@@ -1,6 +1,6 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements o1.g {
     public final /* synthetic */ int a;
@@ -20,18 +20,18 @@ public final /* synthetic */ class z2 implements o1.g {
                 f3Var.c();
                 break;
             case 1:
-                j8 j8Var = (j8) this.b;
-                j8Var.e = f7;
-                j8Var.setScaleX(f7);
-                j8Var.setScaleY(f7);
+                i8 i8Var = (i8) this.b;
+                i8Var.e = f7;
+                i8Var.setScaleX(f7);
+                i8Var.setScaleY(f7);
                 break;
             case 2:
-                j9 j9Var = (j9) this.b;
-                j9Var.a0 = f7;
-                j9Var.B0();
+                i9 i9Var = (i9) this.b;
+                i9Var.b0 = f7;
+                i9Var.C0();
                 break;
             default:
-                ((i9) this.b).d.setConversionWobble(f7);
+                ((h9) this.b).d.setConversionWobble(f7);
                 break;
         }
     }

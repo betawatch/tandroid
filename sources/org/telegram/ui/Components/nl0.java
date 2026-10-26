@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public abstract class nl0 extends lm0 {
     public boolean c;
@@ -15,10 +15,10 @@ public abstract class nl0 extends lm0 {
         if (!this.d && this.e.isEmpty() && this.f.isEmpty()) {
             return;
         }
-        ((org.telegram.ui.em) this).O(false);
+        ((org.telegram.ui.fm) this).O(false);
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public void l() {
         if (this.c) {
             this.d = true;
@@ -27,7 +27,7 @@ public abstract class nl0 extends lm0 {
         }
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public void m(int i10) {
         if (this.c) {
             return;
@@ -35,7 +35,7 @@ public abstract class nl0 extends lm0 {
         super.m(i10);
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public void o(int i10) {
         ArrayList arrayList = this.e;
         if (!this.c) {
@@ -46,7 +46,7 @@ public abstract class nl0 extends lm0 {
         }
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public void q(int i10, int i11) {
         if (this.c) {
             return;
@@ -54,7 +54,7 @@ public abstract class nl0 extends lm0 {
         super.q(i10, i11);
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public void s(int i10, int i11) {
         ArrayList arrayList = this.e;
         if (!this.c) {
@@ -65,7 +65,7 @@ public abstract class nl0 extends lm0 {
         }
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public void t(int i10, int i11) {
         ArrayList arrayList = this.f;
         if (!this.c) {
@@ -76,7 +76,7 @@ public abstract class nl0 extends lm0 {
         }
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public void u(int i10) {
         ArrayList arrayList = this.f;
         if (!this.c) {

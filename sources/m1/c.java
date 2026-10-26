@@ -1,21 +1,22 @@
 package m1;
 
+import a8.ud;
 import android.content.Context;
 import androidx.lifecycle.k0;
-import be.c0;
+import ce.c0;
 import java.util.List;
+import jg.s0;
 import k1.z;
-import k2.w0;
-import td.l;
+import ud.l;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
     public final l b;
     public final c0 c;
     public final Object d;
-    public volatile w0 e;
+    public volatile s0 e;
 
     public c(String name, l lVar, c0 c0Var) {
         kotlin.jvm.internal.i.e(name, "name");
@@ -25,14 +26,14 @@ public final class c {
         this.d = new Object();
     }
 
-    public final w0 a(Object obj, xd.g property) {
-        w0 w0Var;
+    public final s0 a(Object obj, yd.g property) {
+        s0 s0Var;
         Context thisRef = (Context) obj;
         kotlin.jvm.internal.i.e(thisRef, "thisRef");
         kotlin.jvm.internal.i.e(property, "property");
-        w0 w0Var2 = this.e;
-        if (w0Var2 != null) {
-            return w0Var2;
+        s0 s0Var2 = this.e;
+        if (s0Var2 != null) {
+            return s0Var2;
         }
         synchronized (this.d) {
             try {
@@ -44,14 +45,14 @@ public final class c {
                     c0 c0Var = this.c;
                     b bVar = new b(applicationContext, this);
                     kotlin.jvm.internal.i.e(migrations, "migrations");
-                    this.e = new w0(new z(new k0(bVar, 2), jd.h.b(new ab.l(migrations, null, 4)), new rb.b(12), c0Var), 6);
+                    this.e = new s0(new z(new k0(bVar, 2), ud.a(new bb.l(migrations, null, 4)), new pa.d(), c0Var), 10);
                 }
-                w0Var = this.e;
-                kotlin.jvm.internal.i.b(w0Var);
+                s0Var = this.e;
+                kotlin.jvm.internal.i.b(s0Var);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return w0Var;
+        return s0Var;
     }
 }

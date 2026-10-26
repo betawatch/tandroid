@@ -1,11 +1,11 @@
 package k;
 
 import java.util.ArrayList;
-import m.o3;
+import m.n3;
 import r0.m0;
 import r0.n0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class i extends n0 {
     public final /* synthetic */ int a;
@@ -13,7 +13,7 @@ public final class i extends n0 {
     public int c;
     public final /* synthetic */ Object d;
 
-    public i(cc.d dVar) {
+    public i(dc.d dVar) {
         this.a = 0;
         this.d = dVar;
         this.b = false;
@@ -35,7 +35,7 @@ public final class i extends n0 {
             case 0:
                 if (!this.b) {
                     this.b = true;
-                    m0 m0Var = (m0) ((cc.d) this.d).e;
+                    m0 m0Var = (m0) ((dc.d) this.d).e;
                     if (m0Var != null) {
                         m0Var.b();
                         break;
@@ -43,7 +43,7 @@ public final class i extends n0 {
                 }
                 break;
             default:
-                ((o3) this.d).a.setVisibility(0);
+                ((n3) this.d).a.setVisibility(0);
                 break;
         }
     }
@@ -54,7 +54,7 @@ public final class i extends n0 {
             case 0:
                 int i10 = this.c + 1;
                 this.c = i10;
-                cc.d dVar = (cc.d) this.d;
+                dc.d dVar = (dc.d) this.d;
                 if (i10 == ((ArrayList) dVar.c).size()) {
                     m0 m0Var = (m0) dVar.e;
                     if (m0Var != null) {
@@ -68,16 +68,16 @@ public final class i extends n0 {
                 break;
             default:
                 if (!this.b) {
-                    ((o3) this.d).a.setVisibility(this.c);
+                    ((n3) this.d).a.setVisibility(this.c);
                     break;
                 }
                 break;
         }
     }
 
-    public i(o3 o3Var, int i10) {
+    public i(n3 n3Var, int i10) {
         this.a = 1;
-        this.d = o3Var;
+        this.d = n3Var;
         this.c = i10;
         this.b = false;
     }

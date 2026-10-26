@@ -1,83 +1,37 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.util.Property;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.sl;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y8 extends FrameLayout {
-    public static Paint d;
-    public static final int[] e = {-1031100, -29183, -12769, -8792480, -12521994, -12140801, -2984711, -45162, -4473925};
-    public static final int[] f = {-65536, -29183, -256, -16711936, -16711681, -16776961, -2984711, -65281, -1};
-    public final TextView a;
-    public boolean b;
-    public int c;
+public final class y8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ a9 c;
 
-    public y8(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        if (d == null) {
-            d = new Paint(1);
-        }
-        TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.G6, g6Var);
-        sl.u(textView, 1, 16.0f, 1, 1);
-        textView.setSingleLine(true);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(textView, w7.z5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    public /* synthetic */ y8(a9 a9Var, int i10, int i11) {
+        this.a = i11;
+        this.c = a9Var;
+        this.b = i10;
     }
 
-    public final void a(ArrayList arrayList, boolean z10) {
-        setEnabled(z10);
-        TextView textView = this.a;
-        if (arrayList == null) {
-            textView.setAlpha(z10 ? 1.0f : 0.5f);
-            setAlpha(z10 ? 1.0f : 0.5f);
-        } else {
-            float[] fArr = {z10 ? 1.0f : 0.5f};
-            Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr));
-            arrayList.add(ObjectAnimator.ofFloat(this, (Property<y8, Float>) property, z10 ? 1.0f : 0.5f));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                a9 a9Var = this.c;
+                a9Var.r = 0;
+                a9Var.setBackgroundColor(this.b);
+                a9Var.invalidate();
+                break;
+            default:
+                int i10 = this.b;
+                a9 a9Var2 = this.c;
+                a9Var2.setBackgroundColor(i10);
+                a9Var2.r = 0;
+                a9Var2.invalidate();
+                break;
         }
-    }
-
-    public final void b(int i10, String str, boolean z10) {
-        this.a.setText(str);
-        this.b = z10;
-        this.c = i10;
-        setWillNotDraw(!z10 && i10 == 0);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.b) {
-            canvas2 = canvas;
-            canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
-        } else {
-            canvas2 = canvas;
-        }
-        int i10 = this.c;
-        if (i10 != 0) {
-            d.setColor(i10);
-            canvas2.drawCircle(LocaleController.isRTL ? AndroidUtilities.dp(33.0f) : getMeasuredWidth() - AndroidUtilities.dp(33.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(10.0f), d);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.b ? 1 : 0), TLObject.FLAG_30));
     }
 }

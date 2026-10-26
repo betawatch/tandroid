@@ -1,30 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e70 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g70 b;
+public final class e70 extends r90 {
+    public final /* synthetic */ i70 M;
 
-    public /* synthetic */ e70(g70 g70Var, int i10) {
-        this.a = i10;
-        this.b = g70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e70(i70 i70Var, Context context, org.telegram.ui.ActionBar.r2 r2Var, org.telegram.ui.ActionBar.k3 k3Var, boolean z10) {
+        super(context, r2Var, k3Var, false, z10);
+        this.M = i70Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new lg(this.b, tL_error, tLObject, 10));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new yt(17, this.b, tL_error));
-                break;
-        }
+    @Override // org.telegram.ui.Components.r90
+    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
+        org.telegram.ui.ActionBar.u6 u6Var;
+        n70 n70Var = this.M.c;
+        org.telegram.ui.ActionBar.h3 h3Var = n70Var.container;
+        u6Var = ((org.telegram.ui.ActionBar.k3) n70Var).resourcesProvider;
+        qc R = new wc(h3Var, u6Var).R(i10, 36, spannableStringBuilder);
+        R.s = false;
+        R.k(true);
     }
 }

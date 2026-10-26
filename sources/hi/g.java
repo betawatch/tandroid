@@ -1,32 +1,38 @@
 package hi;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.sn;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o b;
-    public final /* synthetic */ long c;
-
-    public /* synthetic */ g(o oVar, long j10, int i10) {
-        this.a = i10;
-        this.b = oVar;
-        this.c = j10;
+public final class g extends s61 {
+    static {
+        s61.setup(new g());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.c, r0.c, new i(this.b, 0));
-                break;
-            default:
-                o oVar = this.b;
-                oVar.getClass();
-                oVar.presentFragment(sn.W9(this.c));
-                break;
-        }
+    public static t61 a(int i10, int i11, int i12, CharSequence charSequence, String str) {
+        t61 K = t61.K(g.class);
+        K.d = i10;
+        K.z = i11;
+        K.k = i12;
+        K.l = charSequence;
+        K.m = str;
+        return K;
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+        ((h) view).a(t61Var.z, t61Var.k, t61Var.l, t61Var.m);
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, u6 u6Var) {
+        return new h(context, u6Var);
     }
 }

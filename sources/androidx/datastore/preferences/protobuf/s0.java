@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public static final int[] o = new int[0];
@@ -1661,8 +1661,8 @@ public final class s0 implements b1 {
                     }
                 case 15:
                     if (q(i10, obj)) {
-                        int g10 = r1.d.g(obj, H & 1048575);
-                        jVar.S(i11, (g10 >> 31) ^ (g10 << 1));
+                        int g7 = r1.d.g(obj, H & 1048575);
+                        jVar.S(i11, (g7 >> 31) ^ (g7 << 1));
                         break;
                     } else {
                         break;
@@ -3737,11 +3737,11 @@ public final class s0 implements b1 {
         int y3;
         int A;
         int y10;
-        int w9;
+        int w10;
         int u10;
         int y11;
-        int x10;
-        int f7;
+        int x9;
+        int e;
         int y12;
         int i11;
         Unsafe unsafe = p;
@@ -3773,14 +3773,14 @@ public final class s0 implements b1 {
             switch (G) {
                 case 0:
                     if ((i10 & i15) != 0) {
-                        i14 = a1.g.e(i16, 8, i14);
+                        i14 = a1.g.d(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if ((i15 & i10) != 0) {
-                        i14 = a1.g.e(i16, 4, i14);
+                        i14 = a1.g.d(i16, 4, i14);
                         break;
                     } else {
                         break;
@@ -3811,8 +3811,8 @@ public final class s0 implements b1 {
                     if ((i15 & i10) != 0) {
                         int i19 = unsafe.getInt(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.w(i19);
-                        u10 = w9 + y10;
+                        w10 = j.w(i19);
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -3836,7 +3836,7 @@ public final class s0 implements b1 {
                     }
                 case 7:
                     if ((i15 & i10) != 0) {
-                        i14 = a1.g.e(i16, 1, i14);
+                        i14 = a1.g.d(i16, 1, i14);
                         break;
                     } else {
                         break;
@@ -3849,14 +3849,14 @@ public final class s0 implements b1 {
                         if (object instanceof g) {
                             int y13 = j.y(i16);
                             int size = ((g) object).size();
-                            f7 = a1.g.f(size, size, y13, i14);
-                            i14 = f7;
+                            e = a1.g.e(size, size, y13, i14);
+                            i14 = e;
                             break;
                         } else {
                             y11 = j.y(i16);
-                            x10 = j.x((String) object);
-                            f7 = x10 + y11 + i14;
-                            i14 = f7;
+                            x9 = j.x((String) object);
+                            e = x9 + y11 + i14;
+                            i14 = e;
                         }
                     }
                 case 9:
@@ -3866,7 +3866,7 @@ public final class s0 implements b1 {
                         Class cls = c1.a;
                         int y14 = j.y(i16);
                         int b10 = ((a) object2).b(n10);
-                        i14 = a1.g.f(b10, b10, y14, i14);
+                        i14 = a1.g.e(b10, b10, y14, i14);
                         break;
                     } else {
                         break;
@@ -3883,8 +3883,8 @@ public final class s0 implements b1 {
                     if ((i15 & i10) != 0) {
                         int i20 = unsafe.getInt(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.z(i20);
-                        u10 = w9 + y10;
+                        w10 = j.z(i20);
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -3894,8 +3894,8 @@ public final class s0 implements b1 {
                     if ((i15 & i10) != 0) {
                         int i21 = unsafe.getInt(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.w(i21);
-                        u10 = w9 + y10;
+                        w10 = j.w(i21);
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -3903,14 +3903,14 @@ public final class s0 implements b1 {
                     }
                 case 13:
                     if ((i15 & i10) != 0) {
-                        i14 = a1.g.e(i16, 4, i14);
+                        i14 = a1.g.d(i16, 4, i14);
                         break;
                     } else {
                         break;
                     }
                 case 14:
                     if ((i10 & i15) != 0) {
-                        i14 = a1.g.e(i16, 8, i14);
+                        i14 = a1.g.d(i16, 8, i14);
                         break;
                     } else {
                         break;
@@ -3919,8 +3919,8 @@ public final class s0 implements b1 {
                     if ((i15 & i10) != 0) {
                         int i22 = unsafe.getInt(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.z((i22 >> 31) ^ (i22 << 1));
-                        u10 = w9 + y10;
+                        w10 = j.z((i22 >> 31) ^ (i22 << 1));
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -4017,17 +4017,17 @@ public final class s0 implements b1 {
                     i14 += u10;
                     break;
                 case 35:
-                    int g10 = c1.g((List) unsafe.getObject(obj, j10));
-                    if (g10 > 0) {
-                        i14 = a1.g.f(g10, j.y(i16), g10, i14);
+                    int g7 = c1.g((List) unsafe.getObject(obj, j10));
+                    if (g7 > 0) {
+                        i14 = a1.g.e(g7, j.y(i16), g7, i14);
                         break;
                     } else {
                         break;
                     }
                 case 36:
-                    int e = c1.e((List) unsafe.getObject(obj, j10));
-                    if (e > 0) {
-                        i14 = a1.g.f(e, j.y(i16), e, i14);
+                    int e10 = c1.e((List) unsafe.getObject(obj, j10));
+                    if (e10 > 0) {
+                        i14 = a1.g.e(e10, j.y(i16), e10, i14);
                         break;
                     } else {
                         break;
@@ -4035,7 +4035,7 @@ public final class s0 implements b1 {
                 case 37:
                     int k10 = c1.k((List) unsafe.getObject(obj, j10));
                     if (k10 > 0) {
-                        i14 = a1.g.f(k10, j.y(i16), k10, i14);
+                        i14 = a1.g.e(k10, j.y(i16), k10, i14);
                         break;
                     } else {
                         break;
@@ -4043,7 +4043,7 @@ public final class s0 implements b1 {
                 case 38:
                     int u11 = c1.u((List) unsafe.getObject(obj, j10));
                     if (u11 > 0) {
-                        i14 = a1.g.f(u11, j.y(i16), u11, i14);
+                        i14 = a1.g.e(u11, j.y(i16), u11, i14);
                         break;
                     } else {
                         break;
@@ -4051,23 +4051,23 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int i23 = c1.i((List) unsafe.getObject(obj, j10));
                     if (i23 > 0) {
-                        i14 = a1.g.f(i23, j.y(i16), i23, i14);
+                        i14 = a1.g.e(i23, j.y(i16), i23, i14);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                    int g11 = c1.g((List) unsafe.getObject(obj, j10));
-                    if (g11 > 0) {
-                        i14 = a1.g.f(g11, j.y(i16), g11, i14);
+                    int g10 = c1.g((List) unsafe.getObject(obj, j10));
+                    if (g10 > 0) {
+                        i14 = a1.g.e(g10, j.y(i16), g10, i14);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e7 = c1.e((List) unsafe.getObject(obj, j10));
-                    if (e7 > 0) {
-                        i14 = a1.g.f(e7, j.y(i16), e7, i14);
+                    int e11 = c1.e((List) unsafe.getObject(obj, j10));
+                    if (e11 > 0) {
+                        i14 = a1.g.e(e11, j.y(i16), e11, i14);
                         break;
                     } else {
                         break;
@@ -4077,7 +4077,7 @@ public final class s0 implements b1 {
                     Class cls3 = c1.a;
                     int size3 = list2.size();
                     if (size3 > 0) {
-                        i14 = a1.g.f(size3, j.y(i16), size3, i14);
+                        i14 = a1.g.e(size3, j.y(i16), size3, i14);
                         break;
                     } else {
                         break;
@@ -4085,7 +4085,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     int s10 = c1.s((List) unsafe.getObject(obj, j10));
                     if (s10 > 0) {
-                        i14 = a1.g.f(s10, j.y(i16), s10, i14);
+                        i14 = a1.g.e(s10, j.y(i16), s10, i14);
                         break;
                     } else {
                         break;
@@ -4093,23 +4093,23 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int c10 = c1.c((List) unsafe.getObject(obj, j10));
                     if (c10 > 0) {
-                        i14 = a1.g.f(c10, j.y(i16), c10, i14);
+                        i14 = a1.g.e(c10, j.y(i16), c10, i14);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e10 = c1.e((List) unsafe.getObject(obj, j10));
-                    if (e10 > 0) {
-                        i14 = a1.g.f(e10, j.y(i16), e10, i14);
+                    int e12 = c1.e((List) unsafe.getObject(obj, j10));
+                    if (e12 > 0) {
+                        i14 = a1.g.e(e12, j.y(i16), e12, i14);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                    int g12 = c1.g((List) unsafe.getObject(obj, j10));
-                    if (g12 > 0) {
-                        i14 = a1.g.f(g12, j.y(i16), g12, i14);
+                    int g11 = c1.g((List) unsafe.getObject(obj, j10));
+                    if (g11 > 0) {
+                        i14 = a1.g.e(g11, j.y(i16), g11, i14);
                         break;
                     } else {
                         break;
@@ -4117,15 +4117,15 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int n11 = c1.n((List) unsafe.getObject(obj, j10));
                     if (n11 > 0) {
-                        i14 = a1.g.f(n11, j.y(i16), n11, i14);
+                        i14 = a1.g.e(n11, j.y(i16), n11, i14);
                         break;
                     } else {
                         break;
                     }
                 case 48:
-                    int p5 = c1.p((List) unsafe.getObject(obj, j10));
-                    if (p5 > 0) {
-                        i14 = a1.g.f(p5, j.y(i16), p5, i14);
+                    int p10 = c1.p((List) unsafe.getObject(obj, j10));
+                    if (p10 > 0) {
+                        i14 = a1.g.e(p10, j.y(i16), p10, i14);
                         break;
                     } else {
                         break;
@@ -4154,14 +4154,14 @@ public final class s0 implements b1 {
                     break;
                 case 51:
                     if (r(i16, i13, obj)) {
-                        i14 = a1.g.e(i16, 8, i14);
+                        i14 = a1.g.d(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
                 case 52:
                     if (r(i16, i13, obj)) {
-                        i14 = a1.g.e(i16, 4, i14);
+                        i14 = a1.g.d(i16, 4, i14);
                         break;
                     } else {
                         break;
@@ -4192,8 +4192,8 @@ public final class s0 implements b1 {
                     if (r(i16, i13, obj)) {
                         int z10 = z(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.w(z10);
-                        u10 = w9 + y10;
+                        w10 = j.w(z10);
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -4217,7 +4217,7 @@ public final class s0 implements b1 {
                     }
                 case 58:
                     if (r(i16, i13, obj)) {
-                        i14 = a1.g.e(i16, 1, i14);
+                        i14 = a1.g.d(i16, 1, i14);
                         break;
                     } else {
                         break;
@@ -4230,14 +4230,14 @@ public final class s0 implements b1 {
                         if (object4 instanceof g) {
                             int y15 = j.y(i16);
                             int size5 = ((g) object4).size();
-                            f7 = a1.g.f(size5, size5, y15, i14);
-                            i14 = f7;
+                            e = a1.g.e(size5, size5, y15, i14);
+                            i14 = e;
                             break;
                         } else {
                             y11 = j.y(i16);
-                            x10 = j.x((String) object4);
-                            f7 = x10 + y11 + i14;
-                            i14 = f7;
+                            x9 = j.x((String) object4);
+                            e = x9 + y11 + i14;
+                            i14 = e;
                         }
                     }
                 case 60:
@@ -4247,7 +4247,7 @@ public final class s0 implements b1 {
                         Class cls5 = c1.a;
                         int y16 = j.y(i16);
                         int b11 = ((a) object5).b(n13);
-                        i14 = a1.g.f(b11, b11, y16, i14);
+                        i14 = a1.g.e(b11, b11, y16, i14);
                         break;
                     } else {
                         break;
@@ -4264,8 +4264,8 @@ public final class s0 implements b1 {
                     if (r(i16, i13, obj)) {
                         int z11 = z(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.z(z11);
-                        u10 = w9 + y10;
+                        w10 = j.z(z11);
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -4275,8 +4275,8 @@ public final class s0 implements b1 {
                     if (r(i16, i13, obj)) {
                         int z12 = z(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.w(z12);
-                        u10 = w9 + y10;
+                        w10 = j.w(z12);
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -4284,14 +4284,14 @@ public final class s0 implements b1 {
                     }
                 case 64:
                     if (r(i16, i13, obj)) {
-                        i14 = a1.g.e(i16, 4, i14);
+                        i14 = a1.g.d(i16, 4, i14);
                         break;
                     } else {
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (r(i16, i13, obj)) {
-                        i14 = a1.g.e(i16, 8, i14);
+                        i14 = a1.g.d(i16, 8, i14);
                         break;
                     } else {
                         break;
@@ -4300,8 +4300,8 @@ public final class s0 implements b1 {
                     if (r(i16, i13, obj)) {
                         int z13 = z(obj, j10);
                         y10 = j.y(i16);
-                        w9 = j.z((z13 >> 31) ^ (z13 << 1));
-                        u10 = w9 + y10;
+                        w10 = j.z((z13 >> 31) ^ (z13 << 1));
+                        u10 = w10 + y10;
                         i14 += u10;
                         break;
                     } else {
@@ -4335,10 +4335,10 @@ public final class s0 implements b1 {
         int y3;
         int A;
         int y10;
-        int w9;
+        int w10;
         int u10;
         int y11;
-        int x10;
+        int x9;
         int y12;
         int A2;
         int i10;
@@ -4361,14 +4361,14 @@ public final class s0 implements b1 {
             switch (G) {
                 case 0:
                     if (q(i11, obj)) {
-                        i12 = a1.g.e(i13, 8, i12);
+                        i12 = a1.g.d(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if (q(i11, obj)) {
-                        i12 = a1.g.e(i13, 4, i12);
+                        i12 = a1.g.d(i13, 4, i12);
                         break;
                     } else {
                         break;
@@ -4397,10 +4397,10 @@ public final class s0 implements b1 {
                     }
                 case 4:
                     if (q(i11, obj)) {
-                        int g10 = r1.d.g(obj, j10);
+                        int g7 = r1.d.g(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.w(g10);
-                        u10 = w9 + y10;
+                        w10 = j.w(g7);
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4424,7 +4424,7 @@ public final class s0 implements b1 {
                     }
                 case 7:
                     if (q(i11, obj)) {
-                        i12 = a1.g.e(i13, 1, i12);
+                        i12 = a1.g.d(i13, 1, i12);
                         break;
                     } else {
                         break;
@@ -4435,12 +4435,12 @@ public final class s0 implements b1 {
                         if (i15 instanceof g) {
                             int y13 = j.y(i13);
                             int size = ((g) i15).size();
-                            i12 = a1.g.f(size, size, y13, i12);
+                            i12 = a1.g.e(size, size, y13, i12);
                             break;
                         } else {
                             y11 = j.y(i13);
-                            x10 = j.x((String) i15);
-                            i12 = x10 + y11 + i12;
+                            x9 = j.x((String) i15);
+                            i12 = x9 + y11 + i12;
                             break;
                         }
                     } else {
@@ -4453,7 +4453,7 @@ public final class s0 implements b1 {
                         Class cls = c1.a;
                         int y14 = j.y(i13);
                         int b10 = ((a) i16).b(n10);
-                        i12 = a1.g.f(b10, b10, y14, i12);
+                        i12 = a1.g.e(b10, b10, y14, i12);
                         break;
                     } else {
                         break;
@@ -4468,10 +4468,10 @@ public final class s0 implements b1 {
                     }
                 case 11:
                     if (q(i11, obj)) {
-                        int g11 = r1.d.g(obj, j10);
+                        int g10 = r1.d.g(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.z(g11);
-                        u10 = w9 + y10;
+                        w10 = j.z(g10);
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4479,10 +4479,10 @@ public final class s0 implements b1 {
                     }
                 case 12:
                     if (q(i11, obj)) {
-                        int g12 = r1.d.g(obj, j10);
+                        int g11 = r1.d.g(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.w(g12);
-                        u10 = w9 + y10;
+                        w10 = j.w(g11);
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4490,24 +4490,24 @@ public final class s0 implements b1 {
                     }
                 case 13:
                     if (q(i11, obj)) {
-                        i12 = a1.g.e(i13, 4, i12);
+                        i12 = a1.g.d(i13, 4, i12);
                         break;
                     } else {
                         break;
                     }
                 case 14:
                     if (q(i11, obj)) {
-                        i12 = a1.g.e(i13, 8, i12);
+                        i12 = a1.g.d(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 15:
                     if (q(i11, obj)) {
-                        int g13 = r1.d.g(obj, j10);
+                        int g12 = r1.d.g(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.z((g13 >> 31) ^ (g13 << 1));
-                        u10 = w9 + y10;
+                        w10 = j.z((g12 >> 31) ^ (g12 << 1));
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4603,9 +4603,9 @@ public final class s0 implements b1 {
                     i12 += u10;
                     break;
                 case 35:
-                    int g14 = c1.g((List) unsafe.getObject(obj, j10));
-                    if (g14 > 0) {
-                        i12 = a1.g.f(g14, j.y(i13), g14, i12);
+                    int g13 = c1.g((List) unsafe.getObject(obj, j10));
+                    if (g13 > 0) {
+                        i12 = a1.g.e(g13, j.y(i13), g13, i12);
                         break;
                     } else {
                         break;
@@ -4613,7 +4613,7 @@ public final class s0 implements b1 {
                 case 36:
                     int e = c1.e((List) unsafe.getObject(obj, j10));
                     if (e > 0) {
-                        i12 = a1.g.f(e, j.y(i13), e, i12);
+                        i12 = a1.g.e(e, j.y(i13), e, i12);
                         break;
                     } else {
                         break;
@@ -4621,7 +4621,7 @@ public final class s0 implements b1 {
                 case 37:
                     int k10 = c1.k((List) unsafe.getObject(obj, j10));
                     if (k10 > 0) {
-                        i12 = a1.g.f(k10, j.y(i13), k10, i12);
+                        i12 = a1.g.e(k10, j.y(i13), k10, i12);
                         break;
                     } else {
                         break;
@@ -4629,7 +4629,7 @@ public final class s0 implements b1 {
                 case 38:
                     int u11 = c1.u((List) unsafe.getObject(obj, j10));
                     if (u11 > 0) {
-                        i12 = a1.g.f(u11, j.y(i13), u11, i12);
+                        i12 = a1.g.e(u11, j.y(i13), u11, i12);
                         break;
                     } else {
                         break;
@@ -4637,23 +4637,23 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int i17 = c1.i((List) unsafe.getObject(obj, j10));
                     if (i17 > 0) {
-                        i12 = a1.g.f(i17, j.y(i13), i17, i12);
+                        i12 = a1.g.e(i17, j.y(i13), i17, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                    int g15 = c1.g((List) unsafe.getObject(obj, j10));
-                    if (g15 > 0) {
-                        i12 = a1.g.f(g15, j.y(i13), g15, i12);
+                    int g14 = c1.g((List) unsafe.getObject(obj, j10));
+                    if (g14 > 0) {
+                        i12 = a1.g.e(g14, j.y(i13), g14, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e7 = c1.e((List) unsafe.getObject(obj, j10));
-                    if (e7 > 0) {
-                        i12 = a1.g.f(e7, j.y(i13), e7, i12);
+                    int e10 = c1.e((List) unsafe.getObject(obj, j10));
+                    if (e10 > 0) {
+                        i12 = a1.g.e(e10, j.y(i13), e10, i12);
                         break;
                     } else {
                         break;
@@ -4663,7 +4663,7 @@ public final class s0 implements b1 {
                     Class cls3 = c1.a;
                     int size3 = list.size();
                     if (size3 > 0) {
-                        i12 = a1.g.f(size3, j.y(i13), size3, i12);
+                        i12 = a1.g.e(size3, j.y(i13), size3, i12);
                         break;
                     } else {
                         break;
@@ -4671,7 +4671,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     int s11 = c1.s((List) unsafe.getObject(obj, j10));
                     if (s11 > 0) {
-                        i12 = a1.g.f(s11, j.y(i13), s11, i12);
+                        i12 = a1.g.e(s11, j.y(i13), s11, i12);
                         break;
                     } else {
                         break;
@@ -4679,23 +4679,23 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int c10 = c1.c((List) unsafe.getObject(obj, j10));
                     if (c10 > 0) {
-                        i12 = a1.g.f(c10, j.y(i13), c10, i12);
+                        i12 = a1.g.e(c10, j.y(i13), c10, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e10 = c1.e((List) unsafe.getObject(obj, j10));
-                    if (e10 > 0) {
-                        i12 = a1.g.f(e10, j.y(i13), e10, i12);
+                    int e11 = c1.e((List) unsafe.getObject(obj, j10));
+                    if (e11 > 0) {
+                        i12 = a1.g.e(e11, j.y(i13), e11, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                    int g16 = c1.g((List) unsafe.getObject(obj, j10));
-                    if (g16 > 0) {
-                        i12 = a1.g.f(g16, j.y(i13), g16, i12);
+                    int g15 = c1.g((List) unsafe.getObject(obj, j10));
+                    if (g15 > 0) {
+                        i12 = a1.g.e(g15, j.y(i13), g15, i12);
                         break;
                     } else {
                         break;
@@ -4703,15 +4703,15 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int n11 = c1.n((List) unsafe.getObject(obj, j10));
                     if (n11 > 0) {
-                        i12 = a1.g.f(n11, j.y(i13), n11, i12);
+                        i12 = a1.g.e(n11, j.y(i13), n11, i12);
                         break;
                     } else {
                         break;
                     }
                 case 48:
-                    int p5 = c1.p((List) unsafe.getObject(obj, j10));
-                    if (p5 > 0) {
-                        i12 = a1.g.f(p5, j.y(i13), p5, i12);
+                    int p10 = c1.p((List) unsafe.getObject(obj, j10));
+                    if (p10 > 0) {
+                        i12 = a1.g.e(p10, j.y(i13), p10, i12);
                         break;
                     } else {
                         break;
@@ -4740,14 +4740,14 @@ public final class s0 implements b1 {
                     break;
                 case 51:
                     if (r(i13, i11, obj)) {
-                        i12 = a1.g.e(i13, 8, i12);
+                        i12 = a1.g.d(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 52:
                     if (r(i13, i11, obj)) {
-                        i12 = a1.g.e(i13, 4, i12);
+                        i12 = a1.g.d(i13, 4, i12);
                         break;
                     } else {
                         break;
@@ -4778,8 +4778,8 @@ public final class s0 implements b1 {
                     if (r(i13, i11, obj)) {
                         int z10 = z(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.w(z10);
-                        u10 = w9 + y10;
+                        w10 = j.w(z10);
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4803,7 +4803,7 @@ public final class s0 implements b1 {
                     }
                 case 58:
                     if (r(i13, i11, obj)) {
-                        i12 = a1.g.e(i13, 1, i12);
+                        i12 = a1.g.d(i13, 1, i12);
                         break;
                     } else {
                         break;
@@ -4814,12 +4814,12 @@ public final class s0 implements b1 {
                         if (i20 instanceof g) {
                             int y15 = j.y(i13);
                             int size5 = ((g) i20).size();
-                            i12 = a1.g.f(size5, size5, y15, i12);
+                            i12 = a1.g.e(size5, size5, y15, i12);
                             break;
                         } else {
                             y11 = j.y(i13);
-                            x10 = j.x((String) i20);
-                            i12 = x10 + y11 + i12;
+                            x9 = j.x((String) i20);
+                            i12 = x9 + y11 + i12;
                             break;
                         }
                     } else {
@@ -4832,7 +4832,7 @@ public final class s0 implements b1 {
                         Class cls5 = c1.a;
                         int y16 = j.y(i13);
                         int b11 = ((a) i21).b(n13);
-                        i12 = a1.g.f(b11, b11, y16, i12);
+                        i12 = a1.g.e(b11, b11, y16, i12);
                         break;
                     } else {
                         break;
@@ -4849,8 +4849,8 @@ public final class s0 implements b1 {
                     if (r(i13, i11, obj)) {
                         int z11 = z(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.z(z11);
-                        u10 = w9 + y10;
+                        w10 = j.z(z11);
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4860,8 +4860,8 @@ public final class s0 implements b1 {
                     if (r(i13, i11, obj)) {
                         int z12 = z(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.w(z12);
-                        u10 = w9 + y10;
+                        w10 = j.w(z12);
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4869,14 +4869,14 @@ public final class s0 implements b1 {
                     }
                 case 64:
                     if (r(i13, i11, obj)) {
-                        i12 = a1.g.e(i13, 4, i12);
+                        i12 = a1.g.d(i13, 4, i12);
                         break;
                     } else {
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (r(i13, i11, obj)) {
-                        i12 = a1.g.e(i13, 8, i12);
+                        i12 = a1.g.d(i13, 8, i12);
                         break;
                     } else {
                         break;
@@ -4885,8 +4885,8 @@ public final class s0 implements b1 {
                     if (r(i13, i11, obj)) {
                         int z13 = z(obj, j10);
                         y10 = j.y(i13);
-                        w9 = j.z((z13 >> 31) ^ (z13 << 1));
-                        u10 = w9 + y10;
+                        w10 = j.z((z13 >> 31) ^ (z13 << 1));
+                        u10 = w10 + y10;
                         i12 += u10;
                         break;
                     } else {

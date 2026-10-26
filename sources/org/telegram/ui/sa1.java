@@ -1,76 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ThemeActivity;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sa1 implements org.telegram.ui.Components.am0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class sa1 implements LocationListener {
+    public final /* synthetic */ ThemeActivity a;
 
-    public /* synthetic */ sa1(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public sa1(ThemeActivity themeActivity) {
+        this.a = themeActivity;
     }
 
-    @Override // org.telegram.ui.Components.am0
-    public final void d(int i10, View view) {
-        switch (this.a) {
-            case 0:
-                za1 za1Var = (za1) this.b;
-                bb1 bb1Var = (bb1) this.c;
-                xa1 xa1Var = (xa1) this.d;
-                ThemeActivity themeActivity = za1Var.e;
-                int i11 = themeActivity.f;
-                org.telegram.ui.ActionBar.j6 C0 = i11 == 1 ? org.telegram.ui.ActionBar.k6.J : org.telegram.ui.ActionBar.k6.C0();
-                if (i10 == bb1Var.h() - 1) {
-                    themeActivity.presentFragment(new qc1(C0, false, 1, false, i11 == 1));
-                } else {
-                    org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) bb1Var.e.get(i10);
-                    if (!TextUtils.isEmpty(i6Var.o) && i6Var.a != org.telegram.ui.ActionBar.k6.n) {
-                        org.telegram.ui.ActionBar.f6.a(false);
-                    }
-                    int i12 = C0.Y;
-                    int i13 = i6Var.a;
-                    if (i12 != i13) {
-                        org.telegram.ui.ActionBar.k6.H1(C0, i11 == 1, i13, view);
-                        org.telegram.ui.ActionBar.f4.p(C0, i6Var.a);
-                        org.telegram.ui.ActionBar.k6.J1(themeActivity);
-                    } else {
-                        themeActivity.presentFragment(new qc1(C0, false, 1, i13 >= 100, i11 == 1));
-                    }
-                }
-                int left = view.getLeft();
-                int right = view.getRight();
-                int dp = AndroidUtilities.dp(52.0f);
-                int i14 = left - dp;
-                if (i14 < 0) {
-                    xa1Var.v0(i14, 0, null);
-                } else {
-                    int i15 = right + dp;
-                    if (i15 > xa1Var.getMeasuredWidth()) {
-                        xa1Var.v0(i15 - xa1Var.getMeasuredWidth(), 0, null);
-                    }
-                }
-                int childCount = xa1Var.getChildCount();
-                for (int i16 = 0; i16 < childCount; i16++) {
-                    View childAt = xa1Var.getChildAt(i16);
-                    if (childAt instanceof ThemeActivity.InnerAccentView) {
-                        ((ThemeActivity.InnerAccentView) childAt).a(true);
-                    }
-                }
-                break;
-            default:
-                d11.V((d11) this.b, (Context) this.c, (String) this.d, view, i10);
-                break;
+    @Override // android.location.LocationListener
+    public final void onLocationChanged(Location location) {
+        ThemeActivity themeActivity = this.a;
+        if (location == null) {
+            return;
         }
+        themeActivity.K0 = false;
+        LocationManager locationManager = (LocationManager) ApplicationLoader.applicationContext.getSystemService("location");
+        locationManager.removeUpdates(themeActivity.Q0);
+        locationManager.removeUpdates(themeActivity.R0);
+        themeActivity.C0(location, false);
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderDisabled(String str) {
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderEnabled(String str) {
+    }
+
+    @Override // android.location.LocationListener
+    public final void onStatusChanged(String str, int i10, Bundle bundle) {
     }
 }

@@ -1,735 +1,702 @@
 package f6;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.media.MediaMetadata;
-import android.net.Uri;
-import android.os.Bundle;
+import a8.h0;
 import android.os.Looper;
-import android.os.Parcel;
-import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.PlaybackStateCompat;
-import android.support.v4.media.session.b0;
-import android.support.v4.media.session.e0;
-import android.support.v4.media.session.v;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
-import c6.o;
-import c6.q;
-import com.google.android.gms.cast.CastDevice;
+import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
-import com.google.android.gms.cast.framework.ReconnectionService;
-import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import com.google.android.gms.internal.cast.a0;
-import com.google.android.gms.internal.cast.r;
-import com.google.android.gms.internal.cast.z5;
-import d6.c0;
-import e6.p;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.common.api.internal.t;
+import com.google.android.gms.common.api.internal.u;
+import com.google.android.gms.common.api.internal.v;
+import com.google.android.gms.internal.cast.y;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import d6.a0;
+import d6.e0;
+import d6.f0;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import n4.s;
-import n6.l;
-import org.telegram.messenger.beta.R;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h {
-    public static final g6.b v = new g6.b("MediaSessionManager", null);
-    public final Context a;
-    public final d6.b b;
-    public final r c;
-    public final d6.g d;
-    public final e6.f e;
-    public final ComponentName f;
-    public final ComponentName g;
-    public final z5 h;
-    public final z5 i;
-    public final f j;
-    public final a0 k;
-    public final androidx.activity.i l;
-    public final c0 m;
-    public e6.h n;
-    public CastDevice o;
-    public b0 p;
-    public boolean q;
-    public PlaybackStateCompat.CustomAction r;
-    public PlaybackStateCompat.CustomAction s;
-    public PlaybackStateCompat.CustomAction t;
-    public PlaybackStateCompat.CustomAction u;
+public final class h implements d6.f {
+    public static final h6.b k = new h6.b("RemoteMediaClient", null);
+    public final Object a;
+    public final y b;
+    public final h6.m c;
+    public final h0 d;
+    public final c e;
+    public f0 f;
+    public TaskCompletionSource g;
+    public final CopyOnWriteArrayList h = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList i = new CopyOnWriteArrayList();
+    public final ConcurrentHashMap j;
 
-    public h(Context context, d6.b bVar, r rVar) {
-        e6.f fVar;
-        this.a = context;
-        this.b = bVar;
-        this.c = rVar;
-        g6.b bVar2 = d6.a.l;
-        l.e("Must be called from the main thread.");
-        d6.a aVar = d6.a.n;
-        f fVar2 = null;
-        this.d = aVar != null ? aVar.b() : null;
-        e6.a aVar2 = bVar.f;
-        this.e = aVar2 == null ? null : aVar2.d;
-        this.m = new c0(this, 2);
-        String str = aVar2 == null ? null : aVar2.b;
-        this.f = !TextUtils.isEmpty(str) ? new ComponentName(context, str) : null;
-        String str2 = aVar2 == null ? null : aVar2.a;
-        this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
-        z5 z5Var = new z5(context);
-        this.h = z5Var;
-        z5Var.e = new ya.c(this, 17);
-        z5 z5Var2 = new z5(context);
-        this.i = z5Var2;
-        z5Var2.e = new a6.i(this, 20);
-        this.k = new a0(Looper.getMainLooper(), 0);
-        g6.b bVar3 = f.u;
-        e6.a aVar3 = bVar.f;
-        if (aVar3 != null && (fVar = aVar3.d) != null) {
-            p pVar = fVar.V;
-            if (pVar != null) {
-                ArrayList a2 = i.a(pVar);
-                int[] b10 = i.b(pVar);
-                int size = a2 == null ? 0 : a2.size();
-                if (a2 == null || a2.isEmpty()) {
-                    Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" doesn't provide any action."), new Object[0]));
-                } else if (a2.size() > 5) {
-                    Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" provides more than 5 actions."), new Object[0]));
-                } else if (b10 == null || (b10.length) == 0) {
-                    Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" doesn't provide any actions for compact view."), new Object[0]));
-                } else {
-                    for (int i10 : b10) {
-                        if (i10 < 0 || i10 >= size) {
-                            Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat("provides a compact view action whose index is out of bounds."), new Object[0]));
-                            break;
-                        }
-                    }
-                }
-            }
-            fVar2 = new f(context);
-        }
-        this.j = fVar2;
-        this.l = new androidx.activity.i(this, 19);
+    static {
+        String str = h6.m.v;
     }
 
-    public final void a(e6.h hVar, CastDevice castDevice) {
-        ComponentName componentName;
-        d6.b bVar = this.b;
-        e6.a aVar = bVar == null ? null : bVar.f;
-        if (this.q || bVar == null || aVar == null || this.e == null || hVar == null || castDevice == null || (componentName = this.g) == null) {
-            v.b("skip attaching media session", new Object[0]);
-            return;
-        }
-        this.n = hVar;
-        hVar.p(this.m);
-        this.o = castDevice;
-        Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
-        intent.setComponent(componentName);
-        Context context = this.a;
-        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, 67108864);
-        if (aVar.f) {
-            b0 b0Var = new b0(context, "CastMediaSession", componentName, broadcast);
-            this.p = b0Var;
-            j(0, null);
-            CastDevice castDevice2 = this.o;
-            if (castDevice2 != null && !TextUtils.isEmpty(castDevice2.d)) {
-                Bundle bundle = new Bundle();
-                String string = context.getResources().getString(R.string.cast_casting_to_device, this.o.d);
-                a0.f fVar = MediaMetadataCompat.d;
-                if (fVar.containsKey("android.media.metadata.ALBUM_ARTIST") && ((Integer) fVar.get("android.media.metadata.ALBUM_ARTIST")).intValue() != 1) {
-                    throw new IllegalArgumentException("The android.media.metadata.ALBUM_ARTIST key cannot be used to put a String");
-                }
-                bundle.putCharSequence("android.media.metadata.ALBUM_ARTIST", string);
-                b0Var.e(new MediaMetadataCompat(bundle));
-            }
-            b0Var.d(new g(this), null);
-            b0Var.c(true);
-            this.c.K0(b0Var);
-        }
-        this.q = true;
-        b();
+    public h(h6.m mVar) {
+        new ConcurrentHashMap();
+        this.j = new ConcurrentHashMap();
+        this.a = new Object();
+        this.b = new y(Looper.getMainLooper(), 0);
+        h0 h0Var = new h0(this);
+        this.d = h0Var;
+        this.c = mVar;
+        mVar.h = new rb.c(this, 19);
+        mVar.c = h0Var;
+        this.e = new c(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00a5  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00a8  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b() {
-        MediaInfo d;
-        c6.l lVar;
-        boolean z10;
-        boolean z11;
-        af.e eVar;
-        Uri uri;
-        s sVar;
-        o c10;
-        MediaInfo mediaInfo;
-        e6.h hVar = this.n;
-        if (hVar == null) {
-            return;
-        }
-        int s10 = hVar.s();
-        MediaInfo d10 = hVar.d();
-        if (hVar.k() && (c10 = hVar.c()) != null && (mediaInfo = c10.a) != null) {
-            d10 = mediaInfo;
-        }
-        j(s10, d10);
-        if (!hVar.h()) {
-            h();
-            i();
-            return;
-        }
-        if (s10 != 0) {
-            f fVar = this.j;
-            if (fVar != null) {
-                v.b("Update media notification.", new Object[0]);
-                CastDevice castDevice = this.o;
-                e6.h hVar2 = this.n;
-                b0 b0Var = this.p;
-                if (castDevice != null && hVar2 != null && b0Var != null && (d = hVar2.d()) != null && (lVar = d.d) != null) {
-                    List list = lVar.a;
-                    q e = hVar2.e();
-                    if (e != null) {
-                        int i10 = e.F;
-                        if (i10 == 1 || i10 == 2 || i10 == 3) {
-                            z10 = true;
-                            z11 = z10;
-                            boolean z12 = hVar2.f() == 2;
-                            int i11 = d.b;
-                            c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-                            String string = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
-                            String str = castDevice.d;
-                            af.e eVar2 = new af.e(z12, i11, string, str, b0Var.a.c, z10, z11);
-                            boolean z13 = z12;
-                            boolean z14 = z10;
-                            boolean z15 = z11;
-                            eVar = fVar.k;
-                            if (eVar != null || z13 != eVar.a || i11 != eVar.b || !g6.a.d(string, (String) eVar.f) || !g6.a.d(str, (String) eVar.g) || z14 != eVar.c || z15 != eVar.d) {
-                                fVar.k = eVar2;
-                                fVar.b();
-                            }
-                            s sVar2 = new s((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
-                            uri = (Uri) sVar2.b;
-                            sVar = fVar.l;
-                            if (sVar != null || !g6.a.d(uri, (Uri) sVar.b)) {
-                                z5 z5Var = fVar.i;
-                                z5Var.e = new qf.b(fVar, sVar2, false, 16);
-                                z5Var.B(uri);
-                            }
-                        } else {
-                            Integer num = (Integer) e.N.get(e.c);
-                            if (num != null) {
-                                boolean z16 = num.intValue() > 0;
-                                z10 = num.intValue() < e.G.size() + (-1);
-                                z11 = z16;
-                                if (hVar2.f() == 2) {
-                                }
-                                int i112 = d.b;
-                                c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-                                String string2 = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
-                                String str2 = castDevice.d;
-                                af.e eVar22 = new af.e(z12, i112, string2, str2, b0Var.a.c, z10, z11);
-                                boolean z132 = z12;
-                                boolean z142 = z10;
-                                boolean z152 = z11;
-                                eVar = fVar.k;
-                                if (eVar != null) {
-                                }
-                                fVar.k = eVar22;
-                                fVar.b();
-                                s sVar22 = new s((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
-                                uri = (Uri) sVar22.b;
-                                sVar = fVar.l;
-                                if (sVar != null) {
-                                }
-                                z5 z5Var2 = fVar.i;
-                                z5Var2.e = new qf.b(fVar, sVar22, false, 16);
-                                z5Var2.B(uri);
-                            }
-                        }
-                    }
-                    z10 = false;
-                    z11 = z10;
-                    if (hVar2.f() == 2) {
-                    }
-                    int i1122 = d.b;
-                    c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-                    String string22 = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
-                    String str22 = castDevice.d;
-                    af.e eVar222 = new af.e(z12, i1122, string22, str22, b0Var.a.c, z10, z11);
-                    boolean z1322 = z12;
-                    boolean z1422 = z10;
-                    boolean z1522 = z11;
-                    eVar = fVar.k;
-                    if (eVar != null) {
-                    }
-                    fVar.k = eVar222;
-                    fVar.b();
-                    s sVar222 = new s((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
-                    uri = (Uri) sVar222.b;
-                    sVar = fVar.l;
-                    if (sVar != null) {
-                    }
-                    z5 z5Var22 = fVar.i;
-                    z5Var22.e = new qf.b(fVar, sVar222, false, 16);
-                    z5Var22.B(uri);
-                }
-            }
-            if (hVar.k()) {
-                return;
-            }
-            g(true);
+    public static t t() {
+        t tVar = new t(null, 1);
+        tVar.a(new n(new Status(17, null, null, null), 0));
+        return tVar;
+    }
+
+    public static final void x(o oVar) {
+        try {
+            oVar.p();
+        } catch (IllegalArgumentException e) {
+            throw e;
+        } catch (Throwable unused) {
+            oVar.a(new n(new Status(2100, null, null, null), 1));
         }
     }
 
-    public final long c(String str, int i10, Bundle bundle) {
-        long j10;
-        int hashCode = str.hashCode();
-        if (hashCode != -945151566) {
-            if (hashCode != -945080078) {
-                if (hashCode == 235550565 && str.equals(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK)) {
-                    if (i10 == 3) {
-                        j10 = 514;
-                        i10 = 3;
-                    } else {
-                        j10 = 512;
-                    }
-                    if (i10 != 2) {
-                        return j10;
-                    }
-                    return 516L;
-                }
-            } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_PREV)) {
-                e6.h hVar = this.n;
-                if (hVar != null && hVar.h()) {
-                    q e = hVar.e();
-                    l.h(e);
-                    if ((128 & e.n) != 0 || e.F != 0) {
-                        return 16L;
-                    }
-                    Integer num = (Integer) e.N.get(e.c);
-                    if (num != null && num.intValue() > 0) {
-                        return 16L;
-                    }
-                }
-                bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
-                return 0L;
-            }
-        } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-            e6.h hVar2 = this.n;
-            if (hVar2 != null && hVar2.h()) {
-                q e7 = hVar2.e();
-                l.h(e7);
-                if ((64 & e7.n) != 0 || e7.F != 0) {
-                    return 32L;
-                }
-                Integer num2 = (Integer) e7.N.get(e7.c);
-                if (num2 != null && num2.intValue() < e7.G.size() - 1) {
-                    return 32L;
-                }
-            }
-            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
+    public final long a() {
+        long o10;
+        synchronized (this.a) {
+            o6.l.e("Must be called from the main thread.");
+            o10 = this.c.o();
         }
-        return 0L;
+        return o10;
     }
 
-    public final Uri d(c6.l lVar) {
-        e6.a aVar = this.b.f;
-        if (aVar != null) {
-            aVar.b();
+    public final int b() {
+        int i10;
+        synchronized (this.a) {
+            try {
+                o6.l.e("Must be called from the main thread.");
+                d6.q e = e();
+                i10 = e != null ? e.f : 0;
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        List list = lVar.a;
-        m6.a aVar2 = (list == null || list.isEmpty()) ? null : (m6.a) lVar.a.get(0);
-        if (aVar2 == null) {
+        return i10;
+    }
+
+    public final d6.o c() {
+        o6.l.e("Must be called from the main thread.");
+        d6.q e = e();
+        if (e == null) {
             return null;
         }
-        return aVar2.b;
+        Integer num = (Integer) e.N.get(e.w);
+        if (num == null) {
+            return null;
+        }
+        return (d6.o) e.G.get(num.intValue());
     }
 
-    public final void e(Bitmap bitmap, int i10) {
-        MediaMetadata metadata;
-        b0 b0Var = this.p;
-        if (b0Var == null) {
-            return;
+    public final MediaInfo d() {
+        MediaInfo mediaInfo;
+        synchronized (this.a) {
+            o6.l.e("Must be called from the main thread.");
+            d6.q qVar = this.c.f;
+            mediaInfo = qVar == null ? null : qVar.a;
         }
-        if (bitmap == null) {
-            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
-            bitmap.eraseColor(0);
-        }
-        b0 b0Var2 = this.p;
-        MediaMetadataCompat mediaMetadataCompat = null;
-        if (b0Var2 != null && (metadata = ((android.support.v4.media.session.h) b0Var2.b.b).a.getMetadata()) != null) {
-            a0.f fVar = MediaMetadataCompat.d;
-            Parcel obtain = Parcel.obtain();
-            metadata.writeToParcel(obtain, 0);
-            obtain.setDataPosition(0);
-            MediaMetadataCompat createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
-            obtain.recycle();
-            createFromParcel.b = metadata;
-            mediaMetadataCompat = createFromParcel;
-        }
-        a4.l lVar = mediaMetadataCompat == null ? new a4.l(2) : new a4.l(mediaMetadataCompat);
-        lVar.a0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        b0Var.e(new MediaMetadataCompat((Bundle) lVar.b));
+        return mediaInfo;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
+    public final d6.q e() {
+        d6.q qVar;
+        synchronized (this.a) {
+            o6.l.e("Must be called from the main thread.");
+            qVar = this.c.f;
+        }
+        return qVar;
+    }
+
+    public final int f() {
+        int i10;
+        synchronized (this.a) {
+            try {
+                o6.l.e("Must be called from the main thread.");
+                d6.q e = e();
+                i10 = e != null ? e.e : 1;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return i10;
+    }
+
+    public final long g() {
+        long j10;
+        synchronized (this.a) {
+            o6.l.e("Must be called from the main thread.");
+            d6.q qVar = this.c.f;
+            MediaInfo mediaInfo = qVar == null ? null : qVar.a;
+            j10 = mediaInfo != null ? mediaInfo.e : 0L;
+        }
+        return j10;
+    }
+
+    public final boolean h() {
+        o6.l.e("Must be called from the main thread.");
+        if (i()) {
+            return true;
+        }
+        o6.l.e("Must be called from the main thread.");
+        d6.q e = e();
+        return (e != null && e.e == 5) || m() || l() || k();
+    }
+
+    public final boolean i() {
+        o6.l.e("Must be called from the main thread.");
+        d6.q e = e();
+        return e != null && e.e == 4;
+    }
+
+    public final boolean j() {
+        o6.l.e("Must be called from the main thread.");
+        MediaInfo d = d();
+        return d != null && d.b == 2;
+    }
+
+    public final boolean k() {
+        o6.l.e("Must be called from the main thread.");
+        d6.q e = e();
+        return (e == null || e.w == 0) ? false : true;
+    }
+
+    public final boolean l() {
+        o6.l.e("Must be called from the main thread.");
+        d6.q e = e();
+        if (e == null) {
+            return false;
+        }
+        if (e.e != 3) {
+            return j() && b() == 2;
+        }
+        return true;
+    }
+
+    public final boolean m() {
+        o6.l.e("Must be called from the main thread.");
+        d6.q e = e();
+        return e != null && e.e == 2;
+    }
+
+    public final boolean n() {
+        o6.l.e("Must be called from the main thread.");
+        d6.q e = e();
+        return e != null && e.H;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00c4 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0111 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0121 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x012e A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0138 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x013f A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0146 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x014d A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0186 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Type inference failed for: r3v0, types: [h6.o] */
+    /* JADX WARN: Type inference failed for: r3v1 */
+    /* JADX WARN: Type inference failed for: r3v3 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(e0 e0Var, String str, e6.d dVar) {
-        int hashCode = str.hashCode();
-        Context context = this.a;
-        PlaybackStateCompat.CustomAction customAction = null;
-        e6.f fVar = this.e;
-        switch (hashCode) {
-            case -1699820260:
-                if (str.equals(MediaIntentReceiver.ACTION_REWIND)) {
-                    if (this.s == null && fVar != null) {
-                        long j10 = fVar.c;
-                        g6.b bVar = i.a;
-                        int i10 = fVar.R;
-                        if (j10 == 10000) {
-                            i10 = fVar.S;
-                        } else if (j10 == 30000) {
-                            i10 = fVar.T;
-                        }
-                        int i11 = fVar.y;
-                        if (j10 == 10000) {
-                            i11 = fVar.E;
-                        } else if (j10 == 30000) {
-                            i11 = fVar.F;
-                        }
-                        String string = context.getResources().getString(i10);
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_REWIND)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i11 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.s = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_REWIND, string, i11, null);
-                    }
-                    customAction = this.s;
-                    if (customAction != null) {
-                        e0Var.a(customAction);
-                        return;
-                    }
-                    return;
-                }
-                if (dVar != null) {
-                    String str2 = dVar.c;
-                    int i12 = dVar.b;
-                    if (TextUtils.isEmpty(str)) {
-                        throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                    }
-                    if (TextUtils.isEmpty(str2)) {
-                        throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                    }
-                    if (i12 == 0) {
-                        throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                    }
-                    customAction = new PlaybackStateCompat.CustomAction(str, str2, i12, null);
-                }
-                if (customAction != null) {
-                }
-            case -668151673:
-                if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                    if (this.t == null && fVar != null) {
-                        String string2 = context.getResources().getString(fVar.U);
-                        int i13 = fVar.G;
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string2)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i13 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.t = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_STOP_CASTING, string2, i13, null);
-                    }
-                    customAction = this.t;
-                    if (customAction != null) {
-                    }
-                }
-                if (dVar != null) {
-                }
-                if (customAction != null) {
-                }
-                break;
-            case -124479363:
-                if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                    if (this.u == null && fVar != null) {
-                        String string3 = context.getResources().getString(fVar.U);
-                        int i14 = fVar.G;
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string3)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i14 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.u = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_DISCONNECT, string3, i14, null);
-                    }
-                    customAction = this.u;
-                    if (customAction != null) {
-                    }
-                }
-                if (dVar != null) {
-                }
-                if (customAction != null) {
-                }
-                break;
-            case 1362116196:
-                if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
-                    if (this.r == null && fVar != null) {
-                        long j11 = fVar.c;
-                        g6.b bVar2 = i.a;
-                        int i15 = fVar.O;
-                        if (j11 == 10000) {
-                            i15 = fVar.P;
-                        } else if (j11 == 30000) {
-                            i15 = fVar.Q;
-                        }
-                        int i16 = fVar.v;
-                        if (j11 == 10000) {
-                            i16 = fVar.w;
-                        } else if (j11 == 30000) {
-                            i16 = fVar.x;
-                        }
-                        String string4 = context.getResources().getString(i15);
-                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_FORWARD)) {
-                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
-                        }
-                        if (TextUtils.isEmpty(string4)) {
-                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
-                        }
-                        if (i16 == 0) {
-                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
-                        }
-                        this.r = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_FORWARD, string4, i16, null);
-                    }
-                    customAction = this.r;
-                    if (customAction != null) {
-                    }
-                }
-                if (dVar != null) {
-                }
-                if (customAction != null) {
-                }
-                break;
-            default:
-                if (dVar != null) {
-                }
-                if (customAction != null) {
-                }
-                break;
-        }
-    }
-
-    public final void g(boolean z10) {
-        if (this.b.h) {
-            a0 a0Var = this.k;
-            androidx.activity.i iVar = this.l;
-            if (iVar != null) {
-                a0Var.removeCallbacks(iVar);
-            }
-            Context context = this.a;
-            Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
-            intent.setPackage(context.getPackageName());
-            try {
-                context.startService(intent);
-            } catch (IllegalStateException unused) {
-                if (z10) {
-                    a0Var.postDelayed(iVar, 1000L);
-                }
-            }
-        }
-    }
-
-    public final void h() {
-        f fVar = this.j;
-        if (fVar != null) {
-            v.b("Stopping media notification.", new Object[0]);
-            z5 z5Var = fVar.i;
-            z5Var.C();
-            z5Var.e = null;
-            NotificationManager notificationManager = fVar.b;
-            if (notificationManager != null) {
-                notificationManager.cancel("castMediaNotification", 1);
-            }
-        }
-    }
-
-    public final void i() {
-        if (this.b.h) {
-            this.k.removeCallbacks(this.l);
-            Context context = this.a;
-            Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
-            intent.setPackage(context.getPackageName());
-            context.stopService(intent);
-        }
-    }
-
-    public final void j(int i10, MediaInfo mediaInfo) {
-        PlaybackStateCompat b10;
-        b0 b0Var;
-        c6.l lVar;
-        MediaMetadata metadata;
-        MediaMetadataCompat createFromParcel;
-        Bitmap bitmap;
-        PendingIntent activity;
+    public final void o(String str) {
+        char c10;
+        int i10;
         int i11;
-        b0 b0Var2 = this.p;
-        if (b0Var2 == null) {
-            return;
-        }
-        v vVar = b0Var2.a;
-        Bundle bundle = new Bundle();
-        e0 e0Var = new e0();
-        e6.h hVar = this.n;
-        e6.f fVar = this.e;
-        if (hVar == null || this.j == null) {
-            b10 = e0Var.b();
-        } else {
-            e0Var.c(i10, (hVar.s() == 0 || hVar.j()) ? 0L : hVar.a(), 1.0f);
-            if (i10 == 0) {
-                b10 = e0Var.b();
-            } else {
-                p pVar = fVar != null ? fVar.V : null;
-                e6.h hVar2 = this.n;
-                long j10 = (hVar2 == null || hVar2.j() || this.n.n()) ? 0L : 256L;
-                if (pVar != null) {
-                    ArrayList a2 = i.a(pVar);
-                    if (a2 != null) {
-                        int size = a2.size();
-                        int i12 = 0;
-                        while (i12 < size) {
-                            Object obj = a2.get(i12);
-                            i12++;
-                            ArrayList arrayList = a2;
-                            e6.d dVar = (e6.d) obj;
-                            int i13 = size;
-                            String str = dVar.a;
-                            if (TextUtils.equals(str, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                                j10 = c(str, i10, bundle) | j10;
-                            } else {
-                                f(e0Var, str, dVar);
-                            }
-                            size = i13;
-                            a2 = arrayList;
+        d6.q qVar;
+        int[] m10;
+        h6.m mVar = this.c;
+        String str2 = mVar.o;
+        h6.o oVar = mVar.n;
+        h6.o oVar2 = mVar.j;
+        List list = mVar.d;
+        h6.b bVar = mVar.a;
+        bVar.b("message received: %s", str);
+        String str3 = bVar.a;
+        try {
+            JSONObject jSONObject = new JSONObject(str);
+            String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
+            try {
+                long optLong = jSONObject.optLong("requestId", -1L);
+                c10 = 1;
+                try {
+                    try {
+                        switch (string.hashCode()) {
+                            case -1830647528:
+                                if (string.equals("LOAD_CANCELLED")) {
+                                    oVar2.b(optLong, 2101, h6.m.f(jSONObject));
+                                    return;
+                                }
+                                return;
+                            case -1790231854:
+                                if (string.equals("QUEUE_ITEMS")) {
+                                    mVar.s.b(optLong, 0, null);
+                                    mVar.h("QUEUE_ITEMS", jSONObject);
+                                    if (mVar.h != null) {
+                                        JSONArray jSONArray = jSONObject.getJSONArray("items");
+                                        d6.o[] oVarArr = new d6.o[jSONArray.length()];
+                                        for (int i12 = 0; i12 < jSONArray.length(); i12++) {
+                                            oVarArr[i12] = new a4.l(jSONArray.getJSONObject(i12)).o();
+                                        }
+                                        Iterator it = ((h) mVar.h.b).i.iterator();
+                                        while (it.hasNext()) {
+                                            ((g) it.next()).k(oVarArr);
+                                        }
+                                        return;
+                                    }
+                                    return;
+                                }
+                                return;
+                            case -1125000185:
+                                if (string.equals("INVALID_REQUEST")) {
+                                    Log.w(str3, bVar.d("received unexpected error: Invalid Request.", new Object[0]));
+                                    Iterator it2 = list.iterator();
+                                    while (it2.hasNext()) {
+                                        ((h6.o) it2.next()).b(optLong, 2001, h6.m.f(jSONObject));
+                                    }
+                                    return;
+                                }
+                                return;
+                            case -262628938:
+                                if (string.equals("LOAD_FAILED")) {
+                                    oVar2.b(optLong, 2100, h6.m.f(jSONObject));
+                                    return;
+                                }
+                                return;
+                            case 66247144:
+                                if (string.equals("ERROR")) {
+                                    Iterator it3 = list.iterator();
+                                    while (it3.hasNext()) {
+                                        ((h6.o) it3.next()).b(optLong, 2100, h6.m.f(jSONObject));
+                                    }
+                                    if (mVar.h == null) {
+                                        return;
+                                    }
+                                    MediaError b10 = MediaError.b(jSONObject);
+                                    Iterator it4 = ((h) mVar.h.b).i.iterator();
+                                    while (it4.hasNext()) {
+                                        ((g) it4.next()).b(b10);
+                                    }
+                                    return;
+                                }
+                                return;
+                            case 154411710:
+                                if (string.equals("QUEUE_CHANGE")) {
+                                    mVar.t.b(optLong, 0, null);
+                                    mVar.h("QUEUE_CHANGE", jSONObject);
+                                    if (mVar.h != null) {
+                                        String string2 = jSONObject.getString("changeType");
+                                        int[] m11 = h6.m.m(jSONObject.getJSONArray("itemIds"));
+                                        int optInt = jSONObject.optInt("insertBefore", 0);
+                                        if (m11 != null) {
+                                            switch (string2.hashCode()) {
+                                                case -2130463047:
+                                                    if (string2.equals("INSERT")) {
+                                                        Iterator it5 = ((h) mVar.h.b).i.iterator();
+                                                        while (it5.hasNext()) {
+                                                            ((g) it5.next()).j(m11, optInt);
+                                                        }
+                                                        return;
+                                                    }
+                                                    return;
+                                                case -1881281404:
+                                                    if (string2.equals("REMOVE")) {
+                                                        Iterator it6 = ((h) mVar.h.b).i.iterator();
+                                                        while (it6.hasNext()) {
+                                                            ((g) it6.next()).l(m11);
+                                                        }
+                                                        return;
+                                                    }
+                                                    return;
+                                                case -1785516855:
+                                                    if (string2.equals("UPDATE")) {
+                                                        int[] m12 = h6.m.m(jSONObject.getJSONArray("itemIds"));
+                                                        o6.l.i(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
+                                                        JSONArray optJSONArray = jSONObject.optJSONArray("reorderItemIds");
+                                                        if (optJSONArray == null) {
+                                                            Iterator it7 = ((h) mVar.h.b).i.iterator();
+                                                            while (it7.hasNext()) {
+                                                                ((g) it7.next()).i(m12);
+                                                            }
+                                                            return;
+                                                        }
+                                                        ArrayList c11 = h6.a.c(m12);
+                                                        int optInt2 = jSONObject.optInt("insertBefore", 0);
+                                                        int[] m13 = h6.m.m(optJSONArray);
+                                                        o6.l.h(m13);
+                                                        ArrayList c12 = h6.a.c(m13);
+                                                        Iterator it8 = ((h) mVar.h.b).i.iterator();
+                                                        while (it8.hasNext()) {
+                                                            ((g) it8.next()).m(c11, c12, optInt2);
+                                                        }
+                                                        return;
+                                                    }
+                                                    return;
+                                                case 1122976047:
+                                                    if (string2.equals("ITEMS_CHANGE")) {
+                                                        Iterator it9 = ((h) mVar.h.b).i.iterator();
+                                                        while (it9.hasNext()) {
+                                                            ((g) it9.next()).n(m11);
+                                                        }
+                                                        return;
+                                                    }
+                                                    return;
+                                                default:
+                                                    return;
+                                            }
+                                        }
+                                        return;
+                                    }
+                                    return;
+                                }
+                                return;
+                            case 431600379:
+                                if (string.equals("INVALID_PLAYER_STATE")) {
+                                    Log.w(str3, bVar.d("received unexpected error: Invalid Player State.", new Object[0]));
+                                    Iterator it10 = list.iterator();
+                                    while (it10.hasNext()) {
+                                        ((h6.o) it10.next()).b(optLong, 2100, h6.m.f(jSONObject));
+                                    }
+                                    return;
+                                }
+                                return;
+                            case 823510221:
+                                if (string.equals("MEDIA_STATUS")) {
+                                    JSONArray jSONArray2 = jSONObject.getJSONArray("status");
+                                    if (jSONArray2.length() > 0) {
+                                        JSONObject jSONObject2 = jSONArray2.getJSONObject(0);
+                                        boolean c13 = oVar2.c(optLong);
+                                        if (oVar.d()) {
+                                            if (oVar.c(optLong)) {
+                                            }
+                                            i10 = 1;
+                                            if (!c13 && (qVar = mVar.f) != null) {
+                                                i11 = qVar.b(i10, jSONObject2);
+                                                if ((i11 & 1) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    mVar.i = -1;
+                                                    mVar.l();
+                                                }
+                                                if ((i11 & 2) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    mVar.l();
+                                                }
+                                                if ((i11 & 128) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                }
+                                                if ((i11 & 4) != 0) {
+                                                    mVar.i();
+                                                }
+                                                if ((i11 & 8) != 0) {
+                                                    mVar.k();
+                                                }
+                                                if ((i11 & 16) != 0) {
+                                                    mVar.j();
+                                                }
+                                                if ((i11 & 32) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    rb.c cVar = mVar.h;
+                                                    if (cVar != null) {
+                                                        h hVar = (h) cVar.b;
+                                                        Iterator it11 = hVar.h.iterator();
+                                                        if (it11.hasNext()) {
+                                                            throw a1.g.j(it11);
+                                                        }
+                                                        Iterator it12 = hVar.i.iterator();
+                                                        while (it12.hasNext()) {
+                                                            ((g) it12.next()).a();
+                                                        }
+                                                    }
+                                                }
+                                                if ((i11 & 64) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    mVar.l();
+                                                }
+                                            }
+                                            d6.q qVar2 = new d6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                            qVar2.b(0, jSONObject2);
+                                            mVar.f = qVar2;
+                                            mVar.e = SystemClock.elapsedRealtime();
+                                            i11 = 127;
+                                            if ((i11 & 1) != 0) {
+                                            }
+                                            if ((i11 & 2) != 0) {
+                                            }
+                                            if ((i11 & 128) != 0) {
+                                            }
+                                            if ((i11 & 4) != 0) {
+                                            }
+                                            if ((i11 & 8) != 0) {
+                                            }
+                                            if ((i11 & 16) != 0) {
+                                            }
+                                            if ((i11 & 32) != 0) {
+                                            }
+                                            if ((i11 & 64) != 0) {
+                                            }
+                                        }
+                                        if (!str2.d() || str2.c(optLong)) {
+                                            i10 = 0;
+                                            if (!c13) {
+                                                i11 = qVar.b(i10, jSONObject2);
+                                                if ((i11 & 1) != 0) {
+                                                }
+                                                if ((i11 & 2) != 0) {
+                                                }
+                                                if ((i11 & 128) != 0) {
+                                                }
+                                                if ((i11 & 4) != 0) {
+                                                }
+                                                if ((i11 & 8) != 0) {
+                                                }
+                                                if ((i11 & 16) != 0) {
+                                                }
+                                                if ((i11 & 32) != 0) {
+                                                }
+                                                if ((i11 & 64) != 0) {
+                                                }
+                                            }
+                                            d6.q qVar22 = new d6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                            qVar22.b(0, jSONObject2);
+                                            mVar.f = qVar22;
+                                            mVar.e = SystemClock.elapsedRealtime();
+                                            i11 = 127;
+                                            if ((i11 & 1) != 0) {
+                                            }
+                                            if ((i11 & 2) != 0) {
+                                            }
+                                            if ((i11 & 128) != 0) {
+                                            }
+                                            if ((i11 & 4) != 0) {
+                                            }
+                                            if ((i11 & 8) != 0) {
+                                            }
+                                            if ((i11 & 16) != 0) {
+                                            }
+                                            if ((i11 & 32) != 0) {
+                                            }
+                                            if ((i11 & 64) != 0) {
+                                            }
+                                        } else {
+                                            i10 = 1;
+                                            if (!c13) {
+                                            }
+                                            d6.q qVar222 = new d6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                            qVar222.b(0, jSONObject2);
+                                            mVar.f = qVar222;
+                                            mVar.e = SystemClock.elapsedRealtime();
+                                            i11 = 127;
+                                            if ((i11 & 1) != 0) {
+                                            }
+                                            if ((i11 & 2) != 0) {
+                                            }
+                                            if ((i11 & 128) != 0) {
+                                            }
+                                            if ((i11 & 4) != 0) {
+                                            }
+                                            if ((i11 & 8) != 0) {
+                                            }
+                                            if ((i11 & 16) != 0) {
+                                            }
+                                            if ((i11 & 32) != 0) {
+                                            }
+                                            if ((i11 & 64) != 0) {
+                                            }
+                                        }
+                                    } else {
+                                        mVar.f = null;
+                                        mVar.l();
+                                        mVar.i();
+                                        mVar.k();
+                                        mVar.j();
+                                    }
+                                    Iterator it13 = list.iterator();
+                                    while (it13.hasNext()) {
+                                        ((h6.o) it13.next()).b(optLong, 0, null);
+                                    }
+                                    return;
+                                }
+                                return;
+                            case 2107149050:
+                                if (string.equals("QUEUE_ITEM_IDS")) {
+                                    mVar.r.b(optLong, 0, null);
+                                    mVar.h("QUEUE_ITEM_IDS", jSONObject);
+                                    if (mVar.h == null || (m10 = h6.m.m(jSONObject.getJSONArray("itemIds"))) == null) {
+                                        return;
+                                    }
+                                    Iterator it14 = ((h) mVar.h.b).i.iterator();
+                                    while (it14.hasNext()) {
+                                        ((g) it14.next()).i(m10);
+                                    }
+                                    return;
+                                }
+                                return;
+                            default:
+                                return;
                         }
+                    } catch (JSONException e) {
+                        e = e;
+                        Object[] objArr = new Object[2];
+                        objArr[0] = e.getMessage();
+                        objArr[c10] = str;
+                        Log.w(str2, bVar.d("Message is malformed (%s); ignoring: %s", objArr));
                     }
-                } else if (fVar != null) {
-                    ArrayList arrayList2 = fVar.a;
-                    int size2 = arrayList2.size();
-                    int i14 = 0;
-                    while (i14 < size2) {
-                        Object obj2 = arrayList2.get(i14);
-                        i14++;
-                        ArrayList arrayList3 = arrayList2;
-                        String str2 = (String) obj2;
-                        if (TextUtils.equals(str2, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                            i11 = size2;
-                            j10 = c(str2, i10, bundle) | j10;
-                        } else {
-                            i11 = size2;
-                            f(e0Var, str2, null);
-                        }
-                        size2 = i11;
-                        arrayList2 = arrayList3;
-                    }
+                } catch (JSONException e10) {
+                    e = e10;
+                    str2 = str3;
+                    Object[] objArr2 = new Object[2];
+                    objArr2[0] = e.getMessage();
+                    objArr2[c10] = str;
+                    Log.w(str2, bVar.d("Message is malformed (%s); ignoring: %s", objArr2));
                 }
-                e0Var.e = j10;
-                b10 = e0Var.b();
+            } catch (JSONException e11) {
+                e = e11;
+                c10 = 1;
             }
+        } catch (JSONException e12) {
+            e = e12;
+            c10 = 1;
+            str2 = str3;
         }
-        b0Var2.f(b10);
-        if (fVar != null && fVar.W) {
-            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
+    }
+
+    public final void p(g gVar) {
+        o6.l.e("Must be called from the main thread.");
+        if (gVar != null) {
+            this.i.add(gVar);
         }
-        if (fVar != null && fVar.X) {
-            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
+    }
+
+    public final BasePendingResult q(d6.p pVar) {
+        o6.l.e("Must be called from the main thread.");
+        if (!w()) {
+            return t();
         }
-        if (bundle.containsKey("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS") || bundle.containsKey("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT")) {
-            vVar.a.setExtras(bundle);
-        }
-        if (i10 == 0) {
-            b0Var2.e(new MediaMetadataCompat(new Bundle()));
-            return;
-        }
-        if (this.n != null) {
-            ComponentName componentName = this.f;
-            if (componentName == null) {
-                activity = null;
+        k kVar = new k(this, pVar, 2);
+        x(kVar);
+        return kVar;
+    }
+
+    public final void r() {
+        o6.l.e("Must be called from the main thread.");
+        int f7 = f();
+        if (f7 == 4 || f7 == 2) {
+            o6.l.e("Must be called from the main thread.");
+            if (w()) {
+                x(new j(this, 5));
+                return;
             } else {
-                Intent intent = new Intent();
-                intent.setComponent(componentName);
-                activity = PendingIntent.getActivity(this.a, 0, intent, 201326592);
-            }
-            if (activity != null) {
-                vVar.a.setSessionActivity(activity);
+                t();
+                return;
             }
         }
-        e6.h hVar3 = this.n;
-        if (hVar3 == null || (b0Var = this.p) == null || mediaInfo == null || (lVar = mediaInfo.d) == null) {
+        o6.l.e("Must be called from the main thread.");
+        if (w()) {
+            x(new j(this, 6));
+        } else {
+            t();
+        }
+    }
+
+    public final int s() {
+        d6.o c10;
+        if (d() != null && h()) {
+            if (i()) {
+                return 6;
+            }
+            if (m()) {
+                return 3;
+            }
+            if (l()) {
+                return 2;
+            }
+            if (k() && (c10 = c()) != null && c10.a != null) {
+                return 6;
+            }
+        }
+        return 0;
+    }
+
+    public final void u() {
+        f0 f0Var = this.f;
+        if (f0Var == null) {
             return;
         }
-        Bundle bundle2 = lVar.b;
-        long j11 = hVar3.j() ? 0L : mediaInfo.e;
-        c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
-        String string = bundle2.getString("com.google.android.gms.cast.metadata.TITLE");
-        c6.l.c(1, "com.google.android.gms.cast.metadata.SUBTITLE");
-        String string2 = bundle2.getString("com.google.android.gms.cast.metadata.SUBTITLE");
-        b0 b0Var3 = this.p;
-        if (b0Var3 == null || (metadata = ((android.support.v4.media.session.h) b0Var3.b.b).a.getMetadata()) == null) {
-            createFromParcel = null;
+        o6.l.e("Must be called from the main thread.");
+        String str = this.c.b;
+        e0 e0Var = (e0) f0Var;
+        h6.a.b(str);
+        synchronized (e0Var.C) {
+            e0Var.C.put(str, this);
+        }
+        u b10 = v.b();
+        b10.c = new a0(e0Var, str, this);
+        b10.a = 8413;
+        e0Var.e(1, b10.a());
+        o6.l.e("Must be called from the main thread.");
+        if (w()) {
+            x(new j(this, 0));
         } else {
-            a0.f fVar2 = MediaMetadataCompat.d;
-            Parcel obtain = Parcel.obtain();
-            metadata.writeToParcel(obtain, 0);
-            obtain.setDataPosition(0);
-            createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
-            obtain.recycle();
-            createFromParcel.b = metadata;
+            t();
         }
-        a4.l lVar2 = createFromParcel == null ? new a4.l(2) : new a4.l(createFromParcel);
-        lVar2.b0(j11);
-        if (string != null) {
-            lVar2.c0("android.media.metadata.TITLE", string);
-            lVar2.c0("android.media.metadata.DISPLAY_TITLE", string);
+    }
+
+    public final void v(e0 e0Var) {
+        d6.f fVar;
+        f0 f0Var = this.f;
+        if (f0Var == e0Var) {
+            return;
         }
-        if (string2 != null) {
-            lVar2.c0("android.media.metadata.DISPLAY_SUBTITLE", string2);
+        if (f0Var != null) {
+            this.c.n();
+            this.e.c();
+            o6.l.e("Must be called from the main thread.");
+            String str = this.c.b;
+            e0 e0Var2 = (e0) f0Var;
+            if (TextUtils.isEmpty(str)) {
+                throw new IllegalArgumentException("Channel namespace cannot be null or empty");
+            }
+            synchronized (e0Var2.C) {
+                fVar = (d6.f) e0Var2.C.remove(str);
+            }
+            u b10 = v.b();
+            b10.c = new a0(e0Var2, fVar, str);
+            b10.a = 8414;
+            e0Var2.e(1, b10.a());
+            this.d.b = null;
+            this.b.removeCallbacksAndMessages(null);
         }
-        b0Var.e(new MediaMetadataCompat((Bundle) lVar2.b));
-        Uri d = d(lVar);
-        if (d != null) {
-            this.h.B(d);
-            bitmap = null;
-        } else {
-            bitmap = null;
-            e(null, 0);
+        this.f = e0Var;
+        if (e0Var != null) {
+            this.d.b = e0Var;
         }
-        Uri d10 = d(lVar);
-        if (d10 != null) {
-            this.i.B(d10);
-        } else {
-            e(bitmap, 3);
-        }
+    }
+
+    public final boolean w() {
+        return this.f != null;
     }
 }

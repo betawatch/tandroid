@@ -1,26 +1,82 @@
 package m;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.TouchDelegate;
+import android.view.View;
+import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class y2 extends i1.c {
-    public static final Parcelable.Creator<y2> CREATOR = new i1.b(1);
-    public boolean c;
+public final class y2 extends TouchDelegate {
+    public final View a;
+    public final Rect b;
+    public final Rect c;
+    public final Rect d;
+    public final int e;
+    public boolean f;
 
-    public y2(Parcel parcel, ClassLoader classLoader) {
-        super(parcel, classLoader);
-        this.c = ((Boolean) parcel.readValue(null)).booleanValue();
+    public y2(Rect rect, Rect rect2, View view) {
+        super(rect, view);
+        int scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
+        this.e = scaledTouchSlop;
+        Rect rect3 = new Rect();
+        this.b = rect3;
+        Rect rect4 = new Rect();
+        this.d = rect4;
+        Rect rect5 = new Rect();
+        this.c = rect5;
+        rect3.set(rect);
+        rect4.set(rect);
+        int i10 = -scaledTouchSlop;
+        rect4.inset(i10, i10);
+        rect5.set(rect2);
+        this.a = view;
     }
 
-    public final String toString() {
-        return "SearchView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " isIconified=" + this.c + "}";
-    }
-
-    @Override // i1.c, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        super.writeToParcel(parcel, i10);
-        parcel.writeValue(Boolean.valueOf(this.c));
+    @Override // android.view.TouchDelegate
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        boolean z11;
+        int x9 = (int) motionEvent.getX();
+        int y3 = (int) motionEvent.getY();
+        int action = motionEvent.getAction();
+        boolean z12 = true;
+        if (action != 0) {
+            if (action == 1 || action == 2) {
+                z11 = this.f;
+                if (z11 && !this.d.contains(x9, y3)) {
+                    z12 = z11;
+                    z10 = false;
+                }
+            } else {
+                if (action == 3) {
+                    z11 = this.f;
+                    this.f = false;
+                }
+                z10 = true;
+                z12 = false;
+            }
+            z12 = z11;
+            z10 = true;
+        } else {
+            if (this.b.contains(x9, y3)) {
+                this.f = true;
+                z10 = true;
+            }
+            z10 = true;
+            z12 = false;
+        }
+        if (!z12) {
+            return false;
+        }
+        Rect rect = this.c;
+        View view = this.a;
+        if (!z10 || rect.contains(x9, y3)) {
+            motionEvent.setLocation(x9 - rect.left, y3 - rect.top);
+        } else {
+            motionEvent.setLocation(view.getWidth() / 2, view.getHeight() / 2);
+        }
+        return view.dispatchTouchEvent(motionEvent);
     }
 }

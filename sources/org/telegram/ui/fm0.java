@@ -1,90 +1,81 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MrzRecognizer;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class fm0 implements org.telegram.ui.Components.ri {
-    public final /* synthetic */ an0 a;
+public final class fm0 implements x9 {
+    public final /* synthetic */ in0 a;
 
-    public fm0(an0 an0Var) {
-        this.a = an0Var;
+    public fm0(in0 in0Var) {
+        this.a = in0Var;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final void J() {
-        AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
+    @Override // org.telegram.ui.x9
+    public final /* synthetic */ String H0() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        org.telegram.ui.Components.ti tiVar;
-        an0 an0Var = this.a;
-        if (an0Var.getParentActivity() == null || (tiVar = an0Var.R0) == null) {
-            return;
+    @Override // org.telegram.ui.x9
+    public final void R0(MrzRecognizer.Result result) {
+        boolean isEmpty = TextUtils.isEmpty(result.firstName);
+        in0 in0Var = this.a;
+        if (!isEmpty) {
+            in0Var.Y[0].setText(result.firstName);
         }
-        if (i10 != 8 && i10 != 7) {
-            tiVar.dismissWithButtonClick(i10);
-            an0Var.E1(i10);
-            return;
+        if (!TextUtils.isEmpty(result.middleName)) {
+            in0Var.Y[1].setText(result.middleName);
         }
-        if (i10 != 8) {
-            tiVar.dismiss(true);
+        if (!TextUtils.isEmpty(result.lastName)) {
+            in0Var.Y[2].setText(result.lastName);
         }
-        HashMap<Object, Object> selectedPhotos = an0Var.R0.j0.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = an0Var.R0.j0.getSelectedPhotosOrder();
-        if (selectedPhotos.isEmpty()) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i13));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            String str = photoEntry.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.path = photoEntry.path;
+        int i10 = result.gender;
+        if (i10 != 0) {
+            if (i10 == 1) {
+                in0Var.w = "male";
+                in0Var.Y[4].setText(LocaleController.getString(R.string.PassportMale));
+            } else if (i10 == 2) {
+                in0Var.w = "female";
+                in0Var.Y[4].setText(LocaleController.getString(R.string.PassportFemale));
             }
-            arrayList.add(sendingMediaInfo);
-            photoEntry.reset();
         }
-        an0Var.F1(arrayList);
+        if (!TextUtils.isEmpty(result.nationality)) {
+            String str = result.nationality;
+            in0Var.s = str;
+            String str2 = (String) in0Var.Y0.get(str);
+            if (str2 != null) {
+                in0Var.Y[5].setText(str2);
+            }
+        }
+        if (!TextUtils.isEmpty(result.issuingCountry)) {
+            String str3 = result.issuingCountry;
+            in0Var.v = str3;
+            String str4 = (String) in0Var.Y0.get(str3);
+            if (str4 != null) {
+                in0Var.Y[6].setText(str4);
+            }
+        }
+        int i11 = result.birthDay;
+        if (i11 <= 0 || result.birthMonth <= 0 || result.birthYear <= 0) {
+            return;
+        }
+        in0Var.Y[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i11), Integer.valueOf(result.birthMonth), Integer.valueOf(result.birthYear)));
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ boolean p0() {
+    @Override // org.telegram.ui.x9
+    public final /* synthetic */ boolean d1(String str, p9 p9Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final void r(org.telegram.ui.Components.gh ghVar) {
-        ghVar.run();
+    @Override // org.telegram.ui.x9
+    public final /* synthetic */ void onDismiss() {
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ boolean u() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void E() {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void O(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void X(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void r0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    @Override // org.telegram.ui.x9
+    public final /* synthetic */ void H(String str) {
     }
 }

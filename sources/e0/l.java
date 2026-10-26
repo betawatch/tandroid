@@ -3,7 +3,7 @@ package e0;
 import android.app.Notification;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class l extends y {
     public final /* synthetic */ int e;
@@ -14,17 +14,17 @@ public final class l extends y {
     }
 
     @Override // e0.y
-    public final void b(f0 f0Var) {
+    public final void b(e0 e0Var) {
         switch (this.e) {
             case 0:
-                Notification.BigTextStyle bigText = new Notification.BigTextStyle((Notification.Builder) f0Var.d).setBigContentTitle(this.b).bigText((CharSequence) this.f);
+                Notification.BigTextStyle bigText = new Notification.BigTextStyle((Notification.Builder) e0Var.d).setBigContentTitle(this.b).bigText((CharSequence) this.f);
                 if (this.d) {
                     bigText.setSummaryText(this.c);
                     break;
                 }
                 break;
             default:
-                Notification.InboxStyle bigContentTitle = new Notification.InboxStyle((Notification.Builder) f0Var.d).setBigContentTitle(this.b);
+                Notification.InboxStyle bigContentTitle = new Notification.InboxStyle((Notification.Builder) e0Var.d).setBigContentTitle(this.b);
                 if (this.d) {
                     bigContentTitle.setSummaryText(this.c);
                 }

@@ -1,6 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -23,16 +23,16 @@ public final /* synthetic */ class t implements Runnable {
         Object obj = this.e;
         switch (i10) {
             case 0:
-                v vVar = (v) ((qf.b) obj).c;
-                String str = e2.m0.a;
-                j2.e eVar = ((i2.b0) vVar).a.s;
-                j2.a p5 = eVar.p();
-                eVar.q(p5, 1011, new j2.d(p5, this.b, this.c, this.d));
+                v vVar = (v) ((rf.b) obj).c;
+                String str = e2.n0.a;
+                j2.e eVar = ((i2.d0) vVar).a.s;
+                j2.a p10 = eVar.p();
+                eVar.q(p10, 1011, new j2.d(p10, this.b, this.c, this.d));
                 break;
             default:
                 j2.e eVar2 = ((y2.b) obj).b;
-                com.google.firebase.messaging.l lVar = eVar2.d;
-                j2.a n10 = eVar2.n(((e9.n0) lVar.b).isEmpty() ? null : (u2.h0) e9.s.m((e9.n0) lVar.b));
+                aa.m0 m0Var = eVar2.d;
+                j2.a n10 = eVar2.n(((f9.i0) m0Var.b).isEmpty() ? null : (u2.g0) f9.o.m((f9.i0) m0Var.b));
                 eVar2.q(n10, 1006, new j2.c(n10, this.b, this.c, this.d));
                 break;
         }

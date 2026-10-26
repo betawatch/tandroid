@@ -1,101 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class oi extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+public final class oi implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.fl0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ bh.x0 n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ un s;
 
-    public /* synthetic */ oi(sn snVar, int i10) {
-        this.a = i10;
-        this.b = snVar;
+    public oi(un unVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.fl0 fl0Var, float f7, float f10, bh.x0 x0Var, MessageObject messageObject) {
+        this.s = unVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = i10;
+        this.d = z12;
+        this.e = fl0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = x0Var;
+        this.r = messageObject;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        nj njVar;
-        switch (this.a) {
-            case 0:
-                sn snVar = this.b;
-                org.telegram.ui.Components.s60 s60Var = snVar.n3;
-                if (s60Var != null) {
-                    s60Var.setIsMessageTransition(false);
-                    snVar.n3.c(true);
-                    snVar.n3.setVisibility(4);
-                    break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            un unVar = this.s;
+            if (unVar.yc != null) {
+                unVar.yc = null;
+                if (this.b) {
+                    unVar.o8(new ni(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    unVar.o8(new ed(18, this, this.r));
                 }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                sn snVar2 = this.b;
-                snVar2.M9 = dp;
-                snVar2.t9();
-                break;
-            case 2:
-                sn snVar3 = this.b;
-                if (snVar3.fragmentView != null && (njVar = snVar3.x0) != null) {
-                    njVar.invalidate();
-                    snVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.P.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new ti(this, 4), 2000L);
-                break;
-            case 5:
-                sn snVar4 = this.b;
-                if (animator.equals(snVar4.s3)) {
-                    snVar4.s3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                sn snVar5 = this.b;
-                if (animator.equals(snVar5.s3)) {
-                    snVar5.s3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                sn snVar6 = this.b;
-                if (animator.equals(snVar6.t3)) {
-                    snVar6.u3 = 1.0f;
-                    snVar6.sc();
-                    snVar6.t3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                sn snVar7 = this.b;
-                if (animator.equals(snVar7.t3)) {
-                    snVar7.u3 = 0.0f;
-                    snVar7.sc();
-                    snVar7.t3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.f5 = null;
-                break;
-            case 10:
-                sn snVar8 = this.b;
-                snVar8.Qa = 1.0f;
-                snVar8.Y.setVisibility(4);
-                snVar8.a1.setVisibility(4);
-                snVar8.t9();
-                break;
-            default:
-                sn snVar9 = this.b;
-                snVar9.Qa = 0.0f;
-                snVar9.t9();
-                break;
+                unVar.H7(true);
+            }
         }
     }
 }

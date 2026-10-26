@@ -2,18 +2,18 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.d71;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o5 b;
+    public final /* synthetic */ m5 b;
 
-    public /* synthetic */ o3(o5 o5Var, int i10) {
+    public /* synthetic */ o3(m5 m5Var, int i10) {
         this.a = i10;
-        this.b = o5Var;
+        this.b = m5Var;
     }
 
     @Override // java.lang.Runnable
@@ -21,91 +21,91 @@ public final /* synthetic */ class o3 implements Runnable {
         d0 d0Var;
         switch (this.a) {
             case 0:
-                o5.Z(this.b);
+                m5.a0(this.b);
                 break;
             case 1:
-                o5 o5Var = this.b;
-                o5Var.getClass();
-                o5Var.presentFragment(new i8());
+                m5 m5Var = this.b;
+                m5Var.getClass();
+                m5Var.presentFragment(new h8());
                 break;
             case 2:
-                o5 o5Var2 = this.b;
-                o5Var2.getClass();
-                o5Var2.presentFragment(new fi.g());
+                m5 m5Var2 = this.b;
+                m5Var2.getClass();
+                m5Var2.presentFragment(new gi.h());
                 break;
             case 3:
-                o5 o5Var3 = this.b;
-                t7 t7Var = o5Var3.i0;
-                if (t7Var != null && (d0Var = o5Var3.D0) != null) {
+                m5 m5Var3 = this.b;
+                t7 t7Var = m5Var3.j0;
+                if (t7Var != null && (d0Var = m5Var3.E0) != null) {
                     t7Var.Y(d0Var);
                 }
-                d0 d0Var2 = o5Var3.D0;
+                d0 d0Var2 = m5Var3.E0;
                 boolean z10 = (d0Var2 == null || d0Var2.a.isEmpty()) ? false : true;
-                if (o5Var3.e0 != z10) {
-                    o5Var3.G0(z10);
+                if (m5Var3.f0 != z10) {
+                    m5Var3.H0(z10);
                 }
-                if (z10 && o5Var3.E0) {
-                    o8 o8Var = o5Var3.h0;
-                    if (o8Var != null) {
-                        o8Var.b(false);
+                if (z10 && m5Var3.F0) {
+                    n8 n8Var = m5Var3.i0;
+                    if (n8Var != null) {
+                        n8Var.b(false);
                     }
-                    if (o5Var3.e0) {
-                        o5Var3.E0 = false;
-                        o5Var3.d0 = 1;
-                        ei.h1 h1Var = o5Var3.o0;
+                    if (m5Var3.f0) {
+                        m5Var3.F0 = false;
+                        m5Var3.e0 = 1;
+                        fi.h1 h1Var = m5Var3.p0;
                         if (h1Var != null) {
                             h1Var.setPosition(1);
                         }
                     } else {
-                        o5Var3.E0 = true;
+                        m5Var3.F0 = true;
                     }
                 }
-                d71 d71Var = o5Var3.a;
-                if (d71Var != null && d71Var.Z2 != null) {
-                    o5Var3.S0(true);
+                l71 l71Var = m5Var3.a;
+                if (l71Var != null && l71Var.g3 != null) {
+                    m5Var3.T0(true);
                     break;
                 }
                 break;
             case 4:
-                this.b.n0(false);
+                this.b.o0(false);
                 break;
             case 5:
-                this.b.z0();
+                this.b.A0();
                 break;
             case 6:
-                this.b.y0();
+                this.b.z0();
                 break;
             case 7:
-                o5 o5Var4 = this.b;
-                if (o5Var4.Q.isAttachedToWindow()) {
-                    if (!o5Var4.a.canScrollVertically(-1)) {
-                        o5Var4.a.Y2.h1(0, 0);
+                m5 m5Var4 = this.b;
+                if (m5Var4.R.isAttachedToWindow()) {
+                    if (!m5Var4.a.canScrollVertically(-1)) {
+                        m5Var4.a.f3.h1(0, 0);
                     }
-                    o5Var4.Q.requestLayout();
+                    m5Var4.R.requestLayout();
                     break;
                 }
                 break;
             case 8:
-                this.b.L0 = null;
+                this.b.M0 = null;
                 break;
             case 9:
-                o5.c0(this.b);
+                m5.d0(this.b);
                 break;
             case 10:
-                this.b.O0();
+                this.b.P0();
                 break;
             case 11:
-                xc.a0(this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                wc.b0(this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 12:
-                o5 o5Var5 = this.b;
-                o5Var5.Q.post(new o3(o5Var5, 7));
+                m5 m5Var5 = this.b;
+                m5Var5.R.post(new o3(m5Var5, 7));
                 break;
             case 13:
-                this.b.y0();
+                this.b.z0();
                 break;
             default:
-                this.b.y0();
+                this.b.z0();
                 break;
         }
     }

@@ -1,14 +1,22 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class cr0 extends hg.a2 {
-    @Override // hg.a2
-    public final boolean d(TLObject tLObject) {
-        return !(tLObject instanceof TLRPC.Chat) || ChatObject.canWriteToChat((TLRPC.Chat) tLObject);
+public final class cr0 extends org.telegram.ui.Cells.k7 {
+    public final /* synthetic */ er0 N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cr0(er0 er0Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, 0, u6Var);
+        this.N = er0Var;
+    }
+
+    @Override // org.telegram.ui.Cells.k7
+    public final String a() {
+        return this.N.f.b0 ? LocaleController.getString(R.string.RepostToStory) : LocaleController.getString(R.string.FwdMyStory);
     }
 }

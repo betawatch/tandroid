@@ -1,29 +1,58 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.xc;
+import android.content.Intent;
+import android.net.Uri;
+import java.util.ArrayList;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.l71;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s9 b;
+public final /* synthetic */ class o9 implements ig.g0, org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ r9 a;
 
-    public /* synthetic */ o9(s9 s9Var, int i10) {
-        this.a = i10;
-        this.b = s9Var;
+    public /* synthetic */ o9(r9 r9Var) {
+        this.a = r9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c0 = null;
-                break;
-            default:
-                xc.a0(this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                break;
+    @Override // ig.g0
+    public void a(a0.h hVar, ArrayList arrayList) {
+        r9 r9Var = this.a;
+        ArrayList arrayList2 = r9Var.s;
+        if (r9Var.r) {
+            return;
+        }
+        arrayList2.clear();
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ig.h0 h0Var = (ig.h0) obj;
+            TLObject tLObject = h0Var.a;
+            if ((tLObject instanceof TLRPC.User) && r9.d0((TLRPC.User) tLObject)) {
+                arrayList2.add((TLRPC.User) h0Var.a);
+            }
+        }
+        l71 l71Var = r9Var.a;
+        if (l71Var != null) {
+            l71Var.g3.O(true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        r9 r9Var = this.a;
+        r9Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            r9Var.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

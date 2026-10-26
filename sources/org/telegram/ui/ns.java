@@ -1,24 +1,35 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ns implements bh.k {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.mm0 b;
+public final class ns extends ig.t1 {
+    public final /* synthetic */ ContactsActivity K;
 
-    public /* synthetic */ ns(org.telegram.ui.Components.mm0 mm0Var, int i10) {
-        this.a = i10;
-        this.b = mm0Var;
+    public ns(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z10, boolean z11, boolean z12) {
+        this.K = contactsActivity;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.H = new ArrayList();
+        this.c = context;
+        this.h = hVar;
+        this.r = z10;
+        this.s = z11;
+        this.x = 0;
+        this.v = z12;
+        this.w = true;
+        ig.a2 a2Var = new ig.a2(true);
+        this.f = a2Var;
+        a2Var.a = new ig.q1(this);
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // bh.k
-    public final boolean a(Canvas canvas, View view, long j10) {
-        switch (this.a) {
+    @Override // ig.t1
+    public final void F() {
+        if (this.y || this.f.e() || h() != 0) {
+            return;
         }
-        return this.b.drawChild(canvas, view, j10);
+        this.K.c.e(false, true);
     }
 }

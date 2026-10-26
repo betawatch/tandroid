@@ -1,21 +1,52 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.os.Build;
+import android.view.ViewGroup;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface w3 {
-    p3 a();
+public final class w3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ r3 a;
+    public final /* synthetic */ y3 b;
+    public final /* synthetic */ b4 c;
 
-    boolean b();
+    public w3(b4 b4Var, r3 r3Var, y3 y3Var) {
+        this.c = b4Var;
+        this.a = r3Var;
+        this.b = y3Var;
+    }
 
-    boolean c(l3 l3Var);
-
-    void dismiss(boolean z10);
-
-    int getNavigationBarColor(int i10);
-
-    x3 getWindowView();
-
-    void release();
-
-    void setLastVisible(boolean z10);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        int i11;
+        r3 r3Var = this.a;
+        ViewGroup viewGroup = r3Var.b;
+        if (viewGroup == null) {
+            viewGroup = r3Var.c;
+        }
+        b4 b4Var = this.c;
+        y3 y3Var = this.b;
+        if (viewGroup != null && r3Var.m == null && (i10 = r3Var.g) > 0 && (i11 = r3Var.h) > 0) {
+            if (Build.VERSION.SDK_INT >= 26) {
+                b4.g(viewGroup, -r3Var.i, new li.s2(3, r3Var, y3Var));
+                b4Var.b = null;
+                b4Var.invalidate();
+                return;
+            } else {
+                r3Var.m = Bitmap.createBitmap(i10, i11, Bitmap.Config.RGB_565);
+                Canvas canvas = new Canvas(r3Var.m);
+                canvas.translate(0.0f, -r3Var.i);
+                viewGroup.draw(canvas);
+            }
+        }
+        y3Var.getWindowView().setDrawingFromOverlay(false);
+        y3Var.release();
+        b4Var.b = null;
+        b4Var.invalidate();
+    }
 }

@@ -3,16 +3,17 @@ package com.google.android.recaptcha.internal;
 import a1.g;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.ui.Cells.b1;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String l4;
+        String k10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -22,17 +23,17 @@ public final class zzmg {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                l4 = "null";
+                k10 = BuildConfig.BETA_URL;
             } else {
                 try {
-                    l4 = obj.toString();
+                    k10 = obj.toString();
                 } catch (Exception e) {
                     String D = g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    l4 = b1.l("<", D, " threw ", e.getClass().getName(), ">");
+                    k10 = b10.k("<", D, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = l4;
+            objArr[i11] = k10;
             i11++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));

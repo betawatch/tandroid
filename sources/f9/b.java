@@ -1,32 +1,59 @@
 package f9;
 
-import v7.u6;
+import j$.util.Objects;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends d {
-    public final char[] e;
+public final class b implements Iterator {
+    public final Iterator a;
+    public Object b = null;
+    public Collection c = null;
+    public Iterator d = y0.a;
+    public final /* synthetic */ k1 e;
+    public final /* synthetic */ int f;
 
-    public b(a aVar) {
-        super(aVar, (Character) null);
-        this.e = new char[512];
-        char[] cArr = aVar.b;
-        u6.g(cArr.length == 16);
-        for (int i10 = 0; i10 < 256; i10++) {
-            char[] cArr2 = this.e;
-            cArr2[i10] = cArr[i10 >>> 4];
-            cArr2[i10 | 256] = cArr[i10 & 15];
+    public b(k1 k1Var, int i10) {
+        this.f = i10;
+        this.e = k1Var;
+        this.a = k1Var.e.entrySet().iterator();
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext() || this.d.hasNext();
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!this.d.hasNext()) {
+            Map.Entry entry = (Map.Entry) this.a.next();
+            this.b = entry.getKey();
+            Collection collection = (Collection) entry.getValue();
+            this.c = collection;
+            this.d = collection.iterator();
+        }
+        Object obj = this.b;
+        Object next = this.d.next();
+        switch (this.f) {
+            case 0:
+                return next;
+            default:
+                return new e0(obj, next);
         }
     }
 
-    @Override // f9.d
-    public final void b(StringBuilder sb2, byte[] bArr, int i10) {
-        u6.n(0, i10, bArr.length);
-        for (int i11 = 0; i11 < i10; i11++) {
-            int i12 = bArr[i11] & 255;
-            char[] cArr = this.e;
-            sb2.append(cArr[i12]);
-            sb2.append(cArr[i12 | 256]);
+    @Override // java.util.Iterator
+    public final void remove() {
+        this.d.remove();
+        Collection collection = this.c;
+        Objects.requireNonNull(collection);
+        if (collection.isEmpty()) {
+            this.a.remove();
         }
+        k1 k1Var = this.e;
+        k1Var.f--;
     }
 }

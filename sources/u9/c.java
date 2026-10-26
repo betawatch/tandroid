@@ -1,102 +1,97 @@
 package u9;
 
-import android.app.ActivityManager;
-import android.app.Application;
+import a8.gg;
 import android.content.Context;
-import android.os.Build;
-import android.os.Process;
-import com.google.firebase.messaging.r;
-import java.util.ArrayList;
-import java.util.List;
-import jd.g;
-import jd.o;
-import kotlin.jvm.internal.i;
-import z9.t0;
-import z9.t1;
+import android.content.SharedPreferences;
+import android.util.Log;
+import c5.g;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.firebase.messaging.q;
+import com.google.firebase.messaging.s;
+import java.util.concurrent.atomic.AtomicMarkableReference;
+import m.r3;
+import y9.n;
+import y9.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
-    public static final c a = new c();
+    public final p a;
 
-    public static ArrayList a(Context context) {
-        i.e(context, "context");
-        int i10 = context.getApplicationInfo().uid;
-        String str = context.getApplicationInfo().processName;
-        Object systemService = context.getSystemService("activity");
-        ActivityManager activityManager = systemService instanceof ActivityManager ? (ActivityManager) systemService : null;
-        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = activityManager != null ? activityManager.getRunningAppProcesses() : null;
-        if (runningAppProcesses == null) {
-            runningAppProcesses = o.a;
-        }
-        ArrayList f7 = g.f(runningAppProcesses);
-        ArrayList arrayList = new ArrayList();
-        int size = f7.size();
-        int i11 = 0;
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = f7.get(i12);
-            i12++;
-            if (((ActivityManager.RunningAppProcessInfo) obj).uid == i10) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList arrayList2 = new ArrayList(jd.i.d(arrayList));
-        int size2 = arrayList.size();
-        while (i11 < size2) {
-            Object obj2 = arrayList.get(i11);
-            i11++;
-            ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj2;
-            r rVar = new r(13, false);
-            String str2 = runningAppProcessInfo.processName;
-            if (str2 == null) {
-                throw new NullPointerException("Null processName");
-            }
-            rVar.b = str2;
-            rVar.d = Integer.valueOf(runningAppProcessInfo.pid);
-            rVar.e = Integer.valueOf(runningAppProcessInfo.importance);
-            rVar.c = Boolean.valueOf(i.a(runningAppProcessInfo.processName, str));
-            arrayList2.add(rVar.c());
-        }
-        return arrayList2;
+    public c(p pVar) {
+        this.a = pVar;
     }
 
-    public final t1 b(Context context) {
-        Object obj;
-        String processName;
-        i.e(context, "context");
-        int myPid = Process.myPid();
-        ArrayList a2 = a(context);
-        int size = a2.size();
-        int i10 = 0;
-        while (true) {
-            if (i10 >= size) {
-                obj = null;
-                break;
+    public final void a(Throwable th2) {
+        if (th2 == null) {
+            Log.w("FirebaseCrashlytics", "A null value was passed to recordException. Ignoring.", null);
+            return;
+        }
+        n nVar = this.a.f;
+        Thread currentThread = Thread.currentThread();
+        nVar.getClass();
+        long currentTimeMillis = System.currentTimeMillis();
+        q qVar = nVar.e;
+        s sVar = new s(nVar, currentTimeMillis, th2, currentThread);
+        qVar.getClass();
+        qVar.F(new gg(sVar, 10));
+    }
+
+    public final void b() {
+        p pVar = this.a;
+        Boolean bool = Boolean.TRUE;
+        y9.s sVar = pVar.b;
+        synchronized (sVar) {
+            sVar.f = false;
+            sVar.g = bool;
+            SharedPreferences.Editor edit = sVar.a.edit();
+            edit.putBoolean("firebase_crashlytics_collection_enabled", true);
+            edit.apply();
+            synchronized (sVar.c) {
+                try {
+                    if (sVar.a()) {
+                        if (!sVar.e) {
+                            sVar.d.trySetResult(null);
+                            sVar.e = true;
+                        }
+                    } else if (sVar.e) {
+                        sVar.d = new TaskCompletionSource();
+                        sVar.e = false;
+                    }
+                } finally {
+                }
             }
-            obj = a2.get(i10);
-            i10++;
-            if (((t0) ((t1) obj)).b == myPid) {
-                break;
+        }
+    }
+
+    public final void c(String str, String str2) {
+        n nVar = this.a.f;
+        nVar.getClass();
+        try {
+            ((c2.b) nVar.d.d).x(str, str2);
+        } catch (IllegalArgumentException e) {
+            Context context = nVar.a;
+            if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
+                throw e;
+            }
+            Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
+        }
+    }
+
+    public final void d(String str) {
+        r3 r3Var = this.a.f.d;
+        r3Var.getClass();
+        String b10 = z9.d.b(1024, str);
+        synchronized (((AtomicMarkableReference) r3Var.h)) {
+            try {
+                String str2 = (String) ((AtomicMarkableReference) r3Var.h).getReference();
+                if (b10 == null ? str2 == null : b10.equals(str2)) {
+                    return;
+                }
+                ((AtomicMarkableReference) r3Var.h).set(b10, true);
+                ((q) r3Var.b).F(new g(r3Var, 1));
+            } finally {
             }
         }
-        t1 t1Var = (t1) obj;
-        if (t1Var != null) {
-            return t1Var;
-        }
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 33) {
-            processName = Process.myProcessName();
-            i.d(processName, "{\n      Process.myProcessName()\n    }");
-        } else if (i11 < 28 || (processName = Application.getProcessName()) == null) {
-            processName = "";
-        }
-        i.e(processName, "processName");
-        r rVar = new r(13, false);
-        rVar.b = processName;
-        rVar.d = Integer.valueOf(myPid);
-        rVar.e = 0;
-        rVar.c = false;
-        return rVar.c();
     }
 }

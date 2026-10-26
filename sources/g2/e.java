@@ -5,14 +5,14 @@ import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.os.Bundle;
-import e2.m0;
+import e2.n0;
 import j$.util.Objects;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e extends c {
     public final ContentResolver a;
@@ -53,8 +53,8 @@ public final class e extends c {
                         transferEnded();
                     }
                 }
-            } catch (IOException e7) {
-                throw new d(e7, 2000);
+            } catch (IOException e10) {
+                throw new d(e10, 2000);
             }
         } catch (Throwable th2) {
             this.d = null;
@@ -70,8 +70,8 @@ public final class e extends c {
                         transferEnded();
                     }
                     throw th2;
-                } catch (IOException e10) {
-                    throw new d(e10, 2000);
+                } catch (IOException e11) {
+                    throw new d(e11, 2000);
                 }
             } finally {
                 this.c = null;
@@ -159,16 +159,16 @@ public final class e extends c {
                 this.f = true;
                 transferStarted(mVar);
                 return j10 != -1 ? j10 : this.e;
-            } catch (IOException e7) {
-                e = e7;
+            } catch (IOException e10) {
+                e = e10;
                 i10 = 2000;
             }
-        } catch (d e10) {
-            throw e10;
+        } catch (d e11) {
+            throw e11;
         }
     }
 
-    @Override // b2.o
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
@@ -183,7 +183,7 @@ public final class e extends c {
                 }
             }
             FileInputStream fileInputStream = this.d;
-            String str = m0.a;
+            String str = n0.a;
             int read = fileInputStream.read(bArr, i10, i11);
             if (read != -1) {
                 long j11 = this.e;

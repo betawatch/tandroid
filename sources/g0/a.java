@@ -1,75 +1,52 @@
 package g0;
 
+import a8.ed;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Shader;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.media.AudioProfile;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
-import e0.f0;
-import e2.m0;
-import e9.k0;
-import e9.n0;
+import e2.n0;
+import f9.f0;
+import f9.i0;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import v7.b8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static Paint a(Bitmap bitmap) {
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        if (Build.VERSION.SDK_INT >= 33) {
-            bitmapShader.setFilterMode(2);
-        }
-        Paint paint = new Paint(1);
-        paint.setShader(bitmapShader);
-        paint.setFilterBitmap(true);
-        return paint;
-    }
-
-    public static void b(Canvas canvas, f0 f0Var, int i10, Paint paint) {
-        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i10 * 8, (float[]) f0Var.c, 0, (float[]) f0Var.d, 0, (int[]) f0Var.f, 0, (short[]) f0Var.e, 0, i10 * 6, paint);
-    }
-
-    public static k2.b c(AudioManager audioManager, b2.f fVar, n0 n0Var, List list) {
+    public static k2.b a(AudioManager audioManager, b2.f fVar, i0 i0Var, List list) {
         List<AudioProfile> directProfilesForAttributes = audioManager.getDirectProfilesForAttributes(fVar.b());
         HashMap hashMap = new HashMap();
-        hashMap.put(2, new HashSet(b8.a(12)));
+        hashMap.put(2, new HashSet(ed.a(12)));
         for (int i10 = 0; i10 < directProfilesForAttributes.size(); i10++) {
             AudioProfile audioProfile = directProfilesForAttributes.get(i10);
             if (audioProfile.getEncapsulationType() != 1) {
                 int format = audioProfile.getFormat();
-                if (m0.M(format) || k2.b.h.containsKey(Integer.valueOf(format))) {
+                if (n0.M(format) || k2.b.h.containsKey(Integer.valueOf(format))) {
                     if (hashMap.containsKey(Integer.valueOf(format))) {
                         Set set = (Set) hashMap.get(Integer.valueOf(format));
                         set.getClass();
-                        set.addAll(b8.a(audioProfile.getChannelMasks()));
+                        set.addAll(ed.a(audioProfile.getChannelMasks()));
                     } else {
-                        hashMap.put(Integer.valueOf(format), new HashSet(b8.a(audioProfile.getChannelMasks())));
+                        hashMap.put(Integer.valueOf(format), new HashSet(ed.a(audioProfile.getChannelMasks())));
                     }
                 }
             }
         }
-        k0 t10 = n0.t();
+        f0 t10 = i0.t();
         for (Map.Entry entry : hashMap.entrySet()) {
             t10.c(new k2.a(((Integer) entry.getKey()).intValue(), (Set) entry.getValue()));
         }
-        return new k2.b(t10.f(), n0Var, list);
+        return new k2.b(t10.f(), i0Var, list);
     }
 
-    public static AudioDeviceInfo d(AudioManager audioManager, b2.f fVar) {
+    public static AudioDeviceInfo b(AudioManager audioManager, b2.f fVar) {
         audioManager.getClass();
         List<AudioDeviceInfo> audioDevicesForAttributes = audioManager.getAudioDevicesForAttributes(fVar.b());
         if (audioDevicesForAttributes.isEmpty()) {
@@ -78,19 +55,19 @@ public abstract class a {
         return audioDevicesForAttributes.get(0);
     }
 
-    public static Object e(Bundle bundle) {
+    public static Object c(Bundle bundle) {
         return bundle.getParcelable("RESULT_DATA", Intent.class);
     }
 
-    public static String f(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public static String d(AccessibilityNodeInfo accessibilityNodeInfo) {
         return accessibilityNodeInfo.getUniqueId();
     }
 
-    public static boolean g(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public static boolean e(AccessibilityNodeInfo accessibilityNodeInfo) {
         return accessibilityNodeInfo.isTextSelectable();
     }
 
-    public static void h(ShortcutInfo.Builder builder) {
+    public static void f(ShortcutInfo.Builder builder) {
         builder.setExcludedFromSurfaces(0);
     }
 }

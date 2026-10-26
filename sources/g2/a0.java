@@ -6,14 +6,14 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.text.TextUtils;
-import e2.m0;
+import e2.n0;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class a0 extends c {
     public final Context a;
@@ -59,8 +59,8 @@ public final class a0 extends c {
                         transferEnded();
                     }
                 }
-            } catch (IOException e7) {
-                throw new z(null, e7, 2000);
+            } catch (IOException e10) {
+                throw new z(null, e10, 2000);
             }
         } catch (Throwable th2) {
             this.d = null;
@@ -76,8 +76,8 @@ public final class a0 extends c {
                         transferEnded();
                     }
                     throw th2;
-                } catch (IOException e10) {
-                    throw new z(null, e10, 2000);
+                } catch (IOException e11) {
+                    throw new z(null, e11, 2000);
                 }
             } finally {
                 this.c = null;
@@ -200,17 +200,17 @@ public final class a0 extends c {
                 this.f = true;
                 transferStarted(mVar);
                 return j10 != -1 ? j10 : this.e;
-            } catch (z e7) {
-                throw e7;
-            } catch (IOException e10) {
-                throw new z(null, e10, 2000);
+            } catch (z e10) {
+                throw e10;
+            } catch (IOException e11) {
+                throw new z(null, e11, 2000);
             }
-        } catch (Resources.NotFoundException e11) {
-            throw new z(null, e11, 2005);
+        } catch (Resources.NotFoundException e12) {
+            throw new z(null, e12, 2005);
         }
     }
 
-    @Override // b2.o
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
@@ -225,7 +225,7 @@ public final class a0 extends c {
                 }
             }
             FileInputStream fileInputStream = this.d;
-            String str = m0.a;
+            String str = n0.a;
             int read = fileInputStream.read(bArr, i10, i11);
             if (read != -1) {
                 long j11 = this.e;

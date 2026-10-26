@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d {
     public static int c;
@@ -148,7 +148,7 @@ public final class d {
         ArrayList arrayList = new ArrayList();
         int size = actionList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            arrayList.add(new c(actionList.get(i10), 0, null, null));
+            arrayList.add(new c(actionList.get(i10), 0, null, null, null));
         }
         return arrayList;
     }
@@ -307,7 +307,7 @@ public final class d {
         sb2.append("; viewIdResName: ");
         sb2.append(accessibilityNodeInfo.getViewIdResourceName());
         sb2.append("; uniqueId: ");
-        sb2.append(i10 >= 33 ? g0.a.f(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY"));
+        sb2.append(i10 >= 33 ? g0.a.d(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY"));
         sb2.append("; checkable: ");
         sb2.append(accessibilityNodeInfo.isCheckable());
         sb2.append("; checked: ");
@@ -340,18 +340,18 @@ public final class d {
         sb2.append("; visible: ");
         sb2.append(accessibilityNodeInfo.isVisibleToUser());
         sb2.append("; isTextSelectable: ");
-        sb2.append(i10 >= 33 ? g0.a.g(accessibilityNodeInfo) : f(TLObject.FLAG_23));
+        sb2.append(i10 >= 33 ? g0.a.e(accessibilityNodeInfo) : f(TLObject.FLAG_23));
         sb2.append("; accessibilityDataSensitive: ");
         sb2.append(i10 >= 34 ? g1.a.k(accessibilityNodeInfo) : f(64));
         sb2.append("; [");
         ArrayList d = d();
         for (int i11 = 0; i11 < d.size(); i11++) {
             c cVar = (c) d.get(i11);
+            int a2 = cVar.a();
             Object obj = cVar.a;
-            Object obj2 = cVar.a;
-            String e = e(((AccessibilityNodeInfo.AccessibilityAction) obj).getId());
-            if (e.equals("ACTION_UNKNOWN") && ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel() != null) {
-                e = ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel().toString();
+            String e = e(a2);
+            if (e.equals("ACTION_UNKNOWN") && ((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel() != null) {
+                e = ((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel().toString();
             }
             sb2.append(e);
             if (i11 != d.size() - 1) {

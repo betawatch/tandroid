@@ -1,31 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LanguageDetector;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bl implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+public final /* synthetic */ class bl implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TranslateController b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
 
-    public /* synthetic */ bl(TranslateController translateController, MessageObject messageObject, long j10, int i10) {
-        this.a = translateController;
-        this.b = messageObject;
-        this.c = j10;
-        this.d = i10;
+    public /* synthetic */ bl(TranslateController translateController, String str, MessageObject messageObject, long j10, int i10, int i11) {
+        this.a = i11;
+        this.b = translateController;
+        this.c = str;
+        this.d = messageObject;
+        this.e = j10;
+        this.f = i10;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        this.a.lambda$checkLanguage$15(this.b, this.c, this.d, exc);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        long j10 = this.c;
-        int i10 = this.d;
-        this.a.lambda$checkLanguage$13(this.b, j10, i10, str);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                long j10 = this.e;
+                int i10 = this.f;
+                this.b.lambda$checkLanguage$16(this.c, this.d, j10, i10);
+                break;
+            default:
+                long j11 = this.e;
+                int i11 = this.f;
+                this.b.lambda$checkLanguage$12(this.c, this.d, j11, i11);
+                break;
+        }
     }
 }

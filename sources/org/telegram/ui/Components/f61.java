@@ -1,41 +1,51 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class f61 {
-    public String[] a = new String[0];
+public final class f61 extends mm0 {
+    public final /* synthetic */ m61 f3;
+    public final /* synthetic */ p61 g3;
 
-    public boolean a() {
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f61(p61 p61Var, Context context, m61 m61Var) {
+        super(context, null);
+        this.g3 = p61Var;
+        this.f3 = m61Var;
     }
 
-    public String[] b() {
-        return this.a;
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) (AndroidUtilities.dp(58.0f) + this.g3.E));
     }
 
-    public boolean c() {
-        return false;
+    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        this.g3.F = true;
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public boolean d(y51 y51Var, MotionEvent motionEvent) {
-        return false;
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return super.onInterceptTouchEvent(motionEvent) || this.f3.d(this, motionEvent);
     }
 
-    public boolean e(y51 y51Var, j jVar, MotionEvent motionEvent) {
-        return false;
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.g3.L != null) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 
-    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
-
-    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    public void i(String[] strArr) {
-        this.a = strArr;
-    }
-
-    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.g3.H) {
+            return;
+        }
+        super.requestLayout();
     }
 }

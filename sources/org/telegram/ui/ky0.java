@@ -1,76 +1,33 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ky0 implements org.telegram.ui.ActionBar.r0, uu0, org.telegram.ui.Components.o8 {
-    public final /* synthetic */ ProfileActivity a;
+public final /* synthetic */ class ky0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ ky0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public /* synthetic */ ky0(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.Components.o8
-    public void H0(int i10, int i11) {
-        ProfileActivity profileActivity = this.a;
-        long a2 = profileActivity.a();
-        profileActivity.getMessagesController().setDialogHistoryTTL(a2, i10);
-        if (profileActivity.w2 == null && profileActivity.v2 == null) {
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        Runnable runnable = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = ProfileActivity.R6;
+                runnable.run();
+                break;
+            default:
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
-        UndoView undoView = profileActivity.M;
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(a2));
-        TLRPC.UserFull userFull = profileActivity.w2;
-        undoView.k(a2, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : profileActivity.v2.ttl_period), null, null);
-    }
-
-    @Override // org.telegram.ui.uu0
-    public /* synthetic */ TextureView U() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.o8
-    public void Y0() {
-        this.a.presentFragment(new u4());
-        dismiss();
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void d() {
-        org.telegram.ui.Components.cn0.d(new f5(this.a, 18));
-    }
-
-    @Override // org.telegram.ui.Components.o8
-    public void dismiss() {
-        this.a.U0.M(null, null);
-    }
-
-    @Override // org.telegram.ui.uu0
-    public void m0(MessageObject messageObject) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.a.I0(true);
-        rz0 rz0Var = profileActivity.O;
-        if (rz0Var != null && rz0Var.getCurrentListView() != null) {
-            profileActivity.O.getCurrentListView().I0(true);
-        }
-        profileActivity.e1.setBackgroundColor(i0.a.f(0.1f, profileActivity.R3(profileActivity.X4.f), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.a7, profileActivity.A0)));
-    }
-
-    @Override // org.telegram.ui.uu0
-    public void z(MessageObject messageObject) {
-        org.telegram.ui.Components.fi0 fi0Var = this.a.n0;
-        if (fi0Var == null || !fi0Var.a) {
-            return;
-        }
-        fi0Var.O.d(0.0f, true);
-        fi0Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void c() {
     }
 }

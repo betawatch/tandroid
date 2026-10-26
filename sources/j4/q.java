@@ -1,16 +1,15 @@
 package j4;
 
 import android.util.SparseArray;
-import b2.v0;
-import c3.l0;
-import e2.m0;
-import i2.n0;
-import i2.o1;
+import b2.w0;
+import c3.j0;
+import e2.n0;
+import i2.p0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class q implements i {
     public final c0 a;
@@ -18,14 +17,14 @@ public final class q implements i {
     public final boolean c;
     public long g;
     public String i;
-    public l0 j;
+    public j0 j;
     public p k;
     public boolean l;
     public boolean n;
     public final boolean[] h = new boolean[3];
-    public final n0 d = new n0(7);
-    public final n0 e = new n0(8);
-    public final n0 f = new n0(6);
+    public final p0 d = new p0(7);
+    public final p0 e = new p0(8);
+    public final p0 f = new p0(6);
     public long m = -9223372036854775807L;
     public final e2.x o = new e2.x();
 
@@ -39,7 +38,7 @@ public final class q implements i {
     public final void a(e2.x xVar) {
         int i10;
         this.j.getClass();
-        String str = m0.a;
+        String str = n0.a;
         int i11 = xVar.b;
         int i12 = xVar.c;
         byte[] bArr = xVar.a;
@@ -109,7 +108,7 @@ public final class q implements i {
     public final void b(long j10, int i10, int i11, long j11) {
         int i12;
         boolean z10;
-        n0 n0Var;
+        p0 p0Var;
         p pVar;
         boolean z11;
         long j12;
@@ -121,33 +120,33 @@ public final class q implements i {
         int i14;
         e2.c cVar = this.a.d;
         if (!this.l || this.k.c) {
-            n0 n0Var2 = this.d;
-            n0Var2.e(i11);
-            n0 n0Var3 = this.e;
-            n0Var3.e(i11);
+            p0 p0Var2 = this.d;
+            p0Var2.e(i11);
+            p0 p0Var3 = this.e;
+            p0Var3.e(i11);
             if (this.l) {
                 i12 = 2;
                 z10 = false;
-                if (n0Var2.d) {
-                    f2.p m10 = f2.q.m(3, n0Var2.e, (byte[]) n0Var2.f);
+                if (p0Var2.d) {
+                    f2.p m10 = f2.q.m(3, p0Var2.e, (byte[]) p0Var2.f);
                     cVar.k(m10.s);
                     this.k.d.append(m10.d, m10);
-                    n0Var2.g();
-                } else if (n0Var3.d) {
-                    f2.u uVar = new f2.u((byte[]) n0Var3.f, 4, n0Var3.e);
+                    p0Var2.g();
+                } else if (p0Var3.d) {
+                    f2.u uVar = new f2.u((byte[]) p0Var3.f, 4, p0Var3.e);
                     int f7 = uVar.f();
                     int f10 = uVar.f();
                     uVar.i();
                     this.k.e.append(f7, new f2.o(f7, f10, uVar.d()));
-                    n0Var3.g();
+                    p0Var3.g();
                 }
-            } else if (n0Var2.d && n0Var3.d) {
+            } else if (p0Var2.d && p0Var3.d) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(Arrays.copyOf((byte[]) n0Var2.f, n0Var2.e));
-                arrayList.add(Arrays.copyOf((byte[]) n0Var3.f, n0Var3.e));
-                f2.p m11 = f2.q.m(3, n0Var2.e, (byte[]) n0Var2.f);
+                arrayList.add(Arrays.copyOf((byte[]) p0Var2.f, p0Var2.e));
+                arrayList.add(Arrays.copyOf((byte[]) p0Var3.f, p0Var3.e));
+                f2.p m11 = f2.q.m(3, p0Var2.e, (byte[]) p0Var2.f);
                 int i15 = m11.s;
-                f2.u uVar2 = new f2.u((byte[]) n0Var3.f, 4, n0Var3.e);
+                f2.u uVar2 = new f2.u((byte[]) p0Var3.f, 4, p0Var3.e);
                 int f11 = uVar2.f();
                 int f12 = uVar2.f();
                 uVar2.i();
@@ -159,32 +158,32 @@ public final class q implements i {
                 int i18 = m11.c;
                 byte[] bArr = e2.g.a;
                 String format = String.format("avc1.%02X%02X%02X", Integer.valueOf(i16), Integer.valueOf(i17), Integer.valueOf(i18));
-                l0 l0Var = this.j;
-                b2.v vVar = new b2.v();
-                vVar.a = this.i;
-                vVar.q = v0.n("video/mp2t");
-                vVar.r = v0.n(MediaController.VIDEO_MIME_TYPE);
-                vVar.j = format;
-                vVar.y = m11.e;
-                vVar.z = m11.f;
-                vVar.H = new b2.n(m11.p, m11.q, m11.r, null, m11.h + 8, m11.i + 8);
-                vVar.E = m11.g;
-                vVar.u = arrayList;
-                vVar.t = i15;
-                o1.v(vVar, l0Var);
+                j0 j0Var = this.j;
+                b2.w wVar = new b2.w();
+                wVar.a = this.i;
+                wVar.q = w0.n("video/mp2t");
+                wVar.r = w0.n(MediaController.VIDEO_MIME_TYPE);
+                wVar.j = format;
+                wVar.y = m11.e;
+                wVar.z = m11.f;
+                wVar.H = new b2.o(m11.p, m11.q, m11.r, null, m11.h + 8, m11.i + 8);
+                wVar.E = m11.g;
+                wVar.u = arrayList;
+                wVar.t = i15;
+                ic.a.u(wVar, j0Var);
                 this.l = true;
                 cVar.k(i15);
                 this.k.d.append(m11.d, m11);
                 this.k.e.append(f11, oVar);
-                n0Var2.g();
-                n0Var3.g();
+                p0Var2.g();
+                p0Var3.g();
             }
-            n0Var = this.f;
-            if (n0Var.e(i11)) {
-                int p5 = f2.q.p(n0Var.e, (byte[]) n0Var.f);
-                byte[] bArr2 = (byte[]) n0Var.f;
+            p0Var = this.f;
+            if (p0Var.e(i11)) {
+                int p10 = f2.q.p(p0Var.e, (byte[]) p0Var.f);
+                byte[] bArr2 = (byte[]) p0Var.f;
                 e2.x xVar = this.o;
-                xVar.L(p5, bArr2);
+                xVar.L(p10, bArr2);
                 xVar.N(4);
                 cVar.a(j11, xVar);
             }
@@ -295,8 +294,8 @@ public final class q implements i {
         }
         i12 = 2;
         z10 = false;
-        n0Var = this.f;
-        if (n0Var.e(i11)) {
+        p0Var = this.f;
+        if (p0Var.e(i11)) {
         }
         pVar = this.k;
         z11 = this.l;
@@ -348,21 +347,21 @@ public final class q implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.s sVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
         this.i = (String) f0Var.e;
         f0Var.c();
-        l0 j02 = sVar.j0(f0Var.c, 2);
-        this.j = j02;
-        this.k = new p(j02, this.b, this.c);
-        this.a.b(sVar, f0Var);
+        j0 F1 = qVar.F1(f0Var.c, 2);
+        this.j = F1;
+        this.k = new p(F1, this.b, this.c);
+        this.a.b(qVar, f0Var);
     }
 
     @Override // j4.i
     public final void e(boolean z10) {
         this.j.getClass();
-        String str = m0.a;
+        String str = n0.a;
         if (z10) {
             this.a.d.c(0);
             b(this.g, 0, 0, this.m);
@@ -459,7 +458,7 @@ public final class q implements i {
                                 }
                             }
                             if (uVar.b(i23)) {
-                                int e7 = uVar.e(i23);
+                                int e10 = uVar.e(i23);
                                 if (pVar2.k) {
                                     z10 = false;
                                     z11 = false;
@@ -497,9 +496,9 @@ public final class q implements i {
                                             } else {
                                                 if (i13 == 1 && !pVar2.o) {
                                                     if (uVar.c()) {
-                                                        int g10 = uVar.g();
+                                                        int g7 = uVar.g();
                                                         if (!z14 || z10) {
-                                                            i17 = g10;
+                                                            i17 = g7;
                                                             i14 = 0;
                                                             i15 = 0;
                                                         } else {
@@ -507,7 +506,7 @@ public final class q implements i {
                                                                 return;
                                                             }
                                                             i15 = uVar.g();
-                                                            i17 = g10;
+                                                            i17 = g7;
                                                             i14 = 0;
                                                         }
                                                         i16 = 0;
@@ -515,7 +514,7 @@ public final class q implements i {
                                                         oVar3.c = pVar2;
                                                         oVar3.d = e;
                                                         oVar3.e = f7;
-                                                        oVar3.f = e7;
+                                                        oVar3.f = e10;
                                                         oVar3.g = f10;
                                                         oVar3.h = z10;
                                                         oVar3.i = z12;
@@ -541,7 +540,7 @@ public final class q implements i {
                                             oVar32.c = pVar2;
                                             oVar32.d = e;
                                             oVar32.e = f7;
-                                            oVar32.f = e7;
+                                            oVar32.f = e10;
                                             oVar32.g = f10;
                                             oVar32.h = z10;
                                             oVar32.i = z12;
@@ -573,7 +572,7 @@ public final class q implements i {
                                 oVar322.c = pVar2;
                                 oVar322.d = e;
                                 oVar322.e = f7;
-                                oVar322.f = e7;
+                                oVar322.f = e10;
                                 oVar322.g = f10;
                                 oVar322.h = z10;
                                 oVar322.i = z12;

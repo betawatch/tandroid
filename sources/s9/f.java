@@ -1,114 +1,38 @@
 package s9;
 
-import ai.y3;
-import com.google.android.gms.internal.cast.i4;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
+import android.os.StrictMode;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import java.util.Collections;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f implements ScheduledExecutorService, AutoCloseable {
-    public final ExecutorService a;
-    public final ScheduledExecutorService b;
+public final /* synthetic */ class f implements ra.b {
+    public final /* synthetic */ int a;
 
-    public f(ExecutorService executorService, ScheduledExecutorService scheduledExecutorService) {
-        this.a = executorService;
-        this.b = scheduledExecutorService;
+    public /* synthetic */ f(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean awaitTermination(long j10, TimeUnit timeUnit) {
-        return this.a.awaitTermination(j10, timeUnit);
-    }
-
-    @Override // java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        i4.i(this);
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.a.execute(runnable);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List invokeAll(Collection collection) {
-        return this.a.invokeAll(collection);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Object invokeAny(Collection collection) {
-        return this.a.invokeAny(collection);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isShutdown() {
-        return this.a.isShutdown();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isTerminated() {
-        return this.a.isTerminated();
-    }
-
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture schedule(Runnable runnable, long j10, TimeUnit timeUnit) {
-        return new h(new y3(this, runnable, j10, timeUnit, 6));
-    }
-
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
-        return new h(new c(this, runnable, j10, j11, timeUnit, 0));
-    }
-
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
-        return new h(new c(this, runnable, j10, j11, timeUnit, 1));
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final void shutdown() {
-        throw new UnsupportedOperationException("Shutting down is not allowed.");
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List shutdownNow() {
-        throw new UnsupportedOperationException("Shutting down is not allowed.");
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Callable callable) {
-        return this.a.submit(callable);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List invokeAll(Collection collection, long j10, TimeUnit timeUnit) {
-        return this.a.invokeAll(collection, j10, timeUnit);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Object invokeAny(Collection collection, long j10, TimeUnit timeUnit) {
-        return this.a.invokeAny(collection, j10, timeUnit);
-    }
-
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture schedule(Callable callable, long j10, TimeUnit timeUnit) {
-        return new h(new y3(this, callable, j10, timeUnit, 7));
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Runnable runnable, Object obj) {
-        return this.a.submit(runnable, obj);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Runnable runnable) {
-        return this.a.submit(runnable);
+    @Override // ra.b
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return Collections.EMPTY_SET;
+            case 1:
+                return null;
+            case 2:
+                return ExecutorsRegistrar.a();
+            case 3:
+                n nVar = ExecutorsRegistrar.a;
+                return new t9.f(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new t9.a("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+            case 4:
+                n nVar2 = ExecutorsRegistrar.a;
+                return new t9.f(Executors.newCachedThreadPool(new t9.a("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+            default:
+                n nVar3 = ExecutorsRegistrar.a;
+                return Executors.newSingleThreadScheduledExecutor(new t9.a("Firebase Scheduler", 0, null));
+        }
     }
 }

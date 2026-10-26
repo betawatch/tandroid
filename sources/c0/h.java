@@ -1,6 +1,6 @@
 package c0;
 
-import j9.y;
+import a8.v9;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -12,22 +12,22 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import si.o0;
-import v7.g0;
+import k9.y;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class h implements y {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final g0 f;
+    public static final v9 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        g0 fVar;
+        v9 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -85,8 +85,8 @@ public abstract class h implements y {
     public static void f(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (RuntimeException e7) {
-            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e7);
+        } catch (RuntimeException e10) {
+            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e10);
         }
     }
 
@@ -128,7 +128,7 @@ public abstract class h implements y {
         return obj;
     }
 
-    @Override // j9.y
+    @Override // k9.y
     public final void a(Runnable runnable, Executor executor) {
         executor.getClass();
         d dVar = this.b;
@@ -155,13 +155,13 @@ public abstract class h implements y {
             sb2.append("]");
         } catch (CancellationException unused) {
             sb2.append("CANCELLED");
-        } catch (RuntimeException e7) {
+        } catch (RuntimeException e10) {
             sb2.append("UNKNOWN, cause=[");
-            sb2.append(e7.getClass());
+            sb2.append(e10.getClass());
             sb2.append(" thrown from get()]");
-        } catch (ExecutionException e10) {
+        } catch (ExecutionException e11) {
             sb2.append("FAILURE, cause=[");
-            sb2.append(e10.getCause());
+            sb2.append(e11.getCause());
             sb2.append("]");
         }
     }
@@ -195,9 +195,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    g0 g0Var = f;
-                    g0Var.d(gVar3, gVar2);
-                    if (g0Var.c(this, gVar2, gVar3)) {
+                    v9 v9Var = f;
+                    v9Var.d(gVar3, gVar2);
+                    if (v9Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -241,7 +241,7 @@ public abstract class h implements y {
         t10.append(timeUnit.toString().toLowerCase(locale));
         String sb2 = t10.toString();
         if (nanos + 1000 < 0) {
-            String u10 = o0.u(sb2, " (plus ");
+            String u10 = b10.u(sb2, " (plus ");
             long j11 = -nanos;
             long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
             long nanos2 = j11 - timeUnit.toNanos(convert);
@@ -249,17 +249,17 @@ public abstract class h implements y {
             if (convert > 0) {
                 String str = u10 + convert + " " + lowerCase;
                 if (z10) {
-                    str = o0.u(str, ",");
+                    str = b10.u(str, ",");
                 }
-                u10 = o0.u(str, " ");
+                u10 = b10.u(str, " ");
             }
             if (z10) {
                 u10 = u10 + nanos2 + " nanoseconds ";
             }
-            sb2 = o0.u(u10, "delay)");
+            sb2 = b10.u(u10, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(o0.u(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(b10.u(sb2, " but future completed as timeout expired"));
         }
         throw new TimeoutException(a1.g.D(sb2, " for ", hVar));
     }
@@ -339,8 +339,8 @@ public abstract class h implements y {
         } else {
             try {
                 str = i();
-            } catch (RuntimeException e7) {
-                str = "Exception thrown from implementation: " + e7.getClass();
+            } catch (RuntimeException e10) {
+                str = "Exception thrown from implementation: " + e10.getClass();
             }
             if (str != null && !str.isEmpty()) {
                 sb2.append("PENDING, info=[");
@@ -372,9 +372,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    g0 g0Var = f;
-                    g0Var.d(gVar3, gVar2);
-                    if (g0Var.c(this, gVar2, gVar3)) {
+                    v9 v9Var = f;
+                    v9Var.d(gVar3, gVar2);
+                    if (v9Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

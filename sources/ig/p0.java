@@ -1,40 +1,45 @@
 package ig;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.m61;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.z1, Utilities.Callback5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s0 b;
+public final class p0 {
+    public final int a;
+    public final int b;
+    public final String c;
+    public final int d;
+    public final TLRPC.MessagesFilter e;
+    public TLObject f;
+    public n0 g;
+    public boolean h;
 
-    public /* synthetic */ p0(s0 s0Var, int i10) {
+    public p0(int i10, int i11, String str) {
+        this.h = true;
         this.a = i10;
-        this.b = s0Var;
+        this.c = str;
+        this.e = null;
+        this.d = i11;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.a0();
-                break;
-            case 1:
-                this.b.finishFragment();
-                break;
-            default:
-                this.b.a0();
-                break;
+    public final boolean a() {
+        int i10 = this.d;
+        return i10 == 0 || i10 == 1 || i10 == 2 || i10 == 3 || i10 == 5;
+    }
+
+    public final boolean b(p0 p0Var) {
+        if (this.d == p0Var.d) {
+            return true;
         }
+        return a() && p0Var.a();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        s0.W(this.b, (m61) obj, (View) obj2);
+    public p0(int i10, int i11, TLRPC.MessagesFilter messagesFilter, int i12) {
+        this.h = true;
+        this.a = i10;
+        this.b = i11;
+        this.e = messagesFilter;
+        this.d = i12;
     }
 }

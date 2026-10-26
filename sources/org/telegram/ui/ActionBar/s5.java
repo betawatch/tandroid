@@ -1,75 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import org.telegram.ui.qc1;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s5 extends j5 {
-    public final /* synthetic */ int T = 1;
-    public final /* synthetic */ Object U;
+public final class s5 {
+    public static final s5 a;
+    public static final s5 b;
+    public static final /* synthetic */ s5[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s5(qc1 qc1Var, int i10, boolean z10) {
-        super(i10, true, z10, null);
-        this.U = qc1Var;
+    static {
+        s5 s5Var = new s5("ICON", 0);
+        a = s5Var;
+        s5 s5Var2 = new s5("TEXT", 1);
+        b = s5Var2;
+        c = new s5[]{s5Var, s5Var2};
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public int g(int i10) {
-        switch (this.T) {
-            case 0:
-                SparseIntArray sparseIntArray = (SparseIntArray) this.U;
-                int indexOfKey = sparseIntArray.indexOfKey(i10);
-                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : k6.ql[i10];
-            default:
-                return super.g(i10);
-        }
+    public static s5 valueOf(String str) {
+        return (s5) Enum.valueOf(s5.class, str);
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public int h(int i10) {
-        switch (this.T) {
-            case 0:
-                return ((SparseIntArray) this.U).get(i10);
-            default:
-                return super.h(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5
-    public void m(int i10, int i11, int i12) {
-        switch (this.T) {
-            case 1:
-                if (!((qc1) this.U).e2) {
-                    super.m(i10, i11, i12);
-                    break;
-                }
-                break;
-            default:
-                super.m(i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5
-    public void n(int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, boolean z11) {
-        switch (this.T) {
-            case 1:
-                if (!((qc1) this.U).e2) {
-                    super.n(i10, i11, i12, i13, i14, i15, z10, z11);
-                    break;
-                }
-                break;
-            default:
-                super.n(i10, i11, i12, i13, i14, i15, z10, z11);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s5(boolean z10, SparseIntArray sparseIntArray) {
-        super(2, z10, false, null);
-        this.U = sparseIntArray;
+    public static s5[] values() {
+        return (s5[]) c.clone();
     }
 }

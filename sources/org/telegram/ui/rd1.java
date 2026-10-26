@@ -1,57 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class rd1 extends FrameLayout {
-    public ValueAnimator a;
-    public boolean b;
-    public float c;
+public final /* synthetic */ class rd1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wd1 b;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7 = ((1.0f - this.c) * 0.2f) + 0.8f;
-        canvas.save();
-        canvas.scale(f7, f7, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        if (isPressed()) {
-            float f10 = this.c;
-            if (f10 != 1.0f) {
-                this.c = Utilities.clamp(f10 + 0.16f, 1.0f, 0.0f);
-                invalidate();
-            }
-        }
+    public /* synthetic */ rd1(wd1 wd1Var, int i10) {
+        this.a = i10;
+        this.b = wd1Var;
     }
 
-    @Override // android.view.View
-    public final void setPressed(boolean z10) {
-        ValueAnimator valueAnimator;
-        super.setPressed(z10);
-        if (this.b != z10) {
-            this.b = z10;
-            invalidate();
-            if (z10 && (valueAnimator = this.a) != null) {
-                valueAnimator.removeAllListeners();
-                this.a.cancel();
-            }
-            if (z10) {
-                return;
-            }
-            float f7 = this.c;
-            if (f7 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
-                this.a = ofFloat;
-                ofFloat.addUpdateListener(new g11(this, 14));
-                this.a.addListener(new v70(this, 29));
-                org.telegram.messenger.sl.l(5.0f, this.a);
-                this.a.setDuration(350L);
-                this.a.start();
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                wd1 wd1Var = this.b;
+                wd1Var.getClass();
+                new tg.y0((org.telegram.ui.ActionBar.r2) wd1Var, 11, false).show();
+                break;
+            default:
+                wd1 wd1Var2 = this.b;
+                wd1Var2.e.requestFocus();
+                AndroidUtilities.showKeyboard(wd1Var2.e);
+                break;
         }
     }
 }

@@ -1,34 +1,30 @@
 package u2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y0 b;
+public final class r0 {
+    public static final r0 a;
+    public static final r0 b;
+    public static final r0 c;
+    public static final /* synthetic */ r0[] d;
 
-    public /* synthetic */ r0(y0 y0Var, int i10) {
-        this.a = i10;
-        this.b = y0Var;
+    static {
+        r0 r0Var = new r0("PASS_THROUGH", 0);
+        a = r0Var;
+        r0 r0Var2 = new r0("DISCARD_AFTER_NEXT_SAMPLE_METADATA", 1);
+        b = r0Var2;
+        r0 r0Var3 = new r0("DISCARDING", 2);
+        c = r0Var3;
+        d = new r0[]{r0Var, r0Var2, r0Var3};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b0 = true;
-                break;
-            case 1:
-                this.b.w();
-                break;
-            default:
-                y0 y0Var = this.b;
-                if (!y0Var.h0) {
-                    e0 e0Var = y0Var.I;
-                    e0Var.getClass();
-                    e0Var.b(y0Var);
-                    break;
-                }
-                break;
-        }
+    public static r0 valueOf(String str) {
+        return (r0) Enum.valueOf(r0.class, str);
+    }
+
+    public static r0[] values() {
+        return (r0[]) d.clone();
     }
 }

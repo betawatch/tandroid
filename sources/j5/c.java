@@ -1,45 +1,32 @@
 package j5;
 
-import ah.l0;
-import android.animation.ValueAnimator;
-import java.net.URL;
-import org.telegram.ui.Components.bs;
-import w7.i;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
-    public long a;
-    public int b;
-    public Object c;
+    public final String a;
 
-    public c(int i10, URL url, long j10) {
-        this.b = i10;
-        this.c = url;
-        this.a = j10;
+    public c(String str) {
+        if (str == null) {
+            throw new NullPointerException("name is null");
+        }
+        this.a = str;
     }
 
-    public void a(ki.a aVar, b bVar) {
-        int i10;
-        int b10 = i.b(aVar);
-        long j10 = aVar != null ? aVar.a : Long.MIN_VALUE;
-        boolean z10 = j10 == this.a && this.b >= 0;
-        this.a = j10;
-        ValueAnimator valueAnimator = (ValueAnimator) this.c;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.c = null;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (!z10 || (i10 = this.b) == b10) {
-            this.b = b10;
-            bVar.j(b10);
-            return;
+        if (!(obj instanceof c)) {
+            return false;
         }
-        ValueAnimator ofInt = ValueAnimator.ofInt(i10, b10);
-        ofInt.addUpdateListener(new l0(8, this, bVar));
-        ofInt.setInterpolator(bs.f);
-        ofInt.setDuration(200L);
-        this.c = ofInt;
-        ofInt.start();
+        return this.a.equals(((c) obj).a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() ^ 1000003;
+    }
+
+    public final String toString() {
+        return a1.g.s(new StringBuilder("Encoding{name=\""), this.a, "\"}");
     }
 }

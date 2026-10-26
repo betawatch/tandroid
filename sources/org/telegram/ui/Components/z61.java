@@ -1,26 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z61 extends ColorDrawable {
-    public final int a;
-    public final org.telegram.ui.ActionBar.g6 b;
+public final class z61 extends URLSpan {
+    public final y11 a;
+    public boolean b;
 
-    public z61(int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
-        this.a = i10;
-        this.b = g6Var;
+    public z61(String str, y11 y11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = y11Var;
     }
 
-    @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.k6.w0(this.a, this.b);
-        if (getColor() != w02) {
-            setColor(w02);
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).Y0 = true;
         }
-        super.draw(canvas);
+        qf.d.o(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        y11 y11Var = this.a;
+        if (y11Var != null) {
+            y11Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
+        }
     }
 }

@@ -1,17 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class za implements org.telegram.ui.Components.ol0, ni.c {
-    public final /* synthetic */ vb a;
+import org.telegram.tgnet.ConnectionsManager;
 
-    @Override // org.telegram.ui.Components.ol0
-    public void a() {
-        this.a.c1();
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class za implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wb b;
+
+    public /* synthetic */ za(wb wbVar, int i10) {
+        this.a = i10;
+        this.b = wbVar;
     }
 
-    @Override // ni.c
-    public void b(int i10) {
-        vb.X(this.a, i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                wb wbVar = this.b;
+                wbVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                wbVar.H0 = -1;
+                wbVar.e1();
+                wbVar.I0 = null;
+                break;
+            case 1:
+                wb wbVar2 = this.b;
+                wbVar2.X0(false);
+                wbVar2.E.l();
+                break;
+            default:
+                this.b.W0();
+                break;
+        }
     }
 }

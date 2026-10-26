@@ -1,22 +1,22 @@
 package j4;
 
+import a8.cd;
+import a8.ng;
+import a8.yb;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
-import b2.w0;
+import b2.x0;
 import e2.k0;
-import e9.l0;
-import e9.n0;
-import e9.x1;
+import f9.i0;
+import f9.s1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.m8;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d0 implements c3.q {
+public final class d0 implements c3.o {
     public final int a;
     public final int b;
     public final List c;
@@ -29,7 +29,7 @@ public final class d0 implements c3.q {
     public final SparseBooleanArray j;
     public final x k;
     public h3.a l;
-    public c3.s m;
+    public c3.q m;
     public int n;
     public boolean o;
     public boolean p;
@@ -58,7 +58,7 @@ public final class d0 implements c3.q {
         this.h = sparseArray;
         this.e = new SparseIntArray();
         this.k = new x(1);
-        this.m = c3.s.i;
+        this.m = c3.q.i;
         this.t = -1;
         sparseBooleanArray.clear();
         sparseArray.clear();
@@ -67,7 +67,7 @@ public final class d0 implements c3.q {
         for (int i12 = 0; i12 < size; i12++) {
             sparseArray.put(sparseArray2.keyAt(i12), (g0) sparseArray2.valueAt(i12));
         }
-        sparseArray.put(0, new b0(new qf.b(this)));
+        sparseArray.put(0, new b0(new n4.s(this)));
         this.r = null;
     }
 
@@ -75,14 +75,14 @@ public final class d0 implements c3.q {
     
         r2 = r2 + 1;
      */
-    @Override // c3.q
+    @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean a(c3.r rVar) {
+    public final boolean a(c3.p pVar) {
         byte[] bArr = this.d.a;
-        c3.l lVar = (c3.l) rVar;
-        lVar.j(bArr, 0, 940, false);
+        c3.l lVar = (c3.l) pVar;
+        lVar.h(bArr, 0, 940, false);
         int i10 = 0;
         while (i10 < 188) {
             for (int i11 = 0; i11 < 5; i11++) {
@@ -90,24 +90,24 @@ public final class d0 implements c3.q {
                     break;
                 }
             }
-            lVar.i(i10, false);
+            lVar.f(i10, false);
             return true;
         }
         return false;
     }
 
-    @Override // c3.q
-    public final void c(c3.s sVar) {
+    @Override // c3.o
+    public final void c(c3.q qVar) {
         if ((this.b & 1) == 0) {
-            sVar = new c2.b(sVar, this.g);
+            qVar = new c2.b(qVar, this.g);
         }
-        this.m = sVar;
+        this.m = qVar;
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void d(long j10, long j11) {
         h3.a aVar;
-        u6.p(this.a != 2);
+        yb.p(this.a != 2);
         List list = this.c;
         int size = list.size();
         for (int i10 = 0; i10 < size; i10++) {
@@ -139,26 +139,26 @@ public final class d0 implements c3.q {
         }
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final List e() {
-        l0 l0Var = n0.b;
-        return x1.e;
+        f9.g0 g0Var = i0.b;
+        return s1.e;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v1 */
     /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v2, types: [boolean, int] */
-    @Override // c3.q
-    public final int f(c3.r rVar, c3.u uVar) {
-        c3.r rVar2;
+    @Override // c3.o
+    public final int f(c3.p pVar, c3.s sVar) {
+        c3.p pVar2;
         ?? r12;
         int i10;
         int i11;
         int i12;
         int i13;
         boolean z10;
-        long length = rVar.getLength();
+        long length = pVar.getLength();
         int i14 = this.a;
         boolean z11 = i14 == 2;
         if (this.o) {
@@ -169,33 +169,33 @@ public final class d0 implements c3.q {
                 k0 k0Var = xVar.b;
                 e2.x xVar2 = xVar.c;
                 if (i15 <= 0) {
-                    xVar.a(rVar);
+                    xVar.a(pVar);
                     return 0;
                 }
                 if (xVar.f) {
                     if (xVar.h == -9223372036854775807L) {
-                        xVar.a(rVar);
+                        xVar.a(pVar);
                         return 0;
                     }
                     if (xVar.e) {
                         long j11 = xVar.g;
                         if (j11 == -9223372036854775807L) {
-                            xVar.a(rVar);
+                            xVar.a(pVar);
                             return 0;
                         }
                         xVar.i = k0Var.c(xVar.h) - k0Var.b(j11);
-                        xVar.a(rVar);
+                        xVar.a(pVar);
                         return 0;
                     }
-                    int min = (int) Math.min(112800, rVar.getLength());
+                    int min = (int) Math.min(112800, pVar.getLength());
                     long j12 = 0;
-                    if (rVar.getPosition() != j12) {
-                        uVar.a = j12;
+                    if (pVar.getPosition() != j12) {
+                        sVar.a = j12;
                         return 1;
                     }
                     xVar2.K(min);
-                    rVar.q();
-                    rVar.a(0, min, xVar2.a);
+                    pVar.p();
+                    pVar.b(0, min, xVar2.a);
                     int i16 = xVar2.b;
                     int i17 = xVar2.c;
                     while (true) {
@@ -203,7 +203,7 @@ public final class d0 implements c3.q {
                             break;
                         }
                         if (xVar2.a[i16] == 71) {
-                            long a2 = m8.a(xVar2, i16, i15);
+                            long a2 = cd.a(xVar2, i16, i15);
                             if (a2 != -9223372036854775807L) {
                                 j10 = a2;
                                 break;
@@ -215,16 +215,16 @@ public final class d0 implements c3.q {
                     xVar.e = true;
                     return 0;
                 }
-                long length2 = rVar.getLength();
+                long length2 = pVar.getLength();
                 int min2 = (int) Math.min(112800, length2);
                 long j13 = length2 - min2;
-                if (rVar.getPosition() != j13) {
-                    uVar.a = j13;
+                if (pVar.getPosition() != j13) {
+                    sVar.a = j13;
                     return 1;
                 }
                 xVar2.K(min2);
-                rVar.q();
-                rVar.a(0, min2, xVar2.a);
+                pVar.p();
+                pVar.b(0, min2, xVar2.a);
                 int i18 = xVar2.b;
                 int i19 = xVar2.c;
                 int i20 = i19 - 188;
@@ -245,7 +245,7 @@ public final class d0 implements c3.q {
                         } else {
                             i22++;
                             if (i22 == 5) {
-                                long a10 = m8.a(xVar2, i20, i15);
+                                long a10 = cd.a(xVar2, i20, i15);
                                 if (a10 != -9223372036854775807L) {
                                     j10 = a10;
                                     break;
@@ -271,32 +271,32 @@ public final class d0 implements c3.q {
                     i10 = 1;
                     z10 = false;
                     i11 = i14;
-                    h3.a aVar = new h3.a(new t7.u(3), new a5.a(this.t, xVar.b), j14, 1 + j14, 0L, length, 188L, 940);
+                    h3.a aVar = new h3.a(new u7.s(3), new ng(this.t, xVar.b), j14, 1 + j14, 0L, length, 188L, 940);
                     this.l = aVar;
-                    this.m.g0(aVar.a);
+                    this.m.D1(aVar.a);
                 } else {
                     i10 = 1;
                     z10 = false;
                     i11 = i14;
-                    this.m.g0(new c3.v(j14));
+                    this.m.D1(new c3.t(j14));
                 }
             }
             if (this.q) {
                 this.q = z10;
                 d(0L, 0L);
-                if (rVar.getPosition() != 0) {
-                    uVar.a = 0L;
+                if (pVar.getPosition() != 0) {
+                    sVar.a = 0L;
                     return i10;
                 }
             }
             h3.a aVar2 = this.l;
             if (aVar2 != null && aVar2.c != null) {
-                return aVar2.b(rVar, uVar);
+                return aVar2.b(pVar, sVar);
             }
-            rVar2 = rVar;
+            pVar2 = pVar;
             r12 = z10;
         } else {
-            rVar2 = rVar;
+            pVar2 = pVar;
             r12 = 0;
             i10 = 1;
             i11 = i14;
@@ -329,7 +329,7 @@ public final class d0 implements c3.q {
                     i12 = i11;
                     i13 = 2;
                     if (i12 == 2 && i28 > 376) {
-                        throw w0.a(null, "Cannot find sync byte. Most likely not a Transport Stream.");
+                        throw x0.a(null, "Cannot find sync byte. Most likely not a Transport Stream.");
                     }
                 } else {
                     i12 = i11;
@@ -384,7 +384,7 @@ public final class d0 implements c3.q {
                 return r12;
             }
             int i34 = xVar3.c;
-            int read = rVar2.read(bArr2, i34, 9400 - i34);
+            int read = pVar2.read(bArr2, i34, 9400 - i34);
             if (read == -1) {
                 int i35 = r12;
                 while (i35 < sparseArray.size()) {
@@ -406,12 +406,12 @@ public final class d0 implements c3.q {
         }
     }
 
-    @Override // c3.q
-    public final c3.q b() {
+    @Override // c3.o
+    public final c3.o b() {
         return this;
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void release() {
     }
 }

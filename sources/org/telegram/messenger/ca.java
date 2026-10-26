@@ -1,79 +1,50 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ca implements RequestDelegate {
+public final /* synthetic */ class ca implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ ca(MessagesController messagesController, long j10, int i10) {
+    public /* synthetic */ ca(MessagesController messagesController, long j10, ArrayList arrayList, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = j10;
+        this.d = j10;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessageAsRead2$234(this.c, tLObject, tL_error);
+                this.b.lambda$markAllTopicsAsRead$7(this.c, this.d);
                 break;
             case 1:
-                this.b.lambda$markMessageAsRead2$235(this.c, tLObject, tL_error);
+                this.b.lambda$deleteMessagesByPush$370(this.c, this.d);
                 break;
             case 2:
-                this.b.lambda$pinDialog$363(this.c, tLObject, tL_error);
+                this.b.lambda$generateJoinMessage$369(this.d, this.c);
                 break;
             case 3:
-                this.b.lambda$saveWallpaperToServer$120(this.c, tLObject, tL_error);
+                this.b.lambda$getDifference$356(this.d, this.c);
                 break;
             case 4:
-                this.b.lambda$updateTimerProc$159(this.c, tLObject, tL_error);
-                break;
-            case 5:
-                this.b.lambda$deleteUserPhoto$114(this.c, tLObject, tL_error);
-                break;
-            case 6:
-                this.b.lambda$reorderPinnedDialogs$362(this.c, tLObject, tL_error);
-                break;
-            case 7:
-                this.b.lambda$loadPeerSettings$79(this.c, tLObject, tL_error);
-                break;
-            case 8:
-                this.b.lambda$setChannelSlowMode$93(this.c, tLObject, tL_error);
-                break;
-            case 9:
-                this.b.lambda$loadChannelAdmins$64(this.c, tLObject, tL_error);
-                break;
-            case 10:
-                this.b.lambda$deleteDialog$140(this.c, tLObject, tL_error);
-                break;
-            case 11:
-                this.b.lambda$addDialogToFolder$197(this.c, tLObject, tL_error);
-                break;
-            case 12:
-                this.b.lambda$setDefaultSendAs$274(this.c, tLObject, tL_error);
-                break;
-            case 13:
-                this.b.lambda$deleteMessages$121(this.c, tLObject, tL_error);
-                break;
-            case 14:
-                this.b.lambda$deleteMessages$122(this.c, tLObject, tL_error);
-                break;
-            case 15:
-                this.b.lambda$deleteMessages$124(this.c, tLObject, tL_error);
-                break;
-            case 16:
-                this.b.lambda$setBoostsToUnblockRestrictions$95(this.c, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$423(this.d, this.c);
                 break;
             default:
-                this.b.lambda$markDialogAsUnread$359(this.c, tLObject, tL_error);
+                this.b.lambda$getDifference$355(this.d, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ ca(MessagesController messagesController, ArrayList arrayList, long j10, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = arrayList;
+        this.d = j10;
     }
 }

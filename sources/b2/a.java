@@ -1,10 +1,10 @@
 package b2;
 
+import a8.yb;
 import android.net.Uri;
 import java.util.Arrays;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class a {
     public static final String i;
@@ -22,14 +22,14 @@ public final class a {
     public final int a;
     public final int b;
     public final Uri[] c;
-    public final o0[] d;
+    public final p0[] d;
     public final int[] e;
     public final long[] f;
     public final String[] g;
     public final b[] h;
 
     static {
-        String str = e2.m0.a;
+        String str = e2.n0.a;
         i = Integer.toString(0, 36);
         j = Integer.toString(1, 36);
         k = Integer.toString(2, 36);
@@ -44,17 +44,17 @@ public final class a {
         t = Integer.toString(11, 36);
     }
 
-    public a(int i10, int i11, int[] iArr, o0[] o0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
+    public a(int i10, int i11, int[] iArr, p0[] p0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
         Uri uri;
         int i12 = 0;
-        u6.g(iArr.length == o0VarArr.length);
-        u6.g(iArr.length == bVarArr.length);
+        yb.g(iArr.length == p0VarArr.length);
+        yb.g(iArr.length == bVarArr.length);
         this.a = i10;
         this.b = i11;
         this.e = iArr;
-        this.d = o0VarArr;
+        this.d = p0VarArr;
         this.f = jArr;
-        this.c = new Uri[o0VarArr.length];
+        this.c = new Uri[p0VarArr.length];
         while (true) {
             Uri[] uriArr = this.c;
             if (i12 >= uriArr.length) {
@@ -62,13 +62,13 @@ public final class a {
                 this.h = bVarArr;
                 return;
             }
-            o0 o0Var = o0VarArr[i12];
-            if (o0Var == null) {
+            p0 p0Var = p0VarArr[i12];
+            if (p0Var == null) {
                 uri = null;
             } else {
-                j0 j0Var = o0Var.b;
-                j0Var.getClass();
-                uri = j0Var.a;
+                k0 k0Var = p0Var.b;
+                k0Var.getClass();
+                uri = k0Var.a;
             }
             uriArr[i12] = uri;
             i12++;

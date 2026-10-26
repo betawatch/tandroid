@@ -1,98 +1,40 @@
 package di;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.wz;
-import s4.y0;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.ar;
+import org.telegram.ui.qw;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class h extends wz {
-    public final /* synthetic */ int X = 0;
-    public final Object Y;
-
-    public h() {
-        super(100, false);
-        this.Y = new iw0();
-    }
-
-    @Override // s4.n0
-    public int A() {
-        switch (this.X) {
-            case 0:
-                return 0;
-            default:
-                return super.A();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wz
-    public iw0 D1(int i10) {
-        switch (this.X) {
-            case 0:
-                iw0 iw0Var = (iw0) this.Y;
-                iw0Var.b = 100.0f;
-                iw0Var.a = 100.0f;
-                return iw0Var;
-            default:
-                return super.D1(i10);
-        }
-    }
-
-    @Override // s4.s, s4.n0
-    public void U(qf.e eVar, y0 y0Var, View view, s0.d dVar) {
-        switch (this.X) {
-            case 0:
-                super.U(eVar, y0Var, view, dVar);
-                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
-                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-                n5.c cVar = collectionItemInfo != null ? new n5.c(collectionItemInfo) : null;
-                if (cVar != null) {
-                    Object obj = cVar.a;
-                    if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
-                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.U(eVar, y0Var, view, dVar);
-                break;
-        }
-    }
-
-    @Override // s4.b0
-    public int W0(y0 y0Var) {
-        switch (this.X) {
-            case 1:
-                if (!((j71) this.Y).b3) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.W0(y0Var);
-    }
-
-    @Override // s4.b0
-    public void z0(y0 y0Var, int[] iArr) {
-        switch (this.X) {
-            case 0:
-                super.z0(y0Var, iArr);
-                iArr[1] = Math.max(iArr[1], t7.a(1) * 2);
-                break;
-            default:
-                super.z0(y0Var, iArr);
-                break;
-        }
-    }
+public final class h extends ar {
+    public final /* synthetic */ Drawable E;
+    public final /* synthetic */ Drawable F;
+    public final /* synthetic */ qw G;
+    public int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(j71 j71Var, int i10) {
-        super(i10, false);
-        this.Y = j71Var;
+    public h(qw qwVar, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super(drawable, drawable2);
+        this.G = qwVar;
+        this.E = drawable3;
+        this.F = drawable4;
+    }
+
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        qw qwVar = this.G;
+        int i10 = qwVar.b;
+        int f7 = qwVar.f(i10 == 0 ? org.telegram.ui.ActionBar.y6.s8 : org.telegram.ui.ActionBar.y6.M8);
+        if (this.y != f7) {
+            this.y = f7;
+            int f10 = i0.a.f(0.1f, qwVar.f(i10 == 0 ? org.telegram.ui.ActionBar.y6.A8 : org.telegram.ui.ActionBar.y6.P8), f7);
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            this.E.setColorFilter(new PorterDuffColorFilter(f10, mode));
+            this.F.setColorFilter(new PorterDuffColorFilter(f7, mode));
+        }
+        super.draw(canvas);
     }
 }

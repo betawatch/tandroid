@@ -9,10 +9,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class o implements Utilities.Callback {
             case 1:
                 e2 e2Var = (e2) this.b;
                 a2 a2Var = (a2) this.c;
-                ki.c cVar = (ki.c) this.d;
+                li.c cVar = (li.c) this.d;
                 String str2 = (String) obj;
                 e2Var.getClass();
                 a2Var.p = !a2Var.n && !e2Var.i(a2Var) && e2Var.y(a2Var) && str2 == null;
@@ -78,7 +78,7 @@ public final /* synthetic */ class o implements Utilities.Callback {
                 break;
             case 4:
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.b;
-                ci.s sVar = (ci.s) this.c;
+                di.s sVar = (di.s) this.c;
                 TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) this.d;
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
                 if (wallettransaction2 != null) {
@@ -90,53 +90,53 @@ public final /* synthetic */ class o implements Utilities.Callback {
                 }
                 break;
             case 5:
-                ei.d dVar = (ei.d) this.b;
+                fi.d dVar = (fi.d) this.b;
                 j2[] j2VarArr = (j2[]) this.c;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.d;
+                org.telegram.ui.ActionBar.u6 u6Var = (org.telegram.ui.ActionBar.u6) this.d;
                 String str4 = (String) obj;
                 dVar.setLoading(false);
                 if (!TextUtils.isEmpty(str4)) {
-                    new xc(j2VarArr[0].topBulletinContainer, g6Var).e0(str4, false);
+                    new wc(j2VarArr[0].topBulletinContainer, u6Var).f0(str4, false);
                     break;
                 } else {
                     j2VarArr[0].dismiss();
                     break;
                 }
             case 6:
-                i8 i8Var = (i8) this.c;
+                h8 h8Var = (h8) this.c;
                 l0 l0Var2 = (l0) this.b;
-                l0Var2.j0(new e2.o0((Object) l0Var2, (Object) new n(i8Var, (Utilities.Callback) obj, (ArrayList) this.d, l0Var2), true, false, 3));
+                l0Var2.j0(new e2.p0((Object) l0Var2, (Object) new n(h8Var, (Utilities.Callback) obj, (ArrayList) this.d, l0Var2), true, false, 3));
                 break;
             case 7:
-                s9 s9Var = (s9) this.c;
+                r9 r9Var = (r9) this.c;
                 l0 l0Var3 = (l0) this.b;
                 TLRPC.User user = (TLRPC.User) this.d;
                 String str5 = (String) obj;
-                if (!s9Var.n) {
-                    if (!TextUtils.isEmpty(str5) && l0.a(s9Var.e, l0Var3.s())) {
-                        b0 b0Var = new b0(l0Var3, str5, s9Var.d, null, new p(s9Var, l0Var3, user, str5));
+                if (!r9Var.r) {
+                    if (!TextUtils.isEmpty(str5) && l0.a(r9Var.f, l0Var3.s())) {
+                        b0 b0Var = new b0(l0Var3, str5, r9Var.e, null, new p(r9Var, l0Var3, user, str5));
                         l0Var3.j0(b0Var);
-                        s9Var.h = new m(b0Var, 1);
+                        r9Var.n = new m(b0Var, 1);
                         break;
                     } else {
-                        s9Var.f = false;
-                        s9Var.Y.setLoading(false);
-                        xc.a0(s9Var).e0(TextUtils.isEmpty(str5) ? LocaleController.getString(R.string.WalletRecipientUnavailable) : "WALLET_CHANGED", false);
+                        r9Var.h = false;
+                        r9Var.Z.setLoading(false);
+                        wc.b0(r9Var).f0(TextUtils.isEmpty(str5) ? LocaleController.getString(R.string.WalletRecipientUnavailable) : "WALLET_CHANGED", false);
                         break;
                     }
                 }
                 break;
             case 8:
-                ((org.telegram.ui.Cells.i6) ((View) obj)).t((TLRPC.User) this.b, null, (CharSequence) this.c, (CharSequence) this.d, false, false);
+                ((org.telegram.ui.Cells.m6) ((View) obj)).s((TLRPC.User) this.b, null, (CharSequence) this.c, (CharSequence) this.d, false, false);
                 break;
             default:
-                ei.d dVar2 = (ei.d) this.b;
+                fi.d dVar2 = (fi.d) this.b;
                 j2 j2Var = (j2) this.c;
-                org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) this.d;
+                org.telegram.ui.ActionBar.u6 u6Var2 = (org.telegram.ui.ActionBar.u6) this.d;
                 String str6 = (String) obj;
                 dVar2.setLoading(false);
                 if (str6 != null) {
-                    xc.c0(str6, j2Var.topBulletinContainer, g6Var2);
+                    wc.d0(str6, j2Var.topBulletinContainer, u6Var2);
                     break;
                 } else {
                     j2Var.dismiss();
@@ -145,9 +145,9 @@ public final /* synthetic */ class o implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ o(e71 e71Var, l0 l0Var, Object obj, int i10) {
+    public /* synthetic */ o(m71 m71Var, l0 l0Var, Object obj, int i10) {
         this.a = i10;
-        this.c = e71Var;
+        this.c = m71Var;
         this.b = l0Var;
         this.d = obj;
     }

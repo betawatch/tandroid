@@ -1,5 +1,6 @@
 package com.google.android.gms.vision.clearcut;
 
+import a8.uf;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import com.google.android.gms.internal.vision.d0;
@@ -16,10 +17,9 @@ import com.google.android.gms.internal.vision.y;
 import com.google.android.gms.internal.vision.z;
 import java.util.ArrayList;
 import java.util.List;
-import w6.b;
-import w7.m6;
+import x6.b;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class LogUtils {
     public static f0 zza(long j10, int i10, String str, String str2, List<d0> list, f3 f3Var) {
@@ -96,9 +96,9 @@ public class LogUtils {
 
     private static String zzb(Context context) {
         try {
-            return b.a(context).c(0, context.getPackageName()).versionName;
+            return b.a(context).b(0, context.getPackageName()).versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            m6.a(e, "Unable to find calling package info for %s", context.getPackageName());
+            uf.a(e, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }

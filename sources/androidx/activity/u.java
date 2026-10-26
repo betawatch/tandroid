@@ -1,17 +1,35 @@
 package androidx.activity;
 
-import android.window.OnBackInvokedCallback;
+import androidx.fragment.app.z;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class u {
-    public static final u a = new u();
+public final class u implements c {
+    public final z a;
+    public final /* synthetic */ w b;
 
-    public final OnBackInvokedCallback a(td.l onBackStarted, td.l onBackProgressed, td.a onBackInvoked, td.a onBackCancelled) {
-        kotlin.jvm.internal.i.e(onBackStarted, "onBackStarted");
-        kotlin.jvm.internal.i.e(onBackProgressed, "onBackProgressed");
-        kotlin.jvm.internal.i.e(onBackInvoked, "onBackInvoked");
-        kotlin.jvm.internal.i.e(onBackCancelled, "onBackCancelled");
-        return new t(onBackStarted, onBackProgressed, onBackInvoked, onBackCancelled);
+    public u(w wVar, z onBackPressedCallback) {
+        kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
+        this.b = wVar;
+        this.a = onBackPressedCallback;
+    }
+
+    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.jvm.internal.h, ud.a] */
+    @Override // androidx.activity.c
+    public final void cancel() {
+        w wVar = this.b;
+        kd.e eVar = wVar.b;
+        z zVar = this.a;
+        eVar.remove(zVar);
+        if (kotlin.jvm.internal.i.a(wVar.c, zVar)) {
+            zVar.a();
+            wVar.c = null;
+        }
+        zVar.b.remove(this);
+        ?? r02 = zVar.c;
+        if (r02 != 0) {
+            r02.invoke();
+        }
+        zVar.c = null;
     }
 }

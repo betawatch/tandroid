@@ -1,17 +1,58 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class j4 extends h4 {
-    public final /* synthetic */ k4 n;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
 
-    public j4(k4 k4Var) {
-        this.n = k4Var;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class j4 implements t0 {
+    public final WeakReference a;
+    public final i4 b = new i4(this);
+
+    public j4(h4 h4Var) {
+        this.a = new WeakReference(h4Var);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.h4
-    public final String c() {
-        i4 i4Var = (i4) this.n.a.get();
-        return i4Var == null ? "Completer object has been garbage collected, future will fail soon" : a1.g.p("tag=[", String.valueOf(i4Var.a), "]");
+    @Override // com.google.android.gms.internal.play_billing.t0
+    public final void b(Runnable runnable, Executor executor) {
+        this.b.b(runnable, executor);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z10) {
+        h4 h4Var = (h4) this.a.get();
+        boolean cancel = this.b.cancel(z10);
+        if (!cancel || h4Var == null) {
+            return cancel;
+        }
+        h4Var.a = null;
+        h4Var.b = null;
+        h4Var.c.i(null);
+        return true;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.b.get();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.b.a instanceof j1;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.b.isDone();
+    }
+
+    public final String toString() {
+        return this.b.toString();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j10, TimeUnit timeUnit) {
+        return this.b.get(j10, timeUnit);
     }
 }

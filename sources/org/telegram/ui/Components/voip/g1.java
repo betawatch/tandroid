@@ -1,38 +1,109 @@
 package org.telegram.ui.Components.voip;
 
+import a8.ee;
+import android.animation.ValueAnimator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
-import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class g1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ h1 a;
+public final class g1 extends GestureDetector.SimpleOnGestureListener {
+    public float a;
+    public float b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ i1 d;
 
-    public g1(h1 h1Var) {
-        this.a = h1Var;
+    public g1(i1 i1Var, int i10) {
+        this.d = i1Var;
+        this.c = i10;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        h1 h1Var = this.a;
-        h1Var.x = true;
-        com.google.android.gms.internal.cast.p pVar = h1Var.Y;
-        if (pVar != null) {
-            pVar.run();
-            h1Var.Y = null;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        i1 i1Var = this.d;
+        if (i1Var.K) {
+            for (int i10 = 1; i10 < i1Var.e.getChildCount(); i10++) {
+                View childAt = i1Var.e.getChildAt(i10);
+                if (childAt.dispatchTouchEvent(motionEvent)) {
+                    i1Var.J = childAt;
+                    return true;
+                }
+            }
         }
-        AndroidUtilities.runOnUIThread(new ki.u(this, 16));
+        this.a = i1Var.Q;
+        this.b = i1Var.R;
+        return true;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
-        int i13 = (i12 / 90) % 2;
-        h1 h1Var = this.a;
-        if (i13 == 0) {
-            h1Var.U = Float.valueOf(i11 / i10);
-        } else {
-            h1Var.U = Float.valueOf(i10 / i11);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        i1 i1Var = this.d;
+        if (!i1Var.H || i1Var.I) {
+            return false;
         }
-        AndroidUtilities.runOnUIThread(new hg.n(this, i10, i11, 11));
+        o1.j jVar = i1Var.S;
+        jVar.a = f7;
+        float f11 = i1Var.Q;
+        jVar.b = f11;
+        jVar.c = true;
+        jVar.u.i = (f7 / 7.0f) + ((i1Var.M / 2.0f) + f11) >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r3 - r2) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        i1Var.S.h();
+        o1.j jVar2 = i1Var.T;
+        jVar2.a = f7;
+        jVar2.b = i1Var.R;
+        jVar2.c = true;
+        jVar2.u.i = ee.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - i1Var.N) - AndroidUtilities.dp(16.0f));
+        i1Var.T.h();
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        i1 i1Var = this.d;
+        if (!i1Var.H && i1Var.L == null && !i1Var.I) {
+            float abs = Math.abs(f7);
+            float f11 = this.c;
+            if (abs >= f11 || Math.abs(f10) >= f11) {
+                i1Var.H = true;
+                i1Var.S.c();
+                i1Var.T.c();
+            }
+        }
+        if (i1Var.H) {
+            WindowManager.LayoutParams layoutParams = i1Var.c;
+            float rawX = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
+            i1Var.Q = rawX;
+            layoutParams.x = (int) rawX;
+            WindowManager.LayoutParams layoutParams2 = i1Var.c;
+            float rawY = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
+            i1Var.R = rawY;
+            layoutParams2.y = (int) rawY;
+            AndroidUtilities.updateViewLayout(i1Var.b, i1Var.d, i1Var.c);
+        }
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        i1 i1Var = this.d;
+        ValueAnimator valueAnimator = i1Var.L;
+        k2.c cVar = i1Var.X;
+        if (valueAnimator == null) {
+            if (i1Var.W) {
+                AndroidUtilities.cancelRunOnUIThread(cVar);
+                i1Var.W = false;
+            }
+            boolean z10 = !i1Var.K;
+            i1Var.K = z10;
+            i1Var.o(z10);
+            if (i1Var.K && !i1Var.W) {
+                AndroidUtilities.runOnUIThread(cVar, 2500L);
+                i1Var.W = true;
+            }
+        }
+        return true;
     }
 }

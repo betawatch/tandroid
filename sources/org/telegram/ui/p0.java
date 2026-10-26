@@ -1,51 +1,10 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class p0 extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-
-    public /* synthetic */ p0(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-    }
-
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                ((f70) this.b).c((i4) this.c, (org.telegram.ui.Components.m11) this.d);
-                break;
-            default:
-                org.telegram.ui.ActionBar.c2 c2Var = ((org.telegram.ui.ActionBar.c2[]) this.b)[0];
-                if (c2Var != null) {
-                    c2Var.dismiss();
-                }
-                pf.d.r((Context) this.c, "https://t.me/" + ((String) this.d));
-                break;
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 1:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                break;
-        }
+public final class p0 extends org.telegram.ui.Components.ex0 {
+    @Override // s4.d0
+    public final int p() {
+        return -1;
     }
 }

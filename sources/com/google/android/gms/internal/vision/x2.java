@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class x2 {
     public static final Unsafe a;
@@ -19,13 +19,13 @@ public abstract class x2 {
     public static final long f;
     public static final boolean g;
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0294  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x02a9  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0136 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0066 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0295  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x02a7  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x02aa  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0137 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0067 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
     static {
         w2 w2Var;
         Class<?> cls;
@@ -36,31 +36,30 @@ public abstract class x2 {
         boolean z11;
         boolean z12;
         Class<?> cls4;
-        Class<?>[] clsArr;
         Field m10;
         w2 w2Var2;
-        Unsafe g10 = g();
-        a = g10;
+        Unsafe g7 = g();
+        a = g7;
         b = m0.a;
         Class<?> cls5 = Long.TYPE;
         boolean k10 = k(cls5);
         Class<?> cls6 = Integer.TYPE;
         boolean k11 = k(cls6);
-        if (g10 != null) {
+        if (g7 != null) {
             if (!m0.a()) {
-                w2Var = new v2(g10);
+                w2Var = new v2(g7);
             } else if (k10) {
-                w2Var = new u2(g10, 1);
+                w2Var = new u2(g7, 1);
             } else if (k11) {
-                w2Var = new u2(g10, 0);
+                w2Var = new u2(g7, 0);
             }
             c = w2Var;
             Class<?> cls7 = Byte.TYPE;
-            if (g10 != null) {
+            if (g7 != null) {
                 cls = cls5;
             } else {
                 try {
-                    cls3 = g10.getClass();
+                    cls3 = g7.getClass();
                     cls = cls5;
                     try {
                         cls3.getMethod("objectFieldOffset", Field.class);
@@ -134,58 +133,58 @@ public abstract class x2 {
                                 cls4.getMethod("getInt", Object.class, cls);
                                 cls4.getMethod("putInt", Object.class, cls, cls2);
                                 cls4.getMethod("getLong", Object.class, cls);
-                                Class<?>[] clsArr2 = new Class[3];
-                                clsArr2[0] = Object.class;
-                                clsArr2[1] = cls;
-                                clsArr2[2] = cls;
-                                cls4.getMethod("putLong", clsArr2);
-                                clsArr = new Class[2];
+                                Class<?>[] clsArr = new Class[3];
                                 clsArr[0] = Object.class;
+                                clsArr[1] = cls;
+                                clsArr[2] = cls;
+                                cls4.getMethod("putLong", clsArr);
+                                Class<?>[] clsArr2 = new Class[2];
+                                clsArr2[0] = Object.class;
                                 z11 = true;
-                            } catch (Throwable th4) {
-                                th = th4;
+                                try {
+                                    clsArr2[1] = cls;
+                                    cls4.getMethod("getObject", clsArr2);
+                                    Class<?>[] clsArr3 = new Class[3];
+                                    clsArr3[0] = Object.class;
+                                    clsArr3[1] = cls;
+                                    clsArr3[2] = Object.class;
+                                    cls4.getMethod("putObject", clsArr3);
+                                } catch (Throwable th4) {
+                                    th = th4;
+                                    Logger logger2 = Logger.getLogger(x2.class.getName());
+                                    Level level2 = Level.WARNING;
+                                    String valueOf2 = String.valueOf(th);
+                                    StringBuilder sb3 = new StringBuilder(valueOf2.length() + 71);
+                                    sb3.append("platform method missing - proto runtime falling back to safer methods: ");
+                                    sb3.append(valueOf2);
+                                    logger2.logp(level2, "com.google.protobuf.UnsafeUtil", "supportsUnsafeArrayOperations", sb3.toString());
+                                    z12 = false;
+                                    e = z12;
+                                    f = f(byte[].class);
+                                    f(boolean[].class);
+                                    h(boolean[].class);
+                                    f(int[].class);
+                                    h(int[].class);
+                                    f(long[].class);
+                                    h(long[].class);
+                                    f(float[].class);
+                                    h(float[].class);
+                                    f(double[].class);
+                                    h(double[].class);
+                                    f(Object[].class);
+                                    h(Object[].class);
+                                    m10 = m();
+                                    if (m10 != null) {
+                                    }
+                                    g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+                                }
+                            } catch (Throwable th5) {
+                                th = th5;
                                 z11 = true;
                             }
-                        } catch (Throwable th5) {
-                            th = th5;
-                            z11 = true;
-                        }
-                        try {
-                            clsArr[1] = cls;
-                            cls4.getMethod("getObject", clsArr);
-                            Class<?>[] clsArr3 = new Class[3];
-                            clsArr3[0] = Object.class;
-                            clsArr3[1] = cls;
-                            clsArr3[2] = Object.class;
-                            cls4.getMethod("putObject", clsArr3);
                         } catch (Throwable th6) {
                             th = th6;
-                            Logger logger2 = Logger.getLogger(x2.class.getName());
-                            Level level2 = Level.WARNING;
-                            String valueOf2 = String.valueOf(th);
-                            StringBuilder sb3 = new StringBuilder(valueOf2.length() + 71);
-                            sb3.append("platform method missing - proto runtime falling back to safer methods: ");
-                            sb3.append(valueOf2);
-                            logger2.logp(level2, "com.google.protobuf.UnsafeUtil", "supportsUnsafeArrayOperations", sb3.toString());
-                            z12 = false;
-                            e = z12;
-                            f = f(byte[].class);
-                            f(boolean[].class);
-                            h(boolean[].class);
-                            f(int[].class);
-                            h(int[].class);
-                            f(long[].class);
-                            h(long[].class);
-                            f(float[].class);
-                            h(float[].class);
-                            f(double[].class);
-                            h(double[].class);
-                            f(Object[].class);
-                            h(Object[].class);
-                            m10 = m();
-                            if (m10 != null) {
-                            }
-                            g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+                            z11 = true;
                         }
                         if (!m0.a()) {
                             Class<?>[] clsArr4 = new Class[2];
@@ -295,7 +294,7 @@ public abstract class x2 {
         w2Var = null;
         c = w2Var;
         Class<?> cls72 = Byte.TYPE;
-        if (g10 != null) {
+        if (g7 != null) {
         }
         cls2 = cls6;
         z10 = false;
@@ -331,8 +330,8 @@ public abstract class x2 {
     public static Object b(Class cls) {
         try {
             return a.allocateInstance(cls);
-        } catch (InstantiationException e7) {
-            throw new IllegalStateException(e7);
+        } catch (InstantiationException e10) {
+            throw new IllegalStateException(e10);
         }
     }
 

@@ -1,33 +1,35 @@
 package androidx.mediarouter.app;
 
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
+import a8.p1;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
+import s4.e1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h0 extends f0 {
-    public final int A;
-    public final /* synthetic */ l0 B;
-    public final TextView z;
+public final class h0 extends e1 {
+    public p4.v A;
+    public final /* synthetic */ m0 B;
+    public final View v;
+    public final ImageView w;
+    public final ProgressBar x;
+    public final TextView y;
+    public final float z;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public h0(l0 l0Var, View view) {
-        super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
-        this.B = l0Var;
-        n0 n0Var = l0Var.w;
-        this.z = (TextView) view.findViewById(R.id.mr_group_volume_route_name);
-        Resources resources = n0Var.y.getResources();
-        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        TypedValue typedValue = new TypedValue();
-        resources.getValue(R.dimen.mr_dynamic_volume_group_list_item_height, typedValue, true);
-        this.A = (int) typedValue.getDimension(displayMetrics);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(m0 m0Var, View view) {
+        super(view);
+        this.B = m0Var;
+        this.v = view;
+        this.w = (ImageView) view.findViewById(R.id.mr_cast_group_icon);
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_cast_group_progress_bar);
+        this.x = progressBar;
+        this.y = (TextView) view.findViewById(R.id.mr_cast_group_name);
+        o0 o0Var = m0Var.w;
+        this.z = p1.c(o0Var.y);
+        p1.i(o0Var.y, progressBar);
     }
 }

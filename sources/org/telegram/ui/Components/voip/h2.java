@@ -1,27 +1,69 @@
 package org.telegram.ui.Components.voip;
 
-import org.webrtc.RendererCommon;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class h2 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ k2 a;
+public final class h2 extends FrameLayout {
+    public String a;
+    public final ImageView b;
+    public final TextView c;
+    public boolean d;
+    public final r1 e;
+    public final RectF f;
 
-    public h2(k2 k2Var) {
-        this.a = k2Var;
+    public h2(Context context, r1 r1Var, int i10) {
+        super(context);
+        this.f = new RectF();
+        setFocusable(true);
+        setFocusableInTouchMode(true);
+        this.e = r1Var;
+        r1Var.a(this);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        addView(imageView, gb1.h(24, 24.0f, 16, 8.0f, 2.0f, 8.0f, 2.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 14.0f);
+        addView(textView, gb1.h(-2, -2.0f, 16, i10 != 0 ? 36.0f : 14.0f, 2.0f, 14.0f, 2.0f));
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        k2 k2Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = k2Var.S;
-        if (pVar != null) {
-            pVar.run();
-            k2Var.S = null;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.f;
+        rectF.set(0.0f, 0.0f, width, height);
+        float x9 = ((View) getParent()).getX() + getX();
+        float y3 = ((View) getParent()).getY() + getY();
+        r1 r1Var = this.e;
+        r1Var.d(x9, y3);
+        Paint paint = r1Var.l;
+        int alpha = (this.d ? paint : r1Var.b()).getAlpha();
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
+        (this.d ? paint : r1Var.b()).setAlpha(255);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.d ? paint : r1Var.b());
+        if (!this.d) {
+            paint = r1Var.b();
         }
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+        paint.setAlpha(alpha);
+        if (r1Var.e) {
+            int alpha2 = ((Paint) r1Var.d.a).getAlpha();
+            ((Paint) r1Var.d.a).setAlpha(255);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), (Paint) r1Var.d.a);
+            ((Paint) r1Var.d.a).setAlpha(alpha2);
+        }
+        canvas.restore();
+        super.dispatchDraw(canvas);
     }
 }

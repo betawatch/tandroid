@@ -6,18 +6,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ TLRPC.User b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 c;
     public final /* synthetic */ AlertDialog$Builder d;
 
-    public /* synthetic */ t0(TLRPC.User user, org.telegram.ui.ActionBar.o2 o2Var, AlertDialog$Builder alertDialog$Builder, int i10) {
+    public /* synthetic */ t0(TLRPC.User user, org.telegram.ui.ActionBar.r2 r2Var, AlertDialog$Builder alertDialog$Builder, int i10) {
         this.a = i10;
         this.b = user;
-        this.c = o2Var;
+        this.c = r2Var;
         this.d = alertDialog$Builder;
     }
 
@@ -27,18 +27,18 @@ public final /* synthetic */ class t0 implements View.OnClickListener {
             case 0:
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", this.b.id);
-                org.telegram.ui.ActionBar.o2 o2Var = this.c;
-                if (o2Var.getMessagesController().checkCanOpenChat(bundle, o2Var)) {
-                    o2Var.presentFragment(new ProfileActivity(bundle, null));
+                org.telegram.ui.ActionBar.r2 r2Var = this.c;
+                if (r2Var.getMessagesController().checkCanOpenChat(bundle, r2Var)) {
+                    r2Var.presentFragment(new ProfileActivity(bundle, null));
                 }
                 this.d.a.N0.run();
                 break;
             default:
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", this.b.id);
-                org.telegram.ui.ActionBar.o2 o2Var2 = this.c;
-                if (o2Var2.getMessagesController().checkCanOpenChat(bundle2, o2Var2)) {
-                    o2Var2.presentFragment(new ProfileActivity(bundle2, null));
+                org.telegram.ui.ActionBar.r2 r2Var2 = this.c;
+                if (r2Var2.getMessagesController().checkCanOpenChat(bundle2, r2Var2)) {
+                    r2Var2.presentFragment(new ProfileActivity(bundle2, null));
                 }
                 this.d.a.N0.run();
                 break;

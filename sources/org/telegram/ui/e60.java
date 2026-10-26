@@ -1,47 +1,280 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e60 implements org.telegram.ui.Components.l20, org.telegram.ui.ActionBar.z1, r0.n {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p60 b;
+public final class e60 extends bd {
+    public float A0;
+    public boolean B0;
+    public uc z0;
 
-    public /* synthetic */ e60(p60 p60Var, int i10) {
-        this.a = i10;
-        this.b = p60Var;
+    public e60(long j10) {
+        super(j10);
+        this.d = true;
     }
 
-    @Override // r0.n
-    public r0.k1 B0(View view, r0.k1 k1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(k1Var, false).d;
-        p60 p60Var = this.b;
-        p60Var.m0 = i10;
-        ai.w1 w1Var = p60Var.F;
-        if (w1Var != null) {
-            w1Var.setPadding(0, 0, 0, i10);
+    public static void h1(e60 e60Var, int i10, ChannelBoostsController.CanApplyBoost canApplyBoost) {
+        if (canApplyBoost == null || e60Var.getParentActivity() == null) {
+            e60Var.B0 = false;
+            return;
         }
-        p60Var.j0();
-        p60Var.h0();
-        return r0.k1.b;
+        d60 d60Var = new d60(e60Var, e60Var, e60Var.getParentActivity(), i10, e60Var.currentAccount, e60Var.resourceProvider);
+        d60Var.K1(canApplyBoost);
+        d60Var.J1(e60Var.c, true);
+        d60Var.L1(e60Var.a);
+        d60Var.show();
     }
 
-    @Override // org.telegram.ui.Components.l20
-    public void a(int i10) {
-        this.b.b.a(Math.min(i10, r0.c0));
+    @Override // org.telegram.ui.bd
+    public final void A0() {
+        k10 k10Var = new k10(this, getParentActivity(), this.resourceProvider, 1);
+        this.M = k10Var;
+        k10Var.setOnScrollListener(new i3(this, 13));
+        this.M.setSections(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                this.b.o0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
+    @Override // org.telegram.ui.bd
+    public final int C0() {
+        return getMessagesController().groupCustomWallpaperLevelMin;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int D0() {
+        return R.string.GroupEmojiPackInfo;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int E0() {
+        return R.string.GroupEmojiPack;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int H0() {
+        return R.string.GroupEmojiStatusInfo;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int I0() {
+        return getMessagesController().groupEmojiStatusLevelMin;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int J0() {
+        return R.string.GroupEmojiStatus;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int K0() {
+        return getMessagesController().groupEmojiStickersLevelMin;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int L0() {
+        return 4;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int M0() {
+        return getMessagesController().groupProfileBgIconLevelMin;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int N0() {
+        return R.string.GroupProfileInfo;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int O0() {
+        return R.string.GroupStickerPackInfo;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int P0() {
+        return R.string.GroupStickerPack;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int Q0() {
+        return R.string.GroupWallpaper2Info;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int R0() {
+        return getMessagesController().groupWallpaperLevelMin;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final int S0() {
+        return R.string.GroupWallpaper;
+    }
+
+    @Override // org.telegram.ui.bd
+    public final boolean U0() {
+        return ChatObject.isForum(getMessagesController().getChat(Long.valueOf(-this.a)));
+    }
+
+    @Override // org.telegram.ui.bd
+    public final void W0(int i10) {
+        if (this.c == null || this.B0) {
+            return;
+        }
+        this.B0 = true;
+        MessagesController.getInstance(this.currentAccount).getBoostsController().userCanBoostChannel(this.a, this.c, new fi.c4(this, i10, 5));
+    }
+
+    @Override // org.telegram.ui.bd
+    public final void a1(boolean z10) {
+        super.a1(z10);
+        uc ucVar = this.z0;
+        if (ucVar != null) {
+            TextView textView = ucVar.d;
+            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.c;
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGroupBoostCount", tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, new Object[0])));
+        }
+    }
+
+    @Override // org.telegram.ui.bd
+    public final void c1(boolean z10) {
+        super.c1(z10);
+        this.actionBar.setBackgroundColor(0);
+        org.telegram.ui.Components.ar arVar = new org.telegram.ui.Components.ar(new ColorDrawable(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.d6, this.resourceProvider)), org.telegram.ui.ActionBar.y6.X0(getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.y6.b7), 0, 0);
+        arVar.w = true;
+        this.O.setBackground(arVar);
+        this.M.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.y6.a7));
+        uc ucVar = this.z0;
+        if (ucVar == null || z10) {
+            return;
+        }
+        ucVar.a.b(this.currentAccount, this.s, false);
+        this.z0.b.b(this.s, false);
+        this.z0.updateColors();
+    }
+
+    @Override // org.telegram.ui.bd, org.telegram.ui.ActionBar.r2
+    public final View createView(Context context) {
+        View createView = super.createView(context);
+        c1(false);
+        this.actionBar.setAddToContainer(false);
+        this.actionBar.setTitle("");
+        ((ViewGroup) createView).addView(this.actionBar);
+        createView.getViewTreeObserver().addOnGlobalLayoutListener(new c60(this, (FrameLayout) createView));
+        return createView;
+    }
+
+    @Override // org.telegram.ui.bd, org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        super.didReceivedNotification(i10, i11, objArr);
+        if (i10 == NotificationCenter.chatInfoDidLoad && ((TLRPC.ChatFull) objArr[0]).id == (-this.a)) {
+            e1();
+        }
+    }
+
+    @Override // org.telegram.ui.bd
+    public final void f1() {
+        oc ocVar;
+        oc ocVar2;
+        this.Z = 0;
+        int i10 = 1 + 1;
+        this.a0 = 1;
+        this.b0 = i10;
+        int i11 = i10 + 2;
+        this.R = i11;
+        this.c0 = i10 + 1;
+        if (this.w != 0 || this.s >= 0) {
+            boolean z10 = this.e0 >= 0;
+            this.R = i10 + 3;
+            this.e0 = i11;
+            if (!z10 && (ocVar = this.N) != null) {
+                ocVar.o(i11);
+                this.N.m(this.c0);
+                this.M.v0(0);
+            }
+        } else {
+            int i12 = this.e0;
+            this.e0 = -1;
+            if (i12 >= 0 && (ocVar2 = this.N) != null) {
+                ocVar2.u(i12);
+                this.N.m(this.c0);
+            }
+        }
+        int i13 = this.R;
+        this.d0 = i13;
+        this.h0 = i13 + 1;
+        this.i0 = i13 + 2;
+        this.f0 = i13 + 3;
+        this.R = i13 + 5;
+        this.g0 = i13 + 4;
+        TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-this.a);
+        if (chatFull == null || !chatFull.can_set_stickers) {
+            this.j0 = -1;
+            this.k0 = -1;
+        } else {
+            int i14 = this.R;
+            this.j0 = i14;
+            this.R = i14 + 2;
+            this.k0 = i14 + 1;
+        }
+        int i15 = this.R;
+        this.S = i15;
+        this.W = i15 + 1;
+        this.X = i15 + 2;
+        this.R = i15 + 4;
+        this.Y = i15 + 3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        uc ucVar = this.z0;
+        if (ucVar != null) {
+            ucVar.a();
+        }
+    }
+
+    @Override // org.telegram.ui.bd, org.telegram.ui.ActionBar.r2
+    public final boolean onFragmentCreate() {
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.chatInfoDidLoad);
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.bd, org.telegram.ui.ActionBar.r2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.chatInfoDidLoad);
+    }
+
+    @Override // org.telegram.ui.bd
+    public final void y0() {
+        x0();
+        org.telegram.ui.Components.mm0 mm0Var = this.M;
+        if (mm0Var != null) {
+            mm0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.y6.a7));
+        }
+        FrameLayout frameLayout = this.O;
+        if (frameLayout == null || !(frameLayout.getBackground() instanceof org.telegram.ui.Components.ar)) {
+            return;
+        }
+        Drawable drawable = ((org.telegram.ui.Components.ar) this.O.getBackground()).a;
+        if (drawable instanceof ColorDrawable) {
+            ((ColorDrawable) drawable).setColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.d6, this.resourceProvider));
+            this.O.invalidate();
         }
     }
 }

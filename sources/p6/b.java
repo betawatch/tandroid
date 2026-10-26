@@ -1,24 +1,9 @@
 package p6;
 
-import a8.d;
-import com.google.android.gms.common.api.e;
-import com.google.android.gms.common.api.internal.u;
-import com.google.android.gms.common.api.internal.v;
-import com.google.android.gms.common.api.j;
-import com.google.android.gms.tasks.Task;
-import ki.t1;
-import n6.o;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends j {
-    public static final e k = new e("ClientTelemetry.API", new d(11), new com.google.android.gms.common.api.d());
-
-    public final Task f(o oVar) {
-        u b10 = v.b();
-        b10.d = new k6.c[]{k7.b.a};
-        b10.b = false;
-        b10.c = new t1(oVar, 21);
-        return e(2, b10.a());
-    }
+public interface b extends Parcelable {
+    public static final String NULL = "SAFE_PARCELABLE_NULL_STRING";
 }

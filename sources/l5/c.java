@@ -1,19 +1,13 @@
 package l5;
 
-import i2.o1;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c implements ja.d {
+public final class c implements ka.d {
     public static final c a = new c();
-    public static final ja.c b = new ja.c("eventsDroppedCount", o1.p(o1.o(ma.e.class, new ma.a(1))));
-    public static final ja.c c = new ja.c("reason", o1.p(o1.o(ma.e.class, new ma.a(3))));
+    public static final ka.c b = ka.c.c("logRequest");
 
-    @Override // ja.a
+    @Override // ka.a
     public final void a(Object obj, Object obj2) {
-        o5.d dVar = (o5.d) obj;
-        ja.e eVar = (ja.e) obj2;
-        eVar.f(b, dVar.a);
-        eVar.d(c, dVar.b);
+        ((ka.e) obj2).a(b, ((i) ((o) obj)).a);
     }
 }

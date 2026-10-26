@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class me extends FrameLayout {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -49,7 +49,7 @@ public final class me extends FrameLayout {
             Float f7 = (Float) chatActivityEnterView.B0.get(childAt);
             if (f7 != null) {
                 childAt.setTranslationX(f7.floatValue() - childAt.getLeft());
-                childAt.animate().translationX(0.0f).setDuration(150L).setInterpolator(bs.f).start();
+                childAt.animate().translationX(0.0f).setDuration(150L).setInterpolator(ds.f).start();
             }
         }
         chatActivityEnterView.B0.clear();
@@ -60,8 +60,8 @@ public final class me extends FrameLayout {
         super.onMeasure(i10, i11);
         int max = Math.max(AndroidUtilities.dp(44.0f), getMeasuredHeight());
         ChatActivityEnterView chatActivityEnterView = this.a;
-        ne.e eVar = chatActivityEnterView.j5;
-        if (eVar.e > 0.0f) {
+        oe.e eVar = chatActivityEnterView.j5;
+        if (eVar.f > 0.0f) {
             eVar.a(max);
         } else {
             eVar.c(max);

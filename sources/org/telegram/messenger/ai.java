@@ -1,32 +1,33 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ai implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ SavedMessagesController b;
 
-    public /* synthetic */ ai(SecretChatHelper secretChatHelper, long j10, int i10) {
+    public /* synthetic */ ai(SavedMessagesController savedMessagesController, int i10) {
         this.a = i10;
-        this.b = secretChatHelper;
-        this.c = j10;
+        this.b = savedMessagesController;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processDecryptedObject$12(this.c);
+                this.b.update();
                 break;
             case 1:
-                this.b.lambda$processDecryptedObject$10(this.c);
+                this.b.saveCache();
                 break;
             case 2:
-                this.b.lambda$processDecryptedObject$11(this.c);
+                this.b.lambda$deleteCache$12();
+                break;
+            case 3:
+                this.b.lambda$saveCache$10();
                 break;
             default:
-                this.b.lambda$processUpdateEncryption$3(this.c);
+                this.b.lambda$loadDialogs$1();
                 break;
         }
     }

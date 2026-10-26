@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 1;
@@ -17,9 +17,9 @@ public final /* synthetic */ class b1 implements Utilities.Callback2 {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ b1(e2 e2Var, w wVar, i0 i0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, z1 z1Var) {
+    public /* synthetic */ b1(e2 e2Var, s sVar, i0 i0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, z1 z1Var) {
         this.b = e2Var;
-        this.f = wVar;
+        this.f = sVar;
         this.g = i0Var;
         this.c = tonconnectsession;
         this.d = str;
@@ -33,7 +33,7 @@ public final /* synthetic */ class b1 implements Utilities.Callback2 {
         e2 e2Var = this.b;
         switch (i10) {
             case 0:
-                w wVar = (w) this.f;
+                s sVar = (s) this.f;
                 i0 i0Var = (i0) this.g;
                 TL_wallet.tonConnectSession tonconnectsession = this.c;
                 String str = this.d;
@@ -43,10 +43,10 @@ public final /* synthetic */ class b1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 e2Var.getClass();
                 if (tL_error == null && tonconnectchallenge != null) {
-                    Utilities.globalQueue.postRunnable(new ai.m8(e2Var, i0Var, tonconnectsession, str, bArr, z1Var, tonconnectchallenge, wVar, 6));
+                    Utilities.globalQueue.postRunnable(new bi.i8(e2Var, i0Var, tonconnectsession, str, bArr, z1Var, tonconnectchallenge, sVar, 6));
                     break;
                 } else {
-                    wVar.run(e2.x(tL_error, "registerKey"));
+                    sVar.run(e2.x(tL_error, "registerKey"));
                     break;
                 }
             default:
@@ -61,7 +61,7 @@ public final /* synthetic */ class b1 implements Utilities.Callback2 {
                 e2Var.getClass();
                 if (str3 == null && i0Var2 != null) {
                     i0 b10 = i0Var2.b();
-                    Utilities.globalQueue.postRunnable(new ai.m8(e2Var, b10, tonconnectsession2, str2, bArr2, jSONArray, tL_urlAuthResultRequest, new r1(1, b10, r1Var), 7));
+                    Utilities.globalQueue.postRunnable(new bi.i8(e2Var, b10, tonconnectsession2, str2, bArr2, jSONArray, tL_urlAuthResultRequest, new r1(1, b10, r1Var), 7));
                     break;
                 } else {
                     if (str3 == null) {

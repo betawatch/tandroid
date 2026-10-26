@@ -1,28 +1,8 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ng0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ og0 b;
-
-    public /* synthetic */ ng0(og0 og0Var, int i10) {
-        this.a = i10;
-        this.b = og0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.a.n.setVisibility(8);
-                break;
-            default:
-                this.b.a.h.setVisibility(8);
-                break;
-        }
-    }
+public final class ng0 extends FrameLayout {
 }

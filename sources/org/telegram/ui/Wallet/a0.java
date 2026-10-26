@@ -3,19 +3,19 @@ package org.telegram.ui.Wallet;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.f80;
+import org.telegram.ui.wb0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class a0 implements Runnable, NotificationCenter.NotificationCenterDelegate {
     public boolean a;
     public final /* synthetic */ NotificationCenter b;
-    public final /* synthetic */ f80 c;
+    public final /* synthetic */ wb0 c;
     public final /* synthetic */ l0 d;
 
-    public a0(NotificationCenter notificationCenter, f80 f80Var, l0 l0Var) {
+    public a0(NotificationCenter notificationCenter, wb0 wb0Var, l0 l0Var) {
         this.b = notificationCenter;
-        this.c = f80Var;
+        this.c = wb0Var;
         this.d = l0Var;
     }
 

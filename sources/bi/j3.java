@@ -1,0 +1,194 @@
+package bi;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.iz0;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j3 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Utilities.Callback d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+
+    public /* synthetic */ j3(long j10, long j11, h7 h7Var, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.e = h7Var;
+        this.d = callback;
+        this.f = tL_error;
+        this.h = tLObject;
+        this.b = j10;
+        this.c = j11;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00cd A[Catch: all -> 0x00ad, TryCatch #7 {all -> 0x00ad, blocks: (B:29:0x006c, B:30:0x0082, B:45:0x00ac, B:49:0x00c6, B:51:0x00cd, B:78:0x00b9, B:81:0x00bc, B:82:0x00c5), top: B:4:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00e7 A[LOOP:1: B:55:0x00e1->B:57:0x00e7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0114 A[LOOP:2: B:65:0x010e->B:67:0x0114, LOOP_END] */
+    /* JADX WARN: Type inference failed for: r10v0, types: [long] */
+    /* JADX WARN: Type inference failed for: r10v1 */
+    /* JADX WARN: Type inference failed for: r10v2 */
+    /* JADX WARN: Type inference failed for: r10v3, types: [java.util.LinkedHashMap] */
+    /* JADX WARN: Type inference failed for: r10v4 */
+    /* JADX WARN: Type inference failed for: r10v5, types: [java.util.LinkedHashMap] */
+    /* JADX WARN: Type inference failed for: r10v6 */
+    /* JADX WARN: Type inference failed for: r10v9, types: [java.util.LinkedHashMap, java.util.Map] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [org.telegram.ui.Wallet.p0] */
+    /* JADX WARN: Type inference failed for: r4v1, types: [java.util.LinkedHashMap] */
+    /* JADX WARN: Type inference failed for: r4v2, types: [org.telegram.ui.Wallet.i0] */
+    /* JADX WARN: Type inference failed for: r4v3 */
+    /* JADX WARN: Type inference failed for: r4v4, types: [org.telegram.ui.Wallet.i0] */
+    /* JADX WARN: Type inference failed for: r4v5 */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        Iterator it;
+        String message;
+        Iterator it2;
+        iz0 r6;
+        switch (this.a) {
+            case 0:
+                h7.y0(this.b, this.c, (h7) this.e, this.d, (TLObject) this.h, (TLRPC.TL_error) this.f);
+                return;
+            default:
+                ?? r12 = (org.telegram.ui.Wallet.p0) this.e;
+                String str = (String) this.f;
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) this.h;
+                long j10 = this.b;
+                long j11 = this.c;
+                Utilities.Callback callback = this.d;
+                ?? r10 = j11;
+                ArrayList arrayList = new ArrayList();
+                ?? linkedHashMap = new LinkedHashMap();
+                try {
+                    try {
+                        try {
+                        } catch (Exception e) {
+                            e = e;
+                            FileLog.e(e);
+                            message = !(e instanceof org.telegram.ui.Wallet.o0) ? e.getMessage() : "STORAGE_BROKEN";
+                            if (linkedHashMap != 0) {
+                                linkedHashMap.close();
+                            }
+                            it2 = r10.values().iterator();
+                            while (it2.hasNext()) {
+                                ((org.telegram.ui.Wallet.i0) it2.next()).close();
+                            }
+                            r12.e(arrayList);
+                            AndroidUtilities.runOnUIThread(new y2((org.telegram.ui.Wallet.p0) r12, callback, j10, message));
+                            return;
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
+                        if (linkedHashMap != 0) {
+                            linkedHashMap.close();
+                        }
+                        it = r10.values().iterator();
+                        while (it.hasNext()) {
+                            ((org.telegram.ui.Wallet.i0) it.next()).close();
+                        }
+                        r12.e(arrayList);
+                        throw th;
+                    }
+                } catch (Exception e10) {
+                    e = e10;
+                    r10 = linkedHashMap;
+                } catch (Throwable th3) {
+                    th = th3;
+                    r10 = linkedHashMap;
+                }
+                if (str.isEmpty() || i0Var == null || i0Var.e()) {
+                    throw new org.telegram.ui.Wallet.o0("INVALID_ARGUMENT");
+                }
+                Object obj = org.telegram.ui.Wallet.p0.f;
+                synchronized (obj) {
+                    try {
+                        r12.c(j10);
+                        r6 = r12.r();
+                    } catch (Throwable th4) {
+                        th = th4;
+                        while (true) {
+                            try {
+                                throw th;
+                            } catch (Throwable th5) {
+                                th = th5;
+                            }
+                        }
+                    }
+                }
+                if (!((LinkedHashMap) r6.e).isEmpty() && r6.a != r10) {
+                    throw new org.telegram.ui.Wallet.o0("USER_MISMATCH");
+                }
+                r6.a = r10;
+                r12.s(r6, str, linkedHashMap, arrayList, j10);
+                r10 = linkedHashMap;
+                try {
+                    ((LinkedHashMap) r6.e).put(str, r12.j(r6, str, i0Var, arrayList, j10));
+                    r10.put(str, i0Var);
+                    r6.b = ConnectionsManager.getInstance(r12.b).getCurrentTime();
+                    synchronized (obj) {
+                        r12.c(j10);
+                        r12.v(r6, r10);
+                        r12.d(r6);
+                    }
+                    i0Var.close();
+                    Iterator it3 = r10.values().iterator();
+                    while (it3.hasNext()) {
+                        ((org.telegram.ui.Wallet.i0) it3.next()).close();
+                    }
+                    message = null;
+                } catch (Exception e11) {
+                    e = e11;
+                    linkedHashMap = i0Var;
+                    FileLog.e(e);
+                    if (!(e instanceof org.telegram.ui.Wallet.o0)) {
+                    }
+                    if (linkedHashMap != 0) {
+                    }
+                    it2 = r10.values().iterator();
+                    while (it2.hasNext()) {
+                    }
+                    r12.e(arrayList);
+                    AndroidUtilities.runOnUIThread(new y2((org.telegram.ui.Wallet.p0) r12, callback, j10, message));
+                    return;
+                } catch (Throwable th6) {
+                    th = th6;
+                    linkedHashMap = i0Var;
+                    if (linkedHashMap != 0) {
+                    }
+                    it = r10.values().iterator();
+                    while (it.hasNext()) {
+                    }
+                    r12.e(arrayList);
+                    throw th;
+                }
+                r12.e(arrayList);
+                AndroidUtilities.runOnUIThread(new y2((org.telegram.ui.Wallet.p0) r12, callback, j10, message));
+                return;
+        }
+    }
+
+    public /* synthetic */ j3(org.telegram.ui.Wallet.p0 p0Var, String str, org.telegram.ui.Wallet.i0 i0Var, long j10, long j11, Utilities.Callback callback) {
+        this.e = p0Var;
+        this.f = str;
+        this.h = i0Var;
+        this.b = j10;
+        this.c = j11;
+        this.d = callback;
+    }
+}

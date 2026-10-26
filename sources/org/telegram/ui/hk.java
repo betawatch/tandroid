@@ -1,55 +1,243 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class hk extends org.telegram.ui.Components.od {
-    public final /* synthetic */ sn d;
+public final class hk extends ChatActivityEnterView {
+    public int s5;
+    public int t5;
+    public int u5;
+    public final /* synthetic */ un v5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hk(sn snVar, Context context) {
-        super(context);
-        this.d = snVar;
+    public hk(un unVar, Activity activity, org.telegram.ui.Components.vw0 vw0Var, un unVar2, boolean z10, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(activity, vw0Var, unVar2, z10, u6Var);
+        this.v5 = unVar;
     }
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        sn snVar = this.d;
-        gk gkVar = snVar.Y;
-        if (gkVar != null) {
-            gkVar.invalidate();
-        }
-        if (getVisibility() != 8) {
-            snVar.m9(true);
-            FrameLayout frameLayout = snVar.P;
-            if (frameLayout != null) {
-                frameLayout.setTranslationY(f7);
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void A0(int i10, int i11) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        un unVar = this.v5;
+        if (unVar.Y != null) {
+            if (unVar.x0 != null) {
+                if (unVar.Qa > 0.0f) {
+                    return;
+                }
+                kVar = ((org.telegram.ui.ActionBar.r2) unVar).actionBar;
+                if (kVar != null) {
+                    kVar2 = ((org.telegram.ui.ActionBar.r2) unVar).actionBar;
+                    if (kVar2.q()) {
+                        return;
+                    }
+                }
             }
-            snVar.t9();
-            snVar.w9();
-            View view = snVar.fragmentView;
-            if (view != null) {
-                view.invalidate();
-            }
+            this.n3 = true;
+            this.t5 = this.E0.getMeasuredHeight();
+            this.u5 = this.E0.getScrollY();
+            unVar.j1.invalidate();
+            unVar.b0 = unVar.Y.getBackgroundTop();
         }
     }
 
-    @Override // android.view.View
-    public final void setVisibility(int i10) {
-        FrameLayout frameLayout;
-        super.setVisibility(i10);
-        if (i10 != 8 || (frameLayout = this.d.P) == null) {
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void F0() {
+        if (this.v5.Ra != null) {
             return;
         }
-        frameLayout.setTranslationY(0.0f);
+        super.F0();
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final boolean L0() {
+        return this.v5.Z5;
+    }
+
+    public final void Q1() {
+        org.telegram.ui.ActionBar.k kVar;
+        un unVar = this.v5;
+        kVar = ((org.telegram.ui.ActionBar.r2) unVar).actionBar;
+        final int i10 = 0;
+        if (kVar.q() || unVar.J9()) {
+            ValueAnimator valueAnimator = unVar.C9;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            ValueAnimator valueAnimator2 = unVar.B9;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+            }
+            unVar.b0 = 0;
+            this.n3 = false;
+            return;
+        }
+        int backgroundTop = getBackgroundTop();
+        int i11 = unVar.b0;
+        final int i12 = 1;
+        if (i11 != 0 && backgroundTop != i11 && this.s5 == unVar.j1.getMeasuredHeight()) {
+            int i13 = (this.T1 + unVar.b0) - backgroundTop;
+            setAnimatedTop(i13);
+            this.y1.invalidate();
+            ValueAnimator valueAnimator3 = unVar.B9;
+            if (valueAnimator3 != null) {
+                valueAnimator3.removeAllListeners();
+                unVar.B9.cancel();
+            }
+            View view = this.G1;
+            if (view != null && view.getVisibility() == 0) {
+                this.G1.setTranslationY(((1.0f - getTopViewEnterProgress()) * this.G1.getLayoutParams().height) + this.T1);
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(i13, 0.0f);
+            unVar.B9 = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.gk
+                public final /* synthetic */ hk b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
+                    switch (i10) {
+                        case 0:
+                            hk hkVar = this.b;
+                            un unVar2 = hkVar.v5;
+                            float floatValue = ((Float) valueAnimator4.getAnimatedValue()).floatValue();
+                            hkVar.setAnimatedTop((int) floatValue);
+                            View view2 = hkVar.G1;
+                            if (view2 == null || view2.getVisibility() != 0) {
+                                unVar2.x9();
+                                unVar2.z9();
+                            } else {
+                                hkVar.G1.setTranslationY(((1.0f - hkVar.getTopViewEnterProgress()) * hkVar.G1.getLayoutParams().height) + floatValue);
+                            }
+                            hkVar.y1.invalidate();
+                            hkVar.invalidate();
+                            break;
+                        default:
+                            this.b.E0.setOffsetY(((Float) valueAnimator4.getAnimatedValue()).floatValue());
+                            break;
+                    }
+                }
+            });
+            unVar.B9.addListener(new kg.e(this, 26));
+            unVar.B9.setDuration(250L);
+            unVar.B9.setInterpolator(mi.m.V);
+            if (!unVar.A9) {
+                unVar.B9.start();
+            }
+            unVar.x9();
+            unVar.z9();
+            unVar.b0 = 0;
+        } else if (this.s5 != unVar.j1.getMeasuredHeight()) {
+            unVar.b0 = 0;
+        }
+        if (this.n3) {
+            float scrollY = (this.u5 - this.E0.getScrollY()) + (this.t5 - this.E0.getMeasuredHeight());
+            org.telegram.ui.Components.pf pfVar = this.E0;
+            pfVar.setOffsetY(pfVar.getOffsetY() - scrollY);
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.E0.getOffsetY(), 0.0f);
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.gk
+                public final /* synthetic */ hk b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
+                    switch (i12) {
+                        case 0:
+                            hk hkVar = this.b;
+                            un unVar2 = hkVar.v5;
+                            float floatValue = ((Float) valueAnimator4.getAnimatedValue()).floatValue();
+                            hkVar.setAnimatedTop((int) floatValue);
+                            View view2 = hkVar.G1;
+                            if (view2 == null || view2.getVisibility() != 0) {
+                                unVar2.x9();
+                                unVar2.z9();
+                            } else {
+                                hkVar.G1.setTranslationY(((1.0f - hkVar.getTopViewEnterProgress()) * hkVar.G1.getLayoutParams().height) + floatValue);
+                            }
+                            hkVar.y1.invalidate();
+                            hkVar.invalidate();
+                            break;
+                        default:
+                            this.b.E0.setOffsetY(((Float) valueAnimator4.getAnimatedValue()).floatValue());
+                            break;
+                    }
+                }
+            });
+            ValueAnimator valueAnimator4 = unVar.C9;
+            if (valueAnimator4 != null) {
+                valueAnimator4.cancel();
+            }
+            unVar.C9 = ofFloat2;
+            ofFloat2.setDuration(250L);
+            ofFloat2.setInterpolator(mi.m.V);
+            ofFloat2.start();
+            this.n3 = false;
+        }
+        this.s5 = unVar.j1.getMeasuredHeight();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() != 1.0f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void n0(boolean z10) {
+        super.n0(z10);
+        un unVar = this.v5;
+        kf kfVar = unVar.Jb;
+        if (kfVar != null) {
+            AndroidUtilities.runOnUIThread(kfVar);
+            unVar.Jb = null;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() != 1.0f) {
+            return false;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() != 1.0f) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView, android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        un unVar = this.v5;
+        k6.m mVar = unVar.Yc;
+        boolean z10 = false;
+        boolean z11 = i10 == 0;
+        if (getMeasuredWidth() > 0 && !unVar.Oc) {
+            z10 = true;
+        }
+        mVar.h(1, z11, z10);
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void y0(float f7) {
+        this.v5.x7();
     }
 }

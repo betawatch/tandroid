@@ -10,7 +10,7 @@ import ru.noties.jlatexmath.awt.geom.Line2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public class AndroidGraphics2D implements Graphics2D {
     private Canvas canvas;
@@ -171,13 +171,13 @@ public class AndroidGraphics2D implements Graphics2D {
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void draw(RoundRectangle2D.Float r62) {
+    public void draw(RoundRectangle2D.Float r6) {
         this.paint.setStyle(Paint.Style.STROKE);
         RectF rectF = this.rectF;
-        float f7 = r62.x;
-        float f10 = r62.y;
-        rectF.set(f7, f10, r62.width + f7, r62.height + f10);
-        this.canvas.drawRoundRect(this.rectF, r62.arcwidth, r62.archeight, this.paint);
+        float f7 = r6.x;
+        float f10 = r6.y;
+        rectF.set(f7, f10, r6.width + f7, r6.height + f10);
+        this.canvas.drawRoundRect(this.rectF, r6.arcwidth, r6.archeight, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D

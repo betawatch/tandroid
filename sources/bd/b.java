@@ -1,60 +1,34 @@
 package bd;
 
-import af.h;
-import v7.f5;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends ff.a {
-    public final a a = new a();
-    public final StringBuilder b = new StringBuilder();
-    public final int c;
+public final class b {
+    public static final Pattern d = Pattern.compile("[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)", 2);
+    public static final Pattern e = Pattern.compile("[ |\t]*(charset)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+    public static final Pattern f = Pattern.compile("[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+    public final String a;
+    public final String b;
+    public final String c;
 
-    public b(int i10) {
-        this.c = i10;
-    }
-
-    @Override // ff.a
-    public final void a(CharSequence charSequence) {
-        StringBuilder sb2 = this.b;
-        sb2.append(charSequence);
-        sb2.append('\n');
-    }
-
-    @Override // ff.a
-    public final void d() {
-        this.a.g = this.b.toString();
-    }
-
-    @Override // ff.a
-    public final df.a e() {
-        return this.a;
-    }
-
-    @Override // ff.a
-    public final af.a h(h hVar) {
-        int i10;
-        int i11 = hVar.e;
-        CharSequence charSequence = hVar.a;
-        int length = charSequence.length();
-        if (hVar.g < 4) {
-            int i12 = i11;
-            while (true) {
-                if (i12 >= length) {
-                    i10 = length - i11;
-                    break;
-                }
-                if ('$' != charSequence.charAt(i12)) {
-                    i10 = i12 - i11;
-                    break;
-                }
-                i12++;
-            }
-            int i13 = this.c;
-            if (i10 == i13 && f5.b(' ', charSequence, i11 + i13, length) == length) {
-                return new af.a(-1, -1, true);
+    public b(String str) {
+        this.a = str;
+        if (str != null) {
+            Matcher matcher = d.matcher(str);
+            this.b = matcher.find() ? matcher.group(1) : "";
+            Matcher matcher2 = e.matcher(str);
+            this.c = matcher2.find() ? matcher2.group(2) : null;
+        } else {
+            this.b = "";
+            this.c = "UTF-8";
+        }
+        if ("multipart/form-data".equalsIgnoreCase(this.b)) {
+            Matcher matcher3 = f.matcher(str);
+            if (matcher3.find()) {
+                matcher3.group(2);
             }
         }
-        return af.a.a(hVar.b);
     }
 }

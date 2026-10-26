@@ -1,38 +1,39 @@
 package o2;
 
-import b2.s0;
+import a8.h0;
 import b2.t0;
-import b2.v;
+import b2.u0;
 import b2.w;
+import b2.x;
 import java.util.Map;
-import u2.e1;
+import u2.c1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class p extends e1 {
+public final class p extends c1 {
     public final Map J;
-    public b2.s K;
+    public b2.t K;
 
-    public p(androidx.biometric.e eVar, n2.n nVar, n2.k kVar, Map map) {
-        super(eVar, nVar, kVar);
+    public p(h0 h0Var, n2.m mVar, n2.j jVar, Map map) {
+        super(h0Var, mVar, jVar);
         this.J = map;
     }
 
-    @Override // u2.e1
-    public final w r(w wVar) {
-        b2.s sVar;
-        b2.s sVar2 = this.K;
-        if (sVar2 == null) {
-            sVar2 = wVar.w;
+    @Override // u2.c1
+    public final x r(x xVar) {
+        b2.t tVar;
+        b2.t tVar2 = this.K;
+        if (tVar2 == null) {
+            tVar2 = xVar.w;
         }
-        if (sVar2 != null && (sVar = (b2.s) this.J.get(sVar2.c)) != null) {
-            sVar2 = sVar;
+        if (tVar2 != null && (tVar = (b2.t) this.J.get(tVar2.c)) != null) {
+            tVar2 = tVar;
         }
-        t0 t0Var = wVar.l;
-        t0 t0Var2 = null;
-        if (t0Var != null) {
-            s0[] s0VarArr = t0Var.a;
-            int length = s0VarArr.length;
+        u0 u0Var = xVar.l;
+        u0 u0Var2 = null;
+        if (u0Var != null) {
+            t0[] t0VarArr = u0Var.a;
+            int length = t0VarArr.length;
             int i10 = 0;
             int i11 = 0;
             while (true) {
@@ -40,39 +41,39 @@ public final class p extends e1 {
                     i11 = -1;
                     break;
                 }
-                s0 s0Var = s0VarArr[i11];
-                if ((s0Var instanceof q3.m) && "com.apple.streaming.transportStreamTimestamp".equals(((q3.m) s0Var).b)) {
+                t0 t0Var = t0VarArr[i11];
+                if ((t0Var instanceof q3.m) && "com.apple.streaming.transportStreamTimestamp".equals(((q3.m) t0Var).b)) {
                     break;
                 }
                 i11++;
             }
             if (i11 != -1) {
                 if (length != 1) {
-                    s0[] s0VarArr2 = new s0[length - 1];
+                    t0[] t0VarArr2 = new t0[length - 1];
                     while (i10 < length) {
                         if (i10 != i11) {
-                            s0VarArr2[i10 < i11 ? i10 : i10 - 1] = s0VarArr[i10];
+                            t0VarArr2[i10 < i11 ? i10 : i10 - 1] = t0VarArr[i10];
                         }
                         i10++;
                     }
-                    t0Var2 = new t0(s0VarArr2);
+                    u0Var2 = new u0(t0VarArr2);
                 }
             }
-            if (sVar2 == wVar.w || t0Var != wVar.l) {
-                v a2 = wVar.a();
-                a2.v = sVar2;
-                a2.k = t0Var;
-                wVar = new w(a2);
+            if (tVar2 == xVar.w || u0Var != xVar.l) {
+                w a2 = xVar.a();
+                a2.v = tVar2;
+                a2.k = u0Var;
+                xVar = new x(a2);
             }
-            return super.r(wVar);
+            return super.r(xVar);
         }
-        t0Var = t0Var2;
-        if (sVar2 == wVar.w) {
+        u0Var = u0Var2;
+        if (tVar2 == xVar.w) {
         }
-        v a22 = wVar.a();
-        a22.v = sVar2;
-        a22.k = t0Var;
-        wVar = new w(a22);
-        return super.r(wVar);
+        w a22 = xVar.a();
+        a22.v = tVar2;
+        a22.k = u0Var;
+        xVar = new x(a22);
+        return super.r(xVar);
     }
 }

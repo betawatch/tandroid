@@ -1,40 +1,39 @@
 package rg;
 
-import android.view.ViewGroup;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.wl0;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.UUID;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t1 extends lm0 {
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
+public final class t1 {
+    public s1 a;
+    public final HashMap b = new HashMap();
+    public final ArrayList c = new ArrayList();
+
+    public final boolean a() {
+        return !this.c.isEmpty();
     }
 
-    @Override // s4.g0
-    public final int h() {
-        return qg.l0.c().size();
+    public final void b(UUID uuid, Runnable runnable) {
+        this.b.put(uuid, runnable);
+        this.c.add(uuid);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.h1(this, 12));
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        o1 o1Var = (o1) b1Var.a;
-        qg.l0 l0Var = (qg.l0) qg.l0.c().get(i10);
-        o1Var.getClass();
-        o1Var.setTypeface(l0Var.d());
-        String str = l0Var.c;
-        if (str == null) {
-            str = LocaleController.getString(l0Var.b);
+    public final void c() {
+        ArrayList arrayList = this.c;
+        if (arrayList.size() == 0) {
+            return;
         }
-        o1Var.setText(str);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        o1 o1Var = new o1(viewGroup.getContext());
-        o1Var.setLayoutParams(new s4.o0(-1, -2));
-        return new wl0(o1Var);
+        int size = arrayList.size() - 1;
+        UUID uuid = (UUID) arrayList.get(size);
+        HashMap hashMap = this.b;
+        Runnable runnable = (Runnable) hashMap.get(uuid);
+        hashMap.remove(uuid);
+        arrayList.remove(size);
+        runnable.run();
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.h1(this, 12));
     }
 }

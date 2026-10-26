@@ -1,29 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.util.Pair;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class xz0 extends ArrayList {
-    public final Class a;
-    public final Class b;
+public final /* synthetic */ class xz0 implements id0, kd0 {
+    public final /* synthetic */ zz0 a;
 
-    public xz0(Class cls, Class cls2) {
-        this.a = cls;
-        this.b = cls2;
+    @Override // org.telegram.ui.Components.id0
+    public String f(int i10) {
+        return this.a.n[i10];
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final m.g3 h() {
-        int size = size();
-        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
-        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = ((Pair) get(i10)).first;
-            objArr2[i10] = ((Pair) get(i10)).second;
+    @Override // org.telegram.ui.Components.kd0
+    public void q(md0 md0Var, int i10) {
+        zz0 zz0Var = this.a;
+        zz0Var.b();
+        SharedConfig.updateChatListSwipeSetting(i10);
+        zz0Var.invalidate();
+        try {
+            md0Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
         }
-        return new m.g3(objArr, objArr2);
     }
 }

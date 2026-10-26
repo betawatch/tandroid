@@ -4,29 +4,30 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class tg1 extends org.telegram.ui.Components.l91 {
-    public boolean T;
-    public final Path U;
-    public final /* synthetic */ ug1 V;
+public final class tg1 extends org.telegram.ui.Components.u91 {
+    public boolean V;
+    public final Path W;
+    public final /* synthetic */ ug1 a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public tg1(ug1 ug1Var, Context context) {
         super(context, null);
-        this.V = ug1Var;
-        this.U = new Path();
+        this.a0 = ug1Var;
+        this.W = new Path();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        if (this.T) {
-            Path path = this.U;
+        if (this.V) {
+            Path path = this.W;
             path.rewind();
             float dpf2 = AndroidUtilities.dpf2(24.0f);
             RectF rectF = AndroidUtilities.rectTmp;
@@ -36,35 +37,35 @@ public final class tg1 extends org.telegram.ui.Components.l91 {
             canvas.clipPath(path);
         }
         super.dispatchDraw(canvas);
-        if (this.T) {
+        if (this.V) {
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.l91
+    @Override // org.telegram.ui.Components.u91
     public float getAvailableTranslationX() {
         return getMeasuredWidth();
     }
 
-    @Override // org.telegram.ui.Components.l91
+    @Override // org.telegram.ui.Components.u91
     public long getManualScrollDuration() {
         return 320L;
     }
 
-    @Override // org.telegram.ui.Components.l91
+    @Override // org.telegram.ui.Components.u91
     public final boolean j(MotionEvent motionEvent) {
-        Object X = ((rg0) this.V).X();
-        if (X instanceof qg0) {
-            return ((qg0) X).S(motionEvent, false);
+        Object X = ((pg0) this.a0).X();
+        if (X instanceof og0) {
+            return ((og0) X).T(motionEvent, false);
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.l91
+    @Override // org.telegram.ui.Components.u91
     public final boolean k(MotionEvent motionEvent) {
-        Object X = ((rg0) this.V).X();
-        if (X instanceof qg0) {
-            return ((qg0) X).S(motionEvent, true);
+        Object X = ((pg0) this.a0).X();
+        if (X instanceof og0) {
+            return ((og0) X).T(motionEvent, true);
         }
         return false;
     }
@@ -80,63 +81,72 @@ public final class tg1 extends org.telegram.ui.Components.l91 {
     }
 
     public void setTabletLayout(boolean z10) {
-        if (this.T == z10) {
+        if (this.V == z10) {
             return;
         }
-        this.T = z10;
+        this.V = z10;
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.l91
+    @Override // org.telegram.ui.Components.u91
     public final void t(View view, View view2, int i10, int i11) {
-        this.V.U();
+        this.a0.V();
     }
 
-    @Override // org.telegram.ui.Components.l91
+    @Override // org.telegram.ui.Components.u91
     public final void u() {
-        ey eyVar;
-        ug1 ug1Var = this.V;
-        rg0 rg0Var = (rg0) ug1Var;
-        if (rg0Var.F != null) {
-            rg0Var.m0(rg0Var.c.getCurrentPosition(), true);
-            rg0Var.n0(0.0f, false);
+        cy cyVar;
+        ug1 ug1Var = this.a0;
+        pg0 pg0Var = (pg0) ug1Var;
+        if (pg0Var.E != null) {
+            pg0Var.j0(pg0Var.c.getCurrentPosition(), true);
+            pg0Var.k0(0.0f, false);
         }
-        rg0Var.d0();
-        tg1 tg1Var = rg0Var.c;
+        pg0Var.b0();
+        tg1 tg1Var = pg0Var.c;
         if (tg1Var != null) {
             int currentPosition = tg1Var.getCurrentPosition();
-            if (currentPosition != 2 && rg0Var.x) {
-                rg0Var.W(2);
-                rg0Var.x = false;
-            }
             if (currentPosition != 3) {
-                rg0Var.W(3);
+                SparseArray sparseArray = pg0Var.a;
+                sg1 sg1Var = (sg1) sparseArray.get(3);
+                if (sg1Var != null) {
+                    org.telegram.ui.ActionBar.r2 r2Var = sg1Var.a;
+                    if (sg1Var.c) {
+                        r2Var.onBecomeFullyHidden();
+                    }
+                    if (sg1Var.d) {
+                        r2Var.onPause();
+                    }
+                    r2Var.onFragmentDestroy();
+                    r2Var.setParentLayout(null);
+                }
+                sparseArray.remove(3);
             }
-            Integer num = rg0Var.I;
-            if (num != null && currentPosition == 0 && (eyVar = rg0Var.J) != null) {
-                eyVar.u4(num.intValue());
-                rg0Var.I = null;
+            Integer num = pg0Var.H;
+            if (num != null && currentPosition == 0 && (cyVar = pg0Var.I) != null) {
+                cyVar.E4(num.intValue());
+                pg0Var.H = null;
             }
         }
-        ug1Var.U();
+        ug1Var.V();
     }
 
-    @Override // org.telegram.ui.Components.l91
+    @Override // org.telegram.ui.Components.u91
     public final void w(boolean z10) {
-        ug1 ug1Var = this.V;
-        rg0 rg0Var = (rg0) ug1Var;
+        ug1 ug1Var = this.a0;
+        pg0 pg0Var = (pg0) ug1Var;
         boolean z11 = !z10;
-        if (rg0Var.F != null) {
-            float positionAnimated = rg0Var.c.getPositionAnimated();
-            rg0Var.n0(positionAnimated, z11);
+        if (pg0Var.E != null) {
+            float positionAnimated = pg0Var.c.getPositionAnimated();
+            pg0Var.k0(positionAnimated, z11);
             if (!z10) {
-                rg0Var.m0(Math.round(positionAnimated), true);
+                pg0Var.j0(Math.round(positionAnimated), true);
             }
         }
-        rg0Var.h0();
-        rg0Var.d0();
-        rg0Var.b.invalidate();
-        ug1Var.U();
+        pg0Var.e0();
+        pg0Var.b0();
+        pg0Var.b.invalidate();
+        ug1Var.V();
         ug1Var.checkSystemBarColors();
     }
 }

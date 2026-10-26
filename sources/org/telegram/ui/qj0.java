@@ -1,46 +1,38 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MrzRecognizer;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qj0 implements v9 {
-    public final /* synthetic */ rj0 a;
+public final /* synthetic */ class qj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xj0 b;
 
-    public qj0(rj0 rj0Var) {
-        this.a = rj0Var;
+    public /* synthetic */ qj0(xj0 xj0Var, int i10) {
+        this.a = i10;
+        this.b = xj0Var;
     }
 
-    @Override // org.telegram.ui.v9
-    public final void E(String str) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        xj0 xj0Var;
         int i10;
-        String b10 = pf.d.b(str);
-        if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new if0(1));
-        } else {
-            i10 = ((org.telegram.ui.ActionBar.h3) this.a).currentAccount;
-            MessagesController.getInstance(i10).getUserNameResolver().resolve(b10, new ci.e(18));
+        switch (this.a) {
+            case 0:
+                LaunchActivity launchActivity = LaunchActivity.I1;
+                rh.e eVar = launchActivity != null ? launchActivity.h1 : null;
+                if ((eVar == null || eVar.c <= 0) && xj0Var.J != (i10 = (xj0Var = this.b).K)) {
+                    xj0Var.J = i10;
+                    xj0Var.p0(false);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.y.setVisibility(8);
+                break;
+            default:
+                xj0 xj0Var2 = this.b;
+                xj0Var2.O = null;
+                xj0Var2.l0(2, true);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ boolean U0(String str, n9 n9Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ String p0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void F0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void onDismiss() {
     }
 }

@@ -1,123 +1,107 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
+import android.app.Dialog;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class o3 extends j1.b {
-    public static final /* synthetic */ int r = 0;
-    public final RectF o;
-    public final Rect p;
-    public final /* synthetic */ q3 q;
+public final class o3 extends Dialog {
+    public final y3 a;
+    public final n3 b;
+    public final m3 c;
+    public final Paint d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o3(q3 q3Var, q3 q3Var2) {
-        super(q3Var2);
-        this.q = q3Var;
-        this.o = new RectF();
-        this.p = new Rect();
+    public o3(y3 y3Var) {
+        super(y3Var.getWindowView().getContext(), R.style.TransparentDialog);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.a = y3Var;
+        z3 windowView = y3Var.getWindowView();
+        m3 m3Var = new m3(this, getContext());
+        this.c = m3Var;
+        paint.setColor(y6.x0(null, y6.a7, false));
+        n3 n3Var = new n3(windowView);
+        this.b = n3Var;
+        setContentView(n3Var, new ViewGroup.LayoutParams(-1, -1));
+        n3Var.addView(m3Var, gb1.i(-1, -2, 80));
+        n3Var.setClipToPadding(false);
     }
 
-    @Override // j1.b
-    public final int g(float f7, float f10) {
-        n3 c10;
-        q3 q3Var = this.q;
-        if (!q3Var.b) {
-            return -1;
-        }
-        ArrayList<p3> tabs = q3Var.getTabs();
-        if (tabs.isEmpty() || (c10 = q3Var.c(tabs.get(0))) == null) {
-            return -1;
-        }
-        float c11 = c10.c();
-        RectF rectF = this.o;
-        q3Var.d(rectF, c11);
-        Rect bounds = c10.l.getBounds();
-        if (bounds.isEmpty() || !bounds.contains((int) (f7 - rectF.left), (int) (f10 - rectF.centerY()))) {
-            return rectF.contains(f7, f10) ? 1 : -1;
-        }
-        return 2;
+    public static /* synthetic */ WindowInsets a(View view, WindowInsets windowInsets) {
+        view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
+        return Build.VERSION.SDK_INT >= 30 ? WindowInsets.CONSUMED : windowInsets.consumeSystemWindowInsets();
     }
 
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        q3 q3Var = this.q;
-        if (q3Var.b) {
-            ArrayList<p3> tabs = q3Var.getTabs();
-            if (tabs.isEmpty() || q3Var.c(tabs.get(0)) == null) {
-                return;
-            }
-            arrayList.add(1);
-            arrayList.add(2);
-        }
-    }
-
-    @Override // j1.b
-    public final boolean k(int i10, int i11) {
-        if (i11 == 16) {
-            q3 q3Var = this.q;
-            ArrayList<p3> tabs = q3Var.getTabs();
-            if (!tabs.isEmpty()) {
-                p3 p3Var = tabs.get(0);
-                if (i10 == 1) {
-                    q3Var.b();
-                    return true;
-                }
-                if (i10 == 2) {
-                    q3Var.g(p3Var, new ci.e(7));
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // j1.b
-    public final void l(int i10, s0.d dVar) {
-        String str;
-        String str2;
-        q3 q3Var = this.q;
-        ArrayList<p3> tabs = q3Var.getTabs();
-        p3 p3Var = tabs.isEmpty() ? null : tabs.get(0);
-        n3 c10 = p3Var != null ? q3Var.c(p3Var) : null;
-        dVar.i("android.widget.Button");
-        dVar.b(s0.c.c);
-        Rect rect = this.p;
-        if (c10 == null) {
-            rect.set(0, 0, 1, 1);
-            dVar.h(rect);
-            dVar.j("");
-            dVar.p(false);
+    public static void b(y3 y3Var) {
+        r2 U = LaunchActivity.U();
+        if (U == null) {
             return;
         }
-        float c11 = c10.c();
-        RectF rectF = this.o;
-        q3Var.d(rectF, c11);
-        String b10 = p3Var.b() != null ? p3Var.b() : "";
-        if (i10 != 2) {
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(rect);
-            if (TextUtils.isEmpty(b10)) {
-                str = LocaleController.getString(R.string.Open);
-            } else {
-                str = LocaleController.getString(R.string.Open) + ", " + b10;
+        if (AndroidUtilities.isTablet() || y3Var.b() || AndroidUtilities.hasDialogOnTop(U)) {
+            o3 o3Var = new o3(y3Var);
+            if (y3Var.c(o3Var)) {
+                n3 n3Var = o3Var.b;
+                View view = (View) n3Var.a;
+                AndroidUtilities.removeFromParent(view);
+                n3Var.addView(view, gb1.i(-1, -1, 119));
             }
-            dVar.j(str);
-            return;
         }
-        Rect bounds = c10.l.getBounds();
-        rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
-        dVar.h(rect);
-        if (TextUtils.isEmpty(b10)) {
-            str2 = LocaleController.getString(R.string.Close);
+    }
+
+    public final void c() {
+        this.a.c(null);
+        if (this.e) {
+            this.e = false;
+            try {
+                super.dismiss();
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        this.a.dismiss(false);
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        if (Build.VERSION.SDK_INT >= 30) {
+            window.addFlags(-2147483392);
         } else {
-            str2 = LocaleController.getString(R.string.Close) + ", " + b10;
+            window.addFlags(-2147417856);
         }
-        dVar.j(str2);
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.gravity = 51;
+        attributes.dimAmount = 0.0f;
+        attributes.flags &= -3;
+        attributes.softInputMode = 16;
+        attributes.height = -1;
+        AndroidUtilities.applyEdgeToEdgeLayoutParams(attributes);
+        window.setAttributes(attributes);
+        window.setStatusBarColor(0);
+        n3 n3Var = this.b;
+        n3Var.setFitsSystemWindows(true);
+        n3Var.setSystemUiVisibility(1792);
+        n3Var.setPadding(0, 0, 0, 0);
+        n3Var.setOnApplyWindowInsetsListener(new l3(0));
     }
 }

@@ -3,10 +3,10 @@ package p1;
 import android.os.Build;
 import android.view.View;
 import java.nio.ByteBuffer;
-import oa.d;
 import r0.i0;
+import u7.s;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class c {
     public int a;
@@ -15,8 +15,8 @@ public abstract class c {
     public Object d;
 
     public c() {
-        if (d.b == null) {
-            d.b = new d(19);
+        if (s.c == null) {
+            s.c = new s(17);
         }
     }
 
@@ -51,9 +51,9 @@ public abstract class c {
             if (bVar == null) {
                 bVar = new r0.b();
             }
-            i0.j(view, bVar);
+            i0.k(view, bVar);
             view.setTag(this.a, obj);
-            i0.f(this.c, view);
+            i0.g(this.c, view);
         }
     }
 

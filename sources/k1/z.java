@@ -1,8 +1,12 @@
 package k1;
 
+import a8.hd;
+import a8.id;
+import a8.jd;
 import androidx.lifecycle.k0;
-import be.c0;
-import be.f0;
+import ce.c0;
+import ce.f0;
+import ce.g1;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,33 +15,46 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.g8;
-import v7.h8;
-import v7.i8;
-import w7.g7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class z implements f {
     public static final LinkedHashSet r = new LinkedHashSet();
     public static final Object s = new Object();
     public final k0 a;
-    public final rb.b b;
-    public final qb.c c;
-    public final String d = ".tmp";
-    public final id.g e = h8.a(new k0(this, 1));
-    public final ee.m f = new ee.m(b0.a);
+    public final pa.d b;
+    public final a4.l c;
+    public final jd.g e;
     public List h;
-    public final com.google.firebase.messaging.r n;
+    public final com.google.firebase.messaging.q n;
+    public final String d = ".tmp";
+    public final fe.m f = new fe.m(b0.a);
 
-    public z(k0 k0Var, List list, rb.b bVar, c0 c0Var) {
+    public z(k0 k0Var, List list, pa.d dVar, c0 c0Var) {
         this.a = k0Var;
-        this.b = bVar;
-        kd.c cVar = null;
-        this.c = new qb.c(new n(this, cVar, 1), 20);
-        this.h = jd.g.m(list);
-        this.n = new com.google.firebase.messaging.r(c0Var, new m(this, 0), new n(this, cVar, 0));
+        this.b = dVar;
+        ld.c cVar = null;
+        int i10 = 1;
+        this.c = new a4.l(new n(this, cVar, i10), 18);
+        this.e = id.a(new k0(this, i10));
+        this.h = kd.g.m(list);
+        int i11 = 0;
+        m mVar = new m(this, i11);
+        n nVar = new n(this, cVar, i11);
+        com.google.firebase.messaging.q qVar = new com.google.firebase.messaging.q();
+        qVar.a = c0Var;
+        qVar.b = nVar;
+        ee.a[] aVarArr = ee.a.a;
+        qVar.c = new ee.b(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        qVar.d = new AtomicInteger(0);
+        g1 g1Var = (g1) c0Var.c().get(ce.b0.b);
+        if (g1Var != null) {
+            g1Var.invokeOnCompletion(new de.d(i10, mVar, qVar));
+        }
+        this.n = qVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00a0, code lost:
@@ -49,38 +66,38 @@ public final class z implements f {
     /* JADX WARN: Removed duplicated region for block: B:23:0x00c7  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0023 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:8:0x004c  */
-    /* JADX WARN: Type inference failed for: r2v10, types: [md.i, td.p] */
-    /* JADX WARN: Type inference failed for: r2v3, types: [md.i, td.p] */
+    /* JADX WARN: Type inference failed for: r2v10, types: [nd.i, ud.p] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [nd.i, ud.p] */
     /* JADX WARN: Type inference failed for: r8v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object a(z zVar, j jVar, md.c cVar) {
+    public static final Object a(z zVar, j jVar, nd.c cVar) {
         p pVar;
         int i10;
-        be.t tVar;
+        ce.t tVar;
         z zVar2;
-        Object i11;
-        be.s sVar;
+        Object h;
+        ce.s sVar;
         Throwable a2;
         a0 a0Var;
         if (cVar instanceof p) {
             pVar = (p) cVar;
-            int i12 = pVar.f;
-            if ((i12 & TLObject.FLAG_31) != 0) {
-                pVar.f = i12 - TLObject.FLAG_31;
+            int i11 = pVar.f;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                pVar.f = i11 - TLObject.FLAG_31;
                 Object obj = pVar.d;
-                ld.a aVar = ld.a.a;
+                md.a aVar = md.a.a;
                 i10 = pVar.f;
                 boolean z10 = true;
                 if (i10 == 0) {
                     try {
                         if (i10 != 1) {
                             if (i10 == 2) {
-                                be.t tVar2 = pVar.c;
+                                ce.t tVar2 = pVar.c;
                                 z zVar3 = pVar.b;
                                 j jVar2 = (j) pVar.a;
-                                i8.b(obj);
+                                jd.b(obj);
                                 tVar = tVar2;
                                 zVar2 = zVar3;
                                 jVar = jVar2;
@@ -88,59 +105,59 @@ public final class z implements f {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
                         }
-                        be.s sVar2 = (be.s) pVar.a;
-                        i8.b(obj);
+                        ce.s sVar2 = (ce.s) pVar.a;
+                        jd.b(obj);
                         sVar = sVar2;
                     } catch (Throwable th2) {
                         th = th2;
-                        obj = i8.a(th);
+                        obj = jd.a(th);
                         sVar = zVar;
-                        a2 = id.f.a(obj);
-                        be.t tVar3 = (be.t) sVar;
+                        a2 = jd.f.a(obj);
+                        ce.t tVar3 = (ce.t) sVar;
                         if (a2 != null) {
                         }
-                        return id.i.a;
+                        return jd.i.a;
                     }
-                    a2 = id.f.a(obj);
-                    be.t tVar32 = (be.t) sVar;
+                    a2 = jd.f.a(obj);
+                    ce.t tVar32 = (ce.t) sVar;
                     if (a2 != null) {
                         tVar32.A(obj);
                     } else {
                         tVar32.L(a2);
                     }
-                    return id.i.a;
+                    return jd.i.a;
                 }
-                i8.b(obj);
+                jd.b(obj);
                 tVar = jVar.b;
                 try {
                     a0Var = (a0) zVar.f.c();
                 } catch (Throwable th3) {
                     th = th3;
                     zVar = tVar;
-                    obj = i8.a(th);
+                    obj = jd.a(th);
                     sVar = zVar;
-                    a2 = id.f.a(obj);
-                    be.t tVar322 = (be.t) sVar;
+                    a2 = jd.f.a(obj);
+                    ce.t tVar322 = (ce.t) sVar;
                     if (a2 != null) {
                     }
-                    return id.i.a;
+                    return jd.i.a;
                 }
                 if (a0Var instanceof b) {
                     ?? r22 = jVar.a;
-                    kd.h hVar = jVar.d;
+                    ld.h hVar = jVar.d;
                     pVar.a = tVar;
                     pVar.f = 1;
-                    i11 = zVar.i(r22, hVar, pVar);
-                    if (i11 == aVar) {
+                    h = zVar.h(r22, hVar, pVar);
+                    if (h == aVar) {
                     }
-                    be.t tVar4 = tVar;
-                    obj = i11;
+                    ce.t tVar4 = tVar;
+                    obj = h;
                     sVar = tVar4;
-                    a2 = id.f.a(obj);
-                    be.t tVar3222 = (be.t) sVar;
+                    a2 = jd.f.a(obj);
+                    ce.t tVar3222 = (ce.t) sVar;
                     if (a2 != null) {
                     }
-                    return id.i.a;
+                    return jd.i.a;
                 }
                 if (!(a0Var instanceof h)) {
                     z10 = a0Var instanceof b0;
@@ -158,46 +175,37 @@ public final class z implements f {
                 pVar.b = zVar;
                 pVar.c = tVar;
                 pVar.f = 2;
-                Object e = zVar.e(pVar);
+                Object d = zVar.d(pVar);
                 zVar2 = zVar;
-                if (e == aVar) {
+                if (d == aVar) {
                 }
                 return aVar;
                 ?? r23 = jVar.a;
-                kd.h hVar2 = jVar.d;
+                ld.h hVar2 = jVar.d;
                 pVar.a = tVar;
                 pVar.b = null;
                 pVar.c = null;
                 pVar.f = 3;
-                i11 = zVar2.i(r23, hVar2, pVar);
+                h = zVar2.h(r23, hVar2, pVar);
             }
         }
         pVar = new p(zVar, cVar);
         Object obj2 = pVar.d;
-        ld.a aVar2 = ld.a.a;
+        md.a aVar2 = md.a.a;
         i10 = pVar.f;
         boolean z102 = true;
         if (i10 == 0) {
         }
         ?? r232 = jVar.a;
-        kd.h hVar22 = jVar.d;
+        ld.h hVar22 = jVar.d;
         pVar.a = tVar;
         pVar.b = null;
         pVar.c = null;
         pVar.f = 3;
-        i11 = zVar2.i(r232, hVar22, pVar);
+        h = zVar2.h(r232, hVar22, pVar);
     }
 
-    @Override // k1.f
-    public final Object b(td.p pVar, md.c cVar) {
-        be.t a2 = f0.a();
-        this.n.o(new j(pVar, a2, (a0) this.f.c(), cVar.getContext()));
-        Object h = a2.h(cVar);
-        ld.a aVar = ld.a.a;
-        return h;
-    }
-
-    public final File c() {
+    public final File b() {
         return (File) this.e.a();
     }
 
@@ -212,10 +220,10 @@ public final class z implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object d(md.c cVar) {
+    public final Object c(nd.c cVar) {
         q qVar;
         int i10;
-        ke.a a2;
+        le.a a2;
         kotlin.jvm.internal.p pVar;
         z zVar;
         kotlin.jvm.internal.p pVar2;
@@ -224,13 +232,13 @@ public final class z implements f {
         kotlin.jvm.internal.p pVar3;
         s sVar;
         Iterator it;
-        ke.a aVar;
+        le.a aVar;
         kotlin.jvm.internal.n nVar;
         kotlin.jvm.internal.n nVar2;
         q qVar2;
         z zVar3;
-        ke.d dVar;
-        ke.a aVar2;
+        le.d dVar;
+        le.a aVar2;
         kotlin.jvm.internal.p pVar4;
         if (cVar instanceof q) {
             qVar = (q) cVar;
@@ -238,22 +246,22 @@ public final class z implements f {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 qVar.r = i11 - TLObject.FLAG_31;
                 Object obj = qVar.h;
-                ld.a aVar3 = ld.a.a;
+                md.a aVar3 = md.a.a;
                 i10 = qVar.r;
                 if (i10 != 0) {
-                    i8.b(obj);
-                    ee.m mVar = this.f;
+                    jd.b(obj);
+                    fe.m mVar = this.f;
                     if (!kotlin.jvm.internal.i.a(mVar.c(), b0.a) && !(mVar.c() instanceof h)) {
                         throw new IllegalStateException("Check failed.");
                     }
-                    a2 = ke.e.a();
+                    a2 = le.e.a();
                     pVar = new kotlin.jvm.internal.p();
                     qVar.a = this;
                     qVar.b = a2;
                     qVar.c = pVar;
                     qVar.d = pVar;
                     qVar.r = 1;
-                    obj = h(qVar);
+                    obj = g(qVar);
                     if (obj != aVar3) {
                         zVar = this;
                         pVar2 = pVar;
@@ -265,20 +273,20 @@ public final class z implements f {
                         if (i10 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        aVar2 = (ke.a) qVar.d;
+                        aVar2 = (le.a) qVar.d;
                         nVar2 = (kotlin.jvm.internal.n) qVar.c;
                         pVar4 = (kotlin.jvm.internal.p) qVar.b;
                         zVar3 = qVar.a;
-                        i8.b(obj);
+                        jd.b(obj);
                         try {
                             nVar2.a = true;
-                            ((ke.d) aVar2).e(null);
-                            ee.m mVar2 = zVar3.f;
+                            ((le.d) aVar2).e(null);
+                            fe.m mVar2 = zVar3.f;
                             Object obj2 = pVar4.a;
                             mVar2.d(new b(obj2, obj2 == null ? obj2.hashCode() : 0));
-                            return id.i.a;
+                            return jd.i.a;
                         } catch (Throwable th2) {
-                            ((ke.d) aVar2).e(null);
+                            ((le.d) aVar2).e(null);
                             throw th2;
                         }
                     }
@@ -286,11 +294,11 @@ public final class z implements f {
                     sVar = qVar.e;
                     nVar = (kotlin.jvm.internal.n) qVar.d;
                     pVar3 = (kotlin.jvm.internal.p) qVar.c;
-                    aVar = (ke.a) qVar.b;
+                    aVar = (le.a) qVar.b;
                     zVar2 = qVar.a;
-                    i8.b(obj);
+                    jd.b(obj);
                     while (it.hasNext()) {
-                        td.p pVar5 = (td.p) it.next();
+                        ud.p pVar5 = (ud.p) it.next();
                         qVar.a = zVar2;
                         qVar.b = aVar;
                         qVar.c = pVar3;
@@ -315,24 +323,24 @@ public final class z implements f {
                     qVar2.e = null;
                     qVar2.f = null;
                     qVar2.r = 3;
-                    dVar = (ke.d) a2;
+                    dVar = (le.d) a2;
                     if (dVar.d(qVar2) != aVar3) {
                         aVar2 = dVar;
                         pVar4 = pVar2;
                         nVar2.a = true;
-                        ((ke.d) aVar2).e(null);
-                        ee.m mVar22 = zVar3.f;
+                        ((le.d) aVar2).e(null);
+                        fe.m mVar22 = zVar3.f;
                         Object obj22 = pVar4.a;
                         mVar22.d(new b(obj22, obj22 == null ? obj22.hashCode() : 0));
-                        return id.i.a;
+                        return jd.i.a;
                     }
                     return aVar3;
                 }
                 pVar = (kotlin.jvm.internal.p) qVar.d;
                 pVar2 = (kotlin.jvm.internal.p) qVar.c;
-                a2 = (ke.a) qVar.b;
+                a2 = (le.a) qVar.b;
                 zVar = qVar.a;
-                i8.b(obj);
+                jd.b(obj);
                 pVar.a = obj;
                 kotlin.jvm.internal.n nVar3 = new kotlin.jvm.internal.n();
                 s sVar2 = new s(a2, nVar3, pVar2, zVar);
@@ -349,7 +357,7 @@ public final class z implements f {
                     qVar2.e = null;
                     qVar2.f = null;
                     qVar2.r = 3;
-                    dVar = (ke.d) a2;
+                    dVar = (le.d) a2;
                     if (dVar.d(qVar2) != aVar3) {
                     }
                     return aVar3;
@@ -375,7 +383,7 @@ public final class z implements f {
                 qVar2.e = null;
                 qVar2.f = null;
                 qVar2.r = 3;
-                dVar = (ke.d) a2;
+                dVar = (le.d) a2;
                 if (dVar.d(qVar2) != aVar3) {
                 }
                 return aVar3;
@@ -383,7 +391,7 @@ public final class z implements f {
         }
         qVar = new q(this, cVar);
         Object obj3 = qVar.h;
-        ld.a aVar32 = ld.a.a;
+        md.a aVar32 = md.a.a;
         i10 = qVar.r;
         if (i10 != 0) {
         }
@@ -400,7 +408,7 @@ public final class z implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object e(md.c cVar) {
+    public final Object d(nd.c cVar) {
         t tVar;
         int i10;
         z zVar;
@@ -410,14 +418,14 @@ public final class z implements f {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 tVar.d = i11 - TLObject.FLAG_31;
                 Object obj = tVar.b;
-                ld.a aVar = ld.a.a;
+                md.a aVar = md.a.a;
                 i10 = tVar.d;
                 if (i10 != 0) {
-                    i8.b(obj);
+                    jd.b(obj);
                     try {
                         tVar.a = this;
                         tVar.d = 1;
-                        if (d(tVar) == aVar) {
+                        if (c(tVar) == aVar) {
                             return aVar;
                         }
                     } catch (Throwable th2) {
@@ -432,23 +440,23 @@ public final class z implements f {
                     }
                     zVar = tVar.a;
                     try {
-                        i8.b(obj);
+                        jd.b(obj);
                     } catch (Throwable th3) {
                         th = th3;
                         zVar.f.d(new h(th));
                         throw th;
                     }
                 }
-                return id.i.a;
+                return jd.i.a;
             }
         }
         tVar = new t(this, cVar);
         Object obj2 = tVar.b;
-        ld.a aVar2 = ld.a.a;
+        md.a aVar2 = md.a.a;
         i10 = tVar.d;
         if (i10 != 0) {
         }
-        return id.i.a;
+        return jd.i.a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0033  */
@@ -456,7 +464,7 @@ public final class z implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object f(md.c cVar) {
+    public final Object e(nd.c cVar) {
         u uVar;
         int i10;
         z zVar;
@@ -466,21 +474,21 @@ public final class z implements f {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 uVar.d = i11 - TLObject.FLAG_31;
                 Object obj = uVar.b;
-                ld.a aVar = ld.a.a;
+                md.a aVar = md.a.a;
                 i10 = uVar.d;
                 if (i10 != 0) {
-                    i8.b(obj);
+                    jd.b(obj);
                     try {
                         uVar.a = this;
                         uVar.d = 1;
-                        if (d(uVar) == aVar) {
+                        if (c(uVar) == aVar) {
                             return aVar;
                         }
                     } catch (Throwable th2) {
                         th = th2;
                         zVar = this;
                         zVar.f.d(new h(th));
-                        return id.i.a;
+                        return jd.i.a;
                     }
                 } else {
                     if (i10 != 1) {
@@ -488,23 +496,23 @@ public final class z implements f {
                     }
                     zVar = uVar.a;
                     try {
-                        i8.b(obj);
+                        jd.b(obj);
                     } catch (Throwable th3) {
                         th = th3;
                         zVar.f.d(new h(th));
-                        return id.i.a;
+                        return jd.i.a;
                     }
                 }
-                return id.i.a;
+                return jd.i.a;
             }
         }
         uVar = new u(this, cVar);
         Object obj2 = uVar.b;
-        ld.a aVar2 = ld.a.a;
+        md.a aVar2 = md.a.a;
         i10 = uVar.d;
         if (i10 != 0) {
         }
-        return id.i.a;
+        return jd.i.a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -522,7 +530,7 @@ public final class z implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object g(md.c cVar) {
+    public final Object f(nd.c cVar) {
         ?? r02;
         int i10;
         FileInputStream fileInputStream;
@@ -535,13 +543,13 @@ public final class z implements f {
                     vVar.e = i11 - TLObject.FLAG_31;
                     r02 = vVar;
                     Object obj = r02.c;
-                    ld.a aVar = ld.a.a;
+                    md.a aVar = md.a.a;
                     i10 = r02.e;
                     boolean z10 = true;
                     if (i10 != 0) {
-                        i8.b(obj);
+                        jd.b(obj);
                         try {
-                            FileInputStream fileInputStream2 = new FileInputStream(c());
+                            FileInputStream fileInputStream2 = new FileInputStream(b());
                             try {
                                 n1.g gVar = n1.g.a;
                                 r02.a = this;
@@ -562,7 +570,7 @@ public final class z implements f {
                         } catch (FileNotFoundException e) {
                             e = e;
                             r02 = this;
-                            if (r02.c().exists()) {
+                            if (r02.b().exists()) {
                                 throw e;
                             }
                             return new n1.b(z10);
@@ -574,38 +582,33 @@ public final class z implements f {
                         fileInputStream = r02.b;
                         r02 = r02.a;
                         try {
-                            i8.b(obj);
+                            jd.b(obj);
                         } catch (Throwable th4) {
                             th2 = th4;
                             try {
                                 throw th2;
                             } catch (Throwable th5) {
-                                g7.a(fileInputStream, th2);
+                                m9.b.a(fileInputStream, th2);
                                 throw th5;
                             }
                         }
                     }
-                    g7.a(fileInputStream, null);
+                    m9.b.a(fileInputStream, null);
                     return obj;
                 }
             }
             if (i10 != 0) {
             }
-            g7.a(fileInputStream, null);
+            m9.b.a(fileInputStream, null);
             return obj;
-        } catch (FileNotFoundException e7) {
-            e = e7;
+        } catch (FileNotFoundException e10) {
+            e = e10;
         }
         r02 = new v(this, cVar);
         Object obj2 = r02.c;
-        ld.a aVar2 = ld.a.a;
+        md.a aVar2 = md.a.a;
         i10 = r02.e;
         boolean z102 = true;
-    }
-
-    @Override // k1.f
-    public final ee.b getData() {
-        return this.c;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x0066  */
@@ -613,7 +616,7 @@ public final class z implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object h(md.c cVar) {
+    public final Object g(nd.c cVar) {
         w wVar;
         int i10;
         z zVar;
@@ -624,17 +627,17 @@ public final class z implements f {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 wVar.e = i11 - TLObject.FLAG_31;
                 Object obj = wVar.c;
-                ld.a aVar2 = ld.a.a;
+                md.a aVar2 = md.a.a;
                 i10 = wVar.e;
                 if (i10 == 0) {
                     if (i10 == 1) {
                         zVar = (z) wVar.a;
                         try {
-                            i8.b(obj);
+                            jd.b(obj);
                             return obj;
                         } catch (a e) {
                             e = e;
-                            rb.b bVar = zVar.b;
+                            pa.d dVar = zVar.b;
                             wVar.a = zVar;
                             wVar.b = e;
                             wVar.e = 2;
@@ -644,16 +647,16 @@ public final class z implements f {
                     if (i10 == 2) {
                         a aVar3 = (a) wVar.b;
                         z zVar2 = (z) wVar.a;
-                        i8.b(obj);
+                        jd.b(obj);
                         try {
                             wVar.a = aVar3;
                             wVar.b = obj;
                             wVar.e = 3;
-                            if (zVar2.j(obj, wVar) != aVar2) {
+                            if (zVar2.i(obj, wVar) != aVar2) {
                                 return obj;
                             }
-                        } catch (IOException e7) {
-                            e = e7;
+                        } catch (IOException e10) {
+                            e = e10;
                             aVar = aVar3;
                         }
                     } else {
@@ -663,27 +666,27 @@ public final class z implements f {
                         Object obj2 = wVar.b;
                         aVar = (a) wVar.a;
                         try {
-                            i8.b(obj);
+                            jd.b(obj);
                             return obj2;
-                        } catch (IOException e10) {
-                            e = e10;
+                        } catch (IOException e11) {
+                            e = e11;
                         }
                     }
-                    g8.a(aVar, e);
+                    hd.a(aVar, e);
                     throw aVar;
                 }
-                i8.b(obj);
+                jd.b(obj);
                 try {
                     wVar.a = this;
                     wVar.e = 1;
-                    Object g10 = g(wVar);
-                    if (g10 != aVar2) {
-                        return g10;
+                    Object f7 = f(wVar);
+                    if (f7 != aVar2) {
+                        return f7;
                     }
-                } catch (a e11) {
-                    e = e11;
+                } catch (a e12) {
+                    e = e12;
                     zVar = this;
-                    rb.b bVar2 = zVar.b;
+                    pa.d dVar2 = zVar.b;
                     wVar.a = zVar;
                     wVar.b = e;
                     wVar.e = 2;
@@ -694,11 +697,16 @@ public final class z implements f {
         }
         wVar = new w(this, cVar);
         Object obj3 = wVar.c;
-        ld.a aVar22 = ld.a.a;
+        md.a aVar22 = md.a.a;
         i10 = wVar.e;
         if (i10 == 0) {
         }
         return aVar22;
+    }
+
+    @Override // k1.f
+    public final fe.b getData() {
+        return this.c;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x00a7  */
@@ -711,7 +719,7 @@ public final class z implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object i(td.p pVar, kd.h hVar, md.c cVar) {
+    public final Object h(ud.p pVar, ld.h hVar, nd.c cVar) {
         x xVar;
         int i10;
         b bVar;
@@ -726,26 +734,26 @@ public final class z implements f {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 xVar.f = i11 - TLObject.FLAG_31;
                 Object obj4 = xVar.d;
-                ld.a aVar = ld.a.a;
+                md.a aVar = md.a.a;
                 i10 = xVar.f;
-                kd.c cVar2 = null;
+                ld.c cVar2 = null;
                 if (i10 != 0) {
-                    i8.b(obj4);
+                    jd.b(obj4);
                     b bVar2 = (b) this.f.c();
                     Object obj5 = bVar2.a;
                     if ((obj5 != null ? obj5.hashCode() : 0) != bVar2.b) {
                         throw new IllegalStateException("Data in DataStore was mutated but DataStore is only compatible with Immutable types.");
                     }
                     Object obj6 = bVar2.a;
-                    ab.l lVar = new ab.l(pVar, obj6, cVar2, 6);
+                    bb.l lVar = new bb.l(pVar, obj6, cVar2, 6);
                     xVar.a = this;
                     xVar.b = bVar2;
                     xVar.c = obj6;
                     xVar.f = 1;
-                    Object w9 = f0.w(hVar, lVar, xVar);
-                    if (w9 != aVar) {
+                    Object w10 = f0.w(hVar, lVar, xVar);
+                    if (w10 != aVar) {
                         bVar = bVar2;
-                        obj4 = w9;
+                        obj4 = w10;
                         obj = obj6;
                         zVar = this;
                     }
@@ -757,14 +765,14 @@ public final class z implements f {
                     }
                     obj3 = xVar.b;
                     zVar2 = xVar.a;
-                    i8.b(obj4);
+                    jd.b(obj4);
                     zVar2.f.d(new b(obj3, obj3 != null ? obj3.hashCode() : 0));
                     return obj3;
                 }
                 obj = xVar.c;
                 bVar = (b) xVar.b;
                 zVar = xVar.a;
-                i8.b(obj4);
+                jd.b(obj4);
                 obj2 = bVar.a;
                 if ((obj2 == null ? obj2.hashCode() : 0) == bVar.b) {
                     throw new IllegalStateException("Data in DataStore was mutated but DataStore is only compatible with Immutable types.");
@@ -776,7 +784,7 @@ public final class z implements f {
                 xVar.b = obj4;
                 xVar.c = null;
                 xVar.f = 2;
-                if (zVar.j(obj4, xVar) != aVar) {
+                if (zVar.i(obj4, xVar) != aVar) {
                     obj3 = obj4;
                     zVar2 = zVar;
                     zVar2.f.d(new b(obj3, obj3 != null ? obj3.hashCode() : 0));
@@ -787,9 +795,9 @@ public final class z implements f {
         }
         xVar = new x(this, cVar);
         Object obj42 = xVar.d;
-        ld.a aVar2 = ld.a.a;
+        md.a aVar2 = md.a.a;
         i10 = xVar.f;
-        kd.c cVar22 = null;
+        ld.c cVar22 = null;
         if (i10 != 0) {
         }
         obj2 = bVar.a;
@@ -815,7 +823,7 @@ public final class z implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object j(Object obj, md.c cVar) {
+    public final Object i(Object obj, nd.c cVar) {
         y yVar;
         ?? r32;
         FileOutputStream fileOutputStream;
@@ -828,20 +836,20 @@ public final class z implements f {
                 if ((i10 & TLObject.FLAG_31) != 0) {
                     yVar.h = i10 - TLObject.FLAG_31;
                     Object obj2 = yVar.e;
-                    ld.a aVar = ld.a.a;
+                    md.a aVar = md.a.a;
                     r32 = yVar.h;
-                    id.i iVar = id.i.a;
+                    jd.i iVar = jd.i.a;
                     if (r32 != 0) {
-                        i8.b(obj2);
-                        File c10 = c();
-                        File parentFile = c10.getCanonicalFile().getParentFile();
+                        jd.b(obj2);
+                        File b10 = b();
+                        File parentFile = b10.getCanonicalFile().getParentFile();
                         if (parentFile != null) {
                             parentFile.mkdirs();
                             if (!parentFile.isDirectory()) {
-                                throw new IOException(kotlin.jvm.internal.i.g(c10, "Unable to create parent directories of "));
+                                throw new IOException(kotlin.jvm.internal.i.g(b10, "Unable to create parent directories of "));
                             }
                         }
-                        r32 = new File(kotlin.jvm.internal.i.g(this.d, c().getAbsolutePath()));
+                        r32 = new File(kotlin.jvm.internal.i.g(this.d, b().getAbsolutePath()));
                         FileOutputStream fileOutputStream3 = new FileOutputStream((File) r32);
                         try {
                             n1.g gVar = n1.g.a;
@@ -873,21 +881,21 @@ public final class z implements f {
                         r32 = yVar.b;
                         zVar = yVar.a;
                         try {
-                            i8.b(obj2);
+                            jd.b(obj2);
                             r32 = r32;
                         } catch (Throwable th3) {
                             th = th3;
                             try {
                                 throw th;
                             } catch (Throwable th4) {
-                                g7.a(fileOutputStream, th);
+                                m9.b.a(fileOutputStream, th);
                                 throw th4;
                             }
                         }
                     }
                     fileOutputStream2.getFD().sync();
-                    g7.a(fileOutputStream, null);
-                    if (!r32.renameTo(zVar.c())) {
+                    m9.b.a(fileOutputStream, null);
+                    if (!r32.renameTo(zVar.b())) {
                         return iVar;
                     }
                     throw new IOException("Unable to rename " + r32 + ".This likely means that there are multiple instances of DataStore for this file. Ensure that you are only creating a single instance of datastore for this file.");
@@ -896,8 +904,8 @@ public final class z implements f {
             if (r32 != 0) {
             }
             fileOutputStream2.getFD().sync();
-            g7.a(fileOutputStream, null);
-            if (!r32.renameTo(zVar.c())) {
+            m9.b.a(fileOutputStream, null);
+            if (!r32.renameTo(zVar.b())) {
             }
         } catch (IOException e) {
             if (r32.exists()) {
@@ -907,8 +915,17 @@ public final class z implements f {
         }
         yVar = new y(this, cVar);
         Object obj22 = yVar.e;
-        ld.a aVar2 = ld.a.a;
+        md.a aVar2 = md.a.a;
         r32 = yVar.h;
-        id.i iVar2 = id.i.a;
+        jd.i iVar2 = jd.i.a;
+    }
+
+    @Override // k1.f
+    public final Object w(ud.p pVar, nd.c cVar) {
+        ce.t a2 = f0.a();
+        this.n.y(new j(pVar, a2, (a0) this.f.c(), cVar.getContext()));
+        Object h = a2.h(cVar);
+        md.a aVar = md.a.a;
+        return h;
     }
 }

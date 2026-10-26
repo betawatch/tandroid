@@ -1,0 +1,79 @@
+package og;
+
+import android.util.DisplayMetrics;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import o1.k;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class f extends GestureDetector.SimpleOnGestureListener {
+    public float a;
+    public float b;
+    public final /* synthetic */ i c;
+
+    public f(i iVar) {
+        this.c = iVar;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        DisplayMetrics displayMetrics;
+        float f11;
+        i iVar = this.c;
+        if (!iVar.f || iVar.n) {
+            return false;
+        }
+        k kVar = iVar.c.u;
+        if ((f7 / 7.0f) + ((float) kVar.i) >= iVar.getWidth() / 2.0f) {
+            displayMetrics = iVar.getResources().getDisplayMetrics();
+            f11 = 2.14748365E9f;
+        } else {
+            displayMetrics = iVar.getResources().getDisplayMetrics();
+            f11 = -2.14748365E9f;
+        }
+        kVar.i = i.a(displayMetrics, f11);
+        iVar.d.u.i = i.b(iVar.getResources().getDisplayMetrics(), (f10 / 10.0f) + ((float) iVar.d.u.i));
+        iVar.c.h();
+        iVar.d.h();
+        iVar.h = true;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        i iVar = this.c;
+        int i10 = iVar.F;
+        if (!iVar.n) {
+            AndroidUtilities.cancelRunOnUIThread(iVar.r);
+        }
+        if (!iVar.f && (Math.abs(f7) >= i10 || Math.abs(f10) >= i10)) {
+            this.a = (float) iVar.c.u.i;
+            this.b = (float) iVar.d.u.i;
+            iVar.f = true;
+        }
+        if (iVar.f && !iVar.n) {
+            iVar.c.u.i = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
+            iVar.d.u.i = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
+            iVar.c.h();
+            iVar.d.h();
+        }
+        return iVar.f;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        i iVar = this.c;
+        if (iVar.n || iVar.s) {
+            return false;
+        }
+        iVar.c(true);
+        return true;
+    }
+}

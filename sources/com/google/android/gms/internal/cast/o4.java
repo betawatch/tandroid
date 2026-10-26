@@ -1,124 +1,107 @@
 package com.google.android.gms.internal.cast;
 
-import android.text.TextUtils;
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class o4 implements d6.h {
-    public final /* synthetic */ z5 a;
+public final class o4 extends AtomicReference implements Runnable {
+    public static final h4 c = new h4();
+    public static final h4 d = new h4();
+    public final Callable a;
+    public final /* synthetic */ p4 b;
 
-    public /* synthetic */ o4(z5 z5Var) {
-        this.a = z5Var;
+    public o4(p4 p4Var, Callable callable) {
+        this.b = p4Var;
+        callable.getClass();
+        this.a = callable;
     }
 
-    @Override // d6.h
-    public void d(d6.f fVar, String str) {
-        x6 x6Var = new x6(new a5.a(7, 2));
-        z5 z5Var = this.a;
-        z5.D(z5Var, x6Var);
-        w6 w6Var = (w6) z5Var.d;
-        n6.l.h(w6Var);
-        w6Var.a((d6.c) fVar);
-        w6 w6Var2 = (w6) z5Var.d;
-        n6.l.h(w6Var2);
-        String str2 = w6Var2.k;
-        if (str2 == null) {
-            w6Var2.k = str;
-        } else {
-            if (TextUtils.equals(str, str2)) {
-                return;
+    public final void a(Thread thread) {
+        Runnable runnable = (Runnable) get();
+        g4 g4Var = null;
+        boolean z10 = false;
+        int i10 = 0;
+        while (true) {
+            boolean z11 = runnable instanceof g4;
+            h4 h4Var = d;
+            if (!z11) {
+                if (runnable != h4Var) {
+                    break;
+                }
+            } else {
+                g4Var = (g4) runnable;
             }
-            w6Var2.b(4);
+            i10++;
+            if (i10 <= 1000) {
+                Thread.yield();
+            } else if (runnable == h4Var || compareAndSet(runnable, h4Var)) {
+                z10 = Thread.interrupted() || z10;
+                LockSupport.park(g4Var);
+            }
+            runnable = (Runnable) get();
+        }
+        if (z10) {
+            thread.interrupt();
         }
     }
 
-    @Override // d6.h
-    public void h(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(5, 2);
-        aVar.c = Integer.valueOf(i10);
-        x6 x6Var = new x6(aVar);
-        z5 z5Var = this.a;
-        z5.D(z5Var, x6Var);
-        z5Var.F();
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void i(d6.f fVar, boolean z10) {
-        x6 x6Var = new x6(new a5.a(4, 2));
-        z5 z5Var = this.a;
-        z5.D(z5Var, x6Var);
-        w6 w6Var = (w6) z5Var.d;
-        n6.l.h(w6Var);
-        w6Var.a((d6.c) fVar);
-    }
-
-    @Override // d6.h
-    public void n(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(9, 2);
-        aVar.c = Integer.valueOf(i10);
-        z5 z5Var = this.a;
-        aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
-        z5.D(z5Var, new x6(aVar));
-        z5Var.F();
-    }
-
-    @Override // d6.h
-    public void p(d6.f fVar) {
-        d6.c cVar = (d6.c) fVar;
-        a5.a aVar = new a5.a(2, 2);
-        z5 z5Var = this.a;
-        aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
-        z5.D(z5Var, new x6(aVar));
-        w6 w6Var = (w6) z5Var.d;
-        n6.l.h(w6Var);
-        w6Var.a(cVar);
-        cVar.l = (o4) z5Var.e;
-    }
-
-    @Override // d6.h
-    public void r(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(8, 2);
-        aVar.c = Integer.valueOf(i10);
-        x6 x6Var = new x6(aVar);
-        z5 z5Var = this.a;
-        z5.D(z5Var, x6Var);
-        z5Var.F();
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void u(d6.f fVar) {
-    }
-
-    @Override // d6.h
-    public void w(d6.f fVar, String str) {
-        x6 x6Var = new x6(new a5.a(4, 2));
-        z5 z5Var = this.a;
-        z5.D(z5Var, x6Var);
-        w6 w6Var = (w6) z5Var.d;
-        n6.l.h(w6Var);
-        w6Var.a((d6.c) fVar);
-        w6 w6Var2 = (w6) z5Var.d;
-        n6.l.h(w6Var2);
-        String str2 = w6Var2.k;
-        if (str2 == null) {
-            w6Var2.k = str;
-        } else {
-            if (TextUtils.equals(str, str2)) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        Object call;
+        Thread currentThread = Thread.currentThread();
+        if (compareAndSet(null, currentThread)) {
+            p4 p4Var = this.b;
+            boolean isDone = p4Var.isDone();
+            h4 h4Var = c;
+            if (isDone) {
+                call = null;
+            } else {
+                try {
+                    call = this.a.call();
+                } catch (Throwable th2) {
+                    try {
+                        if (th2 instanceof InterruptedException) {
+                            Thread.currentThread().interrupt();
+                        }
+                        if (!compareAndSet(currentThread, h4Var)) {
+                            a(currentThread);
+                        }
+                        if (c4.f.f(p4Var, null, new v3(th2))) {
+                            c4.h(p4Var);
+                            return;
+                        }
+                        return;
+                    } catch (Throwable th3) {
+                        if (!compareAndSet(currentThread, h4Var)) {
+                            a(currentThread);
+                        }
+                        if (c4.f.f(p4Var, null, c4.h)) {
+                            c4.h(p4Var);
+                        }
+                        throw th3;
+                    }
+                }
+            }
+            if (!compareAndSet(currentThread, h4Var)) {
+                a(currentThread);
+            }
+            if (isDone) {
                 return;
             }
-            w6Var2.b(4);
+            if (call == null) {
+                call = c4.h;
+            }
+            if (c4.f.f(p4Var, null, call)) {
+                c4.h(p4Var);
+            }
         }
     }
 
-    @Override // d6.h
-    public void z(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(6, 2);
-        aVar.c = Integer.valueOf(i10);
-        x6 x6Var = new x6(aVar);
-        z5 z5Var = this.a;
-        z5.D(z5Var, x6Var);
-        w6 w6Var = (w6) z5Var.d;
-        n6.l.h(w6Var);
-        w6Var.a((d6.c) fVar);
+    @Override // java.util.concurrent.atomic.AtomicReference
+    public final String toString() {
+        Runnable runnable = (Runnable) get();
+        return a1.g.D(runnable == c ? "running=[DONE]" : runnable instanceof g4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a1.g.p("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
     }
 }

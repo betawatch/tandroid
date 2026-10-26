@@ -9,15 +9,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import g.r;
 import l.k;
-import m.e;
-import m.i;
+import m.h;
+import m.i1;
 import m.j1;
-import m.k1;
-import m.o3;
+import m.n3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -27,7 +26,7 @@ public class ContentFrameLayout extends FrameLayout {
     public TypedValue e;
     public TypedValue f;
     public final Rect h;
-    public j1 n;
+    public i1 n;
 
     public ContentFrameLayout(Context context) {
         this(context, null);
@@ -78,29 +77,29 @@ public class ContentFrameLayout extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        j1 j1Var = this.n;
-        if (j1Var != null) {
-            j1Var.getClass();
+        i1 i1Var = this.n;
+        if (i1Var != null) {
+            i1Var.getClass();
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        i iVar;
+        h hVar;
         super.onDetachedFromWindow();
-        j1 j1Var = this.n;
-        if (j1Var != null) {
-            r rVar = (r) ((qb.c) j1Var).b;
-            k1 k1Var = rVar.s;
-            if (k1Var != null) {
-                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
-                actionBarOverlayLayout.f();
-                ActionMenuView actionMenuView = ((o3) actionBarOverlayLayout.e).a.a;
-                if (actionMenuView != null && (iVar = actionMenuView.J) != null) {
-                    iVar.f();
-                    e eVar = iVar.J;
-                    if (eVar != null && eVar.b()) {
-                        eVar.i.dismiss();
+        i1 i1Var = this.n;
+        if (i1Var != null) {
+            r rVar = (r) ((rb.c) i1Var).b;
+            j1 j1Var = rVar.s;
+            if (j1Var != null) {
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
+                actionBarOverlayLayout.e();
+                ActionMenuView actionMenuView = ((n3) actionBarOverlayLayout.e).a.a;
+                if (actionMenuView != null && (hVar = actionMenuView.J) != null) {
+                    hVar.f();
+                    m.d dVar = hVar.J;
+                    if (dVar != null && dVar.b()) {
+                        dVar.i.dismiss();
                     }
                 }
             }
@@ -118,7 +117,7 @@ public class ContentFrameLayout extends FrameLayout {
             if (l0Var != null) {
                 l0Var.b();
             }
-            k kVar = rVar.q(0).h;
+            k kVar = rVar.o(0).h;
             if (kVar != null) {
                 kVar.c(true);
             }
@@ -271,8 +270,8 @@ public class ContentFrameLayout extends FrameLayout {
         }
     }
 
-    public void setAttachListener(j1 j1Var) {
-        this.n = j1Var;
+    public void setAttachListener(i1 i1Var) {
+        this.n = i1Var;
     }
 
     public ContentFrameLayout(Context context, AttributeSet attributeSet) {

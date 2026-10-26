@@ -6,7 +6,7 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class n90 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -28,15 +28,15 @@ public final class n90 implements PopupWindow.OnDismissListener {
         switch (this.a) {
             case 0:
                 ((r90) this.e).s = null;
-                ei.g6 g6Var = (ei.g6) this.c;
-                g6Var.animate().cancel();
-                g6Var.animate().alpha(0.0f).setDuration(150L).setListener(new i60(this, 4));
+                fi.f6 f6Var = (fi.f6) this.c;
+                f6Var.animate().cancel();
+                f6Var.animate().alpha(0.0f).setDuration(150L).setListener(new i10(this, 5));
                 break;
             default:
-                ((org.telegram.ui.mz) this.e).x = null;
-                ei.g6 g6Var2 = (ei.g6) this.c;
-                g6Var2.animate().cancel();
-                g6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new p31(this, 27));
+                ((org.telegram.ui.jz) this.e).x = null;
+                fi.f6 f6Var2 = (fi.f6) this.c;
+                f6Var2.animate().cancel();
+                f6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new h31(this, 28));
                 break;
         }
     }

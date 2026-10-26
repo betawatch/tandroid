@@ -1,28 +1,92 @@
 package y8;
 
+import a8.bf;
 import android.os.Parcel;
 import android.os.Parcelable;
+import androidx.versionedparcelable.ParcelImpl;
+import com.google.android.gms.wearable.ConnectionConfiguration;
 import java.util.ArrayList;
-import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class o extends o6.a {
-    public static final Parcelable.Creator<o> CREATOR = new c(10);
-    public final int a;
-    public final List b;
+public final class o implements Parcelable.Creator {
+    public final /* synthetic */ int a;
 
-    public o(int i10, ArrayList arrayList) {
-        this.a = i10;
-        this.b = arrayList;
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        switch (this.a) {
+            case 0:
+                int z10 = bf.z(parcel);
+                String str = null;
+                String str2 = null;
+                String str3 = null;
+                String str4 = null;
+                String str5 = null;
+                ArrayList arrayList = null;
+                int i10 = 0;
+                int i11 = 0;
+                boolean z11 = false;
+                boolean z12 = false;
+                boolean z13 = false;
+                int i12 = 0;
+                while (parcel.dataPosition() < z10) {
+                    int readInt = parcel.readInt();
+                    switch ((char) readInt) {
+                        case 2:
+                            str = bf.h(parcel, readInt);
+                            break;
+                        case 3:
+                            str2 = bf.h(parcel, readInt);
+                            break;
+                        case 4:
+                            i10 = bf.u(parcel, readInt);
+                            break;
+                        case 5:
+                            i11 = bf.u(parcel, readInt);
+                            break;
+                        case 6:
+                            z11 = bf.n(parcel, readInt);
+                            break;
+                        case 7:
+                            z12 = bf.n(parcel, readInt);
+                            break;
+                        case '\b':
+                            str3 = bf.h(parcel, readInt);
+                            break;
+                        case '\t':
+                            z13 = bf.n(parcel, readInt);
+                            break;
+                        case '\n':
+                            str4 = bf.h(parcel, readInt);
+                            break;
+                        case 11:
+                            str5 = bf.h(parcel, readInt);
+                            break;
+                        case '\f':
+                            i12 = bf.u(parcel, readInt);
+                            break;
+                        case '\r':
+                            arrayList = bf.j(parcel, readInt);
+                            break;
+                        default:
+                            bf.y(parcel, readInt);
+                            break;
+                    }
+                }
+                bf.m(parcel, z10);
+                return new ConnectionConfiguration(str, str2, i10, i11, z11, z12, str3, z13, str4, str5, i12, arrayList);
+            default:
+                return new ParcelImpl(parcel);
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.s(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        w7.f0.p(parcel, 3, this.b);
-        w7.f0.r(parcel, q6);
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i10) {
+        switch (this.a) {
+            case 0:
+                return new ConnectionConfiguration[i10];
+            default:
+                return new ParcelImpl[i10];
+        }
     }
 }

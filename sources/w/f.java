@@ -1,8 +1,8 @@
 package w;
 
-import si.o0;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class f extends Exception {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -11,8 +11,8 @@ public class f extends Exception {
     */
     public f(String str, e eVar) {
         super(r2.toString());
-        StringBuilder i10 = o0.i(str, ", frames: ");
-        i10.append(eVar.a());
+        StringBuilder l4 = b10.l(str, ", frames: ");
+        l4.append(eVar.a());
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -21,7 +21,7 @@ public class f extends Exception {
     */
     public f(String str, e eVar, Exception exc) {
         super(r2.toString(), exc);
-        StringBuilder i10 = o0.i(str, ", frames: ");
-        i10.append(eVar.a());
+        StringBuilder l4 = b10.l(str, ", frames: ");
+        l4.append(eVar.a());
     }
 }

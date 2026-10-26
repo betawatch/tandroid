@@ -8,12 +8,12 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class i0 extends Drawable {
     public final Drawable a;
     public final Drawable b;
-    public final f6 c = new f6(new h0(this, 0), 1200, bs.h, 0);
+    public final h6 c = new h6(new h0(this, 0), 1200, ds.h, 0);
 
     public i0(Context context) {
         this.a = context.getResources().getDrawable(R.drawable.input_ai).mutate();

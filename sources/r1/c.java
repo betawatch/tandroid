@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -45,36 +45,36 @@ public final class c {
     }
 
     public final double d(ByteOrder byteOrder) {
-        Object g10 = g(byteOrder);
-        if (g10 == null) {
+        Object g7 = g(byteOrder);
+        if (g7 == null) {
             throw new NumberFormatException("NULL can't be converted to a double value");
         }
-        if (g10 instanceof String) {
-            return Double.parseDouble((String) g10);
+        if (g7 instanceof String) {
+            return Double.parseDouble((String) g7);
         }
-        if (g10 instanceof long[]) {
-            if (((long[]) g10).length == 1) {
+        if (g7 instanceof long[]) {
+            if (((long[]) g7).length == 1) {
                 return r5[0];
             }
             throw new NumberFormatException("There are more than one component");
         }
-        if (g10 instanceof int[]) {
-            if (((int[]) g10).length == 1) {
+        if (g7 instanceof int[]) {
+            if (((int[]) g7).length == 1) {
                 return r5[0];
             }
             throw new NumberFormatException("There are more than one component");
         }
-        if (g10 instanceof double[]) {
-            double[] dArr = (double[]) g10;
+        if (g7 instanceof double[]) {
+            double[] dArr = (double[]) g7;
             if (dArr.length == 1) {
                 return dArr[0];
             }
             throw new NumberFormatException("There are more than one component");
         }
-        if (!(g10 instanceof e[])) {
+        if (!(g7 instanceof e[])) {
             throw new NumberFormatException("Couldn't find a double value");
         }
-        e[] eVarArr = (e[]) g10;
+        e[] eVarArr = (e[]) g7;
         if (eVarArr.length != 1) {
             throw new NumberFormatException("There are more than one component");
         }
@@ -83,24 +83,24 @@ public final class c {
     }
 
     public final int e(ByteOrder byteOrder) {
-        Object g10 = g(byteOrder);
-        if (g10 == null) {
+        Object g7 = g(byteOrder);
+        if (g7 == null) {
             throw new NumberFormatException("NULL can't be converted to a integer value");
         }
-        if (g10 instanceof String) {
-            return Integer.parseInt((String) g10);
+        if (g7 instanceof String) {
+            return Integer.parseInt((String) g7);
         }
-        if (g10 instanceof long[]) {
-            long[] jArr = (long[]) g10;
+        if (g7 instanceof long[]) {
+            long[] jArr = (long[]) g7;
             if (jArr.length == 1) {
                 return (int) jArr[0];
             }
             throw new NumberFormatException("There are more than one component");
         }
-        if (!(g10 instanceof int[])) {
+        if (!(g7 instanceof int[])) {
             throw new NumberFormatException("Couldn't find a integer value");
         }
-        int[] iArr = (int[]) g10;
+        int[] iArr = (int[]) g7;
         if (iArr.length == 1) {
             return iArr[0];
         }
@@ -108,17 +108,17 @@ public final class c {
     }
 
     public final String f(ByteOrder byteOrder) {
-        Object g10 = g(byteOrder);
-        if (g10 == null) {
+        Object g7 = g(byteOrder);
+        if (g7 == null) {
             return null;
         }
-        if (g10 instanceof String) {
-            return (String) g10;
+        if (g7 instanceof String) {
+            return (String) g7;
         }
         StringBuilder sb2 = new StringBuilder();
         int i10 = 0;
-        if (g10 instanceof long[]) {
-            long[] jArr = (long[]) g10;
+        if (g7 instanceof long[]) {
+            long[] jArr = (long[]) g7;
             while (i10 < jArr.length) {
                 sb2.append(jArr[i10]);
                 i10++;
@@ -128,8 +128,8 @@ public final class c {
             }
             return sb2.toString();
         }
-        if (g10 instanceof int[]) {
-            int[] iArr = (int[]) g10;
+        if (g7 instanceof int[]) {
+            int[] iArr = (int[]) g7;
             while (i10 < iArr.length) {
                 sb2.append(iArr[i10]);
                 i10++;
@@ -139,8 +139,8 @@ public final class c {
             }
             return sb2.toString();
         }
-        if (g10 instanceof double[]) {
-            double[] dArr = (double[]) g10;
+        if (g7 instanceof double[]) {
+            double[] dArr = (double[]) g7;
             while (i10 < dArr.length) {
                 sb2.append(dArr[i10]);
                 i10++;
@@ -150,10 +150,10 @@ public final class c {
             }
             return sb2.toString();
         }
-        if (!(g10 instanceof e[])) {
+        if (!(g7 instanceof e[])) {
             return null;
         }
-        e[] eVarArr = (e[]) g10;
+        e[] eVarArr = (e[]) g7;
         while (i10 < eVarArr.length) {
             sb2.append(eVarArr[i10].a);
             sb2.append('/');
@@ -295,26 +295,26 @@ public final class c {
                             try {
                                 bVar.close();
                                 return null;
-                            } catch (IOException e7) {
-                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e7);
+                            } catch (IOException e10) {
+                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
                                 return null;
                             }
                     }
                     try {
                         bVar.close();
                         return str;
-                    } catch (IOException e10) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
+                    } catch (IOException e11) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
                         return str;
                     }
-                } catch (IOException e11) {
-                    e = e11;
+                } catch (IOException e12) {
+                    e = e12;
                     Log.w("ExifInterface", "IOException occurred during reading a value", e);
                     if (bVar != null) {
                         try {
                             bVar.close();
-                        } catch (IOException e12) {
-                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
+                        } catch (IOException e13) {
+                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
                         }
                     }
                     return null;
@@ -325,14 +325,14 @@ public final class c {
                 if (inputStream2 != null) {
                     try {
                         inputStream2.close();
-                    } catch (IOException e13) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
+                    } catch (IOException e14) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e14);
                     }
                 }
                 throw th;
             }
-        } catch (IOException e14) {
-            e = e14;
+        } catch (IOException e15) {
+            e = e15;
             bVar = null;
         } catch (Throwable th3) {
             th = th3;

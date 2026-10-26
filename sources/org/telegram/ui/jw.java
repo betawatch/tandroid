@@ -1,186 +1,72 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class jw extends s4.r0 {
-    public boolean a;
-    public final /* synthetic */ dy b;
-    public final /* synthetic */ wx c;
-    public final /* synthetic */ ey d;
+public final class jw extends ChatActivityEnterView {
+    public final /* synthetic */ cy s5;
 
-    public jw(ey eyVar, dy dyVar, wx wxVar) {
-        this.d = eyVar;
-        this.b = dyVar;
-        this.c = wxVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jw(cy cyVar, Activity activity, tx txVar) {
+        super(activity, txVar, null, false, null);
+        this.s5 = cyVar;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        ey eyVar = this.d;
-        if (i10 == 1) {
-            this.a = true;
-            eyVar.e3 = true;
-            a5.a aVar = eyVar.e0[0].b;
-            ValueAnimator valueAnimator = (ValueAnimator) aVar.c;
-            if (valueAnimator != null) {
-                valueAnimator.removeAllListeners();
-                ((ValueAnimator) aVar.c).cancel();
-                aVar.c = null;
-            }
-            if (eyVar.X.r.getText().length() == 0 && eyVar.X.r.hasFocus()) {
-                AndroidUtilities.hideKeyboard(eyVar.X.r);
-                eyVar.X.r.clearFocus();
-            }
-        } else {
-            eyVar.e3 = false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int i10;
+        if (motionEvent.getAction() == 0) {
+            cy cyVar = this.s5;
+            Activity parentActivity = cyVar.getParentActivity();
+            i10 = ((org.telegram.ui.ActionBar.r2) cyVar).classGuid;
+            AndroidUtilities.requestAdjustResize(parentActivity, i10);
         }
-        if (i10 == 0) {
-            this.a = false;
-            eyVar.e2 = false;
-            boolean z10 = eyVar.b1;
-            dy dyVar = this.b;
-            if (z10) {
-                eyVar.b1 = false;
-                if (eyVar.d1) {
-                    zx zxVar = dyVar.a;
-                    int i11 = zx.w3;
-                    zxVar.G1();
-                    eyVar.d1 = false;
-                }
-                dyVar.d.l();
-            }
-            ey.n1(eyVar, dyVar);
-        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v4, types: [boolean] */
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        zx zxVar;
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        View childAt;
-        boolean z10;
-        Object[] objArr;
-        this.c.W();
-        dy dyVar = this.b;
-        fw fwVar = dyVar.x;
-        int i12 = -i11;
-        ArrayList arrayList = fwVar.x;
-        ArrayList arrayList2 = fwVar.o;
-        if (!arrayList2.isEmpty()) {
-            int size = arrayList2.size();
-            for (int i13 = 0; i13 < size; i13++) {
-                View view = ((s4.b1) arrayList2.get(i13)).a;
-                view.setTranslationY(view.getTranslationY() + i12);
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final int getMessagesCount() {
+        cy cyVar = this.s5;
+        int i10 = cyVar.S0;
+        jw jwVar = cyVar.B1;
+        return Math.max(1, i10 + (!TextUtils.isEmpty(jwVar == null ? "" : jwVar.getFieldText()) ? 1 : 0));
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final long getStarsPrice() {
+        cy cyVar = this.s5;
+        ArrayList arrayList = cyVar.I2;
+        if (arrayList == null) {
+            return 0L;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        long j10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            long longValue = ((Long) obj).longValue();
+            long sendPaidMessagesStars = cyVar.getMessagesController().getSendPaidMessagesStars(longValue);
+            if (sendPaidMessagesStars <= 0 && longValue > 0) {
+                sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(cyVar.getMessagesController().isUserContactBlocked(longValue));
             }
+            j10 += sendPaidMessagesStars;
         }
-        if (!arrayList.isEmpty()) {
-            int size2 = arrayList.size();
-            for (int i14 = 0; i14 < size2; i14++) {
-                View view2 = ((s4.b1) arrayList.get(i14)).a;
-                view2.setTranslationY(view2.getTranslationY() + i12);
-            }
-        }
-        int i15 = -1;
-        int i16 = -1;
-        for (int i17 = 0; i17 < recyclerView.getChildCount(); i17++) {
-            int R = RecyclerView.R(recyclerView.getChildAt(i17));
-            if (R >= 0) {
-                if (i15 == -1 || R > i15) {
-                    i15 = R;
-                }
-                if (i16 == -1 || R < i16) {
-                    i16 = R;
-                }
-            }
-        }
-        ey eyVar = this.d;
-        eyVar.p3(dyVar);
-        eyVar.Q = true;
-        View view3 = eyVar.fragmentView;
-        if (view3 != null) {
-            view3.invalidate();
-        }
-        if (eyVar.R0 != 10 && this.a && recyclerView.getChildCount() > 0 && i16 != -1) {
-            s4.b1 K = recyclerView.K(i16);
-            if (!eyVar.X3() || (K != null && K.b() >= 0)) {
-                int top = K != null ? K.a.getTop() : 0;
-                int i18 = eyVar.Y1;
-                if (i18 == i16) {
-                    int i19 = eyVar.Z1;
-                    int i20 = i19 - top;
-                    z10 = top < i19;
-                    if (Math.abs(i20) <= 1) {
-                        objArr = false;
-                        if (objArr != false && eyVar.a2 && (z10 || eyVar.e3)) {
-                            eyVar.a4(z10);
-                        }
-                        eyVar.Y1 = i16;
-                        eyVar.Z1 = top;
-                        eyVar.a2 = true;
-                    }
-                } else {
-                    z10 = i16 > i18;
-                }
-                objArr = true;
-                if (objArr != false) {
-                    eyVar.a4(z10);
-                }
-                eyVar.Y1 = i16;
-                eyVar.Z1 = top;
-                eyVar.a2 = true;
-            }
-        }
-        if (!eyVar.K && recyclerView == eyVar.e0[0].a && !eyVar.j2) {
-            kVar = ((org.telegram.ui.ActionBar.o2) eyVar).actionBar;
-            if (kVar != null) {
-                kVar2 = ((org.telegram.ui.ActionBar.o2) eyVar).actionBar;
-                if (!kVar2.s() && !eyVar.e2 && !eyVar.G3.c()) {
-                    if (i11 > 0 && eyVar.X3() && eyVar.e0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
-                        int top2 = (childAt.getTop() - recyclerView.getPaddingTop()) + childAt.getMeasuredHeight();
-                        if (top2 + i11 > 0) {
-                            if (top2 >= 0) {
-                                return;
-                            } else {
-                                i11 = -top2;
-                            }
-                        }
-                    }
-                    eyVar.Q = true;
-                    View view4 = eyVar.fragmentView;
-                    if (view4 != null) {
-                        view4.invalidate();
-                    }
-                }
-            }
-        }
-        if (eyVar.fragmentView != null) {
-            eyVar.i3();
-        }
-        yw ywVar = eyVar.G3;
-        if (ywVar != null && ywVar.c() && (zxVar = dyVar.a) != null) {
-            zxVar.invalidate();
-        }
-        vw vwVar = eyVar.E0;
-        if (vwVar != null && vwVar.getPremiumHint() != null && eyVar.E0.getPremiumHint().V) {
-            eyVar.E0.getPremiumHint().e(true);
-        }
-        ?? X3 = eyVar.X3();
-        View childAt2 = dyVar.a.getChildAt(X3 == true ? 1 : 0);
-        eyVar.e.a(i16 > X3 || (((float) (childAt2 != null ? childAt2.getTop() : 0)) - eyVar.N) + ((float) AndroidUtilities.dp(5.0f)) < ((float) dyVar.a.getPaddingTop()), true);
-        if (i11 == 0 || (fVar = eyVar.l4) == null || Build.VERSION.SDK_INT < 31) {
-            return;
-        }
-        fVar.f(i10, i11);
+        return j10;
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void y0(float f7) {
+        cy cyVar = this.s5;
+        cyVar.y1.setInputBubbleHeight(f7);
+        cyVar.A3();
+        cyVar.B3();
     }
 }

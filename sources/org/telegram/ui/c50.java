@@ -1,39 +1,84 @@
 package org.telegram.ui;
 
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c50 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d50 b;
+public final class c50 implements org.telegram.ui.Components.f50 {
+    public float a;
+    public TLRPC.FileLocation b;
+    public TLRPC.FileLocation c;
+    public ImageLocation d;
+    public final long e;
+    public final /* synthetic */ v50 f;
 
-    public /* synthetic */ c50(d50 d50Var, int i10) {
-        this.a = i10;
-        this.b = d50Var;
+    public c50(v50 v50Var, long j10) {
+        this.f = v50Var;
+        this.e = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d50 d50Var = this.b;
-                e50 e50Var = d50Var.b;
-                if (e50Var != null) {
-                    e50Var.setVisibility(0);
-                }
-                AndroidUtilities.runOnUIThread(new c50(d50Var, 2), 16L);
-                break;
-            case 1:
-                e50 e50Var2 = this.b.b;
-                if (e50Var2 != null) {
-                    e50Var2.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                super/*android.app.Dialog*/.dismiss();
-                break;
+    @Override // org.telegram.ui.Components.f50
+    public final void F(float f7) {
+        this.f.b.O(this.d, f7);
+        a(f7);
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final void R(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
+        AndroidUtilities.runOnUIThread(new ii.k(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
+    }
+
+    public final void a(float f7) {
+        this.a = f7;
+        b50 b50Var = this.f.Q;
+        if (b50Var == null) {
+            return;
         }
+        for (int i10 = 0; i10 < b50Var.getChildCount(); i10++) {
+            View childAt = b50Var.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.i4) {
+                org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) childAt;
+                if (i4Var.c()) {
+                    org.telegram.ui.Cells.d4 d4Var = i4Var.x;
+                    d4Var.setProgress(f7);
+                    if (f7 < 1.0f) {
+                        AndroidUtilities.updateViewVisibilityAnimated(d4Var, true, 1.0f, true);
+                    } else {
+                        AndroidUtilities.updateViewVisibilityAnimated(d4Var, false, 1.0f, true);
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ qu0 getCloseIntoObject() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ String getInitialSearchString() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ boolean u() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ void Q() {
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final void L(boolean z10, boolean z11) {
     }
 }

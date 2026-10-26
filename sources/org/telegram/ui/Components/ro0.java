@@ -1,27 +1,28 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ro0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.nx b;
+public final class ro0 extends ct {
+    public final /* synthetic */ org.telegram.ui.jx k0;
 
-    public /* synthetic */ ro0(org.telegram.ui.nx nxVar, int i10) {
-        this.a = i10;
-        this.b = nxVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ro0(org.telegram.ui.jx jxVar, mm0 mm0Var, Context context, int i10, int i11) {
+        super(mm0Var, context, i10, i11, false, null);
+        this.k0 = jxVar;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                this.b.R(i10, i11);
-                break;
-            default:
-                this.b.R(i10, i11);
-                break;
-        }
+    @Override // org.telegram.ui.Components.j71
+    public final void O(boolean z10) {
+        ArrayList arrayList;
+        super.O(z10);
+        qo0 qo0Var = this.k0.n0;
+        qo0Var.e(this.b0 || this.c0 || (arrayList = this.V) == null || !arrayList.isEmpty(), z10);
+        qo0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        qo0Var.e.setVisibility(8);
     }
 }

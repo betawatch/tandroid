@@ -1,95 +1,100 @@
 package com.google.android.gms.internal.cast;
 
-import android.os.Looper;
-import j$.util.DesugarCollections;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
-import org.telegram.tgnet.TLRPC;
+import java.util.List;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class u {
-    public static final g6.b i = new g6.b("SessionTransController", null);
-    public final d6.b a;
-    public d6.g f;
-    public c0.i g;
-    public c6.r h;
-    public final Set b = DesugarCollections.synchronizedSet(new HashSet());
-    public int e = 0;
-    public final a0 c = new a0(Looper.getMainLooper(), 0);
-    public final t d = new t(this, 0);
+public final /* synthetic */ class u implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public u(d6.b bVar) {
-        this.a = bVar;
+    public /* synthetic */ u(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final e6.h a() {
-        d6.g gVar = this.f;
-        g6.b bVar = i;
-        if (gVar == null) {
-            bVar.b("skip transferring as SessionManager is null", new Object[0]);
-            return null;
-        }
-        d6.c c10 = gVar.c();
-        if (c10 == null) {
-            bVar.b("skip transferring as CastSession is null", new Object[0]);
-            return null;
-        }
-        n6.l.e("Must be called from the main thread.");
-        return c10.j;
-    }
-
-    public final void b(int i10) {
-        c0.i iVar = this.g;
-        if (iVar != null) {
-            iVar.d = true;
-            c0.l lVar = iVar.b;
-            if (lVar != null && lVar.b.cancel(true)) {
-                iVar.a = null;
-                iVar.b = null;
-                iVar.c = null;
-            }
-        }
-        i.b("notify failed transfer with type = %d, reason = %d", Integer.valueOf(this.e), Integer.valueOf(i10));
-        Iterator it = new HashSet(this.b).iterator();
-        while (it.hasNext()) {
-            y0 y0Var = (y0) it.next();
-            int i11 = this.e;
-            switch (y0Var.a) {
-                case 0:
-                    a1.j.b("onTransferFailed with type = %d and reason = %d", Integer.valueOf(i11), Integer.valueOf(i10));
-                    a1 a1Var = (a1) y0Var.b;
-                    a1Var.c();
-                    r1 b10 = a1Var.c.b(a1Var.g);
-                    m1 m10 = n1.m(b10.d());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                List list = ((w) this.b).e;
+                if (list != null) {
+                    list.isEmpty();
+                }
+                throw null;
+            case 1:
+                x0 x0Var = (x0) this.b;
+                y0 y0Var = x0Var.g;
+                if (y0Var != null) {
+                    x0Var.a.a((p1) x0Var.c.b(y0Var).a(), 223);
+                }
+                x0Var.e();
+                return;
+            default:
+                a2 a2Var = (a2) this.b;
+                HashSet hashSet = a2Var.f;
+                SharedPreferences sharedPreferences = a2Var.b;
+                HashSet hashSet2 = a2Var.g;
+                if (hashSet.isEmpty()) {
+                    return;
+                }
+                long j10 = true != hashSet2.equals(hashSet) ? 86400000L : 172800000L;
+                long currentTimeMillis = System.currentTimeMillis();
+                long j11 = a2Var.h;
+                if (j11 == 0 || currentTimeMillis - j11 >= j10) {
+                    a2.i.b("Upload the feature usage report.", new Object[0]);
+                    h1 l4 = i1.l();
+                    String str = a2.j;
+                    l4.c();
+                    i1.n((i1) l4.b, str);
+                    String str2 = a2Var.c;
+                    l4.c();
+                    i1.m((i1) l4.b, str2);
+                    i1 i1Var = (i1) l4.a();
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.addAll(hashSet);
+                    d1 l10 = e1.l();
+                    l10.c();
+                    e1.n((e1) l10.b, arrayList);
+                    l10.c();
+                    e1.m((e1) l10.b, i1Var);
+                    e1 e1Var = (e1) l10.a();
+                    o1 m10 = p1.m();
                     m10.c();
-                    n1.v((n1) m10.b, i11);
-                    m10.c();
-                    n1.w((n1) m10.b, i10);
-                    b10.e((n1) m10.a());
-                    a1Var.a.a((s1) b10.a(), TLRPC.LAYER);
-                    a1Var.i = false;
-                    break;
-                default:
-                    a5.a aVar = new a5.a(11, 2);
-                    aVar.c = Integer.valueOf(i10);
-                    z5 z5Var = (z5) y0Var.b;
-                    aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
-                    z5.D(z5Var, new x6(aVar));
-                    break;
-            }
+                    p1.s((p1) m10.b, e1Var);
+                    a2Var.a.a((p1) m10.a(), 243);
+                    SharedPreferences.Editor edit = sharedPreferences.edit();
+                    if (!hashSet2.equals(hashSet)) {
+                        hashSet2.clear();
+                        hashSet2.addAll(hashSet);
+                        Iterator it = hashSet2.iterator();
+                        while (it.hasNext()) {
+                            String num = Integer.toString(((a1) it.next()).a);
+                            String j12 = b10.j("feature_usage_timestamp_reported_feature_", num);
+                            if (!sharedPreferences.contains(j12)) {
+                                j12 = b10.j("feature_usage_timestamp_detected_feature_", num);
+                            }
+                            String j13 = b10.j("feature_usage_timestamp_reported_feature_", num);
+                            if (!TextUtils.equals(j12, j13)) {
+                                long j14 = sharedPreferences.getLong(j12, 0L);
+                                edit.remove(j12);
+                                if (j14 != 0) {
+                                    edit.putLong(j13, j14);
+                                }
+                            }
+                        }
+                    }
+                    a2Var.h = currentTimeMillis;
+                    edit.putLong("feature_usage_last_report_time", currentTimeMillis).apply();
+                    return;
+                }
+                return;
         }
-        c();
-    }
-
-    public final void c() {
-        a0 a0Var = this.c;
-        n6.l.h(a0Var);
-        t tVar = this.d;
-        n6.l.h(tVar);
-        a0Var.removeCallbacks(tVar);
-        this.e = 0;
-        this.h = null;
     }
 }

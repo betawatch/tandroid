@@ -1,32 +1,41 @@
 package qh;
 
-import ig.k0;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.web.a2;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class c {
-    public final k0 a;
-    public b c = b.a;
-    public final a2 d = new a2(this, 8);
-    public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
+public abstract class c extends FrameLayout {
+    public final LinearLayout a;
+    public float b;
+    public final Rect c;
+    public final Rect d;
+    public final Paint e;
 
-    public c(k0 k0Var) {
-        this.a = k0Var;
+    public c(Context context) {
+        super(context);
+        this.c = new Rect();
+        this.d = new Rect();
+        this.e = new Paint(1);
+        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.a = linearLayout;
+        linearLayout.setOrientation(0);
+        addView(linearLayout, gb1.g(-1.0f, -1));
     }
 
-    public final void a(b bVar, boolean z10) {
-        if (this.c != bVar) {
-            a2 a2Var = this.d;
-            AndroidUtilities.cancelRunOnUIThread(a2Var);
-            this.c = bVar;
-            if (z10) {
-                this.a.run(bVar);
-            }
-            if (bVar == b.b || bVar == b.c) {
-                AndroidUtilities.runOnUIThread(a2Var, this.b);
-            }
-        }
+    public void setLensVisibility(float f7) {
+        this.b = f7;
+        int dp = AndroidUtilities.dp(f7 * 7.0f);
+        Rect rect = this.c;
+        Rect rect2 = this.d;
+        rect2.set(rect);
+        int i10 = -dp;
+        rect2.inset(i10, i10);
     }
 }

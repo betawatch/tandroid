@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ un b;
     public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ sf(sn snVar, ArrayList arrayList, int i10) {
+    public /* synthetic */ sf(un unVar, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = snVar;
+        this.b = unVar;
         this.c = arrayList;
     }
 
@@ -20,18 +20,18 @@ public final /* synthetic */ class sf implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                sn snVar = this.b;
-                hi hiVar = new hi(snVar, snVar, snVar.getParentActivity(), snVar.qa, this.c);
-                hiVar.setCalcMandatoryInsets(snVar.C9());
-                hiVar.setDimBehind(false);
-                snVar.D7(false);
-                snVar.showDialog(hiVar);
+                un unVar = this.b;
+                ii iiVar = new ii(unVar, unVar, unVar.getParentActivity(), unVar.qa, this.c);
+                iiVar.setCalcMandatoryInsets(unVar.F9());
+                iiVar.setDimBehind(false);
+                unVar.H7(false);
+                unVar.showDialog(iiVar);
                 break;
             default:
-                sn snVar2 = this.b;
-                if (snVar2.getParentActivity() != null && snVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.aw(snVar2, snVar2.getParentActivity(), snVar2.qa, this.c).show();
-                    snVar2.D7(true);
+                un unVar2 = this.b;
+                if (unVar2.getParentActivity() != null && unVar2.getParentActivity() != null) {
+                    new org.telegram.ui.Components.aw(unVar2, unVar2.getParentActivity(), unVar2.qa, this.c).show();
+                    unVar2.H7(true);
                     break;
                 }
                 break;

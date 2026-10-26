@@ -1,48 +1,39 @@
 package x5;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 import java.util.Arrays;
-import n6.l;
-import v8.s;
-import w7.f0;
+import m4.w1;
+import o6.l;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends o6.a {
-    public static final Parcelable.Creator<b> CREATOR = new s(26);
+public final class b implements com.google.android.gms.common.api.b {
+    public static final b c;
     public final boolean a;
     public final String b;
 
-    public b(String str, boolean z10) {
-        if (z10) {
-            l.h(str);
-        }
-        this.a = z10;
-        this.b = str;
+    static {
+        w1 w1Var = new w1(26, (byte) 0);
+        w1Var.b = Boolean.FALSE;
+        c = new b(w1Var);
+    }
+
+    public b(w1 w1Var) {
+        this.a = ((Boolean) w1Var.b).booleanValue();
+        this.b = (String) w1Var.c;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
         if (!(obj instanceof b)) {
             return false;
         }
         b bVar = (b) obj;
-        return this.a == bVar.a && l.l(this.b, bVar.b);
+        return l.l(null, null) && this.a == bVar.a && l.l(this.b, bVar.b);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        f0.l(parcel, 2, this.b);
-        f0.r(parcel, q6);
+        return Arrays.hashCode(new Object[]{null, Boolean.valueOf(this.a), this.b});
     }
 }

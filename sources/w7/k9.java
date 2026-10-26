@@ -1,80 +1,148 @@
 package w7;
 
-import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.util.AbstractCollection;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class k9 extends AbstractCollection implements Serializable {
-    public static final Object[] a = new Object[0];
+public abstract class k9 extends h9 implements List, RandomAccess {
+    public static final i9 b = new i9(m9.e, 0);
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
+    @Override // java.util.List
+    public final void add(int i10, Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(Collection collection) {
+    @Override // java.util.List
+    public final boolean addAll(int i10, Collection collection) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean contains(Object obj) {
+        return indexOf(obj) >= 0;
     }
 
-    public abstract int h(Object[] objArr);
-
-    public int m() {
-        throw new UnsupportedOperationException();
-    }
-
-    public int n() {
-        throw new UnsupportedOperationException();
-    }
-
-    public Object[] o() {
-        return null;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        return toArray(a);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        int size = size();
-        int length = objArr.length;
-        if (length < size) {
-            Object[] o10 = o();
-            if (o10 != null) {
-                return Arrays.copyOfRange(o10, n(), m(), objArr.getClass());
-            }
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
-        } else if (length > size) {
-            objArr[size] = null;
+    @Override // java.util.Collection, java.util.List
+    public final boolean equals(Object obj) {
+        Object next;
+        Object next2;
+        int i10;
+        if (obj == this) {
+            return true;
         }
-        h(objArr);
-        return objArr;
+        if (obj instanceof List) {
+            List list = (List) obj;
+            int size = size();
+            if (size == list.size()) {
+                if (list instanceof RandomAccess) {
+                    for (0; i10 < size; i10 + 1) {
+                        Object obj2 = get(i10);
+                        Object obj3 = list.get(i10);
+                        i10 = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i10 + 1 : 0;
+                    }
+                    return true;
+                }
+                i9 listIterator = listIterator(0);
+                Iterator it = list.iterator();
+                while (true) {
+                    if (listIterator.hasNext()) {
+                        if (!it.hasNext() || ((next = listIterator.next()) != (next2 = it.next()) && (next == null || !next.equals(next2)))) {
+                            break;
+                        }
+                    } else if (!it.hasNext()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // w7.h9
+    public int h(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
+    @Override // java.util.Collection, java.util.List
+    public final int hashCode() {
+        int size = size();
+        int i10 = 1;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 = (i10 * 31) + get(i11).hashCode();
+        }
+        return i10;
+    }
+
+    @Override // java.util.List
+    public final int indexOf(Object obj) {
+        if (obj == null) {
+            return -1;
+        }
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (obj.equals(get(i10))) {
+                return i10;
+            }
+        }
+        return -1;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    public final /* synthetic */ Iterator iterator() {
+        return listIterator(0);
+    }
+
+    @Override // java.util.List
+    public final int lastIndexOf(Object obj) {
+        if (obj == null) {
+            return -1;
+        }
+        for (int size = size() - 1; size >= 0; size--) {
+            if (obj.equals(get(size))) {
+                return size;
+            }
+        }
+        return -1;
+    }
+
+    @Override // java.util.List
+    public final /* synthetic */ ListIterator listIterator() {
+        return listIterator(0);
+    }
+
+    @Override // java.util.List
+    /* renamed from: p */
+    public k9 subList(int i10, int i11) {
+        y.b(i10, i11, size());
+        int i12 = i11 - i10;
+        return i12 == size() ? this : i12 == 0 ? m9.e : new j9(this, i10, i12);
+    }
+
+    @Override // java.util.List
+    /* renamed from: q, reason: merged with bridge method [inline-methods] */
+    public final i9 listIterator(int i10) {
+        int size = size();
+        if (i10 < 0 || i10 > size) {
+            throw new IndexOutOfBoundsException(y.c(i10, size, "index"));
+        }
+        return isEmpty() ? b : new i9(this, i10);
+    }
+
+    @Override // java.util.List
+    public final Object remove(int i10) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.List
+    public final Object set(int i10, Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

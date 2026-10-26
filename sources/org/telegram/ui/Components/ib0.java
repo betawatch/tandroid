@@ -1,133 +1,161 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ib0 extends mm0 {
-    public boolean Y2;
-    public boolean Z2;
-    public int a3;
-    public int b3;
-    public final /* synthetic */ jb0 c3;
+public final class ib0 extends Drawable {
+    public Paint a;
+    public Paint b;
+    public long c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public long l;
+    public org.telegram.ui.Cells.s1 m;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ib0(jb0 jb0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.c3 = jb0Var;
-        setOnScrollListener(new kv(this, 3));
-        i(new hb0(this));
+    public final void a() {
+        Rect bounds = getBounds();
+        float centerX = bounds.centerX();
+        float centerY = bounds.centerY();
+        int i10 = bounds.left;
+        float f7 = (i10 - centerX) * (i10 - centerX);
+        int i11 = bounds.top;
+        this.g = (float) Math.ceil(Math.sqrt(c3.h0.z(i11, centerY, i11 - centerY, f7)));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        jb0 jb0Var = this.c3;
-        jb0Var.invalidate();
-        jb0Var.b();
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        jb0 jb0Var = this.c3;
-        hg.j1 j1Var = jb0Var.f;
-        hg.p1 p1Var = jb0Var.e;
-        if (!jb0Var.c.t ? this.Z2 || p1Var == null || p1Var.e == null || !p1Var.f || motionEvent.getY() >= p1Var.e.getBottom() : this.Z2 || p1Var == null || p1Var.e == null || !p1Var.f || motionEvent.getY() <= p1Var.e.getTop()) {
-            boolean z10 = !this.Y2 && org.telegram.ui.ht.o().p(motionEvent, jb0Var.b, null, this.n2);
-            if (((j1Var.N() && motionEvent.getAction() == 0) || motionEvent.getAction() == 2) && j1Var.N()) {
-                if (j1Var.n0 == null) {
-                    hg.f1 f1Var = new hg.f1(j1Var, j1Var.f, j1Var.n, j1Var.r, 0);
-                    j1Var.n0 = f1Var;
-                    f1Var.a();
-                }
-                j1Var.n0.b();
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0056, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float f7;
+        org.telegram.ui.Cells.s1 s1Var;
+        Paint paint = this.a;
+        float f10 = this.d;
+        if (f10 == 1.0f) {
+            Rect bounds = getBounds();
+            Paint paint2 = this.b;
+            if (paint2 != null) {
+                paint = paint2;
             }
-            if (super.onInterceptTouchEvent(motionEvent) || z10) {
-                return true;
+            canvas.drawRect(bounds, paint);
+        } else if (f10 != 0.0f) {
+            float interpolation = this.e ? ds.h.getInterpolation(f10) : 1.0f - ds.h.getInterpolation(1.0f - f10);
+            Rect bounds2 = getBounds();
+            float centerX = bounds2.centerX();
+            float centerY = bounds2.centerY();
+            float f11 = this.j;
+            if (f11 >= 0.0f) {
+                f7 = this.k;
             }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15 = i12 - i10;
-        int i16 = i13 - i11;
-        jb0 jb0Var = this.c3;
-        boolean g10 = jb0Var.g();
-        s4.b0 currentLayoutManager = jb0Var.getCurrentLayoutManager();
-        int L0 = g10 ? currentLayoutManager.L0() : currentLayoutManager.N0();
-        View m10 = currentLayoutManager.m(L0);
-        if (m10 != null) {
-            i14 = m10.getTop() - (g10 ? 0 : this.b3 - i16);
-        } else {
-            i14 = 0;
-        }
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (jb0Var.H) {
-            jb0Var.G = true;
-            currentLayoutManager.h1(0, 100000);
-            super.onLayout(false, i10, i11, i12, i13);
-            jb0Var.G = false;
-            jb0Var.H = false;
-        } else if (L0 != -1 && i15 == this.a3 && i16 - this.b3 != 0) {
-            jb0Var.G = true;
-            currentLayoutManager.i1(L0, i14, false);
-            super.onLayout(false, i10, i11, i12, i13);
-            jb0Var.G = false;
-        }
-        this.b3 = i16;
-        this.a3 = i15;
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i11);
-        jb0 jb0Var = this.c3;
-        hg.p1 p1Var = jb0Var.e;
-        if (p1Var != null) {
-            p1Var.d = Integer.valueOf(size);
-            ai.jc jcVar = p1Var.e;
-            if (jcVar != null) {
-                jcVar.requestLayout();
+            f11 = this.h;
+            if (f11 >= 0.0f) {
+                f7 = this.i;
             }
-        }
-        float min = (int) Math.min(AndroidUtilities.dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
-        jb0Var.v = min;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size + ((int) min), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        jb0 jb0Var = this.c3;
-        hg.p1 p1Var = jb0Var.e;
-        if (jb0Var.c.t) {
-            if (!this.Z2 && p1Var != null && p1Var.e != null && p1Var.f && motionEvent.getY() > p1Var.e.getTop()) {
-                return false;
+            f7 = centerY;
+            f11 = centerX;
+            float f12 = 1.0f - interpolation;
+            float z10 = c3.h0.z(f11, centerX, f12, centerX);
+            float z11 = c3.h0.z(f7, centerY, f12, centerY);
+            float f13 = this.g * interpolation;
+            Paint paint3 = this.b;
+            if (paint3 != null) {
+                paint = paint3;
             }
-        } else if (!this.Z2 && p1Var != null && p1Var.e != null && p1Var.f && motionEvent.getY() < p1Var.e.getBottom()) {
-            return false;
+            canvas.drawCircle(z10, z11, f13, paint);
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c3.G) {
+        if (!this.f) {
             return;
         }
-        super.requestLayout();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = elapsedRealtime - this.c;
+        if (j10 > 20) {
+            j10 = 17;
+        }
+        this.c = elapsedRealtime;
+        if (this.e) {
+            float f14 = (j10 / 240.0f) + this.d;
+            this.d = f14;
+            if (f14 >= 1.0f) {
+                this.d = 1.0f;
+                this.h = -1.0f;
+                this.i = -1.0f;
+                this.j = -1.0f;
+                this.k = -1.0f;
+                this.f = false;
+            }
+            s1Var = this.m;
+            if (s1Var == null) {
+                s1Var.invalidate();
+                if (s1Var.getParent() != null) {
+                    ((ViewGroup) s1Var.getParent()).invalidate();
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        float f15 = this.d - (j10 / 240.0f);
+        this.d = f15;
+        if (f15 <= 0.0f) {
+            this.d = 0.0f;
+            this.h = -1.0f;
+            this.i = -1.0f;
+            this.j = -1.0f;
+            this.k = -1.0f;
+            this.f = false;
+        }
+        s1Var = this.m;
+        if (s1Var == null) {
+        }
     }
 
-    @Override // org.telegram.ui.Components.mm0, android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        jb0 jb0Var = this.c3;
-        jb0Var.invalidate();
-        jb0Var.b();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        super.setBounds(i10, i11, i12, i13);
+        a();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(Rect rect) {
+        super.setBounds(rect);
+        a();
     }
 }

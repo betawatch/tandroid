@@ -1,38 +1,38 @@
 package com.google.firebase.messaging;
 
-import b2.m0;
+import b2.n0;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.Arrays;
 import java.util.List;
-import w7.w8;
+import w7.o5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(r9.b bVar) {
-        l9.h hVar = (l9.h) bVar.a(l9.h.class);
-        if (bVar.a(pa.a.class) == null) {
-            return new FirebaseMessaging(hVar, bVar.b(ya.b.class), bVar.b(oa.f.class), (ra.d) bVar.a(ra.d.class), (i5.f) bVar.a(i5.f.class), (na.b) bVar.a(na.b.class));
+    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(s9.b bVar) {
+        m9.h hVar = (m9.h) bVar.a(m9.h.class);
+        if (bVar.a(qa.a.class) == null) {
+            return new FirebaseMessaging(hVar, bVar.d(za.b.class), bVar.d(pa.f.class), (sa.d) bVar.a(sa.d.class), (j5.f) bVar.a(j5.f.class), (oa.b) bVar.a(oa.b.class));
         }
         throw new ClassCastException();
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<r9.a> getComponents() {
-        m0 a2 = r9.a.a(FirebaseMessaging.class);
+    public List<s9.a> getComponents() {
+        n0 a2 = s9.a.a(FirebaseMessaging.class);
         a2.d = LIBRARY_NAME;
-        a2.a(r9.j.a(l9.h.class));
-        a2.a(new r9.j(0, 0, pa.a.class));
-        a2.a(new r9.j(0, 1, ya.b.class));
-        a2.a(new r9.j(0, 1, oa.f.class));
-        a2.a(new r9.j(0, 0, i5.f.class));
-        a2.a(r9.j.a(ra.d.class));
-        a2.a(r9.j.a(na.b.class));
-        a2.f = new c3.m(12);
+        a2.a(s9.j.a(m9.h.class));
+        a2.a(new s9.j(0, 0, qa.a.class));
+        a2.a(new s9.j(0, 1, za.b.class));
+        a2.a(new s9.j(0, 1, pa.f.class));
+        a2.a(new s9.j(0, 0, j5.f.class));
+        a2.a(s9.j.a(sa.d.class));
+        a2.a(s9.j.a(oa.b.class));
+        a2.f = new c2.i(7);
         a2.c(1);
-        return Arrays.asList(a2.b(), w8.a(LIBRARY_NAME, "23.4.0"));
+        return Arrays.asList(a2.b(), o5.a(LIBRARY_NAME, "23.4.0"));
     }
 }

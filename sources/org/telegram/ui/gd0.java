@@ -1,151 +1,186 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import java.util.HashSet;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class gd0 extends TextView implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.Cells.y a;
-    public final org.telegram.ui.Components.ca0 b;
-    public int c;
-    public final /* synthetic */ ig0 d;
+public final /* synthetic */ class gd0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ od0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ String e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gd0(ig0 ig0Var, Context context) {
-        super(context);
-        this.d = ig0Var;
-        int i10 = org.telegram.ui.ActionBar.k6.I6;
-        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.k6.g0(org.telegram.ui.ActionBar.k6.o1(0.1f, org.telegram.ui.ActionBar.k6.x0(null, i10, false)), 7, -1);
-        this.a = g02;
-        org.telegram.ui.Components.ca0 ca0Var = new org.telegram.ui.Components.ca0();
-        this.b = ca0Var;
-        org.telegram.ui.ActionBar.q6 q6Var = org.telegram.ui.ActionBar.r6.a;
-        this.c = org.telegram.ui.ActionBar.k6.o1(0.1f, org.telegram.ui.ActionBar.k6.x0(null, i10, false));
-        g02.setCallback(this);
-        ca0Var.D = true;
-        ca0Var.u = 0.8f;
+    public /* synthetic */ gd0(od0 od0Var, TLRPC.TL_error tL_error, String str, TLObject tLObject) {
+        this.b = od0Var;
+        this.c = tL_error;
+        this.e = str;
+        this.d = tLObject;
     }
 
-    public boolean a() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.I6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Ld));
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public final void c() {
-        CharSequence text;
-        Layout layout = getLayout();
-        if (layout == null || (text = layout.getText()) == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                final od0 od0Var = this.b;
+                ld0 ld0Var = od0Var.a;
+                gg0 gg0Var = od0Var.W;
+                gg0Var.p1(false, true);
+                TLRPC.TL_error tL_error = this.c;
+                String str = this.e;
+                if (tL_error == null) {
+                    od0Var.E = false;
+                    gg0Var.A1(false, true);
+                    final Bundle bundle = new Bundle();
+                    bundle.putString("phone", od0Var.I);
+                    bundle.putString("ephone", od0Var.J);
+                    bundle.putString("phoneFormated", od0Var.L);
+                    bundle.putString("phoneHash", od0Var.M);
+                    bundle.putString("code", str);
+                    TLObject tLObject = this.d;
+                    if (tLObject instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
+                        TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject).terms_of_service;
+                        if (tL_help_termsOfService != null) {
+                            gg0Var.p0 = tL_help_termsOfService;
+                        }
+                        final int i11 = 0;
+                        od0Var.n(new Runnable() { // from class: org.telegram.ui.jd0
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i11) {
+                                    case 0:
+                                        od0Var.W.z1(5, true, bundle, false);
+                                        break;
+                                    default:
+                                        od0Var.W.z1(6, true, bundle, false);
+                                        break;
+                                }
+                            }
+                        });
+                    } else {
+                        od0Var.n(new nq(od0Var, tLObject, bundle, 28));
+                    }
+                } else if (tL_error.text.contains("SESSION_PASSWORD_NEEDED")) {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    i10 = ((org.telegram.ui.ActionBar.r2) gg0Var).currentAccount;
+                    ConnectionsManager.getInstance(i10).sendRequest(getpassword, new ed0(od0Var, str, 1), 10);
+                } else {
+                    od0Var.E = false;
+                    gg0Var.A1(false, true);
+                    if (tL_error.text.contains("EMAIL_ADDRESS_INVALID")) {
+                        gg0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailAddressInvalid));
+                    } else if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
+                        gg0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                    } else if (tL_error.text.contains("CODE_EMPTY") || tL_error.text.contains("CODE_INVALID") || tL_error.text.contains("EMAIL_CODE_INVALID") || tL_error.text.contains("PHONE_CODE_INVALID")) {
+                        hd0 hd0Var = od0Var.S;
+                        nd0 nd0Var = od0Var.Q;
+                        try {
+                            ld0Var.performHapticFeedback(3, 2);
+                        } catch (Exception unused) {
+                        }
+                        int i12 = 0;
+                        while (true) {
+                            xr[] xrVarArr = ld0Var.f;
+                            if (i12 < xrVarArr.length) {
+                                xrVarArr[i12].setText("");
+                                ld0Var.f[i12].i(1.0f);
+                                i12++;
+                            } else {
+                                if (nd0Var.getCurrentView() == od0Var.e) {
+                                    nd0Var.showNext();
+                                    AndroidUtilities.updateViewVisibilityAnimated(od0Var.h, false, 1.0f, true);
+                                }
+                                ld0Var.f[0].requestFocus();
+                                AndroidUtilities.shakeViewSpring(ld0Var, 10.0f, new hd0(od0Var, 3));
+                                od0Var.removeCallbacks(hd0Var);
+                                od0Var.postDelayed(hd0Var, 5000L);
+                                od0Var.R = true;
+                            }
+                        }
+                    } else if (tL_error.text.contains("EMAIL_NOT_ALLOWED")) {
+                        gg0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailNotAllowed));
+                    } else if (tL_error.text.contains("EMAIL_TOKEN_INVALID")) {
+                        gg0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailTokenInvalid));
+                    } else if (tL_error.text.contains("EMAIL_VERIFY_EXPIRED")) {
+                        gg0Var.z1(0, true, null, true);
+                        gg0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                    } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
+                        gg0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                    } else {
+                        gg0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
+                    }
+                    if (ld0Var.f != null) {
+                        int i13 = 0;
+                        while (true) {
+                            xr[] xrVarArr2 = ld0Var.f;
+                            if (i13 < xrVarArr2.length) {
+                                xrVarArr2[i13].setText("");
+                                i13++;
+                            } else {
+                                xrVarArr2[0].requestFocus();
+                            }
+                        }
+                    }
+                    ld0Var.e = false;
+                }
+                od0Var.F = null;
+                break;
+            default:
+                final od0 od0Var2 = this.b;
+                od0Var2.E = false;
+                gg0 gg0Var2 = od0Var2.W;
+                gg0Var2.A1(false, true);
+                TLRPC.TL_error tL_error2 = this.c;
+                if (tL_error2 != null) {
+                    gg0Var2.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                    break;
+                } else {
+                    TL_account.Password password = (TL_account.Password) this.d;
+                    if (!TwoStepVerificationActivity.j0(password, true)) {
+                        org.telegram.ui.Components.g5.w0(gg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                        break;
+                    } else {
+                        final Bundle bundle2 = new Bundle();
+                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                        password.serializeToStream(serializedData);
+                        bundle2.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
+                        bundle2.putString("phoneFormated", od0Var2.L);
+                        bundle2.putString("phoneHash", od0Var2.M);
+                        bundle2.putString("code", this.e);
+                        final int i14 = 1;
+                        od0Var2.n(new Runnable() { // from class: org.telegram.ui.jd0
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i14) {
+                                    case 0:
+                                        od0Var2.W.z1(5, true, bundle2, false);
+                                        break;
+                                    default:
+                                        od0Var2.W.z1(6, true, bundle2, false);
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    }
+                }
         }
-        org.telegram.ui.Components.s90 s90Var = new org.telegram.ui.Components.s90(0);
-        float dp = AndroidUtilities.dp(3.0f);
-        float dp2 = AndroidUtilities.dp(6.0f);
-        s90Var.q = dp;
-        s90Var.r = dp2;
-        int length = text.length();
-        s90Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, s90Var);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(s90Var.s, s90Var.u, s90Var.t, s90Var.v);
-        this.a.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        org.telegram.ui.Components.ca0 ca0Var = this.b;
-        ca0Var.y = s90Var;
-        ca0Var.k(4.0f);
-        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.k6.Ld);
-        ca0Var.g(org.telegram.ui.ActionBar.k6.o1(0.85f, themedColor), org.telegram.ui.ActionBar.k6.o1(2.0f, themedColor), org.telegram.ui.ActionBar.k6.o1(3.5f, themedColor), org.telegram.ui.ActionBar.k6.o1(6.0f, themedColor));
-        ca0Var.l();
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float paddingTop;
-        canvas.save();
-        if ((getGravity() & 16) == 0 || getLayout() == null) {
-            paddingTop = getPaddingTop();
-        } else {
-            paddingTop = ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
-        }
-        canvas.translate(getPaddingLeft(), paddingTop);
-        this.a.draw(canvas);
-        canvas.restore();
-        super.onDraw(canvas);
-        boolean a2 = a();
-        org.telegram.ui.Components.ca0 ca0Var = this.b;
-        if (a2 || ca0Var.d()) {
-            canvas.save();
-            canvas.translate(getPaddingLeft(), paddingTop);
-            ca0Var.draw(canvas);
-            canvas.restore();
-            invalidate();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        c();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean b10 = b();
-        org.telegram.ui.Cells.y yVar = this.a;
-        if (b10 && motionEvent.getAction() == 0) {
-            yVar.setHotspot(motionEvent.getX(), motionEvent.getY());
-            yVar.setState(new int[]{R.attr.state_enabled, R.attr.state_pressed});
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 1) {
-            yVar.setState(new int[0]);
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        c();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        try {
-            int o12 = org.telegram.ui.ActionBar.k6.o1(0.1f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.I6, false));
-            org.telegram.ui.Cells.y yVar = this.a;
-            if (yVar != null && o12 != this.c) {
-                org.telegram.ui.ActionBar.k6.E1(yVar, o12, true);
-            }
-            this.c = o12;
-            org.telegram.ui.Components.ca0 ca0Var = this.b;
-            if (ca0Var != null) {
-                int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.k6.Ld);
-                ca0Var.g(org.telegram.ui.ActionBar.k6.o1(0.85f, themedColor), org.telegram.ui.ActionBar.k6.o1(2.0f, themedColor), org.telegram.ui.ActionBar.k6.o1(3.5f, themedColor), org.telegram.ui.ActionBar.k6.o1(6.0f, themedColor));
-            }
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || super.verifyDrawable(drawable);
+    public /* synthetic */ gd0(od0 od0Var, TLRPC.TL_error tL_error, TLObject tLObject, String str) {
+        this.b = od0Var;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.e = str;
     }
 }

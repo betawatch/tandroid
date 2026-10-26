@@ -1,55 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class q91 implements org.telegram.ui.up0 {
-    public final /* synthetic */ s91 a;
+public final class q91 {
+    public int a;
+    public CharSequence b;
+    public int c;
 
-    public q91(s91 s91Var) {
-        this.a = s91Var;
-    }
-
-    @Override // org.telegram.ui.up0
-    public final void a(ArrayList arrayList) {
-        s91 s91Var = this.a;
-        try {
-            if (arrayList.isEmpty()) {
-                return;
-            }
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
-            if (sendingMediaInfo.path != null) {
-                s91Var.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                Point realScreenSize = AndroidUtilities.getRealScreenSize();
-                Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(s91Var.e));
-                s91Var.d.b(s91Var.e, loadBitmap, true);
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-        }
-    }
-
-    @Override // org.telegram.ui.up0
-    public final void b() {
-        try {
-            Intent intent = new Intent("android.intent.action.PICK");
-            intent.setType("image/*");
-            this.a.b.startActivityForResult(intent, 11);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    public final int a(TextPaint textPaint) {
+        int ceil = (int) Math.ceil(fi.v3.g(this.b, textPaint));
+        this.c = ceil;
+        return Math.max(0, ceil);
     }
 }

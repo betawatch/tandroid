@@ -1,94 +1,63 @@
 package pi;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
+import a8.lf;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.RenderNode;
+import android.support.v4.media.session.x;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class b {
-    public static SparseIntArray b;
-    public static final b c = new b();
-    public final SparseArray a;
+public final class b extends lf {
+    public final RenderNode a = x.n();
+    public final Paint b = new Paint(1);
+    public final /* synthetic */ e c;
 
-    public b() {
-        this.a = new SparseArray();
+    public b(e eVar) {
+        this.c = eVar;
     }
 
-    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i10 = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i10 < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            } else {
-                while (i10 < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th2) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-            }
-            throw th2;
+    @Override // a8.lf
+    public final void a(Rect rect, RectF rectF) {
+        e eVar = this.c;
+        if (eVar.v || !this.a.hasDisplayList()) {
+            int width = rect.width();
+            int height = rect.height();
+            int i10 = eVar.w;
+            float f7 = (i10 == 1 || i10 == 4) ? height : width;
+            f fVar = eVar.E;
+            fVar.getClass();
+            LinearGradient l4 = e.l(eVar, fVar, f7, 0, eVar.I, 1);
+            Paint paint = this.b;
+            paint.setShader(l4);
+            this.a.setPosition(0, 0, width, height);
+            this.a.beginRecording().drawRect(0.0f, 0.0f, width, height, paint);
+            this.a.endRecording();
+            paint.setShader(null);
+            eVar.v = false;
         }
     }
 
-    public final String b(String str) {
-        if (str == null) {
-            return null;
-        }
-        return (String) this.a.get(str.hashCode());
+    @Override // a8.lf
+    public final void b() {
+        this.a.discardDisplayList();
     }
 
-    public final String c(Context context, String str, int i10) {
-        String b10 = str != null ? b(str) : null;
-        if (b10 != null || i10 == 0) {
-            return b10;
-        }
-        if (context != null && i10 != 0) {
-            if (b == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                    try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                        for (int i11 = 0; i11 < readInt32; i11++) {
-                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
-                        }
-                        bufferedInputStream.close();
-                        b = sparseIntArray;
-                    } finally {
-                    }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            int i12 = b.get(i10);
-            if (i12 != 0) {
-                return (String) this.a.get(i12);
-            }
-        }
-        return null;
+    @Override // a8.lf
+    public final void c(Canvas canvas) {
+        canvas.drawRenderNode(this.a);
     }
 
-    public b(a aVar) {
-        SparseArray sparseArray = aVar.a;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
+    @Override // a8.lf
+    public final boolean d() {
+        return this.a.hasDisplayList();
+    }
+
+    @Override // a8.lf
+    public final void e(float f7) {
+        this.a.setAlpha(f7);
     }
 }

@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class c3 {
     public static final Unsafe a;
@@ -21,9 +21,9 @@ public abstract class c3 {
     public static final boolean g;
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x008e  */
     /* JADX WARN: Type inference failed for: r16v0 */
     /* JADX WARN: Type inference failed for: r16v1 */
     /* JADX WARN: Type inference failed for: r16v2 */
@@ -233,8 +233,8 @@ public abstract class c3 {
     public static Object g(Class cls) {
         try {
             return a.allocateInstance(cls);
-        } catch (InstantiationException e7) {
-            throw new IllegalStateException(e7);
+        } catch (InstantiationException e10) {
+            throw new IllegalStateException(e10);
         }
     }
 

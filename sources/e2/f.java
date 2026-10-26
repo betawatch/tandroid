@@ -2,15 +2,15 @@ package e2;
 
 import androidx.datastore.preferences.protobuf.b1;
 import androidx.datastore.preferences.protobuf.u1;
+import androidx.datastore.preferences.protobuf.y0;
 import androidx.datastore.preferences.protobuf.z1;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
-import s4.y0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -443,27 +443,27 @@ public final class f {
         if (iArr != null) {
             Arrays.fill(iArr, -1);
         }
-        s4.n0 n0Var = recyclerView.x;
-        if (recyclerView.w == null || n0Var == null || !n0Var.h) {
+        s4.p0 p0Var = recyclerView.x;
+        if (recyclerView.w == null || p0Var == null || !p0Var.h) {
             return;
         }
         if (z10) {
             if (!recyclerView.d.h()) {
                 int h = recyclerView.w.h();
-                s4.b0 b0Var = (s4.b0) n0Var;
-                s4.a0 a0Var = b0Var.B;
-                if (a0Var == null || (i10 = a0Var.a) < 0) {
-                    b0Var.f1();
-                    z11 = b0Var.v;
-                    i10 = b0Var.y;
+                s4.c0 c0Var = (s4.c0) p0Var;
+                s4.b0 b0Var = c0Var.B;
+                if (b0Var == null || (i10 = b0Var.a) < 0) {
+                    c0Var.f1();
+                    z11 = c0Var.v;
+                    i10 = c0Var.y;
                     if (i10 == -1) {
                         i10 = z11 ? h - 1 : 0;
                     }
                 } else {
-                    z11 = a0Var.c;
+                    z11 = b0Var.c;
                 }
                 int i11 = z11 ? -1 : 1;
-                for (int i12 = 0; i12 < b0Var.E && i10 >= 0 && i10 < h; i12++) {
+                for (int i12 = 0; i12 < c0Var.E && i10 >= 0 && i10 < h; i12++) {
                     b(i10, 0);
                     i10 += i11;
                 }
@@ -471,21 +471,21 @@ public final class f {
         } else if (!recyclerView.Z()) {
             int i13 = this.a;
             int i14 = this.b;
-            y0 y0Var = recyclerView.u0;
-            s4.b0 b0Var2 = (s4.b0) n0Var;
-            if (b0Var2.o != 0) {
+            s4.b1 b1Var = recyclerView.u0;
+            s4.c0 c0Var2 = (s4.c0) p0Var;
+            if (c0Var2.o != 0) {
                 i13 = i14;
             }
-            if (b0Var2.r() != 0 && i13 != 0) {
-                b0Var2.G0();
-                b0Var2.m1(i13 > 0 ? 1 : -1, Math.abs(i13), true, y0Var);
-                b0Var2.A0(y0Var, b0Var2.p, this);
+            if (c0Var2.r() != 0 && i13 != 0) {
+                c0Var2.G0();
+                c0Var2.n1(i13 > 0 ? 1 : -1, Math.abs(i13), true, b1Var);
+                c0Var2.A0(b1Var, c0Var2.p, this);
             }
         }
         int i15 = this.d;
-        if (i15 > n0Var.i) {
-            n0Var.i = i15;
-            n0Var.j = z10;
+        if (i15 > p0Var.i) {
+            p0Var.i = i15;
+            p0Var.j = z10;
             recyclerView.b.l();
         }
     }
@@ -565,13 +565,13 @@ public final class f {
         hVar.i += i13;
         hVar.g = 0;
         hVar.e = 0;
-        ArrayList p5 = hVar.p(s10 - i14);
+        ArrayList p10 = hVar.p(s10 - i14);
         byte[] bArr2 = new byte[s10];
         System.arraycopy(bArr, i12, bArr2, 0, i14);
-        int size = p5.size();
+        int size = p10.size();
         int i15 = 0;
         while (i15 < size) {
-            Object obj = p5.get(i15);
+            Object obj = p10.get(i15);
             i15++;
             byte[] bArr3 = (byte[]) obj;
             System.arraycopy(bArr3, 0, bArr2, i14, bArr3.length);
@@ -692,7 +692,7 @@ public final class f {
                 throw new RuntimeException("unsupported field type.");
             case 10:
                 T(2);
-                return B(androidx.datastore.preferences.protobuf.y0.c.a(cls), mVar);
+                return B(y0.c.a(cls), mVar);
             case 11:
                 return h();
             case 12:

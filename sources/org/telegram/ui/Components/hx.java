@@ -1,40 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class hx extends ImageView {
-    public final /* synthetic */ tz a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hx(tz tzVar, Context context) {
-        super(context);
-        this.a = tzVar;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        uy uyVar;
-        int action = motionEvent.getAction();
-        tz tzVar = this.a;
-        if (action == 0) {
-            tzVar.P1 = true;
-            tzVar.Q1 = false;
-            AndroidUtilities.runOnUIThread(new d2(tzVar, 350, 7), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            tzVar.P1 = false;
-            if (!tzVar.Q1 && (uyVar = tzVar.t1) != null && uyVar.k()) {
-                try {
-                    tzVar.x.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
-        }
-        super.onTouchEvent(motionEvent);
-        return true;
+public final class hx implements View.OnClickListener {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
     }
 }

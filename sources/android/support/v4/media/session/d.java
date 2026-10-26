@@ -10,48 +10,46 @@ import android.support.v4.media.RatingCompat;
 import android.view.KeyEvent;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface d extends IInterface {
-    void A(String str, Bundle bundle);
+    void B(int i10, int i11);
 
     String B0();
 
-    void E(int i10, int i11);
+    CharSequence E();
 
-    CharSequence G();
+    MediaMetadataCompat I();
 
-    MediaMetadataCompat J();
+    void J(String str, Bundle bundle);
 
-    void K(String str, Bundle bundle);
+    Bundle K();
 
-    Bundle L();
+    void L(b bVar);
 
-    void M(b bVar);
+    void M(String str, Bundle bundle);
 
-    void N(String str, Bundle bundle);
+    void P(String str, Bundle bundle);
 
-    void Q(String str, Bundle bundle);
+    void Q(int i10, int i11);
 
-    void R(int i10, int i11);
+    void S();
 
-    void U();
+    void T(Uri uri, Bundle bundle);
 
-    void V(Uri uri, Bundle bundle);
+    boolean Y(KeyEvent keyEvent);
 
-    void a(float f7);
+    void a();
 
-    boolean a0(KeyEvent keyEvent);
+    void b(float f7);
 
-    void b();
+    void b0(RatingCompat ratingCompat, Bundle bundle);
 
     PlaybackStateCompat d();
 
-    void d0(RatingCompat ratingCompat, Bundle bundle);
-
     void e();
 
-    void f0(MediaDescriptionCompat mediaDescriptionCompat, int i10);
+    void e0(MediaDescriptionCompat mediaDescriptionCompat, int i10);
 
     void g(long j10);
 
@@ -59,27 +57,31 @@ public interface d extends IInterface {
 
     String getTag();
 
-    void i();
+    void h0(boolean z10);
 
-    void i0(boolean z10);
+    void i();
 
     void j(int i10);
 
     long k();
 
+    int k0();
+
     int l();
 
-    int l0();
+    void l0(int i10);
 
-    void m0(int i10);
+    void m0();
 
     void n(String str, Bundle bundle);
 
-    void n0();
+    void n0(String str, Bundle bundle, MediaSessionCompat$ResultReceiverWrapper mediaSessionCompat$ResultReceiverWrapper);
 
     void next();
 
     void o(b bVar);
+
+    List o0();
 
     void p(RatingCompat ratingCompat);
 
@@ -87,27 +89,25 @@ public interface d extends IInterface {
 
     void q(Uri uri, Bundle bundle);
 
-    void r0(String str, Bundle bundle, MediaSessionCompat$ResultReceiverWrapper mediaSessionCompat$ResultReceiverWrapper);
+    void q0();
 
-    List s0();
+    void s(MediaDescriptionCompat mediaDescriptionCompat);
 
     void stop();
 
+    boolean t();
+
+    void t0(long j10);
+
     void u(MediaDescriptionCompat mediaDescriptionCompat);
 
-    void u0();
+    ParcelableVolumeInfo u0();
 
-    boolean w();
+    PendingIntent v();
 
-    void w0(long j10);
+    void x();
 
-    void x(MediaDescriptionCompat mediaDescriptionCompat);
+    void x0(int i10);
 
-    ParcelableVolumeInfo x0();
-
-    PendingIntent y();
-
-    void z();
-
-    void z0(int i10);
+    void y(String str, Bundle bundle);
 }

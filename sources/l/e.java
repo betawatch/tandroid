@@ -1,6 +1,5 @@
 package l;
 
-import ai.n6;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -18,19 +17,18 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import i2.o1;
+import bi.i6;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import ki.t1;
+import m.f2;
 import m.g2;
-import m.h2;
-import m.k2;
-import m.s1;
+import m.j2;
+import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -52,9 +50,9 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     public View y;
     public final ArrayList h = new ArrayList();
     public final ArrayList n = new ArrayList();
-    public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 1);
-    public final n6 s = new n6(this, 3);
-    public final t1 v = new t1(this, 2);
+    public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 1);
+    public final i6 s = new i6(this, 3);
+    public final jg.i v = new jg.i(this);
     public int w = 0;
     public int x = 0;
     public boolean K = false;
@@ -83,7 +81,52 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     }
 
     @Override // l.x
-    public final void d(k kVar, boolean z10) {
+    public final void d() {
+        ArrayList arrayList = this.n;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ListAdapter adapter = ((d) obj).a.c.getAdapter();
+            if (adapter instanceof HeaderViewListAdapter) {
+                adapter = ((HeaderViewListAdapter) adapter).getWrappedAdapter();
+            }
+            ((h) adapter).notifyDataSetChanged();
+        }
+    }
+
+    @Override // l.b0
+    public final void dismiss() {
+        ArrayList arrayList = this.n;
+        int size = arrayList.size();
+        if (size > 0) {
+            d[] dVarArr = (d[]) arrayList.toArray(new d[size]);
+            for (int i10 = size - 1; i10 >= 0; i10--) {
+                d dVar = dVarArr[i10];
+                if (dVar.a.O.isShowing()) {
+                    dVar.a.dismiss();
+                }
+            }
+        }
+    }
+
+    @Override // l.x
+    public final void e(w wVar) {
+        this.M = wVar;
+    }
+
+    @Override // l.b0
+    public final r1 f() {
+        ArrayList arrayList = this.n;
+        if (arrayList.isEmpty()) {
+            return null;
+        }
+        return ((d) ic.a.g(1, arrayList)).a.c;
+    }
+
+    @Override // l.x
+    public final void g(k kVar, boolean z10) {
         ArrayList arrayList = this.n;
         int size = arrayList.size();
         int i10 = 0;
@@ -106,14 +149,14 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         }
         d dVar = (d) arrayList.remove(i10);
         k kVar2 = dVar.b;
-        k2 k2Var = dVar.a;
-        m.y yVar = k2Var.O;
+        j2 j2Var = dVar.a;
+        m.x xVar = j2Var.O;
         kVar2.r(this);
         if (this.P) {
-            g2.b(yVar, null);
-            yVar.setAnimationStyle(0);
+            f2.b(xVar, null);
+            xVar.setAnimationStyle(0);
         }
-        k2Var.dismiss();
+        j2Var.dismiss();
         int size2 = arrayList.size();
         if (size2 > 0) {
             this.F = ((d) arrayList.get(size2 - 1)).c;
@@ -132,7 +175,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         dismiss();
         w wVar = this.M;
         if (wVar != null) {
-            wVar.d(kVar, true);
+            wVar.g(kVar, true);
         }
         ViewTreeObserver viewTreeObserver = this.N;
         if (viewTreeObserver != null) {
@@ -146,47 +189,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     }
 
     @Override // l.b0
-    public final void dismiss() {
-        ArrayList arrayList = this.n;
-        int size = arrayList.size();
-        if (size > 0) {
-            d[] dVarArr = (d[]) arrayList.toArray(new d[size]);
-            for (int i10 = size - 1; i10 >= 0; i10--) {
-                d dVar = dVarArr[i10];
-                if (dVar.a.O.isShowing()) {
-                    dVar.a.dismiss();
-                }
-            }
-        }
-    }
-
-    @Override // l.x
-    public final void e() {
-        ArrayList arrayList = this.n;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ListAdapter adapter = ((d) obj).a.c.getAdapter();
-            if (adapter instanceof HeaderViewListAdapter) {
-                adapter = ((HeaderViewListAdapter) adapter).getWrappedAdapter();
-            }
-            ((h) adapter).notifyDataSetChanged();
-        }
-    }
-
-    @Override // l.b0
-    public final s1 f() {
-        ArrayList arrayList = this.n;
-        if (arrayList.isEmpty()) {
-            return null;
-        }
-        return ((d) o1.i(1, arrayList)).a.c;
-    }
-
-    @Override // l.b0
-    public final void g() {
+    public final void h() {
         if (a()) {
             return;
         }
@@ -213,11 +216,6 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     }
 
     @Override // l.x
-    public final void h(w wVar) {
-        this.M = wVar;
-    }
-
-    @Override // l.x
     public final boolean j(d0 d0Var) {
         ArrayList arrayList = this.n;
         int size = arrayList.size();
@@ -237,7 +235,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         l(d0Var);
         w wVar = this.M;
         if (wVar != null) {
-            wVar.o(d0Var);
+            wVar.t(d0Var);
         }
         return true;
     }
@@ -383,22 +381,22 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
             hVar2.c = z10;
         }
         int m10 = s.m(hVar2, context, this.c);
-        k2 k2Var = new k2(context, null, this.d);
-        k2Var.S = this.v;
-        k2Var.F = this;
-        m.y yVar = k2Var.O;
-        yVar.setOnDismissListener(this);
-        k2Var.E = this.y;
-        k2Var.w = this.x;
-        k2Var.N = true;
-        yVar.setFocusable(true);
-        yVar.setInputMethodMode(2);
-        k2Var.o(hVar2);
-        k2Var.r(m10);
-        k2Var.w = this.x;
+        j2 j2Var = new j2(context, null, this.d);
+        j2Var.S = this.v;
+        j2Var.F = this;
+        m.x xVar = j2Var.O;
+        xVar.setOnDismissListener(this);
+        j2Var.E = this.y;
+        j2Var.w = this.x;
+        j2Var.N = true;
+        xVar.setFocusable(true);
+        xVar.setInputMethodMode(2);
+        j2Var.n(hVar2);
+        j2Var.p(m10);
+        j2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {
-            dVar = (d) o1.i(1, arrayList);
+            dVar = (d) ic.a.g(1, arrayList);
             k kVar2 = dVar.b;
             int size2 = kVar2.f.size();
             int i15 = 0;
@@ -418,8 +416,8 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                 view = null;
                 z11 = 0;
             } else {
-                s1 s1Var = dVar.a.c;
-                ListAdapter adapter = s1Var.getAdapter();
+                r1 r1Var = dVar.a.c;
+                ListAdapter adapter = r1Var.getAdapter();
                 if (adapter instanceof HeaderViewListAdapter) {
                     HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
                     i13 = headerViewListAdapter.getHeadersCount();
@@ -442,7 +440,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                         i16++;
                     }
                 }
-                view = (i16 != -1 && (firstVisiblePosition = (i16 + i13) - s1Var.getFirstVisiblePosition()) >= 0 && firstVisiblePosition < s1Var.getChildCount()) ? s1Var.getChildAt(firstVisiblePosition) : null;
+                view = (i16 != -1 && (firstVisiblePosition = (i16 + i13) - r1Var.getFirstVisiblePosition()) >= 0 && firstVisiblePosition < r1Var.getChildCount()) ? r1Var.getChildAt(firstVisiblePosition) : null;
             }
         } else {
             z11 = 0;
@@ -451,32 +449,32 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         }
         if (view != null) {
             if (Build.VERSION.SDK_INT <= 28) {
-                Method method = k2.T;
+                Method method = j2.T;
                 if (method != null) {
                     try {
                         Object[] objArr = new Object[1];
                         objArr[z11] = Boolean.FALSE;
-                        method.invoke(yVar, objArr);
+                        method.invoke(xVar, objArr);
                     } catch (Exception unused) {
                         Log.i("MenuPopupWindow", "Could not invoke setTouchModal() on PopupWindow. Oh well.");
                     }
                 }
             } else {
-                h2.a(yVar, z11);
+                g2.a(xVar, z11);
             }
-            g2.a(yVar, null);
-            s1 s1Var2 = ((d) arrayList.get(arrayList.size() - 1)).a.c;
+            f2.a(xVar, null);
+            r1 r1Var2 = ((d) arrayList.get(arrayList.size() - 1)).a.c;
             int[] iArr = new int[2];
-            s1Var2.getLocationOnScreen(iArr);
+            r1Var2.getLocationOnScreen(iArr);
             Rect rect = new Rect();
             this.E.getWindowVisibleDisplayFrame(rect);
             if (this.F == 1) {
-                if (s1Var2.getWidth() + iArr[0] + m10 > rect.right) {
+                if (r1Var2.getWidth() + iArr[0] + m10 > rect.right) {
                     i10 = 0;
                     boolean z12 = i10 != 1;
                     this.F = i10;
                     if (Build.VERSION.SDK_INT < 26) {
-                        k2Var.E = view;
+                        j2Var.E = view;
                         i11 = 0;
                         i12 = 0;
                     } else {
@@ -495,29 +493,29 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                     if ((this.x & 5) == 5) {
                         if (z12) {
                             width = i12 + view.getWidth();
-                            k2Var.f = width;
-                            k2Var.v = true;
-                            k2Var.s = true;
-                            k2Var.j(i11);
+                            j2Var.f = width;
+                            j2Var.v = true;
+                            j2Var.s = true;
+                            j2Var.j(i11);
                         }
                         width = i12 - m10;
-                        k2Var.f = width;
-                        k2Var.v = true;
-                        k2Var.s = true;
-                        k2Var.j(i11);
+                        j2Var.f = width;
+                        j2Var.v = true;
+                        j2Var.s = true;
+                        j2Var.j(i11);
                     } else if (z12) {
                         width = i12 + m10;
-                        k2Var.f = width;
-                        k2Var.v = true;
-                        k2Var.s = true;
-                        k2Var.j(i11);
+                        j2Var.f = width;
+                        j2Var.v = true;
+                        j2Var.s = true;
+                        j2Var.j(i11);
                     } else {
                         m10 = view.getWidth();
                         width = i12 - m10;
-                        k2Var.f = width;
-                        k2Var.v = true;
-                        k2Var.s = true;
-                        k2Var.j(i11);
+                        j2Var.f = width;
+                        j2Var.v = true;
+                        j2Var.s = true;
+                        j2Var.j(i11);
                     }
                 }
                 i10 = 1;
@@ -550,25 +548,25 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
             }
         } else {
             if (this.G) {
-                k2Var.f = this.I;
+                j2Var.f = this.I;
             }
             if (this.H) {
-                k2Var.j(this.J);
+                j2Var.j(this.J);
             }
             Rect rect2 = this.a;
-            k2Var.M = rect2 != null ? new Rect(rect2) : null;
+            j2Var.M = rect2 != null ? new Rect(rect2) : null;
         }
-        arrayList.add(new d(k2Var, kVar, this.F));
-        k2Var.g();
-        s1 s1Var3 = k2Var.c;
-        s1Var3.setOnKeyListener(this);
+        arrayList.add(new d(j2Var, kVar, this.F));
+        j2Var.h();
+        r1 r1Var3 = j2Var.c;
+        r1Var3.setOnKeyListener(this);
         if (dVar == null && this.L && kVar.m != null) {
-            FrameLayout frameLayout = (FrameLayout) from.inflate(R.layout.abc_popup_menu_header_item_layout, s1Var3, false);
+            FrameLayout frameLayout = (FrameLayout) from.inflate(R.layout.abc_popup_menu_header_item_layout, r1Var3, false);
             TextView textView = (TextView) frameLayout.findViewById(android.R.id.title);
             frameLayout.setEnabled(false);
             textView.setText(kVar.m);
-            s1Var3.addHeaderView(frameLayout, null, false);
-            k2Var.g();
+            r1Var3.addHeaderView(frameLayout, null, false);
+            j2Var.h();
         }
     }
 }

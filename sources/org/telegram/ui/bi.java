@@ -1,71 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class bi extends cu0 {
-    public final /* synthetic */ sn a;
+public final class bi extends org.telegram.ui.Components.aw {
+    public final /* synthetic */ un W;
 
-    public bi(sn snVar) {
-        this.a = snVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bi(un unVar, org.telegram.ui.ActionBar.r2 r2Var, Activity activity, org.telegram.ui.ActionBar.u6 u6Var, ArrayList arrayList) {
+        super(r2Var, activity, u6Var, arrayList);
+        this.W = unVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final mu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        yj yjVar;
-        ImageReceiver imageReceiver;
-        if (i10 >= 0) {
-            sn snVar = this.a;
-            if (i10 < snVar.Ua.size() && (yjVar = snVar.U1) != null && yjVar.getListView() != null) {
-                int childCount = snVar.U1.getListView().getChildCount();
-                Object obj = snVar.Ua.get(i10);
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = snVar.U1.getListView().getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.e2) {
-                        org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) childAt;
-                        if (e2Var.getResult() == obj) {
-                            imageReceiver = e2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                mu0 mu0Var = new mu0();
-                                mu0Var.b = iArr[0];
-                                mu0Var.c = iArr[1];
-                                mu0Var.d = snVar.U1.getListView();
-                                mu0Var.a = imageReceiver;
-                                mu0Var.e = imageReceiver.getBitmapSafe();
-                                mu0Var.h = imageReceiver.getRoundRadius(true);
-                                return mu0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        if (i10 >= 0) {
-            sn snVar = this.a;
-            if (i10 >= snVar.Ua.size()) {
-                return;
-            }
-            snVar.hb((TLRPC.BotInlineResult) snVar.Ua.get(i10), z10, i11, 0L);
-        }
+    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
+    public final void dismiss() {
+        super.dismiss();
+        un unVar = this.W;
+        unVar.getClass();
+        unVar.n8(false, true, 0.0f);
     }
 }

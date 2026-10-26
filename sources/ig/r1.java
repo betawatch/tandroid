@@ -1,35 +1,51 @@
 package ig;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
+import hi.u2;
+import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.mt;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class r1 implements TextWatcher {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ Runnable[] b;
+public final class r1 extends TimerTask {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ lm0 c;
 
-    public r1(TextView textView, Runnable[] runnableArr) {
-        this.a = textView;
-        this.b = runnableArr;
+    public /* synthetic */ r1(lm0 lm0Var, String str, int i10) {
+        this.a = i10;
+        this.c = lm0Var;
+        this.b = str;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (this.a.getAlpha() > 0.0f) {
-            Runnable[] runnableArr = this.b;
-            AndroidUtilities.cancelRunOnUIThread(runnableArr[0]);
-            AndroidUtilities.runOnUIThread(runnableArr[0]);
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                t1 t1Var = (t1) this.c;
+                try {
+                    t1Var.n.cancel();
+                    t1Var.n = null;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                String str = this.b;
+                t1Var.getClass();
+                AndroidUtilities.runOnUIThread(new u2(11, t1Var, str));
+                break;
+            default:
+                try {
+                    ((mt) this.c).d.cancel();
+                    ((mt) this.c).d = null;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                Utilities.searchQueue.postRunnable(new c71(17, (mt) this.c, this.b));
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

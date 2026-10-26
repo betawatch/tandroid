@@ -1,33 +1,49 @@
 package zh;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class l0 extends ViewOutlineProvider {
+public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n0 b;
+    public final /* synthetic */ p1 b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public /* synthetic */ l0(n0 n0Var, int i10) {
+    public /* synthetic */ l0(p1 p1Var, Utilities.Callback callback, int i10) {
         this.a = i10;
-        this.b = n0Var;
+        this.b = p1Var;
+        this.c = callback;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                float translationY = view.getTranslationY() + view.getTop();
-                float translationX = view.getTranslationX() + view.getLeft();
-                n0 n0Var = this.b;
-                outline.setRoundRect(Math.round(n0Var.n - translationX), Math.round(n0Var.r - translationY), Math.round(n0Var.s - translationX), Math.round(n0Var.v - translationY), n0Var.w);
+                p1 p1Var = this.b;
+                Utilities.Callback callback = this.c;
+                if (callback != null) {
+                    p1Var.getClass();
+                    callback.run(Boolean.FALSE);
+                }
+                p1Var.dismiss();
+                break;
+            case 1:
+                p1 p1Var2 = this.b;
+                Utilities.Callback callback2 = this.c;
+                if (callback2 != null) {
+                    p1Var2.getClass();
+                    callback2.run(Boolean.FALSE);
+                }
+                p1Var2.dismiss();
                 break;
             default:
-                int height = view.getHeight();
-                n0 n0Var2 = this.b;
-                outline.setRoundRect(n0Var2.a0, n0Var2.b0, view.getWidth() - n0Var2.a0, view.getHeight() - n0Var2.c0, ((height - r4) - n0Var2.c0) / 2.0f);
+                p1 p1Var3 = this.b;
+                Utilities.Callback callback3 = this.c;
+                if (callback3 != null) {
+                    p1Var3.getClass();
+                    callback3.run(Boolean.FALSE);
+                }
+                p1Var3.dismiss();
                 break;
         }
     }

@@ -2,9 +2,9 @@ package k2;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d1 extends c2.o {
+public final class d1 extends c2.p {
     public int i;
     public int j;
     public boolean k;
@@ -13,23 +13,18 @@ public final class d1 extends c2.o {
     public int n;
     public long o;
 
-    @Override // c2.o, c2.n
+    @Override // c2.p, c2.o
     public final ByteBuffer a() {
         int i10;
-        if (super.b() && (i10 = this.n) > 0) {
+        if (super.c() && (i10 = this.n) > 0) {
             l(i10).put(this.m, 0, this.n).flip();
             this.n = 0;
         }
         return super.a();
     }
 
-    @Override // c2.o, c2.n
-    public final boolean b() {
-        return super.b() && this.n == 0;
-    }
-
-    @Override // c2.n
-    public final void c(ByteBuffer byteBuffer) {
+    @Override // c2.o
+    public final void b(ByteBuffer byteBuffer) {
         int position = byteBuffer.position();
         int limit = byteBuffer.limit();
         int i10 = limit - position;
@@ -46,9 +41,9 @@ public final class d1 extends c2.o {
         int i11 = i10 - min;
         int length = (this.n + i11) - this.m.length;
         ByteBuffer l4 = l(length);
-        int i12 = e2.m0.i(length, 0, this.n);
+        int i12 = e2.n0.i(length, 0, this.n);
         l4.put(this.m, 0, i12);
-        int i13 = e2.m0.i(length - i12, 0, i11);
+        int i13 = e2.n0.i(length - i12, 0, i11);
         byteBuffer.limit(byteBuffer.position() + i13);
         l4.put(byteBuffer);
         byteBuffer.limit(limit);
@@ -62,21 +57,26 @@ public final class d1 extends c2.o {
         l4.flip();
     }
 
-    @Override // c2.o, c2.n
-    public final long g(long j10) {
-        return Math.max(0L, j10 - e2.m0.Y(this.b.a, this.j + this.i));
+    @Override // c2.p, c2.o
+    public final boolean c() {
+        return super.c() && this.n == 0;
     }
 
-    @Override // c2.o
-    public final c2.k h(c2.k kVar) {
-        if (!e2.m0.M(kVar.c)) {
-            throw new c2.m(kVar);
+    @Override // c2.p, c2.o
+    public final long g(long j10) {
+        return Math.max(0L, j10 - e2.n0.Y(this.b.a, this.j + this.i));
+    }
+
+    @Override // c2.p
+    public final c2.l h(c2.l lVar) {
+        if (!e2.n0.M(lVar.c)) {
+            throw new c2.n(lVar);
         }
         this.k = true;
-        return (this.i == 0 && this.j == 0) ? c2.k.e : kVar;
+        return (this.i == 0 && this.j == 0) ? c2.l.e : lVar;
     }
 
-    @Override // c2.o
+    @Override // c2.p
     public final void i() {
         if (this.k) {
             this.k = false;
@@ -88,7 +88,7 @@ public final class d1 extends c2.o {
         this.n = 0;
     }
 
-    @Override // c2.o
+    @Override // c2.p
     public final void j() {
         if (this.k) {
             if (this.n > 0) {
@@ -98,8 +98,8 @@ public final class d1 extends c2.o {
         }
     }
 
-    @Override // c2.o
+    @Override // c2.p
     public final void k() {
-        this.m = e2.m0.b;
+        this.m = e2.n0.b;
     }
 }

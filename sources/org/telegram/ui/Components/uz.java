@@ -1,56 +1,169 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class uz extends ReplacementSpan {
-    public final /* synthetic */ int a;
+public final class uz extends FrameLayout {
+    public static final /* synthetic */ int h = 0;
+    public final org.telegram.ui.ActionBar.u6 a;
+    public final TextView b;
+    public final View c;
+    public final ak0 d;
+    public boolean e;
+    public int f;
 
-    public /* synthetic */ uz(int i10) {
-        this.a = i10;
+    public uz(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        this.a = u6Var;
+        View radialProgressView = new RadialProgressView(context, null);
+        addView(radialProgressView, gb1.g(-2.0f, -2));
+        this.c = radialProgressView;
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        linearLayout.setGravity(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setOrientation(1);
+        ak0 ak0Var = new ak0(context);
+        this.d = ak0Var;
+        ak0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        ak0Var.setImportantForAccessibility(2);
+        ak0Var.setVisibility(8);
+        linearLayout.addView(ak0Var, gb1.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 20.0f);
+        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.c7, u6Var);
+        textView.setGravity(1);
+        textView.setText(LocaleController.getString(R.string.NoResult));
+        linearLayout.addView(textView, gb1.u(-2, -2, 17));
+        addView(linearLayout, gb1.g(-2.0f, -2));
+        AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
+        AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
+        setOnTouchListener(new ei.d(18));
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.a;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                return (int) paint.measureText(charSequence, i10, i11);
-            case 1:
-                return AndroidUtilities.dp(16.0f);
-            case 2:
-                return AndroidUtilities.dp(12.0f);
-            case 3:
-                return AndroidUtilities.dp(12.0f);
-            default:
-                return AndroidUtilities.dp(16.0f);
+    public final void a(int i10, int i11, int i12) {
+        int i13 = i10 != 0 ? 0 : 8;
+        ak0 ak0Var = this.d;
+        ak0Var.setVisibility(i13);
+        if (i10 != 0) {
+            ak0Var.f(i10, i11, i12, null);
+            ak0Var.d();
         }
     }
 
-    public /* synthetic */ uz(boolean z10) {
-        this.a = 0;
+    public final void b() {
+        AndroidUtilities.updateViewVisibilityAnimated(this.b, false, 0.9f, true);
+        AndroidUtilities.updateViewVisibilityAnimated(this.c, true, 1.0f, true);
     }
 
-    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    public final void c() {
+        AndroidUtilities.updateViewVisibilityAnimated(this.b, true, 0.9f, true);
+        AndroidUtilities.updateViewVisibilityAnimated(this.c, false, 1.0f, true);
     }
 
-    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
     }
 
-    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int measuredHeight;
+        int paddingTop;
+        this.e = true;
+        int i14 = i12 - i10;
+        int i15 = i13 - i11;
+        int childCount = getChildCount();
+        for (int i16 = 0; i16 < childCount; i16++) {
+            View childAt = getChildAt(i16);
+            if (childAt.getVisibility() != 8) {
+                int measuredWidth = (i14 - childAt.getMeasuredWidth()) / 2;
+                View view = this.c;
+                if (childAt == view && (view instanceof c10)) {
+                    measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
+                    paddingTop = getPaddingTop();
+                } else {
+                    int i17 = this.f;
+                    if (i17 == 2) {
+                        measuredHeight = (AndroidUtilities.dp(100.0f) - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    } else if (i17 == 1) {
+                        measuredHeight = ((i15 / 2) - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    } else {
+                        measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    }
+                }
+                int i18 = paddingTop + measuredHeight;
+                childAt.layout(measuredWidth, i18, childAt.getMeasuredWidth() + measuredWidth, childAt.getMeasuredHeight() + i18);
+            }
+        }
+        this.e = false;
     }
 
-    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.e) {
+            return;
+        }
+        super.requestLayout();
     }
 
-    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    public void setProgressBarColor(int i10) {
+        View view = this.c;
+        if (view instanceof RadialProgressView) {
+            ((RadialProgressView) view).setProgressColor(i10);
+        }
+    }
+
+    public void setShowAtCenter(boolean z10) {
+        this.f = z10 ? 1 : 0;
+    }
+
+    public void setShowAtTop(boolean z10) {
+        this.f = z10 ? 2 : 0;
+    }
+
+    public void setText(String str) {
+        this.b.setText(str);
+    }
+
+    public void setTextColor(int i10) {
+        TextView textView = this.b;
+        org.telegram.ui.ActionBar.f7.r(textView);
+        textView.setTextColor(i10);
+    }
+
+    public void setTextSize(int i10) {
+        this.b.setTextSize(1, i10);
+    }
+
+    public void setTopImage(int i10) {
+        TextView textView = this.b;
+        if (i10 == 0) {
+            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
+            return;
+        }
+        Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
+        if (mutate != null) {
+            org.telegram.ui.ActionBar.f7.y(this, mutate, org.telegram.ui.ActionBar.y6.c7, this.a, PorterDuff.Mode.MULTIPLY);
+        }
+        textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
+        textView.setCompoundDrawablePadding(AndroidUtilities.dp(1.0f));
     }
 }

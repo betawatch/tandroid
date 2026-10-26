@@ -1,37 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z21 extends TextView {
-    public View a;
-    public ViewPropertyAnimator b;
-    public boolean c;
-    public kr0 d;
+public final class z21 extends org.telegram.ui.ActionBar.l5 {
+    public final /* synthetic */ SparseIntArray T;
 
-    public final void a() {
-        if (this.a == null) {
-            return;
-        }
-        View view = (View) getParent();
-        int i10 = 0;
-        int i11 = 0;
-        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
-            i11 += view2.getTop();
-            i10 += view2.getLeft();
-        }
-        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
-        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
-        setTranslationY(i11 - getMeasuredHeight());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z21(boolean z10, SparseIntArray sparseIntArray) {
+        super(2, z10, false, null);
+        this.T = sparseIntArray;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        a();
+    @Override // org.telegram.ui.ActionBar.l5
+    public final int g(int i10) {
+        return this.T.get(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.l5
+    public final int h(int i10) {
+        return this.T.get(i10);
     }
 }

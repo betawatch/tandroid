@@ -1,40 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.List;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class sp implements ResultCallback {
-    public final /* synthetic */ ChatThemeController a;
-    public final /* synthetic */ wp b;
+public final class sp extends ak0 {
+    public final /* synthetic */ yp r;
 
-    public sp(wp wpVar, ChatThemeController chatThemeController) {
-        this.b = wpVar;
-        this.a = chatThemeController;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sp(yp ypVar, Context context) {
+        super(context);
+        this.r = ypVar;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        int i10;
-        List<org.telegram.ui.ActionBar.f4> emojiThemes = this.a.getEmojiThemes(7);
-        wp wpVar = this.b;
-        i10 = ((org.telegram.ui.ActionBar.h3) wpVar).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(new ee(21, this, emojiThemes));
-        wpVar.a0 = false;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.r.M) {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
+        }
     }
 }

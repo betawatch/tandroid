@@ -1,15 +1,15 @@
 package androidx.emoji2.text;
 
+import a8.mf;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import com.google.android.gms.common.api.internal.o0;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Cells.n7;
+import org.telegram.ui.Cells.r7;
 import org.telegram.ui.Cells.z;
-import w7.k6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class j implements Runnable {
                 ((o0) this.c).g(this.b);
                 break;
             case 2:
-                ((g6.v) this.c).W.b(this.b);
+                ((h6.v) this.c).W.b(this.b);
                 break;
             case 3:
                 z zVar = (z) this.c;
@@ -64,19 +64,19 @@ public final class j implements Runnable {
                 }
                 break;
             default:
-                n7 n7Var = (n7) this.c;
-                if (n7Var.a && n7Var.getParent() != null && this.b == n7Var.c) {
-                    n7Var.a = false;
+                r7 r7Var = (r7) this.c;
+                if (r7Var.a && r7Var.getParent() != null && this.b == r7Var.c) {
+                    r7Var.a = false;
                     try {
-                        n7Var.performHapticFeedback(0);
+                        r7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i11 = n7Var.h;
+                    int i11 = r7Var.h;
                     if (i11 >= 0) {
-                        n7Var.x.a(((CharSequence) n7Var.E.get(i11)).toString(), true);
+                        r7Var.x.a(((CharSequence) r7Var.E.get(i11)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    n7Var.onTouchEvent(obtain2);
+                    r7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }
@@ -92,7 +92,7 @@ public final class j implements Runnable {
 
     public j(List list, int i10, Throwable th2) {
         this.a = 0;
-        k6.a(list, "initCallbacks cannot be null");
+        mf.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i10;
     }

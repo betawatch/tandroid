@@ -4,16 +4,16 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class sh extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ ai c;
+    public final /* synthetic */ zh c;
 
-    public /* synthetic */ sh(ai aiVar, boolean z10, int i10) {
+    public /* synthetic */ sh(zh zhVar, boolean z10, int i10) {
         this.a = i10;
-        this.c = aiVar;
+        this.c = zhVar;
         this.b = z10;
     }
 
@@ -21,8 +21,8 @@ public final class sh extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ai aiVar = this.c;
-                ti tiVar = aiVar.e;
+                zh zhVar = this.c;
+                ti tiVar = zhVar.e;
                 boolean z10 = this.b;
                 if (z10) {
                     tiVar.A1.setVisibility(8);
@@ -31,10 +31,10 @@ public final class sh extends AnimatorListenerAdapter {
                 }
                 int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
                 for (int i10 = 0; i10 < tiVar.A0.size(); i10++) {
-                    ((gi.f4) tiVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
+                    ((hi.o4) tiVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
                 }
-                if (aiVar.a == animator) {
-                    aiVar.a = null;
+                if (zhVar.a == animator) {
+                    zhVar.a = null;
                     break;
                 }
                 break;
@@ -60,7 +60,7 @@ public final class sh extends AnimatorListenerAdapter {
                     tiVar.H1.setVisibility(0);
                     int dp = AndroidUtilities.dp(36.0f);
                     for (int i10 = 0; i10 < tiVar.A0.size(); i10++) {
-                        ((gi.f4) tiVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
+                        ((hi.o4) tiVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
                     }
                     break;
                 } else {

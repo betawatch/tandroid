@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class q0 implements Serializable, Iterable {
     public static final q0 c = new q0(j1.b);
@@ -103,15 +103,15 @@ public class q0 implements Serializable, Iterable {
             throw new IllegalArgumentException(sb3.toString());
         }
         byte[] bArr = q0Var.b;
-        int q6 = q() + m10;
-        int q10 = q();
-        int q11 = q0Var.q();
-        while (q10 < q6) {
-            if (this.b[q10] != bArr[q11]) {
+        int q5 = q() + m10;
+        int q9 = q();
+        int q10 = q0Var.q();
+        while (q9 < q5) {
+            if (this.b[q9] != bArr[q10]) {
                 return false;
             }
+            q9++;
             q10++;
-            q11++;
         }
         return true;
     }
@@ -126,9 +126,9 @@ public class q0 implements Serializable, Iterable {
             return i10;
         }
         int m10 = m();
-        int q6 = q();
+        int q5 = q();
         int i11 = m10;
-        for (int i12 = q6; i12 < q6 + m10; i12++) {
+        for (int i12 = q5; i12 < q5 + m10; i12++) {
             i11 = (i11 * 31) + this.b[i12];
         }
         if (i11 == 0) {
@@ -163,8 +163,8 @@ public class q0 implements Serializable, Iterable {
         if (m() <= 50) {
             concat = e1.k(this);
         } else {
-            int p5 = p(0, 47, m());
-            concat = String.valueOf(e1.k(p5 == 0 ? c : new p0(this.b, q(), p5))).concat("...");
+            int p10 = p(0, 47, m());
+            concat = String.valueOf(e1.k(p10 == 0 ? c : new p0(this.b, q(), p10))).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);

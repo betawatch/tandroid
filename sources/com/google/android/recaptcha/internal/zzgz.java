@@ -1,20 +1,21 @@
 package com.google.android.recaptcha.internal;
 
+import a8.id;
+import a8.pe;
 import android.content.Context;
 import androidx.car.app.j;
-import be.f0;
+import ce.f0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
-import jd.u;
+import kd.n;
+import kd.u;
 import kotlin.jvm.internal.i;
-import v7.h8;
-import w7.n;
-import yd.c;
+import zd.c;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -67,10 +68,10 @@ public final class zzgz implements zzgs {
                 if (iterator.hasNext()) {
                     u uVar = new u(iterator, null);
                     c cVar = new c();
-                    cVar.c = n.a(cVar, cVar, uVar);
+                    cVar.c = pe.a(cVar, cVar, uVar);
                     it = cVar;
                 } else {
-                    it = jd.n.a;
+                    it = n.a;
                 }
                 while (it.hasNext()) {
                     arrayList.add((List) it.next());
@@ -123,7 +124,7 @@ public final class zzgz implements zzgs {
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
             int i11 = zzby.zza;
-            if (!((zzha) h8.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            if (!((zzha) id.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -143,7 +144,7 @@ public final class zzgz implements zzgs {
     public final void zza(zzzm zzzmVar) {
         try {
             int i10 = zzby.zza;
-            f0.q(((zzcr) h8.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
+            f0.q(((zzcr) id.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

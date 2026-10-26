@@ -1,14 +1,15 @@
 package com.google.android.gms.common.api.internal;
 
 import java.util.Arrays;
+import m4.w1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final b a;
-    public final k6.c b;
+    public final l6.c b;
 
-    public /* synthetic */ p0(b bVar, k6.c cVar) {
+    public /* synthetic */ p0(b bVar, l6.c cVar) {
         this.a = bVar;
         this.b = cVar;
     }
@@ -16,7 +17,7 @@ public final class p0 {
     public final boolean equals(Object obj) {
         if (obj != null && (obj instanceof p0)) {
             p0 p0Var = (p0) obj;
-            if (n6.l.l(this.a, p0Var.a) && n6.l.l(this.b, p0Var.b)) {
+            if (o6.l.l(this.a, p0Var.a) && o6.l.l(this.b, p0Var.b)) {
                 return true;
             }
         }
@@ -28,9 +29,9 @@ public final class p0 {
     }
 
     public final String toString() {
-        mi.q qVar = new mi.q(this);
-        qVar.z(this.a, "key");
-        qVar.z(this.b, "feature");
-        return qVar.toString();
+        w1 w1Var = new w1(this);
+        w1Var.x(this.a, "key");
+        w1Var.x(this.b, "feature");
+        return w1Var.toString();
     }
 }

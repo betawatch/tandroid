@@ -1,26 +1,46 @@
 package o5;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final /* synthetic */ int e = 0;
-    public final g a;
-    public final List b;
-    public final b c;
-    public final String d;
+public final class a implements id.a {
+    public static final Object c = new Object();
+    public volatile b a;
+    public volatile Object b;
 
-    static {
-        DesugarCollections.unmodifiableList(new ArrayList());
+    public static id.a a(b bVar) {
+        if (bVar instanceof a) {
+            return bVar;
+        }
+        a aVar = new a();
+        aVar.b = c;
+        aVar.a = bVar;
+        return aVar;
     }
 
-    public a(g gVar, List list, b bVar, String str) {
-        this.a = gVar;
-        this.b = list;
-        this.c = bVar;
-        this.d = str;
+    @Override // id.a
+    public final Object get() {
+        Object obj;
+        Object obj2 = this.b;
+        Object obj3 = c;
+        if (obj2 != obj3) {
+            return obj2;
+        }
+        synchronized (this) {
+            try {
+                obj = this.b;
+                if (obj == obj3) {
+                    obj = this.a.get();
+                    Object obj4 = this.b;
+                    if (obj4 != obj3 && obj4 != obj) {
+                        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj4 + " & " + obj + ". This is likely due to a circular dependency.");
+                    }
+                    this.b = obj;
+                    this.a = null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return obj;
     }
 }

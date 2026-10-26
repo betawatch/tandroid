@@ -1,36 +1,48 @@
 package s9;
 
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import android.util.Log;
+import com.google.firebase.components.ComponentRegistrar;
+import java.lang.reflect.InvocationTargetException;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements g {
+public final /* synthetic */ class c implements ra.b {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ TimeUnit f;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ c(f fVar, Runnable runnable, long j10, long j11, TimeUnit timeUnit, int i10) {
+    public /* synthetic */ c(Object obj, int i10) {
         this.a = i10;
-        this.b = fVar;
-        this.c = runnable;
-        this.d = j10;
-        this.e = j11;
-        this.f = timeUnit;
+        this.b = obj;
     }
 
-    @Override // s9.g
-    public final ScheduledFuture a(le.b bVar) {
+    @Override // ra.b
+    public final Object get() {
         switch (this.a) {
             case 0:
-                f fVar = this.b;
-                return fVar.b.scheduleAtFixedRate(new d(fVar, this.c, bVar, 0), this.d, this.e, this.f);
+                String str = (String) this.b;
+                try {
+                    Class<?> cls = Class.forName(str);
+                    if (ComponentRegistrar.class.isAssignableFrom(cls)) {
+                        return (ComponentRegistrar) cls.getDeclaredConstructor(null).newInstance(null);
+                    }
+                    throw new m("Class " + str + " is not an instance of com.google.firebase.components.ComponentRegistrar");
+                } catch (ClassNotFoundException unused) {
+                    Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
+                    return null;
+                } catch (IllegalAccessException e) {
+                    throw new m(a1.g.p("Could not instantiate ", str, "."), e);
+                } catch (InstantiationException e10) {
+                    throw new m(a1.g.p("Could not instantiate ", str, "."), e10);
+                } catch (NoSuchMethodException e11) {
+                    throw new m(b10.j("Could not instantiate ", str), e11);
+                } catch (InvocationTargetException e12) {
+                    throw new m(b10.j("Could not instantiate ", str), e12);
+                }
+            case 1:
+                return (ComponentRegistrar) this.b;
             default:
-                f fVar2 = this.b;
-                return fVar2.b.scheduleWithFixedDelay(new d(fVar2, this.c, bVar, 2), this.d, this.e, this.f);
+                return new ta.b((m9.h) this.b);
         }
     }
 }

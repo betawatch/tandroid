@@ -1,12 +1,31 @@
 package a8;
 
-import android.os.IInterface;
-import com.google.android.gms.common.api.Status;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface b extends IInterface {
-    void S(Status status, l8.b bVar);
+public final class b extends d {
+    public final /* synthetic */ int f;
+    public final /* synthetic */ g h;
 
-    void s(Status status, l8.d dVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(g gVar, int i10) {
+        super(gVar);
+        this.f = i10;
+        this.h = gVar;
+    }
+
+    @Override // a8.d
+    public final Object b(int i10) {
+        switch (this.f) {
+            case 0:
+                Object[] objArr = this.h.c;
+                objArr.getClass();
+                return objArr[i10];
+            case 1:
+                return new e(this.h, i10);
+            default:
+                Object[] objArr2 = this.h.d;
+                objArr2.getClass();
+                return objArr2[i10];
+        }
+    }
 }

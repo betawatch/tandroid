@@ -1,12 +1,11 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b4 extends v1 {
     private static final b4 zzb;
     private int zzd;
-    private l3 zze;
-    private long zzf;
+    private int zze;
 
     static {
         b4 b4Var = new b4();
@@ -14,18 +13,8 @@ public final class b4 extends v1 {
         v1.k(b4.class, b4Var);
     }
 
-    public static /* synthetic */ void n(b4 b4Var, l3 l3Var) {
-        b4Var.zze = l3Var;
-        b4Var.zzd |= 1;
-    }
-
-    public static /* synthetic */ void o(b4 b4Var, long j10) {
-        b4Var.zzd |= 2;
-        b4Var.zzf = j10;
-    }
-
-    public static a4 p() {
-        return (a4) zzb.f();
+    public static b4 n() {
+        return zzb;
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
@@ -35,13 +24,13 @@ public final class b4 extends v1 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဂ\u0001", new Object[]{"zzd", "zze", "zzf"});
+            return new s2(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", d1.i});
         }
         if (i11 == 3) {
             return new b4();
         }
         if (i11 == 4) {
-            return new a4(zzb);
+            return new y0(zzb);
         }
         if (i11 == 5) {
             return zzb;

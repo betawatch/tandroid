@@ -1,46 +1,12 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.content.Context;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class i0 {
-    public static final int a(int i10, int i11, int i12) {
-        if (i12 > 0) {
-            if (i10 < i11) {
-                int i13 = i11 % i12;
-                if (i13 < 0) {
-                    i13 += i12;
-                }
-                int i14 = i10 % i12;
-                if (i14 < 0) {
-                    i14 += i12;
-                }
-                int i15 = (i13 - i14) % i12;
-                if (i15 < 0) {
-                    i15 += i12;
-                }
-                return i11 - i15;
-            }
-        } else {
-            if (i12 >= 0) {
-                throw new IllegalArgumentException("Step is zero.");
-            }
-            if (i10 > i11) {
-                int i16 = -i12;
-                int i17 = i10 % i16;
-                if (i17 < 0) {
-                    i17 += i16;
-                }
-                int i18 = i11 % i16;
-                if (i18 < 0) {
-                    i18 += i16;
-                }
-                int i19 = (i17 - i18) % i16;
-                if (i19 < 0) {
-                    i19 += i16;
-                }
-                return i19 + i11;
-            }
-        }
-        return i11;
+    public static j7.b a(Context context) {
+        o6.l.h(context);
+        return new j7.b(context, new y5.h());
     }
 }

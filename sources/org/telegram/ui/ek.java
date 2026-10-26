@@ -1,28 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ek implements Runnable {
-    public final /* synthetic */ sn a;
+public final class ek extends org.telegram.ui.Components.fp {
+    public final /* synthetic */ un f;
 
-    public ek(sn snVar) {
-        this.a = snVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ek(un unVar, Context context) {
+        super(context);
+        this.f = unVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        sn snVar = this.a;
-        MessageObject messageObject = snVar.p5;
-        if (messageObject == null || snVar.f9 == null) {
-            return;
+    @Override // org.telegram.ui.Components.fp
+    public final void a(boolean z10) {
+        un unVar = this.f;
+        unVar.A7();
+        unVar.y7();
+        unVar.B7();
+        unVar.C7();
+        xk xkVar = unVar.wb;
+        if (xkVar != null) {
+            xkVar.setTranslationY(unVar.I9 + getCurrentHeight());
         }
-        int max = Math.max(0, messageObject.messageOwner.ttl_period - (snVar.getConnectionsManager().getCurrentTime() - snVar.p5.messageOwner.date));
-        snVar.f9.setSubtext(LocaleController.formatString(R.string.AutoDeleteIn, max < 86400 ? AndroidUtilities.formatDuration(max, false, true) : LocaleController.formatPluralString("Days", Math.round(max / 86400.0f), new Object[0])));
-        AndroidUtilities.runOnUIThread(snVar.g9, 1000L);
+        if (!z10) {
+            unVar.x9();
+        } else {
+            unVar.P9 = true;
+            unVar.wc();
+        }
     }
 }

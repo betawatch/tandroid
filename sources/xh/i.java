@@ -1,142 +1,293 @@
 package xh;
 
-import android.content.Context;
+import ag.d0;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Path;
+import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import d5.z;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Stack;
+import m4.w1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.sl;
-import org.telegram.messenger.v0;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.oi0;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.d3;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class i extends ViewGroup {
-    public final GestureDetector a;
-    public final Path b;
-    public final RectF c;
-    public boolean d;
-    public final /* synthetic */ j e;
+public final class i {
+    public static i q;
+    public Bitmap e;
+    public Canvas f;
+    public Paint g;
+    public long h;
+    public ArrayList i;
+    public boolean j;
+    public final int k;
+    public boolean l;
+    public boolean p;
+    public final DispatchQueue a = new DispatchQueue("SpoilerEffectBitmapFactory", true, 3);
+    public final z[] b = new z[g.C.length];
+    public final w1[] c = new w1[2];
+    public int d = 0;
+    public final Rect m = new Rect();
+    public final d0 n = new d0(this, 3);
+    public final Rect o = new Rect();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(j jVar, Context context) {
-        super(context);
-        this.e = jVar;
-        this.a = new GestureDetector(getContext(), new tg.e(1, this));
-        this.b = new Path();
-        this.c = new RectF();
-        this.d = true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.b);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.e.c.draw(canvas);
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int height = getHeight();
-        j jVar = this.e;
-        int i14 = jVar.a;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = jVar.f;
-        int i15 = jVar.b;
-        int d = (height - jVar.d()) / 2;
-        int width = getWidth();
-        oi0 oi0Var = jVar.h;
-        int measuredWidth = (width - oi0Var.getMeasuredWidth()) / 2;
-        oi0Var.layout(measuredWidth, d, oi0Var.getMeasuredWidth() + measuredWidth, oi0Var.getMeasuredHeight() + d);
-        h hVar = jVar.n;
-        hVar.layout(oi0Var.getLeft(), oi0Var.getTop(), oi0Var.getRight(), hVar.getMeasuredHeight() + oi0Var.getTop());
-        int C = v0.C(12.0f, oi0Var.getMeasuredHeight(), d);
-        TextView textView = jVar.d;
-        textView.layout(AndroidUtilities.dp(16.0f) + oi0Var.getLeft(), C, oi0Var.getRight() - AndroidUtilities.dp(16.0f), textView.getMeasuredHeight() + C);
-        int measuredHeight = textView.getMeasuredHeight() + C;
-        TextView textView2 = jVar.e;
-        if (textView2.getVisibility() != 8) {
-            int dp = AndroidUtilities.dp(4.0f) + measuredHeight;
-            textView2.layout(textView.getLeft(), dp, textView.getRight(), textView2.getMeasuredHeight() + dp);
-            measuredHeight = textView2.getMeasuredHeight() + dp;
-        }
-        int dp2 = AndroidUtilities.dp(12.0f) + measuredHeight;
-        jVar.c.setBounds(oi0Var.getLeft() - i15, oi0Var.getTop() - i14, oi0Var.getRight() + i15, i14 + dp2);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.layout((oi0Var.getRight() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) + i15, dp2, oi0Var.getRight() + i15, actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight() + dp2);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setVisibility(actionBarPopupWindow$ActionBarPopupWindowLayout.getBottom() < i13 ? 0 : 8);
-        int dp3 = AndroidUtilities.dp(6.0f);
-        float left = oi0Var.getLeft();
-        float top = oi0Var.getTop();
-        float right = oi0Var.getRight();
-        float top2 = (dp3 * 2) + oi0Var.getTop();
-        RectF rectF = this.c;
-        rectF.set(left, top, right, top2);
-        Path path = this.b;
-        path.reset();
-        float f7 = dp3;
-        Path.Direction direction = Path.Direction.CW;
-        path.addRoundRect(rectF, f7, f7, direction);
-        rectF.set(i10, oi0Var.getTop() + dp3, i12, i13);
-        path.addRect(rectF, direction);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setWillNotDraw(false);
-        super.onMeasure(i10, i11);
-        int B = sl.B(12.0f, 2, Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)));
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(B, TLObject.FLAG_31);
-        j jVar = this.e;
-        oi0 oi0Var = jVar.h;
-        oi0Var.measure(makeMeasureSpec, makeMeasureSpec);
-        jVar.n.measure(makeMeasureSpec, makeMeasureSpec);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(B - (AndroidUtilities.dp(16.0f) * 2), TLObject.FLAG_30);
-        jVar.d.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
-        jVar.e.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
-        jVar.f.measure(View.MeasureSpec.makeMeasureSpec((jVar.b * 2) + oi0Var.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
+    public i() {
+        int dp = AndroidUtilities.dp(SharedConfig.getDevicePerformanceClass() == 2 ? 150.0f : 100.0f);
         Point point = AndroidUtilities.displaySize;
-        int i14 = point.x;
-        int i15 = point.y;
-        j jVar = this.e;
-        if (i14 > i15) {
-            super/*android.app.Dialog*/.dismiss();
+        int min = (int) Math.min(Math.min(point.x, point.y) * 0.5f, dp);
+        this.k = min < AndroidUtilities.dp(80.0f) ? AndroidUtilities.dp(80.0f) : min;
+        int i10 = 0;
+        while (true) {
+            z[] zVarArr = this.b;
+            if (i10 >= zVarArr.length) {
+                return;
+            }
+            boolean z10 = false;
+            z zVar = new z(16, z10, z10);
+            zVar.c = new float[Math.max(64, 2)];
+            zVar.b = 0;
+            zVarArr[i10] = zVar;
+            i10++;
         }
-        if (i10 == i12 || i11 == i13) {
+    }
+
+    public final void a(Canvas canvas, Rect rect) {
+        int i10;
+        int i11;
+        float f7;
+        int i12;
+        int i13;
+        float f10;
+        Rect rect2 = rect;
+        z[] zVarArr = this.b;
+        for (z zVar : zVarArr) {
+            zVar.b = 0;
+        }
+        int i14 = 0;
+        while (i14 < 100) {
+            g gVar = (g) this.i.get(i14);
+            if (Rect.intersects(gVar.getBounds(), rect2)) {
+                float[][] fArr = g.D;
+                int[] iArr = gVar.f;
+                float[] fArr2 = gVar.e;
+                if (zVarArr != null) {
+                    int length = zVarArr.length;
+                    float[] fArr3 = g.C;
+                    if (length == fArr3.length) {
+                        long currentTimeMillis = System.currentTimeMillis();
+                        int min = (int) Math.min(currentTimeMillis - gVar.j, 34L);
+                        gVar.j = currentTimeMillis;
+                        ArrayList arrayList = gVar.h;
+                        Stack stack = gVar.c;
+                        int i15 = gVar.d;
+                        int length2 = fArr3.length;
+                        Rect bounds = gVar.getBounds();
+                        float f11 = bounds.left;
+                        float f12 = bounds.top;
+                        i10 = i14;
+                        float width = bounds.width();
+                        float height = bounds.height();
+                        RectF rectF = gVar.z;
+                        float f13 = rectF.left;
+                        float f14 = rectF.top;
+                        float f15 = rectF.right;
+                        float f16 = rectF.bottom;
+                        float dpf2 = AndroidUtilities.dpf2(1.0f);
+                        float f17 = rect2.left - dpf2;
+                        float f18 = rect2.top - dpf2;
+                        float f19 = rect2.right + dpf2;
+                        float f20 = rect2.bottom + dpf2;
+                        float f21 = min;
+                        float f22 = f21 / 500.0f;
+                        int size = arrayList.size();
+                        int i16 = 0;
+                        while (i16 < size) {
+                            int i17 = size;
+                            c cVar = (c) arrayList.get(i16);
+                            float f23 = f20;
+                            float f24 = f15;
+                            float min2 = Math.min(cVar.g + f21, cVar.f);
+                            cVar.g = min2;
+                            float f25 = cVar.a;
+                            float f26 = cVar.b;
+                            boolean z10 = f25 < f13 || f25 > f24 || f26 < f14 || f26 > f16;
+                            if (min2 >= cVar.f || z10) {
+                                if (stack.size() < i15) {
+                                    stack.push(cVar);
+                                }
+                                int i18 = i17 - 1;
+                                if (i16 != i18) {
+                                    arrayList.set(i16, (c) arrayList.get(i18));
+                                }
+                                arrayList.remove(i18);
+                                size = i17 - 1;
+                                i16--;
+                            } else {
+                                float f27 = cVar.e * f22;
+                                cVar.a = (cVar.c * f27) + f25;
+                                cVar.b = (cVar.d * f27) + f26;
+                                size = i17;
+                            }
+                            i16++;
+                            f20 = f23;
+                            f15 = f24;
+                        }
+                        float f28 = f20;
+                        float f29 = f15;
+                        int size2 = arrayList.size();
+                        if (size2 < i15) {
+                            int i19 = i15 - size2;
+                            int i20 = 14;
+                            float f30 = -1.0f;
+                            Arrays.fill(fArr2, 0, Math.min(i19, 14), -1.0f);
+                            float f31 = f12;
+                            int i21 = 0;
+                            int i22 = 0;
+                            while (i21 < i19) {
+                                float f32 = fArr2[i22];
+                                if (f32 == f30) {
+                                    f32 = Utilities.fastRandom.nextFloat();
+                                    fArr2[i22] = f32;
+                                }
+                                float f33 = f32;
+                                int i23 = i22 + 1;
+                                i22 = i23 == i20 ? 0 : i23;
+                                c cVar2 = !stack.isEmpty() ? (c) stack.pop() : new c();
+                                int i24 = 0;
+                                while (true) {
+                                    cVar2.a = d3.f(Utilities.fastRandom, width, f11);
+                                    float f34 = d3.f(Utilities.fastRandom, height, f31);
+                                    cVar2.b = f34;
+                                    int i25 = i24 + 1;
+                                    f10 = width;
+                                    float f35 = cVar2.a;
+                                    if ((f35 < f13 || f35 > f29 || f34 < f14 || f34 > f16) && i25 < 4) {
+                                        width = f10;
+                                        i24 = i25;
+                                    }
+                                }
+                                float f36 = f31;
+                                double d = ((f33 * 3.141592653589793d) * 2.0d) - 3.141592653589793d;
+                                cVar2.c = (float) Math.cos(d);
+                                cVar2.d = (float) Math.sin(d);
+                                cVar2.g = 0.0f;
+                                cVar2.f = Utilities.fastRandom.nextInt(2000) + MediaDataController.MAX_STYLE_RUNS_COUNT;
+                                cVar2.e = (f33 * 6.0f) + 4.0f;
+                                cVar2.h = Utilities.fastRandom.nextInt(length2);
+                                arrayList.add(cVar2);
+                                i21++;
+                                width = f10;
+                                f31 = f36;
+                                i20 = 14;
+                                f30 = -1.0f;
+                            }
+                            size2 = arrayList.size();
+                        }
+                        for (int i26 = 0; i26 < length2; i26++) {
+                            iArr[i26] = 0;
+                        }
+                        int i27 = gVar.x;
+                        int i28 = 0;
+                        while (i28 < size2) {
+                            c cVar3 = (c) arrayList.get(i28);
+                            float f37 = cVar3.a;
+                            float f38 = cVar3.b;
+                            if (f37 >= f17 && f37 <= f19 && f38 >= f18 && f38 <= f28) {
+                                int i29 = cVar3.h;
+                                float[] fArr4 = fArr[i29];
+                                int i30 = iArr[i29];
+                                int i31 = i30 + 1;
+                                if (i31 < fArr4.length) {
+                                    fArr4[i30] = f37;
+                                    fArr4[i31] = f38;
+                                    int i32 = i30 + 2;
+                                    float f39 = gVar.b[i29];
+                                    if (f37 < f39) {
+                                        int i33 = i30 + 3;
+                                        i11 = size2;
+                                        if (i33 < fArr4.length) {
+                                            fArr4[i32] = i27 + f37;
+                                            fArr4[i33] = f38;
+                                            i32 = i30 + 4;
+                                        }
+                                    } else {
+                                        i11 = size2;
+                                    }
+                                    float f40 = i27;
+                                    float f41 = f40 - f39;
+                                    if (f37 > f41) {
+                                        int i34 = i32 + 1;
+                                        f7 = f40;
+                                        if (i34 < fArr4.length) {
+                                            fArr4[i32] = f37 - f7;
+                                            fArr4[i34] = f38;
+                                            i32 += 2;
+                                        }
+                                    } else {
+                                        f7 = f40;
+                                    }
+                                    if (f38 < f39 && (i13 = i32 + 1) < fArr4.length) {
+                                        fArr4[i32] = f37;
+                                        fArr4[i13] = f38 + f7;
+                                        i32 += 2;
+                                    }
+                                    if (f38 > f41 && (i12 = i32 + 1) < fArr4.length) {
+                                        fArr4[i32] = f37;
+                                        fArr4[i12] = f38 - f7;
+                                        i32 += 2;
+                                    }
+                                    iArr[i29] = i32;
+                                    i28++;
+                                    size2 = i11;
+                                }
+                            }
+                            i11 = size2;
+                            i28++;
+                            size2 = i11;
+                        }
+                        for (int i35 = 0; i35 < length2; i35++) {
+                            z zVar2 = zVarArr[i35];
+                            float[] fArr5 = fArr[i35];
+                            int i36 = iArr[i35];
+                            int i37 = zVar2.b + i36;
+                            float[] fArr6 = (float[]) zVar2.c;
+                            if (i37 > fArr6.length) {
+                                zVar2.c = Arrays.copyOf((float[]) zVar2.c, Math.max(i37, fArr6.length * 2));
+                            }
+                            System.arraycopy(fArr5, 0, (float[]) zVar2.c, zVar2.b, i36);
+                            zVar2.b += i36;
+                        }
+                        i14 = i10 + 1;
+                        rect2 = rect;
+                    }
+                }
+            }
+            i10 = i14;
+            i14 = i10 + 1;
+            rect2 = rect;
+        }
+        g gVar2 = (g) this.i.get(0);
+        gVar2.getClass();
+        float[] fArr7 = g.C;
+        if (zVarArr == null || zVarArr.length != fArr7.length) {
             return;
         }
-        if (!this.d) {
-            jVar.f();
+        for (int i38 = 0; i38 < fArr7.length; i38++) {
+            z zVar3 = zVarArr[i38];
+            Paint paint = gVar2.a[i38];
+            int i39 = zVar3.b;
+            if (i39 > 0) {
+                canvas.drawPoints((float[]) zVar3.c, 0, i39, paint);
+            }
         }
-        this.d = false;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.e.c || super.verifyDrawable(drawable);
     }
 }

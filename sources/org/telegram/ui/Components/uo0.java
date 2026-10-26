@@ -1,40 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class uo0 extends ct {
-    public final /* synthetic */ org.telegram.ui.ey f0;
-    public final /* synthetic */ org.telegram.ui.nx g0;
+public final class uo0 extends p40 {
+    public final /* synthetic */ org.telegram.ui.jx e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uo0(org.telegram.ui.nx nxVar, mm0 mm0Var, Context context, int i10, int i11, org.telegram.ui.ey eyVar) {
-        super(mm0Var, context, i10, i11);
-        this.g0 = nxVar;
-        this.f0 = eyVar;
+    public uo0(org.telegram.ui.jx jxVar, mm0 mm0Var, Context context, int i10) {
+        super(mm0Var, context, i10);
+        this.e0 = jxVar;
     }
 
-    @Override // org.telegram.ui.Components.b71
-    public final void N(boolean z10) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
-        super.N(z10);
-        mo0 mo0Var = this.g0.g0;
-        mo0Var.e(this.Y || this.Z || (arrayList = this.R) == null || !arrayList.isEmpty() || (arrayList2 = this.S) == null || !arrayList2.isEmpty() || (arrayList3 = this.U) == null || !arrayList3.isEmpty() || (arrayList4 = this.T) == null || !arrayList4.isEmpty(), z10);
-        if (!TextUtils.isEmpty(this.d0)) {
-            mo0Var.d.setText(LocaleController.getString(R.string.NoResult));
-            mo0Var.e.setVisibility(8);
-        } else {
-            mo0Var.d.setText(LocaleController.getString(R.string.NoChannelsTitle));
-            mo0Var.e.setVisibility(0);
-            mo0Var.e.setText(LocaleController.getString(R.string.NoChannelsMessage));
-        }
+    @Override // org.telegram.ui.Components.j71
+    public final void O(boolean z10) {
+        super.O(z10);
+        qo0 qo0Var = this.e0.u0;
+        qo0Var.e(false, z10);
+        qo0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        qo0Var.e.setVisibility(8);
     }
 }

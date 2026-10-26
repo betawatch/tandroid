@@ -1,5 +1,7 @@
 package com.google.android.gms.auth.api.signin;
 
+import a6.e;
+import a8.df;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -9,18 +11,16 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import n6.l;
-import o6.a;
+import o6.l;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import w7.f0;
-import z5.d;
+import p6.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new d(0);
+    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new e(0);
     public final int a;
     public final String b;
     public final String c;
@@ -107,21 +107,21 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f0.l(parcel, 2, this.b);
-        f0.l(parcel, 3, this.c);
-        f0.l(parcel, 4, this.d);
-        f0.l(parcel, 5, this.e);
-        f0.k(parcel, 6, this.f, i10);
-        f0.l(parcel, 7, this.h);
-        f0.s(parcel, 8, 8);
+        df.l(parcel, 2, this.b);
+        df.l(parcel, 3, this.c);
+        df.l(parcel, 4, this.d);
+        df.l(parcel, 5, this.e);
+        df.k(parcel, 6, this.f, i10);
+        df.l(parcel, 7, this.h);
+        df.s(parcel, 8, 8);
         parcel.writeLong(this.n);
-        f0.l(parcel, 9, this.r);
-        f0.p(parcel, 10, this.s);
-        f0.l(parcel, 11, this.v);
-        f0.l(parcel, 12, this.w);
-        f0.r(parcel, q6);
+        df.l(parcel, 9, this.r);
+        df.p(parcel, 10, this.s);
+        df.l(parcel, 11, this.v);
+        df.l(parcel, 12, this.w);
+        df.r(parcel, q5);
     }
 }

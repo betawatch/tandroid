@@ -1,66 +1,40 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.DialogInterface;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ty0 extends s4.r0 {
+public final /* synthetic */ class ty0 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ ty0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public /* synthetic */ ty0(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
         switch (this.a) {
             case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                int i11 = 2 - i10;
+                if (i11 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i11);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
                     break;
                 }
-                break;
             default:
-                ProfileActivity profileActivity = this.b;
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
+                int i12 = 2 - i10;
+                if (i12 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i12);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
+                    break;
                 }
-                if (profileActivity.G0 && i10 != 2) {
-                    profileActivity.G0 = false;
-                }
-                org.telegram.ui.ActionBar.u0 u0Var = profileActivity.V0;
-                if (u0Var != null) {
-                    boolean z10 = i10 != 0;
-                    profileActivity.A1 = z10;
-                    u0Var.setEnabled((z10 || profileActivity.q2) ? false : true);
-                }
-                rz0 rz0Var = profileActivity.O;
-                boolean z11 = profileActivity.a.I1;
-                rz0Var.getClass();
-                break;
-        }
-    }
-
-    @Override // s4.r0
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                org.telegram.ui.Components.r40 r40Var = profileActivity.X;
-                if (r40Var != null) {
-                    r40Var.b(true);
-                }
-                profileActivity.C3();
-                if (profileActivity.D1 != null && !profileActivity.E1 && profileActivity.c.N0() > profileActivity.w4 - 8) {
-                    profileActivity.T3(false);
-                }
-                rz0 rz0Var = profileActivity.O;
-                rz0Var.setPinnedToTop(rz0Var.getY() <= 0.0f);
-                profileActivity.Y4();
-                break;
         }
     }
 }

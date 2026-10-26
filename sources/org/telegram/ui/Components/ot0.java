@@ -1,22 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ot0 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ xv0 a;
+public final class ot0 extends ey0 {
+    public final /* synthetic */ aw0 K;
 
-    public ot0(xv0 xv0Var) {
-        this.a = xv0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ot0(aw0 aw0Var, Context context, c10 c10Var) {
+        super(context, c10Var, 1, null);
+        this.K = aw0Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        xv0 xv0Var = this.a;
-        if (xv0Var.n0 == null) {
-            return;
-        }
-        xv0Var.n0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - xv0Var.n0.getRight());
+    @Override // org.telegram.ui.Components.ey0
+    public final void a() {
+        invalidate();
+        this.K.L0();
     }
 }

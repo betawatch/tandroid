@@ -1,26 +1,26 @@
 package ee;
 
-import org.telegram.tgnet.TLObject;
+import he.v;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d extends md.c {
-    public /* synthetic */ Object a;
-    public int b;
-    public final /* synthetic */ qf.b c;
-    public qf.b d;
-    public c e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(qf.b bVar, md.c cVar) {
-        super(cVar);
-        this.c = bVar;
-    }
-
-    @Override // md.a
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.b |= TLObject.FLAG_31;
-        return this.c.q(null, this);
-    }
+public abstract class d {
+    public static final h a = new h(-1, null, null, 0);
+    public static final int b = he.a.j(32, 12, "kotlinx.coroutines.bufferedChannel.segmentSize");
+    public static final int c = he.a.j(10000, 12, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations");
+    public static final v d = new v("BUFFERED", 0);
+    public static final v e = new v("SHOULD_BUFFER", 0);
+    public static final v f = new v("S_RESUMING_BY_RCV", 0);
+    public static final v g = new v("RESUMING_BY_EB", 0);
+    public static final v h = new v("POISONED", 0);
+    public static final v i = new v("DONE_RCV", 0);
+    public static final v j = new v("INTERRUPTED_SEND", 0);
+    public static final v k = new v("INTERRUPTED_RCV", 0);
+    public static final v l = new v("CHANNEL_CLOSED", 0);
+    public static final v m = new v("SUSPEND", 0);
+    public static final v n = new v("SUSPEND_NO_WAITER", 0);
+    public static final v o = new v("FAILED", 0);
+    public static final v p = new v("CLOSE_HANDLER_CLOSED", 0);
+    public static final v q = new v("CLOSE_HANDLER_INVOKED", 0);
+    public static final v r = new v("NO_CLOSE_CAUSE", 0);
 }

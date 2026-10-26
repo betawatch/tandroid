@@ -1,29 +1,47 @@
 package vh;
 
-import android.view.animation.Interpolator;
-import w7.r;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Interpolator {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Interpolator d;
+public final class e extends s61 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ e(boolean z10, float f7, float f10, Interpolator interpolator) {
-        this.a = z10;
-        this.b = f7;
-        this.c = f10;
-        this.d = interpolator;
+    static {
+        s61.setup(new e());
     }
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        boolean z10 = this.a;
-        float f10 = this.b;
-        float f11 = this.c;
-        Interpolator interpolator = this.d;
-        return z10 ? 1.0f - interpolator.getInterpolation(1.0f - r.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f)) : interpolator.getInterpolation(r.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f));
+    @Override // org.telegram.ui.Components.s61
+    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+        zg.b bVar = (zg.b) view;
+        bVar.v = (TLRPC.TL_help_country) t61Var.G;
+        bVar.f();
+        bVar.setDivider(z10);
+        bVar.c(t61Var.e, false);
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final boolean contentsEquals(t61 t61Var, t61 t61Var2) {
+        return t61Var.I(t61Var2);
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, u6 u6Var) {
+        zg.b bVar = new zg.b(context, u6Var);
+        bVar.setBackground(null);
+        return bVar;
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final boolean equals(t61 t61Var, t61 t61Var2) {
+        return t61Var.J(t61Var2);
     }
 }

@@ -1,83 +1,128 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import java.io.Serializable;
-import java.util.HashMap;
-import org.telegram.messenger.NotificationCenter;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class hy0 implements TextWatcher {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ Serializable c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+public final class hy0 extends Drawable {
+    public final int a;
+    public final int b;
+    public final t5[] c;
+    public final boolean e;
+    public int d = 255;
+    public final RectF f = new RectF();
+    public boolean g = false;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public hy0(ty0 ty0Var, int[] iArr, TextView textView, EditTextBoldCursor editTextBoldCursor) {
-        this.e = ty0Var;
-        this.c = iArr;
-        this.d = textView;
-        this.b = editTextBoldCursor;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                org.telegram.ui.an0 an0Var = (org.telegram.ui.an0) this.e;
-                String str = (String) this.c;
-                boolean z10 = ((HashMap) this.d) == an0Var.t1;
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                org.telegram.ui.an0.I0(an0Var, editTextBoldCursor, str, editable, z10);
-                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
-                EditTextBoldCursor editTextBoldCursor2 = an0Var.Y[intValue];
-                if (intValue == 6) {
-                    an0Var.X0(true);
-                    break;
-                }
-                break;
+    public hy0(int i10, ArrayList arrayList, boolean z10) {
+        this.e = z10;
+        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
+        this.a = max;
+        int min = Math.min(max * max, arrayList.size());
+        this.b = min;
+        this.c = new t5[min];
+        if (!arrayList.isEmpty()) {
+            MessageObject.isAnimatedEmoji((TLRPC.Document) arrayList.get(0));
+        }
+        int i11 = max < 2 ? 1 : 0;
+        for (int i12 = 0; i12 < this.b; i12++) {
+            this.c[i12] = t5.m(i10, i11, (TLRPC.Document) arrayList.get(i12));
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                if (((int[]) this.c)[0] == 2) {
-                    ((ty0) this.e).o0((TextView) this.d, this.b.getText().toString(), false);
-                    break;
-                }
-                break;
+    public final void a(org.telegram.ui.Cells.s1 s1Var) {
+        for (int i10 = 0; i10 < this.b; i10++) {
+            this.c[i10].o(s1Var);
         }
     }
 
-    public hy0(org.telegram.ui.an0 an0Var, EditTextBoldCursor editTextBoldCursor, String str, HashMap hashMap) {
-        this.e = an0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
-        this.d = hashMap;
+    public final boolean b() {
+        return this.g;
     }
 
-    private final void a(Editable editable) {
+    public final boolean c(ArrayList arrayList) {
+        t5[] t5VarArr = this.c;
+        if (t5VarArr.length == arrayList.size()) {
+            for (int i10 = 0; i10 < t5VarArr.length; i10++) {
+                TLRPC.Document document = t5VarArr[i10].e;
+                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i10)).id) {
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    public final void d() {
+        this.g = false;
     }
 
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        t5 t5Var;
+        if (this.d <= 0) {
+            return;
+        }
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        float centerX = rectF.centerX() - (AndroidUtilities.dp(48.0f) / 2.0f);
+        float centerY = rectF.centerY() - (AndroidUtilities.dp(48.0f) / 2.0f);
+        int dp = AndroidUtilities.dp(48.0f);
+        int i10 = this.a;
+        float f7 = dp / i10;
+        float dp2 = AndroidUtilities.dp(48.0f) / i10;
+        canvas.save();
+        canvas.clipRect(centerX, centerY, AndroidUtilities.dp(48.0f) + centerX, AndroidUtilities.dp(48.0f) + centerY);
+        for (int i11 = 0; i11 < i10; i11++) {
+            for (int i12 = 0; i12 < i10; i12++) {
+                int i13 = (i11 * i10) + i12;
+                if (i13 >= 0) {
+                    t5[] t5VarArr = this.c;
+                    if (i13 < t5VarArr.length && (t5Var = t5VarArr[i13]) != null) {
+                        t5Var.setBounds((int) ((i12 * f7) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f7) + centerX), (int) (((i11 + 1) * dp2) + centerY));
+                        t5VarArr[i13].setAlpha(this.d);
+                        t5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.y6.w3 : org.telegram.ui.ActionBar.y6.v3);
+                        t5VarArr[i13].draw(canvas);
+                    }
+                }
+            }
+        }
+        canvas.restore();
     }
 
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    public final void e() {
+        this.g = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(48.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(48.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

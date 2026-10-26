@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class z extends ViewGroup implements lw0 {
+public abstract class z extends ViewGroup implements sw0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
-    public androidx.activity.i d;
+    public m.g3 d;
     public Runnable e;
 
     public z(Context context) {
@@ -38,14 +38,14 @@ public abstract class z extends ViewGroup implements lw0 {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    public static void p(Drawable drawable, float f7, float f10) {
+    public static void o(Drawable drawable, float f7, float f10) {
         int i10 = (int) f7;
         int i11 = (int) f10;
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.lw0
-    public final void f(Runnable runnable) {
+    @Override // org.telegram.ui.Components.sw0
+    public final void e(Runnable runnable) {
         this.e = runnable;
     }
 
@@ -77,9 +77,9 @@ public abstract class z extends ViewGroup implements lw0 {
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        androidx.activity.i iVar = this.d;
-        if (iVar != null) {
-            removeCallbacks(iVar);
+        m.g3 g3Var = this.d;
+        if (g3Var != null) {
+            removeCallbacks(g3Var);
         }
     }
 
@@ -91,13 +91,13 @@ public abstract class z extends ViewGroup implements lw0 {
         return true;
     }
 
-    public final void q() {
+    public final void p() {
         if (this.a) {
             return;
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new androidx.activity.i(this, 29);
+            this.d = new m.g3(this, 3);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

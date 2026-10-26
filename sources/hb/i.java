@@ -1,17 +1,63 @@
 package hb;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class i implements eb.v {
-    private i() {
+public final class i extends Number {
+    public final String a;
+
+    public i(String str) {
+        this.a = str;
     }
 
-    @Override // eb.v
-    public final eb.u create(eb.g gVar, lb.a aVar) {
-        throw new AssertionError("Factory should not be used");
+    @Override // java.lang.Number
+    public final double doubleValue() {
+        return Double.parseDouble(this.a);
     }
 
-    public /* synthetic */ i(int i10) {
-        this();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof i) {
+            return this.a.equals(((i) obj).a);
+        }
+        return false;
+    }
+
+    @Override // java.lang.Number
+    public final float floatValue() {
+        return Float.parseFloat(this.a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    @Override // java.lang.Number
+    public final int intValue() {
+        String str = this.a;
+        try {
+            try {
+                return Integer.parseInt(str);
+            } catch (NumberFormatException unused) {
+                return (int) Long.parseLong(str);
+            }
+        } catch (NumberFormatException unused2) {
+            return d.i(str).intValue();
+        }
+    }
+
+    @Override // java.lang.Number
+    public final long longValue() {
+        String str = this.a;
+        try {
+            return Long.parseLong(str);
+        } catch (NumberFormatException unused) {
+            return d.i(str).longValue();
+        }
+    }
+
+    public final String toString() {
+        return this.a;
     }
 }

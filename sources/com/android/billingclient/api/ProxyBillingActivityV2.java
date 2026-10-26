@@ -1,20 +1,19 @@
 package com.android.billingclient.api;
 
-import a4.l;
 import android.app.PendingIntent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import androidx.activity.m;
+import androidx.activity.l;
 import androidx.activity.result.c;
 import androidx.activity.result.g;
-import androidx.fragment.app.e0;
+import androidx.fragment.app.d0;
+import b6.i;
 import com.google.android.gms.internal.play_billing.u;
-import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class ProxyBillingActivityV2 extends m {
+public class ProxyBillingActivityV2 extends l {
     public c J;
     public c K;
     public c L;
@@ -22,12 +21,12 @@ public class ProxyBillingActivityV2 extends m {
     public ResultReceiver N;
     public ResultReceiver O;
 
-    @Override // androidx.activity.m, e0.e, android.app.Activity
+    @Override // androidx.activity.l, e0.e, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.J = r(new l(this, 7), new e0(3));
-        this.K = r(new qb.c(this, 11), new e0(3));
-        this.L = r(new ya.c(this, 8), new e0(3));
+        this.J = r(new rb.c(this, 15), new d0(3));
+        this.K = r(new za.c(this, 14), new d0(3));
+        this.L = r(new i(this, 14), new d0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
                 this.M = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
@@ -46,34 +45,34 @@ public class ProxyBillingActivityV2 extends m {
             PendingIntent pendingIntent = (PendingIntent) getIntent().getParcelableExtra("ALTERNATIVE_BILLING_ONLY_DIALOG_INTENT");
             this.M = (ResultReceiver) getIntent().getParcelableExtra("alternative_billing_only_dialog_result_receiver");
             c cVar = this.J;
-            i.e(pendingIntent, "pendingIntent");
+            kotlin.jvm.internal.i.e(pendingIntent, "pendingIntent");
             IntentSender intentSender = pendingIntent.getIntentSender();
-            i.d(intentSender, "pendingIntent.intentSender");
-            cVar.b(new g(intentSender, null, 0, 0));
+            kotlin.jvm.internal.i.d(intentSender, "pendingIntent.intentSender");
+            cVar.a(new g(intentSender, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_payment_dialog_pending_intent")) {
             PendingIntent pendingIntent2 = (PendingIntent) getIntent().getParcelableExtra("external_payment_dialog_pending_intent");
             this.N = (ResultReceiver) getIntent().getParcelableExtra("external_payment_dialog_result_receiver");
             c cVar2 = this.K;
-            i.e(pendingIntent2, "pendingIntent");
+            kotlin.jvm.internal.i.e(pendingIntent2, "pendingIntent");
             IntentSender intentSender2 = pendingIntent2.getIntentSender();
-            i.d(intentSender2, "pendingIntent.intentSender");
-            cVar2.b(new g(intentSender2, null, 0, 0));
+            kotlin.jvm.internal.i.d(intentSender2, "pendingIntent.intentSender");
+            cVar2.a(new g(intentSender2, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_offer_flow_pending_intent")) {
             PendingIntent pendingIntent3 = (PendingIntent) getIntent().getParcelableExtra("external_offer_flow_pending_intent");
             this.O = (ResultReceiver) getIntent().getParcelableExtra("external_offer_flow_result_receiver");
             c cVar3 = this.L;
-            i.e(pendingIntent3, "pendingIntent");
+            kotlin.jvm.internal.i.e(pendingIntent3, "pendingIntent");
             IntentSender intentSender3 = pendingIntent3.getIntentSender();
-            i.d(intentSender3, "pendingIntent.intentSender");
-            cVar3.b(new g(intentSender3, null, 0, 0));
+            kotlin.jvm.internal.i.d(intentSender3, "pendingIntent.intentSender");
+            cVar3.a(new g(intentSender3, null, 0, 0));
         }
     }
 
-    @Override // androidx.activity.m, e0.e, android.app.Activity
+    @Override // androidx.activity.l, e0.e, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         ResultReceiver resultReceiver = this.M;

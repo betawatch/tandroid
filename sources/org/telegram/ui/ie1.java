@@ -1,28 +1,25 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ie1 extends we1 {
-    public final /* synthetic */ ye1 j3;
+public final class ie1 extends org.telegram.ui.Components.y70 {
+    public final /* synthetic */ long A0;
+    public final /* synthetic */ ke1 B0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ie1(ye1 ye1Var, Context context) {
-        super(ye1Var, context);
-        this.j3 = ye1Var;
+    public ie1(ke1 ke1Var, Context context, int i10, a0.h hVar, long j10, org.telegram.ui.ActionBar.r2 r2Var, long j11) {
+        super(context, i10, hVar, j10, r2Var, null);
+        this.B0 = ke1Var;
+        this.A0 = j11;
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean T0() {
-        ArrayList arrayList = this.j3.b;
-        return (getAdapter() == null || this.V1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((oe1) arrayList.get(0)).c == null || ((oe1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
-    }
-
-    @Override // org.telegram.ui.we1, org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.j3.x0();
+    @Override // org.telegram.ui.Components.y70
+    public final boolean X() {
+        TLRPC.Chat chat = this.B0.b.getMessagesController().getChat(Long.valueOf(this.A0));
+        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
     }
 }

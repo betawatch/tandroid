@@ -1,8 +1,72 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.drawable.StateListDrawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class w5 extends StateListDrawable {
+public final class w5 implements oe.h, re.a {
+    public final View a;
+    public boolean b;
+    public float c = 1.0f;
+    public float d = 1.0f;
+    public float e = 1.0f;
+
+    public w5(View view) {
+        this.a = view;
+    }
+
+    @Override // re.a
+    public final void a() {
+        View view = this.a;
+        if (x5.g(view)) {
+            return;
+        }
+        if (view instanceof y5) {
+            ((y5) view).X();
+        } else {
+            view.setVisibility(8);
+        }
+        c(1.0f, 1.0f);
+    }
+
+    @Override // oe.h
+    public final /* synthetic */ int b(boolean z10) {
+        return 0;
+    }
+
+    public final void c(float f7, float f10) {
+        float f11 = this.c;
+        if (f11 == f7 && this.d == f10) {
+            return;
+        }
+        View view = this.a;
+        if (f11 == 1.0f) {
+            this.e = view.getAlpha();
+        }
+        this.c = f7;
+        this.d = f10;
+        view.setAlpha(this.e * f7);
+        float min = Math.min(AndroidUtilities.lerp(0.6f, 1.0f, f7), f10);
+        view.setScaleX(min);
+        view.setScaleY(min);
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof w5) && ((w5) obj).a == this.a;
+    }
+
+    @Override // oe.h
+    public final int getHeight() {
+        return this.a.getMeasuredHeight();
+    }
+
+    @Override // oe.h
+    public final int getWidth() {
+        return x5.e(this.a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
 }

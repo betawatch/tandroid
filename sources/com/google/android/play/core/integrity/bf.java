@@ -1,12 +1,12 @@
 package com.google.android.play.core.integrity;
 
-import a9.j0;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
+import b9.h0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class bf extends bm {
     final /* synthetic */ long a;
@@ -21,9 +21,9 @@ final class bf extends bm {
         this.c = bnVar;
     }
 
-    @Override // a9.k0
+    @Override // b9.i0
     public final void b() {
-        j0 j0Var;
+        h0 h0Var;
         if (bn.l(this.c)) {
             a(new StandardIntegrityException(-2, null));
             return;
@@ -34,23 +34,23 @@ final class bf extends bm {
         }
         try {
             bn bnVar = this.c;
-            a9.z zVar = (a9.z) bnVar.a.n;
+            b9.x xVar = (b9.x) bnVar.a.n;
             Bundle b10 = bn.b(bnVar, this.a, 0);
             bl blVar = new bl(this.c, this.b);
-            a9.x xVar = (a9.x) zVar;
-            xVar.getClass();
+            b9.v vVar = (b9.v) xVar;
+            vVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(xVar.c);
-            int i10 = a9.v.a;
+            obtain.writeInterfaceToken(vVar.c);
+            int i10 = b9.t.a;
             obtain.writeInt(1);
             b10.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(blVar);
-            xVar.G0(obtain, 2);
+            vVar.G0(obtain, 2);
         } catch (RemoteException e) {
             bn bnVar2 = this.c;
             long j10 = this.a;
-            j0Var = bnVar2.b;
-            j0Var.a(e, "warmUpIntegrityToken(%s)", Long.valueOf(j10));
+            h0Var = bnVar2.b;
+            h0Var.a(e, "warmUpIntegrityToken(%s)", Long.valueOf(j10));
             this.b.trySetException(new StandardIntegrityException(-100, e));
         }
     }

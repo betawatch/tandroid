@@ -1,30 +1,25 @@
 package v2;
 
-import b2.w;
+import a8.hc;
+import a8.yb;
+import b2.x;
 import g2.b0;
-import v7.k7;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k extends f {
     public final e s;
-    public n2.e v;
+    public m4.c v;
     public long w;
     public volatile boolean x;
 
-    public k(g2.h hVar, g2.m mVar, w wVar, int i10, Object obj, e eVar) {
-        super(hVar, mVar, 2, wVar, i10, obj, -9223372036854775807L, -9223372036854775807L);
+    public k(g2.h hVar, g2.m mVar, x xVar, int i10, Object obj, e eVar) {
+        super(hVar, mVar, 2, xVar, i10, obj, -9223372036854775807L, -9223372036854775807L);
         this.s = eVar;
     }
 
     @Override // y2.i
-    public final void O() {
-        this.x = true;
-    }
-
-    @Override // y2.i
-    public final void a() {
+    public final void b() {
         if (this.w == 0) {
             this.s.b(this.v, -9223372036854775807L, -9223372036854775807L);
         }
@@ -36,7 +31,7 @@ public final class k extends f {
                 try {
                     int f7 = this.s.a.f(lVar, e.v);
                     boolean z10 = false;
-                    u6.p(f7 != 1);
+                    yb.p(f7 != 1);
                     if (f7 == 0) {
                         z10 = true;
                     }
@@ -49,7 +44,12 @@ public final class k extends f {
                 }
             }
         } finally {
-            k7.a(this.r);
+            hc.a(this.r);
         }
+    }
+
+    @Override // y2.i
+    public final void f0() {
+        this.x = true;
     }
 }

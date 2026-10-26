@@ -1,305 +1,135 @@
 package org.telegram.ui.Components;
 
-import android.os.AsyncTask;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.telegram.messenger.FileLog;
-import org.webrtc.MediaStreamTrack;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class x91 extends AsyncTask {
-    public final /* synthetic */ int a;
-    public String b;
-    public final String[] c;
-    public final /* synthetic */ da1 d;
+public final class x91 implements SensorEventListener {
+    public final float[] a = new float[3];
+    public final float[] b = new float[3];
+    public int c;
+    public final WindowManager d;
+    public final SensorManager e;
+    public final Sensor f;
+    public boolean h;
+    public w91 n;
 
-    public x91(da1 da1Var, String str, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = da1Var;
-                this.c = new String[4];
-                this.b = str;
-                break;
-            case 2:
-                this.d = da1Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
-            case 3:
-                this.d = da1Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
-            case 4:
-                this.d = da1Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
-            default:
-                this.d = da1Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
+    public x91(Context context) {
+        this.d = (WindowManager) context.getSystemService("window");
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.e = sensorManager;
+        this.f = sensorManager.getDefaultSensor(1);
+    }
+
+    public static float a(int i10, int i11) {
+        float f7 = i10;
+        float dp = AndroidUtilities.dp(16.0f) * 2;
+        float f10 = (f7 + dp) / f7;
+        float f11 = i11;
+        return Math.max(f10, (dp + f11) / f11);
+    }
+
+    public final void b(org.telegram.ui.hb1 hb1Var) {
+        this.n = hb1Var;
+    }
+
+    public final void c(boolean z10) {
+        if (this.h != z10) {
+            this.h = z10;
+            Sensor sensor = this.f;
+            if (sensor == null) {
+                return;
+            }
+            SensorManager sensorManager = this.e;
+            if (z10) {
+                sensorManager.registerListener(this, sensor, 1);
+            } else {
+                sensorManager.unregisterListener(this);
+            }
         }
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                String[] strArr = this.c;
-                Locale locale = Locale.US;
-                String str = "http://www.aparat.com/video/video/embed/vt/frame/showvideo/yes/videohash/" + this.b;
-                this.d.getClass();
-                String c10 = da1.c(this, str, null, true);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    Matcher matcher = da1.r0.matcher(c10);
-                    if (matcher.find()) {
-                        JSONArray jSONArray = new JSONArray(matcher.group(1));
-                        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
-                            JSONArray jSONArray2 = jSONArray.getJSONArray(i10);
-                            if (jSONArray2.length() != 0) {
-                                JSONObject jSONObject = jSONArray2.getJSONObject(0);
-                                if (jSONObject.has("file")) {
-                                    strArr[0] = jSONObject.getString("file");
-                                    strArr[1] = "other";
-                                }
-                            }
-                        }
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr[0];
-            case 1:
-                String[] strArr2 = this.c;
-                Locale locale2 = Locale.US;
-                String str2 = "https://coub.com/api/v2/coubs/" + this.b + ".json";
-                this.d.getClass();
-                String c11 = da1.c(this, str2, null, true);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    JSONObject jSONObject2 = new JSONObject(c11).getJSONObject("file_versions").getJSONObject("mobile");
-                    String string = jSONObject2.getString(MediaStreamTrack.VIDEO_TRACK_KIND);
-                    String string2 = jSONObject2.getJSONArray(MediaStreamTrack.AUDIO_TRACK_KIND).getString(0);
-                    if (string != null && string2 != null) {
-                        strArr2[0] = string;
-                        strArr2[1] = "other";
-                        strArr2[2] = string2;
-                        strArr2[3] = "other";
-                    }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr2[0];
-            case 2:
-                String[] strArr3 = this.c;
-                String str3 = this.b;
-                this.d.getClass();
-                String c12 = da1.c(this, str3, null, false);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    Matcher matcher2 = da1.s0.matcher(c12);
-                    if (matcher2.find()) {
-                        strArr3[0] = new JSONObject(matcher2.group(1)).getJSONArray("quality_options").getJSONObject(0).getString("source");
-                        strArr3[1] = "other";
-                    }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr3[0];
-            case 3:
-                String[] strArr4 = this.c;
-                HashMap hashMap = new HashMap();
-                hashMap.put("Client-ID", "jzkbprff40iqj646a697cyrvl0zt2m6");
-                int indexOf = this.b.indexOf(38);
-                if (indexOf > 0) {
-                    this.b = this.b.substring(0, indexOf);
-                }
-                Locale locale3 = Locale.US;
-                String str4 = "https://api.twitch.tv/kraken/streams/" + this.b + "?stream_type=all";
-                this.d.getClass();
-                String c13 = da1.c(this, str4, hashMap, false);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    new JSONObject(c13).getJSONObject("stream");
-                    JSONObject jSONObject3 = new JSONObject(da1.c(this, "https://api.twitch.tv/api/channels/" + this.b + "/access_token", hashMap, false));
-                    String encode = URLEncoder.encode(jSONObject3.getString("sig"), "UTF-8");
-                    String encode2 = URLEncoder.encode(jSONObject3.getString("token"), "UTF-8");
-                    URLEncoder.encode("https://youtube.googleapis.com/v/" + this.b, "UTF-8");
-                    String str5 = "allow_source=true&allow_audio_only=true&allow_spectre=true&player=twitchweb&segment_preference=4&p=" + ((int) (Math.random() * 1.0E7d)) + "&sig=" + encode + "&token=" + encode2;
-                    strArr4[0] = "https://usher.ttvnw.net/api/channel/hls/" + this.b + ".m3u8?" + str5;
-                    strArr4[1] = "hls";
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr4[0];
-            default:
-                String[] strArr5 = this.c;
-                Locale locale4 = Locale.US;
-                String str6 = "https://player.vimeo.com/video/" + this.b + "/config";
-                this.d.getClass();
-                String c14 = da1.c(this, str6, null, true);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    JSONObject jSONObject4 = new JSONObject(c14).getJSONObject("request").getJSONObject("files");
-                    if (jSONObject4.has("hls")) {
-                        JSONObject jSONObject5 = jSONObject4.getJSONObject("hls");
-                        try {
-                            strArr5[0] = jSONObject5.getString("url");
-                        } catch (Exception unused) {
-                            strArr5[0] = jSONObject5.getJSONObject("cdns").getJSONObject(jSONObject5.getString("default_cdn")).getString("url");
-                        }
-                        strArr5[1] = "hls";
-                    } else if (jSONObject4.has("progressive")) {
-                        strArr5[1] = "other";
-                        strArr5[0] = jSONObject4.getJSONArray("progressive").getJSONObject(0).getString("url");
-                    }
-                } catch (Exception e12) {
-                    FileLog.e(e12);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr5[0];
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        w91 w91Var;
+        float f7;
+        int rotation = this.d.getDefaultDisplay().getRotation();
+        float[] fArr = sensorEvent.values;
+        float f10 = fArr[0] / 9.80665f;
+        float f11 = fArr[1] / 9.80665f;
+        float f12 = fArr[2] / 9.80665f;
+        float f13 = f12 * f12;
+        float atan2 = (float) ((Math.atan2(f10, Math.sqrt((f11 * f11) + f13)) / 3.141592653589793d) * 2.0d);
+        float atan22 = (float) ((Math.atan2(f11, Math.sqrt((f10 * f10) + f13)) / 3.141592653589793d) * 2.0d);
+        if (rotation != 1) {
+            if (rotation == 2) {
+                float f14 = -atan22;
+                atan22 = -atan2;
+                atan2 = f14;
+            } else if (rotation != 3) {
+                atan2 = atan22;
+                atan22 = atan2;
+            } else {
+                atan2 = -atan2;
+            }
+        }
+        int i10 = this.c;
+        float[] fArr2 = this.a;
+        fArr2[i10] = atan2;
+        float[] fArr3 = this.b;
+        fArr3[i10] = atan22;
+        this.c = (i10 + 1) % fArr2.length;
+        float f15 = 0.0f;
+        float f16 = 0.0f;
+        for (int i11 = 0; i11 < fArr2.length; i11++) {
+            f15 += fArr2[i11];
+            f16 += fArr3[i11];
+        }
+        float length = f15 / fArr2.length;
+        float length2 = f16 / fArr2.length;
+        if (length <= 1.0f) {
+            f7 = length < -1.0f ? -2.0f : 2.0f;
+            int round = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
+            int round2 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
+            float max = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
+            float max2 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
+            float sqrt = (float) Math.sqrt((max2 * max2) + (max * max));
+            float f17 = max / sqrt;
+            float f18 = max2 / sqrt;
+            Math.atan2((f17 * (-1.0f)) - (f18 * 0.0f), (f18 * (-1.0f)) + (f17 * 0.0f));
+            w91Var = this.n;
+            if (w91Var == null) {
+                w91Var.i(round, round2);
+                return;
+            }
+            return;
+        }
+        length = f7 - length;
+        int round3 = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
+        int round22 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
+        float max3 = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
+        float max22 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
+        float sqrt2 = (float) Math.sqrt((max22 * max22) + (max3 * max3));
+        float f172 = max3 / sqrt2;
+        float f182 = max22 / sqrt2;
+        Math.atan2((f172 * (-1.0f)) - (f182 * 0.0f), (f182 * (-1.0f)) + (f172 * 0.0f));
+        w91Var = this.n;
+        if (w91Var == null) {
         }
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        switch (this.a) {
-            case 0:
-                String str = (String) obj;
-                da1 da1Var = this.d;
-                if (str == null) {
-                    if (!isCancelled()) {
-                        da1Var.h();
-                        break;
-                    }
-                } else {
-                    da1Var.w = true;
-                    da1Var.x = str;
-                    da1Var.y = this.c[1];
-                    if (da1Var.s) {
-                        da1Var.i();
-                    }
-                    da1Var.j(false, true);
-                    da1Var.f0.d(true, true);
-                    break;
-                }
-                break;
-            case 1:
-                String str2 = (String) obj;
-                da1 da1Var2 = this.d;
-                if (str2 == null) {
-                    if (!isCancelled()) {
-                        da1Var2.h();
-                        break;
-                    }
-                } else {
-                    da1Var2.w = true;
-                    da1Var2.x = str2;
-                    String[] strArr = this.c;
-                    da1Var2.y = strArr[1];
-                    da1Var2.E = strArr[2];
-                    da1Var2.F = strArr[3];
-                    if (da1Var2.s) {
-                        da1Var2.i();
-                    }
-                    da1Var2.j(false, true);
-                    da1Var2.f0.d(true, true);
-                    break;
-                }
-                break;
-            case 2:
-                String str3 = (String) obj;
-                da1 da1Var3 = this.d;
-                if (str3 == null) {
-                    if (!isCancelled()) {
-                        da1Var3.h();
-                        break;
-                    }
-                } else {
-                    da1Var3.w = true;
-                    da1Var3.x = str3;
-                    da1Var3.y = this.c[1];
-                    if (da1Var3.s) {
-                        da1Var3.i();
-                    }
-                    da1Var3.j(false, true);
-                    da1Var3.f0.d(true, true);
-                    break;
-                }
-                break;
-            case 3:
-                String str4 = (String) obj;
-                da1 da1Var4 = this.d;
-                if (str4 == null) {
-                    if (!isCancelled()) {
-                        da1Var4.h();
-                        break;
-                    }
-                } else {
-                    da1Var4.w = true;
-                    da1Var4.x = str4;
-                    da1Var4.y = this.c[1];
-                    if (da1Var4.s) {
-                        da1Var4.i();
-                    }
-                    da1Var4.j(false, true);
-                    da1Var4.f0.d(true, true);
-                    break;
-                }
-                break;
-            default:
-                String str5 = (String) obj;
-                da1 da1Var5 = this.d;
-                if (str5 == null) {
-                    if (!isCancelled()) {
-                        da1Var5.h();
-                        break;
-                    }
-                } else {
-                    da1Var5.w = true;
-                    da1Var5.x = str5;
-                    da1Var5.y = this.c[1];
-                    if (da1Var5.s) {
-                        da1Var5.i();
-                    }
-                    da1Var5.j(false, true);
-                    da1Var5.f0.d(true, true);
-                    break;
-                }
-                break;
-        }
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

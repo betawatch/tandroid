@@ -1,41 +1,14 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class i1 extends View {
-    public int a;
-    public float b;
-    public final /* synthetic */ j1 c;
+public final class i1 {
+    public double a;
+    public double b;
+    public double c;
+    public double d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i1(j1 j1Var, Context context) {
-        super(context);
-        this.c = j1Var;
-        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        setLayoutParams(new s4.o0(-2, 0));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        j1 j1Var = this.c;
-        j1Var.Y2.setColor(this.a);
-        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
-        if (this.b != 0.0f) {
-            min -= (j1Var.Z2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
-        }
-        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
-        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
-        j1.D1(width, height, min, this.a, canvas);
-        if (this.b != 0.0f) {
-            j1Var.Z2.setColor(this.a);
-            j1Var.Z2.setAlpha(255);
-            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), j1Var.Z2);
-        }
+    public final String toString() {
+        return "RectD{left=" + this.a + ", top=" + this.b + ", right=" + this.c + ", bottom=" + this.d + '}';
     }
 }

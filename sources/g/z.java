@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class z extends k.a implements l.i {
     public final Context c;
@@ -25,6 +25,15 @@ public final class z extends k.a implements l.i {
         kVar.e = this;
     }
 
+    @Override // l.i
+    public final boolean F(l.k kVar, MenuItem menuItem) {
+        n4.s sVar = this.e;
+        if (sVar != null) {
+            return ((ti.e) sVar.b).o(this, menuItem);
+        }
+        return false;
+    }
+
     @Override // k.a
     public final void a() {
         a0 a0Var = this.h;
@@ -35,7 +44,7 @@ public final class z extends k.a implements l.i {
             a0Var.j = this;
             a0Var.k = this.e;
         } else {
-            this.e.w(this);
+            this.e.A(this);
         }
         this.e = null;
         a0Var.a(false);
@@ -84,7 +93,7 @@ public final class z extends k.a implements l.i {
         l.k kVar = this.d;
         kVar.w();
         try {
-            this.e.x(this, kVar);
+            this.e.C(this, kVar);
         } finally {
             kVar.v();
         }
@@ -95,56 +104,47 @@ public final class z extends k.a implements l.i {
         return this.h.f.I;
     }
 
-    @Override // l.i
-    public final void i(l.k kVar) {
-        if (this.e == null) {
-            return;
-        }
-        g();
-        m.i iVar = this.h.f.d;
-        if (iVar != null) {
-            iVar.l();
-        }
-    }
-
     @Override // k.a
-    public final void j(View view) {
+    public final void i(View view) {
         this.h.f.setCustomView(view);
         this.f = new WeakReference(view);
     }
 
     @Override // k.a
-    public final void k(int i10) {
-        l(this.h.a.getResources().getString(i10));
+    public final void j(int i10) {
+        k(this.h.a.getResources().getString(i10));
     }
 
     @Override // k.a
-    public final void l(CharSequence charSequence) {
+    public final void k(CharSequence charSequence) {
         this.h.f.setSubtitle(charSequence);
     }
 
     @Override // k.a
-    public final void m(int i10) {
-        n(this.h.a.getResources().getString(i10));
+    public final void l(int i10) {
+        m(this.h.a.getResources().getString(i10));
     }
 
     @Override // k.a
-    public final void n(CharSequence charSequence) {
+    public final void m(CharSequence charSequence) {
         this.h.f.setTitle(charSequence);
     }
 
     @Override // k.a
-    public final void o(boolean z10) {
+    public final void n(boolean z10) {
         this.b = z10;
         this.h.f.setTitleOptional(z10);
     }
 
     @Override // l.i
-    public final boolean p(l.k kVar, MenuItem menuItem) {
-        n4.s sVar = this.e;
-        if (sVar != null) {
-            return ((qi.e) sVar.b).A(this, menuItem);
+    public final void r(l.k kVar) {
+        if (this.e == null) {
+            return;
         }
-        return false;
+        g();
+        m.h hVar = this.h.f.d;
+        if (hVar != null) {
+            hVar.l();
+        }
     }
 }

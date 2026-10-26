@@ -1,49 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.accessibility.AccessibilityEvent;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class u30 extends org.telegram.ui.ActionBar.h3 {
-    public z4.h b;
-    public r30 c;
-    public LinearLayout d;
-    public TextView[] e;
-    public float f;
-    public int h;
+public final class u30 extends ImageView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public static void m(org.telegram.ui.s40 s40Var) {
-        TextView[] textViewArr = s40Var.e;
-        int i10 = s40Var.h;
-        TextView textView = textViewArr[i10];
-        TextView textView2 = i10 < textViewArr.length + (-1) ? textViewArr[i10 + 1] : null;
-        s40Var.containerView.getMeasuredWidth();
-        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
-        float measuredWidth2 = (s40Var.containerView.getMeasuredWidth() / 2) - measuredWidth;
-        if (textView2 != null) {
-            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * s40Var.f;
-        }
-        for (int i11 = 0; i11 < textViewArr.length; i11++) {
-            int i12 = s40Var.h;
-            float f7 = 0.9f;
-            float f10 = 0.7f;
-            if (i11 >= i12 && i11 <= i12 + 1) {
-                if (i11 == i12) {
-                    float f11 = s40Var.f;
-                    f10 = 1.0f - (0.3f * f11);
-                    f7 = 1.0f - (f11 * 0.1f);
-                } else {
-                    float f12 = s40Var.f;
-                    f10 = 0.7f + (0.3f * f12);
-                    f7 = 0.9f + (f12 * 0.1f);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u30(Object obj, Context context, int i10, int i11) {
+        super(context);
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.onDraw(canvas);
+                org.telegram.ui.l10 l10Var = (org.telegram.ui.l10) this.c;
+                da0 da0Var = l10Var.s;
+                if (l10Var.r) {
+                    int i10 = this.b / 2;
+                    da0Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
+                    da0Var.draw(canvas);
+                    break;
                 }
-            }
-            textViewArr[i11].setAlpha(f10);
-            textViewArr[i11].setScaleX(f7);
-            textViewArr[i11].setScaleY(f7);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
-        s40Var.d.setTranslationX(measuredWidth2);
-        s40Var.c.invalidate();
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        switch (this.a) {
+            case 0:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                if (accessibilityEvent.getEventType() == 32768) {
+                    ((v30) this.c).c.b.x(this.b, true);
+                    break;
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 1:
+                return drawable == ((org.telegram.ui.l10) this.c).s || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
+        }
     }
 }

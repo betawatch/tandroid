@@ -1,34 +1,60 @@
 package j6;
 
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.SuccessContinuation;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import java.io.IOException;
+import a1.g;
+import a8.df;
+import android.os.Parcel;
+import android.os.Parcelable;
+import h8.j;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Continuation, SuccessContinuation {
-    public static final /* synthetic */ b a = new b();
-    public static final /* synthetic */ b b = new b();
+public final class b extends p6.a {
+    public static final Parcelable.Creator<b> CREATOR = new j(8);
+    public final boolean a;
+    public final long b;
+    public final long c;
 
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public Task then(Object obj) {
-        Bundle bundle = (Bundle) obj;
-        int i10 = a.h;
-        return (bundle == null || !bundle.containsKey("google.messenger")) ? Tasks.forResult(bundle) : Tasks.forResult(null);
+    public b(long j10, long j11, boolean z10) {
+        this.a = z10;
+        this.b = j10;
+        this.c = j11;
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        if (task.isSuccessful()) {
-            return (Bundle) task.getResult();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (Log.isLoggable("Rpc", 3)) {
-            Log.d("Rpc", "Error making request: ".concat(String.valueOf(task.getException())));
+        if (obj instanceof b) {
+            b bVar = (b) obj;
+            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c) {
+                return true;
+            }
         }
-        throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c)});
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("CollectForDebugParcelable[skipPersistentStorage: ");
+        sb2.append(this.a);
+        sb2.append(",collectForDebugStartTimeMillis: ");
+        sb2.append(this.b);
+        sb2.append(",collectForDebugExpiryTimeMillis: ");
+        return g.r(sb2, this.c, "]");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        df.s(parcel, 2, 8);
+        parcel.writeLong(this.c);
+        df.s(parcel, 3, 8);
+        parcel.writeLong(this.b);
+        df.r(parcel, q5);
     }
 }

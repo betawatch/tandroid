@@ -4,57 +4,52 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.util.Log;
 import java.util.HashMap;
+import org.telegram.ui.Components.b10;
 
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements h {
-    public final /* synthetic */ int a;
-    public final String b;
+public final /* synthetic */ class e implements h, hb.n {
+    public final String a;
 
-    public /* synthetic */ e(String str, int i10) {
-        this.a = i10;
-        this.b = str;
+    public /* synthetic */ e(String str) {
+        this.a = str;
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 1:
-                return "<" + this.b + '>';
-            default:
-                return super.toString();
-        }
+    @Override // hb.n
+    public Object U1() {
+        throw new fb.j(this.a);
     }
 
     @Override // com.google.android.gms.internal.clearcut.h
     public Object zzp() {
         Object obj;
         boolean z10;
-        String str = this.b;
+        String str = this.a;
         ContentResolver contentResolver = d.g.getContentResolver();
-        Uri uri = f2.a;
-        synchronized (f2.class) {
-            f2.c(contentResolver);
-            obj = f2.k;
+        Uri uri = d2.a;
+        synchronized (d2.class) {
+            d2.c(contentResolver);
+            obj = d2.k;
         }
-        HashMap hashMap = f2.g;
+        HashMap hashMap = d2.g;
         Boolean bool = Boolean.FALSE;
-        Boolean bool2 = (Boolean) f2.a(hashMap, str, bool);
+        Boolean bool2 = (Boolean) d2.a(hashMap, str, bool);
         if (bool2 != null) {
             z10 = bool2.booleanValue();
         } else {
-            String b10 = f2.b(contentResolver, str);
+            String b10 = d2.b(contentResolver, str);
             boolean z11 = false;
             if (b10 != null && !b10.equals("")) {
-                if (f2.c.matcher(b10).matches()) {
+                if (d2.c.matcher(b10).matches()) {
                     bool = Boolean.TRUE;
                     z11 = true;
-                } else if (!f2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", org.telegram.ui.Cells.b1.l("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                } else if (!d2.d.matcher(b10).matches()) {
+                    Log.w("Gservices", b10.k("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
                 }
-                f2.e(obj, hashMap, str, bool);
+                d2.e(obj, hashMap, str, bool);
                 z10 = z11;
             }
             bool = bool2;
-            f2.e(obj, hashMap, str, bool);
+            d2.e(obj, hashMap, str, bool);
             z10 = z11;
         }
         return Boolean.valueOf(z10);

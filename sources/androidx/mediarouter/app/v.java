@@ -1,7 +1,55 @@
 package androidx.mediarouter.app;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.app.Dialog;
+import android.content.res.Configuration;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class v {
-    public static final v a = new v();
+public class v extends androidx.fragment.app.o {
+    public boolean A0 = false;
+    public g.t B0;
+    public p4.r C0;
+
+    public v() {
+        this.q0 = true;
+        Dialog dialog = this.v0;
+        if (dialog != null) {
+            dialog.setCancelable(true);
+        }
+    }
+
+    @Override // androidx.fragment.app.o, androidx.fragment.app.r
+    public final void I() {
+        super.I();
+        g.t tVar = this.B0;
+        if (tVar == null || this.A0) {
+            return;
+        }
+        ((u) tVar).i(false);
+    }
+
+    @Override // androidx.fragment.app.o
+    public final Dialog O() {
+        if (this.A0) {
+            o0 o0Var = new o0(n());
+            this.B0 = o0Var;
+            o0Var.i(this.C0);
+        } else {
+            this.B0 = new u(n());
+        }
+        return this.B0;
+    }
+
+    @Override // androidx.fragment.app.r, android.content.ComponentCallbacks
+    public final void onConfigurationChanged(Configuration configuration) {
+        this.U = true;
+        g.t tVar = this.B0;
+        if (tVar != null) {
+            if (this.A0) {
+                ((o0) tVar).j();
+            } else {
+                ((u) tVar).s();
+            }
+        }
+    }
 }

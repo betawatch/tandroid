@@ -1,15 +1,15 @@
 package k4;
 
-import c3.d0;
-import c3.e0;
-import c3.f0;
-import e2.m0;
+import c3.a0;
+import c3.b0;
+import c3.c0;
+import e2.n0;
 import f2.u;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f implements e0 {
+public final class f implements b0 {
     public final u a;
     public final int b;
     public final long c;
@@ -25,32 +25,32 @@ public final class f implements e0 {
         this.e = i(j12);
     }
 
-    @Override // c3.e0
+    @Override // c3.b0
     public final boolean d() {
         return true;
     }
 
-    @Override // c3.e0
+    @Override // c3.b0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // c3.e0
-    public final d0 f(long j10) {
+    @Override // c3.b0
+    public final a0 f(long j10) {
         u uVar = this.a;
         long j11 = this.d;
-        long j12 = m0.j((uVar.b * j10) / (this.b * 1000000), 0L, j11 - 1);
+        long j12 = n0.j((uVar.b * j10) / (this.b * 1000000), 0L, j11 - 1);
         long j13 = this.c;
         long i10 = i(j12);
-        f0 f0Var = new f0(i10, (uVar.c * j12) + j13);
+        c0 c0Var = new c0(i10, (uVar.c * j12) + j13);
         if (i10 >= j10 || j12 == j11 - 1) {
-            return new d0(f0Var, f0Var);
+            return new a0(c0Var, c0Var);
         }
         long j14 = j12 + 1;
-        return new d0(f0Var, new f0(i(j14), (uVar.c * j14) + j13));
+        return new a0(c0Var, new c0(i(j14), (uVar.c * j14) + j13));
     }
 
-    @Override // c3.e0
+    @Override // c3.b0
     public final long h() {
         return this.e;
     }
@@ -58,7 +58,7 @@ public final class f implements e0 {
     public final long i(long j10) {
         long j11 = j10 * this.b;
         long j12 = this.a.b;
-        String str = m0.a;
-        return m0.a0(j11, 1000000L, j12, RoundingMode.DOWN);
+        String str = n0.a;
+        return n0.a0(j11, 1000000L, j12, RoundingMode.DOWN);
     }
 }

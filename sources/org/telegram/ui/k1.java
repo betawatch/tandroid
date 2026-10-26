@@ -1,27 +1,19 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaDataController;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k1 {
-    public final ArrayList a = new ArrayList();
-    public final HashMap b = new HashMap();
-    public final int c = MediaDataController.MAX_STYLE_RUNS_COUNT;
-    public final /* synthetic */ l1 d;
-
-    public k1(l1 l1Var) {
-        this.d = l1Var;
+public final class k1 extends View {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawLine(0.0f, 0.0f, getMeasuredWidth(), 0.0f, j4.s1);
     }
 
-    public final float a(float[] fArr, int i10, int i11) {
-        float f7 = 0.0f;
-        while (i10 < i11) {
-            f7 += fArr[i10];
-            i10++;
-        }
-        return this.c / f7;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(4.0f) + 1);
     }
 }

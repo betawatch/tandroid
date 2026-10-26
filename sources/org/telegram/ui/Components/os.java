@@ -1,147 +1,47 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class os {
-    public final int a;
-    public String b;
-    public final ArrayList c;
-    public final boolean[] d;
-    public boolean[] e;
-    public boolean f;
-    public final int g;
-    public int h;
-    public int i;
-    public final /* synthetic */ ps j;
+public final /* synthetic */ class os implements Predicate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
 
-    public os(ps psVar, int i10, ArrayList arrayList) {
-        this.j = psVar;
+    public /* synthetic */ os(int i10, TLObject tLObject) {
         this.a = i10;
-        int size = arrayList.size();
-        this.g = size;
-        this.i = 0;
-        if (size > 0) {
-            this.c = arrayList;
-            this.d = new boolean[size];
-            this.f = true;
-            g();
-        }
+        this.b = tLObject;
     }
 
-    public final boolean a() {
-        boolean[] zArr;
-        for (int i10 = 0; i10 < this.g; i10++) {
-            if (!this.d[i10] || ((zArr = this.e) != null && !zArr[i10])) {
-                return false;
-            }
-        }
-        return true;
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
     }
 
-    public final boolean b() {
-        return (this.e != null ? this.h : this.g) > 1;
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
     }
 
-    public final boolean c() {
-        return (this.e != null ? this.h : this.g) > 0;
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
     }
 
-    public final void d() {
-        boolean[] zArr;
-        boolean[] zArr2;
-        boolean z10 = false;
-        int i10 = 0;
-        while (true) {
-            int i11 = this.g;
-            zArr = this.d;
-            if (i10 >= i11) {
-                break;
-            }
-            if (!zArr[i10] || ((zArr2 = this.e) != null && !zArr2[i10])) {
-                i10++;
-            }
-        }
-        z10 = true;
-        Arrays.fill(zArr, !z10);
-        f();
-        this.j.X.N(true);
-    }
-
-    public final void e(int i10) {
-        boolean[] zArr = this.e;
-        if (zArr == null || zArr[i10]) {
-            boolean[] zArr2 = this.d;
-            boolean z10 = zArr2[i10];
-            zArr2[i10] = !z10;
-            if (z10) {
-                this.i--;
-            } else {
-                this.i++;
-            }
-            this.j.X.N(true);
-        }
-    }
-
-    public final void f() {
-        this.i = 0;
-        this.h = 0;
-        for (int i10 = 0; i10 < this.g; i10++) {
-            boolean[] zArr = this.e;
-            boolean[] zArr2 = this.d;
-            if (zArr == null) {
-                if (zArr2[i10]) {
-                    this.i++;
-                }
-            } else if (zArr[i10]) {
-                this.h++;
-                if (zArr2[i10]) {
-                    this.i++;
-                }
-            }
-        }
-    }
-
-    public final void g() {
-        TLObject tLObject;
-        int i10 = this.g;
-        if (i10 == 0) {
-            return;
-        }
-        for (int i11 = 0; i11 < i10; i11++) {
-            boolean[] zArr = this.e;
-            if (zArr == null || zArr[i11]) {
-                tLObject = (TLObject) this.c.get(i11);
-                break;
-            }
-        }
-        tLObject = null;
-        String forcedFirstName = tLObject instanceof TLRPC.User ? UserObject.getForcedFirstName((TLRPC.User) tLObject) : ContactsController.formatName(tLObject);
-        int i12 = this.a;
-        if (i12 == 0) {
-            this.b = LocaleController.getString(R.string.DeleteReportSpam);
-            return;
-        }
-        if (i12 == 1) {
-            this.b = b() ? LocaleController.getString(R.string.DeleteAllMessagesFromUsers) : LocaleController.formatString(R.string.DeleteAllFrom, forcedFirstName);
-            return;
-        }
-        if (i12 == 3) {
-            this.b = b() ? LocaleController.getString(R.string.DeleteAllReactionsFromUsers) : LocaleController.formatString(R.string.DeleteAllReactionsFrom, forcedFirstName);
-        } else if (i12 == 2) {
-            if (this.j.g0) {
-                this.b = b() ? LocaleController.getString(R.string.DeleteRestrictUsers) : LocaleController.formatString(R.string.DeleteRestrict, forcedFirstName);
-            } else {
-                this.b = b() ? LocaleController.getString(R.string.DeleteBanUsers) : LocaleController.formatString(R.string.DeleteBan, forcedFirstName);
-            }
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
+            case 0:
+                return MessageObject.peersEqual((TLRPC.InputPeer) this.b, ((MessageObject) obj).messageOwner.from_id);
+            default:
+                MessageObject messageObject = (MessageObject) obj;
+                TLObject tLObject = this.b;
+                return !(tLObject instanceof TLRPC.User) ? !((tLObject instanceof TLRPC.Chat) && messageObject.messageOwner.from_id.user_id == ((TLRPC.Chat) tLObject).id) : messageObject.messageOwner.from_id.user_id != ((TLRPC.User) tLObject).id;
         }
     }
 }

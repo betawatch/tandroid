@@ -4,9 +4,12 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
     public final HashMap a;
@@ -16,13 +19,32 @@ public final class c {
             case 1:
                 this.a = new HashMap();
                 break;
+            case 2:
+                this.a = new HashMap();
+                break;
             default:
                 this.a = new HashMap();
                 break;
         }
     }
 
-    public void a(IBinder iBinder) {
+    public void a(Runnable runnable) {
+        Runnable runnable2 = (Runnable) this.a.remove(runnable);
+        if (runnable2 != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable2);
+        }
+    }
+
+    public void b() {
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            AndroidUtilities.cancelRunOnUIThread((Runnable) ((Map.Entry) it.next()).getValue());
+        }
+        hashMap.clear();
+    }
+
+    public void c(IBinder iBinder) {
         synchronized (this.a) {
             if (iBinder != null) {
                 try {
@@ -31,7 +53,7 @@ public final class c {
                     throw th2;
                 }
             }
-            new y8.w0();
+            new z8.x0();
             for (Map.Entry entry : this.a.entrySet()) {
                 if (entry.getValue() != null) {
                     throw new ClassCastException();
@@ -39,7 +61,7 @@ public final class c {
                 try {
                     throw null;
                 } catch (RemoteException unused) {
-                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/null");
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/" + BuildConfig.BETA_URL);
                 }
             }
         }

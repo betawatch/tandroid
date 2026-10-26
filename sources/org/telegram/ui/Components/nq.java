@@ -1,117 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.R;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.util.StateSet;
-import android.view.MotionEvent;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class nq extends q6 {
-    public final Rect s;
-    public Drawable v;
-    public boolean w;
+public final class nq extends FrameLayout {
+    public final View a;
+    public final TextView b;
 
     public nq(Context context) {
-        super(context, false, false, false);
-        this.s = new Rect();
+        super(context);
+        View view = new View(context);
+        this.a = view;
+        int dp = AndroidUtilities.dp(4.0f);
+        int i10 = org.telegram.ui.ActionBar.y6.Oh;
+        int x02 = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
+        int i11 = org.telegram.ui.ActionBar.y6.Qh;
+        int x03 = org.telegram.ui.ActionBar.y6.x0(null, i11, false);
+        Drawable j02 = org.telegram.ui.ActionBar.y6.j0(dp, dp, dp, dp, x02, x03, x03);
+        org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i10);
+        org.telegram.ui.ActionBar.b7 N2 = org.telegram.ui.ActionBar.f7.N(i11);
+        view.setBackground(j02);
+        org.telegram.ui.ActionBar.f7.k(view, j02, N, N2, null);
+        addView(view, gb1.h(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity(17);
+        org.telegram.messenger.t.r(textView, org.telegram.ui.ActionBar.y6.Sh, null, 1, 14.0f);
+        addView(textView, gb1.i(-2, -2, 17));
     }
 
-    public Rect getClickBounds() {
-        return this.s;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.v != null) {
-            Rect bounds = getDrawable().getBounds();
-            Rect rect = this.s;
-            rect.set(bounds);
-            int ceil = (int) Math.ceil(getDrawable().c());
-            if (getDrawable().b == 3) {
-                rect.right = rect.left + ceil;
-            } else if (getDrawable().b == 5) {
-                rect.left = rect.right - ceil;
-            } else if (getDrawable().b == 17) {
-                int i10 = (rect.left + rect.right) / 2;
-                int i11 = ceil / 2;
-                rect.left = i10 - i11;
-                rect.right = i10 + i11;
-            }
-            rect.left -= getPaddingLeft();
-            rect.top -= getPaddingTop();
-            rect.right = getPaddingRight() + rect.right;
-            rect.bottom = getPaddingBottom() + rect.bottom;
-            this.v.setBounds(rect);
-            this.v.draw(canvas);
-        }
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean contains = getClickBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-        if (motionEvent.getAction() == 0 && contains) {
-            this.w = true;
-            Drawable drawable = this.v;
-            if (drawable != null) {
-                drawable.setHotspot(motionEvent.getX(), motionEvent.getY());
-                this.v.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
-            }
-            invalidate();
-            return contains;
-        }
-        if (motionEvent.getAction() == 1) {
-            if (this.w && contains) {
-                callOnClick();
-            }
-            this.w = false;
-            Drawable drawable2 = this.v;
-            if (drawable2 != null) {
-                drawable2.setState(StateSet.NOTHING);
-                return contains;
-            }
-        } else if (motionEvent.getAction() == 3) {
-            this.w = false;
-            Drawable drawable3 = this.v;
-            if (drawable3 != null) {
-                drawable3.setState(StateSet.NOTHING);
-            }
-        }
-        return contains;
-    }
-
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        Drawable drawable2 = this.v;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.v = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        Drawable drawable2 = this.v;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.v = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.v || super.verifyDrawable(drawable);
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

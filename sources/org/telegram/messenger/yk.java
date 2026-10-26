@@ -1,37 +1,76 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.util.ArrayList;
+import java.util.Set;
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ BaseController d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ yk(TranslateController translateController, String str, MessageObject messageObject, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = translateController;
-        this.c = str;
-        this.d = messageObject;
-        this.e = j10;
-        this.f = i10;
+    public /* synthetic */ yk(long j10, Set set, TranslateController.PendingTranslation pendingTranslation, TranslateController translateController, TLObject tLObject, TLRPC.TL_error tL_error, boolean z10) {
+        this.d = translateController;
+        this.e = pendingTranslation;
+        this.f = tLObject;
+        this.b = z10;
+        this.h = tL_error;
+        this.c = j10;
+        this.n = set;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                long j10 = this.e;
-                int i10 = this.f;
-                this.b.lambda$checkLanguage$16(this.c, this.d, j10, i10);
+                TranslateController translateController = (TranslateController) this.d;
+                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
+                TLObject tLObject = (TLObject) this.f;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
+                Set set = (Set) this.n;
+                translateController.lambda$pushToTranslate$22(pendingTranslation, tLObject, this.b, tL_error, this.c, set);
+                break;
+            case 1:
+                ((MediaDataController) this.d).lambda$broadcastReplyMessages$179((ArrayList) this.e, this.b, (ArrayList) this.f, (ArrayList) this.h, (a0.h) this.n, this.c);
                 break;
             default:
-                long j11 = this.e;
-                int i11 = this.f;
-                this.b.lambda$checkLanguage$12(this.c, this.d, j11, i11);
+                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
+                TLObject tLObject2 = (TLObject) this.f;
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
+                RequestDelegate requestDelegate = (RequestDelegate) this.n;
+                memberRequestsController.lambda$getImporters$0(tL_error2, tLObject2, tL_chatInviteImporter, this.b, this.c, requestDelegate);
                 break;
         }
+    }
+
+    public /* synthetic */ yk(long j10, MemberRequestsController memberRequestsController, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.TL_error tL_error, boolean z10) {
+        this.d = memberRequestsController;
+        this.h = tL_error;
+        this.f = tLObject;
+        this.e = tL_chatInviteImporter;
+        this.b = z10;
+        this.c = j10;
+        this.n = requestDelegate;
+    }
+
+    public /* synthetic */ yk(MediaDataController mediaDataController, ArrayList arrayList, boolean z10, ArrayList arrayList2, ArrayList arrayList3, a0.h hVar, long j10) {
+        this.d = mediaDataController;
+        this.e = arrayList;
+        this.b = z10;
+        this.f = arrayList2;
+        this.h = arrayList3;
+        this.n = hVar;
+        this.c = j10;
     }
 }

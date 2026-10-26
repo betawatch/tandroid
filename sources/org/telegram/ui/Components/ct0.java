@@ -1,44 +1,53 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ct0 extends s4.r0 {
-    public final /* synthetic */ ts0 a;
-    public final /* synthetic */ us0 b;
-    public final /* synthetic */ xv0 c;
+public final class ct0 extends g.o {
+    public final /* synthetic */ at0 c;
+    public final /* synthetic */ aw0 d;
 
-    public ct0(xv0 xv0Var, ts0 ts0Var, us0 us0Var) {
-        this.c = xv0Var;
-        this.a = ts0Var;
-        this.b = us0Var;
+    public ct0(aw0 aw0Var, at0 at0Var) {
+        this.d = aw0Var;
+        this.c = at0Var;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        this.c.b1 = i10 != 0;
-    }
-
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int i12;
-        int i13;
-        xv0 xv0Var = this.c;
-        mv0[] mv0VarArr = xv0Var.t1;
-        us0 us0Var = this.b;
-        ts0 ts0Var = this.a;
-        xv0Var.H(ts0Var, (mm0) recyclerView, us0Var);
-        if (i11 != 0 && ((i13 = xv0Var.k0[0].F) == 0 || i13 == 5)) {
-            mv0VarArr[0].a.isEmpty();
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
+    
+        if (r3.h.getAdapter().j(r9) == 2) goto L22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
+    
+        if (r5.j(r9) == 2) goto L22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
+    
+        r1 = 1;
+     */
+    @Override // g.o
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int i(int i10) {
+        aw0 aw0Var = this.d;
+        int[] iArr = aw0Var.o1;
+        ou0 ou0Var = aw0Var.Q;
+        at0 at0Var = this.c;
+        int i11 = iArr[aw0.w0(at0Var.E) ? 1 : 0];
+        s4.h0 adapter = at0Var.h.getAdapter();
+        eu0 eu0Var = aw0Var.J;
+        if (adapter != eu0Var) {
+            if (aw0.w(aw0Var, at0Var.h.getAdapter()) == -1) {
+                if (at0Var.h.getAdapter() != ou0Var) {
+                    i11 = at0Var.w.J;
+                } else if (at0Var.h.getAdapter() == ou0Var && aw0Var.v1[5].a.isEmpty()) {
+                    i11 = at0Var.w.J;
+                } else {
+                    bt0 bt0Var = at0Var.w;
+                    bt0Var.C1();
+                    i11 = bt0Var.R.get(i10);
+                }
+            }
         }
-        if (i11 != 0 && ((i12 = ts0Var.F) == 0 || xv0.r0(i12))) {
-            xv0.r(ts0Var, mv0VarArr, true);
-        }
-        ts0Var.h.L0(true);
-        if (ts0Var.G != null) {
-            ts0Var.invalidate();
-        }
-        xv0Var.q0();
+        return Math.min(i11, at0Var.w.J);
     }
 }

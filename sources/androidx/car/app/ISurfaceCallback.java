@@ -1,14 +1,14 @@
 package androidx.car.app;
 
+import a8.f1;
 import android.graphics.Rect;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
-import v7.q;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface ISurfaceCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$ISurfaceCallback".replace('$', '.');
@@ -29,7 +29,7 @@ public interface ISurfaceCallback extends IInterface {
 
     void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static abstract class Stub extends Binder implements ISurfaceCallback {
         static final int TRANSACTION_onClick = 9;
         static final int TRANSACTION_onFling = 7;
@@ -40,7 +40,7 @@ public interface ISurfaceCallback extends IInterface {
         static final int TRANSACTION_onSurfaceDestroyed = 5;
         static final int TRANSACTION_onVisibleAreaChanged = 3;
 
-        /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
         public static class Proxy implements ISurfaceCallback {
             private IBinder mRemote;
 
@@ -115,7 +115,7 @@ public interface ISurfaceCallback extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    q.a(obtain, rect);
+                    f1.a(obtain, rect);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(4, obtain, null, 1);
                 } finally {
@@ -128,7 +128,7 @@ public interface ISurfaceCallback extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    q.a(obtain, bVar);
+                    f1.a(obtain, bVar);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -141,7 +141,7 @@ public interface ISurfaceCallback extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    q.a(obtain, bVar);
+                    f1.a(obtain, bVar);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(5, obtain, null, 1);
                 } finally {
@@ -154,7 +154,7 @@ public interface ISurfaceCallback extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ISurfaceCallback.DESCRIPTOR);
-                    q.a(obtain, rect);
+                    f1.a(obtain, rect);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(3, obtain, null, 1);
                 } finally {
@@ -221,7 +221,7 @@ public interface ISurfaceCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class Default implements ISurfaceCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

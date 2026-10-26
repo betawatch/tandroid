@@ -1,57 +1,65 @@
 package org.telegram.ui.Cells;
 
-import android.util.Property;
-import android.view.View;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.t21;
-import org.telegram.ui.tu0;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c1 extends Property {
+public final class c1 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ s1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c1(Class cls, String str, int i10) {
-        super(cls, str);
+    public /* synthetic */ c1(int i10, s1 s1Var) {
         this.a = i10;
+        this.b = s1Var;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean e32;
         switch (this.a) {
             case 0:
-                return Float.valueOf(((t1) obj).Ae);
-            case 1:
-                return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
-            case 2:
-                return Float.valueOf(((gl0) obj).v);
-            case 3:
-                return Float.valueOf(((t21) obj).h);
-            default:
-                return Float.valueOf(((tu0) obj).a);
-        }
-    }
-
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                ((t1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
-                break;
-            case 1:
-                ((View) obj).setTranslationY(((Integer) obj2).intValue());
-                break;
-            case 2:
-                ((gl0) obj).setTransitionProgress(((Float) obj2).floatValue());
-                break;
-            case 3:
-                t21 t21Var = (t21) obj;
-                t21Var.h = ((Float) obj2).floatValue();
-                t21Var.invalidate();
+                j1 j1Var = this.b.Jc;
+                if (j1Var != null) {
+                    j1Var.q();
+                    break;
+                }
                 break;
             default:
-                ((tu0) obj).b(((Float) obj2).floatValue());
+                s1 s1Var = this.b;
+                c1 c1Var = s1Var.od;
+                MessageObject messageObject = s1Var.y7;
+                if (messageObject != null && (e32 = s1Var.e3(messageObject)) != s1Var.W3) {
+                    s1Var.W3 = e32;
+                    if (e32) {
+                        MessageObject messageObject2 = s1Var.y7;
+                        s1Var.y7 = null;
+                        s1Var.Z3(messageObject2, s1Var.K, s1Var.F, s1Var.E, s1Var.G, false);
+                    } else {
+                        AndroidUtilities.runOnUIThread(c1Var, 1000L);
+                        s1Var.Wc = true;
+                        int dp = s1Var.J8 - AndroidUtilities.dp(91.0f);
+                        s1Var.T3 = new StaticLayout(TextUtils.ellipsize(LocaleController.getString(R.string.AttachLiveLocation), org.telegram.ui.ActionBar.y6.H2, dp, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.y6.H2, dp, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    }
+                }
+                if (!s1Var.W3) {
+                    RectF rectF = s1Var.c5;
+                    s1Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
+                    if (s1Var.Wc) {
+                        AndroidUtilities.runOnUIThread(c1Var, 1000L);
+                        break;
+                    }
+                } else {
+                    s1Var.invalidate();
+                    s1Var.Wc = false;
+                    break;
+                }
                 break;
         }
     }

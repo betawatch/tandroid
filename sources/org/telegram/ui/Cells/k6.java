@@ -1,106 +1,157 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.util.Property;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import j$.util.Comparator$-CC;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.sl;
+import java.util.Collections;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.jd;
+import org.telegram.messenger.lf;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class k6 extends FrameLayout {
-    public final TextView a;
-    public final RadioButton b;
+public final class k6 {
+    public final int a;
+    public boolean b;
     public boolean c;
+    public int e;
+    public long f;
+    public int g;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList h = new ArrayList();
 
-    public k6(Context context) {
-        this(context, null);
+    public k6(int i10) {
+        this.a = i10;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        this.b.a(z10, z11);
-    }
-
-    public final void b(ArrayList arrayList, boolean z10) {
-        super.setEnabled(z10);
-        RadioButton radioButton = this.b;
-        TextView textView = this.a;
-        if (arrayList == null) {
-            textView.setAlpha(z10 ? 1.0f : 0.5f);
-            radioButton.setAlpha(z10 ? 1.0f : 0.5f);
-        } else {
-            float[] fArr = {z10 ? 1.0f : 0.5f};
-            Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr));
-            arrayList.add(ObjectAnimator.ofFloat(radioButton, (Property<RadioButton, Float>) property, z10 ? 1.0f : 0.5f));
+    public static /* synthetic */ void a(k6 k6Var, TLObject tLObject, MessagesStorage messagesStorage, long j10, int i10, ArrayList arrayList) {
+        ArrayList arrayList2 = k6Var.d;
+        int i11 = k6Var.a;
+        if (!(tLObject instanceof TLRPC.messages_Messages)) {
+            if (i10 != k6Var.e) {
+                return;
+            }
+            k6Var.c();
+            return;
+        }
+        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+        MessagesController.getInstance(i11).putUsers(messages_messages.users, false);
+        MessagesController.getInstance(i11).putChats(messages_messages.chats, false);
+        messagesStorage.putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+        messagesStorage.putMessages(messages_messages, -j10, 3, 0, false, 0, 0L);
+        if (i10 == k6Var.e && !messages_messages.messages.isEmpty()) {
+            arrayList2.clear();
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ag.e(14)));
+            TLRPC.Message message = (TLRPC.Message) ic.a.g(1, messages_messages.messages);
+            long j11 = message.grouped_id;
+            if (j11 != 0) {
+                ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
+                int size = arrayList3.size();
+                int i12 = 0;
+                while (i12 < size) {
+                    TLRPC.Message message2 = arrayList3.get(i12);
+                    i12++;
+                    TLRPC.Message message3 = message2;
+                    if (message3.grouped_id == j11) {
+                        arrayList2.add(new MessageObject(i11, message3, false, true));
+                    }
+                }
+            } else {
+                arrayList2.add(new MessageObject(i11, message, false, true));
+            }
+            if (arrayList2.isEmpty()) {
+                return;
+            }
+            k6Var.c();
         }
     }
 
-    public final void c(String str, boolean z10, boolean z11) {
-        this.a.setText(str);
-        this.b.a(z10, false);
-        this.c = z11;
-        setWillNotDraw(!z11);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+    public static /* synthetic */ void b(k6 k6Var, int i10, ArrayList arrayList, long j10, int i11, MessagesStorage messagesStorage) {
+        int i12 = k6Var.a;
+        ArrayList arrayList2 = k6Var.d;
+        if (i10 != k6Var.e) {
+            return;
         }
+        if (!arrayList.isEmpty()) {
+            arrayList2.clear();
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ag.e(13)));
+            TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
+            long j11 = message.grouped_id;
+            if (j11 != 0) {
+                int size = arrayList.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList.get(i13);
+                    i13++;
+                    TLRPC.Message message2 = (TLRPC.Message) obj;
+                    if (message2.grouped_id == j11) {
+                        arrayList2.add(new MessageObject(i12, message2, false, true));
+                    }
+                }
+            } else {
+                arrayList2.add(new MessageObject(i12, message, false, true));
+            }
+            if (!arrayList2.isEmpty()) {
+                k6Var.c();
+                return;
+            }
+        }
+        TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
+        tL_channels_getMessages.channel = MessagesController.getInstance(i12).getInputChannel(j10);
+        for (int i14 = 10; i14 >= 0; i14--) {
+            int i15 = i11 - i14;
+            if (i15 >= 0) {
+                tL_channels_getMessages.id.add(Integer.valueOf(i15));
+            }
+        }
+        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new jd(k6Var, messagesStorage, j10, i10, arrayList));
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.f);
+    public final void c() {
+        int i10 = 0;
+        this.b = false;
+        this.c = true;
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
+        }
+        arrayList.clear();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.c ? 1 : 0));
-        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(34.0f);
-        this.b.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-    }
-
-    public void setRadioIcon(Drawable drawable) {
-        this.b.setIcon(drawable);
-    }
-
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
-    }
-
-    public k6(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.G6, g6Var);
-        sl.u(textView, 1, 16.0f, 1, 1);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        float f7 = 21;
-        addView(textView, w7.z5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
-        RadioButton radioButton = new RadioButton(context);
-        this.b = radioButton;
-        radioButton.setSize(AndroidUtilities.dp(20.0f));
-        org.telegram.ui.ActionBar.r6.Q(radioButton, org.telegram.ui.ActionBar.k6.g7, org.telegram.ui.ActionBar.k6.h7, g6Var);
-        boolean z10 = LocaleController.isRTL;
-        addView(radioButton, w7.z5.d(22, 22.0f, (z10 ? 3 : 5) | 48, z10 ? 22 : 0, 14.0f, z10 ? 0 : 22, 0.0f));
+    public final void d(TLRPC.UserFull userFull) {
+        ArrayList arrayList = this.d;
+        if (userFull == null || (userFull.flags2 & 64) == 0) {
+            this.e++;
+            this.c = true;
+            arrayList.clear();
+            c();
+            return;
+        }
+        long j10 = userFull.personal_channel_id;
+        int i10 = userFull.personal_channel_message;
+        if (this.c || this.b) {
+            if (this.f == j10 && this.g == i10) {
+                return;
+            }
+            this.c = false;
+            arrayList.clear();
+        }
+        int i11 = this.e + 1;
+        this.e = i11;
+        this.b = true;
+        this.f = j10;
+        this.g = i10;
+        int i12 = this.a;
+        long clientUserId = UserConfig.getInstance(i12).getClientUserId();
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
+        messagesStorage.getStorageQueue().postRunnable(new lf(this, i10, messagesStorage, j10, clientUserId, i11));
     }
 }

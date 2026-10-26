@@ -1,29 +1,52 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tc implements Runnable {
+public final /* synthetic */ class tc implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ tc(MessagesController messagesController, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i10) {
-        this.a = i10;
+    public /* synthetic */ tc(int i10, long j10, long j11, MessagesController messagesController) {
+        this.a = 0;
         this.b = messagesController;
-        this.c = tL_updatePeerBlocked;
+        this.d = j10;
+        this.c = i10;
+        this.e = j11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$394(this.c);
+                int i10 = this.c;
+                long j10 = this.e;
+                this.b.lambda$getChannelDifference$350(this.d, i10, j10, tLObject, tL_error);
+                break;
+            case 1:
+                long j11 = this.d;
+                long j12 = this.e;
+                this.b.lambda$sendTyping$171(this.c, j11, j12, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$processUpdateArray$393(this.c);
+                long j13 = this.d;
+                long j14 = this.e;
+                this.b.lambda$sendTyping$173(this.c, j13, j14, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ tc(MessagesController messagesController, int i10, long j10, long j11, int i11) {
+        this.a = i11;
+        this.b = messagesController;
+        this.c = i10;
+        this.d = j10;
+        this.e = j11;
     }
 }

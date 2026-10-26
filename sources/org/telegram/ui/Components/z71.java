@@ -1,166 +1,217 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z71 extends TextureView implements TextureView.SurfaceTextureListener {
-    public j81 a;
-    public e00 b;
-    public final il0 c;
-    public int d;
-    public int e;
-    public ei.z7 f;
-    public y71 h;
-    public int n;
-    public int r;
-    public ja s;
+public class z71 extends FrameLayout {
+    public ValueAnimator a;
+    public float b;
+    public boolean c;
+    public Boolean d;
+    public final /* synthetic */ b81 e;
 
-    public z71(Context context, j81 j81Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z71(b81 b81Var, Context context) {
         super(context);
-        this.c = new il0();
-        this.a = j81Var;
-        setSurfaceTextureListener(this);
+        this.e = b81Var;
+        this.c = false;
     }
 
-    public final void a(float f7, float f10, float f11, float f12) {
-        il0 il0Var = this.c;
-        il0Var.a = f7;
-        il0Var.b = f10;
-        il0Var.c = f11;
-        il0Var.d = f12;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0, getPaddingTop(), getMeasuredWidth(), getMeasuredHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    public Bitmap getUiBlurBitmap() {
-        pa paVar;
-        e00 e00Var = this.b;
-        if (e00Var == null || (paVar = e00Var.I) == null) {
-            return null;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        float f7;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        canvas.save();
+        b81 b81Var = this.e;
+        Drawable drawable = b81Var.h;
+        RectF rectF = b81Var.x;
+        int i22 = b81Var.y;
+        i10 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+        int dp = AndroidUtilities.dp(6.0f) + (i22 - i10);
+        int i23 = b81Var.y;
+        i11 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+        int dp2 = (i23 - i11) - AndroidUtilities.dp(13.0f);
+        int dp3 = AndroidUtilities.dp(50.0f) + getMeasuredHeight();
+        i12 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+        int i24 = i12 + dp3;
+        int i25 = AndroidUtilities.statusBarHeight;
+        int i26 = dp2 + i25;
+        int i27 = dp + i25;
+        int i28 = i24 - i25;
+        i13 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+        float translationY = getTranslationY() + i13 + i26;
+        int i29 = AndroidUtilities.statusBarHeight;
+        if (translationY < i29 * 2) {
+            i21 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+            int min = (int) Math.min(i29, ((r8 - i26) - i21) - getTranslationY());
+            i26 -= min;
+            i28 += min;
+            f7 = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+        } else {
+            f7 = 1.0f;
         }
-        synchronized (paVar.n) {
-            try {
-                if (paVar.q) {
-                    return paVar.p;
-                }
-                return null;
-            } catch (Throwable th2) {
-                throw th2;
+        i14 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+        float translationY2 = getTranslationY() + i14 + i26;
+        float f10 = AndroidUtilities.statusBarHeight;
+        if (translationY2 < f10) {
+            i20 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+            i15 = (int) Math.min(f10, ((r7 - i26) - i20) - getTranslationY());
+        } else {
+            i15 = 0;
+        }
+        drawable.setBounds(0, i26, getMeasuredWidth(), i28);
+        drawable.draw(canvas);
+        if (!b81Var.S) {
+            if (f7 != 1.0f) {
+                org.telegram.ui.ActionBar.y6.t0.setColor(b81Var.F);
+                i16 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingLeft;
+                i17 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+                int measuredWidth = getMeasuredWidth();
+                i18 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingLeft;
+                float f11 = measuredWidth - i18;
+                i19 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingTop;
+                rectF.set(i16, i17 + i26, f11, AndroidUtilities.dp(24.0f) + i19 + i26);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f) * f7, AndroidUtilities.dp(12.0f) * f7, org.telegram.ui.ActionBar.y6.t0);
+            }
+            int dp4 = AndroidUtilities.dp(36.0f);
+            rectF.set((getMeasuredWidth() - dp4) / 2, i27, (getMeasuredWidth() + dp4) / 2, AndroidUtilities.dp(4.0f) + i27);
+            org.telegram.ui.ActionBar.y6.t0.setColor(org.telegram.ui.ActionBar.y6.x0(null, b81Var.I, false));
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.y6.t0);
+        }
+        if (i15 > 0) {
+            org.telegram.ui.ActionBar.y6.t0.setColor(b81Var.F);
+        }
+        boolean z10 = i15 > AndroidUtilities.statusBarHeight / 2;
+        Boolean bool = this.d;
+        if (bool == null || bool.booleanValue() != z10) {
+            boolean z11 = AndroidUtilities.computePerceivedBrightness(b81Var.getThemedColor(org.telegram.ui.ActionBar.y6.h5)) > 0.721f;
+            boolean z12 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.v(b81Var.getThemedColor(org.telegram.ui.ActionBar.y6.s8), 855638016)) > 0.721f;
+            this.d = Boolean.valueOf(z10);
+            if (!z10) {
+                z11 = z12;
+            }
+            AndroidUtilities.setLightStatusBar(b81Var.getWindow(), z11);
+        }
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            float y3 = motionEvent.getY();
+            b81 b81Var = this.e;
+            if (y3 < b81Var.y) {
+                b81Var.dismiss();
+                return true;
             }
         }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    public int getVideoHeight() {
-        return this.e;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.e.L();
     }
 
-    public int getVideoWidth() {
-        return this.d;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
         int i12;
-        if (this.b != null || surfaceTexture == null || this.a == null) {
+        int i13;
+        boolean z10;
+        int dp;
+        int size = View.MeasureSpec.getSize(i11);
+        int i14 = 1;
+        this.c = true;
+        b81 b81Var = this.e;
+        bi.r1 r1Var = b81Var.d;
+        i12 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingLeft;
+        int i15 = AndroidUtilities.statusBarHeight;
+        i13 = ((org.telegram.ui.ActionBar.k3) b81Var).backgroundPaddingLeft;
+        setPadding(i12, i15, i13, 0);
+        this.c = false;
+        int paddingTop = size - getPaddingTop();
+        z10 = ((org.telegram.ui.ActionBar.k3) b81Var).keyboardVisible;
+        if (z10) {
+            dp = AndroidUtilities.dp(8.0f);
+            b81Var.setAllowNestedScroll(false);
+            int i16 = b81Var.y;
+            if (i16 != 0) {
+                float f7 = i16;
+                this.b = f7;
+                setTranslationY(f7);
+                ValueAnimator valueAnimator = this.a;
+                if (valueAnimator != null) {
+                    valueAnimator.removeAllListeners();
+                    this.a.cancel();
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b, 0.0f);
+                this.a = ofFloat;
+                ofFloat.addUpdateListener(new s71(i14, this));
+                this.a.setDuration(250L);
+                this.a.setInterpolator(org.telegram.ui.ActionBar.q1.w);
+                this.a.addListener(new h31(this, 6));
+                this.a.start();
+            } else if (this.a != null) {
+                setTranslationY(this.b);
+            }
+        } else {
+            dp = (paddingTop - ((paddingTop / 5) * 3)) + AndroidUtilities.dp(8.0f);
+            b81Var.setAllowNestedScroll(true);
+        }
+        if (r1Var.getPaddingTop() != dp) {
+            this.c = true;
+            r1Var.setPadding(0, dp, 0, 0);
+            this.c = false;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.e.isDismissed() && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
             return;
         }
-        e00 e00Var = new e00(surfaceTexture, new tv(this, 29), this.f, this.s, i10, i11);
-        this.b = e00Var;
-        e00Var.i(this.n, this.r);
-        e00 e00Var2 = this.b;
-        ja jaVar = this.s;
-        pa paVar = e00Var2.I;
-        if (paVar != null) {
-            ja jaVar2 = paVar.t;
-            if (jaVar2 != null && jaVar2.m != null) {
-                jaVar2.m = null;
-            }
-            paVar.t = jaVar;
-            if (jaVar != null && jaVar.m != paVar) {
-                jaVar.m = paVar;
-                jaVar.d();
-            }
-        }
-        int i13 = this.d;
-        if (i13 != 0 && (i12 = this.e) != 0) {
-            e00 e00Var3 = this.b;
-            e00Var3.getClass();
-            e00Var3.postRunnable(new a00(e00Var3, i13, i12, 0));
-        }
-        this.b.d(true, true, false);
-        y71 y71Var = this.h;
-        if (y71Var != null) {
-            y71Var.b(this.b);
-        }
+        super.requestLayout();
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        e00 e00Var = this.b;
-        if (e00Var == null) {
-            return true;
-        }
-        e00Var.postRunnable(new b00(e00Var, 0));
-        this.b = null;
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        e00 e00Var = this.b;
-        if (e00Var != null) {
-            e00Var.postRunnable(new a00(e00Var, i10, i11, 1));
-            this.b.d(false, true, false);
-            this.b.postRunnable(new x71(this, 0));
-        }
-    }
-
-    public void setDelegate(y71 y71Var) {
-        this.h = y71Var;
-        e00 e00Var = this.b;
-        if (e00Var != null) {
-            if (y71Var == null) {
-                e00Var.f(null);
-            } else {
-                y71Var.b(e00Var);
-            }
-        }
-    }
-
-    public void setHDRInfo(ei.z7 z7Var) {
-        this.f = z7Var;
-        e00 e00Var = this.b;
-        if (e00Var != null) {
-            e00Var.postRunnable(new yt(9, e00Var, z7Var));
-        }
-    }
-
-    @Override // android.view.TextureView
-    public void setTransform(Matrix matrix) {
-        super.setTransform(matrix);
-        e00 e00Var = this.b;
-        if (e00Var != null) {
-            int width = getWidth();
-            int height = getHeight();
-            pa paVar = e00Var.I;
-            if (paVar == null) {
-                return;
-            }
-            Matrix matrix2 = paVar.v;
-            matrix.invert(matrix2);
-            float f7 = width;
-            float f10 = height;
-            matrix2.preScale(f7, f10);
-            matrix2.postScale(1.0f / f7, 1.0f / f10);
-            paVar.c(matrix2);
-            e00Var.d(false, false, false);
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        invalidate();
     }
 }

@@ -1,23 +1,33 @@
 package sg;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class h {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
+public interface h {
+    void A(boolean z10);
 
-    public h(int i10) {
-        this.a = i10;
-    }
+    void B();
 
-    public h(int i10, int i11, String str, String str2) {
-        this.a = 1;
-        this.b = i10;
-        this.c = str;
-        this.d = str2;
-        this.e = i11;
-    }
+    boolean D(j jVar);
+
+    int[] b(j jVar);
+
+    void e(boolean z10);
+
+    void f(boolean z10);
+
+    void g();
+
+    void h();
+
+    void k(j jVar);
+
+    void l(boolean z10);
+
+    boolean q();
+
+    boolean r();
+
+    void v(float f7, float f10, float[] fArr);
+
+    void x();
 }

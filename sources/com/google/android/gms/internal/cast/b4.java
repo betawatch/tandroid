@@ -1,94 +1,13 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b4 extends v7.q5 {
-    @Override // v7.q5
-    public final z3 a(f4 f4Var) {
-        z3 z3Var;
-        z3 z3Var2 = z3.d;
-        synchronized (f4Var) {
-            try {
-                z3Var = f4Var.b;
-                if (z3Var != z3Var2) {
-                    f4Var.b = z3Var2;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return z3Var;
-    }
+public final class b4 {
+    public static final b4 c = new b4();
+    public volatile Thread a;
+    public volatile b4 b;
 
-    @Override // v7.q5
-    public final e4 b(f4 f4Var) {
-        e4 e4Var;
-        e4 e4Var2 = e4.c;
-        synchronized (f4Var) {
-            try {
-                e4Var = f4Var.c;
-                if (e4Var != e4Var2) {
-                    f4Var.c = e4Var2;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return e4Var;
-    }
-
-    @Override // v7.q5
-    public final void c(e4 e4Var, e4 e4Var2) {
-        e4Var.b = e4Var2;
-    }
-
-    @Override // v7.q5
-    public final void d(e4 e4Var, Thread thread) {
-        e4Var.a = thread;
-    }
-
-    @Override // v7.q5
-    public final boolean e(f4 f4Var, z3 z3Var, z3 z3Var2) {
-        synchronized (f4Var) {
-            try {
-                if (f4Var.b != z3Var) {
-                    return false;
-                }
-                f4Var.b = z3Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // v7.q5
-    public final boolean f(f4 f4Var, Object obj, Object obj2) {
-        synchronized (f4Var) {
-            try {
-                if (f4Var.a != obj) {
-                    return false;
-                }
-                f4Var.a = obj2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // v7.q5
-    public final boolean g(f4 f4Var, e4 e4Var, e4 e4Var2) {
-        synchronized (f4Var) {
-            try {
-                if (f4Var.c != e4Var) {
-                    return false;
-                }
-                f4Var.c = e4Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public b4() {
+        c4.f.d(this, Thread.currentThread());
     }
 }

@@ -40,8 +40,8 @@ public final class e6 extends z4 {
         if (v6.SORTED.m(((a) t3Var).m) && this.s) {
             return t3Var.j0(spliterator, false, intFunction);
         }
-        Object[] g10 = t3Var.j0(spliterator, true, intFunction).g(intFunction);
-        Arrays.sort(g10, this.t);
-        return new h2(g10);
+        Object[] g7 = t3Var.j0(spliterator, true, intFunction).g(intFunction);
+        Arrays.sort(g7, this.t);
+        return new h2(g7);
     }
 }

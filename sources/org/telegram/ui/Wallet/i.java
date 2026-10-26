@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.o71;
+import org.telegram.ui.zc1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class i implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 l0Var3.B = -1;
                 if (updates != null) {
-                    Utilities.stageQueue.postRunnable(new o71(23, l0Var3, updates));
+                    Utilities.stageQueue.postRunnable(new zc1(13, l0Var3, updates));
                     break;
                 } else {
                     StringBuilder sb3 = new StringBuilder("requesting gasless info: ");

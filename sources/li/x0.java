@@ -1,0 +1,92 @@
+package li;
+
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final class x0 extends s61 {
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        s61.setup(new x0());
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+        MessageObject messageObject;
+        t tVar;
+        y0 y0Var = (y0) view;
+        a aVar = (a) t61Var.G;
+        q3 q3Var = (q3) t61Var.H;
+        y0Var.a = aVar;
+        y0Var.S = q3Var;
+        y0Var.M = LocaleController.isRTL;
+        y0Var.c(aVar);
+        y0Var.F.b();
+        TLRPC.Document h = y0Var.h();
+        if (y0Var.U != h) {
+            y0Var.U = h;
+            if (h == null) {
+                messageObject = null;
+            } else {
+                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                tL_message.out = true;
+                tL_message.id = -Long.valueOf(h.id).hashCode();
+                tL_message.peer_id = new TLRPC.TL_peerUser();
+                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                tL_message.from_id = tL_peerUser;
+                TLRPC.Peer peer = tL_message.peer_id;
+                int i10 = y0Var.n;
+                long clientUserId = UserConfig.getInstance(i10).getClientUserId();
+                peer.user_id = clientUserId;
+                tL_peerUser.user_id = clientUserId;
+                tL_message.date = (int) (System.currentTimeMillis() / 1000);
+                tL_message.message = "";
+                TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+                tL_message.media = tL_messageMediaDocument;
+                tL_messageMediaDocument.flags |= 3;
+                tL_messageMediaDocument.document = h;
+                tL_message.flags |= 768;
+                a aVar2 = y0Var.a;
+                if (aVar2 != null && (tVar = aVar2.g) != null && !TextUtils.isEmpty(tVar.e)) {
+                    tL_message.attachPath = y0Var.a.g.e;
+                }
+                messageObject = new MessageObject(i10, tL_message, false, true);
+            }
+            y0Var.T = messageObject;
+        }
+        y0Var.g(h);
+        y0Var.j();
+        if (y0Var.N) {
+            y0Var.k(false);
+        }
+        y0Var.requestLayout();
+        y0Var.invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, u6 u6Var) {
+        y0 y0Var = new y0(context, i10, u6Var);
+        y0Var.setBackground(new y1(y6.w0(y6.d6, u6Var)));
+        y0Var.W = true;
+        return y0Var;
+    }
+
+    @Override // org.telegram.ui.Components.s61
+    public final boolean isClickable() {
+        return false;
+    }
+}

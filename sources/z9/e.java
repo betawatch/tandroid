@@ -1,17 +1,30 @@
 package z9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e implements ja.d {
-    public static final e a = new e();
-    public static final ja.c b = ja.c.c("files");
-    public static final ja.c c = ja.c.c("orgId");
+public final class e implements i {
+    public static final qb.a c = new qb.a(29);
+    public final Object a;
+    public Object b;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        e0 e0Var = (e0) ((j1) obj);
-        eVar.d(b, e0Var.a);
-        eVar.d(c, e0Var.b);
+    public e(da.c cVar) {
+        this.a = cVar;
+        this.b = c;
+    }
+
+    @Override // z9.i
+    public void a(h hVar, int i10) {
+        int[] iArr = (int[]) this.b;
+        try {
+            hVar.read((byte[]) this.a, iArr[0], i10);
+            iArr[0] = iArr[0] + i10;
+        } finally {
+            hVar.close();
+        }
+    }
+
+    public e(byte[] bArr, int[] iArr) {
+        this.a = bArr;
+        this.b = iArr;
     }
 }

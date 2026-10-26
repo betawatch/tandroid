@@ -1,15 +1,10 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class w81 extends f91 {
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (getTranslationY() != 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
-        }
-        super.onDraw(canvas);
+public final class w81 extends s4.l {
+    @Override // s4.l
+    public final long K(long j10, long j11, long j12) {
+        return j10;
     }
 }

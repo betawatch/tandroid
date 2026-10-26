@@ -1,43 +1,44 @@
 package i2;
 
+import a8.yb;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
-import v7.u6;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class m extends b2.y0 {
-    public final u2.h0 E;
+public final class m extends b2.z0 {
+    public final u2.g0 E;
     public final boolean F;
     public final int s;
     public final String v;
     public final int w;
-    public final b2.w x;
+    public final b2.x x;
     public final int y;
 
     public m(int i10, Exception exc, int i11) {
         this(i10, exc, i11, null, -1, null, 4, null, false);
     }
 
-    public final m a(u2.h0 h0Var) {
+    public final m a(u2.g0 g0Var) {
         String message = getMessage();
-        String str = e2.m0.a;
-        return new m(message, getCause(), this.a, this.s, this.v, this.w, this.x, this.y, h0Var, this.b, this.F);
+        String str = e2.n0.a;
+        return new m(message, getCause(), this.a, this.s, this.v, this.w, this.x, this.y, g0Var, this.b, this.F);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(String str, Throwable th2, int i10, int i11, String str2, int i12, b2.w wVar, int i13, u2.h0 h0Var, long j10, boolean z10) {
+    public m(String str, Throwable th2, int i10, int i11, String str2, int i12, b2.x xVar, int i13, u2.g0 g0Var, long j10, boolean z10) {
         super(str, th2, i10, j10);
         Bundle bundle = Bundle.EMPTY;
-        u6.g(!z10 || i11 == 1);
-        u6.g(th2 != null || i11 == 3);
+        yb.g(!z10 || i11 == 1);
+        yb.g(th2 != null || i11 == 3);
         this.s = i11;
         this.v = str2;
         this.w = i12;
-        this.x = wVar;
+        this.x = xVar;
         this.y = i13;
-        this.E = h0Var;
+        this.E = g0Var;
         this.F = z10;
     }
 
@@ -45,17 +46,17 @@ public final class m extends b2.y0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public m(int i10, Throwable th2, int i11, String str, int i12, b2.w wVar, int i13, u2.h0 h0Var, boolean z10) {
-        this(TextUtils.isEmpty(null) ? r0 : si.o0.u(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, h0Var, SystemClock.elapsedRealtime(), z10);
+    public m(int i10, Throwable th2, int i11, String str, int i12, b2.x xVar, int i13, u2.g0 g0Var, boolean z10) {
+        this(TextUtils.isEmpty(null) ? r0 : b10.u(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, g0Var, SystemClock.elapsedRealtime(), z10);
         String str2;
         int i14;
-        b2.w wVar2;
+        b2.x xVar2;
         String str3;
         String str4;
         if (i10 == 0) {
             str2 = str;
             i14 = i12;
-            wVar2 = wVar;
+            xVar2 = xVar;
             str3 = "Source error";
         } else if (i10 != 1) {
             if (i10 != 3) {
@@ -65,7 +66,7 @@ public final class m extends b2.y0 {
             }
             str2 = str;
             i14 = i12;
-            wVar2 = wVar;
+            xVar2 = xVar;
         } else {
             StringBuilder sb2 = new StringBuilder();
             str2 = str;
@@ -74,10 +75,10 @@ public final class m extends b2.y0 {
             i14 = i12;
             sb2.append(i14);
             sb2.append(", format=");
-            wVar2 = wVar;
-            sb2.append(wVar2);
+            xVar2 = xVar;
+            sb2.append(xVar2);
             sb2.append(", format_supported=");
-            String str5 = e2.m0.a;
+            String str5 = e2.n0.a;
             if (i13 == 0) {
                 str4 = "NO";
             } else if (i13 == 1) {

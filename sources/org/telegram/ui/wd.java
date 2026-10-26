@@ -1,112 +1,131 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wd implements TextView.OnEditorActionListener {
+public final /* synthetic */ class wd implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ ke b;
 
-    public /* synthetic */ wd(int i10, Object obj, Object obj2) {
+    public /* synthetic */ wd(ke keVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = keVar;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        int b10;
-        int b11;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ie ieVar = (ie) this.b;
-                u91 u91Var = (u91) this.c;
-                if (i10 == 5) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                    sd sdVar = new sd(ieVar, twoStepVerificationActivity, 1);
-                    twoStepVerificationActivity.Z = 1;
-                    twoStepVerificationActivity.b0 = sdVar;
-                    ieVar.Q0.setLoading(true);
-                    twoStepVerificationActivity.s0(new td(ieVar, u91Var, twoStepVerificationActivity, 1));
+                if (tL_error == null) {
+                    if (tLObject instanceof TLRPC.Updates) {
+                        ke keVar = this.b;
+                        AndroidUtilities.runOnUIThread(new pd(keVar, 3));
+                        MessagesController.getInstance(keVar.o0).lambda$processUpdates$379((TLRPC.Updates) tLObject, false);
+                        break;
+                    }
+                } else {
+                    AndroidUtilities.runOnUIThread(new zt0(tL_error, 22));
                     break;
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) this.b;
-                gi.q1 q1Var = (gi.q1) this.c;
-                if ((i10 == 6 || keyEvent.getKeyCode() == 66) && c2Var.isShowing()) {
-                    q1Var.g(c2Var, 0);
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Components.co coVar = (org.telegram.ui.Components.co) this.b;
-                org.telegram.ui.Components.bo boVar = (org.telegram.ui.Components.bo) this.c;
-                org.telegram.ui.Components.fo foVar = coVar.d;
-                xa1 xa1Var = foVar.s;
-                if (i10 == 5) {
-                    View F = xa1Var.F(boVar);
-                    s4.b1 T = F == null ? null : xa1Var.T(F);
-                    if (T != null && (b10 = T.b()) != -1) {
-                        int i11 = b10 - foVar.t0;
-                        int i12 = foVar.M;
-                        int i13 = i12 - 1;
-                        if (i11 == i13 && i12 < foVar.J) {
-                            foVar.S();
-                            break;
-                        } else if (i11 != i13) {
-                            s4.b1 K = xa1Var.K(b10 + 1);
-                            if (K != null) {
-                                View view = K.a;
-                                if (view instanceof org.telegram.ui.Cells.d6) {
-                                    ((org.telegram.ui.Cells.d6) view).getTextView().requestFocus();
+                final int i10 = 0;
+                final ke keVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.xd
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
+                                    i91 e02 = w91.e0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    ke keVar3 = keVar2;
+                                    keVar3.l1 = e02;
+                                    TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
+                                    if (statsGraph != null) {
+                                        statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
+                                    }
+                                    keVar3.m1 = w91.e0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    i91 i91Var = keVar3.l1;
+                                    if (i91Var != null) {
+                                        i91Var.n = true;
+                                    }
+                                    keVar3.g1 = tL_payments_starsRevenueStats.usd_rate;
+                                    keVar3.L(true, tL_payments_starsRevenueStats.status);
+                                    keVar3.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.ds.h).withEndAction(new pd(keVar3, 5)).start();
+                                    keVar3.E();
                                     break;
                                 }
-                            }
-                        } else {
-                            AndroidUtilities.hideKeyboard(boVar.getTextView());
-                            break;
+                                break;
+                            default:
+                                TLObject tLObject3 = tLObject;
+                                boolean z10 = tLObject3 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                ke keVar4 = keVar2;
+                                if (!z10) {
+                                    keVar4.getClass();
+                                    break;
+                                } else {
+                                    keVar4.D((TLRPC.TL_payments_starsRevenueStats) tLObject3);
+                                    break;
+                                }
                         }
                     }
-                }
+                });
                 break;
             default:
-                gv0 gv0Var = (gv0) this.b;
-                fv0 fv0Var = (fv0) this.c;
-                iv0 iv0Var = gv0Var.d;
-                if (i10 == 5) {
-                    xa1 xa1Var2 = iv0Var.c;
-                    View F2 = xa1Var2.F(fv0Var);
-                    s4.b1 T2 = F2 == null ? null : xa1Var2.T(F2);
-                    if (T2 != null && (b11 = T2.b()) != -1) {
-                        int i14 = b11 - iv0Var.n0;
-                        int i15 = iv0Var.y;
-                        int i16 = i15 - 1;
-                        if (i14 == i16 && i15 < iv0Var.n) {
-                            iv0Var.f0();
-                            break;
-                        } else if (i14 != i16) {
-                            s4.b1 K2 = iv0Var.c.K(b11 + 1);
-                            if (K2 != null) {
-                                View view2 = K2.a;
-                                if (view2 instanceof org.telegram.ui.Cells.d6) {
-                                    ((org.telegram.ui.Cells.d6) view2).getTextView().requestFocus();
+                final int i11 = 1;
+                final ke keVar3 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.xd
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
+                                    i91 e02 = w91.e0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    ke keVar32 = keVar3;
+                                    keVar32.l1 = e02;
+                                    TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
+                                    if (statsGraph != null) {
+                                        statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
+                                    }
+                                    keVar32.m1 = w91.e0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    i91 i91Var = keVar32.l1;
+                                    if (i91Var != null) {
+                                        i91Var.n = true;
+                                    }
+                                    keVar32.g1 = tL_payments_starsRevenueStats.usd_rate;
+                                    keVar32.L(true, tL_payments_starsRevenueStats.status);
+                                    keVar32.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.ds.h).withEndAction(new pd(keVar32, 5)).start();
+                                    keVar32.E();
                                     break;
                                 }
-                            }
-                        } else {
-                            AndroidUtilities.hideKeyboard(fv0Var.getTextView());
-                            break;
+                                break;
+                            default:
+                                TLObject tLObject3 = tLObject;
+                                boolean z10 = tLObject3 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                ke keVar4 = keVar3;
+                                if (!z10) {
+                                    keVar4.getClass();
+                                    break;
+                                } else {
+                                    keVar4.D((TLRPC.TL_payments_starsRevenueStats) tLObject3);
+                                    break;
+                                }
                         }
                     }
-                }
+                });
                 break;
         }
-        return true;
     }
 }

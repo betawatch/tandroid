@@ -1,10 +1,10 @@
 package v3;
 
-import c3.d0;
-import c3.f0;
-import e2.m0;
+import c3.a0;
+import c3.c0;
+import e2.n0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class i implements h {
     public final long[] a;
@@ -24,13 +24,13 @@ public final class i implements h {
     }
 
     @Override // v3.h
-    public final long a() {
-        return this.e;
+    public final long a(long j10) {
+        return this.a[n0.f(this.b, j10, true)];
     }
 
     @Override // v3.h
-    public final long b(long j10) {
-        return this.a[m0.f(this.b, j10, true)];
+    public final long b() {
+        return this.e;
     }
 
     @Override // v3.h
@@ -38,28 +38,28 @@ public final class i implements h {
         return this.d;
     }
 
-    @Override // c3.e0
+    @Override // c3.b0
     public final boolean d() {
         return true;
     }
 
-    @Override // c3.e0
+    @Override // c3.b0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // c3.e0
-    public final d0 f(long j10) {
+    @Override // c3.b0
+    public final a0 f(long j10) {
         long[] jArr = this.a;
-        int f7 = m0.f(jArr, j10, true);
+        int f7 = n0.f(jArr, j10, true);
         long j11 = jArr[f7];
         long[] jArr2 = this.b;
-        f0 f0Var = new f0(j11, jArr2[f7]);
+        c0 c0Var = new c0(j11, jArr2[f7]);
         if (j11 >= j10 || f7 == jArr.length - 1) {
-            return new d0(f0Var, f0Var);
+            return new a0(c0Var, c0Var);
         }
         int i10 = f7 + 1;
-        return new d0(f0Var, new f0(jArr[i10], jArr2[i10]));
+        return new a0(c0Var, new c0(jArr[i10], jArr2[i10]));
     }
 
     @Override // v3.h
@@ -67,7 +67,7 @@ public final class i implements h {
         return this.f;
     }
 
-    @Override // c3.e0
+    @Override // c3.b0
     public final long h() {
         return this.c;
     }

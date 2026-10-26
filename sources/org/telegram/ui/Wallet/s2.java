@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -22,32 +22,32 @@ public final /* synthetic */ class s2 implements View.OnClickListener {
                 ((y2) this.b).dismiss();
                 break;
             case 1:
-                pf.d.t((Activity) this.b, "https://fragment.com/");
+                qf.d.t((Activity) this.b, "https://fragment.com/");
                 break;
             case 2:
-                ((j4) this.b).dismiss();
+                ((i4) this.b).dismiss();
                 break;
             case 3:
                 ((Runnable) this.b).run();
                 break;
             case 4:
-                m6 m6Var = (m6) this.b;
-                if (!m6Var.x && m6Var.r && !m6Var.h.b()) {
-                    m6Var.h.setProgress(0.0f);
-                    m6Var.h.d();
+                l6 l6Var = (l6) this.b;
+                if (!l6Var.x && l6Var.r && !l6Var.h.b()) {
+                    l6Var.h.setProgress(0.0f);
+                    l6Var.h.d();
                     break;
                 }
                 break;
             case 5:
-                ((o8) this.b).b(!r3.x);
+                ((n8) this.b).b(!r3.x);
                 break;
             case 6:
-                ((org.telegram.ui.Cells.z1) this.b).c(!r3.b(), true);
+                ((org.telegram.ui.Cells.y1) this.b).c(!r3.b(), true);
                 break;
             default:
-                e9 e9Var = ((i9) this.b).c;
-                e9Var.requestFocus();
-                AndroidUtilities.showKeyboard(e9Var);
+                d9 d9Var = ((h9) this.b).c;
+                d9Var.requestFocus();
+                AndroidUtilities.showKeyboard(d9Var);
                 break;
         }
     }

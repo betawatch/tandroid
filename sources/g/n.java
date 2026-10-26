@@ -1,5 +1,6 @@
 package g;
 
+import a8.h0;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.location.Location;
@@ -9,18 +10,18 @@ import android.os.Process;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class n extends o {
-    public final /* synthetic */ int c = 0;
+    public final /* synthetic */ int c = 1;
     public final /* synthetic */ r d;
     public final Object e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(r rVar, androidx.biometric.e eVar) {
+    public n(r rVar, h0 h0Var) {
         super(rVar);
         this.d = rVar;
-        this.e = eVar;
+        this.e = h0Var;
     }
 
     @Override // g.o
@@ -49,13 +50,13 @@ public final class n extends o {
             case 0:
                 return ((PowerManager) this.e).isPowerSaveMode() ? 2 : 1;
             default:
-                androidx.biometric.e eVar = (androidx.biometric.e) this.e;
-                bh.a aVar = (bh.a) eVar.d;
-                LocationManager locationManager = (LocationManager) eVar.c;
+                h0 h0Var = (h0) this.e;
+                ch.a aVar = (ch.a) h0Var.d;
+                LocationManager locationManager = (LocationManager) h0Var.c;
                 if (aVar.b > System.currentTimeMillis()) {
                     z10 = aVar.a;
                 } else {
-                    Context context = (Context) eVar.b;
+                    Context context = (Context) h0Var.b;
                     Location location3 = null;
                     if (f0.c.a(context, "android.permission.ACCESS_COARSE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
                         try {
@@ -76,8 +77,8 @@ public final class n extends o {
                             if (locationManager.isProviderEnabled("gps")) {
                                 location3 = locationManager.getLastKnownLocation("gps");
                             }
-                        } catch (Exception e7) {
-                            Log.d("TwilightManager", "Failed to get last known location", e7);
+                        } catch (Exception e10) {
+                            Log.d("TwilightManager", "Failed to get last known location", e10);
                         }
                     }
                     if (location3 == null || location == null ? location3 != null : location3.getTime() > location.getTime()) {

@@ -1,61 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Point;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.ViewTreeObserver;
 import java.util.regex.Pattern;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s90 implements Utilities.Callback {
+public final /* synthetic */ class s90 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ s90(LaunchActivity launchActivity, int i10) {
+    public /* synthetic */ s90(Object obj, int i10) {
         this.a = i10;
-        this.b = launchActivity;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        org.telegram.ui.ActionBar.o2 lastFragment;
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
         int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
+        Object obj = this.b;
         switch (i10) {
             case 0:
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.q0 != null && booleanValue && LiteMode.getPowerSaverLevel() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof wb0)) {
-                    int batteryLevel = LiteMode.getBatteryLevel();
-                    org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(lastFragment);
-                    org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(batteryLevel / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.k6.Y5));
-                    String string = LocaleController.getString(R.string.LowPowerEnabledTitle);
-                    String formatString = LocaleController.formatString("LowPowerEnabledSubtitle", R.string.LowPowerEnabledSubtitle, String.format("%d%%", Integer.valueOf(batteryLevel)));
-                    String string2 = LocaleController.getString(R.string.Disable);
-                    p80 p80Var = new p80(launchActivity, 9);
-                    a02.getClass();
-                    Context W = a02.W();
-                    org.telegram.ui.ActionBar.g6 g6Var = a02.c;
-                    org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(W, g6Var);
-                    ncVar.a.setImageDrawable(y9Var);
-                    ncVar.b.setText(string);
-                    ncVar.c.setText(formatString);
-                    org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(a02.W(), g6Var, true);
-                    ocVar.e(string2);
-                    ocVar.b = p80Var;
-                    ncVar.setButton(ocVar);
-                    org.telegram.ui.Components.qc b10 = a02.b(ncVar, 2750);
-                    b10.j = 5000;
-                    b10.j();
-                    break;
+                Pattern pattern = LaunchActivity.D1;
+                int measuredHeight = ((View) obj).getMeasuredHeight();
+                org.telegram.messenger.t.o(AndroidUtilities.displaySize.y, ic.a.k(measuredHeight, "height = ", " displayHeight = "));
+                int i11 = (measuredHeight - AndroidUtilities.navigationBarHeight) - AndroidUtilities.statusBarHeight;
+                if (i11 > AndroidUtilities.dp(100.0f) && i11 < AndroidUtilities.displaySize.y) {
+                    int dp = AndroidUtilities.dp(100.0f) + i11;
+                    Point point = AndroidUtilities.displaySize;
+                    if (dp > point.y) {
+                        point.y = i11;
+                        if (BuildVars.LOGS_ENABLED) {
+                            org.telegram.messenger.t.o(AndroidUtilities.displaySize.y, new StringBuilder("fix display size y to "));
+                            break;
+                        }
+                    }
                 }
                 break;
             default:
-                Pattern pattern = LaunchActivity.E1;
-                MessagesController.getInstance(launchActivity.O).openApp((TLRPC.User) obj, 0);
+                tc1 tc1Var = (tc1) obj;
+                tc1Var.Q = SystemClock.elapsedRealtime() + 1500;
+                tc1Var.l0.invalidate();
                 break;
         }
     }

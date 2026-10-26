@@ -1,26 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
+import android.app.Activity;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class es0 implements org.telegram.ui.Components.d40 {
-    public final /* synthetic */ PhotoViewer a;
+public final class es0 extends org.telegram.ui.Components.cz0 {
+    public final /* synthetic */ fs0 x0;
 
-    public es0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public es0(fs0 fs0Var, Activity activity, MessageObject messageObject, TLObject tLObject, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(activity, messageObject, tLObject, u6Var);
+        this.x0 = fs0Var;
     }
 
-    public final void a(int i10) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.P4 = -1;
-        ImageReceiver.BitmapHolder bitmapHolder = photoViewer.j5;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            photoViewer.j5 = null;
+    @Override // org.telegram.ui.Components.cz0, org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
+    public final void dismiss() {
+        super.dismiss();
+        PhotoViewer photoViewer = this.x0.b;
+        if (photoViewer.U3 == this) {
+            photoViewer.U3 = null;
         }
-        photoViewer.l5 = true;
-        photoViewer.D2(i10);
-        photoViewer.l5 = false;
     }
 }

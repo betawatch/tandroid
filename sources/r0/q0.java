@@ -7,9 +7,10 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.PathInterpolator;
 import java.util.Iterator;
 import java.util.List;
+import m4.w1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
@@ -18,7 +19,7 @@ public final class q0 extends u0 {
     public static final AccelerateInterpolator h = new AccelerateInterpolator(1.5f);
 
     public static void e(View view, v0 v0Var) {
-        ai.c1 i10 = i(view);
+        b2.h i10 = i(view);
         if (i10 != null) {
             i10.V0();
             return;
@@ -32,7 +33,7 @@ public final class q0 extends u0 {
     }
 
     public static void f(View view, k1 k1Var, boolean z10) {
-        ai.c1 i10 = i(view);
+        b2.h i10 = i(view);
         if (i10 != null) {
             i10.a = k1Var;
             if (!z10) {
@@ -48,7 +49,7 @@ public final class q0 extends u0 {
     }
 
     public static void g(View view, k1 k1Var, List list) {
-        ai.c1 i10 = i(view);
+        b2.h i10 = i(view);
         if (i10 != null) {
             i10.W0(k1Var, list);
             return;
@@ -61,14 +62,14 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void h(View view, v0 v0Var, mi.q qVar) {
-        ai.c1 i10 = i(view);
+    public static void h(View view, v0 v0Var, w1 w1Var) {
+        b2.h i10 = i(view);
         if (i10 != null) {
-            qh.e eVar = (qh.e) i10;
+            rh.e eVar = (rh.e) i10;
             if (eVar.c == 0) {
                 Iterator it = eVar.d.iterator();
                 while (it.hasNext()) {
-                    ((qh.d) it.next()).u();
+                    ((rh.d) it.next()).t();
                 }
             }
             eVar.c++;
@@ -77,12 +78,12 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                h(viewGroup.getChildAt(i11), v0Var, qVar);
+                h(viewGroup.getChildAt(i11), v0Var, w1Var);
             }
         }
     }
 
-    public static ai.c1 i(View view) {
+    public static b2.h i(View view) {
         Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
         if (tag instanceof p0) {
             return ((p0) tag).a;

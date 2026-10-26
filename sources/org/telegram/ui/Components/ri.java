@@ -3,24 +3,24 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public interface ri {
-    void E();
+    void A(gh ghVar);
 
-    void J();
+    boolean E();
 
-    void O(Object obj);
+    void H();
 
-    void X(TLRPC.User user);
+    void R();
 
-    void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11);
+    void T(Object obj);
 
-    boolean p0();
+    void Y(TLRPC.User user);
 
-    void r(gh ghVar);
+    void p0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11);
 
-    void r0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11);
+    boolean x0();
 
-    boolean u();
+    void z0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11);
 }

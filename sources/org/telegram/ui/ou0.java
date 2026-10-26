@@ -1,119 +1,122 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ou0 extends View {
-    public final Paint a;
-    public final TextPaint b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public final String h;
-    public final String n;
-    public int r;
-    public final /* synthetic */ PhotoViewer s;
+public interface ou0 {
+    boolean A();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ou0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.s = photoViewer;
-        this.a = new Paint(1);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setColor(-3289651);
-        this.h = LocaleController.getString("AccDescrVideoCompressLow", R.string.AccDescrVideoCompressLow);
-        this.n = LocaleController.getString("AccDescrVideoCompressHigh", R.string.AccDescrVideoCompressHigh);
-        setImportantForAccessibility(1);
-        setFocusable(true);
-        setAccessibilityDelegate(new nu0(this));
-    }
+    void B(int i10);
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.s.Z7 != 1) {
-            this.f = (((getMeasuredWidth() - (this.c * this.s.Z7)) - (((this.s.Z7 * 2) - 2) * this.d)) - (this.e * 2)) / (this.s.Z7 - 1);
-        } else {
-            this.f = ((getMeasuredWidth() - (this.c * this.s.Z7)) - (this.d * 2)) - (this.e * 2);
-        }
-        int dp = AndroidUtilities.dp(6.0f) + (getMeasuredHeight() / 2);
-        int i10 = 0;
-        while (i10 < this.s.Z7) {
-            int i11 = this.e;
-            int i12 = (this.d * 2) + this.f;
-            int i13 = this.c;
-            int i14 = (i13 / 2) + ((i12 + i13) * i10) + i11;
-            if (i10 <= this.s.Y7) {
-                this.a.setColor(-11292945);
-            } else {
-                this.a.setColor(1728053247);
-            }
-            canvas.drawCircle(i14, dp, i10 == this.s.Y7 ? AndroidUtilities.dp(6.0f) : this.c / 2, this.a);
-            if (i10 != 0) {
-                canvas.drawRect((i10 == this.s.Y7 + 1 ? AndroidUtilities.dpf2(2.0f) : 0.0f) + (((i14 - (this.c / 2)) - this.d) - this.f), dp - AndroidUtilities.dp(1.0f), (r2 + this.f) - (i10 == this.s.Y7 ? AndroidUtilities.dpf2(2.0f) : 0.0f), AndroidUtilities.dp(2.0f) + dp, this.a);
-            }
-            i10++;
-        }
-        canvas.drawText(this.h, this.e, dp - AndroidUtilities.dp(16.0f), this.b);
-        canvas.drawText(this.n, (getMeasuredWidth() - this.e) - this.b.measureText(this.n), dp - AndroidUtilities.dp(16.0f), this.b);
-    }
+    CharSequence C(int i10);
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.c = AndroidUtilities.dp(8.0f);
-        this.d = AndroidUtilities.dp(2.0f);
-        this.e = AndroidUtilities.dp(18.0f);
-    }
+    void D();
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float x10 = motionEvent.getX();
-        if (motionEvent.getAction() == 0) {
-            this.r = this.s.Y7;
-            getParent().requestDisallowInterceptTouchEvent(true);
-        }
-        int i10 = 0;
-        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-            while (true) {
-                if (i10 >= this.s.Z7) {
-                    break;
-                }
-                int i11 = this.e;
-                int i12 = this.f;
-                int i13 = this.d;
-                int i14 = this.c;
-                int i15 = (((i13 * 2) + i12 + i14) * i10) + i11;
-                int i16 = i14 / 2;
-                int i17 = i15 + i16;
-                int i18 = (i12 / 2) + i16 + i13;
-                if (x10 <= i17 - i18 || x10 >= i17 + i18) {
-                    i10++;
-                } else if (this.s.Y7 != i10) {
-                    this.s.Y7 = i10;
-                    this.s.T0();
-                    invalidate();
-                    return true;
-                }
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (this.s.Y7 != this.r) {
-                this.s.r2(1);
-            }
-            this.s.L6 = false;
-            return true;
-        }
-        return true;
-    }
+    qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11);
+
+    void F(boolean z10);
+
+    void G();
+
+    int H();
+
+    boolean I();
+
+    void J();
+
+    boolean K();
+
+    boolean L();
+
+    void M(VideoEditedInfo videoEditedInfo);
+
+    boolean N();
+
+    boolean O();
+
+    boolean P();
+
+    boolean Q();
+
+    int R(Object obj);
+
+    int S(int i10);
+
+    boolean T();
+
+    boolean U();
+
+    MessageObject V();
+
+    void W();
+
+    void X(int i10);
+
+    void Y(int i10);
+
+    boolean Z();
+
+    long a();
+
+    void a0(int i10);
+
+    boolean b();
+
+    String b0();
+
+    ArrayList c();
+
+    CharSequence c0(int i10);
+
+    void d();
+
+    void e(CharSequence charSequence);
+
+    void f(String str, String str2, boolean z10);
+
+    boolean g();
+
+    boolean h();
+
+    void i();
+
+    ImageReceiver.BitmapHolder j(int i10);
+
+    int k(int i10, VideoEditedInfo videoEditedInfo);
+
+    boolean l();
+
+    void m();
+
+    void n();
+
+    void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11);
+
+    boolean p();
+
+    boolean q();
+
+    boolean r();
+
+    void s();
+
+    boolean t();
+
+    boolean u();
+
+    HashMap v();
+
+    boolean w();
+
+    boolean x(int i10);
+
+    int y();
+
+    boolean z();
 }

@@ -1,14 +1,14 @@
 package com.google.android.gms.internal.play_billing;
 
-import com.google.android.gms.internal.cast.z4;
+import a8.bb;
+import com.google.android.gms.internal.cast.w4;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.e6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class m1 extends e6 {
+public final class m1 extends bb {
     public static final Logger e = Logger.getLogger(m1.class.getName());
     public static final boolean f = c3.e;
     public i2 a;
@@ -49,8 +49,8 @@ public final class m1 extends e6 {
         try {
             System.arraycopy(bArr, 0, this.b, this.d, i10);
             this.d += i10;
-        } catch (IndexOutOfBoundsException e7) {
-            throw new z4(this.d, this.c, i10, e7);
+        } catch (IndexOutOfBoundsException e10) {
+            throw new w4(this.d, this.c, i10, e10);
         }
     }
 
@@ -74,8 +74,8 @@ public final class m1 extends e6 {
             bArr[i11 + 2] = (byte) (i10 >> 16);
             bArr[i11 + 3] = (byte) (i10 >> 24);
             this.d = i11 + 4;
-        } catch (IndexOutOfBoundsException e7) {
-            throw new z4(i11, this.c, 4, e7);
+        } catch (IndexOutOfBoundsException e10) {
+            throw new w4(i11, this.c, 4, e10);
         }
     }
 
@@ -97,8 +97,8 @@ public final class m1 extends e6 {
             bArr[i10 + 6] = (byte) (j10 >> 48);
             bArr[i10 + 7] = (byte) (j10 >> 56);
             this.d = i10 + 8;
-        } catch (IndexOutOfBoundsException e7) {
-            throw new z4(i10, this.c, 8, e7);
+        } catch (IndexOutOfBoundsException e10) {
+            throw new w4(i10, this.c, 8, e10);
         }
     }
 
@@ -135,19 +135,19 @@ public final class m1 extends e6 {
                 o((b12 - i11) - b11);
                 this.d = b12;
             }
-        } catch (d3 e7) {
+        } catch (d3 e10) {
             this.d = i11;
-            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
+            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
             byte[] bytes = str.getBytes(a2.a);
             try {
                 int length = bytes.length;
                 o(length);
                 d(length, bytes);
-            } catch (IndexOutOfBoundsException e10) {
-                throw new z4(e10);
+            } catch (IndexOutOfBoundsException e11) {
+                throw new w4(e11);
             }
-        } catch (IndexOutOfBoundsException e11) {
-            throw new z4(e11);
+        } catch (IndexOutOfBoundsException e12) {
+            throw new w4(e12);
         }
     }
 
@@ -177,11 +177,11 @@ public final class m1 extends e6 {
                     bArr[i12] = (byte) (i10 | 128);
                     i10 >>>= 7;
                     i12 = i11;
-                } catch (IndexOutOfBoundsException e7) {
-                    throw new z4(i11, this.c, 1, e7);
+                } catch (IndexOutOfBoundsException e10) {
+                    throw new w4(i11, this.c, 1, e10);
                 }
             }
-            throw new z4(i11, this.c, 1, e7);
+            throw new w4(i11, this.c, 1, e10);
         }
     }
 
@@ -204,8 +204,8 @@ public final class m1 extends e6 {
                     bArr[i11] = (byte) (((int) j11) | 128);
                     j11 >>>= 7;
                     i11 = i10;
-                } catch (IndexOutOfBoundsException e7) {
-                    throw new z4(i10, i12, 1, e7);
+                } catch (IndexOutOfBoundsException e10) {
+                    throw new w4(i10, i12, 1, e10);
                 }
             }
             i10 = i11 + 1;

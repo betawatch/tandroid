@@ -1,44 +1,34 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class bx extends s4.s {
-    public final /* synthetic */ tz Q;
+public final class bx extends g.o {
+    public final /* synthetic */ sz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bx(tz tzVar) {
-        super(5);
-        this.Q = tzVar;
+    public bx(sz szVar) {
+        this.c = szVar;
     }
 
-    @Override // s4.s, s4.b0, s4.n0
-    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
-        int o02 = super.o0(i10, eVar, y0Var);
-        tz tzVar = this.Q;
-        if (o02 != 0 && tzVar.D0.getScrollState() == 1) {
-            tzVar.X1 = false;
-            tzVar.Y();
+    @Override // g.o
+    public final int i(int i10) {
+        sz szVar = this.c;
+        nz nzVar = szVar.z0;
+        s4.h0 adapter = szVar.D0.getAdapter();
+        jz jzVar = szVar.y0;
+        if (adapter != jzVar) {
+            if (i10 == nzVar.x || !(nzVar.r.get(i10) == null || (nzVar.r.get(i10) instanceof TLRPC.Document))) {
+                return jzVar.d;
+            }
+            return 1;
         }
-        if (tzVar.T0 == null) {
-            hg.f1 f1Var = new hg.f1(tzVar, tzVar.c1, tzVar.t1.a(), tzVar.t1.f(), 1);
-            tzVar.T0 = f1Var;
-            f1Var.a();
+        if (i10 == 0) {
+            return jzVar.d;
         }
-        tzVar.T0.b();
-        return o02;
-    }
-
-    @Override // s4.b0, s4.n0
-    public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
-        try {
-            li.n nVar = new li.n(recyclerView.getContext(), 2);
-            nVar.a = i10;
-            w0(nVar);
-        } catch (Exception e) {
-            FileLog.e(e);
+        if (i10 == jzVar.s || !(jzVar.h.get(i10) == null || (jzVar.h.get(i10) instanceof TLRPC.Document))) {
+            return jzVar.d;
         }
+        return 1;
     }
 }

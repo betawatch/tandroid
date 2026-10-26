@@ -4,7 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.FilterInputStream;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class m1 extends FilterInputStream {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class m1 extends FilterInputStream {
         while (i11 < i10) {
             int read = read(bArr, i11, i10 - i11);
             if (read <= 0) {
-                throw new tc.j(i11);
+                throw new uc.j(i11);
             }
             i11 += read;
         }
@@ -46,7 +46,7 @@ public final class m1 extends FilterInputStream {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public tc.x c() {
+    public uc.x c() {
         int i10;
         byte b10;
         byte[] bArr;
@@ -67,7 +67,7 @@ public final class m1 extends FilterInputStream {
                     b(8, bArr2);
                     byte b13 = bArr2[0];
                     if ((b13 & 128) != 0) {
-                        throw new tc.v(21, "The payload length of a frame is invalid.");
+                        throw new uc.v(21, "The payload length of a frame is invalid.");
                     }
                     i10 = ((bArr2[6] & 255) << 8) | ((bArr2[1] & 255) << 48) | ((b13 & 255) << 56) | ((bArr2[2] & 255) << 40) | ((bArr2[3] & 255) << 32) | ((bArr2[4] & 255) << 24) | ((bArr2[5] & 255) << 16);
                     b10 = bArr2[7];
@@ -84,7 +84,7 @@ public final class m1 extends FilterInputStream {
                         skip(j10);
                     } catch (IOException unused) {
                     }
-                    throw new tc.v(22, "The payload length of a frame exceeds the maximum array size in Java.");
+                    throw new uc.v(22, "The payload length of a frame exceeds the maximum array size in Java.");
                 }
                 if (j10 != 0) {
                     int i12 = (int) j10;
@@ -102,10 +102,10 @@ public final class m1 extends FilterInputStream {
                             skip(j10);
                         } catch (IOException unused2) {
                         }
-                        throw new tc.v(23, "OutOfMemoryError occurred during a trial to allocate a memory area for a frame's payload: " + e.getMessage(), e);
+                        throw new uc.v(23, "OutOfMemoryError occurred during a trial to allocate a memory area for a frame's payload: " + e.getMessage(), e);
                     }
                 }
-                tc.x xVar = new tc.x();
+                uc.x xVar = new uc.x();
                 xVar.a = z10;
                 xVar.b = z11;
                 xVar.c = z12;
@@ -124,11 +124,11 @@ public final class m1 extends FilterInputStream {
             }
             if (2147483647L >= j10) {
             }
-        } catch (tc.j e7) {
-            if (e7.b == 0) {
-                throw new tc.l(48, "No more WebSocket frame from the server.");
+        } catch (uc.j e10) {
+            if (e10.b == 0) {
+                throw new uc.l(48, "No more WebSocket frame from the server.");
             }
-            throw e7;
+            throw e10;
         }
     }
 

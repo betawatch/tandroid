@@ -1,93 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class dy extends FrameLayout {
-    public static final /* synthetic */ int L = 0;
-    public boolean E;
-    public ww F;
-    public hg.m G;
-    public boolean H;
-    public final gw I;
-    public final gw J;
-    public final /* synthetic */ ey K;
-    public zx a;
-    public a5.a b;
-    public hw c;
-    public lw d;
-    public s4.y e;
-    public cy f;
-    public int h;
-    public kw n;
-    public org.telegram.ui.Components.pl0 r;
-    public int s;
-    public int v;
-    public org.telegram.ui.Components.b10 w;
-    public fw x;
-    public org.telegram.ui.Components.rl0 y;
+public final class dy implements DownloadController.FileDownloadProgressListener {
+    public long a;
+    public long b;
+    public final String c;
+    public final /* synthetic */ ey d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dy(Context context, ey eyVar) {
-        super(context);
-        this.K = eyVar;
-        this.I = new gw(this, 1);
-        this.J = new gw(this, 2);
+    public dy(ey eyVar, String str) {
+        this.d = eyVar;
+        this.c = str;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        ((FrameLayout.LayoutParams) this.a.getLayoutParams()).bottomMargin = 0;
-        super.onMeasure(i10, i11);
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final int getObserverTag() {
+        return 0;
     }
 
-    public final boolean p() {
-        int i10 = this.s;
-        return i10 == 0 || i10 == 7 || i10 == 8;
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j10, long j11) {
+        this.b = j10;
+        this.a = j11;
+        this.d.b();
     }
 
-    public final void q(boolean z10) {
-        if (((org.telegram.ui.ActionBar.o2) this.K).isPaused) {
-            return;
-        }
-        gw gwVar = this.J;
-        if (z10) {
-            AndroidUtilities.cancelRunOnUIThread(gwVar);
-            this.a.setItemAnimator(this.x);
-            gwVar.run();
-        } else {
-            if (this.H) {
-                return;
-            }
-            this.H = true;
-            if (!this.x.k()) {
-                this.a.setItemAnimator(null);
-            }
-            AndroidUtilities.runOnUIThread(gwVar, 36L);
-        }
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
     }
 
-    @Override // android.view.View
-    public void setTranslationX(float f7) {
-        dy dyVar;
-        if (getTranslationX() != f7) {
-            super.setTranslationX(f7);
-            ey eyVar = this.K;
-            if (eyVar.h3 && (dyVar = eyVar.e0[0]) == this) {
-                eyVar.z0.g(Math.abs(dyVar.getTranslationX()) / eyVar.e0[0].getMeasuredWidth(), eyVar.e0[1].h);
-            }
-            eyVar.i3();
-        }
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z10) {
     }
 
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            this.K.i3();
-        }
-        super.setTranslationY(f7);
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j10, long j11, boolean z10) {
     }
 }

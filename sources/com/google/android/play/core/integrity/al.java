@@ -1,23 +1,23 @@
 package com.google.android.play.core.integrity;
 
-import a9.j0;
 import android.content.Context;
+import b9.h0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class al implements a9.q {
-    private final a9.u a;
-    private final a9.u b;
-    private final a9.u c;
+public final class al implements b9.o {
+    private final b9.s a;
+    private final b9.s b;
+    private final b9.s c;
 
-    public al(a9.u uVar, a9.u uVar2, a9.u uVar3, a9.u uVar4) {
-        this.a = uVar;
-        this.b = uVar2;
-        this.c = uVar3;
+    public al(b9.s sVar, b9.s sVar2, b9.s sVar3, b9.s sVar4) {
+        this.a = sVar;
+        this.b = sVar2;
+        this.c = sVar3;
     }
 
-    @Override // a9.u
+    @Override // b9.s
     public final /* bridge */ /* synthetic */ Object a() {
-        return new aj((Context) this.a.a(), (j0) this.b.a(), ((au) this.c).a(), new i());
+        return new aj((Context) this.a.a(), (h0) this.b.a(), ((au) this.c).a(), new i());
     }
 }

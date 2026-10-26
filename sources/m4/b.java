@@ -8,14 +8,14 @@ import android.os.Build;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b {
     public static final Uri g = Uri.parse("content://androidx.car.app.connection");
     public final Context a;
     public final g0 b;
     public final Executor c;
-    public final androidx.mediarouter.app.f d;
+    public final androidx.mediarouter.app.g d;
     public final AtomicBoolean e;
     public final AtomicBoolean f;
 
@@ -24,20 +24,20 @@ public final class b {
         this.b = g0Var;
         Executor e = e2.a.e();
         this.c = e;
-        this.d = new androidx.mediarouter.app.f(this, 6);
+        this.d = new androidx.mediarouter.app.g(this, 6);
         this.e = new AtomicBoolean();
         this.f = new AtomicBoolean();
         e.execute(new a(this, 1));
     }
 
     public static /* synthetic */ void a(b bVar) {
-        androidx.mediarouter.app.f fVar = bVar.d;
+        androidx.mediarouter.app.g gVar = bVar.d;
         Context context = bVar.a;
         IntentFilter intentFilter = new IntentFilter("androidx.car.app.connection.action.CAR_CONNECTION_UPDATED");
         if (Build.VERSION.SDK_INT >= 33) {
-            context.registerReceiver(fVar, intentFilter, 2);
+            context.registerReceiver(gVar, intentFilter, 2);
         } else {
-            context.registerReceiver(fVar, intentFilter);
+            context.registerReceiver(gVar, intentFilter);
         }
         bVar.b();
     }

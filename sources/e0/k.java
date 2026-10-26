@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k extends y {
     public IconCompat e;
@@ -14,9 +14,9 @@ public final class k extends y {
     public boolean g;
 
     @Override // e0.y
-    public final void b(f0 f0Var) {
-        Notification.Builder builder = (Notification.Builder) f0Var.d;
-        Context context = (Context) f0Var.c;
+    public final void b(e0 e0Var) {
+        Notification.Builder builder = (Notification.Builder) e0Var.d;
+        Context context = (Context) e0Var.c;
         Notification.BigPictureStyle bigContentTitle = new Notification.BigPictureStyle(builder).setBigContentTitle(this.b);
         IconCompat iconCompat = this.e;
         if (iconCompat != null) {

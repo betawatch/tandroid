@@ -1,122 +1,147 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class om0 implements s4.q0 {
-    public RecyclerView a;
-    public boolean c;
-    public int d;
-    public int e;
-    public int f;
-    public boolean g;
-    public boolean h;
-    public int i;
-    public final nm0 k;
-    public int b = -1;
-    public final int j = AndroidUtilities.dp(80.0f);
-    public final org.telegram.ui.Cells.u5 l = new org.telegram.ui.Cells.u5(this, 22);
+public class om0 extends u91 {
+    public final lw0 V;
+    public boolean W;
+    public View a0;
+    public View b0;
 
-    public om0(nm0 nm0Var) {
-        this.k = nm0Var;
+    public om0(Context context, org.telegram.ui.ActionBar.u6 u6Var, lw0 lw0Var) {
+        super(context, u6Var);
+        this.V = lw0Var;
+        setClipChildren(false);
+        setClipToPadding(false);
     }
 
-    @Override // s4.q0
-    public final void a(RecyclerView recyclerView, MotionEvent motionEvent) {
-        View E = recyclerView.E(motionEvent.getX(), motionEvent.getY());
-        int R = E != null ? RecyclerView.R(E) : -1;
+    @Override // org.telegram.ui.Components.u91
+    public final void A(int i10) {
+        lw0 lw0Var = this.V;
+        lw0Var.g("PAGER_TAB_END");
+        lw0Var.l();
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public final boolean B(MotionEvent motionEvent) {
+        boolean z10 = this.H;
+        boolean B = super.B(motionEvent);
+        if (z10 && !this.H && motionEvent != null && motionEvent.getActionMasked() == 2) {
+            View[] viewPages = getViewPages();
+            View view = viewPages[0];
+            View view2 = viewPages[1];
+            if (view != null && view2 != null && view.getTranslationX() == 0.0f && view.getMeasuredWidth() > 0 && Math.abs(view2.getTranslationX()) >= view.getMeasuredWidth()) {
+                this.a0 = view;
+                this.b0 = view2;
+                lw0 lw0Var = this.V;
+                lw0Var.g("PAGER_DRAG_ABORTED");
+                lw0Var.l();
+            }
+        }
+        return B;
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public final void F(View view, float f7) {
+        if (view.getTranslationX() == f7) {
+            return;
+        }
+        super.F(view, f7);
+        invalidate();
+    }
+
+    public final void L(View view) {
+        this.a0 = null;
+        this.b0 = null;
+        lw0 lw0Var = this.V;
+        lw0Var.f("PAGE_BOUND", view, 0, 0, true);
+        if (lw0Var.O == null) {
+            return;
+        }
+        if (lw0Var.d0) {
+            lw0Var.i("page_bound");
+        }
+        RecyclerView i10 = lw0Var.O.i(view);
+        lw0Var.b(i10);
+        lw0Var.O.n(i10);
+        lw0Var.l();
+    }
+
+    public final void M(MotionEvent motionEvent) {
+        if (motionEvent == null || motionEvent.getActionMasked() != 0) {
+            return;
+        }
+        float x9 = motionEvent.getX();
         float y3 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        nm0 nm0Var = this.k;
-        org.telegram.ui.Cells.u5 u5Var = this.l;
-        if (action == 1) {
-            this.c = false;
-            this.g = false;
-            this.h = false;
-            AndroidUtilities.cancelRunOnUIThread(u5Var);
-            nm0Var.a(false);
-            return;
-        }
-        if (action != 2) {
-            return;
-        }
-        if (this.j > -1) {
-            float f7 = 0;
-            if (y3 >= f7 && y3 <= this.d) {
-                this.h = false;
-                if (!this.g) {
-                    this.g = true;
-                    AndroidUtilities.cancelRunOnUIThread(u5Var);
-                    AndroidUtilities.runOnUIThread(u5Var);
-                }
-                this.i = ((int) (this.d - (y3 - f7))) / 2;
-            } else if (y3 >= this.e && y3 <= this.f) {
-                this.g = false;
-                if (!this.h) {
-                    this.h = true;
-                    AndroidUtilities.cancelRunOnUIThread(u5Var);
-                    AndroidUtilities.runOnUIThread(u5Var);
-                }
-                this.i = ((int) ((y3 + this.f) - (this.e + r11))) / 2;
-            } else if (this.g || this.h) {
-                AndroidUtilities.cancelRunOnUIThread(u5Var);
-                this.g = false;
-                this.h = false;
-            }
-        }
-        if (R == -1 || this.b == R) {
-            return;
-        }
-        this.b = R;
-        nm0Var.c(E, !nm0Var.d(R));
+        lw0 lw0Var = this.V;
+        boolean j10 = lw0Var.j(x9, y3);
+        this.W = j10;
+        lw0Var.g(j10 ? "PAGER_DOWN_COMMON" : "PAGER_DOWN_PAGE");
     }
 
-    @Override // s4.q0
-    public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
-        boolean z10 = this.c && !(recyclerView.getAdapter() == null || recyclerView.getAdapter().h() == 0);
-        if (z10) {
-            this.a = recyclerView;
-            int i10 = this.j;
-            if (i10 > -1) {
-                this.d = i10;
-                this.e = recyclerView.getMeasuredHeight() - i10;
-                this.f = recyclerView.getMeasuredHeight();
-            }
-        }
-        if (z10 && motionEvent.getAction() == 1) {
-            this.c = false;
-            this.g = false;
-            this.h = false;
-            AndroidUtilities.cancelRunOnUIThread(this.l);
-            this.k.a(false);
-        }
-        return z10;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        int save = canvas.save();
+        float x9 = view.getX();
+        lw0 lw0Var = this.V;
+        canvas.clipRect(x9, -lw0Var.getTopBleed(), view.getX() + view.getWidth(), lw0Var.getBottomBleed() + getHeight());
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restoreToCount(save);
+        return drawChild;
     }
 
-    public final void d(View view, int i10, boolean z10) {
-        if (this.c) {
-            return;
-        }
-        this.b = -1;
-        AndroidUtilities.cancelRunOnUIThread(this.l);
-        this.g = false;
-        this.h = false;
-        nm0 nm0Var = this.k;
-        if (!nm0Var.b(i10)) {
-            this.c = false;
-            return;
-        }
-        nm0Var.a(true);
-        nm0Var.c(view, z10);
-        this.c = true;
-        this.b = i10;
+    @Override // org.telegram.ui.Components.u91
+    public float getAvailableTranslationX() {
+        return Math.max(1, getMeasuredWidth());
     }
 
-    @Override // s4.q0
-    public final void c(boolean z10) {
+    @Override // org.telegram.ui.Components.u91
+    public final boolean i(MotionEvent motionEvent) {
+        return !this.W && this.V.c();
+    }
+
+    @Override // org.telegram.ui.Components.u91, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        M(motionEvent);
+        return !this.W && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.u91, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        lw0 lw0Var = this.V;
+        if (motionEvent == null) {
+            lw0Var.g("PAGER_CANCEL_NULL");
+            this.W = false;
+            return B(null);
+        }
+        M(motionEvent);
+        if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
+            lw0Var.g(motionEvent.getActionMasked() == 1 ? "PAGER_UP" : "PAGER_CANCEL");
+        }
+        return !this.W && B(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public final void u() {
+        lw0 lw0Var = this.V;
+        lw0Var.g("PAGER_SCROLL_END");
+        lw0Var.l();
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public final void v() {
+        this.a0 = null;
+        this.b0 = null;
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public final void w(boolean z10) {
+        this.V.l();
     }
 }

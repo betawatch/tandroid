@@ -1,18 +1,18 @@
 package p3;
 
-import b2.q0;
-import b2.s0;
-import b2.w;
-import com.google.android.gms.internal.play_billing.k3;
+import a8.yb;
+import b2.r0;
+import b2.t0;
+import b2.x;
+import c3.h0;
 import j$.util.Objects;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b implements s0 {
+public final class b implements t0 {
     public final int a;
     public final String b;
     public final String c;
@@ -21,7 +21,7 @@ public final class b implements s0 {
     public final int f;
 
     public b(int i10, String str, String str2, String str3, boolean z10, int i11) {
-        u6.g(i11 == -1 || i11 > 0);
+        yb.g(i11 == -1 || i11 > 0);
         this.a = i10;
         this.b = str;
         this.c = str2;
@@ -72,7 +72,7 @@ public final class b implements s0 {
                         z10 = false;
                         i11 = -1;
                     } catch (NumberFormatException unused) {
-                        k3.q("Invalid bitrate header: ", str4, "IcyHeaders");
+                        h0.p("Invalid bitrate header: ", str4, "IcyHeaders");
                         z10 = false;
                         i10 = i11;
                         list = (List) map.get("icy-genre");
@@ -144,7 +144,7 @@ public final class b implements s0 {
                         z12 = z10;
                     } catch (NumberFormatException unused3) {
                         i12 = parseInt;
-                        k3.q("Invalid metadata interval: ", str5, "IcyHeaders");
+                        h0.p("Invalid metadata interval: ", str5, "IcyHeaders");
                         int i132 = i12;
                         if (z10) {
                         }
@@ -161,24 +161,24 @@ public final class b implements s0 {
         return null;
     }
 
-    @Override // b2.s0
-    public final /* synthetic */ w a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.s0
-    public final void b(q0 q0Var) {
+    @Override // b2.t0
+    public final void b(r0 r0Var) {
         String str = this.c;
         if (str != null) {
-            q0Var.G = str;
+            r0Var.G = str;
         }
         String str2 = this.b;
         if (str2 != null) {
-            q0Var.E = str2;
+            r0Var.E = str2;
         }
     }
 
-    @Override // b2.s0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }

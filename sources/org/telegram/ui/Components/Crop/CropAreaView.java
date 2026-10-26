@@ -16,15 +16,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import com.google.android.gms.internal.play_billing.k3;
+import c3.h0;
+import kg.e;
 import m1.j;
-import mg.a;
-import mg.n;
-import mg.o;
-import mg.p;
+import ng.a;
+import ng.n;
+import ng.o;
+import ng.p;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
     public int E;
@@ -205,7 +206,6 @@ public class CropAreaView extends ViewGroup {
         }
         this.s0 = i11;
         this.t0 = i10;
-        int i12 = 1;
         float f7 = i10 == 1 ? 0.0f : 1.0f;
         if (!z10) {
             this.b0 = f7;
@@ -215,7 +215,7 @@ public class CropAreaView extends ViewGroup {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.b0, f7);
         this.c0 = ofFloat;
         ofFloat.setDuration(200L);
-        this.c0.addListener(new m.a(this, i12));
+        this.c0.addListener(new e(this, 3));
         if (i10 == 1) {
             this.c0.setStartDelay(200L);
         }
@@ -579,10 +579,10 @@ public class CropAreaView extends ViewGroup {
                     paint4.setAlpha((int) (this.L * 255.0f));
                     paint9.setAlpha((int) (this.L * 127.0f));
                     float f52 = this.a;
-                    this.b = k3.z(measuredWidth, f52, f7, f10);
-                    float z12 = k3.z(measuredHeight, f52, f7, f10) + (z10 ? 0 : AndroidUtilities.statusBarHeight);
-                    this.c = z12;
-                    float f53 = z12 + f52;
+                    this.b = h0.B(measuredWidth, f52, f7, f10);
+                    float B = h0.B(measuredHeight, f52, f7, f10) + (z10 ? 0 : AndroidUtilities.statusBarHeight);
+                    this.c = B;
+                    float f53 = B + f52;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), (int) this.c, paint9);
                     float f54 = (int) f53;
                     canvas.drawRect(0.0f, (int) this.c, (int) this.b, f54, paint9);
@@ -635,7 +635,7 @@ public class CropAreaView extends ViewGroup {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         float f7 = this.V;
         RectF rectF = this.y;
-        int x10 = (int) (motionEvent.getX() - ((ViewGroup) getParent()).getX());
+        int x9 = (int) (motionEvent.getX() - ((ViewGroup) getParent()).getX());
         int y3 = (int) (motionEvent.getY() - ((ViewGroup) getParent()).getY());
         float f10 = !this.a0 ? AndroidUtilities.statusBarHeight : 0;
         int actionMasked = motionEvent.getActionMasked();
@@ -657,9 +657,9 @@ public class CropAreaView extends ViewGroup {
             }
             if (actionMasked == 2 && this.r0 != 1) {
                 rectF.set(this.x);
-                float f11 = x10 - this.E;
+                float f11 = x9 - this.E;
                 float f12 = y3 - this.F;
-                this.E = x10;
+                this.E = x9;
                 this.F = y3;
                 boolean z10 = Math.abs(f11) > Math.abs(f12);
                 switch (j.c(this.r0)) {
@@ -757,7 +757,7 @@ public class CropAreaView extends ViewGroup {
                 if (rectF.left < f7) {
                     float f18 = this.w;
                     if (f18 > 0.0f) {
-                        rectF.bottom = k3.z(rectF.right, f7, f18, rectF.top);
+                        rectF.bottom = h0.B(rectF.right, f7, f18, rectF.top);
                     }
                     rectF.left = f7;
                 } else if (rectF.right > getWidth() - f7) {
@@ -771,7 +771,7 @@ public class CropAreaView extends ViewGroup {
                 if (rectF.top < f19) {
                     float f21 = this.w;
                     if (f21 > 0.0f) {
-                        rectF.right = k3.y(rectF.bottom, f19, f21, rectF.left);
+                        rectF.right = h0.z(rectF.bottom, f19, f21, rectF.left);
                     }
                     rectF.top = f19;
                 } else if (rectF.bottom > getHeight() - f20) {
@@ -833,7 +833,7 @@ public class CropAreaView extends ViewGroup {
             this.r0 = 1;
             return false;
         }
-        float f27 = x10;
+        float f27 = x9;
         float f28 = y3;
         if (this.d.contains(f27, f28)) {
             this.r0 = 2;
@@ -856,7 +856,7 @@ public class CropAreaView extends ViewGroup {
             }
             this.r0 = 8;
         }
-        this.E = x10;
+        this.E = x9;
         this.F = y3;
         g(3, false);
         this.e0 = true;
@@ -868,7 +868,7 @@ public class CropAreaView extends ViewGroup {
             pVar3.n = 0.0f;
             o oVar = pVar3.M;
             if (oVar != null) {
-                oVar.R(false);
+                oVar.H(false);
                 return true;
             }
         }

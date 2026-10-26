@@ -1,27 +1,644 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.Random;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class q30 implements z4.f {
-    public final /* synthetic */ org.telegram.ui.s40 a;
+public final class q30 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
+    public final int E;
+    public final ak0 F;
+    public final xj0 G;
+    public long H;
+    public final boolean I;
+    public final Random J;
+    public boolean K;
+    public final p30[] L;
+    public boolean M;
+    public float N;
+    public float O;
+    public final OvershootInterpolator P;
+    public float Q;
+    public final Paint a;
+    public final fa b;
+    public final fa c;
+    public float d;
+    public float e;
+    public float f;
+    public p30 h;
+    public p30 n;
+    public float r;
+    public boolean s;
+    public float v;
+    public final LinearGradient w;
+    public final Matrix x;
+    public float y;
 
-    public q30(org.telegram.ui.s40 s40Var) {
-        this.a = s40Var;
+    public q30(int i10, Context context, boolean z10) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new fa(8);
+        this.c = new fa(9);
+        this.r = 1.0f;
+        this.x = new Matrix();
+        this.y = 0.0f;
+        this.J = new Random();
+        this.L = new p30[4];
+        this.P = new OvershootInterpolator();
+        this.I = z10;
+        this.E = i10;
+        for (int i11 = 0; i11 < 4; i11++) {
+            this.L[i11] = new p30(i11);
+        }
+        this.b.b = AndroidUtilities.dp(37.0f);
+        this.b.a = AndroidUtilities.dp(32.0f);
+        this.c.b = AndroidUtilities.dp(37.0f);
+        this.c.a = AndroidUtilities.dp(32.0f);
+        this.b.b();
+        this.c.b();
+        xj0 xj0Var = new xj0(R.raw.voice_outlined, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(30.0f), true, null);
+        this.G = xj0Var;
+        setWillNotDraw(false);
+        ak0 ak0Var = new ak0(context);
+        this.F = ak0Var;
+        ak0Var.setAnimation(xj0Var);
+        ak0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(ak0Var);
+        this.w = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(350.0f), 0.0f, new int[]{-2801343, -561538, 0}, new float[]{0.0f, 0.4f, 1.0f}, Shader.TileMode.CLAMP);
+        if (z10) {
+            setState(0);
+        }
     }
 
-    @Override // z4.f
-    public final void b(float f7, int i10, int i11) {
-        org.telegram.ui.s40 s40Var = this.a;
-        s40Var.h = i10;
-        s40Var.f = f7;
-        u30.m(s40Var);
+    private void setAmplitude(double d) {
+        float min = (float) (Math.min(8500.0d, d) / 8500.0d);
+        this.e = min;
+        this.f = (min - this.d) / 265.0f;
     }
 
-    @Override // z4.f
-    public final void a(int i10) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void a() {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null || sharedInstance.groupCall == null) {
+            return;
+        }
+        int callState = sharedInstance.getCallState();
+        if (callState == 1 || callState == 2 || callState == 6 || callState == 5) {
+            setState(2);
+            return;
+        }
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.f(sharedInstance.getSelfId());
+        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
+            setState(sharedInstance.isMicMute() ? 1 : 0);
+            return;
+        }
+        if (!sharedInstance.isMicMute()) {
+            sharedInstance.setMicMute(true, false, false);
+        }
+        setState(3);
+        long uptimeMillis = SystemClock.uptimeMillis();
+        MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+        if (getParent() != null) {
+            ((View) getParent()).dispatchTouchEvent(obtain);
+        }
     }
 
-    @Override // z4.f
-    public final void c(int i10) {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.webRtcMicAmplitudeEvent) {
+            setAmplitude(((Float) objArr[0]).floatValue() * 4000.0f);
+        } else if (i10 == NotificationCenter.groupCallUpdated) {
+            a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.I) {
+            return;
+        }
+        setAmplitude(0.0d);
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.webRtcMicAmplitudeEvent);
+        NotificationCenter.getInstance(this.E).addObserver(this, NotificationCenter.groupCallUpdated);
+        boolean z10 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
+        if (VoIPService.getSharedInstance() != null) {
+            VoIPService.getSharedInstance().registerStateListener(this);
+        }
+        int i10 = z10 ? 13 : 24;
+        xj0 xj0Var = this.G;
+        xj0Var.P(i10);
+        xj0Var.N(xj0Var.f - 1, false, true);
+        a();
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final void onAudioSettingsChanged() {
+        boolean z10 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
+        int i10 = z10 ? 13 : 24;
+        xj0 xj0Var = this.G;
+        if (xj0Var.P(i10)) {
+            if (z10) {
+                xj0Var.M(0);
+            } else {
+                xj0Var.M(12);
+            }
+        }
+        this.F.d();
+        a();
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final /* synthetic */ void onCameraFirstFrameAvailable() {
+        org.telegram.messenger.voip.t0.b(this);
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final /* synthetic */ void onCameraSwitch(boolean z10) {
+        org.telegram.messenger.voip.t0.c(this, z10);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.I) {
+            return;
+        }
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.webRtcMicAmplitudeEvent);
+        NotificationCenter.getInstance(this.E).removeObserver(this, NotificationCenter.groupCallUpdated);
+        if (VoIPService.getSharedInstance() != null) {
+            VoIPService.getSharedInstance().unregisterStateListener(this);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x02d8  */
+    /* JADX WARN: Removed duplicated region for block: B:121:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00fc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0162  */
+    /* JADX WARN: Type inference failed for: r12v1 */
+    /* JADX WARN: Type inference failed for: r12v2, types: [android.graphics.Shader, boolean[]] */
+    /* JADX WARN: Type inference failed for: r12v37 */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        boolean z10;
+        float f7;
+        float f10;
+        boolean z11;
+        int i10;
+        boolean z12;
+        int i11;
+        float f11;
+        float f12;
+        int i12;
+        float f13;
+        super.onDraw(canvas);
+        if (getAlpha() == 0.0f) {
+            return;
+        }
+        int i13 = 1;
+        float measuredWidth = getMeasuredWidth() >> 1;
+        float measuredHeight = getMeasuredHeight() >> 1;
+        boolean z13 = this.M;
+        if (z13) {
+            float f14 = this.N;
+            if (f14 != 1.0f) {
+                float f15 = f14 + 0.10666667f;
+                this.N = f15;
+                if (f15 > 1.0f) {
+                    this.N = 1.0f;
+                }
+                float interpolation = ds.f.getInterpolation(this.N) * 0.1f;
+                float f16 = interpolation + 1.0f;
+                ak0 ak0Var = this.F;
+                ak0Var.setScaleY(f16);
+                ak0Var.setScaleX(f16);
+                z10 = this.I;
+                if (z10) {
+                    long currentTimeMillis = System.currentTimeMillis();
+                    if (currentTimeMillis - this.H > 1000) {
+                        this.H = currentTimeMillis;
+                        float C = a1.g.C(org.telegram.ui.d3.j(this.J, 100), 0.5f, 100.0f, 0.5f);
+                        this.e = C;
+                        this.f = (C - this.d) / 595.0f;
+                    }
+                }
+                f7 = this.e;
+                f10 = this.d;
+                if (f7 != f10) {
+                    float f17 = this.f;
+                    float f18 = (16.0f * f17) + f10;
+                    this.d = f18;
+                    if (f17 > 0.0f) {
+                        if (f18 > f7) {
+                            this.d = f7;
+                        }
+                    } else if (f18 < f7) {
+                        this.d = f7;
+                    }
+                }
+                ?? r12 = 0;
+                if (this.n != null) {
+                    float f19 = this.r + 0.064f;
+                    this.r = f19;
+                    if (f19 > 1.0f) {
+                        this.r = 1.0f;
+                        this.n = null;
+                    }
+                }
+                z11 = this.s;
+                if (z11) {
+                    float f20 = this.v;
+                    if (f20 != 1.0f) {
+                        float f21 = f20 + 0.045714285f;
+                        this.v = f21;
+                        if (f21 > 1.0f) {
+                            this.v = 1.0f;
+                        }
+                        if (this.K) {
+                            invalidate();
+                        }
+                        int i14 = this.h.i;
+                        i10 = 3;
+                        int i15 = 2;
+                        z12 = i14 == 3 && i14 != 2;
+                        if (z12) {
+                            float f22 = this.y;
+                            if (f22 != 1.0f) {
+                                float f23 = f22 + 0.045714285f;
+                                this.y = f23;
+                                if (f23 > 1.0f) {
+                                    this.y = 1.0f;
+                                }
+                                float interpolation2 = (this.P.getInterpolation(this.y) * 0.35f) + 0.65f;
+                                float f24 = this.d;
+                                float f25 = 1.0f;
+                                float f26 = !z10 ? 0.1f : 0.8f;
+                                float f27 = 0.0f;
+                                fa faVar = this.b;
+                                faVar.e(f24, f26);
+                                float f28 = this.d;
+                                float f29 = !z10 ? 0.1f : 0.8f;
+                                fa faVar2 = this.c;
+                                faVar2.e(f28, f29);
+                                i11 = 0;
+                                while (i11 < i10) {
+                                    if (i11 != 0 || this.n != null) {
+                                        Paint paint = this.a;
+                                        if (i11 != 0) {
+                                            if (i11 == i13) {
+                                                p30 p30Var = this.h;
+                                                if (p30Var == null) {
+                                                    return;
+                                                }
+                                                if (this.v != f25) {
+                                                    f11 = this.n != null ? this.r : f25;
+                                                    p30Var.a(this.d);
+                                                    p30 p30Var2 = this.h;
+                                                    if (p30Var2.i == i15) {
+                                                        paint.setShader(r12);
+                                                        paint.setColor(org.telegram.ui.ActionBar.y6.x0(r12, org.telegram.ui.ActionBar.y6.bh, false));
+                                                    } else {
+                                                        paint.setShader(p30Var2.g);
+                                                    }
+                                                }
+                                                f12 = f25;
+                                                i12 = 1;
+                                            } else {
+                                                if (this.v != f27) {
+                                                    paint.setColor(-65536);
+                                                    Matrix matrix = this.x;
+                                                    matrix.reset();
+                                                    matrix.postTranslate((f25 - this.v) * (-AndroidUtilities.dp(250.0f)), f27);
+                                                    matrix.postRotate(this.Q, measuredWidth, measuredHeight);
+                                                    LinearGradient linearGradient = this.w;
+                                                    linearGradient.setLocalMatrix(matrix);
+                                                    paint.setShader(linearGradient);
+                                                    f11 = f25;
+                                                }
+                                                f12 = f25;
+                                                i12 = 1;
+                                            }
+                                            i11++;
+                                            i13 = i12;
+                                            f25 = f12;
+                                            r12 = 0;
+                                            i10 = 3;
+                                            f27 = 0.0f;
+                                        } else if (this.v != f25) {
+                                            f11 = f25 - this.r;
+                                            this.n.a(this.d);
+                                            p30 p30Var3 = this.n;
+                                            if (p30Var3.i == i15) {
+                                                paint.setShader(r12);
+                                                paint.setColor(org.telegram.ui.ActionBar.y6.x0(r12, org.telegram.ui.ActionBar.y6.bh, false));
+                                            } else {
+                                                paint.setShader(p30Var3.g);
+                                            }
+                                        }
+                                        faVar.b = AndroidUtilities.dp(40.0f);
+                                        faVar.a = AndroidUtilities.dp(32.0f);
+                                        faVar2.b = AndroidUtilities.dp(38.0f);
+                                        faVar2.a = AndroidUtilities.dp(33.0f);
+                                        if (i11 != i15) {
+                                            f13 = 32.0f;
+                                            paint.setAlpha((int) ((f25 - this.v) * 76.0f * f11));
+                                        } else {
+                                            f13 = 32.0f;
+                                            paint.setAlpha((int) (76.0f * f11 * this.v));
+                                        }
+                                        if (this.y != 0.0f) {
+                                            f12 = f25;
+                                            float min = Math.min((f12 - this.O) * b10.e(this.d, 0.3f, f12, interpolation), 1.3f) * interpolation2;
+                                            canvas.save();
+                                            canvas.scale(min, min, measuredWidth, measuredHeight);
+                                            faVar.a(measuredWidth, measuredHeight, canvas, paint);
+                                            canvas.restore();
+                                            float min2 = Math.min((f12 - this.O) * b10.e(this.d, 0.26f, f12, interpolation), 1.3f) * interpolation2;
+                                            canvas.save();
+                                            canvas.scale(min2, min2, measuredWidth, measuredHeight);
+                                            faVar2.a(measuredWidth, measuredHeight, canvas, paint);
+                                            canvas.restore();
+                                        } else {
+                                            f12 = f25;
+                                        }
+                                        i15 = 2;
+                                        if (i11 == 2) {
+                                            paint.setAlpha((int) (this.v * 255.0f));
+                                            i12 = 1;
+                                        } else {
+                                            i12 = 1;
+                                            if (i11 == 1) {
+                                                paint.setAlpha((int) (f11 * 255.0f));
+                                            } else {
+                                                paint.setAlpha(255);
+                                            }
+                                        }
+                                        canvas.save();
+                                        canvas.scale(f16, f16, measuredWidth, measuredHeight);
+                                        canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(f13), paint);
+                                        canvas.restore();
+                                        i11++;
+                                        i13 = i12;
+                                        f25 = f12;
+                                        r12 = 0;
+                                        i10 = 3;
+                                        f27 = 0.0f;
+                                    }
+                                    i12 = i13;
+                                    f12 = f25;
+                                    i11++;
+                                    i13 = i12;
+                                    f25 = f12;
+                                    r12 = 0;
+                                    i10 = 3;
+                                    f27 = 0.0f;
+                                }
+                                if (!this.K || this.y <= 0.0f) {
+                                    return;
+                                }
+                                invalidate();
+                                return;
+                            }
+                        }
+                        if (!z12) {
+                            float f30 = this.y;
+                            if (f30 != 0.0f) {
+                                float f31 = f30 - 0.045714285f;
+                                this.y = f31;
+                                if (f31 < 0.0f) {
+                                    this.y = 0.0f;
+                                }
+                            }
+                        }
+                        float interpolation22 = (this.P.getInterpolation(this.y) * 0.35f) + 0.65f;
+                        float f242 = this.d;
+                        float f252 = 1.0f;
+                        if (!z10) {
+                        }
+                        float f272 = 0.0f;
+                        fa faVar3 = this.b;
+                        faVar3.e(f242, f26);
+                        float f282 = this.d;
+                        if (!z10) {
+                        }
+                        fa faVar22 = this.c;
+                        faVar22.e(f282, f29);
+                        i11 = 0;
+                        while (i11 < i10) {
+                        }
+                        if (this.K) {
+                            return;
+                        } else {
+                            return;
+                        }
+                    }
+                }
+                if (!z11) {
+                    float f32 = this.v;
+                    if (f32 != 0.0f) {
+                        float f33 = f32 - 0.045714285f;
+                        this.v = f33;
+                        if (f33 < 0.0f) {
+                            this.v = 0.0f;
+                        }
+                    }
+                }
+                int i142 = this.h.i;
+                i10 = 3;
+                int i152 = 2;
+                if (i142 == 3) {
+                }
+                if (z12) {
+                }
+                if (!z12) {
+                }
+                float interpolation222 = (this.P.getInterpolation(this.y) * 0.35f) + 0.65f;
+                float f2422 = this.d;
+                float f2522 = 1.0f;
+                if (!z10) {
+                }
+                float f2722 = 0.0f;
+                fa faVar32 = this.b;
+                faVar32.e(f2422, f26);
+                float f2822 = this.d;
+                if (!z10) {
+                }
+                fa faVar222 = this.c;
+                faVar222.e(f2822, f29);
+                i11 = 0;
+                while (i11 < i10) {
+                }
+                if (this.K) {
+                }
+            }
+        }
+        if (!z13) {
+            float f34 = this.N;
+            if (f34 != 0.0f) {
+                float f35 = f34 - 0.10666667f;
+                this.N = f35;
+                if (f35 < 0.0f) {
+                    this.N = 0.0f;
+                }
+            }
+        }
+        float interpolation3 = ds.f.getInterpolation(this.N) * 0.1f;
+        float f162 = interpolation3 + 1.0f;
+        ak0 ak0Var2 = this.F;
+        ak0Var2.setScaleY(f162);
+        ak0Var2.setScaleX(f162);
+        z10 = this.I;
+        if (z10) {
+        }
+        f7 = this.e;
+        f10 = this.d;
+        if (f7 != f10) {
+        }
+        ?? r122 = 0;
+        if (this.n != null) {
+        }
+        z11 = this.s;
+        if (z11) {
+        }
+        if (!z11) {
+        }
+        int i1422 = this.h.i;
+        i10 = 3;
+        int i1522 = 2;
+        if (i1422 == 3) {
+        }
+        if (z12) {
+        }
+        if (!z12) {
+        }
+        float interpolation2222 = (this.P.getInterpolation(this.y) * 0.35f) + 0.65f;
+        float f24222 = this.d;
+        float f25222 = 1.0f;
+        if (!z10) {
+        }
+        float f27222 = 0.0f;
+        fa faVar322 = this.b;
+        faVar322.e(f24222, f26);
+        float f28222 = this.d;
+        if (!z10) {
+        }
+        fa faVar2222 = this.c;
+        faVar2222.e(f28222, f29);
+        i11 = 0;
+        while (i11 < i10) {
+        }
+        if (this.K) {
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        k30 k30Var = k30.d0;
+        if (k30Var != null) {
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(k30Var.w ? R.string.AccDescrCloseMenu : R.string.AccDescrOpenMenu2)));
+        }
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final /* synthetic */ void onMediaStateUpdated(int i10, int i11) {
+        org.telegram.messenger.voip.t0.d(this, i10, i11);
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final /* synthetic */ void onScreenOnChange(boolean z10) {
+        org.telegram.messenger.voip.t0.e(this, z10);
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final /* synthetic */ void onSignalBarsCountChanged(int i10) {
+        org.telegram.messenger.voip.t0.f(this, i10);
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final void onStateChanged(int i10) {
+        a();
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final /* synthetic */ void onVideoAvailableChange(boolean z10) {
+        org.telegram.messenger.voip.t0.h(this, z10);
+    }
+
+    public void setPinnedProgress(float f7) {
+        this.O = f7;
+    }
+
+    public void setPressedState(boolean z10) {
+        this.M = z10;
+    }
+
+    public void setRemoveAngle(double d) {
+        this.Q = (float) d;
+    }
+
+    public void setState(int i10) {
+        p30 p30Var = this.h;
+        if (p30Var == null || p30Var.i != i10) {
+            this.n = p30Var;
+            p30 p30Var2 = this.L[i10];
+            this.h = p30Var2;
+            float f7 = 0.0f;
+            if (p30Var != null) {
+                this.r = 0.0f;
+            } else {
+                this.r = 1.0f;
+                int i11 = p30Var2.i;
+                if (i11 != 3 && i11 != 2) {
+                    f7 = 1.0f;
+                }
+                this.y = f7;
+            }
+            VoIPService sharedInstance = VoIPService.getSharedInstance();
+            String string = (sharedInstance == null || !ChatObject.isChannelOrGiga(sharedInstance.getChat())) ? LocaleController.getString(R.string.VoipGroupVoiceChat) : LocaleController.getString(R.string.VoipChannelVoiceChat);
+            if (i10 == 0) {
+                string = org.telegram.messenger.t.h(R.string.VoipTapToMute, b10.l(string, ", "));
+            } else if (i10 == 2) {
+                string = org.telegram.messenger.t.h(R.string.Connecting, b10.l(string, ", "));
+            } else if (i10 == 3) {
+                string = org.telegram.messenger.t.h(R.string.VoipMutedByAdmin, b10.l(string, ", "));
+            }
+            setContentDescription(string);
+            invalidate();
+        }
     }
 }

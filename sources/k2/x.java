@@ -1,24 +1,22 @@
 package k2;
 
-import com.google.android.gms.internal.play_billing.k3;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class x extends Exception {
     public final boolean a;
-    public final b2.w b;
+    public final b2.x b;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public x(int i10, int i11, int i12, int i13, b2.w wVar, boolean z10, n nVar) {
+    public x(int i10, int i11, int i12, int i13, b2.x xVar, boolean z10, n nVar) {
         super(r3.toString(), nVar);
-        StringBuilder k10 = k3.k("AudioTrack init failed 0 Config(", i10, ", ", i11, ", ");
-        k3.r(k10, i12, ", ", i13, ") ");
-        k10.append(wVar);
-        k10.append(z10 ? " (recoverable)" : "");
+        StringBuilder n10 = c3.h0.n("AudioTrack init failed 0 Config(", i10, ", ", i11, ", ");
+        c3.h0.q(n10, i12, ", ", i13, ") ");
+        n10.append(xVar);
+        n10.append(z10 ? " (recoverable)" : "");
         this.a = z10;
-        this.b = wVar;
+        this.b = xVar;
     }
 }

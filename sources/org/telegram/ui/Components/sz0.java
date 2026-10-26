@@ -1,28 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class sz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Switch b;
+public final class sz0 extends View {
+    public String a;
+    public Drawable b;
+    public boolean c;
+    public int d;
+    public final h6 e;
+    public final /* synthetic */ tz0 f;
 
-    public /* synthetic */ sz0(Switch r12, int i10) {
-        this.a = i10;
-        this.b = r12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sz0(tz0 tz0Var, Context context) {
+        super(context);
+        this.f = tz0Var;
+        this.d = 0;
+        this.e = new h6(this, 350L, new OvershootInterpolator(5.0f));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.d = null;
-                break;
-            default:
-                this.b.e = null;
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = ((1.0f - this.e.d(isPressed() ? 1.0f : 0.0f, false)) * 0.2f) + 0.8f;
+        if (this.b != null) {
+            int width = getWidth() / 2;
+            int paddingTop = (getPaddingTop() + (getHeight() - getPaddingBottom())) / 2;
+            this.b.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+            canvas.scale(d, d, width, paddingTop);
+            Drawable drawable = this.b;
+            if (drawable instanceof t5) {
+                ((t5) drawable).q(System.currentTimeMillis());
+            }
+            this.b.draw(canvas);
         }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof t5) {
+            ((t5) drawable).a(this);
+        }
+        this.c = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof t5) {
+            ((t5) drawable).o(this);
+        }
+        this.c = false;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d == 0 ? 0.0f : 6.66f) + 3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d != 0 ? 0.0f : 6.66f) + 3.0f));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
+    }
+
+    public void setDirection(int i10) {
+        this.d = i10;
+        invalidate();
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        Drawable drawable2 = this.b;
+        if (drawable2 instanceof t5) {
+            ((t5) drawable2).o(this);
+        }
+        this.b = drawable;
+        if ((drawable instanceof t5) && this.c) {
+            ((t5) drawable).a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        super.setPressed(z10);
+        invalidate();
     }
 }

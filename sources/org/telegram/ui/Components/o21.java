@@ -1,32 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class o21 extends EditTextBoldCursor {
-    public final /* synthetic */ q21 b;
+public final class o21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ThemeEditorView.EditorAlert b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o21(q21 q21Var, Context context) {
-        super(context);
-        this.b = q21Var;
+    public o21(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
+        this.b = editorAlert;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.ku, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        ViewGroup viewGroup;
-        MotionEvent obtain = MotionEvent.obtain(motionEvent);
-        float rawX = obtain.getRawX();
-        float rawY = obtain.getRawY();
-        ThemeEditorView.EditorAlert editorAlert = this.b.c;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) editorAlert).containerView;
-        obtain.setLocation(rawX, rawY - viewGroup.getTranslationY());
-        editorAlert.c.dispatchTouchEvent(obtain);
-        obtain.recycle();
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.b.x;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        animatorSetArr[0] = null;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.b;
+        AnimatorSet[] animatorSetArr = editorAlert.x;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        if (!this.a) {
+            editorAlert.w[0].setVisibility(4);
+        }
+        animatorSetArr[0] = null;
     }
 }

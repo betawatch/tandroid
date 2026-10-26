@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import be.f0;
-import id.c;
-import id.g;
-import ld.a;
+import a8.id;
+import a8.jd;
+import ce.f0;
+import jd.c;
+import jd.g;
+import md.a;
 import org.telegram.tgnet.TLObject;
-import v7.h8;
-import v7.i8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i10 = zzby.zza;
-        this.zza = h8.a(zzie.zza);
+        this.zza = id.a(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -27,7 +27,7 @@ public final class zzif {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, kd.c cVar) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, ld.c cVar) {
         zzic zzicVar;
         int i10;
         if (cVar instanceof zzic) {
@@ -42,10 +42,10 @@ public final class zzif {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    i8.b(obj);
+                    jd.b(obj);
                     return obj;
                 }
-                i8.b(obj);
+                jd.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
                 Object f7 = f0.f(zzidVar, zzicVar);
@@ -60,7 +60,7 @@ public final class zzif {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, kd.c cVar) {
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, ld.c cVar) {
         return zzc(this, zzcyVar, zzyeVar, cVar);
     }
 }

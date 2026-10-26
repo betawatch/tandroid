@@ -4,5 +4,5 @@ package com.google.android.gms.internal.clearcut;
 public interface p0 {
     boolean zza(Class cls);
 
-    y0 zzb(Class cls);
+    x0 zzb(Class cls);
 }

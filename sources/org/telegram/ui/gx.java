@@ -1,64 +1,16 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.View;
-import android.widget.ScrollView;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class gx extends ScrollView {
-    public final /* synthetic */ int a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gx(Context context, int i10) {
-        super(context);
-        this.a = i10;
-    }
-
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i11), Math.min(AndroidUtilities.displaySize.y * 0.35f, AndroidUtilities.dp(400.0f))), View.MeasureSpec.getMode(i11)));
-                break;
-            case 1:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(320.0f)), TLObject.FLAG_31));
-                break;
-            case 3:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(360.0f)), TLObject.FLAG_31));
-                break;
-            case 4:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
-                break;
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
-        switch (this.a) {
-            case 1:
-                return false;
-            default:
-                return super.onRequestFocusInDescendants(i10, rect);
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        switch (this.a) {
-            case 1:
-                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                rect.top = AndroidUtilities.dp(20.0f) + rect.top;
-                rect.bottom = AndroidUtilities.dp(50.0f) + rect.bottom;
-                break;
-        }
-        return super.requestChildRectangleOnScreen(view, rect, z10);
+public final class gx extends org.telegram.ui.Components.s5 {
+    @Override // org.telegram.ui.Components.s5, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f));
+        super.draw(canvas);
+        canvas.restore();
     }
 }

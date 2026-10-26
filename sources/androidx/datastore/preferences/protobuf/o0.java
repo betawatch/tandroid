@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class o0 {
     /* JADX WARN: Removed duplicated region for block: B:16:0x012f  */
@@ -70,60 +70,60 @@ public final class o0 {
                             ((Double) value).getClass();
                             i13 = 8;
                             int i15 = i13 + y11 + i14;
-                            i11 = a1.g.f(i15, i15, y3, i11);
+                            i11 = a1.g.e(i15, i15, y3, i11);
                         case 1:
                             ((Float) value).getClass();
                             i13 = 4;
                             int i152 = i13 + y11 + i14;
-                            i11 = a1.g.f(i152, i152, y3, i11);
+                            i11 = a1.g.e(i152, i152, y3, i11);
                         case 2:
                             i13 = j.A(((Long) value).longValue());
                             int i1522 = i13 + y11 + i14;
-                            i11 = a1.g.f(i1522, i1522, y3, i11);
+                            i11 = a1.g.e(i1522, i1522, y3, i11);
                         case 3:
                             i13 = j.A(((Long) value).longValue());
                             int i15222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i15222, i15222, y3, i11);
+                            i11 = a1.g.e(i15222, i15222, y3, i11);
                         case 4:
                             i13 = j.w(((Integer) value).intValue());
                             int i152222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i152222, i152222, y3, i11);
+                            i11 = a1.g.e(i152222, i152222, y3, i11);
                         case 5:
                             ((Long) value).getClass();
                             i13 = 8;
                             int i1522222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i1522222, i1522222, y3, i11);
+                            i11 = a1.g.e(i1522222, i1522222, y3, i11);
                         case 6:
                             ((Integer) value).getClass();
                             i13 = 4;
                             int i15222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i15222222, i15222222, y3, i11);
+                            i11 = a1.g.e(i15222222, i15222222, y3, i11);
                         case 7:
                             ((Boolean) value).getClass();
                             int i152222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i152222222, i152222222, y3, i11);
+                            i11 = a1.g.e(i152222222, i152222222, y3, i11);
                         case 8:
                             if (value instanceof g) {
                                 size2 = ((g) value).size();
                                 z11 = j.z(size2);
                                 i13 = z11 + size2;
                                 int i1522222222 = i13 + y11 + i14;
-                                i11 = a1.g.f(i1522222222, i1522222222, y3, i11);
+                                i11 = a1.g.e(i1522222222, i1522222222, y3, i11);
                             } else {
                                 i13 = j.x((String) value);
                                 int i15222222222 = i13 + y11 + i14;
-                                i11 = a1.g.f(i15222222222, i15222222222, y3, i11);
+                                i11 = a1.g.e(i15222222222, i15222222222, y3, i11);
                             }
                         case 9:
                             i13 = ((a) value).a();
                             int i152222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i152222222222, i152222222222, y3, i11);
+                            i11 = a1.g.e(i152222222222, i152222222222, y3, i11);
                         case 10:
                             size2 = ((a) value).a();
                             z11 = j.z(size2);
                             i13 = z11 + size2;
                             int i1522222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i1522222222222, i1522222222222, y3, i11);
+                            i11 = a1.g.e(i1522222222222, i1522222222222, y3, i11);
                         case 11:
                             if (value instanceof g) {
                                 size2 = ((g) value).size();
@@ -134,35 +134,35 @@ public final class o0 {
                             }
                             i13 = z11 + size2;
                             int i15222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i15222222222222, i15222222222222, y3, i11);
+                            i11 = a1.g.e(i15222222222222, i15222222222222, y3, i11);
                         case 12:
                             i13 = j.z(((Integer) value).intValue());
                             int i152222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i152222222222222, i152222222222222, y3, i11);
+                            i11 = a1.g.e(i152222222222222, i152222222222222, y3, i11);
                         case 13:
                             i13 = j.w(((Integer) value).intValue());
                             int i1522222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i1522222222222222, i1522222222222222, y3, i11);
+                            i11 = a1.g.e(i1522222222222222, i1522222222222222, y3, i11);
                         case 14:
                             ((Integer) value).getClass();
                             i13 = 4;
                             int i15222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i15222222222222222, i15222222222222222, y3, i11);
+                            i11 = a1.g.e(i15222222222222222, i15222222222222222, y3, i11);
                         case 15:
                             ((Long) value).getClass();
                             i13 = 8;
                             int i152222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i152222222222222222, i152222222222222222, y3, i11);
+                            i11 = a1.g.e(i152222222222222222, i152222222222222222, y3, i11);
                         case 16:
                             int intValue = ((Integer) value).intValue();
                             i13 = j.z((intValue >> 31) ^ (intValue << 1));
                             int i1522222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i1522222222222222222, i1522222222222222222, y3, i11);
+                            i11 = a1.g.e(i1522222222222222222, i1522222222222222222, y3, i11);
                         case 17:
                             long longValue = ((Long) value).longValue();
                             i13 = j.A((longValue >> 63) ^ (longValue << 1));
                             int i15222222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.f(i15222222222222222222, i15222222222222222222, y3, i11);
+                            i11 = a1.g.e(i15222222222222222222, i15222222222222222222, y3, i11);
                         default:
                             throw new RuntimeException("There is no way to get here, but the compiler thinks otherwise.");
                     }

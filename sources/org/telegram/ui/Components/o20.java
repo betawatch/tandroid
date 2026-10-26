@@ -1,156 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ScrollView;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class o20 extends ScrollView {
-    public final int a;
-    public final a0.h b;
-    public final ArrayList c;
-    public final n20 d;
-    public int e;
-    public l20 f;
-    public boolean h;
-    public int n;
+public final class o20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p20 b;
 
-    public o20(Context context, int i10) {
-        super(context);
-        this.b = new a0.h();
-        this.c = new ArrayList();
+    public /* synthetic */ o20(p20 p20Var, int i10) {
         this.a = i10;
-        n20 n20Var = new n20(this, context);
-        this.d = n20Var;
-        setVerticalScrollBarEnabled(false);
-        addView(n20Var, w7.z5.c(-2.0f, -1));
+        this.b = p20Var;
     }
 
-    public void a(v30 v30Var) {
-        n20 n20Var = this.d;
-        ArrayList arrayList = n20Var.c;
-        o20 o20Var = n20Var.r;
-        o20Var.c.add(v30Var);
-        if (!v30Var.d) {
-            o20Var.b.k(v30Var, v30Var.getUid());
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                p20 p20Var = this.b;
+                NotificationCenter.getInstance(p20Var.r.a).onAnimationFinish(p20Var.f);
+                p20Var.requestLayout();
+                break;
+            default:
+                p20 p20Var2 = this.b;
+                p20Var2.d = null;
+                p20Var2.a = null;
+                p20Var2.b = false;
+                break;
         }
-        AnimatorSet animatorSet = n20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            n20Var.a.setupEndValues();
-            n20Var.a.cancel();
-        }
-        n20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        n20Var.a = animatorSet2;
-        animatorSet2.addListener(new m20(n20Var, 1));
-        n20Var.a.setDuration(150L);
-        n20Var.d = v30Var;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(n20Var.d, (Property<v30, Float>) View.SCALE_X, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(n20Var.d, (Property<v30, Float>) View.SCALE_Y, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(n20Var.d, (Property<v30, Float>) View.ALPHA, 0.0f, 1.0f));
-        n20Var.addView(v30Var);
-    }
-
-    public void b() {
-        n20 n20Var = this.d;
-        ArrayList arrayList = n20Var.c;
-        o20 o20Var = n20Var.r;
-        o20Var.h = true;
-        ArrayList arrayList2 = o20Var.c;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        arrayList2.clear();
-        ArrayList arrayList4 = n20Var.e;
-        arrayList4.clear();
-        arrayList4.addAll(arrayList3);
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            ((v30) arrayList3.get(i10)).setOnClickListener(null);
-        }
-        AnimatorSet animatorSet = n20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            n20Var.a.setupEndValues();
-            n20Var.a.cancel();
-        }
-        n20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        n20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.ne(27, n20Var, arrayList3));
-        arrayList.clear();
-        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-            v30 v30Var = (v30) arrayList3.get(i11);
-            arrayList.add(ObjectAnimator.ofFloat(v30Var, (Property<v30, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(v30Var, (Property<v30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(v30Var, (Property<v30, Float>) View.ALPHA, 1.0f, 0.0f));
-        }
-        n20Var.requestLayout();
-    }
-
-    public void c(v30 v30Var) {
-        n20 n20Var = this.d;
-        ArrayList arrayList = n20Var.e;
-        ArrayList arrayList2 = n20Var.c;
-        o20 o20Var = n20Var.r;
-        o20Var.h = true;
-        if (!v30Var.d) {
-            o20Var.b.l(v30Var.getUid());
-        }
-        o20Var.c.remove(v30Var);
-        v30Var.setOnClickListener(null);
-        AnimatorSet animatorSet = n20Var.a;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            n20Var.a.cancel();
-        }
-        n20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        n20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.ne(26, n20Var, v30Var));
-        n20Var.a.setDuration(150L);
-        arrayList.clear();
-        arrayList.add(v30Var);
-        arrayList2.clear();
-        arrayList2.add(ObjectAnimator.ofFloat(v30Var, (Property<v30, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(v30Var, (Property<v30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(v30Var, (Property<v30, Float>) View.ALPHA, 1.0f, 0.0f));
-        n20Var.requestLayout();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        float f7 = this.e;
-        float y3 = motionEvent.getY();
-        if (action != 0 || y3 <= f7) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    public ViewGroup getSpansContainer() {
-        return this.d;
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        if (this.h) {
-            this.h = false;
-            return false;
-        }
-        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.v0.C(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.v0.C(50.0f, this.n, rect.bottom);
-        return super.requestChildRectangleOnScreen(view, rect, z10);
-    }
-
-    public void setDelegate(l20 l20Var) {
-        this.f = l20Var;
     }
 }

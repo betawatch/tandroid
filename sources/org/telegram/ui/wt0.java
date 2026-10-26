@@ -1,60 +1,81 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.camera.Size;
+import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class wt0 extends rg.e2 {
-    public final Path r0;
-    public boolean s0;
-    public final org.telegram.ui.Components.f6 t0;
-    public final /* synthetic */ PhotoViewer u0;
+public final class wt0 implements Runnable {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ PhotoViewer d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wt0(PhotoViewer photoViewer) {
-        super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
-        this.u0 = photoViewer;
-        this.r0 = new Path();
-        this.t0 = new org.telegram.ui.Components.f6(this, 0L, 420L, org.telegram.ui.Components.bs.h);
+    public wt0(PhotoViewer photoViewer, String str, long j10, int i10) {
+        this.d = photoViewer;
+        this.a = str;
+        this.b = j10;
+        this.c = i10;
     }
 
-    public final void m(boolean z10, boolean z11) {
-        this.s0 = z10;
-        if (!z11) {
-            this.t0.f(z10, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (this.d.x8 != this) {
+            return;
         }
-        invalidate();
-    }
-
-    @Override // rg.e2, ei.d, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.r0;
-        path.rewind();
-        path.addRoundRect(this.l0, AndroidUtilities.dp(this.p0), AndroidUtilities.dp(this.p0), Path.Direction.CW);
-        canvas.clipPath(path);
-        canvas.translate(-getX(), -getY());
-        PhotoViewer photoViewer = this.u0;
-        if (this == photoViewer.v5 || this == photoViewer.w5) {
-            canvas.translate(-photoViewer.u5.getX(), -photoViewer.u5.getY());
+        int videoBitrate = MediaController.getVideoBitrate(this.a);
+        int[] iArr = new int[11];
+        AnimatedFileNative.d(this.a, iArr, this.b);
+        boolean z10 = iArr[10] != 0;
+        this.d.k8 = (iArr[0] == 0 || (z10 && iArr[9] == 0)) ? false : true;
+        PhotoViewer photoViewer = this.d;
+        if (videoBitrate == -1) {
+            videoBitrate = iArr[3];
         }
-        photoViewer.V0(canvas, this.k0, -13948117, 855638016, false, true, false);
-        float e = this.t0.e(this.s0);
-        if (e > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.k6.o1(e, -1));
+        photoViewer.g8 = videoBitrate;
+        photoViewer.h8 = videoBitrate;
+        if (this.d.k8) {
+            PhotoViewer photoViewer2 = this.d;
+            int i10 = iArr[1];
+            photoViewer2.c8 = i10;
+            photoViewer2.e8 = i10;
+            PhotoViewer photoViewer3 = this.d;
+            int i11 = iArr[2];
+            photoViewer3.d8 = i11;
+            photoViewer3.f8 = i11;
+            PhotoViewer photoViewer4 = this.d;
+            int max = Math.max(photoViewer4.c8, this.d.d8);
+            if (max > 1280) {
+                photoViewer4.Z7 = 4;
+            } else if (max > 854) {
+                photoViewer4.Z7 = 3;
+            } else if (max > 640) {
+                photoViewer4.Z7 = 2;
+            } else {
+                photoViewer4.Z7 = 1;
+            }
+            PhotoViewer photoViewer5 = this.d;
+            int i12 = this.c;
+            if (i12 == -1) {
+                i12 = photoViewer5.x2();
+            }
+            photoViewer5.Y7 = i12;
+            PhotoViewer photoViewer6 = this.d;
+            if (photoViewer6.g8 != 0 && photoViewer6.c2 != 1) {
+                Size q02 = photoViewer6.q0();
+                if (q02.getWidth() == photoViewer6.c8 && q02.getHeight() == photoViewer6.d8) {
+                    MediaController.extractRealEncoderBitrate(q02.getWidth(), q02.getHeight(), photoViewer6.h8, false);
+                } else {
+                    MediaController.extractRealEncoderBitrate(q02.getWidth(), q02.getHeight(), MediaController.makeVideoBitrate(photoViewer6.d8, photoViewer6.c8, photoViewer6.h8, q02.getHeight(), q02.getWidth()), false);
+                }
+            }
+            this.d.l8 = MediaController.isH264Video(this.a);
         }
-        setTextColor(i0.a.f(e, -1, -16777216));
-        canvas.restore();
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onDrawForeground(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.r0);
-        super.onDrawForeground(canvas);
-        canvas.restore();
+        if (this.d.x8 != this) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(new oe0(this, this, iArr, 23));
     }
 }

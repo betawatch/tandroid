@@ -1,62 +1,28 @@
 package yb;
 
-import java.util.Arrays;
-import n6.l;
+import a8.me;
+import android.util.Log;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.mlkit.vision.common.internal.MobileVisionBase;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final float b;
-    public final int c;
-    public final String d;
+public final class a implements OnFailureListener, s9.d {
+    public static final a a = new a();
+    public static final /* synthetic */ a b = new a();
+    public static final /* synthetic */ a c = new a();
 
-    public a(float f7, int i10, String str, String str2) {
-        int i11 = y7.b.a;
-        this.a = str == null ? "" : str;
-        this.b = f7;
-        this.c = i10;
-        this.d = str2;
+    @Override // s9.d
+    public Object d1(me meVar) {
+        return new c(meVar.x(b.class));
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        d5.a aVar = MobileVisionBase.e;
+        if (Log.isLoggable(aVar.a, 6)) {
+            String str = aVar.b;
+            Log.e("MobileVisionBase", str != null ? str.concat("Error preloading model resource") : "Error preloading model resource", exc);
         }
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return l.l(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && l.l(this.d, aVar.d);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Float.valueOf(this.b), Integer.valueOf(this.c), this.d});
-    }
-
-    public final String toString() {
-        u2.c cVar = new u2.c(a.class.getSimpleName(), 14);
-        u2.c cVar2 = new u2.c(13, false);
-        ((u2.c) cVar.d).d = cVar2;
-        cVar.d = cVar2;
-        cVar2.c = this.a;
-        cVar2.b = "text";
-        String valueOf = String.valueOf(this.b);
-        y7.a aVar = new y7.a(13, false);
-        ((u2.c) cVar.d).d = aVar;
-        cVar.d = aVar;
-        aVar.c = valueOf;
-        aVar.b = "confidence";
-        String valueOf2 = String.valueOf(this.c);
-        y7.a aVar2 = new y7.a(13, false);
-        ((u2.c) cVar.d).d = aVar2;
-        aVar2.c = valueOf2;
-        aVar2.b = "index";
-        u2.c cVar3 = new u2.c(13, false);
-        aVar2.d = cVar3;
-        cVar.d = cVar3;
-        cVar3.c = this.d;
-        cVar3.b = "mid";
-        return cVar.toString();
     }
 }

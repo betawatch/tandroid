@@ -1,50 +1,19 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c40 extends yu0 {
-    public final /* synthetic */ u50 T;
+public final class c40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ v50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c40(u50 u50Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
-        this.T = u50Var;
+    public c40(v50 v50Var) {
+        this.a = v50Var;
     }
 
-    @Override // org.telegram.ui.yu0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        u50 u50Var = this.T;
-        m30 m30Var = u50Var.b;
-        n30 n30Var = u50Var.C2;
-        if (f7 > 0.0f) {
-            float x10 = n30Var.getX();
-            viewGroup = ((org.telegram.ui.ActionBar.h3) u50Var).containerView;
-            float x11 = viewGroup.getX() + x10;
-            float y3 = n30Var.getY();
-            viewGroup2 = ((org.telegram.ui.ActionBar.h3) u50Var).containerView;
-            float y10 = viewGroup2.getY() + y3;
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(x11, y10, m30Var.getMeasuredWidth() + x11, m30Var.getMeasuredHeight() + y10);
-            canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
-            canvas.translate(x11, y10);
-            n30Var.draw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final void e() {
-        m30 m30Var = this.T.b;
-        super.e();
-        for (int i10 = 0; i10 < m30Var.getChildCount(); i10++) {
-            m30Var.getChildAt(i10).invalidate();
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.X0 = null;
     }
 }

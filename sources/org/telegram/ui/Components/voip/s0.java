@@ -1,8 +1,8 @@
 package org.telegram.ui.Components.voip;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class s0 implements z4.f {
+public final class s0 implements a5.i {
     public int a = 0;
     public int b;
     public final /* synthetic */ v0 c;
@@ -13,7 +13,7 @@ public final class s0 implements z4.f {
 
     /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r0v2, types: [boolean] */
-    @Override // z4.f
+    @Override // a5.i
     public final void a(int i10) {
         int i11 = this.a;
         v0 v0Var = this.c;
@@ -33,7 +33,7 @@ public final class s0 implements z4.f {
         }
     }
 
-    @Override // z4.f
+    @Override // a5.i
     public final void b(float f7, int i10, int i11) {
         v0 v0Var = this.c;
         v0Var.x = i10;
@@ -41,7 +41,7 @@ public final class s0 implements z4.f {
         v0Var.d();
     }
 
-    @Override // z4.f
+    @Override // a5.i
     public final void c(int i10) {
         this.a = i10;
         if (i10 == 0) {

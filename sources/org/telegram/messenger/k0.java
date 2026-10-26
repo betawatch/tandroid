@@ -1,30 +1,50 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class k0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ BotForumHelper b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ k0(BotForumHelper botForumHelper, long j10, int i10, long j11, int i11) {
-        this.a = i11;
-        this.b = botForumHelper;
-        this.c = j10;
-        this.d = i10;
-        this.e = j11;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class k0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ k0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$onBotForumDraftUpdate$1(this.c, this.d, this.e);
+                ((BirthdayController) this.b).lambda$check$3(tLObject, tL_error);
+                break;
+            case 1:
+                ((DownloadController) this.b).lambda$loadAutoDownloadConfig$2(tLObject, tL_error);
+                break;
+            case 2:
+                ((FileLoadOperation) this.b).lambda$requestFileOffsets$22(tLObject, tL_error);
+                break;
+            case 3:
+                MessagesController.lambda$unblockPeer$110((Runnable) this.b, tLObject, tL_error);
+                break;
+            case 4:
+                MessagesController.lambda$checkIsInChat$478((MessagesController.IsInChatCheckedCallback) this.b, tLObject, tL_error);
+                break;
+            case 5:
+                ((MessagesController.SavedMusicIds) this.b).lambda$load$1(tLObject, tL_error);
+                break;
+            case 6:
+                ((MessagesController.SavedMusicList) this.b).lambda$load$1(tLObject, tL_error);
+                break;
+            case 7:
+                ((TopicsController) this.b).lambda$toggleViewForumAsMessages$18(tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$onBotForumDraftUpdate$0(this.c, this.d, this.e);
+                ((UserConfig) this.b).lambda$loadGlobalTTl$4(tLObject, tL_error);
                 break;
         }
     }

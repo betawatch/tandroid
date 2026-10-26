@@ -4,98 +4,98 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public interface og {
-    boolean B0();
+    void A(CharSequence charSequence, boolean z10, int i10, int i11, long j10);
 
-    void C(boolean z10);
+    TLRPC.TL_channels_sendAsPeers B();
 
-    void D0(int i10, int i11);
-
-    void F0();
+    void G(float f7, int i10);
 
     void H();
 
     void H0();
 
-    void L(CharSequence charSequence, boolean z10, int i10, int i11, long j10);
+    void J1();
 
-    TLRPC.TL_channels_sendAsPeers O();
+    void L1(int i10);
 
-    void Q0();
+    void M0(int i10);
+
+    int N0();
+
+    void N1();
+
+    void O1(boolean z10);
+
+    TL_stories.StoryItem P0();
+
+    void P1(int i10, int i11, int i12, long j10, long j11, boolean z10);
+
+    void R(boolean z10);
+
+    boolean R0(long j10);
+
+    boolean T0();
 
     void T1();
 
-    void U(float f7, int i10);
+    void U();
 
-    void V1(int i10);
+    void V0(CharSequence charSequence, boolean z10, boolean z11);
 
-    void X0(int i10);
+    void X0();
 
-    void Y();
-
-    int Y0();
+    boolean Y0();
 
     void Y1();
 
-    void Z1(boolean z10);
+    void a1();
 
-    void a0(boolean z10);
+    void b();
 
-    TL_stories.StoryItem a1();
+    void b1();
 
-    void a2(int i10, int i11, int i12, long j10, long j11, boolean z10);
+    void c1();
 
-    boolean b1(long j10);
+    void c2();
 
-    boolean e1();
+    void e();
 
-    void e2();
+    void e1(View view, CharSequence charSequence, boolean z10);
 
-    void g1(CharSequence charSequence, boolean z10, boolean z11);
+    boolean f();
 
-    void h();
+    int g();
 
-    void i1();
+    void g1(CharSequence charSequence);
 
-    boolean j1();
+    boolean h1();
 
-    void k();
+    org.telegram.ui.kn i0();
 
-    void l1();
+    void j1();
 
-    void m0();
+    TLRPC.Peer k();
 
-    void m1();
+    void l0();
 
-    void m2();
+    void o();
 
-    void n1();
+    void o1();
 
-    boolean o();
+    boolean p0();
 
-    void o1(View view, CharSequence charSequence, boolean z10);
+    void t(float f7);
 
-    org.telegram.ui.in p0();
+    void v0(int i10, int i11);
 
-    void q1(CharSequence charSequence);
+    void w(boolean z10);
 
-    void q2();
+    void x0();
 
-    boolean r1();
+    void z();
 
-    void t0();
-
-    int u();
-
-    void u1();
-
-    TLRPC.Peer x();
-
-    void y();
-
-    void y1();
-
-    void z(float f7);
+    void z0();
 }

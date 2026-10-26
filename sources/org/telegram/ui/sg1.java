@@ -1,16 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class sg1 {
-    public final org.telegram.ui.ActionBar.o2 a;
+    public final org.telegram.ui.ActionBar.r2 a;
     public boolean b;
     public boolean c;
     public boolean d;
     public boolean e;
     public float f;
+    public float g;
 
-    public sg1(org.telegram.ui.ActionBar.o2 o2Var) {
-        this.a = o2Var;
+    public sg1(org.telegram.ui.ActionBar.r2 r2Var) {
+        this.a = r2Var;
     }
 }

@@ -1,68 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Shader;
+import android.os.Build;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class aa extends View {
-    public Bitmap a;
-    public Bitmap b;
-    public Paint c;
-    public int d;
-    public int e;
-    public z9 f;
-
-    public int getRating() {
-        return this.e;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.c;
-        int i10 = 0;
-        while (i10 < this.d) {
-            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10 < this.e ? org.telegram.ui.ActionBar.k6.m5 : org.telegram.ui.ActionBar.k6.t5, false));
-            canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
-            i10++;
+public abstract class aa {
+    public static Paint a(Bitmap bitmap) {
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        if (Build.VERSION.SDK_INT >= 33) {
+            bitmapShader.setFilterMode(2);
         }
+        Paint paint = new Paint(1);
+        paint.setShader(bitmapShader);
+        paint.setFilterBitmap(true);
+        return paint;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = this.d;
-        setMeasuredDimension(org.telegram.messenger.v0.D(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        float dp = AndroidUtilities.dp(-8.0f);
-        for (int i11 = 0; i11 < this.d; i11++) {
-            if (motionEvent.getX() > dp && motionEvent.getX() < AndroidUtilities.dp(48.0f) + dp && this.e != (i10 = i11 + 1)) {
-                this.e = i10;
-                z9 z9Var = this.f;
-                if (z9Var != null) {
-                    View view = ((ne.a) z9Var).a;
-                    view.setEnabled(i10 > 0);
-                    ((TextView) view).setText(LocaleController.getString(i10 < 4 ? R.string.Next : R.string.Send).toUpperCase());
-                }
-                invalidate();
-                return true;
-            }
-            dp += AndroidUtilities.dp(48.0f);
-        }
-        return true;
-    }
-
-    public void setOnRatingChangeListener(z9 z9Var) {
-        this.f = z9Var;
+    public static void b(Canvas canvas, e0.e0 e0Var, int i10, Paint paint) {
+        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i10 * 8, (float[]) e0Var.c, 0, (float[]) e0Var.d, 0, (int[]) e0Var.f, 0, (short[]) e0Var.e, 0, i10 * 6, paint);
     }
 }

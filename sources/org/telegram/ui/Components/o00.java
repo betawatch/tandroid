@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class o00 extends lm0 {
     public final Context c;
@@ -15,28 +15,28 @@ public final class o00 extends lm0 {
     }
 
     @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
+    public final boolean D(s4.e1 e1Var) {
         return true;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int h() {
         return this.d.h.size();
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final long i(int i10) {
         return this.d.k0.get(i10);
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int j(int i10) {
         return 0;
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        q00 q00Var = (q00) b1Var.a;
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        q00 q00Var = (q00) e1Var.a;
         int id2 = q00Var.b != null ? q00Var.getId() : -1;
         p00 p00Var = (p00) this.d.h.get(i10);
         q00Var.b = p00Var;
@@ -46,15 +46,15 @@ public final class o00 extends lm0 {
         boolean z10 = q00Var.n;
         p00 p00Var2 = q00Var.b;
         if (z10 != (p00Var2 != null && p00Var2.g)) {
-            a6.release(q00Var, q00Var.r);
-            a6.release(q00Var, q00Var.O);
-            a6.release(q00Var, q00Var.Q);
-            a6.release(q00Var, q00Var.S);
+            c6.release(q00Var, q00Var.r);
+            c6.release(q00Var, q00Var.O);
+            c6.release(q00Var, q00Var.Q);
+            c6.release(q00Var, q00Var.S);
             if (q00Var.l0) {
-                q00Var.r = a6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.r, q00Var.s);
-                q00Var.O = a6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.O, q00Var.P);
-                q00Var.Q = a6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.Q, q00Var.R);
-                q00Var.S = a6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.S, q00Var.T);
+                q00Var.r = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.r, q00Var.s);
+                q00Var.O = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.O, q00Var.P);
+                q00Var.Q = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.Q, q00Var.R);
+                q00Var.S = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.S, q00Var.T);
             }
             q00Var.n = q00Var.b.g;
         }
@@ -63,8 +63,8 @@ public final class o00 extends lm0 {
         }
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new wl0(new q00(this.d, this.c));
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        return new vl0(new q00(this.d, this.c));
     }
 }

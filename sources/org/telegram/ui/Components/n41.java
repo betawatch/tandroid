@@ -1,46 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import android.view.View;
+import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class n41 extends ClickableSpan {
-    public final /* synthetic */ URLSpan a;
-    public final /* synthetic */ y41 b;
+public final /* synthetic */ class n41 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public n41(y41 y41Var, URLSpan uRLSpan) {
-        this.b = y41Var;
-        this.a = uRLSpan;
+    public /* synthetic */ n41(String str, String str2, Utilities.Callback2 callback2) {
+        this.a = str;
+        this.b = str2;
+        this.c = callback2;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        y41 y41Var = this.b;
-        Utilities.CallbackReturn callbackReturn = y41Var.T;
-        URLSpan uRLSpan = this.a;
-        if (callbackReturn != null) {
-            if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
-                y41Var.dismiss();
-            }
-        } else {
-            org.telegram.ui.ActionBar.o2 o2Var = y41Var.S;
-            if (o2Var != null) {
-                f5.q0(o2Var, uRLSpan.getURL(), false, false);
-            }
-        }
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        f51.I(this.a, str, this.b, this.c);
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
-        if (!(this.a instanceof q61)) {
-            textPaint.setUnderlineText(true);
-        }
-        textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.k5, false));
-        textPaint.setAlpha(min);
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        f51.I(this.a, "en", this.b, this.c);
     }
 }

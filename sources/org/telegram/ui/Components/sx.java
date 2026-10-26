@@ -1,29 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class sx extends g.o {
-    public final /* synthetic */ tz c;
+public final class sx extends gb1 {
+    public final /* synthetic */ sz c;
 
-    public sx(tz tzVar) {
-        this.c = tzVar;
+    public sx(sz szVar) {
+        this.c = szVar;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        tz tzVar = this.c;
-        ay ayVar = tzVar.R;
-        rx rxVar = tzVar.Q;
-        s4.g0 adapter = tzVar.P.getAdapter();
-        ty tyVar = tzVar.S;
-        if (adapter == tyVar) {
-            int j10 = tyVar.j(i10);
-            if (j10 == 1 || j10 == 3 || j10 == 2 || j10 == 4 || j10 == 5) {
-                return rxVar.J;
-            }
-        } else if ((tzVar.d0 && i10 == 0) || i10 == ayVar.d || i10 == ayVar.c || i10 == ayVar.f || ayVar.r.indexOfKey(i10) >= 0 || ayVar.v.indexOfKey(i10) >= 0) {
-            return rxVar.J;
-        }
-        return 1;
+    @Override // org.telegram.ui.Components.gb1
+    public final void N() {
+        sz szVar = this.c;
+        szVar.f0 = false;
+        szVar.P.E1();
+    }
+
+    @Override // org.telegram.ui.Components.gb1
+    public final void O() {
+        sz szVar = this.c;
+        szVar.P.E1();
+        szVar.f0 = true;
     }
 }

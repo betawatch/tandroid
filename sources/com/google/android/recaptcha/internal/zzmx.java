@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import si.o0;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class zzmx {
     private final String zza;
@@ -21,12 +21,12 @@ public class zzmx {
         Class cls = this.zzb;
         String name = getClass().getName();
         String name2 = cls.getName();
-        StringBuilder i10 = o0.i(name, "/");
-        i10.append(this.zza);
-        i10.append("[");
-        i10.append(name2);
-        i10.append("]");
-        return i10.toString();
+        StringBuilder l4 = b10.l(name, "/");
+        l4.append(this.zza);
+        l4.append("[");
+        l4.append(name2);
+        l4.append("]");
+        return l4.toString();
     }
 
     public final boolean zzb() {

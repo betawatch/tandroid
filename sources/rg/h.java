@@ -1,33 +1,28 @@
 package rg;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface h {
-    void A(boolean z10);
+public final class h extends l {
+    @Override // rg.m
+    public final int e() {
+        return R.drawable.msg_msgbubble;
+    }
 
-    void B();
+    @Override // rg.l
+    public final int m() {
+        return R.drawable.msg_msgbubble2;
+    }
 
-    void e(boolean z10);
+    @Override // rg.l
+    public final String n() {
+        return LocaleController.getString(R.string.PaintBubble);
+    }
 
-    void f(boolean z10);
-
-    void g(j jVar);
-
-    void i();
-
-    void j();
-
-    void l(boolean z10);
-
-    boolean p();
-
-    boolean q();
-
-    void t(float f7, float f10, float[] fArr);
-
-    boolean u(j jVar);
-
-    int[] v(j jVar);
-
-    void x();
+    @Override // rg.l
+    public final int o() {
+        return 3;
+    }
 }

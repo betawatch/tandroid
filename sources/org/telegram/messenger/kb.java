@@ -1,40 +1,28 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import org.telegram.tgnet.tl.TL_update;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
+    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
 
-    public /* synthetic */ kb(MessagesController messagesController, long j10, int i10, boolean z10, int i11, int i12, int i13) {
-        this.a = i13;
+    public /* synthetic */ kb(MessagesController messagesController, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.d = i10;
-        this.e = z10;
-        this.f = i11;
-        this.h = i12;
+        this.c = tL_updatePeerBlocked;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.f;
-                int i11 = this.h;
-                int i12 = this.d;
-                this.b.lambda$markDialogAsRead$242(this.c, i12, this.e, i10, i11);
+                this.b.lambda$processUpdateArray$395(this.c);
                 break;
             default:
-                int i13 = this.f;
-                int i14 = this.h;
-                int i15 = this.d;
-                this.b.lambda$markDialogAsRead$243(this.c, i15, this.e, i13, i14);
+                this.b.lambda$processUpdateArray$396(this.c);
                 break;
         }
     }

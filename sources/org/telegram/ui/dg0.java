@@ -1,53 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.ViewSwitcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg0 implements ViewSwitcher.ViewFactory {
+public final /* synthetic */ class dg0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ eg0 b;
+    public final /* synthetic */ tf0 c;
 
-    public /* synthetic */ dg0(Object obj, int i10) {
+    public /* synthetic */ dg0(int i10, tf0 tf0Var, eg0 eg0Var) {
         this.a = i10;
-        this.b = obj;
+        this.b = eg0Var;
+        this.c = tf0Var;
     }
 
-    @Override // android.widget.ViewSwitcher.ViewFactory
-    public final View makeView() {
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        int i11 = 1;
-        Object obj = this.b;
+        tf0 tf0Var = this.c;
+        eg0 eg0Var = this.b;
         switch (i10) {
             case 0:
-                TextView textView = new TextView((Context) obj);
-                textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
-                textView.setTextSize(1, 16.0f);
-                org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.G6, null);
-                org.telegram.ui.ActionBar.r6.F(textView, org.telegram.ui.ActionBar.k6.H6, null);
-                textView.setMaxLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setGravity((LocaleController.isRTL ? 5 : 3) | 1);
-                return textView;
-            case 1:
-                TextView textView2 = new TextView((Context) obj);
-                org.telegram.ui.ActionBar.r6.W(textView2, org.telegram.ui.ActionBar.k6.D6, null);
-                textView2.setGravity(1);
-                textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                textView2.setTextSize(1, 15.0f);
-                return textView2;
+                int i11 = tf0.F;
+                tf0Var.a();
+                AndroidUtilities.runOnUIThread(new dg0(1, tf0Var, eg0Var), 150L);
+                break;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                return new zt0(photoViewer.E, photoViewer.T1, photoViewer.Q, new ar0(photoViewer, 0), new ag0(photoViewer, i11));
+                fg0 fg0Var = eg0Var.a;
+                fg0Var.h(null);
+                RadialProgressView radialProgressView = fg0Var.a0.N.d;
+                RadialProgressView radialProgressView2 = tf0Var.h.d;
+                radialProgressView.getClass();
+                radialProgressView.a = radialProgressView2.a;
+                radialProgressView.b = radialProgressView2.b;
+                radialProgressView.H = radialProgressView2.H;
+                radialProgressView.I = radialProgressView2.I;
+                radialProgressView.J = radialProgressView2.J;
+                radialProgressView.c = radialProgressView2.c;
+                radialProgressView.n = radialProgressView2.n;
+                radialProgressView.e = radialProgressView2.e;
+                radialProgressView.y = radialProgressView2.y;
+                radialProgressView.F = radialProgressView2.F;
+                radialProgressView.G = radialProgressView2.G;
+                radialProgressView.d = radialProgressView2.d;
+                radialProgressView.E = radialProgressView2.E;
+                radialProgressView.b(85L);
+                break;
         }
     }
 }

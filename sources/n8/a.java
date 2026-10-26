@@ -1,22 +1,31 @@
 package n8;
 
-import java.util.Arrays;
-import n6.l;
+import a8.df;
+import android.os.Parcel;
+import android.os.Parcelable;
+import n4.x;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a implements com.google.android.gms.common.api.b {
-    public static final a a = new a();
+public final class a extends p6.a {
+    public static final Parcelable.Creator<a> CREATOR = new x(5);
+    public final String a;
+    public final byte[] b;
+    public final int c;
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        return (obj instanceof a) && l.l(null, null) && l.l(null, null) && l.l(null, null) && l.l(null, null) && l.l(null, null);
+    public a(int i10, String str, byte[] bArr) {
+        this.a = str;
+        this.b = bArr;
+        this.c = i10;
     }
 
-    public final int hashCode() {
-        Boolean bool = Boolean.FALSE;
-        return Arrays.hashCode(new Object[]{bool, bool, null, bool, bool, null, null, null, null});
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 2, this.a);
+        df.c(parcel, 3, this.b);
+        df.s(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        df.r(parcel, q5);
     }
 }

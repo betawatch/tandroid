@@ -1,29 +1,29 @@
 package c2;
 
+import a8.ac;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
 import e2.h0;
 import e2.i0;
-import i2.q0;
-import v7.w6;
+import i2.s0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e {
-    public final d9.u a;
+    public final e9.t a;
     public final Handler b;
-    public q0 c;
+    public s0 c;
     public b2.f d;
     public int f;
     public h h;
     public float g = 1.0f;
     public int e = 0;
 
-    public e(Context context, Looper looper, q0 q0Var) {
-        this.a = w6.a(new d(context, 0));
-        this.c = q0Var;
+    public e(Context context, Looper looper, s0 s0Var) {
+        this.a = ac.a(new d(context, 0));
+        this.c = s0Var;
         this.b = new Handler(looper);
     }
 
@@ -32,13 +32,13 @@ public final class e {
         if (i10 == 1 || i10 == 0 || this.h == null) {
             return;
         }
-        i.a((AudioManager) this.a.get(), this.h);
+        j.a((AudioManager) this.a.get(), this.h);
     }
 
     public final void b(int i10) {
-        q0 q0Var = this.c;
-        if (q0Var != null) {
-            i0 i0Var = q0Var.n;
+        s0 s0Var = this.c;
+        if (s0Var != null) {
+            i0 i0Var = s0Var.n;
             i0Var.getClass();
             h0 c10 = i0.c();
             c10.a = i0Var.a.obtainMessage(33, i10, 0);
@@ -56,9 +56,9 @@ public final class e {
             return;
         }
         this.g = f7;
-        q0 q0Var = this.c;
-        if (q0Var != null) {
-            q0Var.n.f(34);
+        s0 s0Var = this.c;
+        if (s0Var != null) {
+            s0Var.n.f(34);
         }
     }
 
@@ -122,7 +122,7 @@ public final class e {
                             eVar.a();
                             eVar.c(1);
                         } else if (i13 != 1) {
-                            a1.g.x(i13, "Unknown focus change type: ", "AudioFocusManager");
+                            a1.g.z(i13, "Unknown focus change type: ", "AudioFocusManager");
                         } else {
                             eVar.c(2);
                             eVar.b(1);
@@ -133,7 +133,7 @@ public final class e {
                 handler.getClass();
                 this.h = new h(fVar.a, onAudioFocusChangeListener, handler, fVar.b, fVar.c, fVar.d);
             }
-            int h = i.h((AudioManager) this.a.get(), this.h);
+            int h = j.h((AudioManager) this.a.get(), this.h);
             if (h == 1 || h == 2) {
                 c(2);
                 return 1;

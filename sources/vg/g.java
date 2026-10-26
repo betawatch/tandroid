@@ -1,132 +1,37 @@
 package vg;
 
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.TLRPC;
-import ug.a1;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final class g extends pg.a {
-    public TLRPC.User c;
-    public TLRPC.InputPeer d;
-    public TLRPC.Chat e;
-    public TLRPC.TL_help_country f;
-    public CharSequence g;
-    public CharSequence h;
-    public int i;
-    public int j;
-    public boolean k;
-    public int l;
-    public org.telegram.ui.web.c m;
-    public org.telegram.ui.web.c n;
-    public a1 o;
-    public a1 p;
-    public View q;
-    public Drawable r;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class g implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AtomicBoolean b;
+    public final /* synthetic */ qf.c c;
 
-    public g(int i10, boolean z10) {
-        super(i10, z10);
-        this.l = -1;
+    public /* synthetic */ g(AtomicBoolean atomicBoolean, qf.c cVar, int i10) {
+        this.a = i10;
+        this.b = atomicBoolean;
+        this.c = cVar;
     }
 
-    public static g b(CharSequence charSequence) {
-        g gVar = new g(8, false);
-        gVar.g = charSequence;
-        return gVar;
-    }
-
-    public static g c(TLRPC.User user, boolean z10) {
-        g gVar = new g(3, true);
-        gVar.c = user;
-        gVar.d = null;
-        gVar.e = null;
-        gVar.k = z10;
-        return gVar;
-    }
-
-    @Override // pg.a
-    public final boolean a(pg.a aVar) {
-        if (this != aVar) {
-            if (g.class == aVar.getClass()) {
-                g gVar = (g) aVar;
-                if (this.k == gVar.k) {
-                    if (this.a == 8) {
-                        if (TextUtils.equals(this.h, gVar.h)) {
-                            if ((this.m == null) == (gVar.m == null)) {
-                            }
-                        }
-                    }
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        qf.c cVar;
+        switch (this.a) {
+            case 0:
+                if (!this.b.get()) {
+                    this.c.b();
+                    break;
                 }
-            }
-            return false;
-        }
-        return true;
-    }
-
-    public final boolean equals(Object obj) {
-        long peerDialogId;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || g.class != obj.getClass()) {
-            return false;
-        }
-        g gVar = (g) obj;
-        int i10 = this.a;
-        if (i10 != gVar.a) {
-            return false;
-        }
-        if (i10 == -1 && this.l != gVar.l) {
-            return false;
-        }
-        if (i10 == 3) {
-            TLRPC.User user = this.c;
-            long j10 = 0;
-            if (user != null) {
-                peerDialogId = user.id;
-            } else {
-                TLRPC.Chat chat = this.e;
-                if (chat != null) {
-                    peerDialogId = -chat.id;
-                } else {
-                    TLRPC.InputPeer inputPeer = this.d;
-                    peerDialogId = inputPeer != null ? DialogObject.getPeerDialogId(inputPeer) : 0L;
+                break;
+            default:
+                if (!this.b.get() && (cVar = this.c) != null) {
+                    cVar.b();
+                    break;
                 }
-            }
-            TLRPC.User user2 = gVar.c;
-            if (user2 != null) {
-                j10 = user2.id;
-            } else {
-                TLRPC.Chat chat2 = gVar.e;
-                if (chat2 != null) {
-                    j10 = -chat2.id;
-                } else {
-                    TLRPC.InputPeer inputPeer2 = gVar.d;
-                    if (inputPeer2 != null) {
-                        j10 = DialogObject.getPeerDialogId(inputPeer2);
-                    }
-                }
-            }
-            if (peerDialogId != j10) {
-                return false;
-            }
+                break;
         }
-        int i11 = this.a;
-        if (i11 == 6 && this.f != gVar.f) {
-            return false;
-        }
-        if (i11 == 7 && !TextUtils.equals(this.g, gVar.g)) {
-            return false;
-        }
-        if (this.a == 8 && !TextUtils.equals(this.g, gVar.g)) {
-            return false;
-        }
-        if (this.a != 9 || (TextUtils.equals(this.g, gVar.g) && this.i == gVar.i && this.j == gVar.j)) {
-            return this.a != 10 || this.q == gVar.q;
-        }
-        return false;
     }
 }

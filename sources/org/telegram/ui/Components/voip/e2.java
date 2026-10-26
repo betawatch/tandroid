@@ -1,69 +1,40 @@
 package org.telegram.ui.Components.voip;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import w7.z5;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.v80;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class e2 extends FrameLayout {
-    public String a;
-    public final ImageView b;
-    public final TextView c;
-    public boolean d;
-    public final o1 e;
-    public final RectF f;
+public final class e2 extends v80 {
+    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ TLRPC.Chat d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ TLRPC.InputPeer f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ Activity r;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 s;
+    public final /* synthetic */ AccountInstance v;
 
-    public e2(Context context, o1 o1Var, int i10) {
-        super(context);
-        this.f = new RectF();
-        setFocusable(true);
-        setFocusableInTouchMode(true);
-        this.e = o1Var;
-        o1Var.a(this);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        addView(imageView, z5.d(24, 24.0f, 16, 8.0f, 2.0f, 8.0f, 2.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 14.0f);
-        addView(textView, z5.d(-2, -2.0f, 16, i10 != 0 ? 36.0f : 14.0f, 2.0f, 14.0f, 2.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, Activity activity, org.telegram.ui.ActionBar.r2 r2Var, AccountInstance accountInstance) {
+        super(context, chat);
+        this.c = user;
+        this.d = chat2;
+        this.e = str;
+        this.f = inputPeer;
+        this.h = z10;
+        this.n = z11;
+        this.r = activity;
+        this.s = r2Var;
+        this.v = accountInstance;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.f;
-        rectF.set(0.0f, 0.0f, width, height);
-        float x10 = ((View) getParent()).getX() + getX();
-        float y3 = ((View) getParent()).getY() + getY();
-        o1 o1Var = this.e;
-        o1Var.d(x10, y3);
-        Paint paint = o1Var.l;
-        int alpha = (this.d ? paint : o1Var.b()).getAlpha();
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
-        (this.d ? paint : o1Var.b()).setAlpha(255);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.d ? paint : o1Var.b());
-        if (!this.d) {
-            paint = o1Var.b();
-        }
-        paint.setAlpha(alpha);
-        if (o1Var.e) {
-            int alpha2 = ((Paint) o1Var.d.a).getAlpha();
-            ((Paint) o1Var.d.a).setAlpha(255);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), (Paint) o1Var.d.a);
-            ((Paint) o1Var.d.a).setAlpha(alpha2);
-        }
-        canvas.restore();
-        super.dispatchDraw(canvas);
+    @Override // org.telegram.ui.Components.v80
+    public final void m() {
+        g2.b(this.c, this.d, this.e, this.f, true, this.h, this.n, false, this.r, this.s, this.v, false, false, false);
     }
 }

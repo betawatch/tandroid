@@ -1,42 +1,30 @@
 package w7;
 
+import a8.ng;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Looper;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class b9 {
-    public static com.google.android.gms.internal.clearcut.v0 a(Context context, GoogleSignInOptions googleSignInOptions) {
-        n6.l.h(googleSignInOptions);
-        return new com.google.android.gms.internal.clearcut.v0(context, w5.a.a, googleSignInOptions, new com.google.android.gms.common.api.i(new com.google.android.gms.common.api.internal.a(), Looper.getMainLooper()));
+public final class b9 implements c9 {
+    public final ArrayList a;
+
+    public b9(Context context, a9 a9Var) {
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        a9Var.getClass();
+        arrayList.add(new e9(context, a9Var));
     }
 
-    public static Task b(Intent intent) {
-        z5.b bVar;
-        GoogleSignInAccount googleSignInAccount;
-        a5.a aVar = a6.h.a;
-        Status status = Status.h;
-        if (intent == null) {
-            bVar = new z5.b(null, status);
-        } else {
-            Status status2 = (Status) intent.getParcelableExtra("googleSignInStatus");
-            GoogleSignInAccount googleSignInAccount2 = (GoogleSignInAccount) intent.getParcelableExtra("googleSignInAccount");
-            if (googleSignInAccount2 == null) {
-                if (status2 != null) {
-                    status = status2;
-                }
-                bVar = new z5.b(null, status);
-            } else {
-                bVar = new z5.b(googleSignInAccount2, Status.e);
-            }
+    @Override // w7.c9
+    public final void a(ng ngVar) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((c9) obj).a(ngVar);
         }
-        Status status3 = bVar.a;
-        return (!status3.b() || (googleSignInAccount = bVar.b) == null) ? Tasks.forException(n6.l.m(status3)) : Tasks.forResult(googleSignInAccount);
     }
 }

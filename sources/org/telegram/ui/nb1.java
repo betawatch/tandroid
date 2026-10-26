@@ -1,20 +1,178 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class nb1 extends ei.u7 {
-    public nb1(Activity activity) {
-        super(activity, 3);
+public final class nb1 extends org.telegram.ui.Components.mm0 {
+    public boolean f3;
+    public float g3;
+    public final /* synthetic */ tc1 h3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nb1(Context context, tc1 tc1Var) {
+        super(context, null);
+        this.h3 = tc1Var;
     }
 
-    @Override // ei.u7, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(true);
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean F0(View view) {
+        nb1 nb1Var = this.h3.v0;
+        View F = nb1Var.F(view);
+        s4.e1 T = F == null ? null : nb1Var.T(F);
+        return T == null || T.f != 2;
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        s4.e1 T;
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        if (view instanceof org.telegram.ui.Cells.s1) {
+            org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view;
+            s1Var.getMessageObject();
+            ImageReceiver avatarImage = s1Var.getAvatarImage();
+            if (avatarImage != null) {
+                int top = view.getTop();
+                boolean m32 = s1Var.m3();
+                tc1 tc1Var = this.h3;
+                if (m32 && (T = tc1Var.v0.T(view)) != null) {
+                    if (tc1Var.v0.K(T.b() - 1) != null) {
+                        avatarImage.setImageY(-AndroidUtilities.dp(1000.0f));
+                        avatarImage.draw(canvas);
+                        return drawChild;
+                    }
+                }
+                float translationX = s1Var.getTranslationX();
+                int layoutHeight = s1Var.getLayoutHeight() + view.getTop();
+                int measuredHeight = tc1Var.v0.getMeasuredHeight() - tc1Var.v0.getPaddingBottom();
+                if (layoutHeight > measuredHeight) {
+                    layoutHeight = measuredHeight;
+                }
+                if (s1Var.n3() && (r11 = tc1Var.v0.T(view)) != null) {
+                    int i10 = 0;
+                    while (i10 < 20) {
+                        i10++;
+                        s4.e1 T2 = tc1Var.v0.K(T2.b() + 1);
+                        if (T2 == null) {
+                            break;
+                        }
+                        View view2 = T2.a;
+                        int top2 = view2.getTop();
+                        if (layoutHeight - AndroidUtilities.dp(48.0f) < view2.getBottom()) {
+                            translationX = Math.min(view2.getTranslationX(), translationX);
+                        }
+                        if (!(view2 instanceof org.telegram.ui.Cells.s1) || !((org.telegram.ui.Cells.s1) view2).n3()) {
+                            top = top2;
+                            break;
+                        }
+                        top = top2;
+                    }
+                }
+                if (layoutHeight - AndroidUtilities.dp(48.0f) < top) {
+                    layoutHeight = AndroidUtilities.dp(48.0f) + top;
+                }
+                if (translationX != 0.0f) {
+                    canvas.save();
+                    canvas.translate(translationX, 0.0f);
+                }
+                avatarImage.setImageY(layoutHeight - AndroidUtilities.dp(44.0f));
+                avatarImage.draw(canvas);
+                if (translationX != 0.0f) {
+                    canvas.restore();
+                }
+            }
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.mm0
+    public final void k1(View view, float f7, float f10, boolean z10) {
+        if (z10 && (view instanceof org.telegram.ui.Cells.s1) && !((org.telegram.ui.Cells.s1) view).i3(f7)) {
+            return;
+        }
+        super.k1(view, f7, f10, z10);
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.h3.W0();
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        tc1 tc1Var = this.h3;
+        if (action == 1) {
+            if (!tc1Var.s0 && (tc1Var.C1 instanceof bi1) && tc1Var.M0[0].getVisibility() == 0) {
+                tc1Var.g1(0, false, true);
+            }
+            tc1Var.s0 = false;
+        }
+        if (tc1Var.b2) {
+            if (motionEvent.getAction() == 0) {
+                this.g3 = motionEvent.getX();
+                motionEvent.getY();
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                this.f3 = true;
+            } else if (motionEvent.getAction() == 2) {
+                if (!this.f3 && Math.abs(this.g3 - motionEvent.getX()) > AndroidUtilities.touchSlop) {
+                    if (getParent() != null) {
+                        getParent().requestDisallowInterceptTouchEvent(true);
+                    }
+                    this.f3 = true;
+                }
+            } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+                this.f3 = false;
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(false);
+                }
+            }
+            tc1Var.T1.a(motionEvent);
+        }
+        return this.f3 || super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.mm0, android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        tc1 tc1Var = this.h3;
+        int i10 = 0;
+        if (tc1Var.K0 != null) {
+            int i11 = 0;
+            while (true) {
+                org.telegram.ui.Components.v91[] v91VarArr = tc1Var.K0;
+                if (i11 >= v91VarArr.length) {
+                    break;
+                }
+                v91VarArr[i11].invalidate();
+                i11++;
+            }
+        }
+        if (tc1Var.L0 != null) {
+            while (true) {
+                org.telegram.ui.Components.v91[] v91VarArr2 = tc1Var.L0;
+                if (i10 >= v91VarArr2.length) {
+                    break;
+                }
+                v91VarArr2[i10].invalidate();
+                i10++;
+            }
+        }
+        qb1 qb1Var = tc1Var.E0;
+        if (qb1Var != null) {
+            qb1Var.invalidate();
+        }
+        qb1 qb1Var2 = tc1Var.F0;
+        if (qb1Var2 != null) {
+            qb1Var2.invalidate();
+        }
     }
 }

@@ -1,26 +1,14 @@
 package gd;
 
-import df.p;
-import java.util.regex.Pattern;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g extends h {
-    public static final Pattern e = Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>]|<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->|[<][?].*?[?][>]|<![A-Z]+\\s+[^>]*>|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>)", 2);
-
-    @Override // gd.h
-    public final p b() {
-        String a2 = a(e);
-        if (a2 == null) {
-            return null;
-        }
-        df.d dVar = new df.d(1);
-        dVar.h = a2;
-        return dVar;
+public final class g extends f2.f {
+    public g() {
+        super(6, 1);
     }
 
-    @Override // gd.h
-    public final char d() {
-        return '<';
+    @Override // f2.f
+    public final f2.f b() {
+        return this;
     }
 }

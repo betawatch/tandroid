@@ -1,37 +1,30 @@
 package n2;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.os.Build;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface r {
-    boolean B0(String str, byte[] bArr);
+public final class r implements h2.b {
+    public static final boolean c;
+    public final UUID a;
+    public final byte[] b;
 
-    h2.b C(byte[] bArr);
+    static {
+        boolean z10;
+        if ("Amazon".equals(Build.MANUFACTURER)) {
+            String str = Build.MODEL;
+            if ("AFTM".equals(str) || "AFTB".equals(str)) {
+                z10 = true;
+                c = z10;
+            }
+        }
+        z10 = false;
+        c = z10;
+    }
 
-    byte[] H();
-
-    void U(byte[] bArr, byte[] bArr2);
-
-    void Y(byte[] bArr);
-
-    Map b(byte[] bArr);
-
-    byte[] g0(byte[] bArr, byte[] bArr2);
-
-    void h(byte[] bArr, j2.j jVar);
-
-    void j0(byte[] bArr);
-
-    p k0(byte[] bArr, List list, int i10, HashMap hashMap);
-
-    int m0();
-
-    q o();
-
-    void release();
-
-    void t0(l2.f fVar);
+    public r(UUID uuid, byte[] bArr) {
+        this.a = uuid;
+        this.b = bArr;
+    }
 }

@@ -2,35 +2,34 @@ package j4;
 
 import android.util.SparseArray;
 import e2.k0;
-import e9.l0;
-import e9.n0;
-import e9.x1;
+import f9.i0;
+import f9.s1;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class z implements c3.q {
+public final class z implements c3.o {
     public boolean e;
     public boolean f;
     public boolean g;
     public long h;
     public h3.a i;
-    public c3.s j;
+    public c3.q j;
     public boolean k;
     public final k0 a = new k0(0);
     public final e2.x c = new e2.x(4096);
     public final SparseArray b = new SparseArray();
     public final x d = new x(0);
 
-    @Override // c3.q
-    public final boolean a(c3.r rVar) {
+    @Override // c3.o
+    public final boolean a(c3.p pVar) {
         byte[] bArr = new byte[14];
-        c3.l lVar = (c3.l) rVar;
-        lVar.j(bArr, 0, 14, false);
+        c3.l lVar = (c3.l) pVar;
+        lVar.h(bArr, 0, 14, false);
         if (442 == (((bArr[0] & 255) << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8) | (bArr[3] & 255)) && (bArr[4] & 196) == 68 && (bArr[6] & 4) == 4 && (bArr[8] & 4) == 4 && (bArr[9] & 1) == 1 && (bArr[12] & 3) == 3) {
-            lVar.u(bArr[13] & 7, false);
-            lVar.j(bArr, 0, 3, false);
+            lVar.s(bArr[13] & 7, false);
+            lVar.h(bArr, 0, 3, false);
             if (1 == (((bArr[0] & 255) << 16) | ((bArr[1] & 255) << 8) | (bArr[2] & 255))) {
                 return true;
             }
@@ -38,12 +37,12 @@ public final class z implements c3.q {
         return false;
     }
 
-    @Override // c3.q
-    public final void c(c3.s sVar) {
-        this.j = sVar;
+    @Override // c3.o
+    public final void c(c3.q qVar) {
+        this.j = qVar;
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void d(long j10, long j11) {
         k0 k0Var = this.a;
         boolean z10 = k0Var.e() == -9223372036854775807L;
@@ -71,21 +70,21 @@ public final class z implements c3.q {
         }
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final List e() {
-        l0 l0Var = n0.b;
-        return x1.e;
+        f9.g0 g0Var = i0.b;
+        return s1.e;
     }
 
-    @Override // c3.q
-    public final int f(c3.r rVar, c3.u uVar) {
+    @Override // c3.o
+    public final int f(c3.p pVar, c3.s sVar) {
         int i10;
         int i11;
         long j10;
         i iVar;
         long j11;
         this.j.getClass();
-        long length = rVar.getLength();
+        long length = pVar.getLength();
         int i12 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
         long j12 = -9223372036854775807L;
         x xVar = this.d;
@@ -93,16 +92,16 @@ public final class z implements c3.q {
             k0 k0Var = xVar.b;
             e2.x xVar2 = xVar.c;
             if (!xVar.f) {
-                long length2 = rVar.getLength();
+                long length2 = pVar.getLength();
                 int min = (int) Math.min(20000L, length2);
                 long j13 = length2 - min;
-                if (rVar.getPosition() != j13) {
-                    uVar.a = j13;
+                if (pVar.getPosition() != j13) {
+                    sVar.a = j13;
                     return 1;
                 }
                 xVar2.K(min);
-                rVar.q();
-                rVar.a(0, min, xVar2.a);
+                pVar.p();
+                pVar.b(0, min, xVar2.a);
                 int i13 = xVar2.b;
                 int i14 = xVar2.c - 4;
                 while (true) {
@@ -124,28 +123,28 @@ public final class z implements c3.q {
                 return 0;
             }
             if (xVar.h == -9223372036854775807L) {
-                xVar.a(rVar);
+                xVar.a(pVar);
                 return 0;
             }
             if (xVar.e) {
                 long j14 = xVar.g;
                 if (j14 == -9223372036854775807L) {
-                    xVar.a(rVar);
+                    xVar.a(pVar);
                     return 0;
                 }
                 xVar.i = k0Var.c(xVar.h) - k0Var.b(j14);
-                xVar.a(rVar);
+                xVar.a(pVar);
                 return 0;
             }
-            int min2 = (int) Math.min(20000L, rVar.getLength());
+            int min2 = (int) Math.min(20000L, pVar.getLength());
             long j15 = 0;
-            if (rVar.getPosition() != j15) {
-                uVar.a = j15;
+            if (pVar.getPosition() != j15) {
+                sVar.a = j15;
                 return 1;
             }
             xVar2.K(min2);
-            rVar.q();
-            rVar.a(0, min2, xVar2.a);
+            pVar.p();
+            pVar.b(0, min2, xVar2.a);
             int i15 = xVar2.b;
             int i16 = xVar2.c;
             while (true) {
@@ -176,26 +175,26 @@ public final class z implements c3.q {
             if (j16 != -9223372036854775807L) {
                 i10 = i12;
                 i11 = 4;
-                h3.a aVar = new h3.a(new t7.u(3), new n4.s(xVar.b), j16, j16 + 1, 0L, length, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
+                h3.a aVar = new h3.a(new u7.s(3), new rf.b(xVar.b), j16, j16 + 1, 0L, length, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
                 this.i = aVar;
-                this.j.g0(aVar.a);
+                this.j.D1(aVar.a);
             } else {
                 i10 = i12;
                 i11 = 4;
-                this.j.g0(new c3.v(j16));
+                this.j.D1(new c3.t(j16));
             }
         }
         h3.a aVar2 = this.i;
         if (aVar2 != null && aVar2.c != null) {
-            return aVar2.b(rVar, uVar);
+            return aVar2.b(pVar, sVar);
         }
-        rVar.q();
-        long k10 = i10 != 0 ? length - rVar.k() : -1L;
-        if (k10 != -1 && k10 < 4) {
+        pVar.p();
+        long i17 = i10 != 0 ? length - pVar.i() : -1L;
+        if (i17 != -1 && i17 < 4) {
             return -1;
         }
         e2.x xVar3 = this.c;
-        if (!rVar.j(xVar3.a, 0, i11, true)) {
+        if (!pVar.h(xVar3.a, 0, i11, true)) {
             return -1;
         }
         xVar3.N(0);
@@ -204,61 +203,61 @@ public final class z implements c3.q {
             return -1;
         }
         if (m10 == 442) {
-            rVar.a(0, 10, xVar3.a);
+            pVar.b(0, 10, xVar3.a);
             xVar3.N(9);
-            rVar.r((xVar3.A() & 7) + 14);
+            pVar.q((xVar3.A() & 7) + 14);
             return 0;
         }
         if (m10 == 443) {
-            rVar.a(0, 2, xVar3.a);
+            pVar.b(0, 2, xVar3.a);
             xVar3.N(0);
-            rVar.r(xVar3.H() + 6);
+            pVar.q(xVar3.H() + 6);
             return 0;
         }
         if (((m10 & (-256)) >> 8) != 1) {
-            rVar.r(1);
+            pVar.q(1);
             return 0;
         }
-        int i17 = m10 & 255;
+        int i18 = m10 & 255;
         SparseArray sparseArray = this.b;
-        y yVar = (y) sparseArray.get(i17);
+        y yVar = (y) sparseArray.get(i18);
         if (!this.e) {
             if (yVar == null) {
-                if (i17 == 189) {
+                if (i18 == 189) {
                     iVar = new b("video/mp2p");
                     this.f = true;
-                    this.h = rVar.getPosition();
+                    this.h = pVar.getPosition();
                 } else if ((m10 & 224) == 192) {
                     iVar = new u(null, 0, "video/mp2p");
                     this.f = true;
-                    this.h = rVar.getPosition();
+                    this.h = pVar.getPosition();
                 } else if ((m10 & 240) == 224) {
                     iVar = new k(null, "video/mp2p");
                     this.g = true;
-                    this.h = rVar.getPosition();
+                    this.h = pVar.getPosition();
                 } else {
                     iVar = null;
                 }
                 if (iVar != null) {
-                    iVar.d(this.j, new f0(i17, 256));
+                    iVar.d(this.j, new f0(i18, 256));
                     yVar = new y(iVar, this.a);
-                    sparseArray.put(i17, yVar);
+                    sparseArray.put(i18, yVar);
                 }
             }
-            if (rVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
+            if (pVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.C();
+                this.j.Q0();
             }
         }
-        rVar.a(0, 2, xVar3.a);
+        pVar.b(0, 2, xVar3.a);
         xVar3.N(0);
         int H = xVar3.H() + 6;
         if (yVar == null) {
-            rVar.r(H);
+            pVar.q(H);
             return 0;
         }
         xVar3.K(H);
-        rVar.readFully(xVar3.a, 0, H);
+        pVar.readFully(xVar3.a, 0, H);
         xVar3.N(6);
         i iVar2 = yVar.a;
         a4.g gVar = yVar.c;
@@ -276,10 +275,10 @@ public final class z implements c3.q {
             gVar.o(4);
             gVar.o(1);
             gVar.o(1);
-            long g10 = (gVar.g(3) << 30) | (gVar.g(15) << 15) | gVar.g(15);
+            long g7 = (gVar.g(3) << 30) | (gVar.g(15) << 15) | gVar.g(15);
             gVar.o(1);
             if (yVar.f || !yVar.e) {
-                j10 = g10;
+                j10 = g7;
             } else {
                 gVar.o(4);
                 gVar.o(1);
@@ -287,7 +286,7 @@ public final class z implements c3.q {
                 gVar.o(1);
                 k0Var2.b((gVar.g(15) << 15) | (gVar.g(3) << 30) | gVar.g(15));
                 yVar.f = true;
-                j10 = g10;
+                j10 = g7;
             }
             yVar.g = k0Var2.b(j10);
         }
@@ -298,12 +297,12 @@ public final class z implements c3.q {
         return 0;
     }
 
-    @Override // c3.q
-    public final c3.q b() {
+    @Override // c3.o
+    public final c3.o b() {
         return this;
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void release() {
     }
 }

@@ -1,122 +1,35 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
+import java.io.File;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public interface ku0 {
-    boolean A();
+    boolean a(int i10);
 
-    void B(int i10);
+    File b(int i10);
 
-    CharSequence C(int i10);
+    String c(int i10);
 
-    void D();
+    TLObject d(int i10);
 
-    mu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11);
+    boolean e(int i10);
 
-    void F(boolean z10);
+    TLRPC.PhotoSize f(TLObject tLObject, int[] iArr);
 
-    void G();
+    Object g();
 
-    int H();
+    TL_iv.PageBlock get(int i10);
 
-    boolean I();
+    List getAll();
 
-    void J();
+    void h(TL_iv.PageBlock pageBlock);
 
-    boolean K();
+    CharSequence i(int i10);
 
-    boolean L();
-
-    void M(VideoEditedInfo videoEditedInfo);
-
-    boolean N();
-
-    boolean O();
-
-    boolean P();
-
-    boolean Q();
-
-    int R(Object obj);
-
-    int S(int i10);
-
-    boolean T();
-
-    boolean U();
-
-    MessageObject V();
-
-    void W();
-
-    void X(int i10);
-
-    void Y(int i10);
-
-    boolean Z();
-
-    long a();
-
-    void a0(int i10);
-
-    boolean b();
-
-    String b0();
-
-    ArrayList c();
-
-    CharSequence c0(int i10);
-
-    void d();
-
-    void e(CharSequence charSequence);
-
-    void f(String str, String str2, boolean z10);
-
-    boolean g();
-
-    boolean h();
-
-    void i();
-
-    ImageReceiver.BitmapHolder j(int i10);
-
-    int k(int i10, VideoEditedInfo videoEditedInfo);
-
-    boolean l();
-
-    void m();
-
-    void n();
-
-    void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11);
-
-    boolean p();
-
-    boolean q();
-
-    boolean r();
-
-    void s();
-
-    boolean t();
-
-    boolean u();
-
-    HashMap v();
-
-    boolean w();
-
-    boolean x(int i10);
-
-    int y();
-
-    boolean z();
+    int j();
 }

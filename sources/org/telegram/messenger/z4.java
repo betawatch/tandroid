@@ -1,62 +1,36 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ z4(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
-        this.a = i11;
-        this.d = obj;
-        this.e = tLObject;
-        this.b = z10;
-        this.c = i10;
+    public /* synthetic */ z4(int i10, String str, boolean z10) {
+        this.b = i10;
+        this.d = str;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((ImageLoader.5) this.d).lambda$fileDidFailedUpload$4(this.c, (String) this.e, this.b);
-                break;
-            case 1:
-                ((LocaleController) this.d).lambda$loadRemoteLanguages$11((Vector) this.e, this.b, this.c);
-                break;
-            case 2:
-                ((MediaDataController) this.d).lambda$loadStickers$91(this.c, this.b, (Utilities.Callback) this.e);
-                break;
-            case 3:
-                ((MessagesStorage) this.d).lambda$loadUserInfo$129((TLRPC.User) this.e, this.b, this.c);
+                ImageLoader.5.lambda$fileDidFailedUpload$3(this.b, (String) this.d, this.c);
                 break;
             default:
-                ((SendMessagesHelper) this.d).lambda$toggleTodo$36(this.c, this.b, (Runnable) this.e);
+                ((MessagesController) this.d).lambda$removeFolderTemporarily$484(this.b, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ z4(BaseController baseController, int i10, boolean z10, Object obj, int i11) {
-        this.a = i11;
-        this.d = baseController;
-        this.c = i10;
-        this.b = z10;
-        this.e = obj;
-    }
-
-    public /* synthetic */ z4(ImageLoader.5 r22, int i10, String str, boolean z10) {
-        this.a = 0;
-        this.d = r22;
-        this.c = i10;
-        this.e = str;
-        this.b = z10;
+    public /* synthetic */ z4(int i10, MessagesController messagesController, boolean z10) {
+        this.d = messagesController;
+        this.b = i10;
+        this.c = z10;
     }
 }

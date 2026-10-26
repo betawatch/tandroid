@@ -1,38 +1,37 @@
 package e2;
 
-import e9.y0;
-import i2.o1;
+import a8.ed;
+import a8.gd;
+import a8.yb;
+import f9.t0;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
-import v7.b8;
-import v7.f8;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
     public static final char[] e = {'\n'};
-    public static final y0 f = y0.t(5, StandardCharsets.US_ASCII, StandardCharsets.UTF_8, StandardCharsets.UTF_16, StandardCharsets.UTF_16BE, StandardCharsets.UTF_16LE);
+    public static final t0 f = t0.t(5, StandardCharsets.US_ASCII, StandardCharsets.UTF_8, StandardCharsets.UTF_16, StandardCharsets.UTF_16BE, StandardCharsets.UTF_16LE);
     public static final AtomicBoolean g = new AtomicBoolean();
     public byte[] a;
     public int b;
     public int c;
 
     public x() {
-        this.a = m0.b;
+        this.a = n0.b;
     }
 
     public static int b(int i10, int i11, int i12, int i13) {
         byte b10 = (byte) i12;
-        return b8.c((byte) 0, f8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), f8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), f8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
+        return ed.c((byte) 0, gd.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), gd.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), gd.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
     }
 
     public static int d(Charset charset) {
-        u6.h(f.contains(charset), "Unsupported charset: %s", charset);
+        yb.h(f.contains(charset), "Unsupported charset: %s", charset);
         return (charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) ? 1 : 2;
     }
 
@@ -93,7 +92,7 @@ public final class x {
         if (m10 >= 0) {
             return m10;
         }
-        throw new IllegalStateException(o1.k(m10, "Top bit not zero: "));
+        throw new IllegalStateException(ic.a.i(m10, "Top bit not zero: "));
     }
 
     public final int F() {
@@ -108,7 +107,7 @@ public final class x {
                 break;
             }
         }
-        return b8.b(j10);
+        return ed.b(j10);
     }
 
     public final long G() {
@@ -204,12 +203,12 @@ public final class x {
     }
 
     public final void M(int i10) {
-        u6.g(i10 >= 0 && i10 <= this.a.length);
+        yb.g(i10 >= 0 && i10 <= this.a.length);
         this.c = i10;
     }
 
     public final void N(int i10) {
-        u6.g(i10 >= 0 && i10 <= this.c);
+        yb.g(i10 >= 0 && i10 <= this.c);
         this.b = i10;
     }
 
@@ -232,9 +231,9 @@ public final class x {
         if (!g.get() || a() >= i10) {
             return;
         }
-        StringBuilder n10 = o1.n(i10, "bytesNeeded= ", ", bytesLeft=");
-        n10.append(a());
-        throw new IndexOutOfBoundsException(n10.toString());
+        StringBuilder k10 = ic.a.k(i10, "bytesNeeded= ", ", bytesLeft=");
+        k10.append(a());
+        throw new IndexOutOfBoundsException(k10.toString());
     }
 
     public final char g(int i10, ByteOrder byteOrder) {
@@ -258,7 +257,7 @@ public final class x {
     public final int h(Charset charset) {
         int i10;
         int i11;
-        u6.h(f.contains(charset), "Unsupported charset: %s", charset);
+        yb.h(f.contains(charset), "Unsupported charset: %s", charset);
         if (a() < d(charset)) {
             throw new IndexOutOfBoundsException("position=" + this.b + ", limit=" + this.c);
         }
@@ -294,12 +293,12 @@ public final class x {
             i10 = i11;
         } else {
             ByteOrder byteOrder = charset.equals(StandardCharsets.UTF_16LE) ? ByteOrder.LITTLE_ENDIAN : ByteOrder.BIG_ENDIAN;
-            char g10 = g(0, byteOrder);
-            if (!Character.isHighSurrogate(g10) || a() < 4) {
-                i10 = g10;
+            char g7 = g(0, byteOrder);
+            if (!Character.isHighSurrogate(g7) || a() < 4) {
+                i10 = g7;
                 i12 = 2;
             } else {
-                i10 = Character.toCodePoint(g10, g(2, byteOrder));
+                i10 = Character.toCodePoint(g7, g(2, byteOrder));
                 i12 = 4;
             }
         }
@@ -330,15 +329,15 @@ public final class x {
         int h;
         if (a() >= d(charset) && (h = h(charset)) != 0) {
             long j10 = h >>> 8;
-            u6.c(j10, "out of range: %s", (j10 >> 32) == 0);
+            yb.c(j10, "out of range: %s", (j10 >> 32) == 0);
             int i10 = (int) j10;
             if (!Character.isSupplementaryCodePoint(i10)) {
                 long j11 = i10;
                 char c10 = (char) j11;
-                u6.c(j11, "Out of range: %s", ((long) c10) == j11);
+                yb.c(j11, "Out of range: %s", ((long) c10) == j11);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = b8.b(h & 255) + this.b;
+                        this.b = ed.b(h & 255) + this.b;
                         return c10;
                     }
                 }
@@ -366,7 +365,7 @@ public final class x {
 
     public final String n(Charset charset) {
         int i10;
-        u6.h(f.contains(charset), "Unsupported charset: %s", charset);
+        yb.h(f.contains(charset), "Unsupported charset: %s", charset);
         if (a() == 0) {
             return null;
         }
@@ -389,18 +388,18 @@ public final class x {
                 i11 = i12;
                 break;
             }
-            if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && m0.O(this.a[i11])) {
+            if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && n0.O(this.a[i11])) {
                 break;
             }
             if (charset.equals(StandardCharsets.UTF_16) || charset.equals(StandardCharsets.UTF_16BE)) {
                 byte[] bArr = this.a;
-                if (bArr[i11] == 0 && m0.O(bArr[i11 + 1])) {
+                if (bArr[i11] == 0 && n0.O(bArr[i11 + 1])) {
                     break;
                 }
             }
             if (charset.equals(StandardCharsets.UTF_16LE)) {
                 byte[] bArr2 = this.a;
-                if (bArr2[i11 + 1] == 0 && m0.O(bArr2[i11])) {
+                if (bArr2[i11 + 1] == 0 && n0.O(bArr2[i11])) {
                     break;
                 }
             }
@@ -480,7 +479,7 @@ public final class x {
         if (o10 >= 0) {
             return o10;
         }
-        throw new IllegalStateException(o1.k(o10, "Top bit not zero: "));
+        throw new IllegalStateException(ic.a.i(o10, "Top bit not zero: "));
     }
 
     public final int t() {
@@ -525,7 +524,7 @@ public final class x {
         }
         byte[] bArr = this.a;
         int i11 = this.b;
-        String str = m0.a;
+        String str = n0.a;
         String str2 = new String(bArr, i11, i10 - i11, StandardCharsets.UTF_8);
         this.b = i10;
         if (i10 < this.c) {
@@ -543,7 +542,7 @@ public final class x {
         int i12 = (i11 + i10) - 1;
         int i13 = (i12 >= this.c || this.a[i12] != 0) ? i10 : i10 - 1;
         byte[] bArr = this.a;
-        String str = m0.a;
+        String str = n0.a;
         String str2 = new String(bArr, i11, i13, StandardCharsets.UTF_8);
         this.b += i10;
         return str2;

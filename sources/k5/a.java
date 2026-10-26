@@ -1,6 +1,56 @@
 package k5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import a8.md;
+import j$.util.DesugarCollections;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Pattern;
+import m5.l;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class a {
+public final class a implements l {
+    public static final String c;
+    public static final Set d;
+    public static final a e;
+    public static final a f;
+    public final String a;
+    public final String b;
+
+    static {
+        String a2 = md.a("hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3");
+        c = a2;
+        String a10 = md.a("hts/frbslgigp.ogepscmv/ieo/eaybtho", "tp:/ieaeogn-agolai.o/1frlglgc/aclg");
+        String a11 = md.a("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
+        d = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(new j5.c("proto"), new j5.c("json"))));
+        e = new a(a2, null);
+        f = new a(a10, a11);
+    }
+
+    public a(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+    }
+
+    public static a a(byte[] bArr) {
+        String str = new String(bArr, Charset.forName("UTF-8"));
+        if (!str.startsWith("1$")) {
+            throw new IllegalArgumentException("Version marker missing from extras");
+        }
+        String[] split = str.substring(2).split(Pattern.quote("\\"), 2);
+        if (split.length != 2) {
+            throw new IllegalArgumentException("Extra is not a valid encoded LegacyFlgDestination");
+        }
+        String str2 = split[0];
+        if (str2.isEmpty()) {
+            throw new IllegalArgumentException("Missing endpoint in CCTDestination extras");
+        }
+        String str3 = split[1];
+        if (str3.isEmpty()) {
+            str3 = null;
+        }
+        return new a(str2, str3);
+    }
 }

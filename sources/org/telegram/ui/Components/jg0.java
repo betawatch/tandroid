@@ -1,73 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class jg0 extends LinearLayout {
-    public final LinearLayout a;
-    public final LinearLayout b;
+public final /* synthetic */ class jg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lg0 b;
 
-    public jg0(Context context) {
-        super(context);
-        setOrientation(0);
-        setGravity(17);
-        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        LinearLayout a2 = a(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia));
-        this.b = a2;
-        addView(a2, w7.z5.n(-2, -1));
-        LinearLayout a10 = a(R.drawable.media_button_restore, LocaleController.getString(R.string.Edit));
-        this.a = a10;
-        addView(a10, w7.z5.n(-2, -1));
+    public /* synthetic */ jg0(lg0 lg0Var, int i10) {
+        this.a = i10;
+        this.b = lg0Var;
     }
 
-    public final LinearLayout a(int i10, String str) {
-        Context context = getContext();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(17);
-        linearLayout.setPadding(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f));
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(i10);
-        linearLayout.addView(imageView, w7.z5.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
-        TextView textView = new TextView(context);
-        textView.setGravity(16);
-        textView.setText(str);
-        textView.setTextSize(2, 14.0f);
-        textView.setSingleLine(true);
-        textView.setTextColor(-1);
-        linearLayout.addView(textView, w7.z5.n(-2, -2));
-        w7.b6.a(linearLayout);
-        return linearLayout;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        LinearLayout linearLayout = this.a;
-        ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        int paddingRight = getPaddingRight() + getPaddingLeft();
-        int paddingBottom = getPaddingBottom() + getPaddingTop();
-        int max = Math.max(0, size - paddingRight);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
-        linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
-        LinearLayout linearLayout2 = this.b;
-        linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
-        int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
-        layoutParams2.width = min;
-        layoutParams.width = min;
-        super.onMeasure(i10, i11);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.vt0 vt0Var = this.b.a;
+                RadialProgressView radialProgressView = vt0Var.n;
+                View view = vt0Var.r;
+                radialProgressView.setVisibility(4);
+                if (vt0Var.F) {
+                    vt0Var.F = false;
+                    vt0Var.setPlaybackSpeed(vt0Var.E);
+                }
+                view.setEnabled(true);
+                view.setAlpha(1.0f);
+                PhotoViewer photoViewer = vt0Var.b;
+                if (photoViewer != null) {
+                    photoViewer.A0();
+                    break;
+                }
+                break;
+            default:
+                this.b.a.h.setVisibility(4);
+                break;
+        }
     }
 }

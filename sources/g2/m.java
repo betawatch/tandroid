@@ -1,13 +1,13 @@
 package g2;
 
+import a8.yb;
 import android.net.Uri;
-import b2.p0;
+import b2.q0;
 import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class m {
     public static final /* synthetic */ int i = 0;
@@ -21,13 +21,13 @@ public final class m {
     public final int h;
 
     static {
-        p0.a("media3.datasource");
+        q0.a("media3.datasource");
     }
 
     public m(Uri uri, int i10, byte[] bArr, Map map, long j10, long j11, String str, int i11) {
-        u6.g(j10 >= 0);
-        u6.g(j10 >= 0);
-        u6.g(j11 > 0 || j11 == -1);
+        yb.g(j10 >= 0);
+        yb.g(j10 >= 0);
+        yb.g(j11 > 0 || j11 == -1);
         uri.getClass();
         this.a = uri;
         this.b = i10;

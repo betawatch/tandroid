@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
+import a8.jd;
 import android.webkit.WebView;
-import be.c0;
-import kd.c;
-import ld.a;
-import md.i;
-import td.p;
-import v7.i8;
+import ce.c0;
+import ld.c;
+import md.a;
+import nd.i;
+import ud.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzlf extends i implements p {
     Object zza;
@@ -21,14 +21,14 @@ final class zzlf extends i implements p {
         this.zzc = zzlyVar;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final c create(Object obj, c cVar) {
         return new zzlf(this.zzc, cVar);
     }
 
-    @Override // td.p
+    @Override // ud.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlf) create((c0) obj, (c) obj2)).invokeSuspend(id.i.a);
+        return ((zzlf) create((c0) obj, (c) obj2)).invokeSuspend(jd.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x006a, code lost:
@@ -37,7 +37,7 @@ final class zzlf extends i implements p {
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0078, code lost:
     
-        return id.i.a;
+        return jd.i.a;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0053, code lost:
     
@@ -70,7 +70,7 @@ final class zzlf extends i implements p {
     
         return r0;
      */
-    @Override // md.a
+    @Override // nd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -78,16 +78,16 @@ final class zzlf extends i implements p {
         a aVar = a.a;
         int i10 = this.zzb;
         if (i10 == 0) {
-            i8.b(obj);
+            jd.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
         } else if (i10 == 1) {
-            i8.b(obj);
+            jd.b(obj);
         } else if (i10 != 2) {
-            i8.b(obj);
+            jd.b(obj);
         } else {
-            i8.b(obj);
+            jd.b(obj);
             ((WebView) obj).getSettings().setJavaScriptEnabled(true);
             zzly zzlyVar2 = this.zzc;
             this.zza = null;

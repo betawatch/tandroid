@@ -1,86 +1,59 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.view.MotionEvent;
+import org.telegram.messenger.video.VideoFramesRewinder;
+import org.telegram.messenger.video.VideoPlayerRewinder;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class xs0 extends org.telegram.ui.Components.j81 {
-    public final /* synthetic */ PhotoViewer m0;
+public final class xs0 extends VideoPlayerRewinder {
+    public final /* synthetic */ PhotoViewer a;
 
-    public xs0(PhotoViewer photoViewer) {
-        this.m0 = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xs0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
+        super(videoFramesRewinder);
+        this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.j81
-    public final void B() {
-        super.B();
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.u4 == 0) {
-            PhotoViewer.Z(photoViewer, false);
-        }
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(n());
-        b5.d.x(false);
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindCanceled() {
+        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+        PhotoViewer photoViewer = this.a;
+        PhotoViewer.k(photoViewer, obtain);
+        photoViewer.z1.f(false);
+        org.telegram.ui.Components.ch0.p0.Q.f(false);
     }
 
-    @Override // org.telegram.ui.Components.j81
-    public final void C() {
-        super.C();
-        PhotoViewer photoViewer = this.m0;
-        PhotoViewer.Z(photoViewer, true);
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(n());
-        b5.d.x(true);
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindStart(boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.e(false);
+        photoViewer.z1.d(!z10);
+        photoViewer.z1.f(true);
+        photoViewer.e0.invalidate();
+        org.telegram.ui.Components.ch0.v(z10);
     }
 
-    @Override // org.telegram.ui.Components.j81
-    public final void K(long j10) {
-        L(j10, false);
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.r1) {
-            PhotoViewer.a0(photoViewer, j10);
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void updateRewindProgressUi(long j10, float f7, boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.g(Math.abs(j10));
+        if (z10) {
+            photoViewer.q3.h(f7, false);
+            photoViewer.r3.invalidate();
         }
-        if (photoViewer.O8) {
-            return;
+        org.telegram.ui.Components.ch0 ch0Var = org.telegram.ui.Components.ch0.p0;
+        ch0Var.Q.g(0L);
+        if (z10) {
+            ch0Var.Z = f7;
+            di.h3 h3Var = ch0Var.b0;
+            if (h3Var != null) {
+                h3Var.invalidate();
+            }
+            org.telegram.ui.Components.bh0 bh0Var = ch0Var.h;
+            if (bh0Var != null) {
+                bh0Var.invalidate();
+            }
         }
-        b5.d.D(j10);
-    }
-
-    @Override // org.telegram.ui.Components.j81
-    public final void Q(float f7) {
-        super.Q(f7);
-        if (this.m0.O8) {
-            return;
-        }
-        b5.d.z(f7);
-    }
-
-    @Override // org.telegram.ui.Components.j81, b2.d1
-    public final void onRenderedFirstFrame() {
-        b2.z0 h;
-        super.onRenderedFirstFrame();
-        PhotoViewer photoViewer = this.m0;
-        boolean z10 = true;
-        photoViewer.R = true;
-        if (photoViewer.D2) {
-            photoViewer.e0.invalidate();
-        }
-        photoViewer.B3();
-        if (!b5.d.u() && !photoViewer.r) {
-            z10 = false;
-        }
-        O(z10);
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(n());
-        i2.h0 h0Var = this.d;
-        float f7 = 1.0f;
-        if (h0Var != null && (h = h0Var.h()) != null) {
-            f7 = h.a;
-        }
-        b5.d.z(f7);
     }
 }

@@ -1,159 +1,178 @@
 package xh;
 
-import android.util.LongSparseArray;
+import android.R;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Cells.f5;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.iq0;
-import s4.b1;
-import sg.k1;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.v50;
+import org.telegram.ui.o41;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class f extends lm0 {
-    public final /* synthetic */ k c;
+public final class f {
+    public static HashMap n;
+    public final double a;
+    public final double b;
+    public final int c;
+    public final o41 d;
+    public final k60 e;
+    public e f;
+    public final int g;
+    public final int h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
+    public final HashMap k = new HashMap();
+    public int l = 0;
+    public final d m = new d(this, 0);
 
-    public f(k kVar) {
-        this.c = kVar;
+    public f(int i10, o41 o41Var, int i11, int i12) {
+        double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
+        this.a = d;
+        this.b = d * 4.0d;
+        this.c = i10;
+        this.g = i11;
+        this.h = i12;
+        this.d = o41Var;
+        k60 k60Var = new k60(this, o41Var.getContext(), 1);
+        this.e = k60Var;
+        k60Var.setSurfaceTextureListener(new v50(this, 5));
+        k60Var.setOpaque(false);
+        o41Var.addView(k60Var);
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(b1 b1Var) {
-        return b1Var.f == 0;
-    }
-
-    public final void E(List list) {
-        k kVar = this.c;
-        ArrayList arrayList = kVar.c;
-        boolean isEmpty = arrayList.isEmpty();
-        int i10 = 0;
-        while (i10 < list.size()) {
-            long j10 = ((TLRPC.TL_chatInviteImporter) list.get(i10)).user_id;
-            int i11 = i10 + 1;
-            while (true) {
-                if (i11 >= list.size()) {
-                    break;
-                }
-                if (((TLRPC.TL_chatInviteImporter) list.get(i11)).user_id == j10) {
-                    list.remove(i10);
-                    i10--;
-                    break;
-                }
-                i11++;
+    public static f d(int i10, View view, ViewGroup viewGroup) {
+        int min;
+        if (view == null) {
+            return null;
+        }
+        if (n == null) {
+            n = new HashMap();
+        }
+        f fVar = (f) n.get(Integer.valueOf(i10));
+        if (fVar == null) {
+            int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+            if (devicePerformanceClass == 1) {
+                Point point = AndroidUtilities.displaySize;
+                min = Math.min(RichMessageLayout.PART_MAX_HEIGHT_DP, (int) (((point.x + point.y) / 2.0f) * 0.8f));
+            } else if (devicePerformanceClass != 2) {
+                Point point2 = AndroidUtilities.displaySize;
+                min = Math.min(720, (int) (((point2.x + point2.y) / 2.0f) * 0.7f));
+            } else {
+                Point point3 = AndroidUtilities.displaySize;
+                min = Math.min(1280, (int) (((point3.x + point3.y) / 2.0f) * 1.0f));
             }
-            i10++;
-        }
-        arrayList.clear();
-        arrayList.addAll(list);
-        if (isEmpty) {
-            s(!kVar.B ? 1 : 0, arrayList.size());
-        } else {
-            l();
-        }
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        k kVar = this.c;
-        return ((kVar.c.isEmpty() || !kVar.x) ? 0 : 1) + kVar.c.size() + (!kVar.B ? 1 : 0);
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        k kVar = this.c;
-        if (i10 != 0 || kVar.B) {
-            return (i10 == h() + (-1) && !kVar.c.isEmpty() && kVar.x) ? 4 : 0;
-        }
-        return 2;
-    }
-
-    @Override // s4.g0
-    public final void v(b1 b1Var, int i10) {
-        k kVar = this.c;
-        ArrayList arrayList = kVar.c;
-        int i11 = b1Var.f;
-        View view = b1Var.a;
-        if (i11 != 0) {
-            if (i11 == 2) {
-                view.requestLayout();
-                return;
+            if (viewGroup == null) {
+                return null;
             }
+            HashMap hashMap = n;
+            Integer valueOf = Integer.valueOf(i10);
+            o41 o41Var = new o41(viewGroup.getContext(), 11);
+            viewGroup.addView(o41Var);
+            f fVar2 = new f(i10, o41Var, min, min);
+            hashMap.put(valueOf, fVar2);
+            fVar = fVar2;
+        }
+        fVar.a(view);
+        return fVar;
+    }
+
+    public static f e(View view) {
+        Activity findActivity = AndroidUtilities.findActivity(view.getContext());
+        ViewGroup viewGroup = null;
+        if (findActivity != null) {
+            View rootView = findActivity.findViewById(R.id.content).getRootView();
+            if (rootView instanceof ViewGroup) {
+                viewGroup = (ViewGroup) rootView;
+            }
+        }
+        return d(0, view, viewGroup);
+    }
+
+    public static void f(boolean z10) {
+        e eVar;
+        HashMap hashMap = n;
+        if (hashMap == null) {
             return;
         }
-        f5 f5Var = (f5) view;
-        int i12 = i10 - (!kVar.B ? 1 : 0);
-        LongSparseArray longSparseArray = kVar.d;
-        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i12);
-        boolean z10 = i12 != arrayList.size() - 1 || kVar.x;
-        n5 n5Var = f5Var.d;
-        f5Var.e = tL_chatInviteImporter;
-        f5Var.f = z10;
-        f5Var.setWillNotDraw(!z10);
-        TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
-        h9 h9Var = f5Var.a;
-        h9Var.r(user);
-        f5Var.b.e(user, h9Var);
-        f5Var.c.l(UserObject.getUserName(user), false);
-        String formatDateAudio = LocaleController.formatDateAudio(tL_chatInviteImporter.date, false);
-        if (tL_chatInviteImporter.via_chatlist) {
-            n5Var.l(LocaleController.getString(R.string.JoinedViaFolder), false);
-            return;
-        }
-        long j10 = tL_chatInviteImporter.approved_by;
-        if (j10 == 0) {
-            n5Var.l(LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio), false);
-            return;
-        }
-        TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j10);
-        if (user2 != null) {
-            n5Var.l(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio), false);
-        } else {
-            n5Var.l("", false);
+        for (f fVar : hashMap.values()) {
+            if (fVar.c == 0 && (eVar = fVar.f) != null) {
+                eVar.b = z10;
+            }
         }
     }
 
-    @Override // s4.g0
-    public final b1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        k kVar = this.c;
-        boolean z10 = kVar.a;
-        if (i10 == 1) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 == 2) {
-            k1 k1Var = new k1(viewGroup.getContext(), 1);
-            k1Var.setTag(-33024);
-            view = k1Var;
-        } else if (i10 == 3) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 != 4) {
-            view = new f5(viewGroup.getContext(), kVar, z10);
-        } else {
-            o2 o2Var = kVar.g;
-            iq0 iq0Var = new iq0(o2Var.getParentActivity(), 1, o2Var.getResourceProvider());
-            if (kVar.B) {
-                r6.i(k6.d6, iq0Var, o2Var.getResourceProvider());
-            }
-            iq0Var.e(k6.d6, k6.a7, -1);
-            iq0Var.setViewType(15);
-            iq0Var.setMemberRequestButton(z10);
-            iq0Var.setIsSingleCell(true);
-            iq0Var.setItemsCount(1);
-            iq0Var.setTag(-33024);
-            view = iq0Var;
+    public final void a(View view) {
+        if (this.i) {
+            return;
         }
-        return new wl0(view);
+        ArrayList arrayList = this.j;
+        if (arrayList.contains(view)) {
+            return;
+        }
+        arrayList.add(view);
+        int i10 = this.l;
+        this.l = i10 + 1;
+        this.k.put(view, Integer.valueOf(i10));
+    }
+
+    public final void b(View view) {
+        this.j.remove(view);
+        this.k.remove(view);
+        if (this.i) {
+            return;
+        }
+        d dVar = this.m;
+        AndroidUtilities.cancelRunOnUIThread(dVar);
+        AndroidUtilities.runOnUIThread(dVar, 30L);
+    }
+
+    public final void c(Canvas canvas, View view, int i10, int i11, float f7, boolean z10) {
+        if (canvas == null || view == null) {
+            return;
+        }
+        canvas.save();
+        Integer num = (Integer) this.k.get(view);
+        if (num == null) {
+            num = 0;
+        }
+        int i12 = this.g;
+        int i13 = this.h;
+        if (i10 > i12 || i11 > i13) {
+            float max = Math.max(i10 / i12, i11 / i13);
+            canvas.scale(max, max);
+        }
+        if (num.intValue() % 4 == 1) {
+            canvas.rotate(180.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 2) {
+            canvas.scale(-1.0f, 1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 3) {
+            canvas.scale(1.0f, -1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        k60 k60Var = this.e;
+        if (z10) {
+            Bitmap bitmap = k60Var.getBitmap();
+            if (bitmap != null) {
+                Paint paint = new Paint(7);
+                paint.setColor(-1);
+                canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+                bitmap.recycle();
+            }
+        } else {
+            k60Var.setAlpha(f7);
+            k60Var.draw(canvas);
+        }
+        canvas.restore();
     }
 }

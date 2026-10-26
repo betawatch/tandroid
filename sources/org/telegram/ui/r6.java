@@ -1,50 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class r6 extends org.telegram.ui.ActionBar.h3 {
-    public final /* synthetic */ int b = 1;
+public final /* synthetic */ class r6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ v6 c;
+    public final /* synthetic */ long[] d;
+    public final /* synthetic */ s6 e;
 
-    public /* synthetic */ r6(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
-        super(i10, context, g6Var, z10);
+    public /* synthetic */ r6(boolean[] zArr, v6 v6Var, long[] jArr, s6 s6Var, int i10) {
+        this.a = i10;
+        this.b = zArr;
+        this.c = v6Var;
+        this.d = jArr;
+        this.e = s6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.h3
-    public boolean canDismissWithTouchOutside() {
-        switch (this.b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                return false;
+                AndroidUtilities.runOnUIThread(new r6(this.b, this.c, this.d, this.e, 1));
+                break;
             default:
-                return super.canDismissWithTouchOutside();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3
-    public void onThemeColorsChanged() {
-        switch (this.b) {
-            case 1:
-                super.onThemeColorsChanged();
-                try {
-                    int themedColor = getThemedColor(org.telegram.ui.ActionBar.k6.h5);
-                    if (this.navBarColor != themedColor) {
-                        fixNavigationBar(themedColor);
-                        break;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
+                this.b[0] = true;
+                this.c.a(1.0f);
+                long[] jArr = this.d;
+                long j10 = jArr[0];
+                s6 s6Var = this.e;
+                if (j10 <= 0) {
+                    s6Var.dismiss();
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new zt0(s6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
+                    break;
                 }
-                break;
-            default:
-                super.onThemeColorsChanged();
-                break;
         }
-    }
-
-    public /* synthetic */ r6(Context context, boolean z10) {
-        super(context, z10);
     }
 }

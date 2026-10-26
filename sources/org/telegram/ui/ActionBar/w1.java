@@ -1,71 +1,124 @@
 package org.telegram.ui.ActionBar;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.UsersSelectActivity;
+import org.telegram.ui.gg0;
+import org.telegram.ui.in0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class w1 extends FrameLayout {
-    public final TextView a;
-    public final ImageView b;
+public final class w1 extends ScrollView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public w1(Context context, g6 g6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
         super(context);
-        int i10 = k6.I5;
-        Drawable g02 = k6.g0(k6.w0(i10, g6Var), 2, -1);
-        n6 O = r6.O(i10);
-        setBackground(g02);
-        r6.k(this, g02, null, O, g6Var);
-        setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        r6.t(imageView, k6.J5, g6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, w7.z5.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        r6.W(textView, k6.j5, g6Var);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, w7.z5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    public final void a(int i10, CharSequence charSequence) {
-        TextView textView = this.a;
-        textView.setText(charSequence);
-        ImageView imageView = this.b;
-        if (i10 == 0) {
-            imageView.setVisibility(4);
-            textView.setPadding(0, 0, 0, 0);
-        } else {
-            imageView.setImageResource(i10);
-            imageView.setVisibility(0);
-            textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(56.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(56.0f) : 0, 0);
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        switch (this.a) {
+            case 0:
+                boolean drawChild = super.drawChild(canvas, view, j10);
+                e2 e2Var = (e2) this.b;
+                if (e2Var.y[0].getPaint().getAlpha() != 0) {
+                    e2Var.y[0].setBounds(0, getScrollY(), getMeasuredWidth(), AndroidUtilities.dp(3.0f) + getScrollY());
+                    e2Var.y[0].draw(canvas);
+                }
+                if (e2Var.y[1].getPaint().getAlpha() != 0) {
+                    e2Var.y[1].setBounds(0, (getMeasuredHeight() + getScrollY()) - AndroidUtilities.dp(3.0f), getMeasuredWidth(), getMeasuredHeight() + getScrollY());
+                    e2Var.y[1].draw(canvas);
+                }
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j10);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                y70 y70Var = (y70) this.b;
+                int size = View.MeasureSpec.getSize(i10);
+                int size2 = View.MeasureSpec.getSize(i11);
+                if (AndroidUtilities.isTablet() || size2 > size) {
+                    y70Var.s0 = AndroidUtilities.dp(144.0f);
+                } else {
+                    y70Var.s0 = AndroidUtilities.dp(56.0f);
+                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(y70Var.s0, TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i10, i11);
+                setMeasuredDimension(((fi.l5) this.b).getMeasuredWidth(), getMeasuredHeight());
+                break;
+            case 3:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 4:
+                ((in0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
-    public void setGravity(int i10) {
-        this.a.setGravity(i10);
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        switch (this.a) {
+            case 4:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i10, rect);
+        }
     }
 
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 3:
+                int i10 = ((gg0) this.b).a;
+                if (i10 == 1 || i10 == 2 || i10 == 4) {
+                    rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
+                }
+                break;
+            case 4:
+                int i11 = ((in0) this.b).I1;
+                if (i11 == 1 || i11 == 2 || i11 == 4) {
+                    rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
+                }
+                break;
+            case 5:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
+                if (!usersSelectActivity.v) {
+                    rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                    rect.top = org.telegram.messenger.t.D(20.0f, usersSelectActivity.Q, rect.top);
+                    rect.bottom = org.telegram.messenger.t.D(50.0f, usersSelectActivity.Q, rect.bottom);
+                    break;
+                } else {
+                    usersSelectActivity.v = false;
+                    break;
+                }
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w1(Context context, int i10, fi.l5 l5Var) {
+        super(context, null, 0, i10);
+        this.a = 2;
+        this.b = l5Var;
     }
 }

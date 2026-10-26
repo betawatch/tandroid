@@ -1,25 +1,36 @@
 package c9;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class a extends Activity {
-    public abstract Class getServiceClass();
+public final class a implements c, IInterface {
+    public final IBinder a;
 
-    @Override // android.app.Activity
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Intent intent = new Intent(this, (Class<?>) getServiceClass());
-        intent.putExtra(d.EXTRA_INTENT, getIntent());
-        if (Build.VERSION.SDK_INT >= 26) {
-            startForegroundService(intent);
-        } else {
-            startService(intent);
+    public a(IBinder iBinder) {
+        this.a = iBinder;
+    }
+
+    public final Parcel F0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.a.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e) {
+                obtain.recycle();
+                throw e;
+            }
+        } finally {
+            parcel.recycle();
         }
-        finish();
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

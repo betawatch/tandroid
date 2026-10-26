@@ -1,6 +1,32 @@
 package m;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import androidx.appcompat.widget.Toolbar;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class f3 extends o2 {
+public final /* synthetic */ class f3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Toolbar b;
+
+    public /* synthetic */ f3(Toolbar toolbar, int i10) {
+        this.a = i10;
+        this.b = toolbar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                i3 i3Var = this.b.e0;
+                l.m mVar = i3Var == null ? null : i3Var.b;
+                if (mVar != null) {
+                    mVar.collapseActionView();
+                    break;
+                }
+                break;
+            default:
+                this.b.m();
+                break;
+        }
+    }
 }

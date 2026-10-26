@@ -1,11 +1,11 @@
 package x3;
 
-import c3.r;
+import a8.yb;
+import c3.p;
 import e2.x;
 import java.io.EOFException;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e {
     public final f a = new f();
@@ -33,9 +33,9 @@ public final class e {
         return i12;
     }
 
-    public final boolean b(r rVar) {
+    public final boolean b(p pVar) {
         int i10;
-        u6.p(rVar != null);
+        yb.p(pVar != null);
         boolean z10 = this.e;
         x xVar = this.b;
         if (z10) {
@@ -46,7 +46,7 @@ public final class e {
             int i11 = this.c;
             f fVar = this.a;
             if (i11 < 0) {
-                if (fVar.b(rVar, -1L) && fVar.a(rVar, true)) {
+                if (fVar.b(pVar, -1L) && fVar.a(pVar, true)) {
                     int i12 = fVar.d;
                     if ((fVar.a & 1) == 1 && xVar.c == 0) {
                         i12 += a(0);
@@ -55,7 +55,7 @@ public final class e {
                         i10 = 0;
                     }
                     try {
-                        rVar.r(i12);
+                        pVar.q(i12);
                         this.c = i10;
                     } catch (EOFException unused) {
                     }
@@ -67,7 +67,7 @@ public final class e {
             if (a2 > 0) {
                 xVar.c(xVar.c + a2);
                 try {
-                    rVar.readFully(xVar.a, xVar.c, a2);
+                    pVar.readFully(xVar.a, xVar.c, a2);
                     xVar.M(xVar.c + a2);
                     this.e = fVar.f[i13 + (-1)] != 255;
                 } catch (EOFException unused2) {

@@ -1,92 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.os.Build;
-import android.widget.EdgeEffect;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class vt extends EdgeEffect {
-    public final int a;
-    public final tt b;
-    public final RecyclerView c;
-    public final zp d;
-    public boolean e;
+public final /* synthetic */ class vt implements wt {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public vt(RecyclerView recyclerView, int i10, tt ttVar) {
-        super(recyclerView.getContext());
-        this.d = new zp(this, 8);
-        this.c = recyclerView;
+    public /* synthetic */ vt(Object obj, int i10) {
         this.a = i10;
-        this.b = ttVar;
+        this.b = obj;
     }
 
-    public final void a() {
-        boolean b10 = b();
-        if (this.e != b10) {
-            this.e = b10;
-            tt ttVar = this.b;
-            if (ttVar != null) {
-                ttVar.a(this.a, b10);
-            }
+    @Override // org.telegram.ui.Components.wt
+    public final void a(int i10, boolean z10) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = ((yt) this.b).b;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    ((wt) obj).a(i10, z10);
+                }
+                break;
+            default:
+                ((Runnable) this.b).run();
+                break;
         }
-    }
-
-    public final boolean b() {
-        if (isFinished()) {
-            return false;
-        }
-        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final boolean draw(Canvas canvas) {
-        boolean draw = super.draw(canvas);
-        this.c.postOnAnimation(this.d);
-        return draw;
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void finish() {
-        super.finish();
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onAbsorb(int i10) {
-        super.onAbsorb(i10);
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onPull(float f7) {
-        super.onPull(f7);
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final float onPullDistance(float f7, float f10) {
-        float onPullDistance = super.onPullDistance(f7, f10);
-        a();
-        return onPullDistance;
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onRelease() {
-        super.onRelease();
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void setSize(int i10, int i11) {
-        super.setSize(i10, i11);
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onPull(float f7, float f10) {
-        super.onPull(f7, f10);
-        a();
     }
 }

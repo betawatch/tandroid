@@ -11,10 +11,10 @@ import android.text.style.LineHeightSpan;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class x {
-    public static void a(bh.a aVar, View view) {
+    public static void a(ch.a aVar, View view) {
         if (Build.VERSION.SDK_INT >= 29) {
             aVar.a(view.getUniqueDrawingId());
         } else {
@@ -62,5 +62,17 @@ public abstract /* synthetic */ class x {
     }
 
     public static /* synthetic */ void l() {
+    }
+
+    public static /* synthetic */ RenderNode m() {
+        return new RenderNode("debug");
+    }
+
+    public static /* synthetic */ RenderNode n() {
+        return new RenderNode("glass-fade-overlay-only");
+    }
+
+    public static /* synthetic */ RenderNode o() {
+        return new RenderNode("glass-fade-content");
     }
 }

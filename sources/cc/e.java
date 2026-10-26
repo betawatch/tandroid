@@ -1,44 +1,50 @@
 package cc;
 
-import android.os.SystemClock;
-import m.s3;
-import ri.i;
-import ri.o;
-import z7.fb;
-import z7.fe;
-import z7.gb;
-import z7.vf;
+import a8.ef;
+import a8.me;
+import java.util.Arrays;
+import o6.l;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements vf {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class e {
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
 
-    public /* synthetic */ e(f fVar, gb gbVar, long j10) {
-        this.b = fVar;
-        this.c = gbVar;
-        this.a = j10;
+    public /* synthetic */ e(d dVar) {
+        this.a = dVar.a;
+        this.b = dVar.b;
+        this.c = dVar.c;
     }
 
-    @Override // z7.vf
-    public a5.a zza() {
-        f fVar = (f) this.b;
-        gb gbVar = (gb) this.c;
-        s3 s3Var = new s3();
-        s3Var.c = fb.b;
-        u2.c cVar = new u2.c(19, false);
-        cVar.d = fVar.e.a();
-        cVar.b = gbVar;
-        cVar.c = Long.valueOf((SystemClock.elapsedRealtime() - this.a) & Long.MAX_VALUE);
-        s3Var.e = new fe(cVar);
-        return new a5.a(s3Var, 0);
+    public final ef a() {
+        me meVar = new me();
+        Boolean bool = Boolean.FALSE;
+        meVar.a = bool;
+        meVar.b = Boolean.valueOf(this.a);
+        meVar.c = Boolean.valueOf(this.b);
+        meVar.d = bool;
+        meVar.e = Boolean.valueOf(this.c);
+        return new ef(meVar);
     }
 
-    public e(long j10, i iVar, o oVar) {
-        this.c = oVar;
-        this.a = j10;
-        this.b = iVar;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        e eVar = (e) obj;
+        return this.a == eVar.a && this.b == eVar.b && this.c == eVar.c && l.l(null, null);
+    }
+
+    public final int hashCode() {
+        Boolean valueOf = Boolean.valueOf(this.a);
+        Boolean valueOf2 = Boolean.valueOf(this.b);
+        Boolean valueOf3 = Boolean.valueOf(this.c);
+        Boolean bool = Boolean.FALSE;
+        return Arrays.hashCode(new Object[]{bool, valueOf, valueOf2, bool, valueOf3, null});
     }
 }

@@ -1,22 +1,28 @@
 package cd;
 
-import java.util.Map;
+import c3.h0;
+import ef.p;
+import hd.h;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class c {
-    public final String a;
-    public final int b;
-    public final Map c;
-    public int d = -1;
+public final class c extends h {
+    public static final Pattern e = Pattern.compile("(\\${2})([\\s\\S]+?)\\1");
 
-    public c(int i10, String str, Map map) {
-        this.a = str;
-        this.b = i10;
-        this.c = map;
+    @Override // hd.h
+    public final p b() {
+        String a2 = a(e);
+        if (a2 == null) {
+            return null;
+        }
+        d dVar = new d();
+        dVar.g = h0.l(2, 2, a2);
+        return dVar;
     }
 
-    public Map a() {
-        return this.c;
+    @Override // hd.h
+    public final char d() {
+        return '$';
     }
 }

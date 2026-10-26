@@ -1,46 +1,58 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
+import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mq0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wb implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.User d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ wb(MessagesController messagesController, int i10, TLRPC.Chat chat, TLRPC.User user, boolean z10) {
-        this.e = messagesController;
-        this.b = i10;
-        this.f = chat;
-        this.d = user;
-        this.c = z10;
+    public /* synthetic */ wb(MessagesController messagesController, long j10, Object obj, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = j10;
+        this.d = obj;
+        this.e = tLObject;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.e).lambda$pinMessage$129(this.b, (TLRPC.Chat) this.f, this.d, this.c, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$getSavedReactionTags$491(this.c, (TLRPC.messages_SavedReactionTags) this.d, (TLRPC.TL_messages_getSavedReactionTags) this.e, tLObject, tL_error);
+                break;
+            case 1:
+                ((MessagesController) this.b).lambda$deleteSavedDialog$142(this.c, (int[]) this.d, (TLRPC.InputPeer) this.e, tLObject, tL_error);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$addUsersToChannel$273((org.telegram.ui.ActionBar.r2) this.d, (TLRPC.TL_channels_inviteToChannel) this.e, this.c, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ki.r2((mq0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
+                ((TopicsController) this.b).lambda$pinTopic$20((org.telegram.ui.ActionBar.r2) this.d, this.c, (ArrayList) this.e, tLObject, tL_error);
                 break;
         }
     }
 
-    public /* synthetic */ wb(mq0 mq0Var, String str, int i10, boolean z10, TLRPC.User user) {
-        this.e = mq0Var;
-        this.f = str;
-        this.b = i10;
-        this.c = z10;
-        this.d = user;
+    public /* synthetic */ wb(MessagesController messagesController, org.telegram.ui.ActionBar.r2 r2Var, TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel, long j10) {
+        this.a = 2;
+        this.b = messagesController;
+        this.d = r2Var;
+        this.e = tL_channels_inviteToChannel;
+        this.c = j10;
+    }
+
+    public /* synthetic */ wb(TopicsController topicsController, org.telegram.ui.ActionBar.r2 r2Var, long j10, ArrayList arrayList) {
+        this.a = 3;
+        this.b = topicsController;
+        this.d = r2Var;
+        this.c = j10;
+        this.e = arrayList;
     }
 }

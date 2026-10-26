@@ -1,0 +1,85 @@
+package d7;
+
+import a8.df;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class g extends p6.a {
+    public static final Parcelable.Creator<g> CREATOR = new r0(11);
+    public final k0 a;
+    public final u0 b;
+    public final h c;
+    public final v0 d;
+    public final String e;
+
+    public g(k0 k0Var, u0 u0Var, h hVar, v0 v0Var, String str) {
+        this.a = k0Var;
+        this.b = u0Var;
+        this.c = hVar;
+        this.d = v0Var;
+        this.e = str;
+    }
+
+    public final JSONObject b() {
+        try {
+            JSONObject jSONObject = new JSONObject();
+            h hVar = this.c;
+            if (hVar != null) {
+                try {
+                    JSONObject jSONObject2 = new JSONObject();
+                    jSONObject2.put("rk", hVar.a);
+                    jSONObject.put("credProps", jSONObject2);
+                } catch (JSONException e) {
+                    throw new RuntimeException("Error encoding AuthenticationExtensionsCredPropsOutputs to JSON object", e);
+                }
+            }
+            k0 k0Var = this.a;
+            if (k0Var != null) {
+                jSONObject.put("uvm", k0Var.b());
+            }
+            v0 v0Var = this.d;
+            if (v0Var != null) {
+                jSONObject.put("prf", v0Var.b());
+            }
+            String str = this.e;
+            if (str != null) {
+                jSONObject.put("txAuthSimple", str);
+            }
+            return jSONObject;
+        } catch (JSONException e10) {
+            throw new RuntimeException("Error encoding AuthenticationExtensionsClientOutputs to JSON object", e10);
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof g)) {
+            return false;
+        }
+        g gVar = (g) obj;
+        return o6.l.l(this.a, gVar.a) && o6.l.l(this.b, gVar.b) && o6.l.l(this.c, gVar.c) && o6.l.l(this.d, gVar.d) && o6.l.l(this.e, gVar.e);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e});
+    }
+
+    public final String toString() {
+        return a1.g.p("AuthenticationExtensionsClientOutputs{", b().toString(), "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q5 = df.q(parcel, 20293);
+        df.k(parcel, 1, this.a, i10);
+        df.k(parcel, 2, this.b, i10);
+        df.k(parcel, 3, this.c, i10);
+        df.k(parcel, 4, this.d, i10);
+        df.l(parcel, 5, this.e);
+        df.r(parcel, q5);
+    }
+}

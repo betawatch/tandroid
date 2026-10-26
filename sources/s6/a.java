@@ -1,63 +1,29 @@
 package s6;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.api.n;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeSet;
-import n6.l;
-import w7.f0;
+import q7.m;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a extends o6.a {
-    public static final Parcelable.Creator<a> CREATOR = new c();
-    public final List a;
-    public final boolean b;
-    public final String c;
-    public final String d;
+public final class a extends p6.a {
+    public static final Parcelable.Creator<a> CREATOR = new m(5);
+    public final boolean a;
+    public final int b;
 
-    public a(ArrayList arrayList, boolean z10, String str, String str2) {
-        l.h(arrayList);
-        this.a = arrayList;
-        this.b = z10;
-        this.c = str;
-        this.d = str2;
-    }
-
-    public static a b(List list, boolean z10) {
-        TreeSet treeSet = new TreeSet(b.a);
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            Collections.addAll(treeSet, ((n) it.next()).c());
-        }
-        return new a(new ArrayList(treeSet), z10, null, null);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.b == aVar.b && l.l(this.a, aVar.a) && l.l(this.c, aVar.c) && l.l(this.d, aVar.d);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.b), this.a, this.c, this.d});
+    public a(int i10, boolean z10) {
+        this.a = z10;
+        this.b = i10;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.p(parcel, 1, this.a);
-        f0.s(parcel, 2, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        f0.l(parcel, 3, this.c);
-        f0.l(parcel, 4, this.d);
-        f0.r(parcel, q6);
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        df.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        df.r(parcel, q5);
     }
 }

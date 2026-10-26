@@ -1,48 +1,75 @@
 package r9;
 
-import android.util.Log;
-import com.google.firebase.components.ComponentRegistrar;
-import java.lang.reflect.InvocationTargetException;
-import si.o0;
+import android.os.Parcel;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.f;
+import com.google.android.gms.common.api.internal.v;
+import com.google.android.gms.common.api.q;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements qa.b {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class c extends v implements f {
+    public TaskCompletionSource d;
+    public final /* synthetic */ b[] e;
 
-    public /* synthetic */ c(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(b[] bVarArr) {
+        super(null, false, 9004);
+        this.e = bVarArr;
     }
 
-    @Override // qa.b
-    public final Object get() {
-        switch (this.a) {
-            case 0:
-                String str = (String) this.b;
-                try {
-                    Class<?> cls = Class.forName(str);
-                    if (ComponentRegistrar.class.isAssignableFrom(cls)) {
-                        return (ComponentRegistrar) cls.getDeclaredConstructor(null).newInstance(null);
-                    }
-                    throw new m("Class " + str + " is not an instance of com.google.firebase.components.ComponentRegistrar");
-                } catch (ClassNotFoundException unused) {
-                    Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
-                    return null;
-                } catch (IllegalAccessException e) {
-                    throw new m(a1.g.p("Could not instantiate ", str, "."), e);
-                } catch (InstantiationException e7) {
-                    throw new m(a1.g.p("Could not instantiate ", str, "."), e7);
-                } catch (NoSuchMethodException e10) {
-                    throw new m(o0.h("Could not instantiate ", str), e10);
-                } catch (InvocationTargetException e11) {
-                    throw new m(o0.h("Could not instantiate ", str), e11);
-                }
-            case 1:
-                return (ComponentRegistrar) this.b;
+    @Override // com.google.android.gms.common.api.internal.f
+    public final void a(q qVar) {
+        Exception aVar;
+        Status status = (Status) qVar;
+        if (status.b()) {
+            this.d.setResult(null);
+            return;
+        }
+        TaskCompletionSource taskCompletionSource = this.d;
+        String str = status.b;
+        if (str == null || str.isEmpty()) {
+            str = "User Action indexing error, please try again.";
+        }
+        switch (status.a) {
+            case 17510:
+                aVar = new p9.a(str);
+                break;
+            case 17511:
+                aVar = new p9.a(str);
+                break;
+            case 17512:
             default:
-                return new sa.b((l9.h) this.b);
+                aVar = new m9.c(str);
+                break;
+            case 17513:
+                aVar = new p9.a(str);
+                break;
+            case 17514:
+                aVar = new p9.b(str);
+                break;
+        }
+        taskCompletionSource.setException(aVar);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.v
+    public final void c(com.google.android.gms.common.api.c cVar, TaskCompletionSource taskCompletionSource) {
+        this.d = taskCompletionSource;
+        q7.a aVar = (q7.a) ((q7.b) cVar).u();
+        c7.b bVar = new c7.b(this);
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken("com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch");
+        int i10 = q7.c.a;
+        obtain.writeStrongBinder(bVar);
+        obtain.writeTypedArray(this.e, 0);
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            aVar.a.transact(7, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain.recycle();
+            obtain2.recycle();
         }
     }
 }

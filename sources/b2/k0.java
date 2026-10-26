@@ -1,31 +1,64 @@
 package b2;
 
 import android.net.Uri;
-import android.os.Bundle;
 import j$.util.Objects;
+import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k0 {
-    public static final k0 d = new k0(new androidx.biometric.e(3));
-    public static final String e;
-    public static final String f;
-    public static final String g;
+    public static final String i;
+    public static final String j;
+    public static final String k;
+    public static final String l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
     public final Uri a;
     public final String b;
-    public final Bundle c;
+    public final h0 c;
+    public final c0 d;
+    public final List e;
+    public final String f;
+    public final f9.i0 g;
+    public final long h;
 
     static {
-        String str = e2.m0.a;
-        e = Integer.toString(0, 36);
-        f = Integer.toString(1, 36);
-        g = Integer.toString(2, 36);
+        String str = e2.n0.a;
+        i = Integer.toString(0, 36);
+        j = Integer.toString(1, 36);
+        k = Integer.toString(2, 36);
+        l = Integer.toString(3, 36);
+        m = Integer.toString(4, 36);
+        n = Integer.toString(5, 36);
+        o = Integer.toString(6, 36);
+        p = Integer.toString(7, 36);
     }
 
-    public k0(androidx.biometric.e eVar) {
-        this.a = (Uri) eVar.b;
-        this.b = (String) eVar.c;
-        this.c = (Bundle) eVar.d;
+    public k0(Uri uri, String str, h0 h0Var, c0 c0Var, List list, String str2, f9.i0 i0Var, long j10) {
+        this.a = uri;
+        this.b = w0.n(str);
+        this.c = h0Var;
+        this.d = c0Var;
+        this.e = list;
+        this.f = str2;
+        this.g = i0Var;
+        f9.f0 t10 = f9.i0.t();
+        for (int i10 = 0; i10 < i0Var.size(); i10++) {
+            o0 o0Var = (o0) i0Var.get(i10);
+            n0 n0Var = new n0();
+            n0Var.c = o0Var.a;
+            n0Var.d = o0Var.b;
+            n0Var.e = o0Var.c;
+            n0Var.a = o0Var.d;
+            n0Var.b = o0Var.e;
+            n0Var.f = o0Var.f;
+            n0Var.g = o0Var.g;
+            t10.c(new m0(n0Var));
+        }
+        t10.f();
+        this.h = j10;
     }
 
     public final boolean equals(Object obj) {
@@ -36,18 +69,17 @@ public final class k0 {
             return false;
         }
         k0 k0Var = (k0) obj;
-        if (Objects.equals(this.a, k0Var.a) && Objects.equals(this.b, k0Var.b)) {
-            if ((this.c == null) == (k0Var.c == null)) {
-                return true;
-            }
-        }
-        return false;
+        return this.a.equals(k0Var.a) && Objects.equals(this.b, k0Var.b) && Objects.equals(this.c, k0Var.c) && Objects.equals(this.d, k0Var.d) && this.e.equals(k0Var.e) && Objects.equals(this.f, k0Var.f) && this.g.equals(k0Var.g) && this.h == k0Var.h;
     }
 
     public final int hashCode() {
-        Uri uri = this.a;
-        int hashCode = (uri == null ? 0 : uri.hashCode()) * 31;
+        int hashCode = this.a.hashCode() * 31;
         String str = this.b;
-        return ((hashCode + (str == null ? 0 : str.hashCode())) * 31) + (this.c != null ? 1 : 0);
+        int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
+        h0 h0Var = this.c;
+        int hashCode3 = (hashCode2 + (h0Var == null ? 0 : h0Var.hashCode())) * 31;
+        c0 c0Var = this.d;
+        int hashCode4 = (this.e.hashCode() + ((hashCode3 + (c0Var == null ? 0 : c0Var.hashCode())) * 31)) * 31;
+        return (int) (((this.g.hashCode() + ((hashCode4 + (this.f != null ? r0.hashCode() : 0)) * 31)) * 31 * 31) + this.h);
     }
 }

@@ -1,123 +1,18 @@
 package org.telegram.messenger;
 
-import android.os.Bundle;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.BotFullscreenButtons;
-import org.telegram.messenger.CompoundEmoji;
-import org.telegram.messenger.FilesMigrationService;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationBadge;
-import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class i1 implements Executor {
+    public final /* synthetic */ DispatchQueue2 a;
 
-    public /* synthetic */ i1(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ i1(DispatchQueue2 dispatchQueue2) {
+        this.a = dispatchQueue2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((CompoundEmoji.DrawableInfo) this.b).lambda$load$0();
-                break;
-            case 1:
-                ((FeedRemoteViewsFactory) this.b).lambda$onDataSetChanged$0();
-                break;
-            case 2:
-                ((FilesMigrationService.1) this.b).lambda$run$0();
-                break;
-            case 3:
-                ((ImageLoader.6) this.b).lambda$onReceive$0();
-                break;
-            case 4:
-                ((LocaleController.TimeZoneChangedReceiver) this.b).lambda$onReceive$0();
-                break;
-            case 5:
-                ((MediaController.7) this.b).lambda$onSurfaceDestroyed$0();
-                break;
-            case 6:
-                ((MediaController.9) this.b).lambda$onSurfaceDestroyed$0();
-                break;
-            case 7:
-                ((MediaController.GalleryObserverInternal) this.b).lambda$scheduleReloadRunnable$0();
-                break;
-            case 8:
-                ((MediaController.MusicListenReporter) this.b).report();
-                break;
-            case 9:
-                MediaController.VideoConvertRunnable.lambda$runConversion$0((MediaController.VideoConvertMessage) this.b);
-                break;
-            case 10:
-                ((TelegramMediaSession.SessionCallback) this.b).lambda$notifyPlayStateForNotificationRefresh$0();
-                break;
-            case 11:
-                ((ANRDetector) this.b).run();
-                break;
-            case 12:
-                AndroidUtilities.lambda$notifyDataSetChanged$26((RecyclerView) this.b);
-                break;
-            case 13:
-                ((BotFullscreenButtons) this.b).lambda$new$0();
-                break;
-            case 14:
-                ((BotFullscreenButtons.OptionsIcon) this.b).invalidateSelf();
-                break;
-            case 15:
-                ((CompoundEmoji.CompoundEmojiDrawable) this.b).invalidate();
-                break;
-            case 16:
-                ((ContactsLoadingObserver) this.b).lambda$new$1();
-                break;
-            case 17:
-                ((FactCheckController) this.b).loadMissing();
-                break;
-            case 18:
-                ((FileLoaderPriorityQueue) this.b).lambda$new$0();
-                break;
-            case 19:
-                ((FilePathDatabase) this.b).lambda$clear$3();
-                break;
-            case 20:
-                FileRefController.lambda$onRequestComplete$46((TLRPC.TL_theme) this.b);
-                break;
-            case 21:
-                ((ImageReceiver) this.b).invalidate();
-                break;
-            case 22:
-                MediaController.lambda$saveFile$49((org.telegram.ui.ActionBar.c2) this.b);
-                break;
-            case 23:
-                ((org.telegram.ui.Components.oc) this.b).f();
-                break;
-            case 24:
-                MediaDataController.lambda$addRecentGif$27((TLRPC.Document) this.b);
-                break;
-            case 25:
-                MessagesController.lambda$setContentSettings$506((TLRPC.TL_error) this.b);
-                break;
-            case 26:
-                MessagesController.lambda$performLogout$320((TLObject) this.b);
-                break;
-            case 27:
-                MessagesController.lambda$convertToGigaGroup$267((MessagesStorage.BooleanCallback) this.b);
-                break;
-            case 28:
-                ((MusicPlayerService) this.b).stopSelf();
-                break;
-            default:
-                NotificationBadge.HuaweiHomeBadger.lambda$executeBadge$0((Bundle) this.b);
-                break;
-        }
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.postRunnable(runnable);
     }
 }

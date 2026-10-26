@@ -7,15 +7,15 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import ci.u7;
-import g7.g;
+import di.b4;
+import h7.g;
 import java.util.concurrent.Executor;
-import td.l;
+import ud.l;
 import v0.f;
 import v0.i;
-import w7.z7;
+import w7.t;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -32,13 +32,13 @@ public final /* synthetic */ class b implements l {
         this.d = iVar;
     }
 
-    @Override // td.l
+    @Override // ud.l
     public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
                 e eVar = (e) this.e;
                 Context context = eVar.e;
-                g7.e eVar2 = (g7.e) obj;
+                h7.e eVar2 = (h7.e) obj;
                 PendingIntent pendingIntent = eVar2.a;
                 g gVar = eVar2.b;
                 CancellationSignal cancellationSignal = this.b;
@@ -69,11 +69,11 @@ public final /* synthetic */ class b implements l {
                         }
                     }
                     if (gVar != null) {
-                        v0.c a2 = z7.a(gVar.a, gVar.b);
+                        v0.c a2 = t.a(gVar.a, gVar.b);
                         if (a2 instanceof f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!h.a(cancellationSignal)) {
-                                executor.execute(new u7(14, iVar, (f) a2));
+                                executor.execute(new b4(23, iVar, (f) a2));
                             }
                         }
                     }
@@ -84,11 +84,11 @@ public final /* synthetic */ class b implements l {
                         }
                     }
                 }
-                return id.i.a;
+                return jd.i.a;
             default:
                 f1.a aVar = (f1.a) this.e;
                 Context context2 = aVar.e;
-                g7.l lVar = (g7.l) obj;
+                h7.l lVar = (h7.l) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 CancellationSignal cancellationSignal2 = this.b;
                 if (!h.a(cancellationSignal2)) {
@@ -104,7 +104,7 @@ public final /* synthetic */ class b implements l {
                         }
                     }
                 }
-                return id.i.a;
+                return jd.i.a;
         }
     }
 }

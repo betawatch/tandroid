@@ -1,47 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.SecretChatHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.RichMessageLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yh implements Comparator {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class yh implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ RichMessageLayout.Text b;
+    public final /* synthetic */ RichMessageLayout c;
+    public final /* synthetic */ View d;
 
-    public /* synthetic */ yh(int i10) {
-        this.a = i10;
+    public /* synthetic */ yh(RichMessageLayout.Text text, View view, RichMessageLayout richMessageLayout) {
+        this.b = text;
+        this.d = view;
+        this.c = richMessageLayout;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$updatePinnedOrder$5;
-        int lambda$updateAllDialogs$0;
-        int lambda$resendMessages$13;
-        int lambda$checkSecretHoles$16;
-        int lambda$saveProxyList$4;
-        int lambda$sortTopics$9;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$updatePinnedOrder$5 = SavedMessagesController.lambda$updatePinnedOrder$5((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
-                return lambda$updatePinnedOrder$5;
-            case 1:
-                lambda$updateAllDialogs$0 = SavedMessagesController.lambda$updateAllDialogs$0((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
-                return lambda$updateAllDialogs$0;
-            case 2:
-                lambda$resendMessages$13 = SecretChatHelper.lambda$resendMessages$13((TLRPC.Message) obj, (TLRPC.Message) obj2);
-                return lambda$resendMessages$13;
-            case 3:
-                lambda$checkSecretHoles$16 = SecretChatHelper.lambda$checkSecretHoles$16((SecretChatHelper.TL_decryptedMessageHolder) obj, (SecretChatHelper.TL_decryptedMessageHolder) obj2);
-                return lambda$checkSecretHoles$16;
-            case 4:
-                lambda$saveProxyList$4 = SharedConfig.lambda$saveProxyList$4((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
-                return lambda$saveProxyList$4;
+                this.b.lambda$revealSpoilers$4(this.d, this.c);
+                break;
             default:
-                lambda$sortTopics$9 = TopicsController.lambda$sortTopics$9((TLRPC.TL_forumTopic) obj, (TLRPC.TL_forumTopic) obj2);
-                return lambda$sortTopics$9;
+                this.b.lambda$revealSpoilers$3(this.c, this.d);
+                break;
         }
+    }
+
+    public /* synthetic */ yh(RichMessageLayout.Text text, RichMessageLayout richMessageLayout, View view) {
+        this.b = text;
+        this.c = richMessageLayout;
+        this.d = view;
     }
 }

@@ -1,15 +1,21 @@
 package x7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class s0 {
-    public final r0 a;
-    public final Integer b;
-    public final a7 c;
+import org.telegram.ui.Components.b10;
 
-    public /* synthetic */ s0(u2.c cVar) {
-        this.a = (r0) cVar.b;
-        this.b = (Integer) cVar.c;
-        this.c = (a7) cVar.d;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class s0 implements ka.d {
+    public static final s0 a = new s0();
+
+    static {
+        b10.s(b10.n(d.class, b10.q(3, b10.n(d.class, b10.q(2, b10.n(d.class, new a(1)))))));
+    }
+
+    @Override // ka.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

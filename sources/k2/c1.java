@@ -2,9 +2,9 @@ package k2;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c1 extends c2.o {
+public final class c1 extends c2.p {
     public static final int i = Float.floatToIntBits(Float.NaN);
 
     public static void m(int i10, ByteBuffer byteBuffer) {
@@ -15,8 +15,8 @@ public final class c1 extends c2.o {
         byteBuffer.putInt(floatToIntBits);
     }
 
-    @Override // c2.n
-    public final void c(ByteBuffer byteBuffer) {
+    @Override // c2.o
+    public final void b(ByteBuffer byteBuffer) {
         ByteBuffer l4;
         int position = byteBuffer.position();
         int limit = byteBuffer.limit();
@@ -66,12 +66,12 @@ public final class c1 extends c2.o {
         l4.flip();
     }
 
-    @Override // c2.o
-    public final c2.k h(c2.k kVar) {
-        int i10 = kVar.c;
-        if (e2.m0.L(i10) || i10 == 2) {
-            return i10 != 4 ? new c2.k(kVar.a, kVar.b, 4) : c2.k.e;
+    @Override // c2.p
+    public final c2.l h(c2.l lVar) {
+        int i10 = lVar.c;
+        if (e2.n0.L(i10) || i10 == 2) {
+            return i10 != 4 ? new c2.l(lVar.a, lVar.b, 4) : c2.l.e;
         }
-        throw new c2.m(kVar);
+        throw new c2.n(lVar);
     }
 }

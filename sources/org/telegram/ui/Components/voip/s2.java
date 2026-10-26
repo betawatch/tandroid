@@ -1,33 +1,27 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t2 b;
+public final class s2 extends TextureViewRenderer {
+    public final /* synthetic */ t2 a;
 
-    public /* synthetic */ s2(t2 t2Var, int i10) {
-        this.a = i10;
-        this.b = t2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s2(t2 t2Var, Context context) {
+        super(context);
+        this.a = t2Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                t2 t2Var = this.b;
-                t2Var.getClass();
-                t2Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t2Var.a(t2Var.R, t2Var.S);
-                break;
-            default:
-                t2 t2Var2 = this.b;
-                t2Var2.getClass();
-                t2Var2.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t2Var2.invalidate();
-                break;
-        }
+    @Override // org.webrtc.TextureViewRenderer, org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        super.onFirstFrameRendered();
+        this.a.b();
+    }
+
+    @Override // android.view.TextureView, android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
     }
 }

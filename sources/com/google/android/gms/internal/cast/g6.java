@@ -1,107 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g6 extends u4 implements RandomAccess {
-    public static final g6 d = new g6(new Object[0], 0, false);
-    public Object[] b;
-    public int c;
+public final class g6 {
+    public static final g6 e = new g6(new int[0], new Object[0], false);
+    public final int[] a;
+    public final Object[] b;
+    public int c = -1;
+    public boolean d;
 
-    public g6(Object[] objArr, int i10, boolean z10) {
-        super(z10);
+    public g6(int[] iArr, Object[] objArr, boolean z10) {
+        this.a = iArr;
         this.b = objArr;
-        this.c = i10;
+        this.d = z10;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        h();
-        if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a1.g.l(i10, this.c, "Index:", ", Size:"));
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        int i12 = i10 + 1;
-        Object[] objArr = this.b;
-        if (i11 < objArr.length) {
-            System.arraycopy(objArr, i10, objArr, i12, i11 - i10);
-        } else {
-            Object[] objArr2 = new Object[((i11 * 3) / 2) + 1];
-            System.arraycopy(objArr, 0, objArr2, 0, i10);
-            System.arraycopy(this.b, i10, objArr2, i12, this.c - i10);
-            this.b = objArr2;
+        if (obj == null || !(obj instanceof g6)) {
+            return false;
         }
-        this.b[i10] = obj;
-        this.c++;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        m(i10);
-        return this.b[i10];
-    }
-
-    public final void m(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a1.g.l(i10, this.c, "Index:", ", Size:"));
-        }
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        h();
-        m(i10);
-        Object[] objArr = this.b;
-        Object obj = objArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(objArr, i10 + 1, objArr, i10, (r2 - i10) - 1);
-        }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return obj;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        h();
-        m(i10);
-        Object[] objArr = this.b;
-        Object obj2 = objArr[i10];
-        objArr[i10] = obj;
-        ((AbstractList) this).modCount++;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // com.google.android.gms.internal.cast.k5
-    public final /* bridge */ /* synthetic */ k5 zzg(int i10) {
-        if (i10 >= this.c) {
-            return new g6(Arrays.copyOf(this.b, i10), this.c, true);
-        }
-        throw new IllegalArgumentException();
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        h();
-        int i10 = this.c;
-        Object[] objArr = this.b;
-        if (i10 == objArr.length) {
-            this.b = Arrays.copyOf(objArr, ((i10 * 3) / 2) + 1);
-        }
-        Object[] objArr2 = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        objArr2[i11] = obj;
-        ((AbstractList) this).modCount++;
         return true;
+    }
+
+    public final int hashCode() {
+        return 506991;
     }
 }

@@ -4,7 +4,7 @@ import androidx.media3.decoder.ffmpeg.a;
 import h2.j;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class SimpleDecoderOutputBuffer extends j {
     public final a a;
@@ -25,6 +25,6 @@ public final class SimpleDecoderOutputBuffer extends j {
 
     @Override // h2.j
     public final void release() {
-        this.a.f(this);
+        this.a.g(this);
     }
 }

@@ -1,83 +1,73 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class e1 implements c0, i5 {
-    public static final e1 a = new e1();
-    public static final /* synthetic */ e1 b = new e1();
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-    public static boolean a(int i10, byte[] bArr) {
-        int i11;
-        int i12 = 0;
-        while (i12 < i10 && bArr[i12] >= 0) {
-            i12++;
-        }
-        if (i12 < i10) {
-            while (i12 < i10) {
-                int i13 = i12 + 1;
-                i11 = bArr[i12];
-                if (i11 < 0) {
-                    if (i11 >= -32) {
-                        if (i11 >= -16) {
-                            if (i13 < i10 - 2) {
-                                int i14 = i12 + 2;
-                                int i15 = bArr[i13];
-                                if (i15 <= -65) {
-                                    if ((((i15 + 112) + (i11 << 28)) >> 30) == 0) {
-                                        int i16 = i12 + 3;
-                                        if (bArr[i14] <= 65471) {
-                                            i12 += 4;
-                                            if (bArr[i16] > 65471) {
-                                            }
-                                        }
-                                    }
-                                }
-                                i11 = -1;
-                                break;
-                            }
-                            i11 = v6.a(bArr, i13, i10);
-                            break;
-                        }
-                        if (i13 < i10 - 1) {
-                            int i17 = i12 + 2;
-                            char c10 = bArr[i13];
-                            if (c10 <= 65471 && ((i11 != -32 || c10 >= 65440) && (i11 != -19 || c10 < 65440))) {
-                                i12 += 3;
-                                if (bArr[i17] > 65471) {
-                                }
-                            }
-                            i11 = -1;
-                            break;
-                        }
-                        i11 = v6.a(bArr, i13, i10);
-                        break;
-                    }
-                    if (i13 < i10) {
-                        if (i11 >= -62) {
-                            i12 += 2;
-                            if (bArr[i13] > 65471) {
-                            }
-                        }
-                        i11 = -1;
-                        break;
-                    }
-                    break;
-                }
-                i12 = i13;
-            }
-        }
-        i11 = 0;
-        return i11 == 0;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class e1 extends c5 {
+    private static final f5 zzb = new b1();
+    private static final e1 zzd;
+    private int zze;
+    private i1 zzf;
+    private u2 zzg;
+    private h5 zzh = c6.d;
+    private e5 zzi = d5.d;
+
+    static {
+        e1 e1Var = new e1();
+        zzd = e1Var;
+        c5.e(e1.class, e1Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.c0
-    public Object zza() {
-        g6.b bVar = w6.n;
-        g6.b bVar2 = d6.a.l;
-        n6.l.e("Must be called from the main thread.");
-        d6.a aVar = d6.a.n;
-        n6.l.h(aVar);
-        n6.l.e("Must be called from the main thread.");
-        return aVar.e.a;
+    public static d1 l() {
+        return (d1) zzd.j();
+    }
+
+    public static /* synthetic */ void m(e1 e1Var, i1 i1Var) {
+        e1Var.zzf = i1Var;
+        e1Var.zze |= 1;
+    }
+
+    public static void n(e1 e1Var, ArrayList arrayList) {
+        List list = e1Var.zzi;
+        if (!((r4) list).a) {
+            int size = list.size();
+            int i10 = size == 0 ? 10 : size + size;
+            d5 d5Var = (d5) list;
+            if (i10 < d5Var.c) {
+                throw new IllegalArgumentException();
+            }
+            e1Var.zzi = new d5(Arrays.copyOf(d5Var.b, i10), d5Var.c, true);
+        }
+        int size2 = arrayList.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            ((d5) e1Var.zzi).zzh(((a1) obj).a);
+        }
+    }
+
+    @Override // com.google.android.gms.internal.cast.c5
+    public final Object h(int i10, c5 c5Var) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
+        }
+        if (i11 == 2) {
+            return new d6(zzd, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဉ\u0000\u0002ဉ\u0001\u0003\u001b\u0004ࠞ", new Object[]{"zze", "zzf", "zzg", "zzh", s2.class, "zzi", w0.C});
+        }
+        if (i11 == 3) {
+            return new e1();
+        }
+        if (i11 == 4) {
+            return new d1(zzd);
+        }
+        if (i11 != 5) {
+            return null;
+        }
+        return zzd;
     }
 }

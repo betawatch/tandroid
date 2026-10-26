@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class gk extends lm0 {
     public final ArrayList c = new ArrayList();
@@ -23,12 +23,12 @@ public final class gk extends lm0 {
     }
 
     @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f == 1;
+    public final boolean D(s4.e1 e1Var) {
+        return e1Var.f == 1;
     }
 
     public final hk E(int i10) {
-        int g10;
+        int f7;
         ArrayList arrayList = this.c;
         int size = arrayList.size();
         if (i10 < size) {
@@ -38,13 +38,13 @@ public final class gk extends lm0 {
             return null;
         }
         ArrayList arrayList2 = this.e;
-        if (arrayList2.isEmpty() || i10 == size || i10 == size + 1 || (g10 = com.google.android.gms.internal.play_billing.k3.g(2, i10, arrayList)) >= arrayList2.size()) {
+        if (arrayList2.isEmpty() || i10 == size || i10 == size + 1 || (f7 = ic.a.f(2, i10, arrayList)) >= arrayList2.size()) {
             return null;
         }
-        return (hk) arrayList2.get(g10);
+        return (hk) arrayList2.get(f7);
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int h() {
         int size = this.c.size();
         if (this.d.isEmpty()) {
@@ -56,7 +56,7 @@ public final class gk extends lm0 {
         return size + 1;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int j(int i10) {
         if (i10 == h() - 1) {
             return 3;
@@ -68,24 +68,24 @@ public final class gk extends lm0 {
         return i10 == size + 1 ? 0 : 1;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final void l() {
         super.l();
         this.h.W();
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11 = b1Var.f;
-        View view = b1Var.a;
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        int i11 = e1Var.f;
+        View view = e1Var.a;
         nk nkVar = this.h;
         if (i11 == 0) {
-            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
+            org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) view;
             if (nkVar.c0) {
-                l4Var.setText(LocaleController.getString(R.string.RecentFilesAZ));
+                q4Var.setText(LocaleController.getString(R.string.RecentFilesAZ));
                 return;
             } else {
-                l4Var.setText(LocaleController.getString(R.string.RecentFiles));
+                q4Var.setText(LocaleController.getString(R.string.RecentFiles));
                 return;
             }
         }
@@ -93,42 +93,42 @@ public final class gk extends lm0 {
             return;
         }
         hk E = E(i10);
-        org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) view;
+        org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
         int i12 = E.a;
         if (i12 != 0) {
-            k7Var.d(E.b, E.c, null, null, i12, i10 != this.c.size() - 1);
+            o7Var.d(E.b, E.c, null, null, i12, i10 != this.c.size() - 1);
         } else {
-            k7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
+            o7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
         }
         File file = E.f;
         if (file != null) {
-            k7Var.b(nkVar.R.containsKey(file.toString()), !nkVar.U);
+            o7Var.b(nkVar.R.containsKey(file.toString()), !nkVar.U);
         } else {
-            k7Var.b(false, !nkVar.U);
+            o7Var.b(false, !nkVar.U);
         }
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View l4Var;
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        View q4Var;
         View view;
-        org.telegram.ui.ActionBar.g6 g6Var = this.h.a;
+        org.telegram.ui.ActionBar.u6 u6Var = this.h.a;
         Context context = this.f;
         if (i10 == 0) {
-            l4Var = new org.telegram.ui.Cells.l4(context, g6Var);
+            q4Var = new org.telegram.ui.Cells.q4(context, u6Var);
         } else {
             if (i10 != 1) {
                 if (i10 != 2) {
                     view = new View(context);
                     view.setTag(-33024);
                 } else {
-                    view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.b1) null);
+                    view = new org.telegram.ui.Cells.f7(context, (org.telegram.ui.d3) null);
                 }
-                return new wl0(view);
+                return new vl0(view);
             }
-            l4Var = new org.telegram.ui.Cells.k7(context, 1, g6Var);
+            q4Var = new org.telegram.ui.Cells.o7(context, 1, u6Var);
         }
-        view = l4Var;
-        return new wl0(view);
+        view = q4Var;
+        return new vl0(view);
     }
 }

@@ -1,24 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class z implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ BillingController b;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ z(BillingController billingController, int i10) {
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class z implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ z(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = billingController;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.lambda$onQueriedPremiumProductDetails$14();
+                ((BetaUpdaterController) this.b).lambda$checkForUpdate$2((Runnable) this.c, (String) obj);
+                break;
+            case 1:
+                ChannelBoostsController.lambda$userCanBoostChannel$3((ChannelBoostsController.CanApplyBoost) this.b, (Utilities.Callback) this.c, (TLRPC.TL_error) obj);
                 break;
             default:
-                this.b.lambda$onBillingServiceDisconnected$13();
+                ((SendMessagesHelper) this.b).lambda$sendMessage$51((SendMessagesHelper.SendMessageParams) this.c, (Long) obj);
                 break;
         }
     }

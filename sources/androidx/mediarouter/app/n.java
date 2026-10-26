@@ -1,106 +1,42 @@
 package androidx.mediarouter.app;
 
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.AnimationSet;
-import android.view.animation.TranslateAnimation;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class n implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ Map a;
-    public final /* synthetic */ Map b;
-    public final /* synthetic */ t c;
+public final class n extends Animation {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ View d;
 
-    public n(t tVar, HashMap hashMap, HashMap hashMap2) {
-        this.c = tVar;
-        this.a = hashMap;
-        this.b = hashMap2;
+    public /* synthetic */ n(View view, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = i10;
+        this.c = i11;
+        this.d = view;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        Map map;
-        Map map2;
-        o0 o0Var;
-        p4.v vVar;
-        t tVar = this.c;
-        tVar.U.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-        HashSet hashSet = tVar.X;
-        if (hashSet == null || tVar.Y == null) {
-            return;
-        }
-        int size = hashSet.size() - tVar.Y.size();
-        j jVar = new j(tVar, 1);
-        int firstVisiblePosition = tVar.U.getFirstVisiblePosition();
-        int i10 = 0;
-        boolean z10 = false;
-        while (true) {
-            int childCount = tVar.U.getChildCount();
-            map = this.a;
-            map2 = this.b;
-            if (i10 >= childCount) {
+    @Override // android.view.animation.Animation
+    public final void applyTransformation(float f7, Transformation transformation) {
+        int i10 = this.a;
+        View view = this.d;
+        int i11 = this.c;
+        int i12 = this.b;
+        switch (i10) {
+            case 0:
+                u.o(i12 - ((int) ((i12 - i11) * f7)), view);
                 break;
-            }
-            View childAt = tVar.U.getChildAt(i10);
-            p4.v vVar2 = (p4.v) tVar.V.getItem(firstVisiblePosition + i10);
-            Rect rect = (Rect) map.get(vVar2);
-            int top = childAt.getTop();
-            int i11 = rect != null ? rect.top : (tVar.e0 * size) + top;
-            AnimationSet animationSet = new AnimationSet(true);
-            HashSet hashSet2 = tVar.X;
-            if (hashSet2 == null || !hashSet2.contains(vVar2)) {
-                vVar = vVar2;
-            } else {
-                AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
-                vVar = vVar2;
-                alphaAnimation.setDuration(tVar.y0);
-                animationSet.addAnimation(alphaAnimation);
-                i11 = top;
-            }
-            TranslateAnimation translateAnimation = new TranslateAnimation(0.0f, 0.0f, i11 - top, 0.0f);
-            translateAnimation.setDuration(tVar.x0);
-            animationSet.addAnimation(translateAnimation);
-            animationSet.setFillAfter(true);
-            animationSet.setFillEnabled(true);
-            animationSet.setInterpolator(tVar.A0);
-            if (!z10) {
-                animationSet.setAnimationListener(jVar);
-                z10 = true;
-            }
-            childAt.clearAnimation();
-            childAt.startAnimation(animationSet);
-            p4.v vVar3 = vVar;
-            map.remove(vVar3);
-            map2.remove(vVar3);
-            i10++;
-        }
-        for (Map.Entry entry : map2.entrySet()) {
-            p4.v vVar4 = (p4.v) entry.getKey();
-            BitmapDrawable bitmapDrawable = (BitmapDrawable) entry.getValue();
-            Rect rect2 = (Rect) map.get(vVar4);
-            if (tVar.Y.contains(vVar4)) {
-                o0Var = new o0(bitmapDrawable, rect2);
-                o0Var.h = 0.0f;
-                o0Var.e = tVar.z0;
-                o0Var.d = tVar.A0;
-            } else {
-                int i12 = tVar.e0 * size;
-                o0 o0Var2 = new o0(bitmapDrawable, rect2);
-                o0Var2.g = i12;
-                o0Var2.e = tVar.x0;
-                o0Var2.d = tVar.A0;
-                o0Var2.l = new n4.s(tVar, vVar4, false, 7);
-                tVar.Z.add(vVar4);
-                o0Var = o0Var2;
-            }
-            tVar.U.a.add(o0Var);
+            default:
+                int i13 = i11 + ((int) ((i12 - i11) * f7));
+                int i14 = o0.j0;
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                layoutParams.height = i13;
+                view.setLayoutParams(layoutParams);
+                break;
         }
     }
 }

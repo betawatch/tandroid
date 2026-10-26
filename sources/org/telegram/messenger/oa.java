@@ -2,22 +2,22 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oa implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
     public final /* synthetic */ ArrayList f;
 
     public /* synthetic */ oa(MessagesController messagesController, long j10, int i10, long j11, ArrayList arrayList, int i11) {
         this.a = i11;
         this.b = messagesController;
         this.c = j10;
-        this.e = i10;
-        this.d = j11;
+        this.d = i10;
+        this.e = j11;
         this.f = arrayList;
     }
 
@@ -25,41 +25,41 @@ public final /* synthetic */ class oa implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                long j10 = this.d;
+                int i10 = this.d;
                 ArrayList arrayList = this.f;
-                int i10 = this.e;
-                this.b.lambda$checkUnreadReactionsInternal2$425(this.c, i10, j10, arrayList);
+                this.b.lambda$checkUnreadPollVotesInternal2$438(this.c, this.e, i10, arrayList);
                 break;
             case 1:
-                int i11 = this.e;
+                long j10 = this.e;
                 ArrayList arrayList2 = this.f;
-                this.b.lambda$checkUnreadPollVotesInternal2$436(this.c, this.d, i11, arrayList2);
+                int i11 = this.d;
+                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, i11, j10, arrayList2);
                 break;
             case 2:
-                int i12 = this.e;
+                int i12 = this.d;
                 ArrayList arrayList3 = this.f;
-                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, this.d, i12, arrayList3);
+                this.b.lambda$checkUnreadReactionsInternal2$431(this.c, this.e, i12, arrayList3);
                 break;
             case 3:
-                int i13 = this.e;
+                long j11 = this.e;
                 ArrayList arrayList4 = this.f;
-                this.b.lambda$checkUnreadPollVotesInternal2$438(this.c, this.d, i13, arrayList4);
+                int i13 = this.d;
+                this.b.lambda$checkUnreadPollVotesInternal2$434(this.c, i13, j11, arrayList4);
                 break;
             case 4:
-                long j11 = this.d;
+                int i14 = this.d;
                 ArrayList arrayList5 = this.f;
-                int i14 = this.e;
-                this.b.lambda$checkUnreadPollVotesInternal2$432(this.c, i14, j11, arrayList5);
+                this.b.lambda$checkUnreadPollVotesInternal2$440(this.c, this.e, i14, arrayList5);
                 break;
             case 5:
-                int i15 = this.e;
+                int i15 = this.d;
                 ArrayList arrayList6 = this.f;
-                this.b.lambda$checkUnreadReactionsInternal2$431(this.c, this.d, i15, arrayList6);
+                this.b.lambda$checkUnreadReactionsInternal2$433(this.c, this.e, i15, arrayList6);
                 break;
             default:
-                int i16 = this.e;
+                int i16 = this.d;
                 ArrayList arrayList7 = this.f;
-                this.b.lambda$checkUnreadReactionsInternal2$429(this.c, this.d, i16, arrayList7);
+                this.b.lambda$checkUnreadReactionsInternal2$429(this.c, this.e, i16, arrayList7);
                 break;
         }
     }
@@ -68,8 +68,8 @@ public final /* synthetic */ class oa implements Runnable {
         this.a = i11;
         this.b = messagesController;
         this.c = j10;
-        this.d = j11;
-        this.e = i10;
+        this.e = j11;
+        this.d = i10;
         this.f = arrayList;
     }
 }

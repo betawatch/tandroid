@@ -1,5 +1,9 @@
 package androidx.mediarouter.app;
 
+import a8.de;
+import a8.kc;
+import a8.p1;
+import a8.q1;
 import android.R;
 import android.app.Activity;
 import android.content.Context;
@@ -24,9 +28,8 @@ import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import java.util.Iterator;
-import v7.q7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -40,7 +43,7 @@ public class MediaRouteButton extends View {
     private final a mCallback;
     private boolean mCheatSheetEnabled;
     private int mConnectionState;
-    private v mDialogFactory;
+    private w mDialogFactory;
     boolean mIsFixedIcon;
     private int mLastConnectionState;
     private int mMinHeight;
@@ -61,18 +64,18 @@ public class MediaRouteButton extends View {
     public MediaRouteButton(Context context, AttributeSet attributeSet, int i10) {
         super(r7 != 0 ? new ContextThemeWrapper(r0, r7) : r0, attributeSet, i10);
         Drawable.ConstantState constantState;
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, v7.a0.e(context));
-        int g10 = v7.a0.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, p1.e(context));
+        int g7 = p1.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
         this.mSelector = p4.r.c;
-        this.mDialogFactory = v.a;
+        this.mDialogFactory = w.a;
         Context context2 = getContext();
         int[] iArr = o4.a.a;
         TypedArray obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, iArr, i10, 0);
-        r0.i0.i(this, context2, iArr, attributeSet, obtainStyledAttributes, i10);
+        r0.i0.j(this, context2, iArr, attributeSet, obtainStyledAttributes, i10);
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = q7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = kc.b(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
         this.mRouter = p4.x.d(context2);
@@ -118,10 +121,10 @@ public class MediaRouteButton extends View {
         return null;
     }
 
-    private androidx.fragment.app.j0 getFragmentManager() {
+    private androidx.fragment.app.i0 getFragmentManager() {
         Activity activity = getActivity();
-        if (activity instanceof androidx.fragment.app.v) {
-            return ((androidx.fragment.app.v) activity).s();
+        if (activity instanceof androidx.fragment.app.u) {
+            return ((androidx.fragment.app.u) activity).s();
         }
         return null;
     }
@@ -140,7 +143,7 @@ public class MediaRouteButton extends View {
     }
 
     private boolean showDialogForType(int i10) {
-        androidx.fragment.app.j0 fragmentManager = getFragmentManager();
+        androidx.fragment.app.i0 fragmentManager = getFragmentManager();
         if (fragmentManager == null) {
             throw new IllegalStateException("The activity must be a subclass of FragmentActivity");
         }
@@ -151,37 +154,37 @@ public class MediaRouteButton extends View {
                 return false;
             }
             this.mDialogFactory.getClass();
-            h hVar = new h();
+            i iVar = new i();
             p4.r rVar = this.mSelector;
             if (rVar == null) {
                 throw new IllegalArgumentException("selector must not be null");
             }
-            hVar.P();
-            if (!hVar.C0.equals(rVar)) {
-                hVar.C0 = rVar;
-                Bundle bundle = hVar.f;
+            iVar.P();
+            if (!iVar.C0.equals(rVar)) {
+                iVar.C0 = rVar;
+                Bundle bundle = iVar.f;
                 if (bundle == null) {
                     bundle = new Bundle();
                 }
                 bundle.putBundle("selector", rVar.a);
-                hVar.M(bundle);
-                g.t tVar = hVar.B0;
+                iVar.M(bundle);
+                g.t tVar = iVar.B0;
                 if (tVar != null) {
-                    if (hVar.A0) {
-                        ((c0) tVar).f(rVar);
+                    if (iVar.A0) {
+                        ((d0) tVar).f(rVar);
                     } else {
-                        ((g) tVar).h(rVar);
+                        ((h) tVar).h(rVar);
                     }
                 }
             }
             if (i10 == 2) {
-                if (hVar.B0 != null) {
+                if (iVar.B0 != null) {
                     throw new IllegalStateException("This must be called before creating dialog");
                 }
-                hVar.A0 = true;
+                iVar.A0 = true;
             }
             androidx.fragment.app.a aVar = new androidx.fragment.app.a(fragmentManager);
-            aVar.f(0, hVar, CHOOSER_FRAGMENT_TAG);
+            aVar.f(0, iVar, CHOOSER_FRAGMENT_TAG);
             aVar.e(true, true);
             return true;
         }
@@ -190,41 +193,41 @@ public class MediaRouteButton extends View {
             return false;
         }
         this.mDialogFactory.getClass();
-        u uVar = new u();
+        v vVar = new v();
         p4.r rVar2 = this.mSelector;
         if (rVar2 == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (uVar.C0 == null) {
-            Bundle bundle2 = uVar.f;
+        if (vVar.C0 == null) {
+            Bundle bundle2 = vVar.f;
             if (bundle2 != null) {
-                uVar.C0 = p4.r.b(bundle2.getBundle("selector"));
+                vVar.C0 = p4.r.b(bundle2.getBundle("selector"));
             }
-            if (uVar.C0 == null) {
-                uVar.C0 = p4.r.c;
+            if (vVar.C0 == null) {
+                vVar.C0 = p4.r.c;
             }
         }
-        if (!uVar.C0.equals(rVar2)) {
-            uVar.C0 = rVar2;
-            Bundle bundle3 = uVar.f;
+        if (!vVar.C0.equals(rVar2)) {
+            vVar.C0 = rVar2;
+            Bundle bundle3 = vVar.f;
             if (bundle3 == null) {
                 bundle3 = new Bundle();
             }
             bundle3.putBundle("selector", rVar2.a);
-            uVar.M(bundle3);
-            g.t tVar2 = uVar.B0;
-            if (tVar2 != null && uVar.A0) {
-                ((n0) tVar2).i(rVar2);
+            vVar.M(bundle3);
+            g.t tVar2 = vVar.B0;
+            if (tVar2 != null && vVar.A0) {
+                ((o0) tVar2).i(rVar2);
             }
         }
         if (i10 == 2) {
-            if (uVar.B0 != null) {
+            if (vVar.B0 != null) {
                 throw new IllegalStateException("This must be called before creating dialog");
             }
-            uVar.A0 = true;
+            vVar.A0 = true;
         }
         androidx.fragment.app.a aVar2 = new androidx.fragment.app.a(fragmentManager);
-        aVar2.f(0, uVar, CONTROLLER_FRAGMENT_TAG);
+        aVar2.f(0, vVar, CONTROLLER_FRAGMENT_TAG);
         aVar2.e(true, true);
         return true;
     }
@@ -236,7 +239,7 @@ public class MediaRouteButton extends View {
         if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
             string = null;
         }
-        w7.q.a(this, string);
+        de.a(this, string);
     }
 
     @Override // android.view.View
@@ -285,7 +288,7 @@ public class MediaRouteButton extends View {
         p4.x.i(zVar2);
     }
 
-    public v getDialogFactory() {
+    public w getDialogFactory() {
         return this.mDialogFactory;
     }
 
@@ -426,11 +429,11 @@ public class MediaRouteButton extends View {
         }
     }
 
-    public void setDialogFactory(v vVar) {
-        if (vVar == null) {
+    public void setDialogFactory(w wVar) {
+        if (wVar == null) {
             throw new IllegalArgumentException("factory must not be null");
         }
-        this.mDialogFactory = vVar;
+        this.mDialogFactory = wVar;
     }
 
     public void setRemoteIndicatorDrawable(Drawable drawable) {
@@ -495,7 +498,7 @@ public class MediaRouteButton extends View {
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0093, code lost:
     
-        if (v7.b0.a(r3) != false) goto L35;
+        if (a8.q1.a(r3) != false) goto L35;
      */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00fb A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00a3  */
@@ -523,9 +526,9 @@ public class MediaRouteButton extends View {
                 int i10 = Build.VERSION.SDK_INT;
                 if (i10 >= 34) {
                     if (i10 >= 30) {
-                        MediaRouter2 a10 = p0.a(context);
+                        MediaRouter2 a10 = q0.a(context);
                         if (i10 >= 34) {
-                            a2 = q0.a(a10);
+                            a2 = r0.a(a10);
                             if (!a2) {
                                 if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
                                     Intent putExtra = new Intent("android.settings.BLUETOOTH_SETTINGS").addFlags(268468224).putExtra("EXTRA_CONNECTION_ONLY", true).putExtra("android.bluetooth.devicepicker.extra.FILTER_TYPE", 1);
@@ -578,7 +581,7 @@ public class MediaRouteButton extends View {
                     }
                 } else {
                     if (i10 == 30) {
-                        a2 = v7.b0.a(context);
+                        a2 = q1.a(context);
                         if (!a2) {
                         }
                         z11 = true;

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
@@ -17,7 +17,7 @@ public class UserNameResolver {
     android.util.LruCache<String, CachedPeer> resolvedCache = new android.util.LruCache<>(100);
     HashMap<String, ArrayList<Utilities.Callback<Long>>> resolvingConsumers = new HashMap<>();
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class UserNameResolver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$resolve$0(String str, TLRPC.TL_error tL_error, TLObject tLObject) {
-        org.telegram.ui.ActionBar.o2 R;
+        org.telegram.ui.ActionBar.r2 R;
         ArrayList<Utilities.Callback<Long>> remove = this.resolvingConsumers.remove(str);
         if (remove == null) {
             return;
@@ -68,12 +68,12 @@ public class UserNameResolver {
         if (str3 == null || !str3.contains("FLOOD_WAIT") || (R = LaunchActivity.R()) == null) {
             return;
         }
-        sl.q(R.string.FloodWait, org.telegram.ui.Components.xc.a0(R), null);
+        vh.n(R.string.FloodWait, org.telegram.ui.Components.wc.b0(R), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$resolve$1(String str, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new uj(this, str, tL_error, tLObject, 3), 2L);
+        AndroidUtilities.runOnUIThread(new xj(this, str, tL_error, tLObject, 3), 2L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -112,7 +112,7 @@ public class UserNameResolver {
                 StringBuilder sb2 = new StringBuilder("resolve username from cache ");
                 sb2.append(str);
                 sb2.append(" ");
-                i2.o1.x(sb2, cachedPeer.peerId);
+                t.s(sb2, cachedPeer.peerId);
                 return null;
             }
             this.resolvedCache.remove(str);
@@ -138,7 +138,7 @@ public class UserNameResolver {
             }
             tL_contacts_resolveUsername = tL_contacts_resolveUsername2;
         }
-        return new v4(this, str, ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolveUsername, new w1(11, this, str)), 23);
+        return new x4(this, str, ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolveUsername, new x1(11, this, str)), 23);
     }
 
     public void update(TLRPC.Chat chat, TLRPC.Chat chat2) {

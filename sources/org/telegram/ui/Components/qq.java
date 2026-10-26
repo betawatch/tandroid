@@ -1,27 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.text.InputFilter;
-import android.text.Spanned;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class qq implements InputFilter {
-    public final int a;
+public final class qq extends Drawable {
+    public final Drawable a;
+    public Path b;
+    public final RectF c;
+    public final RectF d;
+    public boolean e;
+    public final float[] f;
 
-    public qq(int i10) {
-        this.a = i10;
+    public qq(Drawable drawable) {
+        bh.u0 u0Var = new bh.u0(this, 5);
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = false;
+        this.f = new float[8];
+        Drawable drawable2 = this.a;
+        if (drawable2 != null) {
+            drawable2.setCallback(null);
+        }
+        this.a = drawable;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            this.a.setCallback(u0Var);
+        }
     }
 
-    @Override // android.text.InputFilter
-    public CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        int codePointCount = this.a - (Character.codePointCount(spanned, 0, spanned.length()) - Character.codePointCount(spanned, i12, i13));
-        if (codePointCount <= 0) {
-            return "";
+    public final void a() {
+        if (this.e) {
+            Path path = this.b;
+            if (path == null) {
+                this.b = new Path();
+            } else {
+                path.rewind();
+            }
+            Rect bounds = getBounds();
+            RectF rectF = this.c;
+            rectF.set(bounds);
+            float f7 = rectF.left;
+            RectF rectF2 = this.d;
+            rectF.left = f7 + rectF2.left;
+            rectF.top += rectF2.top;
+            rectF.right -= rectF2.right;
+            rectF.bottom -= rectF2.bottom;
+            this.b.addRoundRect(rectF, this.f, Path.Direction.CW);
         }
-        if (codePointCount >= Character.codePointCount(charSequence, i10, i11)) {
-            return null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            if (!this.e) {
+                canvas.save();
+                canvas.clipRect(getBounds());
+                this.a.draw(canvas);
+                canvas.restore();
+                return;
+            }
+            canvas.save();
+            a();
+            canvas.clipPath(this.b);
+            this.a.draw(canvas);
+            canvas.restore();
         }
-        int i14 = codePointCount + i10;
-        return (Character.isHighSurrogate(charSequence.charAt(i14 + (-1))) && (i14 = i14 + (-1)) == i10) ? "" : charSequence.subSequence(i10, i14);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        Drawable drawable = this.a;
+        return drawable != null ? drawable.getIntrinsicHeight() : super.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        Drawable drawable = this.a;
+        return drawable != null ? drawable.getIntrinsicWidth() : super.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setAlpha(i10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setColorFilter(colorFilter);
+        }
     }
 }

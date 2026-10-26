@@ -1,30 +1,16 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c4 {
-    public static final c4 a;
-    public static final c4 b;
-    public static final c4 c;
-    public static final /* synthetic */ c4[] d;
-
-    static {
-        c4 c4Var = new c4("NONE", 0);
-        a = c4Var;
-        c4 c4Var2 = new c4("VERTICAL", 1);
-        b = c4Var2;
-        c4 c4Var3 = new c4("FULL", 2);
-        c = c4Var3;
-        d = new c4[]{c4Var, c4Var2, c4Var3};
-    }
-
-    public static c4 valueOf(String str) {
-        return (c4) Enum.valueOf(c4.class, str);
-    }
-
-    public static c4[] values() {
-        return (c4[]) d.clone();
+public final class c4 extends e2 {
+    @Override // org.telegram.ui.ActionBar.e2
+    public final int f(int i10) {
+        if (i10 == y6.h5) {
+            return -14277082;
+        }
+        if (i10 == y6.j5 || i10 == y6.H5 || i10 == y6.A5) {
+            return -1;
+        }
+        return y6.w0(i10, this.T0);
     }
 }

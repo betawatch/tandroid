@@ -1,64 +1,96 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.text.style.ImageSpan;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.k41;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class b7 extends View {
-    public int a;
-    public final int b;
-    public boolean c;
-    public boolean d;
+public final class b7 extends ImageSpan {
+    public static k41 b;
+    public final /* synthetic */ int a = 1;
 
-    public b7(Context context) {
-        this(context, (b1) null);
+    public /* synthetic */ b7(Drawable drawable) {
+        super(drawable);
     }
 
-    private int getBackgroundResId() {
-        boolean z10 = this.c;
-        return (z10 && this.d) ? R.drawable.greydivider : z10 ? R.drawable.greydivider_bottom : this.d ? R.drawable.greydivider_top : R.drawable.transparent;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a), TLObject.FLAG_30));
-    }
-
-    public void setSize(int i10) {
-        this.a = i10;
-    }
-
-    public b7(Context context, Object obj) {
-        this(context, (b1) null);
-    }
-
-    public b7(Context context, b1 b1Var) {
-        super(context);
-        this.c = true;
-        this.d = true;
-        this.a = 12;
-        int i10 = this.b;
-        if (i10 == 0) {
-            setBackground(null);
-        } else {
-            setBackgroundColor(i10);
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        switch (this.a) {
+            case 0:
+                Drawable drawable = getDrawable();
+                canvas.save();
+                int i15 = paint.getFontMetricsInt().descent;
+                canvas.translate(f7, ((i13 + i15) - ((i15 - r4.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
+                if (LocaleController.isRTL) {
+                    canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
+                }
+                drawable.draw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+                break;
         }
     }
 
-    public b7(Context context, int i10, int i11) {
-        super(context);
-        this.c = true;
-        this.d = true;
-        this.b = i10;
-        this.a = 12;
-        if (i10 == 0) {
-            setBackground(null);
-        } else {
-            setBackgroundColor(i10);
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                Rect bounds = getDrawable().getBounds();
+                if (fontMetricsInt != null) {
+                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
+                    int i12 = fontMetricsInt2.descent;
+                    int i13 = fontMetricsInt2.ascent;
+                    int i14 = ((i12 - i13) / 2) + i13;
+                    int i15 = (bounds.bottom - bounds.top) / 2;
+                    int i16 = i14 - i15;
+                    fontMetricsInt.ascent = i16;
+                    fontMetricsInt.top = i16;
+                    int i17 = i14 + i15;
+                    fontMetricsInt.bottom = i17;
+                    fontMetricsInt.descent = i17;
+                }
+                return bounds.right;
+            default:
+                return super.getSize(paint, charSequence, i10, i11, fontMetricsInt);
         }
+    }
+
+    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 1:
+                float textSize = textPaint.getTextSize() * 0.89f;
+                int i10 = (int) (0.02f * textSize);
+                getDrawable().setBounds(0, i10, (int) textSize, ((int) (textSize * 1.25f)) + i10);
+                super.updateDrawState(textPaint);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                break;
+        }
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b7() {
+        super(r0, 0);
+        k41 k41Var = b;
+        if (k41Var == null) {
+            k41Var = new k41(org.telegram.ui.ActionBar.y6.o2);
+            b = k41Var;
+        }
+        float textSize = org.telegram.ui.ActionBar.y6.o2.getTextSize() * 0.89f;
+        int i10 = (int) (0.02f * textSize);
+        getDrawable().setBounds(0, i10, (int) textSize, ((int) (textSize * 1.25f)) + i10);
     }
 }

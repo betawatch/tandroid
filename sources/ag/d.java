@@ -1,175 +1,100 @@
 package ag;
 
-import j$.util.List;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import android.graphics.Bitmap;
+import android.os.Build;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
-import java.util.zip.CRC32;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static void a(TLRPC.GroupCall groupCall, TLRPC.GroupCall groupCall2) {
-        if ((groupCall2 instanceof TLRPC.TL_groupCall) && (groupCall instanceof TLRPC.TL_groupCall)) {
-            TLRPC.TL_groupCall tL_groupCall = (TLRPC.TL_groupCall) groupCall2;
-            if (tL_groupCall.min) {
-                TLRPC.TL_groupCall tL_groupCall2 = (TLRPC.TL_groupCall) groupCall;
-                tL_groupCall.can_change_join_muted = tL_groupCall2.can_change_join_muted;
-                tL_groupCall.can_start_video = tL_groupCall2.can_start_video;
-                tL_groupCall.creator = tL_groupCall2.creator;
-                tL_groupCall.can_change_messages_enabled = tL_groupCall2.can_change_messages_enabled;
-            }
-        }
+public final /* synthetic */ class d implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Cloneable h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ d(k kVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, i0[] i0VarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
+        this.e = kVar;
+        this.f = atomicBoolean;
+        this.h = bitmapArr;
+        this.b = i10;
+        this.n = i0VarArr;
+        this.d = i11;
+        this.r = randomAccessFile;
+        this.c = arrayList;
+        this.s = countDownLatchArr;
     }
 
-    public static void b(TLRPC.Poll poll, long j10) {
-        if (poll == null) {
-            return;
-        }
-        int size = poll.answers.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            poll.answers.get(i10).unshuffled_index = i10;
-        }
-        if (poll.creator || !poll.shuffle_answers) {
-            return;
-        }
-        CRC32 crc32 = new CRC32();
-        int size2 = poll.answers.size();
-        for (int i11 = 0; i11 < size2; i11++) {
-            TLRPC.PollAnswer pollAnswer = poll.answers.get(i11);
-            if (pollAnswer.option != null) {
-                crc32.reset();
-                String l4 = Long.toString(j10);
-                Charset charset = StandardCharsets.UTF_8;
-                crc32.update(l4.getBytes(charset));
-                crc32.update(pollAnswer.option);
-                crc32.update(Long.toString(poll.id).getBytes(charset));
-                pollAnswer.shuffle_hash = crc32.getValue();
-            }
-        }
-        ArrayList<TLRPC.PollAnswer> arrayList = new ArrayList<>(poll.answers);
-        poll.shuffled_answers = arrayList;
-        List.-EL.sort(arrayList, new a4.d(1));
-    }
-
-    public static ArrayList c(java.util.List list, Class cls) {
-        ArrayList arrayList = new ArrayList();
-        if (list != null) {
-            for (Object obj : list) {
-                if (cls.isInstance(obj)) {
-                    arrayList.add(cls.cast(obj));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k kVar = (k) this.e;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.f;
+                Bitmap[] bitmapArr = (Bitmap[]) this.h;
+                int i10 = this.b;
+                i0[] i0VarArr = (i0[]) this.n;
+                int i11 = this.d;
+                RandomAccessFile randomAccessFile = (RandomAccessFile) this.r;
+                ArrayList arrayList = this.c;
+                CountDownLatch[] countDownLatchArr = (CountDownLatch[]) this.s;
+                if (kVar.o.get() || atomicBoolean.get()) {
+                    return;
                 }
-            }
-        }
-        return arrayList;
-    }
-
-    public static Object d(ArrayList arrayList, Class cls) {
-        if (arrayList == null) {
-            return null;
-        }
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (cls.isInstance(obj)) {
-                return cls.cast(obj);
-            }
-        }
-        return null;
-    }
-
-    public static TLRPC.Document e(TL_stars.StarGift starGift) {
-        TLRPC.Document document = starGift.sticker;
-        ArrayList<TL_stars.StarGiftAttribute> arrayList = starGift.attributes;
-        if (arrayList != null && document == null) {
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                TL_stars.StarGiftAttribute starGiftAttribute = arrayList.get(i10);
-                i10++;
-                TL_stars.StarGiftAttribute starGiftAttribute2 = starGiftAttribute;
-                if (starGiftAttribute2 instanceof TL_stars.starGiftAttributeModel) {
-                    return ((TL_stars.starGiftAttributeModel) starGiftAttribute2).document;
+                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.WEBP;
+                if (Build.VERSION.SDK_INT <= 28) {
+                    compressFormat = Bitmap.CompressFormat.PNG;
                 }
-            }
-        }
-        return document;
-    }
-
-    public static String f(TLRPC.ChatTheme chatTheme) {
-        if (chatTheme instanceof TLRPC.TL_chatTheme) {
-            return ((TLRPC.TL_chatTheme) chatTheme).emoticon;
-        }
-        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
-            return ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift.title;
-        }
-        return null;
-    }
-
-    public static boolean g(Object obj, Class... clsArr) {
-        if (obj != null) {
-            for (Class cls : clsArr) {
-                if (cls.isInstance(obj)) {
-                    return true;
+                bitmapArr[i10].compress(compressFormat, kVar.l, i0VarArr[i10]);
+                int i12 = i0VarArr[i10].b;
+                try {
+                    synchronized (kVar.h) {
+                        i iVar = new i(i11);
+                        iVar.c = (int) randomAccessFile.length();
+                        arrayList.add(iVar);
+                        randomAccessFile.write(i0VarArr[i10].a, 0, i12);
+                        iVar.b = i12;
+                        i0VarArr[i10].b();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    try {
+                        randomAccessFile.close();
+                    } catch (Exception unused) {
+                    } catch (Throwable th2) {
+                        atomicBoolean.set(true);
+                        throw th2;
+                    }
+                    atomicBoolean.set(true);
                 }
-            }
-        }
-        return false;
-    }
-
-    public static TLRPC.InputMedia h(TLRPC.MessageMedia messageMedia) {
-        TLRPC.InputMedia tL_inputMediaGeoPoint;
-        if (messageMedia instanceof TLRPC.TL_messageMediaVenue) {
-            tL_inputMediaGeoPoint = new TLRPC.TL_inputMediaVenue();
-            tL_inputMediaGeoPoint.address = messageMedia.address;
-            tL_inputMediaGeoPoint.title = messageMedia.title;
-            tL_inputMediaGeoPoint.provider = messageMedia.provider;
-            tL_inputMediaGeoPoint.venue_id = messageMedia.venue_id;
-            tL_inputMediaGeoPoint.venue_type = "";
-        } else if (messageMedia instanceof TLRPC.TL_messageMediaGeoLive) {
-            tL_inputMediaGeoPoint = new TLRPC.TL_inputMediaGeoLive();
-            tL_inputMediaGeoPoint.period = messageMedia.period;
-            int i10 = tL_inputMediaGeoPoint.flags;
-            tL_inputMediaGeoPoint.flags = i10 | 2;
-            int i11 = messageMedia.heading;
-            if (i11 != 0) {
-                tL_inputMediaGeoPoint.heading = i11;
-                tL_inputMediaGeoPoint.flags = i10 | 6;
-            }
-            int i12 = messageMedia.proximity_notification_radius;
-            if (i12 != 0) {
-                tL_inputMediaGeoPoint.proximity_notification_radius = i12;
-                tL_inputMediaGeoPoint.flags |= 8;
-            }
-        } else {
-            tL_inputMediaGeoPoint = new TLRPC.TL_inputMediaGeoPoint();
-        }
-        TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
-        tL_inputMediaGeoPoint.geo_point = tL_inputGeoPoint;
-        TLRPC.GeoPoint geoPoint = messageMedia.geo;
-        tL_inputGeoPoint.lat = geoPoint.lat;
-        tL_inputGeoPoint._long = geoPoint._long;
-        return tL_inputMediaGeoPoint;
-    }
-
-    public static void i(String str, ArrayList arrayList) {
-        int i10;
-        int i11;
-        if (arrayList == null || arrayList.isEmpty() || ApplicationLoader.isAndroidTestEnvironment()) {
-            return;
-        }
-        int length = str != null ? str.length() : 0;
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            TLRPC.MessageEntity messageEntity = (TLRPC.MessageEntity) arrayList.get(i12);
-            if (messageEntity == null || (i10 = messageEntity.offset) < 0 || i10 > length || (i11 = messageEntity.length) <= 0 || i11 > length - i10) {
-                arrayList.clear();
+                countDownLatchArr[i10].countDown();
                 return;
-            }
+            default:
+                ((MessagesStorage) this.e).lambda$getWidgetDialogs$172(this.b, this.c, this.d, (a0.h) this.f, (a0.h) this.h, (ArrayList) this.n, (ArrayList) this.r, (CountDownLatch) this.s);
+                return;
         }
+    }
+
+    public /* synthetic */ d(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
+        this.e = messagesStorage;
+        this.b = i10;
+        this.c = arrayList;
+        this.d = i11;
+        this.f = hVar;
+        this.h = hVar2;
+        this.n = arrayList2;
+        this.r = arrayList3;
+        this.s = countDownLatch;
     }
 }

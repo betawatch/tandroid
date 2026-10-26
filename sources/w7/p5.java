@@ -1,19 +1,6 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class p5 implements ja.d {
-    public static final p5 a = new p5();
-
-    static {
-        si.o0.s(si.o0.l(d.class, si.o0.p(2, si.o0.l(d.class, new a(1)))));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
-    }
+public abstract class p5 {
 }

@@ -1,70 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tc0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class tc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uc0 b;
 
-    public /* synthetic */ tc0(org.telegram.ui.dt dtVar, ArrayList arrayList, boolean z10) {
-        this.c = dtVar;
-        this.d = arrayList;
-        this.b = z10;
+    public /* synthetic */ tc0(uc0 uc0Var, int i10) {
+        this.a = i10;
+        this.b = uc0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.r6 r6Var = (org.telegram.ui.r6) this.c;
-                Runnable runnable = (Runnable) this.d;
-                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
-                    r6Var.dismiss();
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
-                }
+                this.b.y();
                 break;
             default:
-                org.telegram.ui.dt dtVar = (org.telegram.ui.dt) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                org.telegram.ui.ht htVar = dtVar.a;
-                if (htVar.w != null && htVar.l != null) {
-                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
-                    if (intValue == 0) {
-                        htVar.l.C(htVar.W);
-                    } else if (intValue == 1) {
-                        htVar.l.v(htVar.W);
-                    } else if (intValue == 2) {
-                        htVar.l.v(null);
-                    } else if (intValue == 3) {
-                        htVar.l.H(htVar.W);
-                    } else if (intValue == 4) {
-                        htVar.l.p(htVar.W);
-                    } else if (intValue == 5) {
-                        MediaDataController.getInstance(htVar.r).addRecentSticker(2, htVar.b0, htVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
-                    }
-                    htVar.n();
-                    break;
-                }
+                this.b.m(true);
                 break;
         }
-    }
-
-    public /* synthetic */ tc0(boolean z10, org.telegram.ui.r6 r6Var, Runnable runnable) {
-        this.b = z10;
-        this.c = r6Var;
-        this.d = runnable;
     }
 }

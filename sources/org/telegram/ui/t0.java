@@ -2,19 +2,48 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class t0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ k4 a;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public t0(k4 k4Var) {
-        this.a = k4Var;
+    public /* synthetic */ t0(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        AndroidUtilities.runOnUIThread(new vt0(this, 6));
+        switch (this.a) {
+            case 0:
+                j4 j4Var = (j4) this.c;
+                j4Var.u0[1].b();
+                j4Var.u0[1].setVisibility(8);
+                j4Var.P0.S(j4Var.u0[0].b);
+                org.telegram.ui.Cells.s9 s9Var = j4Var.P0;
+                m3[] m3VarArr = j4Var.u0;
+                s9Var.z0 = m3VarArr[0].d;
+                int i10 = this.b;
+                m3VarArr[i10].setBackgroundDrawable(null);
+                j4Var.u0[i10].setLayerType(0, null);
+                j4Var.v0 = null;
+                j4Var.f0.f = false;
+                break;
+            case 1:
+                Activity activity = (Activity) this.c;
+                int i11 = this.b;
+                AndroidUtilities.setNavigationBarColor(activity, i11, false);
+                AndroidUtilities.setLightNavigationBar(activity, AndroidUtilities.computePerceivedBrightness(i11) >= 0.721f);
+                break;
+            default:
+                ((LaunchActivity) this.c).E0(this.b);
+                break;
+        }
     }
 }

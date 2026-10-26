@@ -2,17 +2,17 @@ package androidx.car.app;
 
 import androidx.car.app.model.x0;
 import androidx.car.app.navigation.model.NavigationTemplate;
-import e9.e2;
-import e9.k2;
-import e9.y0;
+import f9.e2;
+import f9.t0;
+import f9.z1;
 import j$.util.Objects;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class SessionInfo {
-    private static final y0 CLUSTER_SUPPORTED_TEMPLATES_API_6;
-    private static final y0 CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
+    private static final t0 CLUSTER_SUPPORTED_TEMPLATES_API_6;
+    private static final t0 CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
     public static final SessionInfo DEFAULT_SESSION_INFO;
     public static final int DISPLAY_TYPE_CLUSTER = 1;
     public static final int DISPLAY_TYPE_MAIN = 0;
@@ -21,9 +21,9 @@ public class SessionInfo {
     private final String mSessionId;
 
     static {
-        int i10 = y0.c;
-        CLUSTER_SUPPORTED_TEMPLATES_API_6 = new k2(NavigationTemplate.class);
-        CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6 = e2.s;
+        int i10 = t0.c;
+        CLUSTER_SUPPORTED_TEMPLATES_API_6 = new e2(NavigationTemplate.class);
+        CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6 = z1.s;
         DEFAULT_SESSION_INFO = new SessionInfo(0, "main");
     }
 

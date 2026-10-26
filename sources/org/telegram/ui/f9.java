@@ -1,46 +1,29 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.HashSet;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class f9 extends p60 {
-    public final /* synthetic */ int v0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 w0;
+public final class f9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ org.telegram.ui.Components.z90 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f9(Bundle bundle, int i10, org.telegram.ui.ActionBar.o2 o2Var) {
-        super(bundle);
-        this.v0 = i10;
-        this.w0 = o2Var;
+    public f9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.z90 z90Var, String str) {
+        this.a = atomicBoolean;
+        this.b = z90Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.p60
-    public final void n0(HashSet hashSet) {
-        int size = hashSet.size();
-        int i10 = this.v0;
-        if (size == 1) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser((Long) hashSet.iterator().next());
-            TLRPC.UserFull userFull = MessagesController.getInstance(i10).getUserFull(user.id);
-            if (userFull == null) {
-                TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
-                tL_users_getFullUser.id = MessagesController.getInstance(i10).getInputUser(user.id);
-                ConnectionsManager.getInstance(i10).sendRequest(tL_users_getFullUser, new hg.u(this, i10, user, 3));
-                return;
-            }
-            org.telegram.ui.Components.voip.d2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, AccountInstance.getInstance(i10));
-        } else {
-            TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
-            createconferencecall.random_id = Utilities.random.nextInt();
-            ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new hg.u(i10, hashSet, this.w0));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AtomicBoolean atomicBoolean = this.a;
+        if (atomicBoolean.get()) {
+            return;
         }
-        finishFragment();
+        atomicBoolean.set(true);
+        this.b.setText(this.c);
     }
 }

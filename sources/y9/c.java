@@ -1,9 +1,44 @@
 package y9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface c {
-    void a();
+public final class c {
+    public final String a;
+    public final String b;
 
-    String d();
+    public c(String str, String str2) {
+        if (str == null) {
+            throw new NullPointerException("Null crashlyticsInstallId");
+        }
+        this.a = str;
+        this.b = str2;
+    }
+
+    public final boolean equals(Object obj) {
+        String str;
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof c) {
+            c cVar = (c) obj;
+            String str2 = cVar.b;
+            if (this.a.equals(cVar.a) && ((str = this.b) != null ? str.equals(str2) : str2 == null)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
+        String str = this.b;
+        return hashCode ^ (str == null ? 0 : str.hashCode());
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("InstallIds{crashlyticsInstallId=");
+        sb2.append(this.a);
+        sb2.append(", firebaseInstallationId=");
+        return a1.g.s(sb2, this.b, "}");
+    }
 }

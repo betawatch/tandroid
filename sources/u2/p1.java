@@ -1,94 +1,141 @@
 package u2;
 
-import android.net.Uri;
-import e9.x1;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import v7.u6;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class p1 extends a {
-    public final g2.m h;
-    public final g2.g i;
-    public final b2.w j;
-    public final oa.d l;
-    public final l1 n;
-    public final b2.o0 o;
-    public g2.c0 p;
-    public final long k = -9223372036854775807L;
-    public final boolean m = true;
+public final class p1 implements e0, d0 {
+    public final e0 a;
+    public final long b;
+    public d0 c;
 
-    public p1(b2.n0 n0Var, qf.b bVar, oa.d dVar) {
-        b2.j0 j0Var;
-        this.i = bVar;
-        this.l = dVar;
-        boolean z10 = true;
-        b2.c0 c0Var = new b2.c0();
-        b2.f0 f0Var = new b2.f0();
-        List list = Collections.EMPTY_LIST;
-        x1 x1Var = x1.e;
-        b2.h0 h0Var = new b2.h0();
-        b2.k0 k0Var = b2.k0.d;
-        Uri uri = Uri.EMPTY;
-        String uri2 = n0Var.a.toString();
-        uri2.getClass();
-        e9.n0 u10 = e9.n0.u(e9.n0.y(n0Var));
-        if (f0Var.b != null && f0Var.a == null) {
-            z10 = false;
+    public p1(e0 e0Var, long j10) {
+        this.a = e0Var;
+        this.b = j10;
+    }
+
+    @Override // u2.f1
+    public final long b() {
+        long b10 = this.a.b();
+        if (b10 == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
         }
-        u6.p(z10);
-        if (uri != null) {
-            j0Var = new b2.j0(uri, null, f0Var.a != null ? new b2.g0(f0Var) : null, null, list, null, u10, -9223372036854775807L);
-        } else {
-            j0Var = null;
+        return b10 + this.b;
+    }
+
+    @Override // u2.f1
+    public final boolean c() {
+        return this.a.c();
+    }
+
+    @Override // u2.e0
+    public final void g() {
+        this.a.g();
+    }
+
+    @Override // u2.e0
+    public final long h(long j10) {
+        long j11 = this.b;
+        return this.a.h(j10 - j11) + j11;
+    }
+
+    @Override // u2.e0
+    public final void i(long j10) {
+        this.a.i(j10 - this.b);
+    }
+
+    @Override // u2.e0
+    public final void k(d0 d0Var, long j10) {
+        this.c = d0Var;
+        this.a.k(this, j10 - this.b);
+    }
+
+    @Override // u2.e0
+    public final long l() {
+        long l4 = this.a.l();
+        if (l4 == -9223372036854775807L) {
+            return -9223372036854775807L;
         }
-        b2.o0 o0Var = new b2.o0(uri2, new b2.e0(c0Var), j0Var, new b2.i0(h0Var), b2.r0.L, k0Var);
-        this.o = o0Var;
-        b2.v vVar = new b2.v();
-        String str = n0Var.b;
-        vVar.r = b2.v0.n(str == null ? "text/x-unknown" : str);
-        vVar.d = n0Var.c;
-        vVar.e = n0Var.d;
-        vVar.f = n0Var.e;
-        vVar.b = n0Var.f;
-        String str2 = n0Var.g;
-        vVar.a = str2 != null ? str2 : null;
-        this.j = new b2.w(vVar);
-        Map map = Collections.EMPTY_MAP;
-        Uri uri3 = n0Var.a;
-        u6.l(uri3, "The uri must be set.");
-        this.h = new g2.m(uri3, 1, null, map, 0L, -1L, null, 1);
-        this.n = new l1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0L, 0L, true, false, false, null, o0Var, null);
+        return l4 + this.b;
     }
 
-    @Override // u2.a
-    public final f0 c(h0 h0Var, androidx.biometric.e eVar, long j10) {
-        return new o1(this.h, this.i, this.p, this.j, this.k, this.l, b(h0Var), this.m, null);
+    @Override // u2.f1
+    public final boolean m(i2.w0 w0Var) {
+        i2.v0 v0Var = new i2.v0();
+        long j10 = w0Var.a;
+        v0Var.b = w0Var.b;
+        v0Var.c = w0Var.c;
+        v0Var.a = j10 - this.b;
+        return this.a.m(new i2.w0(v0Var));
     }
 
-    @Override // u2.a
-    public final b2.o0 i() {
-        return this.o;
+    @Override // u2.d0
+    public final void n(e0 e0Var) {
+        d0 d0Var = this.c;
+        d0Var.getClass();
+        d0Var.n(this);
     }
 
-    @Override // u2.a
-    public final void m(g2.c0 c0Var) {
-        this.p = c0Var;
-        n(this.n);
+    @Override // u2.e0
+    public final long o(x2.q[] qVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10) {
+        d1[] d1VarArr2 = new d1[d1VarArr.length];
+        int i10 = 0;
+        while (true) {
+            d1 d1Var = null;
+            if (i10 >= d1VarArr.length) {
+                break;
+            }
+            o1 o1Var = (o1) d1VarArr[i10];
+            if (o1Var != null) {
+                d1Var = o1Var.a;
+            }
+            d1VarArr2[i10] = d1Var;
+            i10++;
+        }
+        e0 e0Var = this.a;
+        long j11 = this.b;
+        long o10 = e0Var.o(qVarArr, zArr, d1VarArr2, zArr2, j10 - j11);
+        for (int i11 = 0; i11 < d1VarArr.length; i11++) {
+            d1 d1Var2 = d1VarArr2[i11];
+            if (d1Var2 == null) {
+                d1VarArr[i11] = null;
+            } else {
+                d1 d1Var3 = d1VarArr[i11];
+                if (d1Var3 == null || ((o1) d1Var3).a != d1Var2) {
+                    d1VarArr[i11] = new o1(d1Var2, j11);
+                }
+            }
+        }
+        return o10 + j11;
     }
 
-    @Override // u2.a
-    public final void o(f0 f0Var) {
-        ((o1) f0Var).r.e(null);
+    @Override // u2.e0
+    public final r1 p() {
+        return this.a.p();
     }
 
-    @Override // u2.a
-    public final void k() {
+    @Override // u2.f1
+    public final long q() {
+        long q5 = this.a.q();
+        if (q5 == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return q5 + this.b;
     }
 
-    @Override // u2.a
-    public final void q() {
+    @Override // u2.e0
+    public final long r(long j10, i2.t1 t1Var) {
+        long j11 = this.b;
+        return this.a.r(j10 - j11, t1Var) + j11;
+    }
+
+    @Override // u2.f1
+    public final void s(long j10) {
+        this.a.s(j10 - this.b);
+    }
+
+    @Override // u2.e1
+    public final void u(f1 f1Var) {
+        d0 d0Var = this.c;
+        d0Var.getClass();
+        d0Var.u(this);
     }
 }

@@ -1,5 +1,6 @@
 package d2;
 
+import a8.yb;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -7,13 +8,12 @@ import android.text.Layout;
 import android.text.Spanned;
 import android.text.SpannedString;
 import android.text.TextUtils;
-import e2.m0;
+import e2.n0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String A;
@@ -57,7 +57,7 @@ public final class b {
 
     static {
         new b("", null, null, null, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
-        String str = m0.a;
+        String str = n0.a;
         s = Integer.toString(0, 36);
         t = Integer.toString(17, 36);
         u = Integer.toString(1, 36);
@@ -84,7 +84,7 @@ public final class b {
         if (charSequence == null) {
             bitmap.getClass();
         } else {
-            u6.g(bitmap == null);
+            yb.g(bitmap == null);
         }
         if (charSequence instanceof Spanned) {
             this.a = SpannedString.valueOf(charSequence);

@@ -1,34 +1,22 @@
 package mi;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.k6;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class h extends CharacterStyle {
-    public final String a;
-    public final float b;
-    public final boolean c;
+public final class h extends AnimatorListenerAdapter {
+    public final /* synthetic */ MessageObject.GroupedMessages.TransitionParams a;
 
-    public h(boolean z10, String str, String str2) {
-        this.c = z10;
-        this.a = str;
-        int length = str2 == null ? 0 : str2.length();
-        r rVar = k.a;
-        this.b = length > 120 ? 5 : length > 50 ? 3 : 2;
+    public h(MessageObject.GroupedMessages.TransitionParams transitionParams) {
+        this.a = transitionParams;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        if (this.c) {
-            textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - this.b));
-        }
-        textPaint.setColor(k6.x0(null, k6.ec, false));
-        textPaint.setTypeface(Typeface.MONOSPACE);
-        textPaint.setUnderlineText(false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        MessageObject.GroupedMessages.TransitionParams transitionParams = this.a;
+        transitionParams.backgroundChangeBounds = false;
+        transitionParams.drawBackgroundForDeletedItems = false;
     }
 }

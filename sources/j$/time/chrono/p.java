@@ -149,9 +149,9 @@ public final class p extends d {
     }
 
     public final p Q(int i10, int i11, int i12) {
-        int q6 = this.a.q(i10, i11);
-        if (i12 > q6) {
-            i12 = q6;
+        int q5 = this.a.q(i10, i11);
+        if (i12 > q5) {
+            i12 = q5;
         }
         return new p(this.a, i10, i11, i12);
     }

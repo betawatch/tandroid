@@ -2,7 +2,7 @@ package a0;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class m implements Cloneable {
     public /* synthetic */ int[] a;
@@ -123,9 +123,9 @@ public final class m implements Cloneable {
         if (i17 - i11 != 0) {
             int[] iArr = this.a;
             int i18 = i11 + 1;
-            jd.f.b(i18, i11, i17, iArr, iArr);
+            kd.f.b(i18, i11, i17, iArr, iArr);
             Object[] objArr2 = this.b;
-            jd.f.c(i18, i11, this.c, objArr2, objArr2);
+            kd.f.c(i18, i11, this.c, objArr2, objArr2);
         }
         this.a[i11] = i10;
         this.b[i11] = obj;

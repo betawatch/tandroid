@@ -1,55 +1,56 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class gm0 implements Comparator {
-    public final /* synthetic */ an0 a;
+public final class gm0 implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ in0 c;
 
-    public gm0(an0 an0Var) {
-        this.a = an0Var;
+    public gm0(in0 in0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.c = in0Var;
+        this.a = editTextBoldCursor;
+        this.b = str;
     }
 
-    public final int a(TLRPC.SecureValueError secureValueError) {
-        if (secureValueError instanceof TLRPC.TL_secureValueError) {
-            return 0;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        EditTextBoldCursor editTextBoldCursor = this.a;
+        int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= editable.length()) {
+                z10 = false;
+                break;
+            }
+            char charAt = editable.charAt(i10);
+            if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'z') && !((charAt >= 'A' && charAt <= 'Z') || charAt == ' ' || charAt == '\'' || charAt == ',' || charAt == '.' || charAt == '&' || charAt == '-' || charAt == '/'))) {
+                z10 = true;
+                break;
+            }
+            i10++;
         }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFrontSide) {
-            return 1;
+        in0 in0Var = this.c;
+        if (z10 && !in0Var.u0) {
+            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
+        } else {
+            in0Var.t0[intValue] = z10;
+            in0.J0(in0Var, editTextBoldCursor, this.b, editable, false);
         }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorReverseSide) {
-            return 2;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorSelfie) {
-            return 3;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFile) {
-            return 4;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFiles) {
-            return 5;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFile) {
-            return 6;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFiles) {
-            return 7;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorData) {
-            return an0.B0(this.a, ((TLRPC.TL_secureValueErrorData) secureValueError).field);
-        }
-        return 100;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((TLRPC.SecureValueError) obj);
-        int a10 = a((TLRPC.SecureValueError) obj2);
-        if (a2 < a10) {
-            return -1;
-        }
-        return a2 > a10 ? 1 : 0;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -1,149 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.Pair;
-import android.view.KeyEvent;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
+import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vc implements RequestDelegate {
+public final /* synthetic */ class vc implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ zc b;
 
-    public /* synthetic */ vc(int i10, Object obj, Object obj2) {
+    public /* synthetic */ vc(zc zcVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = zcVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        View view = (View) obj;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new s1((zc) this.b, tLObject, (org.telegram.ui.ActionBar.j6) this.c, 10));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new s1((ie) this.b, tLObject, (Context) this.c, 12));
-                break;
-            case 2:
-                sn snVar = (sn) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
-                if (tLObject instanceof TLRPC.messages_Messages) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    AndroidUtilities.runOnUIThread(new bf(snVar, !messages_messages.messages.isEmpty() ? ((TLRPC.messages_Messages) tLObject2).offset_id_offset - messages_messages.offset_id_offset : ((TLRPC.messages_Messages) tLObject2).offset_id_offset, 5));
+                zc zcVar = this.b;
+                zcVar.getClass();
+                if (view instanceof org.telegram.ui.Components.d31) {
+                    view.setBackgroundColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.i5, zcVar.b));
                     break;
                 }
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new s1((sn) this.b, tLObject, (TLRPC.User) this.c, 21));
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((sn) this.b, tLObject, tL_error, (MessagesStorage) this.c, 13));
-                break;
-            case 5:
-                sn snVar2 = (sn) this.b;
-                TLRPC.TL_messages_sendScheduledMessages tL_messages_sendScheduledMessages = (TLRPC.TL_messages_sendScheduledMessages) this.c;
-                if (tL_error != null) {
-                    if (tL_error.text != null) {
-                        AndroidUtilities.runOnUIThread(new eh(2, snVar2, tL_error));
-                        break;
-                    }
-                } else {
-                    snVar2.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new eh(1, snVar2, tL_messages_sendScheduledMessages));
-                    break;
-                }
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new s1((ul) this.b, tLObject, (MessageObject) this.c, 23));
-                break;
-            case 7:
-                ko koVar = (ko) this.b;
-                TL_bots.setBotInfo setbotinfo = (TL_bots.setBotInfo) this.c;
-                TLRPC.UserFull userFull = koVar.D0;
-                if (userFull != null) {
-                    userFull.about = setbotinfo.about;
-                    koVar.getMessagesStorage().updateUserInfo(koVar.D0, false);
-                }
-                AndroidUtilities.runOnUIThread(new eo(koVar, 2));
-                break;
-            case 8:
-                AndroidUtilities.runOnUIThread(new eh(14, (kp) this.b, (org.telegram.ui.ActionBar.c2[]) this.c));
-                break;
-            case 9:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((dq) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.c, 16));
-                break;
-            case 10:
-                org.telegram.ui.Components.n5 n5Var = (org.telegram.ui.Components.n5) this.b;
-                NotificationCenter.getInstance(n5Var.e).doOnIdle(new org.telegram.ui.Components.m5(n5Var, (ArrayList) this.c, tLObject, 0));
-                break;
-            case 11:
-                AndroidUtilities.runOnUIThread(new ig.d2((org.telegram.ui.Components.k8) this.b, (org.telegram.ui.ActionBar.c2) this.c, tLObject));
-                break;
-            case 12:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ee(6, (org.telegram.ui.Components.ti) this.b, (org.telegram.ui.Components.mi) this.c));
-                break;
-            case 13:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ee(7, (org.telegram.ui.Components.ti) this.b, (TLRPC.TL_attachMenuBot) this.c));
-                break;
-            case 14:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.lg((org.telegram.ui.Components.up) this.b, tLObject, (org.telegram.ui.ActionBar.j6) this.c, 3));
-                break;
-            case 15:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yt(11, (org.telegram.ui.Components.k10) this.b, (Pair) this.c));
-                break;
-            case 16:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((org.telegram.ui.Components.k10) this.b, tL_error, tLObject, (Utilities.Callback) this.c, 26));
-                break;
-            case 17:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((org.telegram.ui.Components.a40) this.b, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 28));
-                break;
-            case 18:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90((org.telegram.ui.Components.r90) this.b, (TLRPC.TL_chatInviteExported) this.c, tL_error, tLObject, 0));
-                break;
-            case 19:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.lg((org.telegram.ui.Components.oh0) this.b, (org.telegram.ui.Components.nh0) this.c, tLObject, 17));
-                break;
-            case 20:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ko0((org.telegram.ui.Components.ir0) this.b, tLObject, (Context) this.c, 5));
-                break;
-            case 21:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(this.b, tL_error, tLObject, this.c, 6));
-                break;
-            case 22:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(this.b, tL_error, tLObject, this.c, 7));
-                break;
-            case 23:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90((KeyEvent.Callback) this.b, this.c, tLObject, tL_error, 8));
-                break;
-            case 24:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(this.b, tL_error, tLObject, this.c, 10));
-                break;
-            case 25:
-                AndroidUtilities.runOnUIThread(new lq((qy) this.b, tLObject, (MessageObject) this.c, 4));
-                break;
-            case 26:
-                AndroidUtilities.runOnUIThread(new ot(12, (mz) this.b, (org.telegram.ui.ActionBar.c2) this.c));
-                break;
-            case 27:
-                AndroidUtilities.runOnUIThread(new ot(16, (q00) this.b, (org.telegram.ui.ActionBar.c2) this.c));
-                break;
-            case 28:
-                AndroidUtilities.runOnUIThread(new lq((j00) this.b, tL_error, (i00) this.c, 8));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ot(18, (FiltersSetupActivity) this.b, (TLRPC.TL_messages_toggleDialogFilterTags) this.c));
+                if (view instanceof org.telegram.ui.Components.d31) {
+                    org.telegram.ui.Components.d31 d31Var = (org.telegram.ui.Components.d31) view;
+                    d31Var.setFallbackWallpaper(d31Var.G.a.b ? null : this.b.v);
+                    break;
+                }
                 break;
         }
     }

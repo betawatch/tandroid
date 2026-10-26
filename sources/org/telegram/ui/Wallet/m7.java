@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class m7 extends View {
     public final /* synthetic */ t7 a;
@@ -25,7 +25,7 @@ public final class m7 extends View {
         }
         if (t7Var.X0) {
             float f7 = t7Var.U0;
-            pow = com.google.android.gms.internal.play_billing.k3.B(f7, 2.0f, 3.0f, f7 * f7);
+            pow = c3.h0.D(f7, 2.0f, 3.0f, f7 * f7);
         } else {
             pow = 1.0f - ((float) Math.pow(1.0f - t7Var.U0, 4.0d));
         }

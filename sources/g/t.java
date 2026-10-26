@@ -1,5 +1,6 @@
 package g;
 
+import a8.qf;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -10,15 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
-import m.k1;
-import m.o3;
+import m.j1;
+import m.n3;
 import org.telegram.messenger.beta.R;
 import r0.i0;
-import w7.r6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class t extends androidx.activity.n {
+public abstract class t extends androidx.activity.m {
     public r d;
     public final s e;
 
@@ -53,10 +53,10 @@ public abstract class t extends androidx.activity.n {
         c10.a();
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         r rVar = (r) c();
-        rVar.l();
+        rVar.k();
         ((ViewGroup) rVar.J.findViewById(android.R.id.content)).addView(view, layoutParams);
         rVar.h.a(rVar.f.getCallback());
     }
@@ -98,13 +98,13 @@ public abstract class t extends androidx.activity.n {
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return r6.b(this.e, getWindow().getDecorView(), this, keyEvent);
+        return qf.b(this.e, getWindow().getDecorView(), this, keyEvent);
     }
 
     @Override // android.app.Dialog
     public final View findViewById(int i10) {
         r rVar = (r) c();
-        rVar.l();
+        rVar.k();
         return rVar.f.findViewById(i10);
     }
 
@@ -112,12 +112,12 @@ public abstract class t extends androidx.activity.n {
     public final void invalidateOptionsMenu() {
         r rVar = (r) c();
         if (rVar.n != null) {
-            rVar.r().getClass();
-            rVar.s(0);
+            rVar.p().getClass();
+            rVar.q(0);
         }
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public void onCreate(Bundle bundle) {
         r rVar = (r) c();
         LayoutInflater from = LayoutInflater.from(rVar.e);
@@ -130,21 +130,21 @@ public abstract class t extends androidx.activity.n {
         c().a();
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void onStop() {
-        cc.d dVar;
+        dc.d dVar;
         super.onStop();
-        a0 r10 = ((r) c()).r();
-        if (r10 == null || (dVar = r10.s) == null) {
+        a0 p10 = ((r) c()).p();
+        if (p10 == null || (dVar = p10.s) == null) {
             return;
         }
         dVar.a();
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void setContentView(int i10) {
         r rVar = (r) c();
-        rVar.l();
+        rVar.k();
         ViewGroup viewGroup = (ViewGroup) rVar.J.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         LayoutInflater.from(rVar.e).inflate(i10, viewGroup);
@@ -156,9 +156,9 @@ public abstract class t extends androidx.activity.n {
         super.setTitle(charSequence);
         r rVar = (r) c();
         rVar.r = charSequence;
-        k1 k1Var = rVar.s;
-        if (k1Var != null) {
-            k1Var.setWindowTitle(charSequence);
+        j1 j1Var = rVar.s;
+        if (j1Var != null) {
+            j1Var.setWindowTitle(charSequence);
             return;
         }
         a0 a0Var = rVar.n;
@@ -170,34 +170,34 @@ public abstract class t extends androidx.activity.n {
             }
             return;
         }
-        o3 o3Var = (o3) a0Var.e;
-        if (o3Var.g) {
+        n3 n3Var = (n3) a0Var.e;
+        if (n3Var.g) {
             return;
         }
-        Toolbar toolbar = o3Var.a;
-        o3Var.h = charSequence;
-        if ((o3Var.b & 8) != 0) {
+        Toolbar toolbar = n3Var.a;
+        n3Var.h = charSequence;
+        if ((n3Var.b & 8) != 0) {
             toolbar.setTitle(charSequence);
-            if (o3Var.g) {
-                i0.k(toolbar.getRootView(), charSequence);
+            if (n3Var.g) {
+                i0.l(toolbar.getRootView(), charSequence);
             }
         }
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void setContentView(View view) {
         r rVar = (r) c();
-        rVar.l();
+        rVar.k();
         ViewGroup viewGroup = (ViewGroup) rVar.J.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         viewGroup.addView(view);
         rVar.h.a(rVar.f.getCallback());
     }
 
-    @Override // androidx.activity.n, android.app.Dialog
+    @Override // androidx.activity.m, android.app.Dialog
     public final void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
         r rVar = (r) c();
-        rVar.l();
+        rVar.k();
         ViewGroup viewGroup = (ViewGroup) rVar.J.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         viewGroup.addView(view, layoutParams);
@@ -211,23 +211,23 @@ public abstract class t extends androidx.activity.n {
         String string = getContext().getString(i10);
         r rVar = (r) c10;
         rVar.r = string;
-        k1 k1Var = rVar.s;
-        if (k1Var != null) {
-            k1Var.setWindowTitle(string);
+        j1 j1Var = rVar.s;
+        if (j1Var != null) {
+            j1Var.setWindowTitle(string);
             return;
         }
         a0 a0Var = rVar.n;
         if (a0Var != null) {
-            o3 o3Var = (o3) a0Var.e;
-            if (o3Var.g) {
+            n3 n3Var = (n3) a0Var.e;
+            if (n3Var.g) {
                 return;
             }
-            Toolbar toolbar = o3Var.a;
-            o3Var.h = string;
-            if ((o3Var.b & 8) != 0) {
+            Toolbar toolbar = n3Var.a;
+            n3Var.h = string;
+            if ((n3Var.b & 8) != 0) {
                 toolbar.setTitle(string);
-                if (o3Var.g) {
-                    i0.k(toolbar.getRootView(), string);
+                if (n3Var.g) {
+                    i0.l(toolbar.getRootView(), string);
                     return;
                 }
                 return;

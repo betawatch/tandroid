@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class q00 extends View {
     public float E;
@@ -34,11 +34,11 @@ public final class q00 extends View {
     public StaticLayout L;
     public StaticLayout M;
     public CharSequence N;
-    public w5 O;
+    public y5 O;
     public StaticLayout P;
-    public w5 Q;
+    public y5 Q;
     public StaticLayout R;
-    public w5 S;
+    public y5 S;
     public StaticLayout T;
     public boolean U;
     public boolean V;
@@ -64,7 +64,7 @@ public final class q00 extends View {
     public boolean l0;
     public final /* synthetic */ s00 m0;
     public boolean n;
-    public w5 r;
+    public y5 r;
     public StaticLayout s;
     public int v;
     public boolean w;
@@ -99,7 +99,7 @@ public final class q00 extends View {
         ofFloat.addUpdateListener(new k00(this, 1));
         animatorSet.playTogether(ofFloat);
         animatorSet.setDuration(50L);
-        animatorSet.addListener(new ai.ie(this, i10, f7, 1));
+        animatorSet.addListener(new bi.xd(this, i10, f7, 1));
         animatorSet.start();
     }
 
@@ -112,10 +112,10 @@ public final class q00 extends View {
     public final void onAttachedToWindow() {
         this.l0 = true;
         super.onAttachedToWindow();
-        this.r = a6.update(this.b.g ? 26 : 0, this, this.r, this.s);
-        this.O = a6.update(this.b.g ? 26 : 0, this, this.O, this.P);
-        this.Q = a6.update(this.b.g ? 26 : 0, this, this.Q, this.R);
-        this.S = a6.update(this.b.g ? 26 : 0, this, this.S, this.T);
+        this.r = c6.update(this.b.g ? 26 : 0, this, this.r, this.s);
+        this.O = c6.update(this.b.g ? 26 : 0, this, this.O, this.P);
+        this.Q = c6.update(this.b.g ? 26 : 0, this, this.Q, this.R);
+        this.S = c6.update(this.b.g ? 26 : 0, this, this.S, this.T);
     }
 
     @Override // android.view.View
@@ -135,10 +135,10 @@ public final class q00 extends View {
             this.a = null;
         }
         invalidate();
-        a6.release(this, this.r);
-        a6.release(this, this.O);
-        a6.release(this, this.Q);
-        a6.release(this, this.S);
+        c6.release(this, this.r);
+        c6.release(this, this.O);
+        c6.release(this, this.Q);
+        c6.release(this, this.S);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:266:0x011f, code lost:
@@ -189,7 +189,7 @@ public final class q00 extends View {
         float f13;
         float f14;
         TextPaint textPaint2;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.u6 u6Var;
         float f15;
         Paint paint2;
         int i22;
@@ -213,7 +213,7 @@ public final class q00 extends View {
         Paint paint3 = s00Var.e;
         TextPaint textPaint5 = s00Var.c;
         TextPaint textPaint6 = s00Var.b;
-        org.telegram.ui.ActionBar.g6 g6Var2 = s00Var.a;
+        org.telegram.ui.ActionBar.u6 u6Var2 = s00Var.a;
         if (s00Var.v != 0.0f) {
             canvas2.save();
             float f21 = s00Var.v;
@@ -241,8 +241,8 @@ public final class q00 extends View {
             int i27 = s00Var.d0;
             int i28 = s00Var.W;
             int i29 = s00Var.e0;
-            i15 = org.telegram.ui.ActionBar.k6.T9;
-            i16 = org.telegram.ui.ActionBar.k6.U9;
+            i15 = org.telegram.ui.ActionBar.y6.T9;
+            i16 = org.telegram.ui.ActionBar.y6.U9;
             i13 = i29;
             i14 = i28;
             z10 = z11;
@@ -251,25 +251,25 @@ public final class q00 extends View {
             i12 = s00Var.W;
             i13 = s00Var.e0;
             i14 = s00Var.V;
-            i15 = org.telegram.ui.ActionBar.k6.U9;
-            i16 = org.telegram.ui.ActionBar.k6.T9;
+            i15 = org.telegram.ui.ActionBar.y6.U9;
+            i16 = org.telegram.ui.ActionBar.y6.T9;
             z10 = z11;
             i17 = i13;
         }
         if (i17 >= 0) {
-            int w03 = org.telegram.ui.ActionBar.k6.w0(i12, g6Var2);
-            int w04 = org.telegram.ui.ActionBar.k6.w0(i17, g6Var2);
+            int w03 = org.telegram.ui.ActionBar.y6.w0(i12, u6Var2);
+            int w04 = org.telegram.ui.ActionBar.y6.w0(i17, u6Var2);
             if (s00Var.O) {
             }
             int i30 = this.b.a;
             if (i30 == i10 || i30 == i11) {
-                textPaint6.setColor(i0.a.f(s00Var.P, i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.k6.w0(i14, g6Var2), org.telegram.ui.ActionBar.k6.w0(i13, g6Var2)), i0.a.f(s00Var.w0, w03, w04)));
+                textPaint6.setColor(i0.a.f(s00Var.P, i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.y6.w0(i14, u6Var2), org.telegram.ui.ActionBar.y6.w0(i13, u6Var2)), i0.a.f(s00Var.w0, w03, w04)));
             }
             textPaint6.setColor(i0.a.f(s00Var.w0, w03, w04));
         } else if ((s00Var.O || i25 != -1) && (i26 == i10 || i26 == i11)) {
-            textPaint6.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.k6.w0(i14, g6Var2), org.telegram.ui.ActionBar.k6.w0(i12, g6Var2)));
+            textPaint6.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.y6.w0(i14, u6Var2), org.telegram.ui.ActionBar.y6.w0(i12, u6Var2)));
         } else {
-            textPaint6.setColor(org.telegram.ui.ActionBar.k6.w0(i12, g6Var2));
+            textPaint6.setColor(org.telegram.ui.ActionBar.y6.w0(i12, u6Var2));
         }
         s00Var.f = new PorterDuffColorFilter(textPaint6.getColor(), PorterDuff.Mode.SRC_IN);
         int i31 = this.J;
@@ -300,7 +300,7 @@ public final class q00 extends View {
         float measuredWidth = (getMeasuredWidth() - this.d) / 2.0f;
         if (this.G) {
             float f22 = this.x;
-            measuredWidth = com.google.android.gms.internal.play_billing.k3.y(1.0f, f22, this.F, measuredWidth * f22);
+            measuredWidth = c3.h0.z(1.0f, f22, this.F, measuredWidth * f22);
         }
         if (TextUtils.equals(this.b.b, this.h)) {
             str = format;
@@ -317,7 +317,7 @@ public final class q00 extends View {
             str = format;
             StaticLayout staticLayout = new StaticLayout(this.h, textPaint6, AndroidUtilities.dp(f10), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.s = staticLayout;
-            this.r = a6.update(this.b.g ? 26 : 0, this, this.r, staticLayout);
+            this.r = c6.update(this.b.g ? 26 : 0, this, this.r, staticLayout);
             this.c = this.s.getHeight();
             this.v = (int) (-this.s.getLineLeft(0));
         }
@@ -338,10 +338,10 @@ public final class q00 extends View {
                 this.T.draw(canvas2);
                 textPaint3 = textPaint6;
                 f19 = 6.0f;
-                g6Var = g6Var2;
+                u6Var = u6Var2;
                 textPaint = textPaint4;
                 f20 = f17;
-                a6.drawAnimatedEmojis(canvas2, this.T, this.S, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, s00Var.f);
+                c6.drawAnimatedEmojis(canvas2, this.T, this.S, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, s00Var.f);
                 canvas2.restore();
             } else {
                 textPaint3 = textPaint6;
@@ -349,7 +349,7 @@ public final class q00 extends View {
                 textPaint = textPaint4;
                 f20 = f17;
                 f13 = f12;
-                g6Var = g6Var2;
+                u6Var = u6Var2;
             }
             if (this.P != null) {
                 canvas2.save();
@@ -359,14 +359,14 @@ public final class q00 extends View {
                 canvas2.translate(f13 + this.v + f24, ((getMeasuredHeight() - this.c) / 2.0f) + f20);
                 this.P.draw(canvas2);
                 StaticLayout staticLayout2 = this.P;
-                w5 w5Var = this.O;
+                y5 y5Var = this.O;
                 float computeVerticalScrollOffset = computeVerticalScrollOffset() - AndroidUtilities.dp(f19);
                 float computeVerticalScrollOffset2 = computeVerticalScrollOffset() + computeVerticalScrollExtent();
                 float f25 = this.V ? f20 - this.x : this.x;
                 f14 = f20;
                 textPaint2 = textPaint7;
                 paint = paint3;
-                a6.drawAnimatedEmojis(canvas2, staticLayout2, w5Var, 0.0f, null, computeVerticalScrollOffset, computeVerticalScrollOffset2, 0.0f, f25, s00Var.f);
+                c6.drawAnimatedEmojis(canvas2, staticLayout2, y5Var, 0.0f, null, computeVerticalScrollOffset, computeVerticalScrollOffset2, 0.0f, f25, s00Var.f);
                 canvas2.restore();
                 textPaint2.setAlpha(alpha);
             } else {
@@ -380,7 +380,7 @@ public final class q00 extends View {
                 textPaint2.setAlpha((int) (alpha2 * (this.V ? this.x : f14 - this.x)));
                 canvas2.translate(f13 + this.v + f24, ((getMeasuredHeight() - this.c) / 2.0f) + f14);
                 this.R.draw(canvas2);
-                a6.drawAnimatedEmojis(canvas2, this.R, this.Q, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(f19), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, this.V ? this.x : f14 - this.x, s00Var.f);
+                c6.drawAnimatedEmojis(canvas2, this.R, this.Q, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(f19), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, this.V ? this.x : f14 - this.x, s00Var.f);
                 canvas2.restore();
                 textPaint2.setAlpha(alpha2);
             }
@@ -391,12 +391,12 @@ public final class q00 extends View {
             f13 = f12;
             f14 = 1.0f;
             textPaint2 = textPaint6;
-            g6Var = g6Var2;
+            u6Var = u6Var2;
             if (this.s != null) {
                 canvas2.save();
                 canvas2.translate(f13 + this.v, ((getMeasuredHeight() - this.c) / 2.0f) + 1.0f);
                 this.s.draw(canvas2);
-                a6.drawAnimatedEmojis(canvas2, this.s, this.r, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, s00Var.f);
+                c6.drawAnimatedEmojis(canvas2, this.s, this.r, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, s00Var.f);
                 canvas2.restore();
             }
             f15 = f7;
@@ -404,12 +404,12 @@ public final class q00 extends View {
         String str2 = str;
         if (z12 || str2 != null || (!z10 && (s00Var.n || s00Var.w != f7))) {
             if (s00Var.f0 < 0) {
-                textPaint5.setColor(org.telegram.ui.ActionBar.k6.w0(s00Var.b0, g6Var));
+                textPaint5.setColor(org.telegram.ui.ActionBar.y6.w0(s00Var.b0, u6Var));
             } else {
-                textPaint5.setColor(i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.k6.w0(s00Var.b0, g6Var), org.telegram.ui.ActionBar.k6.w0(s00Var.f0, g6Var)));
+                textPaint5.setColor(i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.y6.w0(s00Var.b0, u6Var), org.telegram.ui.ActionBar.y6.w0(s00Var.f0, u6Var)));
             }
-            if (org.telegram.ui.ActionBar.k6.e1(i15) && org.telegram.ui.ActionBar.k6.e1(i16)) {
-                int w05 = org.telegram.ui.ActionBar.k6.w0(i15, g6Var);
+            if (org.telegram.ui.ActionBar.y6.e1(i15) && org.telegram.ui.ActionBar.y6.e1(i16)) {
+                int w05 = org.telegram.ui.ActionBar.y6.w0(i15, u6Var);
                 if (s00Var.O || s00Var.Q != -1) {
                     int i34 = this.b.a;
                     if (i34 == i19) {
@@ -419,7 +419,7 @@ public final class q00 extends View {
                         i23 = i16;
                         paint2 = paint;
                     }
-                    paint2.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.k6.w0(i23, g6Var), w05));
+                    paint2.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.y6.w0(i23, u6Var), w05));
                 }
                 paint2 = paint;
                 paint2.setColor(w05);
@@ -435,7 +435,7 @@ public final class q00 extends View {
                 f26 = (f26 * f28) + ((f14 - f28) * f27);
             }
             float dp3 = (z15 && this.R == null) ? (f13 - this.a0) + f15 + f26 + AndroidUtilities.dp(5.0f) : f13 + f26 + AndroidUtilities.dp(5.0f);
-            int A = org.telegram.messenger.sl.A(17.333f, getMeasuredHeight(), 2);
+            int B = org.telegram.messenger.vh.B(17.333f, getMeasuredHeight(), 2);
             if (z10 || ((!s00Var.n && s00Var.w == f7) || str2 != null)) {
                 paint2.setAlpha(255);
             } else {
@@ -453,8 +453,8 @@ public final class q00 extends View {
                         float f33 = this.x;
                         f11 = (f11 * f33) + ((f14 - f33) * f32);
                     }
-                    float f34 = A;
-                    float dp4 = AndroidUtilities.dp(17.333f) + A;
+                    float f34 = B;
+                    float dp4 = AndroidUtilities.dp(17.333f) + B;
                     rectF = this.f;
                     rectF.set(dp3, f34, f16 + dp3, dp4);
                     if (!z12 || z13) {
@@ -519,7 +519,7 @@ public final class q00 extends View {
                         if (!z10) {
                             textPaint5.setAlpha((int) ((f14 - s00Var.w) * 255.0f));
                         }
-                        canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + A, textPaint5);
+                        canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + B, textPaint5);
                     }
                     if (!z12 || z13) {
                         canvas2.restore();
@@ -540,8 +540,8 @@ public final class q00 extends View {
             f16 = i22;
             if (z14) {
             }
-            float f342 = A;
-            float dp42 = AndroidUtilities.dp(17.333f) + A;
+            float f342 = B;
+            float dp42 = AndroidUtilities.dp(17.333f) + B;
             rectF = this.f;
             rectF.set(dp3, f342, f16 + dp3, dp42);
             if (!z12) {
@@ -594,10 +594,10 @@ public final class q00 extends View {
             if (f39 != f14) {
                 this.k0 = f39 + 0.10666667f;
                 this.k0 = Utilities.clamp(this.k0, f14, f7);
-                w02 = org.telegram.ui.ActionBar.k6.w0(s00Var.W, g6Var);
+                w02 = org.telegram.ui.ActionBar.y6.w0(s00Var.W, u6Var);
                 i24 = s00Var.e0;
                 if (i24 >= 0) {
-                    w02 = i0.a.f(s00Var.w0, w02, org.telegram.ui.ActionBar.k6.w0(i24, g6Var));
+                    w02 = i0.a.f(s00Var.w0, w02, org.telegram.ui.ActionBar.y6.w0(i24, u6Var));
                 }
                 if (s00Var.u0 != w02) {
                     s00Var.u0 = w02;
@@ -623,7 +623,7 @@ public final class q00 extends View {
             this.k0 -= 0.10666667f;
         }
         this.k0 = Utilities.clamp(this.k0, f14, f7);
-        w02 = org.telegram.ui.ActionBar.k6.w0(s00Var.W, g6Var);
+        w02 = org.telegram.ui.ActionBar.y6.w0(s00Var.W, u6Var);
         i24 = s00Var.e0;
         if (i24 >= 0) {
         }

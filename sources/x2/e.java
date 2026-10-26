@@ -1,267 +1,121 @@
 package x2;
 
-import android.text.TextUtils;
-import b2.p1;
-import b2.r1;
-import b2.w;
-import e2.m0;
-import e9.b0;
-import e9.n0;
-import e9.s1;
-import e9.v1;
-import i2.o1;
-import j$.util.Objects;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import b2.q1;
+import bi.h0;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import f9.f0;
+import f9.s1;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.e2;
+import r0.k1;
+import zh.i0;
+import zh.p1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e extends l implements Comparable {
-    public final boolean E;
-    public final int F;
-    public final int G;
-    public final boolean H;
-    public final int I;
-    public final int J;
-    public final int K;
-    public final int L;
-    public final boolean M;
-    public final boolean N;
-    public final boolean O;
-    public final int e;
-    public final boolean f;
-    public final String h;
-    public final i n;
-    public final boolean r;
-    public final int s;
-    public final int v;
-    public final int w;
-    public final int x;
-    public final boolean y;
+public final /* synthetic */ class e implements l, Continuation, e2.j, ag.s, b2, r0.n, BillingController.ProductDetailsResponseListenerLegacy {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0111 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x00ef A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public e(int i10, p1 p1Var, int i11, i iVar, int i12, boolean z10, d dVar, int i13) {
-        super(i10, p1Var, i11);
-        int i14;
-        int i15;
-        boolean z11;
-        String[] G;
-        int i16;
-        int i17;
-        int i18;
-        w wVar;
-        boolean z12;
-        i iVar2;
-        boolean z13;
-        r1 r1Var;
-        boolean z14;
-        this.n = iVar;
-        boolean z15 = iVar.z0;
-        n0 n0Var = iVar.v;
-        n0 n0Var2 = iVar.q;
-        int i19 = z15 ? 24 : 16;
-        int i20 = 0;
-        this.y = false;
-        this.h = n.l(this.d.d);
-        this.r = o1.e(i12, false);
-        int i21 = 0;
-        while (true) {
-            int size = n0Var2.size();
-            i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (i21 >= size) {
-                i15 = 0;
-                i21 = Integer.MAX_VALUE;
+    public /* synthetic */ e(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // r0.n
+    public k1 P0(View view, k1 k1Var) {
+        ((i0) this.b).h.j(k1Var);
+        return k1.b;
+    }
+
+    @Override // x2.l
+    public s1 a(int i10, q1 q1Var, int[] iArr) {
+        j jVar = (j) this.b;
+        f0 t10 = f9.i0.t();
+        for (int i11 = 0; i11 < q1Var.a; i11++) {
+            t10.c(new g(i10, q1Var, i11, jVar, iArr[i11]));
+        }
+        return t10.f();
+    }
+
+    @Override // e2.j
+    public void accept(Object obj) {
+        switch (this.a) {
+            case 2:
+                z3.h hVar = (z3.h) this.b;
+                z3.a aVar = (z3.a) obj;
+                z3.g gVar = new z3.g(aVar.b, pa.d.f(aVar.a, aVar.c));
+                hVar.c.add(gVar);
+                long j10 = hVar.j;
+                if (j10 == -9223372036854775807L || aVar.d >= j10) {
+                    hVar.g(gVar);
+                    break;
+                }
                 break;
-            } else {
-                i15 = n.i(this.d, (String) n0Var2.get(i21), false);
-                if (i15 > 0) {
-                    break;
-                } else {
-                    i21++;
-                }
-            }
+            default:
+                ((f0) this.b).c((z3.a) obj);
+                break;
         }
-        this.v = i21;
-        this.s = i15;
-        int i22 = this.d.f;
-        int i23 = iVar.s;
-        this.w = (i22 == 0 || i22 != i23) ? Integer.bitCount(i22 & i23) : Integer.MAX_VALUE;
-        this.x = n.c(this.d, iVar.r);
-        w wVar2 = this.d;
-        int i24 = wVar2.f;
-        this.E = i24 == 0 || (i24 & 1) != 0;
-        this.H = (wVar2.e & 1) != 0;
-        String str = wVar2.s;
-        if (str != null) {
-            switch (str.hashCode()) {
-                case -2123537834:
-                    if (str.equals("audio/eac3-joc")) {
-                        z14 = false;
-                        break;
-                    }
-                    z14 = -1;
-                    break;
-                case 187078297:
-                    if (str.equals("audio/ac4")) {
-                        z14 = true;
-                        break;
-                    }
-                    z14 = -1;
-                    break;
-                case 1504698186:
-                    if (str.equals("audio/iamf")) {
-                        z14 = 2;
-                        break;
-                    }
-                    z14 = -1;
-                    break;
-                default:
-                    z14 = -1;
-                    break;
-            }
-            switch (z14) {
-                case false:
-                case true:
-                case true:
-                    z11 = true;
-                    break;
-            }
-            this.O = z11;
-            int i25 = wVar2.K;
-            this.I = i25;
-            this.J = wVar2.L;
-            int i26 = wVar2.j;
-            this.K = i26;
-            this.f = (i26 != -1 || i26 <= iVar.u) && (i25 == -1 || i25 <= iVar.t) && dVar.apply(wVar2);
-            G = m0.G();
-            i16 = 0;
-            while (true) {
-                if (i16 >= G.length) {
-                    i17 = n.i(this.d, G[i16], false);
-                    if (i17 <= 0) {
-                        i16++;
-                    }
-                } else {
-                    i17 = 0;
-                    i16 = Integer.MAX_VALUE;
-                }
-            }
-            this.F = i16;
-            this.G = i17;
-            i18 = 0;
-            while (true) {
-                if (i18 < n0Var.size()) {
-                    String str2 = this.d.s;
-                    if (str2 == null || !str2.equals(n0Var.get(i18))) {
-                        i18++;
-                    } else {
-                        i14 = i18;
-                    }
-                }
-            }
-            this.L = i14;
-            this.M = (i12 & 384) != 128;
-            this.N = (i12 & 64) != 64;
-            wVar = this.d;
-            z12 = this.f;
-            iVar2 = this.n;
-            z13 = iVar2.B0;
-            r1Var = iVar2.w;
-            if (o1.e(i12, z13) && ((z12 || iVar2.y0) && (r1Var.a != 2 || n.n(iVar2, i12, wVar)))) {
-                i20 = (o1.e(i12, false) || !z12 || wVar.j == -1 || iVar2.G || iVar2.F || (!iVar2.C0 && z10) || r1Var.a == 2 || (i19 & i12) == 0) ? 1 : 2;
-            }
-            this.e = i20;
-        }
-        z11 = false;
-        this.O = z11;
-        int i252 = wVar2.K;
-        this.I = i252;
-        this.J = wVar2.L;
-        int i262 = wVar2.j;
-        this.K = i262;
-        this.f = (i262 != -1 || i262 <= iVar.u) && (i252 == -1 || i252 <= iVar.t) && dVar.apply(wVar2);
-        G = m0.G();
-        i16 = 0;
-        while (true) {
-            if (i16 >= G.length) {
-            }
-            i16++;
-        }
-        this.F = i16;
-        this.G = i17;
-        i18 = 0;
-        while (true) {
-            if (i18 < n0Var.size()) {
-            }
-            i18++;
-        }
-        this.L = i14;
-        this.M = (i12 & 384) != 128;
-        this.N = (i12 & 64) != 64;
-        wVar = this.d;
-        z12 = this.f;
-        iVar2 = this.n;
-        z13 = iVar2.B0;
-        r1Var = iVar2.w;
-        if (o1.e(i12, z13)) {
-            if (o1.e(i12, false)) {
-            }
-        }
-        this.e = i20;
     }
 
-    @Override // x2.l
-    public final int a() {
-        return this.e;
+    @Override // ag.s
+    public void f(long j10) {
+        ((zh.d) this.b).a(j10, true);
     }
 
-    @Override // x2.l
-    public final boolean b(l lVar) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(e2 e2Var, int i10) {
+        ((h0) this.b).run();
+    }
+
+    @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
+    public void onProductDetailsResponse(d5.i iVar, List list) {
         int i10;
-        String str;
-        e eVar = (e) lVar;
-        w wVar = eVar.d;
-        this.n.getClass();
-        w wVar2 = this.d;
-        int i11 = wVar2.K;
-        if (i11 == -1 || i11 != wVar.K) {
-            return false;
+        p1 p1Var = (p1) this.b;
+        ArrayList arrayList = p1Var.n0;
+        Iterator it = list.iterator();
+        long j10 = 0;
+        while (true) {
+            i10 = 0;
+            if (!it.hasNext()) {
+                break;
+            }
+            d5.o oVar = (d5.o) it.next();
+            int size = arrayList.size();
+            while (true) {
+                if (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    tg.k kVar = (tg.k) obj;
+                    if (kVar.h() != null && kVar.h().equals(oVar.c)) {
+                        kVar.h = oVar;
+                        if (kVar.f() > j10) {
+                            j10 = kVar.f();
+                        }
+                    }
+                }
+            }
         }
-        return (this.y || ((str = wVar2.s) != null && TextUtils.equals(str, wVar.s))) && (i10 = wVar2.L) != -1 && i10 == wVar.L && this.M == eVar.M && this.N == eVar.N;
+        int size2 = arrayList.size();
+        while (i10 < size2) {
+            Object obj2 = arrayList.get(i10);
+            i10++;
+            ((tg.k) obj2).g = j10;
+        }
+        AndroidUtilities.runOnUIThread(new ti.g(p1Var, 19));
     }
 
-    @Override // java.lang.Comparable
-    /* renamed from: c, reason: merged with bridge method [inline-methods] */
-    public final int compareTo(e eVar) {
-        boolean z10 = this.r;
-        boolean z11 = this.f;
-        v1 a2 = (z11 && z10) ? n.l : n.l.a();
-        boolean z12 = eVar.r;
-        int i10 = eVar.K;
-        b0 c10 = b0.a.c(z10, z12);
-        Integer valueOf = Integer.valueOf(this.v);
-        Integer valueOf2 = Integer.valueOf(eVar.v);
-        s1 s1Var = s1.c;
-        b0 b10 = c10.b(valueOf, valueOf2, s1Var).a(this.s, eVar.s).a(this.w, eVar.w).b(Integer.valueOf(this.x), Integer.valueOf(eVar.x), s1Var).c(this.H, eVar.H).c(this.E, eVar.E).b(Integer.valueOf(this.F), Integer.valueOf(eVar.F), s1Var).a(this.G, eVar.G).c(z11, eVar.f).b(Integer.valueOf(this.L), Integer.valueOf(eVar.L), s1Var);
-        boolean z13 = this.n.F;
-        int i11 = this.K;
-        if (z13) {
-            b10 = b10.b(Integer.valueOf(i11), Integer.valueOf(i10), n.l.a());
-        }
-        b0 b11 = b10.c(this.M, eVar.M).c(this.N, eVar.N).c(this.O, eVar.O).b(Integer.valueOf(this.I), Integer.valueOf(eVar.I), a2).b(Integer.valueOf(this.J), Integer.valueOf(eVar.J), a2);
-        if (Objects.equals(this.h, eVar.h)) {
-            b11 = b11.b(Integer.valueOf(i11), Integer.valueOf(i10), a2);
-        }
-        return b11.e();
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        ((CountDownLatch) this.b).countDown();
+        return null;
     }
 }

@@ -5,9 +5,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.r80;
+import org.telegram.ui.q80;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,10 +21,11 @@ public final /* synthetic */ class k implements Utilities.Callback {
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         int i10 = this.a;
+        int i11 = 1;
         Object obj2 = this.b;
         switch (i10) {
             case 0:
-                ((ai.y8) obj2).run(Boolean.valueOf(((String) obj) == null));
+                ((bi.t8) obj2).run(Boolean.valueOf(((String) obj) == null));
                 break;
             case 1:
                 i0 i0Var = (i0) obj;
@@ -33,7 +34,7 @@ public final /* synthetic */ class k implements Utilities.Callback {
             case 2:
                 String str = (String) obj;
                 e2.k("approve session", str);
-                ((r80) obj2).run(str);
+                ((q80) obj2).run(str);
                 break;
             case 3:
                 String str2 = (String) obj;
@@ -41,17 +42,17 @@ public final /* synthetic */ class k implements Utilities.Callback {
                 ((Utilities.Callback) obj2).run(str2);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new y3(11, (t7) obj2, (TLRPC.UserFull) obj));
+                AndroidUtilities.runOnUIThread(new q6(i11, (t7) obj2, (TLRPC.UserFull) obj));
                 break;
             default:
                 w7 w7Var = (w7) obj2;
                 w7Var.getClass();
-                int i11 = ((Integer) obj).intValue() == 0 ? 12 : 24;
-                if (w7Var.a != i11) {
-                    w7Var.a = i11;
-                    w7Var.W(w7Var.getParentActivity());
-                    w7Var.Y();
-                    w7Var.h.setText(w7Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i11)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i11)));
+                int i12 = ((Integer) obj).intValue() == 0 ? 12 : 24;
+                if (w7Var.a != i12) {
+                    w7Var.a = i12;
+                    w7Var.X(w7Var.getParentActivity());
+                    w7Var.Z();
+                    w7Var.h.setText(w7Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i12)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i12)));
                     break;
                 }
                 break;

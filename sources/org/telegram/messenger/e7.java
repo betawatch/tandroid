@@ -1,34 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e7 implements RequestDelegate {
+public final /* synthetic */ class e7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ BaseController e;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ e7(BaseController baseController, int i10, String str, String str2, int i11) {
-        this.a = i11;
-        this.e = baseController;
-        this.b = i10;
-        this.c = str;
-        this.d = str2;
+    public /* synthetic */ e7(MediaDataController mediaDataController, long j10, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.e).lambda$fetchNewEmojiKeywords$213(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$loadPinnedMessages$161(this.c);
+                break;
+            case 1:
+                this.b.lambda$increasePeerRaiting$157(this.c);
                 break;
             default:
-                ((MessagesController) this.e).lambda$checkPromoInfoInternal$168(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$clearBotKeyboard$195(this.c);
                 break;
         }
     }

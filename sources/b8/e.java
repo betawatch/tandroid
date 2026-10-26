@@ -1,131 +1,87 @@
 package b8;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
+import a8.aa;
+import android.os.BadParcelableException;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.text.TextUtils;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.s0;
-import com.google.android.gms.common.api.m;
-import com.google.android.gms.common.api.q;
-import x8.j;
-import y8.h0;
-import y8.i0;
-import y8.x0;
-import y8.y0;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e extends com.google.android.gms.common.api.internal.e {
-    public final /* synthetic */ int q = 1;
-    public final /* synthetic */ String r;
-    public final /* synthetic */ byte[] s;
-    public final Object t;
+public final class e extends Binder implements b, IInterface {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TaskCompletionSource b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(m mVar, byte[] bArr, String str) {
-        super(m8.c.a, mVar);
-        this.s = bArr;
-        this.r = str;
-        this.t = new g(this);
+    public e(int i10, TaskCompletionSource taskCompletionSource) {
+        this.a = i10;
+        this.b = taskCompletionSource;
+        attachInterface(this, "com.google.android.gms.recaptchabase.internal.IRecaptchaBaseCallbacks");
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult, com.google.android.gms.common.api.internal.f
-    public final /* bridge */ /* synthetic */ void a(q qVar) {
-        switch (this.q) {
+    @Override // android.os.Binder
+    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        if (i10 <= 16777215) {
+            parcel.enforceInterface(getInterfaceDescriptor());
+        } else if (super.onTransact(i10, parcel, parcel2, i11)) {
+            return true;
+        }
+        if (i10 == 1) {
+            Status status = (Status) a.a(parcel, Status.CREATOR);
+            m8.d dVar = (m8.d) a.a(parcel, m8.d.CREATOR);
+            int dataAvail = parcel.dataAvail();
+            if (dataAvail > 0) {
+                throw new BadParcelableException(ic.a.i(dataAvail, "Parcel data not fully consumed, unread size: "));
+            }
+            w0(status, dVar);
+            return true;
+        }
+        if (i10 != 2) {
+            return false;
+        }
+        Status status2 = (Status) a.a(parcel, Status.CREATOR);
+        m8.b bVar = (m8.b) a.a(parcel, m8.b.CREATOR);
+        int dataAvail2 = parcel.dataAvail();
+        if (dataAvail2 > 0) {
+            throw new BadParcelableException(ic.a.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
+        }
+        w(status2, bVar);
+        return true;
+    }
+
+    @Override // b8.b
+    public final void w(Status status, m8.b bVar) {
+        switch (this.a) {
             case 0:
-                a(qVar);
+                i.e(status, "status");
+                aa.a(status, bVar, this.b);
+                break;
+        }
+    }
+
+    @Override // b8.b
+    public final void w0(Status status, m8.d dVar) {
+        switch (this.a) {
+            case 0:
                 break;
             default:
-                a(qVar);
+                i.e(status, "status");
+                aa.a(status, dVar, this.b);
                 break;
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* bridge */ /* synthetic */ q d(Status status) {
-        switch (this.q) {
-            case 0:
-                return new f(status, null);
-            default:
-                return new i0(status, -1);
-        }
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 
-    @Override // com.google.android.gms.common.api.internal.e
-    public final void n(com.google.android.gms.common.api.c cVar) {
-        Parcel obtain;
-        Parcel obtain2;
-        ApplicationInfo applicationInfo;
-        Bundle bundle;
-        int i10 = this.q;
-        byte[] bArr = this.s;
-        Object obj = this.t;
-        String str = this.r;
-        switch (i10) {
-            case 0:
-                a aVar = (a) cVar;
-                g gVar = (g) obj;
-                if (TextUtils.isEmpty(str)) {
-                    Context context = aVar.U;
-                    try {
-                        PackageManager packageManager = context.getPackageManager();
-                        if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null) {
-                            String str2 = (String) bundle.get("com.google.android.safetynet.ATTEST_API_KEY");
-                            if (str2 != null) {
-                                str = str2;
-                            }
-                        }
-                    } catch (PackageManager.NameNotFoundException unused) {
-                    }
-                    str = "";
-                }
-                d dVar = (d) aVar.u();
-                obtain = Parcel.obtain();
-                obtain.writeInterfaceToken("com.google.android.gms.safetynet.internal.ISafetyNetService");
-                int i11 = c.a;
-                if (gVar == null) {
-                    obtain.writeStrongBinder(null);
-                } else {
-                    obtain.writeStrongBinder(gVar);
-                }
-                obtain.writeByteArray(bArr);
-                obtain.writeString(str);
-                obtain2 = Parcel.obtain();
-                try {
-                    dVar.a.transact(7, obtain, obtain2, 0);
-                    obtain2.readException();
-                    return;
-                } finally {
-                }
-            default:
-                h0 h0Var = (h0) ((y0) cVar).u();
-                x0 x0Var = new x0();
-                x0Var.b = this;
-                obtain = Parcel.obtain();
-                obtain.writeInterfaceToken(h0Var.c);
-                int i12 = f8.a.a;
-                obtain.writeStrongBinder(x0Var);
-                obtain.writeString(str);
-                obtain.writeString((String) obj);
-                obtain.writeByteArray(bArr);
-                obtain2 = Parcel.obtain();
-                try {
-                    h0Var.b.transact(12, obtain, obtain2, 0);
-                    obtain2.readException();
-                    return;
-                } finally {
-                }
-        }
+    private final void F0(Status status, m8.b bVar) {
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(s0 s0Var, String str, String str2, byte[] bArr) {
-        super(j.a, s0Var);
-        this.r = str;
-        this.t = str2;
-        this.s = bArr;
+    private final void G0(Status status, m8.d dVar) {
     }
 }

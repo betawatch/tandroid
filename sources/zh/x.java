@@ -1,49 +1,81 @@
 package zh;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.xc;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.view.View;
+import bi.b7;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ o2 d;
+public final class x extends b7 {
+    public final Path D0;
+    public final float[] E0;
+    public final /* synthetic */ int F0;
+    public final /* synthetic */ c0 G0;
 
-    public /* synthetic */ x(String str, Utilities.Callback callback, o2 o2Var) {
-        this.b = str;
-        this.c = callback;
-        this.d = o2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(c0 c0Var, Context context, u6 u6Var, ti.g gVar, bh.f fVar, bh.f fVar2, bh.f fVar3, bh.f fVar4, bh.f fVar5, bh.f fVar6, int i10) {
+        super(context, u6Var, gVar, fVar, null, fVar2, fVar3, fVar4, fVar5, fVar6);
+        this.G0 = c0Var;
+        this.F0 = i10;
+        this.D0 = new Path();
+        this.E0 = new float[8];
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                String str = this.b;
-                Utilities.Callback callback = this.c;
-                o2 o2Var = this.d;
-                b0.p(o2Var, 0, new x(str, callback, o2Var));
-                break;
-            default:
-                String str2 = this.b;
-                if (str2 == null) {
-                    xc.a0(this.d).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                    break;
-                } else {
-                    this.c.run(str2);
-                    break;
-                }
+    @Override // bi.b7, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.D0);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view == this.b) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // bi.b7
+    public final int getFinalHeight() {
+        return AndroidUtilities.dp(this.F0);
+    }
+
+    @Override // bi.b7
+    public final float getRealHeight() {
+        return AndroidUtilities.dp(this.F0);
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        z zVar = this.G0.c0;
+        if (zVar != null) {
+            zVar.invalidate();
         }
     }
 
-    public /* synthetic */ x(o2 o2Var, String str, Utilities.Callback callback) {
-        this.d = o2Var;
-        this.b = str;
-        this.c = callback;
+    @Override // bi.b7
+    public final void k(int i10) {
+        this.G0.c0.setRibbonColor(i10);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        float dp = AndroidUtilities.dp(12.0f);
+        float[] fArr = this.E0;
+        fArr[3] = dp;
+        fArr[2] = dp;
+        fArr[1] = dp;
+        fArr[0] = dp;
+        Path path = this.D0;
+        path.rewind();
+        path.addRoundRect(0.0f, 0.0f, i10, i11, this.E0, Path.Direction.CW);
     }
 }

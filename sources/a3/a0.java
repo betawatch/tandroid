@@ -1,14 +1,14 @@
 package a3;
 
+import a8.yb;
 import android.content.Context;
 import android.hardware.display.DisplayManager;
 import android.os.Build;
 import android.os.SystemClock;
 import android.view.Choreographer;
 import android.view.Surface;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class a0 {
     public final n a;
@@ -121,7 +121,7 @@ public final class a0 {
         long j25 = (long) ((j10 - j11) / this.k);
         if (this.d) {
             this.l.getClass();
-            j25 -= e2.m0.S(SystemClock.elapsedRealtime()) - j12;
+            j25 -= e2.n0.S(SystemClock.elapsedRealtime()) - j12;
         }
         zVar.a = j25;
         if (!z10 || z11) {
@@ -145,7 +145,7 @@ public final class a0 {
                             this.l.getClass();
                             i10 = 3;
                             i11 = 5;
-                            long S = e2.m0.S(SystemClock.elapsedRealtime()) - this.g;
+                            long S = e2.n0.S(SystemClock.elapsedRealtime()) - this.g;
                             if (this.d) {
                                 long j26 = this.f;
                                 if (j26 != j14) {
@@ -319,7 +319,7 @@ public final class a0 {
     public final void d() {
         this.d = true;
         this.l.getClass();
-        this.g = e2.m0.S(SystemClock.elapsedRealtime());
+        this.g = e2.n0.S(SystemClock.elapsedRealtime());
         f0 f0Var = this.b;
         f0Var.d = true;
         f0Var.b();
@@ -379,7 +379,7 @@ public final class a0 {
     }
 
     public final void h(float f7) {
-        u6.g(f7 > 0.0f);
+        yb.g(f7 > 0.0f);
         if (f7 == this.k) {
             return;
         }

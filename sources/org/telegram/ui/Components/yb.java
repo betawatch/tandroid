@@ -9,19 +9,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public class yb extends nb {
-    public final bk0 a;
+    public final ak0 a;
     public TextView b;
     public int c;
 
-    public yb(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        bk0 bk0Var = new bk0(context);
-        this.a = bk0Var;
-        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bk0Var, w7.z5.h(56.0f, 48.0f, 8388627));
+    public yb(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        ak0 ak0Var = new ak0(context);
+        this.a = ak0Var;
+        ak0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(ak0Var, gb1.l(56.0f, 48.0f, 8388627));
         xb xbVar = new xb(context, 0, null);
         xbVar.setDisablePaddingsOffset(true);
         this.b = xbVar;
@@ -31,17 +31,17 @@ public class yb extends nb {
         this.b.setTextSize(1, 15.0f);
         this.b.setEllipsize(TextUtils.TruncateAt.END);
         this.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(this.b, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        org.telegram.ui.ActionBar.r6.I(this.b, org.telegram.ui.ActionBar.k6.Gi, g6Var);
-        setTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.Hi));
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.k6.Fi));
+        addView(this.b, gb1.m(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        org.telegram.ui.ActionBar.f7.H(this.b, org.telegram.ui.ActionBar.y6.Gi, u6Var);
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.y6.Hi));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.y6.Fi));
     }
 
     public final void c(int i10, int i11, int i12, String... strArr) {
-        bk0 bk0Var = this.a;
-        bk0Var.f(i10, i11, i12, null);
+        ak0 ak0Var = this.a;
+        ak0Var.f(i10, i11, i12, null);
         for (String str : strArr) {
-            bk0Var.h(this.c, str);
+            ak0Var.h(this.c, str);
         }
     }
 
@@ -50,11 +50,11 @@ public class yb extends nb {
     }
 
     public final void e(TLRPC.Document document, String... strArr) {
-        bk0 bk0Var = this.a;
-        bk0Var.setAutoRepeat(true);
-        bk0Var.g(36, 36, document);
+        ak0 ak0Var = this.a;
+        ak0Var.setAutoRepeat(true);
+        ak0Var.g(36, 36, document);
         for (String str : strArr) {
-            bk0Var.h(this.c, str);
+            ak0Var.h(this.c, str);
         }
     }
 
@@ -70,7 +70,7 @@ public class yb extends nb {
     }
 
     public void setIconPaddingBottom(int i10) {
-        this.a.setLayoutParams(w7.z5.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
+        this.a.setLayoutParams(gb1.m(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
     }
 
     public void setTextColor(int i10) {
@@ -78,8 +78,8 @@ public class yb extends nb {
         this.b.setTextColor(i10);
     }
 
-    public yb(int i10, int i11, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        this(context, g6Var);
+    public yb(int i10, int i11, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        this(context, u6Var);
         setBackground(i10);
         setTextColor(i11);
     }

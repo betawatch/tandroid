@@ -1,36 +1,39 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class u8 extends AnimatorListenerAdapter {
+public final class u8 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ w8 c;
+    public final /* synthetic */ ImageReceiver b;
 
-    public /* synthetic */ u8(w8 w8Var, int i10, int i11) {
-        this.a = i11;
-        this.c = w8Var;
-        this.b = i10;
+    public /* synthetic */ u8(ImageReceiver imageReceiver, int i10) {
+        this.a = i10;
+        this.b = imageReceiver;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
         switch (this.a) {
             case 0:
-                w8 w8Var = this.c;
-                w8Var.r = 0;
-                w8Var.setBackgroundColor(this.b);
-                w8Var.invalidate();
+                this.b.onAttachedToWindow();
                 break;
             default:
-                int i10 = this.b;
-                w8 w8Var2 = this.c;
-                w8Var2.setBackgroundColor(i10);
-                w8Var2.r = 0;
-                w8Var2.invalidate();
+                this.b.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.onDetachedFromWindow();
+                break;
+            default:
+                this.b.onDetachedFromWindow();
                 break;
         }
     }

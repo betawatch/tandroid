@@ -1,43 +1,24 @@
 package i2;
 
-import android.media.MediaFormat;
+import b2.b2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c0 implements a3.y, k1 {
-    public a3.y a;
-    public c0 b;
+public final /* synthetic */ class c0 implements e2.o {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ b2 b;
 
-    public final void a() {
-        c0 c0Var = this.b;
-        if (c0Var != null) {
-            c0Var.a();
-        }
-    }
-
-    public final void b() {
-        c0 c0Var = this.b;
-        if (c0Var != null) {
-            c0Var.b();
-        }
-    }
-
-    @Override // a3.y
-    public final void c(long j10, long j11, b2.w wVar, MediaFormat mediaFormat) {
-        a3.y yVar = this.a;
-        if (yVar != null) {
-            yVar.c(j10, j11, wVar, mediaFormat);
-        }
-    }
-
-    @Override // i2.k1
-    public final void d(int i10, Object obj) {
-        if (i10 == 7) {
-            this.a = (a3.y) obj;
-        } else if (i10 == 8) {
-            this.b = (c0) obj;
-        } else if (i10 == 10000 && obj != null) {
-            throw new ClassCastException();
+    @Override // e2.o
+    public final void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((b2.e1) obj).onVideoSizeChanged(this.b);
+                break;
+            default:
+                b2 b2Var = this.b;
+                ((j2.b) obj).c(b2Var);
+                int i10 = b2Var.a;
+                break;
         }
     }
 }

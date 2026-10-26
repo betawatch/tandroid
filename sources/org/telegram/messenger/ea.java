@@ -1,43 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ea implements Utilities.Callback2 {
+public final /* synthetic */ class ea implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ea(MessagesController messagesController, int i10) {
-        this.a = i10;
+    public /* synthetic */ ea(MessagesController messagesController, int i10, int i11) {
+        this.a = i11;
         this.b = messagesController;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateWebBrowserSettings$520((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$updateTimerProc$156(this.c);
                 break;
             case 1:
-                this.b.lambda$removeWebBrowserException$518((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$onFolderEmpty$196(this.c);
                 break;
             case 2:
-                this.b.lambda$addWebBrowserException$516((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 3:
-                this.b.lambda$loadStakeDiceInfo$510((TLRPC.EmojiGameInfo) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 4:
-                this.b.lambda$deleteReactionsFromMessage$131((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 5:
-                this.b.lambda$loadWebBrowserConfig$512((Long) obj, (TL_account.TL_webBrowserSettings) obj2);
+                this.b.lambda$ensureMessagesLoaded$467(this.c);
                 break;
             default:
-                this.b.lambda$clearAllWebBrowserExceptions$519((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$didAddedNewTask$80(this.c);
                 break;
         }
     }

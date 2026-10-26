@@ -1,89 +1,153 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
+import android.util.SparseArray;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class us0 extends wz {
-    public final iw0 X;
-    public final /* synthetic */ ts0 Y;
-    public final /* synthetic */ xv0 Z;
+public final class us0 extends ei.v {
+    public final /* synthetic */ aw0 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public us0(xv0 xv0Var, ts0 ts0Var) {
-        super(100, false);
-        this.Z = xv0Var;
-        this.Y = ts0Var;
-        this.X = new iw0();
+    public us0(aw0 aw0Var, Context context, org.telegram.ui.ActionBar.r2 r2Var, long j10) {
+        super(context, r2Var, j10);
+        this.G = aw0Var;
     }
 
-    @Override // s4.n0
-    public final int A() {
-        if (this.Y.h.getAdapter() != this.Z.O) {
-            return 0;
-        }
-        return B();
+    @Override // ei.v
+    public final boolean c(MessageObject messageObject) {
+        aw0 aw0Var = this.G;
+        return aw0Var.b1[(messageObject.getDialogId() > aw0Var.l1 ? 1 : (messageObject.getDialogId() == aw0Var.l1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0;
     }
 
-    @Override // org.telegram.ui.Components.wz
-    public final iw0 D1(int i10) {
-        int i11;
-        int i12;
-        s4.g0 adapter = this.Y.h.getAdapter();
-        xv0 xv0Var = this.Z;
-        mv0[] mv0VarArr = xv0Var.t1;
-        TLRPC.Document document = (adapter != xv0Var.O || mv0VarArr[5].a.isEmpty()) ? null : ((MessageObject) mv0VarArr[5].a.get(i10)).getDocument();
-        iw0 iw0Var = this.X;
-        iw0Var.b = 100.0f;
-        iw0Var.a = 100.0f;
-        if (document != null) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-            if (closestPhotoSizeWithSize != null && (i11 = closestPhotoSizeWithSize.w) != 0 && (i12 = closestPhotoSizeWithSize.h) != 0) {
-                iw0Var.a = i11;
-                iw0Var.b = i12;
-            }
-            ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
-            for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i13);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    iw0Var.a = documentAttribute.w;
-                    iw0Var.b = documentAttribute.h;
-                    break;
+    @Override // ei.v
+    public final boolean e(MessageObject messageObject) {
+        aw0 aw0Var = this.G;
+        ArrayList arrayList = aw0Var.P0;
+        SparseArray[] sparseArrayArr = aw0Var.b1;
+        if (messageObject != null) {
+            char c10 = messageObject.getDialogId() == aw0Var.l1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) < 0) {
+                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() < 100) {
+                    sparseArrayArr[c10].put(messageObject.getId(), messageObject);
+                    if (!messageObject.canDeleteMessage(false, null)) {
+                        aw0Var.c1++;
+                    }
+                    if (aw0Var.E1) {
+                        aw0Var.i1(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
+                    } else {
+                        AndroidUtilities.hideKeyboard(aw0Var.x1.getParentActivity().getCurrentFocus());
+                        int i10 = 8;
+                        aw0Var.n0.setVisibility(aw0Var.c1 == 0 ? 0 : 8);
+                        org.telegram.ui.ActionBar.w0 w0Var = aw0Var.w0;
+                        if (w0Var != null) {
+                            w0Var.setVisibility((aw0Var.getClosestTab() == 8 || aw0Var.getClosestTab() == 13) ? 8 : 0);
+                        }
+                        org.telegram.ui.ActionBar.w0 w0Var2 = aw0Var.x0;
+                        if (w0Var2 != null) {
+                            w0Var2.setVisibility(8);
+                        }
+                        org.telegram.ui.ActionBar.w0 w0Var3 = aw0Var.y0;
+                        if (w0Var3 != null) {
+                            w0Var3.setVisibility(8);
+                        }
+                        org.telegram.ui.ActionBar.w0 w0Var4 = aw0Var.v0;
+                        if (w0Var4 != null) {
+                            if (aw0Var.getClosestTab() != 8 && aw0Var.getClosestTab() != 13) {
+                                i10 = 0;
+                            }
+                            w0Var4.setVisibility(i10);
+                        }
+                        aw0Var.i1(sparseArrayArr[1].size() + sparseArrayArr[0].size(), false);
+                        AnimatorSet animatorSet = new AnimatorSet();
+                        ArrayList arrayList2 = new ArrayList();
+                        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                            View view = (View) arrayList.get(i11);
+                            AndroidUtilities.clearDrawableAnimation(view);
+                            arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
+                        }
+                        animatorSet.playTogether(arrayList2);
+                        animatorSet.setDuration(250L);
+                        animatorSet.start();
+                        aw0Var.d1 = false;
+                        aw0Var.k1(true);
+                    }
+                    j();
+                    return true;
                 }
             }
         }
-        return iw0Var;
+        return false;
     }
 
-    @Override // s4.s, s4.n0
-    public final void U(qf.e eVar, s4.y0 y0Var, View view, s0.d dVar) {
-        super.U(eVar, y0Var, view, dVar);
-        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
-        AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-        n5.c cVar = collectionItemInfo != null ? new n5.c(collectionItemInfo) : null;
-        if (cVar != null) {
-            Object obj = cVar.a;
-            if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
-                accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+    @Override // ei.v
+    public final boolean g(MessageObject messageObject) {
+        aw0 aw0Var = this.G;
+        ArrayList arrayList = aw0Var.P0;
+        SparseArray[] sparseArrayArr = aw0Var.b1;
+        if (messageObject != null) {
+            char c10 = messageObject.getDialogId() == aw0Var.l1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) >= 0) {
+                sparseArrayArr[c10].remove(messageObject.getId());
+                if (!messageObject.canDeleteMessage(false, null)) {
+                    aw0Var.c1--;
+                }
+                if (sparseArrayArr[0].size() == 0 && sparseArrayArr[1].size() == 0) {
+                    AndroidUtilities.hideKeyboard(aw0Var.x1.getParentActivity().getCurrentFocus());
+                    sparseArrayArr[0].clear();
+                    sparseArrayArr[1].clear();
+                    int i10 = 8;
+                    aw0Var.n0.setVisibility(aw0Var.c1 == 0 ? 0 : 8);
+                    org.telegram.ui.ActionBar.w0 w0Var = aw0Var.w0;
+                    if (w0Var != null) {
+                        w0Var.setVisibility((aw0Var.getClosestTab() == 8 || aw0Var.getClosestTab() == 13) ? 8 : 0);
+                    }
+                    org.telegram.ui.ActionBar.w0 w0Var2 = aw0Var.x0;
+                    if (w0Var2 != null) {
+                        w0Var2.setVisibility(8);
+                    }
+                    org.telegram.ui.ActionBar.w0 w0Var3 = aw0Var.y0;
+                    if (w0Var3 != null) {
+                        w0Var3.setVisibility(8);
+                    }
+                    org.telegram.ui.ActionBar.w0 w0Var4 = aw0Var.v0;
+                    if (w0Var4 != null) {
+                        if (aw0Var.getClosestTab() != 8 && aw0Var.getClosestTab() != 13) {
+                            i10 = 0;
+                        }
+                        w0Var4.setVisibility(i10);
+                    }
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        View view = (View) arrayList.get(i11);
+                        AndroidUtilities.clearDrawableAnimation(view);
+                        arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.1f));
+                    }
+                    animatorSet.playTogether(arrayList2);
+                    animatorSet.setDuration(250L);
+                    animatorSet.start();
+                    aw0Var.d1 = false;
+                    AndroidUtilities.runOnUIThread(new mp0(this, 5), 20L);
+                } else {
+                    aw0Var.i1(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
+                }
+                j();
+                return true;
             }
         }
+        return false;
     }
 
-    @Override // s4.b0
-    public final void z0(s4.y0 y0Var, int[] iArr) {
-        super.z0(y0Var, iArr);
-        ts0 ts0Var = this.Y;
-        int i10 = ts0Var.F;
-        if (i10 == 0 || xv0.r0(i10)) {
-            iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.t7.a(1) * 2);
-        } else if (ts0Var.F == 1) {
-            iArr[1] = Math.max(iArr[1], AndroidUtilities.dp(56.0f) * 2);
-        }
+    @Override // ei.v
+    public final int getStartedTrackingX() {
+        return this.G.B1;
     }
 }

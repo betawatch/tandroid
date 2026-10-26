@@ -1,9 +1,9 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.oh1;
+import org.telegram.ui.ph1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -27,24 +27,24 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 l0 l0Var = (l0) this.e;
                 l0Var.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var.y0 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue, 1.0f, this.b * floatValue);
+                l0Var.y0 = c3.h0.z(1.0f, floatValue, 1.0f, this.b * floatValue);
                 l0Var.r0 = this.c * floatValue;
                 l0Var.s0 = this.d * floatValue;
                 l0Var.invalidate();
                 break;
             case 1:
-                oh1 oh1Var = (oh1) this.e;
+                ph1 ph1Var = (ph1) this.e;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                oh1Var.f1 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                oh1Var.Y0 = this.c * floatValue2;
-                oh1Var.Z0 = this.d * floatValue2;
-                oh1Var.s.invalidate();
+                ph1Var.f1 = c3.h0.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                ph1Var.Y0 = this.c * floatValue2;
+                ph1Var.Z0 = this.d * floatValue2;
+                ph1Var.s.invalidate();
                 break;
             default:
-                tg.n nVar = (tg.n) this.e;
+                ug.n nVar = (ug.n) this.e;
                 nVar.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tg.g gVar = nVar.b;
+                ug.g gVar = nVar.b;
                 gVar.d = this.b * floatValue3;
                 gVar.e = this.c * floatValue3;
                 gVar.i = floatValue3 * this.d;

@@ -1,13 +1,42 @@
 package ig;
 
-import android.text.InputFilter;
-import android.text.Spanned;
+import java.util.ArrayList;
+import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class q1 implements InputFilter {
-    @Override // android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        return String.valueOf(charSequence).replaceAll("[^\\d_\\p{L}\\x{200c}\\x{00b7}\\x{0d80}-\\x{0dff}]", "");
+public final class q1 implements z1 {
+    public final /* synthetic */ ns a;
+
+    public q1(ns nsVar) {
+        this.a = nsVar;
+    }
+
+    @Override // ig.z1
+    public final a0.h U() {
+        return null;
+    }
+
+    @Override // ig.z1
+    public final void f(int i10) {
+        ns nsVar = this.a;
+        nsVar.l();
+        if (i10 != 0) {
+            nsVar.F();
+        }
+    }
+
+    @Override // ig.z1
+    public final /* synthetic */ boolean k0(int i10) {
+        return true;
+    }
+
+    @Override // ig.z1
+    public final /* synthetic */ a0.h y() {
+        return null;
+    }
+
+    @Override // ig.z1
+    public final /* synthetic */ void p0(ArrayList arrayList) {
     }
 }

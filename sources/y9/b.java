@@ -1,63 +1,40 @@
 package y9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class b extends l {
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final long f;
+import aa.a0;
+import java.io.File;
 
-    public b(String str, String str2, String str3, String str4, long j10) {
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class b {
+    public final a0 a;
+    public final String b;
+    public final File c;
+
+    public b(a0 a0Var, String str, File file) {
+        this.a = a0Var;
         if (str == null) {
-            throw new NullPointerException("Null rolloutId");
+            throw new NullPointerException("Null sessionId");
         }
         this.b = str;
-        if (str2 == null) {
-            throw new NullPointerException("Null parameterKey");
-        }
-        this.c = str2;
-        if (str3 == null) {
-            throw new NullPointerException("Null parameterValue");
-        }
-        this.d = str3;
-        if (str4 == null) {
-            throw new NullPointerException("Null variantId");
-        }
-        this.e = str4;
-        this.f = j10;
+        this.c = file;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof l) {
-            b bVar = (b) ((l) obj);
-            if (this.b.equals(bVar.b) && this.c.equals(bVar.c) && this.d.equals(bVar.d) && this.e.equals(bVar.e) && this.f == bVar.f) {
-                return true;
-            }
+        if (!(obj instanceof b)) {
+            return false;
         }
-        return false;
+        b bVar = (b) obj;
+        return this.a.equals(bVar.a) && this.b.equals(bVar.b) && this.c.equals(bVar.c);
     }
 
     public final int hashCode() {
-        int hashCode = (((((((this.b.hashCode() ^ 1000003) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003;
-        long j10 = this.f;
-        return hashCode ^ ((int) (j10 ^ (j10 >>> 32)));
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode();
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("RolloutAssignment{rolloutId=");
-        sb2.append(this.b);
-        sb2.append(", parameterKey=");
-        sb2.append(this.c);
-        sb2.append(", parameterValue=");
-        sb2.append(this.d);
-        sb2.append(", variantId=");
-        sb2.append(this.e);
-        sb2.append(", templateVersion=");
-        return a1.g.r(sb2, this.f, "}");
+        return "CrashlyticsReportWithSessionId{report=" + this.a + ", sessionId=" + this.b + ", reportFile=" + this.c + "}";
     }
 }

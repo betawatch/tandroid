@@ -1,38 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.sn;
-import org.webrtc.TextureViewRenderer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ gf(Object obj, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i14;
-        this.f = obj;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
+    public /* synthetic */ gf(int i10, long j10, MessagesStorage messagesStorage, TLRPC.Message message) {
+        this.a = i10;
+        this.b = messagesStorage;
+        this.c = message;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$saveDiffParams$35(this.b, this.c, this.d, this.e);
-                break;
-            case 1:
-                sn.w1((sn) this.f, this.b, this.c, this.d, this.e);
+                this.b.lambda$markMessageAsSendErrorWithParams$213(this.c, this.d);
                 break;
             default:
-                ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);
+                this.b.lambda$updateMessageCustomParams$113(this.c, this.d);
                 break;
         }
     }

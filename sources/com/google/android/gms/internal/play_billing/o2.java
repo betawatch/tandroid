@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class o2 implements t2 {
     public final e1 a;
@@ -19,12 +19,12 @@ public final class o2 implements t2 {
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final boolean b(Object obj) {
-        throw a1.g.i(obj);
+        throw c3.h0.k(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final void c(Object obj, i2 i2Var) {
-        throw a1.g.i(obj);
+        throw c3.h0.k(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
@@ -54,7 +54,7 @@ public final class o2 implements t2 {
         if (v1Var.zzc == x2.f) {
             v1Var.zzc = x2.b();
         }
-        throw a1.g.i(obj);
+        throw c3.h0.k(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
@@ -76,7 +76,7 @@ public final class o2 implements t2 {
             x2Var.e = false;
         }
         t1 t1Var = p1.a;
-        throw a1.g.i(obj);
+        throw c3.h0.k(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2

@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k implements Iterable {
     public final Object a = new Object();
@@ -17,11 +17,11 @@ public final class k implements Iterable {
     public Set c = Collections.EMPTY_SET;
     public List d = Collections.EMPTY_LIST;
 
-    public final int h(n2.k kVar) {
+    public final int h(n2.j jVar) {
         int intValue;
         synchronized (this.a) {
             try {
-                intValue = this.b.containsKey(kVar) ? ((Integer) this.b.get(kVar)).intValue() : 0;
+                intValue = this.b.containsKey(jVar) ? ((Integer) this.b.get(jVar)).intValue() : 0;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -38,23 +38,23 @@ public final class k implements Iterable {
         return it;
     }
 
-    public final void m(n2.k kVar) {
+    public final void m(n2.j jVar) {
         synchronized (this.a) {
             try {
-                Integer num = (Integer) this.b.get(kVar);
+                Integer num = (Integer) this.b.get(jVar);
                 if (num == null) {
                     return;
                 }
                 ArrayList arrayList = new ArrayList(this.d);
-                arrayList.remove(kVar);
+                arrayList.remove(jVar);
                 this.d = DesugarCollections.unmodifiableList(arrayList);
                 if (num.intValue() == 1) {
-                    this.b.remove(kVar);
+                    this.b.remove(jVar);
                     HashSet hashSet = new HashSet(this.c);
-                    hashSet.remove(kVar);
+                    hashSet.remove(jVar);
                     this.c = DesugarCollections.unmodifiableSet(hashSet);
                 } else {
-                    this.b.put(kVar, Integer.valueOf(num.intValue() - 1));
+                    this.b.put(jVar, Integer.valueOf(num.intValue() - 1));
                 }
             } catch (Throwable th2) {
                 throw th2;

@@ -1,40 +1,47 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.SharedConfig;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qy0 implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+public final class qy0 extends s4.l {
+    public int F = -1;
+    public final /* synthetic */ ProfileActivity G;
 
-    public /* synthetic */ qy0(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public qy0(ProfileActivity profileActivity) {
+        this.G = profileActivity;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                int i11 = 2 - i10;
-                if (i11 != this.b) {
-                    SharedConfig.overrideDevicePerformanceClass(i11);
-                    break;
-                } else {
-                    SharedConfig.overrideDevicePerformanceClass(-1);
-                    break;
-                }
-            default:
-                int i12 = 2 - i10;
-                if (i12 != this.b) {
-                    SharedConfig.overrideDevicePerformanceClass(i12);
-                    break;
-                } else {
-                    SharedConfig.overrideDevicePerformanceClass(-1);
-                    break;
-                }
+    @Override // s4.l
+    public final long K(long j10, long j11, long j12) {
+        return 0L;
+    }
+
+    @Override // s4.l
+    public final void N() {
+        AndroidUtilities.runOnUIThread(new my0(this, 1));
+    }
+
+    @Override // s4.l
+    public final void P(s4.e1 e1Var) {
+        int i10 = ProfileActivity.R6;
+        this.G.g5();
+    }
+
+    @Override // s4.l, s4.m0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addUpdateListener(new b3(this, 25));
+            ofFloat.setDuration(this.e);
+            ofFloat.start();
+            this.F = this.G.getNotificationCenter().setAnimationInProgress(this.F, null);
         }
+        super.m();
     }
 }

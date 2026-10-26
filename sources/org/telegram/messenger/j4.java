@@ -1,29 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.function.ToIntFunction;
+import org.telegram.messenger.GiftAuctionController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j4 implements Utilities.Callback2 {
+public final /* synthetic */ class j4 implements ToIntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ j4(int i10, Utilities.Callback callback) {
+    public /* synthetic */ j4(int i10) {
         this.a = i10;
-        this.b = callback;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
+        int lambda$updateActiveAuctions$13;
         switch (this.a) {
             case 0:
-                GiftAuctionController.lambda$requestAuctionUpgrades$5(this.b, (TL_stars.starGiftUpgradeAttributes) obj, (TLRPC.TL_error) obj2);
-                break;
+                lambda$updateActiveAuctions$13 = GiftAuctionController.lambda$updateActiveAuctions$13((GiftAuctionController.Auction) obj);
+                return lambda$updateActiveAuctions$13;
             default:
-                MediaDataController.lambda$searchStickerSets$250(this.b, (TLRPC.messages_FoundStickerSets) obj, (TLRPC.TL_error) obj2);
-                break;
+                return Integer.parseInt((String) obj);
         }
     }
 }

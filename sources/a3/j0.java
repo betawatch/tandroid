@@ -1,6 +1,6 @@
 package a3;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -23,17 +23,17 @@ public final /* synthetic */ class j0 implements Runnable {
         switch (i10) {
             case 0:
                 m0 m0Var = (m0) sVar.c;
-                String str = e2.m0.a;
-                j2.e eVar = ((i2.b0) m0Var).a.s;
-                j2.a n10 = eVar.n((u2.h0) eVar.d.e);
-                eVar.q(n10, 1018, new ih.l(n10, i11, j10));
+                String str = e2.n0.a;
+                j2.e eVar = ((i2.d0) m0Var).a.s;
+                j2.a n10 = eVar.n((u2.g0) eVar.d.e);
+                eVar.q(n10, 1018, new ig.g(n10, i11, j10));
                 break;
             default:
                 m0 m0Var2 = (m0) sVar.c;
-                String str2 = e2.m0.a;
-                j2.e eVar2 = ((i2.b0) m0Var2).a.s;
-                j2.a n11 = eVar2.n((u2.h0) eVar2.d.e);
-                eVar2.q(n11, 1021, new ih.l(n11, j10, i11));
+                String str2 = e2.n0.a;
+                j2.e eVar2 = ((i2.d0) m0Var2).a.s;
+                j2.a n11 = eVar2.n((u2.g0) eVar2.d.e);
+                eVar2.q(n11, 1021, new ig.g(n11, j10, i11));
                 break;
         }
     }

@@ -1,108 +1,211 @@
 package ig;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
-import w7.z5;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t extends FrameLayout {
-    public final n5 a;
-    public final wh.n b;
-    public final n5 c;
-    public final g6 d;
-    public boolean e;
-    public TL_account.TL_businessChatLink f;
+public final /* synthetic */ class t implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ TLObject h;
+    public final /* synthetic */ ArrayList n;
+    public final /* synthetic */ TLObject r;
 
-    public t(Context context, g6 g6Var) {
-        super(context);
-        this.d = g6Var;
-        setWillNotDraw(false);
-        ImageView imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView.setImageResource(R.drawable.msg_limit_links);
-        imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        int dp = AndroidUtilities.dp(36.0f);
-        int i10 = k6.Oh;
-        ShapeDrawable K = k6.K(dp, k6.x0(null, i10, false));
-        n6 O = r6.O(i10);
-        imageView.setBackground(K);
-        r6.k(imageView, K, O, null, null);
-        imageView.setOnClickListener(new hg.r0(this, 6));
-        addView(imageView, z5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        n5 n5Var = new n5(context);
-        this.a = n5Var;
-        n5Var.setTextSize(15);
-        r6.Z(n5Var, k6.G6, null);
-        n5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(n5Var, z5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        n5 n5Var2 = new n5(context);
-        this.c = n5Var2;
-        n5Var2.setTextSize(14);
-        int i11 = k6.z6;
-        r6.Z(n5Var2, i11, null);
-        n5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(n5Var2, z5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
-        wh.n nVar = new wh.n(context);
-        this.b = nVar;
-        nVar.setTextSize(1, 13.0f);
-        nVar.setMaxLines(1);
-        nVar.setEllipsize(TextUtils.TruncateAt.END);
-        r6.W(nVar, i11, g6Var);
-        nVar.setGravity(LocaleController.isRTL ? 5 : 3);
-        nVar.r = false;
-        nVar.setUseAlphaForEmoji(false);
-        NotificationCenter.listenEmojiLoading(nVar);
-        addView(nVar, z5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+    public /* synthetic */ t(i0 i0Var, int i10, int i11, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLMethod tLMethod, ArrayList arrayList, int i12) {
+        this.a = i12;
+        this.b = i0Var;
+        this.c = i10;
+        this.d = i11;
+        this.e = tL_error;
+        this.f = str;
+        this.h = tLObject;
+        this.r = tLMethod;
+        this.n = arrayList;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e) {
-            Paint V0 = k6.V0("paintDivider", this.d);
-            if (V0 == null) {
-                V0 = k6.k0;
-            }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), V0);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v5 */
+    /* JADX WARN: Type inference failed for: r3v9 */
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        int i11;
+        int i12 = this.a;
+        ArrayList arrayList = this.n;
+        TLObject tLObject = this.h;
+        int i13 = this.d;
+        int i14 = this.c;
+        boolean z10 = true;
+        int i15 = 0;
+        TLObject tLObject2 = this.r;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.b;
+        switch (i12) {
+            case 0:
+                i0 i0Var = (i0) obj3;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                String str = (String) obj;
+                TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) tLObject2;
+                y yVar = i0Var.j0;
+                ArrayList arrayList2 = i0Var.H;
+                int i16 = i0Var.s0;
+                if (i14 == i0Var.T && (i13 <= 0 || i13 == i0Var.d0)) {
+                    i0Var.D0--;
+                    if (tL_error == null) {
+                        i0Var.b0 = str;
+                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                        MessagesStorage.getInstance(i16).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                        MessagesController.getInstance(i16).putUsers(messages_messages.users, false);
+                        MessagesController.getInstance(i16).putChats(messages_messages.chats, false);
+                        if (tL_messages_search.add_offset == 0) {
+                            arrayList2.clear();
+                        }
+                        i0Var.c0 = messages_messages.next_rate;
+                        for (int i17 = 0; i17 < messages_messages.messages.size(); i17++) {
+                            TLRPC.Message message = messages_messages.messages.get(i17);
+                            int i18 = MessagesController.getInstance(i16).deletedHistory.get(MessageObject.getDialogId(message));
+                            if (i18 == 0 || message.id > i18) {
+                                arrayList2.add((MessageObject) arrayList.get(i17));
+                            }
+                        }
+                        i0Var.N = true;
+                        i0Var.X = messages_messages.messages.size() != 20;
+                        if (i13 > 0) {
+                            i0Var.g0 = i13;
+                            if (i0Var.f0 != i13) {
+                                i0Var.s.clear();
+                            }
+                            if (i0Var.e0 != i13) {
+                                yVar.b();
+                            }
+                        }
+                        yVar.f(i0Var.s, i0Var.v0);
+                        lx lxVar = i0Var.U;
+                        if (lxVar != null) {
+                            lxVar.d(i0Var.D0 > 0, true);
+                            i0Var.U.c();
+                        }
+                        i0Var.l();
+                    }
+                }
+                i0Var.Q = 0;
+                break;
+            case 1:
+                i0 i0Var2 = (i0) obj3;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                String str2 = (String) obj;
+                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) tLObject2;
+                y yVar2 = i0Var2.j0;
+                ArrayList arrayList3 = i0Var2.I;
+                ArrayList arrayList4 = i0Var2.H;
+                int i19 = i0Var2.s0;
+                if (i14 == i0Var2.P && (i13 <= 0 || i13 == i0Var2.d0)) {
+                    i0Var2.D0--;
+                    if (tL_error2 == null) {
+                        i0Var2.b0 = str2;
+                        TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
+                        MessagesStorage.getInstance(i19).putUsersAndChats(messages_messages2.users, messages_messages2.chats, true, true);
+                        MessagesController.getInstance(i19).putUsers(messages_messages2.users, false);
+                        MessagesController.getInstance(i19).putChats(messages_messages2.chats, false);
+                        if (tL_messages_searchGlobal.offset_id == 0) {
+                            arrayList3.clear();
+                        }
+                        i0Var2.c0 = messages_messages2.next_rate;
+                        int i20 = 0;
+                        while (i20 < messages_messages2.messages.size()) {
+                            TLRPC.Message message2 = messages_messages2.messages.get(i20);
+                            int i21 = MessagesController.getInstance(i19).deletedHistory.get(MessageObject.getDialogId(message2));
+                            if (i21 == 0 || message2.id > i21) {
+                                MessageObject messageObject = (MessageObject) arrayList.get(i20);
+                                if (!arrayList4.isEmpty()) {
+                                    for (int i22 = i15; i22 < arrayList4.size(); i22++) {
+                                        MessageObject messageObject2 = (MessageObject) arrayList4.get(i22);
+                                        if (messageObject2 == null || messageObject == null || messageObject.getId() != messageObject2.getId() || messageObject.getDialogId() != messageObject2.getDialogId()) {
+                                        }
+                                    }
+                                }
+                                arrayList3.add(messageObject);
+                                Integer num = (message2.out ? MessagesController.getInstance(i19).dialogs_read_outbox_max : MessagesController.getInstance(i19).dialogs_read_inbox_max).get(Long.valueOf(MessageObject.getDialogId(message2)));
+                                if (num != null) {
+                                    message2.unread = num.intValue() < message2.id;
+                                }
+                            }
+                            i20++;
+                            z10 = true;
+                            i15 = 0;
+                        }
+                        i0Var2.N = z10;
+                        i0Var2.W = messages_messages2.messages.size() != 20;
+                        if (i13 > 0) {
+                            i0Var2.g0 = i13;
+                            if (i0Var2.f0 != i13) {
+                                i0Var2.s.clear();
+                            }
+                            if (i0Var2.e0 != i13) {
+                                yVar2.b();
+                            }
+                        }
+                        yVar2.f(i0Var2.s, i0Var2.v0);
+                        lx lxVar2 = i0Var2.U;
+                        if (lxVar2 != null) {
+                            i11 = 1;
+                            lxVar2.d(i0Var2.D0 > 0, true);
+                            i0Var2.U.c();
+                        } else {
+                            i11 = 1;
+                        }
+                        i0Var2.G0 = i11;
+                        i0Var2.H0 = i11;
+                        i10 = 0;
+                        i0Var2.d = false;
+                        e0 e0Var = i0Var2.E0;
+                        if (e0Var != null) {
+                            String str3 = i0Var2.Z;
+                            TextView textView = e0Var.a;
+                            int i23 = R.string.SearchMessagesFilterEmptyText;
+                            Object[] objArr = new Object[i11];
+                            objArr[0] = str3;
+                            textView.setText(LocaleController.formatString(i23, objArr));
+                        }
+                        i0Var2.l();
+                        i0Var2.O = i10;
+                        break;
+                    }
+                }
+                i10 = 0;
+                i0Var2.O = i10;
+                break;
+            default:
+                ((MediaDataController) obj3).lambda$processLoadStickersResponse$73(this.h, this.n, this.c, (a0.h) obj2, (TLRPC.StickerSet) obj, (TLRPC.TL_messages_allStickers) tLObject2, this.d);
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        boolean z11 = LocaleController.isRTL;
-        n5 n5Var = this.c;
-        n5 n5Var2 = this.a;
-        if (z11) {
-            n5Var2.setPadding(n5Var.getTextWidth(), 0, 0, 0);
-        } else {
-            n5Var2.setPadding(0, 0, n5Var.getTextWidth(), 0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
+    public /* synthetic */ t(MediaDataController mediaDataController, TLObject tLObject, ArrayList arrayList, int i10, a0.h hVar, TLRPC.StickerSet stickerSet, TLRPC.TL_messages_allStickers tL_messages_allStickers, int i11) {
+        this.a = 2;
+        this.b = mediaDataController;
+        this.h = tLObject;
+        this.n = arrayList;
+        this.c = i10;
+        this.e = hVar;
+        this.f = stickerSet;
+        this.r = tL_messages_allStickers;
+        this.d = i11;
     }
 }

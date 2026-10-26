@@ -1,12 +1,12 @@
 package x3;
 
-import b2.w0;
-import c3.r;
+import a8.yb;
+import b2.x0;
+import c3.p;
 import e2.x;
 import java.io.EOFException;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -17,7 +17,7 @@ public final class f {
     public final int[] f = new int[255];
     public final x g = new x(255);
 
-    public final boolean a(r rVar, boolean z10) {
+    public final boolean a(p pVar, boolean z10) {
         boolean z11;
         boolean z12;
         this.a = 0;
@@ -28,7 +28,7 @@ public final class f {
         x xVar = this.g;
         xVar.K(27);
         try {
-            z11 = rVar.j(xVar.a, 0, 27, z10);
+            z11 = pVar.h(xVar.a, 0, 27, z10);
         } catch (EOFException e) {
             if (!z10) {
                 throw e;
@@ -47,10 +47,10 @@ public final class f {
                 this.d = A + 27;
                 xVar.K(A);
                 try {
-                    z12 = rVar.j(xVar.a, 0, this.c, z10);
-                } catch (EOFException e7) {
+                    z12 = pVar.h(xVar.a, 0, this.c, z10);
+                } catch (EOFException e10) {
                     if (!z10) {
-                        throw e7;
+                        throw e10;
                     }
                     z12 = false;
                 }
@@ -63,23 +63,23 @@ public final class f {
                     return true;
                 }
             } else if (!z10) {
-                throw w0.c("unsupported bit stream revision");
+                throw x0.c("unsupported bit stream revision");
             }
         }
         return false;
     }
 
-    public final boolean b(r rVar, long j10) {
+    public final boolean b(p pVar, long j10) {
         boolean z10;
-        u6.g(rVar.getPosition() == rVar.k());
+        yb.g(pVar.getPosition() == pVar.i());
         x xVar = this.g;
         xVar.K(4);
         while (true) {
-            if (j10 != -1 && rVar.getPosition() + 4 >= j10) {
+            if (j10 != -1 && pVar.getPosition() + 4 >= j10) {
                 break;
             }
             try {
-                z10 = rVar.j(xVar.a, 0, 4, true);
+                z10 = pVar.h(xVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z10 = false;
             }
@@ -88,16 +88,16 @@ public final class f {
             }
             xVar.N(0);
             if (xVar.C() == 1332176723) {
-                rVar.q();
+                pVar.p();
                 return true;
             }
-            rVar.r(1);
+            pVar.q(1);
         }
         do {
-            if (j10 != -1 && rVar.getPosition() >= j10) {
+            if (j10 != -1 && pVar.getPosition() >= j10) {
                 break;
             }
-        } while (rVar.skip(1) != -1);
+        } while (pVar.skip(1) != -1);
         return false;
     }
 }

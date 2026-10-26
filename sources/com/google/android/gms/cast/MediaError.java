@@ -1,15 +1,15 @@
 package com.google.android.gms.cast;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c6.v;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import o6.a;
+import d6.v;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import w7.f0;
+import p6.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class MediaError extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaError> CREATOR = new v(6);
@@ -29,20 +29,20 @@ public class MediaError extends a implements ReflectedParcelable {
     }
 
     public static MediaError b(JSONObject jSONObject) {
-        return new MediaError(jSONObject.optString(TeXSymbolParser.TYPE_ATTR, "ERROR"), jSONObject.optLong("requestId"), jSONObject.has("detailedErrorCode") ? Integer.valueOf(jSONObject.optInt("detailedErrorCode")) : null, g6.a.a("reason", jSONObject), jSONObject.has("customData") ? jSONObject.optJSONObject("customData") : null);
+        return new MediaError(jSONObject.optString(TeXSymbolParser.TYPE_ATTR, "ERROR"), jSONObject.optLong("requestId"), jSONObject.has("detailedErrorCode") ? Integer.valueOf(jSONObject.optInt("detailedErrorCode")) : null, h6.a.a("reason", jSONObject), jSONObject.has("customData") ? jSONObject.optJSONObject("customData") : null);
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.f;
         this.e = jSONObject == null ? null : jSONObject.toString();
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.s(parcel, 3, 8);
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 2, this.a);
+        df.s(parcel, 3, 8);
         parcel.writeLong(this.b);
-        f0.i(parcel, 4, this.c);
-        f0.l(parcel, 5, this.d);
-        f0.l(parcel, 6, this.e);
-        f0.r(parcel, q6);
+        df.i(parcel, 4, this.c);
+        df.l(parcel, 5, this.d);
+        df.l(parcel, 6, this.e);
+        df.r(parcel, q5);
     }
 }

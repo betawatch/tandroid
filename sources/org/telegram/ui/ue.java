@@ -1,53 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
-    public final /* synthetic */ org.telegram.ui.Components.cn0 c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ MessagesController c;
+    public final /* synthetic */ CharSequence d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ ue(sn snVar, org.telegram.ui.Components.cn0 cn0Var, String str, int i10) {
-        this.a = i10;
-        this.b = snVar;
-        this.c = cn0Var;
-        this.d = str;
+    public /* synthetic */ ue(un unVar, CharSequence charSequence, MessagesController messagesController, boolean z10) {
+        this.b = unVar;
+        this.d = charSequence;
+        this.c = messagesController;
+        this.e = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.xc a02;
-        int i10;
         switch (this.a) {
             case 0:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard(this.d);
-                a02 = org.telegram.ui.Components.xc.a0(this.b);
-                i10 = R.string.RelativeDateCopied;
-                break;
-            case 1:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard(this.d);
-                a02 = org.telegram.ui.Components.xc.a0(this.b);
-                i10 = R.string.WalletAddressCopiedBulletin;
-                break;
-            case 2:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard(this.d);
-                a02 = org.telegram.ui.Components.xc.a0(this.b);
-                i10 = R.string.CardNumberCopied;
+                un.k1(this.b, this.d, this.c, this.e);
                 break;
             default:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard("@" + this.d);
-                a02 = org.telegram.ui.Components.xc.a0(this.b);
-                i10 = R.string.UsernameCopied;
+                un unVar = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(unVar.getParentActivity(), 0, unVar.qa);
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
+                String string = LocaleController.getString(R.string.OK);
+                MessagesController messagesController = this.c;
+                alertDialog$Builder.k(string, new ea.b(unVar, messagesController, this.d, this.e, 3));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                String string2 = LocaleController.getString(R.string.SecretLinkPreviewAlert);
+                org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
+                e2Var.T = string2;
+                unVar.showDialog(e2Var);
+                messagesController.secretWebpagePreview = 0;
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", messagesController.secretWebpagePreview).commit();
                 break;
         }
-        org.telegram.messenger.sl.p(i10, a02);
+    }
+
+    public /* synthetic */ ue(un unVar, MessagesController messagesController, CharSequence charSequence, boolean z10) {
+        this.b = unVar;
+        this.c = messagesController;
+        this.d = charSequence;
+        this.e = z10;
     }
 }

@@ -1,17 +1,18 @@
 package j2;
 
+import a8.yb;
 import android.content.SharedPreferences;
 import android.widget.EditText;
-import ci.d6;
+import di.d6;
 import e2.o;
 import e2.x;
 import java.util.List;
-import m4.e1;
 import m4.f0;
-import m4.g1;
-import m4.i1;
-import m4.m1;
-import m4.v;
+import m4.f1;
+import m4.h1;
+import m4.j1;
+import m4.n1;
+import m4.w;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -23,15 +24,14 @@ import org.telegram.tgnet.RequestDelegateTimestamp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.z1;
-import org.telegram.ui.Components.xv0;
-import v7.u6;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.Components.aw0;
 import z3.n;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements o, e1, g1, RequestDelegateTimestamp, z1, MessagesStorage.StringCallback, e2.j {
+public final /* synthetic */ class c implements o, f1, h1, RequestDelegateTimestamp, b2, MessagesStorage.StringCallback, e2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -44,42 +44,42 @@ public final /* synthetic */ class c implements o, e1, g1, RequestDelegateTimest
         this.d = obj;
     }
 
-    @Override // m4.g1
-    public Object a(f0 f0Var, v vVar, int i10) {
-        List list = (List) this.d;
-        int i11 = this.b;
-        return f0Var.q(vVar, list, i11 == -1 ? f0Var.t.n0() : i11, i11 == -1 ? f0Var.t.M0() : this.c);
-    }
-
     @Override // e2.j
     public void accept(Object obj) {
         n nVar = (n) this.d;
         z3.a aVar = (z3.a) obj;
         nVar.h.getClass();
-        byte[] s22 = sb.a.s2(aVar.a, aVar.c);
+        byte[] f7 = pa.d.f(aVar.a, aVar.c);
         x xVar = nVar.c;
         xVar.getClass();
-        xVar.L(s22.length, s22);
-        nVar.a.d(s22.length, xVar);
+        xVar.L(f7.length, f7);
+        nVar.a.d(f7.length, xVar);
         long j10 = aVar.b;
         long j11 = this.c;
         if (j10 == -9223372036854775807L) {
-            u6.p(nVar.h.x == Long.MAX_VALUE);
+            yb.p(nVar.h.x == Long.MAX_VALUE);
         } else {
             long j12 = nVar.h.x;
             j11 = j12 == Long.MAX_VALUE ? j11 + j10 : j10 + j12;
         }
-        nVar.a.c(j11, this.b | 1, s22.length, 0, null);
+        nVar.a.c(j11, this.b | 1, f7.length, 0, null);
     }
 
-    @Override // m4.e1
-    public void c(m1 m1Var, v vVar) {
-        i1 i1Var = (i1) this.d;
-        m1Var.r(i1Var.K0(vVar, m1Var, this.b), this.c);
+    @Override // m4.h1
+    public Object c(f0 f0Var, w wVar, int i10) {
+        List list = (List) this.d;
+        int i11 = this.b;
+        return f0Var.q(wVar, list, i11 == -1 ? f0Var.t.n0() : i11, i11 == -1 ? f0Var.t.M0() : this.c);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(c2 c2Var, int i10) {
+    @Override // m4.f1
+    public void e(n1 n1Var, w wVar) {
+        j1 j1Var = (j1) this.d;
+        n1Var.r(j1Var.K0(wVar, n1Var, this.b), this.c);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(e2 e2Var, int i10) {
         int i11 = this.a;
         Object obj = this.d;
         int i12 = this.b;
@@ -94,7 +94,7 @@ public final /* synthetic */ class c implements o, e1, g1, RequestDelegateTimest
                         String str = userFull.about;
                         if ((str != null ? str : "").equals(trim)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            c2Var.dismiss();
+                            e2Var.dismiss();
                             break;
                         } else {
                             userFull.about = trim;
@@ -114,7 +114,7 @@ public final /* synthetic */ class c implements o, e1, g1, RequestDelegateTimest
                         String str2 = chatFull.about;
                         if ((str2 != null ? str2 : "").equals(obj2)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            c2Var.dismiss();
+                            e2Var.dismiss();
                             break;
                         } else {
                             chatFull.about = obj2;
@@ -127,7 +127,7 @@ public final /* synthetic */ class c implements o, e1, g1, RequestDelegateTimest
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j10));
                     MessagesController.getInstance(i12).updateChatAbout(j11, obj2, chatFull);
                 }
-                c2Var.dismiss();
+                e2Var.dismiss();
                 break;
             default:
                 Runnable runnable = (Runnable) obj;
@@ -161,7 +161,7 @@ public final /* synthetic */ class c implements o, e1, g1, RequestDelegateTimest
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        xv0.i((xv0) this.d, this.c, this.b, str);
+        aw0.j((aw0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ c(a aVar, int i10, long j10, long j11) {

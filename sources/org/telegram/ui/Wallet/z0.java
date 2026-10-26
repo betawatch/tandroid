@@ -5,14 +5,17 @@ import android.text.TextUtils;
 import androidx.car.app.navigation.model.Maneuver;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
+import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.cy0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class z0 {
     public final int a;
@@ -24,13 +27,13 @@ public final class z0 {
     public int g;
     public int h;
     public int j;
-    public tc.u k;
+    public uc.u k;
     public long l;
     public final w0 m;
     public final w0 n;
     public final w0 o;
     public int i = -1;
-    public final org.telegram.ui.Cells.u5 p = new org.telegram.ui.Cells.u5(this, 29);
+    public final cy0 p = new cy0(this, 5);
 
     /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.w0] */
     /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.w0] */
@@ -128,9 +131,9 @@ public final class z0 {
         this.c = l0Var;
     }
 
-    public static String a(tc.v vVar) {
+    public static String a(uc.v vVar) {
         String str;
-        ba.a aVar;
+        ca.a aVar;
         switch (vVar.a) {
             case 1:
                 str = "NOT_IN_CREATED_STATE";
@@ -280,15 +283,15 @@ public final class z0 {
                 str = "HOSTNAME_UNVERIFIED";
                 break;
             default:
-                str = "null";
+                str = BuildConfig.BETA_URL;
                 break;
         }
-        if (!(vVar instanceof tc.n) || (aVar = ((tc.n) vVar).b) == null) {
+        if (!(vVar instanceof uc.n) || (aVar = ((uc.n) vVar).b) == null) {
             return str;
         }
-        StringBuilder i10 = si.o0.i(str, ", HTTP ");
-        i10.append(aVar.c);
-        return i10.toString();
+        StringBuilder l4 = b10.l(str, ", HTTP ");
+        l4.append(aVar.c);
+        return l4.toString();
     }
 
     public final void b() {
@@ -309,14 +312,14 @@ public final class z0 {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.i, true);
             this.i = -1;
         }
-        tc.u uVar = this.k;
+        uc.u uVar = this.k;
         this.k = null;
         if (uVar != null) {
             uVar.c();
         }
     }
 
-    public final boolean c(tc.u uVar, int i10) {
+    public final boolean c(uc.u uVar, int i10) {
         return this.d && this.k == uVar && this.h == i10;
     }
 
@@ -366,20 +369,20 @@ public final class z0 {
                     long elapsedRealtime2 = SystemClock.elapsedRealtime();
                     z0Var.d("opening websocket; attempt=" + i11);
                     try {
-                        c5.c0 c0Var = new c5.c0(13, (short) 0);
-                        c0Var.b = 10000;
-                        tc.u j11 = c0Var.j(str);
-                        z0Var.k = j11;
+                        d5.z zVar = new d5.z(14, (short) 0);
+                        zVar.b = 10000;
+                        uc.u g7 = zVar.g(str);
+                        z0Var.k = g7;
                         y0 y0Var = new y0(z0Var, i11, elapsedRealtime2);
-                        c2.b bVar = j11.d;
+                        c2.b bVar = g7.d;
                         synchronized (((ArrayList) bVar.c)) {
                             ((ArrayList) bVar.c).add(y0Var);
                             bVar.a = true;
                         }
                         AndroidUtilities.runOnUIThread(z0Var.o, 30000L);
-                        tc.u uVar = z0Var.k;
+                        uc.u uVar = z0Var.k;
                         uVar.getClass();
-                        tc.b bVar2 = new tc.b("ConnectThread", uVar, 3, 0);
+                        uc.b bVar2 = new uc.b("ConnectThread", uVar, 3, 0);
                         c2.b bVar3 = uVar.d;
                         if (bVar3 != null) {
                             ArrayList arrayList = (ArrayList) bVar3.n();
@@ -421,15 +424,15 @@ public final class z0 {
 
     public final void g(String str) {
         d("send -> " + str);
-        tc.u uVar = this.k;
+        uc.u uVar = this.k;
         uVar.getClass();
-        tc.x xVar = new tc.x();
+        uc.x xVar = new uc.x();
         xVar.a = true;
         xVar.e = 1;
         if (str == null || str.length() == 0) {
             xVar.g = null;
         } else {
-            xVar.c(tc.k.a(str));
+            xVar.c(uc.k.a(str));
         }
         uVar.g(xVar);
     }

@@ -1,31 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ac1 implements hc1 {
-    public boolean a;
-    public final /* synthetic */ sn b;
+public final class ac1 extends org.telegram.ui.Components.gb1 {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
 
-    public ac1(sn snVar, boolean z10) {
-        this.b = snVar;
-        this.a = z10;
+    public /* synthetic */ ac1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.c = i10;
+        this.d = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.hc1
-    public final boolean I0() {
-        return true;
+    @Override // org.telegram.ui.Components.gb1
+    public void M() {
+        switch (this.c) {
+            case 1:
+                ((ph1) this.d).v.invalidate();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.hc1
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.hc1
-    public final void c1(boolean z10) {
-        boolean z11 = !this.a;
-        this.a = z11;
-        qn qnVar = this.b.qa;
-        qnVar.q(qnVar.f, qnVar.g, z10, Boolean.valueOf(z11), false);
+    @Override // org.telegram.ui.Components.gb1
+    public void P(int i10, int i11) {
+        switch (this.c) {
+            case 0:
+                Point point = AndroidUtilities.displaySize;
+                if ((point.x <= point.y) == (i10 <= i11)) {
+                    ((tc1) this.d).y0.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

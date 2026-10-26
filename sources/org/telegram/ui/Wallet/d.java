@@ -8,13 +8,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.d71;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        b71 b71Var;
+        j71 j71Var;
         String str;
         switch (this.a) {
             case 0:
@@ -38,7 +38,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     Utilities.stageQueue.postRunnable(new e(fVar, currencyrates, 0));
                     break;
                 } else {
-                    i2.o1.w(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
+                    ic.a.w(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
                     break;
                 }
             case 1:
@@ -61,7 +61,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 break;
             case 3:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ((w) this.b).run((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : e2.x(tL_error2, "closeSession"));
+                ((s) this.b).run((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : e2.x(tL_error2, "closeSession"));
                 break;
             case 4:
                 e2 e2Var = (e2) this.b;
@@ -84,7 +84,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(m61.k(((j2) this.b).Y));
+                ((ArrayList) obj).add(t61.k(((j2) this.b).Y));
                 break;
             case 6:
                 y2 y2Var = (y2) this.b;
@@ -104,14 +104,14 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 }
                 break;
             case 7:
-                o5 o5Var = (o5) this.b;
+                m5 m5Var = (m5) this.b;
                 TL_account.Password password = (TL_account.Password) obj;
                 if (password != null) {
-                    o5Var.Q0 = true;
-                    o5Var.R0 = password.has_password;
-                    d71 d71Var = o5Var.a;
-                    if (d71Var != null && (b71Var = d71Var.Z2) != null) {
-                        b71Var.N(true);
+                    m5Var.R0 = true;
+                    m5Var.S0 = password.has_password;
+                    l71 l71Var = m5Var.a;
+                    if (l71Var != null && (j71Var = l71Var.g3) != null) {
+                        j71Var.O(true);
                         break;
                     }
                 }
@@ -122,9 +122,9 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
                 if (onrampsession != null && !TextUtils.isEmpty(onrampsession.url)) {
                     callback.run(null);
-                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                     if (U != null) {
-                        pf.d.r(U.getContext(), onrampsession.url);
+                        qf.d.r(U.getContext(), onrampsession.url);
                         break;
                     }
                 } else {
@@ -139,7 +139,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 WalletEngine2.HttpTransport.lambda$execute$0((b7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((s9) this.b).f = false;
+                ((r9) this.b).h = false;
                 break;
         }
     }

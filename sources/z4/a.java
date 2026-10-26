@@ -1,51 +1,26 @@
 package z4;
 
-import android.database.DataSetObservable;
-import android.database.DataSetObserver;
-import android.view.View;
+import android.os.Bundle;
+import android.os.Parcelable;
+import androidx.versionedparcelable.ParcelImpl;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public final DataSetObservable a = new DataSetObservable();
-    public DataSetObserver b;
-
-    public abstract void a(h hVar, Object obj);
-
-    public abstract int b();
-
-    public int c(Object obj) {
-        return -1;
-    }
-
-    public CharSequence d(int i10) {
-        return null;
-    }
-
-    public abstract Object e(h hVar, int i10);
-
-    public abstract boolean f(View view, Object obj);
-
-    public void g() {
-        synchronized (this) {
-            try {
-                DataSetObserver dataSetObserver = this.b;
-                if (dataSetObserver != null) {
-                    dataSetObserver.onChanged();
-                }
-            } catch (Throwable th2) {
-                throw th2;
+    public static d a(Bundle bundle) {
+        try {
+            Bundle bundle2 = (Bundle) bundle.getParcelable("android.support.v4.media.session.SESSION_TOKEN2");
+            if (bundle2 == null) {
+                return null;
             }
+            bundle2.setClassLoader(a.class.getClassLoader());
+            Parcelable parcelable = bundle2.getParcelable("a");
+            if (parcelable instanceof ParcelImpl) {
+                return ((ParcelImpl) parcelable).a;
+            }
+            throw new IllegalArgumentException("Invalid parcel");
+        } catch (RuntimeException unused) {
+            return null;
         }
-        this.a.notifyChanged();
-    }
-
-    public final void i(DataSetObserver dataSetObserver) {
-        synchronized (this) {
-            this.b = dataSetObserver;
-        }
-    }
-
-    public void h(int i10) {
     }
 }

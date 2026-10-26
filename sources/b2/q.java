@@ -1,34 +1,37 @@
 package b2;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class q implements Parcelable.Creator {
-    public final /* synthetic */ int a;
+public final class q {
+    public static final q c = new q(new x1());
+    public static final String d;
+    public static final String e;
+    public final int a = 0;
+    public final int b = 0;
 
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        switch (this.a) {
-            case 0:
-                return new s(parcel);
-            case 1:
-                return new r(parcel);
-            default:
-                return new i1(parcel);
-        }
+    static {
+        String str = e2.n0.a;
+        Integer.toString(0, 36);
+        d = Integer.toString(1, 36);
+        e = Integer.toString(2, 36);
+        Integer.toString(3, 36);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i10) {
-        switch (this.a) {
-            case 0:
-                return new s[i10];
-            case 1:
-                return new r[i10];
-            default:
-                return new i1[i10];
+    public q(x1 x1Var) {
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof q)) {
+            return false;
+        }
+        q qVar = (q) obj;
+        return this.a == qVar.a && this.b == qVar.b;
+    }
+
+    public final int hashCode() {
+        return (((16337 + this.a) * 31) + this.b) * 31;
     }
 }

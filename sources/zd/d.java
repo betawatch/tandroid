@@ -1,8 +1,29 @@
 package zd;
 
-import w7.p9;
+import a8.ud;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import kd.o;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes.dex */
-public abstract class d extends p9 {
+public abstract class d extends e {
+    public static List a(b bVar) {
+        i.e(bVar, "<this>");
+        Iterator it = bVar.iterator();
+        if (!it.hasNext()) {
+            return o.a;
+        }
+        Object next = it.next();
+        if (!it.hasNext()) {
+            return ud.a(next);
+        }
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(next);
+        while (it.hasNext()) {
+            arrayList.add(it.next());
+        }
+        return arrayList;
+    }
 }

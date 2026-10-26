@@ -1,53 +1,18 @@
 package x2;
 
-import b2.p1;
-import b2.w;
-import java.util.List;
+import b2.q1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface p {
-    boolean a(int i10, long j10);
+public final class p {
+    public final q1 a;
+    public final int[] b;
 
-    p1 b();
-
-    int c();
-
-    boolean d(long j10, v2.f fVar, List list);
-
-    void e(boolean z10);
-
-    w f(int i10);
-
-    void g();
-
-    int h(int i10);
-
-    int i(long j10, List list);
-
-    void j();
-
-    void k(long j10, long j11, long j12, List list, v2.m[] mVarArr);
-
-    int l();
-
-    int length();
-
-    w m();
-
-    int n();
-
-    boolean o(int i10, long j10);
-
-    void p(float f7);
-
-    Object q();
-
-    void r();
-
-    int s(w wVar);
-
-    void t();
-
-    int u(int i10);
+    public p(q1 q1Var, int... iArr) {
+        if (iArr.length == 0) {
+            e2.a.d("ETSDefinition", "Empty tracks are not allowed", new IllegalArgumentException());
+        }
+        this.a = q1Var;
+        this.b = iArr;
+    }
 }

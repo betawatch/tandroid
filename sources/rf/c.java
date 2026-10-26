@@ -1,36 +1,55 @@
 package rf;
 
-import android.app.Activity;
-import android.content.ComponentCallbacks2;
-import android.view.View;
-import i2.h0;
-import org.telegram.ui.LaunchActivity;
+import g2.h;
+import g2.m;
+import java.io.IOException;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c {
-    public final Activity a;
-    public final tf.a b;
-    public String c;
-    public int d;
-    public int e = 0;
-    public boolean f = false;
-    public h0 g;
-    public int h;
-    public int i;
-    public View j;
-    public View k;
+public final class c extends InputStream {
+    public final h a;
+    public final byte[] b = new byte[1];
+    public long c;
 
-    public c(Activity activity, tf.a aVar) {
-        this.a = activity;
-        this.b = aVar;
+    public c(h hVar, m mVar) {
+        this.a = hVar;
+        try {
+            this.c = hVar.open(mVar);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public final d a() {
-        ComponentCallbacks2 componentCallbacks2 = this.a;
-        if (componentCallbacks2 instanceof sf.a) {
-            return new d(((LaunchActivity) ((sf.a) componentCallbacks2)).m0, this);
+    @Override // java.io.InputStream
+    public final int available() {
+        return (int) this.c;
+    }
+
+    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // java.io.InputStream
+    public final int read() {
+        h hVar = this.a;
+        byte[] bArr = this.b;
+        int read = hVar.read(bArr, 0, 1);
+        this.c--;
+        if (read == -1) {
+            return -1;
         }
-        return null;
+        return bArr[0] & 255;
+    }
+
+    @Override // java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        if (i11 == 0) {
+            return 0;
+        }
+        int read = this.a.read(bArr, i10, i11);
+        this.c -= read;
+        return read;
     }
 }

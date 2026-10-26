@@ -1,59 +1,83 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.tgnet.QuickAckDelegate;
-import org.telegram.tgnet.RequestTimeDelegate;
+import android.graphics.BlendMode;
+import android.graphics.RenderNode;
+import com.google.android.gms.tasks.OnSuccessListener;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.hj0;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, RequestTimeDelegate, MessagesController.ErrorDelegate, hj0, QuickAckDelegate {
+public final /* synthetic */ class d implements OnSuccessListener, GenericProvider, org.telegram.ui.ActionBar.b2, Vector.TLDeserializer {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
 
-    public /* synthetic */ d(int i10, Object obj, Object obj2) {
+    public /* synthetic */ d(int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.hj0
-    public void a(Canvas canvas) {
-        ((RichMessageLayout.RichThinkingBlock) this.b).lambda$onDrawFaded$0((View) this.c, canvas);
+    public static /* bridge */ /* synthetic */ BlendMode b(Object obj) {
+        return (BlendMode) obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    public static /* bridge */ /* synthetic */ RenderNode c(Object obj) {
+        return (RenderNode) obj;
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
         switch (this.a) {
-            case 0:
-                AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.o2) this.c, c2Var, i10);
-                break;
+            case 26:
+                return TLRPC.Peer.TLdeserialize(inputSerializedData, i10, z10);
+            case 27:
+                return TL_account.WebBrowserSettings.TLdeserialize(inputSerializedData, i10, z10);
+            case 28:
+                return TLRPC.MessageEntity.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (g0) this.c, c2Var, i10);
-                break;
+                return TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 
-    @Override // org.telegram.tgnet.QuickAckDelegate
-    public void run() {
-        ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$106((TLRPC.Message) this.c);
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        e2Var.dismiss();
     }
 
-    @Override // org.telegram.tgnet.RequestTimeDelegate
-    public void run(long j10) {
-        AndroidUtilities.lambda$showProxyAlert$18((boolean[]) this.b, (org.telegram.ui.Components.zc[]) this.c, j10);
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        AndroidUtilities.lambda$setWaitingForSms$12((Void) obj);
     }
 
-    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
-    public boolean run(TLRPC.TL_error tL_error) {
-        boolean lambda$addUsersToChat$294;
-        lambda$addUsersToChat$294 = MessagesController.lambda$addUsersToChat$294((q0.a) this.b, (TLRPC.User) this.c, tL_error);
-        return lambda$addUsersToChat$294;
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        String lambda$formatSpannableSimple$15;
+        String lambda$formatSpannable$16;
+        TLRPC.MessageEntity lambda$getEntities$182;
+        TLRPC.MessageEntity lambda$getEntities$183;
+        TLRPC.MessageEntity lambda$getEntities$184;
+        TLRPC.MessageEntity lambda$getEntities$185;
+        switch (this.a) {
+            case 3:
+                lambda$formatSpannableSimple$15 = AndroidUtilities.lambda$formatSpannableSimple$15((Integer) obj);
+                return lambda$formatSpannableSimple$15;
+            case 4:
+                lambda$formatSpannable$16 = AndroidUtilities.lambda$formatSpannable$16((Integer) obj);
+                return lambda$formatSpannable$16;
+            case 22:
+                lambda$getEntities$182 = MediaDataController.lambda$getEntities$182((Void) obj);
+                return lambda$getEntities$182;
+            case 23:
+                lambda$getEntities$183 = MediaDataController.lambda$getEntities$183((Void) obj);
+                return lambda$getEntities$183;
+            case 24:
+                lambda$getEntities$184 = MediaDataController.lambda$getEntities$184((Void) obj);
+                return lambda$getEntities$184;
+            default:
+                lambda$getEntities$185 = MediaDataController.lambda$getEntities$185((Void) obj);
+                return lambda$getEntities$185;
+        }
     }
 }

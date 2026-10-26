@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class o1 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.e a;
@@ -16,19 +16,19 @@ public final class o1 implements com.google.android.gms.common.api.k, com.google
 
     @Override // com.google.android.gms.common.api.k
     public final void onConnected(Bundle bundle) {
-        n6.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        o6.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
         this.c.onConnected(bundle);
     }
 
     @Override // com.google.android.gms.common.api.l
-    public final void onConnectionFailed(k6.a aVar) {
+    public final void onConnectionFailed(l6.a aVar) {
         com.google.android.gms.common.api.e eVar = this.a;
         boolean z10 = this.b;
-        n6.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        o6.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
         l0 l0Var = this.c;
         l0Var.a.lock();
         try {
-            l0Var.m.t(aVar, eVar, z10);
+            l0Var.m.e(aVar, eVar, z10);
         } finally {
             l0Var.a.unlock();
         }
@@ -36,7 +36,7 @@ public final class o1 implements com.google.android.gms.common.api.k, com.google
 
     @Override // com.google.android.gms.common.api.k
     public final void onConnectionSuspended(int i10) {
-        n6.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        o6.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
         this.c.onConnectionSuspended(i10);
     }
 }

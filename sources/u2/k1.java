@@ -1,25 +1,80 @@
 package u2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface k1 {
-    k1 a(int i10, int i11);
+public final class k1 implements d1 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ m1 c;
 
-    int b();
+    public k1(m1 m1Var) {
+        this.c = m1Var;
+    }
 
-    k1 c(int i10);
+    public final void a() {
+        if (this.b) {
+            return;
+        }
+        m1 m1Var = this.c;
+        m1Var.e.l(b2.w0.h(m1Var.s.s), m1Var.s, 0, null, 0L);
+        this.b = true;
+    }
 
-    int d(int i10);
+    @Override // u2.d1
+    public final void d() {
+        m1 m1Var = this.c;
+        if (m1Var.v) {
+            return;
+        }
+        m1Var.r.d();
+    }
 
-    int e(int i10);
+    @Override // u2.d1
+    public final boolean e() {
+        return this.c.w;
+    }
 
-    k1 f(int i10, int i11);
+    @Override // u2.d1
+    public final int f(n4.s sVar, h2.h hVar, int i10) {
+        a();
+        m1 m1Var = this.c;
+        boolean z10 = m1Var.w;
+        if (z10 && m1Var.x == null) {
+            this.a = 2;
+        }
+        int i11 = this.a;
+        if (i11 == 2) {
+            hVar.addFlag(4);
+            return -4;
+        }
+        if ((i10 & 2) != 0 || i11 == 0) {
+            sVar.c = m1Var.s;
+            this.a = 1;
+            return -5;
+        }
+        if (!z10) {
+            return -3;
+        }
+        m1Var.x.getClass();
+        hVar.addFlag(1);
+        hVar.e = 0L;
+        if ((i10 & 4) == 0) {
+            hVar.b(m1Var.y);
+            hVar.c.put(m1Var.x, 0, m1Var.y);
+        }
+        if ((i10 & 1) == 0) {
+            this.a = 2;
+        }
+        return -4;
+    }
 
-    k1 g();
-
-    int getLength();
-
-    int h();
-
-    k1 i();
+    @Override // u2.d1
+    public final int j(long j10) {
+        a();
+        if (j10 <= 0 || this.a == 2) {
+            return 0;
+        }
+        this.a = 2;
+        return 1;
+    }
 }

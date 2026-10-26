@@ -1,29 +1,79 @@
 package m;
 
-import android.widget.AbsListView;
+import android.os.Handler;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.ui.Components.fz;
+import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.sy;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c2 implements AbsListView.OnScrollListener {
-    public final /* synthetic */ e2 a;
+public final class c2 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public c2(e2 e2Var) {
-        this.a = e2Var;
+    public /* synthetic */ c2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScrollStateChanged(AbsListView absListView, int i10) {
-        e2 e2Var = this.a;
-        b2 b2Var = e2Var.G;
-        y yVar = e2Var.O;
-        if (i10 != 1 || yVar.getInputMethodMode() == 2 || yVar.getContentView() == null) {
-            return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                d2 d2Var = (d2) this.b;
+                a2 a2Var = d2Var.G;
+                Handler handler = d2Var.K;
+                x xVar = d2Var.O;
+                int action = motionEvent.getAction();
+                int x9 = (int) motionEvent.getX();
+                int y3 = (int) motionEvent.getY();
+                if (action == 0 && xVar != null && xVar.isShowing() && x9 >= 0 && x9 < xVar.getWidth() && y3 >= 0 && y3 < xVar.getHeight()) {
+                    handler.postDelayed(a2Var, 250L);
+                    break;
+                } else if (action == 1) {
+                    handler.removeCallbacks(a2Var);
+                    break;
+                }
+                break;
+            case 1:
+                sy syVar = (sy) this.b;
+                if (motionEvent.getAction() != 0) {
+                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                        syVar.F.f = false;
+                        break;
+                    }
+                } else {
+                    syVar.F.f = true;
+                    break;
+                }
+                break;
+            case 2:
+                fz fzVar = (fz) this.b;
+                if (motionEvent.getAction() != 0) {
+                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                        fzVar.G.f = false;
+                        break;
+                    }
+                } else {
+                    fzVar.G.f = true;
+                    break;
+                }
+                break;
+            default:
+                nz nzVar = (nz) this.b;
+                if (motionEvent.getAction() != 0) {
+                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                        nzVar.Q.f = false;
+                        break;
+                    }
+                } else {
+                    nzVar.Q.f = true;
+                    break;
+                }
+                break;
         }
-        e2Var.K.removeCallbacks(b2Var);
-        b2Var.run();
-    }
-
-    @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScroll(AbsListView absListView, int i10, int i11, int i12) {
+        return false;
     }
 }

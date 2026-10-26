@@ -1,89 +1,56 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class n80 extends FrameLayout {
-    public final /* synthetic */ s80 a;
+public final class n80 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ t80 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n80(s80 s80Var, Context context) {
+    public n80(t80 t80Var, Context context) {
         super(context);
-        this.a = s80Var;
+        this.b = t80Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        s80 s80Var = this.a;
-        Drawable drawable = s80Var.b;
-        int i11 = s80Var.v;
-        i10 = ((org.telegram.ui.ActionBar.h3) s80Var).backgroundPaddingTop;
-        drawable.setBounds(0, i11 - i10, getMeasuredWidth(), getMeasuredHeight());
-        drawable.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            s80 s80Var = this.a;
-            if (s80Var.v != 0 && motionEvent.getY() < s80Var.v) {
-                s80Var.dismiss();
-                return true;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        t80 t80Var = this.b;
+        ArrayList arrayList = t80Var.r;
+        if (t80Var.w == 0) {
+            int size = View.MeasureSpec.getSize(i10);
+            int dp = AndroidUtilities.dp(95.0f) * arrayList.size();
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) t80Var.f.getLayoutParams();
+            if (dp > size) {
+                layoutParams.width = -1;
+                layoutParams.gravity = 51;
+                if (!this.a) {
+                    TLRPC.Peer peer = t80Var.x;
+                    if (peer != null) {
+                        arrayList.remove(peer);
+                        arrayList.add(0, t80Var.x);
+                    }
+                    this.a = true;
+                }
+            } else {
+                layoutParams.width = -2;
+                layoutParams.gravity = 49;
+                if (!this.a) {
+                    if (t80Var.x != null) {
+                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
+                        arrayList.remove(t80Var.x);
+                        arrayList.add(max, t80Var.x);
+                    }
+                    this.a = true;
+                }
             }
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        s80.p(this.a);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        int size = View.MeasureSpec.getSize(i11) - AndroidUtilities.statusBarHeight;
-        s80 s80Var = this.a;
-        TextView textView = s80Var.n;
-        measureChildWithMargins(textView, i10, 0, i11, 0);
-        int measuredHeight = textView.getMeasuredHeight();
-        o80 o80Var = s80Var.f;
-        ((FrameLayout.LayoutParams) o80Var.getLayoutParams()).topMargin = AndroidUtilities.dp(65.0f) + measuredHeight;
-        getMeasuredWidth();
-        int D = org.telegram.messenger.v0.D(58.0f, s80Var.r.size(), AndroidUtilities.dp(80.0f));
-        i12 = ((org.telegram.ui.ActionBar.h3) s80Var).backgroundPaddingTop;
-        int C = org.telegram.messenger.v0.C(55.0f, i12 + D, measuredHeight);
-        int i13 = size / 5;
-        int i14 = C < i13 * 3 ? size - C : i13 * 2;
-        if (o80Var.getPaddingTop() != i14) {
-            s80Var.s = true;
-            o80Var.setPadding(0, i14, 0, 0);
-            s80Var.s = false;
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.a.isDismissed() && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a.s) {
-            return;
-        }
-        super.requestLayout();
+        super.onMeasure(i10, i11);
     }
 }

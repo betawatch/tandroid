@@ -1,36 +1,50 @@
 package b2;
 
+import a8.yb;
 import android.os.Bundle;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class y0 extends Exception {
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public static final String h;
-    public static final String n;
-    public static final String r;
-    public final int a;
-    public final long b;
-    public final Bundle c;
+public final class y0 extends h1 {
+    public static final String c;
+    public final float b;
 
     static {
-        String str = e2.m0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
-        h = Integer.toString(3, 36);
-        n = Integer.toString(4, 36);
-        r = Integer.toString(5, 36);
+        String str = e2.n0.a;
+        c = Integer.toString(1, 36);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(String str, Throwable th2, int i10, long j10) {
-        super(str, th2);
-        Bundle bundle = Bundle.EMPTY;
-        this.a = i10;
-        this.c = bundle;
-        this.b = j10;
+    public y0() {
+        this.b = -1.0f;
+    }
+
+    @Override // b2.h1
+    public final boolean b() {
+        return this.b != -1.0f;
+    }
+
+    @Override // b2.h1
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(h1.a, 1);
+        bundle.putFloat(c, this.b);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof y0) {
+            return this.b == ((y0) obj).b;
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Float.valueOf(this.b));
+    }
+
+    public y0(float f7) {
+        yb.f("percent must be in the range of [0, 100]", f7 >= 0.0f && f7 <= 100.0f);
+        this.b = f7;
     }
 }

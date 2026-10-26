@@ -1,89 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xb0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-
-    public /* synthetic */ xb0(FrameLayout frameLayout, boolean z10, Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.c = frameLayout;
-        this.b = z10;
-        this.d = obj;
-        this.e = obj2;
-        this.f = obj3;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        boolean z10 = this.b;
-        FrameLayout frameLayout = this.c;
-        int i11 = 0;
-        switch (i10) {
-            case 0:
-                lc0 lc0Var = (lc0) frameLayout;
-                Context context = (Context) obj3;
-                qc0 qc0Var = (qc0) obj2;
-                qc0 qc0Var2 = (qc0) obj;
-                rc0 rc0Var = lc0Var.c0;
-                MessagePreviewParams messagePreviewParams = rc0Var.d;
-                if (!z10) {
-                    new xc(rc0Var, rc0Var.F).Q(R.raw.star_premium_2, 36, AndroidUtilities.replaceSingleTag("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", new vb0(lc0Var, context, i11))).j();
-                    break;
-                } else {
-                    boolean z11 = messagePreviewParams.hideForwardSendersName;
-                    messagePreviewParams.hideForwardSendersName = !z11;
-                    rc0Var.x = false;
-                    if (z11) {
-                        messagePreviewParams.hideCaption = false;
-                        if (qc0Var != null) {
-                            qc0Var.a(false, true);
-                        }
-                    }
-                    qc0Var2.a(messagePreviewParams.hideForwardSendersName, true);
-                    lc0Var.i();
-                    lc0Var.l(true);
-                    break;
-                }
-            default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                j80 j80Var = (j80) obj;
-                ns0 ns0Var = ((yh.l2) frameLayout).a;
-                if (z10) {
-                    ns0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    xc.a0(ns0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, ai.l7.X1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                } else {
-                    ai.v9 v9Var = ns0Var.e;
-                    int i12 = tL_starGiftCollection.collection_id;
-                    v9Var.getClass();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(savedStarGift);
-                    v9Var.a(i12, arrayList);
-                    xc.a0(ns0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, ai.l7.X1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                }
-                j80Var.u();
-                ns0Var.n();
-                break;
+public final class xb0 extends s4.n0 {
+    @Override // s4.n0
+    public final void d(Rect rect, View view, RecyclerView recyclerView, s4.b1 b1Var) {
+        org.telegram.ui.Cells.s1 s1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.s1) || (currentMessagesGroup = (s1Var = (org.telegram.ui.Cells.s1) view).getCurrentMessagesGroup()) == null || (currentPosition = s1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+            return;
         }
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = s1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
+            }
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
+        }
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.t.B(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
+                }
+                i10++;
+            } else {
+                break;
+            }
+        }
+        rect.bottom = -round;
     }
 }

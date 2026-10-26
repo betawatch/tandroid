@@ -1,0 +1,31 @@
+package x7;
+
+import java.util.AbstractMap;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class wa extends ta {
+    public final /* synthetic */ xa c;
+
+    public wa(xa xaVar) {
+        this.c = xaVar;
+    }
+
+    @Override // java.util.List
+    public final /* synthetic */ Object get(int i10) {
+        xa xaVar = this.c;
+        w7.b0.a(i10, xaVar.e);
+        Object[] objArr = xaVar.d;
+        int i11 = i10 + i10;
+        Object obj = objArr[i11];
+        obj.getClass();
+        Object obj2 = objArr[i11 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.e;
+    }
+}

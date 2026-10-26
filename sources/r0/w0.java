@@ -6,7 +6,7 @@ import android.view.WindowInsets;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class w0 extends a1 {
     public static Field e = null;
@@ -24,8 +24,8 @@ public final class w0 extends a1 {
         if (!f) {
             try {
                 e = WindowInsets.class.getDeclaredField("CONSUMED");
-            } catch (ReflectiveOperationException e7) {
-                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets.CONSUMED field", e7);
+            } catch (ReflectiveOperationException e10) {
+                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets.CONSUMED field", e10);
             }
             f = true;
         }
@@ -36,15 +36,15 @@ public final class w0 extends a1 {
                 if (windowInsets != null) {
                     return new WindowInsets(windowInsets);
                 }
-            } catch (ReflectiveOperationException e10) {
-                Log.i("WindowInsetsCompat", "Could not get value from WindowInsets.CONSUMED field", e10);
+            } catch (ReflectiveOperationException e11) {
+                Log.i("WindowInsetsCompat", "Could not get value from WindowInsets.CONSUMED field", e11);
             }
         }
         if (!h) {
             try {
                 g = WindowInsets.class.getConstructor(Rect.class);
-            } catch (ReflectiveOperationException e11) {
-                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets(Rect) constructor", e11);
+            } catch (ReflectiveOperationException e12) {
+                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets(Rect) constructor", e12);
             }
             h = true;
         }
@@ -52,8 +52,8 @@ public final class w0 extends a1 {
         if (constructor != null) {
             try {
                 return (WindowInsets) constructor.newInstance(new Rect());
-            } catch (ReflectiveOperationException e12) {
-                Log.i("WindowInsetsCompat", "Could not invoke WindowInsets(Rect) constructor", e12);
+            } catch (ReflectiveOperationException e13) {
+                Log.i("WindowInsetsCompat", "Could not invoke WindowInsets(Rect) constructor", e13);
             }
         }
         return null;

@@ -30,7 +30,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.Camera2Session;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class Camera2Session {
     private CameraCharacteristics cameraCharacteristics;
@@ -63,7 +63,7 @@ public class Camera2Session {
     private boolean opened = false;
     private final Rect cropRegion = new Rect();
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public class 1 extends CameraDevice.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -98,7 +98,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public class 2 extends CameraCaptureSession.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -141,7 +141,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public class 3 implements ImageReader.OnImageAvailableListener {
         final /* synthetic */ File val$file;
         final /* synthetic */ int val$orientation;
@@ -183,8 +183,8 @@ public class Camera2Session {
                     try {
                         fileOutputStream.write(bArr);
                         acquireLatestImage.close();
-                    } catch (IOException e7) {
-                        e = e7;
+                    } catch (IOException e10) {
+                        e = e10;
                         e.printStackTrace();
                         acquireLatestImage.close();
                     }
@@ -194,15 +194,15 @@ public class Camera2Session {
                     if (fileOutputStream != null) {
                         try {
                             fileOutputStream.close();
-                        } catch (IOException e10) {
-                            e10.printStackTrace();
+                        } catch (IOException e11) {
+                            e11.printStackTrace();
                         }
                     }
                     throw th2;
                 }
-            } catch (IOException e11) {
+            } catch (IOException e12) {
                 fileOutputStream = null;
-                e = e11;
+                e = e12;
             } catch (Throwable th4) {
                 fileOutputStream = null;
                 th2 = th4;
@@ -213,8 +213,8 @@ public class Camera2Session {
             }
             try {
                 fileOutputStream.close();
-            } catch (IOException e12) {
-                e12.printStackTrace();
+            } catch (IOException e13) {
+                e13.printStackTrace();
             }
             final Utilities.Callback callback = this.val$whenDone;
             final int i10 = this.val$orientation;
@@ -227,7 +227,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class CompareSizesByArea implements Comparator<android.util.Size> {
         @Override // java.util.Comparator
         public int compare(android.util.Size size, android.util.Size size2) {
@@ -353,14 +353,14 @@ public class Camera2Session {
                             }
                         }
                     }
-                } catch (Exception e7) {
-                    e = e7;
+                } catch (Exception e10) {
+                    e = e10;
                     camera2Session = null;
                 }
             }
             camera2Session = null;
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e11) {
+            e = e11;
             camera2Session = null;
             size = null;
             str = null;
@@ -572,7 +572,7 @@ public class Camera2Session {
     }
 
     public void open(SurfaceTexture surfaceTexture) {
-        this.handler.post(new s(1, this, surfaceTexture));
+        this.handler.post(new r(1, this, surfaceTexture));
     }
 
     public void setFlash(boolean z10) {

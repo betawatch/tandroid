@@ -1,19 +1,16 @@
 package k7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class b {
-    public static final k6.c a;
-    public static final k6.c[] b;
-    public static final k6.c c;
-    public static final k6.c[] d;
+    public static final l6.c a;
+    public static final l6.c[] b;
 
     static {
-        k6.c cVar = new k6.c("CLIENT_TELEMETRY", 1L);
-        a = cVar;
-        b = new k6.c[]{cVar};
-        k6.c cVar2 = new k6.c("moduleinstall", 7L);
-        c = cVar2;
-        d = new k6.c[]{cVar2};
+        l6.c cVar = new l6.c("sms_code_autofill", 2L);
+        l6.c cVar2 = new l6.c("sms_code_browser", 2L);
+        l6.c cVar3 = new l6.c("sms_retrieve", 1L);
+        a = cVar3;
+        b = new l6.c[]{cVar, cVar2, cVar3, new l6.c("user_consent", 3L)};
     }
 }

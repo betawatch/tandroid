@@ -14,7 +14,7 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class o extends AbstractCollection implements Serializable, Collection {
     public static final Object[] a = new Object[0];
@@ -125,14 +125,14 @@ public abstract class o extends AbstractCollection implements Serializable, Coll
         int size = size();
         int length = objArr.length;
         if (length < size) {
-            Object[] q6 = q();
-            if (q6 == null) {
+            Object[] q5 = q();
+            if (q5 == null) {
                 if (length != 0) {
                     objArr = Arrays.copyOf(objArr, 0);
                 }
                 objArr = Arrays.copyOf(objArr, size);
             } else {
-                return Arrays.copyOfRange(q6, n(), m(), objArr.getClass());
+                return Arrays.copyOfRange(q5, n(), m(), objArr.getClass());
             }
         } else if (length > size) {
             objArr[size] = null;

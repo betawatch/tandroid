@@ -1,54 +1,33 @@
 package s4;
 
-import android.util.Log;
-import android.view.animation.Interpolator;
-import androidx.recyclerview.widget.RecyclerView;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class w0 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public Interpolator e;
-    public boolean f;
-    public int g;
+    public final SparseArray a = new SparseArray();
+    public int b = 0;
 
-    public final void a(RecyclerView recyclerView) {
-        int i10 = this.d;
-        if (i10 >= 0) {
-            this.d = -1;
-            recyclerView.c0(i10);
-            this.f = false;
-            return;
+    public final void a() {
+        int i10 = 0;
+        while (true) {
+            SparseArray sparseArray = this.a;
+            if (i10 >= sparseArray.size()) {
+                return;
+            }
+            ((v0) sparseArray.valueAt(i10)).a.clear();
+            i10++;
         }
-        if (!this.f) {
-            this.g = 0;
-            return;
-        }
-        Interpolator interpolator = this.e;
-        if (interpolator != null && this.c < 1) {
-            throw new IllegalStateException("If you provide an interpolator, you must set a positive duration");
-        }
-        int i11 = this.c;
-        if (i11 < 1) {
-            throw new IllegalStateException("Scroll duration must be a positive number");
-        }
-        recyclerView.r0.b(this.a, this.b, i11, interpolator);
-        int i12 = this.g + 1;
-        this.g = i12;
-        if (i12 > 10) {
-            Log.e("RecyclerView", "Smooth Scroll action is being updated too frequently. Make sure you are not changing it unless necessary");
-        }
-        this.f = false;
     }
 
-    public final void b(int i10, int i11, int i12, Interpolator interpolator) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.e = interpolator;
-        this.f = true;
+    public final v0 b(int i10) {
+        SparseArray sparseArray = this.a;
+        v0 v0Var = (v0) sparseArray.get(i10);
+        if (v0Var != null) {
+            return v0Var;
+        }
+        v0 v0Var2 = new v0();
+        sparseArray.put(i10, v0Var2);
+        return v0Var2;
     }
 }

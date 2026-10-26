@@ -1,47 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ke0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ei.x8 b;
+public final class ke0 extends Drawable implements Drawable.Callback {
+    public final eh.d a;
+    public final RectF b = new RectF();
+    public int c = 255;
 
-    public /* synthetic */ ke0(ei.x8 x8Var, int i10) {
-        this.a = i10;
-        this.b = x8Var;
+    public ke0(eh.d dVar) {
+        this.a = dVar;
+        dVar.setCallback(this);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ei.x8 x8Var = this.b;
-                AnimatorSet animatorSet = (AnimatorSet) x8Var.e;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    x8Var.e = null;
-                    break;
-                }
-                break;
-            case 1:
-                ei.x8 x8Var2 = this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) x8Var2.e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    x8Var2.e = null;
-                    break;
-                }
-                break;
-            default:
-                ei.x8 x8Var3 = this.b;
-                AnimatorSet animatorSet3 = (AnimatorSet) x8Var3.e;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    x8Var3.e = null;
-                    break;
-                }
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        this.a.draw(canvas);
+        Rect bounds = getBounds();
+        RectF rectF = this.b;
+        rectF.set(bounds);
+        float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
+        float f7 = this.c / 255.0f;
+        ai.a0.c(canvas, rectF, min, f7);
+        ai.a0.a(canvas, rectF, min, 0, f7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        scheduleSelf(runnable, j10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c = i10;
+        this.a.setAlpha(i10);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.getClass();
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
     }
 }

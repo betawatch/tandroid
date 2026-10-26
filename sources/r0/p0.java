@@ -1,5 +1,6 @@
 package r0;
 
+import a8.fg;
 import android.animation.ValueAnimator;
 import android.os.Build;
 import android.view.View;
@@ -7,16 +8,17 @@ import android.view.ViewGroup;
 import android.view.WindowInsets;
 import j$.util.Objects;
 import java.util.WeakHashMap;
+import m4.w1;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.ll0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class p0 implements View.OnApplyWindowInsetsListener {
-    public final qh.e a;
+    public final rh.e a;
     public k1 b;
 
-    public p0(ViewGroup viewGroup, qh.e eVar) {
+    public p0(ViewGroup viewGroup, rh.e eVar) {
         k1 k1Var;
         this.a = eVar;
         WeakHashMap weakHashMap = i0.a;
@@ -50,7 +52,7 @@ public final class p0 implements View.OnApplyWindowInsetsListener {
                 return view.onApplyWindowInsets(windowInsets);
             }
         } else {
-            ai.c1 i10 = q0.i(view);
+            b2.h i10 = q0.i(view);
             if (i10 == null || !Objects.equals((k1) i10.a, h)) {
                 int[] iArr2 = new int[1];
                 int[] iArr3 = new int[1];
@@ -108,11 +110,11 @@ public final class p0 implements View.OnApplyWindowInsetsListener {
                     int min3 = Math.min(i25, i26);
                     int i27 = f11.d;
                     int i28 = f12.d;
-                    mi.q qVar = new mi.q(17, i0.b.b(min, min2, min3, Math.min(i27, i28)), i0.b.b(Math.max(f11.a, f12.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
+                    w1 w1Var = new w1(17, i0.b.b(min, min2, min3, Math.min(i27, i28)), i0.b.b(Math.max(f11.a, f12.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
                     q0.f(view, h, false);
                     duration.addUpdateListener(new o0(v0Var, h, k1Var2, i22, view));
-                    duration.addListener(new ql0(v0Var, view, 19));
-                    p.a(view, new com.google.android.gms.internal.cast.p(view, v0Var, qVar, duration, 4));
+                    duration.addListener(new ll0(v0Var, view, 18));
+                    p.a(view, new fg(view, v0Var, w1Var, duration, 5));
                     this.b = h;
                     if (view.getTag(R.id.tag_on_apply_window_listener) == null) {
                         return view.onApplyWindowInsets(windowInsets);

@@ -1,15 +1,15 @@
 package com.google.android.recaptcha;
 
+import a8.jd;
 import android.app.Application;
 import com.google.android.gms.tasks.Task;
 import com.google.android.recaptcha.internal.zzdz;
 import com.google.android.recaptcha.internal.zzeq;
-import kd.c;
-import ld.a;
+import ld.c;
+import md.a;
 import org.telegram.tgnet.TLObject;
-import v7.i8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class Recaptcha {
     public static final Recaptcha INSTANCE = new Recaptcha();
@@ -54,7 +54,7 @@ public final class Recaptcha {
                     a aVar = a.a;
                     i10 = recaptcha$getClient$1.zzc;
                     if (i10 != 0) {
-                        i8.b(obj);
+                        jd.b(obj);
                         recaptcha$getClient$1.zzc = 1;
                         obj = zzdz.zzb(application, str, j10, recaptcha$getClient$1);
                         if (obj == aVar) {
@@ -64,7 +64,7 @@ public final class Recaptcha {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        i8.b(obj);
+                        jd.b(obj);
                     }
                     return (zzeq) obj;
                 }
@@ -73,7 +73,7 @@ public final class Recaptcha {
             }
             return (zzeq) obj;
         } catch (Throwable th2) {
-            return i8.a(th2);
+            return jd.a(th2);
         }
         recaptcha$getClient$1 = new Recaptcha$getClient$1(this, cVar);
         Object obj2 = recaptcha$getClient$1.zza;

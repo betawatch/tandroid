@@ -1,27 +1,23 @@
 package z9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g implements ja.d {
-    public static final g a = new g();
-    public static final ja.c b = ja.c.c("identifier");
-    public static final ja.c c = ja.c.c("version");
-    public static final ja.c d = ja.c.c("displayVersion");
-    public static final ja.c e = ja.c.c("organization");
-    public static final ja.c f = ja.c.c("installationUuid");
-    public static final ja.c g = ja.c.c("developmentPlatform");
-    public static final ja.c h = ja.c.c("developmentPlatformVersion");
+public final class g {
+    public static final g c = new g(0, 0);
+    public final int a;
+    public final int b;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        i0 i0Var = (i0) ((l1) obj);
-        eVar.d(b, i0Var.a);
-        eVar.d(c, i0Var.b);
-        eVar.d(d, i0Var.c);
-        eVar.d(e, null);
-        eVar.d(f, i0Var.d);
-        eVar.d(g, i0Var.e);
-        eVar.d(h, i0Var.f);
+    public g(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(g.class.getSimpleName());
+        sb2.append("[position = ");
+        sb2.append(this.a);
+        sb2.append(", length = ");
+        return a1.g.n(this.b, "]", sb2);
     }
 }

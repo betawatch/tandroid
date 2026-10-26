@@ -12,32 +12,32 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.yc0;
-import w7.z5;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.uc0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class u0 extends z4.a {
+public final class u0 extends a5.a {
     public final /* synthetic */ v0 c;
 
     public u0(v0 v0Var) {
         this.c = v0Var;
     }
 
-    @Override // z4.a
-    public final void a(z4.h hVar, Object obj) {
-        hVar.removeView((View) obj);
+    @Override // a5.a
+    public final void a(a5.m mVar, Object obj) {
+        mVar.removeView((View) obj);
     }
 
-    @Override // z4.a
+    @Override // a5.a
     public final int b() {
         return this.c.f.length;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r13v11, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
-    @Override // z4.a
-    public final Object e(z4.h hVar, int i10) {
+    @Override // a5.a
+    public final Object e(a5.m mVar, int i10) {
         Bitmap bitmap;
         ImageView imageView;
         v0 v0Var = this.c;
@@ -45,11 +45,11 @@ public final class u0 extends z4.a {
         int i11 = 1;
         if (z10 && i10 == 0) {
             ?? frameLayout = new FrameLayout(v0Var.getContext());
-            frameLayout.setBackground(new yc0(true, -14602694, -13935795, -14395293, -14203560));
+            frameLayout.setBackground(new uc0(true, -14602694, -13935795, -14395293, -14203560));
             ImageView imageView2 = new ImageView(v0Var.getContext());
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
             imageView2.setImageResource(R.drawable.screencast_big);
-            frameLayout.addView(imageView2, z5.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
+            frameLayout.addView(imageView2, gb1.h(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
             TextView textView = new TextView(v0Var.getContext());
             textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
             textView.setGravity(17);
@@ -57,7 +57,7 @@ public final class u0 extends z4.a {
             textView.setTextColor(-1);
             textView.setTextSize(1, 15.0f);
             textView.setTypeface(AndroidUtilities.bold());
-            frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
+            frameLayout.addView(textView, gb1.h(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
             imageView = frameLayout;
         } else {
             ImageView imageView3 = new ImageView(v0Var.getContext());
@@ -85,16 +85,16 @@ public final class u0 extends z4.a {
         if (imageView.getParent() != null) {
             ((ViewGroup) imageView.getParent()).removeView(imageView);
         }
-        hVar.addView(imageView, 0);
+        mVar.addView(imageView, 0);
         return imageView;
     }
 
-    @Override // z4.a
+    @Override // a5.a
     public final boolean f(View view, Object obj) {
         return view.equals(obj);
     }
 
-    @Override // z4.a
+    @Override // a5.a
     public final void h(int i10) {
     }
 }

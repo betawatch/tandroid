@@ -1,0 +1,151 @@
+package fi;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.ds;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final class ta extends e6 {
+    public boolean o2;
+    public final /* synthetic */ sb p2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ta(sb sbVar, Context context, boolean z10, File file, boolean z11, boolean z12, rb rbVar, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, w7 w7Var, int i12, int i13, MediaController.CropState cropState, org.telegram.ui.Components.la laVar, di.b bVar, n6 n6Var, gb gbVar) {
+        super(context, z10, file, z11, z12, rbVar, activity, i10, bitmap, bitmap2, i11, arrayList, w7Var, i12, i13, cropState, laVar, bVar, n6Var, gbVar);
+        this.p2 = sbVar;
+    }
+
+    @Override // sg.h
+    public final void A(boolean z10) {
+        sb sbVar = this.p2;
+        sbVar.o1.a(true, z10, sbVar.i0);
+    }
+
+    @Override // sg.h
+    public final void B() {
+        sb sbVar = this.p2;
+        sbVar.v1.L0(false);
+        sbVar.c1.clearAnimation();
+        ViewPropertyAnimator duration = sbVar.c1.animate().alpha(0.0f).setDuration(180L);
+        ds dsVar = ds.g;
+        duration.setInterpolator(dsVar).start();
+        if (sbVar.g0 != 2) {
+            sbVar.Y0.clearAnimation();
+            sbVar.Y0.animate().alpha(0.0f).setDuration(180L).setInterpolator(dsVar).start();
+        }
+        S0(q(), false);
+    }
+
+    public final void S0(boolean z10, boolean z11) {
+        sb sbVar = this.p2;
+        if (!z10) {
+            sbVar.p1.a(false, z11);
+            sbVar.p1.clearAnimation();
+            sbVar.p1.animate().alpha(0.0f).withEndAction(new di.s8(this, 29)).setDuration(180L).setInterpolator(ds.g).setStartDelay(z11 ? 500L : 0L).start();
+        } else {
+            sbVar.p1.setVisibility(0);
+            sbVar.p1.setAlpha(0.0f);
+            sbVar.p1.clearAnimation();
+            sbVar.p1.animate().alpha(1.0f).setDuration(180L).setInterpolator(ds.g).start();
+        }
+    }
+
+    @Override // sg.h
+    public final void e(boolean z10) {
+        sb sbVar = this.p2;
+        sbVar.o1.b(sbVar.c1.getText());
+        sbVar.o1.a(false, z10 && this.o2, null);
+    }
+
+    @Override // sg.h
+    public final void f(boolean z10) {
+        sg.j jVar;
+        if (!q()) {
+            z10 = false;
+        }
+        sb sbVar = this.p2;
+        sbVar.c1.clearAnimation();
+        ViewPropertyAnimator duration = sbVar.c1.animate().alpha(sbVar.g0 == -1 ? 1.0f : 0.0f).setDuration(180L);
+        ds dsVar = ds.g;
+        duration.setInterpolator(dsVar).start();
+        sbVar.Y0.clearAnimation();
+        ViewPropertyAnimator animate = sbVar.Y0.animate();
+        int i10 = sbVar.g0;
+        animate.alpha((i10 == -1 || i10 == 2) ? 1.0f : 0.0f).setDuration(180L).setInterpolator(dsVar).start();
+        S0(false, z10);
+        if (z10 && (jVar = this.y0) != null) {
+            z0(jVar);
+        }
+        Q0();
+        this.a2 = true;
+        this.o2 = false;
+    }
+
+    @Override // sg.h
+    public final void g() {
+        this.o2 = false;
+        S0(q(), false);
+        this.p2.o1.a(false, false, null);
+    }
+
+    @Override // sg.h
+    public final void h() {
+        this.o2 = true;
+        this.p2.v1.L0(false);
+        S0(false, false);
+    }
+
+    @Override // sg.h
+    public final void l(boolean z10) {
+        this.p2.p1.a(z10, false);
+    }
+
+    @Override // fi.e6
+    public final void o0() {
+        sb sbVar = this.p2;
+        sbVar.c1.f.d();
+        sbVar.k0(0, false, true);
+        sg.j jVar = this.y0;
+        if (!(jVar instanceof sg.x2) || this.z0) {
+            return;
+        }
+        sg.x2 x2Var = (sg.x2) jVar;
+        this.z0 = true;
+        x2Var.q();
+        View focusedView = x2Var.getFocusedView();
+        focusedView.requestFocus();
+        AndroidUtilities.showKeyboard(focusedView);
+    }
+
+    @Override // fi.e6
+    public final void w0(boolean z10) {
+        sb sbVar = this.p2;
+        gb gbVar = sbVar.X0;
+        if (gbVar != null) {
+            gbVar.x(6, z10);
+            f6 f6Var = sbVar.j1;
+            if (f6Var != null) {
+                ((dh0) f6Var.c).a(sbVar.X0.k(), true);
+            }
+        }
+        ib ibVar = sbVar.c1;
+        if (ibVar != null) {
+            ibVar.e0 = z10;
+            ibVar.L.b(z10);
+        }
+    }
+
+    @Override // sg.h
+    public final void x() {
+        this.p2.v1.L0(false);
+    }
+}

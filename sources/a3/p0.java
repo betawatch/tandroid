@@ -3,22 +3,20 @@ package a3;
 import android.view.Surface;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface p0 {
-    void a(float f7);
+    void b(float f7);
 
-    boolean b();
+    boolean c();
 
-    Surface c();
+    Surface d();
 
-    boolean d(b2.w wVar);
-
-    void e();
+    boolean e(b2.x xVar);
 
     void f();
 
-    void g(a6.i iVar);
+    void g();
 
     void h(long j10);
 
@@ -28,29 +26,31 @@ public interface p0 {
 
     void k();
 
-    void l(b2.w wVar, long j10, int i10, List list);
+    void l(b2.x xVar, long j10, int i10, List list);
 
-    void m(boolean z10);
+    void m(b6.i iVar);
 
-    boolean n(long j10, j jVar);
+    void n(boolean z10);
 
-    void o(List list);
+    boolean o(long j10, j jVar);
 
-    void p(long j10, long j11);
+    void p(List list);
 
-    void q(boolean z10);
+    void q(long j10, long j11);
 
-    boolean r(boolean z10);
+    void r(boolean z10);
 
     void release();
 
-    void s(Surface surface, e2.y yVar);
+    boolean s(boolean z10);
 
-    void t();
+    void t(Surface surface, e2.y yVar);
 
-    void u(y yVar);
+    void u();
 
-    boolean v();
+    void v(y yVar);
 
-    void w();
+    boolean w();
+
+    void x();
 }

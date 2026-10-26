@@ -1,24 +1,14 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.TextPaint;
+import org.telegram.ui.Components.p10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class p3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ r3 a;
-
-    public p3(r3 r3Var) {
-        this.a = r3Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        r3 r3Var = this.a;
-        if (r3Var.r) {
-            r3Var.d.setVisibility(4);
-        } else {
-            r3Var.e.setVisibility(4);
-        }
+public final class p3 extends p10 {
+    @Override // org.telegram.ui.Components.p10, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
     }
 }

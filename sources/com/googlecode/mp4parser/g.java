@@ -1,8 +1,6 @@
 package com.googlecode.mp4parser;
 
-import com.google.firebase.messaging.r;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
     public static final /* synthetic */ Throwable a;
@@ -30,13 +28,13 @@ public final class g {
             stringBuffer2.append(th2);
             stringBuffer = stringBuffer2.toString();
         }
-        se.a aVar = new se.a(stringBuffer);
+        te.a aVar = new te.a(stringBuffer);
         aVar.a = th2;
         throw aVar;
     }
 
-    public static void b(r rVar) {
-        Object obj = rVar.c;
+    public static void b(ti.e eVar) {
+        Object obj = eVar.c;
         if (obj instanceof a) {
             if (((a) obj).isParsed()) {
                 return;

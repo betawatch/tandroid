@@ -1,33 +1,22 @@
 package m4;
 
-import android.os.Bundle;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class q {
-    public static final String a;
-    public static final String b;
-    public static final String c;
-    public static final String d;
-
-    static {
-        String str = e2.m0.a;
-        a = Integer.toString(0, 36);
-        b = Integer.toString(1, 36);
-        c = Integer.toString(2, 36);
-        d = Integer.toString(3, 36);
-    }
-
-    public static q a(Bundle bundle) {
-        Bundle o10 = e2.m0.o(bundle.getBundle(a));
-        bundle.getBoolean(b, false);
-        bundle.getBoolean(c, false);
-        bundle.getBoolean(d, false);
-        if (o10 == null) {
-            o10 = Bundle.EMPTY;
+public abstract class q extends Binder implements m {
+    public static m F0(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        q qVar = new q();
-        new Bundle(o10);
-        return qVar;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("androidx.media3.session.IMediaController");
+        if (queryLocalInterface != null && (queryLocalInterface instanceof m)) {
+            return (m) queryLocalInterface;
+        }
+        l lVar = new l();
+        lVar.a = iBinder;
+        return lVar;
     }
 }

@@ -2,33 +2,33 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class MessageSuggestionParams {
-    public final ag.a amount;
+    public final bg.a amount;
     public final long time;
 
-    private MessageSuggestionParams(ag.a aVar, long j10) {
+    private MessageSuggestionParams(bg.a aVar, long j10) {
         this.amount = aVar;
         this.time = j10;
     }
 
     public static MessageSuggestionParams empty() {
-        return new MessageSuggestionParams(ag.a.g(0L, ag.b.a), 0L);
+        return new MessageSuggestionParams(bg.a.g(0L, bg.b.a), 0L);
     }
 
     public static MessageSuggestionParams of(TLRPC.SuggestedPost suggestedPost) {
-        return suggestedPost == null ? empty() : new MessageSuggestionParams(ag.a.l(suggestedPost.price), suggestedPost.schedule_date);
+        return suggestedPost == null ? empty() : new MessageSuggestionParams(bg.a.l(suggestedPost.price), suggestedPost.schedule_date);
     }
 
     public boolean isEmpty() {
-        ag.a aVar = this.amount;
+        bg.a aVar = this.amount;
         return (aVar == null || aVar.k()) && this.time <= 0;
     }
 
     public TLRPC.SuggestedPost toTl() {
         TLRPC.SuggestedPost suggestedPost = new TLRPC.SuggestedPost();
-        ag.a aVar = this.amount;
+        bg.a aVar = this.amount;
         if (aVar != null && !aVar.k()) {
             suggestedPost.price = this.amount.o();
         }
@@ -41,10 +41,10 @@ public class MessageSuggestionParams {
     }
 
     public static MessageSuggestionParams of(TLRPC.TL_messageActionSuggestedPostApproval tL_messageActionSuggestedPostApproval) {
-        return of(ag.a.l(tL_messageActionSuggestedPostApproval.price), tL_messageActionSuggestedPostApproval.schedule_date);
+        return of(bg.a.l(tL_messageActionSuggestedPostApproval.price), tL_messageActionSuggestedPostApproval.schedule_date);
     }
 
-    public static MessageSuggestionParams of(ag.a aVar, long j10) {
+    public static MessageSuggestionParams of(bg.a aVar, long j10) {
         return new MessageSuggestionParams(aVar, j10);
     }
 }

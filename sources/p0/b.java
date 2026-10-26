@@ -1,9 +1,9 @@
 package p0;
 
 import android.text.SpannableStringBuilder;
-import b2.t;
+import b2.u;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String b;
@@ -13,7 +13,7 @@ public final class b {
     public final boolean a;
 
     static {
-        t tVar = f.c;
+        u uVar = f.c;
         b = Character.toString((char) 8206);
         c = Character.toString((char) 8207);
         d = new b(false);
@@ -21,7 +21,7 @@ public final class b {
     }
 
     public b(boolean z10) {
-        t tVar = f.a;
+        u uVar = f.a;
         this.a = z10;
     }
 
@@ -197,11 +197,11 @@ public final class b {
     }
 
     public final SpannableStringBuilder c(CharSequence charSequence) {
-        t tVar = f.c;
+        u uVar = f.c;
         if (charSequence == null) {
             return null;
         }
-        boolean h = tVar.h(charSequence.length(), charSequence);
+        boolean h = uVar.h(charSequence.length(), charSequence);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         boolean h10 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
         String str = "";

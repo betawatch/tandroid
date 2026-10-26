@@ -1,29 +1,38 @@
 package sc;
 
-import java.util.ArrayList;
+import java.nio.ByteBuffer;
+import java.nio.channels.ByteChannel;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public ArrayList f;
-    public ArrayList g;
-    public boolean h;
-    public int i;
-    public int j;
-    public int k;
-    public ArrayList l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
+public final class b implements ByteChannel {
+    public ByteBuffer a;
 
-    public final String toString() {
-        return "AvcDecoderConfigurationRecord{configurationVersion=" + this.a + ", avcProfileIndication=" + this.b + ", profileCompatibility=" + this.c + ", avcLevelIndication=" + this.d + ", lengthSizeMinusOne=" + this.e + ", hasExts=" + this.h + ", chromaFormat=" + this.i + ", bitDepthLumaMinus8=" + this.j + ", bitDepthChromaMinus8=" + this.k + ", lengthSizeMinusOnePaddingBits=" + this.m + ", numberOfSequenceParameterSetsPaddingBits=" + this.n + ", chromaFormatPaddingBits=" + this.o + ", bitDepthLumaMinus8PaddingBits=" + this.p + ", bitDepthChromaMinus8PaddingBits=" + this.q + '}';
+    @Override // java.nio.channels.Channel
+    public final boolean isOpen() {
+        return true;
+    }
+
+    @Override // java.nio.channels.ReadableByteChannel
+    public final int read(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        ByteBuffer byteBuffer2 = this.a;
+        if (byteBuffer2.remaining() <= 0) {
+            return -1;
+        }
+        byteBuffer.put((ByteBuffer) byteBuffer2.duplicate().limit(byteBuffer.remaining() + byteBuffer2.position()));
+        byteBuffer2.position(byteBuffer2.position() + remaining);
+        return remaining;
+    }
+
+    @Override // java.nio.channels.WritableByteChannel
+    public final int write(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        this.a.put(byteBuffer);
+        return remaining;
+    }
+
+    @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
     }
 }

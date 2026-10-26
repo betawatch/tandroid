@@ -1,0 +1,130 @@
+package o7;
+
+import j$.util.SortedSet;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.NavigableSet;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public abstract class s extends o implements NavigableSet, c0, SortedSet {
+    public final transient Comparator d;
+    public transient s e;
+
+    public s(Comparator comparator) {
+        this.d = comparator;
+    }
+
+    public static z w(Comparator comparator) {
+        if (v.b.equals(comparator)) {
+            return z.h;
+        }
+        i iVar = m.b;
+        return new z(x.e, comparator);
+    }
+
+    public final void addFirst(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    public final void addLast(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.SortedSet
+    public final Comparator comparator() {
+        return this.d;
+    }
+
+    @Override // java.util.SortedSet
+    public abstract Object first();
+
+    public final Object getFirst() {
+        return first();
+    }
+
+    public final Object getLast() {
+        return last();
+    }
+
+    @Override // java.util.NavigableSet, java.util.SortedSet
+    public final java.util.SortedSet headSet(Object obj) {
+        obj.getClass();
+        z zVar = (z) this;
+        return zVar.z(0, zVar.x(obj, false));
+    }
+
+    @Override // java.util.SortedSet
+    public abstract Object last();
+
+    @Override // java.util.NavigableSet
+    public final Object pollFirst() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object pollLast() {
+        throw new UnsupportedOperationException();
+    }
+
+    public final Object removeFirst() {
+        throw new UnsupportedOperationException();
+    }
+
+    public final Object removeLast() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.NavigableSet, java.util.SortedSet
+    public final /* bridge */ /* synthetic */ java.util.SortedSet subSet(Object obj, Object obj2) {
+        return subSet(obj, true, obj2, false);
+    }
+
+    @Override // java.util.NavigableSet, java.util.SortedSet
+    public final java.util.SortedSet tailSet(Object obj) {
+        obj.getClass();
+        z zVar = (z) this;
+        return zVar.z(zVar.y(obj, true), zVar.f.size());
+    }
+
+    @Override // java.util.NavigableSet
+    /* renamed from: u, reason: merged with bridge method [inline-methods] */
+    public final s descendingSet() {
+        s sVar = this.e;
+        if (sVar == null) {
+            z zVar = (z) this;
+            Comparator reverseOrder = Collections.reverseOrder(zVar.d);
+            sVar = zVar.isEmpty() ? w(reverseOrder) : new z(zVar.f.q(), reverseOrder);
+            this.e = sVar;
+            sVar.e = this;
+        }
+        return sVar;
+    }
+
+    @Override // java.util.NavigableSet
+    /* renamed from: v, reason: merged with bridge method [inline-methods] */
+    public final z subSet(Object obj, boolean z10, Object obj2, boolean z11) {
+        obj.getClass();
+        obj2.getClass();
+        if (this.d.compare(obj, obj2) > 0) {
+            throw new IllegalArgumentException();
+        }
+        z zVar = (z) this;
+        z z12 = zVar.z(zVar.y(obj, z10), zVar.f.size());
+        return z12.z(0, z12.x(obj2, z11));
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet headSet(Object obj, boolean z10) {
+        obj.getClass();
+        z zVar = (z) this;
+        return zVar.z(0, zVar.x(obj, z10));
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet tailSet(Object obj, boolean z10) {
+        obj.getClass();
+        z zVar = (z) this;
+        return zVar.z(zVar.y(obj, z10), zVar.f.size());
+    }
+}

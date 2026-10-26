@@ -1,96 +1,139 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.lh0;
+import org.telegram.ui.Components.nh0;
+import org.telegram.ui.Components.y71;
+import org.telegram.ui.rb0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class v1 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final TextView a;
-    public final ImageView b;
-    public final FrameLayout c;
-    public final org.telegram.ui.ActionBar.g6 d;
-    public int e;
+public final class v1 extends org.telegram.ui.Components.s6 {
+    public final /* synthetic */ int s;
+    public Object v;
 
-    public v1(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.d = g6Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.c = frameLayout;
-        frameLayout.setBackgroundResource(R.drawable.newmsg_divider);
-        Drawable background = frameLayout.getBackground();
-        int i10 = org.telegram.ui.ActionBar.k6.Fe;
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        org.telegram.ui.ActionBar.r6.z(frameLayout, background, i10, g6Var, mode);
-        addView(frameLayout, w7.z5.d(-1, 27.0f, 51, 0.0f, 7.0f, 0.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setImageResource(R.drawable.ic_ab_new);
-        int i11 = org.telegram.ui.ActionBar.k6.De;
-        Integer valueOf = g6Var != null ? Integer.valueOf(g6Var.g(i11)) : null;
-        imageView.setColorFilter(new PorterDuffColorFilter(valueOf != null ? valueOf.intValue() : org.telegram.ui.ActionBar.k6.x0(null, i11, false), mode));
-        imageView.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
-        frameLayout.addView(imageView, w7.z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setPadding(0, 0, 0, AndroidUtilities.dp(1.0f));
-        textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.Ee, g6Var);
-        textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, w7.z5.d(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v1(Context context, boolean z10, boolean z11, boolean z12) {
+        super(context, z10, z11, z12);
+        this.s = 3;
     }
 
-    public FrameLayout getBackgroundLayout() {
-        return this.c;
-    }
-
-    public ImageView getImageView() {
-        return this.b;
-    }
-
-    public TextView getTextView() {
-        return this.a;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
-    }
-
-    public void setText(String str) {
-        this.a.setText(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        try {
-            int i10 = org.telegram.ui.ActionBar.k6.De;
-            org.telegram.ui.ActionBar.g6 g6Var = this.d;
-            Integer valueOf = g6Var != null ? Integer.valueOf(g6Var.g(i10)) : null;
-            int intValue = valueOf != null ? valueOf.intValue() : org.telegram.ui.ActionBar.k6.x0(null, i10, false);
-            ImageView imageView = this.b;
-            if (imageView != null && intValue != this.e) {
-                this.e = intValue;
-                imageView.setColorFilter(new PorterDuffColorFilter(intValue, PorterDuff.Mode.MULTIPLY));
-            }
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.s) {
+            case 1:
+                super.invalidate();
+                lh0 lh0Var = (lh0) this.v;
+                nh0 nh0Var = lh0Var.d;
+                if (lh0Var == nh0Var.b.getPinnedHeader()) {
+                    nh0Var.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.s6, android.view.View
+    public void onDraw(Canvas canvas) {
+        int o12;
+        switch (this.s) {
+            case 0:
+                super.onDraw(canvas);
+                ((y1) this.v).f();
+                break;
+            case 1:
+            default:
+                super.onDraw(canvas);
+                break;
+            case 2:
+                canvas.save();
+                canvas.translate(AndroidUtilities.dp(15.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(11.0f));
+                ((y71) this.v).b.draw(canvas);
+                canvas.restore();
+                break;
+            case 3:
+                ShapeDrawable shapeDrawable = (ShapeDrawable) this.v;
+                if (shapeDrawable != null && shapeDrawable.getPaint().getColor() != (o12 = org.telegram.ui.ActionBar.y6.o1(0.15f, org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.L6, false)))) {
+                    shapeDrawable.getPaint().setColor(o12);
+                }
+                shapeDrawable.setBounds(0, 0, (int) (getDrawable().c() + getPaddingLeft() + getPaddingRight()), getMeasuredHeight());
+                shapeDrawable.draw(canvas);
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.s6, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.s) {
+            case 4:
+                rb0 rb0Var = (rb0) this.v;
+                int size = View.MeasureSpec.getSize(i10);
+                if (size <= 0) {
+                    size = AndroidUtilities.displaySize.x - AndroidUtilities.dp(20.0f);
+                }
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - rb0Var.d.getPaint().measureText(rb0Var.d.getText().toString())) - rb0Var.f.getPaint().measureText(rb0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean post(Runnable runnable) {
+        ViewGroup viewGroup;
+        switch (this.s) {
+            case 1:
+                viewGroup = ((org.telegram.ui.ActionBar.k3) ((lh0) this.v).d).containerView;
+                return viewGroup.post(runnable);
+            default:
+                return super.post(runnable);
+        }
+    }
+
+    @Override // android.view.View
+    public boolean postDelayed(Runnable runnable, long j10) {
+        ViewGroup viewGroup;
+        switch (this.s) {
+            case 1:
+                viewGroup = ((org.telegram.ui.ActionBar.k3) ((lh0) this.v).d).containerView;
+                return viewGroup.postDelayed(runnable, j10);
+            default:
+                return super.postDelayed(runnable, j10);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v1(FrameLayout frameLayout, Context context, int i10) {
+        super(context, false, false, false);
+        this.s = i10;
+        this.v = frameLayout;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v1(y71 y71Var, Context context) {
+        super(context, true, true, true);
+        this.s = 2;
+        this.v = y71Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v1(rb0 rb0Var, Context context) {
+        super(context, false, true, true);
+        this.s = 4;
+        this.v = rb0Var;
     }
 }

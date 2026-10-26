@@ -1,65 +1,9 @@
 package i7;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import com.google.android.gms.common.api.k;
-import com.google.android.gms.common.api.l;
-import m.s3;
-import mi.q;
+import com.google.android.gms.common.api.j;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g extends n6.g {
-    public final w5.b U;
-
-    public g(Context context, Looper looper, s3 s3Var, w5.b bVar, k kVar, l lVar) {
-        super(context, looper, 68, s3Var, kVar, lVar, 0);
-        bVar = bVar == null ? w5.b.c : bVar;
-        q qVar = new q(24, (byte) 0);
-        qVar.b = Boolean.FALSE;
-        w5.b bVar2 = w5.b.c;
-        bVar.getClass();
-        qVar.b = Boolean.valueOf(bVar.a);
-        qVar.c = bVar.b;
-        qVar.c = e.a();
-        this.U = new w5.b(qVar);
-    }
-
-    @Override // n6.g, com.google.android.gms.common.api.c
-    public final int l() {
-        return 12800000;
-    }
-
-    @Override // n6.g
-    public final IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.credentials.internal.ICredentialsService");
-        return queryLocalInterface instanceof h ? (h) queryLocalInterface : new h(iBinder, "com.google.android.gms.auth.api.credentials.internal.ICredentialsService", 5);
-    }
-
-    @Override // n6.g
-    public final Bundle t() {
-        w5.b bVar = this.U;
-        bVar.getClass();
-        Bundle bundle = new Bundle();
-        bundle.putString("consumer_package", null);
-        bundle.putBoolean("force_save_dialog", bVar.a);
-        bundle.putString("log_session_id", bVar.b);
-        return bundle;
-    }
-
-    @Override // n6.g
-    public final String v() {
-        return "com.google.android.gms.auth.api.credentials.internal.ICredentialsService";
-    }
-
-    @Override // n6.g
-    public final String w() {
-        return "com.google.android.gms.auth.api.credentials.service.START";
-    }
+public final class g extends j {
+    public static final com.google.android.gms.common.api.e k = new com.google.android.gms.common.api.e("IdentityCredentials.API", new b8.d(4), new com.google.android.gms.common.api.d());
 }

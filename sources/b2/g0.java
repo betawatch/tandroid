@@ -1,72 +1,22 @@
 package b2;
 
 import android.net.Uri;
-import j$.util.Objects;
-import java.util.Arrays;
 import java.util.UUID;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g0 {
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public static final String p;
-    public final UUID a;
-    public final Uri b;
-    public final e9.q0 c;
-    public final boolean d;
-    public final boolean e;
-    public final boolean f;
-    public final e9.n0 g;
-    public final byte[] h;
+    public UUID a;
+    public Uri b;
+    public boolean d;
+    public boolean f;
+    public f9.i0 g;
+    public byte[] h;
+    public f9.l0 c = f9.x1.h;
+    public boolean e = true;
 
-    static {
-        String str = e2.m0.a;
-        i = Integer.toString(0, 36);
-        j = Integer.toString(1, 36);
-        k = Integer.toString(2, 36);
-        l = Integer.toString(3, 36);
-        m = Integer.toString(4, 36);
-        n = Integer.toString(5, 36);
-        o = Integer.toString(6, 36);
-        p = Integer.toString(7, 36);
-    }
-
-    public g0(f0 f0Var) {
-        u6.p((f0Var.f && f0Var.b == null) ? false : true);
-        UUID uuid = f0Var.a;
-        uuid.getClass();
-        this.a = uuid;
-        this.b = f0Var.b;
-        this.c = f0Var.c;
-        this.d = f0Var.d;
-        this.f = f0Var.f;
-        this.e = f0Var.e;
-        this.g = f0Var.g;
-        byte[] bArr = f0Var.h;
-        this.h = bArr != null ? Arrays.copyOf(bArr, bArr.length) : null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof g0)) {
-            return false;
-        }
-        g0 g0Var = (g0) obj;
-        return this.a.equals(g0Var.a) && Objects.equals(this.b, g0Var.b) && Objects.equals(this.c, g0Var.c) && this.d == g0Var.d && this.f == g0Var.f && this.e == g0Var.e && this.g.equals(g0Var.g) && Arrays.equals(this.h, g0Var.h);
-    }
-
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        Uri uri = this.b;
-        return Arrays.hashCode(this.h) + ((this.g.hashCode() + ((((((((this.c.hashCode() + ((hashCode + (uri != null ? uri.hashCode() : 0)) * 31)) * 31) + (this.d ? 1 : 0)) * 31) + (this.f ? 1 : 0)) * 31) + (this.e ? 1 : 0)) * 31)) * 31);
+    public g0() {
+        f9.g0 g0Var = f9.i0.b;
+        this.g = f9.s1.e;
     }
 }

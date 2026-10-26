@@ -1,52 +1,70 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jn implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kn b;
+public final class jn extends TextView implements org.telegram.ui.ActionBar.p6 {
+    public final org.telegram.ui.Cells.y a;
+    public int b;
+    public boolean c;
+    public final /* synthetic */ un d;
 
-    public /* synthetic */ jn(kn knVar, int i10) {
-        this.a = i10;
-        this.b = knVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jn(un unVar, Activity activity) {
+        super(activity);
+        this.d = unVar;
+        setSingleLine(true);
+        setLines(1);
+        setMaxLines(1);
+        setEllipsize(TextUtils.TruncateAt.END);
+        org.telegram.ui.ActionBar.f7.V(this, org.telegram.ui.ActionBar.y6.Sh, unVar.getResourceProvider());
+        int themedColor = unVar.getThemedColor(org.telegram.ui.ActionBar.y6.Oh);
+        this.b = themedColor;
+        org.telegram.ui.Cells.y e = org.telegram.ui.ActionBar.o6.e(new float[]{16.0f}, themedColor);
+        this.a = e;
+        setBackground(e);
+        setTextSize(1, 14.0f);
+        setTypeface(AndroidUtilities.bold());
+        setGravity(17);
+        setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kn knVar = this.b;
-                knVar.r = floatValue;
-                View view = knVar.s.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kn knVar2 = this.b;
-                knVar2.r = floatValue2;
-                View view2 = knVar2.s.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kn knVar3 = this.b;
-                knVar3.r = floatValue3;
-                View view3 = knVar3.s.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), (int) (AndroidUtilities.displaySize.x * 0.45f)), TLObject.FLAG_31), i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        try {
+            int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.y6.Oh);
+            if (themedColor == this.b && this.c == org.telegram.ui.ActionBar.y6.I.q()) {
+                return;
+            }
+            Drawable background = getBackground();
+            org.telegram.ui.Cells.y yVar = this.a;
+            if (background == yVar) {
+                this.c = org.telegram.ui.ActionBar.y6.I.q();
+                org.telegram.ui.ActionBar.y6.E1(yVar, themedColor, false);
+                org.telegram.ui.ActionBar.y6.E1(yVar, org.telegram.ui.ActionBar.o6.b(themedColor), true);
+                this.b = themedColor;
+                invalidate();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,15 +1,50 @@
 package s4;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class i1 {
-    public static final c5.c0 d = new c5.c0(20, 9);
     public int a;
-    public b2.u0 b;
-    public b2.u0 c;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
 
-    public static i1 a() {
-        i1 i1Var = (i1) d.b();
-        return i1Var == null ? new i1() : i1Var;
+    public final boolean a() {
+        int i10 = this.a;
+        int i11 = 2;
+        if ((i10 & 7) != 0) {
+            int i12 = this.d;
+            int i13 = this.b;
+            if (((i12 > i13 ? 1 : i12 == i13 ? 2 : 4) & i10) == 0) {
+                return false;
+            }
+        }
+        if ((i10 & 112) != 0) {
+            int i14 = this.d;
+            int i15 = this.c;
+            if ((((i14 > i15 ? 1 : i14 == i15 ? 2 : 4) << 4) & i10) == 0) {
+                return false;
+            }
+        }
+        if ((i10 & 1792) != 0) {
+            int i16 = this.e;
+            int i17 = this.b;
+            if ((((i16 > i17 ? 1 : i16 == i17 ? 2 : 4) << 8) & i10) == 0) {
+                return false;
+            }
+        }
+        if ((i10 & 28672) != 0) {
+            int i18 = this.e;
+            int i19 = this.c;
+            if (i18 > i19) {
+                i11 = 1;
+            } else if (i18 != i19) {
+                i11 = 4;
+            }
+            if ((i10 & (i11 << 12)) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

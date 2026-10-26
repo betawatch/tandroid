@@ -1,100 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ContactsController;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qs extends hg.e {
-    public final /* synthetic */ ContactsActivity L;
+public final class qs implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qs(ContactsActivity contactsActivity, Context context, int i10, boolean z10, a0.h hVar, int i11) {
-        super(context, i10, z10, hVar, i11);
-        this.L = contactsActivity;
+    public qs(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
-    @Override // org.telegram.ui.Components.im0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int R() {
-        int size;
-        boolean z10;
-        boolean z11 = false;
-        this.I = false;
-        int i10 = this.F;
-        int i11 = this.r;
-        int i12 = this.v;
-        int i13 = 1;
-        if (i10 != 2) {
-            size = (i12 == 2 ? ContactsController.getInstance(i11).sortedUsersMutualSectionsArray : ContactsController.getInstance(i11).sortedUsersSectionsArray).size();
-            if (size == 0) {
-                this.I = true;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        try {
+            String obj = editable.toString();
+            if (obj.isEmpty()) {
+                return;
             }
-            if (i12 == 0) {
-                size++;
+            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
+            EditTextBoldCursor editTextBoldCursor = this.a;
+            if (intValue < 0) {
+                editTextBoldCursor.setText("0");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
             }
-            z10 = this.E;
-            if (z10) {
-                size++;
+            if (intValue > 300) {
+                editTextBoldCursor.setText("300");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
             }
-            boolean isEmpty = ContactsController.getInstance(i11).phoneBookContacts.isEmpty();
-            this.J = !isEmpty;
-            if (this.I && this.w && !z10 && i12 == 0) {
-                z11 = true;
+            if (obj.equals("" + intValue)) {
+                return;
             }
-            this.K = z11;
-            if (z11) {
-                i13 = size;
-            } else if (!isEmpty) {
-                i13 = 2;
-            }
-            ContactsActivity contactsActivity = this.L;
-            ContactsActivity.d0(contactsActivity);
-            contactsActivity.m0();
-            contactsActivity.l0();
-            return i13;
+            editTextBoldCursor.setText("" + intValue);
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        this.I = this.y.isEmpty();
-        size = 1;
-        if (i12 == 0) {
-        }
-        z10 = this.E;
-        if (z10) {
-        }
-        boolean isEmpty2 = ContactsController.getInstance(i11).phoneBookContacts.isEmpty();
-        this.J = !isEmpty2;
-        if (this.I) {
-            z11 = true;
-        }
-        this.K = z11;
-        if (z11) {
-        }
-        ContactsActivity contactsActivity2 = this.L;
-        ContactsActivity.d0(contactsActivity2);
-        contactsActivity2.m0();
-        contactsActivity2.l0();
-        return i13;
     }
 
-    @Override // org.telegram.ui.Components.im0, s4.g0
-    public final void l() {
-        X(false);
-        ContactsActivity contactsActivity = this.L;
-        org.telegram.ui.Components.mm0 mm0Var = contactsActivity.f;
-        if (mm0Var == null || mm0Var.getAdapter() != this) {
-            return;
-        }
-        int h = h();
-        if (contactsActivity.H) {
-            contactsActivity.f.setFastScrollVisible(h != 2);
-        } else {
-            contactsActivity.f.setFastScrollVisible(h != 0);
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

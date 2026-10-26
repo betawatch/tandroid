@@ -1,74 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.RectF;
-import android.view.View;
-import java.util.HashSet;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ss extends View implements org.telegram.ui.ActionBar.b6 {
-    public final ne.b a;
-    public final Paint b;
-    public final RectF c;
-    public final RectF d;
-    public final RectF e;
-    public final zp f;
+public final class ss {
+    public int a;
+    public int b;
+    public q11 c;
+    public int d;
+    public boolean e;
+    public int f;
+    public int g;
 
-    public ss(Context context) {
-        super(context);
-        this.a = new ne.b(this, bs.h, 380L);
-        this.b = new Paint(1);
-        this.c = new RectF();
-        this.d = new RectF();
-        this.e = new RectF();
-        this.f = new zp(this, 6);
-        updateColors();
+    public static ss b(org.telegram.ui.Cells.p2 p2Var, MessagesController.DialogFilter dialogFilter) {
+        ss ssVar = new ss();
+        ssVar.a = dialogFilter.id;
+        ssVar.b = dialogFilter.color;
+        String str = dialogFilter.name;
+        if (str == null) {
+            str = "";
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
+        q11 q11Var = new q11(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
+        q11Var.s(p2Var);
+        ssVar.c = q11Var;
+        ssVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, q11Var.a.getFontMetricsInt(), false), dialogFilter.entities, ssVar.c.a.getFontMetricsInt()));
+        ssVar.c.p(26);
+        int dp = AndroidUtilities.dp(9.32f);
+        q11 q11Var2 = ssVar.c;
+        ssVar.g = dp + ((int) q11Var2.c);
+        q11Var2.j();
+        int[] iArr = org.telegram.ui.ActionBar.y6.r8;
+        int i10 = iArr[dialogFilter.color % iArr.length];
+        ssVar.f = i10;
+        ssVar.e = true;
+        ssVar.d = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
+        return ssVar;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        AndroidUtilities.runOnUIThread(this.f, 3000L);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        AndroidUtilities.cancelRunOnUIThread(this.f);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7 = this.a.e;
-        RectF rectF = this.d;
-        RectF rectF2 = this.c;
-        RectF rectF3 = this.e;
-        AndroidUtilities.lerp(rectF, rectF2, f7, rectF3);
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(15.0f), 0, f7);
-        canvas.drawRoundRect(rectF3, lerp, lerp, this.b);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int paddingTop = getPaddingTop();
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(paddingTop + currentActionBarHeight, TLObject.FLAG_30));
-        this.c.set(0.0f, 0.0f, getMeasuredWidth(), paddingTop);
-        this.d.set(AndroidUtilities.dp(12.0f), ((currentActionBarHeight / 2) + paddingTop) - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(30.0f) + r6);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        this.b.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.hl, false));
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public final void a(Canvas canvas) {
+        if (this.e) {
+            this.d = org.telegram.ui.ActionBar.y6.x0(null, this.f, false);
+        }
+        org.telegram.ui.ActionBar.y6.A0.setColor(org.telegram.ui.ActionBar.y6.o1(org.telegram.ui.ActionBar.y6.I.q() ? 0.2f : 0.1f, this.d));
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, this.g, AndroidUtilities.dp(14.66f));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.y6.A0);
+        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
     }
 }

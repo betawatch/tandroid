@@ -1,48 +1,151 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class r6 extends s6 {
-    @Override // com.google.android.gms.internal.cast.s6
-    public final double a(Object obj, long j10) {
-        return Double.longBitsToDouble(this.a.getLong(obj, j10));
-    }
+public abstract class r6 {
+    public static final b1 a;
 
-    @Override // com.google.android.gms.internal.cast.s6
-    public final float b(Object obj, long j10) {
-        return Float.intBitsToFloat(this.a.getInt(obj, j10));
-    }
-
-    @Override // com.google.android.gms.internal.cast.s6
-    public final void c(Object obj, long j10, boolean z10) {
-        if (t6.g) {
-            t6.c(obj, j10, z10 ? (byte) 1 : (byte) 0);
-        } else {
-            t6.d(obj, j10, z10 ? (byte) 1 : (byte) 0);
+    static {
+        if (p6.e && p6.d) {
+            int i10 = s4.a;
         }
+        a = new b1();
     }
 
-    @Override // com.google.android.gms.internal.cast.s6
-    public final void d(Object obj, long j10, byte b10) {
-        if (t6.g) {
-            t6.c(obj, j10, b10);
-        } else {
-            t6.d(obj, j10, b10);
+    public static /* bridge */ /* synthetic */ int a(byte[] bArr, int i10, int i11) {
+        int i12 = i11 - i10;
+        byte b10 = bArr[i10 - 1];
+        if (i12 == 0) {
+            if (b10 <= -12) {
+                return b10;
+            }
+            return -1;
         }
+        if (i12 == 1) {
+            byte b11 = bArr[i10];
+            if (b10 > -12 || b11 > -65) {
+                return -1;
+            }
+            return (b11 << 8) ^ b10;
+        }
+        if (i12 != 2) {
+            throw new AssertionError();
+        }
+        byte b12 = bArr[i10];
+        byte b13 = bArr[i10 + 1];
+        if (b10 > -12 || b12 > -65 || b13 > -65) {
+            return -1;
+        }
+        return (b13 << 16) ^ ((b12 << 8) ^ b10);
     }
 
-    @Override // com.google.android.gms.internal.cast.s6
-    public final void e(Object obj, long j10, double d) {
-        this.a.putLong(obj, j10, Double.doubleToLongBits(d));
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x001e, code lost:
+    
+        return r10 + r0;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int b(String str, byte[] bArr, int i10, int i11) {
+        int i12;
+        int i13;
+        int i14;
+        char charAt;
+        int length = str.length();
+        int i15 = 0;
+        while (true) {
+            i12 = i10 + i11;
+            if (i15 >= length || (i14 = i15 + i10) >= i12 || (charAt = str.charAt(i15)) >= 128) {
+                break;
+            }
+            bArr[i14] = (byte) charAt;
+            i15++;
+        }
+        int i16 = i10 + i15;
+        while (i15 < length) {
+            char charAt2 = str.charAt(i15);
+            if (charAt2 < 128 && i16 < i12) {
+                bArr[i16] = (byte) charAt2;
+                i16++;
+            } else if (charAt2 < 2048 && i16 <= i12 - 2) {
+                bArr[i16] = (byte) ((charAt2 >>> 6) | 960);
+                bArr[i16 + 1] = (byte) ((charAt2 & '?') | 128);
+                i16 += 2;
+            } else {
+                if ((charAt2 >= 55296 && charAt2 <= 57343) || i16 > i12 - 3) {
+                    if (i16 > i12 - 4) {
+                        if (charAt2 >= 55296 && charAt2 <= 57343 && ((i13 = i15 + 1) == str.length() || !Character.isSurrogatePair(charAt2, str.charAt(i13)))) {
+                            throw new q6(i15, length);
+                        }
+                        throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i16);
+                    }
+                    int i17 = i15 + 1;
+                    if (i17 != str.length()) {
+                        char charAt3 = str.charAt(i17);
+                        if (Character.isSurrogatePair(charAt2, charAt3)) {
+                            int i18 = i16 + 3;
+                            int codePoint = Character.toCodePoint(charAt2, charAt3);
+                            bArr[i16] = (byte) ((codePoint >>> 18) | 240);
+                            bArr[i16 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
+                            bArr[i16 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
+                            i16 += 4;
+                            bArr[i18] = (byte) ((codePoint & 63) | 128);
+                            i15 = i17;
+                        } else {
+                            i15 = i17;
+                        }
+                    }
+                    throw new q6(i15 - 1, length);
+                }
+                bArr[i16] = (byte) ((charAt2 >>> '\f') | 480);
+                bArr[i16 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
+                bArr[i16 + 2] = (byte) ((charAt2 & '?') | 128);
+                i16 += 3;
+            }
+            i15++;
+        }
+        return i16;
     }
 
-    @Override // com.google.android.gms.internal.cast.s6
-    public final void f(Object obj, long j10, float f7) {
-        this.a.putInt(obj, j10, Float.floatToIntBits(f7));
-    }
-
-    @Override // com.google.android.gms.internal.cast.s6
-    public final boolean g(Object obj, long j10) {
-        return t6.g ? t6.m(obj, j10) : t6.n(obj, j10);
+    public static int c(String str) {
+        int length = str.length();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < length && str.charAt(i11) < 128) {
+            i11++;
+        }
+        int i12 = length;
+        while (true) {
+            if (i11 >= length) {
+                break;
+            }
+            char charAt = str.charAt(i11);
+            if (charAt < 2048) {
+                i12 += (127 - charAt) >>> 31;
+                i11++;
+            } else {
+                int length2 = str.length();
+                while (i11 < length2) {
+                    char charAt2 = str.charAt(i11);
+                    if (charAt2 < 2048) {
+                        i10 += (127 - charAt2) >>> 31;
+                    } else {
+                        i10 += 2;
+                        if (charAt2 >= 55296 && charAt2 <= 57343) {
+                            if (Character.codePointAt(str, i11) < 65536) {
+                                throw new q6(i11, length2);
+                            }
+                            i11++;
+                        }
+                    }
+                    i11++;
+                }
+                i12 += i10;
+            }
+        }
+        if (i12 >= length) {
+            return i12;
+        }
+        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + (i12 + 4294967296L));
     }
 }

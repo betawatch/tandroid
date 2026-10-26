@@ -1,98 +1,110 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadioButton;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qa extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.Components.w9 a;
-    public final TextView b;
-    public TLRPC.TL_forumTopic c;
-    public boolean d;
+public final class qa extends lm0 {
+    public final Context c;
+    public final /* synthetic */ ra d;
 
-    public qa(Context context) {
-        super(context);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.a = w9Var;
-        TextView textView = new TextView(context);
-        this.b = textView;
-        org.telegram.messenger.v0.q(textView, org.telegram.ui.ActionBar.k6.G6, null, 1, 16.0f);
-        if (LocaleController.isRTL) {
-            addView(w9Var, w7.z5.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, w7.z5.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
+    public qa(ra raVar, Context context) {
+        this.d = raVar;
+        this.c = context;
+    }
+
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        return false;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        ra raVar = this.d;
+        int size = raVar.l3.size() + raVar.m3.size();
+        raVar.o3 = size;
+        return size;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        int i11;
+        org.telegram.ui.ActionBar.x6 x6Var;
+        TLRPC.TL_theme tL_theme;
+        ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) e1Var.a;
+        ra raVar = this.d;
+        ArrayList arrayList = raVar.m3;
+        if (i10 < arrayList.size()) {
+            i11 = i10;
         } else {
-            addView(w9Var, w7.z5.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, w7.z5.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
+            ArrayList arrayList2 = raVar.l3;
+            int size = i10 - arrayList.size();
+            arrayList = arrayList2;
+            i11 = size;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.d) {
-            int dp = AndroidUtilities.dp(56.0f);
-            if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
-            } else {
-                canvas.drawLine(dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
-            }
-        }
-    }
-
-    public TLRPC.TL_forumTopic getTopic() {
-        return this.c;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setTopic(TLRPC.TL_forumTopic tL_forumTopic) {
-        this.c = tL_forumTopic;
-        boolean isEmpty = TextUtils.isEmpty(tL_forumTopic.searchQuery);
-        TextView textView = this.b;
-        if (isEmpty) {
-            textView.setText(AndroidUtilities.removeDiacritics(tL_forumTopic.title));
-        } else {
-            textView.setText(AndroidUtilities.highlightText(AndroidUtilities.removeDiacritics(tL_forumTopic.title), tL_forumTopic.searchQuery, (org.telegram.ui.ActionBar.g6) null));
-        }
-        org.telegram.ui.Components.w9 w9Var = this.a;
-        og.d.p(w9Var, tL_forumTopic, false, false, null);
-        if (w9Var == null || w9Var.getImageReceiver() == null || !(w9Var.getImageReceiver().getDrawable() instanceof og.c)) {
-            return;
-        }
-        ((og.c) w9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.c9, false));
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        org.telegram.ui.Components.w9 w9Var = this.a;
-        if (w9Var != null) {
-            try {
-                if (w9Var.getImageReceiver() == null || !(w9Var.getImageReceiver().getDrawable() instanceof og.c)) {
-                    return;
+        org.telegram.ui.ActionBar.x6 x6Var2 = (org.telegram.ui.ActionBar.x6) arrayList.get(i11);
+        boolean z10 = i10 == h() - 1;
+        boolean z11 = i10 == 0;
+        HashMap hashMap = themesHorizontalListCell$InnerThemeView.a0.h3;
+        themesHorizontalListCell$InnerThemeView.b = x6Var2;
+        themesHorizontalListCell$InnerThemeView.s = z11;
+        themesHorizontalListCell$InnerThemeView.r = z10;
+        themesHorizontalListCell$InnerThemeView.F = x6Var2.Y;
+        RadioButton radioButton = themesHorizontalListCell$InnerThemeView.a;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) radioButton.getLayoutParams();
+        layoutParams.leftMargin = AndroidUtilities.dp(themesHorizontalListCell$InnerThemeView.s ? 49.0f : 27.0f);
+        radioButton.setLayoutParams(layoutParams);
+        themesHorizontalListCell$InnerThemeView.v = 0.0f;
+        org.telegram.ui.ActionBar.x6 x6Var3 = themesHorizontalListCell$InnerThemeView.b;
+        if (x6Var3.b != null && !x6Var3.T) {
+            x6Var3.Q = org.telegram.ui.ActionBar.y6.E0(org.telegram.ui.ActionBar.y6.ra);
+            themesHorizontalListCell$InnerThemeView.b.R = org.telegram.ui.ActionBar.y6.E0(org.telegram.ui.ActionBar.y6.Aa);
+            boolean exists = new File(themesHorizontalListCell$InnerThemeView.b.b).exists();
+            if ((!exists || !themesHorizontalListCell$InnerThemeView.c() || !exists) && (tL_theme = (x6Var = themesHorizontalListCell$InnerThemeView.b).F) != null) {
+                if (tL_theme.document != null) {
+                    x6Var.U = false;
+                    themesHorizontalListCell$InnerThemeView.v = 1.0f;
+                    Drawable mutate = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.msg_theme).mutate();
+                    themesHorizontalListCell$InnerThemeView.T = mutate;
+                    int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.E6, false);
+                    themesHorizontalListCell$InnerThemeView.U = x02;
+                    org.telegram.ui.ActionBar.y6.z1(x02, mutate);
+                    if (!exists) {
+                        String attachFileName = FileLoader.getAttachFileName(themesHorizontalListCell$InnerThemeView.b.F.document);
+                        if (!hashMap.containsKey(attachFileName)) {
+                            hashMap.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
+                            FileLoader fileLoader = FileLoader.getInstance(themesHorizontalListCell$InnerThemeView.b.E);
+                            TLRPC.TL_theme tL_theme2 = themesHorizontalListCell$InnerThemeView.b.F;
+                            fileLoader.loadFile(tL_theme2.document, tL_theme2, 1, 1);
+                        }
+                    }
+                } else {
+                    Drawable mutate2 = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.preview_custom).mutate();
+                    themesHorizontalListCell$InnerThemeView.T = mutate2;
+                    int x03 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.E6, false);
+                    themesHorizontalListCell$InnerThemeView.U = x03;
+                    org.telegram.ui.ActionBar.y6.z1(x03, mutate2);
                 }
-                ((og.c) w9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.c9, false));
-                w9Var.invalidate();
-            } catch (Exception e) {
-                FileLog.e(e);
             }
         }
+        themesHorizontalListCell$InnerThemeView.a();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        return new vl0(new ThemesHorizontalListCell$InnerThemeView(this.d, this.c));
     }
 }

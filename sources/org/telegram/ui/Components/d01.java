@@ -1,37 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class d01 extends ViewGroup.MarginLayoutParams {
-    public f01 a;
-    public f01 b;
+public final class d01 extends h01 {
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d01() {
-        super(-2, -2);
-        f01 f01Var = f01.e;
-        this.a = f01Var;
-        this.b = f01Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = f01Var;
-        this.b = f01Var;
+    @Override // org.telegram.ui.Components.h01
+    public final int a(q01 q01Var, j01 j01Var, gb1 gb1Var, int i10, boolean z10) {
+        return Math.max(0, this.a - gb1Var.F(j01Var, i10));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || d01.class != obj.getClass()) {
-            return false;
-        }
-        d01 d01Var = (d01) obj;
-        return this.b.equals(d01Var.b) && this.a.equals(d01Var.a);
+    @Override // org.telegram.ui.Components.h01
+    public final void b(int i10, int i11) {
+        super.b(i10, i11);
+        this.d = Math.max(this.d, i10 + i11);
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    @Override // org.telegram.ui.Components.h01
+    public final void c() {
+        super.c();
+        this.d = TLObject.FLAG_31;
+    }
+
+    @Override // org.telegram.ui.Components.h01
+    public final int d(boolean z10) {
+        return Math.max(super.d(z10), this.d);
     }
 }

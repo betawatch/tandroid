@@ -1,13 +1,13 @@
 package a3;
 
+import a8.yb;
 import android.view.Surface;
-import b2.a2;
+import b2.b2;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f implements p0 {
     public final a0 a;
@@ -15,7 +15,7 @@ public final class f implements p0 {
     public final g0 c;
     public final ArrayDeque d;
     public Surface e;
-    public b2.w f;
+    public b2.x f;
     public long g;
     public n0 h;
     public Executor i;
@@ -25,9 +25,9 @@ public final class f implements p0 {
         this.a = a0Var;
         this.b = b0Var;
         a0Var.l = g0Var;
-        this.c = new g0(new qf.b(this), a0Var, b0Var);
+        this.c = new g0(new rf.b(this), a0Var, b0Var);
         this.d = new ArrayDeque();
-        this.f = new b2.w(new b2.v());
+        this.f = new b2.x(new b2.w());
         this.g = -9223372036854775807L;
         this.h = n0.g;
         this.i = new b(0);
@@ -35,31 +35,31 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void a(float f7) {
+    public final void b(float f7) {
         this.a.h(f7);
     }
 
     @Override // a3.p0
-    public final boolean b() {
+    public final boolean c() {
         g0 g0Var = this.c;
         long j10 = g0Var.j;
         return j10 != -9223372036854775807L && g0Var.i == j10;
     }
 
     @Override // a3.p0
-    public final Surface c() {
+    public final Surface d() {
         Surface surface = this.e;
         surface.getClass();
         return surface;
     }
 
     @Override // a3.p0
-    public final boolean d(b2.w wVar) {
+    public final boolean e(b2.x xVar) {
         return true;
     }
 
     @Override // a3.p0
-    public final void e() {
+    public final void f() {
         this.b.b();
         a0 a0Var = this.a;
         a0Var.d = false;
@@ -74,15 +74,9 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void f() {
+    public final void g() {
         this.b.b();
         this.a.d();
-    }
-
-    @Override // a3.p0
-    public final void g(a6.i iVar) {
-        this.h = iVar;
-        this.i = j9.r.a;
     }
 
     @Override // a3.p0
@@ -117,23 +111,23 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void l(b2.w wVar, long j10, int i10, List list) {
-        u6.p(list.isEmpty());
-        int i11 = wVar.z;
-        int i12 = wVar.A;
-        b2.w wVar2 = this.f;
-        int i13 = wVar2.z;
+    public final void l(b2.x xVar, long j10, int i10, List list) {
+        yb.p(list.isEmpty());
+        int i11 = xVar.z;
+        int i12 = xVar.A;
+        b2.x xVar2 = this.f;
+        int i13 = xVar2.z;
         g0 g0Var = this.c;
-        if (i11 != i13 || i12 != wVar2.A) {
+        if (i11 != i13 || i12 != xVar2.A) {
             e2.j0 j0Var = g0Var.d;
             long j11 = g0Var.h;
-            j0Var.a(new a2(i11, i12), j11 == -9223372036854775807L ? 0L : j11 + 1);
+            j0Var.a(new b2(i11, i12), j11 == -9223372036854775807L ? 0L : j11 + 1);
         }
-        float f7 = wVar.D;
+        float f7 = xVar.D;
         if (f7 != this.f.D) {
             this.a.f(f7);
         }
-        this.f = wVar;
+        this.f = xVar;
         if (j10 != this.g) {
             if (g0Var.f.c == 0) {
                 g0Var.b.e(i10);
@@ -148,7 +142,13 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void m(boolean z10) {
+    public final void m(b6.i iVar) {
+        this.h = iVar;
+        this.i = k9.r.a;
+    }
+
+    @Override // a3.p0
+    public final void n(boolean z10) {
         if (z10) {
             a0 a0Var = this.a;
             a0Var.b.b();
@@ -170,7 +170,7 @@ public final class f implements p0 {
         g0Var.j = -9223372036854775807L;
         e2.j0 j0Var2 = g0Var.e;
         if (j0Var2.j() > 0) {
-            u6.g(j0Var2.j() > 0);
+            yb.g(j0Var2.j() > 0);
             while (j0Var2.j() > 1) {
                 j0Var2.f();
             }
@@ -179,19 +179,19 @@ public final class f implements p0 {
             g0Var.l = ((Long) f7).longValue();
         }
         if (j0Var.j() > 0) {
-            u6.g(j0Var.j() > 0);
+            yb.g(j0Var.j() > 0);
             while (j0Var.j() > 1) {
                 j0Var.f();
             }
             Object f10 = j0Var.f();
             f10.getClass();
-            j0Var.a((a2) f10, 0L);
+            j0Var.a((b2) f10, 0L);
         }
         this.d.clear();
     }
 
     @Override // a3.p0
-    public final boolean n(long j10, j jVar) {
+    public final boolean o(long j10, j jVar) {
         this.d.add(jVar);
         g0 g0Var = this.c;
         e2.s sVar = g0Var.f;
@@ -224,12 +224,12 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void o(List list) {
+    public final void p(List list) {
         throw new UnsupportedOperationException();
     }
 
     @Override // a3.p0
-    public final void p(long j10, long j11) {
+    public final void q(long j10, long j11) {
         try {
             this.c.a(j10, j11);
         } catch (i2.m e) {
@@ -238,38 +238,38 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void q(boolean z10) {
+    public final void r(boolean z10) {
         this.a.c(z10);
     }
 
     @Override // a3.p0
-    public final boolean r(boolean z10) {
+    public final boolean s(boolean z10) {
         return this.a.b(z10);
     }
 
     @Override // a3.p0
-    public final void s(Surface surface, e2.y yVar) {
+    public final void t(Surface surface, e2.y yVar) {
         this.e = surface;
         this.a.g(surface);
     }
 
     @Override // a3.p0
-    public final void t() {
+    public final void u() {
         throw new UnsupportedOperationException();
     }
 
     @Override // a3.p0
-    public final void u(y yVar) {
+    public final void v(y yVar) {
         this.j = yVar;
     }
 
     @Override // a3.p0
-    public final boolean v() {
+    public final boolean w() {
         return true;
     }
 
     @Override // a3.p0
-    public final void w() {
+    public final void x() {
         a0 a0Var = this.a;
         if (a0Var.e == 0) {
             a0Var.e = 1;

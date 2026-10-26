@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class o implements Runnable {
                     if (BuildVars.DEBUG_VERSION) {
                         FileLog.e(new RuntimeException(TextUtils.join(", ", actionBarLayout.o1)));
                     }
-                    actionBarLayout.V(true, true);
+                    actionBarLayout.W(true, true);
                     break;
                 }
                 break;

@@ -1,24 +1,37 @@
 package sg;
 
-import ai.a5;
 import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.aw;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class h1 extends aw {
-    public final /* synthetic */ m1 W;
+public final class h1 extends View {
+    public final Paint a;
+    public float b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(m1 m1Var, a5 a5Var, Context context, g6 g6Var, ArrayList arrayList) {
-        super(a5Var, context, g6Var, arrayList);
-        this.W = m1Var;
+    public h1(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
-    @Override // org.telegram.ui.Components.aw
-    public final void i0() {
-        this.W.dismiss();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint paint = this.a;
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 0.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -7.0f, this.b)), paint);
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 7.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, 0.0f, this.b)), paint);
+    }
+
+    public void setProgress(float f7) {
+        this.b = f7;
+        invalidate();
     }
 }

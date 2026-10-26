@@ -1,28 +1,28 @@
 package i2;
 
+import a8.yb;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer;
 import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
-import ci.o4;
+import di.p4;
 import java.util.ArrayList;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class k {
     public final Context a;
-    public final k0.b b;
+    public final m5.j b;
     public int c = 0;
 
     public k(Context context) {
         this.a = context;
-        this.b = new k0.b(context);
+        this.b = new m5.j(context, 1);
     }
 
-    public k2.t0 a(Context context) {
-        return new o4(context, 1).a();
+    public k2.u0 a(Context context) {
+        return new p4(context, 1).a();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:(2:22|23)|24|25|26|(2:27|28)|(5:29|30|31|32|33)|(5:35|36|37|38|39)|41|42|87|(0)|90|91|92) */
@@ -32,7 +32,7 @@ public class k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final b[] b(Handler handler, b0 b0Var, b0 b0Var2, b0 b0Var3, b0 b0Var4) {
+    public final b[] b(Handler handler, d0 d0Var, d0 d0Var2, d0 d0Var3, d0 d0Var4) {
         int i10;
         int i11;
         int i12;
@@ -49,15 +49,15 @@ public class k {
         Class<?> cls2 = Long.TYPE;
         Context context = this.a;
         a3.k kVar = new a3.k(context);
-        k0.b bVar = this.b;
-        kVar.c = bVar;
+        m5.j jVar = this.b;
+        kVar.c = jVar;
         kVar.d = 5000L;
         kVar.e = handler;
-        kVar.f = b0Var;
+        kVar.f = d0Var;
         kVar.g = 50;
-        u6.p(!kVar.b);
+        yb.p(!kVar.b);
         Handler handler2 = kVar.e;
-        u6.p((handler2 == null && kVar.f == null) || !(handler2 == null || kVar.f == null));
+        yb.p((handler2 == null && kVar.f == null) || !(handler2 == null || kVar.f == null));
         kVar.b = true;
         arrayList.add(new a3.n(kVar));
         if (i20 == 0) {
@@ -73,7 +73,7 @@ public class k {
                 try {
                     i11 = i21 + 1;
                     try {
-                        arrayList.add(i21, (b) Class.forName("androidx.media3.decoder.vp9.LibvpxVideoRenderer").getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, b0Var, 50));
+                        arrayList.add(i21, (b) Class.forName("androidx.media3.decoder.vp9.LibvpxVideoRenderer").getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, d0Var, 50));
                         e2.a.g("DefaultRenderersFactory", "Loaded LibvpxVideoRenderer.");
                     } catch (ClassNotFoundException unused) {
                         i21 = i11;
@@ -81,72 +81,72 @@ public class k {
                         try {
                             i12 = i11 + 1;
                             try {
-                                arrayList.add(i11, (b) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, b0Var, 50));
+                                arrayList.add(i11, (b) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, d0Var, 50));
                                 e2.a.g("DefaultRenderersFactory", "Loaded Libdav1dVideoRenderer.");
                             } catch (ClassNotFoundException unused2) {
                                 i11 = i12;
                                 i12 = i11;
                                 int i22 = ExperimentalFfmpegVideoRenderer.r0;
-                                arrayList.add(i12, (b) ExperimentalFfmpegVideoRenderer.class.getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, b0Var, 50));
+                                arrayList.add(i12, (b) ExperimentalFfmpegVideoRenderer.class.getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, d0Var, 50));
                                 e2.a.g("DefaultRenderersFactory", "Loaded FfmpegVideoRenderer.");
-                                k2.t0 a2 = a(context);
+                                k2.u0 a2 = a(context);
                                 i13 = this.c;
                                 Context context2 = this.a;
-                                arrayList.add(new k2.x0(context2, bVar, handler, b0Var2, a2));
+                                arrayList.add(new k2.x0(context2, jVar, handler, d0Var2, a2));
                                 if (i13 != 0) {
                                 }
-                                arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+                                arrayList.add(new w2.e(d0Var3, handler.getLooper()));
                                 Looper looper = handler.getLooper();
                                 while (i14 < 4) {
                                 }
                                 arrayList.add(new b3.a());
-                                arrayList.add(new q2.f(new l5.j(context, 1)));
+                                arrayList.add(new q2.f(new l6.h(context, 4)));
                                 return (b[]) arrayList.toArray(new b[0]);
                             }
                         } catch (ClassNotFoundException unused3) {
                         }
                         int i222 = ExperimentalFfmpegVideoRenderer.r0;
-                        arrayList.add(i12, (b) ExperimentalFfmpegVideoRenderer.class.getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, b0Var, 50));
+                        arrayList.add(i12, (b) ExperimentalFfmpegVideoRenderer.class.getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, d0Var, 50));
                         e2.a.g("DefaultRenderersFactory", "Loaded FfmpegVideoRenderer.");
-                        k2.t0 a22 = a(context);
+                        k2.u0 a22 = a(context);
                         i13 = this.c;
                         Context context22 = this.a;
-                        arrayList.add(new k2.x0(context22, bVar, handler, b0Var2, a22));
+                        arrayList.add(new k2.x0(context22, jVar, handler, d0Var2, a22));
                         if (i13 != 0) {
                         }
-                        arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+                        arrayList.add(new w2.e(d0Var3, handler.getLooper()));
                         Looper looper2 = handler.getLooper();
                         while (i14 < 4) {
                         }
                         arrayList.add(new b3.a());
-                        arrayList.add(new q2.f(new l5.j(context, 1)));
+                        arrayList.add(new q2.f(new l6.h(context, 4)));
                         return (b[]) arrayList.toArray(new b[0]);
                     }
                 } catch (ClassNotFoundException unused4) {
                 }
                 try {
                     i12 = i11 + 1;
-                    arrayList.add(i11, (b) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, b0Var, 50));
+                    arrayList.add(i11, (b) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, d0Var, 50));
                     e2.a.g("DefaultRenderersFactory", "Loaded Libdav1dVideoRenderer.");
                     try {
                         int i2222 = ExperimentalFfmpegVideoRenderer.r0;
-                        arrayList.add(i12, (b) ExperimentalFfmpegVideoRenderer.class.getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, b0Var, 50));
+                        arrayList.add(i12, (b) ExperimentalFfmpegVideoRenderer.class.getConstructor(cls2, Handler.class, a3.m0.class, cls).newInstance(5000L, handler, d0Var, 50));
                         e2.a.g("DefaultRenderersFactory", "Loaded FfmpegVideoRenderer.");
                     } catch (ClassNotFoundException unused5) {
                     } catch (Exception e) {
                         throw new IllegalStateException("Error instantiating FFmpeg extension", e);
                     }
-                } catch (Exception e7) {
-                    throw new IllegalStateException("Error instantiating AV1 extension", e7);
+                } catch (Exception e10) {
+                    throw new IllegalStateException("Error instantiating AV1 extension", e10);
                 }
-            } catch (Exception e10) {
-                throw new IllegalStateException("Error instantiating VP9 extension", e10);
+            } catch (Exception e11) {
+                throw new IllegalStateException("Error instantiating VP9 extension", e11);
             }
         }
-        k2.t0 a222 = a(context);
+        k2.u0 a222 = a(context);
         i13 = this.c;
         Context context222 = this.a;
-        arrayList.add(new k2.x0(context222, bVar, handler, b0Var2, a222));
+        arrayList.add(new k2.x0(context222, jVar, handler, d0Var2, a222));
         if (i13 != 0) {
             int size2 = arrayList.size();
             if (i13 == i10) {
@@ -154,7 +154,7 @@ public class k {
             }
             try {
                 try {
-                    Object[] objArr = {context222, handler, b0Var2, a222};
+                    Object[] objArr = {context222, handler, d0Var2, a222};
                     i15 = size2 + 1;
                     try {
                         arrayList.add(size2, (b) Class.forName("androidx.media3.decoder.midi.MidiRenderer").getConstructor(Context.class, Handler.class, k2.v.class, k2.a0.class).newInstance(objArr));
@@ -168,178 +168,178 @@ public class k {
                         }
                         try {
                             try {
-                                arrayList.add(i15, (b) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                arrayList.add(i15, (b) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                 e2.a.g("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
                             } catch (ClassNotFoundException unused8) {
                                 i15 = i16;
                                 i16 = i15;
                                 i17 = i16 + 1;
-                                arrayList.add(i16, (b) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                arrayList.add(i16, (b) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                 e2.a.g("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
                                 try {
                                     i18 = i17 + 1;
-                                    arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                    arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                     e2.a.g("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                                     Class<?> cls3 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
                                     Object newInstance = cls3.getConstructor(k2.a0.class).newInstance(a222);
-                                    cls3.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance, handler, b0Var2);
-                                    b bVar2 = (b) cls3.getMethod("build", null).invoke(newInstance, null);
-                                    bVar2.getClass();
+                                    cls3.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance, handler, d0Var2);
+                                    b bVar = (b) cls3.getMethod("build", null).invoke(newInstance, null);
+                                    bVar.getClass();
                                     i19 = i18 + 1;
-                                    arrayList.add(i18, bVar2);
+                                    arrayList.add(i18, bVar);
                                     e2.a.g("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
-                                    arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                    arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                     e2.a.g("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
-                                    arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+                                    arrayList.add(new w2.e(d0Var3, handler.getLooper()));
                                     Looper looper22 = handler.getLooper();
                                     while (i14 < 4) {
                                     }
                                     arrayList.add(new b3.a());
-                                    arrayList.add(new q2.f(new l5.j(context, 1)));
+                                    arrayList.add(new q2.f(new l6.h(context, 4)));
                                     return (b[]) arrayList.toArray(new b[0]);
-                                } catch (Exception e11) {
-                                    throw new IllegalStateException("Error instantiating FFmpeg extension", e11);
+                                } catch (Exception e12) {
+                                    throw new IllegalStateException("Error instantiating FFmpeg extension", e12);
                                 }
                             }
                             i17 = i16 + 1;
                             try {
-                                arrayList.add(i16, (b) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                arrayList.add(i16, (b) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                 e2.a.g("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
                             } catch (ClassNotFoundException unused9) {
                                 i16 = i17;
                                 i17 = i16;
                                 i18 = i17 + 1;
-                                arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                 e2.a.g("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                                 Class<?> cls32 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
                                 Object newInstance2 = cls32.getConstructor(k2.a0.class).newInstance(a222);
-                                cls32.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance2, handler, b0Var2);
-                                b bVar22 = (b) cls32.getMethod("build", null).invoke(newInstance2, null);
-                                bVar22.getClass();
+                                cls32.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance2, handler, d0Var2);
+                                b bVar2 = (b) cls32.getMethod("build", null).invoke(newInstance2, null);
+                                bVar2.getClass();
                                 i19 = i18 + 1;
-                                arrayList.add(i18, bVar22);
+                                arrayList.add(i18, bVar2);
                                 e2.a.g("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
-                                arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                 e2.a.g("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
-                                arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+                                arrayList.add(new w2.e(d0Var3, handler.getLooper()));
                                 Looper looper222 = handler.getLooper();
                                 while (i14 < 4) {
                                 }
                                 arrayList.add(new b3.a());
-                                arrayList.add(new q2.f(new l5.j(context, 1)));
+                                arrayList.add(new q2.f(new l6.h(context, 4)));
                                 return (b[]) arrayList.toArray(new b[0]);
                             }
                             try {
                                 i18 = i17 + 1;
-                                arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                                arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                                 e2.a.g("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                             } catch (ClassNotFoundException unused10) {
                             }
                             try {
                                 Class<?> cls322 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
                                 Object newInstance22 = cls322.getConstructor(k2.a0.class).newInstance(a222);
-                                cls322.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance22, handler, b0Var2);
-                                b bVar222 = (b) cls322.getMethod("build", null).invoke(newInstance22, null);
-                                bVar222.getClass();
+                                cls322.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance22, handler, d0Var2);
+                                b bVar22 = (b) cls322.getMethod("build", null).invoke(newInstance22, null);
+                                bVar22.getClass();
                                 i19 = i18 + 1;
-                                arrayList.add(i18, bVar222);
+                                arrayList.add(i18, bVar22);
                                 e2.a.g("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
                             } catch (ReflectiveOperationException unused11) {
                             }
-                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                             e2.a.g("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
-                            arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+                            arrayList.add(new w2.e(d0Var3, handler.getLooper()));
                             Looper looper2222 = handler.getLooper();
                             while (i14 < 4) {
                             }
                             arrayList.add(new b3.a());
-                            arrayList.add(new q2.f(new l5.j(context, 1)));
+                            arrayList.add(new q2.f(new l6.h(context, 4)));
                             return (b[]) arrayList.toArray(new b[0]);
-                        } catch (Exception e12) {
-                            throw new IllegalStateException("Error instantiating FLAC extension", e12);
+                        } catch (Exception e13) {
+                            throw new IllegalStateException("Error instantiating FLAC extension", e13);
                         }
                     }
                 } catch (ClassNotFoundException unused12) {
                 }
                 try {
                     i16 = i15 + 1;
-                    arrayList.add(i15, (b) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                    arrayList.add(i15, (b) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                     e2.a.g("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
                     i17 = i16 + 1;
-                    arrayList.add(i16, (b) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                    arrayList.add(i16, (b) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                     e2.a.g("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
                     i18 = i17 + 1;
                     try {
                         try {
-                            arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                            arrayList.add(i17, (b) FfmpegAudioRenderer.class.getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                             e2.a.g("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
                         } catch (ClassNotFoundException unused13) {
                             i17 = i18;
                             i18 = i17;
                             Class<?> cls3222 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
                             Object newInstance222 = cls3222.getConstructor(k2.a0.class).newInstance(a222);
-                            cls3222.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance222, handler, b0Var2);
-                            b bVar2222 = (b) cls3222.getMethod("build", null).invoke(newInstance222, null);
-                            bVar2222.getClass();
+                            cls3222.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance222, handler, d0Var2);
+                            b bVar222 = (b) cls3222.getMethod("build", null).invoke(newInstance222, null);
+                            bVar222.getClass();
                             i19 = i18 + 1;
-                            arrayList.add(i18, bVar2222);
+                            arrayList.add(i18, bVar222);
                             e2.a.g("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
-                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                             e2.a.g("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
-                            arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+                            arrayList.add(new w2.e(d0Var3, handler.getLooper()));
                             Looper looper22222 = handler.getLooper();
                             while (i14 < 4) {
                             }
                             arrayList.add(new b3.a());
-                            arrayList.add(new q2.f(new l5.j(context, 1)));
+                            arrayList.add(new q2.f(new l6.h(context, 4)));
                             return (b[]) arrayList.toArray(new b[0]);
                         }
                         Class<?> cls32222 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
                         Object newInstance2222 = cls32222.getConstructor(k2.a0.class).newInstance(a222);
-                        cls32222.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance2222, handler, b0Var2);
-                        b bVar22222 = (b) cls32222.getMethod("build", null).invoke(newInstance2222, null);
-                        bVar22222.getClass();
+                        cls32222.getMethod("setEventHandlerAndListener", Handler.class, k2.v.class).invoke(newInstance2222, handler, d0Var2);
+                        b bVar2222 = (b) cls32222.getMethod("build", null).invoke(newInstance2222, null);
+                        bVar2222.getClass();
                         i19 = i18 + 1;
                         try {
-                            arrayList.add(i18, bVar22222);
+                            arrayList.add(i18, bVar2222);
                             e2.a.g("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
                         } catch (ReflectiveOperationException unused14) {
                             i18 = i19;
                             i19 = i18;
-                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                             e2.a.g("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
-                            arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+                            arrayList.add(new w2.e(d0Var3, handler.getLooper()));
                             Looper looper222222 = handler.getLooper();
                             while (i14 < 4) {
                             }
                             arrayList.add(new b3.a());
-                            arrayList.add(new q2.f(new l5.j(context, 1)));
+                            arrayList.add(new q2.f(new l6.h(context, 4)));
                             return (b[]) arrayList.toArray(new b[0]);
                         }
                         try {
-                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, b0Var2, a222));
+                            arrayList.add(i19, (b) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, k2.v.class, k2.a0.class).newInstance(handler, d0Var2, a222));
                             e2.a.g("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
                         } catch (ClassNotFoundException unused15) {
-                        } catch (Exception e13) {
-                            throw new IllegalStateException("Error instantiating MPEG-H extension", e13);
+                        } catch (Exception e14) {
+                            throw new IllegalStateException("Error instantiating MPEG-H extension", e14);
                         }
-                    } catch (Exception e14) {
-                        throw new IllegalStateException("Error instantiating IAMF extension", e14);
+                    } catch (Exception e15) {
+                        throw new IllegalStateException("Error instantiating IAMF extension", e15);
                     }
-                } catch (Exception e15) {
-                    throw new IllegalStateException("Error instantiating Opus extension", e15);
+                } catch (Exception e16) {
+                    throw new IllegalStateException("Error instantiating Opus extension", e16);
                 }
-            } catch (Exception e16) {
-                throw new IllegalStateException("Error instantiating MIDI extension", e16);
+            } catch (Exception e17) {
+                throw new IllegalStateException("Error instantiating MIDI extension", e17);
             }
         }
-        arrayList.add(new w2.e(b0Var3, handler.getLooper()));
+        arrayList.add(new w2.e(d0Var3, handler.getLooper()));
         Looper looper2222222 = handler.getLooper();
         for (i14 = 0; i14 < 4; i14++) {
-            arrayList.add(new s2.b(b0Var4, looper2222222));
+            arrayList.add(new s2.b(d0Var4, looper2222222));
         }
         arrayList.add(new b3.a());
-        arrayList.add(new q2.f(new l5.j(context, 1)));
+        arrayList.add(new q2.f(new l6.h(context, 4)));
         return (b[]) arrayList.toArray(new b[0]);
     }
 }

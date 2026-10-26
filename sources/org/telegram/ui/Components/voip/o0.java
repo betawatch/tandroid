@@ -9,15 +9,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class o0 {
-    public final yj0 a = new yj0(R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-    public final yj0 b = new yj0(R.raw.hand_2, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), true, null);
-    public bk0 c;
+    public final xj0 a = new xj0(R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
+    public final xj0 b = new xj0(R.raw.hand_2, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), true, null);
+    public ak0 c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -50,17 +50,17 @@ public final class o0 {
                     case 0:
                         o0 o0Var = this.b;
                         o0Var.b.S(0, null);
-                        yj0 yj0Var = o0Var.a;
-                        yj0Var.S(0, null);
-                        bk0 bk0Var = o0Var.c;
-                        if (bk0Var != null) {
-                            bk0Var.setAnimation(yj0Var);
+                        xj0 xj0Var = o0Var.a;
+                        xj0Var.S(0, null);
+                        ak0 ak0Var = o0Var.c;
+                        if (ak0Var != null) {
+                            ak0Var.setAnimation(xj0Var);
                             break;
                         }
                         break;
                     case 1:
                         o0 o0Var2 = this.b;
-                        yj0 yj0Var2 = o0Var2.b;
+                        xj0 xj0Var2 = o0Var2.b;
                         int nextInt = Utilities.random.nextInt(100);
                         int i12 = 120;
                         if (nextInt < 32) {
@@ -80,12 +80,12 @@ public final class o0 {
                             i11 = i12;
                             i12 = i13;
                         }
-                        yj0Var2.P(i12);
-                        yj0Var2.S(i12 - 1, o0Var2.i);
-                        yj0Var2.M(i11);
-                        bk0 bk0Var2 = o0Var2.c;
-                        if (bk0Var2 != null) {
-                            bk0Var2.setAnimation(yj0Var2);
+                        xj0Var2.P(i12);
+                        xj0Var2.S(i12 - 1, o0Var2.i);
+                        xj0Var2.M(i11);
+                        ak0 ak0Var2 = o0Var2.c;
+                        if (ak0Var2 != null) {
+                            ak0Var2.setAnimation(xj0Var2);
                             o0Var2.c.d();
                             break;
                         }
@@ -121,17 +121,17 @@ public final class o0 {
                     case 0:
                         o0 o0Var = this.b;
                         o0Var.b.S(0, null);
-                        yj0 yj0Var = o0Var.a;
-                        yj0Var.S(0, null);
-                        bk0 bk0Var = o0Var.c;
-                        if (bk0Var != null) {
-                            bk0Var.setAnimation(yj0Var);
+                        xj0 xj0Var = o0Var.a;
+                        xj0Var.S(0, null);
+                        ak0 ak0Var = o0Var.c;
+                        if (ak0Var != null) {
+                            ak0Var.setAnimation(xj0Var);
                             break;
                         }
                         break;
                     case 1:
                         o0 o0Var2 = this.b;
-                        yj0 yj0Var2 = o0Var2.b;
+                        xj0 xj0Var2 = o0Var2.b;
                         int nextInt = Utilities.random.nextInt(100);
                         int i12 = 120;
                         if (nextInt < 32) {
@@ -151,12 +151,12 @@ public final class o0 {
                             i112 = i12;
                             i12 = i13;
                         }
-                        yj0Var2.P(i12);
-                        yj0Var2.S(i12 - 1, o0Var2.i);
-                        yj0Var2.M(i112);
-                        bk0 bk0Var2 = o0Var2.c;
-                        if (bk0Var2 != null) {
-                            bk0Var2.setAnimation(yj0Var2);
+                        xj0Var2.P(i12);
+                        xj0Var2.S(i12 - 1, o0Var2.i);
+                        xj0Var2.M(i112);
+                        ak0 ak0Var2 = o0Var2.c;
+                        if (ak0Var2 != null) {
+                            ak0Var2.setAnimation(xj0Var2);
                             o0Var2.c.d();
                             break;
                         }
@@ -192,17 +192,17 @@ public final class o0 {
                     case 0:
                         o0 o0Var = this.b;
                         o0Var.b.S(0, null);
-                        yj0 yj0Var = o0Var.a;
-                        yj0Var.S(0, null);
-                        bk0 bk0Var = o0Var.c;
-                        if (bk0Var != null) {
-                            bk0Var.setAnimation(yj0Var);
+                        xj0 xj0Var = o0Var.a;
+                        xj0Var.S(0, null);
+                        ak0 ak0Var = o0Var.c;
+                        if (ak0Var != null) {
+                            ak0Var.setAnimation(xj0Var);
                             break;
                         }
                         break;
                     case 1:
                         o0 o0Var2 = this.b;
-                        yj0 yj0Var2 = o0Var2.b;
+                        xj0 xj0Var2 = o0Var2.b;
                         int nextInt = Utilities.random.nextInt(100);
                         int i122 = 120;
                         if (nextInt < 32) {
@@ -222,12 +222,12 @@ public final class o0 {
                             i112 = i122;
                             i122 = i13;
                         }
-                        yj0Var2.P(i122);
-                        yj0Var2.S(i122 - 1, o0Var2.i);
-                        yj0Var2.M(i112);
-                        bk0 bk0Var2 = o0Var2.c;
-                        if (bk0Var2 != null) {
-                            bk0Var2.setAnimation(yj0Var2);
+                        xj0Var2.P(i122);
+                        xj0Var2.S(i122 - 1, o0Var2.i);
+                        xj0Var2.M(i112);
+                        ak0 ak0Var2 = o0Var2.c;
+                        if (ak0Var2 != null) {
+                            ak0Var2.setAnimation(xj0Var2);
                             o0Var2.c.d();
                             break;
                         }
@@ -263,17 +263,17 @@ public final class o0 {
                     case 0:
                         o0 o0Var = this.b;
                         o0Var.b.S(0, null);
-                        yj0 yj0Var = o0Var.a;
-                        yj0Var.S(0, null);
-                        bk0 bk0Var = o0Var.c;
-                        if (bk0Var != null) {
-                            bk0Var.setAnimation(yj0Var);
+                        xj0 xj0Var = o0Var.a;
+                        xj0Var.S(0, null);
+                        ak0 ak0Var = o0Var.c;
+                        if (ak0Var != null) {
+                            ak0Var.setAnimation(xj0Var);
                             break;
                         }
                         break;
                     case 1:
                         o0 o0Var2 = this.b;
-                        yj0 yj0Var2 = o0Var2.b;
+                        xj0 xj0Var2 = o0Var2.b;
                         int nextInt = Utilities.random.nextInt(100);
                         int i122 = 120;
                         if (nextInt < 32) {
@@ -293,12 +293,12 @@ public final class o0 {
                             i112 = i122;
                             i122 = i132;
                         }
-                        yj0Var2.P(i122);
-                        yj0Var2.S(i122 - 1, o0Var2.i);
-                        yj0Var2.M(i112);
-                        bk0 bk0Var2 = o0Var2.c;
-                        if (bk0Var2 != null) {
-                            bk0Var2.setAnimation(yj0Var2);
+                        xj0Var2.P(i122);
+                        xj0Var2.S(i122 - 1, o0Var2.i);
+                        xj0Var2.M(i112);
+                        ak0 ak0Var2 = o0Var2.c;
+                        if (ak0Var2 != null) {
+                            ak0Var2.setAnimation(xj0Var2);
                             o0Var2.c.d();
                             break;
                         }
@@ -352,10 +352,10 @@ public final class o0 {
     /* JADX WARN: Type inference failed for: r1v4, types: [android.widget.FrameLayout, org.telegram.ui.Components.voip.n0] */
     public final void c(boolean z10) {
         TLRPC.GroupCallParticipant groupCallParticipant;
-        yj0 yj0Var;
+        xj0 xj0Var;
         boolean P;
         boolean z11;
-        if (this.c == null || (groupCallParticipant = this.h) == null || (yj0Var = this.a) == null) {
+        if (this.c == null || (groupCallParticipant = this.h) == null || (xj0Var = this.a) == null) {
             return;
         }
         boolean z12 = groupCallParticipant.muted_by_you && !groupCallParticipant.self;
@@ -372,37 +372,37 @@ public final class o0 {
             if (j10 != 0 && j11 <= 5000) {
                 AndroidUtilities.runOnUIThread(this.m, 5000 - j11);
             }
-            P = yj0Var.P(136);
+            P = xj0Var.P(136);
         } else {
-            this.c.setAnimation(yj0Var);
-            yj0Var.S(0, null);
+            this.c.setAnimation(xj0Var);
+            xj0Var.S(0, null);
             if (z14 && this.f) {
-                P = yj0Var.P(36);
+                P = xj0Var.P(36);
             } else {
-                P = yj0Var.P(z14 ? 99 : 69);
+                P = xj0Var.P(z14 ? 99 : 69);
             }
         }
         if (!z10) {
-            yj0Var.N(yj0Var.f - 1, false, true);
+            xj0Var.N(xj0Var.f - 1, false, true);
             this.c.invalidate();
         } else if (P) {
             if (z15) {
-                yj0Var.M(99);
-                yj0Var.P(136);
+                xj0Var.M(99);
+                xj0Var.P(136);
             } else if (z14 && this.f && !z15) {
-                yj0Var.M(0);
-                yj0Var.P(36);
+                xj0Var.M(0);
+                xj0Var.P(36);
             } else if (z14) {
-                yj0Var.M(69);
-                yj0Var.P(99);
+                xj0Var.M(69);
+                xj0Var.P(99);
             } else {
-                yj0Var.M(36);
-                yj0Var.P(69);
+                xj0Var.M(36);
+                xj0Var.P(69);
             }
             this.c.d();
             this.c.invalidate();
         }
-        this.c.setAnimation(yj0Var);
+        this.c.setAnimation(xj0Var);
         this.f = z15;
         if (this.k != z12) {
             this.k = z12;

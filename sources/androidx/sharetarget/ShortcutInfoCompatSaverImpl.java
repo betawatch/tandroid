@@ -1,6 +1,7 @@
 package androidx.sharetarget;
 
 import a0.f;
+import a8.gg;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,8 +9,7 @@ import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import c0.m;
-import c5.y;
-import e0.m0;
+import e0.l0;
 import g0.c;
 import g0.e;
 import java.io.File;
@@ -21,10 +21,10 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import s9.i;
+import t9.i;
 import u4.g;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ShortcutInfoCompatSaverImpl extends e {
     public static final Object h = new Object();
@@ -87,9 +87,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
             cVar2.k = cVar.k;
             cVar2.l = cVar.l;
             cVar2.m = cVar.m;
-            m0[] m0VarArr = cVar.i;
-            if (m0VarArr != null) {
-                cVar2.i = (m0[]) Arrays.copyOf(m0VarArr, m0VarArr.length);
+            l0[] l0VarArr = cVar.i;
+            if (l0VarArr != null) {
+                cVar2.i = (l0[]) Arrays.copyOf(l0VarArr, l0VarArr.length);
             }
             if (cVar.j != null) {
                 cVar2.j = new HashSet(cVar.j);
@@ -114,7 +114,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
 
     @Override // g0.e
     public final List b() {
-        return (List) this.d.submit(new y(this, 3)).get();
+        return (List) this.d.submit(new gg(this, 3)).get();
     }
 
     @Override // g0.e
@@ -172,7 +172,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         if (TextUtils.isEmpty(gVar.b)) {
             return null;
         }
-        Bitmap bitmap = (Bitmap) this.e.submit(new y(gVar, 4)).get();
+        Bitmap bitmap = (Bitmap) this.e.submit(new gg(gVar, 4)).get();
         if (bitmap != null) {
             return IconCompat.c(bitmap);
         }

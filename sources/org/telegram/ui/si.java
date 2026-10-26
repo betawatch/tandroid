@@ -1,85 +1,71 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class si {
-    public boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ sn d;
+public final class si extends qf.c {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.s1 f;
+    public final /* synthetic */ un g;
 
-    public si(sn snVar, boolean z10, SparseArray sparseArray) {
-        this.d = snVar;
-        this.b = z10;
-        this.c = sparseArray;
+    public /* synthetic */ si(un unVar, int i10, org.telegram.ui.Cells.s1 s1Var, int i11) {
+        this.d = i11;
+        this.g = unVar;
+        this.e = i10;
+        this.f = s1Var;
     }
 
-    public final boolean a(int i10) {
-        sn snVar = this.d;
-        int i11 = i10 - snVar.A0.J;
-        if (i11 < 0 || i11 >= snVar.G6.size()) {
-            return false;
+    @Override // qf.c
+    public final void c(boolean z10) {
+        switch (this.d) {
+            case 0:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 23), 240L);
+                    break;
+                }
+                break;
+            case 1:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 26), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 27), 240L);
+                    break;
+                }
+                break;
         }
-        MessageObject messageObject = (MessageObject) snVar.G6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f7, float f10) {
-        s4.b1 K;
-        sn snVar = this.d;
-        ArrayList arrayList = snVar.G6;
-        SparseArray[] sparseArrayArr = snVar.i6;
-        int i11 = i10 - snVar.A0.J;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = snVar.x0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.t1) {
-                                sn.c2(snVar, view, false, f7, f10);
-                                return;
-                            }
-                        }
-                        snVar.A6(messageObject, false, true);
-                        snVar.kc();
-                        snVar.dd(false);
-                    }
-                }
-                this.a = false;
-                K = snVar.x0.K(i10);
-                if (K != null) {
-                }
-                snVar.A6(messageObject, false, true);
-                snVar.kc();
-                snVar.dd(false);
-            }
+    @Override // qf.c
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i10 = this.e;
+                un unVar = this.g;
+                unVar.Sb = i10;
+                unVar.Tb = 6;
+                this.f.invalidate();
+                break;
+            case 1:
+                int i11 = this.e;
+                un unVar2 = this.g;
+                unVar2.Sb = i11;
+                unVar2.Tb = 5;
+                unVar2.Vb = null;
+                this.f.invalidate();
+                break;
+            default:
+                int i12 = this.e;
+                un unVar3 = this.g;
+                unVar3.Sb = i12;
+                unVar3.Tb = 7;
+                this.f.invalidate();
+                break;
         }
     }
 }

@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnContentRefreshListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class OnContentRefreshDelegateImpl implements d0 {
     private final IOnContentRefreshListener mListener;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class OnContentRefreshListenerStub extends IOnContentRefreshListener.Stub {
         private final e0 mOnContentRefreshListener;
 
@@ -24,7 +24,7 @@ public class OnContentRefreshDelegateImpl implements d0 {
 
         @Override // androidx.car.app.model.IOnContentRefreshListener
         public void onContentRefreshRequested(IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onClick", new f(this, 2));
+            androidx.car.app.utils.h.b(iOnDoneCallback, "onClick", new f(this, 2));
         }
     }
 
@@ -40,7 +40,7 @@ public class OnContentRefreshDelegateImpl implements d0 {
         try {
             IOnContentRefreshListener iOnContentRefreshListener = this.mListener;
             Objects.requireNonNull(iOnContentRefreshListener);
-            iOnContentRefreshListener.onContentRefreshRequested(androidx.car.app.utils.g.a());
+            iOnContentRefreshListener.onContentRefreshRequested(androidx.car.app.utils.h.a());
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }

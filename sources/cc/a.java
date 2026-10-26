@@ -1,26 +1,21 @@
 package cc;
 
-import com.google.android.gms.internal.cast.z5;
-import rb.g;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements r9.d {
-    public static final /* synthetic */ a b = new a(0);
-    public static final /* synthetic */ a c = new a(1);
-    public final /* synthetic */ int a;
+public final class a {
+    public final Bitmap a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
-    }
-
-    @Override // r9.d
-    public final Object j2(z5 z5Var) {
-        switch (this.a) {
-            case 0:
-                return new c((g) z5Var.a(g.class));
-            default:
-                return new b((c) z5Var.a(c.class), (rb.d) z5Var.a(rb.d.class));
-        }
+    public a(Bitmap bitmap, int i10, int i11, int i12, int i13) {
+        this.a = bitmap;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 }

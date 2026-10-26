@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class i3 extends v1 {
     private static final i3 zzb;
@@ -16,18 +16,18 @@ public final class i3 extends v1 {
         v1.k(i3.class, i3Var);
     }
 
-    public static void o(i3 i3Var, n3 n3Var) {
-        i3Var.zzh = n3Var.a;
+    public static void o(i3 i3Var, m3 m3Var) {
+        i3Var.zzh = m3Var.a;
         i3Var.zzd |= 2;
     }
 
-    public static /* synthetic */ void p(i3 i3Var, w3 w3Var) {
-        i3Var.zzf = w3Var;
+    public static /* synthetic */ void p(i3 i3Var, v3 v3Var) {
+        i3Var.zzf = v3Var;
         i3Var.zze = 4;
     }
 
-    public static /* synthetic */ void q(i3 i3Var, e4 e4Var) {
-        i3Var.zzf = e4Var;
+    public static /* synthetic */ void q(i3 i3Var, d4 d4Var) {
+        i3Var.zzf = d4Var;
         i3Var.zze = 3;
     }
 
@@ -47,7 +47,7 @@ public final class i3 extends v1 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0005\u0001\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002<\u0000\u0003<\u0000\u0004<\u0000\u0005᠌\u0001", new Object[]{"zzf", "zze", "zzd", "zzg", d1.c, s3.class, e4.class, w3.class, "zzh", d1.e});
+            return new s2(zzb, "\u0004\u0005\u0001\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002<\u0000\u0003<\u0000\u0004<\u0000\u0005᠌\u0001", new Object[]{"zzf", "zze", "zzd", "zzg", d1.c, r3.class, d4.class, v3.class, "zzh", d1.e});
         }
         if (i11 == 3) {
             return new i3();
@@ -61,7 +61,7 @@ public final class i3 extends v1 {
         throw null;
     }
 
-    public final w3 n() {
-        return this.zze == 4 ? (w3) this.zzf : w3.o();
+    public final v3 n() {
+        return this.zze == 4 ? (v3) this.zzf : v3.o();
     }
 }

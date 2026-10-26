@@ -7,11 +7,11 @@ import android.graphics.RectF;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class gc extends FrameLayout {
-    public final f6 a;
-    public final f6 b;
+    public final h6 a;
+    public final h6 b;
     public final Paint c;
     public final RectF d;
     public final long e;
@@ -21,9 +21,9 @@ public final class gc extends FrameLayout {
     public gc(hc hcVar, Activity activity) {
         super(activity);
         this.f = hcVar;
-        bs bsVar = bs.h;
-        this.a = new f6(this, 320L, bsVar);
-        this.b = new f6(this, 320L, bsVar);
+        ds dsVar = ds.h;
+        this.a = new h6(this, 320L, dsVar);
+        this.b = new h6(this, 320L, dsVar);
         Paint paint = new Paint(1);
         this.c = paint;
         paint.setStyle(Paint.Style.STROKE);
@@ -51,11 +51,11 @@ public final class gc extends FrameLayout {
         float currentTimeMillis = ((System.currentTimeMillis() - this.e) * 0.45f) % 5400.0f;
         float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
         for (int i10 = 0; i10 < 4; i10++) {
-            u1.a aVar = eq.h;
+            u1.a aVar = gq.h;
             aVar.getInterpolation((currentTimeMillis - (i10 * 1350)) / 667.0f);
             max += aVar.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
         }
-        int o12 = org.telegram.ui.ActionBar.k6.o1((1.0f - e) * 1.0f, -1);
+        int o12 = org.telegram.ui.ActionBar.y6.o1((1.0f - e) * 1.0f, -1);
         Paint paint = this.c;
         paint.setColor(o12);
         canvas.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, d) * (-360.0f), false, paint);

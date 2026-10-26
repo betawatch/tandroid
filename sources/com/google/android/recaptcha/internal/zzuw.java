@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.gms.internal.play_billing.k3;
+import c3.h0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzuw {
     private static final zzuw zza = new zzuw(0, new int[0], new Object[0], false);
@@ -165,7 +165,7 @@ public final class zzuw {
             int zzA2 = zzqv.zzA(i13) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zzd = zzqmVar.zzd();
-            i11 += zzA + zzA + zzA2 + k3.x(zzd, zzd, zzA3);
+            i11 += zzA + zzA + zzA2 + h0.A(zzd, zzd, zzA3);
         }
         this.zze = i11;
         return i11;

@@ -1,66 +1,52 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hn0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ io0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+public final class hn0 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public ImageView c;
+    public boolean d;
 
-    public /* synthetic */ hn0(io0 io0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = io0Var;
-        this.c = tL_error;
-        this.d = tLObject;
+    public final void a(String str, boolean z10) {
+        this.a.setText(str);
+        this.b.setText("");
+        this.d = z10;
+        setWillNotDraw(!z10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                io0 io0Var = this.b;
-                io0Var.e0 = false;
-                if (this.c == null) {
-                    TL_account.Password password = (TL_account.Password) this.d;
-                    io0Var.a0 = password;
-                    if (!TwoStepVerificationActivity.i0(password, false)) {
-                        org.telegram.ui.Components.f5.x0(io0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
-                        break;
-                    } else {
-                        TLRPC.PaymentForm paymentForm = io0Var.C0;
-                        if (paymentForm != null && io0Var.a0.has_password) {
-                            paymentForm.password_missing = false;
-                            paymentForm.can_save_credentials = true;
-                            io0Var.K0();
-                        }
-                        TwoStepVerificationActivity.m0(io0Var.a0);
-                        io0 io0Var2 = io0Var.f0;
-                        if (io0Var2 != null) {
-                            io0Var2.C0(io0Var.a0);
-                        }
-                        if (!io0Var.a0.has_password && io0Var.d0 == null) {
-                            fn0 fn0Var = new fn0(io0Var, 3);
-                            io0Var.d0 = fn0Var;
-                            AndroidUtilities.runOnUIThread(fn0Var, 5000L);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 1:
-                io0.V(this.b, this.c, this.d);
-                break;
-            default:
-                io0.X(this.b, this.c, this.d);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.y6.k0);
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setChecked(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 4);
+    }
+
+    public void setNeedDivider(boolean z10) {
+        this.d = z10;
+        setWillNotDraw(!z10);
+        invalidate();
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

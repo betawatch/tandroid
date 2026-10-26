@@ -1,5 +1,6 @@
 package org.telegram.ui.Wallet;
 
+import a8.af;
 import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.content.DialogInterface;
@@ -15,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class v0 {
     public final CountDownLatch a = new CountDownLatch(1);
@@ -44,12 +45,12 @@ public final class v0 {
                 c("AUTH_UNAVAILABLE");
                 return;
             }
-            int i10 = w7.h6.a;
+            int i10 = af.a;
             int i11 = i10 + 1;
-            w7.h6.a = i11;
+            af.a = i11;
             this.g = i10;
             if (i11 > 22399) {
-                w7.h6.a = 22336;
+                af.a = 22336;
             }
             this.e.startActivityForResult(intent, i10);
         } catch (Exception e) {
@@ -140,8 +141,8 @@ public final class v0 {
             if (alertDialog != null) {
                 alertDialog.dismiss();
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         this.i = null;
     }

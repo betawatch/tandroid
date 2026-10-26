@@ -76,8 +76,8 @@ public final class w extends d {
             int year = this.b.b.getYear();
             return this.b.p() != null ? j$.time.temporal.s.e(1L, (r0.b.getYear() - year) + 1) : j$.time.temporal.s.e(1L, 999999999 - year);
         }
-        x p5 = this.b.p();
-        int L = (p5 == null || p5.b.getYear() != this.a.getYear()) ? this.a.O() ? 366 : 365 : p5.b.L() - 1;
+        x p10 = this.b.p();
+        int L = (p10 == null || p10.b.getYear() != this.a.getYear()) ? this.a.O() ? 366 : 365 : p10.b.L() - 1;
         if (this.c == 1) {
             L -= this.b.b.L() - 1;
         }

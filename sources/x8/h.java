@@ -1,6 +1,28 @@
 package x8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import a8.df;
+import android.os.Parcel;
+import android.os.Parcelable;
+import w8.s;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface h {
+public final class h extends p6.a {
+    public static final Parcelable.Creator<h> CREATOR = new s(22);
+    public String a;
+    public String b;
+    public f c;
+    public g d;
+    public g e;
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 2, this.a);
+        df.l(parcel, 3, this.b);
+        df.k(parcel, 4, this.c, i10);
+        df.k(parcel, 5, this.d, i10);
+        df.k(parcel, 6, this.e, i10);
+        df.r(parcel, q5);
+    }
 }

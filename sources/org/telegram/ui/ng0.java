@@ -1,75 +1,60 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ng0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rg0 b;
+public final class ng0 extends ReplacementSpan {
+    public final String a;
+    public final boolean b;
+    public final TextPaint c;
+    public final Paint d;
+    public final float e;
+    public final /* synthetic */ pg0 f;
 
-    public /* synthetic */ ng0(rg0 rg0Var, int i10) {
-        this.a = i10;
-        this.b = rg0Var;
+    public ng0(pg0 pg0Var, int i10, boolean z10) {
+        this.f = pg0Var;
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.d = new Paint(1);
+        String valueOf = String.valueOf(i10);
+        this.a = valueOf;
+        this.b = z10;
+        textPaint.setTextSize(AndroidUtilities.dpf2(11.0f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        this.e = Math.max(AndroidUtilities.dp(7.333f), textPaint.measureText(valueOf)) + AndroidUtilities.dp(10.0f);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ph.b[] bVarArr;
-        switch (this.a) {
-            case 0:
-                rg0 rg0Var = this.b;
-                rg0Var.getClass();
-                m9.l0(rg0Var);
-                break;
-            case 1:
-                rg0.c0(this.b);
-                break;
-            case 2:
-                rg0.a0(this.b);
-                break;
-            case 3:
-                AndroidUtilities.removeFromParent(this.b.P);
-                break;
-            case 4:
-                rg0 rg0Var2 = this.b;
-                rg0Var2.getClass();
-                new rj0(rg0Var2.getParentActivity(), rg0Var2).show();
-                break;
-            case 5:
-                rg0 rg0Var3 = this.b;
-                rg0Var3.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putBoolean("needFinishFragment", false);
-                rg0Var3.presentFragment(new m9(bundle));
-                break;
-            case 6:
-                rg0 rg0Var4 = this.b;
-                if (rg0Var4.getParentActivity() != null && (bVarArr = rg0Var4.K) != null) {
-                    float width = ((r1.getWidth() / 2.0f) + (rg0Var4.b.getWidth() - ((bVarArr[4].getX() + rg0Var4.F.getX()) + r1.getWidth()))) / AndroidUtilities.density;
-                    ei.x3 x3Var = new ei.x3(rg0Var4.getParentActivity(), 3);
-                    rg0Var4.P = x3Var;
-                    x3Var.setTranslationY(AndroidUtilities.dp(4.0f) + (-rg0Var4.L));
-                    rg0Var4.P.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                    rg0Var4.P.p(false);
-                    rg0Var4.P.i(true);
-                    rg0Var4.P.s(LocaleController.getString(R.string.SwitchAccountHint));
-                    rg0Var4.P.l(1.0f, (-width) + 7.33f);
-                    rg0Var4.b.addView(rg0Var4.P, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
-                    ei.x3 x3Var2 = rg0Var4.P;
-                    x3Var2.l0 = new ng0(rg0Var4, 3);
-                    x3Var2.d = 8000L;
-                    x3Var2.u();
-                    org.telegram.ui.Components.s40.r.b();
-                    break;
-                }
-                break;
-            default:
-                rg0.b0(this.b);
-                break;
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        float dp = f7 + AndroidUtilities.dp(5.0f);
+        float dp2 = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
+        float dp3 = AndroidUtilities.dp(17.333f) / 2.0f;
+        int i15 = this.b ? org.telegram.ui.ActionBar.y6.Oh : org.telegram.ui.ActionBar.y6.U9;
+        pg0 pg0Var = this.f;
+        int themedColor = pg0Var.getThemedColor(i15);
+        Paint paint2 = this.d;
+        paint2.setColor(themedColor);
+        int themedColor2 = pg0Var.getThemedColor(org.telegram.ui.ActionBar.y6.s8);
+        TextPaint textPaint = this.c;
+        textPaint.setColor(themedColor2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f10 = this.e;
+        rectF.set(dp, dp2 - dp3, dp + f10, dp2 + dp3);
+        canvas.drawRoundRect(rectF, dp3, dp3, paint2);
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        float f11 = dp2 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f);
+        String str = this.a;
+        canvas.drawText(str, ((f10 - textPaint.measureText(str)) / 2.0f) + dp, f11, textPaint);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) Math.ceil(AndroidUtilities.dp(5.0f) + this.e);
     }
 }

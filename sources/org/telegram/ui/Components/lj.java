@@ -2,12 +2,12 @@ package org.telegram.ui.Components;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.DispatchQueue2;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class lj implements TextWatcher {
     public final /* synthetic */ xj a;
@@ -21,7 +21,7 @@ public final class lj implements TextWatcher {
         int currentTop;
         String obj = editable.toString();
         if (obj.isEmpty()) {
-            s4.g0 adapter = this.a.s.getAdapter();
+            s4.h0 adapter = this.a.s.getAdapter();
             xj xjVar = this.a;
             if (adapter != xjVar.E) {
                 currentTop = xjVar.getCurrentTop();
@@ -35,9 +35,9 @@ public final class lj implements TextWatcher {
                 }
             }
         } else {
-            vz vzVar = this.a.G;
-            if (vzVar != null) {
-                vzVar.setText(LocaleController.getString(R.string.NoResult));
+            uz uzVar = this.a.G;
+            if (uzVar != null) {
+                uzVar.setText(LocaleController.getString(R.string.NoResult));
             }
         }
         tj tjVar = this.a.F;
@@ -48,10 +48,10 @@ public final class lj implements TextWatcher {
             }
             int i10 = tjVar.h + 1;
             tjVar.h = i10;
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
+            DispatchQueue2 dispatchQueue2 = Utilities.searchQueue;
             sj sjVar = new sj(tjVar, obj, i10, 0);
             tjVar.f = sjVar;
-            dispatchQueue.postRunnable(sjVar, 300L);
+            dispatchQueue2.postRunnable(sjVar, 300L);
         }
     }
 

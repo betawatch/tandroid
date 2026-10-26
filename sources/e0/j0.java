@@ -1,252 +1,84 @@
 package e0;
 
-import android.content.ComponentName;
+import android.app.AppOpsManager;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.content.pm.ResolveInfo;
-import android.content.pm.ServiceInfo;
-import android.os.DeadObjectException;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Message;
-import android.os.RemoteException;
-import android.provider.Settings;
-import android.util.Log;
-import java.util.ArrayDeque;
-import java.util.HashMap;
+import android.content.pm.ApplicationInfo;
+import android.os.Build;
+import android.os.Bundle;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class j0 implements Handler.Callback, ServiceConnection {
+public final class j0 {
+    public static String d;
+    public static i0 g;
     public final Context a;
-    public final Handler b;
-    public final HashMap c = new HashMap();
-    public HashSet d = new HashSet();
+    public final NotificationManager b;
+    public static final Object c = new Object();
+    public static HashSet e = new HashSet();
+    public static final Object f = new Object();
 
     public j0(Context context) {
         this.a = context;
-        HandlerThread handlerThread = new HandlerThread("NotificationManagerCompat");
-        handlerThread.start();
-        this.b = new Handler(handlerThread.getLooper(), this);
+        this.b = (NotificationManager) context.getSystemService("notification");
     }
 
-    public final void a(i0 i0Var) {
-        boolean z10;
-        ArrayDeque arrayDeque = i0Var.d;
-        ComponentName componentName = i0Var.a;
-        if (Log.isLoggable("NotifManCompat", 3)) {
-            Log.d("NotifManCompat", "Processing component " + componentName + ", " + arrayDeque.size() + " queued tasks");
+    public static j0 c(Context context) {
+        return new j0(context);
+    }
+
+    public final boolean a() {
+        Method method;
+        Integer num;
+        if (Build.VERSION.SDK_INT >= 24) {
+            return androidx.emoji2.text.w.a(this.b);
         }
-        if (arrayDeque.isEmpty()) {
+        Context context = this.a;
+        AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService("appops");
+        ApplicationInfo applicationInfo = context.getApplicationInfo();
+        String packageName = context.getApplicationContext().getPackageName();
+        int i10 = applicationInfo.uid;
+        try {
+            Class<?> cls = Class.forName(AppOpsManager.class.getName());
+            Class<?> cls2 = Integer.TYPE;
+            method = cls.getMethod("checkOpNoThrow", cls2, cls2, String.class);
+            num = (Integer) cls.getDeclaredField("OP_POST_NOTIFICATION").get(Integer.class);
+            num.getClass();
+        } catch (ClassNotFoundException | IllegalAccessException | NoSuchFieldException | NoSuchMethodException | RuntimeException | InvocationTargetException unused) {
+        }
+        return ((Integer) method.invoke(appOpsManager, num, Integer.valueOf(i10), packageName)).intValue() == 0;
+    }
+
+    public final void b(int i10, String str) {
+        this.b.cancel(str, i10);
+    }
+
+    public final void d(int i10, Notification notification) {
+        e(null, i10, notification);
+    }
+
+    public final void e(String str, int i10, Notification notification) {
+        NotificationManager notificationManager = this.b;
+        Bundle bundle = notification.extras;
+        if (bundle == null || !bundle.getBoolean("android.support.useSideChannel")) {
+            notificationManager.notify(str, i10, notification);
             return;
         }
-        if (i0Var.b) {
-            z10 = true;
-        } else {
-            Intent component = new Intent("android.support.BIND_NOTIFICATION_SIDE_CHANNEL").setComponent(componentName);
-            Context context = this.a;
-            boolean bindService = context.bindService(component, this, 33);
-            i0Var.b = bindService;
-            if (bindService) {
-                i0Var.e = 0;
-            } else {
-                Log.w("NotifManCompat", "Unable to bind to listener " + componentName);
-                context.unbindService(this);
-            }
-            z10 = i0Var.b;
-        }
-        if (!z10 || i0Var.c == null) {
-            b(i0Var);
-            return;
-        }
-        while (true) {
-            g0 g0Var = (g0) arrayDeque.peek();
-            if (g0Var == null) {
-                break;
-            }
+        f0 f0Var = new f0(this.a.getPackageName(), i10, str, notification);
+        synchronized (f) {
             try {
-                if (Log.isLoggable("NotifManCompat", 3)) {
-                    Log.d("NotifManCompat", "Sending task " + g0Var);
+                if (g == null) {
+                    g = new i0(this.a.getApplicationContext());
                 }
-                g0Var.a(i0Var.c);
-                arrayDeque.remove();
-            } catch (DeadObjectException unused) {
-                if (Log.isLoggable("NotifManCompat", 3)) {
-                    Log.d("NotifManCompat", "Remote service has died: " + componentName);
-                }
-            } catch (RemoteException e) {
-                Log.w("NotifManCompat", "RemoteException communicating with " + componentName, e);
+                g.b.obtainMessage(0, f0Var).sendToTarget();
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        if (arrayDeque.isEmpty()) {
-            return;
-        }
-        b(i0Var);
-    }
-
-    public final void b(i0 i0Var) {
-        ComponentName componentName = i0Var.a;
-        ArrayDeque arrayDeque = i0Var.d;
-        Handler handler = this.b;
-        if (handler.hasMessages(3, componentName)) {
-            return;
-        }
-        int i10 = i0Var.e;
-        int i11 = i10 + 1;
-        i0Var.e = i11;
-        if (i11 <= 6) {
-            int i12 = (1 << i10) * MediaDataController.MAX_STYLE_RUNS_COUNT;
-            if (Log.isLoggable("NotifManCompat", 3)) {
-                Log.d("NotifManCompat", "Scheduling retry for " + i12 + " ms");
-            }
-            handler.sendMessageDelayed(handler.obtainMessage(3, componentName), i12);
-            return;
-        }
-        Log.w("NotifManCompat", "Giving up on delivering " + arrayDeque.size() + " tasks to " + componentName + " after " + i0Var.e + " retries");
-        arrayDeque.clear();
-    }
-
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        HashSet hashSet;
-        int i10 = message.what;
-        b.c cVar = null;
-        if (i10 == 0) {
-            g0 g0Var = (g0) message.obj;
-            String string = Settings.Secure.getString(this.a.getContentResolver(), "enabled_notification_listeners");
-            synchronized (k0.c) {
-                if (string != null) {
-                    try {
-                        if (!string.equals(k0.d)) {
-                            String[] split = string.split(":", -1);
-                            HashSet hashSet2 = new HashSet(split.length);
-                            for (String str : split) {
-                                ComponentName unflattenFromString = ComponentName.unflattenFromString(str);
-                                if (unflattenFromString != null) {
-                                    hashSet2.add(unflattenFromString.getPackageName());
-                                }
-                            }
-                            k0.e = hashSet2;
-                            k0.d = string;
-                        }
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
-                }
-                hashSet = k0.e;
-            }
-            if (!hashSet.equals(this.d)) {
-                this.d = hashSet;
-                List<ResolveInfo> queryIntentServices = this.a.getPackageManager().queryIntentServices(new Intent().setAction("android.support.BIND_NOTIFICATION_SIDE_CHANNEL"), 0);
-                HashSet hashSet3 = new HashSet();
-                for (ResolveInfo resolveInfo : queryIntentServices) {
-                    if (hashSet.contains(resolveInfo.serviceInfo.packageName)) {
-                        ServiceInfo serviceInfo = resolveInfo.serviceInfo;
-                        ComponentName componentName = new ComponentName(serviceInfo.packageName, serviceInfo.name);
-                        if (resolveInfo.serviceInfo.permission != null) {
-                            Log.w("NotifManCompat", "Permission present on component " + componentName + ", not adding listener record.");
-                        } else {
-                            hashSet3.add(componentName);
-                        }
-                    }
-                }
-                Iterator it = hashSet3.iterator();
-                while (it.hasNext()) {
-                    ComponentName componentName2 = (ComponentName) it.next();
-                    if (!this.c.containsKey(componentName2)) {
-                        if (Log.isLoggable("NotifManCompat", 3)) {
-                            Log.d("NotifManCompat", "Adding listener record for " + componentName2);
-                        }
-                        this.c.put(componentName2, new i0(componentName2));
-                    }
-                }
-                Iterator it2 = this.c.entrySet().iterator();
-                while (it2.hasNext()) {
-                    Map.Entry entry = (Map.Entry) it2.next();
-                    if (!hashSet3.contains(entry.getKey())) {
-                        if (Log.isLoggable("NotifManCompat", 3)) {
-                            Log.d("NotifManCompat", "Removing listener record for " + entry.getKey());
-                        }
-                        i0 i0Var = (i0) entry.getValue();
-                        if (i0Var.b) {
-                            this.a.unbindService(this);
-                            i0Var.b = false;
-                        }
-                        i0Var.c = null;
-                        it2.remove();
-                    }
-                }
-            }
-            for (i0 i0Var2 : this.c.values()) {
-                i0Var2.d.add(g0Var);
-                a(i0Var2);
-            }
-        } else if (i10 == 1) {
-            h0 h0Var = (h0) message.obj;
-            ComponentName componentName3 = h0Var.a;
-            IBinder iBinder = h0Var.b;
-            i0 i0Var3 = (i0) this.c.get(componentName3);
-            if (i0Var3 != null) {
-                int i11 = b.b.a;
-                if (iBinder != null) {
-                    IInterface queryLocalInterface = iBinder.queryLocalInterface(b.c.g);
-                    if (queryLocalInterface == null || !(queryLocalInterface instanceof b.c)) {
-                        b.a aVar = new b.a();
-                        aVar.a = iBinder;
-                        cVar = aVar;
-                    } else {
-                        cVar = (b.c) queryLocalInterface;
-                    }
-                }
-                i0Var3.c = cVar;
-                i0Var3.e = 0;
-                a(i0Var3);
-                return true;
-            }
-        } else if (i10 == 2) {
-            i0 i0Var4 = (i0) this.c.get((ComponentName) message.obj);
-            if (i0Var4 != null) {
-                if (i0Var4.b) {
-                    this.a.unbindService(this);
-                    i0Var4.b = false;
-                }
-                i0Var4.c = null;
-                return true;
-            }
-        } else {
-            if (i10 != 3) {
-                return false;
-            }
-            i0 i0Var5 = (i0) this.c.get((ComponentName) message.obj);
-            if (i0Var5 != null) {
-                a(i0Var5);
-                return true;
-            }
-        }
-        return true;
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        if (Log.isLoggable("NotifManCompat", 3)) {
-            Log.d("NotifManCompat", "Connected to service " + componentName);
-        }
-        this.b.obtainMessage(1, new h0(componentName, iBinder)).sendToTarget();
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        if (Log.isLoggable("NotifManCompat", 3)) {
-            Log.d("NotifManCompat", "Disconnected from service " + componentName);
-        }
-        this.b.obtainMessage(2, componentName).sendToTarget();
+        notificationManager.cancel(str, i10);
     }
 }

@@ -1,71 +1,33 @@
 package ph;
 
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.yx;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public enum a {
-    f(R.raw.tab_contacts),
-    h(R.raw.tab_calls),
-    n(R.raw.tab_chats),
-    r(R.raw.tab_settings),
-    s("CHECKLIST", R.raw.tab_checklist_reverse),
-    v("COLORS", R.raw.tab_colors_reverse),
-    w("FILES", R.raw.tab_files_reverse),
-    x("GALLERY", R.raw.tab_gallery_reverse),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7("GIFT", R.raw.tab_gift_reverse),
-    y("LOCATION", R.raw.tab_location_reverse),
-    E("STICKER", R.raw.tab_sticker_reverse),
-    F("EMOJI", R.raw.tab_emoji_reverse),
-    G("MODELS", R.raw.tab_models_reverse),
-    H("MUSIC", R.raw.tab_music_reverse),
-    I("POLL", R.raw.tab_poll_reverse),
-    J("SYMBOLS", R.raw.tab_symbols_reverse),
-    K("REPLIES", R.raw.tab_reply_reverse),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0("WALLET", R.raw.tab_wallet_reverse),
-    L,
-    M("ARTICLE", R.raw.tab_article_reverse),
-    N("GRAM", R.raw.gram_reverse),
-    O(R.raw.boosts, 25, 49),
-    P(R.raw.monetize, 19, 45);
-
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-
-    a(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i10;
-        this.d = i11;
-        this.e = i12;
-        this.c = -1;
+public abstract class a extends r71 {
+    public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, u6 u6Var) {
+        super(context, i10, -1, false, callback2, callback5, null, u6Var, -1, 0);
+        this.y2 = true;
+        setOverScrollMode(2);
     }
 
-    a(int i10) {
-        this.c = i10;
-        this.a = -1;
-        this.b = -1;
-        this.d = -1;
-        this.e = -1;
-    }
-
-    a(int i10) {
-        this.a = i10;
-        this.b = i10;
-        this.d = -1;
-        this.e = -1;
-        this.c = -1;
-    }
-
-    a(String str, int i10) {
-        this.a = r2;
-        this.b = i10;
-        this.d = -1;
-        this.e = -1;
-        this.c = -1;
+    public final void O1(View view) {
+        if (view == null) {
+            return;
+        }
+        float dp = AndroidUtilities.dp(92.0f);
+        float width = getWidth() - dp;
+        float x9 = view.getX();
+        float width2 = view.getWidth() + x9;
+        int i10 = x9 < dp ? (int) (x9 - dp) : width2 > width ? (int) (width2 - width) : 0;
+        if (i10 != 0) {
+            AndroidUtilities.doOnLayout(this, new yx(this, view, i10, 21));
+        }
     }
 }

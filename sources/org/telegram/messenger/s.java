@@ -1,42 +1,150 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class s implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
+import java.util.Comparator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AutoDeleteMediaTask;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.FileLoadOperation;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-    public /* synthetic */ s(AccountInstance accountInstance, long j10, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = accountInstance;
-        this.c = j10;
-        this.d = i10;
-        this.e = i11;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class s implements Comparator {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ s(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$pruneOverlaps$10;
+        int lambda$run$0;
+        int lambda$processUpdatesQueue$7;
+        int lambda$getContactsHash$26;
+        int lambda$sortEmoji$3;
+        int lambda$removePart$2;
+        int lambda$loadGalleryPhotosAlbums$59;
+        int lambda$sortPlaylist$13;
+        int lambda$getTextStyleRunsLegacy$181;
+        int lambda$static$160;
+        int lambda$increasePeerRaiting$155;
+        int lambda$increaseWebappRating$151;
+        int lambda$increaseInlineRating$150;
+        int lambda$getTextStyleRunsSafe$180;
+        int lambda$handleFoundWords$3;
+        int lambda$addEntitiesToText$2;
+        int lambda$processUpdatesQueue$329;
+        int lambda$processUpdatesQueue$330;
+        int lambda$processChannelsUpdatesQueue$327;
+        int lambda$processLoadedDialogFilters$21;
+        int lambda$processLoadedMessages$189;
+        int lambda$processLoadedMessages$190;
+        int lambda$processLoadedMessages$191;
+        int lambda$getMessagesInternal$162;
+        int lambda$processLoadedFilterPeersInternal$73;
+        int lambda$loadDialogFilters$69;
+        int lambda$localSearch$263;
+        int lambda$switchToAvailable$3;
+        int lambda$quotesFor$0;
+        int lambda$updatePinnedOrder$4;
         switch (this.a) {
             case 0:
-                AutoMessageHeardReceiver.lambda$onReceive$1((AccountInstance) this.b, this.c, this.d, this.e);
-                break;
+                lambda$pruneOverlaps$10 = AndroidUtilities.lambda$pruneOverlaps$10((AndroidUtilities.LinkSpec) obj, (AndroidUtilities.LinkSpec) obj2);
+                return lambda$pruneOverlaps$10;
             case 1:
-                AutoMessageHeardReceiver.lambda$onReceive$3((AccountInstance) this.b, this.c, this.d, this.e);
-                break;
+                lambda$run$0 = AutoDeleteMediaTask.lambda$run$0((AutoDeleteMediaTask.FileInfoInternal) obj, (AutoDeleteMediaTask.FileInfoInternal) obj2);
+                return lambda$run$0;
+            case 2:
+                lambda$processUpdatesQueue$7 = ChatObject.Call.lambda$processUpdatesQueue$7((TL_update.TL_updateGroupCallParticipants) obj, (TL_update.TL_updateGroupCallParticipants) obj2);
+                return lambda$processUpdatesQueue$7;
+            case 3:
+                lambda$getContactsHash$26 = ContactsController.lambda$getContactsHash$26((TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
+                return lambda$getContactsHash$26;
+            case 4:
+                lambda$sortEmoji$3 = Emoji.lambda$sortEmoji$3((String) obj, (String) obj2);
+                return lambda$sortEmoji$3;
+            case 5:
+                lambda$removePart$2 = FileLoadOperation.lambda$removePart$2((FileLoadOperation.Range) obj, (FileLoadOperation.Range) obj2);
+                return lambda$removePart$2;
+            case 6:
+                lambda$loadGalleryPhotosAlbums$59 = MediaController.lambda$loadGalleryPhotosAlbums$59((MediaController.PhotoEntry) obj, (MediaController.PhotoEntry) obj2);
+                return lambda$loadGalleryPhotosAlbums$59;
+            case 7:
+                lambda$sortPlaylist$13 = MediaController.lambda$sortPlaylist$13((MessageObject) obj, (MessageObject) obj2);
+                return lambda$sortPlaylist$13;
+            case 8:
+                lambda$getTextStyleRunsLegacy$181 = MediaDataController.lambda$getTextStyleRunsLegacy$181((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
+                return lambda$getTextStyleRunsLegacy$181;
+            case 9:
+                lambda$static$160 = MediaDataController.lambda$static$160((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
+                return lambda$static$160;
+            case 10:
+                lambda$increasePeerRaiting$155 = MediaDataController.lambda$increasePeerRaiting$155((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
+                return lambda$increasePeerRaiting$155;
+            case 11:
+                lambda$increaseWebappRating$151 = MediaDataController.lambda$increaseWebappRating$151((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
+                return lambda$increaseWebappRating$151;
+            case 12:
+                lambda$increaseInlineRating$150 = MediaDataController.lambda$increaseInlineRating$150((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
+                return lambda$increaseInlineRating$150;
+            case 13:
+                lambda$getTextStyleRunsSafe$180 = MediaDataController.lambda$getTextStyleRunsSafe$180((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
+                return lambda$getTextStyleRunsSafe$180;
+            case 14:
+                lambda$handleFoundWords$3 = MessageObject.lambda$handleFoundWords$3((String) obj, (String) obj2);
+                return lambda$handleFoundWords$3;
+            case 15:
+                lambda$addEntitiesToText$2 = MessageObject.lambda$addEntitiesToText$2((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
+                return lambda$addEntitiesToText$2;
+            case 16:
+                lambda$processUpdatesQueue$329 = MessagesController.lambda$processUpdatesQueue$329((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processUpdatesQueue$329;
+            case 17:
+                lambda$processUpdatesQueue$330 = MessagesController.lambda$processUpdatesQueue$330((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processUpdatesQueue$330;
+            case 18:
+                lambda$processChannelsUpdatesQueue$327 = MessagesController.lambda$processChannelsUpdatesQueue$327((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processChannelsUpdatesQueue$327;
+            case 19:
+                lambda$processLoadedDialogFilters$21 = MessagesController.lambda$processLoadedDialogFilters$21((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
+                return lambda$processLoadedDialogFilters$21;
+            case 20:
+                lambda$processLoadedMessages$189 = MessagesController.lambda$processLoadedMessages$189((MessageObject) obj, (MessageObject) obj2);
+                return lambda$processLoadedMessages$189;
+            case 21:
+                lambda$processLoadedMessages$190 = MessagesController.lambda$processLoadedMessages$190((MessageObject) obj, (MessageObject) obj2);
+                return lambda$processLoadedMessages$190;
+            case 22:
+                lambda$processLoadedMessages$191 = MessagesController.lambda$processLoadedMessages$191((MessageObject) obj, (MessageObject) obj2);
+                return lambda$processLoadedMessages$191;
+            case 23:
+                lambda$getMessagesInternal$162 = MessagesStorage.lambda$getMessagesInternal$162((TLRPC.Message) obj, (TLRPC.Message) obj2);
+                return lambda$getMessagesInternal$162;
+            case 24:
+                lambda$processLoadedFilterPeersInternal$73 = MessagesStorage.lambda$processLoadedFilterPeersInternal$73((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
+                return lambda$processLoadedFilterPeersInternal$73;
+            case 25:
+                lambda$loadDialogFilters$69 = MessagesStorage.lambda$loadDialogFilters$69((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
+                return lambda$loadDialogFilters$69;
+            case 26:
+                lambda$localSearch$263 = MessagesStorage.lambda$localSearch$263((ig.c0) obj, (ig.c0) obj2);
+                return lambda$localSearch$263;
+            case 27:
+                lambda$switchToAvailable$3 = ProxyRotationController.lambda$switchToAvailable$3((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
+                return lambda$switchToAvailable$3;
+            case 28:
+                lambda$quotesFor$0 = RichMessageLayout.lambda$quotesFor$0((RichMessageLayout.QuoteBackground) obj, (RichMessageLayout.QuoteBackground) obj2);
+                return lambda$quotesFor$0;
             default:
-                ((MediaController) this.b).lambda$startRecordingV2$23(this.d, this.c, this.e);
-                break;
+                lambda$updatePinnedOrder$4 = SavedMessagesController.lambda$updatePinnedOrder$4((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
+                return lambda$updatePinnedOrder$4;
         }
-    }
-
-    public /* synthetic */ s(MediaController mediaController, int i10, long j10, int i11) {
-        this.a = 2;
-        this.b = mediaController;
-        this.d = i10;
-        this.c = j10;
-        this.e = i11;
     }
 }

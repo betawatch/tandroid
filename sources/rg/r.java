@@ -1,46 +1,42 @@
 package rg;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class r implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
-    public final /* synthetic */ boolean c;
+import android.view.View;
+import bi.mc;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.m91;
 
-    public /* synthetic */ r(m0 m0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = m0Var;
-        this.c = z10;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class r extends m91 {
+    public final /* synthetic */ mc a;
+
+    public r(mc mcVar) {
+        this.a = mcVar;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                m0 m0Var = this.b;
-                u1 u1Var = m0Var.v1;
-                if (hVar == m0Var.F1) {
-                    m0Var.F1 = null;
-                    if (!this.c) {
-                        u1Var.setVisibility(8);
-                    }
-                    u1Var.setMaskProvider(null);
-                    break;
-                }
-                break;
-            default:
-                m0 m0Var2 = this.b;
-                j0 j0Var = m0Var2.G1;
-                if (hVar == m0Var2.M1) {
-                    m0Var2.M1 = null;
-                    if (!this.c) {
-                        j0Var.setVisibility(8);
-                        qg.u0.e(m0Var2.P1).g();
-                        j0Var.getAdapter().l();
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.m91
+    public final View d(int i10) {
+        mc mcVar = this.a;
+        return i10 != 1 ? i10 != 2 ? (u) mcVar.b : (x) mcVar.d : (t) mcVar.c;
+    }
+
+    @Override // org.telegram.ui.Components.m91
+    public final int e() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.m91
+    public final CharSequence g(int i10) {
+        return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.PaintPaletteGrid).toUpperCase() : LocaleController.getString(R.string.PaintPaletteSliders).toUpperCase() : LocaleController.getString(R.string.PaintPaletteSpectrum).toUpperCase();
+    }
+
+    @Override // org.telegram.ui.Components.m91
+    public final int h(int i10) {
+        return i10;
+    }
+
+    @Override // org.telegram.ui.Components.m91
+    public final void b(View view, int i10, int i11) {
     }
 }

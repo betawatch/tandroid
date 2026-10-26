@@ -1,8 +1,8 @@
 package k1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class m extends kotlin.jvm.internal.j implements td.l {
+public final class m extends kotlin.jvm.internal.j implements ud.l {
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
@@ -13,7 +13,7 @@ public final class m extends kotlin.jvm.internal.j implements td.l {
         this.c = obj;
     }
 
-    @Override // td.l
+    @Override // ud.l
     public final Object invoke(Object obj) {
         switch (this.b) {
             case 0:
@@ -24,12 +24,12 @@ public final class m extends kotlin.jvm.internal.j implements td.l {
                 Object obj2 = z.s;
                 z zVar = (z) this.c;
                 synchronized (obj2) {
-                    z.r.remove(zVar.c().getAbsolutePath());
+                    z.r.remove(zVar.b().getAbsolutePath());
                 }
-                return id.i.a;
+                return jd.i.a;
             default:
-                ((ke.h) this.c).b();
-                return id.i.a;
+                ((le.h) this.c).b();
+                return jd.i.a;
         }
     }
 }

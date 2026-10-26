@@ -1,17 +1,17 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class au implements a9.q {
-    private final a9.u a;
-    private final a9.u b;
+public final class au implements b9.o {
+    private final b9.s a;
+    private final b9.s b;
 
-    public au(a9.u uVar, a9.u uVar2) {
-        this.a = uVar;
-        this.b = uVar2;
+    public au(b9.s sVar, b9.s sVar2) {
+        this.a = sVar;
+        this.b = sVar2;
     }
 
-    @Override // a9.u
+    @Override // b9.s
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
     public final at a() {
         return new at(this.a, this.b);

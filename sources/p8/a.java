@@ -1,259 +1,101 @@
 package p8;
 
+import android.accounts.Account;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.PowerManager;
-import android.os.SystemClock;
-import android.os.WorkSource;
-import android.text.TextUtils;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
+import android.os.RemoteException;
 import android.util.Log;
-import androidx.car.app.j;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-import n6.l;
-import org.telegram.ui.Wallet.m4;
-import u6.e;
-import u6.f;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import m.r3;
+import o6.u;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final long n = TimeUnit.DAYS.toMillis(366);
-    public static volatile ScheduledExecutorService o = null;
-    public static final Object p = new Object();
-    public final Object a;
-    public final PowerManager.WakeLock b;
-    public int c;
-    public ScheduledFuture d;
-    public long e;
-    public final HashSet f;
-    public boolean g;
-    public c8.a h;
-    public final u6.a i;
-    public final String j;
-    public final HashMap k;
-    public final AtomicInteger l;
-    public final ScheduledExecutorService m;
+public final class a extends o6.g implements com.google.android.gms.common.api.c {
+    public final boolean U;
+    public final r3 V;
+    public final Bundle W;
+    public final Integer X;
 
-    public a(Context context) {
-        String packageName = context.getPackageName();
-        this.a = new Object();
-        this.c = 0;
-        this.f = new HashSet();
-        this.g = true;
-        this.i = u6.a.a;
-        this.k = new HashMap();
-        this.l = new AtomicInteger(0);
-        l.g("wake:com.google.firebase.iid.WakeLockHolder", "WakeLock: wakeLockName must not be empty");
-        context.getApplicationContext();
-        WorkSource workSource = null;
-        this.h = null;
-        if ("com.google.android.gms".equals(context.getPackageName())) {
-            this.j = "wake:com.google.firebase.iid.WakeLockHolder";
-        } else {
-            this.j = "wake:com.google.firebase.iid.WakeLockHolder".length() != 0 ? "*gcore*:".concat("wake:com.google.firebase.iid.WakeLockHolder") : new String("*gcore*:");
-        }
-        PowerManager powerManager = (PowerManager) context.getSystemService("power");
-        if (powerManager == null) {
-            StringBuilder sb2 = new StringBuilder(29);
-            sb2.append((CharSequence) "expected a non-null reference", 0, 29);
-            throw new j(sb2.toString());
-        }
-        this.b = powerManager.newWakeLock(1, "wake:com.google.firebase.iid.WakeLockHolder");
-        if (f.b(context)) {
-            int i10 = e.a;
-            packageName = (packageName == null || packageName.trim().isEmpty()) ? context.getPackageName() : packageName;
-            if (context.getPackageManager() != null && packageName != null) {
-                try {
-                    ApplicationInfo applicationInfo = w6.b.a(context).a.getPackageManager().getApplicationInfo(packageName, 0);
-                    if (applicationInfo == null) {
-                        Log.e("WorkSourceUtil", "Could not get applicationInfo from package: ".concat(packageName));
-                    } else {
-                        int i11 = applicationInfo.uid;
-                        workSource = new WorkSource();
-                        f.a(workSource, i11, packageName);
-                    }
-                } catch (PackageManager.NameNotFoundException unused) {
-                    Log.e("WorkSourceUtil", "Could not find package: ".concat(packageName));
-                }
-            }
-            if (workSource != null) {
-                try {
-                    this.b.setWorkSource(workSource);
-                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
-                    Log.wtf("WakeLock", e.toString());
-                }
-            }
-        }
-        ScheduledExecutorService scheduledExecutorService = o;
-        if (scheduledExecutorService == null) {
-            synchronized (p) {
-                try {
-                    scheduledExecutorService = o;
-                    if (scheduledExecutorService == null) {
-                        scheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1));
-                        o = scheduledExecutorService;
-                    }
-                } finally {
-                }
-            }
-        }
-        this.m = scheduledExecutorService;
+    public a(Context context, Looper looper, r3 r3Var, Bundle bundle, k kVar, l lVar) {
+        super(context, looper, 44, r3Var, kVar, lVar, 0);
+        this.U = true;
+        this.V = r3Var;
+        this.W = bundle;
+        this.X = (Integer) r3Var.h;
     }
 
-    public final void a(long j10) {
-        this.l.incrementAndGet();
-        long max = Math.max(Math.min(Long.MAX_VALUE, n), 1L);
-        if (j10 > 0) {
-            max = Math.min(j10, max);
-        }
-        synchronized (this.a) {
+    public final void G() {
+        h(new o6.c(this));
+    }
+
+    public final void H(c cVar) {
+        try {
+            this.V.getClass();
+            Account account = new Account("<<default account>>", "com.google");
+            GoogleSignInAccount b10 = "<<default account>>".equals(account.name) ? b6.b.a(this.n).b() : null;
+            Integer num = this.X;
+            o6.l.h(num);
+            u uVar = new u(2, account, num.intValue(), b10);
+            e eVar = (e) u();
+            g gVar = new g(1, uVar);
+            Parcel H0 = eVar.H0();
+            l7.a.c(H0, gVar);
+            l7.a.d(H0, cVar);
+            eVar.I0(H0, 12);
+        } catch (RemoteException e) {
+            Log.w("SignInClientImpl", "Remote service probably died when signIn is called");
             try {
-                if (!b()) {
-                    this.h = c8.a.a;
-                    this.b.acquire();
-                    this.i.getClass();
-                    SystemClock.elapsedRealtime();
-                }
-                this.c++;
-                if (this.g) {
-                    TextUtils.isEmpty(null);
-                }
-                b bVar = (b) this.k.get(null);
-                if (bVar == null) {
-                    bVar = new b();
-                    this.k.put(null, bVar);
-                }
-                bVar.a++;
-                this.i.getClass();
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                long j11 = Long.MAX_VALUE - elapsedRealtime > max ? elapsedRealtime + max : Long.MAX_VALUE;
-                if (j11 > this.e) {
-                    this.e = j11;
-                    ScheduledFuture scheduledFuture = this.d;
-                    if (scheduledFuture != null) {
-                        scheduledFuture.cancel(false);
-                    }
-                    this.d = this.m.schedule(new m4(this, 3), max, TimeUnit.MILLISECONDS);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+                cVar.m(new h(1, new l6.a(8, null), null));
+            } catch (RemoteException unused) {
+                Log.wtf("SignInClientImpl", "ISignInCallbacks#onSignInComplete should be executed from the same process, unexpected RemoteException.", e);
             }
         }
     }
 
-    public final boolean b() {
-        boolean z10;
-        synchronized (this.a) {
-            z10 = this.c > 0;
-        }
-        return z10;
+    @Override // o6.g, com.google.android.gms.common.api.c
+    public final int l() {
+        return 12451000;
     }
 
-    public final void c() {
-        if (this.l.decrementAndGet() < 0) {
-            Log.e("WakeLock", String.valueOf(this.j).concat(" release without a matched acquire!"));
-        }
-        synchronized (this.a) {
-            try {
-                if (this.g) {
-                    TextUtils.isEmpty(null);
-                }
-                if (this.k.containsKey(null)) {
-                    b bVar = (b) this.k.get(null);
-                    if (bVar != null) {
-                        int i10 = bVar.a - 1;
-                        bVar.a = i10;
-                        if (i10 == 0) {
-                            this.k.remove(null);
-                        }
-                    }
-                } else {
-                    Log.w("WakeLock", String.valueOf(this.j).concat(" counter does not exist"));
-                }
-                e();
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    @Override // o6.g, com.google.android.gms.common.api.c
+    public final boolean p() {
+        return this.U;
     }
 
-    public final void d() {
-        HashSet hashSet = this.f;
-        if (hashSet.isEmpty()) {
-            return;
+    @Override // o6.g
+    public final IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        ArrayList arrayList = new ArrayList(hashSet);
-        hashSet.clear();
-        if (arrayList.size() <= 0) {
-            return;
-        }
-        arrayList.get(0).getClass();
-        throw new ClassCastException();
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.signin.internal.ISignInService");
+        return queryLocalInterface instanceof e ? (e) queryLocalInterface : new e(iBinder, "com.google.android.gms.signin.internal.ISignInService", 7);
     }
 
-    public final void e() {
-        synchronized (this.a) {
-            try {
-                if (b()) {
-                    if (this.g) {
-                        int i10 = this.c - 1;
-                        this.c = i10;
-                        if (i10 > 0) {
-                            return;
-                        }
-                    } else {
-                        this.c = 0;
-                    }
-                    d();
-                    Iterator it = this.k.values().iterator();
-                    while (it.hasNext()) {
-                        ((b) it.next()).a = 0;
-                    }
-                    this.k.clear();
-                    ScheduledFuture scheduledFuture = this.d;
-                    if (scheduledFuture != null) {
-                        scheduledFuture.cancel(false);
-                        this.d = null;
-                        this.e = 0L;
-                    }
-                    if (this.b.isHeld()) {
-                        try {
-                            try {
-                                this.b.release();
-                                if (this.h != null) {
-                                    this.h = null;
-                                }
-                            } catch (RuntimeException e) {
-                                if (!e.getClass().equals(RuntimeException.class)) {
-                                    throw e;
-                                }
-                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e);
-                                if (this.h != null) {
-                                    this.h = null;
-                                }
-                            }
-                        } catch (Throwable th2) {
-                            if (this.h != null) {
-                                this.h = null;
-                            }
-                            throw th2;
-                        }
-                    } else {
-                        Log.e("WakeLock", String.valueOf(this.j).concat(" should be held!"));
-                    }
-                }
-            } catch (Throwable th3) {
-                throw th3;
-            }
+    @Override // o6.g
+    public final Bundle t() {
+        r3 r3Var = this.V;
+        boolean equals = this.n.getPackageName().equals((String) r3Var.d);
+        Bundle bundle = this.W;
+        if (!equals) {
+            bundle.putString("com.google.android.gms.signin.internal.realClientPackageName", (String) r3Var.d);
         }
+        return bundle;
+    }
+
+    @Override // o6.g
+    public final String v() {
+        return "com.google.android.gms.signin.internal.ISignInService";
+    }
+
+    @Override // o6.g
+    public final String w() {
+        return "com.google.android.gms.signin.service.START";
     }
 }

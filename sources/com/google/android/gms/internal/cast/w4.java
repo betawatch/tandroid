@@ -1,35 +1,43 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.io.IOException;
+import java.util.Locale;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class w4 extends x4 {
-    public final int d;
-
-    public w4(byte[] bArr) {
-        super(bArr);
-        x4.o(bArr.length);
-        this.d = 47;
+public final class w4 extends IOException {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public w4(int i10, int i11) {
+        super(r0.toString());
+        StringBuilder sb2 = new StringBuilder(108);
+        sb2.append("CodedOutputStream was writing to a flat byte array and ran out of space (pos ");
+        sb2.append(i10);
+        sb2.append(" limit ");
+        sb2.append(i11);
+        sb2.append(").");
     }
 
-    @Override // com.google.android.gms.internal.cast.x4
-    public final byte h(int i10) {
-        int i11 = this.d;
-        if (((i11 - (i10 + 1)) | i10) >= 0) {
-            return this.b[i10];
-        }
-        if (i10 < 0) {
-            throw new ArrayIndexOutOfBoundsException(i2.o1.k(i10, "Index < 0: "));
-        }
-        throw new ArrayIndexOutOfBoundsException(a1.g.l(i10, i11, "Index > length: ", ", "));
+    public /* synthetic */ w4(IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.", indexOutOfBoundsException);
     }
 
-    @Override // com.google.android.gms.internal.cast.x4
-    public final byte m(int i10) {
-        return this.b[i10];
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public w4(long j10, long j11, int i10, IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), indexOutOfBoundsException);
+        Locale locale = Locale.US;
+        StringBuilder t10 = a1.g.t(j10, "Pos: ", ", limit: ");
+        t10.append(j11);
+        t10.append(", len: ");
+        t10.append(i10);
     }
 
-    @Override // com.google.android.gms.internal.cast.x4
-    public final int n() {
-        return this.d;
+    public w4(String str, IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(str), indexOutOfBoundsException);
     }
 }

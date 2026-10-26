@@ -12,7 +12,7 @@ import java.security.KeyStoreException;
 import java.util.Locale;
 import javax.crypto.Cipher;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class FingerprintController {
     private static final String KEY_ALIAS = "tmessages_passcode";
@@ -63,14 +63,14 @@ public class FingerprintController {
                 keyPairGenerator2.initialize(new KeyGenParameterSpec.Builder(KEY_ALIAS, 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
                 keyPairGenerator2.generateKeyPair();
                 setLocale(locale);
-                AndroidUtilities.runOnUIThread(new c4(1, z10));
+                AndroidUtilities.runOnUIThread(new e4(1, z10));
             } catch (InvalidAlgorithmParameterException e) {
                 FileLog.e(e);
-            } catch (Exception e7) {
-                if (e7.getClass().getName().equals("android.security.KeyStoreException")) {
+            } catch (Exception e10) {
+                if (e10.getClass().getName().equals("android.security.KeyStoreException")) {
                     return;
                 }
-                FileLog.e(e7);
+                FileLog.e(e10);
             }
         }
     }
@@ -155,11 +155,11 @@ public class FingerprintController {
                 if (fingerprintManager2 != null) {
                     z12 = fingerprintManager2.hasEnrolledFingerprints();
                 }
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
             if (z12) {
-                Utilities.globalQueue.postRunnable(new c4(0, z10));
+                Utilities.globalQueue.postRunnable(new e4(0, z10));
                 return;
             }
             return;

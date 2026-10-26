@@ -1,46 +1,48 @@
 package u2;
 
-import m.g3;
+import a8.yb;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class z0 implements g0 {
-    public final g2.g a;
-    public final qg.g0 b;
-    public final g3 c;
-    public final oa.d d;
-    public final int e;
+public final class z0 implements x3.g {
+    public long a;
+    public long b;
+    public Object c;
+    public Object d;
 
-    public z0(g2.g gVar, c3.o oVar) {
-        qg.g0 g0Var = new qg.g0(oVar, 17);
-        g3 g3Var = new g3(5);
-        oa.d dVar = new oa.d(27);
-        this.a = gVar;
-        this.b = g0Var;
-        this.c = g3Var;
-        this.d = dVar;
-        this.e = 1048576;
+    public z0(long j10, int i10) {
+        yb.p(((y2.a) this.c) == null);
+        this.a = j10;
+        this.b = j10 + i10;
     }
 
-    @Override // u2.g0
-    /* renamed from: e, reason: merged with bridge method [inline-methods] */
-    public final a1 a(b2.o0 o0Var) {
-        o0Var.b.getClass();
-        return new a1(o0Var, this.a, this.b, this.c.B(o0Var), this.d, this.e, null);
+    @Override // x3.g
+    public void N0(long j10) {
+        long[] jArr = (long[]) ((rf.b) this.d).b;
+        this.b = jArr[e2.n0.f(jArr, j10, true)];
     }
 
-    @Override // u2.g0
-    public final g0 b(boolean z10) {
-        return this;
+    @Override // x3.g
+    public c3.b0 U() {
+        yb.p(this.a != -1);
+        return new c3.t((c3.u) this.c, this.a, 0);
     }
 
-    @Override // u2.g0
-    public final g0 c(int i10) {
-        return this;
+    @Override // x3.g
+    public long w(c3.p pVar) {
+        long j10 = this.b;
+        if (j10 < 0) {
+            return -1L;
+        }
+        long j11 = -(j10 + 2);
+        this.b = -1L;
+        return j11;
     }
 
-    @Override // u2.g0
-    public final g0 d(t7.u uVar) {
-        return this;
+    public z0(String str, byte[] bArr, long j10, long j11) {
+        this.c = str;
+        this.d = bArr;
+        this.a = j10;
+        this.b = j11;
     }
 }

@@ -1,18 +1,25 @@
 package fd;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.lang.reflect.Field;
+import java.util.Collections;
+import java.util.Map;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class d extends f2.f {
-    public String c;
+public abstract class d {
+    public static final Map a;
 
-    @Override // f2.f
-    public final f2.f b() {
-        this.c = null;
-        return this;
-    }
-
-    @Override // f2.f
-    public String toString() {
-        return this.c;
+    static {
+        Map map;
+        try {
+            Field declaredField = df.b.class.getDeclaredField("a");
+            declaredField.setAccessible(true);
+            map = (Map) declaredField.get(null);
+        } catch (Throwable th2) {
+            Map map2 = Collections.EMPTY_MAP;
+            th2.printStackTrace();
+            map = map2;
+        }
+        a = map;
     }
 }

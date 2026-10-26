@@ -1,17 +1,17 @@
 package com.google.android.recaptcha.internal;
 
+import a8.id;
 import android.app.Application;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
-import be.e2;
+import ce.e2;
 import com.google.android.recaptcha.RecaptchaAction;
-import id.c;
-import id.g;
+import jd.c;
+import jd.g;
 import kotlin.jvm.internal.i;
-import v7.h8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzfp {
     private final String zza;
@@ -27,14 +27,14 @@ public final class zzfp {
     public zzfp(String str) {
         this.zza = str;
         int i10 = zzby.zza;
-        this.zzb = h8.a(zzff.zza);
-        this.zzc = h8.a(zzfg.zza);
-        this.zzd = h8.a(zzfh.zza);
-        this.zze = h8.a(zzfi.zza);
-        this.zzf = h8.a(zzfj.zza);
-        this.zzg = h8.a(zzfk.zza);
-        this.zzh = h8.a(zzfl.zza);
-        this.zzi = h8.a(zzfm.zza);
+        this.zzb = id.a(zzff.zza);
+        this.zzc = id.a(zzfg.zza);
+        this.zzd = id.a(zzfh.zza);
+        this.zze = id.a(zzfi.zza);
+        this.zzf = id.a(zzfj.zza);
+        this.zzg = id.a(zzfk.zza);
+        this.zzh = id.a(zzfl.zza);
+        this.zzi = id.a(zzfm.zza);
     }
 
     public static final /* synthetic */ zzq zzb(zzfp zzfpVar) {
@@ -101,7 +101,7 @@ public final class zzfp {
         try {
             zzxg zzj = zzxg.zzj(zzdb.zza(str));
             int i10 = zzby.zza;
-            ((zziq) h8.a(zzeu.zza).a()).zza(zzj);
+            ((zziq) id.a(zzeu.zza).a()).zza(zzj);
         } catch (Exception e) {
             throw new zzcg(zzce.zzl, zzcd.zzan, e.getMessage(), null, 8, null);
         }
@@ -117,23 +117,23 @@ public final class zzfp {
         return (zzye) zzf.zzk();
     }
 
-    public final Object zzl(String str, long j10, kd.c cVar) {
+    public final Object zzl(String str, long j10, ld.c cVar) {
         return new zzhf(27, new zzet(this, str, j10, null), null);
     }
 
-    public final Object zzm(zzye zzyeVar, long j10, kd.c cVar) {
+    public final Object zzm(zzye zzyeVar, long j10, ld.c cVar) {
         return new zzhf(28, new zzex(this, j10, zzyeVar, null), null);
     }
 
-    public final Object zzn(zzxn zzxnVar, long j10, kd.c cVar) {
+    public final Object zzn(zzxn zzxnVar, long j10, ld.c cVar) {
         return new zzhg(new zzfd(j10, this, zzxnVar, null));
     }
 
-    public final Object zzo(zzyg zzygVar, kd.c cVar) {
+    public final Object zzo(zzyg zzygVar, ld.c cVar) {
         return new zzhf(29, new zzfe(zzygVar, this, null), null);
     }
 
-    public final Object zzp(long j10, kd.c cVar) {
+    public final Object zzp(long j10, ld.c cVar) {
         return new zzhf(22, new zzfo(j10, this, null), null);
     }
 }

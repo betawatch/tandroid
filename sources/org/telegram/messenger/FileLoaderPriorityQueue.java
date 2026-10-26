@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class FileLoaderPriorityQueue {
     public static final int PRIORITY_VALUE_LOW = 0;
@@ -13,17 +13,17 @@ public class FileLoaderPriorityQueue {
     int currentAccount;
     String name;
     int type;
-    final DispatchQueue workerQueue;
+    final DispatchQueue2 workerQueue;
     public ArrayList<FileLoadOperation> allOperations = new ArrayList<>();
     public ArrayList<FileLoadOperation> tmpListOperations = new ArrayList<>();
     boolean checkOperationsScheduled = false;
-    Runnable checkOperationsRunnable = new i1(this, 18);
+    Runnable checkOperationsRunnable = new j1(this, 18);
 
-    public FileLoaderPriorityQueue(int i10, String str, int i11, DispatchQueue dispatchQueue) {
+    public FileLoaderPriorityQueue(int i10, String str, int i11, DispatchQueue2 dispatchQueue2) {
         this.currentAccount = i10;
         this.name = str;
         this.type = i11;
-        this.workerQueue = dispatchQueue;
+        this.workerQueue = dispatchQueue2;
     }
 
     private void checkLoadingOperationInternal() {

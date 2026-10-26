@@ -1,71 +1,41 @@
 package jf;
 
-import a1.g;
-import java.util.ArrayList;
+import com.google.android.gms.internal.cast.f4;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public String a;
-    public ArrayList b;
-    public ArrayList c;
-    public ArrayList d;
+public final class a extends ThreadPoolExecutor implements AutoCloseable {
+    public final /* synthetic */ c a;
 
-    public final String a(String str) {
-        String str2;
-        String str3;
-        String str4;
-        String str5 = null;
-        if (str.startsWith(this.a)) {
-            str4 = this.a;
-            str3 = str.substring(str4.length());
-        } else {
-            ArrayList arrayList = this.b;
-            int size = arrayList.size();
-            int i10 = 0;
-            while (true) {
-                if (i10 >= size) {
-                    str2 = null;
-                    break;
-                }
-                Object obj = arrayList.get(i10);
-                i10++;
-                str2 = (String) obj;
-                if (str.startsWith(str2)) {
-                    break;
-                }
-            }
-            if (str2 != null) {
-                str3 = str.substring(str2.length());
-                str4 = null;
-                str5 = str2;
-            } else {
-                str3 = str;
-                str4 = null;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public a(c cVar, PriorityBlockingQueue priorityBlockingQueue) {
+        super(1, 1, 60L, r5, priorityBlockingQueue);
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+        this.a = cVar;
+    }
+
+    @Override // java.util.concurrent.ThreadPoolExecutor
+    public final void beforeExecute(Thread thread, Runnable runnable) {
+        CountDownLatch countDownLatch = this.a.b;
+        if (countDownLatch != null) {
+            try {
+                countDownLatch.await();
+            } catch (InterruptedException e) {
+                FileLog.e(e);
             }
         }
-        ArrayList arrayList2 = this.d;
-        int size2 = arrayList2.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj2 = arrayList2.get(i11);
-            i11++;
-            String a2 = ((d) obj2).a(str3, str4, str5, true);
-            if (a2 != null) {
-                return a2;
-            }
-        }
-        ArrayList arrayList3 = this.d;
-        int size3 = arrayList3.size();
-        int i12 = 0;
-        while (i12 < size3) {
-            Object obj3 = arrayList3.get(i12);
-            i12++;
-            String a10 = ((d) obj3).a(str3, str4, str5, false);
-            if (a10 != null) {
-                return a10;
-            }
-        }
-        return (str4 == null || str3.length() == 0) ? str : g.D(str4, " ", str3);
+    }
+
+    @Override // java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        f4.f(this);
     }
 }

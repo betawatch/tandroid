@@ -1,13 +1,21 @@
 package w7;
 
-import java.util.logging.Logger;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class r2 {
-    public static final /* synthetic */ int a = 0;
+public final class r2 implements ka.d {
+    public static final r2 a = new r2();
 
     static {
-        Logger.getLogger(r2.class.getName());
+        b10.s(b10.m(h.class, b10.p(7, b10.m(h.class, b10.p(6, b10.m(h.class, b10.p(5, b10.m(h.class, b10.p(4, b10.m(h.class, b10.p(3, b10.m(h.class, b10.p(2, b10.m(h.class, new e(1)))))))))))))));
+    }
+
+    @Override // ka.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

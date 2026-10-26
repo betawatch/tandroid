@@ -1,102 +1,50 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class jp extends org.telegram.ui.Components.lm0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public ip f;
-    public final /* synthetic */ kp h;
+public final class jp extends org.telegram.ui.Components.g90 {
+    public final /* synthetic */ TLRPC.Chat w;
+    public final /* synthetic */ kp x;
 
-    public jp(kp kpVar, Context context) {
-        this.h = kpVar;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jp(kp kpVar, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
+        super(context, chat);
+        this.x = kpVar;
+        this.w = chat2;
     }
 
-    public static void E(jp jpVar, ArrayList arrayList, ArrayList arrayList2) {
-        kp kpVar = jpVar.h;
-        if (kpVar.N) {
-            jpVar.d = arrayList;
-            jpVar.e = arrayList2;
-            if (kpVar.b.getAdapter() == kpVar.e) {
-                kpVar.d.c();
-            }
-            super.l();
+    @Override // org.telegram.ui.Components.g90
+    public final boolean a(boolean z10, org.telegram.ui.Components.e90 e90Var) {
+        np npVar = this.x.d;
+        if (npVar.P) {
+            return false;
         }
+        npVar.P = true;
+        e(new ed(29, this, e90Var), new bi.s9(this, this.w, z10, e90Var, 16));
+        return true;
     }
 
-    @Override // s4.g0
-    public final void A(s4.b1 b1Var) {
-        View view = b1Var.a;
-        if (view instanceof org.telegram.ui.Cells.a5) {
-            ((org.telegram.ui.Cells.a5) view).a();
+    @Override // org.telegram.ui.Components.g90
+    public final boolean b(boolean z10, org.telegram.ui.Components.f90 f90Var) {
+        np npVar = this.x.d;
+        if (npVar.O) {
+            return false;
         }
+        npVar.O = true;
+        e(new ed(29, this, f90Var), new bi.s9(this, this.w, z10, f90Var, 15));
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f != 1;
-    }
-
-    public final void F(String str) {
-        if (this.f != null) {
-            Utilities.searchQueue.cancelRunnable(this.f);
-            this.f = null;
-        }
-        if (TextUtils.isEmpty(str)) {
-            this.d.clear();
-            this.e.clear();
-            super.l();
+    public final void e(ed edVar, Runnable runnable) {
+        np npVar = this.x.d;
+        if (ChatObject.isChannel(npVar.f)) {
+            runnable.run();
         } else {
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
-            ip ipVar = new ip(this, str, 0);
-            this.f = ipVar;
-            dispatchQueue.postRunnable(ipVar, 300L);
+            npVar.getMessagesController().convertToMegaGroup(npVar.getParentActivity(), this.w.id, npVar, new m4.s0(25, this, runnable), edVar);
         }
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.d.size();
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        TLRPC.Chat chat = (TLRPC.Chat) this.d.get(i10);
-        String publicUsername = ChatObject.getPublicUsername(chat);
-        CharSequence charSequence = (CharSequence) this.e.get(i10);
-        CharSequence charSequence2 = null;
-        if (charSequence != null && !TextUtils.isEmpty(publicUsername)) {
-            if (charSequence.toString().startsWith("@" + publicUsername)) {
-                charSequence2 = charSequence;
-                charSequence = null;
-            }
-        }
-        org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) b1Var.a;
-        a5Var.setTag(Integer.valueOf(i10));
-        a5Var.c(chat, charSequence, charSequence2, false);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(6, 2, this.c, null, false);
-        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, a5Var, null);
-        return new org.telegram.ui.Components.wl0(a5Var);
     }
 }

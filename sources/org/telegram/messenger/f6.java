@@ -1,27 +1,55 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Serializable n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ f6(MediaController mediaController, int i10, int i11) {
-        this.a = i11;
-        this.b = mediaController;
+    public /* synthetic */ f6(MediaController mediaController, File file, TLRPC.TL_document tL_document, int i10, boolean z10, int i11, boolean z11, long j10) {
+        this.h = mediaController;
+        this.n = file;
+        this.r = tL_document;
         this.c = i10;
+        this.b = z10;
+        this.e = i11;
+        this.f = z11;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onAudioFocusChange$5(this.c);
+                ((MediaController) this.h).lambda$stopRecordingInternal$43((File) this.n, (TLRPC.TL_document) this.r, this.c, this.b, this.e, this.f, this.d);
                 break;
             default:
-                this.b.lambda$stopRecording$45(this.c);
+                ((MessagesStorage) this.h).lambda$updatePinnedMessages$141(this.b, (HashMap) this.n, this.c, this.d, (ArrayList) this.r, this.e, this.f);
                 break;
         }
+    }
+
+    public /* synthetic */ f6(MessagesStorage messagesStorage, boolean z10, HashMap hashMap, int i10, long j10, ArrayList arrayList, int i11, boolean z11) {
+        this.h = messagesStorage;
+        this.b = z10;
+        this.n = hashMap;
+        this.c = i10;
+        this.d = j10;
+        this.r = arrayList;
+        this.e = i11;
+        this.f = z11;
     }
 }

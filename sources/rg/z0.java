@@ -1,132 +1,46 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.TextureView;
-import ei.q6;
-import ei.r5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.na;
+import android.os.Looper;
+import org.telegram.ui.Components.cy0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z0 extends org.telegram.ui.Cells.t1 {
-    public final na Ge;
-    public final float[] He;
-    public final Path Ie;
-    public final Paint Je;
-    public final Rect Ke;
-    public final RectF Le;
-    public final /* synthetic */ a1 Me;
+public final /* synthetic */ class z0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(a1 a1Var, Context context, int i10, e1 e1Var) {
-        super(context, i10, false, null, e1Var);
-        this.Me = a1Var;
-        this.Ge = new na(a1Var.d, this, 10, false);
-        this.He = new float[8];
-        this.Ie = new Path();
-        Paint paint = new Paint();
-        this.Je = paint;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.Ke = new Rect();
-        this.Le = new RectF();
+    public /* synthetic */ z0(a1 a1Var, int i10) {
+        this.a = i10;
+        this.b = a1Var;
     }
 
-    @Override // org.telegram.ui.Cells.t1
-    public final Paint L2(String str) {
-        if ("paintChatActionBackground".equals(str)) {
-            this.Me.h.v0 = true;
-            Paint c10 = this.Ge.c(1.0f);
-            if (c10 != null) {
-                return c10;
-            }
-        }
-        return super.L2(str);
-    }
-
-    @Override // org.telegram.ui.Cells.t1
-    public final boolean Z1(Canvas canvas) {
-        q6 q6Var;
-        float[] fArr;
-        ImageReceiver photoImage = getPhotoImage();
-        a1 a1Var = this.Me;
-        r5 r5Var = a1Var.h;
-        if (!a1Var.f || photoImage == null || (((q6Var = a1Var.e) == null || !q6Var.g || !q6Var.d || !r5Var.x0) && !r5Var.u0 && (r5Var.w0 == null || !r5Var.M0.I0))) {
-            return super.Z1(canvas);
-        }
-        int i10 = 0;
-        while (true) {
-            int length = photoImage.getRoundRadius().length;
-            fArr = this.He;
-            if (i10 >= length) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a1 a1Var = this.b;
+                cy0 cy0Var = a1Var.w;
+                z0 z0Var = a1Var.s;
+                if (z0Var != null) {
+                    a1Var.cancelRunnable(z0Var);
+                    a1Var.s = null;
+                }
+                a1Var.cancelRunnable(cy0Var);
+                a1Var.postRunnable(cy0Var);
                 break;
-            }
-            int i11 = i10 * 2;
-            fArr[i11] = photoImage.getRoundRadius()[i10];
-            fArr[i11 + 1] = photoImage.getRoundRadius()[i10];
-            i10++;
+            case 1:
+                a1 a1Var2 = this.b;
+                a1Var2.s = null;
+                a1Var2.w.run();
+                break;
+            default:
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
         }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(photoImage.getImageX(), photoImage.getImageY(), photoImage.getImageX2(), photoImage.getImageY2());
-        Path path = this.Ie;
-        path.rewind();
-        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-        TextureView textureView = r5Var.w0;
-        if (textureView == null || !r5Var.M0.I0) {
-            canvas.drawPath(path, this.Je);
-            return true;
-        }
-        Bitmap bitmap = textureView.getBitmap();
-        if (bitmap == null) {
-            return super.Z1(canvas);
-        }
-        canvas.save();
-        canvas.clipPath(path);
-        canvas.translate(-getX(), -getY());
-        float max = Math.max(photoImage.getImageWidth() / r5Var.y0, photoImage.getImageHeight() / r5Var.z0);
-        canvas.translate(photoImage.getCenterX() - ((r5Var.y0 * max) / 2.0f), photoImage.getCenterY() - ((r5Var.z0 * max) / 2.0f));
-        canvas.scale((r5Var.y0 / r5Var.w0.getWidth()) * max, (r5Var.z0 / r5Var.w0.getHeight()) * max);
-        int width = bitmap.getWidth();
-        int height = bitmap.getHeight();
-        Rect rect = this.Ke;
-        rect.set(0, 0, width, height);
-        float width2 = r5Var.w0.getWidth();
-        float height2 = r5Var.w0.getHeight();
-        RectF rectF2 = this.Le;
-        rectF2.set(0.0f, 0.0f, width2, height2);
-        canvas.drawBitmap(bitmap, rect, rectF2, (Paint) null);
-        canvas.restore();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.t1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        a1 a1Var = this.Me;
-        q6 q6Var = a1Var.e;
-        if ((q6Var != null && q6Var.g && q6Var.d) || a1Var.h.u0) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        } else {
-            canvas2 = canvas;
-            canvas2.save();
-        }
-        R1(canvas2);
-        canvas2.restore();
-    }
-
-    @Override // org.telegram.ui.Cells.t1, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
     }
 }

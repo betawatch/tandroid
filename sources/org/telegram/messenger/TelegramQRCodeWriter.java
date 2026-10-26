@@ -12,7 +12,7 @@ import android.graphics.drawable.GradientDrawable;
 import java.util.Arrays;
 import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class TelegramQRCodeWriter {
     private static final int QUIET_ZONE_SIZE = 4;
@@ -20,7 +20,7 @@ public final class TelegramQRCodeWriter {
     private int imageBlockX;
     private int imageBloks;
     private int imageSize;
-    private kc.b input;
+    private lc.b input;
     private int sideQuadSize;
     private float[] radii = new float[8];
     public boolean includeSideQuads = true;
@@ -151,7 +151,7 @@ public final class TelegramQRCodeWriter {
             return false;
         }
         if ((i10 >= i14 || i11 < this.input.c - i14) && i10 >= 0 && i11 >= 0) {
-            kc.b bVar = this.input;
+            lc.b bVar = this.input;
             if (i10 < bVar.b && i11 < bVar.c && bVar.a(i10, i11) == 1) {
                 return true;
             }
@@ -159,7 +159,7 @@ public final class TelegramQRCodeWriter {
         return false;
     }
 
-    public Bitmap encode(String str, int i10, int i11, Map<dc.b, ?> map, Bitmap bitmap) {
+    public Bitmap encode(String str, int i10, int i11, Map<ec.b, ?> map, Bitmap bitmap) {
         return encode(str, i10, i11, map, bitmap, 1.0f, -1, -16777216);
     }
 
@@ -181,10 +181,10 @@ public final class TelegramQRCodeWriter {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Bitmap encode(String str, int i10, int i11, Map<dc.b, ?> map, Bitmap bitmap, float f7, int i12, int i13) {
+    public Bitmap encode(String str, int i10, int i11, Map<ec.b, ?> map, Bitmap bitmap, float f7, int i12, int i13) {
         String str2;
         int i14;
-        kc.b bVar;
+        lc.b bVar;
         int i15;
         int i16;
         Paint paint;
@@ -203,17 +203,17 @@ public final class TelegramQRCodeWriter {
         if (i10 < 0 || i11 < 0) {
             throw new IllegalArgumentException("Requested dimensions are too small: " + i10 + 'x' + i11);
         }
-        ic.c cVar = ic.c.b;
+        jc.c cVar = jc.c.b;
         if (map != null) {
-            dc.b bVar2 = dc.b.a;
+            ec.b bVar2 = ec.b.a;
             if (map.containsKey(bVar2)) {
-                cVar = ic.c.valueOf(map.get(bVar2).toString());
+                cVar = jc.c.valueOf(map.get(bVar2).toString());
             }
-            dc.b bVar3 = dc.b.c;
+            ec.b bVar3 = ec.b.c;
             if (map.containsKey(bVar3)) {
                 i14 = Integer.parseInt(map.get(bVar3).toString());
                 str2 = str;
-                bVar = (kc.b) kc.c.b(str2, cVar, map).f;
+                bVar = (lc.b) lc.c.b(str2, cVar, map).f;
                 this.input = bVar;
                 if (bVar != null) {
                     throw new IllegalStateException();
@@ -401,7 +401,7 @@ public final class TelegramQRCodeWriter {
         }
         str2 = str;
         i14 = 4;
-        bVar = (kc.b) kc.c.b(str2, cVar, map).f;
+        bVar = (lc.b) lc.c.b(str2, cVar, map).f;
         this.input = bVar;
         if (bVar != null) {
         }

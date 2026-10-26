@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
+import a8.sa;
 import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import sun.misc.Unsafe;
-import v7.z5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class j0 extends z5 {
+public final class j0 extends sa {
     public static final Unsafe a;
     public static final long b;
     public static final long c;
@@ -20,8 +20,8 @@ public final class j0 extends z5 {
         try {
             try {
                 unsafe = Unsafe.getUnsafe();
-            } catch (PrivilegedActionException e7) {
-                throw new RuntimeException("Could not initialize intrinsics", e7.getCause());
+            } catch (PrivilegedActionException e10) {
+                throw new RuntimeException("Could not initialize intrinsics", e10.getCause());
             }
         } catch (SecurityException unused) {
             unsafe = (Unsafe) AccessController.doPrivileged(new o0());
@@ -33,12 +33,12 @@ public final class j0 extends z5 {
             e = unsafe.objectFieldOffset(k0.class.getDeclaredField("a"));
             f = unsafe.objectFieldOffset(k0.class.getDeclaredField("b"));
             a = unsafe;
-        } catch (NoSuchFieldException e10) {
-            throw new RuntimeException(e10);
+        } catch (NoSuchFieldException e11) {
+            throw new RuntimeException(e11);
         }
     }
 
-    @Override // v7.z5
+    @Override // a8.sa
     public final f0 a(w0 w0Var) {
         f0 f0Var;
         f0 f0Var2 = f0.d;
@@ -51,7 +51,7 @@ public final class j0 extends z5 {
         return f0Var;
     }
 
-    @Override // v7.z5
+    @Override // a8.sa
     public final k0 b(w0 w0Var) {
         k0 k0Var;
         k0 k0Var2 = k0.c;
@@ -64,27 +64,27 @@ public final class j0 extends z5 {
         return k0Var;
     }
 
-    @Override // v7.z5
+    @Override // a8.sa
     public final void c(k0 k0Var, k0 k0Var2) {
         a.putObject(k0Var, f, k0Var2);
     }
 
-    @Override // v7.z5
+    @Override // a8.sa
     public final void d(k0 k0Var, Thread thread) {
         a.putObject(k0Var, e, thread);
     }
 
-    @Override // v7.z5
+    @Override // a8.sa
     public final boolean e(w0 w0Var, f0 f0Var, f0 f0Var2) {
         return n0.a(a, w0Var, b, f0Var, f0Var2);
     }
 
-    @Override // v7.z5
+    @Override // a8.sa
     public final boolean f(l0 l0Var, Object obj, Object obj2) {
         return n0.a(a, l0Var, d, obj, obj2);
     }
 
-    @Override // v7.z5
+    @Override // a8.sa
     public final boolean g(l0 l0Var, k0 k0Var, k0 k0Var2) {
         return n0.a(a, l0Var, c, k0Var, k0Var2);
     }

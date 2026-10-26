@@ -1,37 +1,34 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class z2 extends f5 {
+public final class z2 extends c5 {
     private static final z2 zzb;
     private int zzd;
     private int zze;
     private int zzf;
-    private boolean zzg;
-    private boolean zzh;
-    private int zzi;
-    private int zzj;
+    private int zzg;
 
     static {
         z2 z2Var = new z2();
         zzb = z2Var;
-        f5.e(z2.class, z2Var);
+        c5.e(z2.class, z2Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.f5
-    public final Object h(int i10, f5 f5Var) {
+    @Override // com.google.android.gms.internal.cast.c5
+    public final Object h(int i10, c5 c5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new h6(zzb, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001င\u0000\u0002᠌\u0001\u0003ဇ\u0002\u0004ဇ\u0003\u0005᠌\u0004\u0006ဆ\u0005", new Object[]{"zzd", "zze", "zzf", z0.e, "zzg", "zzh", "zzi", z.L, "zzj"});
+            return new d6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003င\u0002", new Object[]{"zzd", "zze", "zzf", "zzg"});
         }
         if (i11 == 3) {
             return new z2();
         }
         if (i11 == 4) {
-            return new v0(zzb);
+            return new s0(zzb);
         }
         if (i11 != 5) {
             return null;

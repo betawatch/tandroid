@@ -1,171 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.DesugarCollections;
-import java.nio.charset.Charset;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class n5 extends u4 implements RandomAccess, o5 {
-    public final List b;
-
-    static {
-        new n5();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n5(int i10) {
-        super(true);
-        ArrayList arrayList = new ArrayList(i10);
-        this.b = arrayList;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ void add(int i10, Object obj) {
-        h();
-        this.b.add(i10, (String) obj);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i10, Collection collection) {
-        h();
-        if (collection instanceof o5) {
-            collection = ((o5) collection).zzh();
+public final class n5 extends o5 {
+    @Override // com.google.android.gms.internal.cast.o5
+    public final void a(Object obj, long j10) {
+        r4 r4Var = (r4) ((h5) p6.h(obj, j10));
+        if (r4Var.a) {
+            r4Var.a = false;
         }
-        boolean addAll = this.b.addAll(i10, collection);
-        ((AbstractList) this).modCount++;
-        return addAll;
     }
 
     @Override // com.google.android.gms.internal.cast.o5
-    public final Object c(int i10) {
-        return this.b.get(i10);
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        h();
-        this.b.clear();
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    /* renamed from: m, reason: merged with bridge method [inline-methods] */
-    public final String get(int i10) {
-        String str;
-        List list = this.b;
-        Object obj = list.get(i10);
-        if (obj instanceof String) {
-            return (String) obj;
-        }
-        if (!(obj instanceof x4)) {
-            byte[] bArr = (byte[]) obj;
-            String str2 = new String(bArr, l5.a);
-            e1 e1Var = v6.a;
-            int length = bArr.length;
-            e1Var.getClass();
-            if (e1.a(length, bArr)) {
-                list.set(i10, str2);
+    public final void b(Object obj, long j10, Object obj2) {
+        h5 h5Var = (h5) p6.h(obj, j10);
+        h5 h5Var2 = (h5) p6.h(obj2, j10);
+        int size = h5Var.size();
+        int size2 = h5Var2.size();
+        if (size > 0 && size2 > 0) {
+            if (!((r4) h5Var).a) {
+                h5Var = h5Var.zzg(size2 + size);
             }
-            return str2;
+            h5Var.addAll(h5Var2);
         }
-        x4 x4Var = (x4) obj;
-        Charset charset = l5.a;
-        if (x4Var.n() == 0) {
-            str = "";
-        } else {
-            str = new String(x4Var.b, 0, x4Var.n(), charset);
+        if (size > 0) {
+            h5Var2 = h5Var;
         }
-        int n10 = x4Var.n();
-        byte[] bArr2 = x4Var.b;
-        v6.a.getClass();
-        if (e1.a(n10, bArr2)) {
-            list.set(i10, str);
-        }
-        return str;
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        h();
-        Object remove = this.b.remove(i10);
-        ((AbstractList) this).modCount++;
-        if (remove instanceof String) {
-            return (String) remove;
-        }
-        if (!(remove instanceof x4)) {
-            return new String((byte[]) remove, l5.a);
-        }
-        x4 x4Var = (x4) remove;
-        Charset charset = l5.a;
-        if (x4Var.n() == 0) {
-            return "";
-        }
-        return new String(x4Var.b, 0, x4Var.n(), charset);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        h();
-        Object obj2 = this.b.set(i10, (String) obj);
-        if (obj2 instanceof String) {
-            return (String) obj2;
-        }
-        if (!(obj2 instanceof x4)) {
-            return new String((byte[]) obj2, l5.a);
-        }
-        x4 x4Var = (x4) obj2;
-        Charset charset = l5.a;
-        if (x4Var.n() == 0) {
-            return "";
-        }
-        return new String(x4Var.b, 0, x4Var.n(), charset);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.b.size();
-    }
-
-    @Override // com.google.android.gms.internal.cast.o5
-    public final o5 zzd() {
-        return this.a ? new o6(this) : this;
-    }
-
-    @Override // com.google.android.gms.internal.cast.k5
-    public final k5 zzg(int i10) {
-        List list = this.b;
-        if (i10 < list.size()) {
-            throw new IllegalArgumentException();
-        }
-        ArrayList arrayList = new ArrayList(i10);
-        arrayList.addAll(list);
-        return new n5(arrayList);
-    }
-
-    @Override // com.google.android.gms.internal.cast.o5
-    public final List zzh() {
-        return DesugarCollections.unmodifiableList(this.b);
-    }
-
-    public n5(ArrayList arrayList) {
-        super(true);
-        this.b = arrayList;
-    }
-
-    public n5() {
-        super(false);
-        this.b = Collections.EMPTY_LIST;
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        return addAll(this.b.size(), collection);
+        p6.l(obj, j10, h5Var2);
     }
 }

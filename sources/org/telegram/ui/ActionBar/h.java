@@ -6,7 +6,7 @@ import android.transition.TransitionValues;
 import android.view.View;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class h extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,24 +30,24 @@ public final class h extends AnimatorListenerAdapter {
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i10 = 0; i10 < itemsCount; i10++) {
                     View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
-                    if (!(childAt instanceof j1)) {
+                    if (!(childAt instanceof l1)) {
                         childAt.setTranslationY(0.0f);
                         childAt.setAlpha(childAt.isEnabled() ? 1.0f : 0.5f);
                     }
                 }
                 break;
             case 2:
-                o1 o1Var = (o1) this.b;
-                if (!o1Var.e) {
-                    o1Var.j();
+                q1 q1Var = (q1) this.b;
+                if (!q1Var.e) {
+                    q1Var.j();
                     break;
                 }
                 break;
             case 3:
-                q3 q3Var = (q3) this.b;
-                if (q3Var.F == animator) {
-                    q3Var.G = q3Var.H;
-                    Iterator it = q3Var.I.iterator();
+                s3 s3Var = (s3) this.b;
+                if (s3Var.F == animator) {
+                    s3Var.G = s3Var.H;
+                    Iterator it = s3Var.I.iterator();
                     while (it.hasNext()) {
                         ((Runnable) it.next()).run();
                     }
@@ -55,16 +55,16 @@ public final class h extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                z3 z3Var = (z3) this.b;
-                q3 q3Var2 = z3Var.a;
-                if (q3Var2 != null) {
-                    q3Var2.b = true;
-                    q3Var2.invalidate();
+                b4 b4Var = (b4) this.b;
+                s3 s3Var2 = b4Var.a;
+                if (s3Var2 != null) {
+                    s3Var2.b = true;
+                    s3Var2.invalidate();
                 }
-                z3Var.V = z3Var.U ? 1.0f : 0.0f;
-                z3Var.invalidate();
-                if (!z3Var.U) {
-                    z3Var.R.clear();
+                b4Var.V = b4Var.U ? 1.0f : 0.0f;
+                b4Var.invalidate();
+                if (!b4Var.U) {
+                    b4Var.R.clear();
                     break;
                 }
                 break;

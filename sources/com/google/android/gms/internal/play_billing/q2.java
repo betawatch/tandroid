@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class q2 {
     public static final q2 c = new q2();
@@ -11,7 +11,7 @@ public final class q2 {
     public final i2 a = new i2();
 
     public final t2 a(Class cls) {
-        t2 r10;
+        t2 r6;
         Charset charset = a2.a;
         if (cls == null) {
             throw new NullPointerException("messageType");
@@ -29,16 +29,16 @@ public final class q2 {
         if ((zzb.d & 2) == 2) {
             t1 t1Var2 = u2.a;
             t1 t1Var3 = p1.a;
-            r10 = new o2(t1Var2, zzb.a);
+            r6 = new o2(t1Var2, zzb.a);
         } else {
             int i10 = p2.a;
             int i11 = f2.a;
             t1 t1Var4 = u2.a;
             t1 t1Var5 = zzb.a() + (-1) != 1 ? p1.a : null;
             int i12 = k2.a;
-            r10 = n2.r(zzb, t1Var4, t1Var5);
+            r6 = n2.r(zzb, t1Var4, t1Var5);
         }
-        t2 t2Var2 = (t2) concurrentHashMap.putIfAbsent(cls, r10);
-        return t2Var2 != null ? t2Var2 : r10;
+        t2 t2Var2 = (t2) concurrentHashMap.putIfAbsent(cls, r6);
+        return t2Var2 != null ? t2Var2 : r6;
     }
 }

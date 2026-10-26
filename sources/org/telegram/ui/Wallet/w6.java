@@ -7,10 +7,10 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.k80;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w6 implements Runnable {
     public final /* synthetic */ int a;
@@ -68,15 +68,15 @@ public final /* synthetic */ class w6 implements Runnable {
             case 4:
                 l0 l0Var2 = (l0) this.b;
                 boolean[] zArr = (boolean[]) this.d;
-                ai.q qVar = (ai.q) this.e;
+                ai.e eVar = (ai.e) this.e;
                 d2 d2Var = (d2) this.c;
                 if (!zArr[0]) {
                     WalletEngine2 walletEngine2 = l0Var2.b;
                     if (walletEngine2 != null) {
-                        walletEngine2.previewTonConnect(d2Var, new ai.r5(27, zArr, qVar));
+                        walletEngine2.previewTonConnect(d2Var, new bi.m5(27, zArr, eVar));
                         break;
                     } else {
-                        qVar.run(null, "NULL_ENGINE");
+                        eVar.run(null, "NULL_ENGINE");
                         break;
                     }
                 }
@@ -102,14 +102,14 @@ public final /* synthetic */ class w6 implements Runnable {
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) this.c;
                 l0 l0Var4 = e2Var.b;
                 String s10 = l0Var4.s();
-                byte[] x10 = l0Var4.x();
-                byte[] bArr = x10 == null ? null : (byte[]) x10.clone();
-                w wVar = new w(4, z1Var, kVar);
+                byte[] x9 = l0Var4.x();
+                byte[] bArr = x9 == null ? null : (byte[]) x9.clone();
+                s sVar = new s(6, z1Var, kVar);
                 if (s10 != null && bArr != null) {
-                    l0Var4.y(new h1(e2Var, wVar, tonconnectsession, s10, bArr, z1Var, 3), true, false);
+                    l0Var4.y(new h1(e2Var, sVar, tonconnectsession, s10, bArr, z1Var, 3), true, false);
                     break;
                 } else {
-                    wVar.run("Wallet is not ready");
+                    sVar.run("Wallet is not ready");
                     break;
                 }
             case 7:
@@ -117,21 +117,21 @@ public final /* synthetic */ class w6 implements Runnable {
                 break;
             case 8:
                 byte[] bArr2 = (byte[]) this.b;
-                w wVar2 = (w) this.d;
+                s sVar2 = (s) this.d;
                 String str = (String) this.c;
-                ai.r3 r3Var = (ai.r3) this.e;
+                bi.n3 n3Var = (bi.n3) this.e;
                 if (bArr2 != null) {
-                    r3Var.run(bArr2);
+                    n3Var.run(bArr2);
                     break;
                 } else {
-                    wVar2.run(str);
+                    sVar2.run(str);
                     break;
                 }
             case 9:
                 e2 e2Var2 = (e2) this.b;
                 i0 i0Var2 = (i0) this.d;
                 a2 a2Var = (a2) this.e;
-                w wVar3 = (w) this.c;
+                s sVar3 = (s) this.c;
                 try {
                     jSONObject = WalletEngine2.signData(i0Var2, a2Var.a, a2Var.h, a2Var.g, new JSONObject(a2Var.k), e2.l(a2Var.a.manifest.url), e2Var2.f.getCurrentTime());
                     h = null;
@@ -139,19 +139,19 @@ public final /* synthetic */ class w6 implements Runnable {
                     h = e2.h("sign data", e);
                     jSONObject = null;
                 }
-                AndroidUtilities.runOnUIThread(new ai.g3(e2Var2, a2Var, i0Var2, wVar3, jSONObject, h, 23));
+                AndroidUtilities.runOnUIThread(new bi.c3(e2Var2, a2Var, i0Var2, sVar3, jSONObject, h, 23));
                 break;
             case 10:
-                o5.f0((o5) this.b, (LinearLayout) this.d, (l0) this.e, (j80) this.c);
+                m5.g0((m5) this.b, (LinearLayout) this.d, (l0) this.e, (k80) this.c);
                 break;
             case 11:
                 l0 l0Var5 = (l0) this.b;
                 boolean[] zArr2 = (boolean[]) this.d;
-                org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.e;
+                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) this.e;
                 w6 w6Var = (w6) this.c;
                 f fVar = l0Var5.h;
                 if (fVar.f() != null && !zArr2[0]) {
-                    e1Var.setSubtext(fVar.i());
+                    g1Var.setSubtext(fVar.i());
                     w6Var.run();
                     zArr2[0] = true;
                     break;

@@ -7,7 +7,7 @@ import android.os.Parcelable;
 import android.util.ArrayMap;
 import android.util.Log;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.m0;
+import e0.l0;
 import j$.util.Objects;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -23,10 +23,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.ui.Cells.b1;
-import si.o0;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -86,10 +85,10 @@ public abstract class g {
             return g(Class.forName(string2), "valueOf", eVar).invoke(null, string);
         } catch (ClassNotFoundException e) {
             throw new f(a1.g.p("Enum class [", string2, "] not found"), eVar, e);
-        } catch (IllegalArgumentException e7) {
-            throw new f(b1.l("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e7);
-        } catch (ReflectiveOperationException e10) {
-            throw new f(a1.g.p("Enum of class [", string2, "] missing valueOf method"), eVar, e10);
+        } catch (IllegalArgumentException e10) {
+            throw new f(b10.k("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e10);
+        } catch (ReflectiveOperationException e11) {
+            throw new f(a1.g.p("Enum of class [", string2, "] missing valueOf method"), eVar, e11);
         }
     }
 
@@ -110,8 +109,8 @@ public abstract class g {
             throw new f("Failed to get interface from binder", eVar);
         } catch (ClassNotFoundException e) {
             throw new f("Binder for unknown IInterface: ".concat(string), eVar, e);
-        } catch (ReflectiveOperationException e7) {
-            throw new f("Method to create IInterface from a Binder is not accessible for interface: ".concat(string), eVar, e7);
+        } catch (ReflectiveOperationException e10) {
+            throw new f("Method to create IInterface from a Binder is not accessible for interface: ".concat(string), eVar, e10);
         }
     }
 
@@ -158,7 +157,7 @@ public abstract class g {
                 String str = field.getDeclaringClass().getName() + field.getName();
                 Object obj2 = bundle.get(str);
                 if (obj2 == null) {
-                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "android.support.v4.graphics.drawable.IconCompat"));
+                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "androidx.core.graphics.drawable.IconCompat"));
                 }
                 if (obj2 instanceof Bundle) {
                     field.set(newInstance, f((Bundle) obj2, eVar));
@@ -169,12 +168,12 @@ public abstract class g {
             return newInstance;
         } catch (ClassNotFoundException e) {
             throw new f("Object for unknown class: ".concat(string), eVar, e);
-        } catch (IllegalArgumentException e7) {
-            throw new f("Failed to deserialize class: ".concat(string), eVar, e7);
-        } catch (NoSuchMethodException e10) {
-            throw new f("Object missing no args constructor: ".concat(string), eVar, e10);
-        } catch (ReflectiveOperationException e11) {
-            throw new f("Constructor or field is not accessible: ".concat(string), eVar, e11);
+        } catch (IllegalArgumentException e10) {
+            throw new f("Failed to deserialize class: ".concat(string), eVar, e10);
+        } catch (NoSuchMethodException e11) {
+            throw new f("Object missing no args constructor: ".concat(string), eVar, e11);
+        } catch (ReflectiveOperationException e12) {
+            throw new f("Constructor or field is not accessible: ".concat(string), eVar, e12);
         }
     }
 
@@ -255,8 +254,8 @@ public abstract class g {
                         Class<?> cls = Class.forName(string);
                         eVar2.close();
                         return cls;
-                    } catch (ClassNotFoundException e7) {
-                        throw new f("Class name is unknown: ".concat(string), eVar2, e7);
+                    } catch (ClassNotFoundException e10) {
+                        throw new f("Class name is unknown: ".concat(string), eVar2, e10);
                     }
                 case 9:
                     IBinder binder = bundle.getBinder("tag_value");
@@ -266,7 +265,7 @@ public abstract class g {
                     eVar2.close();
                     return binder;
                 case 10:
-                    m0 a10 = m0.a(bundle);
+                    l0 a10 = l0.a(bundle);
                     eVar2.close();
                     return a10;
                 default:
@@ -380,19 +379,19 @@ public abstract class g {
                 i10++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String u10 = o0.u(field.getDeclaringClass().getName(), field.getName());
+                String u10 = b10.u(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
                         bundle.putParcelable(u10, o(obj3, field.getName(), eVar));
                     }
                 } catch (IllegalAccessException e) {
-                    throw new f(o0.h("Field is not accessible: ", u10), eVar, e);
+                    throw new f(b10.j("Field is not accessible: ", u10), eVar, e);
                 }
             }
             return bundle;
-        } catch (NoSuchMethodException e7) {
-            throw new f("Class to deserialize is missing a no args constructor: ".concat(name), eVar, e7);
+        } catch (NoSuchMethodException e10) {
+            throw new f("Class to deserialize is missing a no args constructor: ".concat(name), eVar, e10);
         }
     }
 
@@ -514,12 +513,12 @@ public abstract class g {
                 if (obj.getClass().isArray()) {
                     throw new f("Object serializing contains an array, use a list or a set instead", eVar2);
                 }
-                if (!(obj instanceof m0)) {
+                if (!(obj instanceof l0)) {
                     Bundle m10 = m(obj, eVar2);
                     eVar2.close();
                     return m10;
                 }
-                Bundle c10 = ((m0) obj).c();
+                Bundle c10 = ((l0) obj).c();
                 c10.putInt("tag_class_type", 10);
                 eVar2.close();
                 return c10;

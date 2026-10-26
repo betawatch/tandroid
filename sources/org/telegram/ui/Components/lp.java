@@ -1,23 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import org.telegram.ui.qc1;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class lp extends qc1 {
-    public final /* synthetic */ int l2;
+public final class lp implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ b31 b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ yp e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lp(Object obj, Bitmap bitmap, boolean z10, int i10) {
-        super(obj, bitmap, z10);
-        this.l2 = i10;
+    public lp(yp ypVar, b31 b31Var, float f7, boolean z10) {
+        this.e = ypVar;
+        this.b = b31Var;
+        this.c = f7;
+        this.d = z10;
     }
 
-    @Override // org.telegram.ui.qc1
-    public final boolean U0() {
-        switch (this.l2) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        yp ypVar = this.e;
+        ypVar.R = floatValue;
+        if (!this.d) {
+            floatValue = 1.0f - floatValue;
         }
-        return true;
+        this.b.setRadius(this.c * floatValue);
+        if (this.a || ypVar.R <= 0.5f) {
+            return;
+        }
+        this.a = true;
     }
 }

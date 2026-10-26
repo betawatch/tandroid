@@ -1,36 +1,39 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Bundle;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class bk extends un {
-    public final /* synthetic */ int f;
-    public boolean h;
+public final class bk extends FragmentContextView {
+    public final /* synthetic */ int X0;
+    public final /* synthetic */ un Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bk(Context context, org.telegram.ui.ActionBar.h5 h5Var, Bundle bundle, int i10) {
-        super(context, h5Var, bundle);
-        this.f = i10;
-    }
-
-    @Override // org.telegram.ui.un
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+    public bk(un unVar, Context context, un unVar2, org.telegram.ui.ActionBar.u6 u6Var, int i10) {
+        super(context, unVar2, null, true, u6Var);
+        this.X0 = i10;
+        switch (i10) {
+            case 1:
+                this.Y0 = unVar;
+                super(context, unVar2, null, false, u6Var);
                 break;
             default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+                this.Y0 = unVar;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.X0) {
+            case 0:
+                un unVar = this.Y0;
+                unVar.Y0.i(unVar.m2, i10 == 0, true);
+                break;
+            default:
+                un unVar2 = this.Y0;
+                unVar2.Y0.i(unVar2.k2, i10 == 0, true);
                 break;
         }
     }

@@ -4,15 +4,15 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nf implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ un b;
 
-    public /* synthetic */ nf(sn snVar, int i10) {
+    public /* synthetic */ nf(un unVar, int i10) {
         this.a = i10;
-        this.b = snVar;
+        this.b = unVar;
     }
 
     @Override // android.view.View.OnLongClickListener
@@ -21,28 +21,28 @@ public final /* synthetic */ class nf implements View.OnLongClickListener {
         MessageObject messageObject2;
         switch (this.a) {
             case 0:
-                sn snVar = this.b;
-                MessageObject messageObject3 = snVar.p5;
+                un unVar = this.b;
+                MessageObject messageObject3 = unVar.p5;
                 if (messageObject3 == null) {
                     return false;
                 }
                 if (AndroidUtilities.addToClipboard(messageObject3.sponsoredUrl)) {
-                    new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.qa).k(false).j();
+                    new org.telegram.ui.Components.wc(org.telegram.ui.Components.lb.a(unVar.getParentActivity()), unVar.qa).k(false).j();
                 }
                 return true;
             case 1:
-                return sn.W(this.b);
+                return un.g1(this.b);
             default:
-                sn snVar2 = this.b;
-                int i10 = snVar2.Bb;
-                if (i10 == 1 && (messageObject2 = snVar2.B5) != null) {
-                    snVar2.j(messageObject2.getId(), 0, true, 0, true, 0);
+                un unVar2 = this.b;
+                int i10 = unVar2.Kb;
+                if (i10 == 1 && (messageObject2 = unVar2.B5) != null) {
+                    unVar2.j(messageObject2.getId(), 0, true, 0, true, 0);
                     return true;
                 }
-                if (snVar2.r5 == null || i10 != 2 || (messageObject = snVar2.z5) == null) {
+                if (unVar2.r5 == null || i10 != 2 || (messageObject = unVar2.z5) == null) {
                     return false;
                 }
-                snVar2.j(messageObject.getId(), 0, true, 0, true, 0);
+                unVar2.j(messageObject.getId(), 0, true, 0, true, 0);
                 return true;
         }
     }

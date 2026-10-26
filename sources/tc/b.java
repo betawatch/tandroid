@@ -1,55 +1,29 @@
 package tc;
 
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fz0;
-import org.telegram.ui.Wallet.y0;
-import org.telegram.ui.Wallet.z0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends z {
-    public final /* synthetic */ int b;
+public final class b {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public ArrayList f;
+    public ArrayList g;
+    public boolean h;
+    public int i;
+    public int j;
+    public int k;
+    public ArrayList l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(String str, u uVar, int i10, int i11) {
-        super(str, uVar, i10);
-        this.b = i11;
-    }
-
-    @Override // tc.z
-    public final void a() {
-        switch (this.b) {
-            case 0:
-                u uVar = this.a;
-                try {
-                    uVar.b();
-                    break;
-                } catch (v e) {
-                    c2.b bVar = uVar.d;
-                    bVar.d(e);
-                    ArrayList arrayList = (ArrayList) bVar.n();
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        y0 y0Var = (y0) obj;
-                        try {
-                            try {
-                                u uVar2 = (u) bVar.b;
-                                AndroidUtilities.runOnUIThread(new fz0(y0Var.c, uVar2, y0Var.a, "connect error: " + z0.a(e), 16));
-                            } catch (Throwable unused) {
-                            }
-                        } catch (Throwable unused2) {
-                            y0Var.getClass();
-                        }
-                    }
-                    return;
-                }
-            default:
-                this.a.d();
-                break;
-        }
+    public final String toString() {
+        return "AvcDecoderConfigurationRecord{configurationVersion=" + this.a + ", avcProfileIndication=" + this.b + ", profileCompatibility=" + this.c + ", avcLevelIndication=" + this.d + ", lengthSizeMinusOne=" + this.e + ", hasExts=" + this.h + ", chromaFormat=" + this.i + ", bitDepthLumaMinus8=" + this.j + ", bitDepthChromaMinus8=" + this.k + ", lengthSizeMinusOnePaddingBits=" + this.m + ", numberOfSequenceParameterSetsPaddingBits=" + this.n + ", chromaFormatPaddingBits=" + this.o + ", bitDepthLumaMinus8PaddingBits=" + this.p + ", bitDepthChromaMinus8PaddingBits=" + this.q + '}';
     }
 }

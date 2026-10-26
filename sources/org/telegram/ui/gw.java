@@ -1,73 +1,112 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.os.Bundle;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.TopicsController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dy b;
+public final class gw extends ig.n {
+    public final /* synthetic */ ay d0;
+    public final /* synthetic */ cy e0;
 
-    public /* synthetic */ gw(dy dyVar, int i10) {
-        this.a = i10;
-        this.b = dyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gw(cy cyVar, cy cyVar2, Context context, int i10, int i11, boolean z10, ArrayList arrayList, int i12, TLRPC.RequestPeerType requestPeerType, ay ayVar) {
+        super(cyVar2, context, i10, i11, z10, arrayList, i12, requestPeerType);
+        this.e0 = cyVar;
+        this.d0 = ayVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.d.l();
-                break;
-            case 1:
-                dy dyVar = this.b;
-                ey eyVar = dyVar.K;
-                zx zxVar = dyVar.a;
-                if (zxVar != null && zxVar.getScrollState() == 0 && dyVar.a.getChildCount() > 0 && dyVar.a.getLayoutManager() != null) {
-                    int i10 = 1;
-                    boolean z10 = dyVar.s == 0 && eyVar.X3() && dyVar.v == 2;
-                    float f7 = eyVar.N;
-                    s4.b0 b0Var = (s4.b0) dyVar.a.getLayoutManager();
-                    View view = null;
-                    int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    int i12 = -1;
-                    for (int i13 = 0; i13 < dyVar.a.getChildCount(); i13++) {
-                        int R = RecyclerView.R(dyVar.a.getChildAt(i13));
-                        View childAt = dyVar.a.getChildAt(i13);
-                        if (R != -1 && childAt != null && childAt.getTop() < i11) {
-                            i11 = childAt.getTop();
-                            i12 = R;
-                            view = childAt;
-                        }
-                    }
-                    if (view != null) {
-                        float top = view.getTop() - dyVar.a.getPaddingTop();
-                        if (eyVar.K) {
-                            f7 = 0.0f;
-                        }
-                        if (dyVar.a.getScrollState() != 1) {
-                            if (z10 && i12 == 0 && ((dyVar.a.getPaddingTop() - view.getTop()) - view.getMeasuredHeight()) + f7 < 0.0f) {
-                                top = f7;
-                            } else {
-                                i10 = i12;
-                            }
-                            b0Var.h1(i10, (int) top);
-                            break;
-                        }
-                    }
+    @Override // ig.n
+    public final void K() {
+        this.e0.presentFragment(new k());
+    }
+
+    @Override // ig.n
+    public final void L() {
+        cy cyVar = this.e0;
+        org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2(cyVar.getParentActivity(), 3, null);
+        TLRPC.RequestPeerType requestPeerType = cyVar.G;
+        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
+            Bundle g7 = org.telegram.ui.Components.b10.g(0, "step");
+            Boolean bool = cyVar.G.has_username;
+            if (bool != null) {
+                g7.putBoolean("forcePublic", bool.booleanValue());
+            }
+            nd ndVar = new nd(g7);
+            ndVar.u0 = new q6(cyVar, ndVar, e2Var, 2);
+            cyVar.presentFragment(ndVar);
+            return;
+        }
+        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat) {
+            Bundle bundle = new Bundle();
+            Boolean bool2 = cyVar.G.bot_participant;
+            bundle.putLongArray("result", (bool2 == null || !bool2.booleanValue()) ? new long[]{cyVar.getUserConfig().getClientUserId()} : new long[]{cyVar.getUserConfig().getClientUserId(), cyVar.H});
+            Boolean bool3 = cyVar.G.forum;
+            bundle.putInt("chatType", (bool3 == null || !bool3.booleanValue()) ? 4 : 5);
+            bundle.putBoolean("canToggleTopics", false);
+            x60 x60Var = new x60(bundle);
+            x60Var.Y = new yw(cyVar, e2Var);
+            cyVar.presentFragment(x60Var);
+        }
+    }
+
+    @Override // ig.n
+    public final void M(TLRPC.User user) {
+        int i10;
+        i10 = ((org.telegram.ui.ActionBar.r2) this.e0).currentAccount;
+        MessagesController.getInstance(i10).openApp(user, 0);
+    }
+
+    @Override // ig.n
+    public final boolean T() {
+        return this.e0.R0 == 0;
+    }
+
+    @Override // ig.n, org.telegram.ui.Cells.l2
+    public final void a(org.telegram.ui.Cells.p2 p2Var) {
+        ay ayVar = this.d0;
+        ayVar.a.getClass();
+        this.e0.w4(p2Var, RecyclerView.R(p2Var), 0.0f, ayVar.d);
+    }
+
+    @Override // ig.n, org.telegram.ui.Cells.l2
+    public final void d(org.telegram.ui.Cells.p2 p2Var) {
+        int i10;
+        if (p2Var.getMessage() != null) {
+            cy cyVar = this.e0;
+            TopicsController topicsController = cyVar.getMessagesController().getTopicsController();
+            long j10 = -p2Var.getDialogId();
+            i10 = ((org.telegram.ui.ActionBar.r2) cyVar).currentAccount;
+            TLRPC.TL_forumTopic findTopic = topicsController.findTopic(j10, MessageObject.getTopicId(i10, p2Var.getMessage().messageOwner, true));
+            if (findTopic != null) {
+                if (cyVar.l2) {
+                    cyVar.W3(p2Var.getDialogId(), findTopic.id, false, null);
+                } else {
+                    pg.d.m(cyVar, -p2Var.getDialogId(), findTopic, 0);
                 }
-                break;
-            default:
-                dy dyVar2 = this.b;
-                dyVar2.d.X(dyVar2.I);
-                dyVar2.K.Q = true;
-                zx zxVar2 = dyVar2.a;
-                zxVar2.e3 = true;
-                dyVar2.H = false;
-                zxVar2.invalidate();
-                break;
+            }
+        }
+    }
+
+    @Override // ig.n, s4.h0
+    public final void l() {
+        h();
+        int i10 = ay.L;
+        try {
+            super.l();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        cy cyVar = this.e0;
+        if (cyVar.R0 == 15) {
+            cyVar.j0.setVisibility(this.U ? 8 : 0);
         }
     }
 }

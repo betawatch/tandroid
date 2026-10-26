@@ -1,92 +1,45 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import j$.util.Objects;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class v3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public org.telegram.ui.Components.w9 a;
-    public org.telegram.ui.ActionBar.n5 b;
-    public org.telegram.ui.ActionBar.n5 c;
-    public ImageView d;
-    public org.telegram.ui.Components.h9 e;
-    public TLRPC.User f;
-    public Paint h;
-    public int n;
-    public boolean r;
-    public int s;
+public final class v3 extends s61 {
+    public static final /* synthetic */ int a = 0;
 
-    public final void a(int i10, int i11) {
-        this.n = i10;
-        ImageView imageView = this.d;
-        imageView.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
-        this.c.setTextColor(i11);
-        org.telegram.ui.ActionBar.k6.E1(imageView.getDrawable(), i11 & 620756991, true);
+    static {
+        s61.setup(new v3());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.r) {
-            canvas2 = canvas;
-            canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.h);
-        } else {
-            canvas2 = canvas;
-        }
-        super.dispatchDraw(canvas2);
+    @Override // org.telegram.ui.Components.s61
+    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+        w3 w3Var = (w3) view;
+        w3Var.w = z10;
+        w3Var.b((MessageObject) t61Var.G, (ArrayList) t61Var.H);
+        w3Var.invalidate();
     }
 
-    public CharSequence getName() {
-        return this.b.getText();
+    @Override // org.telegram.ui.Components.s61
+    public final boolean contentsEquals(t61 t61Var, t61 t61Var2) {
+        return t61Var.G == t61Var2.G && Objects.equals(t61Var.H, t61Var2.H) && t61Var.j == t61Var2.j;
     }
 
-    public TLRPC.User getUser() {
-        return this.f;
+    @Override // org.telegram.ui.Components.s61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
+        return new w3(context, i10, u6Var);
     }
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
-    }
-
-    public void setDrawDivider(boolean z10) {
-        this.r = z10;
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        int x02;
-        try {
-            this.h.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.gg, false));
-            if (this.d != null && this.c != null && (x02 = org.telegram.ui.ActionBar.k6.x0(null, this.n, false)) != this.s) {
-                this.s = x02;
-                a(this.n, x02);
-            }
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.s61
+    public final boolean equals(t61 t61Var, t61 t61Var2) {
+        return t61Var.d == t61Var2.d && t61Var.B == t61Var2.B;
     }
 }

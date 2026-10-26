@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -22,7 +22,7 @@ public class StatsController extends BaseController {
     public static final int TYPE_VIDEOS = 2;
     public static final int TYPE_WIFI = 1;
     private byte[] buffer;
-    zf.z byteArrayOutputStream;
+    ag.i0 byteArrayOutputStream;
     private int[] callsTotalTime;
     private long lastInternalStatsSaveTime;
     private long[][] receivedBytes;
@@ -32,7 +32,7 @@ public class StatsController extends BaseController {
     private long[][] sentBytes;
     private int[][] sentItems;
     private RandomAccessFile statsFile;
-    private static DispatchQueue statsSaveQueue = new DispatchQueue("statsSaveQueue");
+    private static DispatchQueue2 statsSaveQueue = new DispatchQueue2("statsSaveQueue");
     private static final ThreadLocal<Long> lastStatsSaveTime = new ThreadLocal<Long>() { // from class: org.telegram.messenger.StatsController.1
         @Override // java.lang.ThreadLocal
         public Long initialValue() {
@@ -52,7 +52,7 @@ public class StatsController extends BaseController {
         this.receivedItems = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
         this.resetStatsDate = new long[3];
         this.callsTotalTime = new int[3];
-        this.byteArrayOutputStream = new zf.z(32);
+        this.byteArrayOutputStream = new ag.i0(32);
         this.saveRunnable = new Runnable() { // from class: org.telegram.messenger.StatsController.2
             @Override // java.lang.Runnable
             public void run() {
@@ -91,8 +91,8 @@ public class StatsController extends BaseController {
                     }
                     StatsController.this.statsFile.seek(0L);
                     RandomAccessFile randomAccessFile = StatsController.this.statsFile;
-                    zf.z zVar = StatsController.this.byteArrayOutputStream;
-                    randomAccessFile.write(zVar.a, 0, zVar.b);
+                    ag.i0 i0Var = StatsController.this.byteArrayOutputStream;
+                    randomAccessFile.write(i0Var.a, 0, i0Var.b);
                     StatsController.this.statsFile.getFD().sync();
                 } catch (Exception unused) {
                 }
@@ -100,7 +100,7 @@ public class StatsController extends BaseController {
         };
         File filesDirFixed = ApplicationLoader.getFilesDirFixed();
         if (i10 != 0) {
-            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), i2.o1.l(i10, "account", "/"));
+            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), ic.a.j(i10, "account", "/"));
             filesDirFixed.mkdirs();
         }
         try {

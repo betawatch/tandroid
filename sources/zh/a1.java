@@ -1,14 +1,27 @@
 package zh;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.content.Context;
+import bi.h7;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.wc;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class a1 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
+public final class a1 extends h7 {
+    public final /* synthetic */ p1 B1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a1(p1 p1Var, Context context, int i10, long j10, u6 u6Var) {
+        super(context, i10, j10, u6Var, null);
+        this.B1 = p1Var;
+    }
+
+    @Override // bi.h7, org.telegram.ui.ActionBar.k3, org.telegram.ui.ActionBar.n2
+    public final wc getBulletinFactory() {
+        u6 u6Var;
+        p1 p1Var = this.B1;
+        org.telegram.ui.ActionBar.h3 h3Var = p1Var.container;
+        u6Var = p1Var.resourcesProvider;
+        return new wc(h3Var, u6Var);
+    }
 }

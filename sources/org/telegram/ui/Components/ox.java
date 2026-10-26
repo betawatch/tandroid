@@ -1,30 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ox extends s4.c0 {
-    public final /* synthetic */ int r;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ox(Context context, int i10) {
-        super(context);
-        this.r = i10;
-    }
-
-    @Override // s4.c0
-    public final int i(int i10, int i11, int i12, int i13, int i14) {
-        return super.i(i10, i11, i12, i13, i14) + this.r;
-    }
-
-    @Override // s4.c0
-    public final int m(int i10) {
-        return super.m(i10) * 16;
-    }
-
-    @Override // s4.c0
-    public final int p() {
-        return -1;
+public final class ox extends org.telegram.ui.un {
+    @Override // org.telegram.ui.un, org.telegram.ui.ActionBar.r2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        org.telegram.ui.hk hkVar;
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || (hkVar = this.Y) == null) {
+            return;
+        }
+        hkVar.p1();
+        this.Y.postDelayed(new bq(this, 14), 100L);
     }
 }

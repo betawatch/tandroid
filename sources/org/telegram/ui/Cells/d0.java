@@ -8,12 +8,11 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.sl;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.i11;
+import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.q11;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class d0 {
     public final Runnable a;
@@ -23,7 +22,7 @@ public final class d0 {
     public float e;
     public int f;
     public int g;
-    public i11 h;
+    public q11 h;
     public TL_keyboard.KeyboardInlineButton i;
     public BotInlineKeyboard.ButtonCustom j;
     public BotInlineKeyboard.Button k;
@@ -33,10 +32,10 @@ public final class d0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public ca0 r;
+    public da0 r;
     public y s;
     public Drawable t;
-    public org.telegram.ui.Components.r5 u;
+    public org.telegram.ui.Components.t5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -55,7 +54,7 @@ public final class d0 {
                 this.a.run();
             }
         }
-        return com.google.android.gms.internal.play_billing.k3.y(1.0f, this.w, 0.04f, 0.96f);
+        return c3.h0.z(1.0f, this.w, 0.04f, 0.96f);
     }
 
     public final void b(boolean z10) {
@@ -75,8 +74,8 @@ public final class d0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new m.a(this, 11));
-                sl.l(2.0f, this.x);
+                this.x.addListener(new kg.e(this, 13));
+                org.telegram.ui.d3.m(2.0f, this.x);
                 this.x.setDuration(350L);
                 this.x.start();
             }

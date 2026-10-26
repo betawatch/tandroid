@@ -1,108 +1,23 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k30 extends org.telegram.ui.Components.voip.l0 {
-    public final /* synthetic */ u50 Q0;
+public final class k30 extends s4.u0 {
+    public final /* synthetic */ v50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k30(u50 u50Var, LaunchActivity launchActivity, z40 z40Var, g30 g30Var, ArrayList arrayList, ChatObject.Call call, u50 u50Var2) {
-        super(launchActivity, z40Var, g30Var, arrayList, call, u50Var2);
-        this.Q0 = u50Var;
+    public k30(v50 v50Var) {
+        this.a = v50Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.l0, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view == this.Q0.Z2) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // org.telegram.ui.Components.voip.l0
-    public final void i(boolean z10) {
-        u50 u50Var = this.Q0;
-        s50 s50Var = u50Var.B1;
-        p40 p40Var = u50Var.O;
-        z40 z40Var = u50Var.Q;
-        org.telegram.ui.Components.a30 a30Var = u50Var.p2;
-        k30 k30Var = u50Var.a2;
-        g30 g30Var = u50Var.m2;
-        u50Var.s0 = z10;
-        if (u50.G3) {
-            if (z10 || !k30Var.b) {
-                return;
-            }
-            u50Var.o2.H(u50Var.n2, false, true);
-            return;
-        }
-        if (z10) {
-            u50Var.j0[0].d(1, false);
-            k30Var.K0[0].d(2, false);
-            if (!k30Var.b) {
-                z40Var.setVisibility(0);
-                p40Var.setVisibility(0);
-                if (s50Var != null) {
-                    s50Var.setVisibility(0);
-                }
-            }
-            u50Var.O1(true, false);
-            u50Var.e.requestLayout();
-            if (g30Var.getVisibility() != 0) {
-                g30Var.setVisibility(0);
-                a30Var.F(g30Var, true);
-                a30Var.G(g30Var, false);
-            } else {
-                a30Var.F(g30Var, true);
-                u50Var.O0(true);
-            }
-        } else {
-            if (k30Var.b) {
-                p40Var.setVisibility(8);
-                z40Var.setVisibility(8);
-                if (s50Var != null) {
-                    s50Var.setVisibility(8);
-                }
-            } else {
-                g30Var.setVisibility(8);
-                a30Var.F(g30Var, false);
-            }
-            if (g30Var.getVisibility() == 0) {
-                for (int i10 = 0; i10 < g30Var.getChildCount(); i10++) {
-                    View childAt = g30Var.getChildAt(i10);
-                    childAt.setAlpha(1.0f);
-                    childAt.setScaleX(1.0f);
-                    childAt.setScaleY(1.0f);
-                    childAt.setTranslationX(0.0f);
-                    childAt.setTranslationY(0.0f);
-                    ((org.telegram.ui.Components.z20) childAt).setProgressToFullscreen(k30Var.c);
-                }
-            }
-        }
-        u50Var.K2.setVisibility(z10 ? 0 : 8);
-        if (u50Var.s0) {
-            return;
-        }
-        u50Var.O0(true);
-    }
-
-    @Override // org.telegram.ui.Components.voip.l0
-    public final void l() {
+    @Override // s4.u0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
         ViewGroup viewGroup;
-        invalidate();
-        u50 u50Var = this.Q0;
-        float f7 = u50Var.U1;
-        k30 k30Var = u50Var.a2;
-        ((org.telegram.ui.ActionBar.h3) u50Var).navBarColor = AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.jg, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.gg, false), Math.max(f7, k30Var == null ? 0.0f : k30Var.c), 1.0f);
-        viewGroup = ((org.telegram.ui.ActionBar.h3) u50Var).containerView;
+        v50 v50Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.k3) v50Var).containerView;
         viewGroup.invalidate();
-        u50Var.B1(u50Var.U1);
+        v50Var.a2.invalidate();
     }
 }

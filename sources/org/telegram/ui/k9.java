@@ -1,35 +1,13 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k9 extends org.telegram.ui.Components.l61 {
-    public static final /* synthetic */ int a = 0;
-
-    static {
-        org.telegram.ui.Components.l61.setup(new k9());
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final void bindView(View view, org.telegram.ui.Components.m61 m61Var, boolean z10, org.telegram.ui.Components.b71 b71Var, org.telegram.ui.Components.j71 j71Var) {
-        l9 l9Var = (l9) view;
-        TLRPC.Chat chat = (TLRPC.Chat) m61Var.G;
-        View.OnClickListener onClickListener = m61Var.D;
-        l9Var.c = chat;
-        org.telegram.ui.Components.xi0 xi0Var = l9Var.b;
-        xi0Var.setTag(Long.valueOf(chat.id));
-        l9Var.a.t(chat, null, null, (!ChatObject.isChannel(chat) || chat.megagroup) ? chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate).toLowerCase() : LocaleController.getString(R.string.MegaPublic).toLowerCase() : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPrivate).toLowerCase() : LocaleController.getString(R.string.ChannelPublic).toLowerCase(), false, false);
-        xi0Var.setOnClickListener(onClickListener);
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
-        return new l9(context);
-    }
+public final class k9 {
+    public long a;
+    public final ArrayList b = new ArrayList();
+    public final ArrayList c = new ArrayList();
+    public int d;
+    public boolean e;
 }

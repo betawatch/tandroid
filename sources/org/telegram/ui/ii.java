@@ -1,53 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.app.Activity;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ii extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ org.telegram.ui.Components.gl0 o;
-    public final /* synthetic */ sn p;
+public final class ii extends org.telegram.ui.Components.aw {
+    public final /* synthetic */ un W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ii(sn snVar, eb ebVar, org.telegram.ui.Components.gl0 gl0Var) {
-        super(ebVar, -2, -2);
-        this.p = snVar;
-        this.o = gl0Var;
+    public ii(un unVar, org.telegram.ui.ActionBar.r2 r2Var, Activity activity, org.telegram.ui.ActionBar.u6 u6Var, ArrayList arrayList) {
+        super(r2Var, activity, u6Var, arrayList);
+        this.W = unVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.m1
-    public final void d(boolean z10) {
-        super.d(true);
-        org.telegram.ui.Components.gl0 gl0Var = this.o;
-        if (gl0Var != null) {
-            gl0Var.d();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
     public final void dismiss() {
-        d(true);
-        sn snVar = this.p;
-        if (snVar.c9 != this) {
-            return;
-        }
-        org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-        org.telegram.ui.Components.qc qcVar2 = snVar.z1;
-        if (qcVar == qcVar2 && qcVar2 != null) {
-            qcVar2.b();
-            snVar.z1 = null;
-        }
-        snVar.c9 = null;
-        snVar.f9 = null;
-        snVar.e9 = null;
-        snVar.z0.R = true;
-        if (snVar.d9) {
-            snVar.j8(false, true, 0.0f);
-        } else {
-            snVar.d9 = true;
-        }
-        gk gkVar = snVar.Y;
-        if (gkVar == null || gkVar.getEditField() == null) {
-            return;
-        }
-        snVar.Y.getEditField().setAllowDrawCursor(true);
+        super.dismiss();
+        un unVar = this.W;
+        unVar.getClass();
+        unVar.n8(false, true, 0.0f);
     }
 }

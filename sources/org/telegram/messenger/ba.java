@@ -1,48 +1,44 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ba implements Runnable {
+public final /* synthetic */ class ba implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
 
-    public /* synthetic */ ba(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = 2;
+    public /* synthetic */ ba(MessagesController messagesController, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.d = j10;
-        this.e = j11;
-        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                long j10 = this.d;
-                long j11 = this.e;
-                this.b.lambda$sendTyping$170(this.c, j10, j11);
+                this.b.lambda$updateWebBrowserSettings$522((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                long j12 = this.d;
-                long j13 = this.e;
-                this.b.lambda$sendTyping$172(this.c, j12, j13);
+                this.b.lambda$removeWebBrowserException$520((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 2:
+                this.b.lambda$addWebBrowserException$518((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 3:
+                this.b.lambda$loadStakeDiceInfo$512((TLRPC.EmojiGameInfo) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 4:
+                this.b.lambda$deleteReactionsFromMessage$131((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 5:
+                this.b.lambda$loadWebBrowserConfig$514((Long) obj, (TL_account.TL_webBrowserSettings) obj2);
                 break;
             default:
-                long j14 = this.e;
-                int i10 = this.c;
-                this.b.lambda$checkDeletingTask$83(this.d, j14, i10);
+                this.b.lambda$clearAllWebBrowserExceptions$521((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ ba(MessagesController messagesController, int i10, long j10, long j11, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = j10;
-        this.e = j11;
     }
 }

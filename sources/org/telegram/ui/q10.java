@@ -10,12 +10,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class q10 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+public final class q10 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public TextView a;
     public TextView b;
-    public org.telegram.ui.Components.xi0 c;
+    public org.telegram.ui.Components.wi0 c;
     public boolean d;
     public TLRPC.TL_dialogFilterSuggested e;
 
@@ -26,7 +26,7 @@ public final class q10 extends FrameLayout implements org.telegram.ui.ActionBar.
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.y6.k0);
         }
     }
 
@@ -43,26 +43,26 @@ public final class q10 extends FrameLayout implements org.telegram.ui.ActionBar.
         setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
         measureChildWithMargins(this.c, i10, 0, i11, 0);
         TextView textView = this.a;
-        org.telegram.ui.Components.xi0 xi0Var = this.c;
-        measureChildWithMargins(textView, i10, xi0Var.getMeasuredWidth(), i11, 0);
-        measureChildWithMargins(this.b, i10, xi0Var.getMeasuredWidth(), i11, 0);
+        org.telegram.ui.Components.wi0 wi0Var = this.c;
+        measureChildWithMargins(textView, i10, wi0Var.getMeasuredWidth(), i11, 0);
+        measureChildWithMargins(this.b, i10, wi0Var.getMeasuredWidth(), i11, 0);
     }
 
     public void setAddOnClickListener(View.OnClickListener onClickListener) {
         this.c.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
         try {
-            this.c.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Nh, false));
+            this.c.setProgressColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Nh, false));
             invalidate();
         } catch (Exception e) {
             FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.p6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

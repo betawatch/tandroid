@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import r0.j0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class k implements Menu {
     public static final int[] y = {1, 4, 5, 3, 2, 0};
@@ -74,7 +74,7 @@ public class k implements Menu {
             ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
             Method method = j0.a;
             if (Build.VERSION.SDK_INT >= 28) {
-                z10 = b5.d.B(viewConfiguration);
+                z10 = c5.d.B(viewConfiguration);
             } else {
                 Resources resources2 = context.getResources();
                 int identifier = resources2.getIdentifier("config_showMenuShortcutsWhenKeyboardPresent", "bool", "android");
@@ -167,7 +167,7 @@ public class k implements Menu {
             if (xVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                xVar.d(this, z10);
+                xVar.g(this, z10);
             }
         }
         this.s = false;
@@ -223,7 +223,7 @@ public class k implements Menu {
 
     public boolean e(k kVar, MenuItem menuItem) {
         i iVar = this.e;
-        return iVar != null && iVar.p(kVar, menuItem);
+        return iVar != null && iVar.F(kVar, menuItem);
     }
 
     public boolean f(m mVar) {
@@ -443,7 +443,7 @@ public class k implements Menu {
             if (xVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                xVar.e();
+                xVar.d();
             }
         }
         v();
@@ -456,12 +456,12 @@ public class k implements Menu {
 
     @Override // android.view.Menu
     public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
-        m g10 = g(i10, keyEvent);
-        boolean q6 = g10 != null ? q(g10, null, i11) : false;
+        m g7 = g(i10, keyEvent);
+        boolean q5 = g7 != null ? q(g7, null, i11) : false;
         if ((i11 & 2) != 0) {
             c(true);
         }
-        return q6;
+        return q5;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0058  */

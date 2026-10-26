@@ -1,63 +1,84 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qd implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ Object e;
+public final /* synthetic */ class qd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ke b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ qd(int i10, ei.d dVar, org.telegram.ui.ActionBar.h3 h3Var, long j10) {
-        this.b = i10;
-        this.d = dVar;
-        this.e = h3Var;
-        this.c = j10;
+    public /* synthetic */ qd(ke keVar, int i10, int i11) {
+        this.a = i11;
+        this.b = keVar;
+        this.c = i10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        int i11 = this.c;
+        ke keVar = this.b;
+        switch (i10) {
             case 0:
-                ie ieVar = (ie) this.d;
-                Context context = (Context) this.e;
-                if (view.isEnabled()) {
-                    ei.d dVar = ieVar.T0;
-                    if (!dVar.Q) {
-                        dVar.setLoading(true);
-                        TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
-                        int i10 = this.b;
-                        tL_payments_getStarsRevenueAdsAccountUrl.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new vc(1, ieVar, context));
-                        break;
-                    }
+                qf.d.r(keVar.getContext(), LocaleController.getString(i11));
+                break;
+            case 1:
+                qd qdVar = keVar.f1;
+                bi.t tVar = keVar.O0;
+                org.telegram.ui.Components.qc.e();
+                if (keVar.D0.amount < MessagesController.getInstance(i11).starsRevenueWithdrawalMin) {
+                    keVar.M0 = true;
+                    keVar.N0 = keVar.D0.amount;
+                } else {
+                    keVar.M0 = false;
+                    keVar.N0 = MessagesController.getInstance(i11).starsRevenueWithdrawalMin;
                 }
+                keVar.L0 = true;
+                tVar.setText(Long.toString(keVar.N0));
+                tVar.setSelection(tVar.getText().length());
+                keVar.L0 = false;
+                AndroidUtilities.cancelRunOnUIThread(qdVar);
+                qdVar.run();
                 break;
             default:
-                ei.d dVar2 = (ei.d) this.d;
-                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.e;
-                TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
-                createconferencecall.random_id = Utilities.random.nextInt();
-                int i11 = this.b;
-                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new ai.c0(i11, dVar2, h3Var, this.c));
+                qd qdVar2 = keVar.f1;
+                int currentTime = ConnectionsManager.getInstance(i11).getCurrentTime();
+                ae aeVar = keVar.G0;
+                aeVar.setEnabled(keVar.N0 > 0 || keVar.B0 > currentTime);
+                if (currentTime >= keVar.B0) {
+                    aeVar.g(null, true);
+                    aeVar.i(bi.dd.U0(false, keVar.M0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) keVar.N0), keVar.H0), true, true);
+                    break;
+                } else {
+                    aeVar.i(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
+                    if (keVar.e1 == null) {
+                        keVar.e1 = new SpannableStringBuilder("l");
+                        org.telegram.ui.Components.zq zqVar = new org.telegram.ui.Components.zq(R.drawable.mini_switch_lock, 0);
+                        zqVar.setTopOffset(1);
+                        keVar.e1.setSpan(zqVar, 0, 1, 33);
+                    }
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                    spannableStringBuilder.append((CharSequence) keVar.e1).append((CharSequence) bi.y.s0(keVar.B0 - currentTime));
+                    aeVar.g(spannableStringBuilder, true);
+                    org.telegram.ui.Components.qc qcVar = keVar.P0;
+                    if (qcVar != null) {
+                        org.telegram.ui.Components.ub ubVar = qcVar.e;
+                        if ((ubVar instanceof org.telegram.ui.Components.yb) && ubVar.isAttachedToWindow()) {
+                            org.telegram.messenger.vh.o(R.string.BotStarsWithdrawalToast, new Object[]{bi.y.s0(keVar.B0 - currentTime)}, ((org.telegram.ui.Components.yb) keVar.P0.e).b);
+                        }
+                    }
+                    AndroidUtilities.cancelRunOnUIThread(qdVar2);
+                    AndroidUtilities.runOnUIThread(qdVar2, 1000L);
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ qd(ie ieVar, int i10, long j10, Context context) {
-        this.d = ieVar;
-        this.b = i10;
-        this.c = j10;
-        this.e = context;
     }
 }

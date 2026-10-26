@@ -1,26 +1,29 @@
 package org.telegram.ui.Components.voip;
 
 import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.ui.Components.zw0;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class c3 extends View {
-    public zw0 a;
-    public boolean b;
+public final class c3 extends Drawable {
+    public final int a = -15130842;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        zw0 zw0Var;
-        if (this.b || (zw0Var = this.a) == null) {
-            return;
-        }
-        zw0Var.b(canvas, this);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawColor(this.a);
     }
 
-    public void setState(boolean z10) {
-        this.b = z10;
-        invalidate();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,48 +1,56 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nu0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ou0 b;
-    public final /* synthetic */ String c;
+public final class nu0 extends LinearLayout {
+    public final TextView a;
+    public final ImageView b;
+    public boolean c;
 
-    public /* synthetic */ nu0(ou0 ou0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ou0Var;
-        this.c = str;
+    public nu0(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        setOrientation(1);
+        setGravity(17);
+        addView(imageView, gb1.r(-2, -2));
+        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.z6, u6Var);
+        textView.setGravity(17);
+        textView.setTextSize(1, 17.0f);
+        textView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        addView(textView, gb1.x(-2, -2, 17, 0, 24, 0, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ou0 ou0Var = this.b;
-                String str = this.c;
-                ou0Var.getClass();
-                AndroidUtilities.runOnUIThread(new nu0(ou0Var, str, 1));
-                break;
-            default:
-                ou0 ou0Var2 = this.b;
-                String str2 = this.c;
-                ArrayList arrayList = null;
-                ou0Var2.f = null;
-                if (!ChatObject.isChannel(ou0Var2.n) && ou0Var2.s.d1 != null) {
-                    arrayList = new ArrayList(ou0Var2.s.d1.participants.participants);
-                }
-                ou0Var2.r = 2;
-                if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new lg((Object) ou0Var2, (Object) str2, arrayList, 24));
-                } else {
-                    ou0Var2.r = 1;
-                }
-                ou0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(ou0Var2.n) ? ou0Var2.n.id : 0L, false, 2, 1);
-                break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+        this.c = true;
+        if (AndroidUtilities.isTablet()) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        } else if (rotation == 3 || rotation == 1) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
+        } else {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
         }
+        this.c = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
+        }
+        super.requestLayout();
     }
 }

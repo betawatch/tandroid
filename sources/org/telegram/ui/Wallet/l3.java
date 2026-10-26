@@ -4,19 +4,19 @@ import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class l3 extends tg.t {
+public final class l3 extends ug.s {
     public final /* synthetic */ Object E;
     public final /* synthetic */ int y = 1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(j8 j8Var, Context context, m mVar) {
+    public l3(i8 i8Var, Context context, m mVar) {
         super(context, mVar, 0);
-        this.E = j8Var;
+        this.E = i8Var;
     }
 
-    @Override // tg.t
+    @Override // ug.s
     public final void a() {
         switch (this.y) {
             case 0:
@@ -29,16 +29,16 @@ public final class l3 extends tg.t {
             default:
                 setPaused(true);
                 setVisibility(8);
-                ((j8) this.E).a.setVisibility(0);
+                ((i8) this.E).a.setVisibility(0);
                 break;
         }
     }
 
-    @Override // tg.t, android.view.TextureView.SurfaceTextureListener
+    @Override // ug.s, android.view.TextureView.SurfaceTextureListener
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         switch (this.y) {
             case 1:
-                ImageView imageView = ((j8) this.E).a;
+                ImageView imageView = ((i8) this.E).a;
                 super.onSurfaceTextureUpdated(surfaceTexture);
                 if (this.n && imageView.getVisibility() == 0) {
                     imageView.setVisibility(4);

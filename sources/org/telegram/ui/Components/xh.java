@@ -1,177 +1,182 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import android.view.KeyEvent;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class xh extends mm0 {
-    public final /* synthetic */ int Y2;
-    public final Paint Z2;
-    public final Paint a3;
-    public boolean b3;
-    public boolean c3;
-    public final Object d3;
-    public final Object e3;
+public final class xh implements TextWatcher {
+    public final /* synthetic */ int a;
+    public boolean b;
+    public boolean c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xh(Context context, int i10) {
-        super(context, null);
-        this.Y2 = i10;
-        switch (i10) {
-            case 1:
-                super(context, null);
-                Paint paint = new Paint(1);
-                this.Z2 = paint;
-                Paint paint2 = new Paint(1);
-                this.a3 = paint2;
-                this.d3 = new f6(this);
-                this.e3 = new f6(this);
-                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode));
-                paint2.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode));
-                break;
-            default:
-                bs bsVar = bs.h;
-                this.d3 = new ne.b(this, bsVar, 320L);
-                this.e3 = new ne.b(this, bsVar, 320L);
-                Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
-                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{0, -16777216}, (float[]) null, tileMode2);
-                LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{-16777216, 0}, (float[]) null, tileMode2);
-                Paint paint3 = new Paint(1);
-                this.Z2 = paint3;
-                Paint paint4 = new Paint(1);
-                this.a3 = paint4;
-                paint3.setShader(linearGradient);
-                PorterDuff.Mode mode = PorterDuff.Mode.DST_IN;
-                paint3.setXfermode(new PorterDuffXfermode(mode));
-                paint4.setShader(linearGradient2);
-                paint4.setXfermode(new PorterDuffXfermode(mode));
-                break;
-        }
+    public /* synthetic */ xh(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.d = callback;
     }
 
-    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.Y2) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        int i10;
+        org.telegram.ui.ActionBar.u6 u6Var;
+        org.telegram.ui.ActionBar.u6 u6Var2;
+        switch (this.a) {
             case 0:
-                this.c3 = false;
-                this.b3 = false;
-                super.dispatchDraw(canvas);
-                ((ne.b) this.d3).a(this.b3, true);
-                ((ne.b) this.e3).a(this.c3, true);
-                break;
+                ti tiVar = (ti) this.d;
+                s6 s6Var = tiVar.v;
+                wh whVar = tiVar.H0;
+                s6 s6Var2 = tiVar.s;
+                if (this.c != TextUtils.isEmpty(editable)) {
+                    li liVar = tiVar.B0;
+                    if (liVar != null) {
+                        liVar.D(liVar.getSelectedItemsCount());
+                    }
+                    this.c = !this.c;
+                }
+                boolean z11 = false;
+                if (this.b) {
+                    for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                        editable.removeSpan(imageSpan);
+                    }
+                    Emoji.replaceEmoji(editable, whVar.getEditText().getPaint().getFontMetricsInt(), false);
+                    this.b = false;
+                }
+                int codePointCount = Character.codePointCount(editable, 0, editable.length());
+                tiVar.L = codePointCount;
+                tiVar.e.a(codePointCount > 0, true);
+                int i11 = tiVar.K;
+                if (i11 <= 0 || (i10 = i11 - tiVar.L) > 100) {
+                    s6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.qp(this, 10));
+                    s6Var.setAlpha(0.0f);
+                    z10 = true;
+                } else {
+                    if (i10 < -9999) {
+                        i10 = -9999;
+                    }
+                    long j10 = i10;
+                    s6Var2.c(LocaleController.formatNumber(j10, ','), s6Var2.getVisibility() == 0, true);
+                    if (s6Var2.getVisibility() != 0) {
+                        s6Var2.setVisibility(0);
+                        s6Var2.setAlpha(0.0f);
+                        s6Var2.setScaleX(0.5f);
+                        s6Var2.setScaleY(0.5f);
+                    }
+                    s6Var2.animate().setListener(null).cancel();
+                    s6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+                    if (i10 < 0) {
+                        int i12 = org.telegram.ui.ActionBar.y6.p7;
+                        u6Var2 = ((org.telegram.ui.ActionBar.k3) tiVar).resourcesProvider;
+                        org.telegram.ui.ActionBar.f7.Z(s6Var2, i12, u6Var2);
+                        z10 = false;
+                    } else {
+                        int i13 = org.telegram.ui.ActionBar.y6.y6;
+                        u6Var = ((org.telegram.ui.ActionBar.k3) tiVar).resourcesProvider;
+                        org.telegram.ui.ActionBar.f7.Z(s6Var2, i13, u6Var);
+                        z10 = true;
+                    }
+                    s6Var.c(LocaleController.formatNumber(j10, ','), false, true);
+                    s6Var.setAlpha(1.0f);
+                }
+                if (tiVar.X0 != z10) {
+                    tiVar.X0 = z10;
+                    tiVar.L0.invalidate();
+                }
+                if (!tiVar.c0) {
+                    if (whVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(whVar.getText().toString().trim())) {
+                        z11 = true;
+                    }
+                    tiVar.T1(z11);
+                }
+                tiVar.i1(true);
+                return;
             default:
-                super.dispatchDraw(canvas);
-                int d = (int) (((f6) this.d3).d(this.b3 ? 1.0f : 0.0f, false) * 255.0f);
-                Paint paint = this.Z2;
-                paint.setAlpha(d);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f), paint);
-                int d10 = (int) (((f6) this.e3).d(this.c3 ? 1.0f : 0.0f, false) * 255.0f);
-                Paint paint2 = this.a3;
-                paint2.setAlpha(d10);
-                canvas.save();
-                canvas.translate(0.0f, getHeight() - AndroidUtilities.dp(8.0f));
-                canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f), paint2);
-                canvas.restore();
-                break;
+                org.telegram.ui.Wallet.h9 h9Var = (org.telegram.ui.Wallet.h9) this.d;
+                if (!this.b) {
+                    h9Var.f(editable);
+                    return;
+                }
+                this.b = false;
+                this.c = true;
+                try {
+                    editable.append('.');
+                    this.c = false;
+                    h9Var.c.setSelection(editable.length());
+                    return;
+                } catch (Throwable th2) {
+                    this.c = false;
+                    throw th2;
+                }
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.Y2) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
             case 0:
-                float x10 = view.getX();
-                float width = view.getWidth() + x10;
-                boolean z10 = true;
-                boolean z11 = x10 < ((float) AndroidUtilities.dp(10.0f));
-                boolean z12 = width > ((float) (getMeasuredWidth() - AndroidUtilities.dp(10.0f)));
-                if (!z11 && !z12) {
-                    z10 = false;
-                }
-                this.b3 |= z11;
-                this.c3 |= z12;
-                canvas.save();
-                if (z10) {
-                    canvas.clipRect(AndroidUtilities.dp(19.0f), 0, getMeasuredWidth() - AndroidUtilities.dp(19.0f), getMeasuredHeight());
-                }
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                canvas.restore();
-                if (z11) {
-                    float dp = AndroidUtilities.dp(11.0f);
-                    canvas.saveLayer(dp, getPaddingTop(), AndroidUtilities.dp(19.0f), getMeasuredHeight() - getPaddingBottom(), null);
-                    super.drawChild(canvas, view, j10);
-                    canvas.save();
-                    canvas.translate(com.google.android.gms.internal.play_billing.k3.D(1.0f, ((ne.b) this.d3).e, AndroidUtilities.dp(8.0f), dp), 0.0f);
-                    canvas.drawPaint(this.Z2);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                if (z12) {
-                    float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(19.0f);
-                    canvas.saveLayer(measuredWidth, getPaddingTop(), getMeasuredWidth() - AndroidUtilities.dp(11.0f), getMeasuredHeight() - getPaddingBottom(), null);
-                    super.drawChild(canvas, view, j10);
-                    canvas.save();
-                    canvas.translate(com.google.android.gms.internal.play_billing.k3.y(1.0f, ((ne.b) this.e3).e, AndroidUtilities.dp(8.0f), measuredWidth), 0.0f);
-                    canvas.drawPaint(this.a3);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                return drawChild;
+                break;
             default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void k0(int i10, int i11) {
-        switch (this.Y2) {
-            case 1:
-                boolean canScrollVertically = canScrollVertically(-1);
-                boolean canScrollVertically2 = canScrollVertically(1);
-                if (canScrollVertically != this.b3 || canScrollVertically2 != this.c3) {
-                    this.b3 = canScrollVertically;
-                    this.c3 = canScrollVertically2;
-                    invalidate();
+                org.telegram.ui.Wallet.h9 h9Var = (org.telegram.ui.Wallet.h9) this.d;
+                org.telegram.ui.Wallet.d9 d9Var = h9Var.c;
+                if (charSequence.length() > 0 && i11 == charSequence.length() && i12 == 0 && d9Var.getLayout() != null) {
+                    h9Var.N = d9Var.getLayout().getLineLeft(0) - d9Var.getScrollX();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.Y2) {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
             case 0:
-                int childCount = getChildCount();
-                int size = (View.MeasureSpec.getSize(i10) - getPaddingLeft()) - getPaddingRight();
-                float f7 = 0.0f;
-                for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt = getChildAt(i12);
-                    if (childAt instanceof oi) {
-                        f7 = ((oi) childAt).a.d() + f7;
-                    }
+                ti tiVar = (ti) this.d;
+                if (i12 - i11 >= 1) {
+                    this.b = true;
                 }
-                int floor = (size <= f7 || childCount <= 0) ? 0 : (int) Math.floor((r1 - f7) / childCount);
-                for (int i13 = 0; i13 < childCount; i13++) {
-                    View childAt2 = getChildAt(i13);
-                    if (childAt2 instanceof oi) {
-                        ((oi) childAt2).a.setAdditionalWidth(floor);
-                    }
+                if (tiVar.H2 == null) {
+                    ti.M(tiVar);
                 }
-                super.onMeasure(i10, i11);
+                if (tiVar.H2.getAdapter() != null) {
+                    tiVar.H2.setReversed(false);
+                    tiVar.H2.getAdapter().U(charSequence, tiVar.H0.getEditText().getSelectionStart(), null, false, false);
+                    tiVar.b2();
+                    break;
+                }
                 break;
             default:
-                super.onMeasure(i10, i11);
+                boolean z10 = false;
+                this.b = i12 > 0 && TextUtils.equals(charSequence, "0");
+                org.telegram.ui.Wallet.h9 h9Var = (org.telegram.ui.Wallet.h9) this.d;
+                if (!h9Var.R && !this.c) {
+                    if (i11 != 0 || i12 != 0) {
+                        org.telegram.ui.Wallet.l6 l6Var = h9Var.d;
+                        if (i12 > 0 && i12 >= i11) {
+                            z10 = true;
+                        }
+                        if (l6Var.x && l6Var.r && l6Var.y == -1) {
+                            ak0 ak0Var = l6Var.h;
+                            if (ak0Var == null) {
+                                l6Var.d0 = org.telegram.messenger.vh.A(l6Var.d0, z10 ? -160.0f : 160.0f, 360.0f, -360.0f);
+                                break;
+                            } else if (!ak0Var.b()) {
+                                l6Var.h.setProgress(0.0f);
+                                l6Var.h.d();
+                                break;
+                            }
+                        }
+                    }
+                }
                 break;
         }
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

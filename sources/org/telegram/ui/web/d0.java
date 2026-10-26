@@ -1,94 +1,43 @@
 package org.telegram.ui.web;
 
-import android.graphics.Typeface;
-import android.media.AudioRecordingConfiguration;
-import android.media.MediaRoute2Info;
-import com.google.android.gms.internal.cast.z5;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.installations.FirebaseInstallationsRegistrar;
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import rg.o2;
+import android.app.Activity;
+import di.x7;
+import li.e3;
+import org.json.JSONObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.y9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d0 implements org.telegram.ui.ActionBar.z1, q3.g, g2.g, qg.j0, androidx.car.app.utils.b, r9.e, qa.a, r9.d, OnFailureListener {
-    public final /* synthetic */ int a;
+public final class d0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ x7 a;
+    public final /* synthetic */ a1 b;
 
-    public /* synthetic */ d0(int i10) {
-        this.a = i10;
+    public d0(a1 a1Var, x7 x7Var) {
+        this.b = a1Var;
+        this.a = x7Var;
     }
 
-    public static /* bridge */ /* synthetic */ AudioRecordingConfiguration c(Object obj) {
-        return (AudioRecordingConfiguration) obj;
-    }
-
-    public static /* bridge */ /* synthetic */ MediaRoute2Info d(Object obj) {
-        return (MediaRoute2Info) obj;
-    }
-
-    @Override // qg.j0
-    public Typeface a() {
-        switch (this.a) {
-            case 7:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
-            case 8:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            case 9:
-                return Typeface.create("serif", 1);
-            case 10:
-                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
-            case 11:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
-            default:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.onRequestPermissionResultReceived;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == 5000) {
+                NotificationCenter.getGlobalInstance().removeObserver(this, i12);
+                int i13 = iArr[0];
+                a1 a1Var = this.b;
+                if (i13 != 0) {
+                    a1Var.x(this.a, "scan_qr_popup_closed", new JSONObject());
+                } else {
+                    Activity activity = a1Var.W;
+                    if (activity == null) {
+                        return;
+                    }
+                    a1Var.g0 = y9.f0(activity, 3, new e3(a1Var, 13));
+                }
+            }
         }
-    }
-
-    @Override // q3.g
-    public boolean b(int i10, int i11, int i12, int i13, int i14) {
-        return false;
-    }
-
-    @Override // androidx.car.app.utils.b
-    public void call() {
-        throw null;
-    }
-
-    @Override // g2.g
-    public g2.h createDataSource() {
-        return new g2.b(ApplicationLoader.applicationContext);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        c2Var.dismiss();
-    }
-
-    @Override // r9.d
-    public Object j2(z5 z5Var) {
-        ra.d lambda$getComponents$0;
-        lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(z5Var);
-        return lambda$getComponents$0;
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        int i10 = o2.r0;
-    }
-
-    @Override // r9.e
-    public List v(ComponentRegistrar componentRegistrar) {
-        return componentRegistrar.getComponents();
-    }
-
-    public /* synthetic */ d0(r.a aVar, int i10, w.b bVar) {
-        this.a = 13;
-    }
-
-    @Override // qa.a
-    public void h(qa.b bVar) {
     }
 }

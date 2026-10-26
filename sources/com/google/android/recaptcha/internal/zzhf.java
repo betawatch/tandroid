@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import kd.c;
-import ld.a;
+import a8.jd;
+import ld.c;
+import md.a;
 import org.telegram.tgnet.TLObject;
-import td.p;
-import v7.i8;
+import ud.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
@@ -38,7 +38,7 @@ public final class zzhf {
                 a aVar = a.a;
                 i10 = zzheVar.zzc;
                 if (i10 != 0) {
-                    i8.b(obj);
+                    jd.b(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
                         p pVar = this.zza;
@@ -49,8 +49,8 @@ public final class zzhf {
                             return aVar;
                         }
                         zzgrVar = zzgrVar2;
-                    } catch (zzcg e7) {
-                        e = e7;
+                    } catch (zzcg e10) {
+                        e = e10;
                         zzgrVar = zzgrVar2;
                         zzgrVar.zzc(e);
                         throw e;
@@ -61,9 +61,9 @@ public final class zzhf {
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        i8.b(obj);
-                    } catch (zzcg e10) {
-                        e = e10;
+                        jd.b(obj);
+                    } catch (zzcg e11) {
+                        e = e11;
                         zzgrVar.zzc(e);
                         throw e;
                     }

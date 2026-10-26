@@ -1,116 +1,204 @@
 package org.telegram.ui.Components;
 
-import android.hardware.Camera;
-import android.os.Handler;
-import org.telegram.messenger.BuildVars;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
+import java.nio.ByteBuffer;
+import java.nio.FloatBuffer;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.camera.CameraSession;
-import org.telegram.messenger.camera.Size;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n50 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n60 b;
+public final class n50 {
+    public final int a;
+    public final int b;
+    public final FloatBuffer g;
+    public final FloatBuffer h;
+    public final int[] k;
+    public final m50 c = new m50(R.raw.round_blur_stage_0_frag);
+    public final m50 d = new m50(R.raw.round_blur_stage_3_frag);
+    public final k50 e = new k50();
+    public final l50 f = new l50();
+    public int i = 0;
+    public final int[] j = new int[1];
 
-    public /* synthetic */ n50(n60 n60Var, int i10) {
+    public n50(int i10, int i11) {
+        float f7;
+        char c10;
+        int i12;
+        RLottieNative rLottieNative;
+        int i13;
+        Bitmap bitmap;
+        int i14;
+        int i15;
+        Object obj;
+        int i16 = 0;
+        int[] iArr = new int[5];
+        this.k = iArr;
         this.a = i10;
-        this.b = n60Var;
+        this.b = i11;
+        float[] fArr = new float[232];
+        c(fArr, 0, 0.0f, 1.0f, 1.0f, 0.0f);
+        c(fArr, 8, 0.0f, 0.0f, 1.0f, 1.0f);
+        float[] fArr2 = new float[36];
+        float f10 = 1.0f;
+        d(fArr2, 0, -1.0f, 1.0f, 1.0f);
+        GLES20.glGenTextures(5, iArr, 0);
+        int i17 = 0;
+        for (int i18 = 5; i17 < i18; i18 = 5) {
+            GLES20.glBindTexture(3553, this.k[i17]);
+            GLES20.glTexParameteri(3553, 10241, i17 < 2 ? 9729 : 9728);
+            GLES20.glTexParameteri(3553, 10240, i17 < 2 ? 9729 : 9728);
+            GLES20.glTexParameteri(3553, 10242, 33071);
+            GLES20.glTexParameteri(3553, 10243, 33071);
+            int i19 = 4;
+            if (i17 == 4) {
+                int round = Math.round(i10 * 0.2f);
+                int round2 = Math.round((i10 * 28) / 1536.0f);
+                int i20 = (round - round2) - round2;
+                Object obj2 = null;
+                RLottieNative b10 = RLottieNative.b(AndroidUtilities.readRes(R.raw.plane_logo_plain), null, null, null);
+                Bitmap createBitmap = Bitmap.createBitmap(round, round, Bitmap.Config.ARGB_8888);
+                float f11 = f10;
+                Bitmap createBitmap2 = Bitmap.createBitmap(i20 * 8, i20 * 4, Bitmap.Config.ALPHA_8);
+                Canvas canvas = new Canvas(createBitmap2);
+                int i21 = 0;
+                while (i21 < 8) {
+                    int i22 = 0;
+                    while (i22 < i19) {
+                        int i23 = (i22 * 8) + i21;
+                        if (i23 >= 27) {
+                            obj = obj2;
+                            bitmap = createBitmap;
+                            i12 = i20;
+                            i13 = i21;
+                            rLottieNative = b10;
+                            i14 = i22;
+                            i15 = 4;
+                        } else {
+                            int i24 = (i23 * 8) + 16;
+                            i12 = i20;
+                            rLottieNative = b10;
+                            i13 = i21;
+                            bitmap = createBitmap;
+                            i14 = i22;
+                            i15 = 4;
+                            c(fArr, i24, i21 / 8.0f, i22 / 4.0f, (i21 + 1) / 8.0f, (i22 + 1) / 4.0f);
+                            rLottieNative.c(i23 * 2, bitmap, true);
+                            obj = null;
+                            canvas.drawBitmap(bitmap, (i12 * i13) - round2, (i12 * i14) - round2, (Paint) null);
+                        }
+                        i20 = i12;
+                        b10 = rLottieNative;
+                        i22 = i14 + 1;
+                        obj2 = obj;
+                        createBitmap = bitmap;
+                        i21 = i13;
+                        i19 = i15;
+                    }
+                    i21++;
+                    obj2 = obj2;
+                    i19 = i19;
+                }
+                float c11 = a1.g.c(i20, this.a, 2.0f, -1.0f);
+                d(fArr2, 24, -1.0f, c11, c11);
+                GLUtils.texImage2D(3553, 0, createBitmap2, 0);
+                createBitmap2.recycle();
+                createBitmap.recycle();
+                b10.d();
+                f7 = f11;
+                c10 = 0;
+            } else {
+                float f12 = f10;
+                if (i17 == 3) {
+                    int round3 = Math.round((i10 * 372.0f) / 1536.0f);
+                    float f13 = (round3 / this.a) * 2.0f;
+                    c10 = 0;
+                    f7 = f12;
+                    d(fArr2, 12, f12 - f13, f13 - 1.0f, f7);
+                    Bitmap bitmapFromRaw = AndroidUtilities.getBitmapFromRaw(R.raw.round_blur_overlay_text);
+                    if (bitmapFromRaw != null) {
+                        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmapFromRaw, round3, round3, true);
+                        Bitmap extractAlpha = createScaledBitmap.extractAlpha();
+                        GLUtils.texImage2D(3553, 0, extractAlpha, 0);
+                        extractAlpha.recycle();
+                        createScaledBitmap.recycle();
+                        bitmapFromRaw.recycle();
+                    }
+                } else {
+                    f7 = f12;
+                    c10 = 0;
+                    GLES20.glTexImage2D(3553, 0, 6408, i17 == 0 ? this.a : 48, i17 == 0 ? this.b : 48, 0, 6408, 5121, null);
+                }
+            }
+            i17++;
+            f10 = f7;
+            i16 = 0;
+        }
+        int i25 = i16;
+        GLES20.glBindTexture(3553, i25);
+        GLES20.glGenFramebuffers(1, this.j, i25);
+        FloatBuffer h = org.telegram.messenger.vh.h(ByteBuffer.allocateDirect(144));
+        this.g = h;
+        h.put(fArr2).position(i25);
+        FloatBuffer h10 = org.telegram.messenger.vh.h(ByteBuffer.allocateDirect(928));
+        this.h = h10;
+        h10.put(fArr).position(i25);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(14:14|15|16|(11:18|(1:20)|21|22|(7:24|(1:26)|27|28|(1:30)|31|(0)(1:37))|42|43|28|(0)|31|(1:33))|48|21|22|(0)|42|43|28|(0)|31|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0097, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00c7, code lost:
-    
-        org.telegram.messenger.FileLog.e(r0);
-     */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008c A[Catch: Exception -> 0x0097, TryCatch #1 {Exception -> 0x0097, blocks: (B:22:0x007c, B:24:0x008c, B:42:0x0099), top: B:21:0x007c }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00db  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z10;
-        x50 x50Var;
-        Handler handler;
-        Camera.Size currentPictureSize;
-        Camera.Size currentPreviewSize;
-        switch (this.a) {
-            case 0:
-                n60 n60Var = this.b;
-                if (n60Var.u0) {
-                    n60Var.u();
-                    break;
-                }
-                break;
-            case 1:
-                n60 n60Var2 = this.b;
-                Size[] sizeArr = n60Var2.n0;
-                if (n60Var2.t0 != null) {
-                    n60Var2.v();
-                    try {
-                        currentPreviewSize = n60Var2.t0.getCurrentPreviewSize();
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                    }
-                    if (currentPreviewSize.width == sizeArr[0].getWidth()) {
-                        if (currentPreviewSize.height != sizeArr[0].getHeight()) {
-                        }
-                        currentPictureSize = n60Var2.t0.getCurrentPictureSize();
-                        if (currentPictureSize.width == n60Var2.o0.getWidth()) {
-                            if (currentPictureSize.height == n60Var2.o0.getHeight()) {
-                            }
-                            z10 = false;
-                            if (BuildVars.LOGS_ENABLED) {
-                                FileLog.d("InstantCamera camera initied");
-                            }
-                            n60Var2.t0.setInitied();
-                            if (z10 && (x50Var = n60Var2.m0) != null && (handler = x50Var.getHandler()) != null) {
-                                x50Var.sendMessage(handler.obtainMessage(2), 0);
-                                break;
-                            }
-                        }
-                        n60Var2.o0 = new Size(currentPictureSize.width, currentPictureSize.height);
-                        FileLog.d("InstantCamera change picture size to w = " + n60Var2.o0.getWidth() + " h = " + n60Var2.o0.getHeight());
-                        z10 = true;
-                        if (BuildVars.LOGS_ENABLED) {
-                        }
-                        n60Var2.t0.setInitied();
-                        if (z10) {
-                        }
-                    }
-                    sizeArr[0] = new Size(currentPreviewSize.width, currentPreviewSize.height);
-                    FileLog.d("InstantCamera change preview size to w = " + sizeArr[0].getWidth() + " h = " + sizeArr[0].getHeight());
-                    currentPictureSize = n60Var2.t0.getCurrentPictureSize();
-                    if (currentPictureSize.width == n60Var2.o0.getWidth()) {
-                    }
-                    n60Var2.o0 = new Size(currentPictureSize.width, currentPictureSize.height);
-                    FileLog.d("InstantCamera change picture size to w = " + n60Var2.o0.getWidth() + " h = " + n60Var2.o0.getHeight());
-                    z10 = true;
-                    if (BuildVars.LOGS_ENABLED) {
-                    }
-                    n60Var2.t0.setInitied();
-                    if (z10) {
-                    }
-                }
-                break;
-            default:
-                n60 n60Var3 = this.b;
-                x50 x50Var2 = n60Var3.m0;
-                if (x50Var2 != null) {
-                    CameraSession cameraSession = n60Var3.t0;
-                    Handler handler2 = x50Var2.getHandler();
-                    if (handler2 != null) {
-                        x50Var2.sendMessage(handler2.obtainMessage(3, cameraSession), 0);
-                        break;
-                    }
-                }
-                break;
+    public static int a(int i10, int i11) {
+        int glCreateShader = GLES20.glCreateShader(i10);
+        if (glCreateShader == 0) {
+            return 0;
         }
+        GLES20.glShaderSource(glCreateShader, AndroidUtilities.readRes(i11));
+        GLES20.glCompileShader(glCreateShader);
+        int[] iArr = new int[1];
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
+        if (iArr[0] != 0) {
+            return glCreateShader;
+        }
+        FileLog.e("GlUtils: compile shader error: " + GLES20.glGetShaderInfoLog(glCreateShader));
+        GLES20.glDeleteShader(glCreateShader);
+        return 0;
+    }
+
+    public static void c(float[] fArr, int i10, float f7, float f10, float f11, float f12) {
+        fArr[i10] = f7;
+        fArr[i10 + 1] = f12;
+        fArr[i10 + 2] = f11;
+        fArr[i10 + 3] = f12;
+        fArr[i10 + 4] = f7;
+        fArr[i10 + 5] = f10;
+        fArr[i10 + 6] = f11;
+        fArr[i10 + 7] = f10;
+    }
+
+    public static void d(float[] fArr, int i10, float f7, float f10, float f11) {
+        fArr[i10] = f7;
+        fArr[i10 + 1] = -1.0f;
+        fArr[i10 + 2] = 0.0f;
+        fArr[i10 + 3] = f11;
+        fArr[i10 + 4] = -1.0f;
+        fArr[i10 + 5] = 0.0f;
+        fArr[i10 + 6] = f7;
+        fArr[i10 + 7] = f10;
+        fArr[i10 + 8] = 0.0f;
+        fArr[i10 + 9] = f11;
+        fArr[i10 + 10] = f10;
+        fArr[i10 + 11] = 0.0f;
+    }
+
+    public final void b() {
+        this.c.a();
+        this.e.a();
+        this.f.a();
+        this.d.a();
+        GLES20.glDeleteTextures(5, this.k, 0);
+        GLES20.glDeleteFramebuffers(1, this.j, 0);
     }
 }

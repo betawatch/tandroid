@@ -1,115 +1,55 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qc extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final Paint d;
-    public final Path e;
-    public final Path f;
-    public boolean h;
-    public boolean n;
-    public final org.telegram.ui.Components.yc r;
-    public boolean s;
-    public final org.telegram.ui.Components.f6 v;
-    public final /* synthetic */ rc w;
+public final class qc extends org.telegram.ui.Components.lm0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ sc f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qc(rc rcVar, Context context) {
-        super(context);
-        this.w = rcVar;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        this.c = new Paint(1);
-        this.d = new Paint(1);
-        this.e = new Path();
-        this.f = new Path();
-        this.r = new org.telegram.ui.Components.yc(this);
-        this.v = new org.telegram.ui.Components.f6(this, 0L, 320L, org.telegram.ui.Components.bs.h);
-        paint.setStyle(Paint.Style.STROKE);
+    public qc(sc scVar, Context context, org.telegram.ui.ActionBar.u6 u6Var, int i10) {
+        this.f = scVar;
+        this.c = context;
+        this.d = u6Var;
+        this.e = i10;
     }
 
-    public final void a(MessagesController.PeerColor peerColor) {
-        org.telegram.ui.ActionBar.g6 g6Var = this.w.a;
-        boolean a2 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
-        Paint paint = this.c;
-        Paint paint2 = this.b;
-        if (a2 && peerColor.hasColor2() && !peerColor.hasColor3()) {
-            paint2.setColor(peerColor.getColor(1, g6Var));
-            paint.setColor(peerColor.getColor(0, g6Var));
-        } else {
-            paint2.setColor(peerColor.getColor(0, g6Var));
-            paint.setColor(peerColor.getColor(1, g6Var));
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null) {
+            return 0;
         }
-        this.d.setColor(peerColor.getColor(2, g6Var));
-        this.h = peerColor.hasColor2();
-        this.n = peerColor.hasColor3();
+        return peerColors.colors.size();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        float a2 = this.r.a(0.05f);
-        canvas.scale(a2, a2, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        canvas.save();
-        canvas.clipPath(this.e);
-        canvas.drawPaint(this.b);
-        if (this.h) {
-            canvas.drawPath(this.f, this.c);
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        rc rcVar = (rc) e1Var.a;
+        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, rcVar, this.d);
+        boolean z10 = i10 == this.f.e;
+        rcVar.s = z10;
+        rcVar.v.f(z10, true);
+        rcVar.invalidate();
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null || i10 < 0 || i10 >= peerColors.colors.size()) {
+            return;
         }
-        canvas.restore();
-        if (this.n) {
-            canvas.save();
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set((getMeasuredWidth() - AndroidUtilities.dp(12.4f)) / 2.0f, (getMeasuredHeight() - AndroidUtilities.dp(12.4f)) / 2.0f, (AndroidUtilities.dp(12.4f) + getMeasuredWidth()) / 2.0f, (AndroidUtilities.dp(12.4f) + getMeasuredHeight()) / 2.0f);
-            canvas.rotate(45.0f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.33f), AndroidUtilities.dp(2.33f), this.d);
-            canvas.restore();
-        }
-        float e = this.v.e(this.s);
-        if (e > 0.0f) {
-            float dpf2 = AndroidUtilities.dpf2(2.0f);
-            Paint paint = this.a;
-            paint.setStrokeWidth(dpf2);
-            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.lerp((paint.getStrokeWidth() * 0.5f) + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f) - (paint.getStrokeWidth() * 2.0f), e), paint);
-        }
-        canvas.restore();
+        rcVar.a(peerColors.colors.get(i10));
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-        Path path = this.e;
-        path.rewind();
-        path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.dp(20.0f), Path.Direction.CW);
-        Path path2 = this.f;
-        path2.rewind();
-        path2.moveTo(getMeasuredWidth(), 0.0f);
-        path2.lineTo(getMeasuredWidth(), getMeasuredHeight());
-        path2.lineTo(0.0f, getMeasuredHeight());
-        path2.close();
-    }
-
-    @Override // android.view.View
-    public final void setBackgroundColor(int i10) {
-        this.a.setColor(i10);
-    }
-
-    @Override // android.view.View
-    public final void setPressed(boolean z10) {
-        super.setPressed(z10);
-        this.r.c(z10);
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.vl0(new rc(this.f, this.c));
     }
 }

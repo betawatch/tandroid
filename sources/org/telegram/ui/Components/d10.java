@@ -1,77 +1,71 @@
 package org.telegram.ui.Components;
 
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d10 implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h5 b;
-    public final /* synthetic */ qy c;
+public abstract class d10 extends jp0 {
+    public final boolean d;
 
-    public /* synthetic */ d10(org.telegram.ui.ActionBar.h5 h5Var, qy qyVar) {
-        this.b = h5Var;
-        this.c = qyVar;
+    public d10(boolean z10) {
+        this.d = z10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x003e  */
-    @Override // org.telegram.messenger.Utilities.Callback
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(Object obj) {
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                this.c.run(this.b.getLastFragment());
-                break;
-            default:
-                Integer num = (Integer) obj;
-                List fragmentStack = this.b.getFragmentStack();
-                boolean z11 = true;
-                org.telegram.ui.ActionBar.o2 o2Var = null;
-                for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                    o2Var = (org.telegram.ui.ActionBar.o2) fragmentStack.get(size);
-                    if (!(o2Var instanceof org.telegram.ui.ey) && !(o2Var instanceof org.telegram.ui.rg0)) {
-                        if (z11) {
-                            o2Var.finishFragment();
-                            z11 = false;
-                        } else {
-                            o2Var.removeSelfFromStack();
-                        }
-                    }
-                    org.telegram.ui.ActionBar.o2 o2Var2 = o2Var;
-                    org.telegram.ui.ActionBar.o2 o2Var3 = !(o2Var2 instanceof org.telegram.ui.rg0) ? ((org.telegram.ui.rg0) o2Var2).J : o2Var2;
-                    z10 = o2Var3 instanceof org.telegram.ui.ey;
-                    qy qyVar = this.c;
-                    if (z10) {
-                        qyVar.run(o2Var2);
-                        break;
-                    } else {
-                        org.telegram.ui.ey eyVar = (org.telegram.ui.ey) o2Var3;
-                        eyVar.I3();
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(eyVar, num, qyVar, o2Var2, 27), 80L);
-                        break;
-                    }
-                }
-                org.telegram.ui.ActionBar.o2 o2Var22 = o2Var;
-                if (!(o2Var22 instanceof org.telegram.ui.rg0)) {
-                }
-                z10 = o2Var3 instanceof org.telegram.ui.ey;
-                qy qyVar2 = this.c;
-                if (z10) {
-                }
-                break;
+    @Override // org.telegram.ui.Components.jp0
+    public final boolean a() {
+        return k() > j();
+    }
+
+    @Override // org.telegram.ui.Components.jp0
+    public final boolean b() {
+        return k() < i();
+    }
+
+    @Override // org.telegram.ui.Components.jp0
+    public final void c(boolean z10) {
+        float h = h();
+        if (z10) {
+            h *= -1.0f;
+        }
+        l(Math.min(i(), Math.max(j(), k() + h)));
+    }
+
+    @Override // org.telegram.ui.Components.jp0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        if (this.d) {
+            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.c.j.a);
+            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
         }
     }
 
-    public /* synthetic */ d10(qy qyVar, org.telegram.ui.ActionBar.h5 h5Var) {
-        this.c = qyVar;
-        this.b = h5Var;
+    @Override // org.telegram.ui.Components.jp0
+    public final boolean g(View view, int i10, Bundle bundle) {
+        if (super.g(view, i10, bundle)) {
+            return true;
+        }
+        if (i10 != s0.c.j.a()) {
+            return false;
+        }
+        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
+        return true;
     }
+
+    public float h() {
+        return 0.05f;
+    }
+
+    public float i() {
+        return 1.0f;
+    }
+
+    public float j() {
+        return 0.0f;
+    }
+
+    public abstract float k();
+
+    public abstract void l(float f7);
 }

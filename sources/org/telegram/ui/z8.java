@@ -1,45 +1,44 @@
 package org.telegram.ui;
 
-import android.os.Build;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z8 extends s4.r0 {
-    public boolean a;
-    public final /* synthetic */ m9 b;
+public final /* synthetic */ class z8 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
+    public final /* synthetic */ o9 a;
 
-    public z8(m9 m9Var) {
-        this.b = m9Var;
+    public /* synthetic */ z8(o9 o9Var) {
+        this.a = o9Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        m9 m9Var = this.b;
-        ArrayList arrayList = m9Var.G;
-        int L0 = m9Var.c.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(m9Var.c.N0() - L0) + 1;
-        if (abs > 0) {
-            int size = m9Var.d.Z2.y.size();
-            if (!m9Var.J && !m9Var.H && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new h0(7, this, (i9) i2.o1.i(1, arrayList)));
-            }
+    @Override // r0.n
+    public r0.k1 P0(View view, r0.k1 k1Var) {
+        return this.a.onInsetsInternal(view, k1Var);
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        o9.W(this.a, (org.telegram.ui.Components.t61) obj, (View) obj2);
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z10;
+        View view = (View) obj2;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        Object obj6 = ((org.telegram.ui.Components.t61) obj).G;
+        if (obj6 instanceof k9) {
+            this.a.b0(((k9) obj6).c, (j9) view);
+            z10 = true;
+        } else {
+            z10 = false;
         }
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (i11 != 0 && this.a) {
-            m9Var.f.e(i11 < 0, true);
-        }
-        this.a = true;
-        m9Var.r.b(L0 != 0 || top < m9Var.d.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT < 31 || (fVar = m9Var.Y) == null) {
-            return;
-        }
-        fVar.f(i10, i11);
-        m9Var.e0();
+        return Boolean.valueOf(z10);
     }
 }

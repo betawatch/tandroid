@@ -6,7 +6,7 @@ import android.os.IBinder;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class VideoEncodingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static VideoEncodingService instance;
@@ -110,7 +110,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             if (MediaController.getInstance().getCurrentForegroundConverMessage() == null) {
                 return;
             }
-            new e0.k0(ApplicationLoader.applicationContext).e(null, 4, this.builder.b());
+            new e0.j0(ApplicationLoader.applicationContext).e(null, 4, this.builder.b());
         } catch (Throwable th2) {
             FileLog.e(th2);
         }
@@ -124,7 +124,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             if (i10 == NotificationCenter.fileUploaded || i10 == NotificationCenter.fileUploadFailed) {
                 String str3 = (String) objArr[0];
                 if (i11 == this.currentAccount && (str = this.currentPath) != null && str.equals(str3)) {
-                    AndroidUtilities.runOnUIThread(new ul(this, 0));
+                    AndroidUtilities.runOnUIThread(new wl(this, 0));
                     return;
                 }
                 return;
@@ -157,7 +157,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.k0(ApplicationLoader.applicationContext).b(4, null);
+        new e0.j0(ApplicationLoader.applicationContext).b(4, null);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploadProgressChanged);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploadFailed);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploaded);
@@ -178,8 +178,8 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             NotificationsController.checkOtherNotificationsChannel();
             e0.q qVar = new e0.q(ApplicationLoader.applicationContext, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
             this.builder = qVar;
-            qVar.E.icon = android.R.drawable.stat_sys_upload;
-            qVar.E.when = System.currentTimeMillis();
+            qVar.F.icon = android.R.drawable.stat_sys_upload;
+            qVar.F.when = System.currentTimeMillis();
             e0.q qVar2 = this.builder;
             qVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
             qVar2.g(LocaleController.getString(R.string.AppName));
@@ -190,7 +190,16 @@ public class VideoEncodingService extends Service implements NotificationCenter.
         } catch (Throwable th2) {
             FileLog.e(th2);
         }
-        AndroidUtilities.runOnUIThread(new ul(this, 1));
+        AndroidUtilities.runOnUIThread(new wl(this, 1));
         return 2;
+    }
+
+    public void onTimeout(int i10, int i11) {
+        FileLog.d("VideoEncodingService timeout, type = " + i11);
+        try {
+            stopForeground(true);
+        } catch (Throwable unused) {
+        }
+        stopSelf();
     }
 }

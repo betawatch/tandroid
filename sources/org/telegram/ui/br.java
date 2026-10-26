@@ -1,25 +1,30 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class br extends org.telegram.ui.Components.w20 {
-    public final /* synthetic */ jr b;
+public final class br implements m60 {
+    public final /* synthetic */ r60 a;
+    public final /* synthetic */ kr b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public br(jr jrVar, Activity activity, jr jrVar2) {
-        super(activity, jrVar2);
-        this.b = jrVar;
+    public br(kr krVar, r60 r60Var) {
+        this.b = krVar;
+        this.a = r60Var;
     }
 
-    @Override // org.telegram.ui.Components.w20
-    public final void n() {
-        jr jrVar = this.b;
-        jrVar.getMessagesController().convertToGigaGroup(jrVar.getParentActivity(), jrVar.r, jrVar, new a1(this, 24));
+    @Override // org.telegram.ui.m60
+    public final void e(TLRPC.User user) {
+        this.b.u0(user.id, null, null, null, "", true, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.w20
-    public final void m() {
+    @Override // org.telegram.ui.m60
+    public final void f(int i10, ArrayList arrayList) {
+        if (this.a.getParentActivity() == null) {
+            return;
+        }
+        kr krVar = this.b;
+        krVar.getMessagesController().addUsersToChat(krVar.n, krVar, arrayList, i10, new h3(this, 2), new ar(0), null);
     }
 }

@@ -1,52 +1,22 @@
 package di;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import w7.z5;
+import bi.yd;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class t extends LinearLayout {
-    public final TextView a;
-    public final TextView b;
-    public boolean c;
+public final class t extends yd {
+    public final /* synthetic */ Utilities.Callback[] m0;
 
-    public t(Context context) {
-        super(context);
-        setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextSize(1, 16.0f);
-        r6.W(textView, k6.j5, null);
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView, z5.t(-1, -2, 51, 0, 7, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 13.0f);
-        r6.W(textView2, k6.q5, null);
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView2, z5.t(-1, -2, 51, 0, 4, 0, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t(Context context, b bVar, Utilities.Callback[] callbackArr) {
+        super(context, bVar);
+        this.m0 = callbackArr;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.c) {
-            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), k6.k0);
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+    @Override // bi.yd
+    public final void e(int i10) {
+        this.m0[0].run(Integer.valueOf(i10));
     }
 }

@@ -1,18 +1,13 @@
 package w7;
 
-import java.lang.ref.Reference;
-import java.util.ArrayList;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class h7 {
-    public static void a(ArrayList arrayList, Object obj) {
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            Object obj2 = ((Reference) arrayList.get(size)).get();
-            if (obj2 == null || obj2 == obj) {
-                arrayList.remove(size);
-                return;
-            }
-        }
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        Logger.getLogger(h7.class.getName());
     }
 }

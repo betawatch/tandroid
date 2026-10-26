@@ -1,40 +1,35 @@
 package org.telegram.ui;
 
 import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class ka0 implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ f80 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Integer e;
-    public final /* synthetic */ Bundle f;
-    public final /* synthetic */ LaunchActivity g;
+    public final /* synthetic */ sz a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Bundle c;
+    public final /* synthetic */ TLRPC.ChatInvite d;
+    public final /* synthetic */ LaunchActivity e;
 
-    public ka0(LaunchActivity launchActivity, f80 f80Var, String str, org.telegram.ui.ActionBar.o2 o2Var, long j10, Integer num, Bundle bundle) {
-        this.g = launchActivity;
-        this.a = f80Var;
-        this.b = str;
-        this.c = o2Var;
-        this.d = j10;
-        this.e = num;
-        this.f = bundle;
+    public ka0(LaunchActivity launchActivity, sz szVar, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
+        this.e = launchActivity;
+        this.a = szVar;
+        this.b = zArr;
+        this.c = bundle;
+        this.d = chatInvite;
     }
 
     @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
     public final void onError() {
-        LaunchActivity launchActivity = this.g;
+        LaunchActivity launchActivity = this.e;
         if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.f5.u0((org.telegram.ui.ActionBar.o2) i2.o1.i(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
+            org.telegram.ui.Components.g5.t0((org.telegram.ui.ActionBar.r2) ic.a.g(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
         }
         try {
             this.a.run();
@@ -50,32 +45,14 @@ public final class ka0 implements MessagesController.MessagesLoadedCallback {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        LaunchActivity launchActivity = this.g;
-        if (launchActivity.isFinishing()) {
+        if (this.b[0]) {
             return;
         }
-        String str = this.b;
-        long j10 = this.d;
-        org.telegram.ui.ActionBar.o2 o2Var = this.c;
-        if (str == null || !(o2Var instanceof sn) || ((sn) o2Var).a() != j10) {
-            if (o2Var instanceof sn) {
-                sn snVar = (sn) o2Var;
-                if (snVar.a() == j10 && this.e == null) {
-                    AndroidUtilities.shakeViewSpring(snVar.x0, 5.0f);
-                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    gk gkVar = snVar.Y;
-                    for (int i10 = 0; i10 < gkVar.getChildCount(); i10++) {
-                        AndroidUtilities.shakeViewSpring(gkVar.getChildAt(i10), 5.0f);
-                    }
-                    org.telegram.ui.ActionBar.k actionBar = snVar.getActionBar();
-                    for (int i11 = 0; i11 < actionBar.getChildCount(); i11++) {
-                        AndroidUtilities.shakeViewSpring(actionBar.getChildAt(i11), 5.0f);
-                    }
-                }
-            }
-            o2Var = new sn(this.f);
-            ((ActionBarLayout) launchActivity.O()).Q(o2Var);
+        un unVar = new un(this.c);
+        TLRPC.ChatInvite chatInvite = this.d;
+        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
+            unVar.W5 = chatInvite;
         }
-        AndroidUtilities.runOnUIThread(new ai.c3(this, this.b, this.d, o2Var, 22), 150L);
+        ((ActionBarLayout) this.e.O()).R(unVar);
     }
 }

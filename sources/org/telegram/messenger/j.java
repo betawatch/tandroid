@@ -1,14 +1,31 @@
 package org.telegram.messenger;
 
-import android.text.util.Linkify;
+import android.view.PixelCopy;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements Linkify.MatchFilter {
-    @Override // android.text.util.Linkify.MatchFilter
-    public final boolean acceptMatch(CharSequence charSequence, int i10, int i11) {
-        boolean lambda$static$7;
-        lambda$static$7 = AndroidUtilities.lambda$static$7(charSequence, i10, i11);
-        return lambda$static$7;
+public final /* synthetic */ class j implements PixelCopy.OnPixelCopyFinishedListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ j(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
+    public final void onPixelCopyFinished(int i10) {
+        switch (this.a) {
+            case 0:
+                ((CountDownLatch) this.b).countDown();
+                break;
+            case 1:
+                ((CountDownLatch) this.b).countDown();
+                break;
+            default:
+                ((Runnable) this.b).run();
+                break;
+        }
     }
 }

@@ -1,18 +1,23 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class p80 extends s4.r0 {
-    public final /* synthetic */ s80 a;
+public final class p80 extends mm0 {
+    public final /* synthetic */ t80 f3;
 
-    public p80(s80 s80Var) {
-        this.a = s80Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p80(t80 t80Var, Context context) {
+        super(context, null);
+        this.f3 = t80Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        s80.p(this.a);
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3.s) {
+            return;
+        }
+        super.requestLayout();
     }
 }

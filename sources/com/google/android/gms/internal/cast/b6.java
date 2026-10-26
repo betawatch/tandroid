@@ -1,75 +1,80 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b6 implements i6 {
-    public final t4 a;
-    public final l6 b;
-    public final a5 c;
+public final class b6 {
+    public static final b6 c = new b6();
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
+    public final r5 a = new r5();
 
-    public b6(l6 l6Var, a5 a5Var, t4 t4Var) {
-        this.b = l6Var;
-        this.c = a5Var;
-        this.a = t4Var;
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final void a(Object obj) {
-        this.b.getClass();
-        k6 k6Var = ((f5) obj).zzc;
-        if (k6Var.d) {
-            k6Var.d = false;
+    public final e6 a(Class cls) {
+        e6 j10;
+        Class cls2;
+        Charset charset = i5.a;
+        if (cls == null) {
+            throw new NullPointerException("messageType");
         }
-        throw a1.g.i(obj);
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final int b(f5 f5Var) {
-        this.b.getClass();
-        f5Var.zzc.getClass();
-        return 506991;
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final boolean c(f5 f5Var, f5 f5Var2) {
-        this.b.getClass();
-        return f5Var.zzc.equals(f5Var2.zzc);
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final void d(Object obj, Object obj2) {
-        j6.o(this.b, obj, obj2);
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final void e(Object obj, u5 u5Var) {
-        this.c.getClass();
-        a1.g.z(obj);
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final boolean f(Object obj) {
-        this.c.getClass();
-        a1.g.z(obj);
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final int g(t4 t4Var) {
-        this.b.getClass();
-        k6 k6Var = ((f5) t4Var).zzc;
-        int i10 = k6Var.c;
-        if (i10 != -1) {
-            return i10;
+        ConcurrentHashMap concurrentHashMap = this.b;
+        e6 e6Var = (e6) concurrentHashMap.get(cls);
+        if (e6Var != null) {
+            return e6Var;
         }
-        k6Var.c = 0;
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.cast.i6
-    public final f5 zzc() {
-        t4 t4Var = this.a;
-        return t4Var instanceof f5 ? (f5) ((f5) t4Var).h(4, null) : ((e5) ((f5) t4Var).h(5, null)).b();
+        r5 r5Var = this.a;
+        r5Var.getClass();
+        Class cls3 = f6.a;
+        if (!c5.class.isAssignableFrom(cls) && (cls2 = f6.a) != null && !cls2.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
+        }
+        d6 zzb = ((q5) r5Var.a).zzb(cls);
+        int i10 = zzb.d;
+        q4 q4Var = zzb.a;
+        if ((i10 & 2) == 2) {
+            if (c5.class.isAssignableFrom(cls)) {
+                j10 = new x5(f6.c, y4.a, q4Var);
+            } else {
+                h6 h6Var = f6.b;
+                x4 x4Var = y4.b;
+                if (x4Var == null) {
+                    throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+                }
+                j10 = new x5(h6Var, x4Var, q4Var);
+            }
+        } else if (c5.class.isAssignableFrom(cls)) {
+            if (zzb.a() - 1 != 1) {
+                int i11 = z5.a;
+                n5 n5Var = o5.b;
+                h6 h6Var2 = f6.c;
+                x4 x4Var2 = y4.a;
+                int i12 = t5.a;
+                j10 = w5.j(zzb, n5Var, h6Var2, x4Var2);
+            } else {
+                int i13 = z5.a;
+                n5 n5Var2 = o5.b;
+                h6 h6Var3 = f6.c;
+                int i14 = t5.a;
+                j10 = w5.j(zzb, n5Var2, h6Var3, null);
+            }
+        } else if (zzb.a() - 1 != 1) {
+            int i15 = z5.a;
+            m5 m5Var = o5.a;
+            h6 h6Var4 = f6.b;
+            x4 x4Var3 = y4.b;
+            if (x4Var3 == null) {
+                throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+            }
+            int i16 = t5.a;
+            j10 = w5.j(zzb, m5Var, h6Var4, x4Var3);
+        } else {
+            int i17 = z5.a;
+            m5 m5Var2 = o5.a;
+            h6 h6Var5 = f6.b;
+            int i18 = t5.a;
+            j10 = w5.j(zzb, m5Var2, h6Var5, null);
+        }
+        e6 e6Var2 = (e6) concurrentHashMap.putIfAbsent(cls, j10);
+        return e6Var2 == null ? j10 : e6Var2;
     }
 }

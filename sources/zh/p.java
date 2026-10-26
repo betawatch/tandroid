@@ -1,94 +1,35 @@
 package zh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import com.google.android.gms.internal.play_billing.k3;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.r5;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class p extends View {
-    public final r5 a;
-    public final Drawable b;
-    public float c;
-    public boolean d;
+public final /* synthetic */ class p implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ u6 c;
+    public final /* synthetic */ TL_stars.StarGift d;
 
-    public p(k0 k0Var, Context context, int i10, TLRPC.Document document) {
-        super(context);
-        if (document != null) {
-            this.a = r5.m(k0Var.a, 5, document);
-            this.b = null;
-        } else {
-            this.a = null;
-            Drawable mutate = context.getDrawable(i10 == 0 ? R.drawable.emoji_tabs_faves : R.drawable.msg_emoji_recent).mutate();
-            this.b = mutate;
-            mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
-        }
+    public /* synthetic */ p(Context context, u6 u6Var, TL_stars.StarGift starGift, int i10) {
+        this.a = i10;
+        this.b = context;
+        this.c = u6Var;
+        this.d = starGift;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        r5 r5Var = this.a;
-        if (r5Var != null) {
-            r5Var.a(this);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u6 u6Var = this.c;
+                v.U(this.b, this.d, u6Var);
+                break;
+            default:
+                u6 u6Var2 = this.c;
+                v.U(this.b, this.d, u6Var2);
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        r5 r5Var = this.a;
-        if (r5Var != null) {
-            r5Var.o(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7 = this.d ? 1.0f : 0.0f;
-        float f10 = this.c;
-        if (f10 != f7) {
-            if (Math.abs(f10 - f7) >= 0.02f) {
-                float f11 = this.c;
-                f7 = k3.y(f7, f11, 0.35f, f11);
-            }
-            this.c = f7;
-            invalidate();
-        }
-        float interpolation = (1.0f - (bs.g.getInterpolation(this.c) * 0.15f)) * AndroidUtilities.dp(26.0f);
-        float f12 = interpolation / 2.0f;
-        int width = (int) ((getWidth() / 2.0f) - f12);
-        int height = (int) ((getHeight() / 2.0f) - f12);
-        Drawable drawable = this.a;
-        if (drawable == null) {
-            drawable = this.b;
-        }
-        if (drawable != null) {
-            drawable.setBounds(width, height, (int) (width + interpolation), (int) (height + interpolation));
-            r.b(canvas, drawable);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            this.d = true;
-            invalidate();
-        } else if (actionMasked == 1 || actionMasked == 3) {
-            this.d = false;
-            invalidate();
-        }
-        return super.onTouchEvent(motionEvent);
     }
 }

@@ -1,5 +1,6 @@
 package androidx.mediarouter.app;
 
+import a8.p1;
 import android.R;
 import android.content.Context;
 import android.graphics.Color;
@@ -9,9 +10,9 @@ import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class MediaRouteVolumeSlider extends m.d0 {
+public class MediaRouteVolumeSlider extends m.c0 {
     public final float b;
     public boolean c;
     public Drawable d;
@@ -45,7 +46,7 @@ public class MediaRouteVolumeSlider extends m.d0 {
         super.setThumb(z10 ? null : this.d);
     }
 
-    @Override // m.d0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
         int i10 = isEnabled() ? 255 : (int) (this.b * 255.0f);
@@ -80,6 +81,6 @@ public class MediaRouteVolumeSlider extends m.d0 {
 
     public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        this.b = v7.a0.c(context);
+        this.b = p1.c(context);
     }
 }

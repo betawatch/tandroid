@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fe implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -40,17 +40,17 @@ public final /* synthetic */ class fe implements Utilities.Callback {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
                 int i11 = ChatActivityEnterView.r5;
-                qd qdVar = new qd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
-                if (!chatActivityEnterView.o1(qdVar)) {
-                    qdVar.run();
+                rd rdVar = new rd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
+                if (!chatActivityEnterView.o1(rdVar)) {
+                    rdVar.run();
                     break;
                 }
                 break;
             default:
                 gg ggVar = (gg) obj3;
-                qd qdVar2 = new qd(ggVar, this.b, (MediaController.PhotoEntry) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
-                if (!ggVar.a.o1(qdVar2)) {
-                    qdVar2.run();
+                rd rdVar2 = new rd(ggVar, this.b, (MediaController.PhotoEntry) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
+                if (!ggVar.a.o1(rdVar2)) {
+                    rdVar2.run();
                     break;
                 }
                 break;

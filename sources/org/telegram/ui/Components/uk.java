@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uk implements Runnable {
     public final /* synthetic */ int a;
@@ -39,14 +39,14 @@ public final /* synthetic */ class uk implements Runnable {
                 if (!alVar3.K) {
                     float f7 = alVar3.m0;
                     if (f7 < 1.0f && alVar3.l0 == null) {
-                        o1.k kVar = new o1.k(new o1.j(f7));
-                        alVar3.l0 = kVar;
-                        o1.l lVar = new o1.l(1.0f);
-                        lVar.a(0.55f);
-                        lVar.b(65.0f);
-                        kVar.u = lVar;
+                        o1.j jVar = new o1.j(new ac.a(f7));
+                        alVar3.l0 = jVar;
+                        o1.k kVar = new o1.k(1.0f);
+                        kVar.a(0.55f);
+                        kVar.b(65.0f);
+                        jVar.u = kVar;
                         alVar3.l0.e(0.001f);
-                        alVar3.l0.b(new l7(alVar3, 4));
+                        alVar3.l0.b(new n7(alVar3, 4));
                         alVar3.l0.a(new hb(alVar3, 2));
                         alVar3.l0.h();
                         break;

@@ -1,16 +1,15 @@
 package x3;
 
-import b2.t0;
-import b2.v;
-import b2.v0;
+import b2.u0;
 import b2.w;
+import b2.w0;
 import e2.x;
-import e9.n0;
 import f2.q;
+import f9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class h extends i {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
@@ -35,35 +34,35 @@ public final class h extends i {
     }
 
     @Override // x3.i
-    public final boolean c(x xVar, long j10, n2.e eVar) {
+    public final boolean c(x xVar, long j10, m4.c cVar) {
         if (e(xVar, o)) {
             byte[] copyOf = Arrays.copyOf(xVar.a, xVar.c);
             int i10 = copyOf[9] & 255;
             ArrayList a2 = q.a(copyOf);
-            if (((w) eVar.b) == null) {
-                v vVar = new v();
-                vVar.q = v0.n("audio/ogg");
-                vVar.r = v0.n("audio/opus");
-                vVar.J = i10;
-                vVar.K = 48000;
-                vVar.u = a2;
-                eVar.b = new w(vVar);
+            if (((b2.x) cVar.b) == null) {
+                w wVar = new w();
+                wVar.q = w0.n("audio/ogg");
+                wVar.r = w0.n("audio/opus");
+                wVar.J = i10;
+                wVar.K = 48000;
+                wVar.u = a2;
+                cVar.b = new b2.x(wVar);
                 return true;
             }
         } else {
             if (!e(xVar, p)) {
-                ((w) eVar.b).getClass();
+                ((b2.x) cVar.b).getClass();
                 return false;
             }
-            ((w) eVar.b).getClass();
+            ((b2.x) cVar.b).getClass();
             if (!this.n) {
                 this.n = true;
                 xVar.O(8);
-                t0 r10 = c3.b.r(n0.v(c3.b.u(xVar, false, false).a));
-                if (r10 != null) {
-                    v a10 = ((w) eVar.b).a();
-                    a10.k = r10.b(((w) eVar.b).l);
-                    eVar.b = new w(a10);
+                u0 r6 = c3.b.r(i0.v(c3.b.u(xVar, false, false).a));
+                if (r6 != null) {
+                    w a10 = ((b2.x) cVar.b).a();
+                    a10.k = r6.b(((b2.x) cVar.b).l);
+                    cVar.b = new b2.x(a10);
                     return true;
                 }
             }

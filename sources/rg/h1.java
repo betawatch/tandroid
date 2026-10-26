@@ -1,42 +1,17 @@
 package rg;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.wl0;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class h1 extends s4.g0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ j1 d;
+public final class h1 {
+    public double a;
+    public double b;
 
-    public h1(j1 j1Var, Context context) {
-        this.d = j1Var;
-        this.c = context;
+    public h1(double d, double d10) {
+        this.a = d;
+        this.b = d10;
     }
 
-    @Override // s4.g0
-    public final int h() {
-        return 14;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        i1 i1Var = (i1) b1Var.a;
-        ViewGroup.LayoutParams layoutParams = i1Var.getLayoutParams();
-        j1 j1Var = this.d;
-        layoutParams.height = ((j1Var.getHeight() - j1Var.getPaddingTop()) - j1Var.getPaddingBottom()) / 2;
-        qg.u0 u0Var = j1Var.b3;
-        if (u0Var != null) {
-            i1Var.a = u0Var.b(i10);
-            i1Var.invalidate();
-            i1Var.b = j1Var.a3 == i10 ? 1.0f : 0.0f;
-            i1Var.invalidate();
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new wl0(new i1(this.d, this.c));
+    public final double a(double d, double d10) {
+        return Math.sqrt(Math.pow(d10 - this.b, 2.0d) + Math.pow(d - this.a, 2.0d));
     }
 }

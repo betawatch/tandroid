@@ -1,78 +1,80 @@
 package v2;
 
-import u2.e1;
-import u2.f1;
+import a8.ng;
+import n4.s;
+import u2.c1;
+import u2.d1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g implements f1 {
+public final class g implements d1 {
     public final i a;
-    public final e1 b;
+    public final c1 b;
     public final int c;
     public boolean d;
     public final /* synthetic */ i e;
 
-    public g(i iVar, i iVar2, e1 e1Var, int i10) {
+    public g(i iVar, i iVar2, c1 c1Var, int i10) {
         this.e = iVar;
         this.a = iVar2;
-        this.b = e1Var;
+        this.b = c1Var;
         this.c = i10;
     }
 
-    public final void b() {
+    public final void a() {
         if (this.d) {
             return;
         }
         i iVar = this.e;
-        a5.a aVar = iVar.h;
+        ng ngVar = iVar.h;
         int[] iArr = iVar.b;
         int i10 = this.c;
-        aVar.m(iArr[i10], iVar.c[i10], 0, null, iVar.J);
+        ngVar.l(iArr[i10], iVar.c[i10], 0, null, iVar.J);
         this.d = true;
     }
 
-    @Override // u2.f1
-    public final boolean f() {
+    @Override // u2.d1
+    public final boolean e() {
         i iVar = this.e;
-        return !iVar.y() && this.b.A(iVar.P);
+        return !iVar.v() && this.b.A(iVar.P);
     }
 
-    @Override // u2.f1
-    public final int g(qf.b bVar, h2.h hVar, int i10) {
+    @Override // u2.d1
+    public final int f(s sVar, h2.h hVar, int i10) {
         i iVar = this.e;
-        if (iVar.y()) {
+        if (iVar.v()) {
             return -3;
         }
         a aVar = iVar.L;
-        e1 e1Var = this.b;
-        if (aVar != null && aVar.d(this.c + 1) <= e1Var.v()) {
+        c1 c1Var = this.b;
+        if (aVar != null && aVar.d(this.c + 1) <= c1Var.v()) {
             return -3;
         }
-        b();
-        return e1Var.F(bVar, hVar, i10, iVar.P);
+        a();
+        return c1Var.F(sVar, hVar, i10, iVar.P);
     }
 
-    @Override // u2.f1
-    public final int m(long j10) {
+    @Override // u2.d1
+    public final int j(long j10) {
         i iVar = this.e;
-        if (iVar.y()) {
+        if (iVar.v()) {
             return 0;
         }
         boolean z10 = iVar.P;
-        e1 e1Var = this.b;
-        int x10 = e1Var.x(j10, z10);
+        c1 c1Var = this.b;
+        int x9 = c1Var.x(j10, z10);
         a aVar = iVar.L;
         if (aVar != null) {
-            x10 = Math.min(x10, aVar.d(this.c + 1) - e1Var.v());
+            x9 = Math.min(x9, aVar.d(this.c + 1) - c1Var.v());
         }
-        e1Var.L(x10);
-        if (x10 > 0) {
-            b();
+        c1Var.L(x9);
+        if (x9 > 0) {
+            a();
         }
-        return x10;
+        return x9;
     }
 
-    @Override // u2.f1
-    public final void a() {
+    @Override // u2.d1
+    public final void d() {
     }
 }

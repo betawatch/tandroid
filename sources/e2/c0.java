@@ -1,11 +1,11 @@
 package e2;
 
 import android.os.SystemClock;
-import b2.l1;
-import b2.o1;
+import b2.m1;
+import b2.p1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final int a;
@@ -24,26 +24,26 @@ public final class c0 {
     public final void a() {
         long duration;
         e0 e0Var = this.g;
-        l1 l1Var = e0Var.e;
+        m1 m1Var = e0Var.e;
         i0 i0Var = e0Var.f;
-        i2.h0 h0Var = e0Var.a;
-        o1 y02 = h0Var.y0();
-        Object l4 = y02.p() ? null : y02.l(h0Var.A());
-        int m0 = h0Var.m0();
-        int N = h0Var.N();
-        long M0 = h0Var.M0();
+        i2.j0 j0Var = e0Var.a;
+        p1 y02 = j0Var.y0();
+        Object l4 = y02.p() ? null : y02.l(j0Var.A());
+        int m0 = j0Var.m0();
+        int N = j0Var.N();
+        long M0 = j0Var.M0();
         if (l4 == null || m0 != -1) {
-            duration = m0 != -1 ? h0Var.getDuration() : -9223372036854775807L;
+            duration = m0 != -1 ? j0Var.getDuration() : -9223372036854775807L;
         } else {
-            y02.g(l4, l1Var);
-            M0 -= m0.h0(l1Var.e);
-            duration = m0.h0(l1Var.d);
+            y02.g(l4, m1Var);
+            M0 -= n0.h0(m1Var.e);
+            duration = n0.h0(m1Var.d);
         }
-        boolean j02 = h0Var.j0();
+        boolean j02 = j0Var.j0();
         if (!j02 || duration == -9223372036854775807L || M0 < duration) {
             i0Var.e(3);
             if (j02 && duration != -9223372036854775807L) {
-                i0Var.a.sendEmptyMessageDelayed(3, (int) Math.ceil((duration - M0) / h0Var.h().a));
+                i0Var.a.sendEmptyMessageDelayed(3, (int) Math.ceil((duration - M0) / j0Var.h().a));
             }
             this.e = false;
             return;

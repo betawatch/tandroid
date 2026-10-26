@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class h extends w {
     private static final h DEFAULT_INSTANCE;
@@ -53,10 +53,10 @@ public final class h extends w {
             }
             return;
         }
-        List g10 = ((e0) set).g();
+        List g7 = ((e0) set).g();
         e0 e0Var = (e0) list;
         int size4 = list.size();
-        for (Object obj2 : g10) {
+        for (Object obj2 : g7) {
             if (obj2 == null) {
                 String str2 = "Element at index " + (e0Var.size() - size4) + " is null.";
                 for (int size5 = e0Var.size() - 1; size5 >= size4; size5--) {

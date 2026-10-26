@@ -1,18 +1,14 @@
 package n4;
 
-import a3.i0;
-import ab.a0;
-import ab.c0;
-import ah.h0;
-import ai.u2;
-import android.animation.Animator;
-import android.animation.AnimatorSet;
+import a3.k0;
+import a3.m0;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ResolveInfo;
+import android.media.session.MediaController;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.os.Build;
@@ -21,83 +17,55 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.Messenger;
-import android.os.Parcel;
+import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.text.Editable;
+import android.text.Selection;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.SparseArray;
+import android.util.SparseBooleanArray;
 import android.view.ActionMode;
+import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import b2.a2;
-import b2.r0;
-import b2.w0;
-import c5.g0;
-import c6.e0;
-import ci.g4;
-import ci.p4;
-import ci.y9;
-import ci.z9;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.play_billing.c4;
-import com.google.android.gms.internal.play_billing.f3;
-import com.google.android.gms.internal.play_billing.g3;
-import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.m3;
-import com.google.android.gms.internal.play_billing.p3;
-import com.google.android.gms.internal.play_billing.q3;
-import com.google.android.gms.internal.play_billing.w3;
-import com.google.android.gms.internal.play_billing.x3;
-import com.google.android.gms.internal.play_billing.y3;
+import b2.b2;
+import com.google.android.gms.internal.cast.a1;
+import com.google.android.gms.internal.cast.a2;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import e2.k0;
-import e2.m0;
+import e0.e0;
+import f9.s1;
 import j$.util.DesugarCollections;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.ref.ReferenceQueue;
+import j4.b0;
+import j4.d0;
+import j4.f0;
+import java.lang.reflect.Constructor;
 import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.WeakHashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import ki.b4;
-import ki.c6;
-import ki.h1;
-import ki.j3;
-import ki.j4;
-import ki.t3;
-import ki.u3;
-import ki.v3;
-import m.s3;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.j80;
-import org.telegram.ui.Components.ti;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 import p4.t0;
+import r0.i0;
 import r0.l0;
-import si.o0;
-import v7.q8;
-import v7.s6;
-import v7.u6;
-import w7.a9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class s implements ee.b, g0, com.google.android.gms.common.api.internal.r, d9.k, g6.n, ef.b, z3.m, c3.i, u3, e2.d {
+public final class s implements OnCompleteListener, com.google.android.gms.internal.clearcut.h, e9.k, h6.n, ff.b, j4.a0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -108,67 +76,204 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         this.c = obj2;
     }
 
-    public static void h(s sVar, i2.d dVar) {
-        sVar.getClass();
-        for (Map.Entry entry : new HashMap((HashMap) sVar.b).entrySet()) {
-            if (entry.getKey() != null) {
-                throw new ClassCastException();
+    public static String K(s sVar) {
+        Collection<String> collection = (Collection) sVar.c;
+        StringBuilder sb2 = new StringBuilder("com.google.android.gms.cast.CATEGORY_CAST");
+        String str = (String) sVar.b;
+        if (str != null) {
+            String upperCase = str.toUpperCase(Locale.ROOT);
+            if (!upperCase.matches("[A-F0-9]+")) {
+                throw new IllegalArgumentException("Invalid application ID: ".concat(str));
             }
-            List list = (List) entry.getValue();
-            if (!l(dVar, list).equals(l((i2.d) sVar.c, list))) {
-                throw null;
+            sb2.append("/");
+            sb2.append(upperCase);
+        }
+        if (collection != null) {
+            if (collection.isEmpty()) {
+                throw new IllegalArgumentException("Must specify at least one namespace");
+            }
+            if (str == null) {
+                sb2.append("/");
+            }
+            sb2.append("/");
+            boolean z10 = true;
+            for (String str2 : collection) {
+                h6.a.b(str2);
+                if (!z10) {
+                    sb2.append(",");
+                }
+                if (!h6.a.a.matcher(str2).matches()) {
+                    StringBuilder sb3 = new StringBuilder(str2.length());
+                    for (int i10 = 0; i10 < str2.length(); i10++) {
+                        char charAt = str2.charAt(i10);
+                        if ((charAt < 'A' || charAt > 'Z') && ((charAt < 'a' || charAt > 'z') && !((charAt >= '0' && charAt <= '9') || charAt == '_' || charAt == '-' || charAt == '.' || charAt == ':'))) {
+                            sb3.append(String.format("%%%04x", Integer.valueOf(charAt)));
+                        } else {
+                            sb3.append(charAt);
+                        }
+                    }
+                    str2 = sb3.toString();
+                }
+                sb2.append(str2);
+                z10 = false;
             }
         }
-        sVar.c = dVar;
+        if (str == null && collection == null) {
+            sb2.append("/");
+        }
+        if (collection == null) {
+            sb2.append("/");
+        }
+        sb2.append("//ALLOW_IPV6");
+        return sb2.toString();
     }
 
-    public static i2.d l(i2.d dVar, List list) {
-        dVar.getClass();
-        Map map = dVar.a;
-        HashMap hashMap = new HashMap(map);
-        HashSet hashSet = new HashSet(list);
-        for (String str : map.keySet()) {
-            if (!hashSet.contains(str)) {
-                hashMap.remove(str);
+    public static void c(s sVar, boolean z10, boolean z11) {
+        synchronized (sVar) {
+            boolean z12 = false;
+            if (z10) {
+                if (((PowerManager.WakeLock) sVar.c) == null) {
+                    if (((Context) sVar.b).checkSelfPermission("android.permission.WAKE_LOCK") != 0) {
+                        e2.a.l("WakeLockManager", "WAKE_LOCK permission not granted, can't acquire wake lock for playback");
+                        return;
+                    }
+                    PowerManager powerManager = (PowerManager) ((Context) sVar.b).getSystemService("power");
+                    if (powerManager == null) {
+                        e2.a.l("WakeLockManager", "PowerManager is null, therefore not creating the WakeLock.");
+                        return;
+                    } else {
+                        PowerManager.WakeLock newWakeLock = powerManager.newWakeLock(1, "ExoPlayer:WakeLockManager");
+                        sVar.c = newWakeLock;
+                        newWakeLock.setReferenceCounted(false);
+                    }
+                }
+            }
+            PowerManager.WakeLock wakeLock = (PowerManager.WakeLock) sVar.c;
+            if (wakeLock == null) {
+                return;
+            }
+            if (z10 && z11) {
+                z12 = true;
+            }
+            if (z12) {
+                wakeLock.acquire();
+            } else {
+                wakeLock.release();
             }
         }
-        return new i2.d(hashMap);
     }
 
-    public void A(boolean z10, boolean z11, float f7) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-        g4 g4Var = (g4) this.c;
-        z9 z9Var = g4Var.e;
-        z9.B1 = f7;
-        y9 y9Var = z9Var.z0;
-        if (y9Var != null) {
-            y9Var.setSpeed(f7);
+    public static boolean f(Editable editable, KeyEvent keyEvent, boolean z10) {
+        androidx.emoji2.text.v[] vVarArr;
+        if (KeyEvent.metaStateHasNoModifiers(keyEvent.getMetaState())) {
+            int selectionStart = Selection.getSelectionStart(editable);
+            int selectionEnd = Selection.getSelectionEnd(editable);
+            if (selectionStart != -1 && selectionEnd != -1 && selectionStart == selectionEnd && (vVarArr = (androidx.emoji2.text.v[]) editable.getSpans(selectionStart, selectionEnd, androidx.emoji2.text.v.class)) != null && vVarArr.length > 0) {
+                for (androidx.emoji2.text.v vVar : vVarArr) {
+                    int spanStart = editable.getSpanStart(vVar);
+                    int spanEnd = editable.getSpanEnd(vVar);
+                    if ((z10 && spanStart == selectionStart) || ((!z10 && spanEnd == selectionStart) || (selectionStart > spanStart && selectionStart < spanEnd))) {
+                        editable.delete(spanStart, spanEnd);
+                        return true;
+                    }
+                }
+            }
         }
-        p4.Z(g4Var.l, z10);
-        if (!z11 || actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() == null) {
+        return false;
+    }
+
+    public void A(k.a aVar) {
+        ti.e eVar = (ti.e) this.b;
+        ((ActionMode.Callback) eVar.b).onDestroyActionMode(eVar.h(aVar));
+        g.r rVar = (g.r) this.c;
+        if (rVar.E != null) {
+            rVar.f.getDecorView().removeCallbacks(rVar.F);
+        }
+        if (rVar.y != null) {
+            l0 l0Var = rVar.G;
+            if (l0Var != null) {
+                l0Var.b();
+            }
+            l0 a2 = i0.a(rVar.y);
+            a2.a(0.0f);
+            rVar.G = a2;
+            a2.d(new g.i(this, 2));
+        }
+        rVar.x = null;
+        ViewGroup viewGroup = rVar.J;
+        WeakHashMap weakHashMap = i0.a;
+        r0.y.c(viewGroup);
+        rVar.x();
+    }
+
+    @Override // ff.b
+    public ff.a B(s sVar) {
+        List list = (List) this.c;
+        List list2 = (List) sVar.b;
+        int size = list2 != null ? list2.size() : 0;
+        if (size > 0) {
+            ArrayList arrayList = new ArrayList(list.size() + size);
+            arrayList.addAll(list);
+            arrayList.addAll(list2);
+            list = arrayList;
+        }
+        return new hd.i(sVar, (List) this.b, list);
+    }
+
+    public boolean C(k.a aVar, Menu menu) {
+        ViewGroup viewGroup = ((g.r) this.c).J;
+        WeakHashMap weakHashMap = i0.a;
+        r0.y.c(viewGroup);
+        ti.e eVar = (ti.e) this.b;
+        ActionMode.Callback callback = (ActionMode.Callback) eVar.b;
+        k.e h = eVar.h(aVar);
+        a0.l lVar = (a0.l) eVar.e;
+        Menu menu2 = (Menu) lVar.get(menu);
+        if (menu2 == null) {
+            menu2 = new l.a0((Context) eVar.c, (l.k) menu);
+            lVar.put(menu, menu2);
+        }
+        return callback.onPrepareActionMode(h, menu2);
+    }
+
+    public void D(androidx.mediarouter.app.r rVar) {
+        if (rVar == null) {
+            throw new IllegalArgumentException("callback must not be null");
+        }
+        if (!((Set) this.c).add(rVar)) {
+            Log.w("MediaControllerCompat", "the callback has already been registered");
             return;
         }
-        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+        Handler handler = new Handler();
+        rVar.f(handler);
+        android.support.v4.media.session.h hVar = (android.support.v4.media.session.h) this.b;
+        hVar.a.registerCallback(rVar.a, handler);
+        synchronized (hVar.b) {
+            if (hVar.e.a() != null) {
+                android.support.v4.media.session.g gVar = new android.support.v4.media.session.g(rVar);
+                hVar.d.put(rVar, gVar);
+                rVar.c = gVar;
+                try {
+                    hVar.e.a().o(gVar);
+                    rVar.e(13, null, null);
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
+                }
+            } else {
+                rVar.c = null;
+                hVar.c.add(rVar);
+            }
+        }
     }
 
-    public void B(Object obj) {
+    public void E(Object obj) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new i0(this, obj, SystemClock.elapsedRealtime(), 0));
+            handler.post(new a3.i0(this, obj, SystemClock.elapsedRealtime(), 0));
         }
     }
 
-    @Override // ki.u3
-    public void C(c6 c6Var, String str) {
-        ki.q qVar = (ki.q) this.c;
-        if (qVar.v == null) {
-            g6 g6Var = (g6) this.b;
-            qVar.v = new s3(new h0(22, this, g6Var), g6Var);
-        }
-        qVar.v.f(c6Var, str);
-    }
-
-    public void D(l lVar, Handler handler) {
+    public void F(l lVar, Handler handler) {
         n nVar = (n) this.b;
         synchronized (nVar.d) {
             nVar.l = lVar;
@@ -177,28 +282,14 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         }
     }
 
-    @Override // ef.b
-    public ef.a E(qf.b bVar) {
-        List list = (List) this.c;
-        List list2 = (List) bVar.b;
-        int size = list2 != null ? list2.size() : 0;
-        if (size > 0) {
-            ArrayList arrayList = new ArrayList(list.size() + size);
-            arrayList.addAll(list);
-            arrayList.addAll(list2);
-            list = arrayList;
-        }
-        return new gd.i(bVar, (List) this.b, list);
-    }
-
     /* JADX WARN: Type inference failed for: r1v4, types: [java.util.AbstractCollection, java.util.List] */
-    public void F(y yVar) {
+    public void G(z zVar) {
         n nVar = (n) this.b;
-        nVar.g = yVar;
+        nVar.g = zVar;
         synchronized (nVar.d) {
             for (int beginBroadcast = nVar.f.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                 try {
-                    ((b) nVar.f.getBroadcastItem(beginBroadcast)).t(yVar);
+                    ((b) nVar.f.getBroadcastItem(beginBroadcast)).r(zVar);
                 } catch (RemoteException | SecurityException e) {
                     e2.a.d("MediaSessionCompat", "Dead object in setPlaybackState.", e);
                 }
@@ -206,40 +297,44 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
             nVar.f.finishBroadcast();
         }
         MediaSession mediaSession = nVar.a;
-        if (yVar.w == null) {
+        if (zVar.w == null) {
             PlaybackState.Builder builder = new PlaybackState.Builder();
-            builder.setState(yVar.a, yVar.b, yVar.d, yVar.n);
-            builder.setBufferedPosition(yVar.c);
-            builder.setActions(yVar.e);
-            builder.setErrorMessage(yVar.h);
-            for (x xVar : yVar.r) {
-                xVar.getClass();
-                PlaybackState.CustomAction.Builder builder2 = new PlaybackState.CustomAction.Builder(xVar.a, xVar.b, xVar.c);
-                builder2.setExtras(xVar.d);
+            builder.setState(zVar.a, zVar.b, zVar.d, zVar.n);
+            builder.setBufferedPosition(zVar.c);
+            builder.setActions(zVar.e);
+            builder.setErrorMessage(zVar.h);
+            for (y yVar : zVar.r) {
+                yVar.getClass();
+                PlaybackState.CustomAction.Builder builder2 = new PlaybackState.CustomAction.Builder(yVar.a, yVar.b, yVar.c);
+                builder2.setExtras(yVar.d);
                 PlaybackState.CustomAction build = builder2.build();
                 if (build != null) {
                     builder.addCustomAction(build);
                 }
             }
-            builder.setActiveQueueItemId(yVar.s);
-            builder.setExtras(yVar.v);
-            yVar.w = builder.build();
+            builder.setActiveQueueItemId(zVar.s);
+            builder.setExtras(zVar.v);
+            zVar.w = builder.build();
         }
-        mediaSession.setPlaybackState(yVar.w);
+        mediaSession.setPlaybackState(zVar.w);
     }
 
-    public void G(c5.p pVar) {
-        this.b = pVar;
-        if (pVar.a() != null) {
-            pVar.a().getClass();
-            String str = pVar.a().d;
-            if (str != null) {
-                this.c = str;
-            }
+    public void H(androidx.mediarouter.app.r rVar) {
+        if (rVar == null) {
+            throw new IllegalArgumentException("callback must not be null");
+        }
+        if (!((Set) this.c).remove(rVar)) {
+            Log.w("MediaControllerCompat", "the callback has never been registered");
+            return;
+        }
+        try {
+            ((android.support.v4.media.session.h) this.b).b(rVar);
+        } finally {
+            rVar.f(null);
         }
     }
 
-    public void H(ArrayList arrayList) {
+    public void I(ArrayList arrayList) {
         f2.t tVar;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (((f2.s) arrayList.get(i10)).a == 1) {
@@ -253,831 +348,360 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         }
     }
 
-    public void I(a2 a2Var) {
+    public void J(b2 b2Var) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new a1.f(4, this, a2Var));
+            handler.post(new a1.f(4, this, b2Var));
         }
     }
 
-    @Override // ki.u3
-    public void J() {
-        b4 b4Var = ((ki.q) this.c).s;
-        if (b4Var != null) {
-            b4Var.e(false, true);
-            int i10 = b4Var.b0;
-            b4Var.g(i10 != 2 ? i10 : 0, true);
-        }
-    }
-
-    public void K(g3 g3Var) {
-        try {
-            T(g3Var, (q3) this.b);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void L(g3 g3Var, int i10, long j10) {
-        try {
-            p3 p3Var = (p3) ((q3) this.b).g();
-            p3Var.c();
-            q3.p((q3) p3Var.b, i10);
-            q3 q3Var = (q3) p3Var.a();
-            this.b = q3Var;
-            if (j10 != 0) {
-                p3 p3Var2 = (p3) q3Var.g();
-                p3Var2.c();
-                q3.r((q3) p3Var2.b, j10);
-                q3Var = (q3) p3Var2.a();
-            }
-            T(g3Var, q3Var);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    @Override // ki.u3
-    public j80 M(View view) {
-        ki.q qVar = (ki.q) this.c;
-        j80 j80Var = new j80(qVar, (g6) this.b, view, false, false, true);
-        qVar.H = j80Var;
-        return j80Var;
-    }
-
-    public void N(g3 g3Var, long j10, boolean z10) {
-        q3 q3Var;
-        try {
-            f3 f3Var = (f3) g3Var.g();
-            com.google.android.gms.internal.play_billing.u3 u3Var = (com.google.android.gms.internal.play_billing.u3) g3Var.o().g();
-            u3Var.c();
-            w3.n((w3) u3Var.b, z10);
-            f3Var.c();
-            g3.r((g3) f3Var.b, (w3) u3Var.a());
-            g3 g3Var2 = (g3) f3Var.a();
-            if (j10 == 0) {
-                q3Var = (q3) this.b;
-            } else {
-                p3 p3Var = (p3) ((q3) this.b).g();
-                p3Var.c();
-                q3.r((q3) p3Var.b, j10);
-                q3Var = (q3) p3Var.a();
-            }
-            T(g3Var2, q3Var);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void O(g3 g3Var, int i10, long j10, boolean z10) {
-        q3 q3Var;
-        try {
-            p3 p3Var = (p3) ((q3) this.b).g();
-            p3Var.c();
-            q3.p((q3) p3Var.b, i10);
-            this.b = (q3) p3Var.a();
-            f3 f3Var = (f3) g3Var.g();
-            com.google.android.gms.internal.play_billing.u3 u3Var = (com.google.android.gms.internal.play_billing.u3) g3Var.o().g();
-            u3Var.c();
-            w3.n((w3) u3Var.b, z10);
-            f3Var.c();
-            g3.r((g3) f3Var.b, (w3) u3Var.a());
-            g3 g3Var2 = (g3) f3Var.a();
-            if (j10 == 0) {
-                q3Var = (q3) this.b;
-            } else {
-                p3 p3Var2 = (p3) ((q3) this.b).g();
-                p3Var2.c();
-                q3.r((q3) p3Var2.b, j10);
-                q3Var = (q3) p3Var2.a();
-            }
-            T(g3Var2, q3Var);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    @Override // ki.u3
-    public void P() {
-        ki.q qVar = (ki.q) this.c;
-        qVar.a0();
-        qVar.b0();
-    }
-
-    public void Q(m3 m3Var) {
-        try {
-            x3 t10 = y3.t();
-            t10.d((q3) this.b);
-            t10.c();
-            y3.p((y3) t10.b, m3Var);
-            ((b2.t) this.c).i((y3) t10.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void R(com.google.android.gms.internal.play_billing.b4 b4Var) {
-        try {
-            b2.t tVar = (b2.t) this.c;
-            x3 t10 = y3.t();
-            t10.d((q3) this.b);
-            t10.c();
-            y3.r((y3) t10.b, b4Var);
-            tVar.i((y3) t10.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void S(c4 c4Var) {
-        if (c4Var == null) {
-            return;
-        }
-        try {
-            x3 t10 = y3.t();
-            t10.d((q3) this.b);
-            t10.c();
-            y3.s((y3) t10.b, c4Var);
-            ((b2.t) this.c).i((y3) t10.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void T(g3 g3Var, q3 q3Var) {
-        if (g3Var == null) {
-            return;
-        }
-        try {
-            x3 t10 = y3.t();
-            t10.d(q3Var);
-            t10.c();
-            y3.n((y3) t10.b, g3Var);
-            ((b2.t) this.c).i((y3) t10.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    public void U(i3 i3Var, q3 q3Var) {
-        try {
-            x3 t10 = y3.t();
-            t10.d(q3Var);
-            t10.c();
-            y3.o((y3) t10.b, i3Var);
-            ((b2.t) this.c).i((y3) t10.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-        }
-    }
-
-    @Override // ki.u3
-    public void V(v3 v3Var, View view) {
-        ki.q qVar = (ki.q) this.c;
-        j80 j80Var = new j80(qVar, (g6) this.b, view, false, false, true);
-        j80Var.Q = true;
-        o2 o2Var = qVar.b.f0;
-        qVar.getContext();
-        qVar.H = j4.b(j80Var, o2Var, v3Var, true);
-    }
-
-    @Override // z3.m
-    public /* synthetic */ z3.d a(int i10, int i11, byte[] bArr) {
-        return o0.a(this, bArr, i11);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.r
-    public void accept(Object obj, Object obj2) {
-        e0 e0Var = (e0) this.b;
-        String str = (String) this.c;
-        g6.w wVar = (g6.w) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        n6.l.j("Not connected to device", e0Var.F == 2);
-        g6.f fVar = (g6.f) wVar.u();
-        Parcel N0 = fVar.N0();
-        N0.writeString(str);
-        fVar.S0(N0, 5);
-        synchronized (e0Var.s) {
-            try {
-                if (e0Var.p != null) {
-                    taskCompletionSource.setException(n6.l.m(new Status(2001, null, null, null)));
+    @Override // j4.a0
+    public void a(e2.x xVar) {
+        d0 d0Var = (d0) this.c;
+        SparseArray sparseArray = d0Var.h;
+        a4.g gVar = (a4.g) this.b;
+        if (xVar.A() == 0 && (xVar.A() & 128) != 0) {
+            xVar.O(6);
+            int a2 = xVar.a() / 4;
+            for (int i10 = 0; i10 < a2; i10++) {
+                xVar.k(0, 4, gVar.b);
+                gVar.m(0);
+                int g7 = gVar.g(16);
+                gVar.o(3);
+                if (g7 == 0) {
+                    gVar.o(13);
                 } else {
-                    e0Var.p = taskCompletionSource;
+                    int g10 = gVar.g(13);
+                    if (sparseArray.get(g10) == null) {
+                        sparseArray.put(g10, new b0(new e0(d0Var, g10)));
+                        d0Var.n++;
+                    }
                 }
-            } catch (Throwable th2) {
-                throw th2;
+            }
+            if (d0Var.a != 2) {
+                sparseArray.remove(0);
             }
         }
     }
 
-    @Override // d9.k
+    @Override // e9.k
     public Object apply(Object obj) {
-        return ((d9.k) ((a4.l) this.b).b).apply(obj);
+        return ((e9.k) ((b6.i) this.b).b).apply(obj);
     }
 
-    @Override // c3.i
-    public c3.h b(c3.r rVar, long j10) {
-        long position = rVar.getPosition();
-        int min = (int) Math.min(20000L, rVar.getLength() - position);
-        e2.x xVar = (e2.x) this.c;
-        xVar.K(min);
-        rVar.a(0, min, xVar.a);
-        int i10 = -1;
-        int i11 = -1;
-        long j11 = -9223372036854775807L;
-        while (xVar.a() >= 4) {
-            if (h3.a.a(xVar.b, xVar.a) != 442) {
-                xVar.O(1);
-            } else {
-                xVar.O(4);
-                long c10 = j4.x.c(xVar);
-                if (c10 != -9223372036854775807L) {
-                    long b10 = ((k0) this.b).b(c10);
-                    if (b10 > j10) {
-                        return j11 == -9223372036854775807L ? new c3.h(-1, b10, position) : new c3.h(0, -9223372036854775807L, position + i11);
-                    }
-                    if (b10 + 100000 > j10) {
-                        return new c3.h(0, -9223372036854775807L, position + xVar.b);
-                    }
-                    j11 = b10;
-                    i11 = xVar.b;
-                }
-                int i12 = xVar.c;
-                if (xVar.a() >= 10) {
-                    xVar.O(9);
-                    int A = xVar.A() & 7;
-                    if (xVar.a() >= A) {
-                        xVar.O(A);
-                        if (xVar.a() >= 4) {
-                            if (h3.a.a(xVar.b, xVar.a) == 443) {
-                                xVar.O(4);
-                                int H = xVar.H();
-                                if (xVar.a() < H) {
-                                    xVar.N(i12);
-                                } else {
-                                    xVar.O(H);
-                                }
-                            }
-                            while (true) {
-                                if (xVar.a() < 4) {
-                                    break;
-                                }
-                                int a2 = h3.a.a(xVar.b, xVar.a);
-                                if (a2 == 442 || a2 == 441 || (a2 >>> 8) != 1) {
-                                    break;
-                                }
-                                xVar.O(4);
-                                if (xVar.a() < 2) {
-                                    xVar.N(i12);
-                                    break;
-                                }
-                                xVar.N(Math.min(xVar.c, xVar.b + xVar.H()));
-                            }
-                        } else {
-                            xVar.N(i12);
-                        }
-                    } else {
-                        xVar.N(i12);
-                    }
-                } else {
-                    xVar.N(i12);
-                }
-                i10 = xVar.b;
-            }
-        }
-        return j11 != -9223372036854775807L ? new c3.h(-2, j11, position + i10) : c3.h.d;
-    }
-
-    @Override // z3.m
-    public int c() {
-        return 1;
-    }
-
-    @Override // c3.i
     public void d() {
-        e2.x xVar = (e2.x) this.c;
-        byte[] bArr = m0.b;
-        xVar.getClass();
-        xVar.L(bArr.length, bArr);
+        this.b = null;
+        this.c = null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0023 A[RETURN] */
-    @Override // ki.u3
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean e(float f7) {
-        boolean z10;
-        b4 b4Var = ((ki.q) this.c).s;
-        if (b4Var != null) {
-            FrameLayout frameLayout = b4Var.H;
-            if (frameLayout != null) {
-                frameLayout.getLocationOnScreen(new int[2]);
-                if (f7 >= r4[1]) {
-                    z10 = true;
-                    b4Var.e(z10, true);
-                    if (!z10) {
-                        return true;
-                    }
-                }
-            }
-            z10 = false;
-            b4Var.e(z10, true);
-            if (!z10) {
-            }
-        }
-        return false;
+    public boolean e(int i10) {
+        return ((b2.v) this.b).a.get(i10);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:195:0x03ae, code lost:
-    
-        r0.addAll(r12);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:222:0x0117, code lost:
-    
-        if (")".equals(i4.a.b(r11, r6)) == false) goto L37;
-     */
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r14v11, types: [java.util.regex.Matcher] */
-    /* JADX WARN: Type inference failed for: r1v13 */
-    /* JADX WARN: Type inference failed for: r1v14 */
-    /* JADX WARN: Type inference failed for: r1v16 */
-    /* JADX WARN: Type inference failed for: r1v19 */
-    /* JADX WARN: Type inference failed for: r1v32 */
-    /* JADX WARN: Type inference failed for: r1v33 */
-    /* JADX WARN: Type inference failed for: r1v34, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v35 */
-    /* JADX WARN: Type inference failed for: r1v49 */
-    /* JADX WARN: Type inference failed for: r1v51 */
-    /* JADX WARN: Type inference failed for: r4v32, types: [java.util.regex.Matcher] */
-    /* JADX WARN: Type inference failed for: r9v0 */
-    /* JADX WARN: Type inference failed for: r9v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r9v3 */
-    @Override // z3.m
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void f(byte[] bArr, int i10, int i11, z3.l lVar, e2.j jVar) {
-        i4.c cVar;
-        String str;
-        ?? r12;
-        String sb2;
-        int i12;
-        char c10;
-        s sVar = this;
-        e2.x xVar = (e2.x) sVar.b;
-        xVar.L(i10 + i11, bArr);
-        xVar.N(i10);
-        ArrayList arrayList = new ArrayList();
-        try {
-            i4.i.d(xVar);
-            while (!TextUtils.isEmpty(xVar.n(StandardCharsets.UTF_8))) {
-            }
-            ArrayList arrayList2 = new ArrayList();
-            while (true) {
-                boolean z10 = false;
-                int i13 = -1;
-                int i14 = 0;
-                char c11 = 65535;
-                while (true) {
-                    ?? r92 = 1;
-                    if (c11 == 65535) {
-                        i14 = xVar.b;
-                        String n10 = xVar.n(StandardCharsets.UTF_8);
-                        c11 = n10 == null ? (char) 0 : "STYLE".equals(n10) ? (char) 2 : n10.startsWith("NOTE") ? (char) 1 : (char) 3;
-                    } else {
-                        xVar.N(i14);
-                        if (c11 == 0) {
-                            a9.b(new androidx.biometric.e(arrayList2), lVar, jVar);
-                            return;
-                        }
-                        if (c11 == 1) {
-                            while (!TextUtils.isEmpty(xVar.n(StandardCharsets.UTF_8))) {
-                            }
-                        } else {
-                            String str2 = null;
-                            if (c11 == 2) {
-                                if (!arrayList2.isEmpty()) {
-                                    throw new IllegalArgumentException("A style block was found after the first cue.");
-                                }
-                                xVar.n(StandardCharsets.UTF_8);
-                                i4.a aVar = (i4.a) sVar.c;
-                                e2.x xVar2 = aVar.a;
-                                StringBuilder sb3 = aVar.b;
-                                sb3.setLength(0);
-                                int i15 = xVar.b;
-                                while (!TextUtils.isEmpty(xVar.n(StandardCharsets.UTF_8))) {
-                                }
-                                xVar2.L(xVar.b, xVar.a);
-                                xVar2.N(i15);
-                                ArrayList arrayList3 = new ArrayList();
-                                while (true) {
-                                    i4.a.c(xVar2);
-                                    if (xVar2.a() >= 5 && "::cue".equals(xVar2.y(5, StandardCharsets.UTF_8))) {
-                                        int i16 = xVar2.b;
-                                        String b10 = i4.a.b(xVar2, sb3);
-                                        if (b10 != null) {
-                                            if ("{".equals(b10)) {
-                                                xVar2.N(i16);
-                                                str = "";
-                                            } else if ("(".equals(b10)) {
-                                                int i17 = xVar2.b;
-                                                int i18 = xVar2.c;
-                                                boolean z11 = z10 ? 1 : 0;
-                                                while (i17 < i18 && z11 == 0) {
-                                                    int i19 = i17 + 1;
-                                                    z11 = ((char) xVar2.a[i17]) == ')' ? r92 : z10 ? 1 : 0;
-                                                    i17 = i19;
-                                                }
-                                                str = xVar2.y((i17 - 1) - xVar2.b, StandardCharsets.UTF_8).trim();
-                                            } else {
-                                                str = str2;
-                                            }
-                                            if (str == null && "{".equals(i4.a.b(xVar2, sb3))) {
-                                                i4.b bVar = new i4.b();
-                                                bVar.a = "";
-                                                bVar.b = "";
-                                                bVar.c = Collections.EMPTY_SET;
-                                                bVar.d = "";
-                                                bVar.e = str2;
-                                                bVar.g = z10;
-                                                bVar.i = z10;
-                                                bVar.j = i13;
-                                                bVar.k = i13;
-                                                bVar.l = i13;
-                                                bVar.m = i13;
-                                                bVar.n = i13;
-                                                bVar.p = i13;
-                                                bVar.q = z10;
-                                                if (!str.isEmpty()) {
-                                                    int indexOf = str.indexOf(91);
-                                                    if (indexOf != i13) {
-                                                        ?? matcher = i4.a.c.matcher(str.substring(indexOf));
-                                                        if (matcher.matches()) {
-                                                            String group = matcher.group(r92);
-                                                            group.getClass();
-                                                            bVar.d = group;
-                                                        }
-                                                        str = str.substring(z10 ? 1 : 0, indexOf);
-                                                    }
-                                                    String str3 = m0.a;
-                                                    String[] split = str.split("\\.", i13);
-                                                    String str4 = split[z10 ? 1 : 0];
-                                                    int indexOf2 = str4.indexOf(35);
-                                                    if (indexOf2 != i13) {
-                                                        bVar.b = str4.substring(z10 ? 1 : 0, indexOf2);
-                                                        bVar.a = str4.substring(indexOf2 + 1);
-                                                    } else {
-                                                        bVar.b = str4;
-                                                    }
-                                                    if (split.length > r92) {
-                                                        int length = split.length;
-                                                        u6.g(length <= split.length ? r92 : z10 ? 1 : 0);
-                                                        bVar.c = new HashSet(Arrays.asList((String[]) Arrays.copyOfRange(split, (int) r92, length)));
-                                                    }
-                                                }
-                                                boolean z12 = z10 ? 1 : 0;
-                                                String str5 = str2;
-                                                boolean z13 = r92;
-                                                while (z12 == 0) {
-                                                    int i20 = xVar2.b;
-                                                    str5 = i4.a.b(xVar2, sb3);
-                                                    boolean z14 = (str5 == null || "}".equals(str5)) ? z13 : z10;
-                                                    if (z14 == 0) {
-                                                        xVar2.N(i20);
-                                                        i4.a.c(xVar2);
-                                                        String a2 = i4.a.a(xVar2, sb3);
-                                                        if (!a2.isEmpty() && ":".equals(i4.a.b(xVar2, sb3))) {
-                                                            i4.a.c(xVar2);
-                                                            StringBuilder sb4 = new StringBuilder();
-                                                            boolean z15 = false;
-                                                            while (true) {
-                                                                if (z15) {
-                                                                    sb2 = sb4.toString();
-                                                                } else {
-                                                                    int i21 = xVar2.b;
-                                                                    String b11 = i4.a.b(xVar2, sb3);
-                                                                    if (b11 == null) {
-                                                                        sb2 = null;
-                                                                    } else if ("}".equals(b11) || ";".equals(b11)) {
-                                                                        xVar2.N(i21);
-                                                                        z15 = true;
-                                                                    } else {
-                                                                        sb4.append(b11);
-                                                                    }
-                                                                }
-                                                            }
-                                                            if (sb2 != null && !sb2.isEmpty()) {
-                                                                int i22 = xVar2.b;
-                                                                String b12 = i4.a.b(xVar2, sb3);
-                                                                if (!";".equals(b12)) {
-                                                                    if ("}".equals(b12)) {
-                                                                        xVar2.N(i22);
-                                                                    }
-                                                                }
-                                                                if ("color".equals(a2)) {
-                                                                    i12 = 1;
-                                                                    bVar.f = e2.h.a(sb2, true);
-                                                                    bVar.g = true;
-                                                                } else {
-                                                                    i12 = 1;
-                                                                    if ("background-color".equals(a2)) {
-                                                                        bVar.h = e2.h.a(sb2, true);
-                                                                        bVar.i = true;
-                                                                    } else {
-                                                                        if ("ruby-position".equals(a2)) {
-                                                                            if ("over".equals(sb2)) {
-                                                                                bVar.p = 1;
-                                                                            } else if ("under".equals(sb2)) {
-                                                                                bVar.p = 2;
-                                                                                r12 = 1;
-                                                                                z13 = r12;
-                                                                                z12 = z14;
-                                                                                z10 = false;
-                                                                            }
-                                                                        } else if ("text-combine-upright".equals(a2)) {
-                                                                            bVar.q = "all".equals(sb2) || sb2.startsWith("digits");
-                                                                        } else if ("text-decoration".equals(a2)) {
-                                                                            if ("underline".equals(sb2)) {
-                                                                                i12 = 1;
-                                                                                bVar.k = 1;
-                                                                            }
-                                                                        } else if ("font-family".equals(a2)) {
-                                                                            bVar.e = s6.c(sb2);
-                                                                        } else if (!"font-weight".equals(a2)) {
-                                                                            i12 = 1;
-                                                                            if ("font-style".equals(a2)) {
-                                                                                if ("italic".equals(sb2)) {
-                                                                                    bVar.m = 1;
-                                                                                }
-                                                                            } else if ("font-size".equals(a2)) {
-                                                                                ?? matcher2 = i4.a.d.matcher(s6.c(sb2));
-                                                                                if (matcher2.matches()) {
-                                                                                    String group2 = matcher2.group(2);
-                                                                                    group2.getClass();
-                                                                                    switch (group2.hashCode()) {
-                                                                                        case 37:
-                                                                                            if (group2.equals("%")) {
-                                                                                                c10 = 0;
-                                                                                                break;
-                                                                                            }
-                                                                                            break;
-                                                                                        case 3240:
-                                                                                            if (group2.equals("em")) {
-                                                                                                c10 = 1;
-                                                                                                break;
-                                                                                            }
-                                                                                            break;
-                                                                                        case 3592:
-                                                                                            if (group2.equals("px")) {
-                                                                                                c10 = 2;
-                                                                                                break;
-                                                                                            }
-                                                                                            break;
-                                                                                    }
-                                                                                    c10 = 65535;
-                                                                                    switch (c10) {
-                                                                                        case 0:
-                                                                                            r12 = 1;
-                                                                                            bVar.n = 3;
-                                                                                            break;
-                                                                                        case 1:
-                                                                                            r12 = 1;
-                                                                                            bVar.n = 2;
-                                                                                            break;
-                                                                                        case 2:
-                                                                                            r12 = 1;
-                                                                                            bVar.n = 1;
-                                                                                            break;
-                                                                                        default:
-                                                                                            throw new IllegalStateException();
-                                                                                    }
-                                                                                    String group3 = matcher2.group(r12);
-                                                                                    group3.getClass();
-                                                                                    bVar.o = Float.parseFloat(group3);
-                                                                                    z13 = r12;
-                                                                                    z12 = z14;
-                                                                                    z10 = false;
-                                                                                } else {
-                                                                                    e2.a.l("WebvttCssParser", "Invalid font-size: '" + sb2 + "'.");
-                                                                                }
-                                                                            }
-                                                                        } else if ("bold".equals(sb2)) {
-                                                                            i12 = 1;
-                                                                            bVar.l = 1;
-                                                                        }
-                                                                        z13 = r12;
-                                                                        z12 = z14;
-                                                                        z10 = false;
-                                                                    }
-                                                                }
-                                                                r12 = i12;
-                                                                z13 = r12;
-                                                                z12 = z14;
-                                                                z10 = false;
-                                                            }
-                                                            r12 = 1;
-                                                            z13 = r12;
-                                                            z12 = z14;
-                                                            z10 = false;
-                                                        }
-                                                    }
-                                                    r12 = z13;
-                                                    z13 = r12;
-                                                    z12 = z14;
-                                                    z10 = false;
-                                                }
-                                                boolean z16 = z13;
-                                                if ("}".equals(str5)) {
-                                                    arrayList3.add(bVar);
-                                                }
-                                                r92 = z16;
-                                                z10 = false;
-                                                i13 = -1;
-                                                str2 = null;
-                                            }
-                                        }
-                                    }
-                                    str = str2;
-                                    if (str == null) {
-                                    }
-                                }
-                            } else if (c11 == 3) {
-                                Pattern pattern = i4.h.a;
-                                Charset charset = StandardCharsets.UTF_8;
-                                String n11 = xVar.n(charset);
-                                if (n11 == null) {
-                                    cVar = null;
-                                } else {
-                                    Pattern pattern2 = i4.h.a;
-                                    Matcher matcher3 = pattern2.matcher(n11);
-                                    if (matcher3.matches()) {
-                                        cVar = i4.h.d(null, matcher3, xVar, arrayList);
-                                    } else {
-                                        cVar = null;
-                                        String n12 = xVar.n(charset);
-                                        if (n12 != null) {
-                                            Matcher matcher4 = pattern2.matcher(n12);
-                                            if (matcher4.matches()) {
-                                                cVar = i4.h.d(n11.trim(), matcher4, xVar, arrayList);
-                                            }
-                                        }
-                                    }
-                                }
-                                if (cVar != null) {
-                                    arrayList2.add(cVar);
-                                }
-                            }
-                            sVar = this;
-                        }
-                    }
-                }
-            }
-        } catch (w0 e) {
-            throw new IllegalArgumentException(e);
-        }
-    }
-
-    @Override // e2.d
-    public j9.y g(r0 r0Var) {
-        j9.y g10 = ((e2.d) this.b).g(r0Var);
-        if (g10 == null) {
-            return null;
-        }
-        return q8.c(g10, new j5.b(this, 17));
-    }
-
-    @Override // ki.u3
-    public void i(ki.a aVar) {
-        ki.q qVar = (ki.q) this.c;
-        ti tiVar = qVar.b;
-        o2 o2Var = tiVar.f0;
-        if (o2Var != null && aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && AndroidUtilities.isMapsInstalled(o2Var)) {
-            ti tiVar2 = new ti(qVar.getContext(), tiVar.f0, false, false, false, null);
-            tiVar2.c2 = new t7.u(11);
-            tiVar2.P = true;
-            tiVar2.A1.setVisibility(8);
-            tiVar2.z2 = new u2(qVar, aVar, tiVar2, 11);
-            tiVar2.w1();
-            tiVar2.show();
-        }
-    }
-
-    @Override // g6.n
-    public void j(String str, long j10, long j11, long j12) {
-        g6.n nVar = (g6.n) this.b;
-        if (nVar != null) {
-            nVar.j(str, j10, j11, j12);
-        }
-    }
-
-    public c5.e k() {
-        if (((c5.p) this.b) != null) {
-            return new c5.e(this);
-        }
-        throw new NullPointerException("ProductDetails is required for constructing ProductDetailsParams.");
-    }
-
-    @Override // ki.u3
-    public void m(int i10) {
-        ki.q.R((ki.q) this.c, 74, i10);
-    }
-
-    @Override // ki.u3
-    public void n(t3 t3Var, View view) {
-        ki.q qVar = (ki.q) this.c;
-        j80 j80Var = new j80(qVar, (g6) this.b, view, false, false, true);
-        j80Var.Q = true;
-        qVar.H = j4.c(j80Var, qVar.b.f0, qVar.getContext(), (g6) this.b, t3Var, true);
-    }
-
-    @Override // ki.u3
-    public void o(h1 h1Var, boolean z10) {
-        ((ki.q) this.c).b.z1(h1Var, z10);
-    }
-
-    @Override // ki.u3
-    public void onContentChanged() {
-        ki.q qVar = (ki.q) this.c;
-        b4 b4Var = qVar.s;
-        if (b4Var != null) {
-            b4Var.setSendLoading(qVar.r.s3());
-        }
-        qVar.Y(true);
-        qVar.b0();
-        ki.d dVar = qVar.P;
-        AndroidUtilities.cancelRunOnUIThread(dVar);
-        AndroidUtilities.runOnUIThread(dVar, 1000L);
-    }
-
-    @Override // ki.u3
-    public void p() {
-        ki.q qVar = (ki.q) this.c;
-        ki.w3 w3Var = qVar.r;
-        b4 b4Var = qVar.s;
-        if (b4Var != null) {
-            j3 j3Var = w3Var.o3;
-            int i10 = (j3Var != null && j3Var.x() && w3Var.I4()) ? 1 : 0;
-            if (b4Var.a0 == 2) {
-                b4Var.b0 = i10;
-            } else {
-                b4Var.g(i10, true);
-            }
-            if (i10 != 0) {
-                qVar.Z();
-            }
-        }
-        qVar.c0();
-    }
-
-    @Override // ee.b
-    public Object q(ee.c cVar, md.c cVar2) {
-        Object q6 = ((qf.b) this.b).q(new a0(cVar, (c0) this.c), cVar2);
-        return q6 == ld.a.a ? q6 : id.i.a;
-    }
-
-    public void r(i2.e eVar) {
+    public void g(i2.e eVar) {
         synchronized (eVar) {
         }
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new a3.k0(this, eVar, 1));
+            handler.post(new k0(this, eVar, 1));
         }
     }
 
-    @Override // ki.u3
-    public void s() {
-        b4 b4Var = ((ki.q) this.c).s;
-        if (b4Var != null) {
-            int i10 = b4Var.a0;
-            if (i10 == 2) {
-                i10 = 0;
+    @Override // h6.n
+    public void h(String str, long j10, long j11, long j12) {
+        h6.n nVar = (h6.n) this.b;
+        if (nVar != null) {
+            nVar.h(str, j10, j11, j12);
+        }
+    }
+
+    public void i(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.i(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
             }
-            b4Var.b0 = i10;
-            b4Var.e(false, false);
-            b4Var.g(2, true);
+            if (!z10) {
+                throw null;
+            }
+            throw null;
         }
     }
 
-    @Override // g6.n
+    public void j(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.i0 i0Var = (androidx.fragment.app.i0) this.b;
+        androidx.fragment.app.u uVar = i0Var.w.b;
+        androidx.fragment.app.r rVar = i0Var.y;
+        if (rVar != null) {
+            rVar.p().o.j(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void k(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.k(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void l(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.l(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void m(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.m(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void n(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.n(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void o(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.i0 i0Var = (androidx.fragment.app.i0) this.b;
+        androidx.fragment.app.u uVar = i0Var.w.b;
+        androidx.fragment.app.r rVar = i0Var.y;
+        if (rVar != null) {
+            rVar.p().o.o(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        boolean z10;
+        e6.b bVar;
+        switch (this.a) {
+            case 7:
+                b9.d dVar = (b9.d) this.b;
+                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
+                synchronized (dVar.f) {
+                    dVar.e.remove(taskCompletionSource);
+                }
+                return;
+            default:
+                com.google.android.gms.internal.cast.p pVar = (com.google.android.gms.internal.cast.p) this.b;
+                e6.b bVar2 = (e6.b) this.c;
+                p4.x xVar = pVar.c;
+                h6.b bVar3 = com.google.android.gms.internal.cast.p.j;
+                if (task.isSuccessful()) {
+                    Bundle bundle = (Bundle) task.getResult();
+                    boolean z11 = bundle != null && bundle.containsKey("com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED");
+                    bVar3.b("The module-to-client output switcher flag %s", true != z11 ? "not existed" : "existed");
+                    if (z11) {
+                        z10 = bundle.getBoolean("com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED");
+                        Log.i(bVar3.a, bVar3.d("Set up output switcher flags: %b (from module), %b (from CastOptions)", Boolean.valueOf(z10), Boolean.valueOf(bVar2.x)));
+                        boolean z12 = !z10 && bVar2.x;
+                        if (xVar != null || (bVar = pVar.d) == null) {
+                            return;
+                        }
+                        boolean z13 = bVar.v;
+                        boolean z14 = bVar.s;
+                        p4.y yVar = new p4.y();
+                        int i10 = Build.VERSION.SDK_INT;
+                        if (i10 >= 30) {
+                            yVar.b = z12;
+                        }
+                        if (i10 >= 30) {
+                            yVar.d = z13;
+                        }
+                        if (i10 >= 30) {
+                            yVar.c = z14;
+                        }
+                        p4.x.i(new p4.z(yVar));
+                        Log.i(bVar3.a, bVar3.d("media transfer = %b, session transfer = %b, transfer to local = %b, in-app output switcher = %b", Boolean.valueOf(pVar.i), Boolean.valueOf(z12), Boolean.valueOf(z13), Boolean.valueOf(z14)));
+                        if (z13) {
+                            com.google.android.gms.internal.cast.s sVar = pVar.f;
+                            o6.l.h(sVar);
+                            com.google.android.gms.internal.cast.o oVar = new com.google.android.gms.internal.cast.o(sVar);
+                            p4.x.b();
+                            p4.x.c().f = oVar;
+                            a2.a(a1.b0);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                z10 = true;
+                Log.i(bVar3.a, bVar3.d("Set up output switcher flags: %b (from module), %b (from CastOptions)", Boolean.valueOf(z10), Boolean.valueOf(bVar2.x)));
+                if (z10) {
+                }
+                if (xVar != null) {
+                    return;
+                } else {
+                    return;
+                }
+        }
+    }
+
+    public void p(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.p(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void q(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.q(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void r(androidx.fragment.app.r f7, Bundle bundle, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.r(f7, bundle, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void s(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.s(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    @Override // h6.n
     public void t(String str, long j10, int i10, Object obj, long j11, long j12) {
         int i11;
-        g6.m mVar = (g6.m) this.c;
-        if (((g6.n) this.b) != null) {
+        h6.m mVar = (h6.m) this.c;
+        if (((h6.n) this.b) != null) {
             if (i10 == 2001) {
                 Object[] objArr = {Integer.valueOf(mVar.i)};
-                g6.b bVar = mVar.a;
+                h6.b bVar = mVar.a;
                 Log.w(bVar.a, bVar.d("Possibility of local queue out of sync with receiver queue. Refetching sequence number. Current Local Sequence Number = %d", objArr));
-                Iterator it = ((e6.h) mVar.h.b).i.iterator();
+                Iterator it = ((f6.h) mVar.h.b).i.iterator();
                 while (it.hasNext()) {
-                    ((e6.g) it.next()).o();
+                    ((f6.g) it.next()).o();
                 }
                 i11 = 2001;
             } else {
                 i11 = i10;
             }
-            ((g6.n) this.b).t(str, j10, i11, obj, j11, j12);
+            ((h6.n) this.b).t(str, j10, i11, obj, j11, j12);
         }
     }
 
@@ -1085,11 +709,11 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         switch (this.a) {
             case 15:
                 try {
-                    if (((ec.b) this.c) == null) {
-                        this.c = ((ec.e) this.b).a();
+                    if (((fc.b) this.c) == null) {
+                        this.c = ((fc.e) this.b).a();
                     }
-                    return ((ec.b) this.c).toString();
-                } catch (dc.e unused) {
+                    return ((fc.b) this.c).toString();
+                } catch (ec.e unused) {
                     return "";
                 }
             default:
@@ -1097,7 +721,67 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         }
     }
 
-    public synchronized Map u() {
+    public void u(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.u(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public void v(androidx.fragment.app.r f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.r rVar = ((androidx.fragment.app.i0) this.b).y;
+        if (rVar != null) {
+            rVar.p().o.v(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
+    }
+
+    public c3.o w(Object... objArr) {
+        Constructor a2;
+        synchronized (((AtomicBoolean) this.c)) {
+            if (!((AtomicBoolean) this.c).get()) {
+                try {
+                    a2 = ((c2.i) this.b).a();
+                } catch (ClassNotFoundException unused) {
+                    ((AtomicBoolean) this.c).set(true);
+                } catch (Exception e) {
+                    throw new RuntimeException("Error instantiating extension", e);
+                }
+            }
+            a2 = null;
+        }
+        if (a2 == null) {
+            return null;
+        }
+        try {
+            return (c3.o) a2.newInstance(objArr);
+        } catch (Exception e10) {
+            throw new IllegalStateException("Unexpected error creating extractor", e10);
+        }
+    }
+
+    public synchronized Map x() {
         try {
             if (((Map) this.c) == null) {
                 this.c = DesugarCollections.unmodifiableMap(new HashMap((HashMap) this.b));
@@ -1108,72 +792,64 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         return (Map) this.c;
     }
 
-    @Override // e2.d
-    public j9.y v(byte[] bArr) {
-        return q8.c(((e2.d) this.b).v(bArr), new j5.b(this, 17));
+    public android.support.v4.media.session.m y() {
+        MediaController.TransportControls transportControls = ((android.support.v4.media.session.h) this.b).a.getTransportControls();
+        int i10 = Build.VERSION.SDK_INT;
+        return i10 >= 29 ? new android.support.v4.media.session.o(transportControls) : i10 >= 24 ? new android.support.v4.media.session.n(transportControls) : new android.support.v4.media.session.m(transportControls);
     }
 
-    public void w(k.a aVar) {
-        qi.e eVar = (qi.e) this.b;
-        ((ActionMode.Callback) eVar.a).onDestroyActionMode(eVar.n(aVar));
-        g.r rVar = (g.r) this.c;
-        if (rVar.E != null) {
-            rVar.f.getDecorView().removeCallbacks(rVar.F);
-        }
-        if (rVar.y != null) {
-            l0 l0Var = rVar.G;
-            if (l0Var != null) {
-                l0Var.b();
+    public boolean z(CharSequence charSequence, int i10, int i11, androidx.emoji2.text.o oVar) {
+        if (oVar.c == 0) {
+            androidx.emoji2.text.h hVar = (androidx.emoji2.text.h) this.c;
+            p1.a b10 = oVar.b();
+            int a2 = b10.a(8);
+            if (a2 != 0) {
+                ((ByteBuffer) b10.d).getShort(a2 + b10.a);
             }
-            l0 a2 = r0.i0.a(rVar.y);
-            a2.a(0.0f);
-            rVar.G = a2;
-            a2.d(new g.i(this, 2));
+            androidx.emoji2.text.d dVar = (androidx.emoji2.text.d) hVar;
+            dVar.getClass();
+            ThreadLocal threadLocal = androidx.emoji2.text.d.b;
+            if (threadLocal.get() == null) {
+                threadLocal.set(new StringBuilder());
+            }
+            StringBuilder sb2 = (StringBuilder) threadLocal.get();
+            sb2.setLength(0);
+            while (i10 < i11) {
+                sb2.append(charSequence.charAt(i10));
+                i10++;
+            }
+            TextPaint textPaint = dVar.a;
+            String sb3 = sb2.toString();
+            int i12 = i0.c.a;
+            oVar.c = textPaint.hasGlyph(sb3) ? 2 : 1;
         }
-        rVar.x = null;
-        ViewGroup viewGroup = rVar.J;
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.y.c(viewGroup);
-        rVar.y();
+        return oVar.c == 2;
     }
 
-    public boolean x(k.a aVar, Menu menu) {
-        ViewGroup viewGroup = ((g.r) this.c).J;
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.y.c(viewGroup);
-        qi.e eVar = (qi.e) this.b;
-        ActionMode.Callback callback = (ActionMode.Callback) eVar.a;
-        k.e n10 = eVar.n(aVar);
-        a0.l lVar = (a0.l) eVar.d;
-        Menu menu2 = (Menu) lVar.get(menu);
-        if (menu2 == null) {
-            menu2 = new l.a0((Context) eVar.b, (l.k) menu);
-            lVar.put(menu, menu2);
+    @Override // com.google.android.gms.internal.clearcut.h
+    public Object zzp() {
+        com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) this.b;
+        com.google.android.gms.internal.clearcut.b bVar = (com.google.android.gms.internal.clearcut.b) this.c;
+        bVar.getClass();
+        Map b10 = com.google.android.gms.internal.clearcut.d.e() ? ((Boolean) com.google.android.gms.internal.clearcut.d.c(new com.google.android.gms.internal.clearcut.e("gms:phenotype:phenotype_flag:debug_disable_caching"))).booleanValue() : false ? bVar.b() : bVar.e;
+        if (b10 == null) {
+            synchronized (bVar.d) {
+                try {
+                    HashMap hashMap = bVar.e;
+                    b10 = hashMap;
+                    if (hashMap == null) {
+                        HashMap b11 = bVar.b();
+                        bVar.e = b11;
+                        b10 = b11;
+                    }
+                } finally {
+                }
+            }
         }
-        return callback.onPrepareActionMode(n10, menu2);
-    }
-
-    @Override // ki.u3
-    public void y() {
-        ki.q qVar = (ki.q) this.c;
-        if (qVar.getCurrentItemTop() != qVar.I) {
-            qVar.b.f2(qVar, 0);
+        if (b10 == null) {
+            b10 = Collections.EMPTY_MAP;
         }
-        qVar.d0();
-        ki.q.N(qVar);
-    }
-
-    @Override // ki.u3
-    public void z(int i10) {
-        ki.q qVar = (ki.q) this.c;
-        qVar.b.f2(qVar, i10);
-        qVar.d0();
-        ki.q.N(qVar);
-    }
-
-    public /* synthetic */ s(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.b = obj;
+        return (String) b10.get(dVar.b);
     }
 
     public /* synthetic */ s(int i10, boolean z10) {
@@ -1183,37 +859,23 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
     public /* synthetic */ s(Object obj, int i10) {
         this.a = i10;
         this.b = obj;
-        this.c = null;
     }
 
     public /* synthetic */ s(Object obj, Object obj2, boolean z10, int i10) {
         this.a = i10;
-        this.c = obj;
         this.b = obj2;
-    }
-
-    public s(Context context, q3 q3Var) {
-        this.a = 10;
-        b2.t tVar = new b2.t(1);
-        try {
-            l5.t.b(context);
-            tVar.c = l5.t.a().c(j5.a.e).a("PLAY_BILLING_LIBRARY", new i5.c("proto"), new sb.a(4));
-        } catch (Throwable unused) {
-            tVar.b = true;
-        }
-        this.c = tVar;
-        this.b = q3Var;
+        this.c = obj;
     }
 
     public s(IBinder iBinder) {
-        this.a = 25;
+        this.a = 27;
         String interfaceDescriptor = iBinder.getInterfaceDescriptor();
         if (interfaceDescriptor != "android.os.IMessenger" && (interfaceDescriptor == null || !interfaceDescriptor.equals("android.os.IMessenger"))) {
             if (interfaceDescriptor != "com.google.android.gms.iid.IMessengerCompat" && (interfaceDescriptor == null || !interfaceDescriptor.equals("com.google.android.gms.iid.IMessengerCompat"))) {
                 Log.w("MessengerIpcClient", "Invalid interface descriptor: ".concat(String.valueOf(interfaceDescriptor)));
                 throw new RemoteException();
             }
-            this.c = new j6.f(iBinder);
+            this.c = new k6.g(iBinder);
             this.b = null;
             return;
         }
@@ -1221,38 +883,22 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         this.c = null;
     }
 
-    public s(m6.a aVar) {
-        this.a = 17;
+    public s(n6.a aVar) {
+        this.a = 20;
         this.b = aVar == null ? null : aVar.b;
     }
 
-    @Override // z3.m
-    public /* synthetic */ void reset() {
-    }
-
-    public s(k0 k0Var) {
-        this.a = 24;
-        this.b = k0Var;
-        this.c = new e2.x();
+    public s(androidx.fragment.app.i0 i0Var) {
+        this.a = 6;
+        this.b = i0Var;
+        this.c = new CopyOnWriteArrayList();
     }
 
     public s(int i10) {
         this.a = i10;
         switch (i10) {
-            case 14:
-                this.b = new ConcurrentHashMap(16, 0.75f, 10);
-                this.c = new ReferenceQueue();
-                break;
             case 19:
                 this.b = new HashMap();
-                break;
-            case 22:
-                this.b = new HashMap();
-                this.c = i2.d.b;
-                break;
-            case 23:
-                this.b = new e2.x();
-                this.c = new i4.a();
                 break;
             default:
                 this.b = ByteBuffer.allocateDirect(500);
@@ -1260,7 +906,33 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         }
     }
 
-    public s(Handler handler, a3.m0 m0Var) {
+    public s(b2.v vVar, SparseArray sparseArray) {
+        this.a = 25;
+        this.b = vVar;
+        SparseBooleanArray sparseBooleanArray = vVar.a;
+        SparseArray sparseArray2 = new SparseArray(sparseBooleanArray.size());
+        for (int i10 = 0; i10 < sparseBooleanArray.size(); i10++) {
+            int a2 = vVar.a(i10);
+            j2.a aVar = (j2.a) sparseArray.get(a2);
+            aVar.getClass();
+            sparseArray2.append(a2, aVar);
+        }
+        this.c = sparseArray2;
+    }
+
+    public s(com.google.firebase.messaging.q qVar, pa.d dVar, androidx.emoji2.text.d dVar2) {
+        this.a = 5;
+        this.b = qVar;
+        this.c = dVar2;
+    }
+
+    public s(String str) {
+        this.a = 28;
+        this.c = null;
+        this.b = str;
+    }
+
+    public s(Handler handler, m0 m0Var) {
         this.a = 2;
         if (m0Var != null) {
             handler.getClass();
@@ -1271,12 +943,42 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
         this.c = m0Var;
     }
 
-    public s(Animator animator) {
-        this.a = 6;
-        this.b = null;
-        AnimatorSet animatorSet = new AnimatorSet();
-        this.c = animatorSet;
-        animatorSet.play(animator);
+    public s(ArrayList arrayList, ArrayList arrayList2) {
+        this.a = 21;
+        int size = arrayList.size();
+        this.b = new int[size];
+        this.c = new float[size];
+        for (int i10 = 0; i10 < size; i10++) {
+            ((int[]) this.b)[i10] = ((Integer) arrayList.get(i10)).intValue();
+            ((float[]) this.c)[i10] = ((Float) arrayList2.get(i10)).floatValue();
+        }
+    }
+
+    public s(int i10, int i11) {
+        this.a = 21;
+        this.b = new int[]{i10, i11};
+        this.c = new float[]{0.0f, 1.0f};
+    }
+
+    public s(Context context, MediaSessionCompat$Token mediaSessionCompat$Token) {
+        this.a = 4;
+        if (mediaSessionCompat$Token != null) {
+            this.c = DesugarCollections.synchronizedSet(new HashSet());
+            if (Build.VERSION.SDK_INT >= 29) {
+                this.b = new android.support.v4.media.session.i(context, mediaSessionCompat$Token);
+                return;
+            } else {
+                this.b = new android.support.v4.media.session.h(context, mediaSessionCompat$Token);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("sessionToken must not be null");
+    }
+
+    public s(int i10, int i11, int i12) {
+        this.a = 21;
+        this.b = new int[]{i10, i11, i12};
+        this.c = new float[]{0.0f, 0.5f, 1.0f};
     }
 
     public s(Context context, String str, ComponentName componentName, PendingIntent pendingIntent, Bundle bundle) {
@@ -1314,7 +1016,7 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
                 this.b = new n(context, str, bundle);
             }
             Looper myLooper = Looper.myLooper();
-            D(new j(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
+            F(new j(), new Handler(myLooper == null ? Looper.getMainLooper() : myLooper));
             ((n) this.b).a.setMediaButtonReceiver(pendingIntent);
             r rVar = ((n) this.b).c;
             w wVar = new w();
@@ -1328,5 +1030,27 @@ public final class s implements ee.b, g0, com.google.android.gms.common.api.inte
             return;
         }
         throw new IllegalArgumentException("tag must not be null or empty");
+    }
+
+    @Override // j4.a0
+    public void b(e2.k0 k0Var, c3.q qVar, f0 f0Var) {
+    }
+
+    public s(s1 s1Var, int[] iArr) {
+        this.a = 16;
+        this.b = f9.i0.u(s1Var);
+        this.c = iArr;
+    }
+
+    public s(d0 d0Var) {
+        this.a = 26;
+        this.c = d0Var;
+        this.b = new a4.g(new byte[4], 4);
+    }
+
+    public s(c2.i iVar) {
+        this.a = 9;
+        this.b = iVar;
+        this.c = new AtomicBoolean(false);
     }
 }

@@ -1,17 +1,16 @@
 package o3;
 
 import a1.g;
-import b2.q0;
-import b2.s0;
-import b2.v0;
-import b2.w;
+import b2.r0;
+import b2.t0;
+import b2.w0;
 import e2.x;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a implements s0 {
+public final class a implements t0 {
     public final int a;
     public final String b;
     public final String c;
@@ -34,7 +33,7 @@ public final class a implements s0 {
 
     public static a d(x xVar) {
         int m10 = xVar.m();
-        String n10 = v0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
+        String n10 = w0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
         String y3 = xVar.y(xVar.m(), StandardCharsets.UTF_8);
         int m11 = xVar.m();
         int m12 = xVar.m();
@@ -46,17 +45,17 @@ public final class a implements s0 {
         return new a(m10, n10, y3, m11, m12, m13, m14, bArr);
     }
 
-    @Override // b2.s0
-    public final /* synthetic */ w a() {
+    @Override // b2.t0
+    public final /* synthetic */ b2.x a() {
         return null;
     }
 
-    @Override // b2.s0
-    public final void b(q0 q0Var) {
-        q0Var.a(this.a, this.h);
+    @Override // b2.t0
+    public final void b(r0 r0Var) {
+        r0Var.a(this.a, this.h);
     }
 
-    @Override // b2.s0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -75,7 +74,7 @@ public final class a implements s0 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.h) + ((((((((g.g(g.g((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
+        return Arrays.hashCode(this.h) + ((((((((g.f(g.f((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
     }
 
     public final String toString() {

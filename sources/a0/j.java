@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class j {
     public final int a;
-    public final a6.i b;
-    public final rb.b c;
+    public final b6.i b;
+    public final pa.d c;
     public int d;
     public int e;
     public int f;
@@ -21,14 +21,14 @@ public class j {
         if (i10 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.b = new a6.i(7);
-        this.c = new rb.b(3);
+        this.b = new b6.i(5);
+        this.c = new pa.d();
     }
 
     public final Object a(Object key) {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
-            a6.i iVar = this.b;
+            b6.i iVar = this.b;
             iVar.getClass();
             Object obj = ((LinkedHashMap) iVar.b).get(key);
             if (obj != null) {
@@ -45,7 +45,7 @@ public class j {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
             this.d++;
-            a6.i iVar = this.b;
+            b6.i iVar = this.b;
             iVar.getClass();
             put = ((LinkedHashMap) iVar.b).put(key, obj);
             if (put != null) {
@@ -93,7 +93,7 @@ public class j {
                     }
                     Object key = entry.getKey();
                     Object value = entry.getValue();
-                    a6.i iVar = this.b;
+                    b6.i iVar = this.b;
                     iVar.getClass();
                     kotlin.jvm.internal.i.e(key, "key");
                     ((LinkedHashMap) iVar.b).remove(key);

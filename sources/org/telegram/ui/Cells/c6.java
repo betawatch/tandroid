@@ -1,223 +1,79 @@
 package org.telegram.ui.Cells;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.MotionEvent;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
+import android.graphics.Paint;
+import android.view.View;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.iu;
-import org.telegram.ui.o51;
-import org.telegram.ui.s41;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.vh;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c6 extends iu {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class c6 extends FrameLayout {
+    public a6[] a;
+    public MediaController.AlbumEntry[] b;
+    public int c;
+    public b6 d;
+    public Paint e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c6(FrameLayout frameLayout, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, g6Var);
-        this.c = i10;
-        this.d = frameLayout;
+    public final void a(int i10, MediaController.AlbumEntry albumEntry) {
+        a6[] a6VarArr = this.a;
+        this.b[i10] = albumEntry;
+        if (albumEntry == null) {
+            a6VarArr[i10].setVisibility(4);
+            return;
+        }
+        a6 a6Var = a6VarArr[i10];
+        org.telegram.ui.Components.y9 y9Var = a6Var.a;
+        org.telegram.ui.Components.y9 y9Var2 = a6Var.a;
+        y9Var.q(0, true);
+        MediaController.PhotoEntry photoEntry = albumEntry.coverPhoto;
+        if (photoEntry == null || photoEntry.path == null) {
+            y9Var2.setImageDrawable(org.telegram.ui.ActionBar.y6.R4);
+        } else {
+            y9Var2.p(photoEntry.orientation, photoEntry.invert, true);
+            if (albumEntry.coverPhoto.isVideo) {
+                y9Var2.g("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.y6.R4);
+            } else {
+                y9Var2.g("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.y6.R4);
+            }
+        }
+        a6Var.b.setText(albumEntry.bucketName);
+        a6Var.c.setText(String.format("%d", Integer.valueOf(albumEntry.photos.size())));
     }
 
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.c) {
-            case 3:
-                super.dispatchDraw(canvas);
-                Drawable drawable = (Drawable) this.d;
-                drawable.setBounds(0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(28.0f));
-                drawable.draw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View[] viewArr = this.a;
+        int C = AndroidUtilities.isTablet() ? vh.C(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : vh.C(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
+        for (int i12 = 0; i12 < this.c; i12++) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
+            layoutParams.topMargin = AndroidUtilities.dp(4.0f);
+            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + C) * i12;
+            layoutParams.width = C;
+            layoutParams.height = C;
+            layoutParams.gravity = 51;
+            viewArr[i12].setLayoutParams(layoutParams);
+        }
+        super.onMeasure(i10, vh.D(4.0f, C, TLObject.FLAG_30));
+    }
+
+    public void setAlbumsCount(int i10) {
+        int i11 = 0;
+        while (true) {
+            a6[] a6VarArr = this.a;
+            if (i11 >= a6VarArr.length) {
+                this.c = i10;
+                return;
+            } else {
+                a6VarArr[i11].setVisibility(i11 < i10 ? 0 : 4);
+                i11++;
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.ku
-    public int emojiCacheType() {
-        switch (this.c) {
-            case 0:
-                return 3;
-            case 1:
-            default:
-                return super.emojiCacheType();
-            case 2:
-                return 3;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.c) {
-            case 1:
-                if (!ah.x0.b) {
-                    super.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        switch (this.c) {
-            case 0:
-                InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-                if (((d6) this.d).s) {
-                    editorInfo.imeOptions &= -1073741825;
-                }
-                return onCreateInputConnection;
-            case 1:
-            default:
-                return super.onCreateInputConnection(editorInfo);
-            case 2:
-                InputConnection onCreateInputConnection2 = super.onCreateInputConnection(editorInfo);
-                editorInfo.imeOptions &= -1073741825;
-                return onCreateInputConnection2;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iu, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ku, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.c) {
-            case 0:
-                super.onDraw(canvas);
-                ((d6) this.d).getClass();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z10, int i10, Rect rect) {
-        switch (this.c) {
-            case 0:
-                super.onFocusChanged(z10, i10, rect);
-                ((d6) this.d).i(z10);
-                break;
-            case 1:
-                if (z10) {
-                    ((s41) this.d).F.q();
-                    AndroidUtilities.runOnUIThread(new o51(this, 0), 200L);
-                }
-                super.onFocusChanged(z10, i10, rect);
-                break;
-            default:
-                super.onFocusChanged(z10, i10, rect);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ku, android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.c) {
-            case 2:
-                super.onSizeChanged(i10, i11, i12, i13);
-                postOnAnimation(new org.telegram.ui.web.a2(this, 17));
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iu, android.widget.EditText, android.widget.TextView
-    public boolean onTextContextMenuItem(int i10) {
-        ClipData primaryClip;
-        switch (this.c) {
-            case 0:
-                if (i10 == 16908322 && (primaryClip = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip()) != null && primaryClip.getItemCount() == 1 && AndroidUtilities.charSequenceIndexOf(primaryClip.getItemAt(0).getText(), "\n") > 0) {
-                    CharSequence text = primaryClip.getItemAt(0).getText();
-                    ArrayList arrayList = new ArrayList();
-                    StringBuilder sb2 = new StringBuilder();
-                    for (int i11 = 0; i11 < text.length(); i11++) {
-                        char charAt = text.charAt(i11);
-                        if (charAt == '\n') {
-                            arrayList.add(sb2.toString());
-                            sb2.setLength(0);
-                        } else {
-                            sb2.append(charAt);
-                        }
-                    }
-                    if (!TextUtils.isEmpty(sb2)) {
-                        arrayList.add(sb2);
-                    }
-                    if (((d6) this.d).l(arrayList)) {
-                    }
-                }
-                break;
-        }
-        return super.onTextContextMenuItem(i10);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.c) {
-            case 0:
-                if (isEnabled()) {
-                    if (motionEvent.getAction() == 1) {
-                        ((d6) this.d).k(this);
-                    }
-                    break;
-                }
-                break;
-            case 1:
-                if (motionEvent.getAction() != 1 || !((s41) this.d).F.u()) {
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new o51(this, 1), 200L);
-                    break;
-                }
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.iu, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-    public ActionMode startActionMode(ActionMode.Callback callback, int i10) {
-        switch (this.c) {
-            case 0:
-                ActionMode startActionMode = super.startActionMode(callback, i10);
-                ((d6) this.d).g(this, startActionMode);
-                return startActionMode;
-            default:
-                return super.startActionMode(callback, i10);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c6(Context context, org.telegram.ui.ActionBar.g6 g6Var, Drawable drawable) {
-        super(context, g6Var);
-        this.c = 3;
-        this.d = drawable;
-    }
-
-    @Override // org.telegram.ui.Components.iu, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-    public ActionMode startActionMode(ActionMode.Callback callback) {
-        switch (this.c) {
-            case 0:
-                ActionMode startActionMode = super.startActionMode(callback);
-                ((d6) this.d).g(this, startActionMode);
-                return startActionMode;
-            default:
-                return super.startActionMode(callback);
-        }
+    public void setDelegate(b6 b6Var) {
+        this.d = b6Var;
     }
 }

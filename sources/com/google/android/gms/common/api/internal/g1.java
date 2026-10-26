@@ -6,7 +6,7 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g1 extends j1 {
     public final e b;
@@ -45,11 +45,11 @@ public final class g1 extends j1 {
             } catch (DeadObjectException e) {
                 eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
                 throw e;
-            } catch (RemoteException e7) {
-                eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
+            } catch (RemoteException e10) {
+                eVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
             }
-        } catch (RuntimeException e10) {
-            b(e10);
+        } catch (RuntimeException e11) {
+            b(e11);
         }
     }
 

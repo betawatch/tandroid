@@ -1,21 +1,85 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.locks.AbstractOwnableSynchronizer;
+import java.util.List;
+import java.util.concurrent.AbstractExecutorService;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class j4 extends AbstractOwnableSynchronizer implements Runnable {
-    public final r4 a;
+public class j4 extends AbstractExecutorService implements i4, AutoCloseable {
+    public final ExecutorService a;
 
-    public /* synthetic */ j4(r4 r4Var) {
-        this.a = r4Var;
+    public j4(ExecutorService executorService) {
+        executorService.getClass();
+        this.a = executorService;
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean awaitTermination(long j10, TimeUnit timeUnit) {
+        return this.a.awaitTermination(j10, timeUnit);
+    }
+
+    @Override // java.lang.AutoCloseable
+    public /* synthetic */ void close() {
+        f4.c(this);
+    }
+
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.execute(runnable);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isShutdown() {
+        return this.a.isShutdown();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isTerminated() {
+        return this.a.isTerminated();
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService
+    public final RunnableFuture newTaskFor(Runnable runnable, Object obj) {
+        return new p4(Executors.callable(runnable, obj));
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final void shutdown() {
+        this.a.shutdown();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final List shutdownNow() {
+        return this.a.shutdownNow();
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Runnable runnable) {
+        return (k9.y) super.submit(runnable);
     }
 
     public final String toString() {
-        return this.a.toString();
+        return super.toString() + "[" + String.valueOf(this.a) + "]";
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.concurrent.AbstractExecutorService
+    public final RunnableFuture newTaskFor(Callable callable) {
+        return new p4(callable);
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Runnable runnable, Object obj) {
+        return (k9.y) super.submit(runnable, obj);
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Callable callable) {
+        return (k9.y) super.submit(callable);
     }
 }

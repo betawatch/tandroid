@@ -1,10 +1,10 @@
 package y2;
 
-import e2.m0;
+import e2.n0;
 import java.util.Arrays;
-import u2.b1;
+import u2.z0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d {
     public int c;
@@ -41,18 +41,18 @@ public final class d {
         return aVar;
     }
 
-    public final synchronized void b(b1 b1Var) {
-        while (b1Var != null) {
+    public final synchronized void b(z0 z0Var) {
+        while (z0Var != null) {
             a[] aVarArr = this.f;
             int i10 = this.e;
             this.e = i10 + 1;
-            a aVar = (a) b1Var.c;
+            a aVar = (a) z0Var.c;
             aVar.getClass();
             aVarArr[i10] = aVar;
             this.d--;
-            b1Var = (b1) b1Var.d;
-            if (b1Var == null || ((a) b1Var.c) == null) {
-                b1Var = null;
+            z0Var = (z0) z0Var.d;
+            if (z0Var == null || ((a) z0Var.c) == null) {
+                z0Var = null;
             }
         }
     }
@@ -74,7 +74,7 @@ public final class d {
     }
 
     public final synchronized void e() {
-        int max = Math.max(0, m0.g(this.c, this.b) - this.d);
+        int max = Math.max(0, n0.g(this.c, this.b) - this.d);
         int i10 = this.e;
         if (max >= i10) {
             return;

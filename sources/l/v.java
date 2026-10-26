@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class v {
     public final Context a;
@@ -50,7 +50,7 @@ public class v {
             c0Var.l(this.b);
             c0Var.r(this.k);
             c0Var.n(this.e);
-            c0Var.h(this.h);
+            c0Var.e(this.h);
             c0Var.o(this.g);
             c0Var.p(this.f);
             this.i = c0Var;
@@ -86,6 +86,6 @@ public class v {
             int i13 = (int) ((this.a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
             a2.a = new Rect(i10 - i13, i11 - i13, i10 + i13, i11 + i13);
         }
-        a2.g();
+        a2.h();
     }
 }

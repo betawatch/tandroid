@@ -6,12 +6,12 @@ import androidx.car.app.model.IOnCheckedChangeListener;
 import androidx.car.app.model.OnCheckedChangeDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class OnCheckedChangeDelegateImpl implements z {
     private final IOnCheckedChangeListener mStub;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class OnCheckedChangeListenerStub extends IOnCheckedChangeListener.Stub {
         private final z0 mListener;
 
@@ -25,8 +25,8 @@ public class OnCheckedChangeDelegateImpl implements z {
 
         @Override // androidx.car.app.model.IOnCheckedChangeListener
         public void onCheckedChange(final boolean z10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onCheckedChange", new androidx.car.app.utils.a() { // from class: androidx.car.app.model.a0
-                @Override // androidx.car.app.utils.a
+            androidx.car.app.utils.h.b(iOnDoneCallback, "onCheckedChange", new androidx.car.app.utils.b() { // from class: androidx.car.app.model.a0
+                @Override // androidx.car.app.utils.b
                 public final Object a() {
                     Object lambda$onCheckedChange$0;
                     lambda$onCheckedChange$0 = OnCheckedChangeDelegateImpl.OnCheckedChangeListenerStub.this.lambda$onCheckedChange$0(z10);
@@ -48,7 +48,7 @@ public class OnCheckedChangeDelegateImpl implements z {
         try {
             IOnCheckedChangeListener iOnCheckedChangeListener = this.mStub;
             Objects.requireNonNull(iOnCheckedChangeListener);
-            iOnCheckedChangeListener.onCheckedChange(z10, androidx.car.app.utils.g.a());
+            iOnCheckedChangeListener.onCheckedChange(z10, androidx.car.app.utils.h.a());
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }

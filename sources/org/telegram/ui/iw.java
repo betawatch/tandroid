@@ -1,26 +1,50 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesStorage;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class iw implements v60 {
-    public final /* synthetic */ ey a;
+public final class iw extends org.telegram.ui.Components.u6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ cy c;
 
-    public iw(ey eyVar) {
-        this.a = eyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iw(cy cyVar, int i10) {
+        super("animationValue", 0);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = cyVar;
+                super("viewPagerTranslation", 0);
+                break;
+            default:
+                this.c = cyVar;
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.v60
-    public final void a(w60 w60Var, long j10) {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(MessagesStorage.TopicKey.of(-j10, 0L));
-        ey eyVar = this.a;
-        xx xxVar = eyVar.C2;
-        if (eyVar.B2) {
-            eyVar.removeSelfFromStack();
+    @Override // org.telegram.ui.Components.u6
+    public final void c(Object obj, float f7) {
+        switch (this.b) {
+            case 0:
+                ((cy) obj).K4(f7);
+                break;
+            default:
+                cy cyVar = this.c;
+                cyVar.I0 = f7;
+                ((View) obj).setTranslationY(cyVar.J0 + f7);
+                cyVar.N3();
+                break;
         }
-        xxVar.w(eyVar, arrayList, null, true, eyVar.J2, eyVar.K2, eyVar.L2, null);
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.N);
+            default:
+                return Float.valueOf(this.c.I0);
+        }
     }
 }

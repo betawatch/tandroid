@@ -1,11 +1,14 @@
 package be;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b implements y1 {
-    public static final b a = new b();
+public abstract class b {
+    public static final /* synthetic */ int a = 0;
 
-    public final String toString() {
-        return "Active";
+    static {
+        ThreadLocal[] threadLocalArr = new ThreadLocal[4];
+        for (int i10 = 0; i10 < 4; i10++) {
+            threadLocalArr[i10] = new ThreadLocal();
+        }
     }
 }

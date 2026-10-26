@@ -1,12 +1,39 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.IMapsProvider;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ql {
-    public int a;
-    public IMapsProvider.IMarker b;
-    public TLRPC.TL_messageMediaVenue c;
+public final class ql extends TextView {
+    public final /* synthetic */ int a;
+    public float b;
+    public float c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ql(Context context, int i10) {
+        super(context);
+        this.a = i10;
+    }
+
+    @Override // android.view.View
+    public final float getTranslationX() {
+        switch (this.a) {
+        }
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        switch (this.a) {
+            case 0:
+                this.b = f7;
+                setTranslationY(this.c + f7);
+                break;
+            default:
+                this.b = f7;
+                setTranslationY(this.c + f7);
+                break;
+        }
+    }
 }

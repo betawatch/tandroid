@@ -1,17 +1,11 @@
 package n2;
 
-import u2.h0;
+import m4.x0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface l {
-    void a(int i10, h0 h0Var, int i11);
+    public static final x0 u = new x0(17);
 
-    void b(int i10, h0 h0Var, Exception exc);
-
-    void c(int i10, h0 h0Var, oa.d dVar);
-
-    void h(int i10, h0 h0Var);
-
-    void j(int i10, h0 h0Var);
+    void release();
 }

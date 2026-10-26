@@ -1,28 +1,53 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ w7(MediaDataController mediaDataController, ArrayList arrayList, int i10) {
+    public /* synthetic */ w7(int i10, Utilities.Callback callback) {
         this.a = i10;
-        this.b = mediaDataController;
-        this.c = arrayList;
+        this.b = callback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadRepliesOfDraftReplies$0(this.c);
+                MediaDataController.lambda$loadStickers$98(this.b);
+                break;
+            case 1:
+                MediaDataController.lambda$loadStickers$99(this.b);
+                break;
+            case 2:
+                MediaDataController.lambda$loadStickers$94(this.b);
+                break;
+            case 3:
+                MediaDataController.lambda$loadStickers$95(this.b);
+                break;
+            case 4:
+                MediaDataController.lambda$loadStickers$96(this.b);
+                break;
+            case 5:
+                MediaDataController.lambda$loadBotInfo$199(this.b);
+                break;
+            case 6:
+                this.b.run(null);
+                break;
+            case 7:
+                MessagesController.lambda$addUserToChat$300(this.b);
+                break;
+            case 8:
+                MessagesController.lambda$addUserToChat$304(this.b);
+                break;
+            case 9:
+                this.b.run(null);
                 break;
             default:
-                this.b.lambda$broadcastPinnedMessage$168(this.c);
+                ShortcutResultReceiver.lambda$onReceive$0(this.b);
                 break;
         }
     }

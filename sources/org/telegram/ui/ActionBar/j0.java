@@ -1,125 +1,69 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.wq;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bg1;
-import org.telegram.ui.is0;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j0 extends ImageView {
+public final class j0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ FrameLayout b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(Object obj, Context context, int i10) {
-        super(context);
+    public /* synthetic */ j0(int i10, FrameLayout frameLayout) {
         this.a = i10;
-        this.b = obj;
+        this.b = frameLayout;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        s0 searchListener;
         switch (this.a) {
             case 0:
-                getBackground().draw(canvas);
-                super.draw(canvas);
-                break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 0:
-                u0 u0Var = (u0) this.b;
-                super.onDetachedFromWindow();
-                clearAnimation();
-                if (getTag() != null) {
-                    u0Var.s.setAlpha(1.0f);
-                    u0Var.s.setRotation(0.0f);
-                    u0Var.s.setScaleX(1.0f);
-                    u0Var.s.setScaleY(1.0f);
-                    break;
-                } else {
-                    u0Var.s.setVisibility(4);
-                    u0Var.s.setAlpha(0.0f);
-                    u0Var.s.setRotation(45.0f);
-                    u0Var.s.setScaleX(0.0f);
-                    u0Var.s.setScaleY(0.0f);
-                    break;
+                w0 w0Var = (w0) this.b;
+                s0 s0Var = w0Var.H;
+                if (s0Var != null) {
+                    s0Var.l(w0Var.e);
                 }
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((bg1) this.b).n.getTransformationMethod() == null);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.a) {
-            case 1:
-                super.setAlpha(f7);
-                ((wq) this.b).x.invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        switch (this.a) {
-            case 2:
-                super.setTranslationY(f7);
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                ArrayList arrayList = photoViewer.h1;
-                if (arrayList != null) {
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        ((ei.x3) obj).setTranslationY(f7);
-                    }
-                }
-                is0 is0Var = photoViewer.g1;
-                if (is0Var != null) {
-                    is0Var.setTranslationY(f7);
-                }
-                aa0 aa0Var = photoViewer.f1;
-                if (aa0Var != null) {
-                    aa0Var.setTranslationY(f7);
+                w0Var.j();
+                if (!w0Var.g0.isEmpty() && !TextUtils.isEmpty(w0Var.e.getText()) && w0Var.h0 >= 0) {
+                    w0Var.h0 = -1;
+                    w0Var.D();
                     break;
                 }
                 break;
             default:
-                super.setTranslationY(f7);
+                r5 r5Var = (r5) this.b;
+                r5Var.d();
+                searchListener = r5Var.getSearchListener();
+                if (searchListener != null) {
+                    searchListener.l(r5Var.s);
+                    break;
+                }
                 break;
         }
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

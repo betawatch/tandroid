@@ -1,55 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cs implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fs b;
+public final class cs extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public float c;
+    public float d = 255.0f;
 
-    public /* synthetic */ cs(fs fsVar, int i10) {
-        this.a = i10;
-        this.b = fsVar;
+    public cs(Drawable drawable, Drawable drawable2) {
+        this.a = drawable;
+        this.b = drawable2;
+        if (drawable != null) {
+            drawable.setCallback(new bs(this, 0));
+        }
+        if (drawable2 != null) {
+            drawable2.setCallback(new bs(this, 1));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        switch (this.a) {
-            case 0:
-                fs fsVar = this.b;
-                if (fsVar.b == null && (view = fsVar.d) != null) {
-                    View findFocus = view.findFocus();
-                    if (findFocus instanceof EditText) {
-                        fsVar.b = (EditText) findFocus;
-                    }
-                }
-                EditText editText = fsVar.b;
-                if (editText != null) {
-                    if (editText.length() != 0 || fsVar.e) {
-                        try {
-                            fsVar.performHapticFeedback(3, 2);
-                            fsVar.playSoundEffect(0);
-                        } catch (Exception unused) {
-                        }
-                        fsVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
-                        fsVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
-                        if (fsVar.f) {
-                            fsVar.postDelayed(fsVar.h, 50L);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                fs fsVar2 = this.b;
-                fsVar2.n = false;
-                fsVar2.f = true;
-                fsVar2.h.run();
-                break;
+    public final void a(float f7) {
+        this.c = f7;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = (int) ((1.0f - this.c) * this.d);
+        Drawable drawable = this.a;
+        drawable.setAlpha(i10);
+        int i11 = (int) (this.d * this.c);
+        Drawable drawable2 = this.b;
+        drawable2.setAlpha(i11);
+        if (i10 > 0) {
+            drawable.draw(canvas);
         }
+        if (i11 > 0) {
+            drawable2.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.b.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

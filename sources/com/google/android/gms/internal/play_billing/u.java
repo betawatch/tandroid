@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import a8.ra;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,9 +9,8 @@ import com.android.billingclient.api.Purchase;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
-import v7.y5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -40,11 +40,11 @@ public abstract class u {
         bundle.putLong("billingClientSessionId", j10);
     }
 
-    public static Bundle c(int i10, c5.i iVar) {
+    public static Bundle c(int i10, d5.i iVar) {
         Bundle bundle = new Bundle();
         bundle.putInt("RESPONSE_CODE", iVar.a);
         bundle.putString("DEBUG_MESSAGE", iVar.c);
-        bundle.putInt("LOG_REASON", k3.b(i10));
+        bundle.putInt("LOG_REASON", c3.h0.d(i10));
         return bundle;
     }
 
@@ -55,10 +55,10 @@ public abstract class u {
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        y5.a(2, objArr);
+        ra.a(2, objArr);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.s(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        y5.a(1, objArr2);
+        ra.a(1, objArr2);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.s(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
@@ -68,12 +68,12 @@ public abstract class u {
         boolean z10 = false;
         boolean z11 = false;
         for (int i10 = 0; i10 < size; i10++) {
-            c5.s sVar = (c5.s) arrayList.get(i10);
+            d5.r rVar = (d5.r) arrayList.get(i10);
             arrayList2.add(null);
             z10 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
             z11 |= !TextUtils.isEmpty(null);
-            if (sVar.b.equals("first_party")) {
+            if (rVar.b.equals("first_party")) {
                 throw new NullPointerException("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
             }
         }
@@ -92,15 +92,15 @@ public abstract class u {
         return bundle;
     }
 
-    public static c5.i e(String str, Intent intent) {
+    public static d5.i e(String str, Intent intent) {
         if (intent != null) {
-            c3.a a2 = c5.i.a();
+            c3.a a2 = d5.i.a();
             a2.b = a(str, intent.getExtras());
             a2.a = f(str, intent.getExtras());
             return a2.a();
         }
         h("BillingHelper", "Got null intent!");
-        c3.a a10 = c5.i.a();
+        c3.a a10 = d5.i.a();
         a10.b = 6;
         a10.a = "An internal error occurred.";
         return a10.a();

@@ -5,9 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class yz extends s4.b0 {
+public class yz extends s4.c0 {
     public final SparseArray I;
     public int J;
     public int K;
@@ -31,77 +31,77 @@ public class yz extends s4.b0 {
         this.M = i10;
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void P(View view) {
         if (this.T) {
             RecyclerView recyclerView = this.N;
             View F = recyclerView.F(view);
             if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
-                ((ViewGroup.MarginLayoutParams) ((s4.o0) view.getLayoutParams())).height = Math.max(this.J, 0);
+                ((ViewGroup.MarginLayoutParams) ((s4.q0) view.getLayoutParams())).height = Math.max(this.J, 0);
             }
         }
         super.P(view);
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void Q() {
         this.I.clear();
-        p1();
+        q1();
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void V(RecyclerView recyclerView, int i10, int i11) {
-        p1();
+        q1();
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void W(RecyclerView recyclerView) {
         this.I.clear();
-        p1();
+        q1();
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void X(RecyclerView recyclerView, int i10, int i11) {
-        p1();
+        q1();
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void Y(RecyclerView recyclerView, int i10, int i11) {
-        p1();
+        q1();
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void Z() {
-        p1();
+        q1();
     }
 
-    @Override // s4.n0
+    @Override // s4.p0
     public final void a0(RecyclerView recyclerView, int i10, int i11, Object obj) {
-        p1();
-        p1();
+        q1();
+        q1();
     }
 
-    @Override // s4.n0
-    public final void d0(qf.e eVar, s4.y0 y0Var, int i10, int i11) {
+    @Override // s4.p0
+    public final void d0(rf.e eVar, s4.b1 b1Var, int i10, int i11) {
         int i12 = this.K;
         this.L = View.MeasureSpec.getSize(i10);
         int size = View.MeasureSpec.getSize(i11);
         this.K = size;
         if (i12 != size) {
-            p1();
+            q1();
         }
-        super.d0(eVar, y0Var, i10, i11);
+        super.d0(eVar, b1Var, i10, i11);
     }
 
-    @Override // s4.b0, s4.n0
+    @Override // s4.c0, s4.p0
     public final boolean e() {
         return this.Q;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void p1() {
+    public final void q1() {
         RecyclerView recyclerView;
-        s4.g0 adapter;
+        s4.h0 adapter;
         if (this.K > 0 && (adapter = (recyclerView = this.N).getAdapter()) != null) {
             int h = adapter.h() - 1;
             int i10 = 0;
@@ -109,21 +109,21 @@ public class yz extends s4.b0 {
             for (int i12 = this.O; i12 < h; i12++) {
                 int j10 = adapter.j(i12);
                 SparseArray sparseArray = this.I;
-                s4.b1 b1Var = (s4.b1) sparseArray.get(j10, null);
-                if (b1Var == null) {
-                    b1Var = adapter.g(recyclerView, j10);
-                    View view = b1Var.a;
-                    sparseArray.put(j10, b1Var);
+                s4.e1 e1Var = (s4.e1) sparseArray.get(j10, null);
+                if (e1Var == null) {
+                    e1Var = adapter.g(recyclerView, j10);
+                    View view = e1Var.a;
+                    sparseArray.put(j10, e1Var);
                     if (view.getLayoutParams() == null) {
                         view.setLayoutParams(n());
                     }
                 }
-                View view2 = b1Var.a;
+                View view2 = e1Var.a;
                 if (this.P) {
-                    adapter.v(b1Var, i12);
+                    adapter.v(e1Var, i12);
                 }
-                s4.o0 o0Var = (s4.o0) view2.getLayoutParams();
-                view2.measure(s4.n0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, ((ViewGroup.MarginLayoutParams) o0Var).width), s4.n0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) o0Var).topMargin + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) o0Var).height));
+                s4.q0 q0Var = (s4.q0) view2.getLayoutParams();
+                view2.measure(s4.p0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) q0Var).leftMargin + ((ViewGroup.MarginLayoutParams) q0Var).rightMargin, ((ViewGroup.MarginLayoutParams) q0Var).width), s4.p0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) q0Var).topMargin + ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) q0Var).height));
                 i10 += view2.getMeasuredHeight();
                 if (i12 == 0) {
                     i11 = view2.getMeasuredHeight();

@@ -1,25 +1,76 @@
 package d6;
 
 import android.os.Parcel;
-import android.os.Parcelable;
-import c7.r0;
-import w7.f0;
+import android.os.RemoteException;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b0 extends o6.a {
-    public static final Parcelable.Creator<b0> CREATOR = new r0(27);
-    public final int a;
+public final /* synthetic */ class b0 implements com.google.android.gms.common.api.internal.r {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ String d;
 
-    public b0(int i10) {
+    public /* synthetic */ b0(e0 e0Var, String str, String str2, int i10) {
         this.a = i10;
+        this.b = e0Var;
+        this.c = str;
+        this.d = str2;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        f0.r(parcel, q6);
+    @Override // com.google.android.gms.common.api.internal.r
+    public final void accept(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                e0 e0Var = this.b;
+                String str = this.c;
+                String str2 = this.d;
+                h6.w wVar = (h6.w) obj;
+                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
+                o6.l.j("Not connected to device", e0Var.F == 2);
+                h6.f fVar = (h6.f) wVar.u();
+                Parcel N0 = fVar.N0();
+                N0.writeString(str);
+                N0.writeString(str2);
+                int i10 = com.google.android.gms.internal.cast.t.a;
+                N0.writeInt(0);
+                fVar.S0(N0, 14);
+                synchronized (e0Var.r) {
+                    try {
+                        if (e0Var.o != null) {
+                            e0Var.i(2477);
+                        }
+                        e0Var.o = taskCompletionSource;
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+                return;
+            default:
+                e0 e0Var2 = this.b;
+                String str3 = this.c;
+                String str4 = this.d;
+                h6.w wVar2 = (h6.w) obj;
+                TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) obj2;
+                HashMap hashMap = e0Var2.B;
+                long incrementAndGet = e0Var2.q.incrementAndGet();
+                o6.l.j("Not connected to device", e0Var2.F == 2);
+                try {
+                    hashMap.put(Long.valueOf(incrementAndGet), taskCompletionSource2);
+                    h6.f fVar2 = (h6.f) wVar2.u();
+                    Parcel N02 = fVar2.N0();
+                    N02.writeString(str3);
+                    N02.writeString(str4);
+                    N02.writeLong(incrementAndGet);
+                    fVar2.S0(N02, 9);
+                    return;
+                } catch (RemoteException e) {
+                    hashMap.remove(Long.valueOf(incrementAndGet));
+                    taskCompletionSource2.setException(e);
+                    return;
+                }
+        }
     }
 }

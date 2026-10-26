@@ -1,29 +1,24 @@
 package mi;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r b;
-
-    public /* synthetic */ l(r rVar, int i10) {
-        this.a = i10;
-        this.b = rVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b bVar = this.b.v;
-                if (bVar != null) {
-                    bVar.close();
-                    break;
-                }
-                break;
-            default:
-                this.b.a();
-                break;
-        }
-    }
+public final class l extends s4.k {
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public boolean m;
+    public boolean n;
+    public float o;
+    public float p;
+    public float q;
+    public float r;
+    public int s;
+    public int t;
+    public int u;
+    public int v;
+    public boolean w;
 }

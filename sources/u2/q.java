@@ -1,140 +1,318 @@
 package u2;
 
-import androidx.media3.exoplayer.dash.DashMediaSource$Factory;
-import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
-import java.lang.reflect.GenericDeclaration;
-import java.util.HashMap;
+import a8.yb;
+import android.content.Context;
+import android.net.Uri;
+import j$.util.Objects;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class q {
-    public final c3.o a;
-    public qf.b d;
-    public t7.u f;
-    public final HashMap b = new HashMap();
-    public final HashMap c = new HashMap();
-    public boolean e = true;
-    public int g = 3;
+public final class q implements f0 {
+    public final p a;
+    public final rf.b b;
+    public qb.a c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final float g;
+    public final float h;
+    public boolean i;
 
-    public q(c3.o oVar, t7.u uVar) {
-        this.a = oVar;
-        this.f = uVar;
+    public q(Context context, c3.m mVar) {
+        rf.b bVar = new rf.b(context, 19);
+        qb.a aVar = new qb.a(28);
+        this.b = bVar;
+        this.c = aVar;
+        p pVar = new p(mVar, aVar);
+        this.a = pVar;
+        if (bVar != pVar.d) {
+            pVar.d = bVar;
+            pVar.b.clear();
+            pVar.c.clear();
+        }
+        this.d = -9223372036854775807L;
+        this.e = -9223372036854775807L;
+        this.f = -9223372036854775807L;
+        this.g = -3.4028235E38f;
+        this.h = -3.4028235E38f;
+        this.i = true;
     }
 
-    public static void a(q qVar) {
-        c3.o oVar = qVar.a;
-        synchronized (oVar) {
-            oVar.f = 1;
+    public static f0 e(Class cls, g2.g gVar) {
+        try {
+            return (f0) cls.getConstructor(g2.g.class).newInstance(gVar);
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
         }
     }
 
-    public final g0 b(int i10) {
-        d9.u uVar;
-        d9.u nVar;
-        Integer valueOf = Integer.valueOf(i10);
-        HashMap hashMap = this.c;
-        g0 g0Var = (g0) hashMap.get(valueOf);
-        if (g0Var != null) {
-            return g0Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // u2.f0
+    public final a a(b2.p0 p0Var) {
+        Uri uri;
+        boolean z10;
+        boolean z11;
+        long j10;
+        Uri uri2;
+        String str;
+        b2.c0 c0Var;
+        String str2;
+        b2.g0 g0Var;
+        b2.p0 p0Var2 = p0Var;
+        p0Var2.b.getClass();
+        String scheme = p0Var2.b.a.getScheme();
+        if (scheme != null && scheme.equals("ssai")) {
+            throw null;
         }
-        Integer valueOf2 = Integer.valueOf(i10);
-        HashMap hashMap2 = this.b;
-        d9.u uVar2 = (d9.u) hashMap2.get(valueOf2);
-        if (uVar2 == null) {
-            final qf.b bVar = this.d;
-            bVar.getClass();
-            if (i10 != 0) {
-                final int i11 = 1;
-                if (i10 != 1) {
-                    final int i12 = 2;
-                    if (i10 != 2) {
-                        final int i13 = 3;
-                        if (i10 == 3) {
-                            nVar = new i2.n(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(g0.class), 3);
-                        } else {
-                            if (i10 != 4) {
-                                throw new IllegalArgumentException(i2.o1.k(i10, "Unrecognized contentType: "));
-                            }
-                            nVar = new d9.u() { // from class: u2.p
-                                @Override // d9.u
-                                public final Object get() {
-                                    switch (i13) {
-                                        case 0:
-                                            return r.e((Class) this, bVar);
-                                        case 1:
-                                            return r.e((Class) this, bVar);
-                                        case 2:
-                                            return r.e((Class) this, bVar);
-                                        default:
-                                            return new z0(bVar, ((q) this).a);
-                                    }
-                                }
-                            };
-                        }
-                        uVar2 = nVar;
-                    } else {
-                        final Class asSubclass = HlsMediaSource$Factory.class.asSubclass(g0.class);
-                        uVar = new d9.u() { // from class: u2.p
-                            @Override // d9.u
-                            public final Object get() {
-                                switch (i12) {
-                                    case 0:
-                                        return r.e((Class) asSubclass, bVar);
-                                    case 1:
-                                        return r.e((Class) asSubclass, bVar);
-                                    case 2:
-                                        return r.e((Class) asSubclass, bVar);
-                                    default:
-                                        return new z0(bVar, ((q) asSubclass).a);
-                                }
-                            }
-                        };
-                    }
-                } else {
-                    final GenericDeclaration asSubclass2 = Class.forName("androidx.media3.exoplayer.smoothstreaming.SsMediaSource$Factory").asSubclass(g0.class);
-                    uVar = new d9.u() { // from class: u2.p
-                        @Override // d9.u
-                        public final Object get() {
-                            switch (i11) {
-                                case 0:
-                                    return r.e((Class) asSubclass2, bVar);
-                                case 1:
-                                    return r.e((Class) asSubclass2, bVar);
-                                case 2:
-                                    return r.e((Class) asSubclass2, bVar);
-                                default:
-                                    return new z0(bVar, ((q) asSubclass2).a);
-                            }
-                        }
-                    };
-                }
-                uVar2 = uVar;
-            } else {
-                final Class asSubclass3 = DashMediaSource$Factory.class.asSubclass(g0.class);
-                final int i14 = 0;
-                uVar2 = new d9.u() { // from class: u2.p
-                    @Override // d9.u
-                    public final Object get() {
-                        switch (i14) {
-                            case 0:
-                                return r.e((Class) asSubclass3, bVar);
-                            case 1:
-                                return r.e((Class) asSubclass3, bVar);
-                            case 2:
-                                return r.e((Class) asSubclass3, bVar);
-                            default:
-                                return new z0(bVar, ((q) asSubclass3).a);
-                        }
-                    }
-                };
+        if (Objects.equals(p0Var2.b.b, "application/x-image-uri")) {
+            long j11 = p0Var2.b.h;
+            String str3 = e2.n0.a;
+            throw null;
+        }
+        b2.k0 k0Var = p0Var2.b;
+        int K = e2.n0.K(k0Var.a, k0Var.b);
+        if (p0Var2.b.h != -9223372036854775807L) {
+            c3.m mVar = this.a.a;
+            synchronized (mVar) {
+                mVar.e = 1;
             }
-            hashMap2.put(Integer.valueOf(i10), uVar2);
+            p.a(this.a);
         }
-        g0 g0Var2 = (g0) uVar2.get();
-        g0Var2.d(this.f);
-        g0Var2.b(this.e);
-        g0Var2.c(this.g);
-        hashMap.put(Integer.valueOf(i10), g0Var2);
-        return g0Var2;
+        try {
+            f0 b10 = this.a.b(K);
+            b2.i0 a2 = p0Var2.c.a();
+            b2.j0 j0Var = p0Var2.c;
+            if (j0Var.a == -9223372036854775807L) {
+                a2.a = this.d;
+            }
+            if (j0Var.d == -3.4028235E38f) {
+                a2.d = this.g;
+            }
+            if (j0Var.e == -3.4028235E38f) {
+                a2.e = this.h;
+            }
+            if (j0Var.b == -9223372036854775807L) {
+                a2.b = this.e;
+            }
+            if (j0Var.c == -9223372036854775807L) {
+                a2.c = this.f;
+            }
+            b2.j0 j0Var2 = new b2.j0(a2);
+            if (j0Var2.equals(p0Var2.c)) {
+                uri = null;
+                z10 = true;
+                z11 = false;
+            } else {
+                b2.g0 g0Var2 = new b2.g0();
+                List list = Collections.EMPTY_LIST;
+                f9.i0 i0Var = f9.s1.e;
+                b2.l0 l0Var = b2.l0.d;
+                b2.f0 f0Var = p0Var2.e;
+                b2.d0 d0Var = new b2.d0();
+                d0Var.a = f0Var.b;
+                d0Var.b = f0Var.d;
+                d0Var.c = f0Var.e;
+                d0Var.d = f0Var.f;
+                d0Var.e = f0Var.g;
+                d0Var.f = f0Var.h;
+                String str4 = p0Var2.a;
+                b2.s0 s0Var = p0Var2.d;
+                p0Var2.c.a();
+                b2.l0 l0Var2 = p0Var2.f;
+                b2.k0 k0Var2 = p0Var2.b;
+                if (k0Var2 != null) {
+                    String str5 = k0Var2.f;
+                    String str6 = k0Var2.b;
+                    Uri uri3 = k0Var2.a;
+                    list = k0Var2.e;
+                    i0Var = k0Var2.g;
+                    uri = null;
+                    b2.h0 h0Var = k0Var2.c;
+                    if (h0Var != null) {
+                        z11 = false;
+                        b2.g0 g0Var3 = new b2.g0();
+                        z10 = true;
+                        g0Var3.a = h0Var.a;
+                        g0Var3.b = h0Var.b;
+                        g0Var3.c = h0Var.c;
+                        g0Var3.d = h0Var.d;
+                        g0Var3.e = h0Var.e;
+                        g0Var3.f = h0Var.f;
+                        g0Var3.g = h0Var.g;
+                        g0Var3.h = h0Var.h;
+                        g0Var = g0Var3;
+                    } else {
+                        z10 = true;
+                        z11 = false;
+                        g0Var = new b2.g0();
+                    }
+                    b2.c0 c0Var2 = k0Var2.d;
+                    j10 = k0Var2.h;
+                    c0Var = c0Var2;
+                    str = str6;
+                    uri2 = uri3;
+                    str2 = str5;
+                    g0Var2 = g0Var;
+                } else {
+                    uri = null;
+                    z10 = true;
+                    z11 = false;
+                    j10 = -9223372036854775807L;
+                    uri2 = null;
+                    str = null;
+                    c0Var = null;
+                    str2 = null;
+                }
+                List list2 = list;
+                f9.i0 i0Var2 = i0Var;
+                b2.i0 a10 = j0Var2.a();
+                yb.p((g0Var2.b == null || g0Var2.a != null) ? z10 : z11 ? 1 : 0);
+                b2.k0 k0Var3 = uri2 != null ? new b2.k0(uri2, str, g0Var2.a != null ? new b2.h0(g0Var2) : uri, c0Var, list2, str2, i0Var2, j10) : uri;
+                if (str4 == null) {
+                    str4 = "";
+                }
+                String str7 = str4;
+                b2.f0 f0Var2 = new b2.f0(d0Var);
+                b2.j0 j0Var3 = new b2.j0(a10);
+                if (s0Var == null) {
+                    s0Var = b2.s0.L;
+                }
+                p0Var2 = new b2.p0(str7, f0Var2, k0Var3, j0Var3, s0Var, l0Var2);
+            }
+            a a11 = b10.a(p0Var2);
+            f9.i0 i0Var3 = p0Var2.b.g;
+            if (!i0Var3.isEmpty()) {
+                a[] aVarArr = new a[i0Var3.size() + 1];
+                aVarArr[z11 ? 1 : 0] = a11;
+                for (int i10 = z11 ? 1 : 0; i10 < i0Var3.size(); i10++) {
+                    if (this.i) {
+                        b2.w wVar = new b2.w();
+                        wVar.r = b2.w0.n(((b2.o0) i0Var3.get(i10)).b);
+                        wVar.d = ((b2.o0) i0Var3.get(i10)).c;
+                        wVar.e = ((b2.o0) i0Var3.get(i10)).d;
+                        wVar.f = ((b2.o0) i0Var3.get(i10)).e;
+                        wVar.b = ((b2.o0) i0Var3.get(i10)).f;
+                        wVar.a = ((b2.o0) i0Var3.get(i10)).g;
+                        b2.x xVar = new b2.x(wVar);
+                        zg1 zg1Var = new zg1(16, this, xVar);
+                        rf.b bVar = this.b;
+                        org.telegram.ui.Components.voip.j1 j1Var = new org.telegram.ui.Components.voip.j1(zg1Var, 22);
+                        k6.c cVar = new k6.c(8);
+                        u7.s sVar = new u7.s(26);
+                        if (this.c.i1(xVar)) {
+                            b2.w a12 = xVar.a();
+                            a12.r = b2.w0.n("application/x-media3-cues");
+                            a12.j = xVar.s;
+                            a12.P = this.c.B0(xVar);
+                            xVar = new b2.x(a12);
+                        }
+                        b2.x xVar2 = xVar;
+                        int i11 = i10 + 1;
+                        String uri4 = ((b2.o0) i0Var3.get(i10)).a.toString();
+                        b2.d0 d0Var2 = new b2.d0();
+                        b2.g0 g0Var4 = new b2.g0();
+                        List list3 = Collections.EMPTY_LIST;
+                        f9.s1 s1Var = f9.s1.e;
+                        b2.i0 i0Var4 = new b2.i0();
+                        b2.l0 l0Var3 = b2.l0.d;
+                        Uri parse = uri4 == null ? uri : Uri.parse(uri4);
+                        yb.p((g0Var4.b == null || g0Var4.a != null) ? z10 : z11 ? 1 : 0);
+                        b2.k0 k0Var4 = parse != null ? new b2.k0(parse, null, g0Var4.a != null ? new b2.h0(g0Var4) : uri, null, list3, null, s1Var, -9223372036854775807L) : uri;
+                        b2.p0 p0Var3 = new b2.p0("", new b2.f0(d0Var2), k0Var4, new b2.j0(i0Var4), b2.s0.L, l0Var3);
+                        k0Var4.getClass();
+                        aVarArr[i11] = new y0(p0Var3, bVar, j1Var, cVar.u(p0Var3), sVar, 1048576, xVar2);
+                    } else {
+                        rf.b bVar2 = this.b;
+                        bVar2.getClass();
+                        aVarArr[i10 + 1] = new n1((b2.o0) i0Var3.get(i10), bVar2, new u7.s(26));
+                    }
+                }
+                a11 = new o0(aVarArr);
+            }
+            b2.f0 f0Var3 = p0Var2.e;
+            if (f0Var3.b != 0 || f0Var3.d != Long.MIN_VALUE || f0Var3.f) {
+                e eVar = new e(a11);
+                long j12 = f0Var3.b;
+                if (j12 >= 0) {
+                    z11 = z10;
+                }
+                yb.g(z11);
+                yb.p(!eVar.h);
+                eVar.b = j12;
+                long j13 = f0Var3.d;
+                yb.p(!eVar.h);
+                eVar.c = j13;
+                boolean z12 = !f0Var3.g;
+                yb.p(!eVar.h);
+                eVar.d = z12;
+                boolean z13 = f0Var3.e;
+                yb.p(!eVar.h);
+                eVar.e = z13;
+                boolean z14 = f0Var3.f;
+                yb.p(!eVar.h);
+                eVar.f = z14;
+                boolean z15 = f0Var3.h;
+                yb.p(!eVar.h);
+                eVar.g = z15;
+                yb.p(!eVar.h);
+                eVar.h = z10;
+                a11 = new h(eVar);
+            }
+            p0Var2.b.getClass();
+            if (p0Var2.b.d == null) {
+                return a11;
+            }
+            e2.a.l("DMediaSourceFactory", "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
+            return a11;
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    @Override // u2.f0
+    public final f0 b(qb.a aVar) {
+        this.c = aVar;
+        p pVar = this.a;
+        pVar.f = aVar;
+        c3.m mVar = pVar.a;
+        synchronized (mVar) {
+            mVar.c = aVar;
+        }
+        Iterator it = pVar.c.values().iterator();
+        while (it.hasNext()) {
+            ((f0) it.next()).b(aVar);
+        }
+        return this;
+    }
+
+    @Override // u2.f0
+    public final f0 c(boolean z10) {
+        this.i = z10;
+        p pVar = this.a;
+        pVar.e = z10;
+        c3.m mVar = pVar.a;
+        synchronized (mVar) {
+            mVar.b = z10;
+        }
+        Iterator it = pVar.c.values().iterator();
+        while (it.hasNext()) {
+            ((f0) it.next()).c(z10);
+        }
+        return this;
+    }
+
+    @Override // u2.f0
+    public final f0 d(int i10) {
+        p pVar = this.a;
+        pVar.g = i10;
+        c3.m mVar = pVar.a;
+        synchronized (mVar) {
+            mVar.d = i10;
+        }
+        return this;
     }
 }

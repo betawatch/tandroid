@@ -1,69 +1,127 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.os.Bundle;
+import android.view.View;
+import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class h31 implements org.telegram.ui.Components.gp0 {
-    public final /* synthetic */ org.telegram.ui.Components.hp0 a;
-    public final /* synthetic */ k31 b;
-    public final /* synthetic */ k31 c;
-    public final /* synthetic */ k31 d;
-    public final /* synthetic */ i31 e;
+public final /* synthetic */ class h31 implements org.telegram.ui.Components.am0, org.telegram.ui.Components.cm0, ux {
+    public final /* synthetic */ SaveToGallerySettingsActivity a;
 
-    public h31(i31 i31Var, org.telegram.ui.Components.hp0 hp0Var, k31 k31Var, k31 k31Var2, k31 k31Var3) {
-        this.e = i31Var;
-        this.a = hp0Var;
-        this.b = k31Var;
-        this.c = k31Var2;
-        this.d = k31Var3;
+    public /* synthetic */ h31(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
+        this.a = saveToGallerySettingsActivity;
     }
 
-    @Override // org.telegram.ui.Components.gp0
-    public final void L(float f7, boolean z10) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
-        boolean isAttachedToWindow = this.a.isAttachedToWindow();
-        long j10 = f7 > 0.7f ? (long) ((4089446400L * ((f7 - 0.7f) / 0.3f)) + SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) : (long) ((104333312 * (f7 / 0.7f)) + 524288.0f);
-        k31 k31Var = this.d;
-        k31 k31Var2 = this.b;
-        k31 k31Var3 = this.c;
-        if (f7 >= 1.0f) {
-            k31Var2.e(false, isAttachedToWindow);
-            k31Var3.e(false, isAttachedToWindow);
-            k31Var.e(true, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(k31Var3, false, 0.8f, isAttachedToWindow);
-        } else if (f7 == 0.0f) {
-            k31Var2.e(true, isAttachedToWindow);
-            k31Var3.e(false, isAttachedToWindow);
-            k31Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(k31Var3, false, 0.8f, isAttachedToWindow);
+    @Override // org.telegram.ui.ux
+    public /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ux
+    public /* synthetic */ boolean K(cy cyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.am0
+    public /* synthetic */ boolean c1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.am0
+    public void e(float f7, float f10, int i10, View view) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        ArrayList arrayList = saveToGallerySettingsActivity.s;
+        if (i10 == saveToGallerySettingsActivity.e) {
+            saveToGallerySettingsActivity.Z().savePhoto = !r11.savePhoto;
+            saveToGallerySettingsActivity.a0();
+            saveToGallerySettingsActivity.b0();
+            return;
+        }
+        if (i10 == saveToGallerySettingsActivity.f) {
+            saveToGallerySettingsActivity.Z().saveVideo = !r11.saveVideo;
+            saveToGallerySettingsActivity.a0();
+            saveToGallerySettingsActivity.b0();
+            return;
+        }
+        if (((k31) arrayList.get(i10)).a != 1) {
+            if (((k31) arrayList.get(i10)).a == 2) {
+                Bundle bundle = new Bundle();
+                bundle.putLong("dialog_id", ((k31) arrayList.get(i10)).c.dialogId);
+                bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
+                saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle));
+                return;
+            }
+            if (((k31) arrayList.get(i10)).a == 4) {
+                org.telegram.ui.ActionBar.e2 e2Var = org.telegram.ui.Components.g5.N(saveToGallerySettingsActivity.getParentActivity(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new my0(saveToGallerySettingsActivity, 12), null).a;
+                e2Var.show();
+                e2Var.i();
+                return;
+            }
+            return;
+        }
+        Bundle bundle2 = new Bundle();
+        bundle2.putBoolean("onlySelect", true);
+        bundle2.putBoolean("checkCanWrite", false);
+        int i11 = saveToGallerySettingsActivity.a;
+        if (i11 == 2) {
+            bundle2.putInt("dialogsType", 6);
+        } else if (i11 == 4) {
+            bundle2.putInt("dialogsType", 5);
         } else {
-            k31Var3.c(LocaleController.formatString("UpToFileSize", R.string.UpToFileSize, AndroidUtilities.formatFileSize(j10, true, false)), false, true);
-            k31Var2.e(false, isAttachedToWindow);
-            k31Var3.e(true, isAttachedToWindow);
-            k31Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(k31Var3, true, 0.8f, isAttachedToWindow);
+            bundle2.putInt("dialogsType", 4);
         }
-        if (z10) {
-            saveToGallerySettingsActivity.Y().limitVideo = j10;
-            saveToGallerySettingsActivity.Z();
+        bundle2.putBoolean("allowGlobalSearch", false);
+        cy cyVar = new cy(bundle2);
+        cyVar.C2 = new h31(saveToGallerySettingsActivity);
+        saveToGallerySettingsActivity.presentFragment(cyVar);
+    }
+
+    @Override // org.telegram.ui.ux
+    public boolean v(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, af1 af1Var) {
+        Bundle bundle = new Bundle();
+        bundle.putLong("dialog_id", ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
+        saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle), true);
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public /* synthetic */ void g() {
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public /* synthetic */ void o(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public boolean e(float f7, float f10, int i10, View view) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        ArrayList arrayList = saveToGallerySettingsActivity.s;
+        if (((k31) arrayList.get(i10)).a != 2) {
+            return false;
         }
+        SaveToGallerySettingsHelper.DialogException dialogException = ((k31) arrayList.get(i10)).c;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(saveToGallerySettingsActivity.getParentActivity(), null);
+        org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.EditException), false, null);
+        org.telegram.ui.ActionBar.g1 c11 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteException), false, null);
+        int i11 = org.telegram.ui.ActionBar.y6.p7;
+        c11.d(org.telegram.ui.ActionBar.y6.x0(null, i11, false), org.telegram.ui.ActionBar.y6.x0(null, i11, false));
+        org.telegram.ui.ActionBar.o1 P = org.telegram.ui.Components.g5.P(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f7, f10);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setParentWindow(P);
+        c10.setOnClickListener(new bi.pa(saveToGallerySettingsActivity, P, i10, 17));
+        c11.setOnClickListener(new z(saveToGallerySettingsActivity, P, dialogException, 15));
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.gp0
-    public final /* synthetic */ int Y() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.gp0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.gp0
-    public final void v() {
+    @Override // org.telegram.ui.Components.am0
+    public /* synthetic */ void l0(View view, float f7, float f10) {
     }
 }

@@ -1,47 +1,28 @@
 package cb;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import kotlin.jvm.internal.i;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e {
-    public final Boolean a;
-    public final Double b;
-    public final Integer c;
-    public final Integer d;
-    public final Long e;
+    public final String a;
 
-    public e(Boolean bool, Double d, Integer num, Integer num2, Long l4) {
-        this.a = bool;
-        this.b = d;
-        this.c = num;
-        this.d = num2;
-        this.e = l4;
+    public e(String str) {
+        this.a = str;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof e)) {
-            return false;
-        }
-        e eVar = (e) obj;
-        return kotlin.jvm.internal.i.a(this.a, eVar.a) && kotlin.jvm.internal.i.a(this.b, eVar.b) && kotlin.jvm.internal.i.a(this.c, eVar.c) && kotlin.jvm.internal.i.a(this.d, eVar.d) && kotlin.jvm.internal.i.a(this.e, eVar.e);
+        return (obj instanceof e) && i.a(this.a, ((e) obj).a);
     }
 
     public final int hashCode() {
-        Boolean bool = this.a;
-        int hashCode = (bool == null ? 0 : bool.hashCode()) * 31;
-        Double d = this.b;
-        int hashCode2 = (hashCode + (d == null ? 0 : d.hashCode())) * 31;
-        Integer num = this.c;
-        int hashCode3 = (hashCode2 + (num == null ? 0 : num.hashCode())) * 31;
-        Integer num2 = this.d;
-        int hashCode4 = (hashCode3 + (num2 == null ? 0 : num2.hashCode())) * 31;
-        Long l4 = this.e;
-        return hashCode4 + (l4 != null ? l4.hashCode() : 0);
+        return this.a.hashCode();
     }
 
     public final String toString() {
-        return "SessionConfigs(sessionEnabled=" + this.a + ", sessionSamplingRate=" + this.b + ", sessionRestartTimeout=" + this.c + ", cacheDuration=" + this.d + ", cacheUpdatedTime=" + this.e + ')';
+        return "SessionDetails(sessionId=" + this.a + ')';
     }
 }

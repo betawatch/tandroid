@@ -1,69 +1,44 @@
 package org.telegram.messenger;
 
-import android.os.CancellationSignal;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.SendMessagesHelper;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ NotificationsController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ fh(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ fh(NotificationsController notificationsController, int i10, int i11) {
+        this.a = i11;
+        this.b = notificationsController;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((NotificationsSettingsFacade) this.b).lambda$applyDialogNotificationsSettings$0();
+                this.b.lambda$processSeenStoryReactions$15(this.c);
                 break;
             case 1:
-                ((CancellationSignal) this.b).cancel();
+                this.b.lambda$setLastOnlineFromOtherDevice$6(this.c);
                 break;
             case 2:
-                ((ProxyRotationController) this.b).lambda$new$2();
+                this.b.lambda$processDialogsUpdateRead$30(this.c);
                 break;
             case 3:
-                ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$1();
+                this.b.lambda$processNewMessages$25(this.c);
                 break;
             case 4:
-                ((RichMessageLayout.PreviewView) this.b).lambda$onTouchEvent$0();
+                this.b.lambda$processNewMessages$27(this.c);
                 break;
             case 5:
-                ((RichMessageLayout.RichButtonRowBlock) this.b).invalidate();
+                this.b.lambda$removeDeletedMessagesFromNotifications$10(this.c);
                 break;
             case 6:
-                ((RichMessageLayout.RichButtonSpan) this.b).invalidate();
-                break;
-            case 7:
-                RichMessageLayout.RichUnsupportedBlock.lambda$new$0((RichMessageLayout) this.b);
-                break;
-            case 8:
-                ((RichMessageLayout.Text) this.b).lambda$scheduleLongPress$2();
-                break;
-            case 9:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$25();
-                break;
-            case 10:
-                ((SendMessagesHelper) this.b).lambda$new$0();
-                break;
-            case 11:
-                ((MessagesStorage.StringCallback) this.b).run(null);
-                break;
-            case 12:
-                ((SendMessagesHelper.LocationProvider) this.b).lambda$start$0();
-                break;
-            case 13:
-                ((TelegramMediaSession) this.b).onAccountSwitched();
+                this.b.lambda$removeDeletedHisoryFromNotifications$13(this.c);
                 break;
             default:
-                ((TranslateController) this.b).loadTranslatingDialogsCached();
+                this.b.lambda$processLoadedUnreadMessages$33(this.c);
                 break;
         }
     }

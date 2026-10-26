@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wa implements Runnable {
     public final /* synthetic */ int a;
@@ -19,28 +19,28 @@ public final /* synthetic */ class wa implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdates$382(this.c);
+                this.b.lambda$processUpdates$384(this.c);
                 break;
             case 1:
-                this.b.lambda$processUpdateArray$400(this.c);
+                this.b.lambda$processUpdateArray$402(this.c);
                 break;
             case 2:
-                this.b.lambda$checkChatInviter$372(this.c);
+                this.b.lambda$processUpdateArray$403(this.c);
                 break;
             case 3:
-                this.b.lambda$processUpdates$381(this.c);
+                this.b.lambda$checkChatInviter$374(this.c);
                 break;
             case 4:
-                this.b.lambda$processUpdateArray$401(this.c);
+                this.b.lambda$processUpdates$383(this.c);
                 break;
             case 5:
-                this.b.lambda$getChannelDifference$340(this.c);
+                this.b.lambda$getChannelDifference$342(this.c);
                 break;
             case 6:
                 this.b.lambda$reloadMentionsCountForChannels$221(this.c);
                 break;
             default:
-                this.b.lambda$checkChatInviter$371(this.c);
+                this.b.lambda$checkChatInviter$373(this.c);
                 break;
         }
     }

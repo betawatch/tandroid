@@ -16,25 +16,25 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Timer;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.gb1;
 import org.telegram.ui.LaunchActivity;
-import w7.z5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Timer.Task b;
     public final /* synthetic */ boolean[] c;
     public final /* synthetic */ Timer d;
-    public final /* synthetic */ i2 e;
+    public final /* synthetic */ h2 e;
     public final /* synthetic */ Utilities.Callback f;
 
-    public /* synthetic */ z1(Timer.Task task, boolean[] zArr, Timer timer, i2 i2Var, Utilities.Callback callback, int i10) {
+    public /* synthetic */ z1(Timer.Task task, boolean[] zArr, Timer timer, h2 h2Var, Utilities.Callback callback, int i10) {
         this.a = i10;
         this.b = task;
         this.c = zArr;
         this.d = timer;
-        this.e = i2Var;
+        this.e = h2Var;
         this.f = callback;
     }
 
@@ -45,16 +45,16 @@ public final /* synthetic */ class z1 implements Utilities.Callback {
                 Timer.Task task = this.b;
                 boolean[] zArr = this.c;
                 Timer timer = this.d;
-                i2 i2Var = this.e;
+                h2 h2Var = this.e;
                 Utilities.Callback callback = this.f;
                 InputStream inputStream = (InputStream) obj;
                 Timer.done(task);
                 if (!zArr[0]) {
                     Timer.Task start = Timer.start(timer, "readHTML");
-                    String str = i2Var.a;
-                    final z1 z1Var = new z1(start, zArr, timer, i2Var, callback, 1);
+                    String str = h2Var.a;
+                    final z1 z1Var = new z1(start, zArr, timer, h2Var, callback, 1);
                     if (inputStream != null) {
-                        Context context = LaunchActivity.J1;
+                        Context context = LaunchActivity.I1;
                         if (context == null) {
                             context = ApplicationLoader.applicationContext;
                         }
@@ -65,8 +65,8 @@ public final /* synthetic */ class z1 implements Utilities.Callback {
                                 z1Var.run(null);
                                 break;
                             } else {
-                                final c2 c2Var = new c2(context);
-                                ((ViewGroup) rootView).addView(c2Var);
+                                final b2 b2Var = new b2(context);
+                                ((ViewGroup) rootView).addView(b2Var);
                                 final WebView webView = new WebView(context);
                                 WebSettings settings = webView.getSettings();
                                 settings.setAllowContentAccess(false);
@@ -78,14 +78,14 @@ public final /* synthetic */ class z1 implements Utilities.Callback {
                                 settings.setDomStorageEnabled(false);
                                 settings.setAllowFileAccessFromFileURLs(false);
                                 settings.setAllowUniversalAccessFromFileURLs(false);
-                                webView.setWebViewClient(new d2(i2Var, inputStream));
-                                webView.setWebChromeClient(new e2());
-                                c2Var.addView(webView, z5.c(-1.0f, -1));
+                                webView.setWebViewClient(new c2(h2Var, inputStream));
+                                webView.setWebChromeClient(new d2());
+                                b2Var.addView(webView, gb1.g(-1.0f, -1));
                                 final boolean[] zArr2 = {false};
                                 webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
                                     @JavascriptInterface
                                     public void done(String str2) {
-                                        AndroidUtilities.runOnUIThread(new b0(zArr2, webView, c2Var, str2, z1Var, 6));
+                                        AndroidUtilities.runOnUIThread(new b0(zArr2, webView, b2Var, str2, z1Var, 6));
                                     }
                                 }, "Instant");
                                 webView.loadUrl(str);
@@ -105,23 +105,23 @@ public final /* synthetic */ class z1 implements Utilities.Callback {
                 Timer.Task task2 = this.b;
                 boolean[] zArr3 = this.c;
                 Timer timer2 = this.d;
-                i2 i2Var2 = this.e;
+                h2 h2Var2 = this.e;
                 Utilities.Callback callback2 = this.f;
                 JSONObject jSONObject = (JSONObject) obj;
                 Timer.done(task2);
                 if (!zArr3[0]) {
                     Timer.Task start2 = Timer.start(timer2, "parseJSON");
                     try {
-                        i2Var2.c = i2Var2.i(i2Var2.a, jSONObject);
+                        h2Var2.c = h2Var2.i(h2Var2.a, jSONObject);
                     } catch (Exception e) {
                         Timer.log(timer2, "error: " + e);
                         FileLog.e(e);
                     }
                     Timer.done(start2);
-                    callback2.run(i2Var2);
-                    TLRPC.TL_webPage tL_webPage = i2Var2.c;
+                    callback2.run(h2Var2);
+                    TLRPC.TL_webPage tL_webPage = h2Var2.c;
                     if (tL_webPage != null) {
-                        i2.e.put(tL_webPage, i2Var2);
+                        h2.e.put(tL_webPage, h2Var2);
                     }
                     Timer.finish(timer2);
                     break;

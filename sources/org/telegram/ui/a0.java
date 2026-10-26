@@ -4,26 +4,26 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k4 b;
+    public final /* synthetic */ j4 b;
 
-    public /* synthetic */ a0(k4 k4Var, int i10) {
+    public /* synthetic */ a0(j4 j4Var, int i10) {
         this.a = i10;
-        this.b = k4Var;
+        this.b = j4Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                k4 k4Var = this.b;
-                k4Var.getClass();
+                j4 j4Var = this.b;
+                j4Var.getClass();
                 try {
-                    if (k4Var.f0.getParent() != null) {
-                        ((WindowManager) k4Var.L.getSystemService("window")).removeView(k4Var.f0);
+                    if (j4Var.f0.getParent() != null) {
+                        ((WindowManager) j4Var.L.getSystemService("window")).removeView(j4Var.f0);
                         break;
                     }
                 } catch (Exception e) {
@@ -32,12 +32,12 @@ public final /* synthetic */ class a0 implements Runnable {
                 }
                 break;
             case 1:
-                k4 k4Var2 = this.b;
-                l0 l0Var = k4Var2.g0;
-                if (l0Var != null && k4Var2.f0 != null) {
-                    l0Var.setLayerType(0, null);
-                    k4Var2.Z = 0;
-                    AndroidUtilities.hideKeyboard(k4Var2.L.getCurrentFocus());
+                j4 j4Var2 = this.b;
+                k0 k0Var = j4Var2.g0;
+                if (k0Var != null && j4Var2.f0 != null) {
+                    k0Var.setLayerType(0, null);
+                    j4Var2.Z = 0;
+                    AndroidUtilities.hideKeyboard(j4Var2.L.getCurrentFocus());
                     break;
                 }
                 break;
@@ -45,13 +45,13 @@ public final /* synthetic */ class a0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new a0(this.b, 11));
                 break;
             case 3:
-                k4 k4Var3 = this.b;
-                float currentProgress = 0.7f - k4Var3.h0.d0.getCurrentProgress();
+                j4 j4Var3 = this.b;
+                float currentProgress = 0.7f - j4Var3.h0.d0.getCurrentProgress();
                 if (currentProgress > 0.0f) {
                     float f7 = currentProgress < 0.25f ? 0.01f : 0.02f;
-                    org.telegram.ui.Components.h90 h90Var = k4Var3.h0.d0;
-                    h90Var.a(h90Var.getCurrentProgress() + f7, true);
-                    AndroidUtilities.runOnUIThread(k4Var3.j0, 100L);
+                    org.telegram.ui.Components.i90 i90Var = j4Var3.h0.d0;
+                    i90Var.a(i90Var.getCurrentProgress() + f7, true);
+                    AndroidUtilities.runOnUIThread(j4Var3.j0, 100L);
                     break;
                 }
                 break;
@@ -65,12 +65,12 @@ public final /* synthetic */ class a0 implements Runnable {
                 this.b.K.dismiss(true);
                 break;
             case 7:
-                k4 k4Var4 = this.b;
-                l0 l0Var2 = k4Var4.g0;
-                if (l0Var2 != null) {
-                    l0Var2.setLayerType(0, null);
-                    k4Var4.Z = 0;
-                    k4Var4.M();
+                j4 j4Var4 = this.b;
+                k0 k0Var2 = j4Var4.g0;
+                if (k0Var2 != null) {
+                    k0Var2.setLayerType(0, null);
+                    j4Var4.Z = 0;
+                    j4Var4.M();
                     break;
                 }
                 break;
@@ -81,11 +81,11 @@ public final /* synthetic */ class a0 implements Runnable {
                 this.b.h0();
                 break;
             case 10:
-                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                 if (U != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                    m2Var.a = true;
-                    U.showAsSheet(new org.telegram.ui.web.y1(new q(this.b, 3)), m2Var);
+                    org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
+                    p2Var.a = true;
+                    U.showAsSheet(new org.telegram.ui.web.y1(new q(this.b, 3)), p2Var);
                     break;
                 }
                 break;

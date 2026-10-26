@@ -4,46 +4,46 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class kl extends s4.r0 {
-    public final /* synthetic */ rl a;
+public final class kl extends s4.u0 {
+    public final /* synthetic */ sl a;
 
-    public kl(rl rlVar) {
-        this.a = rlVar;
+    public kl(sl slVar) {
+        this.a = slVar;
     }
 
-    @Override // s4.r0
+    @Override // s4.u0
     public final void a(RecyclerView recyclerView, int i10) {
-        wl0 wl0Var;
-        rl rlVar = this.a;
-        ai.u1 u1Var = rlVar.N;
-        ti tiVar = rlVar.b;
+        vl0 vl0Var;
+        sl slVar = this.a;
+        bi.r1 r1Var = slVar.N;
+        ti tiVar = slVar.b;
         boolean z10 = i10 != 0;
-        rlVar.J = z10;
-        if (!z10 && rlVar.H != null) {
-            rlVar.H = null;
+        slVar.J = z10;
+        if (!z10 && slVar.H != null) {
+            slVar.H = null;
         }
         if (i10 == 0) {
             int dp = AndroidUtilities.dp(13.0f);
             int backgroundPaddingTop = tiVar.getBackgroundPaddingTop();
-            if (((tiVar.e2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (wl0Var = (wl0) u1Var.K(0)) == null) {
+            if (((tiVar.e2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (vl0Var = (vl0) r1Var.K(0)) == null) {
                 return;
             }
-            View view = wl0Var.a;
-            if (view.getTop() > rlVar.y0 - rlVar.x0) {
-                u1Var.v0(0, view.getTop() - (rlVar.y0 - rlVar.x0), null);
+            View view = vl0Var.a;
+            if (view.getTop() > slVar.x0 - slVar.w0) {
+                r1Var.w0(0, view.getTop() - (slVar.x0 - slVar.w0), null);
             }
         }
     }
 
-    @Override // s4.r0
+    @Override // s4.u0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        rl rlVar = this.a;
-        rlVar.i0();
-        if (rlVar.H != null) {
-            rlVar.I += i11;
+        sl slVar = this.a;
+        slVar.h0();
+        if (slVar.H != null) {
+            slVar.I += i11;
         }
-        rlVar.b.f2(rlVar, i11);
+        slVar.b.e2(slVar, i11);
     }
 }

@@ -1,30 +1,29 @@
 package yb;
 
-import java.util.Arrays;
-import n6.l;
-import o1.j;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+import o6.l;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class c {
-    public final float a;
+public final class c {
+    public final HashMap a = new HashMap();
 
-    public c(j jVar) {
-        this.a = jVar.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public c(Set set) {
+        HashMap hashMap = new HashMap();
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            b bVar = (b) it.next();
+            bVar.getClass();
+            if (this.a.containsKey(ac.b.class)) {
+                Integer num = (Integer) hashMap.get(ac.b.class);
+                l.h(num);
+                if (num.intValue() <= 0) {
+                }
+            }
+            this.a.put(ac.b.class, bVar.a);
+            hashMap.put(ac.b.class, 0);
         }
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        c cVar = (c) obj;
-        return getClass().equals(cVar.getClass()) && Float.compare(this.a, cVar.a) == 0 && l.l(null, null);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{getClass(), Float.valueOf(this.a), null});
     }
 }

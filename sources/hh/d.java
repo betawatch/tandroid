@@ -1,66 +1,108 @@
 package hh;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import ih.k;
+import android.graphics.RecordingCanvas;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
+import android.os.Build;
+import android.support.v4.media.session.x;
+import ch.f;
+import ch.h;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public abstract class d {
-    public static final Matrix a = new Matrix();
-    public static final RectF b = new RectF();
-    public static final RectF c = new RectF();
+public final class d implements a {
+    public final a a;
+    public h c;
+    public f d;
+    public int e;
+    public a f;
+    public oi.c h;
+    public boolean n;
+    public boolean r;
+    public RecordingCanvas s;
+    public final se.b v = new se.b();
+    public final RenderNode b = x.c();
 
-    public static void a(ch.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
-        b(aVar, canvas, rectF, view, viewGroup, 255);
+    public d(a aVar) {
+        this.a = aVar;
     }
 
-    public static void b(ch.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i10) {
-        if (i10 <= 0 || aVar == null) {
+    public final RecordingCanvas a(int i10, int i11) {
+        if (this.r) {
+            throw new IllegalStateException();
+        }
+        this.r = true;
+        this.b.setPosition(0, 0, i10, i11);
+        RecordingCanvas beginRecording = this.b.beginRecording(i10, i11);
+        this.s = beginRecording;
+        return beginRecording;
+    }
+
+    public final void b() {
+        if (!this.r) {
+            throw new IllegalStateException();
+        }
+        this.b.endRecording();
+        this.r = false;
+        this.s = null;
+    }
+
+    public final boolean c(int i10, int i11) {
+        return (this.b.hasDisplayList() && this.b.getWidth() == i10 && this.b.getHeight() == i11) ? false : true;
+    }
+
+    public final void d(float f7) {
+        this.b.setRenderEffect(f7 > 0.0f ? RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP) : null);
+    }
+
+    public final void e(float f7, RenderEffect renderEffect) {
+        this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP), renderEffect));
+    }
+
+    @Override // hh.a
+    public final eh.d f() {
+        eh.e eVar = new eh.e(this);
+        this.v.add(eVar);
+        return eVar;
+    }
+
+    public final void g(int i10, int i11) {
+        this.b.setPosition(0, 0, i10, i11);
+    }
+
+    @Override // ri.a
+    public final void w(Canvas canvas, float f7, float f10, float f11, float f12) {
+        f fVar;
+        oi.c cVar;
+        if (!canvas.isHardwareAccelerated()) {
+            a aVar = this.a;
+            if (aVar != null) {
+                aVar.w(canvas, f7, f10, f11, f12);
+                return;
+            }
             return;
         }
-        RectF rectF2 = c;
-        if (k.c(view, viewGroup, rectF2)) {
-            float f7 = rectF2.left;
-            float f10 = rectF2.top;
-            RectF rectF3 = b;
-            rectF3.set(rectF);
-            rectF3.offset(-f7, -f10);
-            boolean z10 = (f7 == 0.0f && f10 == 0.0f) ? false : true;
-            boolean z11 = i10 != 255;
-            if (z10) {
-                canvas.save();
-                canvas.translate(f7, f10);
-            }
-            if (z11) {
-                canvas.saveLayerAlpha(rectF3, i10);
-            }
-            aVar.f(canvas, rectF3);
-            if (z11) {
-                canvas.restore();
-            }
-            if (z10) {
-                canvas.restore();
-            }
+        if (this.r) {
+            throw new IllegalStateException();
         }
-    }
-
-    public static void c(gh.b bVar, View view) {
-        Bitmap bitmap;
-        if (bVar == null || view == null || view.getWidth() == 0 || view.getHeight() == 0 || (bitmap = bVar.d) == null || bitmap.isRecycled() || bitmap.getWidth() == 0 || bitmap.getHeight() == 0) {
-            return;
+        a aVar2 = this.f;
+        if (aVar2 != null) {
+            aVar2.w(canvas, f7, f10, f11, f12);
         }
-        Matrix matrix = a;
-        matrix.reset();
-        matrix.setScale(view.getWidth() / bitmap.getWidth(), view.getHeight() / bitmap.getHeight());
-        bVar.b.set(matrix);
-    }
-
-    public static c d(dh.d dVar, int i10, int i11) {
-        return new c(i10, i11, dVar);
+        canvas.save();
+        if (!this.n) {
+            canvas.clipRect(f7, f10, f11, f12);
+        }
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 31 && (cVar = this.h) != null) {
+            cVar.w(canvas, f7, f10, f11, f12);
+        } else if (i10 < 31 || (fVar = this.d) == null) {
+            canvas.drawRenderNode(this.b);
+        } else {
+            fVar.c(canvas, this.e);
+        }
+        canvas.restore();
     }
 }

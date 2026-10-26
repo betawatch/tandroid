@@ -1,52 +1,82 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t81 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u91 b;
+public final class t81 extends org.telegram.ui.Components.u91 {
+    public boolean V;
+    public final /* synthetic */ w91 W;
 
-    public /* synthetic */ t81(u91 u91Var, int i10) {
-        this.a = i10;
-        this.b = u91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t81(w91 w91Var, Activity activity) {
+        super(activity, null);
+        this.W = w91Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        u91 u91Var;
-        bh.f fVar2;
-        u91 u91Var2;
-        bh.f fVar3;
-        switch (this.a) {
-            case 0:
-                u91 u91Var3 = this.b;
-                if (u91Var3.r0.size() != u91Var3.s0.size() && !u91Var3.w0 && u91Var3.U.N0() > u91Var3.X.c0 - 20) {
-                    u91Var3.h0();
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            w91 w91Var = this.W;
+            if (w91Var.j0 != null) {
+                View currentView = getCurrentView();
+                ke keVar = w91Var.j0;
+                if (currentView == keVar) {
+                    boolean G = keVar.G(motionEvent.getX() - w91Var.j0.getX(), motionEvent.getY() - w91Var.j0.getY());
+                    keVar.Q0 = G;
+                    if (G && keVar.a1.b.canScrollHorizontally(-1)) {
+                        z10 = true;
+                        this.V = z10;
+                    }
                 }
-                if (Build.VERSION.SDK_INT >= 31 && (fVar = u91Var3.E0) != null) {
-                    fVar.f(i10, i11);
-                    u91.W(u91Var3);
-                    break;
-                }
-                break;
-            case 1:
-                if (Build.VERSION.SDK_INT >= 31 && (fVar2 = (u91Var = this.b).E0) != null) {
-                    fVar2.f(i10, i11);
-                    u91.W(u91Var);
-                    break;
-                }
-                break;
-            default:
-                if (Build.VERSION.SDK_INT >= 31 && (fVar3 = (u91Var2 = this.b).E0) != null) {
-                    fVar3.f(i10, i11);
-                    u91.W(u91Var2);
-                    break;
-                }
-                break;
+            }
+            z10 = false;
+            this.V = z10;
         }
+        try {
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if (actionMasked != 1 && actionMasked != 3) {
+                return dispatchTouchEvent;
+            }
+            this.V = false;
+            return dispatchTouchEvent;
+        } catch (Throwable th2) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.V = false;
+            }
+            throw th2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u91, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.V && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.u91, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.V && B(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public final void u() {
+        w91 w91Var = this.W;
+        w91Var.l0(w91Var.h0.getCurrentPosition(), true);
+        w91Var.m0(0.0f, false);
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public final void w(boolean z10) {
+        w91 w91Var = this.W;
+        float positionAnimated = w91Var.h0.getPositionAnimated();
+        w91Var.m0(positionAnimated, !z10);
+        if (z10) {
+            return;
+        }
+        w91Var.l0(Math.round(positionAnimated), true);
     }
 }

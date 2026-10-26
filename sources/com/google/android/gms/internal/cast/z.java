@@ -1,65 +1,13 @@
 package com.google.android.gms.internal.cast;
 
-import java.io.IOException;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z implements i5.e, c0 {
-    public static final /* synthetic */ z a = new z();
-    public static final /* synthetic */ z b = new z();
-    public static final z c = new z();
-    public static final z d = new z();
-    public static final z e = new z();
-    public static final z f = new z();
-    public static final z h = new z();
-    public static final z n = new z();
-    public static final z r = new z();
-    public static final z s = new z();
-    public static final z v = new z();
-    public static final z w = new z();
-    public static final z x = new z();
-    public static final z y = new z();
-    public static final z E = new z();
-    public static final z F = new z();
-    public static final z G = new z();
-    public static final z H = new z();
-    public static final z I = new z();
-    public static final z J = new z();
-    public static final z K = new z();
-    public static final z L = new z();
-    public static final z M = new z();
-    public static final z N = new z();
-    public static final z O = new z();
-    public static final z P = new z();
-    public static final z Q = new z();
-    public static final z R = new z();
-    public static final z S = new z();
-    public static final z T = new z();
+public abstract class z {
+    public static final /* synthetic */ int a = 0;
 
-    @Override // i5.e
-    public Object apply(Object obj) {
-        s1 s1Var = (s1) obj;
-        try {
-            int i10 = s1Var.i();
-            byte[] bArr = new byte[i10];
-            y4 y4Var = new y4(bArr, i10);
-            i6 a2 = f6.c.a(s1.class);
-            u5 u5Var = y4Var.a;
-            if (u5Var == null) {
-                u5Var = new u5(y4Var);
-            }
-            a2.e(s1Var, u5Var);
-            if (i10 - y4Var.d == 0) {
-                return bArr;
-            }
-            throw new IllegalStateException("Did not write as much data as expected.");
-        } catch (IOException e7) {
-            throw new RuntimeException(a1.g.p("Serializing ", s1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
-        }
-    }
-
-    @Override // com.google.android.gms.internal.cast.c0
-    public Object zza() {
-        throw new IllegalStateException();
+    static {
+        Logger.getLogger(z.class.getName());
     }
 }

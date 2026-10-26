@@ -1,28 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class du implements Utilities.Callback {
-    public final /* synthetic */ iu a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class du extends ShapeDrawable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ du(iu iuVar, int i10, int i11) {
-        this.a = iuVar;
-        this.b = i10;
-        this.c = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public du(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        iu iuVar = this.a;
-        Editable text = iuVar.getText();
-        int i10 = this.b;
-        text.replace(i10, this.c, charSequence);
-        iuVar.setSelection(i10, charSequence.length() + i10);
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                if (!editTextBoldCursor.drawInMaim) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.cursorDrawn = true;
+                    break;
+                }
+            default:
+                super.draw(canvas);
+                this.b.cursorDrawn = true;
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                i10 = this.b.cursorSize;
+                return AndroidUtilities.dp(i10 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        float f7;
+        switch (this.a) {
+            case 0:
+                f7 = this.b.cursorWidth;
+                return AndroidUtilities.dp(f7);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public du(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

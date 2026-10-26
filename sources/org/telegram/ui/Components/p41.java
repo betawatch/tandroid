@@ -1,23 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class p41 extends y41 {
-    public final /* synthetic */ org.telegram.ui.kf Z;
+public final class p41 extends mm0 {
+    public final /* synthetic */ f51 f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.kf kfVar) {
-        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
-        this.Z = kfVar;
+    public p41(f51 f51Var, Context context) {
+        super(context, null);
+        this.f3 = f51Var;
     }
 
-    @Override // org.telegram.ui.Components.y41, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        super.dismiss();
-        this.Z.run();
+    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            float y3 = motionEvent.getY();
+            f51 f51Var = this.f3;
+            if (y3 < f51Var.K(true) - getTop()) {
+                f51Var.dismiss();
+                return true;
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        return true;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
+    public final void requestChildFocus(View view, View view2) {
     }
 }

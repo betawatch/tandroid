@@ -1,37 +1,38 @@
 package k3;
 
-import b2.w0;
-import e9.k0;
-import e9.l0;
-import e9.n0;
-import e9.x1;
+import a8.lg;
+import b2.x0;
+import f9.f0;
+import f9.g0;
+import f9.i0;
+import f9.s1;
 import java.io.StringReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final String[] a = {"Camera:MotionPhoto", "GCamera:MotionPhoto", "Camera:MicroVideo", "GCamera:MicroVideo"};
     public static final String[] b = {"Camera:MotionPhotoPresentationTimestampUs", "GCamera:MotionPhotoPresentationTimestampUs", "Camera:MicroVideoPresentationTimestampUs", "GCamera:MicroVideoPresentationTimestampUs"};
     public static final String[] c = {"Camera:MicroVideoOffset", "GCamera:MicroVideoOffset"};
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0060, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0060, code lost:
     
-        if (r6 == (-1)) goto L19;
+        if (r6 == (-1)) goto L20;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ad.d a(String str) {
+    public static lg a(String str) {
         XmlPullParser newPullParser = XmlPullParserFactory.newInstance().newPullParser();
         newPullParser.setInput(new StringReader(str));
         newPullParser.next();
         if (!e2.a.i(newPullParser, "x:xmpmeta")) {
-            throw w0.a(null, "Couldn't find xmp metadata");
+            throw x0.a(null, "Couldn't find xmp metadata");
         }
-        l0 l0Var = n0.b;
-        x1 x1Var = x1.e;
+        g0 g0Var = i0.b;
+        s1 s1Var = s1.e;
         long j10 = -9223372036854775807L;
         loop0: while (true) {
             newPullParser.next();
@@ -64,13 +65,13 @@ public abstract class d {
                         j10 = -9223372036854775807L;
                         while (true) {
                             if (i10 >= 2) {
-                                l0 l0Var2 = n0.b;
-                                x1Var = x1.e;
+                                g0 g0Var2 = i0.b;
+                                s1Var = s1.e;
                                 break;
                             }
                             String f11 = e2.a.f(newPullParser, c[i10]);
                             if (f11 != null) {
-                                x1Var = n0.z(new c("image/jpeg", 0L, 0L, "Primary"), new c("video/mp4", Long.parseLong(f11), 0L, "MotionPhoto"));
+                                s1Var = i0.z(new c("image/jpeg", 0L, 0L, "Primary"), new c("video/mp4", Long.parseLong(f11), 0L, "MotionPhoto"));
                                 break;
                             }
                             i10++;
@@ -78,21 +79,21 @@ public abstract class d {
                     }
                 }
             } else if (e2.a.i(newPullParser, "Container:Directory")) {
-                x1Var = b(newPullParser, "Container", "Item");
+                s1Var = b(newPullParser, "Container", "Item");
             } else if (e2.a.i(newPullParser, "GContainer:Directory")) {
-                x1Var = b(newPullParser, "GContainer", "GContainerItem");
+                s1Var = b(newPullParser, "GContainer", "GContainerItem");
             }
             if (e2.a.h(newPullParser, "x:xmpmeta")) {
-                if (!x1Var.isEmpty()) {
-                    return new ad.d(j10, x1Var, 4);
+                if (!s1Var.isEmpty()) {
+                    return new lg(j10, s1Var, 5);
                 }
             }
         }
         return null;
     }
 
-    public static x1 b(XmlPullParser xmlPullParser, String str, String str2) {
-        k0 t10 = n0.t();
+    public static s1 b(XmlPullParser xmlPullParser, String str, String str2) {
+        f0 t10 = i0.t();
         String concat = str.concat(":Item");
         String concat2 = str.concat(":Directory");
         do {
@@ -107,7 +108,7 @@ public abstract class d {
                 String f11 = e2.a.f(xmlPullParser, concat5);
                 String f12 = e2.a.f(xmlPullParser, concat6);
                 if (f7 == null || f10 == null) {
-                    return x1.e;
+                    return s1.e;
                 }
                 t10.c(new c(f7, f11 != null ? Long.parseLong(f11) : 0L, f12 != null ? Long.parseLong(f12) : 0L, f10));
             }

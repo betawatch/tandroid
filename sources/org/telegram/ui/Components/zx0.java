@@ -1,128 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.CacheFetcher;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class zx0 extends Drawable {
-    public final int a;
-    public final int b;
-    public final r5[] c;
-    public final boolean e;
-    public int d = 255;
-    public final RectF f = new RectF();
-    public boolean g = false;
+public final class zx0 extends CacheFetcher {
+    @Override // org.telegram.messenger.CacheFetcher
+    public final void getLocal(int i10, Object obj, Utilities.Callback2 callback2) {
+        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new org.telegram.ui.g4(i10, (Integer) obj, callback2, 23));
+    }
 
-    public zx0(int i10, ArrayList arrayList, boolean z10) {
-        this.e = z10;
-        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
-        this.a = max;
-        int min = Math.min(max * max, arrayList.size());
-        this.b = min;
-        this.c = new r5[min];
-        if (!arrayList.isEmpty()) {
-            MessageObject.isAnimatedEmoji((TLRPC.Document) arrayList.get(0));
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.messenger.CacheFetcher
+    public final void getRemote(int i10, Object obj, long j10, Utilities.Callback4 callback4) {
+        TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups;
+        Integer num = (Integer) obj;
+        if (num.intValue() == 1) {
+            TLRPC.TL_messages_getEmojiStatusGroups tL_messages_getEmojiStatusGroups = new TLRPC.TL_messages_getEmojiStatusGroups();
+            tL_messages_getEmojiStatusGroups.hash = (int) j10;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiStatusGroups;
+        } else if (num.intValue() == 2) {
+            TLRPC.TL_messages_getEmojiProfilePhotoGroups tL_messages_getEmojiProfilePhotoGroups = new TLRPC.TL_messages_getEmojiProfilePhotoGroups();
+            tL_messages_getEmojiProfilePhotoGroups.hash = (int) j10;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiProfilePhotoGroups;
+        } else if (num.intValue() == 3) {
+            TLRPC.TL_messages_getEmojiStickerGroups tL_messages_getEmojiStickerGroups = new TLRPC.TL_messages_getEmojiStickerGroups();
+            tL_messages_getEmojiStickerGroups.hash = (int) j10;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiStickerGroups;
+        } else {
+            TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups2 = new TLRPC.TL_messages_getEmojiGroups();
+            tL_messages_getEmojiGroups2.hash = (int) j10;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiGroups2;
         }
-        int i11 = max < 2 ? 1 : 0;
-        for (int i12 = 0; i12 < this.b; i12++) {
-            this.c[i12] = r5.m(i10, i11, (TLRPC.Document) arrayList.get(i12));
-        }
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getEmojiGroups, new yx0(callback4, 0));
     }
 
-    public final void a(org.telegram.ui.Cells.t1 t1Var) {
-        for (int i10 = 0; i10 < this.b; i10++) {
-            this.c[i10].o(t1Var);
-        }
-    }
-
-    public final boolean b() {
-        return this.g;
-    }
-
-    public final boolean c(ArrayList arrayList) {
-        r5[] r5VarArr = this.c;
-        if (r5VarArr.length == arrayList.size()) {
-            for (int i10 = 0; i10 < r5VarArr.length; i10++) {
-                TLRPC.Document document = r5VarArr[i10].e;
-                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i10)).id) {
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public final void d() {
-        this.g = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        r5 r5Var;
-        if (this.d <= 0) {
-            return;
-        }
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        float centerX = rectF.centerX() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        float centerY = rectF.centerY() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        int dp = AndroidUtilities.dp(48.0f);
-        int i10 = this.a;
-        float f7 = dp / i10;
-        float dp2 = AndroidUtilities.dp(48.0f) / i10;
-        canvas.save();
-        canvas.clipRect(centerX, centerY, AndroidUtilities.dp(48.0f) + centerX, AndroidUtilities.dp(48.0f) + centerY);
-        for (int i11 = 0; i11 < i10; i11++) {
-            for (int i12 = 0; i12 < i10; i12++) {
-                int i13 = (i11 * i10) + i12;
-                if (i13 >= 0) {
-                    r5[] r5VarArr = this.c;
-                    if (i13 < r5VarArr.length && (r5Var = r5VarArr[i13]) != null) {
-                        r5Var.setBounds((int) ((i12 * f7) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f7) + centerX), (int) (((i11 + 1) * dp2) + centerY));
-                        r5VarArr[i13].setAlpha(this.d);
-                        r5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.k6.w3 : org.telegram.ui.ActionBar.k6.v3);
-                        r5VarArr[i13].draw(canvas);
-                    }
-                }
-            }
-        }
-        canvas.restore();
-    }
-
-    public final void e() {
-        this.g = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.messenger.CacheFetcher
+    public final void setLocal(int i10, Object obj, Object obj2, long j10) {
+        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new org.telegram.ui.g4(i10, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 22));
     }
 }

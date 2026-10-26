@@ -1,48 +1,31 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.RectF;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class g30 extends org.telegram.ui.Components.mm0 {
-    public final /* synthetic */ u50 Y2;
+public final class g30 extends TextView {
+    public final RectF a;
+    public final /* synthetic */ v50 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g30(u50 u50Var, LaunchActivity launchActivity) {
-        super(launchActivity, null);
-        this.Y2 = u50Var;
+    public g30(v50 v50Var, Context context) {
+        super(context);
+        this.b = v50Var;
+        this.a = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        org.telegram.ui.Components.z20 z20Var = (org.telegram.ui.Components.z20) view;
-        u50 u50Var = this.Y2;
-        z40 z40Var = u50Var.Q;
-        k30 k30Var = u50Var.a2;
-        if (k30Var.r == null && !u50Var.N2.k()) {
-            z20Var.setAlpha(1.0f);
-            z20Var.setTranslationX(0.0f);
-            z20Var.setTranslationY(0.0f);
-        }
-        g30 g30Var = u50Var.m2;
-        z20Var.getClass();
-        g30Var.getClass();
-        if (RecyclerView.R(z20Var) == -1 && z20Var.getRenderer() != null) {
-            return true;
-        }
-        if (z20Var.getTranslationY() == 0.0f || z20Var.getRenderer() == null || z20Var.getRenderer().c == null) {
-            return super.drawChild(canvas, view, j10);
-        }
-        float top = z40Var.getTop() - getTop();
-        float measuredHeight = z40Var.getMeasuredHeight() + top;
-        float f7 = k30Var.c;
-        canvas.save();
-        float f10 = 1.0f - f7;
-        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b.g1);
+        super.onDraw(canvas);
     }
 }

@@ -1,153 +1,106 @@
 package rg;
 
-import android.text.TextUtils;
+import a8.ee;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import w7.z5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
-    public final /* synthetic */ j c;
+public final class s extends View {
+    public final Paint a;
+    public final Paint b;
+    public int c;
+    public int d;
+    public final /* synthetic */ y e;
 
-    public /* synthetic */ s(m0 m0Var, j jVar, int i10) {
-        this.a = i10;
-        this.b = m0Var;
-        this.c = jVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s(y yVar, Context context) {
+        super(context);
+        this.e = yVar;
+        this.a = new Paint(1);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.q0(this.c);
-                break;
-            default:
-                final m0 m0Var = this.b;
-                LinearLayout linearLayout = new LinearLayout(m0Var.getContext());
-                linearLayout.setOrientation(0);
-                TextView textView = new TextView(m0Var.getContext());
-                int i10 = k6.E8;
-                u uVar = m0Var.Q1;
-                r6.W(textView, i10, uVar);
-                textView.setBackground(k6.M0(false));
-                textView.setGravity(16);
-                textView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(14.0f), 0);
-                textView.setTextSize(1, 14.0f);
-                textView.setTag(0);
-                textView.setText(LocaleController.getString(R.string.PaintDelete));
-                TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                textView.setEllipsize(truncateAt);
-                final int i11 = 0;
-                final j jVar = this.c;
-                textView.setOnClickListener(new View.OnClickListener() { // from class: rg.p
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i11) {
-                            case 0:
-                                j jVar2 = jVar;
-                                m0 m0Var2 = m0Var;
-                                m0Var2.q0(jVar2);
-                                org.telegram.ui.ActionBar.m1 m1Var = m0Var2.R1;
-                                if (m1Var != null && m1Var.isShowing()) {
-                                    m0Var2.R1.d(true);
-                                    break;
-                                }
-                                break;
-                            default:
-                                m0 m0Var3 = m0Var;
-                                m0Var3.getClass();
-                                ((p2) jVar).r(true);
-                                org.telegram.ui.ActionBar.m1 m1Var2 = m0Var3.R1;
-                                if (m1Var2 != null && m1Var2.isShowing()) {
-                                    m0Var3.R1.d(true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                linearLayout.addView(textView, z5.n(-2, 48));
-                if (jVar instanceof w2) {
-                    TextView textView2 = new TextView(m0Var.getContext());
-                    r6.W(textView2, i10, uVar);
-                    textView2.setBackground(k6.M0(false));
-                    textView2.setGravity(16);
-                    textView2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                    textView2.setTextSize(1, 14.0f);
-                    textView2.setEllipsize(truncateAt);
-                    textView2.setTag(1);
-                    textView2.setText(LocaleController.getString(R.string.PaintEdit));
-                    textView2.setOnClickListener(new k(m0Var, 2));
-                    linearLayout.addView(textView2, z5.n(-2, 48));
-                }
-                if (jVar instanceof p2) {
-                    TextView textView3 = new TextView(m0Var.getContext());
-                    r6.W(textView3, i10, uVar);
-                    textView3.setBackgroundDrawable(k6.M0(false));
-                    textView3.setGravity(16);
-                    textView3.setEllipsize(truncateAt);
-                    textView3.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                    textView3.setTextSize(1, 14.0f);
-                    textView3.setTag(2);
-                    textView3.setText(LocaleController.getString(R.string.Flip));
-                    final int i12 = 1;
-                    textView3.setOnClickListener(new View.OnClickListener() { // from class: rg.p
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            switch (i12) {
-                                case 0:
-                                    j jVar2 = jVar;
-                                    m0 m0Var2 = m0Var;
-                                    m0Var2.q0(jVar2);
-                                    org.telegram.ui.ActionBar.m1 m1Var = m0Var2.R1;
-                                    if (m1Var != null && m1Var.isShowing()) {
-                                        m0Var2.R1.d(true);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    m0 m0Var3 = m0Var;
-                                    m0Var3.getClass();
-                                    ((p2) jVar).r(true);
-                                    org.telegram.ui.ActionBar.m1 m1Var2 = m0Var3.R1;
-                                    if (m1Var2 != null && m1Var2.isShowing()) {
-                                        m0Var3.R1.d(true);
-                                        break;
-                                    }
-                                    break;
-                            }
-                        }
-                    });
-                    linearLayout.addView(textView3, z5.n(-2, 48));
-                }
-                if (!(jVar instanceof z1)) {
-                    TextView textView4 = new TextView(m0Var.getContext());
-                    r6.W(textView4, i10, uVar);
-                    textView4.setBackgroundDrawable(k6.M0(false));
-                    textView4.setGravity(16);
-                    textView4.setEllipsize(truncateAt);
-                    textView4.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                    textView4.setTextSize(1, 14.0f);
-                    textView4.setTag(2);
-                    textView4.setText(LocaleController.getString(R.string.PaintDuplicate));
-                    textView4.setOnClickListener(new k(m0Var, 3));
-                    linearLayout.addView(textView4, z5.n(-2, 48));
-                }
-                m0Var.S1.addView(linearLayout);
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();
-                layoutParams.width = -2;
-                layoutParams.height = -2;
-                linearLayout.setLayoutParams(layoutParams);
-                break;
+    public final void a() {
+        int argb;
+        int argb2;
+        int i10 = this.c;
+        y yVar = this.e;
+        if (i10 == 1) {
+            argb = Color.argb(255, Color.red(yVar.f), 0, Color.blue(yVar.f));
+            argb2 = Color.argb(255, Color.red(yVar.f), 255, Color.blue(yVar.f));
+        } else if (i10 != 2) {
+            argb = Color.argb(255, 0, Color.green(yVar.f), Color.blue(yVar.f));
+            argb2 = Color.argb(255, 255, Color.green(yVar.f), Color.blue(yVar.f));
+        } else {
+            argb = Color.argb(255, Color.red(yVar.f), Color.green(yVar.f), 0);
+            argb2 = Color.argb(255, Color.red(yVar.f), Color.green(yVar.f), 255);
         }
+        this.a.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{argb, argb2}, (float[]) null, Shader.TileMode.CLAMP));
+    }
+
+    public final void b(float f7) {
+        float dp = AndroidUtilities.dp(6.0f);
+        float a2 = ee.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
+        int i10 = this.c;
+        y yVar = this.e;
+        yVar.m(i0.a.o(i10 != 1 ? i10 != 2 ? Color.argb(255, (int) (a2 * 255.0f), Color.green(yVar.f), Color.blue(yVar.f)) : Color.argb(255, Color.red(yVar.f), Color.green(yVar.f), (int) (a2 * 255.0f)) : Color.argb(255, Color.red(yVar.f), (int) (a2 * 255.0f), Color.blue(yVar.f)), Color.alpha(yVar.f)), 4);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float height = getHeight() / 2.0f;
+        float dp = AndroidUtilities.dp(6.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(dp, height - dp, getWidth() - dp, height + dp);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.a);
+        int i10 = this.c;
+        y yVar = this.e;
+        float red = (i10 != 1 ? i10 != 2 ? Color.red(yVar.f) : Color.blue(yVar.f) : Color.green(yVar.f)) / 255.0f;
+        float dp2 = AndroidUtilities.dp(13.0f);
+        Paint paint = this.b;
+        float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
+        float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * red) + dp) - strokeWidth);
+        canvas.drawCircle(max, height, dp2, paint);
+        sg.k1.D1(max, height, strokeWidth, this.d, canvas);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        a();
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked != 0) {
+            if (actionMasked == 1) {
+                b(motionEvent.getX());
+                getParent().requestDisallowInterceptTouchEvent(false);
+            } else if (actionMasked != 2) {
+                if (actionMasked == 3) {
+                    getParent().requestDisallowInterceptTouchEvent(false);
+                }
+            }
+            return true;
+        }
+        getParent().requestDisallowInterceptTouchEvent(true);
+        b(motionEvent.getX());
+        return true;
     }
 }

@@ -1,23 +1,37 @@
 package q7;
 
-import k6.c;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final c a;
-    public static final c b;
-    public static final c[] c;
+public final class b extends o6.g {
+    @Override // o6.g
+    public final boolean C() {
+        return true;
+    }
 
-    static {
-        c cVar = new c("GET_CREDENTIAL", 1L);
-        a = cVar;
-        c cVar2 = new c("CREDENTIAL_REGISTRY", 1L);
-        c cVar3 = new c("CLEAR_REGISTRY", 2L);
-        c cVar4 = new c("CLEAR_CREATION_OPTIONS", 1L);
-        c cVar5 = new c("CLEAR_CREDENTIAL_STATE", 1L);
-        c cVar6 = new c("CREATE_CREDENTIAL", 3L);
-        b = cVar6;
-        c = new c[]{cVar, cVar2, cVar3, cVar4, cVar5, cVar6, new c("REGISTER_CREATION_OPTIONS", 1L), new c("REGISTER_EXPORT", 1L), new c("IMPORT_CREDENTIALS", 1L), new c("SIGNAL_CREDENTIAL_STATE", 1L), new c("CLEAR_EXPORT", 1L), new c("IMPORT_CREDENTIALS_FOR_DEVICE_SETUP", 3L), new c("EXPORT_CREDENTIALS_TO_DEVICE_SETUP", 3L), new c("GET_CREDENTIAL_TRANSFER_CAPABILITIES", 3L)};
+    @Override // o6.g, com.google.android.gms.common.api.c
+    public final int l() {
+        return 12600000;
+    }
+
+    @Override // o6.g
+    public final /* bridge */ /* synthetic */ IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch");
+        return queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(iBinder);
+    }
+
+    @Override // o6.g
+    public final String v() {
+        return "com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch";
+    }
+
+    @Override // o6.g
+    public final String w() {
+        return "com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE";
     }
 }

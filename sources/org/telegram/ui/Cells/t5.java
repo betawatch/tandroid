@@ -1,81 +1,121 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.tm;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t5 extends FrameLayout {
-    public final TextView a;
-    public final LinearLayout b;
-    public View.OnClickListener c;
-    public int d;
-    public final int[] e;
+public final class t5 extends org.telegram.ui.Components.y9 {
+    public final Paint G;
+    public long H;
+    public Drawable I;
+    public Drawable J;
+    public final /* synthetic */ x5 K;
 
-    public t5(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t5(x5 x5Var, Context context) {
         super(context);
-        this.e = new int[]{0, -45747, -753630, -13056, -8269183, -9321002, -16747844, -10080879};
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setGravity(5);
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 12.0f);
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.b = linearLayout;
-        linearLayout.setOrientation(0);
-        for (int i10 = 0; i10 < this.e.length; i10++) {
-            RadioButton radioButton = new RadioButton(context);
-            radioButton.setSize(AndroidUtilities.dp(20.0f));
-            radioButton.setTag(Integer.valueOf(i10));
-            this.b.addView(radioButton, w7.z5.l(1.0f / this.e.length, 0, -1));
-            radioButton.setOnClickListener(new a(this, 8));
+        this.K = x5Var;
+        this.G = new Paint(1);
+    }
+
+    @Override // org.telegram.ui.Components.y9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Bitmap bitmap;
+        MediaController.PhotoEntry photoEntry;
+        Drawable drawable;
+        org.telegram.ui.Components.t5 t5Var = this.e;
+        ImageReceiver imageReceiver = t5Var != null ? t5Var.k : this.a;
+        if (imageReceiver == null) {
+            return;
         }
-        addView(this.b, w7.z5.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
-    }
-
-    public final void a(int i10, String str) {
-        this.d = i10;
-        this.a.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
-        b(false);
-    }
-
-    public final void b(boolean z10) {
-        LinearLayout linearLayout = this.b;
-        int childCount = linearLayout.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = linearLayout.getChildAt(i10);
-            if (childAt instanceof RadioButton) {
-                RadioButton radioButton = (RadioButton) childAt;
-                int intValue = ((Integer) radioButton.getTag()).intValue();
-                int[] iArr = this.e;
-                radioButton.a(this.d == iArr[intValue], z10);
-                radioButton.b(intValue == 0 ? -1 : iArr[intValue], intValue != 0 ? iArr[intValue] : -1);
+        if (this.c == -1 || this.d == -1) {
+            imageReceiver.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
+            this.b.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
+        } else {
+            float width = (getWidth() - this.c) / 2;
+            int height = getHeight();
+            imageReceiver.setImageCoords(width, (height - r5) / 2, this.c, this.d);
+            ImageReceiver imageReceiver2 = this.b;
+            float width2 = (getWidth() - this.c) / 2;
+            int height2 = getHeight();
+            imageReceiver2.setImageCoords(width2, (height2 - r6) / 2, this.c, this.d);
+        }
+        imageReceiver.draw(canvas);
+        x5 x5Var = this.K;
+        if (x5Var.N) {
+            Rect rect = x5.a0;
+            MediaController.PhotoEntry photoEntry2 = x5Var.G;
+            if (photoEntry2 == null || !photoEntry2.isAttachSpoilerRevealed) {
+                this.b.draw(canvas);
+                if (x5Var.M == null) {
+                    if (x5Var.L == null) {
+                        xh.g gVar = new xh.g();
+                        x5Var.L = gVar;
+                        gVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    }
+                    x5Var.L.setBounds(0, 0, getWidth(), getHeight());
+                    x5Var.L.draw(canvas);
+                }
+                invalidate();
+            }
+        }
+        float f7 = x5Var.T;
+        if (f7 != 1.0f && x5Var.R != null) {
+            int interpolation = (int) (ds.f.getInterpolation(1.0f - f7) * 255.0f);
+            Paint paint = this.G;
+            paint.setAlpha(interpolation);
+            canvas.drawBitmap(x5Var.R, 0.0f, 0.0f, paint);
+            long min = Math.min(16L, System.currentTimeMillis() - this.H);
+            Float f10 = x5Var.S;
+            x5Var.T = org.telegram.ui.d3.d(min, f10 == null ? 250.0f : f10.floatValue(), x5Var.T, 1.0f);
+            this.H = System.currentTimeMillis();
+            invalidate();
+            if (x5Var.M != null) {
+                x5Var.b.invalidate();
+            }
+        } else if (f7 == 1.0f && (bitmap = x5Var.R) != null) {
+            bitmap.recycle();
+            x5Var.R = null;
+            x5Var.S = null;
+            invalidate();
+        }
+        if (x5Var.s) {
+            v5 v5Var = x5Var.U;
+            if ((v5Var == null || !((tm) ((org.telegram.ui.Components.s) v5Var).b).s) && (photoEntry = x5Var.G) != null && photoEntry.isLivePhoto()) {
+                if (x5Var.G.isUnalivePhoto()) {
+                    if (this.J == null) {
+                        this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();
+                    }
+                    drawable = this.J;
+                } else {
+                    if (this.I == null) {
+                        this.I = getContext().getResources().getDrawable(R.drawable.media_live_on).mutate();
+                    }
+                    drawable = this.I;
+                }
+                drawable.setBounds((int) (imageReceiver.getImageX() + AndroidUtilities.dp(8.0f)), (int) (imageReceiver.getImageY() + AndroidUtilities.dp(8.0f)), (int) (imageReceiver.getImageX() + AndroidUtilities.dp(30.0f)), (int) (imageReceiver.getImageY() + AndroidUtilities.dp(26.0f)));
+                drawable.draw(canvas);
             }
         }
     }
 
-    public int getCurrentColor() {
-        return this.d;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
-    }
-
     @Override // android.view.View
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.c = onClickListener;
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        x5 x5Var = this.K;
+        MediaController.PhotoEntry photoEntry = x5Var.G;
+        x5Var.h(photoEntry != null && photoEntry.hasSpoiler);
     }
 }

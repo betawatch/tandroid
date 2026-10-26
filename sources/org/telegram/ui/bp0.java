@@ -1,65 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class bp0 extends b61 {
-    public final /* synthetic */ ep0 e2;
-    public final /* synthetic */ s51[] f2;
-    public final /* synthetic */ fp0 g2;
+public final /* synthetic */ class bp0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lp0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bp0(fp0 fp0Var, org.telegram.ui.ActionBar.o2 o2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11, int i12, ep0 ep0Var, s51[] s51VarArr) {
-        super(o2Var, context, true, num, i10, true, g6Var, i11, i12);
-        this.g2 = fp0Var;
-        this.e2 = ep0Var;
-        this.f2 = s51VarArr;
+    public /* synthetic */ bp0(lp0 lp0Var, int i10) {
+        this.a = i10;
+        this.b = lp0Var;
     }
 
-    @Override // org.telegram.ui.b61
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.b61
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        fp0 fp0Var = this.g2;
-        if (tL_starGiftUnique != null) {
-            if (fp0Var.m0 == 0) {
-                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
-                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        lp0 lp0Var = this.b;
+        switch (i10) {
+            case 0:
+                if (lp0Var.G) {
+                    lp0Var.b.invalidate();
+                    break;
                 }
-                fp0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
-                fp0Var.r = null;
-            } else {
-                fp0Var.s = null;
-                fp0Var.r = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
-            }
-            fp0Var.I = null;
-            fp0Var.h = -1;
-        } else {
-            fp0Var.n = l4 == null ? 0L : l4.longValue();
-            fp0Var.r = null;
-            fp0Var.s = null;
-            fp0Var.I = null;
-        }
-        ep0 ep0Var = this.e2;
-        if (ep0Var != null) {
-            ep0Var.b(true);
-        }
-        fp0Var.j(true);
-        fp0Var.i();
-        fp0Var.f(true);
-        s51 s51Var = this.f2[0];
-        if (s51Var != null) {
-            fp0Var.o0 = null;
-            s51Var.dismiss();
+                break;
+            case 1:
+                lp0Var.h();
+                break;
+            case 2:
+                int i11 = lp0.q0;
+                lp0Var.h();
+                break;
+            default:
+                int i12 = lp0.q0;
+                lp0Var.h();
+                break;
         }
     }
 }

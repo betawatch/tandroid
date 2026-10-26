@@ -1,66 +1,66 @@
 package j3;
 
-import c3.g0;
+import a8.ad;
+import c3.d0;
 import c3.l;
+import c3.o;
+import c3.p;
 import c3.q;
-import c3.r;
 import c3.s;
-import c3.u;
-import e9.l0;
-import e9.n0;
-import e9.x1;
+import f9.g0;
+import f9.i0;
+import f9.s1;
 import java.util.List;
-import v7.k8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b implements q {
-    public final q a;
+public final class b implements o {
+    public final o a;
     public final boolean b;
 
     public b(int i10) {
         boolean z10 = (i10 & 1) != 0;
         this.b = z10;
         if (z10) {
-            this.a = new g0(-1, -1, "image/heif");
+            this.a = new d0(-1, -1, "image/heif");
         } else {
             this.a = new a();
         }
     }
 
-    @Override // c3.q
-    public final boolean a(r rVar) {
-        return this.b ? k8.a((l) rVar, false) : this.a.a(rVar);
+    @Override // c3.o
+    public final boolean a(p pVar) {
+        return this.b ? ad.a((l) pVar, false) : this.a.a(pVar);
     }
 
-    @Override // c3.q
-    public final void c(s sVar) {
-        this.a.c(sVar);
+    @Override // c3.o
+    public final void c(q qVar) {
+        this.a.c(qVar);
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void d(long j10, long j11) {
         this.a.d(j10, j11);
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final List e() {
-        l0 l0Var = n0.b;
-        return x1.e;
+        g0 g0Var = i0.b;
+        return s1.e;
     }
 
-    @Override // c3.q
-    public final int f(r rVar, u uVar) {
-        return this.a.f(rVar, uVar);
+    @Override // c3.o
+    public final int f(p pVar, s sVar) {
+        return this.a.f(pVar, sVar);
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void release() {
         this.a.release();
     }
 
-    @Override // c3.q
-    public final q b() {
+    @Override // c3.o
+    public final o b() {
         return this;
     }
 }

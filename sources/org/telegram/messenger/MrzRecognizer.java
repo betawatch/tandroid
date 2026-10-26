@@ -13,11 +13,11 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class Result {
         public static final int GENDER_FEMALE = 2;
         public static final int GENDER_MALE = 1;
@@ -408,22 +408,22 @@ public class MrzRecognizer {
     }
 
     private static Result recognizeBarcode(Bitmap bitmap) {
-        r8.n nVar = new r8.n(new com.google.android.gms.internal.vision.t2(ApplicationLoader.applicationContext, new com.google.android.gms.internal.vision.x1()));
+        s8.n nVar = new s8.n(new com.google.android.gms.internal.vision.t2(ApplicationLoader.applicationContext, new com.google.android.gms.internal.vision.x1()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        m.g3 g3Var = new m.g3(22);
+        k6.c cVar = new k6.c(28);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        g3Var.d = bitmap;
-        a3.l lVar = (a3.l) g3Var.b;
+        cVar.d = bitmap;
+        a3.l lVar = (a3.l) cVar.b;
         lVar.a = width;
         lVar.b = height;
-        SparseArray e12 = nVar.e1(g3Var);
+        SparseArray e12 = nVar.e1(cVar);
         int i10 = 0;
         for (int i11 = 0; i11 < e12.size(); i11++) {
-            r8.m mVar = (r8.m) e12.valueAt(i11);
+            s8.m mVar = (s8.m) e12.valueAt(i11);
             int i12 = mVar.d;
             int i13 = 6;
             int i14 = 4;
@@ -442,7 +442,7 @@ public class MrzRecognizer {
                 result.firstName = capitalize(mVar.y.b);
                 result.lastName = capitalize(mVar.y.d);
                 result.middleName = capitalize(mVar.y.c);
-                r8.e eVar = mVar.y;
+                s8.e eVar = mVar.y;
                 result.number = eVar.s;
                 String str2 = eVar.e;
                 if (str2 != null) {

@@ -1,229 +1,32 @@
 package rh;
 
-import ai.u;
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import ig.o;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n5;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Cells.c6;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.h20;
-import org.telegram.ui.kg;
-import org.telegram.ui.n41;
-import org.telegram.ui.sn;
-import qg.g0;
-import w7.z5;
+import org.telegram.ui.web.h1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener, b6 {
-    public final Rect E;
-    public ViewTreeObserver F;
-    public int G;
-    public final ne.b H;
-    public final ne.b I;
-    public final c6 a;
-    public final b b;
-    public final d c;
-    public final sn d;
-    public final FrameLayout.LayoutParams e;
-    public final n5 f;
-    public e h;
-    public t1 n;
-    public int r;
-    public kg s;
-    public final n41 v;
-    public final n41 w;
-    public final int x;
-    public final int[] y;
+public final class c {
+    public final o a;
+    public b c = b.a;
+    public final h1 d = new h1(this, 13);
+    public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
 
-    public c(Activity activity, g6 g6Var, sn snVar) {
-        super(activity);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(0, -2);
-        this.e = layoutParams;
-        this.y = new int[2];
-        this.E = new Rect();
-        int i10 = 15;
-        g0 g0Var = new g0(this, i10);
-        bs bsVar = bs.h;
-        this.H = new ne.b(0, g0Var, bsVar, 380L, false);
-        this.I = new ne.b(0, new g0(this, i10), bsVar, 380L, false);
-        this.d = snVar;
-        this.x = snVar.getMessagesController().config.pollAnswerLengthMax.get();
-        c6 c6Var = new c6(this, activity, g6Var, 2);
-        this.a = c6Var;
-        c6Var.setAllowTextEntitiesIntersection(true);
-        r6.W(c6Var, k6.G6, g6Var);
-        r6.I(c6Var, k6.gc, g6Var);
-        r6.F(c6Var, k6.H6, g6Var);
-        c6Var.setHint(LocaleController.getString(R.string.PollAddAnOptionHint));
-        c6Var.setTextSize(1, 15.0f);
-        c6Var.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        c6Var.setBackground(null);
-        c6Var.setImeOptions(268435462);
-        c6Var.setInputType(c6Var.getInputType() | 16384);
-        c6Var.addTextChangedListener(new u(this, 20));
-        b bVar = new b(activity);
-        this.b = bVar;
-        int i11 = k6.Vh;
-        y g02 = k6.g0(k6.w0(i11, g6Var), 1, -1);
-        n6 O = r6.O(i11);
-        bVar.setBackground(g02);
-        r6.k(bVar, g02, null, O, g6Var);
-        w7.b6.a(bVar);
-        d dVar = new d(getContext(), 36);
-        this.c = dVar;
-        y g03 = k6.g0(k6.w0(i11, g6Var), 1, -1);
-        n6 O2 = r6.O(i11);
-        dVar.setBackground(g03);
-        r6.k(dVar, g03, null, O2, g6Var);
-        dVar.setOnClickListener(new org.telegram.ui.web.c(3, this, snVar));
-        w7.b6.a(dVar);
-        n5 n5Var = new n5(getContext());
-        this.f = n5Var;
-        n5Var.setTextSize(13);
-        n5Var.setGravity(17);
-        n5Var.setTranslationY(AndroidUtilities.dp(44.0f));
-        n5Var.setVisibility(8);
-        n41 n41Var = new n41(activity, 9);
-        this.w = n41Var;
-        addView(n41Var, layoutParams);
-        n41 n41Var2 = new n41(activity, 8);
-        this.v = n41Var2;
-        n41Var.addView(n41Var2, z5.c(-2.0f, -1));
-        n41Var2.addView(n5Var, z5.e(54, 24, 53));
-        n41Var2.addView(bVar, z5.e(44, 44, 51));
-        n41Var2.addView(dVar, z5.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        n41Var2.addView(c6Var, z5.d(-1, -2.0f, 119, 39.0f, 0.0f, 47.0f, 0.0f));
-        c6Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f));
+    public c(o oVar) {
+        this.a = oVar;
     }
 
-    public static void a(c cVar) {
-        n5 n5Var = cVar.f;
-        h20.d(n5Var, cVar.H.e);
-        int i10 = k6.A6;
-        sn snVar = cVar.d;
-        n5Var.setTextColor(i0.a.f(cVar.I.e, k6.w0(i10, snVar.getResourceProvider()), k6.w0(k6.p7, snVar.getResourceProvider())));
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.A6));
-        hashSet.add(Integer.valueOf(k6.p7));
-    }
-
-    public e getAttachedMedia() {
-        return this.h;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ViewTreeObserver viewTreeObserver = getViewTreeObserver();
-        this.F = viewTreeObserver;
-        viewTreeObserver.addOnPreDrawListener(this);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        ViewTreeObserver viewTreeObserver = this.F;
-        if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
-            this.F.removeOnPreDrawListener(this);
-        }
-        this.F = null;
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        t1 t1Var;
-        th.a aVar;
-        t1 t1Var2 = this.n;
-        if (t1Var2 != null) {
-            int id2 = t1Var2.getMessageObject().getId();
-            if (this.n.isAttachedToWindow() && this.r == id2 && (aVar = (t1Var = this.n).a6) != null && t1Var.n6) {
-                Rect bounds = aVar.getBounds();
-                Rect rect = this.E;
-                rect.set(bounds);
-                t1 t1Var3 = this.n;
-                int[] iArr = this.y;
-                t1Var3.getLocationInWindow(iArr);
-                int i10 = iArr[0];
-                int i11 = iArr[1];
-                getLocationInWindow(iArr);
-                rect.offset(i10 - iArr[0], i11 - iArr[1]);
-                int width = rect.width();
-                FrameLayout.LayoutParams layoutParams = this.e;
-                int i12 = layoutParams.width;
-                n41 n41Var = this.w;
-                if (i12 != width) {
-                    layoutParams.width = width;
-                    n41Var.setLayoutParams(layoutParams);
-                }
-                n41Var.setTranslationX(rect.left);
-                n41Var.setTranslationY(AndroidUtilities.dp(0.66f) + rect.top);
-                return true;
+    public final void a(b bVar, boolean z10) {
+        if (this.c != bVar) {
+            h1 h1Var = this.d;
+            AndroidUtilities.cancelRunOnUIThread(h1Var);
+            this.c = bVar;
+            if (z10) {
+                this.a.run(bVar);
             }
-            kg kgVar = this.s;
-            if (kgVar != null) {
-                kgVar.run();
-                this.s = null;
+            if (bVar == b.b || bVar == b.c) {
+                AndroidUtilities.runOnUIThread(h1Var, this.b);
             }
-        }
-        return true;
-    }
-
-    public void setAnimatedVisibility(float f7) {
-        this.v.setAlpha(f7);
-    }
-
-    public void setCellToWatch(t1 t1Var) {
-        this.n = t1Var;
-        this.r = t1Var.getMessageObject().getId();
-    }
-
-    public void setColor(int i10) {
-        if (this.G != i10) {
-            this.G = i10;
-            PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-            b bVar = this.b;
-            bVar.b.setColorFilter(porterDuffColorFilter);
-            bVar.c.setColorFilter(porterDuffColorFilter);
-            this.c.a.setColorFilter(porterDuffColorFilter);
-            c6 c6Var = this.a;
-            c6Var.setCursorColor(i10);
-            c6Var.setHandlesColor(i10);
-            c6Var.setHintTextColor(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        sn snVar;
-        try {
-            n5 n5Var = this.f;
-            if (n5Var == null || (snVar = this.d) == null) {
-                return;
-            }
-            n5Var.setTextColor(i0.a.f(this.I.e, k6.w0(k6.A6, snVar.getResourceProvider()), k6.w0(k6.p7, snVar.getResourceProvider())));
-        } catch (Exception e) {
-            FileLog.e(e);
         }
     }
 }

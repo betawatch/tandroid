@@ -1,111 +1,181 @@
 package org.telegram.ui.Cells;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.View;
-import android.widget.Button;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.ds;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t3 extends org.telegram.ui.Components.q6 {
-    public final /* synthetic */ int s;
+public final class t3 extends TextView implements org.telegram.ui.ActionBar.p6 {
+    public org.telegram.ui.Components.r5 a;
+    public final Paint b;
+    public final Path c;
+    public final RectF d;
+    public ValueAnimator e;
+    public float f;
+    public float h;
+    public float n;
+    public boolean r;
+    public int s;
+    public final /* synthetic */ u3 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t3(Context context, boolean z10, boolean z11, boolean z12, int i10) {
-        super(context, z10, z11, z12);
-        this.s = i10;
+    public t3(u3 u3Var, Context context) {
+        super(context);
+        this.v = u3Var;
+        this.b = new Paint(1);
+        this.c = new Path();
+        this.d = new RectF();
+        this.h = -1.0f;
+        int dp = AndroidUtilities.dp(14.0f);
+        int o12 = org.telegram.ui.ActionBar.y6.o1(0.25f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.n6, u3Var.a));
+        setForeground(org.telegram.ui.ActionBar.y6.j0(dp, dp, dp, dp, 0, o12, o12));
     }
 
-    @Override // android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.s) {
-            case 0:
-                return Button.class.getName();
-            case 1:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
+    public final void a(boolean z10, boolean z11) {
+        if (z11 && isSelected() == z10) {
+            return;
+        }
+        setSelected(z10);
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (!z11) {
+            this.f = z10 ? 1.0f : 0.0f;
+            b();
+            invalidate();
+        } else {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f, z10 ? 1.0f : 0.0f);
+            this.e = ofFloat;
+            ofFloat.setDuration(280L);
+            this.e.setInterpolator(ds.h);
+            this.e.addUpdateListener(new r(this, 3));
+            this.e.start();
+        }
+    }
+
+    public final void b() {
+        this.r = true;
+        int i10 = org.telegram.ui.ActionBar.y6.n6;
+        u3 u3Var = this.v;
+        int f7 = i0.a.f(this.f, org.telegram.ui.ActionBar.y6.w0(i10, u3Var.a), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Sh, u3Var.a));
+        if (getCurrentTextColor() != f7) {
+            setTextColor(f7);
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.ui.Components.r5 r5Var = this.a;
+        if (r5Var != null) {
+            r5Var.a();
         }
     }
 
     @Override // android.view.View
-    public int getBaseline() {
-        switch (this.s) {
-            case 5:
-                return Math.round((getHeight() - getDrawable().e) / 2.0f) - getPaint().getFontMetricsInt().ascent;
-            default:
-                return super.getBaseline();
+    public final void onDetachedFromWindow() {
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
+        this.f = isSelected() ? 1.0f : 0.0f;
+        b();
+        org.telegram.ui.Components.r5 r5Var = this.a;
+        if (r5Var != null) {
+            r5Var.b();
+        }
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.n6, this.v.a);
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.d;
+        rectF.set(0.0f, 0.0f, width, height);
+        Path path = this.c;
+        path.rewind();
+        float dp = AndroidUtilities.dp(14.0f);
+        float dp2 = AndroidUtilities.dp(14.0f);
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(rectF, dp, dp2, direction);
+        canvas.save();
+        canvas.clipPath(path);
+        int o12 = org.telegram.ui.ActionBar.y6.o1(0.1f, w02);
+        Paint paint = this.b;
+        paint.setColor(o12);
+        canvas.drawRect(rectF, paint);
+        if (this.f > 0.0f) {
+            float f7 = this.h;
+            if (f7 < 0.0f) {
+                f7 = getWidth() / 2.0f;
+            }
+            float height2 = this.h < 0.0f ? getHeight() / 2.0f : this.n;
+            float hypot = (float) Math.hypot(Math.max(f7, getWidth() - f7), Math.max(height2, getHeight() - height2));
+            path.rewind();
+            path.addCircle(f7, height2, hypot * this.f, direction);
+            canvas.clipPath(path);
+            paint.setColor(w02);
+            canvas.drawRect(rectF, paint);
+        }
+        canvas.restore();
+        super.onDraw(canvas);
     }
 
     @Override // android.view.View
-    public void invalidate() {
-        switch (this.s) {
-            case 4:
-                if (!ah.x0.b(this)) {
-                    super.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.CheckBox");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(isSelected());
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            this.h = motionEvent.getX();
+            this.n = motionEvent.getY();
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        try {
+            if (this.r) {
+                b();
+            }
+            int o12 = org.telegram.ui.ActionBar.y6.o1(0.25f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.n6, this.v.a));
+            if (o12 != this.s) {
+                this.s = o12;
+                org.telegram.ui.ActionBar.y6.E1(getForeground(), o12, true);
+            }
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 2:
-                canvas.save();
-                canvas.translate(AndroidUtilities.dp(17.0f), 0.0f);
-                super.onDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a || super.verifyDrawable(drawable);
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.s) {
-            case 3:
-                super.onMeasure(i10, i11);
-                setPivotX(getMeasuredWidth());
-                break;
-            case 4:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), i11);
-                setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i10), getMeasuredHeight());
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t3(Context context, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
-        super(context, z10, z11, z12, z13, z14);
-        this.s = 5;
-    }
-
-    @Override // android.view.View
-    public void invalidate(int i10, int i11, int i12, int i13) {
-        switch (this.s) {
-            case 4:
-                if (!ah.x0.b(this)) {
-                    super.invalidate(i10, i11, i12, i13);
-                    break;
-                }
-                break;
-            default:
-                super.invalidate(i10, i11, i12, i13);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

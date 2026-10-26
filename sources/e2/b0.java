@@ -1,10 +1,10 @@
 package e2;
 
 import android.os.SystemClock;
-import b2.o1;
+import b2.p1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b0 {
     public final int a;
@@ -24,21 +24,21 @@ public final class b0 {
     public final void a() {
         e0 e0Var = this.h;
         i0 i0Var = e0Var.f;
-        i2.h0 h0Var = e0Var.a;
-        if (!h0Var.j0()) {
+        i2.j0 j0Var = e0Var.a;
+        if (!j0Var.j0()) {
             if (this.f) {
                 i0Var.e(2);
             }
             this.f = false;
             return;
         }
-        o1 y02 = h0Var.y0();
-        Object l4 = y02.p() ? null : y02.l(h0Var.A());
-        int m0 = h0Var.m0();
-        int N = h0Var.N();
-        long M0 = h0Var.M0();
+        p1 y02 = j0Var.y0();
+        Object l4 = y02.p() ? null : y02.l(j0Var.A());
+        int m0 = j0Var.m0();
+        int N = j0Var.N();
+        long M0 = j0Var.M0();
         if (l4 != null && m0 == -1) {
-            M0 -= m0.h0(y02.g(l4, e0Var.e).e);
+            M0 -= n0.h0(y02.g(l4, e0Var.e).e);
         }
         e0Var.d.getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();

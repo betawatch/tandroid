@@ -1,15 +1,15 @@
 package m2;
 
 import android.net.Uri;
-import b2.h0;
-import b2.i1;
-import e2.m0;
+import b2.i0;
+import b2.j1;
+import e2.n0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c implements t2.a {
     public final long a;
@@ -21,12 +21,12 @@ public final class c implements t2.a {
     public final long g;
     public final long h;
     public final t i;
-    public final h0 j;
+    public final i0 j;
     public final Uri k;
     public final i l;
     public final List m;
 
-    public c(long j10, long j11, long j12, boolean z10, long j13, long j14, long j15, long j16, i iVar, t tVar, h0 h0Var, Uri uri, ArrayList arrayList) {
+    public c(long j10, long j11, long j12, boolean z10, long j13, long j14, long j15, long j16, i iVar, t tVar, i0 i0Var, Uri uri, ArrayList arrayList) {
         this.a = j10;
         this.b = j11;
         this.c = j12;
@@ -38,7 +38,7 @@ public final class c implements t2.a {
         this.l = iVar;
         this.i = tVar;
         this.k = uri;
-        this.j = h0Var;
+        this.j = i0Var;
         this.m = arrayList;
     }
 
@@ -47,7 +47,7 @@ public final class c implements t2.a {
         long j10;
         LinkedList linkedList = new LinkedList(list);
         Collections.sort(linkedList);
-        linkedList.add(new i1(-1, -1, -1));
+        linkedList.add(new j1(-1, -1, -1));
         ArrayList arrayList = new ArrayList();
         long j11 = 0;
         int i10 = 0;
@@ -55,7 +55,7 @@ public final class c implements t2.a {
             if (i10 >= this.m.size()) {
                 break;
             }
-            if (((i1) linkedList.peek()).a != i10) {
+            if (((j1) linkedList.peek()).a != i10) {
                 long c10 = c(i10);
                 if (c10 != -9223372036854775807L) {
                     j11 += c10;
@@ -63,29 +63,29 @@ public final class c implements t2.a {
             } else {
                 h b10 = b(i10);
                 List list2 = b10.c;
-                i1 i1Var = (i1) linkedList.poll();
-                int i11 = i1Var.a;
+                j1 j1Var = (j1) linkedList.poll();
+                int i11 = j1Var.a;
                 ArrayList arrayList2 = new ArrayList();
                 while (true) {
-                    int i12 = i1Var.b;
+                    int i12 = j1Var.b;
                     a aVar = (a) list2.get(i12);
                     List list3 = aVar.c;
                     ArrayList arrayList3 = new ArrayList();
                     do {
-                        arrayList3.add((m) list3.get(i1Var.c));
-                        i1Var = (i1) linkedList.poll();
-                        if (i1Var.a != i11) {
+                        arrayList3.add((m) list3.get(j1Var.c));
+                        j1Var = (j1) linkedList.poll();
+                        if (j1Var.a != i11) {
                             break;
                         }
-                    } while (i1Var.b == i12);
+                    } while (j1Var.b == i12);
                     j10 = j11;
                     arrayList2.add(new a(aVar.a, aVar.b, arrayList3, aVar.d, aVar.e, aVar.f));
-                    if (i1Var.a != i11) {
+                    if (j1Var.a != i11) {
                         break;
                     }
                     j11 = j10;
                 }
-                linkedList.addFirst(i1Var);
+                linkedList.addFirst(j1Var);
                 arrayList.add(new h(b10.a, b10.b - j10, arrayList2, b10.d));
                 j11 = j10;
             }
@@ -118,6 +118,6 @@ public final class c implements t2.a {
     }
 
     public final long d(int i10) {
-        return m0.S(c(i10));
+        return n0.S(c(i10));
     }
 }

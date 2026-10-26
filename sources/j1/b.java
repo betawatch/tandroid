@@ -9,13 +9,13 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import l2.f;
+import jg.i;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import s0.d;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class b extends r0.b {
     public static final Rect n = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, TLObject.FLAG_31);
@@ -41,7 +41,7 @@ public abstract class b extends r0.b {
     }
 
     @Override // r0.b
-    public final f a(View view) {
+    public final i a(View view) {
         if (this.j == null) {
             this.j = new a(this);
         }
@@ -86,14 +86,14 @@ public abstract class b extends r0.b {
         }
         int action = motionEvent.getAction();
         if (action == 7 || action == 9) {
-            int g10 = g(motionEvent.getX(), motionEvent.getY());
+            int g7 = g(motionEvent.getX(), motionEvent.getY());
             int i11 = this.m;
-            if (i11 != g10) {
-                this.m = g10;
-                m(g10, 128);
+            if (i11 != g7) {
+                this.m = g7;
+                m(g7, 128);
                 m(i11, 256);
             }
-            if (g10 == Integer.MIN_VALUE) {
+            if (g7 == Integer.MIN_VALUE) {
                 return false;
             }
         } else {

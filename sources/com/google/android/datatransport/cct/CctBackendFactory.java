@@ -1,15 +1,14 @@
 package com.google.android.datatransport.cct;
 
-import j5.d;
-import m5.b;
-import m5.c;
-import m5.e;
+import n5.b;
+import n5.c;
+import n5.e;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class CctBackendFactory {
     public e create(c cVar) {
         b bVar = (b) cVar;
-        return new d(bVar.a, bVar.b, bVar.c);
+        return new k5.c(bVar.a, bVar.b, bVar.c);
     }
 }

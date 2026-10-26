@@ -2,64 +2,36 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import java.util.WeakHashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ck extends org.telegram.ui.Components.d91 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ sn b;
+public final class ck extends wn {
+    public final /* synthetic */ int f;
+    public boolean h;
 
-    public ck(sn snVar, Context context) {
-        this.b = snVar;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ck(Context context, org.telegram.ui.ActionBar.j5 j5Var, Bundle bundle, int i10) {
+        super(context, j5Var, bundle);
+        this.f = i10;
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final void b(View view, int i10, int i11) {
-        if (view instanceof un) {
-            ((un) view).a.Qc(this.b.G3);
+    @Override // org.telegram.ui.wn
+    public final void a() {
+        switch (this.f) {
+            case 0:
+                if (!this.h) {
+                    this.h = true;
+                    super.a();
+                    break;
+                }
+                break;
+            default:
+                if (!this.h) {
+                    this.h = true;
+                    super.a();
+                    break;
+                }
+                break;
         }
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.y.c(view);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final View d(int i10) {
-        Context context = this.a;
-        sn snVar = this.b;
-        if (i10 == 0) {
-            return new fn(snVar, context);
-        }
-        Bundle bundle = new Bundle();
-        bundle.putInt("chatMode", 7);
-        bundle.putInt("searchType", i10);
-        bundle.putString("searchHashtag", snVar.G3);
-        bk bkVar = new bk(context, snVar.getParentLayout(), bundle, 0);
-        bkVar.h = false;
-        tn tnVar = bkVar.a;
-        tnVar.L.a = snVar.L;
-        tnVar.oa = snVar.qa;
-        tnVar.pa = snVar;
-        tnVar.h9 = new f(this, 13);
-        return bkVar;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int e() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final CharSequence g(int i10) {
-        return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int h(int i10) {
-        return i10;
     }
 }

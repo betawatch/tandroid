@@ -1,12 +1,12 @@
 package org.telegram.ui.Wallet;
 
-import ai.nd;
 import android.content.Context;
 import android.net.Uri;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
 import android.util.Base64;
+import bi.dd;
 import j$.util.DesugarCollections;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Array;
@@ -30,6 +30,7 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -45,14 +46,14 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.q61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.o70;
-import org.telegram.ui.ql0;
-import org.telegram.ui.ta0;
+import org.telegram.ui.bv;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public static volatile l0[] O = new l0[4];
@@ -494,7 +495,7 @@ public final class l0 {
             wallettransactionpeeraddress = new TL_wallet.walletTransactionPeerAddress();
         }
         wallettransactionpeeraddress.address = str;
-        if (TextUtils.isEmpty(str2) || "null".equals(str2)) {
+        if (TextUtils.isEmpty(str2) || BuildConfig.BETA_URL.equals(str2)) {
             str2 = null;
         }
         wallettransactionpeeraddress.domain = str2;
@@ -567,7 +568,7 @@ public final class l0 {
 
     public static String n(long j10, boolean z10) {
         if ((j10 > -10000000 && j10 < 10000000) || z10) {
-            return nd.N0(j10);
+            return dd.L0(j10);
         }
         if (Q == null) {
             Q = new DecimalFormat("0.##", new DecimalFormatSymbols(Locale.US));
@@ -603,7 +604,7 @@ public final class l0 {
     }
 
     public static Context v() {
-        org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+        org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
         return (U == null || U.getContext() == null) ? ApplicationLoader.applicationContext : U.getContext();
     }
 
@@ -671,7 +672,7 @@ public final class l0 {
             byte[] secretPhraseToAnchorPublicKey = WalletEngine2.secretPhraseToAnchorPublicKey(i0Var);
             i0 b10 = i0Var.b();
             F("import wallet: requesting proof challenge");
-            r2.a(this.a, null, new p(this, b10, callback, secretPhraseToAnchorPublicKey, 2), null, null, new s(this, callback, secretPhraseToPublicKey, b10), z10, z11, new ta0(new m(b10, 2), 1));
+            r2.a(this.a, null, new p(this, b10, callback, secretPhraseToAnchorPublicKey, 2), null, null, new t(this, callback, secretPhraseToPublicKey, b10), z10, z11, new ag.b1(new m(b10, 2), 2));
         } catch (Exception unused2) {
             callback.run("INVALID_PHRASE");
         }
@@ -941,8 +942,8 @@ public final class l0 {
                                     str10 = str15;
                                 }
                                 try {
-                                } catch (Exception e7) {
-                                    e = e7;
+                                } catch (Exception e10) {
+                                    e = e10;
                                     hashMap3 = hashMap6;
                                     str11 = j10;
                                     k0Var2 = k0Var4;
@@ -966,8 +967,8 @@ public final class l0 {
                                         if (optJSONObject5 != null) {
                                             hashMap4 = hashMap5;
                                             try {
-                                            } catch (Exception e10) {
-                                                e = e10;
+                                            } catch (Exception e11) {
+                                                e = e11;
                                                 hashMap3 = hashMap6;
                                                 str11 = j10;
                                                 k0Var2 = k0Var4;
@@ -1234,8 +1235,8 @@ public final class l0 {
                                                     jSONArray2 = optJSONArray2;
                                                     i22++;
                                                     optJSONArray2 = jSONArray2;
-                                                } catch (Exception e11) {
-                                                    e = e11;
+                                                } catch (Exception e12) {
+                                                    e = e12;
                                                     wallettransaction2 = null;
                                                     j("stream transaction parse failed", e);
                                                     wallettransaction3 = wallettransaction2;
@@ -1250,8 +1251,8 @@ public final class l0 {
                                         if (z12 == 0 && i12 == 0 && !optBoolean) {
                                             try {
                                                 i14 = i15;
-                                            } catch (Exception e12) {
-                                                e = e12;
+                                            } catch (Exception e13) {
+                                                e = e13;
                                                 wallettransaction2 = null;
                                                 j("stream transaction parse failed", e);
                                                 wallettransaction3 = wallettransaction2;
@@ -1276,8 +1277,8 @@ public final class l0 {
                                                                         wallettransaction2 = null;
                                                                         try {
                                                                             wallettransaction3.normalMessageBodyHash = optJSONObject.optString("hash", null);
-                                                                        } catch (Exception e13) {
-                                                                            e = e13;
+                                                                        } catch (Exception e14) {
+                                                                            e = e14;
                                                                             j("stream transaction parse failed", e);
                                                                             wallettransaction3 = wallettransaction2;
                                                                             if (wallettransaction3 != null) {
@@ -1340,8 +1341,8 @@ public final class l0 {
                                                                     str13 = jSONObject2.optString("domain", null);
                                                                 }
                                                                 wallettransactionpeeraddress.domain = str13;
-                                                            } catch (Exception e14) {
-                                                                e = e14;
+                                                            } catch (Exception e15) {
+                                                                e = e15;
                                                                 wallettransaction2 = null;
                                                             }
                                                             if (a(wallettransactionpeeraddress.address, string)) {
@@ -1661,7 +1662,7 @@ public final class l0 {
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj2;
                 if (wallettransaction2.pending && !TextUtils.isEmpty(wallettransaction2.messageHash) && !hashMap.containsKey(wallettransaction2)) {
                     String str = wallettransaction2.messageHash;
-                    n0 n0Var = new n0(i10, str, new ql0(27, this, wallettransaction2));
+                    n0 n0Var = new n0(i10, str, new zg1(1, this, wallettransaction2));
                     hashMap.put(wallettransaction2, n0Var);
                     if (!n0Var.d && !TextUtils.isEmpty(str)) {
                         n0Var.d = true;
@@ -1712,7 +1713,7 @@ public final class l0 {
     public final void S(i0 i0Var, boolean z10, Utilities.Callback2 callback2) {
         i0 b10 = i0Var.b();
         F("requesting proof challenge");
-        ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_wallet.getProofChallenge(), new org.telegram.messenger.a(), new v(this, b10, callback2, z10, 0));
+        ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_wallet.getProofChallenge(), new org.telegram.messenger.a(), new w(this, b10, callback2, z10, 0));
     }
 
     public final void U() {
@@ -1758,7 +1759,7 @@ public final class l0 {
             t(str, null);
             h0((c0) this.N.get(str));
         }
-        Collections.sort(this.G, new o70(10));
+        Collections.sort(this.G, new bv(13));
     }
 
     public final void V() {
@@ -1811,7 +1812,7 @@ public final class l0 {
         performapirequest.post = true;
         performapirequest.endpoint = "/api/v2/runGetMethod";
         JSONArray jSONArray = new JSONArray();
-        boolean z10 = org.telegram.ui.web.b1.Q0;
+        boolean z10 = org.telegram.ui.web.a1.Q0;
         try {
             jSONObject = new JSONObject();
             jSONObject.put("address", str);
@@ -1822,7 +1823,7 @@ public final class l0 {
         }
         performapirequest.payload = jSONObject.toString();
         int i10 = this.a;
-        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new org.telegram.messenger.a(), new ai.r5(this, str, callback), MessagesController.getInstance(i10).webFileDatacenterId, 0);
+        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new org.telegram.messenger.a(), new bi.m5(this, str, callback), MessagesController.getInstance(i10).webFileDatacenterId, 0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x006b  */
@@ -1850,7 +1851,7 @@ public final class l0 {
         TL_wallet.WalletTransactionPeer walletTransactionPeer = wallettransaction.peer;
         TL_wallet.WalletTransactionPeer walletTransactionPeer2 = wallettransaction2.peer;
         if (walletTransactionPeer2 != null && walletTransactionPeer != null && a(walletTransactionPeer.address, walletTransactionPeer2.address)) {
-            if (TextUtils.isEmpty(walletTransactionPeer2.domain) || "null".equals(walletTransactionPeer2.domain)) {
+            if (TextUtils.isEmpty(walletTransactionPeer2.domain) || BuildConfig.BETA_URL.equals(walletTransactionPeer2.domain)) {
                 walletTransactionPeer2.domain = walletTransactionPeer.domain;
             }
             if ((walletTransactionPeer2 instanceof TL_wallet.walletTransactionPeerAddress) && (walletTransactionPeer instanceof TL_wallet.walletTransactionPeerUser)) {
@@ -2060,7 +2061,7 @@ public final class l0 {
         BigDecimal scale;
         int i10;
         f fVar = this.h;
-        String g10 = fVar.g();
+        String g7 = fVar.g();
         TL_wallet.currencyRate j11 = fVar.j();
         if (j11 != null) {
             String str = j11.symbol;
@@ -2101,19 +2102,19 @@ public final class l0 {
                 boolean z15 = scale.signum() < 0;
                 String format = decimalFormat.format(scale.abs());
                 if (!TextUtils.isEmpty(str)) {
-                    g10 = str;
+                    g7 = str;
                 }
                 String str4 = z12 ? " " : "";
-                String D = z11 ? a1.g.D(g10, str4, format) : a1.g.D(format, str4, g10);
+                String D = z11 ? a1.g.D(g7, str4, format) : a1.g.D(format, str4, g7);
                 if (z15) {
-                    D = si.o0.h("-", D);
+                    D = b10.j("-", D);
                 }
                 int indexOf = D.indexOf(8387);
                 if (indexOf < 0) {
                     return D;
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(D);
-                spannableStringBuilder.setSpan(new j61(AndroidUtilities.getTypeface("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
+                spannableStringBuilder.setSpan(new q61(AndroidUtilities.getTypeface("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
                 return spannableStringBuilder;
             }
         }
@@ -2240,6 +2241,6 @@ public final class l0 {
 
     public final void y(Utilities.Callback2 callback2, boolean z10, boolean z11) {
         F("getSecretPhrase: whenReady...");
-        j0(new e2.o0(this, callback2, z10, z11, 4));
+        j0(new e2.p0(this, callback2, z10, z11, 4));
     }
 }

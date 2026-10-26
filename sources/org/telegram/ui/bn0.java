@@ -1,70 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.webkit.WebView;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bn0 implements Runnable {
+public final class bn0 extends TextView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ io0 b;
-    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ bn0(io0 io0Var, TLObject tLObject, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ bn0(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = io0Var;
-        this.c = tLObject;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 3:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                io0.e0(this.b, this.c);
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 break;
             case 1:
-                io0 io0Var = this.b;
-                Utilities.Callback callback = io0Var.d1;
-                TLObject tLObject = this.c;
-                if (callback != null) {
-                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
-                }
-                io0Var.D0(false);
-                io0Var.z0 = true;
-                io0Var.H0(true, true);
-                org.telegram.ui.Components.cr crVar = io0Var.r;
-                if (crVar != null) {
-                    crVar.setVisibility(0);
-                }
-                org.telegram.ui.ActionBar.u0 u0Var = io0Var.n;
-                if (u0Var != null) {
-                    u0Var.setEnabled(false);
-                    io0Var.n.getContentView().setVisibility(4);
-                }
-                org.telegram.ui.ActionBar.h5 parentLayout = io0Var.getParentLayout();
-                Activity parentActivity = io0Var.getParentActivity();
-                io0Var.getMessagesController().newMessageCallback = new e7(io0Var, parentLayout, parentActivity, 17);
-                WebView webView = io0Var.w;
-                if (webView != null) {
-                    webView.setVisibility(0);
-                    WebView webView2 = io0Var.w;
-                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
-                    io0Var.x = str;
-                    webView2.loadUrl(str);
-                }
-                io0Var.a1 = true;
-                io0Var.f1 = 3;
-                ho0 ho0Var = io0Var.Z0;
-                if (ho0Var != null) {
-                    ho0Var.a(3);
-                    break;
-                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
                 break;
             default:
-                io0.c0(this.b, this.c);
+                super.onMeasure(i10, i11);
                 break;
         }
     }

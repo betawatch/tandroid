@@ -1,41 +1,10 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class i0 extends org.telegram.ui.ActionBar.k5 {
-    public final /* synthetic */ int r;
-    public final /* synthetic */ Object s;
-
-    public /* synthetic */ i0(Object obj, int i10) {
-        this.r = i10;
-        this.s = obj;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k5, org.telegram.ui.ActionBar.a3
-    public boolean g() {
-        switch (this.r) {
-            case 0:
-                k4 k4Var = (k4) this.s;
-                org.telegram.ui.Cells.o9 o9Var = k4Var.Q0;
-                if (o9Var == null || !o9Var.x()) {
-                    return true;
-                }
-                k4Var.Q0.f(false);
-                return false;
-            case 1:
-            default:
-                return super.g();
-            case 2:
-                return !((org.telegram.ui.Wallet.a2) this.s).m;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k5, org.telegram.ui.ActionBar.a3
-    public void onOpenAnimationEnd() {
-        switch (this.r) {
-            case 1:
-                ((org.telegram.ui.Components.ir0) this.s).Z = true;
-                break;
-        }
+public final class i0 extends org.telegram.ui.Components.ex0 {
+    @Override // s4.d0
+    public final int p() {
+        return -1;
     }
 }

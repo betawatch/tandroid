@@ -1,21 +1,22 @@
 package f4;
 
 import a1.g;
-import ai.h6;
+import a8.me;
+import a8.wb;
+import a8.yb;
 import android.text.Layout;
 import android.text.TextUtils;
-import b2.u0;
-import com.google.android.gms.internal.cast.z5;
-import com.google.android.gms.internal.play_billing.k3;
+import b2.v0;
+import bi.c6;
+import c3.h0;
 import e2.h;
 import e2.j;
-import e2.m0;
-import e9.a1;
-import e9.e2;
-import e9.g2;
-import e9.k2;
-import e9.s;
-import e9.y0;
+import e2.n0;
+import f9.b2;
+import f9.e2;
+import f9.o;
+import f9.t0;
+import f9.z1;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayDeque;
@@ -24,17 +25,15 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.b10;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-import si.o0;
-import v7.s6;
-import v7.u6;
-import w7.a9;
+import w7.m5;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -44,7 +43,7 @@ public final class d implements m {
     public static final Pattern f = Pattern.compile("^([-+]?\\d+\\.?\\d*?)% ([-+]?\\d+\\.?\\d*?)%$");
     public static final Pattern h = Pattern.compile("^([-+]?\\d+\\.?\\d*?)px ([-+]?\\d+\\.?\\d*?)px$");
     public static final Pattern n = Pattern.compile("^(\\d+) (\\d+)$");
-    public static final h6 r = new h6(30.0f, 1, 1);
+    public static final c6 r = new c6(30.0f, 1, 1);
     public final XmlPullParserFactory a;
 
     public d() {
@@ -52,20 +51,20 @@ public final class d implements m {
             XmlPullParserFactory newInstance = XmlPullParserFactory.newInstance();
             this.a = newInstance;
             newInstance.setNamespaceAware(true);
-        } catch (XmlPullParserException e7) {
-            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e7);
+        } catch (XmlPullParserException e10) {
+            throw new RuntimeException("Couldn't create XmlPullParserFactory instance", e10);
         }
     }
 
-    public static f b(f fVar) {
+    public static f a(f fVar) {
         return fVar == null ? new f() : fVar;
     }
 
-    public static boolean d(String str) {
+    public static boolean b(String str) {
         return str.equals("tt") || str.equals("head") || str.equals("body") || str.equals("div") || str.equals("p") || str.equals("span") || str.equals("br") || str.equals("style") || str.equals("styling") || str.equals("layout") || str.equals("region") || str.equals("metadata") || str.equals("image") || str.equals("data") || str.equals("information");
     }
 
-    public static int e(XmlPullParser xmlPullParser) {
+    public static int c(XmlPullParser xmlPullParser) {
         String attributeValue = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "cellResolution");
         if (attributeValue == null) {
             return 15;
@@ -86,7 +85,7 @@ public final class d implements m {
             if (parseInt == 0 || parseInt2 == 0) {
                 z10 = false;
             }
-            u6.d("Invalid cell resolution %s %s", parseInt, parseInt2, z10);
+            yb.d("Invalid cell resolution %s %s", parseInt, parseInt2, z10);
             return parseInt2;
         } catch (NumberFormatException unused) {
             e2.a.l("TtmlParser", "Ignoring malformed cell resolution: ".concat(attributeValue));
@@ -94,10 +93,10 @@ public final class d implements m {
         }
     }
 
-    public static void g(String str, f fVar) {
+    public static void d(String str, f fVar) {
         Matcher matcher;
         String group;
-        String str2 = m0.a;
+        String str2 = n0.a;
         String[] split = str.split("\\s+", -1);
         int length = split.length;
         Pattern pattern = d;
@@ -133,30 +132,30 @@ public final class d implements m {
         fVar.k = Float.parseFloat(group2);
     }
 
-    public static h6 h(XmlPullParser xmlPullParser) {
+    public static c6 e(XmlPullParser xmlPullParser) {
         float f7;
         String attributeValue = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRate");
         int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : 30;
         String attributeValue2 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRateMultiplier");
         if (attributeValue2 != null) {
-            String str = m0.a;
-            u6.f("frameRateMultiplier doesn't have 2 parts", attributeValue2.split(" ", -1).length == 2);
+            String str = n0.a;
+            yb.f("frameRateMultiplier doesn't have 2 parts", attributeValue2.split(" ", -1).length == 2);
             f7 = Integer.parseInt(r2[0]) / Integer.parseInt(r2[1]);
         } else {
             f7 = 1.0f;
         }
-        h6 h6Var = r;
-        int i10 = h6Var.b;
+        c6 c6Var = r;
+        int i10 = c6Var.b;
         String attributeValue3 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "subFrameRate");
         if (attributeValue3 != null) {
             i10 = Integer.parseInt(attributeValue3);
         }
-        int i11 = h6Var.c;
+        int i11 = c6Var.c;
         String attributeValue4 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "tickRate");
         if (attributeValue4 != null) {
             i11 = Integer.parseInt(attributeValue4);
         }
-        return new h6(parseInt * f7, i10, i11);
+        return new c6(parseInt * f7, i10, i11);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -165,7 +164,7 @@ public final class d implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void i(XmlPullParser xmlPullParser, HashMap hashMap, int i10, u0 u0Var, HashMap hashMap2, HashMap hashMap3) {
+    public static void f(XmlPullParser xmlPullParser, HashMap hashMap, int i10, v0 v0Var, HashMap hashMap2, HashMap hashMap3) {
         String f7;
         float f10;
         float f11;
@@ -189,22 +188,22 @@ public final class d implements m {
             xmlPullParser.next();
             if (e2.a.i(xmlPullParser, "style")) {
                 String f19 = e2.a.f(xmlPullParser, "style");
-                f k10 = k(xmlPullParser, new f());
+                f h10 = h(xmlPullParser, new f());
                 if (f19 != null) {
                     String trim = f19.trim();
                     if (trim.isEmpty()) {
                         split = new String[0];
                     } else {
-                        String str = m0.a;
+                        String str = n0.a;
                         split = trim.split("\\s+", -1);
                     }
                     for (String str2 : split) {
-                        k10.a((f) hashMap.get(str2));
+                        h10.a((f) hashMap.get(str2));
                     }
                 }
-                String str3 = k10.l;
+                String str3 = h10.l;
                 if (str3 != null) {
-                    hashMap.put(str3, k10);
+                    hashMap.put(str3, h10);
                 }
             } else if (e2.a.i(xmlPullParser, "region")) {
                 String f20 = e2.a.f(xmlPullParser, "id");
@@ -233,7 +232,7 @@ public final class d implements m {
                             }
                         } else if (!matcher2.matches()) {
                             e2.a.l("TtmlParser", "Ignoring region with unsupported origin: ".concat(f21));
-                        } else if (u0Var == null) {
+                        } else if (v0Var == null) {
                             e2.a.l("TtmlParser", "Ignoring region with missing tts:extent: ".concat(f21));
                         } else {
                             try {
@@ -243,8 +242,8 @@ public final class d implements m {
                                 String group4 = matcher2.group(2);
                                 group4.getClass();
                                 f10 = 100.0f;
-                                float f22 = parseInt / u0Var.a;
-                                float parseInt2 = Integer.parseInt(group4) / u0Var.b;
+                                float f22 = parseInt / v0Var.a;
+                                float parseInt2 = Integer.parseInt(group4) / v0Var.b;
                                 f12 = f22;
                                 f11 = parseInt2;
                             } catch (NumberFormatException unused2) {
@@ -272,20 +271,20 @@ public final class d implements m {
                                 group6.getClass();
                                 parseFloat2 = Float.parseFloat(group6) / f10;
                             } catch (NumberFormatException unused3) {
-                                k3.q("Ignoring region with malformed extent: ", f21, "TtmlParser");
+                                h0.p("Ignoring region with malformed extent: ", f21, "TtmlParser");
                             }
                         } else if (!matcher4.matches()) {
-                            k3.q("Ignoring region with unsupported extent: ", f21, "TtmlParser");
-                        } else if (u0Var == null) {
-                            k3.q("Ignoring region with missing tts:extent: ", f21, "TtmlParser");
+                            h0.p("Ignoring region with unsupported extent: ", f21, "TtmlParser");
+                        } else if (v0Var == null) {
+                            h0.p("Ignoring region with missing tts:extent: ", f21, "TtmlParser");
                         } else {
                             String group7 = matcher4.group(1);
                             group7.getClass();
                             int parseInt3 = Integer.parseInt(group7);
                             String group8 = matcher4.group(2);
                             group8.getClass();
-                            float f24 = parseInt3 / u0Var.a;
-                            parseFloat2 = Integer.parseInt(group8) / u0Var.b;
+                            float f24 = parseInt3 / v0Var.a;
+                            parseFloat2 = Integer.parseInt(group8) / v0Var.b;
                             parseFloat = f24;
                         }
                         f13 = parseFloat;
@@ -296,7 +295,7 @@ public final class d implements m {
                     }
                     String f25 = e2.a.f(xmlPullParser, "displayAlign");
                     if (f25 != null) {
-                        String c11 = s6.c(f25);
+                        String c11 = wb.c(f25);
                         c11.getClass();
                         if (c11.equals("center")) {
                             f15 = f11 + (f14 / 2.0f);
@@ -308,7 +307,7 @@ public final class d implements m {
                         float f26 = 1.0f / i10;
                         f16 = e2.a.f(xmlPullParser, "writingMode");
                         if (f16 != null) {
-                            String c12 = s6.c(f16);
+                            String c12 = wb.c(f16);
                             c12.getClass();
                             switch (c12.hashCode()) {
                                 case 3694:
@@ -383,13 +382,13 @@ public final class d implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static c j(XmlPullParser xmlPullParser, c cVar, HashMap hashMap, h6 h6Var) {
+    public static c g(XmlPullParser xmlPullParser, c cVar, HashMap hashMap, c6 c6Var) {
         long j10;
         char c10;
         String[] split;
         int attributeCount = xmlPullParser.getAttributeCount();
         String[] strArr = null;
-        f k10 = k(xmlPullParser, null);
+        f h10 = h(xmlPullParser, null);
         String str = null;
         String str2 = "";
         long j11 = -9223372036854775807L;
@@ -455,20 +454,20 @@ public final class d implements m {
                         continue;
                     }
                 case 1:
-                    j13 = l(attributeValue, h6Var);
+                    j13 = i(attributeValue, c6Var);
                     break;
                 case 2:
-                    j12 = l(attributeValue, h6Var);
+                    j12 = i(attributeValue, c6Var);
                     break;
                 case 3:
-                    j11 = l(attributeValue, h6Var);
+                    j11 = i(attributeValue, c6Var);
                     break;
                 case 4:
                     String trim = attributeValue.trim();
                     if (trim.isEmpty()) {
                         split = new String[0];
                     } else {
-                        String str3 = m0.a;
+                        String str3 = n0.a;
                         split = trim.split("\\s+", -1);
                     }
                     if (split.length > 0) {
@@ -502,12 +501,12 @@ public final class d implements m {
                 long j15 = cVar.e;
                 if (j15 != -9223372036854775807L) {
                     j10 = j15;
-                    return new c(xmlPullParser.getName(), null, j11, j10, k10, strArr, str2, str, cVar);
+                    return new c(xmlPullParser.getName(), null, j11, j10, h10, strArr, str2, str, cVar);
                 }
             }
         }
         j10 = j12;
-        return new c(xmlPullParser.getName(), null, j11, j10, k10, strArr, str2, str, cVar);
+        return new c(xmlPullParser.getName(), null, j11, j10, h10, strArr, str2, str, cVar);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -526,13 +525,13 @@ public final class d implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static f k(XmlPullParser xmlPullParser, f fVar) {
+    public static f h(XmlPullParser xmlPullParser, f fVar) {
         char c10;
         ?? r92;
         boolean z10;
         char c11;
         int i10;
-        g2 o10;
+        b2 o10;
         int i11;
         int hashCode;
         int i12;
@@ -672,20 +671,20 @@ public final class d implements m {
             Layout.Alignment alignment = null;
             switch (c10) {
                 case 0:
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     fVar2.i = "italic".equalsIgnoreCase(attributeValue) ? 1 : 0;
                     break;
                 case 1:
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     fVar2.u = attributeValue;
                     break;
                 case 2:
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     fVar2.a = attributeValue;
                     break;
                 case 3:
-                    fVar2 = b(fVar2);
-                    String c13 = s6.c(attributeValue);
+                    fVar2 = a(fVar2);
+                    String c13 = wb.c(attributeValue);
                     c13.getClass();
                     switch (c13.hashCode()) {
                         case -1364013995:
@@ -743,11 +742,11 @@ public final class d implements m {
                     fVar2.o = alignment;
                     break;
                 case 4:
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     fVar2.t = attributeValue;
                     break;
                 case 5:
-                    String c14 = s6.c(attributeValue);
+                    String c14 = wb.c(attributeValue);
                     c14.getClass();
                     switch (c14.hashCode()) {
                         case -1461280213:
@@ -784,36 +783,36 @@ public final class d implements m {
                     }
                     switch (z10) {
                         case false:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.g = 0;
                             break;
                         case true:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.g = 1;
                             break;
                         case true:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.f = 0;
                             break;
                         case true:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.f = 1;
                             break;
                     }
                 case 6:
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     fVar2.h = "bold".equalsIgnoreCase(attributeValue) ? 1 : 0;
                     break;
                 case 7:
                     if ("style".equals(xmlPullParser.getName())) {
-                        fVar2 = b(fVar2);
+                        fVar2 = a(fVar2);
                         fVar2.l = attributeValue;
                         break;
                     } else {
                         break;
                     }
                 case '\b':
-                    String c15 = s6.c(attributeValue);
+                    String c15 = wb.c(attributeValue);
                     c15.getClass();
                     switch (c15.hashCode()) {
                         case -618561360:
@@ -865,35 +864,35 @@ public final class d implements m {
                     switch (c11) {
                         case 0:
                         case 4:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.m = 2;
                             break;
                         case 1:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.m = 1;
                             break;
                         case 2:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.m = 4;
                             break;
                         case 3:
                         case 5:
-                            fVar2 = b(fVar2);
+                            fVar2 = a(fVar2);
                             fVar2.m = 3;
                             break;
                     }
                 case '\t':
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     try {
                         fVar2.b = h.a(attributeValue, false);
                         fVar2.c = true;
                         break;
                     } catch (IllegalArgumentException unused) {
-                        k3.q("Failed parsing color value: ", attributeValue, "TtmlParser");
+                        h0.p("Failed parsing color value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case '\n':
-                    f b10 = b(fVar2);
+                    f a2 = a(fVar2);
                     Matcher matcher = e.matcher(attributeValue);
                     float f7 = Float.MAX_VALUE;
                     if (matcher.matches()) {
@@ -901,24 +900,24 @@ public final class d implements m {
                             String group = matcher.group(1);
                             group.getClass();
                             f7 = Math.min(100.0f, Math.max(-100.0f, Float.parseFloat(group)));
-                        } catch (NumberFormatException e7) {
-                            e2.a.m("TtmlParser", "Failed to parse shear: " + attributeValue, e7);
+                        } catch (NumberFormatException e10) {
+                            e2.a.m("TtmlParser", "Failed to parse shear: " + attributeValue, e10);
                         }
                     } else {
-                        k3.q("Invalid value for shear: ", attributeValue, "TtmlParser");
+                        h0.p("Invalid value for shear: ", attributeValue, "TtmlParser");
                     }
-                    b10.s = f7;
-                    fVar2 = b10;
+                    a2.s = f7;
+                    fVar2 = a2;
                     break;
                 case 11:
-                    String c16 = s6.c(attributeValue);
+                    String c16 = wb.c(attributeValue);
                     c16.getClass();
                     if (c16.equals("all")) {
-                        fVar2 = b(fVar2);
+                        fVar2 = a(fVar2);
                         fVar2.q = 1;
                         break;
                     } else if (c16.equals("none")) {
-                        fVar2 = b(fVar2);
+                        fVar2 = a(fVar2);
                         fVar2.q = 0;
                         break;
                     } else {
@@ -926,42 +925,42 @@ public final class d implements m {
                     }
                 case '\f':
                     try {
-                        fVar2 = b(fVar2);
-                        g(attributeValue, fVar2);
+                        fVar2 = a(fVar2);
+                        d(attributeValue, fVar2);
                         break;
                     } catch (z3.f unused2) {
-                        k3.q("Failed parsing fontSize value: ", attributeValue, "TtmlParser");
+                        h0.p("Failed parsing fontSize value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case '\r':
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     Pattern pattern = b.d;
                     if (attributeValue != null) {
-                        String c17 = s6.c(attributeValue.trim());
+                        String c17 = wb.c(attributeValue.trim());
                         if (!c17.isEmpty()) {
                             String[] split = TextUtils.split(c17, b.d);
                             int length = split.length;
-                            y0 t10 = length != 0 ? length != 1 ? y0.t(split.length, (Object[]) split.clone()) : new k2(split[0]) : e2.s;
-                            String str = (String) s.l(s.o(b.h, t10), "outside");
+                            t0 t10 = length != 0 ? length != 1 ? t0.t(split.length, (Object[]) split.clone()) : new e2(split[0]) : z1.s;
+                            String str = (String) o.l(o.o(b.h, t10), "outside");
                             int hashCode2 = str.hashCode();
                             if (hashCode2 != -1392885889) {
                                 if (hashCode2 != -1106037339) {
                                     if (hashCode2 == 92734940 && str.equals("after")) {
                                         i10 = 2;
-                                        o10 = s.o(b.e, t10);
+                                        o10 = o.o(b.e, t10);
                                         if (o10.isEmpty()) {
-                                            g2 o11 = s.o(b.g, t10);
-                                            g2 o12 = s.o(b.f, t10);
+                                            b2 o11 = o.o(b.g, t10);
+                                            b2 o12 = o.o(b.f, t10);
                                             if (o11.isEmpty() && o12.isEmpty()) {
                                                 bVar = new b(-1, 0, i10);
                                             } else {
-                                                String str2 = (String) s.l(o11, "filled");
+                                                String str2 = (String) o.l(o11, "filled");
                                                 int hashCode3 = str2.hashCode();
                                                 if (hashCode3 == -1274499742) {
                                                     str2.equals("filled");
                                                 } else if (hashCode3 == 3417674 && str2.equals("open")) {
                                                     i11 = 2;
-                                                    String str3 = (String) s.l(o12, "circle");
+                                                    String str3 = (String) o.l(o12, "circle");
                                                     hashCode = str3.hashCode();
                                                     if (hashCode != -1360216880) {
                                                         str3.equals("circle");
@@ -978,7 +977,7 @@ public final class d implements m {
                                                     bVar = new b(i12, i11, i10);
                                                 }
                                                 i11 = 1;
-                                                String str32 = (String) s.l(o12, "circle");
+                                                String str32 = (String) o.l(o12, "circle");
                                                 hashCode = str32.hashCode();
                                                 if (hashCode != -1360216880) {
                                                 }
@@ -986,7 +985,7 @@ public final class d implements m {
                                                 bVar = new b(i12, i11, i10);
                                             }
                                         } else {
-                                            String str4 = (String) new a1(o10).next();
+                                            String str4 = (String) new f9.v0(o10).next();
                                             int hashCode4 = str4.hashCode();
                                             if (hashCode4 == 3005871) {
                                                 str4.equals("auto");
@@ -1000,7 +999,7 @@ public final class d implements m {
                                     }
                                 } else if (str.equals("outside")) {
                                     i10 = -2;
-                                    o10 = s.o(b.e, t10);
+                                    o10 = o.o(b.e, t10);
                                     if (o10.isEmpty()) {
                                     }
                                 }
@@ -1010,7 +1009,7 @@ public final class d implements m {
                                 str.equals("before");
                             }
                             i10 = 1;
-                            o10 = s.o(b.e, t10);
+                            o10 = o.o(b.e, t10);
                             if (o10.isEmpty()) {
                             }
                             fVar2.r = bVar;
@@ -1020,32 +1019,32 @@ public final class d implements m {
                     fVar2.r = bVar;
                     break;
                 case 14:
-                    String c18 = s6.c(attributeValue);
+                    String c18 = wb.c(attributeValue);
                     c18.getClass();
                     if (c18.equals("before")) {
-                        fVar2 = b(fVar2);
+                        fVar2 = a(fVar2);
                         fVar2.n = 1;
                         break;
                     } else if (c18.equals("after")) {
-                        fVar2 = b(fVar2);
+                        fVar2 = a(fVar2);
                         fVar2.n = 2;
                         break;
                     } else {
                         break;
                     }
                 case 15:
-                    fVar2 = b(fVar2);
+                    fVar2 = a(fVar2);
                     try {
                         fVar2.d = h.a(attributeValue, false);
                         fVar2.e = true;
                         break;
                     } catch (IllegalArgumentException unused3) {
-                        k3.q("Failed parsing background value: ", attributeValue, "TtmlParser");
+                        h0.p("Failed parsing background value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case 16:
-                    fVar2 = b(fVar2);
-                    String c19 = s6.c(attributeValue);
+                    fVar2 = a(fVar2);
+                    String c19 = wb.c(attributeValue);
                     c19.getClass();
                     switch (c19.hashCode()) {
                         case -1364013995:
@@ -1115,7 +1114,7 @@ public final class d implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static long l(String str, h6 h6Var) {
+    public static long i(String str, c6 c6Var) {
         double d10;
         double d11;
         Matcher matcher = b.matcher(str);
@@ -1129,11 +1128,11 @@ public final class d implements m {
             matcher.group(3).getClass();
             double parseLong3 = parseLong2 + Long.parseLong(r13);
             String group2 = matcher.group(4);
-            return (long) ((parseLong3 + (group2 != null ? Double.parseDouble(group2) : 0.0d) + (matcher.group(5) != null ? Long.parseLong(r13) / h6Var.a : 0.0d) + (matcher.group(6) != null ? (Long.parseLong(r13) / h6Var.b) / h6Var.a : 0.0d)) * 1000000.0d);
+            return (long) ((parseLong3 + (group2 != null ? Double.parseDouble(group2) : 0.0d) + (matcher.group(5) != null ? Long.parseLong(r13) / c6Var.a : 0.0d) + (matcher.group(6) != null ? (Long.parseLong(r13) / c6Var.b) / c6Var.a : 0.0d)) * 1000000.0d);
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(o0.h("Malformed time expression: ", str));
+            throw new z3.f(b10.j("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1177,7 +1176,7 @@ public final class d implements m {
         }
         switch (c10) {
             case 0:
-                d10 = h6Var.a;
+                d10 = c6Var.a;
                 parseDouble /= d10;
                 break;
             case 1:
@@ -1187,7 +1186,7 @@ public final class d implements m {
                 d11 = 60.0d;
                 break;
             case 3:
-                d10 = h6Var.c;
+                d10 = c6Var.c;
                 parseDouble /= d10;
                 break;
             case 4:
@@ -1199,7 +1198,7 @@ public final class d implements m {
         return (long) (parseDouble * 1000000.0d);
     }
 
-    public static u0 m(XmlPullParser xmlPullParser) {
+    public static v0 k(XmlPullParser xmlPullParser) {
         String f7 = e2.a.f(xmlPullParser, "extent");
         if (f7 == null) {
             return null;
@@ -1215,7 +1214,7 @@ public final class d implements m {
             int parseInt = Integer.parseInt(group);
             String group2 = matcher.group(2);
             group2.getClass();
-            return new u0(parseInt, Integer.parseInt(group2));
+            return new v0(parseInt, Integer.parseInt(group2));
         } catch (NumberFormatException unused) {
             e2.a.l("TtmlParser", "Ignoring malformed tts extent: ".concat(f7));
             return null;
@@ -1223,60 +1222,65 @@ public final class d implements m {
     }
 
     @Override // z3.m
-    public final z3.d a(int i10, int i11, byte[] bArr) {
+    public final void G(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+        m5.b(j(i10, i11, bArr), lVar, jVar);
+    }
+
+    @Override // z3.m
+    public final z3.d j(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();
             HashMap hashMap2 = new HashMap();
             HashMap hashMap3 = new HashMap();
             hashMap2.put("", new e("", -3.4028235E38f, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31));
-            u0 u0Var = null;
+            v0 v0Var = null;
             newPullParser.setInput(new ByteArrayInputStream(bArr, i10, i11), null);
             ArrayDeque arrayDeque = new ArrayDeque();
-            h6 h6Var = r;
+            c6 c6Var = r;
             int i12 = 0;
             int i13 = 15;
-            z5 z5Var = null;
+            me meVar = null;
             for (int eventType = newPullParser.getEventType(); eventType != 1; eventType = newPullParser.getEventType()) {
                 c cVar = (c) arrayDeque.peek();
                 if (i12 == 0) {
                     String name = newPullParser.getName();
                     if (eventType == 2) {
                         if ("tt".equals(name)) {
-                            h6Var = h(newPullParser);
-                            i13 = e(newPullParser);
-                            u0Var = m(newPullParser);
+                            c6Var = e(newPullParser);
+                            i13 = c(newPullParser);
+                            v0Var = k(newPullParser);
                         }
-                        h6 h6Var2 = h6Var;
-                        u0 u0Var2 = u0Var;
+                        c6 c6Var2 = c6Var;
+                        v0 v0Var2 = v0Var;
                         int i14 = i13;
-                        if (d(name)) {
+                        if (b(name)) {
                             if ("head".equals(name)) {
-                                i(newPullParser, hashMap, i14, u0Var2, hashMap2, hashMap3);
+                                f(newPullParser, hashMap, i14, v0Var2, hashMap2, hashMap3);
                             } else {
                                 try {
-                                    c j10 = j(newPullParser, cVar, hashMap2, h6Var2);
-                                    arrayDeque.push(j10);
+                                    c g7 = g(newPullParser, cVar, hashMap2, c6Var2);
+                                    arrayDeque.push(g7);
                                     if (cVar != null) {
                                         if (cVar.m == null) {
                                             cVar.m = new ArrayList();
                                         }
-                                        cVar.m.add(j10);
+                                        cVar.m.add(g7);
                                     }
-                                } catch (z3.f e7) {
-                                    e2.a.m("TtmlParser", "Suppressing parser error", e7);
+                                } catch (z3.f e10) {
+                                    e2.a.m("TtmlParser", "Suppressing parser error", e10);
                                 }
                             }
                             i13 = i14;
-                            u0Var = u0Var2;
-                            h6Var = h6Var2;
+                            v0Var = v0Var2;
+                            c6Var = c6Var2;
                         } else {
                             e2.a.g("TtmlParser", "Ignoring unsupported tag: " + newPullParser.getName());
                         }
                         i12++;
                         i13 = i14;
-                        u0Var = u0Var2;
-                        h6Var = h6Var2;
+                        v0Var = v0Var2;
+                        c6Var = c6Var2;
                     } else if (eventType == 4) {
                         cVar.getClass();
                         c a2 = c.a(newPullParser.getText());
@@ -1288,7 +1292,7 @@ public final class d implements m {
                         if (newPullParser.getName().equals("tt")) {
                             c cVar2 = (c) arrayDeque.peek();
                             cVar2.getClass();
-                            z5Var = new z5(cVar2, hashMap, hashMap2, hashMap3);
+                            meVar = new me(cVar2, hashMap, hashMap2, hashMap3);
                         }
                         arrayDeque.pop();
                     }
@@ -1299,23 +1303,18 @@ public final class d implements m {
                 }
                 newPullParser.next();
             }
-            z5Var.getClass();
-            return z5Var;
-        } catch (IOException e10) {
-            throw new IllegalStateException("Unexpected error when reading input.", e10);
-        } catch (XmlPullParserException e11) {
-            throw new IllegalStateException("Unable to decode source", e11);
+            meVar.getClass();
+            return meVar;
+        } catch (IOException e11) {
+            throw new IllegalStateException("Unexpected error when reading input.", e11);
+        } catch (XmlPullParserException e12) {
+            throw new IllegalStateException("Unable to decode source", e12);
         }
     }
 
     @Override // z3.m
-    public final int c() {
+    public final int y() {
         return 1;
-    }
-
-    @Override // z3.m
-    public final void f(byte[] bArr, int i10, int i11, l lVar, j jVar) {
-        a9.b(a(i10, i11, bArr), lVar, jVar);
     }
 
     @Override // z3.m

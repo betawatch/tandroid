@@ -1,136 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.view.WindowManager;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.fb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class o91 implements SensorEventListener {
-    public final float[] a = new float[3];
-    public final float[] b = new float[3];
-    public int c;
-    public final WindowManager d;
-    public final SensorManager e;
-    public final Sensor f;
-    public boolean h;
-    public n91 n;
+public final class o91 extends s4.d0 {
+    public final /* synthetic */ ig.j0 r;
 
-    public o91(Context context) {
-        this.d = (WindowManager) context.getSystemService("window");
-        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
-        this.e = sensorManager;
-        this.f = sensorManager.getDefaultSensor(1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o91(ig.j0 j0Var, Context context) {
+        super(context);
+        this.r = j0Var;
     }
 
-    public static float a(int i10, int i11) {
-        float f7 = i10;
-        float dp = AndroidUtilities.dp(16.0f) * 2;
-        float f10 = (f7 + dp) / f7;
-        float f11 = i11;
-        return Math.max(f10, (dp + f11) / f11);
-    }
-
-    public final void b(fb1 fb1Var) {
-        this.n = fb1Var;
-    }
-
-    public final void c(boolean z10) {
-        if (this.h != z10) {
-            this.h = z10;
-            Sensor sensor = this.f;
-            if (sensor == null) {
-                return;
-            }
-            SensorManager sensorManager = this.e;
-            if (z10) {
-                sensorManager.registerListener(this, sensor, 1);
-            } else {
-                sensorManager.unregisterListener(this);
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
-    @Override // android.hardware.SensorEventListener
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.t91) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // s4.d0, s4.a1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        n91 n91Var;
-        float f7;
-        int rotation = this.d.getDefaultDisplay().getRotation();
-        float[] fArr = sensorEvent.values;
-        float f10 = fArr[0] / 9.80665f;
-        float f11 = fArr[1] / 9.80665f;
-        float f12 = fArr[2] / 9.80665f;
-        float f13 = f12 * f12;
-        float atan2 = (float) ((Math.atan2(f10, Math.sqrt((f11 * f11) + f13)) / 3.141592653589793d) * 2.0d);
-        float atan22 = (float) ((Math.atan2(f11, Math.sqrt((f10 * f10) + f13)) / 3.141592653589793d) * 2.0d);
-        if (rotation != 1) {
-            if (rotation == 2) {
-                float f14 = -atan22;
-                atan22 = -atan2;
-                atan2 = f14;
-            } else if (rotation != 3) {
-                atan2 = atan22;
-                atan22 = atan2;
-            } else {
-                atan2 = -atan2;
+    public final void g(View view, s4.z0 z0Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
+            j10 += AndroidUtilities.dp(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
             }
+            j10 -= AndroidUtilities.dp(60.0f);
         }
-        int i10 = this.c;
-        float[] fArr2 = this.a;
-        fArr2[i10] = atan2;
-        float[] fArr3 = this.b;
-        fArr3[i10] = atan22;
-        this.c = (i10 + 1) % fArr2.length;
-        float f15 = 0.0f;
-        float f16 = 0.0f;
-        for (int i11 = 0; i11 < fArr2.length; i11++) {
-            f15 += fArr2[i11];
-            f16 += fArr3[i11];
+        int k10 = k(p(), view);
+        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            z0Var.b(-j10, -k10, max, this.j);
         }
-        float length = f15 / fArr2.length;
-        float length2 = f16 / fArr2.length;
-        if (length <= 1.0f) {
-            f7 = length < -1.0f ? -2.0f : 2.0f;
-            int round = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
-            int round2 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
-            float max = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
-            float max2 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
-            float sqrt = (float) Math.sqrt((max2 * max2) + (max * max));
-            float f17 = max / sqrt;
-            float f18 = max2 / sqrt;
-            Math.atan2((f17 * (-1.0f)) - (f18 * 0.0f), (f18 * (-1.0f)) + (f17 * 0.0f));
-            n91Var = this.n;
-            if (n91Var == null) {
-                n91Var.e(round, round2);
-                return;
-            }
-            return;
-        }
-        length = f7 - length;
-        int round3 = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
-        int round22 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
-        float max3 = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
-        float max22 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
-        float sqrt2 = (float) Math.sqrt((max22 * max22) + (max3 * max3));
-        float f172 = max3 / sqrt2;
-        float f182 = max22 / sqrt2;
-        Math.atan2((f172 * (-1.0f)) - (f182 * 0.0f), (f182 * (-1.0f)) + (f172 * 0.0f));
-        n91Var = this.n;
-        if (n91Var == null) {
-        }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

@@ -1,54 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ya0 extends xh.k {
-    public final /* synthetic */ int E = 1;
-    public final /* synthetic */ Object F;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ya0(org.telegram.ui.nh0 nh0Var, org.telegram.ui.nh0 nh0Var2, FrameLayout frameLayout, long j10) {
-        super(nh0Var2, frameLayout, j10, true);
-        this.F = nh0Var;
-    }
-
-    @Override // xh.k
-    public final void f(String str, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.k kVar;
-        switch (this.E) {
-            case 0:
-                xh.b bVar = (xh.b) this.F;
-                wx0 wx0Var = bVar.W;
-                if (!this.e.isEmpty()) {
-                    if (!z11) {
-                        super.f(str, z10, z11);
-                        break;
-                    } else {
-                        bVar.w.J.setText("");
-                        break;
-                    }
-                } else if (wx0Var.getVisibility() != 4) {
-                    wx0Var.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!z11) {
-                    super.f(str, z10, z11);
-                    break;
-                } else {
-                    kVar = ((org.telegram.ui.ActionBar.o2) ((org.telegram.ui.nh0) this.F)).actionBar;
-                    kVar.setSearchFieldText("");
-                    break;
-                }
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ya0(xh.b bVar, org.telegram.ui.ActionBar.o2 o2Var, FrameLayout frameLayout, long j10) {
-        super(o2Var, frameLayout, j10, false);
-        this.F = bVar;
+public final /* synthetic */ class ya0 implements o1.f {
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+        int i10 = gb0.U;
     }
 }

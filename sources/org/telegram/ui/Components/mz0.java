@@ -1,13 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.animation.ValueAnimator;
+import android.text.StaticLayout;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class mz0 {
-    public final i11 a;
-    public final i11 b;
+    public final EditTextBoldCursor a;
+    public StaticLayout b;
+    public StaticLayout c;
+    public StaticLayout d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public float h;
+    public float i;
+    public ValueAnimator j;
 
-    public mz0(i11 i11Var, i11 i11Var2) {
-        this.a = i11Var;
-        this.b = i11Var2;
+    public mz0(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 }

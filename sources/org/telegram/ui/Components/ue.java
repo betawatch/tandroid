@@ -19,19 +19,19 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class ue extends FrameLayout {
     public final Paint a;
     public final RectF b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 c;
     public final /* synthetic */ ChatActivityEnterView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ue(ChatActivityEnterView chatActivityEnterView, Activity activity, org.telegram.ui.ActionBar.g6 g6Var) {
+    public ue(ChatActivityEnterView chatActivityEnterView, Activity activity, org.telegram.ui.ActionBar.u6 u6Var) {
         super(activity);
         this.d = chatActivityEnterView;
-        this.c = g6Var;
+        this.c = u6Var;
         this.a = new Paint(1);
         this.b = new RectF();
     }
@@ -46,7 +46,7 @@ public final class ue extends FrameLayout {
                 f7 = 1.0f - chatActivityEnterView.S0.getAlpha();
             }
             float dpf2 = AndroidUtilities.dpf2(19.0f);
-            int f02 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.Yd);
+            int f02 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.Yd);
             Paint paint = this.a;
             paint.setColor(f02);
             float dpf22 = AndroidUtilities.dpf2(3.0f);
@@ -76,24 +76,24 @@ public final class ue extends FrameLayout {
         long j10;
         long j11;
         long j12;
-        float f7;
         ChatActivityEnterView chatActivityEnterView = this.d;
         ue ueVar = chatActivityEnterView.Z0;
-        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+        org.telegram.ui.un unVar = chatActivityEnterView.P2;
         af afVar = chatActivityEnterView.H3;
         ig igVar = chatActivityEnterView.K3;
         xe xeVar = chatActivityEnterView.J0;
         final int i10 = 0;
         if (!chatActivityEnterView.p5) {
             chatActivityEnterView.V();
-            final int i11 = 3;
-            final int i12 = 1;
+            int i11 = 5;
+            final int i12 = 3;
+            final int i13 = 1;
             if (motionEvent.getAction() == 0) {
                 if (!ChatActivityEnterView.this.s4) {
-                    TLRPC.Chat chat = snVar == null ? null : snVar.e;
-                    TLRPC.UserFull userFull = snVar == null ? chatActivityEnterView.K : snVar.m8;
+                    TLRPC.Chat chat = unVar == null ? null : unVar.e;
+                    TLRPC.UserFull userFull = unVar == null ? chatActivityEnterView.K : unVar.m8;
                     if ((chat != null && !ChatObject.canSendVoice(chat) && (!ChatObject.canSendRoundVideo(chat) || !chatActivityEnterView.e2)) || (userFull != null && userFull.voice_messages_forbidden)) {
-                        chatActivityEnterView.Z2.Y1();
+                        chatActivityEnterView.Z2.N1();
                         return true;
                     }
                     if (!chatActivityEnterView.e2) {
@@ -111,32 +111,32 @@ public final class ue extends FrameLayout {
                     if (!z10 || !chatActivityEnterView.c1) {
                         if (chatActivityEnterView.F2 && chatActivityEnterView.c()) {
                             Activity activity = chatActivityEnterView.O2;
-                            long a2 = snVar.a();
-                            e2 e2Var = new e2(16);
-                            rc rcVar = new rc(i11);
-                            Pattern pattern = f5.a;
-                            org.telegram.ui.ActionBar.g6 g6Var = this.c;
-                            f5.K(activity, a2, -1L, 0, false, e2Var, rcVar, new c5(g6Var), g6Var);
+                            long a2 = unVar.a();
+                            f2 f2Var = new f2(20);
+                            k5 k5Var = new k5(i11);
+                            Pattern pattern = g5.a;
+                            org.telegram.ui.ActionBar.u6 u6Var = this.c;
+                            g5.J(activity, a2, -1L, 0, false, f2Var, k5Var, new d5(u6Var), u6Var);
                         }
-                        if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                        if (g5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             if (chatActivityEnterView.c1) {
                                 ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
                                 if (slideTextView != null) {
                                     slideTextView.setEnabled(false);
                                 }
-                                chatActivityEnterView.Z2.i1();
+                                chatActivityEnterView.Z2.X0();
                             } else {
                                 if (chatActivityEnterView.s4) {
                                     chatActivityEnterView.J3 = true;
                                 }
                                 MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.O);
-                                chatActivityEnterView.Z2.X0(0);
+                                chatActivityEnterView.Z2.M0(0);
                                 ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.k1;
                                 if (slideTextView2 != null) {
                                     slideTextView2.setEnabled(false);
                                 }
                             }
-                            f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                            g5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                 public final /* synthetic */ ue b;
 
                                 {
@@ -146,7 +146,7 @@ public final class ue extends FrameLayout {
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     Long l4 = (Long) obj;
-                                    switch (i12) {
+                                    switch (i13) {
                                         case 0:
                                             this.b.d.R0(0, true, 0, false, l4.longValue());
                                             break;
@@ -165,15 +165,15 @@ public final class ue extends FrameLayout {
                             return true;
                         }
                         MediaController.getInstance().stopRecording(chatActivityEnterView.c() ? 3 : 1, true, 0, chatActivityEnterView.O, 0L);
-                        chatActivityEnterView.Z2.X0(0);
+                        chatActivityEnterView.Z2.M0(0);
                     } else {
-                        if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                        if (g5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             ChatActivityEnterView.SlideTextView slideTextView3 = chatActivityEnterView.k1;
                             if (slideTextView3 != null) {
                                 slideTextView3.setEnabled(false);
                             }
-                            chatActivityEnterView.Z2.i1();
-                            f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                            chatActivityEnterView.Z2.X0();
+                            g5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                 public final /* synthetic */ ue b;
 
                                 {
@@ -201,7 +201,7 @@ public final class ue extends FrameLayout {
                             });
                             return true;
                         }
-                        chatActivityEnterView.Z2.a2(1, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
+                        chatActivityEnterView.Z2.P1(1, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
                         chatActivityEnterView.S4 = 0L;
                         xeVar.setEffect(0L);
                     }
@@ -236,10 +236,10 @@ public final class ue extends FrameLayout {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 return true;
             }
-            final int i13 = 2;
+            final int i14 = 2;
             if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
                 if (motionEvent.getAction() == 2 && chatActivityEnterView.F2) {
-                    float x10 = motionEvent.getX();
+                    float x9 = motionEvent.getX();
                     float y3 = motionEvent.getY();
                     ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.N1;
                     ChatActivityEnterView chatActivityEnterView2 = ChatActivityEnterView.this;
@@ -253,46 +253,43 @@ public final class ue extends FrameLayout {
                             recordCircle.invalidate();
                             if (chatActivityEnterView2.r4 || chatActivityEnterView2.j4 < 0.7f || chatActivityEnterView2.k4 - chatActivityEnterView2.l4 < AndroidUtilities.dp(57.0f)) {
                                 ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.N1;
-                                float f10 = x10 - recordCircle2.F;
-                                float f11 = y3 - recordCircle2.G;
-                                float f12 = (f11 * f11) + (f10 * f10);
+                                float f7 = x9 - recordCircle2.F;
+                                float f10 = y3 - recordCircle2.G;
+                                float f11 = (f10 * f10) + (f7 * f7);
                                 recordCircle2.G = y3;
-                                recordCircle2.F = x10;
+                                recordCircle2.F = x9;
                                 ChatActivityEnterView chatActivityEnterView3 = ChatActivityEnterView.this;
-                                if (chatActivityEnterView3.e4 && chatActivityEnterView3.g4 == 0.0f && f12 > recordCircle2.E) {
-                                    f7 = 1.0f;
+                                if (chatActivityEnterView3.e4 && chatActivityEnterView3.g4 == 0.0f && f11 > recordCircle2.E) {
                                     chatActivityEnterView3.f4 = System.currentTimeMillis();
-                                } else {
-                                    f7 = 1.0f;
                                 }
                                 if (chatActivityEnterView.D2 == -1.0f) {
-                                    chatActivityEnterView.D2 = x10;
+                                    chatActivityEnterView.D2 = x9;
                                     float measuredWidth = (float) (chatActivityEnterView.m1.getMeasuredWidth() * 0.35d);
                                     chatActivityEnterView.E2 = measuredWidth;
                                     if (measuredWidth > AndroidUtilities.dp(140.0f)) {
                                         chatActivityEnterView.E2 = AndroidUtilities.dp(140.0f);
                                     }
                                 }
-                                float x11 = ueVar.getX() + x10;
-                                float f13 = chatActivityEnterView.D2;
-                                float f14 = ((x11 - f13) / chatActivityEnterView.E2) + f7;
-                                if (f13 != -1.0f) {
-                                    float f15 = f14 > f7 ? f7 : f14 < 0.0f ? 0.0f : f14;
+                                float x10 = ueVar.getX() + x9;
+                                float f12 = chatActivityEnterView.D2;
+                                float f13 = ((x10 - f12) / chatActivityEnterView.E2) + 1.0f;
+                                if (f12 != -1.0f) {
+                                    float f14 = f13 <= 1.0f ? f13 < 0.0f ? 0.0f : f13 : 1.0f;
                                     ChatActivityEnterView.SlideTextView slideTextView4 = chatActivityEnterView.k1;
                                     if (slideTextView4 != null) {
-                                        slideTextView4.r = f15;
+                                        slideTextView4.r = f14;
                                     }
-                                    chatActivityEnterView.setSlideToCancelProgress(f15);
-                                    f14 = f15;
+                                    chatActivityEnterView.setSlideToCancelProgress(f14);
+                                    f13 = f14;
                                 }
-                                if (f14 == 0.0f) {
+                                if (f13 == 0.0f) {
                                     if (chatActivityEnterView.e2 && chatActivityEnterView.c1) {
                                         CameraController.getInstance().cancelOnInitRunnable(afVar);
-                                        chatActivityEnterView.Z2.a2(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
+                                        chatActivityEnterView.Z2.P1(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
                                         chatActivityEnterView.S4 = 0L;
                                         xeVar.setEffect(0L);
                                     } else {
-                                        chatActivityEnterView.Z2.X0(0);
+                                        chatActivityEnterView.Z2.M0(0);
                                         MediaController.getInstance().stopRecording(0, false, 0, chatActivityEnterView.O, 0L);
                                     }
                                     chatActivityEnterView.F2 = false;
@@ -304,16 +301,16 @@ public final class ue extends FrameLayout {
                                 sg sgVar = chatActivityEnterView2.O1;
                                 if (sgVar != null && MessagesController.getGlobalMainSettings().getInt("voicepausehint", 0) <= 3) {
                                     sgVar.a();
-                                    ei.x3 x3Var = new ei.x3(sgVar.getContext(), 2);
-                                    sgVar.a = x3Var;
-                                    x3Var.l(1.0f, 0.0f);
+                                    fi.v3 v3Var = new fi.v3(sgVar.getContext(), 2);
+                                    sgVar.a = v3Var;
+                                    v3Var.l(1.0f, 0.0f);
                                     sgVar.a.p(true);
                                     sgVar.a.s(LocaleController.getString(R.string.VoicePauseHint));
                                     MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", MessagesController.getGlobalMainSettings().getInt("voicepausehint", 0) + 1).apply();
-                                    sgVar.addView(sgVar.a, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
-                                    ei.x3 x3Var2 = sgVar.a;
-                                    x3Var2.l0 = new qg(sgVar, x3Var2, 3);
-                                    x3Var2.u();
+                                    sgVar.addView(sgVar.a, gb1.h(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
+                                    fi.v3 v3Var2 = sgVar.a;
+                                    v3Var2.l0 = new qg(sgVar, v3Var2, 3);
+                                    v3Var2.u();
                                 }
                             }
                         }
@@ -331,12 +328,12 @@ public final class ue extends FrameLayout {
                 }
                 if (chatActivityEnterView.e2 && chatActivityEnterView.c1) {
                     CameraController.getInstance().cancelOnInitRunnable(afVar);
-                    chatActivityEnterView.Z2.a2(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
+                    chatActivityEnterView.Z2.P1(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
                     j12 = 0;
                     chatActivityEnterView.S4 = 0L;
                     xeVar.setEffect(0L);
                 } else {
-                    chatActivityEnterView.Z2.X0(0);
+                    chatActivityEnterView.Z2.M0(0);
                     MediaController.getInstance().stopRecording(0, false, 0, chatActivityEnterView.O, 0L);
                     j12 = 0;
                 }
@@ -350,12 +347,12 @@ public final class ue extends FrameLayout {
                 if ((((ueVar.getX() + motionEvent.getX()) - chatActivityEnterView.D2) / chatActivityEnterView.E2) + 1.0f < 0.45d) {
                     if (chatActivityEnterView.e2 && chatActivityEnterView.c1) {
                         CameraController.getInstance().cancelOnInitRunnable(afVar);
-                        chatActivityEnterView.Z2.a2(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
+                        chatActivityEnterView.Z2.P1(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
                         j11 = 0;
                         chatActivityEnterView.S4 = 0L;
                         xeVar.setEffect(0L);
                     } else {
-                        chatActivityEnterView.Z2.X0(0);
+                        chatActivityEnterView.Z2.M0(0);
                         MediaController.getInstance().stopRecording(0, false, 0, chatActivityEnterView.O, 0L);
                         j11 = 0;
                     }
@@ -367,10 +364,10 @@ public final class ue extends FrameLayout {
                 if (chatActivityEnterView.I3) {
                     AndroidUtilities.cancelRunOnUIThread(igVar);
                     if (chatActivityEnterView.y0 && chatActivityEnterView.x0) {
-                        chatActivityEnterView.Z2.a0(!chatActivityEnterView.c1);
+                        chatActivityEnterView.Z2.R(!chatActivityEnterView.c1);
                         chatActivityEnterView.h1(!chatActivityEnterView.c1, true);
                     } else {
-                        chatActivityEnterView.Z2.Y1();
+                        chatActivityEnterView.Z2.N1();
                     }
                     performHapticFeedback(3);
                     sendAccessibilityEvent(1);
@@ -382,19 +379,19 @@ public final class ue extends FrameLayout {
                     if (!z12 || !chatActivityEnterView.c1) {
                         j10 = 0;
                         if (!chatActivityEnterView.y0) {
-                            chatActivityEnterView.Z2.Y1();
+                            chatActivityEnterView.Z2.N1();
                         } else {
-                            if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                            if (g5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                                 if (chatActivityEnterView.s4) {
                                     chatActivityEnterView.J3 = true;
                                 }
                                 MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.O);
-                                chatActivityEnterView.Z2.X0(0);
+                                chatActivityEnterView.Z2.M0(0);
                                 ChatActivityEnterView.SlideTextView slideTextView5 = chatActivityEnterView.k1;
                                 if (slideTextView5 != null) {
                                     slideTextView5.setEnabled(false);
                                 }
-                                f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                                g5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                     public final /* synthetic */ ue b;
 
                                     {
@@ -404,7 +401,7 @@ public final class ue extends FrameLayout {
                                     @Override // org.telegram.messenger.Utilities.Callback
                                     public final void run(Object obj) {
                                         Long l4 = (Long) obj;
-                                        switch (i11) {
+                                        switch (i12) {
                                             case 0:
                                                 this.b.d.R0(0, true, 0, false, l4.longValue());
                                                 break;
@@ -424,23 +421,23 @@ public final class ue extends FrameLayout {
                             }
                             if (chatActivityEnterView.F2 && chatActivityEnterView.c()) {
                                 Activity activity2 = chatActivityEnterView.O2;
-                                long a10 = snVar.a();
-                                e2 e2Var2 = new e2(17);
-                                rc rcVar2 = new rc(4);
-                                org.telegram.ui.ActionBar.g6 g6Var2 = this.c;
-                                f5.K(activity2, a10, -1L, 0, false, e2Var2, rcVar2, new c5(g6Var2), g6Var2);
+                                long a10 = unVar.a();
+                                f2 f2Var2 = new f2(21);
+                                k5 k5Var2 = new k5(6);
+                                org.telegram.ui.ActionBar.u6 u6Var2 = this.c;
+                                g5.J(activity2, a10, -1L, 0, false, f2Var2, k5Var2, new d5(u6Var2), u6Var2);
                             }
-                            chatActivityEnterView.Z2.X0(0);
+                            chatActivityEnterView.Z2.M0(0);
                             MediaController.getInstance().stopRecording(chatActivityEnterView.c() ? 3 : 1, true, 0, chatActivityEnterView.O, 0L);
                         }
                     } else {
-                        if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                        if (g5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             ChatActivityEnterView.SlideTextView slideTextView6 = chatActivityEnterView.k1;
                             if (slideTextView6 != null) {
                                 slideTextView6.setEnabled(false);
                             }
-                            chatActivityEnterView.Z2.i1();
-                            f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                            chatActivityEnterView.Z2.X0();
+                            g5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                 public final /* synthetic */ ue b;
 
                                 {
@@ -450,7 +447,7 @@ public final class ue extends FrameLayout {
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     Long l4 = (Long) obj;
-                                    switch (i13) {
+                                    switch (i14) {
                                         case 0:
                                             this.b.d.R0(0, true, 0, false, l4.longValue());
                                             break;
@@ -469,7 +466,7 @@ public final class ue extends FrameLayout {
                             return true;
                         }
                         CameraController.getInstance().cancelOnInitRunnable(afVar);
-                        chatActivityEnterView.Z2.a2(1, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
+                        chatActivityEnterView.Z2.P1(1, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
                         j10 = 0;
                         chatActivityEnterView.S4 = 0L;
                         xeVar.setEffect(0L);
@@ -485,7 +482,7 @@ public final class ue extends FrameLayout {
 
                         @Override // java.lang.Runnable
                         public final void run() {
-                            switch (i12) {
+                            switch (i13) {
                                 case 0:
                                     ChatActivityEnterView chatActivityEnterView22 = this.b.d;
                                     chatActivityEnterView22.f0 = null;

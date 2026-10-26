@@ -1,22 +1,9 @@
 package ge;
 
-import be.c0;
+import he.v;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e implements c0 {
-    public final kd.h a;
-
-    public e(kd.h hVar) {
-        this.a = hVar;
-    }
-
-    @Override // be.c0
-    public final kd.h c() {
-        return this.a;
-    }
-
-    public final String toString() {
-        return "CoroutineScope(coroutineContext=" + this.a + ')';
-    }
+public abstract class e {
+    public static final v a = new v("NULL", 0);
 }

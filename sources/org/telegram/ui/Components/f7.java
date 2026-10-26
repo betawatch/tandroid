@@ -1,27 +1,28 @@
 package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f7 implements Utilities.Callback {
+public final /* synthetic */ class f7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k8 b;
+    public final /* synthetic */ m8 b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ f7(k8 k8Var, int i10) {
+    public /* synthetic */ f7(m8 m8Var, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = k8Var;
+        this.b = m8Var;
+        this.c = messageObject;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                k8.w(this.b, (MessageObject) obj);
+                m8.m(this.b, this.c);
                 break;
             default:
-                k8.J(this.b);
+                m8.F(this.b, this.c);
                 break;
         }
     }

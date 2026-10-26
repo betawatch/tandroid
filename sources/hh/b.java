@@ -1,9 +1,99 @@
 package hh;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import eh.f;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public interface b {
-    Object a(Bitmap bitmap);
+public final class b implements a {
+    public final Paint a;
+    public final Matrix b;
+    public BitmapShader c;
+    public Bitmap d;
+    public final Matrix e;
+    public Bitmap f;
+    public int h;
+    public int n;
+
+    public b() {
+        Paint paint = new Paint(3);
+        this.a = paint;
+        this.b = new Matrix();
+        this.e = new Matrix();
+        paint.setFilterBitmap(true);
+    }
+
+    public final void a(Bitmap bitmap) {
+        if (this.d == bitmap) {
+            return;
+        }
+        this.d = bitmap;
+        Paint paint = this.a;
+        paint.setShader(null);
+        this.c = null;
+        if (bitmap != null) {
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.c = bitmapShader;
+            paint.setShader(bitmapShader);
+            c();
+        }
+    }
+
+    public final void b(int i10, int i11) {
+        if (this.h == i10 && this.n == i11) {
+            return;
+        }
+        this.h = i10;
+        this.n = i11;
+        c();
+    }
+
+    public final void c() {
+        Bitmap bitmap = this.d;
+        Matrix matrix = this.b;
+        if (bitmap == null) {
+            matrix.reset();
+            return;
+        }
+        int width = bitmap.getWidth();
+        int height = this.d.getHeight();
+        int i10 = this.h;
+        int i11 = this.n;
+        matrix.reset();
+        if (width <= 0 || height <= 0 || i10 <= 0 || i11 <= 0) {
+            return;
+        }
+        float f7 = i10;
+        float f10 = width;
+        float f11 = i11;
+        float f12 = height;
+        float max = Math.max(f7 / f10, f11 / f12);
+        matrix.setScale(max, max);
+        matrix.postTranslate((f7 - (f10 * max)) * 0.5f, ((f11 - (f12 * max)) * 0.5f) + 0);
+    }
+
+    @Override // hh.a
+    public final eh.d f() {
+        return new f(this);
+    }
+
+    @Override // ri.a
+    public final void w(Canvas canvas, float f7, float f10, float f11, float f12) {
+        Bitmap bitmap = this.d;
+        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
+            return;
+        }
+        Matrix matrix = this.e;
+        Matrix matrix2 = this.b;
+        matrix.set(matrix2);
+        matrix.postTranslate(f7, f10);
+        this.c.setLocalMatrix(matrix2);
+        canvas.drawRect(f7, f10, f11, f12, this.a);
+    }
 }

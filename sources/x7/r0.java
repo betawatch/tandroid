@@ -1,32 +1,21 @@
 package x7;
 
-import java.util.Arrays;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class r0 {
-    public final n7 a;
-    public final Boolean b;
-    public final h8 c;
+public final class r0 implements ka.d {
+    public static final r0 a = new r0();
 
-    public /* synthetic */ r0(u2.c cVar) {
-        this.a = (n7) cVar.b;
-        this.b = (Boolean) cVar.c;
-        this.c = (h8) cVar.d;
+    static {
+        b10.s(b10.n(d.class, b10.q(3, b10.n(d.class, b10.q(2, b10.n(d.class, new a(1)))))));
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // ka.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (!(obj instanceof r0)) {
-            return false;
-        }
-        r0 r0Var = (r0) obj;
-        return n6.l.l(this.a, r0Var.a) && n6.l.l(this.b, r0Var.b) && n6.l.l(null, null) && n6.l.l(this.c, r0Var.c);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, this.c});
+        throw null;
     }
 }

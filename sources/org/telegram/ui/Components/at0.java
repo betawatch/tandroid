@@ -1,57 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class at0 extends s4.m0 {
-    public final /* synthetic */ ts0 a;
-    public final /* synthetic */ xv0 b;
+public final class at0 extends tu0 {
+    public final /* synthetic */ aw0 P;
 
-    public at0(xv0 xv0Var, ts0 ts0Var) {
-        this.b = xv0Var;
-        this.a = ts0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public at0(aw0 aw0Var, Context context) {
+        super(context);
+        this.P = aw0Var;
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        ts0 ts0Var = this.a;
-        if (ts0Var.h.getAdapter() == this.b.O) {
-            recyclerView.getClass();
-            int R = RecyclerView.R(view);
-            rect.left = 0;
-            rect.bottom = 0;
-            us0 us0Var = ts0Var.x;
-            us0Var.B1();
-            if (R <= us0Var.U) {
-                rect.top = 0;
-            } else {
-                rect.top = AndroidUtilities.dp(2.0f);
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        tu0 tu0Var;
+        float translationX = getTranslationX();
+        super.setTranslationX(f7);
+        aw0 aw0Var = this.P;
+        tu0[] tu0VarArr = aw0Var.m0;
+        if (tu0VarArr[0] == this) {
+            float f10 = translationX - f7;
+            oi.q qVar = aw0Var.g2;
+            if (qVar != null) {
+                float f11 = aw0Var.h2 + f10;
+                aw0Var.h2 = f11;
+                int i10 = (int) f11;
+                if (i10 != 0) {
+                    aw0Var.h2 = f11 - i10;
+                    qVar.h(i10, 0);
+                }
             }
-            rect.right = ts0Var.x.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
-            return;
         }
-        if (!(view instanceof org.telegram.ui.Cells.s7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
+        if (aw0Var.i1 && (tu0Var = tu0VarArr[0]) == this) {
+            float abs = Math.abs(tu0Var.getTranslationX()) / tu0VarArr[0].getMeasuredWidth();
+            aw0Var.f1(abs, tu0VarArr[1].E);
+            if (aw0Var.G()) {
+                int i11 = aw0Var.z0;
+                if (i11 == 2) {
+                    aw0Var.q0 = 1.0f - abs;
+                } else if (i11 == 1) {
+                    aw0Var.q0 = abs;
+                }
+                aw0Var.G1(abs);
+                float h02 = aw0Var.h0(abs);
+                aw0Var.r0 = h02;
+                aw0Var.t0.setVisibility((h02 == 0.0f || !aw0Var.G() || aw0Var.x0()) ? 4 : 0);
+            } else {
+                aw0Var.q0 = 0.0f;
+            }
+            aw0Var.C1(false);
         }
-        org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) view;
-        ts0Var.h.getClass();
-        int R2 = RecyclerView.R(s7Var);
-        int i10 = ts0Var.x.J;
-        s7Var.a0 = R2 < i10;
-        int i11 = R2 % i10;
-        s7Var.V = i11 == 0;
-        s7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+        aw0Var.P();
+        aw0Var.R();
     }
 }

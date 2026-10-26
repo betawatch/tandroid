@@ -1,84 +1,40 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k61 implements NotificationCenter.NotificationCenterDelegate {
-    public final int a;
-    public final TLRPC.Chat b;
-    public TLRPC.ChannelParticipantsFilter c;
-    public boolean f;
-    public boolean h;
-    public boolean r;
-    public boolean s;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public int n = -1;
+public final class k61 extends View {
+    public final Paint a;
+    public int b;
+    public LinearGradient c;
+    public final /* synthetic */ m61 d;
 
-    public k61(int i10, long j10, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
-        this.a = i10;
-        this.b = MessagesController.getInstance(i10).getChat(Long.valueOf(j10));
-        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(j10);
-        this.c = channelParticipantsFilter;
-        if (chatFull == null) {
-            if (!this.s) {
-                this.s = true;
-                NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.chatInfoDidLoad);
-            }
-            MessagesController.getInstance(i10).loadFullChat(j10, 0, false);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k61(m61 m61Var, Context context) {
+        super(context);
+        this.d = m61Var;
+        this.a = new Paint(1);
+        this.b = m61Var.getThemedColor(org.telegram.ui.ActionBar.y6.h5);
+        this.c = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(68.0f), new int[]{org.telegram.ui.ActionBar.y6.o1(0.0f, this.b), this.b}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
     }
 
-    public final void a() {
-        if (this.s) {
-            return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.y6.h5);
+        if (themedColor != this.b) {
+            this.b = themedColor;
+            this.c = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(68.0f), new int[]{org.telegram.ui.ActionBar.y6.o1(0.0f, themedColor), themedColor}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
         }
-        this.s = false;
-        int i10 = this.a;
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.chatInfoDidLoad);
-        if (this.n >= 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(this.n, true);
-            this.n = -1;
-        }
-        this.f = false;
-    }
-
-    public final void b() {
-        if (this.f || this.h) {
-            return;
-        }
-        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = this.c;
-        if ((channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) && TextUtils.isEmpty(channelParticipantsFilter.q)) {
-            return;
-        }
-        this.f = true;
-        TLRPC.Chat chat = this.b;
-        if (ChatObject.isChannel(chat)) {
-            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-            tL_channels_getParticipants.channel = MessagesController.getInputChannel(chat);
-            tL_channels_getParticipants.filter = this.c;
-            tL_channels_getParticipants.limit = 30;
-            tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
-            ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_channels_getParticipants, new org.telegram.messenger.a(), new f5(this, 24));
-        }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.chatInfoDidLoad) {
-            long j10 = ((TLRPC.ChatFull) objArr[0]).id;
-            TLRPC.Chat chat = this.b;
-            if (j10 == chat.id && !ChatObject.isChannel(chat) && this.f) {
-                this.f = false;
-                b();
-            }
-        }
+        LinearGradient linearGradient = this.c;
+        Paint paint = this.a;
+        paint.setShader(linearGradient);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
     }
 }

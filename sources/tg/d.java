@@ -1,158 +1,130 @@
 package tg;
 
-import android.opengl.GLES20;
-import android.opengl.GLSurfaceView;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.web.a2;
+import android.content.Context;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.vh;
+import org.telegram.ui.ActionBar.f7;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.o41;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final class d implements GLSurfaceView.Renderer {
-    public long a;
-    public boolean b;
-    public int c;
-    public final /* synthetic */ f d;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final class d extends lm0 {
+    public final u6 c;
+    public final int d;
+    public final int e;
+    public final ArrayList f;
+    public final a1 h;
+    public int n;
+    public c r;
+    public final boolean s;
 
-    public d(f fVar) {
-        this.d = fVar;
+    public d(int i10, u6 u6Var) {
+        ArrayList arrayList = new ArrayList();
+        this.f = arrayList;
+        this.s = true;
+        this.c = u6Var;
+        a1 a1Var = new a1(y6.Lj, y6.Mj, y6.Nj, y6.Oj, u6Var);
+        this.h = a1Var;
+        a1Var.o = 0.0f;
+        a1Var.p = 0.0f;
+        a1Var.q = 1.0f;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        arrayList.add(new e(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
+        arrayList.add(new e(messagesController.publicLinksLimitDefault, messagesController.publicLinksLimitPremium, LocaleController.getString(R.string.PublicLinksLimitTitle), LocaleController.formatString(R.string.PublicLinksLimitSubtitle, Integer.valueOf(messagesController.publicLinksLimitPremium))));
+        arrayList.add(new e(messagesController.savedGifsLimitDefault, messagesController.savedGifsLimitPremium, LocaleController.getString(R.string.SavedGifsLimitTitle), LocaleController.formatString(R.string.SavedGifsLimitSubtitle, Integer.valueOf(messagesController.savedGifsLimitPremium))));
+        arrayList.add(new e(messagesController.stickersFavedLimitDefault, messagesController.stickersFavedLimitPremium, LocaleController.getString(R.string.FavoriteStickersLimitTitle), LocaleController.formatString(R.string.FavoriteStickersLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.aboutLengthLimitDefault, messagesController.aboutLengthLimitPremium, LocaleController.getString(R.string.BioLimitTitle), LocaleController.formatString(R.string.BioLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.captionLengthLimitDefault, messagesController.captionLengthLimitPremium, LocaleController.getString(R.string.CaptionsLimitTitle), LocaleController.formatString(R.string.CaptionsLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersLimitDefault, messagesController.dialogFiltersLimitPremium, LocaleController.getString(R.string.FoldersLimitTitle), LocaleController.formatString(R.string.FoldersLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersChatsLimitDefault, messagesController.dialogFiltersChatsLimitPremium, LocaleController.getString(R.string.ChatPerFolderLimitTitle), LocaleController.formatString(R.string.ChatPerFolderLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersChatsLimitPremium))));
+        arrayList.add(new e(3, 4, LocaleController.getString(R.string.ConnectedAccountsLimitTitle), LocaleController.formatString(R.string.ConnectedAccountsLimitSubtitle, 4)));
+        arrayList.add(new e(messagesController.recommendedChannelsLimitDefault, messagesController.recommendedChannelsLimitPremium, LocaleController.getString(R.string.SimilarChannelsLimitTitle), LocaleController.formatString(R.string.SimilarChannelsLimitSubtitle, Integer.valueOf(messagesController.recommendedChannelsLimitPremium))));
+        this.d = 1;
+        this.e = 1;
+        this.d = arrayList.size() + 1;
     }
 
-    @Override // android.opengl.GLSurfaceView.Renderer
-    public final void onDrawFrame(GL10 gl10) {
-        if (this.d.r) {
-            GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-            GLES20.glClear(16384);
-            return;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        return false;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
         }
-        if (!this.d.x) {
-            GLES20.glBindFramebuffer(36160, 0);
-            GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-            GLES20.glClear(16384);
-            if (this.d.y) {
-                return;
-            }
-            this.d.y = true;
-            final int i10 = this.d.E;
-            final int i11 = 0;
-            this.d.post(new Runnable(this) { // from class: tg.c
-                public final /* synthetic */ d b;
+        return i10 == 0 ? 2 : 0;
+    }
 
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i11) {
-                        case 0:
-                            d dVar = this.b;
-                            f.a(dVar.d, i10);
-                            break;
-                        default:
-                            d dVar2 = this.b;
-                            int i12 = i10;
-                            f fVar = dVar2.d;
-                            if (fVar.e && !fVar.r && i12 == dVar2.d.G) {
-                                f fVar2 = dVar2.d;
-                                fVar2.s = true;
-                                Runnable runnable = fVar2.v;
-                                fVar2.v = null;
-                                if (runnable != null) {
-                                    runnable.run();
-                                    break;
-                                }
-                            }
-                            break;
-                    }
-                }
-            });
-            return;
-        }
-        try {
-            long nanoTime = System.nanoTime();
-            this.d.a.G = this.a == 0 ? 0.016666668f : Math.min(0.1f, (nanoTime - r5) / 1.0E9f);
-            this.a = nanoTime;
-            f fVar = this.d;
-            fVar.a.c.A = fVar.w;
-            this.d.a.onDrawFrame(gl10);
-            int glGetError = GLES20.glGetError();
-            if (glGetError != 0) {
-                throw new IllegalStateException("Diamond GL error: " + glGetError);
-            }
-            if (this.b) {
-                return;
-            }
-            this.b = true;
-            final int i12 = this.c;
-            final int i13 = 1;
-            this.d.post(new Runnable(this) { // from class: tg.c
-                public final /* synthetic */ d b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i13) {
-                        case 0:
-                            d dVar = this.b;
-                            f.a(dVar.d, i12);
-                            break;
-                        default:
-                            d dVar2 = this.b;
-                            int i122 = i12;
-                            f fVar2 = dVar2.d;
-                            if (fVar2.e && !fVar2.r && i122 == dVar2.d.G) {
-                                f fVar22 = dVar2.d;
-                                fVar22.s = true;
-                                Runnable runnable = fVar22.v;
-                                fVar22.v = null;
-                                if (runnable != null) {
-                                    runnable.run();
-                                    break;
-                                }
-                            }
-                            break;
-                    }
-                }
-            });
-        } catch (RuntimeException e) {
-            FileLog.e(e);
-            this.d.r = true;
-            this.d.post(new a2(this, 29));
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        if (e1Var.f == 0) {
+            f fVar = (f) e1Var.a;
+            int i11 = i10 - this.e;
+            ArrayList arrayList = this.f;
+            fVar.a((e) arrayList.get(i11));
+            LimitPreviewView limitPreviewView = fVar.c;
+            limitPreviewView.F = ((e) arrayList.get(i11)).e;
+            limitPreviewView.c = this.n;
         }
     }
 
-    @Override // android.opengl.GLSurfaceView.Renderer
-    public final void onSurfaceChanged(GL10 gl10, int i10, int i11) {
-        this.b = false;
-        this.c = this.d.G;
-        if (this.d.r) {
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.o41] */
+    /* JADX WARN: Type inference failed for: r1v7, types: [tg.f] */
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        x3 x3Var;
+        Context context = viewGroup.getContext();
+        u6 u6Var = this.c;
+        if (i10 != 1) {
+            if (i10 != 2) {
+                ?? fVar = new f(context, u6Var);
+                fVar.c.setParentViewForGradien(this.r);
+                fVar.c.setStaticGradinet(this.h);
+                x3Var = fVar;
+            } else {
+                x3Var = new x3(context, 16);
+            }
+        } else if (this.s) {
+            ?? o41Var = new o41(context, 10);
+            LinearLayout d = vh.d(context, 0);
+            ImageView imageView = new ImageView(context);
+            imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
+            d.addView(imageView, gb1.h(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            TextView textView = new TextView(context);
+            textView.setText(LocaleController.getString(R.string.DoubledLimits));
+            textView.setGravity(17);
+            textView.setTextSize(1, 20.0f);
+            f7.V(textView, y6.G6, u6Var);
+            textView.setTypeface(AndroidUtilities.bold());
+            d.addView(textView, gb1.i(-2, -2, 16));
+            o41Var.addView(d, gb1.i(-2, -2, 17));
+            x3Var = o41Var;
+        } else {
+            x3Var = new x3(context, 64);
         }
-        this.d.a.onSurfaceChanged(gl10, i10, i11);
-    }
-
-    @Override // android.opengl.GLSurfaceView.Renderer
-    public final void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
-        f fVar = this.d;
-        int i10 = fVar.G + 1;
-        fVar.G = i10;
-        this.c = i10;
-        this.b = false;
-        this.a = 0L;
-        this.d.r = false;
-        g gVar = this.d.a;
-        gVar.c = null;
-        try {
-            gVar.onSurfaceCreated(gl10, eGLConfig);
-        } catch (RuntimeException e) {
-            FileLog.e(e);
-            this.d.r = true;
-            this.d.post(new a2(this, 29));
-        }
+        return ic.a.n(x3Var, x3Var, -1, -2);
     }
 }

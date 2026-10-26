@@ -1,43 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.TextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ee0 implements ValueAnimator.AnimatorUpdateListener {
+public final class ee0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pe0 b;
+    public final /* synthetic */ fe0 b;
 
-    public /* synthetic */ ee0(pe0 pe0Var, int i10) {
+    public /* synthetic */ ee0(fe0 fe0Var, int i10) {
         this.a = i10;
-        this.b = pe0Var;
+        this.b = fe0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        EditTextBoldCursor editTextBoldCursor;
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pe0 pe0Var = this.b;
-                ci.h4 h4Var = pe0Var.e;
-                h4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
-                h4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
-                h4Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue));
-                TextView textView = pe0Var.w;
-                textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue));
-                textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue));
-                textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, floatValue));
-                pe0Var.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue));
+                le0 le0Var = this.b.d;
+                if (!le0Var.P) {
+                    le0Var.a0 = 1.0f;
+                    le0Var.h(1.0f);
+                    break;
+                }
                 break;
             default:
-                pe0 pe0Var2 = this.b;
-                pe0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pe0Var2.a0 = floatValue2;
-                pe0Var2.h(floatValue2);
-                pe0Var2.setAlpha(pe0Var2.a0);
+                fe0 fe0Var = this.b;
+                le0 le0Var2 = fe0Var.d;
+                if (!le0Var2.P) {
+                    Runnable runnable = fe0Var.c;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    if (SharedConfig.passcodeType == 1 && le0Var2.x.getVisibility() != 0 && (editTextBoldCursor = le0Var2.r) != null) {
+                        editTextBoldCursor.requestFocus();
+                        AndroidUtilities.showKeyboard(le0Var2.r);
+                        break;
+                    }
+                }
                 break;
         }
     }

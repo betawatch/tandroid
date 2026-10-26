@@ -1,27 +1,66 @@
 package rg;
 
-import org.telegram.ui.jt0;
+import java.util.Arrays;
+import java.util.List;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jt0 b;
+public abstract class m {
+    public static final List a = Arrays.asList(new f(), new a(), new c(), new e(), new b(), new d());
 
-    public /* synthetic */ m(jt0 jt0Var, int i10) {
-        this.a = i10;
-        this.b = jt0Var;
+    public float a() {
+        return 0.85f;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                m0.Y(this.b, (Integer) obj);
-                break;
-            default:
-                m0.b0(this.b, (Integer) obj);
-                break;
+    public float b() {
+        return 0.0f;
+    }
+
+    public int c() {
+        return -16777216;
+    }
+
+    public float d() {
+        return 0.25f;
+    }
+
+    public abstract int e();
+
+    public float f() {
+        return 1.0f;
+    }
+
+    public float g() {
+        return 0.4f;
+    }
+
+    public float h() {
+        return 1.0f;
+    }
+
+    public String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMask";
         }
+        if (i10 == 1) {
+            return "compositeWithMask";
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return "brush";
+    }
+
+    public float j() {
+        return 1.0f;
+    }
+
+    public float k() {
+        return 0.15f;
+    }
+
+    public int l() {
+        return R.drawable.paint_radial_brush;
     }
 }

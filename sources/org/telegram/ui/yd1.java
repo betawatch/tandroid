@@ -1,24 +1,42 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.HashSet;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yd1 implements View.OnTouchListener {
+public final /* synthetic */ class yd1 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ af1 b;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
+    public /* synthetic */ yd1(af1 af1Var, int i10) {
+        this.a = i10;
+        this.b = af1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                HashSet hashSet = ye1.q1;
+                af1 af1Var = this.b;
+                af1Var.x0();
+                af1Var.B0();
+                break;
+            case 1:
+                this.b.x0();
+                break;
+            case 2:
+                this.b.O0(true);
+                break;
+            case 3:
+                this.b.finishPreviewFragment();
+                break;
+            case 4:
+                af1 af1Var2 = this.b;
+                af1Var2.A0 = null;
+                af1Var2.V0(true, false);
                 break;
             default:
-                int[][] iArr = WallpapersListActivity.k0;
+                af1 af1Var3 = this.b;
+                af1Var3.N.postOnAnimation(new yd1(af1Var3, 1));
                 break;
         }
-        return true;
     }
 }

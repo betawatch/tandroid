@@ -1,22 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface a01 extends org.telegram.ui.Cells.z9 {
-    void attach(View view);
+public final class a01 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Switch b;
 
-    void detach(View view);
+    public /* synthetic */ a01(Switch r12, int i10) {
+        this.a = i10;
+        this.b = r12;
+    }
 
-    void draw(Canvas canvas, View view);
-
-    int getEmojiOnlyCount();
-
-    void setRow(int i10);
-
-    void setX(int i10);
-
-    void setY(int i10);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.d = null;
+                break;
+            default:
+                this.b.e = null;
+                break;
+        }
+    }
 }

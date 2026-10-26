@@ -1,0 +1,69 @@
+package org.telegram.ui.Components;
+
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class g61 extends xz {
+    public final /* synthetic */ p61 Y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g61(p61 p61Var, int i10, f61 f61Var) {
+        super(5, i10, f61Var);
+        this.Y = p61Var;
+    }
+
+    @Override // org.telegram.ui.Components.xz
+    public final boolean E1() {
+        p61 p61Var = this.Y;
+        return p61Var.n.getAdapter() == p61Var.v;
+    }
+
+    @Override // s4.c0
+    public final boolean Y0() {
+        return LocaleController.isRTL;
+    }
+
+    @Override // s4.t, s4.c0, s4.p0
+    public final int o0(int i10, rf.e eVar, s4.b1 b1Var) {
+        int i11;
+        View m10;
+        p61 p61Var = this.Y;
+        if (p61Var.N) {
+            return super.o0(i10, eVar, b1Var);
+        }
+        int i12 = 0;
+        if (p61Var.L != null) {
+            return 0;
+        }
+        if (p61Var.M) {
+            while (true) {
+                i11 = 1;
+                if (i12 >= r()) {
+                    break;
+                }
+                f61 f61Var = p61Var.n;
+                View q5 = q(i12);
+                f61Var.getClass();
+                int R = RecyclerView.R(q5);
+                if (R < 1) {
+                    i11 = R;
+                    break;
+                }
+                i12++;
+            }
+            if (i11 == 0 && (m10 = p61Var.r.m(i11)) != null && m10.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
+                i10 = m10.getTop() - AndroidUtilities.dp(58.0f);
+            }
+        }
+        return super.o0(i10, eVar, b1Var);
+    }
+
+    @Override // s4.t, s4.c0, s4.p0
+    public final boolean y0() {
+        return false;
+    }
+}

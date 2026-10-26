@@ -1,31 +1,31 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.ui.jt0;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c0 extends qg.e1 {
-    public final /* synthetic */ Bitmap E;
-    public final /* synthetic */ jt0 F;
+public final /* synthetic */ class c0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e0 b;
+    public final /* synthetic */ r0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(jt0 jt0Var, Context context, qg.s0 s0Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, s0Var, bitmap, null, null);
-        this.F = jt0Var;
-        this.E = bitmap2;
+    public /* synthetic */ c0(e0 e0Var, r0 r0Var, int i10) {
+        this.a = i10;
+        this.b = e0Var;
+        this.c = r0Var;
     }
 
-    @Override // qg.e1
-    public final void g(qg.m mVar) {
-        int indexOf = qg.m.a.indexOf(mVar);
-        int i10 = indexOf + 1;
-        if (i10 <= 1 || this.E != null) {
-            indexOf = i10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new c0(this.b, this.c, 1));
+                break;
+            default:
+                e0 e0Var = this.b;
+                e0Var.getClass();
+                e0Var.i = this.c.a;
+                break;
         }
-        jt0 jt0Var = this.F;
-        jt0Var.t1.b(indexOf);
-        jt0Var.n(mVar);
     }
 }

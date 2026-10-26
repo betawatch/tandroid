@@ -1,36 +1,28 @@
 package zh;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.vz;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class x0 implements SensorEventListener {
-    public final /* synthetic */ c1 a;
+public final class x0 extends g.o {
+    public final /* synthetic */ p1 c;
 
-    public x0(c1 c1Var) {
-        this.a = c1Var;
+    public x0(p1 p1Var) {
+        this.c = p1Var;
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        float[] fArr = sensorEvent.values;
-        float f7 = fArr[0];
-        c1 c1Var = this.a;
-        c1Var.I6 = f7;
-        float f10 = fArr[1];
-        c1Var.J6 = f10;
-        float f11 = fArr[2];
-        if (c1Var.M6) {
-            return;
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        p1 p1Var = this.c;
+        vz vzVar = p1Var.j0;
+        j71 j71Var = p1Var.Y;
+        if (j71Var == null || i10 == 0) {
+            return vzVar.J;
         }
-        c1Var.K6 = f7;
-        c1Var.L6 = f10;
-        c1Var.M6 = true;
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+        t61 G = j71Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? vzVar.J : i11;
     }
 }

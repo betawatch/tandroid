@@ -1,30 +1,48 @@
 package androidx.mediarouter.app;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import s4.b1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a0 extends b1 {
-    public final View v;
-    public final ImageView w;
-    public final ProgressBar x;
-    public final TextView y;
-    public final /* synthetic */ b0 z;
+public final class a0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a0(b0 b0Var, View view) {
-        super(view);
-        this.z = b0Var;
-        this.v = view;
-        this.w = (ImageView) view.findViewById(R.id.mr_picker_route_icon);
-        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_picker_route_progress_bar);
-        this.x = progressBar;
-        this.y = (TextView) view.findViewById(R.id.mr_picker_route_name);
-        v7.a0.i(b0Var.r.n, progressBar);
+    public a0(Context context, Intent intent) {
+        this.b = context;
+        this.c = intent;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                b0 b0Var = (b0) this.c;
+                d0 d0Var = b0Var.z.r;
+                p4.v vVar = (p4.v) this.b;
+                d0Var.y = vVar;
+                vVar.l();
+                b0Var.w.setVisibility(4);
+                b0Var.x.setVisibility(0);
+                break;
+            default:
+                try {
+                    ((Context) this.b).startActivity((Intent) this.c);
+                    break;
+                } catch (ActivityNotFoundException e) {
+                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e);
+                    return;
+                }
+        }
+    }
+
+    public a0(b0 b0Var, p4.v vVar) {
+        this.c = b0Var;
+        this.b = vVar;
     }
 }

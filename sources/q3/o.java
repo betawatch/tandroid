@@ -2,7 +2,7 @@ package q3;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class o extends i {
     public final String b;
@@ -28,9 +28,9 @@ public final class o extends i {
     }
 
     public final int hashCode() {
-        int g10 = a1.g.g(527, 31, this.a);
+        int f7 = a1.g.f(527, 31, this.a);
         String str = this.b;
-        int hashCode = (g10 + (str != null ? str.hashCode() : 0)) * 31;
+        int hashCode = (f7 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.c;
         return hashCode + (str2 != null ? str2.hashCode() : 0);
     }

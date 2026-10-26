@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class xg extends View {
     public float E;
@@ -82,7 +82,7 @@ public final class xg extends View {
             textPaint2.setTextSize(AndroidUtilities.dp(15.0f));
             this.F.setTypeface(AndroidUtilities.bold());
             TextPaint textPaint3 = this.F;
-            int i10 = org.telegram.ui.ActionBar.k6.nf;
+            int i10 = org.telegram.ui.ActionBar.y6.nf;
             int i11 = ChatActivityEnterView.r5;
             textPaint3.setColor(chatActivityEnterView.f0(i10));
         }
@@ -93,7 +93,7 @@ public final class xg extends View {
         long j13 = 0;
         if (chatActivityEnterView.c1 && j11 >= 59500 && !this.b) {
             chatActivityEnterView.D2 = -1.0f;
-            chatActivityEnterView.Z2.a2(3, 0, chatActivityEnterView.O ? Integer.MAX_VALUE : 0, chatActivityEnterView.S4, 0L, true);
+            chatActivityEnterView.Z2.P1(3, 0, chatActivityEnterView.O ? Integer.MAX_VALUE : 0, chatActivityEnterView.S4, 0L, true);
             xe xeVar = chatActivityEnterView.J0;
             chatActivityEnterView.S4 = 0L;
             xeVar.setEffect(0L);
@@ -145,13 +145,13 @@ public final class xg extends View {
                     }
                     i17++;
                     if (i16 != 0) {
-                        uz uzVar = new uz(false);
+                        tz tzVar = new tz(0);
                         if (i15 == length - 2) {
                             i16++;
                         }
                         int i18 = i16 + i13;
-                        spannableStringBuilder.setSpan(uzVar, i13, i18, 33);
-                        spannableStringBuilder2.setSpan(uzVar, i13, i18, 33);
+                        spannableStringBuilder.setSpan(tzVar, i13, i18, 33);
+                        spannableStringBuilder2.setSpan(tzVar, i13, i18, 33);
                         i16 = 0;
                     }
                 } else {
@@ -160,7 +160,7 @@ public final class xg extends View {
                     }
                     i16++;
                     if (i17 != 0) {
-                        this.w.setSpan(new uz(false), i14, i17 + i14, 33);
+                        this.w.setSpan(new tz(0), i14, i17 + i14, 33);
                         i17 = 0;
                     }
                 }
@@ -169,13 +169,13 @@ public final class xg extends View {
                 j13 = j10;
             }
             if (i16 != 0) {
-                uz uzVar2 = new uz(false);
+                tz tzVar2 = new tz(0);
                 int i19 = i16 + i13 + 1;
-                spannableStringBuilder.setSpan(uzVar2, i13, i19, 33);
-                spannableStringBuilder2.setSpan(uzVar2, i13, i19, 33);
+                spannableStringBuilder.setSpan(tzVar2, i13, i19, 33);
+                spannableStringBuilder2.setSpan(tzVar2, i13, i19, 33);
             }
             if (i17 != 0) {
-                this.w.setSpan(new uz(false), i14, i17 + i14, 33);
+                this.w.setSpan(new tz(0), i14, i17 + i14, 33);
             }
             TextPaint textPaint4 = this.F;
             int measuredWidth = getMeasuredWidth();
@@ -218,7 +218,7 @@ public final class xg extends View {
             if (this.y != null) {
                 canvas.save();
                 this.F.setAlpha((int) (this.E * 255.0f));
-                canvas.translate(0.0f, com.google.android.gms.internal.play_billing.k3.y(1.0f, this.E, f11, measuredHeight - (this.y.getHeight() / 2.0f)));
+                canvas.translate(0.0f, c3.h0.z(1.0f, this.E, f11, measuredHeight - (this.y.getHeight() / 2.0f)));
                 this.y.draw(canvas);
                 canvas.restore();
             }

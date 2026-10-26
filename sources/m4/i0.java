@@ -1,9 +1,9 @@
 package m4;
 
+import a8.qd;
 import android.os.Bundle;
-import v7.q8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements o0 {
     public final /* synthetic */ int a;
@@ -15,20 +15,20 @@ public final /* synthetic */ class i0 implements o0 {
     }
 
     @Override // m4.o0
-    public final void f(v vVar) {
+    public final void i(w wVar) {
         int i10 = this.a;
         p0 p0Var = this.b;
         switch (i10) {
             case 0:
-                p0Var.g.n(vVar);
+                p0Var.g.n(wVar);
                 break;
             case 1:
                 f0 f0Var = p0Var.g;
                 if (f0Var.t.S0() != null) {
-                    pb.a aVar = f0Var.e;
-                    f0Var.s(vVar);
+                    qb.a aVar = f0Var.e;
+                    f0Var.s(wVar);
                     aVar.getClass();
-                    q8.b(new s1(-6));
+                    qd.b(new t1(-6));
                     break;
                 }
                 break;
@@ -45,24 +45,24 @@ public final /* synthetic */ class i0 implements o0 {
                 p0Var.g.t.J0();
                 break;
             case 6:
-                p0Var.g.g(vVar, true);
+                p0Var.g.g(wVar, true);
                 break;
             case 7:
-                p0Var.g.t.b();
+                p0Var.g.t.a();
                 break;
             case 8:
                 p0Var.g.t.stop();
                 break;
             case 9:
                 f0 f0Var2 = p0Var.g;
-                m1 m1Var = f0Var2.t;
-                if (!e2.m0.c0(m1Var, f0Var2.p)) {
-                    if (m1Var != null && m1Var.o0(1)) {
-                        m1Var.e();
+                n1 n1Var = f0Var2.t;
+                if (!e2.n0.c0(n1Var, f0Var2.p)) {
+                    if (n1Var != null && n1Var.o0(1)) {
+                        n1Var.e();
                         break;
                     }
                 } else {
-                    e2.m0.J(m1Var);
+                    e2.n0.J(n1Var);
                     break;
                 }
                 break;
@@ -73,22 +73,22 @@ public final /* synthetic */ class i0 implements o0 {
                 p0Var.g.t.f0();
                 break;
             default:
-                m1 m1Var2 = p0Var.g.t;
-                String str = e2.m0.a;
-                if (m1Var2 != null && m1Var2.o0(1)) {
-                    m1Var2.e();
+                n1 n1Var2 = p0Var.g.t;
+                String str = e2.n0.a;
+                if (n1Var2 != null && n1Var2.o0(1)) {
+                    n1Var2.e();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ i0(p0 p0Var, b2.g1 g1Var) {
+    public /* synthetic */ i0(p0 p0Var, b2.h1 h1Var) {
         this.a = 1;
         this.b = p0Var;
     }
 
-    public /* synthetic */ i0(p0 p0Var, o1 o1Var, Bundle bundle) {
+    public /* synthetic */ i0(p0 p0Var, p1 p1Var, Bundle bundle) {
         this.a = 0;
         this.b = p0Var;
     }

@@ -1,60 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'f' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class h5 {
-    public static final h5 d;
-    public static final h5 e;
-    public static final h5 f;
-    public static final h5 h;
-    public static final h5 n;
-    public static final h5 r;
-    public static final /* synthetic */ h5[] s;
-    public final String a;
-    public final int b;
-    public final int c;
-
-    static {
-        h5 h5Var = new h5(0, R.string.OpenProfile, R.drawable.msg_openprofile, "OPEN_PROFILE", "OpenProfile");
-        d = h5Var;
-        h5 h5Var2 = new h5(1, R.string.OpenChannel2, R.drawable.msg_channel, "OPEN_CHANNEL", "OpenChannel2");
-        e = h5Var2;
-        int i10 = R.string.OpenGroup2;
-        int i11 = R.drawable.msg_discussion;
-        h5 h5Var3 = new h5(2, i10, i11, "OPEN_GROUP", "OpenGroup2");
-        f = h5Var3;
-        h5 h5Var4 = new h5(3, R.string.SendMessage, i11, "SEND_MESSAGE", "SendMessage");
-        h = h5Var4;
-        h5 h5Var5 = new h5(4, R.string.Mention, R.drawable.msg_mention, "MENTION", "Mention");
-        n = h5Var5;
-        h5 h5Var6 = new h5(5, R.string.AvatarPreviewSearchMessages, R.drawable.msg_search, "SEARCH_MESSAGES", "AvatarPreviewSearchMessages");
-        r = h5Var6;
-        s = new h5[]{h5Var, h5Var2, h5Var3, h5Var4, h5Var5, h5Var6};
+public final class h5 extends c5 {
+    @Override // org.telegram.ui.c5
+    public final void a() {
+        MessagesController.getInstance(UserConfig.selectedAccount).loadUserInfo((TLRPC.User) this.c, false, this.d);
     }
 
-    public h5(int i10, int i11, int i12, String str, String str2) {
-        this.a = str2;
-        this.b = i11;
-        this.c = i12;
-    }
-
-    public static h5 valueOf(String str) {
-        return (h5) Enum.valueOf(h5.class, str);
-    }
-
-    public static h5[] values() {
-        return (h5[]) s.clone();
+    @Override // org.telegram.ui.c5
+    public final void b(Object... objArr) {
+        if (((Long) objArr[0]).longValue() == ((TLRPC.User) this.c).id) {
+            TLRPC.UserFull userFull = (TLRPC.UserFull) objArr[1];
+            boolean z10 = this.g;
+            if (z10) {
+                if (z10) {
+                    this.g = false;
+                    this.b.removeObserver(this.a, this.e);
+                }
+                this.f.accept(userFull);
+            }
+        }
     }
 }

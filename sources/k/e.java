@@ -7,7 +7,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import l.a0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e extends ActionMode {
     public final Context a;
@@ -70,12 +70,12 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final void setCustomView(View view) {
-        this.b.j(view);
+        this.b.i(view);
     }
 
     @Override // android.view.ActionMode
     public final void setSubtitle(CharSequence charSequence) {
-        this.b.l(charSequence);
+        this.b.k(charSequence);
     }
 
     @Override // android.view.ActionMode
@@ -85,21 +85,21 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final void setTitle(CharSequence charSequence) {
-        this.b.n(charSequence);
+        this.b.m(charSequence);
     }
 
     @Override // android.view.ActionMode
     public final void setTitleOptionalHint(boolean z10) {
-        this.b.o(z10);
+        this.b.n(z10);
     }
 
     @Override // android.view.ActionMode
     public final void setSubtitle(int i10) {
-        this.b.k(i10);
+        this.b.j(i10);
     }
 
     @Override // android.view.ActionMode
     public final void setTitle(int i10) {
-        this.b.m(i10);
+        this.b.l(i10);
     }
 }

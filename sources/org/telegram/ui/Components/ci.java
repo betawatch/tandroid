@@ -1,69 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ci extends qu {
-    public final /* synthetic */ ti V;
+public final class ci implements oj {
+    public final /* synthetic */ ti a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ci(ti tiVar, Context context, ji jiVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, jiVar, null, 1, true, g6Var);
-        this.V = tiVar;
+    public ci(ti tiVar) {
+        this.a = tiVar;
     }
 
-    @Override // org.telegram.ui.Components.qu
-    public final void f() {
-        super.f();
-        tz emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.x2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
+    @Override // org.telegram.ui.Components.oj
+    public final void a(TLRPC.User user, boolean z10, int i10, long j10) {
+        org.telegram.ui.un unVar = (org.telegram.ui.un) this.a.f0;
+        if (unVar.m7()) {
+            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, unVar.f6, unVar.z5, unVar.j4, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
+            of2.sendMessageChatArguments = unVar.L8();
+            of2.effect_id = 0L;
+            of2.invert_media = false;
+            of2.payStars = j10;
+            of2.monoForumPeer = unVar.X8();
+            of2.suggestionParams = unVar.s5;
+            unVar.getSendMessagesHelper().sendMessage(of2);
+            unVar.D6();
         }
     }
 
-    @Override // org.telegram.ui.Components.qu
-    public final void i(ActionMode actionMode, Menu menu) {
-        org.telegram.ui.ActionBar.o2 o2Var = this.V.f0;
-        if (o2Var instanceof org.telegram.ui.sn) {
-            org.telegram.ui.sn.n8(menu, ((org.telegram.ui.sn) o2Var).h, true, true, true, true);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        ti tiVar = this.V;
-        ci ciVar = tiVar.S0;
-        if (!tiVar.x1) {
-            if (motionEvent.getX() <= ciVar.getEditText().getLeft() || motionEvent.getX() >= ciVar.getEditText().getRight() || motionEvent.getY() <= ciVar.getEditText().getTop() || motionEvent.getY() >= ciVar.getEditText().getBottom()) {
-                tiVar.z1(ciVar.getEditText(), false);
-            } else {
-                tiVar.z1(ciVar.getEditText(), true);
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.V.j2();
-    }
-
-    @Override // org.telegram.ui.Components.qu
-    public final void q(int i10, int i11) {
-        ti tiVar = this.V;
-        tiVar.j2();
-        if (tiVar.c0) {
-            tiVar.U1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
-        }
+    @Override // org.telegram.ui.Components.oj
+    public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
+        ((org.telegram.ui.un) this.a.f0).ob(arrayList, str, z10, i10, j10, z11);
     }
 }

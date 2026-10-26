@@ -1,82 +1,274 @@
 package i9;
 
-import java.io.Serializable;
-import v7.u6;
+import a4.l;
+import a8.ng;
+import a8.wb;
+import d5.j;
+import e9.b;
+import e9.e;
+import e9.h;
+import e9.i;
+import f9.c0;
+import f9.f0;
+import f9.g0;
+import f9.h1;
+import f9.i0;
+import f9.j0;
+import f9.l1;
+import f9.o;
+import f9.q;
+import f9.s;
+import f9.s1;
+import f9.y;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a implements Serializable {
-    public static final a c = new a(new int[0]);
-    public final int[] a;
-    public final int b;
+public final class a {
+    public static final j0 f;
+    public static final e9.a g;
+    public static final HashMap h;
+    public static final a i;
+    public static final l j;
+    public final String a;
+    public final String b;
+    public final j0 c;
+    public String d;
+    public int e;
 
-    public a(int[] iArr) {
-        int length = iArr.length;
-        this.a = iArr;
-        this.b = length;
-    }
-
-    public final boolean a(int i10) {
-        int i11 = 0;
-        while (true) {
-            if (i11 >= this.b) {
-                i11 = -1;
-                break;
-            }
-            if (this.a[i11] == i10) {
-                break;
-            }
-            i11++;
+    static {
+        j0 j0Var;
+        String c10 = wb.c(StandardCharsets.UTF_8.name());
+        o.e("charset", c10);
+        s a2 = s.a();
+        c0 c0Var = (c0) a2.get("charset");
+        if (c0Var == null) {
+            g0 g0Var = i0.b;
+            o.f(4, "expectedSize");
+            c0Var = new f0(4);
+            a2.put("charset", c0Var);
         }
-        return i11 >= 0;
+        c0Var.a(c10);
+        Collection entrySet = a2.entrySet();
+        if (((AbstractCollection) entrySet).isEmpty()) {
+            j0Var = y.h;
+        } else {
+            q qVar = (q) entrySet;
+            ng ngVar = new ng(qVar.b.size(), 7);
+            Iterator it = qVar.iterator();
+            int i10 = 0;
+            while (it.hasNext()) {
+                Map.Entry entry = (Map.Entry) it.next();
+                Object key = entry.getKey();
+                s1 f7 = ((f0) entry.getValue()).f();
+                ngVar.w(key, f7);
+                i10 += f7.d;
+            }
+            j0Var = new j0(ngVar.c(true), i10);
+        }
+        f = j0Var;
+        b bVar = b.d;
+        b bVar2 = b.e;
+        bVar2.getClass();
+        h hVar = new h(bVar2);
+        bVar.getClass();
+        g = new e9.a(new e9.a(new e9.a(bVar, hVar), new e(' ', 1)), i.b("()<>@,;:\\\"/[]?=").d());
+        i.b("\"\\\r").d().getClass();
+        i.b(" \t\r\n");
+        h = new HashMap();
+        a("*", "*");
+        a("text", "*");
+        a("image", "*");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "*");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "*");
+        a("application", "*");
+        a("font", "*");
+        b("text", "cache-manifest");
+        b("text", "css");
+        b("text", "csv");
+        b("text", "html");
+        b("text", "calendar");
+        b("text", "markdown");
+        b("text", "plain");
+        b("text", "javascript");
+        b("text", "tab-separated-values");
+        b("text", "vcard");
+        b("text", "vnd.wap.wml");
+        b("text", "xml");
+        b("text", "vtt");
+        a("image", "bmp");
+        a("image", "x-canon-crw");
+        a("image", "gif");
+        a("image", "vnd.microsoft.icon");
+        a("image", "jpeg");
+        a("image", "png");
+        a("image", "vnd.adobe.photoshop");
+        b("image", "svg+xml");
+        a("image", "tiff");
+        a("image", "webp");
+        a("image", "heif");
+        a("image", "jp2");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "mp4");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "mpeg");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "ogg");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "webm");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "l16");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "l24");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "basic");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "aac");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "vorbis");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "x-ms-wma");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "x-ms-wax");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "vnd.rn-realaudio");
+        a(MediaStreamTrack.AUDIO_TRACK_KIND, "vnd.wave");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "mp4");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "mpeg");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "ogg");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "quicktime");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "webm");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "x-ms-wmv");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "x-flv");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "3gpp");
+        a(MediaStreamTrack.VIDEO_TRACK_KIND, "3gpp2");
+        b("application", "xml");
+        b("application", "atom+xml");
+        a("application", "x-bzip2");
+        b("application", "dart");
+        a("application", "vnd.apple.pkpass");
+        a("application", "vnd.ms-fontobject");
+        a("application", "epub+zip");
+        a("application", "x-www-form-urlencoded");
+        a("application", "pkcs12");
+        a("application", "binary");
+        a("application", "geo+json");
+        a("application", "x-gzip");
+        a("application", "hal+json");
+        b("application", "javascript");
+        a("application", "jose");
+        a("application", "jose+json");
+        i = b("application", "json");
+        a("application", "jwt");
+        b("application", "manifest+json");
+        a("application", "vnd.google-earth.kml+xml");
+        a("application", "vnd.google-earth.kmz");
+        a("application", "mbox");
+        a("application", "x-apple-aspen-config");
+        a("application", "vnd.ms-excel");
+        a("application", "vnd.ms-outlook");
+        a("application", "vnd.ms-powerpoint");
+        a("application", "msword");
+        a("application", "dash+xml");
+        a("application", "wasm");
+        a("application", "x-nacl");
+        a("application", "x-pnacl");
+        a("application", "octet-stream");
+        a("application", "ogg");
+        a("application", "vnd.openxmlformats-officedocument.wordprocessingml.document");
+        a("application", "vnd.openxmlformats-officedocument.presentationml.presentation");
+        a("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        a("application", "vnd.oasis.opendocument.graphics");
+        a("application", "vnd.oasis.opendocument.presentation");
+        a("application", "vnd.oasis.opendocument.spreadsheet");
+        a("application", "vnd.oasis.opendocument.text");
+        b("application", "opensearchdescription+xml");
+        a("application", "pdf");
+        a("application", "postscript");
+        a("application", "protobuf");
+        b("application", "rdf+xml");
+        b("application", "rtf");
+        a("application", "font-sfnt");
+        a("application", "x-shockwave-flash");
+        a("application", "vnd.sketchup.skp");
+        b("application", "soap+xml");
+        a("application", "x-tar");
+        a("application", "font-woff");
+        a("application", "font-woff2");
+        b("application", "xhtml+xml");
+        b("application", "xrd+xml");
+        a("application", "zip");
+        a("font", "collection");
+        a("font", "otf");
+        a("font", "sfnt");
+        a("font", "ttf");
+        a("font", "woff");
+        a("font", "woff2");
+        j = new l(new j("; "), 15);
     }
 
-    public final int b(int i10) {
-        u6.j(i10, this.b);
-        return this.a[i10];
+    public a(String str, String str2, j0 j0Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = j0Var;
+    }
+
+    public static void a(String str, String str2) {
+        a aVar = new a(str, str2, y.h);
+        h.put(aVar, aVar);
+    }
+
+    public static a b(String str, String str2) {
+        a aVar = new a(str, str2, f);
+        h.put(aVar, aVar);
+        StandardCharsets.UTF_8.getClass();
+        return aVar;
+    }
+
+    public final h1 c() {
+        return new h1(this.c.b(), new b6.i(new gh.a(27), 18));
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            int i10 = aVar.b;
-            int i11 = this.b;
-            if (i11 == i10) {
-                for (int i12 = 0; i12 < i11; i12++) {
-                    if (b(i12) == aVar.b(i12)) {
-                    }
-                }
-                return true;
-            }
+        if (!(obj instanceof a)) {
+            return false;
         }
-        return false;
+        a aVar = (a) obj;
+        return this.a.equals(aVar.a) && this.b.equals(aVar.b) && c().equals(aVar.c());
     }
 
     public final int hashCode() {
-        int i10 = 1;
-        for (int i11 = 0; i11 < this.b; i11++) {
-            i10 = (i10 * 31) + this.a[i11];
+        int i10 = this.e;
+        if (i10 != 0) {
+            return i10;
         }
-        return i10;
+        int hashCode = Arrays.hashCode(new Object[]{this.a, this.b, c()});
+        this.e = hashCode;
+        return hashCode;
     }
 
     public final String toString() {
-        int i10 = this.b;
-        if (i10 == 0) {
-            return "[]";
+        String str = this.d;
+        if (str != null) {
+            return str;
         }
-        StringBuilder sb2 = new StringBuilder(i10 * 5);
-        sb2.append('[');
-        int[] iArr = this.a;
-        sb2.append(iArr[0]);
-        for (int i11 = 1; i11 < i10; i11++) {
-            sb2.append(", ");
-            sb2.append(iArr[i11]);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.a);
+        sb2.append('/');
+        sb2.append(this.b);
+        j0 j0Var = this.c;
+        if (j0Var.f != 0) {
+            sb2.append("; ");
+            Collection a2 = new l1(j0Var, new b6.i(new gh.a(26), 18)).a();
+            l lVar = j;
+            lVar.getClass();
+            try {
+                lVar.l(sb2, a2.iterator());
+            } catch (IOException e) {
+                throw new AssertionError(e);
+            }
         }
-        sb2.append(']');
-        return sb2.toString();
+        String sb3 = sb2.toString();
+        this.d = sb3;
+        return sb3;
     }
 }

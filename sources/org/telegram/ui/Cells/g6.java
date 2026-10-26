@@ -1,157 +1,223 @@
 package org.telegram.ui.Cells;
 
-import j$.util.Comparator$-CC;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.ActionMode;
+import android.view.MotionEvent;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kd;
-import org.telegram.messenger.tf;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ju;
+import org.telegram.ui.p51;
+import org.telegram.ui.t41;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class g6 {
-    public final int a;
-    public boolean b;
-    public boolean c;
-    public int e;
-    public long f;
-    public int g;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList h = new ArrayList();
+public final class g6 extends ju {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public g6(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g6(FrameLayout frameLayout, Context context, org.telegram.ui.ActionBar.u6 u6Var, int i10) {
+        super(context, u6Var);
+        this.c = i10;
+        this.d = frameLayout;
     }
 
-    public static /* synthetic */ void a(g6 g6Var, TLObject tLObject, MessagesStorage messagesStorage, long j10, int i10, ArrayList arrayList) {
-        ArrayList arrayList2 = g6Var.d;
-        int i11 = g6Var.a;
-        if (!(tLObject instanceof TLRPC.messages_Messages)) {
-            if (i10 != g6Var.e) {
-                return;
-            }
-            g6Var.c();
-            return;
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.c) {
+            case 3:
+                super.dispatchDraw(canvas);
+                Drawable drawable = (Drawable) this.d;
+                drawable.setBounds(0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(28.0f));
+                drawable.draw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-        MessagesController.getInstance(i11).putUsers(messages_messages.users, false);
-        MessagesController.getInstance(i11).putChats(messages_messages.chats, false);
-        messagesStorage.putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-        messagesStorage.putMessages(messages_messages, -j10, 3, 0, false, 0, 0L);
-        if (i10 == g6Var.e && !messages_messages.messages.isEmpty()) {
-            arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.v8(13)));
-            TLRPC.Message message = (TLRPC.Message) i2.o1.i(1, messages_messages.messages);
-            long j11 = message.grouped_id;
-            if (j11 != 0) {
-                ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
-                int size = arrayList3.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    TLRPC.Message message2 = arrayList3.get(i12);
-                    i12++;
-                    TLRPC.Message message3 = message2;
-                    if (message3.grouped_id == j11) {
-                        arrayList2.add(new MessageObject(i11, message3, false, true));
+    }
+
+    @Override // org.telegram.ui.Components.lu
+    public int emojiCacheType() {
+        switch (this.c) {
+            case 0:
+                return 3;
+            case 1:
+            default:
+                return super.emojiCacheType();
+            case 2:
+                return 3;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.c) {
+            case 1:
+                if (!bh.m0.b) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+        switch (this.c) {
+            case 0:
+                InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+                if (((h6) this.d).s) {
+                    editorInfo.imeOptions &= -1073741825;
+                }
+                return onCreateInputConnection;
+            case 1:
+            default:
+                return super.onCreateInputConnection(editorInfo);
+            case 2:
+                InputConnection onCreateInputConnection2 = super.onCreateInputConnection(editorInfo);
+                editorInfo.imeOptions &= -1073741825;
+                return onCreateInputConnection2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ju, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.lu, android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.c) {
+            case 0:
+                super.onDraw(canvas);
+                ((h6) this.d).getClass();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public void onFocusChanged(boolean z10, int i10, Rect rect) {
+        switch (this.c) {
+            case 0:
+                super.onFocusChanged(z10, i10, rect);
+                ((h6) this.d).i(z10);
+                break;
+            case 1:
+                if (z10) {
+                    ((t41) this.d).F.q();
+                    AndroidUtilities.runOnUIThread(new p51(this, 0), 200L);
+                }
+                super.onFocusChanged(z10, i10, rect);
+                break;
+            default:
+                super.onFocusChanged(z10, i10, rect);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lu, android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.c) {
+            case 2:
+                super.onSizeChanged(i10, i11, i12, i13);
+                postOnAnimation(new org.telegram.ui.web.h1(this, 21));
+                break;
+            default:
+                super.onSizeChanged(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ju, android.widget.EditText, android.widget.TextView
+    public boolean onTextContextMenuItem(int i10) {
+        ClipData primaryClip;
+        switch (this.c) {
+            case 0:
+                if (i10 == 16908322 && (primaryClip = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip()) != null && primaryClip.getItemCount() == 1 && AndroidUtilities.charSequenceIndexOf(primaryClip.getItemAt(0).getText(), "\n") > 0) {
+                    CharSequence text = primaryClip.getItemAt(0).getText();
+                    ArrayList arrayList = new ArrayList();
+                    StringBuilder sb2 = new StringBuilder();
+                    for (int i11 = 0; i11 < text.length(); i11++) {
+                        char charAt = text.charAt(i11);
+                        if (charAt == '\n') {
+                            arrayList.add(sb2.toString());
+                            sb2.setLength(0);
+                        } else {
+                            sb2.append(charAt);
+                        }
+                    }
+                    if (!TextUtils.isEmpty(sb2)) {
+                        arrayList.add(sb2);
+                    }
+                    if (((h6) this.d).l(arrayList)) {
                     }
                 }
-            } else {
-                arrayList2.add(new MessageObject(i11, message, false, true));
-            }
-            if (arrayList2.isEmpty()) {
-                return;
-            }
-            g6Var.c();
+                break;
         }
+        return super.onTextContextMenuItem(i10);
     }
 
-    public static /* synthetic */ void b(g6 g6Var, int i10, ArrayList arrayList, long j10, int i11, MessagesStorage messagesStorage) {
-        int i12 = g6Var.a;
-        ArrayList arrayList2 = g6Var.d;
-        if (i10 != g6Var.e) {
-            return;
-        }
-        if (!arrayList.isEmpty()) {
-            arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.v8(12)));
-            TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
-            long j11 = message.grouped_id;
-            if (j11 != 0) {
-                int size = arrayList.size();
-                int i13 = 0;
-                while (i13 < size) {
-                    Object obj = arrayList.get(i13);
-                    i13++;
-                    TLRPC.Message message2 = (TLRPC.Message) obj;
-                    if (message2.grouped_id == j11) {
-                        arrayList2.add(new MessageObject(i12, message2, false, true));
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.c) {
+            case 0:
+                if (isEnabled()) {
+                    if (motionEvent.getAction() == 1) {
+                        ((h6) this.d).k(this);
                     }
+                    break;
                 }
-            } else {
-                arrayList2.add(new MessageObject(i12, message, false, true));
-            }
-            if (!arrayList2.isEmpty()) {
-                g6Var.c();
-                return;
-            }
+                break;
+            case 1:
+                if (motionEvent.getAction() != 1 || !((t41) this.d).F.u()) {
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new p51(this, 1), 200L);
+                    break;
+                }
         }
-        TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-        tL_channels_getMessages.channel = MessagesController.getInstance(i12).getInputChannel(j10);
-        for (int i14 = 10; i14 >= 0; i14--) {
-            int i15 = i11 - i14;
-            if (i15 >= 0) {
-                tL_channels_getMessages.id.add(Integer.valueOf(i15));
-            }
-        }
-        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new kd(g6Var, messagesStorage, j10, i10, arrayList));
+        return super.onTouchEvent(motionEvent);
     }
 
-    public final void c() {
-        int i10 = 0;
-        this.b = false;
-        this.c = true;
-        ArrayList arrayList = this.h;
-        int size = arrayList.size();
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((Runnable) obj).run();
+    @Override // org.telegram.ui.Components.ju, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    public ActionMode startActionMode(ActionMode.Callback callback, int i10) {
+        switch (this.c) {
+            case 0:
+                ActionMode startActionMode = super.startActionMode(callback, i10);
+                ((h6) this.d).g(this, startActionMode);
+                return startActionMode;
+            default:
+                return super.startActionMode(callback, i10);
         }
-        arrayList.clear();
     }
 
-    public final void d(TLRPC.UserFull userFull) {
-        ArrayList arrayList = this.d;
-        if (userFull == null || (userFull.flags2 & 64) == 0) {
-            this.e++;
-            this.c = true;
-            arrayList.clear();
-            c();
-            return;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g6(Context context, org.telegram.ui.ActionBar.u6 u6Var, Drawable drawable) {
+        super(context, u6Var);
+        this.c = 3;
+        this.d = drawable;
+    }
+
+    @Override // org.telegram.ui.Components.ju, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    public ActionMode startActionMode(ActionMode.Callback callback) {
+        switch (this.c) {
+            case 0:
+                ActionMode startActionMode = super.startActionMode(callback);
+                ((h6) this.d).g(this, startActionMode);
+                return startActionMode;
+            default:
+                return super.startActionMode(callback);
         }
-        long j10 = userFull.personal_channel_id;
-        int i10 = userFull.personal_channel_message;
-        if (this.c || this.b) {
-            if (this.f == j10 && this.g == i10) {
-                return;
-            }
-            this.c = false;
-            arrayList.clear();
-        }
-        int i11 = this.e + 1;
-        this.e = i11;
-        this.b = true;
-        this.f = j10;
-        this.g = i10;
-        int i12 = this.a;
-        long clientUserId = UserConfig.getInstance(i12).getClientUserId();
-        MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
-        messagesStorage.getStorageQueue().postRunnable(new tf(this, i10, messagesStorage, j10, clientUserId, i11));
     }
 }

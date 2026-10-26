@@ -1,13 +1,13 @@
 package u3;
 
-import b2.s;
-import b2.w;
-import b2.w0;
+import b2.t;
+import b2.x;
+import b2.x0;
+import c3.i0;
+import c3.j0;
 import c3.k0;
-import c3.l0;
-import c3.m0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e {
     public int A;
@@ -31,15 +31,15 @@ public final class e {
     public int S;
     public long T;
     public long U;
-    public m0 V;
+    public k0 V;
     public boolean W;
     public boolean X;
     public boolean Y;
     public String Z;
     public boolean a;
-    public l0 a0;
+    public j0 a0;
     public String b;
-    public w b0;
+    public x b0;
     public String c;
     public int c0;
     public int d;
@@ -49,9 +49,9 @@ public final class e {
     public int h;
     public boolean i;
     public byte[] j;
-    public k0 k;
+    public i0 k;
     public byte[] l;
-    public s m;
+    public t m;
     public int n;
     public int o;
     public int p;
@@ -71,6 +71,6 @@ public final class e {
         if (bArr != null) {
             return bArr;
         }
-        throw w0.a(null, "Missing CodecPrivate for codec " + str);
+        throw x0.a(null, "Missing CodecPrivate for codec " + str);
     }
 }

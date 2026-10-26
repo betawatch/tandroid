@@ -1,47 +1,24 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class uy0 implements aq {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ dq b;
-    public final /* synthetic */ ProfileActivity c;
+public final class uy0 extends org.telegram.ui.Components.mr0 {
+    public final /* synthetic */ vy0 a1;
 
-    public uy0(ProfileActivity profileActivity, TLRPC.Chat chat, dq dqVar) {
-        this.c = profileActivity;
-        this.a = chat;
-        this.b = dqVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uy0(vy0 vy0Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.a1 = vy0Var;
     }
 
-    @Override // org.telegram.ui.aq
-    public final void a(TLRPC.User user) {
-        ProfileActivity profileActivity = this.c;
-        profileActivity.M.m(-profileActivity.g1, user, profileActivity.F2.megagroup ? 10 : 9);
-    }
-
-    @Override // org.telegram.ui.aq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = this.c;
-        profileActivity.removeSelfFromStack();
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.f1));
-        if (user == null || (chat = this.a) == null || profileActivity.f1 == 0) {
-            return;
-        }
-        dq dqVar = this.b;
-        if (!dqVar.R || dqVar.getParentLayout() == null) {
-            return;
-        }
-        for (org.telegram.ui.ActionBar.o2 o2Var : dqVar.getParentLayout().getFragmentStack()) {
-            if (o2Var instanceof vb) {
-                vb vbVar = (vb) o2Var;
-                vbVar.V0();
-                AndroidUtilities.runOnUIThread(new re0(vbVar, user, chat, 27));
-                return;
-            }
+    @Override // org.telegram.ui.Components.mr0
+    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new fy0(this, hVar, i10, 5), 250L);
         }
     }
 }

@@ -1,74 +1,69 @@
 package l5;
 
-import android.content.Context;
-import com.google.android.gms.internal.play_billing.k3;
-import j$.util.DesugarCollections;
-import java.nio.charset.Charset;
-import java.util.Collections;
-import java.util.Set;
-import java.util.concurrent.Executor;
-import org.telegram.ui.web.a2;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class t {
-    public static volatile k e;
-    public final u5.a a;
-    public final u5.a b;
-    public final q5.b c;
-    public final ea.b d;
+    public static final SparseArray a;
+    public static final /* synthetic */ t[] b;
 
-    public t(u5.a aVar, u5.a aVar2, q5.b bVar, ea.b bVar2, com.google.firebase.messaging.r rVar) {
-        this.a = aVar;
-        this.b = aVar2;
-        this.c = bVar;
-        this.d = bVar2;
-        ((Executor) rVar.b).execute(new a2(rVar, 11));
+    /* JADX INFO: Fake field, exist only in values array */
+    t EF0;
+
+    static {
+        t tVar = new t("UNKNOWN_MOBILE_SUBTYPE", 0);
+        t tVar2 = new t("GPRS", 1);
+        t tVar3 = new t("EDGE", 2);
+        t tVar4 = new t("UMTS", 3);
+        t tVar5 = new t("CDMA", 4);
+        t tVar6 = new t("EVDO_0", 5);
+        t tVar7 = new t("EVDO_A", 6);
+        t tVar8 = new t("RTT", 7);
+        t tVar9 = new t("HSDPA", 8);
+        t tVar10 = new t("HSUPA", 9);
+        t tVar11 = new t("HSPA", 10);
+        t tVar12 = new t("IDEN", 11);
+        t tVar13 = new t("EVDO_B", 12);
+        t tVar14 = new t("LTE", 13);
+        t tVar15 = new t("EHRPD", 14);
+        t tVar16 = new t("HSPAP", 15);
+        t tVar17 = new t("GSM", 16);
+        t tVar18 = new t("TD_SCDMA", 17);
+        t tVar19 = new t("IWLAN", 18);
+        t tVar20 = new t("LTE_CA", 19);
+        b = new t[]{tVar, tVar2, tVar3, tVar4, tVar5, tVar6, tVar7, tVar8, tVar9, tVar10, tVar11, tVar12, tVar13, tVar14, tVar15, tVar16, tVar17, tVar18, tVar19, tVar20, new t("COMBINED", 20)};
+        SparseArray sparseArray = new SparseArray();
+        a = sparseArray;
+        sparseArray.put(0, tVar);
+        sparseArray.put(1, tVar2);
+        sparseArray.put(2, tVar3);
+        sparseArray.put(3, tVar4);
+        sparseArray.put(4, tVar5);
+        sparseArray.put(5, tVar6);
+        sparseArray.put(6, tVar7);
+        sparseArray.put(7, tVar8);
+        sparseArray.put(8, tVar9);
+        sparseArray.put(9, tVar10);
+        sparseArray.put(10, tVar11);
+        sparseArray.put(11, tVar12);
+        sparseArray.put(12, tVar13);
+        sparseArray.put(13, tVar14);
+        sparseArray.put(14, tVar15);
+        sparseArray.put(15, tVar16);
+        sparseArray.put(16, tVar17);
+        sparseArray.put(17, tVar18);
+        sparseArray.put(18, tVar19);
+        sparseArray.put(19, tVar20);
     }
 
-    public static t a() {
-        k kVar = e;
-        if (kVar != null) {
-            return (t) kVar.f.get();
-        }
-        throw new IllegalStateException("Not initialized!");
+    public static t valueOf(String str) {
+        return (t) Enum.valueOf(t.class, str);
     }
 
-    public static void b(Context context) {
-        if (e == null) {
-            synchronized (t.class) {
-                try {
-                    if (e == null) {
-                        j jVar = new j();
-                        context.getClass();
-                        jVar.a = context;
-                        e = jVar.a();
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-        }
-    }
-
-    public final r c(l lVar) {
-        byte[] bytes;
-        Set unmodifiableSet = lVar != null ? DesugarCollections.unmodifiableSet(j5.a.d) : Collections.singleton(new i5.c("proto"));
-        androidx.biometric.e a2 = i.a();
-        lVar.getClass();
-        a2.b = "cct";
-        j5.a aVar = (j5.a) lVar;
-        String str = aVar.a;
-        String str2 = aVar.b;
-        if (str2 == null && str == null) {
-            bytes = null;
-        } else {
-            if (str2 == null) {
-                str2 = "";
-            }
-            bytes = k3.j("1$", str, "\\", str2).getBytes(Charset.forName("UTF-8"));
-        }
-        a2.c = bytes;
-        return new r(unmodifiableSet, a2.e(), this);
+    public static t[] values() {
+        return (t[]) b.clone();
     }
 }

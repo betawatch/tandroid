@@ -1,25 +1,21 @@
 package f5;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.googlecode.mp4parser.e;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class c extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ te.b e;
-
+public abstract class c extends e {
     static {
-        te.a aVar = new te.a(c.class, "ChunkOffsetBox.java");
-        e = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.ChunkOffsetBox", "", "", "java.lang.String"));
+        sc.c.a(c.class);
     }
 
-    public final String toString() {
-        com.google.firebase.messaging.r b10 = te.a.b(e, this, this);
-        com.googlecode.mp4parser.g.a().getClass();
-        com.googlecode.mp4parser.g.b(b10);
-        StringBuilder sb2 = new StringBuilder(getClass().getSimpleName());
-        sb2.append("[entryCount=");
-        t tVar = (t) this;
-        k3.o(te.a.b(t.h, tVar, tVar));
-        return a1.g.n(tVar.f.length, "]", sb2);
+    public static byte[] d(String str) {
+        byte[] bArr = new byte[4];
+        if (str != null) {
+            for (int i10 = 0; i10 < Math.min(4, str.length()); i10++) {
+                bArr[i10] = (byte) str.charAt(i10);
+            }
+        }
+        return bArr;
     }
 }

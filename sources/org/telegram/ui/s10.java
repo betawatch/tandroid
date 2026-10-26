@@ -7,20 +7,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s10 extends s4.v {
-    public final fz d = new fz(this, 5);
+public final class s10 extends s4.w {
+    public final p00 d = new p00(this, 4);
     public final /* synthetic */ FiltersSetupActivity e;
 
     public s10(FiltersSetupActivity filtersSetupActivity) {
         this.e = filtersSetupActivity;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
-        super.a(recyclerView, b1Var);
-        View view = b1Var.a;
+    @Override // s4.w
+    public final void a(RecyclerView recyclerView, s4.e1 e1Var) {
+        super.a(recyclerView, e1Var);
+        View view = e1Var.a;
         view.setPressed(false);
         view.setTag(R.id.dragging, null);
         if (view instanceof l10) {
@@ -28,26 +28,26 @@ public final class s10 extends s4.v {
         }
     }
 
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
-        return b1Var.f != 2 ? s4.v.l(0, 0) : s4.v.l(3, 0);
+    @Override // s4.w
+    public final int e(RecyclerView recyclerView, s4.e1 e1Var) {
+        return e1Var.f != 2 ? s4.w.l(0, 0) : s4.w.l(3, 0);
     }
 
-    @Override // s4.v
+    @Override // s4.w
     public final boolean k() {
         return true;
     }
 
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+    @Override // s4.w
+    public final boolean n(RecyclerView recyclerView, s4.e1 e1Var, s4.e1 e1Var2) {
         MessagesController.DialogFilter dialogFilter;
         MessagesController.DialogFilter dialogFilter2;
-        if (b1Var.f != b1Var2.f) {
+        if (e1Var.f != e1Var2.f) {
             return false;
         }
         p10 p10Var = this.e.b;
-        int b10 = b1Var.b();
-        int b11 = b1Var2.b();
+        int b10 = e1Var.b();
+        int b11 = e1Var2.b();
         FiltersSetupActivity filtersSetupActivity = p10Var.e;
         int i10 = filtersSetupActivity.r;
         ArrayList arrayList = filtersSetupActivity.n;
@@ -65,24 +65,24 @@ public final class s10 extends s4.v {
                 } catch (Exception unused) {
                 }
                 filtersSetupActivity.e = true;
-                filtersSetupActivity.b0(true);
+                filtersSetupActivity.c0(true);
             }
         }
         return true;
     }
 
-    @Override // s4.v
-    public final void p(s4.b1 b1Var, int i10) {
+    @Override // s4.w
+    public final void p(s4.e1 e1Var, int i10) {
         if (i10 != 0) {
             this.e.a.I0(false);
-            b1Var.a.setPressed(true);
+            e1Var.a.setPressed(true);
         } else {
-            fz fzVar = this.d;
-            AndroidUtilities.cancelRunOnUIThread(fzVar);
-            AndroidUtilities.runOnUIThread(fzVar, 320L);
+            p00 p00Var = this.d;
+            AndroidUtilities.cancelRunOnUIThread(p00Var);
+            AndroidUtilities.runOnUIThread(p00Var, 320L);
         }
-        if (b1Var != null) {
-            View view = b1Var.a;
+        if (e1Var != null) {
+            View view = e1Var.a;
             view.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
             if (view instanceof l10) {
                 ((l10) view).setDragging(i10 == 2);
@@ -90,7 +90,7 @@ public final class s10 extends s4.v {
         }
     }
 
-    @Override // s4.v
-    public final void q(s4.b1 b1Var) {
+    @Override // s4.w
+    public final void q(s4.e1 e1Var) {
     }
 }

@@ -1,44 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n7 implements am0 {
+public final /* synthetic */ class n7 implements o1.g {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ n7(int i10) {
+    public /* synthetic */ n7(Object obj, int i10) {
         this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.am0
-    public final void d(int i10, View view) {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        oi.q qVar;
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                if (view instanceof org.telegram.ui.Cells.w) {
-                    ((org.telegram.ui.Cells.w) view).a();
-                    break;
-                }
+                ((m8) this.b).S.setBufferedProgress(f7 / 1000.0f);
                 break;
             case 1:
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.s5) {
-                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-                    s5Var.w.b(s5Var);
+                qc qcVar = (qc) this.b;
+                qcVar.p = (int) f7;
+                qcVar.l();
+                break;
+            case 2:
+                if (Math.abs(f7) > ((ub) this.b).getWidth()) {
+                    hVar.c();
                     break;
                 }
                 break;
-            case 2:
-                break;
             case 3:
-                int i11 = yh.c.a0;
+                ti tiVar = (ti) ((bi.x4) this.b).d;
+                li liVar = tiVar.C0;
+                if (liVar == tiVar.m0 || liVar == tiVar.n0 || (tiVar.F && tiVar.w1 != null)) {
+                    tiVar.h2(1);
+                }
+                tiVar.C0.l(tiVar.o2);
+                qVar = ((org.telegram.ui.ActionBar.k3) tiVar).glassEngine;
+                qVar.g();
+                viewGroup = ((org.telegram.ui.ActionBar.k3) tiVar).containerView;
+                viewGroup.invalidate();
+                break;
+            case 4:
+                al alVar = (al) this.b;
+                alVar.m0 = f7;
+                alVar.k0();
                 break;
             default:
-                int i12 = yh.m.A0;
+                ((uc0) this.b).y();
                 break;
         }
-    }
-
-    private final void a(int i10, View view) {
     }
 }

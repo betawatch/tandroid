@@ -6,9 +6,11 @@ import java.lang.ref.SoftReference;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
+import li.h5;
 import org.telegram.messenger.BuildVars;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b {
     public static boolean i = true;
@@ -25,16 +27,16 @@ public final class b {
         this.a = i10;
     }
 
-    public sa.a a() {
+    public ta.a a() {
         String str = this.b == 0 ? " registrationStatus" : "";
         if (((Long) this.f) == null) {
             str = str.concat(" expiresInSecs");
         }
         if (((Long) this.g) == null) {
-            str = si.o0.u(str, " tokenCreationEpochInSecs");
+            str = b10.u(str, " tokenCreationEpochInSecs");
         }
         if (str.isEmpty()) {
-            return new sa.a((String) this.c, this.b, (String) this.d, (String) this.e, ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h);
+            return new ta.a((String) this.c, this.b, (String) this.d, (String) this.e, ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h);
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
@@ -71,14 +73,14 @@ public final class b {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            ((ih.g) this.g).a((a) arrayList.get(i10));
+            ((jh.g) this.g).a((a) arrayList.get(i10));
         }
         m(arrayList);
         this.b = 0;
     }
 
     public void d() {
-        ih.g gVar = (ih.g) this.g;
+        jh.g gVar = (jh.g) this.g;
         c();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -93,7 +95,7 @@ public final class b {
                 int i12 = aVar.b;
                 int i13 = aVar.d;
                 RecyclerView recyclerView = gVar.a;
-                recyclerView.e0(i12, i13, true);
+                recyclerView.f0(i12, i13, true);
                 recyclerView.x0 = true;
                 recyclerView.u0.c += i13;
             } else if (i11 == 4) {
@@ -110,7 +112,7 @@ public final class b {
 
     public void e(a aVar) {
         int i10;
-        c5.c0 c0Var = (c5.c0) this.c;
+        d5.z zVar = (d5.z) this.c;
         int i11 = aVar.a;
         if (i11 == 1 || i11 == 8) {
             throw new IllegalArgumentException("should not dispatch add or move for pre layout");
@@ -134,7 +136,7 @@ public final class b {
                 a j10 = j(i16, o10, aVar.c, i14);
                 f(j10, i12);
                 j10.c = null;
-                c0Var.w(j10);
+                zVar.r(j10);
                 if (aVar.a == 4) {
                     i12 += i14;
                 }
@@ -146,17 +148,17 @@ public final class b {
         }
         Object obj = aVar.c;
         aVar.c = null;
-        c0Var.w(aVar);
+        zVar.r(aVar);
         if (i14 > 0) {
             a j11 = j(aVar.a, o10, obj, i14);
             f(j11, i12);
             j11.c = null;
-            c0Var.w(j11);
+            zVar.r(j11);
         }
     }
 
     public void f(a aVar, int i10) {
-        ih.g gVar = (ih.g) this.g;
+        jh.g gVar = (jh.g) this.g;
         gVar.a(aVar);
         int i11 = aVar.a;
         if (i11 != 2) {
@@ -167,7 +169,7 @@ public final class b {
         } else {
             int i12 = aVar.d;
             RecyclerView recyclerView = gVar.a;
-            recyclerView.e0(i10, i12, true);
+            recyclerView.f0(i10, i12, true);
             recyclerView.x0 = true;
             recyclerView.u0.c += i12;
         }
@@ -247,7 +249,7 @@ public final class b {
     }
 
     public a j(int i10, int i11, Object obj, int i12) {
-        a aVar = (a) ((c5.c0) this.c).b();
+        a aVar = (a) ((d5.z) this.c).a();
         if (aVar != null) {
             aVar.a = i10;
             aVar.b = i11;
@@ -264,7 +266,7 @@ public final class b {
     }
 
     public void k(a aVar) {
-        ih.g gVar = (ih.g) this.g;
+        jh.g gVar = (jh.g) this.g;
         ((ArrayList) this.e).add(aVar);
         int i10 = aVar.a;
         if (i10 == 1) {
@@ -275,7 +277,7 @@ public final class b {
             int i11 = aVar.b;
             int i12 = aVar.d;
             RecyclerView recyclerView = gVar.a;
-            recyclerView.e0(i11, i12, false);
+            recyclerView.f0(i11, i12, false);
             recyclerView.x0 = true;
             return;
         }
@@ -329,11 +331,11 @@ public final class b {
         int i17;
         Object obj;
         a aVar;
-        c5.c0 c0Var = (c5.c0) this.c;
-        ih.g gVar = (ih.g) this.g;
-        k2.w0 w0Var = (k2.w0) this.h;
+        d5.z zVar = (d5.z) this.c;
+        jh.g gVar = (jh.g) this.g;
+        h5 h5Var = (h5) this.h;
         ArrayList arrayList = (ArrayList) this.d;
-        w0Var.getClass();
+        h5Var.getClass();
         while (true) {
             int size = arrayList.size() - 1;
             boolean z13 = false;
@@ -355,8 +357,8 @@ public final class b {
                 break;
             }
             int i18 = size + 1;
-            b bVar = (b) w0Var.b;
-            c5.c0 c0Var2 = (c5.c0) bVar.c;
+            b bVar = (b) h5Var.a;
+            d5.z zVar2 = (d5.z) bVar.c;
             a aVar2 = (a) arrayList.get(size);
             a aVar3 = (a) arrayList.get(i18);
             int i19 = aVar3.a;
@@ -411,7 +413,7 @@ public final class b {
                                 if (aVar3.d == 0) {
                                     arrayList.remove(i18);
                                     aVar3.c = null;
-                                    c0Var2.w(aVar3);
+                                    zVar2.r(aVar3);
                                 }
                             }
                         }
@@ -430,7 +432,7 @@ public final class b {
                                     arrayList.set(size, aVar3);
                                     arrayList.remove(i18);
                                     aVar2.c = obj;
-                                    c0Var2.w(aVar2);
+                                    zVar2.r(aVar2);
                                 } else {
                                     if (z11) {
                                         if (aVar != null) {
@@ -543,7 +545,7 @@ public final class b {
                                 } else {
                                     arrayList.remove(size);
                                     aVar3.c = null;
-                                    c0Var2.w(aVar3);
+                                    zVar2.r(aVar3);
                                 }
                                 if (j10 != null) {
                                     arrayList.add(size, j10);
@@ -594,7 +596,7 @@ public final class b {
                 char c11 = 65535;
                 while (i46 < i45) {
                     RecyclerView recyclerView = gVar.a;
-                    b1 L = recyclerView.L(i46, true);
+                    e1 L = recyclerView.L(i46, true);
                     if (L != null) {
                     }
                     L = null;
@@ -627,7 +629,7 @@ public final class b {
                 }
                 if (i47 != aVar4.d) {
                     aVar4.c = null;
-                    c0Var.w(aVar4);
+                    zVar.r(aVar4);
                     i12 = 2;
                     aVar4 = j(2, i44, null, i47);
                 } else {
@@ -651,7 +653,7 @@ public final class b {
                 char c12 = 65535;
                 while (i48 < i49) {
                     RecyclerView recyclerView2 = gVar.a;
-                    b1 L2 = recyclerView2.L(i48, true);
+                    e1 L2 = recyclerView2.L(i48, true);
                     if (L2 != null) {
                     }
                     L2 = null;
@@ -676,7 +678,7 @@ public final class b {
                 if (i51 != aVar4.d) {
                     Object obj2 = aVar4.c;
                     aVar4.c = null;
-                    c0Var.w(aVar4);
+                    zVar.r(aVar4);
                     aVar4 = j(4, i50, obj2, i51);
                 }
                 if (c12 == 0) {
@@ -698,31 +700,31 @@ public final class b {
         for (int i10 = 0; i10 < size; i10++) {
             a aVar = (a) arrayList.get(i10);
             aVar.c = null;
-            ((c5.c0) this.c).w(aVar);
+            ((d5.z) this.c).r(aVar);
         }
         arrayList.clear();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public String n() {
         String str;
-        te.c cVar = te.c.e;
+        ue.b bVar = ue.b.e;
         if (i) {
-            le.b bVar = (le.b) this.f;
-            if (bVar == null) {
+            h5 h5Var = (h5) this.f;
+            if (h5Var == null) {
                 try {
-                    le.b bVar2 = new le.b(23);
-                    bVar2.b = new SoftReference(new String[3]);
-                    this.f = bVar2;
+                    h5 h5Var2 = new h5();
+                    h5Var2.a = new SoftReference(new String[3]);
+                    this.f = h5Var2;
                 } catch (Throwable unused) {
                     i = false;
                 }
             } else {
-                String[] strArr = (String[]) ((SoftReference) bVar.b).get();
+                String[] strArr = (String[]) ((SoftReference) h5Var.a).get();
                 if (strArr != null) {
                     str = strArr[0];
                     if (str == null) {
@@ -732,19 +734,19 @@ public final class b {
                             throw null;
                         }
                         String str2 = "";
-                        if (cVar.c) {
+                        if (bVar.c) {
                             String modifier = Modifier.toString(i10);
                             if (modifier.length() != 0) {
                                 str2 = modifier.concat(" ");
                             }
                         }
                         stringBuffer.append(str2);
-                        if (cVar.b) {
+                        if (bVar.b) {
                             ((Class) this.h).getClass();
                             Class cls = (Class) this.h;
-                            stringBuffer.append(te.c.a(cls.getName(), cls, cVar.a));
+                            stringBuffer.append(ue.b.a(cls.getName(), cls, bVar.a));
                         }
-                        if (cVar.b) {
+                        if (bVar.b) {
                             stringBuffer.append(" ");
                         }
                         ((Class) this.e).getClass();
@@ -753,19 +755,19 @@ public final class b {
                             cls2.getClass();
                             this.d = ((Class) this.e).getName();
                         }
-                        stringBuffer.append(te.c.a((String) this.d, cls2, cVar.d));
+                        stringBuffer.append(ue.b.a((String) this.d, cls2, bVar.d));
                         stringBuffer.append(".");
                         ((String) this.c).getClass();
                         stringBuffer.append((String) this.c);
                         Class[] clsArr = (Class[]) this.g;
-                        if (cVar.b) {
+                        if (bVar.b) {
                             stringBuffer.append("(");
                             for (int i11 = 0; i11 < clsArr.length; i11++) {
                                 if (i11 > 0) {
                                     stringBuffer.append(", ");
                                 }
                                 Class cls3 = clsArr[i11];
-                                stringBuffer.append(te.c.a(cls3.getName(), cls3, cVar.a));
+                                stringBuffer.append(ue.b.a(cls3.getName(), cls3, bVar.a));
                             }
                             stringBuffer.append(")");
                         } else if (clsArr.length == 0) {
@@ -776,11 +778,11 @@ public final class b {
                         str = stringBuffer.toString();
                     }
                     if (i) {
-                        le.b bVar3 = (le.b) this.f;
-                        String[] strArr2 = (String[]) ((SoftReference) bVar3.b).get();
+                        h5 h5Var3 = (h5) this.f;
+                        String[] strArr2 = (String[]) ((SoftReference) h5Var3.a).get();
                         if (strArr2 == null) {
                             strArr2 = new String[3];
-                            bVar3.b = new SoftReference(strArr2);
+                            h5Var3.a = new SoftReference(strArr2);
                         }
                         strArr2[0] = str;
                     }
@@ -799,7 +801,7 @@ public final class b {
     public int o(int i10, int i11) {
         int i12;
         int i13;
-        c5.c0 c0Var = (c5.c0) this.c;
+        d5.z zVar = (d5.z) this.c;
         ArrayList arrayList = (ArrayList) this.e;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             a aVar = (a) arrayList.get(size);
@@ -861,12 +863,12 @@ public final class b {
                 if (i18 == aVar2.b || i18 < 0) {
                     arrayList.remove(size2);
                     aVar2.c = null;
-                    c0Var.w(aVar2);
+                    zVar.r(aVar2);
                 }
             } else if (aVar2.d <= 0) {
                 arrayList.remove(size2);
                 aVar2.c = null;
-                c0Var.w(aVar2);
+                zVar.r(aVar2);
             }
         }
         return i10;
@@ -875,21 +877,21 @@ public final class b {
     public String toString() {
         switch (this.a) {
             case 3:
-                te.c cVar = te.c.e;
+                ue.b bVar = ue.b.e;
                 return n();
             default:
                 return super.toString();
         }
     }
 
-    public b(ih.g gVar) {
+    public b(jh.g gVar) {
         this.a = 0;
-        this.c = new c5.c0(30, 9);
+        this.c = new d5.z(30, 9);
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.b = 0;
         this.f = BuildVars.DEBUG_VERSION ? new ArrayList() : null;
         this.g = gVar;
-        this.h = new k2.w0(this, 20);
+        this.h = new h5(this);
     }
 }

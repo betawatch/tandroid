@@ -1,19 +1,43 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final class cz0 extends s51 {
-    public final /* synthetic */ ProfileActivity e;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.ImageReceiver;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cz0(ProfileActivity profileActivity, bz0 bz0Var) {
-        super(bz0Var);
-        this.e = profileActivity;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class cz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ProfileActivity a;
+
+    public cz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.s51, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.D5 = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        ProfileActivity profileActivity = this.a;
+        kVar = ((org.telegram.ui.ActionBar.r2) profileActivity).actionBar;
+        kVar.x(profileActivity.p2 ? 1090519039 : profileActivity.X5 != null ? 553648127 : org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.f8, profileActivity.z0), false);
+        yy0 yy0Var = profileActivity.e0;
+        ImageReceiver imageReceiver = yy0Var.U;
+        org.telegram.ui.Components.g6 animation = imageReceiver.getAnimation();
+        if (animation != null) {
+            animation.w(yy0Var);
+        }
+        imageReceiver.clearImage();
+        ImageReceiver.BitmapHolder bitmapHolder = yy0Var.W;
+        if (bitmapHolder != null) {
+            bitmapHolder.release();
+            yy0Var.W = null;
+        }
+        yy0Var.V = 0.0f;
+        yy0Var.invalidate();
+        profileActivity.H0 = false;
+        profileActivity.x5(false);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
     }
 }

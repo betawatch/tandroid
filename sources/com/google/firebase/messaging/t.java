@@ -1,51 +1,42 @@
 package com.google.firebase.messaging;
 
-import android.text.TextUtils;
 import android.util.Log;
-import java.util.concurrent.TimeUnit;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.Arrays;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class t {
-    public static final long d = TimeUnit.DAYS.toMillis(7);
+    public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
     public final String a;
     public final String b;
-    public final long c;
+    public final String c;
 
-    public t(long j10, String str, String str2) {
-        this.a = str;
-        this.b = str2;
-        this.c = j10;
+    public t(String str, String str2) {
+        String str3;
+        if (str2 == null || !str2.startsWith("/topics/")) {
+            str3 = str2;
+        } else {
+            Log.w("FirebaseMessaging", "Format /topics/topic-name is deprecated. Only 'topic-name' should be used in " + str + ".");
+            str3 = str2.substring(8);
+        }
+        if (str3 == null || !d.matcher(str3).matches()) {
+            throw new IllegalArgumentException(a1.g.p("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
+        }
+        this.a = str3;
+        this.b = str;
+        this.c = a1.g.D(str, "!", str2);
     }
 
-    public static String a(long j10, String str, String str2) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("token", str);
-            jSONObject.put("appVersion", str2);
-            jSONObject.put("timestamp", j10);
-            return jSONObject.toString();
-        } catch (JSONException e) {
-            Log.w("FirebaseMessaging", "Failed to encode token: " + e);
-            return null;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof t)) {
+            return false;
         }
+        t tVar = (t) obj;
+        return this.a.equals(tVar.a) && this.b.equals(tVar.b);
     }
 
-    public static t b(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return null;
-        }
-        if (!str.startsWith("{")) {
-            return new t(0L, str, null);
-        }
-        try {
-            JSONObject jSONObject = new JSONObject(str);
-            return new t(jSONObject.getLong("timestamp"), jSONObject.getString("token"), jSONObject.getString("appVersion"));
-        } catch (JSONException e) {
-            Log.w("FirebaseMessaging", "Failed to parse token: " + e);
-            return null;
-        }
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.b, this.a});
     }
 }

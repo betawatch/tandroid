@@ -1,50 +1,141 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ci0 extends qy {
-    public final int[] N;
-    public final /* synthetic */ qi0 O;
+public final /* synthetic */ class ci0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ci0(qi0 qi0Var, bi0 bi0Var, int i10) {
-        super(i10, bi0Var);
-        this.O = qi0Var;
-        this.N = new int[2];
+    public /* synthetic */ ci0(int i10, org.telegram.ui.ActionBar.r2 r2Var) {
+        this.a = i10;
+        this.b = r2Var;
     }
 
-    @Override // org.telegram.ui.qy
-    public final void g(py pyVar) {
-        qi0 qi0Var = this.O;
-        ji0 ji0Var = qi0Var.J;
-        if (pyVar == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
+                p2Var.a = true;
+                this.b.showAsSheet(new PremiumPreviewFragment(0, "effect"), p2Var);
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.r2 r2Var = this.b;
+                if (r2Var instanceof PremiumPreviewFragment) {
+                    PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) r2Var;
+                    premiumPreviewFragment.p0 = true;
+                    premiumPreviewFragment.getMediaDataController().loadPremiumPromo(false);
+                    premiumPreviewFragment.a.y0(0);
+                } else {
+                    PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, null);
+                    premiumPreviewFragment2.p0 = true;
+                    if (r2Var != null) {
+                        r2Var.presentFragment(premiumPreviewFragment2);
+                    } else {
+                        org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
+                        if (U != null) {
+                            U.presentFragment(premiumPreviewFragment2);
+                        }
+                    }
+                }
+                if (r2Var != null && (r2Var.getParentActivity() instanceof LaunchActivity)) {
+                    try {
+                        r2Var.getFragmentView().performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                    ((LaunchActivity) r2Var.getParentActivity()).x0.c(false);
+                    break;
+                }
+                break;
+            case 2:
+                this.b.presentFragment(new DataSettingsActivity());
+                break;
+            case 3:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 4:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 5:
+                this.b.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 6:
+                this.b.presentFragment(new WallpapersListActivity(1));
+                break;
+            case 7:
+                this.b.presentFragment(new NotificationsCustomSettingsActivity(2, new ArrayList(), null, true));
+                break;
+            case 8:
+                this.b.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 9:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 10:
+                org.telegram.messenger.vh.l(3, this.b);
+                break;
+            case 11:
+                org.telegram.messenger.vh.l(3, this.b);
+                break;
+            case 12:
+                org.telegram.ui.ActionBar.r2 r2Var2 = this.b;
+                tg.y0 y0Var = new tg.y0(r2Var2, 5, false);
+                y0Var.F();
+                r2Var2.showDialog(y0Var);
+                break;
+            case 13:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 14:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 15:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 16:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 17:
+                org.telegram.messenger.vh.l(1, this.b);
+                break;
+            case 18:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 19:
+                this.b.presentFragment(new NotificationsSettingsActivity());
+                break;
+            case 20:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 21:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 22:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 23:
+                this.b.presentFragment(new NotificationsSettingsActivity());
+                break;
+            case 24:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 25:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 26:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 27:
+                org.telegram.messenger.vh.l(0, this.b);
+                break;
+            case 28:
+                this.b.presentFragment(new StickersActivity(0, null));
+                break;
+            default:
+                this.b.presentFragment(new StickersActivity(0, null));
+                break;
         }
-        if (qi0Var.k0 != null) {
-            pyVar.c = true;
-            float f7 = (qy.f() * AndroidUtilities.density) / 1.3f;
-            float f10 = f7 / 3.0f;
-            pyVar.d = f10;
-            pyVar.e = f10;
-            pyVar.a = Utilities.clamp(qi0Var.k0.right - (0.75f * f7), AndroidUtilities.displaySize.x - f7, 0.0f);
-            pyVar.b = qi0Var.k0.bottom - (f7 / 2.0f);
-            return;
-        }
-        org.telegram.ui.Cells.t1 t1Var = qi0Var.P;
-        if (t1Var == null || !t1Var.isAttachedToWindow() || qi0Var.P.getMessageObject() == null || qi0Var.P.getMessageObject().getId() != qi0Var.Q) {
-            return;
-        }
-        qi0Var.P.getLocationOnScreen(this.N);
-        pyVar.c = true;
-        float f11 = (qy.f() * AndroidUtilities.density) / 1.3f;
-        float f12 = f11 / 3.0f;
-        pyVar.d = f12;
-        pyVar.e = f12;
-        float f13 = f11 / 2.0f;
-        pyVar.a = Utilities.clamp(((ji0Var.getScaleX() * qi0Var.P.getTimeX()) + r8[0]) - f13, AndroidUtilities.displaySize.x - f11, 0.0f);
-        pyVar.b = ((ji0Var.getScaleY() * qi0Var.P.getTimeY()) + r8[1]) - f13;
     }
 }

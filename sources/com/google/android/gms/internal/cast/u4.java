@@ -1,106 +1,121 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractList;
-import java.util.Collection;
-import java.util.List;
-import java.util.RandomAccess;
+import a8.na;
+import java.io.Serializable;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class u4 extends AbstractList implements k5 {
-    public boolean a;
+public class u4 implements Iterable, Serializable {
+    public static final u4 c = new u4(i5.b);
+    public int a = 0;
+    public final byte[] b;
 
-    public u4(boolean z10) {
-        this.a = z10;
+    static {
+        int i10 = s4.a;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        h();
-        return super.add(obj);
+    public u4(byte[] bArr) {
+        bArr.getClass();
+        this.b = bArr;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i10, Collection collection) {
-        h();
-        return super.addAll(i10, collection);
+    public static void o(int i10) {
+        if (((i10 - 47) | 47) < 0) {
+            throw new IndexOutOfBoundsException(ic.a.i(i10, "End index: 47 >= "));
+        }
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public void clear() {
-        h();
-        super.clear();
-    }
-
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof List)) {
-            return false;
-        }
-        if (!(obj instanceof RandomAccess)) {
-            return super.equals(obj);
-        }
-        List list = (List) obj;
-        int size = size();
-        if (size != list.size()) {
-            return false;
-        }
-        for (int i10 = 0; i10 < size; i10++) {
-            if (!get(i10).equals(list.get(i10))) {
-                return false;
+        if ((obj instanceof u4) && n() == ((u4) obj).n()) {
+            if (n() == 0) {
+                return true;
+            }
+            if (!(obj instanceof u4)) {
+                return obj.equals(this);
+            }
+            u4 u4Var = (u4) obj;
+            int i10 = this.a;
+            int i11 = u4Var.a;
+            if (i10 == 0 || i11 == 0 || i10 == i11) {
+                int n10 = n();
+                if (n10 > u4Var.n()) {
+                    throw new IllegalArgumentException("Length too large: " + n10 + n());
+                }
+                if (n10 > u4Var.n()) {
+                    throw new IllegalArgumentException(a1.g.l(n10, u4Var.n(), "Ran off end of other: 0, ", ", "));
+                }
+                byte[] bArr = u4Var.b;
+                int i12 = 0;
+                int i13 = 0;
+                while (i12 < n10) {
+                    if (this.b[i12] == bArr[i13]) {
+                        i12++;
+                        i13++;
+                    }
+                }
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
-    public final void h() {
-        if (!this.a) {
-            throw new UnsupportedOperationException();
+    public byte h(int i10) {
+        return this.b[i10];
+    }
+
+    public final int hashCode() {
+        int i10 = this.a;
+        if (i10 != 0) {
+            return i10;
         }
-    }
-
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public int hashCode() {
-        int size = size();
-        int i10 = 1;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 = (i10 * 31) + get(i11).hashCode();
+        int n10 = n();
+        Charset charset = i5.a;
+        int i11 = n10;
+        for (int i12 = 0; i12 < n10; i12++) {
+            i11 = (i11 * 31) + this.b[i12];
         }
-        return i10;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public abstract Object remove(int i10);
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean remove(Object obj) {
-        h();
-        int indexOf = indexOf(obj);
-        if (indexOf == -1) {
-            return false;
+        if (i11 == 0) {
+            i11 = 1;
         }
-        remove(indexOf);
-        return true;
+        this.a = i11;
+        return i11;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean removeAll(Collection collection) {
-        h();
-        return super.removeAll(collection);
+    @Override // java.lang.Iterable
+    public final /* synthetic */ Iterator iterator() {
+        return new androidx.datastore.preferences.protobuf.e(this);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean retainAll(Collection collection) {
-        h();
-        return super.retainAll(collection);
+    public byte m(int i10) {
+        return this.b[i10];
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        h();
-        return super.addAll(collection);
+    public int n() {
+        return this.b.length;
+    }
+
+    public final String toString() {
+        String concat;
+        Locale locale = Locale.ROOT;
+        String hexString = Integer.toHexString(System.identityHashCode(this));
+        int n10 = n();
+        if (n() <= 50) {
+            concat = na.a(this);
+        } else {
+            o(n());
+            concat = na.a(new t4(this.b)).concat("...");
+        }
+        StringBuilder sb2 = new StringBuilder("<ByteString@");
+        sb2.append(hexString);
+        sb2.append(" size=");
+        sb2.append(n10);
+        sb2.append(" contents=\"");
+        return a1.g.s(sb2, concat, "\">");
     }
 }

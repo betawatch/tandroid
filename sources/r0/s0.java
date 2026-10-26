@@ -10,15 +10,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class s0 extends WindowInsetsAnimation$Callback {
-    public final qh.e a;
+    public final rh.e a;
     public List b;
     public ArrayList c;
     public final HashMap d;
 
-    public s0(qh.e eVar) {
+    public s0(rh.e eVar) {
         super(0);
         this.d = new HashMap();
         this.a = eVar;
@@ -71,11 +71,11 @@ public final class s0 extends WindowInsetsAnimation$Callback {
         a(windowInsetsAnimation);
         i0.b f7 = t0.f(bounds);
         i0.b e = t0.e(bounds);
-        qh.e eVar = this.a;
+        rh.e eVar = this.a;
         if (eVar.c == 0) {
             Iterator it = eVar.d.iterator();
             while (it.hasNext()) {
-                ((qh.d) it.next()).u();
+                ((rh.d) it.next()).t();
             }
         }
         eVar.c++;

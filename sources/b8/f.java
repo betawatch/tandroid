@@ -1,21 +1,9 @@
 package b8;
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
+import com.google.android.gms.common.api.j;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f implements q {
-    public final Status a;
-    public final m8.e b;
-
-    public f(Status status, m8.e eVar) {
-        this.a = status;
-        this.b = eVar;
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status h() {
-        return this.a;
-    }
+public final class f extends j implements m8.e {
+    public static final com.google.android.gms.common.api.e k = new com.google.android.gms.common.api.e("RecaptchaBase.API", new d(0), new com.google.android.gms.common.api.d());
 }

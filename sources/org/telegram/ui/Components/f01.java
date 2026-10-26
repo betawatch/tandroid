@@ -1,40 +1,29 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class f01 {
-    public static final f01 e = new f01(false, new c01(TLObject.FLAG_31, -2147483647), i01.R, 0.0f);
-    public final boolean a;
-    public final c01 b;
-    public final uz0 c;
-    public final float d;
+public final class f01 extends ArrayList {
+    public final Class a;
+    public final Class b;
 
-    public f01(boolean z10, c01 c01Var, uz0 uz0Var, float f7) {
-        this.a = z10;
-        this.b = c01Var;
-        this.c = uz0Var;
-        this.d = f7;
+    public f01(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
     }
 
-    public static uz0 a(f01 f01Var, boolean z10) {
-        uz0 uz0Var = f01Var.c;
-        return uz0Var != i01.R ? uz0Var : f01Var.d == 0.0f ? z10 ? i01.S : i01.T : i01.U;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final k6.c h() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = ((Pair) get(i10)).first;
+            objArr2[i10] = ((Pair) get(i10)).second;
         }
-        if (obj == null || f01.class != obj.getClass()) {
-            return false;
-        }
-        f01 f01Var = (f01) obj;
-        return this.c.equals(f01Var.c) && this.b.equals(f01Var.b);
-    }
-
-    public final int hashCode() {
-        return this.c.hashCode() + (this.b.hashCode() * 31);
+        return new k6.c(objArr, objArr2);
     }
 }

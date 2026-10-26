@@ -7,18 +7,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d8 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i8 b;
-    public final /* synthetic */ pf.c c;
+    public final /* synthetic */ h8 b;
+    public final /* synthetic */ qf.c c;
 
-    public /* synthetic */ d8(i8 i8Var, pf.c cVar, int i10) {
+    public /* synthetic */ d8(h8 h8Var, qf.c cVar, int i10) {
         this.a = i10;
-        this.b = i8Var;
+        this.b = h8Var;
         this.c = cVar;
     }
 
@@ -27,18 +27,18 @@ public final /* synthetic */ class d8 implements Utilities.Callback {
         String str = (String) obj;
         switch (this.a) {
             case 0:
-                i8 i8Var = this.b;
-                i8Var.getClass();
+                h8 h8Var = this.b;
+                h8Var.getClass();
                 this.c.b();
                 if (!TextUtils.isEmpty(str)) {
-                    xc.a0(i8Var).e0(str, false);
+                    wc.b0(h8Var).f0(str, false);
                     break;
                 }
                 break;
             case 1:
                 this.c.c(false);
-                i8 i8Var2 = this.b;
-                org.telegram.ui.ActionBar.h5 parentLayout = i8Var2.getParentLayout();
+                h8 h8Var2 = this.b;
+                org.telegram.ui.ActionBar.j5 parentLayout = h8Var2.getParentLayout();
                 if (parentLayout != null) {
                     ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
                     int size = arrayList.size();
@@ -46,28 +46,28 @@ public final /* synthetic */ class d8 implements Utilities.Callback {
                     while (i10 < size) {
                         Object obj2 = arrayList.get(i10);
                         i10++;
-                        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj2;
-                        if ((o2Var instanceof s9) || (o2Var instanceof q8) || (o2Var instanceof aa)) {
-                            ((ActionBarLayout) parentLayout).b0(o2Var, false);
+                        org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) obj2;
+                        if ((r2Var instanceof r9) || (r2Var instanceof p8) || (r2Var instanceof z9)) {
+                            ((ActionBarLayout) parentLayout).c0(r2Var, false);
                         }
                     }
                 }
                 if (str == null) {
-                    qc M = xc.a0(i8Var2).M(LocaleController.getString(R.string.WalletBackupDisabled), LocaleController.getString(R.string.WalletBackupDisabledInfo), R.raw.contact_check);
+                    qc M = wc.b0(h8Var2).M(LocaleController.getString(R.string.WalletBackupDisabled), LocaleController.getString(R.string.WalletBackupDisabledInfo), R.raw.contact_check);
                     M.j = 5000;
                     M.j();
                     break;
                 } else {
-                    xc.a0(i8Var2).e0(str, false);
+                    wc.b0(h8Var2).f0(str, false);
                     break;
                 }
                 break;
             default:
-                i8 i8Var3 = this.b;
-                i8Var3.getClass();
+                h8 h8Var3 = this.b;
+                h8Var3.getClass();
                 this.c.b();
                 if (str == null) {
-                    org.telegram.ui.ActionBar.h5 parentLayout2 = i8Var3.getParentLayout();
+                    org.telegram.ui.ActionBar.j5 parentLayout2 = h8Var3.getParentLayout();
                     if (parentLayout2 != null) {
                         ArrayList arrayList2 = new ArrayList(parentLayout2.getFragmentStack());
                         int size2 = arrayList2.size();
@@ -75,19 +75,19 @@ public final /* synthetic */ class d8 implements Utilities.Callback {
                         while (i11 < size2) {
                             Object obj3 = arrayList2.get(i11);
                             i11++;
-                            org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) obj3;
-                            if ((o2Var2 instanceof s9) || (o2Var2 instanceof q8) || (o2Var2 instanceof aa) || (o2Var2 instanceof i8)) {
-                                ((ActionBarLayout) parentLayout2).b0(o2Var2, false);
+                            org.telegram.ui.ActionBar.r2 r2Var2 = (org.telegram.ui.ActionBar.r2) obj3;
+                            if ((r2Var2 instanceof r9) || (r2Var2 instanceof p8) || (r2Var2 instanceof z9) || (r2Var2 instanceof h8)) {
+                                ((ActionBarLayout) parentLayout2).c0(r2Var2, false);
                             }
                         }
-                        i8Var3.finishFragment();
+                        h8Var3.finishFragment();
                         break;
                     } else {
-                        i8Var3.finishFragment();
+                        h8Var3.finishFragment();
                         break;
                     }
                 } else {
-                    xc.a0(i8Var3).e0(str, false);
+                    wc.b0(h8Var3).f0(str, false);
                     break;
                 }
                 break;

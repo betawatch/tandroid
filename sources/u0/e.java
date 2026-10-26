@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ScrollView;
 import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e extends r0.b {
     @Override // r0.b
@@ -35,12 +35,12 @@ public final class e extends r0.b {
         }
         accessibilityNodeInfo.setScrollable(true);
         if (nestedScrollView.getScrollY() > 0) {
-            dVar.b(s0.c.e);
-            dVar.b(s0.c.f);
+            dVar.b(s0.c.g);
+            dVar.b(s0.c.h);
         }
         if (nestedScrollView.getScrollY() < scrollRange) {
-            dVar.b(s0.c.d);
-            dVar.b(s0.c.g);
+            dVar.b(s0.c.f);
+            dVar.b(s0.c.i);
         }
     }
 
@@ -67,14 +67,14 @@ public final class e extends r0.b {
                 if (i10 == 8192 || i10 == 16908344) {
                     int max = Math.max(nestedScrollView.getScrollY() - ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), 0);
                     if (max != nestedScrollView.getScrollY()) {
-                        nestedScrollView.y(0 - nestedScrollView.getScrollX(), max - nestedScrollView.getScrollY(), true);
+                        nestedScrollView.z(0 - nestedScrollView.getScrollX(), max - nestedScrollView.getScrollY(), true);
                         return true;
                     }
                 }
             }
             int min = Math.min(nestedScrollView.getScrollY() + ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), nestedScrollView.getScrollRange());
             if (min != nestedScrollView.getScrollY()) {
-                nestedScrollView.y(0 - nestedScrollView.getScrollX(), min - nestedScrollView.getScrollY(), true);
+                nestedScrollView.z(0 - nestedScrollView.getScrollX(), min - nestedScrollView.getScrollY(), true);
                 return true;
             }
         }

@@ -1,10 +1,10 @@
 package e2;
 
 import android.os.SystemClock;
-import b2.o1;
+import b2.p1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class a0 {
     public final int a;
@@ -26,22 +26,22 @@ public final class a0 {
         Object obj;
         e0 e0Var = this.i;
         i0 i0Var = e0Var.f;
-        i2.h0 h0Var = e0Var.a;
-        if (h0Var.d() != 2 || !h0Var.t() || h0Var.w0() != 0) {
+        i2.j0 j0Var = e0Var.a;
+        if (j0Var.d() != 2 || !j0Var.t() || j0Var.w0() != 0) {
             if (this.g) {
                 i0Var.e(1);
             }
             this.g = false;
             return;
         }
-        o1 y02 = h0Var.y0();
-        Object l4 = y02.p() ? null : y02.l(h0Var.A());
-        int m0 = h0Var.m0();
-        int N = h0Var.N();
-        long d02 = h0Var.d0();
-        long max = Math.max(0L, h0Var.q() - Math.max(0L, d02 - h0Var.M0()));
+        p1 y02 = j0Var.y0();
+        Object l4 = y02.p() ? null : y02.l(j0Var.A());
+        int m0 = j0Var.m0();
+        int N = j0Var.N();
+        long d02 = j0Var.d0();
+        long max = Math.max(0L, j0Var.q() - Math.max(0L, d02 - j0Var.M0()));
         if (l4 != null && m0 == -1) {
-            d02 -= m0.h0(y02.g(l4, e0Var.e).e);
+            d02 -= n0.h0(y02.g(l4, e0Var.e).e);
         }
         e0Var.d.getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();

@@ -1,50 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t20 {
-    public static final int w = ViewConfiguration.getTapTimeout();
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final u20 f;
-    public final u20 g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public MotionEvent m;
-    public MotionEvent n;
-    public boolean o;
-    public float p;
-    public float q;
-    public float r;
-    public float s;
-    public boolean t;
-    public VelocityTracker v;
-    public long u = ViewConfiguration.getLongPressTimeout();
-    public final ab.o0 e = new ab.o0(this, 9);
+public interface t20 {
+    void a1();
 
-    public t20(Context context, u20 u20Var) {
-        this.f = u20Var;
-        this.g = u20Var;
-        if (context == null) {
-            throw new IllegalArgumentException("Context must not be null");
-        }
-        this.t = true;
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-        int scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
-        int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
-        this.c = viewConfiguration.getScaledMinimumFlingVelocity();
-        this.d = viewConfiguration.getScaledMaximumFlingVelocity();
-        this.a = scaledTouchSlop * scaledTouchSlop;
-        this.b = scaledDoubleTapSlop * scaledDoubleTapSlop;
-    }
+    boolean onDown(MotionEvent motionEvent);
+
+    boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
+
+    void onLongPress(MotionEvent motionEvent);
+
+    boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
+
+    boolean onSingleTapUp(MotionEvent motionEvent);
 }

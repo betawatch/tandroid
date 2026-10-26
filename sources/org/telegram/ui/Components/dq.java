@@ -1,91 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import java.util.Random;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class dq {
-    public float g;
-    public float k;
-    public final Path a = new Path();
-    public final float[] b = new float[4];
-    public final float[] c = new float[4];
-    public final Matrix d = new Matrix();
-    public final float h = 1.0f;
-    public final Random i = new Random();
-    public final int f = 6;
-    public final float e = (float) (Math.tan(3.141592653589793d / 12) * 1.3333333333333333d);
-    public final float[] j = new float[6];
+public final class dq extends FrameLayout {
+    public TextView[] a;
+    public ak0[] b;
+    public ImageView c;
+    public AnimatorSet d;
+    public bq e;
+    public float f;
 
-    public dq() {
-        for (int i10 = 0; i10 < this.f; i10++) {
-            this.j[i10] = (this.i.nextInt() % 100) / 100.0f;
+    public final void a() {
+        if (getTag() == null) {
+            return;
         }
+        setTag(null);
+        bq bqVar = this.e;
+        if (bqVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(bqVar);
+            this.e = null;
+        }
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.d = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<dq, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this, (Property<dq, Float>) View.SCALE_X, 0.0f), ObjectAnimator.ofFloat(this, (Property<dq, Float>) View.SCALE_Y, 0.0f));
+        this.d.addListener(new cq(this, 1));
+        this.d.setDuration(180L);
+        this.d.start();
     }
 
-    public final void a(float f7, float f10, Canvas canvas, Paint paint) {
-        dq dqVar = this;
-        float f11 = dqVar.g;
-        float f12 = (f11 - 0.0f) - 0.0f;
-        float f13 = f11 + 0.0f + 0.0f;
-        float max = Math.max(f12, f13);
-        float f14 = dqVar.e;
-        float f15 = max * f14 * dqVar.h;
-        Path path = dqVar.a;
-        path.reset();
-        int i10 = 0;
-        while (true) {
-            int i11 = dqVar.f;
-            if (i10 >= i11) {
-                canvas.save();
-                canvas.rotate(0.0f, f7, f10);
-                canvas.drawPath(path, paint);
-                canvas.restore();
-                return;
-            }
-            Matrix matrix = dqVar.d;
-            matrix.reset();
-            float f16 = 360.0f / i11;
-            matrix.setRotate(i10 * f16, f7, f10);
-            float f17 = i10 % 2 == 0 ? f12 : f13;
-            float f18 = dqVar.k;
-            float[] fArr = dqVar.j;
-            float f19 = (fArr[i10] * f18) + f17;
-            float[] fArr2 = dqVar.b;
-            fArr2[0] = f7;
-            float f20 = f10 - f19;
-            fArr2[1] = f20;
-            float f21 = f13;
-            fArr2[2] = com.google.android.gms.internal.play_billing.k3.t(f18, fArr[i10], f14, f7 + f15);
-            fArr2[3] = f20;
-            matrix.mapPoints(fArr2);
-            int i12 = i10 + 1;
-            int i13 = i12 >= i11 ? 0 : i12;
-            float f22 = i13 % 2 == 0 ? f12 : f21;
-            float f23 = dqVar.k;
-            float f24 = (fArr[i13] * f23) + f22;
-            float[] fArr3 = dqVar.c;
-            fArr3[0] = f7;
-            float f25 = f10 - f24;
-            fArr3[1] = f25;
-            float f26 = f12;
-            fArr3[2] = com.google.android.gms.internal.play_billing.k3.t(f23, fArr[i13], f14, f7 - f15);
-            fArr3[3] = f25;
-            matrix.reset();
-            matrix.setRotate(f16 * i13, f7, f10);
-            matrix.mapPoints(fArr3);
-            if (i10 == 0) {
-                path.moveTo(fArr2[0], fArr2[1]);
-            }
-            path.cubicTo(fArr2[2], fArr2[3], fArr3[2], fArr3[3], fArr3[0], fArr3[1]);
-            i10 = i12;
-            f13 = f21;
-            f12 = f26;
-            dqVar = this;
-        }
+    public float getBaseTranslationY() {
+        return this.f;
     }
 }

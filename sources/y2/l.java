@@ -1,14 +1,14 @@
 package y2;
 
+import a8.yb;
 import android.os.Looper;
 import android.os.SystemClock;
-import e2.m0;
+import e2.n0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
-import org.telegram.ui.Wallet.m4;
-import v7.u6;
+import org.telegram.ui.Components.cy0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class l implements m {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -23,13 +23,27 @@ public final class l implements m {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public l(String str) {
-        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new v0.k(11)));
+        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new vg.d(11)));
         String concat = "ExoPlayer:Loader:".concat(str);
-        String str2 = m0.a;
+        String str2 = n0.a;
+    }
+
+    public final void a() {
+        h hVar = this.b;
+        hVar.getClass();
+        hVar.a(false);
+    }
+
+    public final boolean b() {
+        return this.c != null;
+    }
+
+    public final boolean c() {
+        return this.b != null;
     }
 
     @Override // y2.m
-    public final void a() {
+    public final void d() {
         IOException iOException = this.c;
         if (iOException != null) {
             throw iOException;
@@ -44,20 +58,6 @@ public final class l implements m {
         }
     }
 
-    public final void b() {
-        h hVar = this.b;
-        hVar.getClass();
-        hVar.a(false);
-    }
-
-    public final boolean c() {
-        return this.c != null;
-    }
-
-    public final boolean d() {
-        return this.b != null;
-    }
-
     public final void e(j jVar) {
         h hVar = this.b;
         if (hVar != null) {
@@ -65,7 +65,7 @@ public final class l implements m {
         }
         z2.a aVar = this.a;
         if (jVar != null) {
-            aVar.execute(new m4(jVar, 15));
+            aVar.execute(new cy0(jVar, 19));
         }
         aVar.b.accept(aVar.a);
     }
@@ -75,7 +75,7 @@ public final class l implements m {
         myLooper.getClass();
         this.c = null;
         h hVar = new h(this, myLooper, iVar, gVar, i10, SystemClock.elapsedRealtime());
-        u6.p(this.b == null);
+        yb.p(this.b == null);
         this.b = hVar;
         hVar.b();
     }

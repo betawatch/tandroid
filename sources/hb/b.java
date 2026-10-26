@@ -1,55 +1,81 @@
 package hb;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import j$.util.Objects;
+import java.io.Serializable;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends eb.u {
-    public static final a c = new a();
-    public final Class a;
-    public final o b;
+public final class b implements ParameterizedType, Serializable {
+    public final Type a;
+    public final Type b;
+    public final Type[] c;
 
-    public b(eb.g gVar, eb.u uVar, Class cls) {
-        this.b = new o(gVar, uVar, cls);
-        this.a = cls;
-    }
-
-    @Override // eb.u
-    public final Object read(mb.a aVar) {
-        if (aVar.x() == 9) {
-            aVar.t();
-            return null;
+    public b(Type type, Type type2, Type... typeArr) {
+        Objects.requireNonNull(type2);
+        if (type == null && (type2 instanceof Class)) {
+            Class cls = (Class) type2;
+            if (!Modifier.isStatic(cls.getModifiers()) && cls.getDeclaringClass() != null) {
+                throw new IllegalArgumentException("Must specify owner type for " + type2);
+            }
         }
-        ArrayList arrayList = new ArrayList();
-        aVar.a();
-        while (aVar.k()) {
-            arrayList.add(((eb.u) this.b.c).read(aVar));
-        }
-        aVar.e();
-        int size = arrayList.size();
-        Class cls = this.a;
-        if (!cls.isPrimitive()) {
-            return arrayList.toArray((Object[]) Array.newInstance((Class<?>) cls, size));
-        }
-        Object newInstance = Array.newInstance((Class<?>) cls, size);
-        for (int i10 = 0; i10 < size; i10++) {
-            Array.set(newInstance, i10, arrayList.get(i10));
-        }
-        return newInstance;
-    }
-
-    @Override // eb.u
-    public final void write(mb.b bVar, Object obj) {
-        if (obj == null) {
-            bVar.i();
-            return;
-        }
-        bVar.b();
-        int length = Array.getLength(obj);
+        this.a = type == null ? null : d.a(type);
+        this.b = d.a(type2);
+        Type[] typeArr2 = (Type[]) typeArr.clone();
+        this.c = typeArr2;
+        int length = typeArr2.length;
         for (int i10 = 0; i10 < length; i10++) {
-            this.b.write(bVar, Array.get(obj, i10));
+            Objects.requireNonNull(this.c[i10]);
+            d.c(this.c[i10]);
+            Type[] typeArr3 = this.c;
+            typeArr3[i10] = d.a(typeArr3[i10]);
         }
-        bVar.e();
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof ParameterizedType) && d.e(this, (ParameterizedType) obj);
+    }
+
+    @Override // java.lang.reflect.ParameterizedType
+    public final Type[] getActualTypeArguments() {
+        return (Type[]) this.c.clone();
+    }
+
+    @Override // java.lang.reflect.ParameterizedType
+    public final Type getOwnerType() {
+        return this.a;
+    }
+
+    @Override // java.lang.reflect.ParameterizedType
+    public final Type getRawType() {
+        return this.b;
+    }
+
+    public final int hashCode() {
+        int hashCode = Arrays.hashCode(this.c) ^ this.b.hashCode();
+        Type type = this.a;
+        return hashCode ^ (type != null ? type.hashCode() : 0);
+    }
+
+    public final String toString() {
+        Type[] typeArr = this.c;
+        int length = typeArr.length;
+        Type type = this.b;
+        if (length == 0) {
+            return d.k(type);
+        }
+        StringBuilder sb2 = new StringBuilder((length + 1) * 30);
+        sb2.append(d.k(type));
+        sb2.append("<");
+        sb2.append(d.k(typeArr[0]));
+        for (int i10 = 1; i10 < length; i10++) {
+            sb2.append(", ");
+            sb2.append(d.k(typeArr[i10]));
+        }
+        sb2.append(">");
+        return sb2.toString();
     }
 }

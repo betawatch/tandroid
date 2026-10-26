@@ -1,64 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t30 extends z4.a {
-    public final /* synthetic */ org.telegram.ui.s40 c;
+public final class t30 extends TextView {
+    public final Paint[] a;
+    public final /* synthetic */ org.telegram.ui.u40 b;
 
-    public t30(org.telegram.ui.s40 s40Var) {
-        this.c = s40Var;
-    }
-
-    @Override // z4.a
-    public final void a(z4.h hVar, Object obj) {
-        hVar.removeView((View) obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.c.e.length;
-    }
-
-    @Override // z4.a
-    public final Object e(z4.h hVar, int i10) {
-        s30 s30Var = new s30(this, this.c.getContext(), i10, 0);
-        s30Var.setOnClickListener(new ai.n1(this, i10, 12));
-        s30Var.setFocusable(true);
-        s30Var.setTag(Integer.valueOf(i10));
-        s30Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        s30Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        s30Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
-        if (i10 == 0) {
-            s30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
-        } else if (i10 == 1) {
-            s30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
-        } else {
-            s30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t30(org.telegram.ui.u40 u40Var, Context context) {
+        super(context);
+        this.b = u40Var;
+        this.a = new Paint[u40Var.e.length];
+        int i10 = 0;
+        while (true) {
+            Paint[] paintArr = this.a;
+            if (i10 >= paintArr.length) {
+                return;
+            }
+            paintArr[i10] = new Paint(1);
+            i10++;
         }
-        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
-        drawable.setAspectFill(false);
-        s30Var.setImageDrawable(drawable);
-        if (s30Var.getParent() != null) {
-            ((ViewGroup) s30Var.getParent()).removeView(s30Var);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        org.telegram.ui.u40 u40Var = this.b;
+        int i11 = u40Var.h;
+        Paint[] paintArr = this.a;
+        paintArr[i11].setAlpha(255);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[u40Var.h]);
+        float f7 = u40Var.f;
+        if (f7 > 0.0f && (i10 = u40Var.h + 1) < paintArr.length) {
+            paintArr[i10].setAlpha((int) (f7 * 255.0f));
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[u40Var.h + 1]);
         }
-        hVar.addView(s30Var, 0);
-        return s30Var;
+        super.onDraw(canvas);
     }
 
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view.equals(obj);
-    }
-
-    @Override // z4.a
-    public final void h(int i10) {
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003e  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0029  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        super.onSizeChanged(i10, i11, i12, i13);
+        int i16 = 0;
+        while (true) {
+            Paint[] paintArr = this.a;
+            if (i16 >= paintArr.length) {
+                return;
+            }
+            int i17 = -9015575;
+            if (i16 == 0) {
+                i14 = -9015575;
+                i17 = -11033346;
+            } else if (i16 == 1) {
+                i17 = -8919716;
+                i14 = -11089922;
+            } else {
+                i14 = -1026983;
+                i15 = -1792170;
+                paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
+                i16++;
+            }
+            i15 = 0;
+            paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
+            i16++;
+        }
     }
 }

@@ -1,35 +1,15 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class py {
-    public float a;
-    public float b;
-    public boolean c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public boolean i;
-    public ah.e j;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public float o;
-    public int p;
-    public TLRPC.Document q;
-    public final ImageReceiver r;
-    public String s;
-
-    public py() {
-        ImageReceiver imageReceiver = new ImageReceiver();
-        this.r = imageReceiver;
-        imageReceiver.setAllowLoadingOnAttachedOnly(true);
-        imageReceiver.setAllowDrawWhileCacheGenerating(true);
+public abstract class py extends org.telegram.ui.ActionBar.r2 {
+    @Override // org.telegram.ui.ActionBar.r2
+    public final View createView(Context context) {
+        org.telegram.ui.Components.vw0 vw0Var = new org.telegram.ui.Components.vw0(context, null);
+        this.fragmentView = vw0Var;
+        return vw0Var;
     }
 }

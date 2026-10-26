@@ -1,53 +1,20 @@
 package u7;
 
-import j$.util.Objects;
-import w7.x7;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e extends d {
-    public static final e e = new e(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class e {
+    public final Object a;
+    public final Object b;
+    public final Object c;
 
-    public e(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    public e(Object obj, Object obj2, Object obj3) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = obj3;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        x7.a(i10, this.d);
-        Object obj = this.c[i10];
-        Objects.requireNonNull(obj);
-        return obj;
-    }
-
-    @Override // u7.d, u7.a
-    public final int h(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
-    }
-
-    @Override // u7.a
-    public final int m() {
-        return this.d;
-    }
-
-    @Override // u7.a
-    public final int n() {
-        return 0;
-    }
-
-    @Override // u7.a
-    public final Object[] o() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public final IllegalArgumentException a() {
+        Object obj = this.a;
+        return new IllegalArgumentException(a1.g.q(String.valueOf(obj), "=", String.valueOf(this.c), a1.g.w("Multiple entries with same key: ", String.valueOf(obj), "=", String.valueOf(this.b), " and ")));
     }
 }

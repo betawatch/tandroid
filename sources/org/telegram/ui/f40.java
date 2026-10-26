@@ -1,27 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.TextureView;
 import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class f40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.voip.t a;
-    public final /* synthetic */ u50 b;
+public final class f40 implements yu0 {
+    public final /* synthetic */ v50 a;
 
-    public f40(u50 u50Var, org.telegram.ui.Components.voip.t tVar) {
-        this.b = u50Var;
-        this.a = tVar;
+    public f40(v50 v50Var) {
+        this.a = v50Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.yu0
+    public final void B0(MessageObject messageObject) {
         ViewGroup viewGroup;
-        org.telegram.ui.Components.voip.t tVar = this.a;
-        if (tVar.getParent() != null) {
-            viewGroup = ((org.telegram.ui.ActionBar.h3) this.b).containerView;
-            viewGroup.removeView(tVar);
-        }
+        v50 v50Var = this.a;
+        v50Var.Q.I0(true);
+        v50Var.c2.f.setRoundRadius(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0, 0);
+        viewGroup = ((org.telegram.ui.ActionBar.k3) v50Var).containerView;
+        viewGroup.invalidate();
+    }
+
+    @Override // org.telegram.ui.yu0
+    public final void E(MessageObject messageObject) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.k3) this.a).containerView;
+        viewGroup.invalidate();
+    }
+
+    @Override // org.telegram.ui.yu0
+    public final /* synthetic */ TextureView f0() {
+        return null;
     }
 }

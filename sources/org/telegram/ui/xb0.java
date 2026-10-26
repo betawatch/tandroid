@@ -1,33 +1,68 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xb0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sc0 b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ pc0 b;
 
-    public /* synthetic */ xb0(sc0 sc0Var, boolean z10, int i10) {
+    public /* synthetic */ xb0(pc0 pc0Var, int i10) {
         this.a = i10;
-        this.b = sc0Var;
-        this.c = z10;
+        this.b = pc0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                sc0 sc0Var = this.b;
-                if (!z10) {
-                    sc0Var.b.setVisibility(8);
-                    break;
-                } else {
-                    sc0Var.getClass();
+                pc0 pc0Var = this.b;
+                IMapsProvider.ICameraUpdate iCameraUpdate = pc0Var.J;
+                if (iCameraUpdate != null) {
+                    pc0Var.I.moveCamera(iCameraUpdate);
+                    pc0Var.J = null;
                     break;
                 }
+                break;
+            case 1:
+                pc0 pc0Var2 = this.b;
+                pc0Var2.getLocationController().setProximityLocation(pc0Var2.e0, 0, true);
+                pc0Var2.G = false;
+                break;
+            case 2:
+                pc0 pc0Var3 = this.b;
+                IMapsProvider.IMap iMap = pc0Var3.I;
+                if (iMap != null) {
+                    iMap.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(10.0f));
+                }
+                if (!pc0Var3.R.getRadiusSet()) {
+                    double d = pc0Var3.P;
+                    if (d > 0.0d) {
+                        pc0Var3.O.setRadius(d);
+                    } else {
+                        IMapsProvider.ICircle iCircle = pc0Var3.O;
+                        if (iCircle != null) {
+                            iCircle.remove();
+                            pc0Var3.O = null;
+                        }
+                    }
+                }
+                pc0Var3.R = null;
+                break;
+            case 3:
+                mc0 mc0Var = this.b.x;
+                if (mc0Var != null) {
+                    mc0Var.a();
+                    break;
+                }
+                break;
+            case 4:
+                pc0.W(this.b);
+                break;
             default:
-                this.b.s0(this.c);
+                AndroidUtilities.runOnUIThread(new xb0(this.b, 0));
                 break;
         }
     }

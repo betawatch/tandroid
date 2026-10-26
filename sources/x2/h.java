@@ -1,69 +1,23 @@
 package x2;
 
-import android.util.SparseArray;
-import android.util.SparseBooleanArray;
-import b2.q1;
-import b2.s1;
-import b2.t1;
-import java.util.HashMap;
-import java.util.Map;
+import b2.x;
+import c3.h0;
+import f9.w;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h extends s1 {
-    public final boolean J;
-    public final boolean K;
-    public final boolean L;
-    public final boolean M;
-    public final boolean N;
-    public final boolean O;
-    public final boolean P;
-    public final SparseArray Q;
-    public final SparseBooleanArray R;
+public final class h implements Comparable {
+    public final boolean a;
+    public final boolean b;
 
-    public h(i iVar) {
-        d(iVar);
-        this.J = iVar.w0;
-        this.K = iVar.x0;
-        this.L = iVar.y0;
-        this.M = iVar.z0;
-        this.N = iVar.A0;
-        this.O = iVar.B0;
-        this.P = iVar.C0;
-        SparseArray sparseArray = iVar.D0;
-        SparseArray sparseArray2 = new SparseArray();
-        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-            sparseArray2.put(sparseArray.keyAt(i10), new HashMap((Map) sparseArray.valueAt(i10)));
-        }
-        this.Q = sparseArray2;
-        this.R = iVar.E0.clone();
+    public h(x xVar, int i10) {
+        this.a = (xVar.e & 1) != 0;
+        this.b = h0.e(i10, false);
     }
 
-    @Override // b2.s1
-    public final void a(q1 q1Var) {
-        this.H.put(q1Var.a, q1Var);
-    }
-
-    @Override // b2.s1
-    public final t1 b() {
-        return new i(this);
-    }
-
-    @Override // b2.s1
-    public final s1 c() {
-        super.c();
-        return this;
-    }
-
-    public h() {
-        this.Q = new SparseArray();
-        this.R = new SparseBooleanArray();
-        this.J = true;
-        this.K = true;
-        this.L = true;
-        this.M = true;
-        this.N = true;
-        this.O = true;
-        this.P = true;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        h hVar = (h) obj;
+        return w.a.c(this.b, hVar.b).c(this.a, hVar.a).e();
     }
 }

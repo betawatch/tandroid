@@ -1,15 +1,55 @@
 package s4;
 
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.my0;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class x extends v {
-    public int d;
+public final class x extends GestureDetector.SimpleOnGestureListener {
+    public boolean a = true;
+    public final /* synthetic */ z b;
 
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, b1 b1Var) {
-        return v.l(b1Var.f == 3 ? 0 : ((my0) this).d, 0);
+    public x(z zVar) {
+        this.b = zVar;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final void onLongPress(MotionEvent motionEvent) {
+        e1 T;
+        if (this.a) {
+            z zVar = this.b;
+            View m10 = zVar.m(motionEvent);
+            w wVar = zVar.x;
+            if (m10 == null || (T = zVar.H.T(m10)) == null) {
+                return;
+            }
+            RecyclerView recyclerView = zVar.H;
+            int e = wVar.e(recyclerView, T);
+            WeakHashMap weakHashMap = r0.i0.a;
+            if ((wVar.b(e, recyclerView.getLayoutDirection()) & 16711680) != 0) {
+                int pointerId = motionEvent.getPointerId(0);
+                int i10 = zVar.w;
+                if (pointerId == i10) {
+                    int findPointerIndex = motionEvent.findPointerIndex(i10);
+                    float x9 = motionEvent.getX(findPointerIndex);
+                    float y3 = motionEvent.getY(findPointerIndex);
+                    zVar.d = x9;
+                    zVar.e = y3;
+                    zVar.r = 0.0f;
+                    zVar.n = 0.0f;
+                    if (wVar.k()) {
+                        zVar.r(T, 2);
+                    }
+                }
+            }
+        }
     }
 }

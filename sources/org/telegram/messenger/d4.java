@@ -1,39 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
+import android.view.View;
+import org.telegram.messenger.FilesMigrationService;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d4 implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ GiftAuctionController b;
-    public final /* synthetic */ GiftAuctionController.AuctionInternal c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class d4 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ d4(GiftAuctionController giftAuctionController, GiftAuctionController.AuctionInternal auctionInternal, Utilities.Callback2 callback2) {
-        this.b = giftAuctionController;
-        this.c = auctionInternal;
-        this.d = callback2;
+    public /* synthetic */ d4(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.lambda$sendBid$8(this.c, (Utilities.Callback2) this.d, (TLRPC.payments_PaymentResult) obj, (TLRPC.TL_error) obj2);
+                ((FilesMigrationService.FilesMigrationBottomSheet) this.b).lambda$new$0(view);
                 break;
             default:
-                this.b.lambda$getOrRequestAcquiredGifts$11((Utilities.Callback) this.d, this.c, (TL_payments.TL_StarGiftAuctionAcquiredGifts) obj, (TLRPC.TL_error) obj2);
+                MessagesController.lambda$checkSensitive$450((boolean[]) this.b, view);
                 break;
         }
-    }
-
-    public /* synthetic */ d4(GiftAuctionController giftAuctionController, Utilities.Callback callback, GiftAuctionController.AuctionInternal auctionInternal) {
-        this.b = giftAuctionController;
-        this.d = callback;
-        this.c = auctionInternal;
     }
 }

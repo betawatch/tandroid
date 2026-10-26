@@ -1,19 +1,13 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e5 implements ja.d {
-    public static final e5 a = new e5();
-
-    static {
-        si.o0.s(si.o0.l(d.class, si.o0.p(2, si.o0.l(d.class, new a(1)))));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class e5 {
+    public static void a(int i10, Object[] objArr) {
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (objArr[i11] == null) {
+                throw new NullPointerException(ic.a.i(i11, "at index "));
+            }
         }
-        throw null;
     }
 }

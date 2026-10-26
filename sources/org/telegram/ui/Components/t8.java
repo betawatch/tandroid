@@ -1,31 +1,88 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t8 extends AnimatorListenerAdapter {
+public final /* synthetic */ class t8 implements org.telegram.ui.ActionBar.b2, xq {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e9 b;
+    public final /* synthetic */ g9 b;
 
-    public /* synthetic */ t8(e9 e9Var, int i10) {
+    public /* synthetic */ t8(g9 g9Var, int i10) {
         this.a = i10;
-        this.b = e9Var;
+        this.b = g9Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.Components.xq
+    public /* synthetic */ int M0(int i10) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                this.b.f = false;
+                this.b.finishFragment();
                 break;
             default:
-                e9 e9Var = this.b;
-                e9Var.i0(e9Var.F ? 1.0f : 0.0f, false);
-                e9Var.F = false;
+                this.b.finishFragment();
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.xq
+    public void x0(int i10, int i11, boolean z10) {
+        g9 g9Var = this.b;
+        if (i11 == 0) {
+            c9 c9Var = g9Var.Y;
+            int i12 = c9Var.c;
+            if (i12 != i10 && (i12 == 0 || i10 == 0)) {
+                c9 a2 = c9Var.a();
+                g9Var.Y = a2;
+                g9Var.a.b(a2, true);
+                g9Var.o0();
+            }
+            g9Var.Y.c = i10;
+        } else if (i11 == 1) {
+            c9 c9Var2 = g9Var.Y;
+            int i13 = c9Var2.d;
+            if (i13 != i10 && (i13 == 0 || i10 == 0)) {
+                c9 a10 = c9Var2.a();
+                g9Var.Y = a10;
+                g9Var.a.b(a10, true);
+                g9Var.o0();
+            }
+            g9Var.Y.d = i10;
+        } else if (i11 == 2) {
+            c9 c9Var3 = g9Var.Y;
+            int i14 = c9Var3.e;
+            if (i14 != i10 && (i14 == 0 || i10 == 0)) {
+                c9 a11 = c9Var3.a();
+                g9Var.Y = a11;
+                g9Var.a.b(a11, true);
+                g9Var.o0();
+            }
+            g9Var.Y.e = i10;
+        } else if (i11 == 3) {
+            c9 c9Var4 = g9Var.Y;
+            int i15 = c9Var4.f;
+            if (i15 != i10 && (i15 == 0 || i10 == 0)) {
+                c9 a12 = c9Var4.a();
+                g9Var.Y = a12;
+                g9Var.a.b(a12, true);
+                g9Var.o0();
+            }
+            g9Var.Y.f = i10;
+        }
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
+        g9Var.a.invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.xq
+    public /* synthetic */ void w() {
+    }
+
+    @Override // org.telegram.ui.Components.xq
+    public /* synthetic */ void k(boolean z10) {
     }
 }

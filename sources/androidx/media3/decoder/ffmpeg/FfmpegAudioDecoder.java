@@ -1,9 +1,9 @@
 package androidx.media3.decoder.ffmpeg;
 
+import a8.yb;
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
-import b2.w;
-import e2.m0;
-import e2.x;
+import b2.x;
+import e2.n0;
 import h2.f;
 import h2.h;
 import h2.j;
@@ -12,9 +12,8 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -36,18 +35,18 @@ public final class FfmpegAudioDecoder extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public FfmpegAudioDecoder(int i10, w wVar, boolean z10) {
+    public FfmpegAudioDecoder(int i10, x xVar, boolean z10) {
         super(new h[16], new SimpleDecoderOutputBuffer[16]);
         byte[] bArr;
         int i11;
         byte[] bArr2;
         String str = FfmpegLibrary.a;
-        wVar.s.getClass();
-        String str2 = wVar.s;
+        xVar.s.getClass();
+        String str2 = xVar.s;
         String a2 = FfmpegLibrary.a(str2);
         a2.getClass();
         this.o = a2;
-        List list = wVar.v;
+        List list = xVar.v;
         char c10 = 65535;
         switch (str2.hashCode()) {
             case -1003765268:
@@ -157,7 +156,7 @@ public final class FfmpegAudioDecoder extends l {
         this.p = bArr;
         this.q = z10 ? 4 : 2;
         this.r = z10 ? 131070 : 65535;
-        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, wVar.L, wVar.K);
+        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, xVar.L, xVar.K);
         this.s = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Initialization failed.");
@@ -181,7 +180,7 @@ public final class FfmpegAudioDecoder extends l {
         this.r = i10;
         ByteBuffer byteBuffer = simpleDecoderOutputBuffer.b;
         byteBuffer.getClass();
-        u6.g(i10 >= byteBuffer.limit());
+        yb.g(i10 >= byteBuffer.limit());
         ByteBuffer order = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);
@@ -223,7 +222,7 @@ public final class FfmpegAudioDecoder extends l {
             }
         }
         ByteBuffer byteBuffer = hVar.c;
-        String str = m0.a;
+        String str = n0.a;
         int limit = byteBuffer.limit();
         long j10 = hVar.e;
         int i10 = this.r;
@@ -251,7 +250,7 @@ public final class FfmpegAudioDecoder extends l {
             this.v = ffmpegGetSampleRate(this.s);
             if (this.v == 0 && "alac".equals(this.o)) {
                 this.p.getClass();
-                x xVar = new x(this.p);
+                e2.x xVar = new e2.x(this.p);
                 xVar.N(this.p.length - 4);
                 this.v = xVar.E();
             }

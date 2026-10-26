@@ -1,12 +1,12 @@
 package r2;
 
+import a8.yb;
 import android.media.LoudnessCodecController;
 import android.media.MediaCodec;
 import java.util.HashSet;
 import java.util.Iterator;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class j {
     public final HashSet a;
@@ -22,7 +22,7 @@ public final class j {
     public final void a(MediaCodec mediaCodec) {
         LoudnessCodecController loudnessCodecController = this.c;
         if (loudnessCodecController == null || loudnessCodecController.addMediaCodec(mediaCodec)) {
-            u6.p(this.a.add(mediaCodec));
+            yb.p(this.a.add(mediaCodec));
         }
     }
 
@@ -48,7 +48,7 @@ public final class j {
             loudnessCodecController.close();
             this.c = null;
         }
-        LoudnessCodecController create = LoudnessCodecController.create(i10, j9.r.a, new h(this));
+        LoudnessCodecController create = LoudnessCodecController.create(i10, k9.r.a, new h(this));
         this.c = create;
         Iterator it = this.a.iterator();
         while (it.hasNext()) {

@@ -1,36 +1,18 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class db0 extends g.o {
-    public final /* synthetic */ jb0 c;
+public interface db0 {
+    Paint.FontMetricsInt D();
 
-    public db0(jb0 jb0Var) {
-        this.c = jb0Var;
-    }
+    void J(TLRPC.TL_document tL_document, String str, Object obj);
 
-    @Override // g.o
-    public final int i(int i10) {
-        jb0 jb0Var = this.c;
-        hg.j1 j1Var = jb0Var.f;
-        if (i10 == 0) {
-            return 100;
-        }
-        int i11 = i10 - 1;
-        Object J = j1Var.J(i11);
-        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
-            return 100;
-        }
-        if (J instanceof TLRPC.Document) {
-            return 20;
-        }
-        if (j1Var.I() != null || j1Var.U != null) {
-            i10 = i11;
-        }
-        cb0 cb0Var = jb0Var.d;
-        cb0Var.B1();
-        return cb0Var.R.get(i10);
-    }
+    void X(int i10, int i11, CharSequence charSequence, boolean z10);
+
+    void b0(String str);
+
+    void j(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
 }

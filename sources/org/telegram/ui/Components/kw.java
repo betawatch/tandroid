@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class kw extends on0 {
+public abstract class kw extends tn0 {
     public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
     public static final int[] f0 = {R.raw.msg_emoji_smiles, R.raw.msg_emoji_cat, R.raw.msg_emoji_food, R.raw.msg_emoji_activities, R.raw.msg_emoji_travel, R.raw.msg_emoji_objects, R.raw.msg_emoji_other, R.raw.msg_emoji_flags};
     public final gw E;
@@ -45,13 +45,13 @@ public abstract class kw extends on0 {
     public final int h;
     public final boolean n;
     public boolean r;
-    public f6 s;
-    public final org.telegram.ui.ActionBar.g6 v;
+    public h6 s;
+    public final org.telegram.ui.ActionBar.u6 v;
     public final boolean w;
     public final gw x;
     public final gw y;
 
-    public kw(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10, boolean z11, boolean z12, boolean z13, int i10, Runnable runnable, int i11, boolean z14) {
+    public kw(Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10, boolean z11, boolean z12, boolean z13, int i10, Runnable runnable, int i11, boolean z14) {
         super(context);
         this.h = R.drawable.msg_emoji_recent;
         int i12 = R.drawable.msg_emoji_gem;
@@ -73,7 +73,7 @@ public abstract class kw extends on0 {
         this.c0 = true;
         this.d0 = 11.0f;
         this.w = z13;
-        this.v = g6Var;
+        this.v = u6Var;
         this.R = runnable;
         this.T = i10;
         this.Q = i11;
@@ -173,12 +173,12 @@ public abstract class kw extends on0 {
         return false;
     }
 
-    public boolean g(fy fyVar) {
-        return fyVar.f;
+    public boolean g(ey eyVar) {
+        return eyVar.f;
     }
 
     public ColorFilter getEmojiColorFilter() {
-        return org.telegram.ui.ActionBar.k6.o0(this.v);
+        return org.telegram.ui.ActionBar.y6.o0(this.v);
     }
 
     public abstract boolean h(int i10);
@@ -236,9 +236,9 @@ public abstract class kw extends on0 {
             if (z11) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.J = ofFloat;
-                ofFloat.addUpdateListener(new ei.ja(this, f7, f10, i18));
+                ofFloat.addUpdateListener(new fi.fa(this, f7, f10, i18));
                 this.J.setDuration(350L);
-                this.J.setInterpolator(bs.h);
+                this.J.setInterpolator(ds.h);
                 this.J.start();
             } else {
                 this.L = 1.0f;
@@ -259,9 +259,9 @@ public abstract class kw extends on0 {
                     if (z11) {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(iwVar2.r, z12 ? 1.0f : 0.0f);
                         iwVar2.c = ofFloat2;
-                        ofFloat2.addUpdateListener(new l6(iwVar2, 21));
+                        ofFloat2.addUpdateListener(new n6(iwVar2, 21));
                         iwVar2.c.setDuration(475L);
-                        iwVar2.c.setInterpolator(bs.h);
+                        iwVar2.c.setInterpolator(ds.h);
                         iwVar2.c.start();
                     } else {
                         iwVar2.r = z12 ? 1.0f : 0.0f;
@@ -290,12 +290,12 @@ public abstract class kw extends on0 {
 
     public final int k() {
         boolean z10 = this.P;
-        org.telegram.ui.ActionBar.g6 g6Var = this.v;
+        org.telegram.ui.ActionBar.u6 u6Var = this.v;
         if (z10) {
-            return i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wk, g6Var), (int) 12.75f);
+            return i0.a.o(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Wk, u6Var), (int) 12.75f);
         }
         int i10 = this.T;
-        return (i10 == 5 || i10 == 7) ? org.telegram.ui.ActionBar.k6.o1(0.09f, this.Q) : org.telegram.ui.ActionBar.k6.o1(0.18f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Me, g6Var));
+        return (i10 == 5 || i10 == 7) ? org.telegram.ui.ActionBar.y6.o1(0.09f, this.Q) : org.telegram.ui.ActionBar.y6.o1(0.18f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Me, u6Var));
     }
 
     public final void l(boolean z10) {
@@ -309,7 +309,7 @@ public abstract class kw extends on0 {
                     gwVar.setAlpha(z10 ? 1.0f : 0.0f);
                 } else {
                     gwVar.setVisibility(0);
-                    gwVar.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(200L).setInterpolator(bs.h).withEndAction(new ah.t(27, this, z10)).start();
+                    gwVar.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(200L).setInterpolator(ds.h).withEndAction(new bh.n(27, this, z10)).start();
                 }
                 this.b.requestLayout();
                 this.a0 = false;
@@ -438,18 +438,18 @@ public abstract class kw extends on0 {
                 int i15 = 0;
                 while (i15 < Math.max(arrayList.size(), i14)) {
                     gw gwVar3 = i15 < i14 ? (gw) this.b.getChildAt(i15 + i12) : null;
-                    fy fyVar = i15 < arrayList.size() ? (fy) arrayList.get(i15) : null;
-                    if (fyVar == null) {
+                    ey eyVar = i15 < arrayList.size() ? (ey) arrayList.get(i15) : null;
+                    if (eyVar == null) {
                         if (gwVar3 != null) {
                             this.b.removeView(gwVar3);
                         }
-                    } else if (fyVar.j == 0) {
-                        boolean z13 = fyVar.e;
-                        Long l4 = fyVar.a;
+                    } else if (eyVar.j == 0) {
+                        boolean z13 = eyVar.e;
+                        Long l4 = eyVar.a;
                         if (l4 != null) {
                             if (gwVar3 == null) {
                                 i10 = i14;
-                                gwVar3 = new gw(this, getContext(), fyVar.a.longValue());
+                                gwVar3 = new gw(this, getContext(), eyVar.a.longValue());
                                 i(gwVar3);
                                 this.b.addView(gwVar3, i12 + i15);
                             } else {
@@ -462,8 +462,8 @@ public abstract class kw extends on0 {
                             z11 = true;
                         } else {
                             i10 = i14;
-                            TLRPC.StickerSet stickerSet = fyVar.b;
-                            ArrayList arrayList3 = fyVar.c;
+                            TLRPC.StickerSet stickerSet = eyVar.b;
+                            ArrayList arrayList3 = eyVar.c;
                             if (stickerSet == null) {
                                 i11 = i12;
                                 gwVar = gwVar2;
@@ -501,7 +501,7 @@ public abstract class kw extends on0 {
                                             gwVar3.setAnimatedEmojiDocument(document);
                                         }
                                         if (document == null) {
-                                            gwVar3.setStickerThumb(fyVar);
+                                            gwVar3.setStickerThumb(eyVar);
                                         }
                                     }
                                     document = null;
@@ -518,7 +518,7 @@ public abstract class kw extends on0 {
                             if (document == null) {
                             }
                         }
-                        gwVar3.a = fyVar.i ? Long.valueOf(439488310) : null;
+                        gwVar3.a = eyVar.i ? Long.valueOf(439488310) : null;
                         gwVar3.g(this.M == i15 ? z11 : false, false);
                         int i17 = this.T;
                         if (i17 == 4) {
@@ -527,7 +527,7 @@ public abstract class kw extends on0 {
                             if (i17 != 6 && i17 != 5 && i17 != 7) {
                                 if (!z10 && !z13) {
                                     gwVar3.a(Boolean.TRUE);
-                                } else if (g(fyVar)) {
+                                } else if (g(eyVar)) {
                                     gwVar3.a(null);
                                 } else {
                                     gwVar3.a(Boolean.FALSE);
@@ -541,11 +541,11 @@ public abstract class kw extends on0 {
                         i12 = i11;
                         gwVar2 = gwVar;
                     } else if (gwVar3 == null) {
-                        gw gwVar4 = new gw(this, getContext(), fyVar.j, false);
+                        gw gwVar4 = new gw(this, getContext(), eyVar.j, false);
                         i(gwVar4);
                         this.b.addView(gwVar4, i12 + i15);
                     } else {
-                        gwVar3.setDrawable(getResources().getDrawable(fyVar.j).mutate());
+                        gwVar3.setDrawable(getResources().getDrawable(eyVar.j).mutate());
                         gwVar3.d();
                         gwVar3.a(null);
                     }
@@ -563,7 +563,7 @@ public abstract class kw extends on0 {
                 if (gwVar5 != null) {
                     gwVar5.bringToFront();
                     if (gwVar5.getAlpha() < 1.0f) {
-                        gwVar5.animate().alpha(1.0f).setDuration(ah.x0.d() ? 0L : 200L).setInterpolator(bs.f).start();
+                        gwVar5.animate().alpha(1.0f).setDuration(bh.m0.d() ? 0L : 200L).setInterpolator(ds.f).start();
                     }
                 }
                 for (int i18 = 0; i18 < arrayList2.size(); i18++) {

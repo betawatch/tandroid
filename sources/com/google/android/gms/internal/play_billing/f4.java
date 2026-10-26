@@ -1,62 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
-import v7.c6;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f4 extends c6 {
-    @Override // v7.c6
-    public final void a(g4 g4Var, g4 g4Var2) {
-        g4Var.b = g4Var2;
-    }
+public final class f4 {
+    public static final f4 c = new f4();
+    public volatile Thread a;
+    public volatile f4 b;
 
-    @Override // v7.c6
-    public final void b(g4 g4Var, Thread thread) {
-        g4Var.a = thread;
-    }
-
-    @Override // v7.c6
-    public final boolean c(h4 h4Var, v2 v2Var, v2 v2Var2) {
-        synchronized (h4Var) {
-            try {
-                if (h4Var.b != v2Var) {
-                    return false;
-                }
-                h4Var.b = v2Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // v7.c6
-    public final boolean d(h4 h4Var, Object obj, Object obj2) {
-        synchronized (h4Var) {
-            try {
-                if (h4Var.a != obj) {
-                    return false;
-                }
-                h4Var.a = obj2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // v7.c6
-    public final boolean e(h4 h4Var, g4 g4Var, g4 g4Var2) {
-        synchronized (h4Var) {
-            try {
-                if (h4Var.c != g4Var) {
-                    return false;
-                }
-                h4Var.c = g4Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public f4() {
+        g4.f.b(this, Thread.currentThread());
     }
 }

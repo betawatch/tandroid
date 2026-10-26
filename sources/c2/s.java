@@ -1,245 +1,223 @@
 package c2;
 
-import v7.u6;
+import java.io.Serializable;
+import java.nio.ByteBuffer;
+import java.nio.ShortBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class s {
-    public final int a;
-    public final int b;
-    public final float c;
-    public final float d;
-    public final float e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final q i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
-    public double q;
+public final class s implements r {
+    public int a;
+    public int b;
+    public int c;
+    public final Serializable d;
+    public Object e;
+    public Serializable f;
+    public Serializable g;
+    public Object h;
 
-    public s(int i10, int i11, float f7, float f10, int i12, boolean z10) {
-        this.a = i10;
-        this.b = i11;
-        this.c = f7;
-        this.d = f10;
-        this.e = i10 / i12;
-        this.f = i10 / 400;
-        int i13 = i10 / 65;
-        this.g = i13;
-        this.h = i13 * 2;
-        this.i = z10 ? new p(this) : new r(this);
+    public s(byte[] bArr, String str, ArrayList arrayList, String str2, int i10, int i11, int i12) {
+        this.d = str;
+        this.e = arrayList;
+        this.f = str2;
+        this.a = i11;
+        this.b = i10;
+        this.c = i12;
     }
 
-    public final void a(int i10, int i11) {
-        q qVar = this.i;
-        qVar.j(i11);
-        Object h = qVar.h();
-        int i12 = this.b;
-        System.arraycopy(h, i10 * i12, qVar.i(), this.k * i12, i12 * i11);
-        this.k += i11;
+    @Override // c2.r
+    public void a(int i10, ByteBuffer byteBuffer) {
+        ShortBuffer asShortBuffer = byteBuffer.asShortBuffer();
+        short[] sArr = (short[]) this.e;
+        t tVar = (t) this.h;
+        asShortBuffer.get(sArr, tVar.j * tVar.b, i10 / 2);
+        byteBuffer.position(byteBuffer.position() + i10);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b() {
-        float f7;
-        int i10;
-        double d;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        long j10;
-        long j11;
-        int i18 = this.k;
-        float f10 = this.c;
-        float f11 = this.d;
-        double d10 = f10 / f11;
-        float f12 = this.e * f11;
-        int i19 = this.a;
-        int i20 = 1;
-        q qVar = this.i;
-        int i21 = this.b;
-        if (d10 > 1.0000100135803223d || d10 < 0.9999899864196777d) {
-            int i22 = this.j;
-            int i23 = this.h;
-            if (i22 >= i23) {
-                int i24 = 0;
-                while (true) {
-                    int i25 = this.o;
-                    if (i25 > 0) {
-                        int min = Math.min(i23, i25);
-                        a(i24, min);
-                        this.o -= min;
-                        i24 += min;
-                        f7 = f12;
-                        d = d10;
-                        i13 = i20;
-                        i11 = i23;
-                    } else {
-                        int i26 = i19 > 4000 ? i19 / 4000 : i20;
-                        int i27 = this.g;
-                        int i28 = this.f;
-                        if (i21 == i20 && i26 == i20) {
-                            i10 = qVar.f(i24, i28, i27);
-                            f7 = f12;
-                        } else {
-                            qVar.e(i24, i26);
-                            f7 = f12;
-                            int q6 = qVar.q(i28 / i26, i27 / i26);
-                            if (i26 != i20) {
-                                int i29 = q6 * i26;
-                                int i30 = i26 * 4;
-                                int i31 = i29 - i30;
-                                int i32 = i29 + i30;
-                                if (i31 >= i28) {
-                                    i28 = i31;
-                                }
-                                if (i32 <= i27) {
-                                    i27 = i32;
-                                }
-                                if (i21 == i20) {
-                                    i10 = qVar.f(i24, i28, i27);
-                                } else {
-                                    qVar.e(i24, i20);
-                                    i10 = qVar.q(i28, i27);
-                                }
-                            } else {
-                                i10 = q6;
-                            }
-                        }
-                        int i33 = qVar.k() ? this.p : i10;
-                        qVar.g();
-                        this.p = i10;
-                        if (d10 > 1.0d) {
-                            if (d10 >= 2.0d) {
-                                i14 = i20;
-                                double d11 = (i33 / (d10 - 1.0d)) + this.q;
-                                i15 = (int) Math.round(d11);
-                                d = d10;
-                                this.q = d11 - i15;
-                                qVar = qVar;
-                            } else {
-                                d = d10;
-                                i14 = i20;
-                                double d12 = (((2.0d - d) * i33) / (d - 1.0d)) + this.q;
-                                int round = (int) Math.round(d12);
-                                this.o = round;
-                                this.q = d12 - round;
-                                i15 = i33;
-                            }
-                            qVar.j(i15);
-                            int i34 = i23;
-                            int i35 = i15;
-                            qVar.m(i35, this.b, this.k, i24, i24 + i33);
-                            this.k += i35;
-                            i24 = i33 + i35 + i24;
-                            i11 = i34;
-                            i13 = i14;
-                        } else {
-                            d = d10;
-                            int i36 = i20;
-                            int i37 = i23;
-                            if (d < 0.5d) {
-                                i11 = i37;
-                                double d13 = ((i33 * d) / (1.0d - d)) + this.q;
-                                int round2 = (int) Math.round(d13);
-                                this.q = d13 - round2;
-                                i12 = round2;
-                            } else {
-                                i11 = i37;
-                                double d14 = ((((d * 2.0d) - 1.0d) * i33) / (1.0d - d)) + this.q;
-                                int round3 = (int) Math.round(d14);
-                                this.o = round3;
-                                this.q = d14 - round3;
-                                i12 = i33;
-                            }
-                            int i38 = i33 + i12;
-                            qVar.j(i38);
-                            i13 = i36;
-                            System.arraycopy(qVar.h(), i24 * i21, qVar.i(), this.k * i21, i33 * i21);
-                            int i39 = i24;
-                            qVar.m(i12, this.b, this.k + i33, i33 + i24, i39);
-                            this.k += i38;
-                            i24 = i39 + i12;
-                        }
-                    }
-                    if (i24 + i11 > i22) {
-                        break;
-                    }
-                    i23 = i11;
-                    f12 = f7;
-                    i20 = i13;
-                    d10 = d;
-                }
-                int i40 = this.j - i24;
-                System.arraycopy(qVar.h(), i24 * i21, qVar.h(), 0, i40 * i21);
-                this.j = i40;
-                if (f7 != 1.0f || this.k == i18) {
-                }
-                long j12 = (long) (i19 / f7);
-                long j13 = i19;
-                while (j12 != 0 && j13 != 0 && j12 % 2 == 0 && j13 % 2 == 0) {
-                    j12 /= 2;
-                    j13 /= 2;
-                }
-                int i41 = this.k - i18;
-                qVar.n(i41);
-                System.arraycopy(qVar.i(), i18 * i21, qVar.l(), this.l * i21, i41 * i21);
-                this.k = i18;
-                this.l += i41;
-                int i42 = 0;
-                while (true) {
-                    i16 = this.l - 1;
-                    if (i42 >= i16) {
-                        break;
-                    }
-                    while (true) {
-                        i17 = this.m + 1;
-                        j10 = i17;
-                        long j14 = j10 * j12;
-                        j11 = this.n;
-                        if (j14 <= j11 * j13) {
-                            break;
-                        }
-                        int i43 = i13;
-                        qVar.j(i43);
-                        qVar.c(i42, j13, j12);
-                        this.n += i43;
-                        this.k += i43;
-                    }
-                    int i44 = i13;
-                    this.m = i17;
-                    if (j10 == j13) {
-                        this.m = 0;
-                        u6.p(j11 == j12 ? i44 : 0);
-                        this.n = 0;
-                    }
-                    i42++;
-                    i13 = i44;
-                }
-                if (i16 == 0) {
-                    return;
-                }
-                System.arraycopy(qVar.l(), i16 * i21, qVar.l(), 0, (this.l - i16) * i21);
-                this.l -= i16;
+    @Override // c2.r
+    public void b(int i10, ByteBuffer byteBuffer) {
+        ShortBuffer asShortBuffer = byteBuffer.asShortBuffer();
+        short[] sArr = (short[]) this.f;
+        t tVar = (t) this.h;
+        asShortBuffer.put(sArr, 0, tVar.b * i10);
+        byteBuffer.position((i10 * 2 * tVar.b) + byteBuffer.position());
+    }
+
+    @Override // c2.r
+    public void c(int i10, long j10, long j11) {
+        int i11 = 0;
+        while (true) {
+            t tVar = (t) this.h;
+            int i12 = tVar.b;
+            if (i11 >= i12) {
                 return;
             }
-        } else {
-            a(0, this.j);
-            this.j = 0;
+            short[] sArr = (short[]) this.f;
+            int i13 = (tVar.k * i12) + i11;
+            short[] sArr2 = (short[]) this.g;
+            int i14 = (i10 * i12) + i11;
+            short s10 = sArr2[i14];
+            short s11 = sArr2[i14 + i12];
+            long j12 = tVar.n * j10;
+            long j13 = (r1 + 1) * j11;
+            long j14 = j13 - j12;
+            long j15 = j13 - (tVar.m * j11);
+            sArr[i13] = (short) ((((j15 - j14) * s11) + (s10 * j14)) / j15);
+            i11++;
         }
-        f7 = f12;
-        i13 = 1;
-        if (f7 != 1.0f) {
+    }
+
+    @Override // c2.r
+    public void d(int i10, int i11) {
+        for (int i12 = 0; i12 < ((t) this.h).b * i11; i12++) {
+            ((short[]) this.e)[i10 + i12] = 0;
         }
+    }
+
+    @Override // c2.r
+    public void e(int i10, int i11) {
+        short[] sArr = (short[]) this.e;
+        t tVar = (t) this.h;
+        int i12 = tVar.h / i11;
+        int i13 = tVar.b;
+        int i14 = i11 * i13;
+        int i15 = i10 * i13;
+        for (int i16 = 0; i16 < i12; i16++) {
+            int i17 = 0;
+            for (int i18 = 0; i18 < i14; i18++) {
+                i17 += sArr[(i16 * i14) + i15 + i18];
+            }
+            ((short[]) this.d)[i16] = (short) (i17 / i14);
+        }
+    }
+
+    @Override // c2.r
+    public int f(int i10, int i11, int i12) {
+        return s((short[]) this.e, i10, i11, i12);
+    }
+
+    @Override // c2.r
+    public void flush() {
+        this.c = 0;
+        this.a = 0;
+        this.b = 0;
+    }
+
+    @Override // c2.r
+    public void g() {
+        this.c = this.a;
+    }
+
+    @Override // c2.r
+    public Object h() {
+        return (short[]) this.e;
+    }
+
+    @Override // c2.r
+    public Object i() {
+        return (short[]) this.f;
+    }
+
+    /* JADX WARN: Type inference failed for: r3v1, types: [java.io.Serializable, short[]] */
+    @Override // c2.r
+    public void j(int i10) {
+        this.f = r((short[]) this.f, ((t) this.h).k, i10);
+    }
+
+    @Override // c2.r
+    public boolean k() {
+        int i10 = this.a;
+        return i10 != 0 && ((t) this.h).p != 0 && this.b <= i10 * 3 && i10 * 2 > this.c * 3;
+    }
+
+    @Override // c2.r
+    public Object l() {
+        return (short[]) this.g;
+    }
+
+    @Override // c2.r
+    public void m(int i10, int i11, int i12, int i13, int i14) {
+        short[] sArr = (short[]) this.f;
+        short[] sArr2 = (short[]) this.e;
+        for (int i15 = 0; i15 < i11; i15++) {
+            int i16 = (i12 * i11) + i15;
+            int i17 = (i14 * i11) + i15;
+            int i18 = (i13 * i11) + i15;
+            for (int i19 = 0; i19 < i10; i19++) {
+                sArr[i16] = (short) (((sArr2[i17] * i19) + ((i10 - i19) * sArr2[i18])) / i10);
+                i16 += i11;
+                i18 += i11;
+                i17 += i11;
+            }
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r3v1, types: [java.io.Serializable, short[]] */
+    @Override // c2.r
+    public void n(int i10) {
+        this.g = r((short[]) this.g, ((t) this.h).l, i10);
+    }
+
+    @Override // c2.r
+    public int o() {
+        return 2;
+    }
+
+    @Override // c2.r
+    public void p(int i10) {
+        this.e = r((short[]) this.e, ((t) this.h).j, i10);
+    }
+
+    @Override // c2.r
+    public int q(int i10, int i11) {
+        return s((short[]) this.d, 0, i10, i11);
+    }
+
+    public short[] r(short[] sArr, int i10, int i11) {
+        int length = sArr.length;
+        int i12 = ((t) this.h).b;
+        int i13 = length / i12;
+        return i10 + i11 <= i13 ? sArr : Arrays.copyOf(sArr, (((i13 * 3) / 2) + i11) * i12);
+    }
+
+    public int s(short[] sArr, int i10, int i11, int i12) {
+        int i13 = i10 * ((t) this.h).b;
+        int i14 = 255;
+        int i15 = 1;
+        int i16 = 0;
+        int i17 = 0;
+        while (i11 <= i12) {
+            int i18 = 0;
+            for (int i19 = 0; i19 < i11; i19++) {
+                i18 += Math.abs(sArr[i13 + i19] - sArr[(i13 + i11) + i19]);
+            }
+            if (i18 * i16 < i15 * i11) {
+                i16 = i11;
+                i15 = i18;
+            }
+            if (i18 * i14 > i17 * i11) {
+                i14 = i11;
+                i17 = i18;
+            }
+            i11++;
+        }
+        this.a = i15 / i16;
+        this.b = i17 / i14;
+        return i16;
+    }
+
+    /* JADX WARN: Type inference failed for: r1v0, types: [java.io.Serializable, short[]] */
+    /* JADX WARN: Type inference failed for: r3v3, types: [java.io.Serializable, short[]] */
+    /* JADX WARN: Type inference failed for: r3v4, types: [java.io.Serializable, short[]] */
+    public s(t tVar) {
+        this.h = tVar;
+        int i10 = tVar.h;
+        this.d = new short[i10];
+        int i11 = i10 * tVar.b;
+        this.e = new short[i11];
+        this.f = new short[i11];
+        this.g = new short[i11];
     }
 }

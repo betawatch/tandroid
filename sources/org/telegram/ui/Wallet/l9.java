@@ -1,130 +1,72 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.os.SystemClock;
-import java.util.ArrayList;
-import java.util.Random;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class l9 {
-    public static final int[] f = {-16106272, -16754689, -14779393, -13326081, -10235137, -6559233};
-    public final ArrayList a = new ArrayList();
-    public final Random b = new Random();
-    public final Paint c = new Paint(1);
-    public final Path d;
-    public long e;
+public final /* synthetic */ class l9 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r9 b;
 
-    public l9() {
-        Path path = new Path();
-        this.d = path;
-        path.moveTo(0.0f, -1.0f);
-        path.quadTo(0.12f, -0.12f, 1.0f, 0.0f);
-        path.quadTo(0.12f, 0.12f, 0.0f, 1.0f);
-        path.quadTo(-0.12f, 0.12f, -1.0f, 0.0f);
-        path.quadTo(-0.12f, -0.12f, 0.0f, -1.0f);
-        path.close();
+    public /* synthetic */ l9(r9 r9Var, int i10) {
+        this.a = i10;
+        this.b = r9Var;
     }
 
-    public final k9 a(float f7, float f10, float f11, float f12, float f13, float f14, float f15) {
-        ArrayList arrayList = this.a;
-        if (arrayList.isEmpty()) {
-            this.e = SystemClock.uptimeMillis();
-        }
-        k9 k9Var = new k9();
-        k9Var.l = 1.0f;
-        k9Var.a = f7;
-        k9Var.b = f10;
-        double d = f11;
-        k9Var.c = ((float) Math.cos(d)) * f12;
-        k9Var.d = ((float) Math.sin(d)) * f12;
-        k9Var.e = f13;
-        k9Var.f = f14;
-        k9Var.g = f15;
-        k9Var.k = f[this.b.nextInt(6)];
-        k9Var.h = e(0.0f, 90.0f);
-        k9Var.i = e(-180.0f, 180.0f);
-        arrayList.add(k9Var);
-        return k9Var;
-    }
-
-    public final void b(float f7, float f10) {
-        float f11 = AndroidUtilities.density;
-        for (int i10 = 0; i10 < 28; i10++) {
-            a(f7, f10, e(0.0f, 6.2831855f), e(60.0f, 300.0f) * f11, e(2.5f, 6.0f) * f11, e(0.5f, 0.9f), 3.0f);
-        }
-    }
-
-    public final void c(Canvas canvas) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        float min = Math.min(0.033f, (uptimeMillis - this.e) / 1000.0f);
-        this.e = uptimeMillis;
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            k9 k9Var = (k9) arrayList.get(size);
-            float f7 = k9Var.j + min;
-            k9Var.j = f7;
-            if (f7 >= 0.0f) {
-                if (f7 >= k9Var.f) {
-                    arrayList.remove(size);
-                } else {
-                    float exp = (float) Math.exp((-k9Var.g) * min);
-                    float f10 = k9Var.c * exp;
-                    k9Var.c = f10;
-                    float f11 = k9Var.d * exp;
-                    k9Var.d = f11;
-                    k9Var.a = (f10 * min) + k9Var.a;
-                    k9Var.b = (f11 * min) + k9Var.b;
-                    k9Var.h = (k9Var.i * min) + k9Var.h;
-                    float f12 = k9Var.j / k9Var.f;
-                    float max = Math.max(0.0f, Math.min(1.0f, (f12 - 0.35f) / 0.65f));
-                    float min2 = (1.0f - ((3.0f - (max * 2.0f)) * (max * max))) * Math.min(1.0f, 8.0f * f12) * k9Var.l;
-                    float B = com.google.android.gms.internal.play_billing.k3.B(f12, 0.5f, 1.0f, k9Var.e);
-                    int save = canvas.save();
-                    canvas.translate(k9Var.a, k9Var.b);
-                    canvas.rotate(k9Var.h);
-                    canvas.scale(B, B);
-                    int i10 = k9Var.k;
-                    Paint paint = this.c;
-                    paint.setColor(i10);
-                    paint.setAlpha(Math.round(20.4f * min2));
-                    canvas.drawCircle(0.0f, 0.0f, 1.4f, paint);
-                    paint.setAlpha(Math.round(min2 * 255.0f));
-                    canvas.drawPath(this.d, paint);
-                    canvas.restoreToCount(save);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                r9 r9Var = this.b;
+                if (r9Var.x != null) {
+                    AndroidUtilities.hideKeyboard(r9Var.N);
+                    r9Var.i0(r9Var.x, null);
+                    break;
                 }
-            }
+                break;
+            case 1:
+                r9 r9Var2 = this.b;
+                if (r9Var2.x != null) {
+                    AndroidUtilities.hideKeyboard(r9Var2.N);
+                    r9Var2.i0(r9Var2.x, null);
+                    break;
+                }
+                break;
+            case 2:
+                r9 r9Var3 = this.b;
+                ClipboardManager clipboardManager = (ClipboardManager) r9Var3.getParentActivity().getSystemService("clipboard");
+                if (clipboardManager != null && clipboardManager.hasPrimaryClip()) {
+                    ClipData primaryClip = clipboardManager.getPrimaryClip();
+                    if (primaryClip != null && primaryClip.getItemCount() != 0) {
+                        CharSequence coerceToText = primaryClip.getItemAt(0).coerceToText(r9Var3.getParentActivity());
+                        if (!TextUtils.isEmpty(coerceToText)) {
+                            r9Var3.N.setText(coerceToText.toString().trim());
+                            fi.c2 c2Var = r9Var3.N;
+                            c2Var.setSelection(c2Var.length());
+                            break;
+                        } else {
+                            r9Var3.S = false;
+                            r9Var3.l0(true);
+                            break;
+                        }
+                    } else {
+                        r9Var3.S = false;
+                        r9Var3.l0(true);
+                        break;
+                    }
+                } else {
+                    r9Var3.S = false;
+                    r9Var3.l0(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.e0();
+                break;
         }
-    }
-
-    public final boolean d() {
-        return !this.a.isEmpty();
-    }
-
-    public final float e(float f7, float f10) {
-        return com.google.android.gms.internal.play_billing.k3.y(f10, f7, this.b.nextFloat(), f7);
-    }
-
-    public final void f() {
-        this.a.clear();
-        float f7 = AndroidUtilities.density;
-        for (int i10 = 0; i10 < 48; i10++) {
-            int i11 = -1;
-            while (i11 <= 1) {
-                k9 a2 = a(0.0f, (e(-3.0f, 3.0f) * f7) + 0.0f, e(-0.6f, 0.6f) + (i11 < 0 ? 3.1415927f : 0.0f), e(150.0f, 310.0f) * f7, e(1.3f, 3.2f) * f7, e(0.65f, 1.05f), 1.8f);
-                a2.k = -6562049;
-                a2.l = e(0.3f, 1.0f);
-                a2.j = (-i10) * 0.006f;
-                i11 += 2;
-            }
-        }
-    }
-
-    public final void g(float f7, float f10) {
-        float f11 = AndroidUtilities.density;
-        a(f7, f10, e(0.0f, 6.2831855f), e(0.0f, 28.0f) * f11, e(1.5f, 3.5f) * f11, e(0.35f, 0.6f), 2.0f);
     }
 }

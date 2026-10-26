@@ -1,48 +1,15 @@
 package yh;
 
-import ai.je;
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
+import android.graphics.Canvas;
+import org.telegram.ui.u4;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class h extends je {
-    public final /* synthetic */ m m0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(m mVar, Context context, g6 g6Var) {
-        super(context, g6Var);
-        this.m0 = mVar;
-    }
-
-    @Override // ai.je
-    public final boolean d(float f7) {
-        if (getProgress() <= 0.99d && f7 <= getMeasuredWidth() * 0.9f) {
-            return false;
+public final class h extends u4 {
+    @Override // org.telegram.ui.u4, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.P.getRealCount() > 1) {
+            super.onDraw(canvas);
         }
-        m.U(this.m0);
-        return true;
-    }
-
-    @Override // ai.je, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - AndroidUtilities.dp(48.0f)) {
-            return false;
-        }
-        super.dispatchTouchEvent(motionEvent);
-        return true;
-    }
-
-    @Override // ai.je
-    public final void e(int i10) {
-        m.T(this.m0, i10);
-    }
-
-    @Override // ai.je
-    public final void setValue(int i10) {
-        super.setValue(i10);
-        m.T(this.m0, i10);
     }
 }

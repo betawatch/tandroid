@@ -1,15 +1,12 @@
 package org.telegram.messenger;
 
-import android.graphics.Canvas;
-import android.graphics.PostProcessor;
+import android.graphics.ImageDecoder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bh implements PostProcessor {
-    @Override // android.graphics.PostProcessor
-    public final int onPostProcess(Canvas canvas) {
-        int lambda$loadRoundAvatar$47;
-        lambda$loadRoundAvatar$47 = NotificationsController.lambda$loadRoundAvatar$47(canvas);
-        return lambda$loadRoundAvatar$47;
+public final /* synthetic */ class bh implements ImageDecoder.OnHeaderDecodedListener {
+    @Override // android.graphics.ImageDecoder.OnHeaderDecodedListener
+    public final void onHeaderDecoded(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
+        NotificationsController.lambda$loadRoundAvatar$48(imageDecoder, imageInfo, source);
     }
 }

@@ -1,28 +1,34 @@
 package androidx.biometric;
 
-import android.security.keystore.KeyGenParameterSpec;
-import javax.crypto.KeyGenerator;
+import android.hardware.biometrics.BiometricPrompt;
+import java.security.Signature;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static KeyGenParameterSpec a(KeyGenParameterSpec.Builder builder) {
-        return builder.build();
+    public static BiometricPrompt.CryptoObject a(Signature signature) {
+        return new BiometricPrompt.CryptoObject(signature);
     }
 
-    public static KeyGenParameterSpec.Builder b(String str, int i10) {
-        return new KeyGenParameterSpec.Builder(str, i10);
+    public static BiometricPrompt.CryptoObject b(Cipher cipher) {
+        return new BiometricPrompt.CryptoObject(cipher);
     }
 
-    public static void c(KeyGenerator keyGenerator, KeyGenParameterSpec keyGenParameterSpec) {
-        keyGenerator.init(keyGenParameterSpec);
+    public static BiometricPrompt.CryptoObject c(Mac mac) {
+        return new BiometricPrompt.CryptoObject(mac);
     }
 
-    public static void d(KeyGenParameterSpec.Builder builder) {
-        builder.setBlockModes("CBC");
+    public static Cipher d(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getCipher();
     }
 
-    public static void e(KeyGenParameterSpec.Builder builder) {
-        builder.setEncryptionPaddings("PKCS7Padding");
+    public static Mac e(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getMac();
+    }
+
+    public static Signature f(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getSignature();
     }
 }

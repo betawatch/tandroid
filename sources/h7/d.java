@@ -1,8 +1,25 @@
 package h7;
 
-import android.os.IInterface;
+import a8.df;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface d extends IInterface {
+public final class d extends p6.a {
+    public static final Parcelable.Creator<d> CREATOR = new f6.i(15);
+    public final boolean a;
+
+    public d(boolean z10) {
+        this.a = z10;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.i.e(dest, "dest");
+        int q5 = df.q(dest, 20293);
+        df.s(dest, 1, 4);
+        dest.writeInt(this.a ? 1 : 0);
+        df.r(dest, q5);
+    }
 }

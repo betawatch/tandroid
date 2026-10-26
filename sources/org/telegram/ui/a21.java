@@ -1,60 +1,34 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class a21 extends b61 {
-    public final /* synthetic */ c21 e2;
-    public final /* synthetic */ s51[] f2;
-    public final /* synthetic */ d21 g2;
+public final class a21 implements Transition.TransitionListener {
+    public final /* synthetic */ Runnable a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a21(d21 d21Var, d21 d21Var2, Activity activity, Integer num, c21 c21Var, s51[] s51VarArr) {
-        super(d21Var2, activity, false, num, 2, null);
-        this.g2 = d21Var;
-        this.e2 = c21Var;
-        this.f2 = s51VarArr;
+    public a21(Runnable runnable) {
+        this.a = runnable;
     }
 
-    @Override // org.telegram.ui.b61
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i10;
-        if (l4 == null) {
-            return;
-        }
-        d21 d21Var = this.g2;
-        i10 = ((org.telegram.ui.ActionBar.o2) d21Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction("animated_" + l4);
-        c21 c21Var = this.e2;
-        if (c21Var != null) {
-            c21Var.a(true);
-        }
-        s51 s51Var = this.f2[0];
-        if (s51Var != null) {
-            d21Var.n = null;
-            s51Var.dismiss();
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.run();
     }
 
-    @Override // org.telegram.ui.b61
-    public final void r(k51 k51Var, ah.i1 i1Var) {
-        int i10;
-        d21 d21Var = this.g2;
-        i10 = ((org.telegram.ui.ActionBar.o2) d21Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction(i1Var.f);
-        c21 c21Var = this.e2;
-        if (c21Var != null) {
-            c21Var.a(true);
-        }
-        s51 s51Var = this.f2[0];
-        if (s51Var != null) {
-            d21Var.n = null;
-            s51Var.dismiss();
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
     }
 }

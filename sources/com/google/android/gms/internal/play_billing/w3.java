@@ -1,47 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class w3 extends v1 {
-    private static final w3 zzb;
-    private int zzd;
-    private z1 zze = r2.e;
-    private String zzf = "";
-    private boolean zzg;
-
-    static {
-        w3 w3Var = new w3();
-        zzb = w3Var;
-        v1.k(w3.class, w3Var);
-    }
-
-    public static /* synthetic */ void n(w3 w3Var, boolean z10) {
-        w3Var.zzd |= 2;
-        w3Var.zzg = z10;
-    }
-
-    public static w3 o() {
-        return zzb;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
-            return (byte) 1;
-        }
-        if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001\u001b\u0002ဈ\u0000\u0003ဇ\u0001", new Object[]{"zzd", "zze", v3.class, "zzf", "zzg"});
-        }
-        if (i11 == 3) {
-            return new w3();
-        }
-        if (i11 == 4) {
-            return new u3(zzb);
-        }
-        if (i11 == 5) {
-            return zzb;
-        }
-        throw null;
+public final class w3 extends u1 {
+    public final void d(p3 p3Var) {
+        c();
+        x3.q((x3) this.b, p3Var);
     }
 }

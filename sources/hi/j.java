@@ -1,48 +1,55 @@
 package hi;
 
-import android.view.View;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.m61;
-import r0.k1;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.vh;
+import org.telegram.ui.ActionBar.f7;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j implements Utilities.Callback5, Utilities.Callback5Return, r0.n, MessagesStorage.BooleanCallback {
-    public final /* synthetic */ o a;
+public final class j extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final TextView c;
 
-    public /* synthetic */ j(o oVar) {
-        this.a = oVar;
+    public j(Context context, u6 u6Var, boolean z10) {
+        super(context);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        int i10 = y6.G6;
+        f7.t(imageView, i10, u6Var, PorterDuff.Mode.SRC_IN);
+        addView(imageView, gb1.h(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, gb1.h(-1, -2.0f, 23, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        f7.V(textView, i10, u6Var);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 14.0f);
+        TextView e = vh.e(linearLayout, textView, gb1.x(-1, -2, 55, 0, 0, 0, 1), context);
+        this.c = e;
+        f7.V(e, y6.z6, u6Var);
+        e.setTextSize(1, 14.0f);
+        linearLayout.addView(e, gb1.x(-1, -2, 55, 0, 0, 0, 0));
     }
 
-    @Override // r0.n
-    public k1 B0(View view, k1 k1Var) {
-        i0.b f7 = k1Var.a.f(519);
-        this.a.e.setPadding(0, f7.b, 0, f7.d);
-        return k1.b;
+    public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {
+        this.a.setImageResource(i10);
+        this.b.setText(charSequence);
+        this.c.setText(charSequence2);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(o.U(this.a, (m61) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        o.V(this.a, (m61) obj);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        o oVar = this.a;
-        oVar.finishFragment();
-        oVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-oVar.c), null, oVar.I, Boolean.valueOf(z10));
+    public void setText(CharSequence charSequence) {
+        this.c.setText(charSequence);
     }
 }

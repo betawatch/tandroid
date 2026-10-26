@@ -1,35 +1,17 @@
 package m5;
 
-import android.content.Context;
-import com.google.android.datatransport.cct.CctBackendFactory;
-import java.util.HashMap;
-import m.g3;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d {
-    public final qf.b a;
-    public final g3 b;
-    public final HashMap c;
+public final class d implements ka.d {
+    public static final d a = new d();
+    public static final ka.c b = new ka.c("logSource", ic.a.m(ic.a.l(na.d.class, new na.a(1))));
+    public static final ka.c c = new ka.c("logEventDropped", ic.a.m(ic.a.l(na.d.class, new na.a(2))));
 
-    public d(Context context, g3 g3Var) {
-        qf.b bVar = new qf.b(context, 29);
-        this.c = new HashMap();
-        this.a = bVar;
-        this.b = g3Var;
-    }
-
-    public final synchronized e a(String str) {
-        if (this.c.containsKey(str)) {
-            return (e) this.c.get(str);
-        }
-        CctBackendFactory V = this.a.V(str);
-        if (V == null) {
-            return null;
-        }
-        g3 g3Var = this.b;
-        e create = V.create(new b((Context) g3Var.b, (u5.a) g3Var.c, (u5.a) g3Var.d, str));
-        this.c.put(str, create);
-        return create;
+    @Override // ka.a
+    public final void a(Object obj, Object obj2) {
+        p5.e eVar = (p5.e) obj;
+        ka.e eVar2 = (ka.e) obj2;
+        eVar2.a(b, eVar.a);
+        eVar2.a(c, eVar.b);
     }
 }

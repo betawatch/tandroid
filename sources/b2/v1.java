@@ -1,59 +1,57 @@
 package b2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import a8.yb;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class v1 {
-    public static final v1 b;
-    public static final String c;
-    public final e9.n0 a;
+    public static final String f;
+    public static final String g;
+    public static final String h;
+    public static final String i;
+    public final int a;
+    public final q1 b;
+    public final boolean c;
+    public final int[] d;
+    public final boolean[] e;
 
     static {
-        e9.l0 l0Var = e9.n0.b;
-        b = new v1(e9.x1.e);
-        String str = e2.m0.a;
-        c = Integer.toString(0, 36);
+        String str = e2.n0.a;
+        f = Integer.toString(0, 36);
+        g = Integer.toString(1, 36);
+        h = Integer.toString(3, 36);
+        i = Integer.toString(4, 36);
     }
 
-    public v1(e9.x1 x1Var) {
-        this.a = e9.n0.u(x1Var);
-    }
-
-    public final boolean a(int i10) {
-        int i11 = 0;
-        while (true) {
-            e9.n0 n0Var = this.a;
-            if (i11 >= n0Var.size()) {
-                return false;
-            }
-            u1 u1Var = (u1) n0Var.get(i11);
-            boolean[] zArr = u1Var.e;
-            int length = zArr.length;
-            int i12 = 0;
-            while (true) {
-                if (i12 >= length) {
-                    break;
-                }
-                if (!zArr[i12]) {
-                    i12++;
-                } else if (u1Var.b.c == i10) {
-                    return true;
-                }
-            }
-            i11++;
+    public v1(q1 q1Var, boolean z10, int[] iArr, boolean[] zArr) {
+        int i10 = q1Var.a;
+        this.a = i10;
+        boolean z11 = false;
+        yb.g(i10 == iArr.length && i10 == zArr.length);
+        this.b = q1Var;
+        if (z10 && i10 > 1) {
+            z11 = true;
         }
+        this.c = z11;
+        this.d = (int[]) iArr.clone();
+        this.e = (boolean[]) zArr.clone();
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || v1.class != obj.getClass()) {
-            return false;
+        if (obj != null && v1.class == obj.getClass()) {
+            v1 v1Var = (v1) obj;
+            if (this.c == v1Var.c && this.b.equals(v1Var.b) && Arrays.equals(this.d, v1Var.d) && Arrays.equals(this.e, v1Var.e)) {
+                return true;
+            }
         }
-        return this.a.equals(((v1) obj).a);
+        return false;
     }
 
     public final int hashCode() {
-        return this.a.hashCode();
+        return Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + (((this.b.hashCode() * 31) + (this.c ? 1 : 0)) * 31)) * 31);
     }
 }

@@ -1,129 +1,174 @@
 package x7;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class qa extends e9.j2 {
-    public final /* synthetic */ e9.e b;
+public final class qa implements j5.e {
+    public static qa b;
+    public static final qa c = new qa(1);
+    public static final /* synthetic */ qa d = new qa(2);
+    public static final /* synthetic */ qa e = new qa(3);
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qa(e9.e eVar) {
-        super(1);
-        this.b = eVar;
+    public /* synthetic */ qa(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        this.b.clear();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        Set entrySet = this.b.b.entrySet();
-        entrySet.getClass();
-        try {
-            return entrySet.contains(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            return false;
+    public static synchronized void b() {
+        synchronized (qa.class) {
+            if (b == null) {
+                b = new qa(0);
+            }
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean isEmpty() {
-        return this.b.isEmpty();
+    public void a(la.a aVar) {
+        aVar.d(l7.class, g3.a);
+        aVar.d(m9.class, m5.a);
+        aVar.d(m7.class, h3.a);
+        aVar.d(p7.class, j3.a);
+        aVar.d(n7.class, i3.a);
+        aVar.d(o7.class, k3.a);
+        aVar.d(p6.class, i2.a);
+        aVar.d(o6.class, h2.a);
+        aVar.d(d7.class, z2.a);
+        aVar.d(h9.class, e5.a);
+        aVar.d(n6.class, g2.a);
+        aVar.d(m6.class, f2.a);
+        aVar.d(y7.class, v3.a);
+        aVar.d(ga.class, t2.a);
+        aVar.d(a7.class, w2.a);
+        aVar.d(x6.class, s2.a);
+        aVar.d(z7.class, w3.a);
+        aVar.d(e9.class, b5.a);
+        aVar.d(f9.class, c5.a);
+        aVar.d(d9.class, a5.a);
+        aVar.d(t7.class, q3.a);
+        aVar.d(fa.class, p1.a);
+        aVar.d(u7.class, r3.a);
+        aVar.d(h8.class, e4.a);
+        aVar.d(k8.class, h4.a);
+        aVar.d(j8.class, g4.a);
+        aVar.d(i8.class, f4.a);
+        aVar.d(t8.class, q4.a);
+        aVar.d(u8.class, r4.a);
+        aVar.d(w8.class, t4.a);
+        aVar.d(v8.class, s4.a);
+        aVar.d(s7.class, p3.a);
+        aVar.d(x8.class, u4.a);
+        aVar.d(y8.class, v4.a);
+        aVar.d(z8.class, w4.a);
+        aVar.d(a9.class, x4.a);
+        aVar.d(c9.class, y4.a);
+        aVar.d(b9.class, z4.a);
+        aVar.d(s8.class, m4.a);
+        aVar.d(i7.class, e3.a);
+        aVar.d(q8.class, o4.a);
+        aVar.d(p8.class, n4.a);
+        aVar.d(r8.class, p4.a);
+        aVar.d(g9.class, d5.a);
+        aVar.d(s9.class, s5.a);
+        aVar.d(b6.class, u1.a);
+        aVar.d(z5.class, s1.a);
+        aVar.d(y5.class, r1.a);
+        aVar.d(a6.class, t1.a);
+        aVar.d(d6.class, w1.a);
+        aVar.d(c6.class, v1.a);
+        aVar.d(e6.class, x1.a);
+        aVar.d(f6.class, y1.a);
+        aVar.d(g6.class, z1.a);
+        aVar.d(h6.class, a2.a);
+        aVar.d(i6.class, b2.a);
+        aVar.d(h0.class, l1.a);
+        aVar.d(j0.class, n1.a);
+        aVar.d(i0.class, m1.a);
+        aVar.d(g7.class, c3.a);
+        aVar.d(q6.class, j2.a);
+        aVar.d(i.class, l0.a);
+        aVar.d(h.class, m0.a);
+        aVar.d(v6.class, p2.a);
+        aVar.d(k.class, n0.a);
+        aVar.d(j.class, o0.a);
+        aVar.d(q.class, t0.a);
+        aVar.d(p.class, u0.a);
+        aVar.d(m.class, p0.a);
+        aVar.d(l.class, q0.a);
+        aVar.d(w.class, z0.a);
+        aVar.d(v.class, a1.a);
+        aVar.d(a0.class, d1.a);
+        aVar.d(z.class, e1.a);
+        aVar.d(g0.class, j1.a);
+        aVar.d(f0.class, k1.a);
+        aVar.d(c0.class, f1.a);
+        aVar.d(b0.class, g1.a);
+        aVar.d(e0.class, h1.a);
+        aVar.d(d0.class, i1.a);
+        aVar.d(aa.class, h5.a);
+        aVar.d(t9.class, k2.a);
+        aVar.d(x9.class, o3.a);
+        aVar.d(w9.class, n3.a);
+        aVar.d(u9.class, u2.a);
+        aVar.d(z9.class, g5.a);
+        aVar.d(y9.class, f5.a);
+        aVar.d(ba.class, i5.a);
+        aVar.d(v9.class, a3.a);
+        aVar.d(ea.class, u5.a);
+        aVar.d(da.class, v5.a);
+        aVar.d(ca.class, t5.a);
+        aVar.d(i9.class, j5.a);
+        aVar.d(f7.class, b3.a);
+        aVar.d(j7.class, f3.a);
+        aVar.d(x5.class, q1.a);
+        aVar.d(b7.class, x2.a);
+        aVar.d(h7.class, d3.a);
+        aVar.d(w6.class, q2.a);
+        aVar.d(s6.class, m2.a);
+        aVar.d(t6.class, n2.a);
+        aVar.d(r6.class, l2.a);
+        aVar.d(u6.class, o2.a);
+        aVar.d(r7.class, m3.a);
+        aVar.d(q7.class, l3.a);
+        aVar.d(g.class, k0.a);
+        aVar.d(p9.class, p5.a);
+        aVar.d(r9.class, r5.a);
+        aVar.d(q9.class, q5.a);
+        aVar.d(w5.class, o1.a);
+        aVar.d(l6.class, e2.a);
+        aVar.d(k6.class, d2.a);
+        aVar.d(j6.class, c2.a);
+        aVar.d(v7.class, s3.a);
+        aVar.d(x7.class, u3.a);
+        aVar.d(w7.class, t3.a);
+        aVar.d(o.class, r0.a);
+        aVar.d(n.class, s0.a);
+        aVar.d(a8.class, x3.a);
+        aVar.d(d8.class, a4.a);
+        aVar.d(b8.class, y3.a);
+        aVar.d(c8.class, z3.a);
+        aVar.d(s.class, v0.a);
+        aVar.d(r.class, w0.a);
+        aVar.d(k9.class, l5.a);
+        aVar.d(j9.class, k5.a);
+        aVar.d(n9.class, n5.a);
+        aVar.d(o9.class, o5.a);
+        aVar.d(l8.class, i4.a);
+        aVar.d(o8.class, l4.a);
+        aVar.d(m8.class, j4.a);
+        aVar.d(n8.class, k4.a);
+        aVar.d(y.class, b1.a);
+        aVar.d(x.class, c1.a);
+        aVar.d(c7.class, y2.a);
+        aVar.d(y6.class, v2.a);
+        aVar.d(e8.class, b4.a);
+        aVar.d(g8.class, d4.a);
+        aVar.d(f8.class, c4.a);
+        aVar.d(u.class, x0.a);
+        aVar.d(t.class, y0.a);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new e9.d(this.b, (byte) 0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        Object obj2;
-        if (!contains(obj)) {
-            return false;
+    @Override // j5.e
+    public Object apply(Object obj) {
+        switch (this.a) {
         }
-        Map.Entry entry = (Map.Entry) obj;
-        entry.getClass();
-        f fVar = (f) this.b.e;
-        Object key = entry.getKey();
-        j jVar = fVar.c;
-        jVar.getClass();
-        try {
-            obj2 = jVar.remove(key);
-        } catch (ClassCastException | NullPointerException unused) {
-            obj2 = null;
-        }
-        Collection collection = (Collection) obj2;
-        if (collection == null) {
-            return true;
-        }
-        int size = collection.size();
-        collection.clear();
-        fVar.d -= size;
-        return true;
-    }
-
-    @Override // e9.j2, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean removeAll(Collection collection) {
-        try {
-            if (collection != null) {
-                return w7.l8.a(this, collection);
-            }
-            throw null;
-        } catch (UnsupportedOperationException unused) {
-            Iterator it = collection.iterator();
-            boolean z10 = false;
-            while (it.hasNext()) {
-                z10 |= remove(it.next());
-            }
-            return z10;
-        }
-    }
-
-    @Override // e9.j2, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean retainAll(Collection collection) {
-        int ceil;
-        try {
-            if (collection != null) {
-                return super.retainAll(collection);
-            }
-            throw null;
-        } catch (UnsupportedOperationException unused) {
-            int size = collection.size();
-            if (size >= 3) {
-                ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
-            } else {
-                if (size < 0) {
-                    throw new IllegalArgumentException(i2.o1.k(size, "expectedSize cannot be negative but was: "));
-                }
-                ceil = size + 1;
-            }
-            HashSet hashSet = new HashSet(ceil);
-            for (Object obj : collection) {
-                if (contains(obj) && (obj instanceof Map.Entry)) {
-                    hashSet.add(((Map.Entry) obj).getKey());
-                }
-            }
-            f fVar = (f) this.b.e;
-            a aVar = fVar.a;
-            if (aVar == null) {
-                aVar = new a(fVar, fVar.c);
-                fVar.a = aVar;
-            }
-            return aVar.retainAll(hashSet);
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.b.b.size();
+        return (byte[]) obj;
     }
 }

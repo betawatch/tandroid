@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -74,7 +74,7 @@ public final class m implements Window.Callback {
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
         boolean z10 = this.c;
         Window.Callback callback = this.a;
-        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.j(keyEvent) || callback.dispatchKeyEvent(keyEvent);
+        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.i(keyEvent) || callback.dispatchKeyEvent(keyEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0066, code lost:
@@ -97,9 +97,9 @@ public final class m implements Window.Callback {
         if (!this.a.dispatchKeyShortcutEvent(keyEvent)) {
             int keyCode = keyEvent.getKeyCode();
             r rVar = this.e;
-            a0 r10 = rVar.r();
-            if (r10 != null) {
-                z zVar = r10.i;
+            a0 p10 = rVar.p();
+            if (p10 != null) {
+                z zVar = p10.i;
                 if (zVar == null || (kVar = zVar.d) == null) {
                     performShortcut = false;
                 } else {
@@ -108,12 +108,12 @@ public final class m implements Window.Callback {
                 }
             }
             q qVar = rVar.V;
-            if (qVar == null || !rVar.v(qVar, keyEvent.getKeyCode(), keyEvent)) {
+            if (qVar == null || !rVar.u(qVar, keyEvent.getKeyCode(), keyEvent)) {
                 if (rVar.V == null) {
-                    q q6 = rVar.q(0);
-                    rVar.w(q6, keyEvent);
-                    boolean v = rVar.v(q6, keyEvent.getKeyCode(), keyEvent);
-                    q6.k = false;
+                    q o10 = rVar.o(0);
+                    rVar.v(o10, keyEvent);
+                    boolean u10 = rVar.u(o10, keyEvent.getKeyCode(), keyEvent);
+                    o10.k = false;
                 }
                 z10 = false;
                 if (z10) {
@@ -194,12 +194,12 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final boolean onMenuOpened(int i10, Menu menu) {
-        a0 r10;
+        a0 p10;
         b(i10, menu);
-        if (i10 == 108 && (r10 = this.e.r()) != null) {
-            ArrayList arrayList = r10.m;
-            if (true != r10.l) {
-                r10.l = true;
+        if (i10 == 108 && (p10 = this.e.p()) != null) {
+            ArrayList arrayList = p10.m;
+            if (true != p10.l) {
+                p10.l = true;
                 if (arrayList.size() > 0) {
                     arrayList.get(0).getClass();
                     throw new ClassCastException();
@@ -219,20 +219,20 @@ public final class m implements Window.Callback {
         r rVar = this.e;
         if (i10 != 108) {
             if (i10 == 0) {
-                q q6 = rVar.q(i10);
-                if (q6.m) {
-                    rVar.h(q6, false);
+                q o10 = rVar.o(i10);
+                if (o10.m) {
+                    rVar.h(o10, false);
                     return;
                 }
                 return;
             }
             return;
         }
-        a0 r10 = rVar.r();
-        if (r10 != null) {
-            ArrayList arrayList = r10.m;
-            if (r10.l) {
-                r10.l = false;
+        a0 p10 = rVar.p();
+        if (p10 != null) {
+            ArrayList arrayList = p10.m;
+            if (p10.l) {
+                p10.l = false;
                 if (arrayList.size() <= 0) {
                     return;
                 }
@@ -265,7 +265,7 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final void onProvideKeyboardShortcuts(List list, Menu menu, int i10) {
-        l.k kVar = this.e.q(0).h;
+        l.k kVar = this.e.o(0).h;
         if (kVar != null) {
             d(list, kVar, i10);
         } else {
@@ -288,7 +288,7 @@ public final class m implements Window.Callback {
         this.a.onWindowFocusChanged(z10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:60:0x01cb  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01b9  */
     @Override // android.view.Window.Callback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -300,35 +300,30 @@ public final class m implements Window.Callback {
             return k.j.b(this.a, callback, i10);
         }
         Context context = rVar.e;
-        qi.e eVar = new qi.e();
-        eVar.b = context;
-        eVar.a = callback;
-        eVar.c = new ArrayList();
-        boolean z10 = false;
-        eVar.d = new a0.l(0);
+        ti.e eVar = new ti.e(context, callback);
         k.a aVar = rVar.x;
         if (aVar != null) {
             aVar.a();
         }
-        n4.s sVar = new n4.s(rVar, eVar, z10, 18);
-        a0 r10 = rVar.r();
+        n4.s sVar = new n4.s(rVar, eVar, false, 18);
+        a0 p10 = rVar.p();
         int i11 = 1;
-        if (r10 != null) {
-            z zVar = r10.i;
+        if (p10 != null) {
+            z zVar = p10.i;
             if (zVar != null) {
                 zVar.a();
             }
-            r10.c.setHideOnContentScrollEnabled(false);
-            r10.f.e();
-            z zVar2 = new z(r10, r10.f.getContext(), sVar);
+            p10.c.setHideOnContentScrollEnabled(false);
+            p10.f.e();
+            z zVar2 = new z(p10, p10.f.getContext(), sVar);
             l.k kVar = zVar2.d;
             kVar.w();
             try {
-                if (((qi.e) zVar2.e.b).B(zVar2, kVar)) {
-                    r10.i = zVar2;
+                if (((ti.e) zVar2.e.b).p(zVar2, kVar)) {
+                    p10.i = zVar2;
                     zVar2.g();
-                    r10.f.c(zVar2);
-                    r10.a(true);
+                    p10.f.c(zVar2);
+                    p10.a(true);
                 } else {
                     zVar2 = null;
                 }
@@ -372,7 +367,7 @@ public final class m implements Window.Callback {
                 } else {
                     ViewStubCompat viewStubCompat = (ViewStubCompat) rVar.J.findViewById(R.id.action_mode_bar_stub);
                     if (viewStubCompat != null) {
-                        viewStubCompat.setLayoutInflater(LayoutInflater.from(rVar.n()));
+                        viewStubCompat.setLayoutInflater(LayoutInflater.from(rVar.m()));
                         rVar.y = (ActionBarContextView) viewStubCompat.a();
                     }
                 }
@@ -393,7 +388,7 @@ public final class m implements Window.Callback {
                 kVar2.l = 1;
                 dVar.n = kVar2;
                 kVar2.e = dVar;
-                if (eVar.B(dVar, kVar2)) {
+                if (eVar.p(dVar, kVar2)) {
                     dVar.g();
                     rVar.y.c(dVar);
                     rVar.x = dVar;
@@ -423,13 +418,13 @@ public final class m implements Window.Callback {
                     rVar.x = null;
                 }
             }
-            rVar.y();
+            rVar.x();
             rVar.x = rVar.x;
         }
-        rVar.y();
+        rVar.x();
         k.a aVar3 = rVar.x;
         if (aVar3 != null) {
-            return eVar.n(aVar3);
+            return eVar.h(aVar3);
         }
         return null;
     }

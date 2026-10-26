@@ -1,15 +1,15 @@
 package org.telegram.utils.recorder.audio;
 
 import a1.g;
-import ai.c3;
+import bi.y2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.ui.ec0;
-import org.telegram.ui.go;
-import ri.i;
-import ri.o;
+import org.telegram.ui.bc0;
+import org.telegram.ui.io;
+import ui.i;
+import ui.o;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -31,8 +31,8 @@ public final /* synthetic */ class b implements Runnable {
             case 0:
                 d dVar = (d) this.c;
                 Exception exc = (Exception) this.d;
-                cc.e eVar = dVar.g;
-                ri.b bVar = dVar.f;
+                dc.e eVar = dVar.g;
+                ui.b bVar = dVar.f;
                 File file = dVar.a;
                 ByteBuffer byteBuffer = dVar.s;
                 if (dVar.w) {
@@ -103,9 +103,9 @@ public final /* synthetic */ class b implements Runnable {
                 if (exc3 == null) {
                     o oVar = (o) eVar.c;
                     oVar.a((i) eVar.b, length);
-                    oVar.i.post(new go(eVar, eVar.a, j10, 3));
+                    oVar.i.post(new io(eVar, eVar.a, j10, 3));
                 } else {
-                    ((o) eVar.c).i.post(new ec0(eVar, eVar.a, exc3, 3));
+                    ((o) eVar.c).i.post(new bc0(eVar, eVar.a, exc3, 3));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();
@@ -119,7 +119,7 @@ public final /* synthetic */ class b implements Runnable {
                     oVar2.h.a("final waveform extraction failed", th4);
                     bArr = null;
                 }
-                oVar2.i.post(new c3(oVar2, iVar, this.b, bArr, 27));
+                oVar2.i.post(new y2(oVar2, iVar, this.b, bArr, 27));
                 return;
         }
     }

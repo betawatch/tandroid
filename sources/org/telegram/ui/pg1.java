@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.DispatchQueue2;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg1 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,10 +67,10 @@ public final /* synthetic */ class pg1 implements Runnable {
                 boolean z14 = this.d;
                 boolean z15 = this.e;
                 qg1Var2.f.g(str5, true, z14, z14, qg1Var2.v.G, 0L, false, 0, 0);
-                DispatchQueue dispatchQueue = Utilities.searchQueue;
+                DispatchQueue2 dispatchQueue2 = Utilities.searchQueue;
                 pg1 pg1Var = new pg1(qg1Var2, str5, z15, z14, 2);
                 qg1Var2.h = pg1Var;
-                dispatchQueue.postRunnable(pg1Var);
+                dispatchQueue2.postRunnable(pg1Var);
                 break;
             default:
                 qg1 qg1Var3 = this.b;
@@ -143,7 +143,7 @@ public final /* synthetic */ class pg1 implements Runnable {
                                     if (str8 != null) {
                                         if (!str8.startsWith(str7)) {
                                             i12 = i20;
-                                            if (org.telegram.messenger.v0.w(" ", str7, str8)) {
+                                            if (org.telegram.messenger.vh.u(" ", str7, str8)) {
                                             }
                                         }
                                         i19 = i10;
@@ -154,7 +154,7 @@ public final /* synthetic */ class pg1 implements Runnable {
                                             i11 = i10;
                                             if (i19 != i11) {
                                                 str3 = str;
-                                                arrayList4.add(AndroidUtilities.generateSearchName(si.o0.h("@", str2), str3, "@" + str7));
+                                                arrayList4.add(AndroidUtilities.generateSearchName(org.telegram.ui.Components.b10.j("@", str2), str3, "@" + str7));
                                             } else if (z18) {
                                                 TLRPC.User user2 = (TLRPC.User) tLObject;
                                                 arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str7));
@@ -193,10 +193,10 @@ public final /* synthetic */ class pg1 implements Runnable {
                         z16 = z10;
                         z17 = z11;
                     }
-                    AndroidUtilities.runOnUIThread(new h71(qg1Var3, arrayList3, arrayList4, 8));
+                    AndroidUtilities.runOnUIThread(new h71(qg1Var3, arrayList3, arrayList4, 9));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new h71(qg1Var3, new ArrayList(), new ArrayList(), 8));
+                    AndroidUtilities.runOnUIThread(new h71(qg1Var3, new ArrayList(), new ArrayList(), 9));
                     break;
                 }
         }

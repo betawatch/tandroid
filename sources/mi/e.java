@@ -1,61 +1,38 @@
 package mi;
 
-import android.text.SpannableString;
-import java.lang.reflect.Array;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Cells.s1;
+import org.telegram.ui.Components.vo;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public class e extends SpannableString {
-    public volatile boolean a;
+public final class e extends AnimatorListenerAdapter {
+    public final /* synthetic */ s1 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ m f;
 
-    public e(CharSequence charSequence) {
-        super(charSequence);
-        this.a = false;
+    public e(m mVar, s1 s1Var, float f7, float f10, float f11, float f12) {
+        this.f = mVar;
+        this.a = s1Var;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
     }
 
-    public static Object[] a(e eVar, int i10, Class cls) {
-        return super.getSpans(0, i10, cls);
-    }
-
-    public static int b(e eVar, Object obj) {
-        return super.getSpanStart(obj);
-    }
-
-    public static int c(e eVar, Object obj) {
-        return super.getSpanEnd(obj);
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanEnd(Object obj) {
-        if (this.a) {
-            return super.getSpanEnd(obj);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        s1 s1Var = this.a;
+        s1Var.getTransitionParams().j();
+        s1Var.getPhotoImage().setImageCoords(this.b, this.c, this.d, this.e);
+        vo voVar = this.f.P;
+        if (voVar != null) {
+            voVar.h.setAlpha(1.0f);
         }
-        return -1;
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanFlags(Object obj) {
-        if (this.a) {
-            return super.getSpanFlags(obj);
-        }
-        return 0;
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanStart(Object obj) {
-        if (this.a) {
-            return super.getSpanStart(obj);
-        }
-        return -1;
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public Object[] getSpans(int i10, int i11, Class cls) {
-        return !this.a ? (Object[]) Array.newInstance((Class<?>) cls, 0) : super.getSpans(i10, i11, cls);
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int nextSpanTransition(int i10, int i11, Class cls) {
-        return !this.a ? i11 : super.nextSpanTransition(i10, i11, cls);
+        s1Var.invalidate();
     }
 }

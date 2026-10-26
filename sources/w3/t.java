@@ -1,11 +1,10 @@
 package w3;
 
-import e2.m0;
-import i2.o1;
+import a8.yb;
+import e2.n0;
 import org.telegram.tgnet.TLObject;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class t {
     public final q a;
@@ -20,9 +19,9 @@ public final class t {
     public final boolean j;
 
     public t(q qVar, long[] jArr, int[] iArr, int i10, long[] jArr2, int[] iArr2, int[] iArr3, boolean z10, long j10, int i11) {
-        u6.g(iArr.length == jArr2.length);
-        u6.g(jArr.length == jArr2.length);
-        u6.g(iArr2.length == jArr2.length);
+        yb.g(iArr.length == jArr2.length);
+        yb.g(jArr.length == jArr2.length);
+        yb.g(iArr2.length == jArr2.length);
         this.a = qVar;
         this.c = jArr;
         this.d = iArr;
@@ -46,18 +45,18 @@ public final class t {
         }
         int i10 = 0;
         if (this.j) {
-            return m0.f(jArr, j10, false);
+            return n0.f(jArr, j10, false);
         }
         int[] iArr = this.h;
         int length = iArr.length - 1;
         int i11 = -1;
         while (i10 <= length) {
-            int C = o1.C(length, i10, 2, i10);
-            if (jArr[iArr[C]] <= j10) {
-                i10 = C + 1;
-                i11 = C;
+            int A = ic.a.A(length, i10, 2, i10);
+            if (jArr[iArr[A]] <= j10) {
+                i10 = A + 1;
+                i11 = A;
             } else {
-                length = C - 1;
+                length = A - 1;
             }
         }
         if (i11 == -1) {
@@ -78,19 +77,19 @@ public final class t {
             return -1;
         }
         if (this.j) {
-            return m0.b(jArr, j10, true);
+            return n0.b(jArr, j10, true);
         }
         int[] iArr = this.h;
         int length = iArr.length - 1;
         int i10 = 0;
         int i11 = -1;
         while (i10 <= length) {
-            int C = o1.C(length, i10, 2, i10);
-            if (jArr[iArr[C]] >= j10) {
-                length = C - 1;
-                i11 = C;
+            int A = ic.a.A(length, i10, 2, i10);
+            if (jArr[iArr[A]] >= j10) {
+                length = A - 1;
+                i11 = A;
             } else {
-                i10 = C + 1;
+                i10 = A + 1;
             }
         }
         if (i11 == -1) {

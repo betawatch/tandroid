@@ -5,26 +5,26 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class tw extends FrameLayout {
-    public final /* synthetic */ tz a;
+    public final /* synthetic */ sz a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tw(tz tzVar, Context context) {
+    public tw(sz szVar, Context context) {
         super(context);
-        this.a = tzVar;
+        this.a = szVar;
     }
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        tz tzVar = this.a;
-        xw xwVar = tzVar.o0;
-        if (view != tzVar.h0) {
+        sz szVar = this.a;
+        ww wwVar = szVar.o0;
+        if (view != szVar.h0) {
             return super.drawChild(canvas, view, j10);
         }
         canvas.save();
-        canvas.clipRect(0.0f, xwVar.getY() + xwVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
+        canvas.clipRect(0.0f, wwVar.getY() + wwVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
         boolean drawChild = super.drawChild(canvas, view, j10);
         canvas.restore();
         return drawChild;

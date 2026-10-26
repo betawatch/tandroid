@@ -1,155 +1,121 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.FileLog;
+import android.widget.TextView;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y60 extends org.telegram.ui.ActionBar.o2 implements NotificationCenter.NotificationCenterDelegate {
-    public x60 a;
-    public org.telegram.ui.Components.mm0 b;
-    public org.telegram.ui.Components.vz c;
-    public long d;
-    public boolean e;
-    public TLRPC.TL_chatInviteExported f;
-    public int h;
-    public int n;
-    public int r;
-    public int s;
-    public int v;
-    public int w;
+public final class y60 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
+    public final /* synthetic */ z60 d;
 
-    public final void U(boolean z10) {
-        this.e = true;
-        TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
-        tL_messages_exportChatInvite.peer = getMessagesController().getInputPeer(-this.d);
-        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_exportChatInvite, new ei.o3(8, this, z10)), this.classGuid);
-        x60 x60Var = this.a;
-        if (x60Var != null) {
-            x60Var.l();
+    public y60(z60 z60Var, Context context) {
+        this.d = z60Var;
+        this.c = context;
+    }
+
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        int b10 = e1Var.b();
+        z60 z60Var = this.d;
+        return b10 == z60Var.r || b10 == z60Var.n || b10 == z60Var.s || b10 == 0;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        z60 z60Var = this.d;
+        if (z60Var.e) {
+            return 0;
         }
+        return z60Var.w;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void addThemeColorKeys(HashSet hashSet) {
-        super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.B6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.b7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.d7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.i6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.t8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.A8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.v8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.s8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.d6));
+    @Override // s4.h0
+    public final int j(int i10) {
+        z60 z60Var = this.d;
+        if (i10 == z60Var.n || i10 == z60Var.s || i10 == z60Var.r) {
+            return 0;
+        }
+        if (i10 == z60Var.v || i10 == z60Var.h) {
+            return 1;
+        }
+        return i10 == 0 ? 2 : 0;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.InviteLink));
-        this.actionBar.setActionBarMenuOnItemClick(new s60(this, 1));
-        this.a = new x60(this, context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, frameLayout, null);
-        org.telegram.ui.Components.vz vzVar = new org.telegram.ui.Components.vz(context, null);
-        this.c = vzVar;
-        vzVar.b();
-        frameLayout.addView(this.c, w7.z5.e(-1, -1, 51));
-        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
-        this.b = mm0Var;
-        mm0Var.setLayoutManager(new s4.b0(1, false));
-        this.b.setEmptyView(this.c);
-        this.b.setVerticalScrollBarEnabled(false);
-        frameLayout.addView(this.b, w7.z5.e(-1, -1, 51));
-        this.b.setAdapter(this.a);
-        this.b.setOnItemClickListener(new h(this, 13));
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        long j10 = this.d;
-        if (i10 == NotificationCenter.chatInfoDidLoad) {
-            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
-            int intValue = ((Integer) objArr[1]).intValue();
-            if (chatFull.id == j10 && intValue == this.classGuid) {
-                TLRPC.TL_chatInviteExported exportedInvite = getMessagesController().getExportedInvite(j10);
-                this.f = exportedInvite;
-                if (exportedInvite == null) {
-                    U(false);
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        int i11 = e1Var.f;
+        View view = e1Var.a;
+        z60 z60Var = this.d;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.ga gaVar = (org.telegram.ui.Cells.ga) view;
+            if (i10 == z60Var.n) {
+                gaVar.b(LocaleController.getString(R.string.CopyLink), true);
+                return;
+            } else if (i10 == z60Var.s) {
+                gaVar.b(LocaleController.getString(R.string.ShareLink), false);
+                return;
+            } else {
+                if (i10 == z60Var.r) {
+                    gaVar.b(LocaleController.getString(R.string.RevokeLink), true);
                     return;
                 }
-                this.e = false;
-                x60 x60Var = this.a;
-                if (x60Var != null) {
-                    x60Var.l();
-                }
+                return;
+            }
+        }
+        if (i11 != 1) {
+            if (i11 != 2) {
+                return;
+            }
+            org.telegram.ui.Cells.t8 t8Var = (org.telegram.ui.Cells.t8) view;
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = z60Var.f;
+            t8Var.a.setText(tL_chatInviteExported != null ? tL_chatInviteExported.link : "error");
+            t8Var.setWillNotDraw(true);
+            return;
+        }
+        org.telegram.ui.Cells.i9 i9Var = (org.telegram.ui.Cells.i9) view;
+        if (i10 == z60Var.v) {
+            i9Var.setText("");
+            return;
+        }
+        if (i10 == z60Var.h) {
+            TLRPC.Chat chat = z60Var.getMessagesController().getChat(Long.valueOf(z60Var.d));
+            if (!ChatObject.isChannel(chat) || chat.megagroup) {
+                i9Var.setText(LocaleController.getString(R.string.LinkInfo));
+            } else {
+                i9Var.setText(LocaleController.getString(R.string.ChannelLinkInfo));
             }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.t6(this.c, 2048, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, org.telegram.ui.ActionBar.k6.h6));
-        return arrayList;
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public final boolean onFragmentCreate() {
-        super.onFragmentCreate();
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.chatInfoDidLoad);
-        getMessagesController().loadFullChat(this.d, this.classGuid, true);
-        this.e = true;
-        this.h = 1;
-        this.n = 2;
-        this.r = 3;
-        this.s = 4;
-        this.w = 6;
-        this.v = 5;
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.chatInfoDidLoad);
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void onResume() {
-        super.onResume();
-        x60 x60Var = this.a;
-        if (x60Var != null) {
-            x60Var.l();
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            FrameLayout gaVar = new org.telegram.ui.Cells.ga(context);
+            org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, gaVar, null);
+            frameLayout = gaVar;
+        } else if (i10 != 1) {
+            org.telegram.ui.Cells.t8 t8Var = new org.telegram.ui.Cells.t8(context);
+            TextView textView = new TextView(context);
+            t8Var.a = textView;
+            org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, null);
+            textView.setTextSize(1, 16.0f);
+            textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+            t8Var.addView(textView, org.telegram.ui.Components.gb1.h(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
+            org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, t8Var, null);
+            frameLayout = t8Var;
+        } else {
+            frameLayout = new org.telegram.ui.Cells.i9(context);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void onThemeColorsChanged() {
-        super.onThemeColorsChanged();
-        try {
-            org.telegram.ui.Components.vz vzVar = this.c;
-            if (vzVar != null) {
-                vzVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+        return new org.telegram.ui.Components.vl0(frameLayout);
     }
 }

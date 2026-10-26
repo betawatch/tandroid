@@ -1,135 +1,115 @@
 package b2;
 
-import android.net.Uri;
-import j$.util.Objects;
-import java.util.Collections;
-import java.util.List;
-import v7.u6;
+import a8.yb;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class n1 {
-    public static final String A;
-    public static final String B;
-    public static final String C;
-    public static final String D;
-    public static final String E;
-    public static final Object q = new Object();
-    public static final o0 r;
-    public static final String s;
-    public static final String t;
-    public static final String u;
-    public static final String v;
-    public static final String w;
-    public static final String x;
-    public static final String y;
-    public static final String z;
-    public Object b;
-    public Object d;
-    public long e;
-    public long f;
-    public long g;
-    public boolean h;
-    public boolean i;
-    public i0 j;
-    public boolean k;
-    public long l;
-    public long m;
-    public int n;
-    public int o;
-    public long p;
-    public Object a = q;
-    public o0 c = r;
+public final class n1 extends p1 {
+    public final f9.i0 e;
+    public final f9.i0 f;
+    public final int[] g;
+    public final int[] h;
 
-    static {
-        j0 j0Var;
-        c0 c0Var = new c0();
-        f0 f0Var = new f0();
-        List list = Collections.EMPTY_LIST;
-        e9.x1 x1Var = e9.x1.e;
-        h0 h0Var = new h0();
-        k0 k0Var = k0.d;
-        Uri uri = Uri.EMPTY;
-        u6.p(f0Var.b == null || f0Var.a != null);
-        g0 g0Var = null;
-        if (uri != null) {
-            if (f0Var.a != null) {
-                g0Var = new g0(f0Var);
+    public n1(f9.s1 s1Var, f9.s1 s1Var2, int[] iArr) {
+        yb.g(s1Var.d == iArr.length);
+        this.e = s1Var;
+        this.f = s1Var2;
+        this.g = iArr;
+        this.h = new int[iArr.length];
+        for (int i10 = 0; i10 < iArr.length; i10++) {
+            this.h[iArr[i10]] = i10;
+        }
+    }
+
+    @Override // b2.p1
+    public final int a(boolean z10) {
+        if (p()) {
+            return -1;
+        }
+        if (z10) {
+            return this.g[0];
+        }
+        return 0;
+    }
+
+    @Override // b2.p1
+    public final int b(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // b2.p1
+    public final int c(boolean z10) {
+        if (p()) {
+            return -1;
+        }
+        f9.i0 i0Var = this.e;
+        if (!z10) {
+            return i0Var.size() - 1;
+        }
+        return this.g[i0Var.size() - 1];
+    }
+
+    @Override // b2.p1
+    public final int e(int i10, int i11, boolean z10) {
+        if (i11 == 1) {
+            return i10;
+        }
+        if (i10 == c(z10)) {
+            if (i11 == 2) {
+                return a(z10);
             }
-            j0Var = new j0(uri, null, g0Var, null, list, null, x1Var, -9223372036854775807L);
-        } else {
-            j0Var = null;
+            return -1;
         }
-        r = new o0("androidx.media3.common.Timeline", new e0(c0Var), j0Var, new i0(h0Var), r0.L, k0Var);
-        s = Integer.toString(1, 36);
-        t = Integer.toString(2, 36);
-        u = Integer.toString(3, 36);
-        v = Integer.toString(4, 36);
-        w = Integer.toString(5, 36);
-        x = Integer.toString(6, 36);
-        y = Integer.toString(7, 36);
-        z = Integer.toString(8, 36);
-        A = Integer.toString(9, 36);
-        B = Integer.toString(10, 36);
-        C = Integer.toString(11, 36);
-        D = Integer.toString(12, 36);
-        E = Integer.toString(13, 36);
+        if (!z10) {
+            return i10 + 1;
+        }
+        return this.g[this.h[i10] + 1];
     }
 
-    public final boolean a() {
-        return this.j != null;
+    @Override // b2.p1
+    public final m1 f(int i10, m1 m1Var, boolean z10) {
+        m1 m1Var2 = (m1) this.f.get(i10);
+        m1Var.h(m1Var2.a, m1Var2.b, m1Var2.c, m1Var2.d, m1Var2.e, m1Var2.g, m1Var2.f);
+        return m1Var;
     }
 
-    public final void b(Object obj, o0 o0Var, Object obj2, long j10, long j11, long j12, boolean z10, boolean z11, i0 i0Var, long j13, long j14, int i10, int i11, long j15) {
-        this.a = obj;
-        this.c = o0Var != null ? o0Var : r;
-        if (o0Var != null) {
-            j0 j0Var = o0Var.b;
-        }
-        this.b = null;
-        this.d = obj2;
-        this.e = j10;
-        this.f = j11;
-        this.g = j12;
-        this.h = z10;
-        this.i = z11;
-        this.j = i0Var;
-        this.l = j13;
-        this.m = j14;
-        this.n = i10;
-        this.o = i11;
-        this.p = j15;
-        this.k = false;
+    @Override // b2.p1
+    public final int h() {
+        return this.f.size();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // b2.p1
+    public final int k(int i10, int i11, boolean z10) {
+        if (i11 == 1) {
+            return i10;
         }
-        if (obj == null || !n1.class.equals(obj.getClass())) {
-            return false;
+        if (i10 == a(z10)) {
+            if (i11 == 2) {
+                return c(z10);
+            }
+            return -1;
         }
-        n1 n1Var = (n1) obj;
-        return Objects.equals(this.a, n1Var.a) && Objects.equals(this.c, n1Var.c) && Objects.equals(this.d, n1Var.d) && Objects.equals(this.j, n1Var.j) && this.e == n1Var.e && this.f == n1Var.f && this.g == n1Var.g && this.h == n1Var.h && this.i == n1Var.i && this.k == n1Var.k && this.l == n1Var.l && this.m == n1Var.m && this.n == n1Var.n && this.o == n1Var.o && this.p == n1Var.p;
+        if (!z10) {
+            return i10 - 1;
+        }
+        return this.g[this.h[i10] - 1];
     }
 
-    public final int hashCode() {
-        int hashCode = (this.c.hashCode() + ((this.a.hashCode() + 217) * 31)) * 31;
-        Object obj = this.d;
-        int hashCode2 = (hashCode + (obj == null ? 0 : obj.hashCode())) * 31;
-        i0 i0Var = this.j;
-        int hashCode3 = (hashCode2 + (i0Var != null ? i0Var.hashCode() : 0)) * 31;
-        long j10 = this.e;
-        int i10 = (hashCode3 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
-        long j11 = this.f;
-        int i11 = (i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31;
-        long j12 = this.g;
-        int i12 = (((((((i11 + ((int) (j12 ^ (j12 >>> 32)))) * 31) + (this.h ? 1 : 0)) * 31) + (this.i ? 1 : 0)) * 31) + (this.k ? 1 : 0)) * 31;
-        long j13 = this.l;
-        int i13 = (i12 + ((int) (j13 ^ (j13 >>> 32)))) * 31;
-        long j14 = this.m;
-        int i14 = (((((i13 + ((int) (j14 ^ (j14 >>> 32)))) * 31) + this.n) * 31) + this.o) * 31;
-        long j15 = this.p;
-        return i14 + ((int) (j15 ^ (j15 >>> 32)));
+    @Override // b2.p1
+    public final Object l(int i10) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // b2.p1
+    public final o1 m(int i10, o1 o1Var, long j10) {
+        o1 o1Var2 = (o1) this.e.get(i10);
+        o1Var.b(o1Var2.a, o1Var2.c, o1Var2.d, o1Var2.e, o1Var2.f, o1Var2.g, o1Var2.h, o1Var2.i, o1Var2.j, o1Var2.l, o1Var2.m, o1Var2.n, o1Var2.o, o1Var2.p);
+        o1Var.k = o1Var2.k;
+        return o1Var;
+    }
+
+    @Override // b2.p1
+    public final int o() {
+        return this.e.size();
     }
 }

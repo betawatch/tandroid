@@ -1,31 +1,35 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class n0 extends h0 {
-    public final /* synthetic */ o0 c;
+    public final transient p0 d;
+    public final transient o0 e;
 
-    public n0(o0 o0Var) {
-        this.c = o0Var;
+    public n0(p0 p0Var, o0 o0Var) {
+        this.d = p0Var;
+        this.e = o0Var;
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        o0 o0Var = this.c;
-        v7.l5.a(i10, o0Var.f);
-        Object[] objArr = o0Var.e;
-        int i11 = i10 + i10;
-        Object obj = objArr[i11];
-        obj.getClass();
-        Object obj2 = objArr[i11 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.get(obj) != null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // com.google.android.gms.internal.cast.c0
+    public final int h(Object[] objArr) {
+        return this.e.h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.e.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.c.f;
+        return this.d.h;
     }
 }

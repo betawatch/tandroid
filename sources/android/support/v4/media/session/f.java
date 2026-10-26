@@ -7,14 +7,13 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.media.MediaMetadataCompat;
 import android.util.Pair;
-import b2.w0;
-import com.google.android.gms.internal.cast.z4;
-import e9.k0;
+import b2.x0;
+import com.google.android.gms.internal.cast.w4;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -27,7 +26,7 @@ public final class f extends Handler {
         this.c = bVar;
     }
 
-    public boolean a(Message message, n2.x xVar) {
+    public boolean a(Message message, n2.w wVar) {
         long min;
         n2.a aVar = (n2.a) message.obj;
         if (aVar.b) {
@@ -35,12 +34,12 @@ public final class f extends Handler {
             aVar.e = i10;
             ((n2.b) this.c).i.getClass();
             if (i10 <= 3) {
-                u2.v vVar = new u2.v(xVar.a, xVar.b, xVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, xVar.d);
-                oa.d dVar = ((n2.b) this.c).i;
+                u2.u uVar = new u2.u(wVar.a, wVar.b, wVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, wVar.d);
+                u7.s sVar = ((n2.b) this.c).i;
                 int i11 = aVar.e;
-                dVar.getClass();
-                for (Throwable z4Var = xVar.getCause() instanceof IOException ? (IOException) xVar.getCause() : new z4(xVar.getCause()); z4Var != null; z4Var = z4Var.getCause()) {
-                    if ((z4Var instanceof w0) || (z4Var instanceof FileNotFoundException) || (z4Var instanceof g2.u) || (z4Var instanceof y2.k) || ((z4Var instanceof g2.j) && ((g2.j) z4Var).a == 2008)) {
+                sVar.getClass();
+                for (Throwable w4Var = wVar.getCause() instanceof IOException ? (IOException) wVar.getCause() : new w4(wVar.getCause()); w4Var != null; w4Var = w4Var.getCause()) {
+                    if ((w4Var instanceof x0) || (w4Var instanceof FileNotFoundException) || (w4Var instanceof g2.u) || (w4Var instanceof y2.k) || ((w4Var instanceof g2.j) && ((g2.j) w4Var).a == 2008)) {
                         min = -9223372036854775807L;
                         break;
                     }
@@ -50,9 +49,9 @@ public final class f extends Handler {
                     return false;
                 }
                 synchronized (((n2.b) this.c).o) {
-                    le.b bVar = ((n2.b) this.c).y;
-                    if (bVar != null) {
-                        ((k0) bVar.b).c(vVar);
+                    jg.i iVar = ((n2.b) this.c).y;
+                    if (iVar != null) {
+                        ((f9.f0) iVar.a).c(uVar);
                     }
                 }
                 synchronized (this) {
@@ -79,20 +78,20 @@ public final class f extends Handler {
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
         Object obj;
-        u2.v vVar;
+        u2.u uVar;
         switch (this.a) {
             case 0:
-                androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.c;
+                androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.c;
                 if (this.b) {
                     switch (message.what) {
                         case 1:
                             b0.a(message.getData());
                             return;
                         case 2:
-                            qVar.b((PlaybackStateCompat) message.obj);
+                            rVar.b((PlaybackStateCompat) message.obj);
                             return;
                         case 3:
-                            qVar.a((MediaMetadataCompat) message.obj);
+                            rVar.a((MediaMetadataCompat) message.obj);
                             return;
                         case 4:
                             return;
@@ -104,7 +103,7 @@ public final class f extends Handler {
                             b0.a((Bundle) message.obj);
                             return;
                         case 8:
-                            qVar.d();
+                            rVar.d();
                             return;
                         case 9:
                             ((Integer) message.obj).getClass();
@@ -126,37 +125,37 @@ public final class f extends Handler {
                 try {
                     int i10 = message.what;
                     if (i10 == 1) {
-                        obj = ((n2.b) this.c).k.l((n2.q) aVar.d);
+                        obj = ((n2.b) this.c).k.l((n2.p) aVar.d);
                     } else {
                         if (i10 != 2) {
                             throw new RuntimeException();
                         }
                         n2.b bVar = (n2.b) this.c;
-                        n2.w k10 = bVar.k.k(bVar.l, (n2.p) aVar.d);
+                        n2.v k10 = bVar.k.k(bVar.l, (n2.o) aVar.d);
                         synchronized (((n2.b) this.c).o) {
                             try {
-                                le.b bVar2 = ((n2.b) this.c).y;
-                                if (bVar2 != null && (vVar = k10.b) != null) {
-                                    ((k0) bVar2.b).c(new u2.v(vVar.a, vVar.b, vVar.c, vVar.d, SystemClock.elapsedRealtime() - aVar.c, vVar.f));
+                                jg.i iVar = ((n2.b) this.c).y;
+                                if (iVar != null && (uVar = k10.b) != null) {
+                                    ((f9.f0) iVar.a).c(new u2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
                                 }
                             } finally {
                             }
                         }
                         obj = k10;
                     }
-                } catch (n2.x e) {
+                } catch (n2.w e) {
                     boolean a2 = a(message, e);
                     obj = e;
                     if (a2) {
                         return;
                     }
-                } catch (Exception e7) {
-                    e2.a.m("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e7);
-                    obj = e7;
+                } catch (Exception e10) {
+                    e2.a.m("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e10);
+                    obj = e10;
                 }
-                oa.d dVar = ((n2.b) this.c).i;
+                u7.s sVar = ((n2.b) this.c).i;
                 long j10 = aVar.a;
-                dVar.getClass();
+                sVar.getClass();
                 synchronized (this) {
                     try {
                         if (!this.b) {
@@ -170,9 +169,9 @@ public final class f extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(androidx.mediarouter.app.q qVar, Looper looper) {
+    public f(androidx.mediarouter.app.r rVar, Looper looper) {
         super(looper);
-        this.c = qVar;
+        this.c = rVar;
         this.b = false;
     }
 }

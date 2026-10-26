@@ -1,39 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ol extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ rl b;
+public final class ol implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a;
+    public final float[] b = {0.0f, 1.0f};
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ pl d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ol(rl rlVar, Context context) {
-        super(context);
-        this.b = rlVar;
-        this.a = new HashMap();
+    public ol(pl plVar, FrameLayout frameLayout) {
+        this.d = plVar;
+        this.c = frameLayout;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.F;
-        if (iMap == null) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
+        if (lerp >= 0.7f && !this.a) {
+            pl plVar = this.d;
+            sl slVar = plVar.b;
+            sl slVar2 = plVar.b;
+            if (slVar.g0 != null) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(slVar2.g0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(slVar2.g0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(slVar2.g0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
+                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
+                animatorSet.setDuration(250L);
+                animatorSet.start();
+                this.a = true;
+            }
         }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
-        }
+        float interpolation = lerp <= 0.5f ? ds.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (ds.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (ds.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+        FrameLayout frameLayout = this.c;
+        frameLayout.setScaleX(interpolation);
+        frameLayout.setScaleY(interpolation);
     }
 }

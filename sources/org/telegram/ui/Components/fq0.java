@@ -1,26 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
 import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fq0 implements bh.k {
+public final /* synthetic */ class fq0 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mm0 b;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ View d;
 
-    public /* synthetic */ fq0(mm0 mm0Var, int i10) {
+    public /* synthetic */ fq0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, View view, int[] iArr, int i10) {
         this.a = i10;
-        this.b = mm0Var;
+        this.c = notificationCenterDelegate;
+        this.d = view;
+        this.b = iArr;
     }
 
-    @Override // bh.k
-    public final boolean a(Canvas canvas, View view, long j10) {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
             case 0:
-                return ((lq0) this.b).drawChild(canvas, view, j10);
+                ((mr0) this.c).S0((org.telegram.ui.Cells.k7) this.d, this.b, f7 / 1000.0f);
+                break;
             default:
-                return ((pu0) this.b).drawChild(canvas, view, j10);
+                ((tq0) this.c).d.S0(this.d, this.b, f7 / 1000.0f);
+                break;
         }
     }
 }

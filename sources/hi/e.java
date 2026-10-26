@@ -1,82 +1,133 @@
 package hi;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.w9;
-import w7.z5;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.b20;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class e extends FrameLayout implements b6 {
-    public final w9 a;
-    public final g6 b;
-    public final TextView c;
-    public final TextView d;
+public final class e extends tg.x1 {
+    public final /* synthetic */ int r;
 
-    public e(Context context, g6 g6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e(Context context, int i10) {
         super(context);
-        this.b = g6Var;
-        w9 w9Var = new w9(context);
-        this.a = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(w9Var, z5.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 20.0f);
-        textView.setGravity(17);
-        addView(textView, z5.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, z5.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
-        updateColors();
+        this.r = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.G6));
-        hashSet.add(Integer.valueOf(k6.z6));
+    @Override // tg.x1
+    public final void a() {
+        switch (this.r) {
+            case 0:
+                super.a();
+                tg.w1 w1Var = this.a;
+                w1Var.q = true;
+                w1Var.K = false;
+                w1Var.L = true;
+                w1Var.H = true;
+                w1Var.c();
+                break;
+            case 1:
+                super.a();
+                tg.w1 w1Var2 = this.a;
+                w1Var2.q = true;
+                w1Var2.K = false;
+                w1Var2.L = true;
+                w1Var2.H = true;
+                w1Var2.c();
+                break;
+            case 2:
+                b20 b20Var = new b20(50);
+                this.a = b20Var;
+                b20Var.O = 100;
+                b20Var.M = false;
+                b20Var.G = false;
+                b20Var.K = true;
+                b20Var.H = true;
+                b20Var.J = false;
+                b20Var.r = 4;
+                b20Var.w = 0.98f;
+                b20Var.v = 0.98f;
+                b20Var.u = 0.98f;
+                b20Var.c();
+                break;
+            case 3:
+                tg.w1 w1Var3 = this.a;
+                w1Var3.q = true;
+                w1Var3.K = false;
+                w1Var3.H = true;
+                w1Var3.J = true;
+                w1Var3.k = AndroidUtilities.dp(-14.0f);
+                tg.w1 w1Var4 = this.a;
+                w1Var4.x = 2000L;
+                w1Var4.y = 3000;
+                w1Var4.r = 16;
+                w1Var4.G = false;
+                w1Var4.O = 28;
+                w1Var4.Q = y6.Mj;
+                w1Var4.c();
+                break;
+            case 4:
+                tg.w1 w1Var5 = this.a;
+                w1Var5.q = true;
+                w1Var5.K = false;
+                w1Var5.H = true;
+                w1Var5.J = true;
+                w1Var5.k = AndroidUtilities.dp(-14.0f);
+                tg.w1 w1Var6 = this.a;
+                w1Var6.x = 2000L;
+                w1Var6.y = 3000;
+                w1Var6.r = 16;
+                w1Var6.G = false;
+                w1Var6.O = 28;
+                w1Var6.Q = y6.Mj;
+                w1Var6.c();
+                break;
+            default:
+                super.a();
+                tg.w1 w1Var7 = this.a;
+                w1Var7.q = true;
+                w1Var7.K = false;
+                w1Var7.L = true;
+                w1Var7.H = true;
+                w1Var7.c();
+                break;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Drawable drawable = k6.S0;
-        w9 w9Var = this.a;
-        zf.p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
+    @Override // tg.x1
+    public int getStarsRectWidth() {
+        switch (this.r) {
+            case 0:
+                return getMeasuredWidth();
+            case 1:
+                return getMeasuredWidth();
+            case 2:
+                return getMeasuredWidth();
+            default:
+                return super.getStarsRectWidth();
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(218.0f), TLObject.FLAG_30));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        int i10 = k6.G6;
-        g6 g6Var = this.b;
-        this.c.setTextColor(k6.w0(i10, g6Var));
-        this.d.setTextColor(k6.w0(k6.z6, g6Var));
+    @Override // tg.x1, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.r) {
+            case 3:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 4:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 5:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

@@ -5,9 +5,9 @@ import android.os.Message;
 import android.util.Log;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g0 extends com.google.android.gms.internal.cast.a0 {
+public final class g0 extends com.google.android.gms.internal.cast.y {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -26,7 +26,7 @@ public final class g0 extends com.google.android.gms.internal.cast.a0 {
                 int i10 = message.what;
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        i0.h(i0Var);
+                        i0.g(i0Var);
                         return;
                     }
                     Log.w("GoogleApiClientImpl", "Unknown message id: " + i10);
@@ -35,8 +35,8 @@ public final class g0 extends com.google.android.gms.internal.cast.a0 {
                 ReentrantLock reentrantLock = i0Var.b;
                 reentrantLock.lock();
                 try {
-                    if (i0Var.i()) {
-                        i0Var.k();
+                    if (i0Var.h()) {
+                        i0Var.j();
                     }
                     return;
                 } finally {

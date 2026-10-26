@@ -1,80 +1,80 @@
 package z3;
 
-import b2.v;
-import b2.v0;
+import a8.ed;
+import a8.yb;
 import b2.w;
-import c3.b0;
-import c3.l0;
+import b2.w0;
+import b2.x;
+import c3.j0;
+import c3.o;
+import c3.p;
 import c3.q;
-import c3.r;
 import c3.s;
-import c3.u;
-import e2.m0;
-import e2.x;
-import e9.n0;
-import e9.x1;
+import c3.y;
+import e2.n0;
+import f9.g0;
+import f9.i0;
+import f9.s1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import v7.b8;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h implements q {
+public final class h implements o {
     public final m a;
-    public final w b;
+    public final x b;
     public final ArrayList c;
-    public l0 f;
+    public j0 f;
     public int g;
     public int h;
     public long[] i;
     public long j;
-    public byte[] e = m0.b;
-    public final x d = new x();
+    public byte[] e = n0.b;
+    public final e2.x d = new e2.x();
 
-    public h(m mVar, w wVar) {
-        w wVar2;
+    public h(m mVar, x xVar) {
+        x xVar2;
         this.a = mVar;
-        if (wVar != null) {
-            v a2 = wVar.a();
-            a2.r = v0.n("application/x-media3-cues");
-            a2.j = wVar.s;
-            a2.P = mVar.c();
-            wVar2 = new w(a2);
+        if (xVar != null) {
+            w a2 = xVar.a();
+            a2.r = w0.n("application/x-media3-cues");
+            a2.j = xVar.s;
+            a2.P = mVar.y();
+            xVar2 = new x(a2);
         } else {
-            wVar2 = null;
+            xVar2 = null;
         }
-        this.b = wVar2;
+        this.b = xVar2;
         this.c = new ArrayList();
         this.h = 0;
-        this.i = m0.c;
+        this.i = n0.c;
         this.j = -9223372036854775807L;
     }
 
-    @Override // c3.q
-    public final boolean a(r rVar) {
+    @Override // c3.o
+    public final boolean a(p pVar) {
         return true;
     }
 
-    @Override // c3.q
-    public final void c(s sVar) {
-        u6.p(this.h == 0);
-        l0 j02 = sVar.j0(0, 3);
-        this.f = j02;
-        w wVar = this.b;
-        if (wVar != null) {
-            j02.b(wVar);
-            sVar.C();
-            sVar.g0(new b0(-9223372036854775807L, new long[]{0}, new long[]{0}));
+    @Override // c3.o
+    public final void c(q qVar) {
+        yb.p(this.h == 0);
+        j0 F1 = qVar.F1(0, 3);
+        this.f = F1;
+        x xVar = this.b;
+        if (xVar != null) {
+            F1.b(xVar);
+            qVar.Q0();
+            qVar.D1(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
         }
         this.h = 1;
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void d(long j10, long j11) {
         int i10 = this.h;
-        u6.p((i10 == 0 || i10 == 5) ? false : true);
+        yb.p((i10 == 0 || i10 == 5) ? false : true);
         this.j = j11;
         if (this.h == 2) {
             this.h = 1;
@@ -84,10 +84,10 @@ public final class h implements q {
         }
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final List e() {
-        e9.l0 l0Var = n0.b;
-        return x1.e;
+        g0 g0Var = i0.b;
+        return s1.e;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0077, code lost:
@@ -112,7 +112,7 @@ public final class h implements q {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x008f, code lost:
     
-        r20.a.f(r20.e, 0, r20.g, r2, new yh.q0(r20, 1));
+        r20.a.G(r20.e, 0, r20.g, r2, new x2.e(r20, 2));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
         r2 = r22;
@@ -128,7 +128,7 @@ public final class h implements q {
      */
     /* JADX WARN: Code restructure failed: missing block: B:61:0x00c8, code lost:
     
-        r20.e = e2.m0.b;
+        r20.e = e2.n0.b;
      */
     /* JADX WARN: Code restructure failed: missing block: B:62:0x00cc, code lost:
     
@@ -144,18 +144,18 @@ public final class h implements q {
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x00d5, code lost:
     
-        throw b2.w0.a(r0, "SubtitleParser failed.");
+        throw b2.x0.a(r0, "SubtitleParser failed.");
      */
-    @Override // c3.q
+    @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int f(r rVar, u uVar) {
+    public final int f(p pVar, s sVar) {
         int i10;
         int i11 = this.h;
-        u6.p((i11 == 0 || i11 == 5) ? false : true);
+        yb.p((i11 == 0 || i11 == 5) ? false : true);
         if (this.h == 1) {
-            int b10 = rVar.getLength() != -1 ? b8.b(rVar.getLength()) : 1024;
+            int b10 = pVar.getLength() != -1 ? ed.b(pVar.getLength()) : 1024;
             if (b10 > this.e.length) {
                 this.e = new byte[b10];
             }
@@ -171,11 +171,11 @@ public final class h implements q {
             }
             byte[] bArr2 = this.e;
             int i13 = this.g;
-            int read = rVar.read(bArr2, i13, bArr2.length - i13);
+            int read = pVar.read(bArr2, i13, bArr2.length - i13);
             if (read != -1) {
                 this.g += read;
             }
-            long length = rVar.getLength();
+            long length = pVar.getLength();
             if (length != -1) {
                 i10 = 0;
             } else {
@@ -185,9 +185,9 @@ public final class h implements q {
             i10 = 0;
         }
         if (this.h == 3) {
-            if (rVar.skip(rVar.getLength() != -1 ? b8.b(rVar.getLength()) : 1024) == -1) {
+            if (pVar.skip(pVar.getLength() != -1 ? ed.b(pVar.getLength()) : 1024) == -1) {
                 long j10 = this.j;
-                for (int f7 = j10 == -9223372036854775807L ? i10 : m0.f(this.i, j10, true); f7 < arrayList.size(); f7++) {
+                for (int f7 = j10 == -9223372036854775807L ? i10 : n0.f(this.i, j10, true); f7 < arrayList.size(); f7++) {
                     g((g) arrayList.get(f7));
                 }
                 this.h = 4;
@@ -203,14 +203,14 @@ public final class h implements q {
         this.f.getClass();
         byte[] bArr = gVar.b;
         int length = bArr.length;
-        x xVar = this.d;
+        e2.x xVar = this.d;
         xVar.getClass();
         xVar.L(bArr.length, bArr);
         this.f.d(length, xVar);
         this.f.c(gVar.a, 1, length, 0, null);
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void release() {
         if (this.h == 5) {
             return;
@@ -219,8 +219,8 @@ public final class h implements q {
         this.h = 5;
     }
 
-    @Override // c3.q
-    public final q b() {
+    @Override // c3.o
+    public final o b() {
         return this;
     }
 }

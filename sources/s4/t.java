@@ -1,47 +1,312 @@
 package s4;
 
+import android.content.Context;
 import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
-import org.telegram.messenger.MediaDataController;
+import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.qu;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class t extends s {
-    public final ArrayList Q;
-    public boolean R;
+public class t extends c0 {
+    public boolean I;
+    public int J;
+    public int[] K;
+    public View[] L;
+    public final SparseIntArray M;
+    public final SparseIntArray N;
+    public g.o O;
+    public final Rect P;
 
-    public t(boolean z10) {
-        super(MediaDataController.MAX_STYLE_RUNS_COUNT, z10);
-        this.Q = new ArrayList(4);
-        this.R = true;
+    public t(int i10) {
+        this.I = false;
+        this.J = -1;
+        this.M = new SparseIntArray();
+        this.N = new SparseIntArray();
+        this.O = new qu(1);
+        this.P = new Rect();
+        z1(i10);
     }
 
-    public abstract boolean B1(int i10);
+    @Override // s4.c0
+    public final void A0(b1 b1Var, a0 a0Var, e2.f fVar) {
+        int i10 = this.J;
+        for (int i11 = 0; i11 < this.J && a0Var.b(b1Var) && i10 > 0; i11++) {
+            int i12 = a0Var.d;
+            fVar.b(i12, Math.max(0, a0Var.g));
+            i10 -= this.O.i(i12);
+            a0Var.d += a0Var.e;
+        }
+    }
 
-    public abstract boolean C1(View view);
+    public final void A1(g.o oVar) {
+        this.O = oVar;
+    }
 
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x00de, code lost:
+    public final void B1() {
+        int C;
+        int F;
+        if (this.o == 1) {
+            C = this.m - E();
+            F = D();
+        } else {
+            C = this.n - C();
+            F = F();
+        }
+        int i10 = C - F;
+        this.K = r1(this.J, i10, this.K);
+    }
+
+    @Override // s4.p0
+    public int I(rf.e eVar, b1 b1Var) {
+        if (this.o == 0) {
+            return this.J;
+        }
+        if (b1Var.b() < 1) {
+            return 0;
+        }
+        return u1(b1Var.b() - 1, eVar, b1Var) + 1;
+    }
+
+    @Override // s4.c0
+    public final View Q0(rf.e eVar, b1 b1Var, int i10, int i11, int i12) {
+        G0();
+        int j10 = this.q.j();
+        int f7 = this.q.f();
+        int i13 = i11 > i10 ? 1 : -1;
+        View view = null;
+        View view2 = null;
+        while (i10 != i11) {
+            View q5 = q(i10);
+            int H = p0.H(q5);
+            if (H >= 0 && H < i12 && v1(H, eVar, b1Var) == 0) {
+                if (((q0) q5.getLayoutParams()).a.j()) {
+                    if (view2 == null) {
+                        view2 = q5;
+                    }
+                } else {
+                    if (this.q.d(q5) < f7 && this.q.a(q5) >= j10) {
+                        return q5;
+                    }
+                    if (view == null) {
+                        view = q5;
+                    }
+                }
+            }
+            i10 += i13;
+        }
+        return view != null ? view : view2;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00e3, code lost:
     
-        r25.b = r16;
+        if (r13 == (r2 > r15)) goto L58;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x00e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x010c, code lost:
     
-        return;
+        if (r13 == (r2 > r8)) goto L81;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x01a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0022, code lost:
     
-        if (r24.f != (-1)) goto L88;
+        if (((java.util.ArrayList) r22.a.d).contains(r3) != false) goto L5;
      */
-    @Override // s4.s, s4.b0
+    @Override // s4.c0, s4.p0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Z0(qf.e eVar, y0 y0Var, z zVar, k2.l lVar) {
-        boolean z10;
+    public final View R(View view, int i10, rf.e eVar, b1 b1Var) {
+        View F;
+        int r6;
+        int i11;
+        int i12;
+        View view2;
+        View view3;
+        int i13;
+        int i14;
+        rf.e eVar2 = eVar;
+        b1 b1Var2 = b1Var;
+        RecyclerView recyclerView = this.b;
+        if (recyclerView != null) {
+            F = recyclerView.F(view);
+            if (F != null) {
+            }
+        }
+        F = null;
+        if (F != null) {
+            s sVar = (s) F.getLayoutParams();
+            int i15 = sVar.e;
+            int i16 = sVar.f + i15;
+            if (super.R(view, i10, eVar, b1Var) != null) {
+                if ((F0(i10) == 1) != this.v) {
+                    i12 = r() - 1;
+                    r6 = -1;
+                    i11 = -1;
+                } else {
+                    r6 = r();
+                    i11 = 1;
+                    i12 = 0;
+                }
+                boolean z10 = this.o == 1 && Y0();
+                int u12 = u1(i12, eVar2, b1Var2);
+                View view4 = null;
+                int i17 = -1;
+                int i18 = -1;
+                int i19 = 0;
+                int i20 = i12;
+                int i21 = 0;
+                View view5 = null;
+                while (true) {
+                    view2 = view5;
+                    if (i20 == r6) {
+                        break;
+                    }
+                    int u13 = u1(i20, eVar2, b1Var2);
+                    View q5 = q(i20);
+                    if (q5 == F) {
+                        break;
+                    }
+                    if (!q5.hasFocusable() || u13 == u12) {
+                        s sVar2 = (s) q5.getLayoutParams();
+                        int i22 = sVar2.e;
+                        view3 = F;
+                        int i23 = sVar2.f + i22;
+                        if (q5.hasFocusable() && i22 == i15 && i23 == i16) {
+                            return q5;
+                        }
+                        if (!(q5.hasFocusable() && view4 == null) && (q5.hasFocusable() || view2 != null)) {
+                            i13 = r6;
+                            int min = Math.min(i23, i16) - Math.max(i22, i15);
+                            if (q5.hasFocusable()) {
+                                if (min <= i19) {
+                                    if (min == i19) {
+                                    }
+                                    i14 = i19;
+                                }
+                                i14 = i19;
+                            } else {
+                                if (view4 == null) {
+                                    i14 = i19;
+                                    if (!(this.c.O(q5) && this.d.O(q5))) {
+                                        if (min <= i21) {
+                                            if (min == i21) {
+                                            }
+                                        }
+                                    }
+                                }
+                                i14 = i19;
+                            }
+                        } else {
+                            i14 = i19;
+                            i13 = r6;
+                        }
+                        if (q5.hasFocusable()) {
+                            int i24 = sVar2.e;
+                            i19 = Math.min(i23, i16) - Math.max(i22, i15);
+                            view4 = q5;
+                            i18 = i24;
+                            view5 = view2;
+                        } else {
+                            int i25 = sVar2.e;
+                            view5 = q5;
+                            i17 = i25;
+                            i19 = i14;
+                            i21 = Math.min(i23, i16) - Math.max(i22, i15);
+                        }
+                        i20 += i11;
+                        eVar2 = eVar;
+                        b1Var2 = b1Var;
+                        F = view3;
+                        r6 = i13;
+                    } else {
+                        if (view4 != null) {
+                            break;
+                        }
+                        view3 = F;
+                        i14 = i19;
+                        i13 = r6;
+                    }
+                    view5 = view2;
+                    i19 = i14;
+                    i20 += i11;
+                    eVar2 = eVar;
+                    b1Var2 = b1Var;
+                    F = view3;
+                    r6 = i13;
+                }
+                return view4 != null ? view4 : view2;
+            }
+        }
+        return null;
+    }
+
+    @Override // s4.p0
+    public void U(rf.e eVar, b1 b1Var, View view, s0.d dVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        if (!(layoutParams instanceof s)) {
+            T(view, dVar);
+            return;
+        }
+        s sVar = (s) layoutParams;
+        int u12 = u1(sVar.b(), eVar, b1Var);
+        if (this.o == 0) {
+            int i10 = sVar.e;
+            int i11 = sVar.f;
+            int i12 = this.J;
+            accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(i10, i11, u12, 1, i12 > 1 && i11 == i12, false));
+            return;
+        }
+        int i13 = sVar.e;
+        int i14 = sVar.f;
+        int i15 = this.J;
+        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(u12, 1, i13, i14, i15 > 1 && i14 == i15, false));
+    }
+
+    @Override // s4.p0
+    public void V(RecyclerView recyclerView, int i10, int i11) {
+        this.O.j();
+        ((SparseIntArray) this.O.b).clear();
+    }
+
+    @Override // s4.p0
+    public void W(RecyclerView recyclerView) {
+        this.O.j();
+        ((SparseIntArray) this.O.b).clear();
+    }
+
+    @Override // s4.p0
+    public void X(RecyclerView recyclerView, int i10, int i11) {
+        this.O.j();
+        ((SparseIntArray) this.O.b).clear();
+    }
+
+    @Override // s4.p0
+    public void Y(RecyclerView recyclerView, int i10, int i11) {
+        this.O.j();
+        ((SparseIntArray) this.O.b).clear();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0089, code lost:
+    
+        r21.b = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x008b, code lost:
+    
+        return;
+     */
+    @Override // s4.c0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void Z0(rf.e eVar, b1 b1Var, a0 a0Var, k2.l lVar) {
         int i10;
         int i11;
         int i12;
@@ -49,278 +314,478 @@ public abstract class t extends s {
         int i14;
         int i15;
         int i16;
+        int s10;
         int i17;
-        int i18;
-        boolean z11;
-        boolean z12;
         View c10;
-        boolean z13;
-        qf.e eVar2 = eVar;
-        y0 y0Var2 = y0Var;
-        int i19 = this.q.i();
-        int i20 = 0;
-        boolean z14 = true;
-        boolean z15 = zVar.e == 1;
-        lVar.a = 0;
-        int i21 = zVar.d;
-        boolean z16 = this.v;
-        Rect rect = this.P;
-        ArrayList arrayList = this.Q;
-        int i22 = -1;
-        if (z16 && zVar.f != -1 && B1(i21) && m(zVar.d + 1) == null) {
-            if (B1(zVar.d + 1)) {
-                zVar.d += 3;
-            } else {
-                zVar.d += 2;
+        int i18 = this.q.i();
+        boolean z10 = i18 != 1073741824;
+        int i19 = r() > 0 ? this.K[this.J] : 0;
+        if (z10) {
+            B1();
+        }
+        boolean z11 = a0Var.e == 1;
+        int i20 = this.J;
+        if (!z11) {
+            i20 = v1(a0Var.d, eVar, b1Var) + w1(a0Var.d, eVar, b1Var);
+        }
+        int i21 = 0;
+        while (i21 < this.J && a0Var.b(b1Var) && i20 > 0) {
+            int i22 = a0Var.d;
+            int w12 = w1(i22, eVar, b1Var);
+            if (w12 > this.J) {
+                throw new IllegalArgumentException(a1.g.n(this.J, " spans.", c3.h0.n("Item at position ", i22, " requires ", w12, " spans but GridLayoutManager has only ")));
             }
-            int i23 = zVar.d;
-            int i24 = i23;
-            while (i24 > i21) {
-                View c11 = zVar.c(eVar2);
-                if (c11 != null) {
-                    arrayList.add(c11);
-                    if (i24 != i23) {
-                        c(c11, rect);
-                        w1(c11, i19, false);
-                        z13 = z14;
-                        int b10 = this.q.b(c11);
-                        zVar.b -= b10;
-                        zVar.c += b10;
-                        i24--;
-                        z14 = z13;
-                    }
+            i20 -= w12;
+            if (i20 < 0 || (c10 = a0Var.c(eVar)) == null) {
+                break;
+            }
+            this.L[i21] = c10;
+            i21++;
+        }
+        q1(i21, eVar, b1Var, z11);
+        float f7 = 0.0f;
+        int i23 = 0;
+        for (int i24 = 0; i24 < i21; i24++) {
+            View view = this.L[i24];
+            if (a0Var.k == null) {
+                if (z11) {
+                    a(view, -1, false);
+                } else {
+                    a(view, 0, false);
                 }
-                z13 = z14;
-                i24--;
-                z14 = z13;
+            } else if (z11) {
+                a(view, -1, true);
+            } else {
+                a(view, 0, true);
             }
-            z10 = z14;
-            zVar.d = i23;
+            c(view, this.P);
+            x1(view, i18, false);
+            int b10 = this.q.b(view);
+            if (b10 > i23) {
+                i23 = b10;
+            }
+            float c11 = (this.q.c(view) * 1.0f) / ((s) view.getLayoutParams()).f;
+            if (c11 > f7) {
+                f7 = c11;
+            }
+        }
+        if (z10) {
+            this.K = r1(this.J, Math.max(Math.round(f7 * this.J), i19), this.K);
+            i23 = 0;
+            for (int i25 = 0; i25 < i21; i25++) {
+                View view2 = this.L[i25];
+                x1(view2, TLObject.FLAG_30, true);
+                int b11 = this.q.b(view2);
+                if (b11 > i23) {
+                    i23 = b11;
+                }
+            }
+        }
+        for (int i26 = 0; i26 < i21; i26++) {
+            View view3 = this.L[i26];
+            if (this.q.b(view3) != i23) {
+                s sVar = (s) view3.getLayoutParams();
+                Rect rect = sVar.b;
+                int i27 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) sVar).topMargin + ((ViewGroup.MarginLayoutParams) sVar).bottomMargin;
+                int i28 = rect.left + rect.right + ((ViewGroup.MarginLayoutParams) sVar).leftMargin + ((ViewGroup.MarginLayoutParams) sVar).rightMargin;
+                int t12 = t1(sVar.e, sVar.f);
+                if (this.o == 1) {
+                    i17 = p0.s(false, t12, TLObject.FLAG_30, i28, ((ViewGroup.MarginLayoutParams) sVar).width);
+                    s10 = View.MeasureSpec.makeMeasureSpec(i23 - i27, TLObject.FLAG_30);
+                } else {
+                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i23 - i28, TLObject.FLAG_30);
+                    s10 = p0.s(false, t12, TLObject.FLAG_30, i27, ((ViewGroup.MarginLayoutParams) sVar).height);
+                    i17 = makeMeasureSpec;
+                }
+                y1(i17, s10, view3, true);
+            }
+        }
+        lVar.a = i23;
+        if (this.o == 1) {
+            if (a0Var.f == -1) {
+                i15 = a0Var.b;
+                i16 = i15 - i23;
+            } else {
+                i16 = a0Var.b;
+                i15 = i16 + i23;
+            }
+            i13 = i16;
+            i14 = 0;
+            i12 = 0;
         } else {
-            z10 = true;
-        }
-        boolean z17 = z10;
-        while (z17) {
-            int i25 = this.J;
-            boolean z18 = !arrayList.isEmpty();
-            int i26 = i20;
-            while (i26 < this.J && zVar.b(y0Var2) && i25 > 0) {
-                int i27 = zVar.d;
-                i25 -= v1(i27, eVar2, y0Var2);
-                if (i25 < 0) {
-                    break;
-                }
-                if (arrayList.isEmpty()) {
-                    c10 = zVar.c(eVar2);
-                } else {
-                    c10 = (View) arrayList.get(i20);
-                    arrayList.remove(i20);
-                    zVar.d--;
-                }
-                if (c10 == null) {
-                    break;
-                }
-                this.L[i26] = c10;
-                i26++;
-                if (zVar.f == i22 && i25 <= 0 && B1(i27)) {
-                    z18 = z10;
-                }
-                i20 = 0;
-            }
-            p1(i26, eVar2, y0Var2, z15);
-            float f7 = 0.0f;
-            int i28 = 0;
-            for (int i29 = 0; i29 < i26; i29++) {
-                View view = this.L[i29];
-                if (zVar.k == null) {
-                    if (z15) {
-                        z12 = false;
-                        a(view, -1, false);
-                    } else {
-                        z12 = false;
-                        a(view, 0, false);
-                    }
-                    z11 = z12;
-                } else if (z15) {
-                    a(view, -1, true);
-                    z11 = false;
-                } else {
-                    z11 = false;
-                    a(view, 0, true);
-                }
-                c(view, rect);
-                w1(view, i19, z11);
-                int b11 = this.q.b(view);
-                if (b11 > i28) {
-                    i28 = b11;
-                }
-                float c12 = (this.q.c(view) * 1.0f) / ((r) view.getLayoutParams()).f;
-                if (c12 > f7) {
-                    f7 = c12;
-                }
-            }
-            int i30 = 0;
-            while (i30 < i26) {
-                View view2 = this.L[i30];
-                if (this.q.b(view2) != i28) {
-                    r rVar = (r) view2.getLayoutParams();
-                    Rect rect2 = rVar.b;
-                    i17 = i30;
-                    i18 = i19;
-                    x1(n0.s(false, this.K[rVar.f], TLObject.FLAG_30, rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) rVar).leftMargin + ((ViewGroup.MarginLayoutParams) rVar).rightMargin, ((ViewGroup.MarginLayoutParams) rVar).width), View.MeasureSpec.makeMeasureSpec(i28 - (((rect2.top + rect2.bottom) + ((ViewGroup.MarginLayoutParams) rVar).topMargin) + ((ViewGroup.MarginLayoutParams) rVar).bottomMargin), TLObject.FLAG_30), view2, true);
-                } else {
-                    i17 = i30;
-                    i18 = i19;
-                }
-                i30 = i17 + 1;
-                i19 = i18;
-            }
-            int i31 = i19;
-            boolean C1 = C1(this.L[0]);
-            if (C1) {
-                i10 = -1;
+            if (a0Var.f == -1) {
+                i11 = a0Var.b;
+                i10 = i11 - i23;
             } else {
-                i10 = -1;
+                i10 = a0Var.b;
+                i11 = i10 + i23;
             }
-            if (C1 || zVar.f != 1) {
-                if (zVar.f == -1) {
-                    int i32 = zVar.b - lVar.a;
-                    int i33 = i32 - i28;
-                    i12 = i32;
-                    i13 = this.m;
-                    i11 = i33;
-                } else {
-                    int i34 = lVar.a + zVar.b;
-                    i11 = i34;
-                    i12 = i34 + i28;
-                    i13 = 0;
-                }
-                int i35 = i13;
-                int i36 = 0;
-                while (i36 < i26) {
-                    View view3 = this.L[i36];
-                    r rVar2 = (r) view3.getLayoutParams();
-                    int c13 = this.q.c(view3);
-                    int i37 = i36;
-                    boolean z19 = z15;
-                    if (zVar.f == -1) {
-                        i35 -= c13;
-                    }
-                    int i38 = c13 + i35;
-                    n0.O(view3, i35, i11, i38, i12);
-                    if (zVar.f == 1) {
-                        i35 = i38;
-                    }
-                    if (rVar2.a.j() || rVar2.a.m()) {
-                        lVar.c = true;
-                    }
-                    lVar.d |= view3.hasFocusable();
-                    i36 = i37 + 1;
-                    z15 = z19;
-                }
-                boolean z20 = z15;
-                lVar.a += i28;
-                Arrays.fill(this.L, (Object) null);
-                y0Var2 = y0Var;
-                z10 = true;
-                z17 = z18;
-                i19 = i31;
-                z15 = z20;
-                i20 = 0;
-                i22 = -1;
-                eVar2 = eVar;
-            }
-            if (zVar.f == i10) {
-                int i39 = zVar.b - lVar.a;
-                i16 = i39 - i28;
-                i14 = i39;
-                i15 = 0;
+            i12 = i10;
+            i13 = 0;
+            i14 = i11;
+            i15 = 0;
+        }
+        for (int i29 = 0; i29 < i21; i29++) {
+            View view4 = this.L[i29];
+            s sVar2 = (s) view4.getLayoutParams();
+            if (this.o != 1) {
+                int F = F() + this.K[sVar2.e];
+                i13 = F;
+                i15 = this.q.c(view4) + F;
+            } else if (Y0()) {
+                i14 = D() + this.K[this.J - sVar2.e];
+                i12 = i14 - this.q.c(view4);
             } else {
-                int i40 = lVar.a + zVar.b;
-                i14 = i40 + i28;
-                i15 = this.m;
-                i16 = i40;
+                int D = D() + this.K[sVar2.e];
+                i12 = D;
+                i14 = this.q.c(view4) + D;
             }
-            for (int i41 = i26 - 1; i41 >= 0; i41--) {
-                View view4 = this.L[i41];
-                r rVar3 = (r) view4.getLayoutParams();
-                int c14 = this.q.c(view4);
-                int i42 = i15;
-                int i43 = zVar.f == 1 ? i42 - c14 : i42;
-                int i44 = c14 + i43;
-                n0.O(view4, i43, i16, i44, i14);
-                i15 = zVar.f == -1 ? i44 : i43;
-                if (rVar3.a.j() || rVar3.a.m()) {
-                    lVar.c = true;
-                }
-                lVar.d |= view4.hasFocusable();
+            p0.O(view4, i12, i13, i14, i15);
+            if (sVar2.a.j() || sVar2.a.m()) {
+                lVar.c = true;
             }
-            boolean z202 = z15;
-            lVar.a += i28;
-            Arrays.fill(this.L, (Object) null);
-            y0Var2 = y0Var;
-            z10 = true;
-            z17 = z18;
-            i19 = i31;
-            z15 = z202;
-            i20 = 0;
-            i22 = -1;
-            eVar2 = eVar;
+            lVar.d = view4.hasFocusable() | lVar.d;
         }
+        Arrays.fill(this.L, (Object) null);
     }
 
-    @Override // s4.b0, s4.n0
-    public final boolean e() {
-        return this.R;
+    @Override // s4.p0
+    public void a0(RecyclerView recyclerView, int i10, int i11, Object obj) {
+        this.O.j();
+        ((SparseIntArray) this.O.b).clear();
     }
 
-    @Override // s4.b0
-    public final void e1(qf.e eVar, int i10, int i11) {
-        if (i10 < 0) {
-            return;
-        }
-        int r10 = r();
-        if (!this.v) {
-            for (int i12 = 0; i12 < r10; i12++) {
-                View q6 = q(i12);
-                if (q6.getBottom() + ((ViewGroup.MarginLayoutParams) ((o0) q6.getLayoutParams())).bottomMargin <= i10) {
-                    if (q6.getHeight() + q6.getTop() <= i10) {
+    @Override // s4.c0
+    public final void a1(rf.e eVar, b1 b1Var, i2.p0 p0Var, int i10) {
+        B1();
+        if (b1Var.b() > 0 && !b1Var.g) {
+            boolean z10 = i10 == 1;
+            int v12 = v1(p0Var.b, eVar, b1Var);
+            if (z10) {
+                while (v12 > 0) {
+                    int i11 = p0Var.b;
+                    if (i11 <= 0) {
+                        break;
                     }
+                    int i12 = i11 - 1;
+                    p0Var.b = i12;
+                    v12 = v1(i12, eVar, b1Var);
                 }
-                d1(eVar, 0, i12);
-                return;
+            } else {
+                int b10 = b1Var.b() - 1;
+                int i13 = p0Var.b;
+                while (i13 < b10) {
+                    int i14 = i13 + 1;
+                    int v13 = v1(i14, eVar, b1Var);
+                    if (v13 <= v12) {
+                        break;
+                    }
+                    i13 = i14;
+                    v12 = v13;
+                }
+                p0Var.b = i13;
             }
-            return;
         }
-        int i13 = r10 - 1;
-        for (int i14 = i13; i14 >= 0; i14--) {
-            View q10 = q(i14);
-            if (q10.getBottom() + ((ViewGroup.MarginLayoutParams) ((o0) q10.getLayoutParams())).bottomMargin <= i10) {
-                if (q10.getHeight() + q10.getTop() <= i10) {
-                }
+        s1();
+    }
+
+    @Override // s4.c0, s4.p0
+    public void b0(rf.e eVar, b1 b1Var) {
+        boolean z10 = b1Var.g;
+        SparseIntArray sparseIntArray = this.N;
+        SparseIntArray sparseIntArray2 = this.M;
+        if (z10) {
+            int r6 = r();
+            for (int i10 = 0; i10 < r6; i10++) {
+                s sVar = (s) q(i10).getLayoutParams();
+                int b10 = sVar.b();
+                sparseIntArray2.put(b10, sVar.f);
+                sparseIntArray.put(b10, sVar.e);
             }
-            d1(eVar, i13, i14);
-            return;
+        }
+        super.b0(eVar, b1Var);
+        sparseIntArray2.clear();
+        sparseIntArray.clear();
+    }
+
+    @Override // s4.c0, s4.p0
+    public final void c0(b1 b1Var) {
+        super.c0(b1Var);
+        this.I = false;
+    }
+
+    @Override // s4.p0
+    public final boolean f(q0 q0Var) {
+        return q0Var instanceof s;
+    }
+
+    @Override // s4.c0, s4.p0
+    public final int h(b1 b1Var) {
+        return C0(b1Var);
+    }
+
+    @Override // s4.c0, s4.p0
+    public final int i(b1 b1Var) {
+        return D0(b1Var);
+    }
+
+    @Override // s4.c0, s4.p0
+    public int k(b1 b1Var) {
+        return C0(b1Var);
+    }
+
+    @Override // s4.c0, s4.p0
+    public int l(b1 b1Var) {
+        return D0(b1Var);
+    }
+
+    @Override // s4.c0, s4.p0
+    public final int m0(int i10, rf.e eVar, b1 b1Var) {
+        B1();
+        s1();
+        return super.m0(i10, eVar, b1Var);
+    }
+
+    @Override // s4.c0
+    public final void m1(boolean z10) {
+        throw new UnsupportedOperationException("GridLayoutManager does not support stack from end. Consider using reverse layout");
+    }
+
+    @Override // s4.c0, s4.p0
+    public final q0 n() {
+        return this.o == 0 ? new s(-2, -1) : new s(-1, -2);
+    }
+
+    @Override // s4.p0
+    public final q0 o(Context context, AttributeSet attributeSet) {
+        s sVar = new s(context, attributeSet);
+        sVar.e = -1;
+        sVar.f = 0;
+        return sVar;
+    }
+
+    @Override // s4.c0, s4.p0
+    public int o0(int i10, rf.e eVar, b1 b1Var) {
+        B1();
+        s1();
+        return super.o0(i10, eVar, b1Var);
+    }
+
+    @Override // s4.p0
+    public final q0 p(ViewGroup.LayoutParams layoutParams) {
+        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+            s sVar = new s((ViewGroup.MarginLayoutParams) layoutParams);
+            sVar.e = -1;
+            sVar.f = 0;
+            return sVar;
+        }
+        s sVar2 = new s(layoutParams);
+        sVar2.e = -1;
+        sVar2.f = 0;
+        return sVar2;
+    }
+
+    public final void q1(int i10, rf.e eVar, b1 b1Var, boolean z10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14 = 0;
+        if (z10) {
+            i13 = 1;
+            i12 = i10;
+            i11 = 0;
+        } else {
+            i11 = i10 - 1;
+            i12 = -1;
+            i13 = -1;
+        }
+        while (i11 != i12) {
+            View view = this.L[i11];
+            s sVar = (s) view.getLayoutParams();
+            int w12 = w1(((q0) view.getLayoutParams()).b(), eVar, b1Var);
+            sVar.f = w12;
+            sVar.e = i14;
+            i14 += w12;
+            i11 += i13;
         }
     }
 
-    @Override // s4.s
-    public final int[] q1(int i10, int i11, int[] iArr) {
+    @Override // s4.p0
+    public final void r0(Rect rect, int i10, int i11) {
+        int g7;
+        int g10;
+        if (this.K == null) {
+            super.r0(rect, i10, i11);
+        }
+        int E = E() + D();
+        int C = C() + F();
+        if (this.o == 1) {
+            int height = rect.height() + C;
+            RecyclerView recyclerView = this.b;
+            WeakHashMap weakHashMap = r0.i0.a;
+            g10 = p0.g(i11, height, recyclerView.getMinimumHeight());
+            int[] iArr = this.K;
+            g7 = p0.g(i10, iArr[iArr.length - 1] + E, this.b.getMinimumWidth());
+        } else {
+            int width = rect.width() + E;
+            RecyclerView recyclerView2 = this.b;
+            WeakHashMap weakHashMap2 = r0.i0.a;
+            g7 = p0.g(i10, width, recyclerView2.getMinimumWidth());
+            int[] iArr2 = this.K;
+            g10 = p0.g(i11, iArr2[iArr2.length - 1] + C, this.b.getMinimumHeight());
+        }
+        this.b.setMeasuredDimension(g7, g10);
+    }
+
+    public int[] r1(int i10, int i11, int[] iArr) {
+        int i12;
         if (iArr == null || iArr.length != i10 + 1 || iArr[iArr.length - 1] != i11) {
             iArr = new int[i10 + 1];
         }
+        int i13 = 0;
         iArr[0] = 0;
-        for (int i12 = 1; i12 <= i10; i12++) {
-            iArr[i12] = (int) Math.ceil((i12 / i10) * i11);
+        int i14 = i11 / i10;
+        int i15 = i11 % i10;
+        int i16 = 0;
+        for (int i17 = 1; i17 <= i10; i17++) {
+            i13 += i15;
+            if (i13 <= 0 || i10 - i13 >= i15) {
+                i12 = i14;
+            } else {
+                i12 = i14 + 1;
+                i13 -= i10;
+            }
+            i16 += i12;
+            iArr[i17] = i16;
         }
         return iArr;
     }
 
-    @Override // s4.s
-    public final void w1(View view, int i10, boolean z10) {
-        r rVar = (r) view.getLayoutParams();
-        Rect rect = rVar.b;
-        int i11 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) rVar).topMargin + ((ViewGroup.MarginLayoutParams) rVar).bottomMargin;
-        x1(n0.s(false, this.K[rVar.f], i10, rect.left + rect.right + ((ViewGroup.MarginLayoutParams) rVar).leftMargin + ((ViewGroup.MarginLayoutParams) rVar).rightMargin, ((ViewGroup.MarginLayoutParams) rVar).width), n0.s(true, this.q.k(), this.l, i11, ((ViewGroup.MarginLayoutParams) rVar).height), view, z10);
+    public final void s1() {
+        View[] viewArr = this.L;
+        if (viewArr == null || viewArr.length != this.J) {
+            this.L = new View[this.J];
+        }
+    }
+
+    public final int t1(int i10, int i11) {
+        if (this.o != 1 || !Y0()) {
+            int[] iArr = this.K;
+            return iArr[i11 + i10] - iArr[i10];
+        }
+        int[] iArr2 = this.K;
+        int i12 = this.J;
+        return iArr2[i12 - i10] - iArr2[(i12 - i10) - i11];
+    }
+
+    @Override // s4.p0
+    public int u(rf.e eVar, b1 b1Var) {
+        if (this.o == 1) {
+            return this.J;
+        }
+        if (b1Var.b() < 1) {
+            return 0;
+        }
+        return u1(b1Var.b() - 1, eVar, b1Var) + 1;
+    }
+
+    public final int u1(int i10, rf.e eVar, b1 b1Var) {
+        if (!b1Var.g) {
+            return this.O.g(i10, this.J);
+        }
+        int b10 = eVar.b(i10);
+        if (b10 != -1) {
+            return this.O.g(b10, this.J);
+        }
+        Log.w("GridLayoutManager", "Cannot find span size for pre layout position. " + i10);
+        return 0;
+    }
+
+    public final int v1(int i10, rf.e eVar, b1 b1Var) {
+        if (!b1Var.g) {
+            return this.O.h(i10, this.J);
+        }
+        int i11 = this.N.get(i10, -1);
+        if (i11 != -1) {
+            return i11;
+        }
+        int b10 = eVar.b(i10);
+        if (b10 != -1) {
+            return this.O.h(b10, this.J);
+        }
+        Log.w("GridLayoutManager", "Cannot find span size for pre layout position. It is not cached, not in the adapter. Pos:" + i10);
+        return 0;
+    }
+
+    public final int w1(int i10, rf.e eVar, b1 b1Var) {
+        if (!b1Var.g) {
+            return this.O.i(i10);
+        }
+        int i11 = this.M.get(i10, -1);
+        if (i11 != -1) {
+            return i11;
+        }
+        int b10 = eVar.b(i10);
+        if (b10 != -1) {
+            return this.O.i(b10);
+        }
+        Log.w("GridLayoutManager", "Cannot find span size for pre layout position. It is not cached, not in the adapter. Pos:" + i10);
+        return 1;
+    }
+
+    public void x1(View view, int i10, boolean z10) {
+        int i11;
+        int i12;
+        s sVar = (s) view.getLayoutParams();
+        Rect rect = sVar.b;
+        int i13 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) sVar).topMargin + ((ViewGroup.MarginLayoutParams) sVar).bottomMargin;
+        int i14 = rect.left + rect.right + ((ViewGroup.MarginLayoutParams) sVar).leftMargin + ((ViewGroup.MarginLayoutParams) sVar).rightMargin;
+        int t12 = t1(sVar.e, sVar.f);
+        if (this.o == 1) {
+            i12 = p0.s(false, t12, i10, i14, ((ViewGroup.MarginLayoutParams) sVar).width);
+            i11 = p0.s(true, this.q.k(), this.l, i13, ((ViewGroup.MarginLayoutParams) sVar).height);
+        } else {
+            int s10 = p0.s(false, t12, i10, i13, ((ViewGroup.MarginLayoutParams) sVar).height);
+            int s11 = p0.s(true, this.q.k(), this.k, i14, ((ViewGroup.MarginLayoutParams) sVar).width);
+            i11 = s10;
+            i12 = s11;
+        }
+        y1(i12, i11, view, z10);
+    }
+
+    @Override // s4.c0, s4.p0
+    public boolean y0() {
+        return this.B == null && !this.I;
+    }
+
+    public final void y1(int i10, int i11, View view, boolean z10) {
+        q0 q0Var = (q0) view.getLayoutParams();
+        if (z10 ? (this.g && p0.N(view.getMeasuredWidth(), i10, ((ViewGroup.MarginLayoutParams) q0Var).width) && p0.N(view.getMeasuredHeight(), i11, ((ViewGroup.MarginLayoutParams) q0Var).height)) ? false : true : u0(view, i10, i11, q0Var)) {
+            view.measure(i10, i11);
+        }
+    }
+
+    public void z1(int i10) {
+        if (i10 == this.J) {
+            return;
+        }
+        this.I = true;
+        if (i10 < 1) {
+            throw new IllegalArgumentException(ic.a.i(i10, "Span count should be at least 1. Provided "));
+        }
+        this.J = i10;
+        this.O.j();
+        l0();
+    }
+
+    public t(int i10, boolean z10) {
+        super(1, z10);
+        this.I = false;
+        this.J = -1;
+        this.M = new SparseIntArray();
+        this.N = new SparseIntArray();
+        this.O = new qu(1);
+        this.P = new Rect();
+        z1(i10);
     }
 }

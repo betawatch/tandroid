@@ -1,0 +1,141 @@
+package t5;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabaseLockedException;
+import android.os.SystemClock;
+import android.util.Base64;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import org.telegram.ui.Components.qy;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class g implements d, u5.c, c {
+    public static final j5.c f = new j5.c("proto");
+    public final i a;
+    public final v5.a b;
+    public final v5.a c;
+    public final a d;
+    public final id.a e;
+
+    public g(v5.a aVar, v5.a aVar2, a aVar3, i iVar, id.a aVar4) {
+        this.a = iVar;
+        this.b = aVar;
+        this.c = aVar2;
+        this.d = aVar3;
+        this.e = aVar4;
+    }
+
+    public static Long b(SQLiteDatabase sQLiteDatabase, m5.i iVar) {
+        StringBuilder sb2 = new StringBuilder("backend_name = ? and priority = ?");
+        ArrayList arrayList = new ArrayList(Arrays.asList(iVar.a, String.valueOf(w5.a.a(iVar.c))));
+        byte[] bArr = iVar.b;
+        if (bArr != null) {
+            sb2.append(" and extras = ?");
+            arrayList.add(Base64.encodeToString(bArr, 0));
+        } else {
+            sb2.append(" and extras is null");
+        }
+        Cursor query = sQLiteDatabase.query("transport_contexts", new String[]{"_id"}, sb2.toString(), (String[]) arrayList.toArray(new String[0]), null, null, null);
+        try {
+            return !query.moveToNext() ? null : Long.valueOf(query.getLong(0));
+        } finally {
+            query.close();
+        }
+    }
+
+    public static String g(Iterable iterable) {
+        StringBuilder sb2 = new StringBuilder("(");
+        Iterator it = iterable.iterator();
+        while (it.hasNext()) {
+            sb2.append(((b) it.next()).a);
+            if (it.hasNext()) {
+                sb2.append(',');
+            }
+        }
+        sb2.append(')');
+        return sb2.toString();
+    }
+
+    public static Object h(Cursor cursor, e eVar) {
+        try {
+            return eVar.apply(cursor);
+        } finally {
+            cursor.close();
+        }
+    }
+
+    public final SQLiteDatabase a() {
+        i iVar = this.a;
+        Objects.requireNonNull(iVar);
+        v5.a aVar = this.c;
+        long o10 = aVar.o();
+        while (true) {
+            try {
+                return iVar.getWritableDatabase();
+            } catch (SQLiteDatabaseLockedException e) {
+                if (aVar.o() >= this.d.c + o10) {
+                    throw new u5.a("Timed out while trying to open db.", e);
+                }
+                SystemClock.sleep(50L);
+            }
+        }
+    }
+
+    public final Object c(e eVar) {
+        SQLiteDatabase a2 = a();
+        a2.beginTransaction();
+        try {
+            Object apply = eVar.apply(a2);
+            a2.setTransactionSuccessful();
+            return apply;
+        } finally {
+            a2.endTransaction();
+        }
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.a.close();
+    }
+
+    public final ArrayList d(SQLiteDatabase sQLiteDatabase, m5.i iVar, int i10) {
+        ArrayList arrayList = new ArrayList();
+        Long b10 = b(sQLiteDatabase, iVar);
+        if (b10 == null) {
+            return arrayList;
+        }
+        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline"}, "context_id = ?", new String[]{b10.toString()}, null, null, null, String.valueOf(i10)), new qy(this, arrayList, iVar, 9));
+        return arrayList;
+    }
+
+    public final void e(long j10, p5.c cVar, String str) {
+        c(new bi.i(str, cVar, j10, 10));
+    }
+
+    public final Object f(u5.b bVar) {
+        SQLiteDatabase a2 = a();
+        v5.a aVar = this.c;
+        long o10 = aVar.o();
+        while (true) {
+            try {
+                a2.beginTransaction();
+                try {
+                    Object f7 = bVar.f();
+                    a2.setTransactionSuccessful();
+                    return f7;
+                } finally {
+                    a2.endTransaction();
+                }
+            } catch (SQLiteDatabaseLockedException e) {
+                if (aVar.o() >= this.d.c + o10) {
+                    throw new u5.a("Timed out while trying to acquire the lock.", e);
+                }
+                SystemClock.sleep(50L);
+            }
+        }
+    }
+}

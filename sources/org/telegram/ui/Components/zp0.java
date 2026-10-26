@@ -1,38 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class zp0 {
-    public final uu a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final class zp0 implements rb {
+    public final /* synthetic */ qc a;
+    public final /* synthetic */ ef b;
 
-    public zp0(View view) {
-        uu uuVar = new uu(1, view);
-        this.b = System.currentTimeMillis();
-        this.a = uuVar;
-        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+    public zp0(ef efVar, qc qcVar) {
+        this.b = efVar;
+        this.a = qcVar;
     }
 
-    public final void a(Canvas canvas, float f7) {
-        uu uuVar;
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
-        canvas.translate(-0.0f, -0.0f);
-        if (f7 <= 0.0f || (uuVar = this.a) == null) {
-            return;
-        }
-        uuVar.run();
+    @Override // org.telegram.ui.Components.rb
+    public final void a() {
+        this.b.G.add(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final void b() {
+        this.b.G.remove(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final /* synthetic */ void d() {
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final /* synthetic */ void c(qc qcVar) {
     }
 }

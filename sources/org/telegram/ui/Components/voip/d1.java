@@ -1,27 +1,46 @@
 package org.telegram.ui.Components.voip;
 
-import org.webrtc.RendererCommon;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class d1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ h1 a;
+public final class d1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i1 b;
 
-    public d1(h1 h1Var) {
-        this.a = h1Var;
+    public /* synthetic */ d1(i1 i1Var, int i10) {
+        this.a = i10;
+        this.b = i1Var;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        h1 h1Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = h1Var.Y;
-        if (pVar != null) {
-            pVar.run();
-            h1Var.Y = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 1:
+                this.b.L = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                break;
         }
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    @Override // android.animation.Animator.AnimatorListener
+    public void onAnimationEnd(Animator animator, boolean z10) {
+        View view;
+        switch (this.a) {
+            case 0:
+                sf.d dVar = this.b.O;
+                if (dVar != null && (view = dVar.j) != null) {
+                    dVar.e(view);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator, z10);
+                break;
+        }
     }
 }

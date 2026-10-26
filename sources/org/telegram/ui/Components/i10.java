@@ -1,189 +1,253 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class i10 extends View implements org.telegram.ui.ActionBar.b6 {
-    public p6 E;
-    public TextPaint a;
-    public TextPaint b;
-    public Paint c;
-    public Path d;
-    public float[] e;
-    public i11 f;
-    public i11 h;
-    public i11 n;
-    public LinearGradient r;
-    public LinearGradient s;
-    public Paint v;
-    public Paint w;
-    public Matrix x;
-    public Matrix y;
+public final class i10 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public static CharSequence a(CharSequence charSequence) {
-        return "ALL_CHATS".equals(charSequence.toString()) ? LocaleController.getString(R.string.FilterAllChats) : charSequence;
+    public /* synthetic */ i10(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        i11 i11Var;
-        float f13;
-        float f14;
-        Paint paint = this.c;
-        Matrix matrix = this.y;
-        Matrix matrix2 = this.x;
-        Path path = this.d;
-        i11 i11Var2 = this.f;
-        p6 p6Var = this.E;
-        i11 i11Var3 = this.n;
-        super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        i11 i11Var4 = this.h;
-        if (i11Var4 != null) {
-            canvas.save();
-            float f15 = i11Var4.c;
-            f7 = 15.32f;
-            CharSequence charSequence = p6Var.i;
-            if (charSequence == null || charSequence.length() == 0) {
-                f14 = 0.0f;
-            } else {
-                f14 = p6Var.c() + AndroidUtilities.dp(15.32f);
-            }
-            float f16 = f15 + f14;
-            f10 = measuredWidth - (f16 / 2.0f);
-            canvas.translate(f10, measuredHeight - (i11Var4.j() / 2.0f));
-            i11Var4.d(canvas);
-            canvas.restore();
-            f11 = f16;
-        } else {
-            f7 = 15.32f;
-            f10 = measuredWidth;
-            f11 = 0.0f;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 11:
+                ((nh0) this.b).h = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        CharSequence charSequence2 = p6Var.i;
-        if (charSequence2 == null || charSequence2.length() == 0) {
-            f12 = measuredHeight;
-            i11Var = i11Var4;
-            f13 = 2.0f;
-        } else {
-            Rect rect = AndroidUtilities.rectTmp2;
-            f13 = 2.0f;
-            int dp = (int) (i11Var4.c + f10 + AndroidUtilities.dp(4.66f));
-            int dp2 = (int) (measuredHeight - AndroidUtilities.dp(9.0f));
-            f12 = measuredHeight;
-            int c10 = (int) (p6Var.c() + i11Var4.c + f10 + AndroidUtilities.dp(f7));
-            i11Var = i11Var4;
-            rect.set(dp, dp2, c10, (int) (f12 + AndroidUtilities.dp(9.0f)));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(rect);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint);
-            rect.offset(-AndroidUtilities.dp(0.33f), -AndroidUtilities.dp(0.66f));
-            p6Var.setBounds(rect);
-            p6Var.draw(canvas);
-        }
-        float dp3 = AndroidUtilities.dp(30.0f);
-        float f17 = (f10 - dp3) - i11Var2.c;
-        canvas.save();
-        canvas.translate(f17, (f12 - (i11Var2.j() / f13)) + AndroidUtilities.dp(1.0f));
-        i11Var2.d(canvas);
-        canvas.restore();
-        float f18 = f10 + f11;
-        if (i11Var3 != null) {
-            canvas.save();
-            canvas.translate(f18 + dp3, (f12 - (i11Var3.j() / f13)) + AndroidUtilities.dp(1.0f));
-            i11Var3.d(canvas);
-            canvas.restore();
-            f18 += dp3 + i11Var3.c;
-        }
-        float f19 = f18;
-        float dp4 = AndroidUtilities.dp(12.0f) + (i11Var.j() / f13) + f12;
-        canvas.drawRect(0.0f, dp4, getMeasuredWidth(), 1.0f + dp4, this.a);
-        path.rewind();
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        float f20 = f11 / f13;
-        float f21 = measuredWidth + f20;
-        rectF2.set((measuredWidth - f20) - AndroidUtilities.dp(4.0f), dp4 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + f21, dp4);
-        path.addRoundRect(rectF2, this.e, Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.save();
-        float max = Math.max(AndroidUtilities.dp(8.0f), f17);
-        matrix2.reset();
-        matrix2.postTranslate(Math.min(f10, max + AndroidUtilities.dp(8.0f)), 0.0f);
-        this.r.setLocalMatrix(matrix2);
-        float min = Math.min(getMeasuredWidth() - AndroidUtilities.dp(8.0f), f19);
-        matrix.reset();
-        matrix.postTranslate(Math.max(f21, min - AndroidUtilities.dp(88.0f)), 0.0f);
-        this.s.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.v);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.w);
-        canvas.restore();
-        canvas.restore();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        Paint paint = this.c;
-        TextPaint textPaint = this.b;
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 == null || textPaint == null || paint == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                j10 j10Var = (j10) this.b;
+                j10Var.v = 1.0f;
+                j10Var.invalidate();
+                break;
+            case 1:
+                n60 n60Var = (n60) this.b;
+                if (animator == n60Var.W) {
+                    n60Var.c(true);
+                    n60Var.setVisibility(4);
+                    break;
+                }
+                break;
+            case 2:
+                k80 k80Var = (k80) this.b;
+                i80 i80Var = k80Var.x;
+                if (i80Var != null) {
+                    i80Var.setProgress(1.0f);
+                    k80Var.x.invalidate();
+                }
+                k80Var.m0 = null;
+                break;
+            case 3:
+                t00 t00Var = (t00) this.b;
+                ((t80) t00Var.e).G = false;
+                TextView[] textViewArr = (TextView[]) t00Var.d;
+                TextView textView = textViewArr[0];
+                textViewArr[0] = textViewArr[1];
+                textViewArr[1] = textView;
+                break;
+            case 4:
+                g90 g90Var = (g90) this.b;
+                if (!g90Var.f) {
+                    g90Var.c.setVisibility(8);
+                    break;
+                }
+                break;
+            case 5:
+                n90 n90Var = (n90) this.b;
+                FrameLayout frameLayout = n90Var.b;
+                fi.f6 f6Var = (fi.f6) n90Var.c;
+                if (f6Var.getParent() != null) {
+                    frameLayout.removeView(f6Var);
+                }
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Cells.ha) n90Var.d);
+                break;
+            case 6:
+                hc0 hc0Var = (hc0) this.b;
+                hc0Var.c0.h = null;
+                hc0Var.f(hc0Var.S, hc0Var.R);
+                break;
+            case 7:
+                NumberTextView numberTextView = (NumberTextView) this.b;
+                numberTextView.d = null;
+                numberTextView.b.clear();
+                break;
+            case 8:
+                le0 le0Var = (le0) this.b;
+                le0Var.S = null;
+                le0Var.r.setText("");
+                fi.t8.a(le0Var.s, false);
+                le0Var.setVisibility(8);
+                le0Var.a0 = 0.0f;
+                le0Var.h(0.0f);
+                le0Var.setAlpha(0.0f);
+                le0Var.j();
+                break;
+            case 9:
+                AnimatorSet animatorSet = (AnimatorSet) this.b;
+                if (animatorSet != null) {
+                    animatorSet.start();
+                    break;
+                }
+                break;
+            case 10:
+                hf hfVar = (hf) this.b;
+                AnimatorSet animatorSet2 = (AnimatorSet) ((fi.t8) hfVar.c).e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    ((fi.t8) hfVar.c).e = null;
+                    break;
+                }
+                break;
+            case 11:
+                break;
+            case 12:
+                sh0 sh0Var = (sh0) this.b;
+                sh0Var.f = false;
+                sh0Var.F = null;
+                break;
+            case 13:
+                ((hj0) this.b).b();
+                break;
+            case 14:
+                ((pk0) this.b).h.setVisibility(8);
+                break;
+            case 15:
+                mm0 mm0Var = (mm0) this.b;
+                View view = mm0Var.a1;
+                if (view != null) {
+                    view.setVisibility(8);
+                }
+                if (mm0Var.b1()) {
+                    mm0Var.invalidate();
+                    break;
+                }
+                break;
+            case 16:
+                pn0 pn0Var = (pn0) this.b;
+                if (pn0Var.s != null) {
+                    pn0Var.j();
+                    pn0Var.s.invalidate();
+                    pn0Var.e.invalidate();
+                    pn0Var.invalidate();
+                    pn0Var.s = null;
+                    break;
+                }
+                break;
+            case 17:
+                ((tn0) this.b).d = false;
+                break;
+            case 18:
+                ((ep0) this.b).O0.setVisibility(8);
+                break;
+            case 19:
+                cq0 cq0Var = (cq0) this.b;
+                if (animator == cq0Var.h) {
+                    cq0Var.h = null;
+                    break;
+                }
+                break;
+            case 20:
+                ((lr0) this.b).f = null;
+                break;
+            case 21:
+                sr0 sr0Var = (sr0) this.b;
+                if (sr0Var.getParent() != null) {
+                    ((ViewGroup) sr0Var.getParent()).removeView(sr0Var);
+                    break;
+                }
+                break;
+            case 22:
+                zt0 zt0Var = (zt0) this.b;
+                View view2 = zt0Var.c;
+                view2.setAlpha(1.0f);
+                s4.p0.x0(view2);
+                zt0Var.a.removeView(view2);
+                break;
+            case 23:
+                mw0 mw0Var = (mw0) this.b;
+                if (mw0Var.f == animator) {
+                    mw0Var.f = null;
+                    break;
+                }
+                break;
+            case 24:
+                by0 by0Var = (by0) this.b;
+                by0Var.setCategoriesShownT(((Float) by0Var.x3.getAnimatedValue()).floatValue());
+                by0Var.x3 = null;
+                break;
+            case 25:
+                cz0 cz0Var = (cz0) this.b;
+                cz0Var.x.setVisibility(8);
+                cz0Var.F.setImageDrawable(null);
+                break;
+            case 26:
+                int i10 = 0;
+                while (true) {
+                    iz0[] iz0VarArr = (iz0[]) this.b;
+                    if (i10 >= iz0VarArr.length) {
+                        break;
+                    } else {
+                        iz0 iz0Var = iz0VarArr[i10];
+                        if (iz0Var != null) {
+                            iz0Var.d = false;
+                        }
+                        i10++;
+                    }
+                }
+            case 27:
+                super.onAnimationEnd(animator);
+                ((jz0) this.b).H = null;
+                break;
+            case 28:
+                ((mz0) this.b).e = false;
+                break;
+            default:
+                ((x11) this.b).setVisibility(4);
+                break;
         }
-        int i10 = org.telegram.ui.ActionBar.k6.Eh;
-        textPaint2.setColor(org.telegram.ui.ActionBar.k6.o1(0.8f, org.telegram.ui.ActionBar.k6.x0(null, i10, false)));
-        int i11 = org.telegram.ui.ActionBar.k6.o6;
-        textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i11, false));
-        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Th, false));
-        try {
-            p6 p6Var = this.E;
-            if (p6Var != null) {
-                p6Var.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
-            }
-            int o12 = org.telegram.ui.ActionBar.k6.o1(0.8f, org.telegram.ui.ActionBar.k6.x0(null, i10, false));
-            i11 i11Var = this.f;
-            if (i11Var != null) {
-                i11Var.o(o12);
-            }
-            i11 i11Var2 = this.h;
-            if (i11Var2 != null) {
-                i11Var2.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false));
-            }
-            i11 i11Var3 = this.n;
-            if (i11Var3 != null) {
-                i11Var3.o(o12);
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        invalidate();
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.E || super.verifyDrawable(drawable);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 17:
+                tn0 tn0Var = (tn0) this.b;
+                tn0Var.d = true;
+                if (tn0Var.getParent() instanceof HorizontalScrollView) {
+                    ((HorizontalScrollView) tn0Var.getParent()).requestDisallowInterceptTouchEvent(false);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public i10(zt0 zt0Var, s4.p0 p0Var) {
+        this.a = 22;
+        this.b = zt0Var;
+    }
+
+    private final void a(Animator animator) {
     }
 }

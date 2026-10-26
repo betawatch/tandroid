@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qf implements Runnable {
     public final /* synthetic */ int a;
@@ -22,22 +22,22 @@ public final /* synthetic */ class qf implements Runnable {
                 this.b.lambda$saveChannelPts$34(this.c, this.d);
                 break;
             case 1:
-                this.b.lambda$markMessageAsMention$113(this.c, this.d);
+                this.b.lambda$markMessageAsMention$116(this.c, this.d);
                 break;
             case 2:
-                this.b.lambda$setDialogPinned$251(this.c, this.d);
+                this.b.lambda$setDialogPinned$254(this.c, this.d);
                 break;
             case 3:
-                this.b.lambda$setDialogTtl$60(this.c, this.d);
+                this.b.lambda$setDialogTtl$63(this.c, this.d);
                 break;
             case 4:
-                this.b.lambda$deleteDialog$90(this.c, this.d);
+                this.b.lambda$deleteDialog$93(this.c, this.d);
                 break;
             case 5:
-                this.b.lambda$updateChatOnlineCount$135(this.c, this.d);
+                this.b.lambda$updateChatOnlineCount$138(this.c, this.d);
                 break;
             default:
-                this.b.lambda$saveChatLinksCount$133(this.c, this.d);
+                this.b.lambda$saveChatLinksCount$136(this.c, this.d);
                 break;
         }
     }

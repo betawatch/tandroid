@@ -1,34 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class nn0 implements go0 {
-    public final /* synthetic */ io0 a;
+public final /* synthetic */ class nn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ po0 b;
 
-    public nn0(io0 io0Var) {
-        this.a = io0Var;
+    public /* synthetic */ nn0(po0 po0Var, int i10) {
+        this.a = i10;
+        this.b = po0Var;
     }
 
-    @Override // org.telegram.ui.go0
-    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.go0
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        io0 io0Var = this.a;
-        io0Var.I0 = tL_payments_validateRequestedInfo;
-        io0Var.B0(tL_payments_validateRequestedInfo.info);
-    }
-
-    @Override // org.telegram.ui.go0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.go0
-    public final /* synthetic */ void b() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                po0 po0Var = this.b;
+                po0Var.f[0].requestFocus();
+                AndroidUtilities.showKeyboard(po0Var.f[0]);
+                break;
+            case 1:
+                this.b.u0();
+                break;
+            case 2:
+                po0 po0Var2 = this.b;
+                po0Var2.getMessagesController().newMessageCallback = null;
+                if (po0Var2.f1 == 3 && !po0Var2.isFinishing()) {
+                    po0Var2.f1 = 4;
+                    oo0 oo0Var = po0Var2.Z0;
+                    if (oo0Var != null) {
+                        oo0Var.a(4);
+                    }
+                    po0Var2.finishFragment();
+                    break;
+                } else if (po0Var2.f1 == 1 && !po0Var2.isFinishing()) {
+                    po0Var2.finishFragment();
+                    break;
+                }
+                break;
+            default:
+                po0 po0Var3 = this.b;
+                if (po0Var3.d0 != null) {
+                    po0Var3.x0();
+                    po0Var3.d0 = null;
+                    break;
+                }
+                break;
+        }
     }
 }

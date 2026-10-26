@@ -1,77 +1,40 @@
 package t7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
-import w7.o7;
+import android.os.BadParcelableException;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends a9.o implements ListIterator {
-    public final int b;
-    public int c;
-    public final d d;
+public abstract class b {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, int i10) {
-        super(4);
-        int size = dVar.size();
-        o7.b(i10, size);
-        this.b = size;
-        this.c = i10;
-        this.d = dVar;
+    static {
+        b.class.getClassLoader();
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    public static void a(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(ic.a.i(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
         }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    public static void c(Parcel parcel, IInterface iInterface) {
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
+        }
     }
 }

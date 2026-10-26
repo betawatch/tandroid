@@ -8,25 +8,25 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class rv extends View {
     public ImageReceiver.BackgroundThreadDrawHolder[] a;
-    public ci.f3 b;
-    public a6 c;
+    public di.f3 b;
+    public c6 c;
     public ValueAnimator d;
     public float e;
 
     public TLRPC.Document getDocument() {
-        a6 a6Var = this.c;
-        if (a6Var == null) {
+        c6 c6Var = this.c;
+        if (c6Var == null) {
             return null;
         }
-        TLRPC.Document document = a6Var.document;
+        TLRPC.Document document = c6Var.document;
         if (document != null) {
             return document;
         }
-        return r5.f(UserConfig.selectedAccount, a6Var.getDocumentId());
+        return t5.f(UserConfig.selectedAccount, c6Var.getDocumentId());
     }
 
     @Override // android.view.View
@@ -52,9 +52,9 @@ public final class rv extends View {
             if (f7 != 0.0f) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.d = ofFloat;
-                ofFloat.addUpdateListener(new l6(this, 18));
-                this.d.addListener(new org.telegram.ui.pq(this, 24));
-                org.telegram.messenger.sl.l(5.0f, this.d);
+                ofFloat.addUpdateListener(new n6(this, 18));
+                this.d.addListener(new org.telegram.ui.qp(this, 25));
+                org.telegram.ui.d3.m(5.0f, this.d);
                 this.d.setDuration(350L);
                 this.d.start();
             }

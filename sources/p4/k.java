@@ -20,15 +20,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.ji1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k extends g3 {
-    public final i2.f0 E;
+    public final i2.h0 E;
     public ArrayList F;
     public final ArrayMap G;
     public final MediaRouter2 r;
-    public final l2.f s;
+    public final jg.i s;
     public final ArrayMap v;
     public final MediaRouter2$RouteCallback w;
     public final j x;
@@ -38,7 +39,7 @@ public final class k extends g3 {
         Log.isLoggable("MR2Provider", 3);
     }
 
-    public k(Context context, l2.f fVar) {
+    public k(Context context, jg.i iVar) {
         super(context, null);
         this.v = new ArrayMap();
         this.x = new j(this);
@@ -46,8 +47,8 @@ public final class k extends g3 {
         this.F = new ArrayList();
         this.G = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
-        this.s = fVar;
-        this.E = new i2.f0(new Handler(Looper.getMainLooper()), 1);
+        this.s = iVar;
+        this.E = new i2.h0(new Handler(Looper.getMainLooper()), 1);
         if (Build.VERSION.SDK_INT >= 34) {
             this.w = new i(this, 1);
         } else {
@@ -193,10 +194,10 @@ public final class k extends g3 {
             }
             build = new RouteDiscoveryPreference.Builder(arrayList2, z11).build();
         }
-        i2.f0 f0Var = this.E;
-        mediaRouter2.registerRouteCallback(f0Var, mediaRouter2$RouteCallback, build);
-        this.r.registerTransferCallback(f0Var, jVar);
-        this.r.registerControllerCallback(f0Var, fVar);
+        i2.h0 h0Var = this.E;
+        mediaRouter2.registerRouteCallback(h0Var, mediaRouter2$RouteCallback, build);
+        this.r.registerTransferCallback(h0Var, jVar);
+        this.r.registerControllerCallback(h0Var, fVar);
     }
 
     public final MediaRoute2Info o(String str) {
@@ -209,7 +210,7 @@ public final class k extends g3 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            MediaRoute2Info d = org.telegram.ui.web.d0.d(obj);
+            MediaRoute2Info d = ji1.d(obj);
             if (TextUtils.equals(d.getId(), str)) {
                 return d;
             }
@@ -222,7 +223,7 @@ public final class k extends g3 {
         ArraySet arraySet = new ArraySet();
         Iterator<MediaRoute2Info> it = this.r.getRoutes().iterator();
         while (it.hasNext()) {
-            MediaRoute2Info d = org.telegram.ui.web.d0.d(it.next());
+            MediaRoute2Info d = ji1.d(it.next());
             if (d != null && !arraySet.contains(d) && !d.isSystemRoute()) {
                 arraySet.add(d);
                 arrayList.add(d);
@@ -241,7 +242,7 @@ public final class k extends g3 {
         while (i11 < size) {
             Object obj = arrayList2.get(i11);
             i11++;
-            MediaRoute2Info d10 = org.telegram.ui.web.d0.d(obj);
+            MediaRoute2Info d10 = ji1.d(obj);
             Bundle extras = d10.getExtras();
             if (extras == null || extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID") == null) {
                 Log.w("MR2Provider", "Cannot find the original route Id. route=" + d10);
@@ -256,10 +257,10 @@ public final class k extends g3 {
         while (i12 < size2) {
             Object obj2 = arrayList4.get(i12);
             i12++;
-            MediaRoute2Info d11 = org.telegram.ui.web.d0.d(obj2);
-            m w9 = g0.f.w(d11);
+            MediaRoute2Info d11 = ji1.d(obj2);
+            m w10 = g0.f.w(d11);
             if (d11 != null) {
-                arrayList3.add(w9);
+                arrayList3.add(w10);
             }
         }
         ArrayList arrayList5 = new ArrayList();
@@ -278,7 +279,7 @@ public final class k extends g3 {
                 arrayList5.add(mVar);
             }
         }
-        g(new b2.t(arrayList5, true));
+        g(new b2.u(arrayList5, true));
     }
 
     public final void r(MediaRouter2.RoutingController routingController) {
@@ -295,7 +296,7 @@ public final class k extends g3 {
         }
         ArrayList h = g0.f.h(selectedRoutes);
         int i10 = 0;
-        m w9 = g0.f.w(org.telegram.ui.web.d0.d(selectedRoutes.get(0)));
+        m w10 = g0.f.w(ji1.d(selectedRoutes.get(0)));
         Bundle controlHints = routingController.getControlHints();
         String string = this.a.getString(R.string.mr_dialog_default_group_name);
         m mVar = null;
@@ -327,7 +328,7 @@ public final class k extends g3 {
         bundle3.putInt("volumeMax", routingController.getVolumeMax());
         bundle3.putInt("volumeHandling", routingController.getVolumeHandling());
         lVar.c.clear();
-        lVar.a(w9.b());
+        lVar.a(w10.b());
         ArrayList arrayList = lVar.b;
         arrayList.clear();
         if (!h.isEmpty()) {
@@ -347,13 +348,13 @@ public final class k extends g3 {
         m b10 = lVar.b();
         ArrayList h10 = g0.f.h(routingController.getSelectableRoutes());
         ArrayList h11 = g0.f.h(routingController.getDeselectableRoutes());
-        b2.t tVar = (b2.t) this.n;
-        if (tVar == null) {
+        b2.u uVar = (b2.u) this.n;
+        if (uVar == null) {
             Log.w("MR2Provider", "setDynamicRouteDescriptors: providerDescriptor is not set.");
             return;
         }
         ArrayList arrayList2 = new ArrayList();
-        List<m> list = (List) tVar.c;
+        List<m> list = (List) uVar.c;
         if (!list.isEmpty()) {
             for (m mVar2 : list) {
                 String d = mVar2.d();

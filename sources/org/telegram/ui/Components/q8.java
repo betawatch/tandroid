@@ -1,43 +1,11 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.PremiumPreviewFragment;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e9 b;
+public interface q8 {
+    void T0(int i10, int i11);
 
-    public /* synthetic */ q8(e9 e9Var, int i10) {
-        this.a = i10;
-        this.b = e9Var;
-    }
+    void dismiss();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e9 e9Var = this.b;
-                if (!e9Var.U) {
-                    if (e9Var.N <= 0.0f) {
-                        e9Var.g0(!e9Var.a.v, true, false);
-                        break;
-                    } else {
-                        if (e9Var.M != null) {
-                            e9Var.E = 1.0f;
-                            e9Var.F = true;
-                        }
-                        AndroidUtilities.hideKeyboard(e9Var.fragmentView);
-                        break;
-                    }
-                }
-                break;
-            default:
-                e9 e9Var2 = this.b;
-                e9Var2.getClass();
-                e9Var2.presentFragment(new PremiumPreviewFragment(0, "avatar"));
-                break;
-        }
-    }
+    void e1();
 }

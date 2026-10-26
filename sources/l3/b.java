@@ -1,13 +1,13 @@
 package l3;
 
-import b2.q0;
-import b2.s0;
-import b2.w;
-import v7.c8;
+import a8.fd;
+import b2.r0;
+import b2.t0;
+import b2.x;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b implements s0 {
+public final class b implements t0 {
     public final long a;
     public final long b;
     public final long c;
@@ -22,12 +22,12 @@ public final class b implements s0 {
         this.e = j14;
     }
 
-    @Override // b2.s0
-    public final /* synthetic */ w a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.s0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -46,14 +46,14 @@ public final class b implements s0 {
     }
 
     public final int hashCode() {
-        return c8.b(this.e) + ((c8.b(this.d) + ((c8.b(this.c) + ((c8.b(this.b) + ((c8.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
+        return fd.b(this.e) + ((fd.b(this.d) + ((fd.b(this.c) + ((fd.b(this.b) + ((fd.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
         return "Motion photo metadata: photoStartPosition=" + this.a + ", photoSize=" + this.b + ", photoPresentationTimestampUs=" + this.c + ", videoStartPosition=" + this.d + ", videoSize=" + this.e;
     }
 
-    @Override // b2.s0
-    public final /* synthetic */ void b(q0 q0Var) {
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

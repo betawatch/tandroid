@@ -1,79 +1,159 @@
 package rg;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.ri;
-import org.telegram.ui.Components.ti;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import bi.mc;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.k3;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y implements ri {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ m0 b;
+public final class y extends k3 {
+    public static final /* synthetic */ int s = 0;
+    public final mc b;
+    public final ImageView c;
+    public final p d;
+    public final Path e;
+    public int f;
+    public q0.a h;
+    public v n;
+    public boolean r;
 
-    public y(m0 m0Var, ti tiVar) {
-        this.b = m0Var;
-        this.a = tiVar;
+    public y(Context context, u6 u6Var) {
+        super(1, context, u6Var, true);
+        this.e = new Path();
+        fixNavigationBar(-14342875);
+        Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-14342875, PorterDuff.Mode.MULTIPLY));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setImageResource(R.drawable.picker);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        imageView.setBackground(y6.g0(1090519039, 1, -1));
+        imageView.setOnClickListener(new org.telegram.ui.web.c(1, this, context));
+        ImageView imageView2 = new ImageView(context);
+        imageView2.setImageResource(R.drawable.ic_ab_done);
+        imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        imageView2.setBackground(y6.g0(1090519039, 1, -1));
+        imageView2.setOnClickListener(new ig.d0(this, 17));
+        p pVar = new p(this, context);
+        this.d = pVar;
+        pVar.c = Color.alpha(-65536) / 255.0f;
+        pVar.a();
+        pVar.invalidate();
+        mc mcVar = new mc(context, 6);
+        mcVar.setOrientation(1);
+        u uVar = new u(this, context);
+        mcVar.b = uVar;
+        uVar.a(this.f);
+        mcVar.c = new t(this, context);
+        mcVar.d = new x(this, context);
+        q qVar = new q(context, this.resourcesProvider);
+        qVar.setAdapter(new r(mcVar));
+        mcVar.addView(qVar, gb1.p(1.0f, -1, 0));
+        mcVar.addView(pVar, gb1.o(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        linearLayout2.setGravity(16);
+        linearLayout2.addView(imageView, gb1.r(28, 28));
+        linearLayout2.addView(qVar.n(8, false), gb1.t(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, gb1.r(28, 28));
+        mcVar.addView(linearLayout2, gb1.o(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        this.b = mcVar;
+        linearLayout.addView(mcVar, gb1.r(-1, 0));
+        o oVar = new o(this, context, linearLayout);
+        oVar.addView(linearLayout);
+        setCustomView(oVar);
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        ti tiVar = this.a;
-        try {
-            HashMap<Object, Object> selectedPhotos = tiVar.j0.getSelectedPhotos();
-            if (selectedPhotos.isEmpty()) {
-                return;
-            }
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
-            String str = photoEntry.imagePath;
-            if (str == null) {
-                str = photoEntry.path;
-            }
-            m0 m0Var = this.b;
-            m0Var.e0(m0Var.g0(str, true));
-            tiVar.dismiss();
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+    @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
+    public final void dismiss() {
+        super.dismiss();
+        q0.a aVar = this.h;
+        if (aVar != null) {
+            aVar.accept(Integer.valueOf(this.f));
         }
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final boolean p0() {
-        System.currentTimeMillis();
-        return true;
+    public final void m(int i10, int i11) {
+        View findFocus;
+        if (!this.r) {
+            if (i11 != 2) {
+                return;
+            } else {
+                this.r = true;
+            }
+        }
+        mc mcVar = this.b;
+        if (i11 != 5 && (findFocus = mcVar.findFocus()) != null) {
+            findFocus.clearFocus();
+            AndroidUtilities.hideKeyboard(findFocus);
+        }
+        if (i11 != 3) {
+            ((u) mcVar.b).a(i10);
+        }
+        if (i11 != 0) {
+            t tVar = (t) mcVar.c;
+            boolean z10 = i11 != 1;
+            tVar.n.f = i10;
+            float[] fArr = tVar.h;
+            Color.colorToHSV(i10, fArr);
+            if (z10) {
+                float f7 = (fArr[1] * 0.5f) + 1.0f;
+                float f10 = fArr[2];
+                tVar.d = f7 - (f10 <= 0.5f ? 1.0f - (((1.0f - f10) * 0.22000003f) + 0.78f) : ic.a.d(1.0f, f10, 0.22f, 1.0f));
+                tVar.e = fArr[0] / 360.0f;
+            }
+            tVar.invalidate();
+        }
+        if (i11 != 1) {
+            p pVar = this.d;
+            pVar.getClass();
+            pVar.c = Color.alpha(i10) / 255.0f;
+            pVar.a();
+            pVar.invalidate();
+        }
+        x xVar = (x) mcVar.d;
+        xVar.e = true;
+        xVar.a.b();
+        xVar.b.b();
+        xVar.c.b();
+        EditTextBoldCursor editTextBoldCursor = xVar.d;
+        if (!editTextBoldCursor.isFocused()) {
+            int selectionStart = editTextBoldCursor.getSelectionStart();
+            int selectionEnd = editTextBoldCursor.getSelectionEnd();
+            StringBuilder sb2 = new StringBuilder(Integer.toHexString(xVar.f.f));
+            while (sb2.length() < 8) {
+                sb2.insert(0, "0");
+            }
+            editTextBoldCursor.setText(sb2.toString().toUpperCase().substring(2));
+            editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        }
+        xVar.e = false;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final void r(gh ghVar) {
-        ghVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ boolean u() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void E() {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void J() {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void O(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void X(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void r0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog
+    public final void show() {
+        if (!this.n.g()) {
+            this.c.setVisibility(8);
+        }
+        super.show();
     }
 }

@@ -1,24 +1,73 @@
 package ma;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.util.Date;
+import java.util.HashMap;
+import ka.g;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d {
-    public static final d a;
-    public static final /* synthetic */ d[] b;
+public final class d implements la.a {
+    public static final b f;
+    public static final b h;
+    public final HashMap a;
+    public final HashMap b;
+    public final a c;
+    public boolean d;
+    public static final a e = new a(0);
+    public static final c n = new c();
 
+    /* JADX WARN: Type inference failed for: r0v1, types: [ma.b] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [ma.b] */
     static {
-        d dVar = new d("DEFAULT", 0);
-        a = dVar;
-        b = new d[]{dVar, new d("SIGNED", 1), new d("FIXED", 2)};
+        final int i10 = 0;
+        f = new ka.f() { // from class: ma.b
+            @Override // ka.a
+            public final void a(Object obj, Object obj2) {
+                switch (i10) {
+                    case 0:
+                        ((g) obj2).b((String) obj);
+                        break;
+                    default:
+                        ((g) obj2).c(((Boolean) obj).booleanValue());
+                        break;
+                }
+            }
+        };
+        final int i11 = 1;
+        h = new ka.f() { // from class: ma.b
+            @Override // ka.a
+            public final void a(Object obj, Object obj2) {
+                switch (i11) {
+                    case 0:
+                        ((g) obj2).b((String) obj);
+                        break;
+                    default:
+                        ((g) obj2).c(((Boolean) obj).booleanValue());
+                        break;
+                }
+            }
+        };
     }
 
-    public static d valueOf(String str) {
-        return (d) Enum.valueOf(d.class, str);
+    public d() {
+        HashMap hashMap = new HashMap();
+        this.a = hashMap;
+        HashMap hashMap2 = new HashMap();
+        this.b = hashMap2;
+        this.c = e;
+        this.d = false;
+        hashMap2.put(String.class, f);
+        hashMap.remove(String.class);
+        hashMap2.put(Boolean.class, h);
+        hashMap.remove(Boolean.class);
+        hashMap2.put(Date.class, n);
+        hashMap.remove(Date.class);
     }
 
-    public static d[] values() {
-        return (d[]) b.clone();
+    @Override // la.a
+    public final la.a d(Class cls, ka.d dVar) {
+        this.a.put(cls, dVar);
+        this.b.remove(cls);
+        return this;
     }
 }

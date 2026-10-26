@@ -1,7 +1,6 @@
 package com.google.android.gms.internal.vision;
 
 import androidx.car.app.navigation.model.Maneuver;
-import com.google.android.gms.internal.play_billing.k3;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -15,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e2 implements n2 {
     public static final int[] n = new int[0];
@@ -611,13 +610,13 @@ public final class e2 implements n2 {
             try {
                 r0Var.H(bytes.length);
                 r0Var.L(bytes, 0, bytes.length);
-            } catch (s0 e7) {
-                throw e7;
-            } catch (IndexOutOfBoundsException e10) {
-                throw new s0(e10);
+            } catch (s0 e10) {
+                throw e10;
+            } catch (IndexOutOfBoundsException e11) {
+                throw new s0(e11);
             }
-        } catch (IndexOutOfBoundsException e11) {
-            throw new s0(e11);
+        } catch (IndexOutOfBoundsException e12) {
+            throw new s0(e12);
         }
     }
 
@@ -2666,7 +2665,7 @@ public final class e2 implements n2 {
                 if (i14 != 2) {
                     return i10;
                 }
-                int g10 = e1.g(l(i17), bArr, i10, i11, mVar);
+                int g7 = e1.g(l(i17), bArr, i10, i11, mVar);
                 object = unsafe.getInt(obj, j11) == i13 ? unsafe.getObject(obj, j10) : null;
                 if (object == null) {
                     unsafe.putObject(obj, j10, mVar.c);
@@ -2674,7 +2673,7 @@ public final class e2 implements n2 {
                     unsafe.putObject(obj, j10, j1.b(object, mVar.c));
                 }
                 unsafe.putInt(obj, j11, i13);
-                return g10;
+                return g7;
             case 61:
                 if (i14 != 2) {
                     return i10;
@@ -2689,8 +2688,8 @@ public final class e2 implements n2 {
                 }
                 int j13 = e1.j(bArr, i10, mVar);
                 int i21 = mVar.a;
-                k1 x10 = x(i17);
-                if (x10 != null && !x10.zza(i21)) {
+                k1 x9 = x(i17);
+                if (x9 != null && !x9.zza(i21)) {
                     C(obj).a(i12, Long.valueOf(i21));
                     return j13;
                 }
@@ -3033,9 +3032,9 @@ public final class e2 implements n2 {
                 f1 f1Var = (f1) obj;
                 q2 q2Var = f1Var.zzb;
                 q2 q2Var2 = q2Var != q2.f ? q2Var : null;
-                k1 x10 = x(i15);
+                k1 x9 = x(i15);
                 Class cls = o2.a;
-                if (x10 != null) {
+                if (x9 != null) {
                     boolean z10 = o1Var2 instanceof RandomAccess;
                     p2 p2Var = this.l;
                     if (z10) {
@@ -3044,7 +3043,7 @@ public final class e2 implements n2 {
                         for (int i35 = 0; i35 < size2; i35++) {
                             Integer num = (Integer) o1Var2.get(i35);
                             int intValue = num.intValue();
-                            if (x10.zza(intValue)) {
+                            if (x9.zza(intValue)) {
                                 if (i35 != i34) {
                                     o1Var2.set(i34, num);
                                 }
@@ -3065,7 +3064,7 @@ public final class e2 implements n2 {
                         Iterator it = o1Var2.iterator();
                         while (it.hasNext()) {
                             int intValue2 = ((Integer) it.next()).intValue();
-                            if (!x10.zza(intValue2)) {
+                            if (!x9.zza(intValue2)) {
                                 if (q2Var2 == null) {
                                     p2Var.getClass();
                                     q2Var2 = q2.b();
@@ -3603,13 +3602,13 @@ public final class e2 implements n2 {
                                 i17 = i15;
                                 unsafe2 = unsafe5;
                                 if (i43 == 2) {
-                                    int g10 = e1.g(e2Var2.l(i17), bArr, i30, i11, mVar2);
+                                    int g7 = e1.g(e2Var2.l(i17), bArr, i30, i11, mVar2);
                                     if ((i38 & i25) == 0) {
                                         unsafe2.putObject(obj6, j10, mVar2.c);
                                     } else {
                                         unsafe2.putObject(obj6, j10, j1.b(unsafe2.getObject(obj6, j10), mVar2.c));
                                     }
-                                    i31 = g10;
+                                    i31 = g7;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
                                     i28 = i31;
@@ -3691,8 +3690,8 @@ public final class e2 implements n2 {
                                 if (i43 == 0) {
                                     i29 = e1.j(bArr, i30, mVar2);
                                     int i54 = mVar2.a;
-                                    k1 x10 = e2Var2.x(i17);
-                                    if (x10 == null || x10.zza(i54)) {
+                                    k1 x9 = e2Var2.x(i17);
+                                    if (x9 == null || x9.zza(i54)) {
                                         unsafe2.putInt(obj6, j10, i54);
                                         int i5322222222 = i29;
                                         unsafe3 = unsafe2;
@@ -4839,14 +4838,14 @@ public final class e2 implements n2 {
                 switch (i19) {
                     case 0:
                         if (r(i17, obj)) {
-                            i18 = k3.d(i21 << 3, 8, i18);
+                            i18 = c3.h0.v(i21 << 3, 8, i18);
                             break;
                         } else {
                             break;
                         }
                     case 1:
                         if (r(i17, obj)) {
-                            i18 = k3.d(i21 << 3, 4, i18);
+                            i18 = c3.h0.v(i21 << 3, 4, i18);
                             break;
                         } else {
                             break;
@@ -4897,7 +4896,7 @@ public final class e2 implements n2 {
                         }
                     case 7:
                         if (r(i17, obj)) {
-                            i18 = k3.d(i21 << 3, 1, i18);
+                            i18 = c3.h0.v(i21 << 3, 1, i18);
                             break;
                         } else {
                             break;
@@ -4954,14 +4953,14 @@ public final class e2 implements n2 {
                         }
                     case 13:
                         if (r(i17, obj)) {
-                            i18 = k3.d(i21 << 3, 4, i18);
+                            i18 = c3.h0.v(i21 << 3, 4, i18);
                             break;
                         } else {
                             break;
                         }
                     case 14:
                         if (r(i17, obj)) {
-                            i18 = k3.d(i21 << 3, 8, i18);
+                            i18 = c3.h0.v(i21 << 3, 8, i18);
                             break;
                         } else {
                             break;
@@ -5002,7 +5001,7 @@ public final class e2 implements n2 {
                         List list = (List) x2.l(obj, j10);
                         Class cls = o2.a;
                         if (list.size() != 0) {
-                            N = k3.u(i21, list.size(), o2.c(list));
+                            N = c3.h0.y(i21, list.size(), o2.c(list));
                             i18 += N;
                             break;
                         }
@@ -5013,7 +5012,7 @@ public final class e2 implements n2 {
                         Class cls2 = o2.a;
                         int size = list2.size();
                         if (size != 0) {
-                            N = k3.u(i21, size, o2.k(list2));
+                            N = c3.h0.y(i21, size, o2.k(list2));
                             i18 += N;
                             break;
                         }
@@ -5024,7 +5023,7 @@ public final class e2 implements n2 {
                         Class cls3 = o2.a;
                         int size2 = list3.size();
                         if (size2 != 0) {
-                            N = k3.u(i21, size2, o2.t(list3));
+                            N = c3.h0.y(i21, size2, o2.t(list3));
                             i18 += N;
                             break;
                         }
@@ -5066,7 +5065,7 @@ public final class e2 implements n2 {
                         Class cls5 = o2.a;
                         int size4 = list5.size();
                         if (size4 != 0) {
-                            N = k3.u(i21, size4, o2.v(list5));
+                            N = c3.h0.y(i21, size4, o2.v(list5));
                             i18 += N;
                             break;
                         }
@@ -5077,7 +5076,7 @@ public final class e2 implements n2 {
                         Class cls6 = o2.a;
                         int size5 = list6.size();
                         if (size5 != 0) {
-                            N = k3.u(i21, size5, o2.r(list6));
+                            N = c3.h0.y(i21, size5, o2.r(list6));
                             i18 += N;
                             break;
                         }
@@ -5096,7 +5095,7 @@ public final class e2 implements n2 {
                         Class cls7 = o2.a;
                         int size6 = list7.size();
                         if (size6 != 0) {
-                            N = k3.u(i21, size6, o2.x(list7));
+                            N = c3.h0.y(i21, size6, o2.x(list7));
                             i18 += N;
                             break;
                         }
@@ -5107,7 +5106,7 @@ public final class e2 implements n2 {
                         Class cls8 = o2.a;
                         int size7 = list8.size();
                         if (size7 != 0) {
-                            N = k3.u(i21, size7, o2.p(list8));
+                            N = c3.h0.y(i21, size7, o2.p(list8));
                             i18 += N;
                             break;
                         }
@@ -5116,7 +5115,7 @@ public final class e2 implements n2 {
                     case 35:
                         int D = o2.D((List) unsafe.getObject(obj, j10));
                         if (D > 0) {
-                            i18 = k3.e(D, r0.y(i21), D, i18);
+                            i18 = c3.h0.h(D, r0.y(i21), D, i18);
                             break;
                         } else {
                             break;
@@ -5124,7 +5123,7 @@ public final class e2 implements n2 {
                     case 36:
                         int A = o2.A((List) unsafe.getObject(obj, j10));
                         if (A > 0) {
-                            i18 = k3.e(A, r0.y(i21), A, i18);
+                            i18 = c3.h0.h(A, r0.y(i21), A, i18);
                             break;
                         } else {
                             break;
@@ -5132,7 +5131,7 @@ public final class e2 implements n2 {
                     case 37:
                         int c13 = o2.c((List) unsafe.getObject(obj, j10));
                         if (c13 > 0) {
-                            i18 = k3.e(c13, r0.y(i21), c13, i18);
+                            i18 = c3.h0.h(c13, r0.y(i21), c13, i18);
                             break;
                         } else {
                             break;
@@ -5140,7 +5139,7 @@ public final class e2 implements n2 {
                     case 38:
                         int k12 = o2.k((List) unsafe.getObject(obj, j10));
                         if (k12 > 0) {
-                            i18 = k3.e(k12, r0.y(i21), k12, i18);
+                            i18 = c3.h0.h(k12, r0.y(i21), k12, i18);
                             break;
                         } else {
                             break;
@@ -5148,7 +5147,7 @@ public final class e2 implements n2 {
                     case Maneuver.TYPE_DESTINATION /* 39 */:
                         int t10 = o2.t((List) unsafe.getObject(obj, j10));
                         if (t10 > 0) {
-                            i18 = k3.e(t10, r0.y(i21), t10, i18);
+                            i18 = c3.h0.h(t10, r0.y(i21), t10, i18);
                             break;
                         } else {
                             break;
@@ -5156,7 +5155,7 @@ public final class e2 implements n2 {
                     case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                         int D2 = o2.D((List) unsafe.getObject(obj, j10));
                         if (D2 > 0) {
-                            i18 = k3.e(D2, r0.y(i21), D2, i18);
+                            i18 = c3.h0.h(D2, r0.y(i21), D2, i18);
                             break;
                         } else {
                             break;
@@ -5164,7 +5163,7 @@ public final class e2 implements n2 {
                     case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                         int A2 = o2.A((List) unsafe.getObject(obj, j10));
                         if (A2 > 0) {
-                            i18 = k3.e(A2, r0.y(i21), A2, i18);
+                            i18 = c3.h0.h(A2, r0.y(i21), A2, i18);
                             break;
                         } else {
                             break;
@@ -5174,7 +5173,7 @@ public final class e2 implements n2 {
                         Class cls9 = o2.a;
                         int size8 = list9.size();
                         if (size8 > 0) {
-                            i18 = k3.e(size8, r0.y(i21), size8, i18);
+                            i18 = c3.h0.h(size8, r0.y(i21), size8, i18);
                             break;
                         } else {
                             break;
@@ -5182,15 +5181,15 @@ public final class e2 implements n2 {
                     case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                         int v = o2.v((List) unsafe.getObject(obj, j10));
                         if (v > 0) {
-                            i18 = k3.e(v, r0.y(i21), v, i18);
+                            i18 = c3.h0.h(v, r0.y(i21), v, i18);
                             break;
                         } else {
                             break;
                         }
                     case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                        int r10 = o2.r((List) unsafe.getObject(obj, j10));
-                        if (r10 > 0) {
-                            i18 = k3.e(r10, r0.y(i21), r10, i18);
+                        int r6 = o2.r((List) unsafe.getObject(obj, j10));
+                        if (r6 > 0) {
+                            i18 = c3.h0.h(r6, r0.y(i21), r6, i18);
                             break;
                         } else {
                             break;
@@ -5198,7 +5197,7 @@ public final class e2 implements n2 {
                     case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                         int A3 = o2.A((List) unsafe.getObject(obj, j10));
                         if (A3 > 0) {
-                            i18 = k3.e(A3, r0.y(i21), A3, i18);
+                            i18 = c3.h0.h(A3, r0.y(i21), A3, i18);
                             break;
                         } else {
                             break;
@@ -5206,23 +5205,23 @@ public final class e2 implements n2 {
                     case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                         int D3 = o2.D((List) unsafe.getObject(obj, j10));
                         if (D3 > 0) {
-                            i18 = k3.e(D3, r0.y(i21), D3, i18);
+                            i18 = c3.h0.h(D3, r0.y(i21), D3, i18);
                             break;
                         } else {
                             break;
                         }
                     case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
-                        int x10 = o2.x((List) unsafe.getObject(obj, j10));
-                        if (x10 > 0) {
-                            i18 = k3.e(x10, r0.y(i21), x10, i18);
+                        int x9 = o2.x((List) unsafe.getObject(obj, j10));
+                        if (x9 > 0) {
+                            i18 = c3.h0.h(x9, r0.y(i21), x9, i18);
                             break;
                         } else {
                             break;
                         }
                     case 48:
-                        int p5 = o2.p((List) unsafe.getObject(obj, j10));
-                        if (p5 > 0) {
-                            i18 = k3.e(p5, r0.y(i21), p5, i18);
+                        int p10 = o2.p((List) unsafe.getObject(obj, j10));
+                        if (p10 > 0) {
+                            i18 = c3.h0.h(p10, r0.y(i21), p10, i18);
                             break;
                         } else {
                             break;
@@ -5250,14 +5249,14 @@ public final class e2 implements n2 {
                         break;
                     case 51:
                         if (q(i21, i17, obj)) {
-                            i18 = k3.d(i21 << 3, 8, i18);
+                            i18 = c3.h0.v(i21 << 3, 8, i18);
                             break;
                         } else {
                             break;
                         }
                     case 52:
                         if (q(i21, i17, obj)) {
-                            i18 = k3.d(i21 << 3, 4, i18);
+                            i18 = c3.h0.v(i21 << 3, 4, i18);
                             break;
                         } else {
                             break;
@@ -5308,7 +5307,7 @@ public final class e2 implements n2 {
                         }
                     case 58:
                         if (q(i21, i17, obj)) {
-                            i18 = k3.d(i21 << 3, 1, i18);
+                            i18 = c3.h0.v(i21 << 3, 1, i18);
                             break;
                         } else {
                             break;
@@ -5365,14 +5364,14 @@ public final class e2 implements n2 {
                         }
                     case 64:
                         if (q(i21, i17, obj)) {
-                            i18 = k3.d(i21 << 3, 4, i18);
+                            i18 = c3.h0.v(i21 << 3, 4, i18);
                             break;
                         } else {
                             break;
                         }
                     case VoIPService.CALL_MIN_LAYER /* 65 */:
                         if (q(i21, i17, obj)) {
-                            i18 = k3.d(i21 << 3, 8, i18);
+                            i18 = c3.h0.v(i21 << 3, 8, i18);
                             break;
                         } else {
                             break;
@@ -5440,7 +5439,7 @@ public final class e2 implements n2 {
                     c10 = 4;
                     if ((i28 & i10) != 0) {
                         c11 = '\b';
-                        i27 = k3.d(i29 << 3, 8, i27);
+                        i27 = c3.h0.v(i29 << 3, 8, i27);
                         break;
                     }
                     c11 = '\b';
@@ -5449,7 +5448,7 @@ public final class e2 implements n2 {
                     i11 = i31;
                     if ((i28 & i10) != 0) {
                         c10 = 4;
-                        i27 = k3.d(i29 << 3, 4, i27);
+                        i27 = c3.h0.v(i29 << 3, 4, i27);
                         c11 = '\b';
                         break;
                     }
@@ -5503,7 +5502,7 @@ public final class e2 implements n2 {
                 case 7:
                     if ((i28 & i10) != 0) {
                         i11 = 1;
-                        i27 = k3.d(i29 << 3, 1, i27);
+                        i27 = c3.h0.v(i29 << 3, 1, i27);
                     } else {
                         i11 = 1;
                     }
@@ -5569,7 +5568,7 @@ public final class e2 implements n2 {
                 case 13:
                     if ((i28 & i10) != 0) {
                         c10 = 4;
-                        i27 = k3.d(i29 << 3, 4, i27);
+                        i27 = c3.h0.v(i29 << 3, 4, i27);
                         i11 = 1;
                         c11 = '\b';
                         break;
@@ -5580,7 +5579,7 @@ public final class e2 implements n2 {
                 case 14:
                     if ((i28 & i10) != 0) {
                         c12 = '\b';
-                        i27 = k3.d(i29 << 3, 8, i27);
+                        i27 = c3.h0.v(i29 << 3, 8, i27);
                         c11 = c12;
                         c10 = 4;
                         i11 = 1;
@@ -5635,7 +5634,7 @@ public final class e2 implements n2 {
                     List list11 = (List) unsafe2.getObject(obj, j11);
                     Class cls11 = o2.a;
                     if (list11.size() != 0) {
-                        J = k3.u(i29, list11.size(), o2.c(list11));
+                        J = c3.h0.y(i29, list11.size(), o2.c(list11));
                         i27 += J;
                         c10 = 4;
                         i11 = 1;
@@ -5652,7 +5651,7 @@ public final class e2 implements n2 {
                     Class cls12 = o2.a;
                     int size10 = list12.size();
                     if (size10 != 0) {
-                        J = k3.u(i29, size10, o2.k(list12));
+                        J = c3.h0.y(i29, size10, o2.k(list12));
                         i27 += J;
                         c10 = 4;
                         i11 = 1;
@@ -5669,7 +5668,7 @@ public final class e2 implements n2 {
                     Class cls13 = o2.a;
                     int size11 = list13.size();
                     if (size11 != 0) {
-                        J = k3.u(i29, size11, o2.t(list13));
+                        J = c3.h0.y(i29, size11, o2.t(list13));
                         i27 += J;
                         c10 = 4;
                         i11 = 1;
@@ -5730,7 +5729,7 @@ public final class e2 implements n2 {
                     Class cls15 = o2.a;
                     int size13 = list15.size();
                     if (size13 != 0) {
-                        J = k3.u(i29, size13, o2.v(list15));
+                        J = c3.h0.y(i29, size13, o2.v(list15));
                         i27 += J;
                         c10 = 4;
                         i11 = 1;
@@ -5747,7 +5746,7 @@ public final class e2 implements n2 {
                     Class cls16 = o2.a;
                     int size14 = list16.size();
                     if (size14 != 0) {
-                        J = k3.u(i29, size14, o2.r(list16));
+                        J = c3.h0.y(i29, size14, o2.r(list16));
                         i27 += J;
                         c10 = 4;
                         i11 = 1;
@@ -5778,7 +5777,7 @@ public final class e2 implements n2 {
                     Class cls17 = o2.a;
                     int size15 = list17.size();
                     if (size15 != 0) {
-                        J = k3.u(i29, size15, o2.x(list17));
+                        J = c3.h0.y(i29, size15, o2.x(list17));
                         i27 += J;
                         c10 = 4;
                         i11 = 1;
@@ -5795,7 +5794,7 @@ public final class e2 implements n2 {
                     Class cls18 = o2.a;
                     int size16 = list18.size();
                     if (size16 != 0) {
-                        J = k3.u(i29, size16, o2.p(list18));
+                        J = c3.h0.y(i29, size16, o2.p(list18));
                         i27 += J;
                         c10 = 4;
                         i11 = 1;
@@ -5810,7 +5809,7 @@ public final class e2 implements n2 {
                 case 35:
                     int D4 = o2.D((List) unsafe2.getObject(obj, j11));
                     if (D4 > 0) {
-                        i27 = k3.e(D4, r0.y(i29), D4, i27);
+                        i27 = c3.h0.h(D4, r0.y(i29), D4, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5819,7 +5818,7 @@ public final class e2 implements n2 {
                 case 36:
                     int A6 = o2.A((List) unsafe2.getObject(obj, j11));
                     if (A6 > 0) {
-                        i27 = k3.e(A6, r0.y(i29), A6, i27);
+                        i27 = c3.h0.h(A6, r0.y(i29), A6, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5828,7 +5827,7 @@ public final class e2 implements n2 {
                 case 37:
                     int c14 = o2.c((List) unsafe2.getObject(obj, j11));
                     if (c14 > 0) {
-                        i27 = k3.e(c14, r0.y(i29), c14, i27);
+                        i27 = c3.h0.h(c14, r0.y(i29), c14, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5837,7 +5836,7 @@ public final class e2 implements n2 {
                 case 38:
                     int k13 = o2.k((List) unsafe2.getObject(obj, j11));
                     if (k13 > 0) {
-                        i27 = k3.e(k13, r0.y(i29), k13, i27);
+                        i27 = c3.h0.h(k13, r0.y(i29), k13, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5846,7 +5845,7 @@ public final class e2 implements n2 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int t12 = o2.t((List) unsafe2.getObject(obj, j11));
                     if (t12 > 0) {
-                        i27 = k3.e(t12, r0.y(i29), t12, i27);
+                        i27 = c3.h0.h(t12, r0.y(i29), t12, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5855,7 +5854,7 @@ public final class e2 implements n2 {
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     int D5 = o2.D((List) unsafe2.getObject(obj, j11));
                     if (D5 > 0) {
-                        i27 = k3.e(D5, r0.y(i29), D5, i27);
+                        i27 = c3.h0.h(D5, r0.y(i29), D5, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5864,7 +5863,7 @@ public final class e2 implements n2 {
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                     int A7 = o2.A((List) unsafe2.getObject(obj, j11));
                     if (A7 > 0) {
-                        i27 = k3.e(A7, r0.y(i29), A7, i27);
+                        i27 = c3.h0.h(A7, r0.y(i29), A7, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5875,7 +5874,7 @@ public final class e2 implements n2 {
                     Class cls19 = o2.a;
                     int size17 = list19.size();
                     if (size17 > 0) {
-                        i27 = k3.e(size17, r0.y(i29), size17, i27);
+                        i27 = c3.h0.h(size17, r0.y(i29), size17, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5884,16 +5883,16 @@ public final class e2 implements n2 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     int v10 = o2.v((List) unsafe2.getObject(obj, j11));
                     if (v10 > 0) {
-                        i27 = k3.e(v10, r0.y(i29), v10, i27);
+                        i27 = c3.h0.h(v10, r0.y(i29), v10, i27);
                     }
                     c10 = 4;
                     i11 = 1;
                     c11 = '\b';
                     break;
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                    int r11 = o2.r((List) unsafe2.getObject(obj, j11));
-                    if (r11 > 0) {
-                        i27 = k3.e(r11, r0.y(i29), r11, i27);
+                    int r10 = o2.r((List) unsafe2.getObject(obj, j11));
+                    if (r10 > 0) {
+                        i27 = c3.h0.h(r10, r0.y(i29), r10, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5902,7 +5901,7 @@ public final class e2 implements n2 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     int A8 = o2.A((List) unsafe2.getObject(obj, j11));
                     if (A8 > 0) {
-                        i27 = k3.e(A8, r0.y(i29), A8, i27);
+                        i27 = c3.h0.h(A8, r0.y(i29), A8, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5911,25 +5910,25 @@ public final class e2 implements n2 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     int D6 = o2.D((List) unsafe2.getObject(obj, j11));
                     if (D6 > 0) {
-                        i27 = k3.e(D6, r0.y(i29), D6, i27);
+                        i27 = c3.h0.h(D6, r0.y(i29), D6, i27);
                     }
                     c10 = 4;
                     i11 = 1;
                     c11 = '\b';
                     break;
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
-                    int x11 = o2.x((List) unsafe2.getObject(obj, j11));
-                    if (x11 > 0) {
-                        i27 = k3.e(x11, r0.y(i29), x11, i27);
+                    int x10 = o2.x((List) unsafe2.getObject(obj, j11));
+                    if (x10 > 0) {
+                        i27 = c3.h0.h(x10, r0.y(i29), x10, i27);
                     }
                     c10 = 4;
                     i11 = 1;
                     c11 = '\b';
                     break;
                 case 48:
-                    int p9 = o2.p((List) unsafe2.getObject(obj, j11));
-                    if (p9 > 0) {
-                        i27 = k3.e(p9, r0.y(i29), p9, i27);
+                    int p11 = o2.p((List) unsafe2.getObject(obj, j11));
+                    if (p11 > 0) {
+                        i27 = c3.h0.h(p11, r0.y(i29), p11, i27);
                     }
                     c10 = 4;
                     i11 = 1;
@@ -5965,7 +5964,7 @@ public final class e2 implements n2 {
                 case 51:
                     if (q(i29, i26, obj)) {
                         c12 = '\b';
-                        i27 = k3.d(i29 << 3, 8, i27);
+                        i27 = c3.h0.v(i29 << 3, 8, i27);
                         c11 = c12;
                         c10 = 4;
                         i11 = 1;
@@ -5978,7 +5977,7 @@ public final class e2 implements n2 {
                 case 52:
                     if (q(i29, i26, obj)) {
                         c10 = 4;
-                        i27 = k3.d(i29 << 3, 4, i27);
+                        i27 = c3.h0.v(i29 << 3, 4, i27);
                         i11 = 1;
                         c11 = '\b';
                         break;
@@ -6036,7 +6035,7 @@ public final class e2 implements n2 {
                     break;
                 case 58:
                     if (q(i29, i26, obj)) {
-                        i27 = k3.d(i29 << 3, i31, i27);
+                        i27 = c3.h0.v(i29 << 3, i31, i27);
                         i11 = i31;
                         c10 = 4;
                         c11 = '\b';
@@ -6104,7 +6103,7 @@ public final class e2 implements n2 {
                 case 64:
                     if (q(i29, i26, obj)) {
                         c10 = 4;
-                        i27 = k3.d(i29 << 3, 4, i27);
+                        i27 = c3.h0.v(i29 << 3, 4, i27);
                         i11 = i31;
                         c11 = '\b';
                         break;
@@ -6114,7 +6113,7 @@ public final class e2 implements n2 {
                     c11 = '\b';
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (q(i29, i26, obj)) {
-                        i27 = k3.d(i29 << 3, 8, i27);
+                        i27 = c3.h0.v(i29 << 3, 8, i27);
                         c11 = '\b';
                         i11 = i31;
                         c10 = 4;

@@ -1,26 +1,55 @@
 package j8;
 
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
-import g8.j;
-import n6.l;
-import w7.f0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e extends o6.a {
-    public static final Parcelable.Creator<e> CREATOR = new j(14);
-    public final String a;
-
-    public e(String str) {
-        l.i(str, "json must not be null");
-        this.a = str;
+public final class e extends a8.a {
+    public final a V0() {
+        a aVar;
+        Parcel M0 = M0(N0(), 4);
+        IBinder readStrongBinder = M0.readStrongBinder();
+        if (readStrongBinder == null) {
+            aVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
+            aVar = queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(readStrongBinder, "com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate", 10);
+        }
+        M0.recycle();
+        return aVar;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.r(parcel, q6);
+    public final g W0(y6.b bVar) {
+        g gVar;
+        Parcel N0 = N0();
+        t7.b.c(N0, bVar);
+        N0.writeInt(0);
+        Parcel M0 = M0(N0, 3);
+        IBinder readStrongBinder = M0.readStrongBinder();
+        if (readStrongBinder == null) {
+            gVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IMapViewDelegate");
+            gVar = queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(readStrongBinder, "com.google.android.gms.maps.internal.IMapViewDelegate", 10);
+        }
+        M0.recycle();
+        return gVar;
+    }
+
+    public final t7.e X0() {
+        t7.e cVar;
+        Parcel M0 = M0(N0(), 5);
+        IBinder readStrongBinder = M0.readStrongBinder();
+        int i10 = t7.d.b;
+        if (readStrongBinder == null) {
+            cVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate");
+            cVar = queryLocalInterface instanceof t7.e ? (t7.e) queryLocalInterface : new t7.c(readStrongBinder, "com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate", 10);
+        }
+        M0.recycle();
+        return cVar;
     }
 }

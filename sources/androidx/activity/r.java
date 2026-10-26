@@ -1,48 +1,27 @@
 package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
-import ci.z9;
-import ei.vb;
-import org.telegram.ui.LaunchActivity;
+import android.window.OnBackInvokedDispatcher;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r implements OnBackInvokedCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class r {
+    public static final r a = new r();
 
-    public /* synthetic */ r(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public final OnBackInvokedCallback a(ud.a onBackInvoked) {
+        kotlin.jvm.internal.i.e(onBackInvoked, "onBackInvoked");
+        return new q(onBackInvoked, 0);
     }
 
-    public final void onBackInvoked() {
-        switch (this.a) {
-            case 0:
-                td.a onBackInvoked = (td.a) this.b;
-                kotlin.jvm.internal.i.e(onBackInvoked, "$onBackInvoked");
-                onBackInvoked.invoke();
-                break;
-            case 1:
-                z9 z9Var = (z9) this.b;
-                z9Var.getClass();
-                LaunchActivity launchActivity = LaunchActivity.J1;
-                if (launchActivity == null) {
-                    z9Var.onAttachedBackPressed();
-                    break;
-                } else {
-                    launchActivity.onBackPressed();
-                    break;
-                }
-            case 2:
-                ((vb) this.b).L();
-                break;
-            case 3:
-                ((g.r) this.b).t();
-                break;
-            default:
-                ((Runnable) this.b).run();
-                break;
-        }
+    public final void b(Object dispatcher, int i10, Object callback) {
+        kotlin.jvm.internal.i.e(dispatcher, "dispatcher");
+        kotlin.jvm.internal.i.e(callback, "callback");
+        ((OnBackInvokedDispatcher) dispatcher).registerOnBackInvokedCallback(i10, (OnBackInvokedCallback) callback);
+    }
+
+    public final void c(Object dispatcher, Object callback) {
+        kotlin.jvm.internal.i.e(dispatcher, "dispatcher");
+        kotlin.jvm.internal.i.e(callback, "callback");
+        ((OnBackInvokedDispatcher) dispatcher).unregisterOnBackInvokedCallback((OnBackInvokedCallback) callback);
     }
 }

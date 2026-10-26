@@ -1,48 +1,71 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class di extends ph0 {
-    public final /* synthetic */ sn f;
+public final class di implements View.OnClickListener {
+    public final /* synthetic */ rh0 a;
+    public final /* synthetic */ org.telegram.ui.Components.mm0 b;
+    public final /* synthetic */ LinearLayout c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ un f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public di(sn snVar, Context context, int i10, MessageObject messageObject) {
-        super(context);
-        this.f = snVar;
-        this.a = null;
-        if (!messageObject.isRoundVideo()) {
-            messageObject.isVoice();
+    public di(un unVar, rh0 rh0Var, org.telegram.ui.Components.mm0 mm0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.f = unVar;
+        this.a = rh0Var;
+        this.b = mm0Var;
+        this.c = linearLayout;
+        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.e = iArr;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        rh0 rh0Var = this.a;
+        ArrayList arrayList = rh0Var.b;
+        ArrayList arrayList2 = rh0Var.c;
+        un unVar = this.f;
+        if (unVar.c9 == null || arrayList2.isEmpty()) {
+            return;
         }
-        org.telegram.ui.Components.b10 b10Var = new org.telegram.ui.Components.b10(context, null);
-        this.c = b10Var;
-        b10Var.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
-        b10Var.setViewType(13);
-        b10Var.setIsSingleCell(false);
-        addView(b10Var, w7.z5.c(-1.0f, -2));
-        org.telegram.ui.Components.y90 y90Var = new org.telegram.ui.Components.y90(context, null);
-        this.b = y90Var;
-        y90Var.setTextSize(1, 14.0f);
-        y90Var.setGravity(19);
-        org.telegram.ui.ActionBar.r6.W(y90Var, org.telegram.ui.ActionBar.k6.E8, null);
-        org.telegram.ui.ActionBar.r6.I(y90Var, org.telegram.ui.ActionBar.k6.gc, null);
-        y90Var.setEllipsize(TextUtils.TruncateAt.END);
-        y90Var.setSingleLine();
-        y90Var.setLines(1);
-        y90Var.setMaxLines(1);
-        addView(y90Var, w7.z5.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
-        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
-        tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
-        tL_channels_getMessageAuthor.id = messageObject.getId();
-        y90Var.setAlpha(0.0f);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.n2(this, i10, 8));
-        setBackground(org.telegram.ui.ActionBar.k6.Z(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.I5, false), 6, 0));
-        setEnabled(false);
+        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            unVar.presentFragment(new ProfileActivity(bundle, null));
+            unVar.H7(true);
+            return;
+        }
+        if (SharedConfig.messageSeenHintCount > 0 && unVar.j1.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.wc(org.telegram.ui.Components.lb.a(unVar.getParentActivity()), unVar.qa).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            unVar.z1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.mm0 mm0Var = this.b;
+        mm0Var.requestLayout();
+        this.c.requestLayout();
+        mm0Var.getAdapter().l();
+        this.d.getSwipeBack().e(this.e[0]);
     }
 }

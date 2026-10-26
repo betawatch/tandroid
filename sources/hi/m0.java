@@ -1,53 +1,72 @@
 package hi;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.ey;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import fi.ua;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.h6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m0 implements MessagesStorage.LongCallback, MessagesStorage.BooleanCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
+public final class m0 extends Drawable {
+    public final Paint a = new Paint(1);
+    public final RectF b = new RectF();
+    public final int c;
+    public final Path d;
+    public boolean e;
+    public int f;
+    public final h6 g;
+    public final h6 h;
 
-    public /* synthetic */ m0(c2 c2Var, o2 o2Var, int i10, long j10, boolean z10) {
-        this.d = c2Var;
-        this.e = o2Var;
-        this.a = i10;
-        this.b = j10;
-        this.c = z10;
+    public m0(int i10) {
+        Path path = new Path();
+        this.d = path;
+        ua uaVar = new ua(this, 7);
+        ds dsVar = ds.h;
+        this.g = new h6(uaVar, 320L, dsVar, 0);
+        this.h = new h6(new ua(this, 7), 320L, dsVar, 0);
+        this.c = i10;
+        path.moveTo(-AndroidUtilities.dp(6.5f), 0.0f);
+        path.lineTo(AndroidUtilities.dp(6.5f), 0.0f);
+        path.lineTo(0.0f, -AndroidUtilities.dp(6.16f));
+        path.close();
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        ey eyVar = (ey) this.d;
-        TLRPC.Chat chat = (TLRPC.Chat) this.e;
-        ey.t0(this.a, this.b, chat, eyVar, this.c, z10);
-    }
-
-    public /* synthetic */ m0(ey eyVar, int i10, TLRPC.Chat chat, long j10, boolean z10) {
-        this.d = eyVar;
-        this.a = i10;
-        this.e = chat;
-        this.b = j10;
-        this.c = z10;
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j10) {
-        c2 c2Var = (c2) this.d;
-        o2 o2Var = (o2) this.e;
-        c2Var.dismiss();
-        if (j10 == 0) {
-            return;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.b;
+        rectF.set(bounds);
+        rectF.inset(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        int i10 = this.c;
+        Paint paint = this.a;
+        canvas.drawRoundRect(rectF, i10, i10, paint);
+        float e = this.g.e(this.e);
+        float dp = (rectF.right + AndroidUtilities.dp(8.0f)) - this.h.d(this.f, false);
+        if (e > 0.0f) {
+            canvas.save();
+            canvas.translate(dp, c3.h0.z(1.0f, e, AndroidUtilities.dp(6.16f), AndroidUtilities.dp(8.0f)));
+            canvas.drawPath(this.d, paint);
+            canvas.restore();
         }
-        MessagesController.getInstance(this.a).linkCommunity(-j10, this.b, this.c, new n0(o2Var, j10, 0));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

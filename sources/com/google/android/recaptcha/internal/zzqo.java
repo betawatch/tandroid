@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import i2.o1;
+import ic.a;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzqo extends zzqq {
     private final InputStream zzf;
@@ -78,7 +78,7 @@ final class zzqo extends zzqq {
         int i12 = i11 + i10;
         int i13 = this.zzh;
         if (i12 <= i13) {
-            throw new IllegalStateException(o1.l(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(a.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.zzl;
         if (i10 > (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 || i14 + i11 + i10 > this.zzm) {
@@ -177,9 +177,9 @@ final class zzqo extends zzqq {
                 }
                 this.zzl += read;
                 i15 += read;
-            } catch (zzsx e7) {
-                e7.zza();
-                throw e7;
+            } catch (zzsx e10) {
+                e10.zza();
+                throw e10;
             }
         }
         return bArr;

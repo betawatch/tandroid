@@ -1,39 +1,366 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.lang.reflect.Field;
+import java.nio.Buffer;
+import java.nio.ByteOrder;
+import java.security.AccessController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sun.misc.Unsafe;
+
 /* loaded from: classes.dex */
-public final class i1 extends j1 {
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final void c(Object obj, long j10, double d) {
-        this.a.putDouble(obj, j10, d);
+public abstract class i1 {
+    public static final Logger a = Logger.getLogger(i1.class.getName());
+    public static final Unsafe b;
+    public static final Class c;
+    public static final h1 d;
+    public static final boolean e;
+    public static final boolean f;
+    public static final long g;
+    public static final boolean h;
+
+    /* JADX WARN: Can't wrap try/catch for region: R(27:0|1|(24:3|(1:(1:6)(1:(1:67)))(1:68)|7|(3:54|55|(1:57)(20:58|(1:60)(2:61|62)|11|(18:46|47|(1:50)|49|14|(1:18)|19|20|21|22|23|24|(1:40)(1:28)|(1:32)|33|(1:35)(1:39)|36|37)|13|14|(2:16|18)|19|20|21|22|23|24|(1:26)|40|(2:30|32)|33|(0)(0)|36|37))|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37)|69|7|(0)|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x0297, code lost:
+    
+        r0 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0296, code lost:
+    
+        r7 = true;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0280  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x029a  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02a7  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x02b9  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0131 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x006f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    static {
+        h1 h1Var;
+        Class<?> cls;
+        Class<?> cls2;
+        boolean z10;
+        Unsafe unsafe;
+        boolean z11;
+        Field g7;
+        Field field;
+        h1 h1Var2;
+        h1 h1Var3;
+        Unsafe f7 = f();
+        b = f7;
+        c = l.a;
+        Class<?> cls3 = Long.TYPE;
+        boolean j10 = j(cls3);
+        Class<?> cls4 = Integer.TYPE;
+        boolean j11 = j(cls4);
+        if (f7 != null) {
+            if (!l.a()) {
+                h1Var = new g1(f7);
+            } else if (j10) {
+                h1Var = new f1(f7, 1);
+            } else if (j11) {
+                h1Var = new f1(f7, 0);
+            }
+            d = h1Var;
+            Class<?> cls5 = Byte.TYPE;
+            if (f7 != null) {
+                try {
+                    cls2 = f7.getClass();
+                    cls2.getMethod("objectFieldOffset", Field.class);
+                    cls2.getMethod("getLong", Object.class, cls3);
+                } catch (Throwable th2) {
+                    Logger logger = a;
+                    Level level = Level.WARNING;
+                    String valueOf = String.valueOf(th2);
+                    cls = cls3;
+                    StringBuilder sb2 = new StringBuilder(valueOf.length() + 71);
+                    sb2.append("platform method missing - proto runtime falling back to safer methods: ");
+                    sb2.append(valueOf);
+                    logger.logp(level, "com.google.protobuf.UnsafeUtil", "supportsUnsafeByteBufferOperations", sb2.toString());
+                }
+                if (g() != null) {
+                    if (l.a()) {
+                        cls = cls3;
+                        z10 = true;
+                    } else {
+                        cls2.getMethod("getByte", cls3);
+                        cls2.getMethod("putByte", cls3, cls5);
+                        cls2.getMethod("getInt", cls3);
+                        cls2.getMethod("putInt", cls3, cls4);
+                        cls2.getMethod("getLong", cls3);
+                        cls2.getMethod("putLong", cls3, cls3);
+                        cls2.getMethod("copyMemory", cls3, cls3, cls3);
+                        cls2.getMethod("copyMemory", Object.class, cls3, Object.class, cls3, cls3);
+                        cls = cls3;
+                        z10 = true;
+                    }
+                    e = z10;
+                    unsafe = b;
+                    if (unsafe != null) {
+                        try {
+                            Class<?> cls6 = unsafe.getClass();
+                            cls6.getMethod("objectFieldOffset", Field.class);
+                            cls6.getMethod("arrayBaseOffset", Class.class);
+                            cls6.getMethod("arrayIndexScale", Class.class);
+                            cls6.getMethod("getInt", Object.class, cls);
+                            cls6.getMethod("putInt", Object.class, cls, cls4);
+                            cls6.getMethod("getLong", Object.class, cls);
+                            cls6.getMethod("putLong", Object.class, cls, cls);
+                            cls6.getMethod("getObject", Object.class, cls);
+                            cls6.getMethod("putObject", Object.class, cls, Object.class);
+                            if (!l.a()) {
+                                cls6.getMethod("getByte", Object.class, cls);
+                                cls6.getMethod("putByte", Object.class, cls, cls5);
+                                cls6.getMethod("getBoolean", Object.class, cls);
+                                cls6.getMethod("putBoolean", Object.class, cls, Boolean.TYPE);
+                                cls6.getMethod("getFloat", Object.class, cls);
+                                cls6.getMethod("putFloat", Object.class, cls, Float.TYPE);
+                                cls6.getMethod("getDouble", Object.class, cls);
+                                cls6.getMethod("putDouble", Object.class, cls, Double.TYPE);
+                            }
+                            z11 = true;
+                        } catch (Throwable th3) {
+                            Logger logger2 = a;
+                            Level level2 = Level.WARNING;
+                            String valueOf2 = String.valueOf(th3);
+                            StringBuilder sb3 = new StringBuilder(valueOf2.length() + 71);
+                            sb3.append("platform method missing - proto runtime falling back to safer methods: ");
+                            sb3.append(valueOf2);
+                            logger2.logp(level2, "com.google.protobuf.UnsafeUtil", "supportsUnsafeArrayOperations", sb3.toString());
+                        }
+                        f = z11;
+                        g = h(byte[].class);
+                        h(boolean[].class);
+                        i(boolean[].class);
+                        h(int[].class);
+                        i(int[].class);
+                        h(long[].class);
+                        i(long[].class);
+                        h(float[].class);
+                        i(float[].class);
+                        h(double[].class);
+                        i(double[].class);
+                        h(Object[].class);
+                        i(Object[].class);
+                        g7 = g();
+                        if (g7 != null && (h1Var3 = d) != null) {
+                            h1Var3.a(g7);
+                        }
+                        Field field2 = String.class.getDeclaredField("value");
+                        boolean z12 = true;
+                        field2.setAccessible(true);
+                        field = (field2 == null && field2.getType() == char[].class) ? field2 : null;
+                        if (field != null && (h1Var2 = d) != null) {
+                            h1Var2.a(field);
+                        }
+                        h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN ? z12 : false;
+                    }
+                    z11 = false;
+                    f = z11;
+                    g = h(byte[].class);
+                    h(boolean[].class);
+                    i(boolean[].class);
+                    h(int[].class);
+                    i(int[].class);
+                    h(long[].class);
+                    i(long[].class);
+                    h(float[].class);
+                    i(float[].class);
+                    h(double[].class);
+                    i(double[].class);
+                    h(Object[].class);
+                    i(Object[].class);
+                    g7 = g();
+                    if (g7 != null) {
+                        h1Var3.a(g7);
+                    }
+                    Field field22 = String.class.getDeclaredField("value");
+                    boolean z122 = true;
+                    field22.setAccessible(true);
+                    if (field22 == null) {
+                    }
+                    if (field != null) {
+                        h1Var2.a(field);
+                    }
+                    h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN ? z122 : false;
+                }
+            }
+            cls = cls3;
+            z10 = false;
+            e = z10;
+            unsafe = b;
+            if (unsafe != null) {
+            }
+            z11 = false;
+            f = z11;
+            g = h(byte[].class);
+            h(boolean[].class);
+            i(boolean[].class);
+            h(int[].class);
+            i(int[].class);
+            h(long[].class);
+            i(long[].class);
+            h(float[].class);
+            i(float[].class);
+            h(double[].class);
+            i(double[].class);
+            h(Object[].class);
+            i(Object[].class);
+            g7 = g();
+            if (g7 != null) {
+            }
+            Field field222 = String.class.getDeclaredField("value");
+            boolean z1222 = true;
+            field222.setAccessible(true);
+            if (field222 == null) {
+            }
+            if (field != null) {
+            }
+            h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN ? z1222 : false;
+        }
+        h1Var = null;
+        d = h1Var;
+        Class<?> cls52 = Byte.TYPE;
+        if (f7 != null) {
+        }
+        cls = cls3;
+        z10 = false;
+        e = z10;
+        unsafe = b;
+        if (unsafe != null) {
+        }
+        z11 = false;
+        f = z11;
+        g = h(byte[].class);
+        h(boolean[].class);
+        i(boolean[].class);
+        h(int[].class);
+        i(int[].class);
+        h(long[].class);
+        i(long[].class);
+        h(float[].class);
+        i(float[].class);
+        h(double[].class);
+        i(double[].class);
+        h(Object[].class);
+        i(Object[].class);
+        g7 = g();
+        if (g7 != null) {
+        }
+        Field field2222 = String.class.getDeclaredField("value");
+        boolean z12222 = true;
+        field2222.setAccessible(true);
+        if (field2222 == null) {
+        }
+        if (field != null) {
+        }
+        h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN ? z12222 : false;
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final void d(Object obj, long j10, float f7) {
-        this.a.putFloat(obj, j10, f7);
+    public static byte a(long j10, byte[] bArr) {
+        return d.l(bArr, g + j10);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final void f(Object obj, long j10, boolean z10) {
-        this.a.putBoolean(obj, j10, z10);
+    public static void b(long j10, Object obj, int i10) {
+        d.b(j10, obj, i10);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final boolean i(Object obj, long j10) {
-        return this.a.getBoolean(obj, j10);
+    public static void c(Object obj, long j10, byte b10) {
+        long j11 = (-4) & j10;
+        int g7 = d.g(obj, j11);
+        int i10 = ((~((int) j10)) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i10) | (g7 & (~(255 << i10))));
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final float j(Object obj, long j10) {
-        return this.a.getFloat(obj, j10);
+    public static void d(Object obj, long j10, Object obj2) {
+        d.a.putObject(obj, j10, obj2);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final double k(Object obj, long j10) {
-        return this.a.getDouble(obj, j10);
+    public static void e(Object obj, long j10, byte b10) {
+        long j11 = (-4) & j10;
+        int i10 = (((int) j10) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i10) | (d.g(obj, j11) & (~(255 << i10))));
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final byte l(Object obj, long j10) {
-        return this.a.getByte(obj, j10);
+    public static Unsafe f() {
+        try {
+            return (Unsafe) AccessController.doPrivileged(new j1());
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    public static Field g() {
+        Field field;
+        Field field2;
+        if (l.a()) {
+            try {
+                field2 = Buffer.class.getDeclaredField("effectiveDirectAddress");
+                field2.setAccessible(true);
+            } catch (Throwable unused) {
+                field2 = null;
+            }
+            if (field2 != null) {
+                return field2;
+            }
+        }
+        try {
+            field = Buffer.class.getDeclaredField("address");
+            field.setAccessible(true);
+        } catch (Throwable unused2) {
+            field = null;
+        }
+        if (field == null || field.getType() != Long.TYPE) {
+            return null;
+        }
+        return field;
+    }
+
+    public static int h(Class cls) {
+        if (f) {
+            return d.a.arrayBaseOffset(cls);
+        }
+        return -1;
+    }
+
+    public static void i(Class cls) {
+        if (f) {
+            d.a.arrayIndexScale(cls);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static boolean j(Class cls) {
+        if (!l.a()) {
+            return false;
+        }
+        try {
+            Class cls2 = c;
+            Class cls3 = Boolean.TYPE;
+            cls2.getMethod("peekLong", cls, cls3);
+            cls2.getMethod("pokeLong", cls, Long.TYPE, cls3);
+            Class cls4 = Integer.TYPE;
+            cls2.getMethod("pokeInt", cls, cls4, cls3);
+            cls2.getMethod("peekInt", cls, cls3);
+            cls2.getMethod("pokeByte", cls, Byte.TYPE);
+            cls2.getMethod("peekByte", cls);
+            cls2.getMethod("pokeByteArray", cls, byte[].class, cls4, cls4);
+            cls2.getMethod("peekByteArray", cls, byte[].class, cls4, cls4);
+            return true;
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    public static Object k(Object obj, long j10) {
+        return d.a.getObject(obj, j10);
+    }
+
+    public static byte l(Object obj, long j10) {
+        return (byte) (d.g(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3)));
+    }
+
+    public static byte m(Object obj, long j10) {
+        return (byte) (d.g(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3)));
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class PredefinedCommands {
     static {
@@ -189,9 +189,9 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("phantom", new PredefMacroInfo(176, 1));
         MacroInfo.Commands.put("hphantom", new PredefMacroInfo(177, 1));
         MacroInfo.Commands.put("vphantom", new PredefMacroInfo(178, 1));
-        MacroInfo.Commands.put("sp@breve", new PredefMacroInfo(MessagesStorage.LAST_DB_VERSION, 0));
+        MacroInfo.Commands.put("sp@breve", new PredefMacroInfo(179, 0));
         MacroInfo.Commands.put("sp@hat", new PredefMacroInfo(180, 0));
-        MacroInfo.Commands.put("definecolor", new PredefMacroInfo(181, 3));
+        MacroInfo.Commands.put("definecolor", new PredefMacroInfo(MessagesStorage.LAST_DB_VERSION, 3));
         MacroInfo.Commands.put("textcolor", new PredefMacroInfo(182, 2));
         MacroInfo.Commands.put("fgcolor", new PredefMacroInfo(183, 2));
         MacroInfo.Commands.put("bgcolor", new PredefMacroInfo(184, 2));
@@ -242,8 +242,8 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("simcolon", new PredefMacroInfo(229, 0));
         MacroInfo.Commands.put("simcoloncolon", new PredefMacroInfo(230, 0));
         MacroInfo.Commands.put("approxcolon", new PredefMacroInfo(231, 0));
-        MacroInfo.Commands.put("approxcoloncolon", new PredefMacroInfo(TLRPC.LAYER, 0));
-        MacroInfo.Commands.put("coloncolon", new PredefMacroInfo(233, 0));
+        MacroInfo.Commands.put("approxcoloncolon", new PredefMacroInfo(232, 0));
+        MacroInfo.Commands.put("coloncolon", new PredefMacroInfo(TLRPC.LAYER, 0));
         MacroInfo.Commands.put("equalscolon", new PredefMacroInfo(234, 0));
         MacroInfo.Commands.put("equalscoloncolon", new PredefMacroInfo(235, 0));
         MacroInfo.Commands.put("colonminus", new PredefMacroInfo(236, 0));

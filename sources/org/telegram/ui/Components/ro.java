@@ -1,46 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ro implements ImageReceiver.ImageReceiverDelegate {
-    public boolean a;
-    public final /* synthetic */ ig.g b;
-    public final /* synthetic */ to c;
+public final /* synthetic */ class ro implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vo b;
+    public final /* synthetic */ TLRPC.Document c;
 
-    public ro(ig.i iVar, ig.g gVar) {
-        this.c = iVar;
-        this.b = gVar;
+    public /* synthetic */ ro(vo voVar, TLRPC.Document document, int i10) {
+        this.a = i10;
+        this.b = voVar;
+        this.c = document;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        yj0 yj0Var;
-        zf.e eVar;
-        if (this.a) {
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                uo uoVar = this.b.d;
+                if (uoVar != null) {
+                    uoVar.b(this.c);
+                    break;
+                }
+                break;
+            default:
+                uo uoVar2 = this.b.d;
+                if (uoVar2 != null) {
+                    uoVar2.b(this.c);
+                    break;
+                }
+                break;
         }
-        if ((i10 == 0 || i10 == 3) && drawable != null) {
-            this.a = true;
-            boolean z10 = drawable instanceof yj0;
-            ig.g gVar = this.b;
-            if (z10 && (eVar = (yj0Var = (yj0) drawable).B0) != null && eVar.g()) {
-                yj0Var.A0 = new ee(20, this, gVar);
-            } else {
-                to.a(this.c);
-                gVar.run();
-            }
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.m5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
     }
 }

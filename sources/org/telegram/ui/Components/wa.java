@@ -9,27 +9,27 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class wa extends ow0 {
-    public final /* synthetic */ boolean w0;
-    public final /* synthetic */ boolean x0;
-    public final /* synthetic */ bb y0;
+public final class wa extends vw0 {
+    public final /* synthetic */ boolean l0;
+    public final /* synthetic */ boolean m0;
+    public final /* synthetic */ bb n0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public wa(bb bbVar, Context context, boolean z10, boolean z11) {
         super(context, null);
-        this.y0 = bbVar;
-        this.w0 = z10;
-        this.x0 = z11;
+        this.n0 = bbVar;
+        this.l0 = z10;
+        this.m0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        bb bbVar = this.y0;
+        bb bbVar = this.n0;
         bbVar.I(canvas, this);
         super.dispatchDraw(canvas);
-        bbVar.G(canvas, this);
+        bbVar.H(canvas, this);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -37,8 +37,8 @@ public final class wa extends ow0 {
         Drawable drawable;
         if (motionEvent.getAction() == 0) {
             float y3 = motionEvent.getY();
-            bb bbVar = this.y0;
-            drawable = ((org.telegram.ui.ActionBar.h3) bbVar).shadowDrawable;
+            bb bbVar = this.n0;
+            drawable = ((org.telegram.ui.ActionBar.k3) bbVar).shadowDrawable;
             if (y3 < drawable.getBounds().top) {
                 bbVar.dismiss();
             }
@@ -48,8 +48,8 @@ public final class wa extends ow0 {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (!this.x0) {
-            this.y0.getClass();
+        if (!this.m0) {
+            this.n0.getClass();
         }
         return super.drawChild(canvas, view, j10);
     }
@@ -57,7 +57,7 @@ public final class wa extends ow0 {
     /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00c1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00b1  */
-    @Override // org.telegram.ui.Components.ow0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -71,7 +71,7 @@ public final class wa extends ow0 {
         int i19;
         int measuredHeight;
         int measuredHeight2;
-        bb bbVar = this.y0;
+        bb bbVar = this.n0;
         if (bbVar.Q == null) {
             super.onLayout(z10, i10, i11, i12, i13);
             return;
@@ -79,7 +79,7 @@ public final class wa extends ow0 {
         int childCount = getChildCount();
         int Q = Q();
         int paddingBottom = getPaddingBottom();
-        z11 = ((org.telegram.ui.ActionBar.h3) bbVar).keyboardVisible;
+        z11 = ((org.telegram.ui.ActionBar.k3) bbVar).keyboardVisible;
         if (!z11 && bbVar.Q != null && Q <= AndroidUtilities.dp(20.0f) && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
             paddingBottom += bbVar.Q.getEmojiPadding();
         }
@@ -110,7 +110,7 @@ public final class wa extends ow0 {
                             i17 = ((i13 - paddingBottom) - i11) - measuredHeight3;
                             i18 = layoutParams.bottomMargin;
                         }
-                        if (childAt instanceof tz) {
+                        if (childAt instanceof sz) {
                             if (AndroidUtilities.isTablet()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -126,18 +126,18 @@ public final class wa extends ow0 {
                         i18 = layoutParams.bottomMargin;
                     }
                     i19 = i17 - i18;
-                    if (childAt instanceof tz) {
+                    if (childAt instanceof sz) {
                     }
                     childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
                 } else {
                     i14 = (((i12 - i10) - measuredWidth) - layoutParams.rightMargin) - getPaddingRight();
-                    i15 = ((org.telegram.ui.ActionBar.h3) bbVar).backgroundPaddingLeft;
+                    i15 = ((org.telegram.ui.ActionBar.k3) bbVar).backgroundPaddingLeft;
                 }
                 i16 = i14 - i15;
                 if (i22 == 16) {
                 }
                 i19 = i17 - i18;
-                if (childAt instanceof tz) {
+                if (childAt instanceof sz) {
                 }
                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
@@ -149,12 +149,12 @@ public final class wa extends ow0 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         boolean z10;
-        qu quVar;
+        ru ruVar;
         int size = View.MeasureSpec.getSize(i11);
-        bb bbVar = this.y0;
+        bb bbVar = this.n0;
         bbVar.h = size;
         bbVar.D(i10, i11);
-        if (this.w0) {
+        if (this.l0) {
             i11 = View.MeasureSpec.makeMeasureSpec(bbVar.h, TLObject.FLAG_30);
         }
         if (bbVar.Q == null) {
@@ -164,17 +164,17 @@ public final class wa extends ow0 {
         int size2 = View.MeasureSpec.getSize(i10);
         int size3 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size2, size3);
-        qu quVar2 = bbVar.Q;
-        if (quVar2 != null && !quVar2.N && AndroidUtilities.dp(20.0f) >= 0) {
-            qu quVar3 = bbVar.Q;
-            if (!quVar3.e && !quVar3.O) {
-                quVar3.j();
+        ru ruVar2 = bbVar.Q;
+        if (ruVar2 != null && !ruVar2.N && AndroidUtilities.dp(20.0f) >= 0) {
+            ru ruVar3 = bbVar.Q;
+            if (!ruVar3.e && !ruVar3.O) {
+                ruVar3.j();
             }
         }
         int i13 = 0;
         if (AndroidUtilities.dp(20.0f) >= 0) {
-            z10 = ((org.telegram.ui.ActionBar.h3) bbVar).keyboardVisible;
-            int emojiPadding = (z10 || (quVar = bbVar.Q) == null) ? 0 : quVar.getEmojiPadding();
+            z10 = ((org.telegram.ui.ActionBar.k3) bbVar).keyboardVisible;
+            int emojiPadding = (z10 || (ruVar = bbVar.Q) == null) ? 0 : ruVar.getEmojiPadding();
             if (!AndroidUtilities.isInMultiwindow) {
                 size3 -= emojiPadding;
                 i11 = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
@@ -185,8 +185,8 @@ public final class wa extends ow0 {
         while (i13 < childCount) {
             View childAt = getChildAt(i13);
             if (childAt != null && childAt.getVisibility() != 8) {
-                qu quVar4 = bbVar.Q;
-                if (quVar4 == null || !quVar4.l(childAt)) {
+                ru ruVar4 = bbVar.Q;
+                if (ruVar4 == null || !ruVar4.l(childAt)) {
                     i12 = i10;
                     measureChildWithMargins(childAt, i12, 0, i14, 0);
                     i13++;

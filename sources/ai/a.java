@@ -1,265 +1,69 @@
 package ai;
 
-import android.content.Context;
-import android.os.SystemClock;
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
-import java.util.TimeZone;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class a {
-    public boolean a;
-    public int b;
-    public Object c;
-    public Object d;
-    public Object e;
-    public Object f;
+public abstract class a {
+    public static String[] a = {"Rosewood", "Carmine", "Fire Engine", "Seal Brown", "Chestnut", "Coral Red", "Strawberry", "Chocolate", "Mystic Pearl", "Burnt Sienna", "Tomato", "Cappuccino", "Copper", "Carrot Juice", "Persimmon", "Desert Sand", "Orange", "Caramel", "Old Gold", "Mustard", "Satin Gold", "Amber", "Pure Gold", "Light Olive", "Khaki Green", "Lemongrass", "Malachite", "Camo Green", "Pistachio", "Shamrock Green", "Dark Green", "Ranger Green", "Hunter Green", "Mint Green", "Emerald", "Pine Green", "Gunship Green", "Pacific Green", "Tactical Pine", "Jade Green", "Aquamarine", "Pacific Cyan", "Deep Cyan", "Turquoise", "Moonstone", "Sky Blue", "Azure Blue", "Gunmetal", "Celtic Blue", "Sapphire", "Silver Blue", "Indigo Dye", "French Blue", "Navy Blue", "Cobalt Blue", "Marine Blue", "Midnight Blue", "Neon Blue", "Cyberpunk", "Electric Indigo", "Lavender", "Grape", "French Violet", "English Violet", "Purple", "Electric Purple", "Dark Lilac", "Fandango", "Mexican Pink", "Burgundy", "Raspberry", "Black", "Onyx Black", "Rifle Green", "Battleship Grey", "Feldgrau", "Steel Grey", "Roman Silver", "Platinum", "Ivory White"};
+    public static int[] b = {-4752777, -2074806, -1024177, -10072763, -4296876, -2455189, -2257297, -6001064, -3110035, -2724036, -1672898, -5140354, -3111338, -2385817, -1595558, -5005438, -3040710, -3106510, -4879048, -2844659, -4220089, -2444475, -3364031, -4018332, -5394320, -5326758, -6966185, -9071539, -6836100, -7687837, -11443391, -10520503, -7360904, -8467582, -8862331, -9721476, -11171227, -9451629, -12287381, -11156324, -10440299, -10830170, -13519446, -10567496, -8474188, -10963768, -10636853, -11772573, -12207891, -10968120, -8346440, -11306607, -10708028, -9658659, -10450737, -11638628, -10720891, -9070855, -8024077, -5668621, -4748828, -6458175, -4038426, -5142853, -5346130, -3510074, -5145179, -1930570, -1874286, -6070682, -2065531, -13224136, -12170675, -10196644, -7566203, -7761272, -6839636, -6051659, -5067097, -4540751};
+    public static int[] c = {-8303534, -5752773, -3917495, -12110290, -6731720, -3906225, -4760992, -9157573, -5220496, -4895955, -2863553, -8625322, -6462159, -3707057, -3840161, -8490149, -4165817, -4754383, -7050971, -3901678, -7506119, -5144534, -6784206, -7831995, -9732780, -11168955, -12740779, -11242687, -10714804, -11168955, -13941457, -12824773, -11828645, -12214694, -12410511, -12682896, -12753321, -12870524, -13671575, -12871305, -12145740, -12741190, -15166055, -12742002, -10976368, -11301950, -12285013, -13681854, -13072679, -11306558, -10453871, -12491655, -13143142, -10719543, -11443528, -12891270, -13287337, -9936156, -7970861, -10788136, -7710020, -8827488, -7254311, -7906671, -8108156, -6921516, -7579782, -6006645, -3585668, -9617078, -4826752, -15855857, -14144466, -11840959, -9671578, -10589341, -10259844, -8617846, -7830402, -6185577};
+    public static int[] d = {-11199454, -11599616, -9895927, -16120315, -10480376, -7794176, -5698548, -12711422, -6617818, -9762558, -8385792, -1321784, -10475263, -7462656, -5435904, -11516887, -6473465, -8571392, -11586814, -8772352, -10667264, -8769280, -9421824, -10925052, -13021157, -12162553, -16487674, -15321343, -14137573, -15570176, -16775935, -15719927, -14923489, -16618718, -16751310, -16037837, -16308707, -16752311, -16767452, -16496335, -16556185, -16620403, -16756913, -15641780, -15317678, -16293733, -16625548, -16513014, -16761211, -15907402, -15386805, -16573655, -16303268, -15582814, -15522692, -16709599, -16578024, -14145348, -12379994, -13163861, -10809173, -12711317, -11927158, -11263393, -12121017, -10350668, -10147758, -7469746, -9108944, -13368569, -7797192, -9672600, -16777216, -15789557, -13948384, -14932449, -13417134, -12630704, -12765139, -10068142};
+    public static int[] e = {-1193267, -18515, -18522, -2835275, -80199, -9774, -11309, -1788244, -74272, -13136, -13123, -11914714, -730946, -10294, -6953, -858675, -7741, -9805, -8820, -8548, -72535, -4665, -6741, -660548, -2890053, -2559294, -4001858, -3151687, -2493751, -2753592, -4206167, -4733771, -2558498, -4325428, -4589095, -2558491, -4857644, -3735568, -4725037, -4260121, -3670530, -4788225, -3014659, -4327182, -2427395, -3282691, -4854529, -4799028, -4003841, -4071681, -3545868, -4006674, -4070407, -2891265, -4008971, -4469774, -4207392, -3154433, -2041345, -2565889, -1519105, -2048514, -1325057, -1652755, -799757, -1323265, -998174, -14357, -10522, -1590080, -10522, -7565423, -6381150, -3946563, -3158332, -2168351, -2104088, -2433054, -1447966, -658190};
+    public static final String[] f = {"Black", "Onyx Black", "Gunmetal", "Midnight Blue", "Steel Grey", "Roman Silver", "Raspberry", "Carmine", "Fire Engine", "Burnt Sienna", "Tomato", "Copper", "Persimmon", "Orange", "Caramel", "Mustard", "Old Gold", "Satin Gold", "Amber", "Pure Gold", "Lemongrass", "Malachite", "Shamrock Green", "Mint Green", "Emerald", "Pacific Green", "Jade Green", "Deep Cyan", "Celtic Blue", "Cobalt Blue", "Neon Blue", "Cyberpunk", "Electric Indigo", "Lavender", "Grape", "French Violet", "Purple", "Electric Purple", "Fandango", "Mexican Pink", "Burgundy", "Rosewood", "Chestnut", "Coral Red", "Strawberry", "Mystic Pearl", "Carrot Juice", "Light Olive", "Khaki Green", "Camo Green", "Pistachio", "Hunter Green", "Pine Green", "Gunship Green", "Tactical Pine", "Aquamarine", "Pacific Cyan", "Turquoise", "Moonstone", "Sky Blue", "Azure Blue", "Sapphire", "Silver Blue", "Indigo Dye", "French Blue", "Navy Blue", "English Violet", "Dark Lilac", "Seal Brown", "Chocolate", "Cappuccino", "Desert Sand", "Dark Green", "Ranger Green", "Marine Blue", "Ivory White", "Platinum", "Battleship Grey", "Rifle Green", "Feldgrau"};
+    public static int[] g;
+    public static int[] h;
 
-    public a(i6.a aVar, byte[] bArr) {
-        this.f = aVar;
-        this.b = aVar.e;
-        this.c = aVar.d;
-        this.d = aVar.f;
-        com.google.android.gms.internal.clearcut.x1 x1Var = new com.google.android.gms.internal.clearcut.x1();
-        x1Var.a = 0L;
-        x1Var.b = 0L;
-        x1Var.c = 0;
-        if (com.google.android.gms.internal.clearcut.y1.a == null) {
-            synchronized (com.google.android.gms.internal.clearcut.p1.a) {
-                try {
-                    if (com.google.android.gms.internal.clearcut.y1.a == null) {
-                        com.google.android.gms.internal.clearcut.y1.a = new com.google.android.gms.internal.clearcut.y1[0];
-                    }
-                } finally {
+    public static boolean a(ArrayList arrayList) {
+        if (arrayList != null && !arrayList.isEmpty()) {
+            int i10 = -1;
+            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                if ("Black".equals(((TLRPC.TL_shareThemeBackdropOption) arrayList.get(i11)).name)) {
+                    i10 = i11;
                 }
             }
+            if (i10 >= 0) {
+                int size = arrayList.size();
+                a = new String[size];
+                b = new int[size];
+                c = new int[size];
+                d = new int[size];
+                e = new int[size];
+                h = new int[size];
+                for (int i12 = 0; i12 < size; i12++) {
+                    TLRPC.TL_shareThemeBackdropOption tL_shareThemeBackdropOption = (TLRPC.TL_shareThemeBackdropOption) arrayList.get(i12);
+                    a[i12] = tL_shareThemeBackdropOption.name;
+                    b[i12] = tL_shareThemeBackdropOption.center_color | (-16777216);
+                    c[i12] = tL_shareThemeBackdropOption.edge_color | (-16777216);
+                    d[i12] = tL_shareThemeBackdropOption.pattern_color | (-16777216);
+                    e[i12] = tL_shareThemeBackdropOption.text_color | (-16777216);
+                    h[i12] = tL_shareThemeBackdropOption.backdrop_id;
+                }
+                g = null;
+                int b10 = b("Neon Blue");
+                t1.H9 = i10;
+                t1.I9 = b10;
+                t1.G9 = null;
+                t1.F9 = null;
+                t1.E9 = null;
+                return true;
+            }
         }
-        x1Var.d = com.google.android.gms.internal.clearcut.y1.a;
-        byte[] bArr2 = com.google.android.gms.internal.clearcut.n1.d;
-        x1Var.e = bArr2;
-        x1Var.f = bArr2;
-        x1Var.h = "";
-        x1Var.n = "";
-        x1Var.r = "";
-        x1Var.s = 180000L;
-        x1Var.v = bArr2;
-        x1Var.w = "";
-        x1Var.x = com.google.android.gms.internal.clearcut.n1.c;
-        x1Var.y = false;
-        this.e = x1Var;
-        this.a = false;
-        x1Var.y = com.google.android.gms.internal.clearcut.a.a(aVar.a);
-        aVar.h.getClass();
-        x1Var.a = System.currentTimeMillis();
-        aVar.h.getClass();
-        x1Var.b = SystemClock.elapsedRealtime();
-        x1Var.s = TimeZone.getDefault().getOffset(x1Var.a) / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        x1Var.f = bArr;
+        return false;
     }
 
-    public com.google.android.gms.common.api.internal.f1 a() {
-        n6.l.a("Must set register function", ((com.google.android.gms.common.api.internal.r) this.c) != null);
-        n6.l.a("Must set unregister function", ((com.google.android.gms.common.api.internal.r) this.d) != null);
-        n6.l.a("Must set holder", ((com.google.android.gms.common.api.internal.p) this.e) != null);
-        com.google.android.gms.common.api.internal.n nVar = ((com.google.android.gms.common.api.internal.p) this.e).c;
-        n6.l.i(nVar, "Key must not be null");
-        return new com.google.android.gms.common.api.internal.f1(new e2.w(this, (com.google.android.gms.common.api.internal.p) this.e, (k6.c[]) this.f, this.a, this.b), new com.google.android.gms.common.api.internal.f1(this, nVar));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:22:0x016a  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void b() {
-        List e;
-        String str;
-        String str2;
-        int i10;
-        com.google.android.gms.internal.clearcut.t1 t1Var;
-        long parseLong;
-        long parseLong2;
-        i6.a aVar = (i6.a) this.f;
-        if (this.a) {
-            throw new IllegalStateException("do not reuse LogEventBuilder");
-        }
-        boolean z10 = true;
-        this.a = true;
-        com.google.android.gms.internal.clearcut.d2 d2Var = new com.google.android.gms.internal.clearcut.d2(aVar.b, aVar.c, this.b, (String) this.c, (com.google.android.gms.internal.clearcut.q1) this.d);
-        com.google.android.gms.internal.clearcut.x1 x1Var = (com.google.android.gms.internal.clearcut.x1) this.e;
-        i6.c cVar = new i6.c(d2Var, x1Var);
-        Context context = aVar.i.a;
-        boolean z11 = false;
-        int i11 = x1Var != null ? x1Var.c : 0;
-        boolean booleanValue = ((Boolean) com.google.android.gms.internal.clearcut.c2.i.a()).booleanValue();
-        Object obj = null;
-        String str3 = d2Var.h;
-        int i12 = d2Var.c;
-        if (booleanValue) {
-            if (str3 == null || str3.isEmpty()) {
-                str3 = i12 >= 0 ? String.valueOf(i12) : null;
+    public static int b(String str) {
+        int i10 = 0;
+        while (true) {
+            String[] strArr = a;
+            if (i10 >= strArr.length) {
+                return -1;
             }
-            if (str3 != null) {
-                if (context == null) {
-                    e = Collections.EMPTY_LIST;
-                } else {
-                    ConcurrentHashMap concurrentHashMap = com.google.android.gms.internal.clearcut.c2.e;
-                    com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.get(str3);
-                    if (dVar == null) {
-                        com.google.android.gms.internal.clearcut.i iVar = com.google.android.gms.internal.clearcut.c2.c;
-                        com.google.android.gms.internal.clearcut.u1 f7 = com.google.android.gms.internal.clearcut.u1.f();
-                        iVar.getClass();
-                        com.google.android.gms.internal.clearcut.g gVar = new com.google.android.gms.internal.clearcut.g(iVar, str3, f7);
-                        dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.putIfAbsent(str3, gVar);
-                        if (dVar == null) {
-                            dVar = gVar;
-                        }
-                    }
-                    e = ((com.google.android.gms.internal.clearcut.u1) dVar.a()).e();
-                }
-                Iterator it = e.iterator();
-                while (true) {
-                    if (!it.hasNext()) {
-                        break;
-                    }
-                    com.google.android.gms.internal.clearcut.t1 t1Var2 = (com.google.android.gms.internal.clearcut.t1) it.next();
-                    if (!t1Var2.i() || t1Var2.e() == 0 || t1Var2.e() == i11) {
-                        if (!com.google.android.gms.internal.clearcut.c2.b(com.google.android.gms.internal.clearcut.c2.a(com.google.android.gms.internal.clearcut.c2.d(context), t1Var2.j()), t1Var2.k(), t1Var2.l())) {
-                            z10 = false;
-                            break;
-                        }
-                    }
-                }
+            if (str.equals(strArr[i10])) {
+                return i10;
             }
-        } else {
-            if (str3 == null || str3.isEmpty()) {
-                str3 = i12 >= 0 ? String.valueOf(i12) : null;
-            }
-            if (str3 != null) {
-                if (context == null || !com.google.android.gms.internal.clearcut.c2.c(context)) {
-                    str = null;
-                } else {
-                    HashMap hashMap = com.google.android.gms.internal.clearcut.c2.f;
-                    com.google.android.gms.internal.clearcut.d dVar2 = (com.google.android.gms.internal.clearcut.d) hashMap.get(str3);
-                    if (dVar2 == null) {
-                        com.google.android.gms.internal.clearcut.i iVar2 = com.google.android.gms.internal.clearcut.c2.d;
-                        iVar2.getClass();
-                        com.google.android.gms.internal.clearcut.f fVar = new com.google.android.gms.internal.clearcut.f(iVar2, str3, obj, 1);
-                        hashMap.put(str3, fVar);
-                        dVar2 = fVar;
-                    }
-                    str = (String) dVar2.a();
-                }
-                if (str != null) {
-                    int indexOf = str.indexOf(44);
-                    if (indexOf >= 0) {
-                        str2 = str.substring(0, indexOf);
-                        i10 = indexOf + 1;
-                    } else {
-                        str2 = "";
-                        i10 = 0;
-                    }
-                    int indexOf2 = str.indexOf(47, i10);
-                    if (indexOf2 <= 0) {
-                        Log.e("LogSamplerImpl", str.length() != 0 ? "Failed to parse the rule: ".concat(str) : new String("Failed to parse the rule: "));
-                    } else {
-                        try {
-                            parseLong = Long.parseLong(str.substring(i10, indexOf2));
-                            parseLong2 = Long.parseLong(str.substring(indexOf2 + 1));
-                        } catch (NumberFormatException e7) {
-                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e7);
-                        }
-                        if (parseLong < 0 || parseLong2 < 0) {
-                            StringBuilder sb2 = new StringBuilder(72);
-                            sb2.append("negative values not supported: ");
-                            sb2.append(parseLong);
-                            sb2.append("/");
-                            sb2.append(parseLong2);
-                            Log.e("LogSamplerImpl", sb2.toString());
-                            t1Var = null;
-                            if (t1Var != null) {
-                                z10 = com.google.android.gms.internal.clearcut.c2.b(com.google.android.gms.internal.clearcut.c2.a(com.google.android.gms.internal.clearcut.c2.d(context), t1Var.j()), t1Var.k(), t1Var.l());
-                            }
-                        } else {
-                            com.google.android.gms.internal.clearcut.s1 m10 = com.google.android.gms.internal.clearcut.t1.m();
-                            m10.b();
-                            com.google.android.gms.internal.clearcut.t1.g((com.google.android.gms.internal.clearcut.t1) m10.b, str2);
-                            m10.b();
-                            com.google.android.gms.internal.clearcut.t1.f((com.google.android.gms.internal.clearcut.t1) m10.b, parseLong);
-                            m10.b();
-                            com.google.android.gms.internal.clearcut.t1.h((com.google.android.gms.internal.clearcut.t1) m10.b, parseLong2);
-                            com.google.android.gms.internal.clearcut.z c10 = m10.c();
-                            byte byteValue = ((Byte) c10.a(1)).byteValue();
-                            if (byteValue == 1) {
-                                z11 = true;
-                            } else if (byteValue != 0) {
-                                com.google.android.gms.internal.clearcut.w0 w0Var = com.google.android.gms.internal.clearcut.w0.c;
-                                w0Var.getClass();
-                                z11 = w0Var.a(c10.getClass()).g(c10);
-                                c10.a(2);
-                            }
-                            if (!z11) {
-                                throw new androidx.car.app.j();
-                            }
-                            t1Var = (com.google.android.gms.internal.clearcut.t1) c10;
-                            if (t1Var != null) {
-                            }
-                        }
-                    }
-                }
-                t1Var = null;
-                if (t1Var != null) {
-                }
-            }
+            i10++;
         }
-        if (!z10) {
-            new com.google.android.gms.common.api.internal.t(null, 0).a(Status.e);
-            return;
-        }
-        com.google.android.gms.internal.clearcut.v0 v0Var = aVar.g;
-        v0Var.getClass();
-        v0Var.d(2, new com.google.android.gms.internal.clearcut.w1(cVar, v0Var.h));
-    }
-
-    public Object c() {
-        ArrayList arrayList = (ArrayList) this.d;
-        if (((ArrayList) this.c).isEmpty()) {
-            return null;
-        }
-        Object obj = this.f;
-        if (this.b >= arrayList.size()) {
-            if (this.a) {
-                Collections.shuffle(arrayList, (Random) this.e);
-                this.b = 0;
-            } else {
-                this.b = 0;
-            }
-        }
-        int i10 = this.b;
-        this.b = i10 + 1;
-        this.f = arrayList.get(i10);
-        return obj;
-    }
-
-    public a(ArrayList arrayList) {
-        this.a = true;
-        ArrayList arrayList2 = new ArrayList(arrayList == null ? new ArrayList() : arrayList);
-        this.c = arrayList2;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        this.d = arrayList3;
-        this.b = 0;
-        Random random = new Random();
-        this.e = random;
-        Collections.shuffle(arrayList3, random);
-        this.b = 0;
-        c();
     }
 }

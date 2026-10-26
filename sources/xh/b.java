@@ -1,26 +1,25 @@
 package xh;
 
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.za0;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class b extends za0 {
-    public final /* synthetic */ d b0;
+public final class b extends ReplacementSpan {
+    public final /* synthetic */ Emoji.EmojiSpan a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, o2 o2Var, long j10) {
-        super(o2Var, j10);
-        this.b0 = dVar;
+    public b(Emoji.EmojiSpan emojiSpan) {
+        this.a = emojiSpan;
     }
 
-    @Override // org.telegram.ui.Components.s71, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        d dVar = this.b0;
-        b bVar = dVar.i;
-        if (bVar != null && !bVar.U.b) {
-            dVar.i = null;
-        }
-        super.dismiss();
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return this.a.getSize(paint, charSequence, i10, i11, fontMetricsInt);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

@@ -1,50 +1,16 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z30 extends TextView {
-    public final RectF a;
-    public final Paint b;
-
+public final class z30 extends org.telegram.ui.Components.md0 {
     public z30(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = new RectF();
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(-16711936);
+        super(launchActivity, null);
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.b);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        paint.setColor(-16711936);
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        super.onDraw(canvas);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    @Override // org.telegram.ui.Components.md0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
     }
 }

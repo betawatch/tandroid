@@ -1,32 +1,54 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gp implements Utilities.Callback {
+public final /* synthetic */ class gp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wp b;
+    public final /* synthetic */ yp b;
 
-    public /* synthetic */ gp(wp wpVar, int i10) {
+    public /* synthetic */ gp(yp ypVar, int i10) {
         this.a = i10;
-        this.b = wpVar;
+        this.b = ypVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                wp wpVar = this.b;
-                wpVar.e0 = (TL_stories.TL_premium_boostsStatus) obj;
-                wpVar.d0 = true;
-                wpVar.L(true);
-                wpVar.c0 = false;
+                this.b.h.l();
+                break;
+            case 1:
+                this.b.u(true);
+                break;
+            case 2:
+                yp ypVar = this.b;
+                org.telegram.ui.un unVar = ypVar.v;
+                org.telegram.ui.ActionBar.r2 c02 = org.telegram.ui.w91.c0(unVar.getMessagesController().getChat(Long.valueOf(-unVar.a())), true);
+                org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
+                p2Var.a = true;
+                c02.setResourceProvider(unVar.getResourceProvider());
+                p2Var.c = new k5(9);
+                p2Var.d = new gp(ypVar, 3);
+                p2Var.b = new gp(ypVar, 4);
+                p2Var.e = true;
+                ypVar.W = c02;
+                unVar.showAsSheet(c02, p2Var);
+                break;
+            case 3:
+                this.b.y();
+                break;
+            case 4:
+                this.b.W = null;
+                break;
+            case 5:
+                this.b.y();
+                break;
+            case 6:
+                this.b.W = null;
                 break;
             default:
-                wp.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                yp ypVar2 = this.b;
+                ypVar2.T.f(ypVar2.F, true);
                 break;
         }
     }

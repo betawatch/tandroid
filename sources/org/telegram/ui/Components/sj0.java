@@ -1,45 +1,370 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.TextPaint;
-import android.text.style.LineHeightSpan;
-import android.text.style.MetricAffectingSpan;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.Layout;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.TreeSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class sj0 extends MetricAffectingSpan implements LineHeightSpan {
-    public tj0 a;
+public final class sj0 implements LeadingMarginSpan {
+    public final Path E;
+    public final Paint F;
+    public final float[] G;
+    public final Path H;
+    public int I;
+    public jj0 J;
+    public SpannableString K;
+    public final boolean a;
+    public boolean b = true;
+    public int c;
+    public int d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public boolean r;
+    public final rj0 s;
+    public li.z5 v;
+    public final Drawable w;
+    public final Paint x;
+    public final float[] y;
 
-    @Override // android.text.style.LineHeightSpan
-    public final void chooseHeight(CharSequence charSequence, int i10, int i11, int i12, int i13, Paint.FontMetricsInt fontMetricsInt) {
-        tj0 tj0Var = this.a;
-        if (tj0Var.b) {
-            int i14 = tj0Var.f ? 7 : 2;
-            if (i10 <= tj0Var.c) {
-                fontMetricsInt.ascent -= AndroidUtilities.dp((tj0Var.n ? 2 : 0) + i14);
-                fontMetricsInt.top -= AndroidUtilities.dp((this.a.n ? 2 : 0) + i14);
-            }
-            if (i11 >= this.a.d) {
-                float f7 = i14;
-                fontMetricsInt.descent = AndroidUtilities.dp(f7) + fontMetricsInt.descent;
-                fontMetricsInt.bottom = AndroidUtilities.dp(f7) + fontMetricsInt.bottom;
-            }
-        }
+    public sj0(boolean z10, boolean z11, rj0 rj0Var) {
+        Paint paint = new Paint(1);
+        this.x = paint;
+        this.y = new float[8];
+        this.E = new Path();
+        Paint paint2 = new Paint(1);
+        this.F = paint2;
+        this.G = new float[8];
+        this.H = new Path();
+        this.I = -1;
+        this.a = z10;
+        this.s = rj0Var;
+        this.e = z11;
+        this.w = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.mini_quote).mutate();
+        paint2.setColor(this.I);
+        paint.setColor(i0.a.o(this.I, 30));
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        if (textPaint == null) {
+    public static void a(SpannableStringBuilder spannableStringBuilder) {
+        TreeSet treeSet = new TreeSet();
+        HashMap hashMap = new HashMap();
+        rj0[] rj0VarArr = (rj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), rj0.class);
+        int i10 = 0;
+        while (true) {
+            if (i10 >= rj0VarArr.length) {
+                break;
+            }
+            rj0 rj0Var = rj0VarArr[i10];
+            int spanStart = spannableStringBuilder.getSpanStart(rj0Var);
+            int spanEnd = spannableStringBuilder.getSpanEnd(rj0Var);
+            treeSet.add(Integer.valueOf(spanStart));
+            hashMap.put(Integer.valueOf(spanStart), Integer.valueOf((rj0Var.a.e ? 16 : 1) | (hashMap.containsKey(Integer.valueOf(spanStart)) ? ((Integer) hashMap.get(Integer.valueOf(spanStart))).intValue() : 0)));
+            treeSet.add(Integer.valueOf(spanEnd));
+            hashMap.put(Integer.valueOf(spanEnd), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanEnd)) ? ((Integer) hashMap.get(Integer.valueOf(spanEnd))).intValue() : 0) | 2));
+            spannableStringBuilder.removeSpan(rj0Var);
+            spannableStringBuilder.removeSpan(rj0Var.a);
+            i10++;
+        }
+        Iterator it = treeSet.iterator();
+        int i11 = 0;
+        int i12 = 0;
+        boolean z10 = false;
+        while (it.hasNext()) {
+            Integer num = (Integer) it.next();
+            int intValue = num.intValue();
+            int intValue2 = ((Integer) hashMap.get(num)).intValue();
+            if (i11 != intValue) {
+                int i13 = intValue - 1;
+                int i14 = (i13 < 0 || i13 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(i13) != '\n') ? intValue : intValue - 1;
+                if (i12 > 0) {
+                    c(spannableStringBuilder, i11, i14, z10);
+                }
+                i11 = intValue + 1;
+                if (i11 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(intValue) != '\n') {
+                    i11 = intValue;
+                }
+            }
+            if ((intValue2 & 2) != 0) {
+                i12--;
+            }
+            if ((intValue2 & 1) != 0 || (intValue2 & 16) != 0) {
+                i12++;
+                z10 = (intValue2 & 16) != 0;
+            }
+        }
+        if (i11 >= spannableStringBuilder.length() || i12 <= 0) {
             return;
         }
-        textPaint.setTextSize(AndroidUtilities.dp(this.a.a ? 16.0f : SharedConfig.fontSize - 2));
+        c(spannableStringBuilder, i11, spannableStringBuilder.length(), z10);
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.dp(this.a.a ? 16.0f : SharedConfig.fontSize - 2));
-        textPaint.setTextScaleX(this.a.a ? 1.1f : 1.0f);
+    public static void b(Spannable spannable, int i10, int i11, boolean z10) {
+        sj0[] sj0VarArr = (sj0[]) spannable.getSpans(i10, i11, sj0.class);
+        if (sj0VarArr == null || sj0VarArr.length <= 0) {
+            int clamp = Utilities.clamp(i10, spannable.length(), 0);
+            int clamp2 = Utilities.clamp(i11, spannable.length(), 0);
+            rj0 rj0Var = new rj0();
+            sj0 sj0Var = new sj0(false, z10, rj0Var);
+            rj0Var.a = sj0Var;
+            sj0Var.c = clamp;
+            sj0Var.d = clamp2;
+            spannable.setSpan(rj0Var, clamp, clamp2, 33);
+            spannable.setSpan(sj0Var, clamp, clamp2, 33);
+        }
+    }
+
+    public static int c(Editable editable, int i10, int i11, boolean z10) {
+        if (editable == null) {
+            return -1;
+        }
+        int clamp = Utilities.clamp(i10, editable.length(), 0);
+        int clamp2 = Utilities.clamp(i11, editable.length(), 0);
+        if (clamp > 0 && editable.charAt(clamp - 1) != '\n') {
+            editable.insert(clamp, "\n");
+            clamp++;
+            clamp2++;
+        }
+        int i12 = clamp2 + 1;
+        if (clamp2 >= editable.length() || editable.charAt(clamp2) != '\n') {
+            editable.insert(clamp2, "\n");
+        }
+        rj0 rj0Var = new rj0();
+        sj0 sj0Var = new sj0(true, z10, rj0Var);
+        rj0Var.a = sj0Var;
+        sj0Var.c = clamp;
+        sj0Var.d = clamp2;
+        editable.setSpan(sj0Var, Utilities.clamp(clamp, editable.length(), 0), Utilities.clamp(clamp2, editable.length(), 0), 33);
+        editable.setSpan(rj0Var, Utilities.clamp(clamp, editable.length(), 0), Utilities.clamp(clamp2, editable.length(), 0), 33);
+        editable.insert(Utilities.clamp(clamp2, editable.length(), 0), "\ufeff");
+        editable.delete(Utilities.clamp(clamp2, editable.length(), 0), Utilities.clamp(i12, editable.length(), 0));
+        return i12;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:105:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x011f  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static ArrayList d(lu luVar, Layout layout, ArrayList arrayList, boolean[] zArr) {
+        CharSequence charSequence;
+        sj0[] sj0VarArr;
+        boolean z10;
+        boolean z11;
+        int lineStart;
+        int i10;
+        boolean z12;
+        int i11;
+        lu luVar2 = luVar;
+        if (layout != null) {
+            CharSequence text = layout.getText();
+            if (text != null && (text instanceof Spannable)) {
+                Spannable spannable = (Spannable) text;
+                if (arrayList != null) {
+                    arrayList.clear();
+                }
+                boolean z13 = false;
+                sj0[] sj0VarArr2 = (sj0[]) spannable.getSpans(0, spannable.length(), sj0.class);
+                ArrayList arrayList2 = arrayList;
+                int i12 = 0;
+                while (i12 < sj0VarArr2.length) {
+                    sj0 sj0Var = sj0VarArr2[i12];
+                    boolean z14 = sj0Var.n;
+                    oj0 oj0Var = new oj0(luVar2, layout, spannable, sj0Var);
+                    if (sj0Var.a) {
+                        int i13 = sj0Var.c;
+                        if (i13 == 0 || text.charAt(i13 - 1) == '\n') {
+                            if (sj0Var.d != text.length() && text.charAt(sj0Var.d) != '\n') {
+                                int i14 = sj0Var.d;
+                                while (i14 <= text.length() && i14 != text.length() && text.charAt(i14) != '\n') {
+                                    i14++;
+                                }
+                                spannable.removeSpan(sj0VarArr2[i12]);
+                                spannable.removeSpan(sj0VarArr2[i12].s);
+                                spannable.setSpan(sj0VarArr2[i12], sj0Var.c, i14, 33);
+                                spannable.setSpan(sj0VarArr2[i12].s, sj0Var.c, i14, 33);
+                                oj0Var = new oj0(luVar2, layout, spannable, sj0VarArr2[i12]);
+                            }
+                            boolean z15 = spannable instanceof SpannableStringBuilder;
+                            sj0 sj0Var2 = oj0Var.e;
+                            if (z15) {
+                                SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) spannable;
+                                int i15 = sj0Var2.d - 1;
+                                boolean z16 = (i15 < 0 || spannableStringBuilder.charAt(i15) != '\n') ? z13 : true;
+                                if (oj0Var.b()) {
+                                    int i16 = sj0Var2.d;
+                                    if (i16 - 2 >= 0) {
+                                        z10 = true;
+                                        if (layout.getLineRight(layout.getLineForOffset(i16 - 1)) - AndroidUtilities.dp(12.0f) > oj0Var.d - (sj0Var2.J != null ? org.telegram.messenger.vh.b(3.333f, 2, AndroidUtilities.dp(23.66f) + r12.c) : org.telegram.messenger.vh.b(3.333f, 2, AndroidUtilities.dp(23.66f)))) {
+                                            z12 = true;
+                                            if (z16 != z12) {
+                                                int i17 = sj0Var2.d;
+                                                if (z16) {
+                                                    i11 = i17 - 1;
+                                                    spannableStringBuilder.delete(i17 - 1, i17);
+                                                    charSequence = text;
+                                                    sj0VarArr = sj0VarArr2;
+                                                } else {
+                                                    i11 = i17 + 2;
+                                                    boolean z17 = (Selection.getSelectionStart(spannableStringBuilder) == sj0Var2.d && Selection.getSelectionStart(spannableStringBuilder) == Selection.getSelectionEnd(spannableStringBuilder)) ? z10 : false;
+                                                    int i18 = sj0Var2.d;
+                                                    if (sj0Var2.K == null) {
+                                                        SpannableString spannableString = new SpannableString("\n");
+                                                        sj0Var2.K = spannableString;
+                                                        charSequence = text;
+                                                        sj0VarArr = sj0VarArr2;
+                                                        spannableString.setSpan(new qj0(), 0, sj0Var2.K.length(), 33);
+                                                    } else {
+                                                        charSequence = text;
+                                                        sj0VarArr = sj0VarArr2;
+                                                    }
+                                                    spannableStringBuilder.insert(i18, (CharSequence) sj0Var2.K);
+                                                    if (z17) {
+                                                        int selectionStart = Selection.getSelectionStart(spannableStringBuilder);
+                                                        int i19 = sj0Var2.d;
+                                                        if (selectionStart != i19) {
+                                                            Selection.setSelection(spannableStringBuilder, i19, i19);
+                                                        }
+                                                    }
+                                                }
+                                                sj0Var2.d = Math.min(i11, spannable.length());
+                                                spannable.removeSpan(sj0VarArr[i12]);
+                                                spannable.removeSpan(sj0VarArr[i12].s);
+                                                spannable.setSpan(sj0VarArr[i12], sj0Var2.c, sj0Var2.d, 33);
+                                                spannable.setSpan(sj0VarArr[i12].s, sj0Var2.c, sj0Var2.d, 33);
+                                                if (zArr != null) {
+                                                    zArr[0] = z10;
+                                                }
+                                            } else {
+                                                charSequence = text;
+                                                sj0VarArr = sj0VarArr2;
+                                            }
+                                        }
+                                        z12 = false;
+                                        if (z16 != z12) {
+                                        }
+                                    }
+                                }
+                                z10 = true;
+                                z12 = false;
+                                if (z16 != z12) {
+                                }
+                            } else {
+                                charSequence = text;
+                                sj0VarArr = sj0VarArr2;
+                                z10 = true;
+                            }
+                            li.z5 z5Var = sj0Var2.v;
+                            if (z5Var != null) {
+                                spannable.removeSpan(z5Var);
+                            }
+                            if (sj0Var2.e && (lineStart = layout.getLineStart(Math.min(layout.getLineForOffset(sj0Var2.c) + 3, layout.getLineCount()))) < (i10 = sj0Var2.d)) {
+                                if (sj0Var2.v == null) {
+                                    sj0Var2.v = new li.z5(sj0Var2);
+                                }
+                                spannable.setSpan(sj0Var2.v, lineStart, i10, 33);
+                            }
+                        } else {
+                            spannable.removeSpan(sj0VarArr2[i12]);
+                            spannable.removeSpan(sj0VarArr2[i12].s);
+                            li.z5 z5Var2 = sj0VarArr2[i12].v;
+                            if (z5Var2 != null) {
+                                spannable.removeSpan(z5Var2);
+                            }
+                            charSequence = text;
+                            sj0VarArr = sj0VarArr2;
+                            z11 = z13;
+                            i12++;
+                            luVar2 = luVar;
+                            z13 = z11;
+                            text = charSequence;
+                            sj0VarArr2 = sj0VarArr;
+                        }
+                    } else {
+                        charSequence = text;
+                        sj0VarArr = sj0VarArr2;
+                        z10 = true;
+                    }
+                    if (arrayList2 == null) {
+                        arrayList2 = new ArrayList();
+                    }
+                    if (sj0VarArr[i12].n == z14 || zArr == null) {
+                        z11 = false;
+                    } else {
+                        z11 = false;
+                        zArr[0] = z10;
+                    }
+                    arrayList2.add(oj0Var);
+                    i12++;
+                    luVar2 = luVar;
+                    z13 = z11;
+                    text = charSequence;
+                    sj0VarArr2 = sj0VarArr;
+                }
+                return arrayList2;
+            }
+            if (arrayList != null) {
+                arrayList.clear();
+            }
+        } else if (arrayList != null) {
+            arrayList.clear();
+            return arrayList;
+        }
+        return arrayList;
+    }
+
+    public static ArrayList e(Layout layout, ArrayList arrayList) {
+        if (layout != null) {
+            CharSequence text = layout.getText();
+            if (text != null && (text instanceof Spanned)) {
+                Spanned spanned = (Spanned) text;
+                if (arrayList != null) {
+                    arrayList.clear();
+                }
+                for (sj0 sj0Var : (sj0[]) spanned.getSpans(0, spanned.length(), sj0.class)) {
+                    boolean z10 = sj0Var.n;
+                    oj0 oj0Var = new oj0(null, layout, spanned, sj0Var);
+                    if (arrayList == null) {
+                        arrayList = new ArrayList();
+                    }
+                    arrayList.add(oj0Var);
+                }
+                return arrayList;
+            }
+            if (arrayList != null) {
+                arrayList.clear();
+            }
+        } else if (arrayList != null) {
+            arrayList.clear();
+            return arrayList;
+        }
+        return arrayList;
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z10) {
+        return AndroidUtilities.dp(this.b ? 8.0f : 10.0f);
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
     }
 }

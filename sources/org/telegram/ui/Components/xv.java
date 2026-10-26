@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public abstract class xv implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList a;
@@ -42,13 +42,13 @@ public abstract class xv implements NotificationCenter.NotificationCenterDelegat
                 if (document == null) {
                     this.c[i10].add(null);
                 } else {
-                    wx wxVar = new wx();
+                    vx vxVar = new vx();
                     long j10 = document.id;
                     for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j10))); i13++) {
                     }
-                    wxVar.a = tL_messages_stickerSet;
-                    wxVar.b = document.id;
-                    this.c[i10].add(wxVar);
+                    vxVar.a = tL_messages_stickerSet;
+                    vxVar.b = document.id;
+                    this.c[i10].add(vxVar);
                     if (this.f.H) {
                         TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                         if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
@@ -65,7 +65,7 @@ public abstract class xv implements NotificationCenter.NotificationCenterDelegat
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         TLRPC.StickerSet stickerSet;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.u6 u6Var;
         if (i10 == NotificationCenter.groupStickersDidLoad) {
             for (int i12 = 0; i12 < this.b.size(); i12++) {
                 if (this.b.get(i12) == null) {
@@ -74,12 +74,12 @@ public abstract class xv implements NotificationCenter.NotificationCenterDelegat
                         aw awVar = this.f;
                         awVar.dismiss();
                         Context context = awVar.getContext();
-                        org.telegram.ui.ActionBar.o2 o2Var = awVar.c;
+                        org.telegram.ui.ActionBar.r2 r2Var = awVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
-                        org.telegram.ui.ActionBar.o2 o2Var2 = awVar.c;
-                        org.telegram.ui.gk gkVar = o2Var2 instanceof org.telegram.ui.sn ? ((org.telegram.ui.sn) o2Var2).Y : null;
-                        g6Var = ((org.telegram.ui.ActionBar.h3) awVar).resourcesProvider;
-                        new ty0(context, o2Var, inputStickerSet, null, gkVar, g6Var).show();
+                        org.telegram.ui.ActionBar.r2 r2Var2 = awVar.c;
+                        org.telegram.ui.hk hkVar = r2Var2 instanceof org.telegram.ui.un ? ((org.telegram.ui.un) r2Var2).Y : null;
+                        u6Var = ((org.telegram.ui.ActionBar.k3) awVar).resourcesProvider;
+                        new cz0(context, r2Var, inputStickerSet, null, hkVar, u6Var).show();
                         return;
                     }
                     this.b.set(i12, stickerSet2);
@@ -88,9 +88,9 @@ public abstract class xv implements NotificationCenter.NotificationCenterDelegat
                     }
                 }
             }
-            aw awVar2 = ((jv) this).h;
+            aw awVar2 = ((kv) this).h;
             awVar2.k0();
-            ei.v vVar = awVar2.h;
+            fi.v vVar = awVar2.h;
             if (vVar == null || vVar.getAdapter() == null) {
                 return;
             }

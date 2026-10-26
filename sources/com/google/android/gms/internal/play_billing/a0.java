@@ -1,21 +1,22 @@
 package com.google.android.gms.internal.play_billing;
 
+import a8.ng;
+import a8.oa;
+import a8.qa;
 import j$.util.Objects;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
-import v7.v5;
-import v7.x5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a0 extends com.google.android.gms.internal.cast.j0 {
+public final class a0 extends a8.m {
     public static final a0 n = new a0(null, new Object[0], 0);
     public final transient Object e;
     public final transient Object[] f;
     public final transient int h;
 
     public a0(Object obj, Object[] objArr, int i10) {
-        super(1);
+        super(2);
         this.e = obj;
         this.f = objArr;
         this.h = i10;
@@ -33,7 +34,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static a0 b(int i10, Object[] objArr, a5.a aVar) {
+    public static a0 b(int i10, Object[] objArr, ng ngVar) {
         int i11;
         boolean z10;
         int i12;
@@ -59,7 +60,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
             Objects.requireNonNull(objArr2[1]);
             return new a0(null, objArr2, 1);
         }
-        v5.b(i14, objArr2.length >> 1);
+        oa.b(i14, objArr2.length >> 1);
         char c12 = 2;
         int max = Math.max(i14, 2);
         if (max < 751619276) {
@@ -93,7 +94,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
                     Objects.requireNonNull(obj3);
                     Object obj4 = objArr2[i20 ^ i15];
                     Objects.requireNonNull(obj4);
-                    int a2 = x5.a(obj3.hashCode());
+                    int a2 = qa.a(obj3.hashCode());
                     while (true) {
                         int i21 = a2 & i16;
                         z11 = z14;
@@ -136,10 +137,10 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
                     if (z12) {
                         Object[] objArr3 = (Object[]) obj;
                         s sVar2 = (s) objArr3[c10];
-                        if (aVar == null) {
+                        if (ngVar == null) {
                             throw sVar2.a();
                         }
-                        aVar.d = sVar2;
+                        ngVar.d = sVar2;
                         Object obj7 = objArr3[r16];
                         int intValue = ((Integer) objArr3[i12]).intValue();
                         objArr2 = Arrays.copyOf(objArr2, intValue + intValue);
@@ -169,7 +170,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
                         Objects.requireNonNull(obj8);
                         Object obj9 = objArr2[i27 ^ 1];
                         Objects.requireNonNull(obj9);
-                        int a10 = x5.a(obj8.hashCode());
+                        int a10 = qa.a(obj8.hashCode());
                         while (true) {
                             int i28 = a10 & i16;
                             int i29 = iArr[i28];
@@ -227,7 +228,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
                     Objects.requireNonNull(obj11);
                     Object obj12 = objArr2[i34 ^ 1];
                     Objects.requireNonNull(obj12);
-                    int a11 = x5.a(obj11.hashCode());
+                    int a11 = qa.a(obj11.hashCode());
                     while (true) {
                         int i35 = a11 & i16;
                         char c13 = (char) sArr[i35];
@@ -272,7 +273,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
 
     /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x009f A[RETURN] */
-    @Override // com.google.android.gms.internal.cast.j0, java.util.Map
+    @Override // a8.m, java.util.Map
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -294,7 +295,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
                     if (obj4 instanceof byte[]) {
                         byte[] bArr = (byte[]) obj4;
                         int length = bArr.length - 1;
-                        int a2 = x5.a(obj.hashCode());
+                        int a2 = qa.a(obj.hashCode());
                         while (true) {
                             int i11 = a2 & length;
                             int i12 = bArr[i11] & 255;
@@ -310,7 +311,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
                     } else if (obj4 instanceof short[]) {
                         short[] sArr = (short[]) obj4;
                         int length2 = sArr.length - 1;
-                        int a10 = x5.a(obj.hashCode());
+                        int a10 = qa.a(obj.hashCode());
                         while (true) {
                             int i13 = a10 & length2;
                             char c10 = (char) sArr[i13];
@@ -326,7 +327,7 @@ public final class a0 extends com.google.android.gms.internal.cast.j0 {
                     } else {
                         int[] iArr = (int[]) obj4;
                         int length3 = iArr.length - 1;
-                        int a11 = x5.a(obj.hashCode());
+                        int a11 = qa.a(obj.hashCode());
                         while (true) {
                             int i14 = a11 & length3;
                             int i15 = iArr[i14];

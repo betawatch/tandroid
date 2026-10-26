@@ -1,84 +1,93 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class wo extends org.telegram.ui.Components.lm0 {
-    public final /* synthetic */ xo c;
+public final class wo extends org.telegram.ui.Components.g90 {
+    public final /* synthetic */ Context w;
+    public final /* synthetic */ ap x;
 
-    public wo(xo xoVar) {
-        this.c = xoVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wo(ap apVar, Context context, TLRPC.Chat chat, Context context2) {
+        super(context, chat);
+        this.x = apVar;
+        this.w = context2;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f == 1;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.c.b3.O.size() + 2;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
+    @Override // org.telegram.ui.Components.g90
+    public final boolean a(final boolean z10, org.telegram.ui.Components.e90 e90Var) {
+        TLRPC.ChatFull chatFull;
+        int i10;
+        org.telegram.ui.ActionBar.u6 u6Var;
+        ap apVar = this.x;
+        if (!apVar.V || (chatFull = apVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
+            return true;
         }
-        return i10 <= this.c.b3.O.size() ? 1 : 2;
-    }
+        String str = apVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
+        Context context = this.w;
+        u6Var = ((org.telegram.ui.ActionBar.r2) apVar).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, u6Var);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.ApproveNewMembersApplyToLinksTitle);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString(str, i10, new Object[0]));
+        final int i11 = 0;
+        alertDialog$Builder.k(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksApply), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.vo
+            public final /* synthetic */ wo b;
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        xo xoVar = this.c;
-        yo yoVar = xoVar.b3;
-        int i11 = b1Var.f;
-        View view = b1Var.a;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
-            org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, l4Var, xoVar.n2);
-            l4Var.setText(LocaleController.getString(R.string.UsernamesChannelHeader));
-            return;
-        }
-        if (i11 != 1) {
-            if (i11 != 2) {
-                return;
+            {
+                this.b = this;
             }
-            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-            e9Var.setText(LocaleController.getString(R.string.UsernamesChannelHelp));
-            org.telegram.ui.ActionBar.r6.b0(R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.k6.b7, xoVar.getContext(), e9Var, null);
-            return;
-        }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) yoVar.O.get(i10 - 1);
-        pa paVar = (pa) view;
-        if (paVar.H) {
-            yoVar.P = null;
-        }
-        paVar.a(tL_username, i10 < yoVar.O.size(), false, 0L);
-        if (tL_username == null || !tL_username.editable) {
-            return;
-        }
-        yoVar.P = paVar;
-    }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        xo xoVar = this.c;
-        org.telegram.ui.ActionBar.g6 g6Var = xoVar.n2;
-        if (i10 == 0) {
-            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.l4(xoVar.getContext(), g6Var));
-        }
-        if (i10 == 1) {
-            return new org.telegram.ui.Components.wl0(new ia(this, xoVar.getContext(), g6Var));
-        }
-        if (i10 != 2) {
-            return null;
-        }
-        return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.e9(xoVar.getContext(), 12, g6Var));
+            @Override // org.telegram.ui.ActionBar.b2
+            public final void h(org.telegram.ui.ActionBar.e2 e2Var, int i12) {
+                switch (i11) {
+                    case 0:
+                        boolean z11 = z10;
+                        wo woVar = this.b;
+                        woVar.setJoinRequest(z11);
+                        woVar.x.W = true;
+                        break;
+                    default:
+                        boolean z12 = z10;
+                        wo woVar2 = this.b;
+                        woVar2.setJoinRequest(z12);
+                        woVar2.x.W = false;
+                        break;
+                }
+            }
+        });
+        final int i12 = 1;
+        alertDialog$Builder.h(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksDontApply), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.vo
+            public final /* synthetic */ wo b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.b2
+            public final void h(org.telegram.ui.ActionBar.e2 e2Var, int i122) {
+                switch (i12) {
+                    case 0:
+                        boolean z11 = z10;
+                        wo woVar = this.b;
+                        woVar.setJoinRequest(z11);
+                        woVar.x.W = true;
+                        break;
+                    default:
+                        boolean z12 = z10;
+                        wo woVar2 = this.b;
+                        woVar2.setJoinRequest(z12);
+                        woVar2.x.W = false;
+                        break;
+                }
+            }
+        });
+        apVar.showDialog(alertDialog$Builder.a);
+        return false;
     }
 }

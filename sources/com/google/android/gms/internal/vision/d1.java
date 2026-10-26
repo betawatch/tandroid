@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class d1 implements Cloneable {
     public final f1 a;
@@ -44,8 +44,8 @@ public abstract class d1 implements Cloneable {
             a2.f(f1Var2, bArr, 0, i10, mVar);
         } catch (n1 e) {
             throw e;
-        } catch (IOException e7) {
-            throw new RuntimeException("Reading from byte array should not throw IOException.", e7);
+        } catch (IOException e10) {
+            throw new RuntimeException("Reading from byte array should not throw IOException.", e10);
         } catch (IndexOutOfBoundsException unused) {
             throw n1.a();
         }

@@ -1,6 +1,5 @@
 package org.telegram.ui.web;
 
-import ai.y8;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import bi.t8;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,14 +28,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f5;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.un;
-import org.telegram.ui.o70;
-import w7.b6;
-import w7.z5;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.vn;
+import org.telegram.ui.bv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class l extends FrameLayout {
     public int E;
@@ -49,7 +48,7 @@ public final class l extends FrameLayout {
     public org.telegram.ui.q M;
     public org.telegram.ui.q N;
     public AsyncTask O;
-    public final f5 a;
+    public final h5 a;
     public boolean b;
     public final org.telegram.ui.Cells.y c;
     public final FrameLayout d;
@@ -59,7 +58,7 @@ public final class l extends FrameLayout {
     public final ImageView n;
     public final TextView r;
     public final TextView s;
-    public final un v;
+    public final vn v;
     public final d w;
     public final ArrayList x;
     public final j y;
@@ -71,57 +70,57 @@ public final class l extends FrameLayout {
         this.J = 0.0f;
         setWillNotDraw(false);
         int i11 = UserConfig.selectedAccount;
-        hg.o oVar = new hg.o(this, 17);
+        hi.e2 e2Var = new hi.e2(this, 20);
         a aVar = new a(this);
-        f5 f5Var = new f5(null);
-        this.a = f5Var;
-        d dVar = new d(this, activity, i11, oVar, aVar, f5Var);
+        h5 h5Var = new h5(null);
+        this.a = h5Var;
+        d dVar = new d(this, activity, i11, e2Var, aVar, h5Var);
         this.w = dVar;
-        dVar.Z2.r = false;
+        dVar.g3.r = false;
         dVar.setOverScrollMode(2);
         dVar.setPadding(0, 0, 0, 0);
-        addView(dVar, z5.e(-1, -1, 119));
+        addView(dVar, gb1.i(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
         this.e = frameLayout2;
-        org.telegram.ui.Cells.y a02 = k6.a0(this.G, this.I, 15, 15);
+        org.telegram.ui.Cells.y a02 = y6.a0(this.G, this.I, 15, 15);
         this.c = a02;
         frameLayout2.setBackground(a02);
-        b6.b(frameLayout2, 0.04f, 1.25f);
-        frameLayout.addView(frameLayout2, z5.d(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
+        gb1.c(frameLayout2, 0.04f, 1.25f);
+        frameLayout.addView(frameLayout2, gb1.h(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
         ImageView imageView = new ImageView(activity);
         this.f = imageView;
-        frameLayout2.addView(imageView, z5.d(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
+        frameLayout2.addView(imageView, gb1.h(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
         ImageView imageView2 = new ImageView(activity);
         this.n = imageView2;
-        b6.a(imageView2);
+        gb1.b(imageView2);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.msg_copy);
-        org.telegram.ui.Cells.y a03 = k6.a0(0, 0, 6, 6);
+        org.telegram.ui.Cells.y a03 = y6.a0(0, 0, 6, 6);
         this.h = a03;
         imageView2.setBackground(a03);
-        frameLayout2.addView(imageView2, z5.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
+        frameLayout2.addView(imageView2, gb1.h(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        frameLayout2.addView(linearLayout, z5.d(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
+        frameLayout2.addView(linearLayout, gb1.h(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
         TextView textView = new TextView(activity);
         this.r = textView;
         textView.setTextSize(1, 16.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setMaxLines(4);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView, z5.t(-1, -2, 55, 0, 0, 0, 2));
+        linearLayout.addView(textView, gb1.x(-1, -2, 55, 0, 0, 0, 2));
         TextView textView2 = new TextView(activity);
         this.s = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
-        linearLayout.addView(textView2, z5.t(-1, -2, 55, 0, 0, 0, 0));
-        this.y = new j(null, i10, new ki.u(this, 22));
-        this.v = new un(activity, 28);
-        int i12 = k6.Pk;
-        c(k6.x0(null, i12, false), AndroidUtilities.computePerceivedBrightness(k6.x0(null, i12, false)) >= 0.721f ? -16777216 : -1);
+        linearLayout.addView(textView2, gb1.x(-1, -2, 55, 0, 0, 0, 0));
+        this.y = new j(null, i10, new k2.c(this, 25));
+        this.v = new vn(activity, 28);
+        int i12 = y6.Pk;
+        c(y6.x0(null, i12, false), AndroidUtilities.computePerceivedBrightness(y6.x0(null, i12, false)) >= 0.721f ? -16777216 : -1);
         setOpenProgress(0.0f);
         setImportantForAccessibility(4);
     }
@@ -162,7 +161,7 @@ public final class l extends FrameLayout {
                     kVar2.c = jSONObject.optDouble("rank", 0.0d);
                     arrayList.add(kVar2);
                 }
-                Collections.sort(arrayList, new o70(14));
+                Collections.sort(arrayList, new bv(17));
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -179,8 +178,8 @@ public final class l extends FrameLayout {
                     break;
                 }
                 i11++;
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
                 return;
             }
         }
@@ -216,28 +215,28 @@ public final class l extends FrameLayout {
         this.I = i0.a.f(AndroidUtilities.lerp(0.12f, 0.22f, f7), i10, i11);
         int i12 = this.G;
         org.telegram.ui.Cells.y yVar = this.c;
-        k6.E1(yVar, i12, false);
-        k6.E1(yVar, this.I, true);
+        y6.E1(yVar, i12, false);
+        y6.E1(yVar, this.I, true);
         this.e.invalidate();
         this.r.setTextColor(i11);
-        this.s.setTextColor(k6.o1(0.6f, i11));
+        this.s.setTextColor(y6.o1(0.6f, i11));
         ImageView imageView = this.f;
         if (imageView.getColorFilter() != null) {
             imageView.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
         }
         this.n.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
-        k6.E1(this.h, k6.o1(1.5f, this.I), true);
-        int v = k6.v(i10, k6.o1(0.05f, i11));
-        int v10 = k6.v(i10, k6.o1(0.55f, i11));
-        f5 f5Var = this.a;
-        SparseIntArray sparseIntArray = f5Var.b;
-        SparseIntArray sparseIntArray2 = f5Var.b;
-        sparseIntArray.put(k6.d6, this.F);
-        sparseIntArray2.put(k6.G6, i11);
-        sparseIntArray2.put(k6.e7, v);
-        sparseIntArray2.put(k6.f7, v10);
-        sparseIntArray2.put(k6.G8, k6.o1(0.2f, i11));
-        sparseIntArray2.put(k6.i6, k6.o1(AndroidUtilities.lerp(0.05f, 0.12f, f7), i11));
+        y6.E1(this.h, y6.o1(1.5f, this.I), true);
+        int v = y6.v(i10, y6.o1(0.05f, i11));
+        int v10 = y6.v(i10, y6.o1(0.55f, i11));
+        h5 h5Var = this.a;
+        SparseIntArray sparseIntArray = h5Var.b;
+        SparseIntArray sparseIntArray2 = h5Var.b;
+        sparseIntArray.put(y6.d6, this.F);
+        sparseIntArray2.put(y6.G6, i11);
+        sparseIntArray2.put(y6.e7, v);
+        sparseIntArray2.put(y6.f7, v10);
+        sparseIntArray2.put(y6.G8, y6.o1(0.2f, i11));
+        sparseIntArray2.put(y6.i6, y6.o1(AndroidUtilities.lerp(0.05f, 0.12f, f7), i11));
         this.w.g1();
     }
 
@@ -289,14 +288,14 @@ public final class l extends FrameLayout {
         if (TextUtils.isEmpty(str)) {
             arrayList.clear();
             d dVar = this.w;
-            dVar.Z2.N(true);
+            dVar.g3.O(true);
             if (z10 != (!arrayList.isEmpty())) {
-                dVar.Y2.h1(0, 0);
+                dVar.f3.h1(0, 0);
                 return;
             }
             return;
         }
-        i1 i1Var = new i1(new y8(9, this, z10));
+        i1 i1Var = new i1(new t8(9, this, z10));
         String str3 = n1.a().c;
         if (str3 != null) {
             StringBuilder u10 = a1.g.u(str3);

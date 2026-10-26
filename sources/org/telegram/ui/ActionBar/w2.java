@@ -1,55 +1,56 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.view.View;
+import fi.k8;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class w2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class w2 extends h3 {
+    public final /* synthetic */ k3 H;
 
-    public /* synthetic */ w2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w2(k3 k3Var, Context context) {
+        super(k3Var, context);
+        this.H = k3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                h3 h3Var = (h3) this.b;
-                if (h3Var.startAnimationRunnable == this) {
-                    z10 = h3Var.dismissed;
-                    if (!z10) {
-                        h3Var.startAnimationRunnable = null;
-                        h3.access$2500(h3Var);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
-                if (actionBarLayout.d == this) {
-                    actionBarLayout.d = null;
-                    actionBarLayout.f0(false, true, false);
-                    break;
-                }
-                break;
-            case 2:
-                o1 o1Var = (o1) this.b;
-                ValueAnimator valueAnimator = o1Var.m;
-                if (valueAnimator != null && !valueAnimator.isRunning()) {
-                    o1Var.m.start();
-                    break;
-                }
-                break;
-            default:
-                y4 y4Var = (y4) this.b;
-                y4Var.k();
-                y4Var.j();
-                y4Var.f.setAlpha(1.0f);
-                break;
+    @Override // org.telegram.ui.ActionBar.h3, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.H.mainContainerDispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.ActionBar.h3, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        try {
+            return super.drawChild(canvas, view, j10);
+        } catch (Exception e) {
+            FileLog.e(e);
+            return true;
         }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        qc.a(this, new k8(5));
+    }
+
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        k3 k3Var = this.H;
+        k3Var.lastInsets = null;
+        k3Var.container.requestApplyInsets();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        qc.h(this);
     }
 }

@@ -1,23 +1,13 @@
 package zh;
 
-import java.io.IOException;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class m0 implements y2.m {
-    public final /* synthetic */ Object a;
-
-    public /* synthetic */ m0(Object obj) {
-        this.a = obj;
-    }
-
-    @Override // y2.m
-    public void a() {
-        l2.h hVar = (l2.h) this.a;
-        hVar.A.a();
-        IOException iOException = hVar.C;
-        if (iOException != null) {
-            throw iOException;
-        }
+public final /* synthetic */ class m0 implements ViewTreeObserver.OnPreDrawListener {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        int i10 = p1.z0;
+        return false;
     }
 }

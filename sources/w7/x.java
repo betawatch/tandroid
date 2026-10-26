@@ -1,60 +1,133 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import android.media.MediaCodec;
+import android.media.MediaExtractor;
+import android.media.MediaFormat;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class x {
-    public static String a(Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String l4;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                l4 = "null";
-            } else {
-                try {
-                    l4 = obj.toString();
-                } catch (Exception e) {
-                    String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    l4 = org.telegram.ui.Cells.b1.l("<", D, " threw ", e.getClass().getName(), ">");
+    public static a3.z a(File file, vi.v vVar, long j10, long j11, boolean z10) {
+        long e = e(file);
+        long max = Math.max(0L, j10 * 1000);
+        long min = Math.min(e, Math.max(max, j11 * 1000));
+        MediaExtractor mediaExtractor = new MediaExtractor();
+        try {
+            mediaExtractor.setDataSource(file.getAbsolutePath());
+            int d = d(mediaExtractor, true);
+            long j12 = -1;
+            if (d >= 0) {
+                mediaExtractor.selectTrack(d);
+                mediaExtractor.seekTo(max, 1);
+                long sampleTime = mediaExtractor.getSampleTime();
+                if (sampleTime >= 0 && sampleTime < min) {
+                    j12 = sampleTime;
                 }
             }
-            objArr[i11] = l4;
-            i11++;
-        }
-        StringBuilder sb2 = new StringBuilder((length * 16) + 29);
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = "expected a non-null reference".indexOf("%s", i12)) == -1) {
-                break;
+            if (j12 < 0 || j12 >= min) {
+                throw new IOException("Trim range has no video sync sample");
             }
-            sb2.append((CharSequence) "expected a non-null reference", i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
-        }
-        sb2.append((CharSequence) "expected a non-null reference", i12, 29);
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
+            mediaExtractor = new MediaExtractor();
+            try {
+                mediaExtractor.setDataSource(file.getAbsolutePath());
+                int d10 = d(mediaExtractor, true);
+                int d11 = d(mediaExtractor, false);
+                if (d10 < 0 || (z10 && d11 < 0)) {
+                    throw new IOException("Source file has no required tracks");
+                }
+                vVar.l(mediaExtractor.getTrackFormat(d10), true);
+                if (z10) {
+                    vVar.l(mediaExtractor.getTrackFormat(d11), false);
+                }
+                mediaExtractor.release();
+                ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_21);
+                long j13 = j12;
+                b(file, vVar, true, j13, min, allocateDirect);
+                if (z10) {
+                    b(file, vVar, false, j13, min, allocateDirect);
+                }
+                return new a3.z(j13 / 1000, (min - j13) / 1000);
+            } finally {
             }
-            sb2.append(']');
+        } finally {
         }
-        return sb2.toString();
+    }
+
+    public static void b(File file, vi.v vVar, boolean z10, long j10, long j11, ByteBuffer byteBuffer) {
+        boolean z11 = z10;
+        MediaExtractor mediaExtractor = new MediaExtractor();
+        MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
+        try {
+            mediaExtractor.setDataSource(file.getAbsolutePath());
+            int d = d(mediaExtractor, z11);
+            if (d < 0) {
+                throw new IOException("Source track disappeared");
+            }
+            mediaExtractor.selectTrack(d);
+            mediaExtractor.seekTo(j10, z11 ? 1 : 2);
+            while (mediaExtractor.getSampleTime() >= 0 && mediaExtractor.getSampleTime() < j10) {
+                mediaExtractor.advance();
+            }
+            while (mediaExtractor.getSampleTime() >= 0 && mediaExtractor.getSampleTime() < j11) {
+                byteBuffer.clear();
+                int readSampleData = mediaExtractor.readSampleData(byteBuffer, 0);
+                if (readSampleData >= 0) {
+                    bufferInfo.set(0, readSampleData, mediaExtractor.getSampleTime(), mediaExtractor.getSampleFlags());
+                    vVar.o(z11, byteBuffer, bufferInfo, -j10);
+                    mediaExtractor.advance();
+                    z11 = z10;
+                }
+            }
+        } finally {
+            mediaExtractor.release();
+        }
+    }
+
+    public static void c(File file) {
+        try {
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
+            try {
+                randomAccessFile.setLength(0L);
+                randomAccessFile.close();
+            } finally {
+            }
+        } catch (IOException unused) {
+        }
+        if (file.exists()) {
+            file.delete();
+        }
+    }
+
+    public static int d(MediaExtractor mediaExtractor, boolean z10) {
+        String str = z10 ? "video/" : "audio/";
+        for (int i10 = 0; i10 < mediaExtractor.getTrackCount(); i10++) {
+            String string = mediaExtractor.getTrackFormat(i10).getString("mime");
+            if (string != null && string.startsWith(str)) {
+                return i10;
+            }
+        }
+        return -1;
+    }
+
+    public static long e(File file) {
+        MediaExtractor mediaExtractor = new MediaExtractor();
+        try {
+            mediaExtractor.setDataSource(file.getAbsolutePath());
+            long j10 = 0;
+            for (int i10 = 0; i10 < mediaExtractor.getTrackCount(); i10++) {
+                MediaFormat trackFormat = mediaExtractor.getTrackFormat(i10);
+                if (trackFormat.containsKey("durationUs")) {
+                    j10 = Math.max(j10, trackFormat.getLong("durationUs"));
+                }
+            }
+            return j10;
+        } finally {
+            mediaExtractor.release();
+        }
     }
 }

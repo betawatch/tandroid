@@ -449,11 +449,11 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
     }
 
     public ZonedDateTime atStartOfDay(ZoneId zoneId) {
-        j$.time.zone.b e7;
+        j$.time.zone.b e10;
         Objects.requireNonNull(zoneId, "zone");
         LocalDateTime J = LocalDateTime.J(this, h.g);
-        if (!(zoneId instanceof ZoneOffset) && (e7 = zoneId.getRules().e(J)) != null && e7.j()) {
-            J = e7.b.M(e7.d.getTotalSeconds() - e7.c.getTotalSeconds());
+        if (!(zoneId instanceof ZoneOffset) && (e10 = zoneId.getRules().e(J)) != null && e10.j()) {
+            J = e10.b.M(e10.d.getTotalSeconds() - e10.c.getTotalSeconds());
         }
         return ZonedDateTime.H(J, zoneId, null);
     }

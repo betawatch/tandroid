@@ -1,9 +1,9 @@
 package j4;
 
 import e2.k0;
-import e2.m0;
+import e2.n0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b0 implements g0 {
     public final a0 a;
@@ -71,7 +71,7 @@ public final class b0 implements g0 {
                     if (!this.e) {
                         xVar2.M(i15);
                     } else {
-                        if (m0.p(0, i15, -1, xVar2.a) != 0) {
+                        if (n0.p(0, i15, -1, xVar2.a) != 0) {
                             this.f = true;
                             return;
                         }
@@ -86,8 +86,8 @@ public final class b0 implements g0 {
     }
 
     @Override // j4.g0
-    public final void b(k0 k0Var, c3.s sVar, f0 f0Var) {
-        this.a.b(k0Var, sVar, f0Var);
+    public final void b(k0 k0Var, c3.q qVar, f0 f0Var) {
+        this.a.b(k0Var, qVar, f0Var);
         this.f = true;
     }
 

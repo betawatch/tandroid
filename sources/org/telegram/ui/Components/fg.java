@@ -2,18 +2,18 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class fg extends u51 {
+public final class fg extends b61 {
     public final /* synthetic */ gg f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fg(gg ggVar, Context context, org.telegram.ui.ActionBar.o2 o2Var, i61 i61Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, o2Var, i61Var, g6Var);
+    public fg(gg ggVar, Context context, org.telegram.ui.ActionBar.r2 r2Var, p61 p61Var, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, r2Var, p61Var, u6Var);
         this.f = ggVar;
     }
 
-    @Override // org.telegram.ui.Components.u51, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    @Override // org.telegram.ui.Components.b61, org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
     public final void dismiss() {
         super.dismiss();
         ChatActivityEnterView chatActivityEnterView = this.f.a;
@@ -22,7 +22,7 @@ public final class fg extends u51 {
         }
         og ogVar = chatActivityEnterView.Z2;
         if (ogVar != null) {
-            ogVar.C(false);
+            ogVar.w(false);
         }
     }
 }

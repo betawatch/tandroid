@@ -1,31 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fn implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
+public final /* synthetic */ class fn implements nl, org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ Utilities.Callback a;
 
-    public /* synthetic */ fn(fo foVar, int i10) {
-        this.a = i10;
-        this.b = foVar;
+    public /* synthetic */ fn(Utilities.Callback callback) {
+        this.a = callback;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                fo foVar = this.b;
-                foVar.getClass();
-                foVar.E.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                fo foVar2 = this.b;
-                foVar2.getClass();
-                foVar2.E.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    @Override // org.telegram.ui.Components.nl
+    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
+        this.a.run(new th.f(messageMedia));
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        Utilities.Callback callback = this.a;
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
     }
 }

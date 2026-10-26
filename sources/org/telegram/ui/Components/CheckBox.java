@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public class CheckBox extends View {
     public static Paint H;
@@ -93,7 +93,7 @@ public class CheckBox extends View {
         this.v = z10;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addListener(new org.telegram.ui.pq(this, 18));
+        ofFloat.addListener(new org.telegram.ui.qp(this, 19));
         this.s.setDuration(300L);
         this.s.start();
     }

@@ -1,44 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.ViewSwitcher;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class s11 extends ViewSwitcher {
-    public final void a(CharSequence charSequence, boolean z10, boolean z11) {
-        if (z11 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
-            if (!z10) {
-                getCurrentView().setText(charSequence);
-            } else {
-                getNextView().setText(charSequence);
-                showNext();
-            }
+public final class s11 extends MetricAffectingSpan {
+    public TextPaint a;
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
         }
     }
 
-    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
-    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
-        if (!(view instanceof TextView)) {
-            throw new IllegalArgumentException();
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
         }
-        super.addView(view, i10, layoutParams);
-    }
-
-    public void setText(CharSequence charSequence) {
-        a(charSequence, true, false);
-    }
-
-    @Override // android.widget.ViewAnimator
-    public TextView getCurrentView() {
-        return (TextView) super.getCurrentView();
-    }
-
-    @Override // android.widget.ViewSwitcher
-    public TextView getNextView() {
-        return (TextView) super.getNextView();
     }
 }

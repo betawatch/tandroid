@@ -1,43 +1,243 @@
 package s4;
 
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ RecyclerView b;
+public final class f0 extends androidx.emoji2.text.g {
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ f0(RecyclerView recyclerView, int i10) {
-        this.a = i10;
-        this.b = recyclerView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f0(c0 c0Var, int i10) {
+        super(c0Var);
+        this.d = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // androidx.emoji2.text.g
+    public final int a(View view) {
+        int y3;
+        int i10;
+        switch (this.d) {
             case 0:
-                RecyclerView recyclerView = this.b;
-                if (recyclerView.I && !recyclerView.isLayoutRequested()) {
-                    if (!recyclerView.G) {
-                        recyclerView.requestLayout();
-                        break;
-                    } else if (!recyclerView.L) {
-                        recyclerView.p();
-                        break;
-                    } else {
-                        recyclerView.K = true;
-                        break;
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                y3 = p0.y(view);
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var).rightMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                y3 = p0.v(view);
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin;
+                break;
+        }
+        return y3 + i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int b(View view) {
+        int measuredWidth;
+        int i10;
+        switch (this.d) {
+            case 0:
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect = ((q0) view.getLayoutParams()).b;
+                measuredWidth = view.getMeasuredWidth() + rect.left + rect.right + ((ViewGroup.MarginLayoutParams) q0Var).leftMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var).rightMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect2 = ((q0) view.getLayoutParams()).b;
+                measuredWidth = view.getMeasuredHeight() + rect2.top + rect2.bottom + ((ViewGroup.MarginLayoutParams) q0Var2).topMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin;
+                break;
+        }
+        return measuredWidth + i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int c(View view) {
+        int measuredHeight;
+        int i10;
+        switch (this.d) {
+            case 0:
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect = ((q0) view.getLayoutParams()).b;
+                measuredHeight = view.getMeasuredHeight() + rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) q0Var).topMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                Rect rect2 = ((q0) view.getLayoutParams()).b;
+                measuredHeight = view.getMeasuredWidth() + rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) q0Var2).leftMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).rightMargin;
+                break;
+        }
+        return measuredHeight + i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int d(View view) {
+        int x9;
+        int i10;
+        switch (this.d) {
+            case 0:
+                q0 q0Var = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                x9 = p0.x(view);
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var).leftMargin;
+                break;
+            default:
+                q0 q0Var2 = (q0) view.getLayoutParams();
+                ((c0) this.b).getClass();
+                x9 = p0.z(view);
+                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).topMargin;
+                break;
+        }
+        return x9 - i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int e() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).m;
+            default:
+                return ((c0) this.b).n;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int f() {
+        int i10;
+        int E;
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                i10 = c0Var.m;
+                E = c0Var.E();
+                break;
+            default:
+                c0 c0Var2 = (c0) this.b;
+                i10 = c0Var2.n;
+                E = c0Var2.C();
+                break;
+        }
+        return i10 - E;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int g() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).E();
+            default:
+                return ((c0) this.b).C();
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int h() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).k;
+            default:
+                return ((c0) this.b).l;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int i() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).l;
+            default:
+                return ((c0) this.b).k;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int j() {
+        switch (this.d) {
+            case 0:
+                return ((c0) this.b).D();
+            default:
+                return ((c0) this.b).J();
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int k() {
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                return (c0Var.m - c0Var.D()) - c0Var.E();
+            default:
+                return ((c0) this.b).K();
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int l(View view) {
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                Rect rect = (Rect) this.c;
+                c0Var.L(view, rect);
+                return rect.right;
+            default:
+                c0 c0Var2 = (c0) this.b;
+                Rect rect2 = (Rect) this.c;
+                c0Var2.L(view, rect2);
+                return rect2.bottom;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int m(View view) {
+        switch (this.d) {
+            case 0:
+                c0 c0Var = (c0) this.b;
+                Rect rect = (Rect) this.c;
+                c0Var.L(view, rect);
+                return rect.left;
+            default:
+                c0 c0Var2 = (c0) this.b;
+                Rect rect2 = (Rect) this.c;
+                c0Var2.L(view, rect2);
+                return rect2.top;
+        }
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final void n(int i10) {
+        switch (this.d) {
+            case 0:
+                RecyclerView recyclerView = ((c0) this.b).b;
+                if (recyclerView != null) {
+                    int k10 = recyclerView.e.k();
+                    for (int i11 = 0; i11 < k10; i11++) {
+                        recyclerView.e.j(i11).offsetLeftAndRight(i10);
                     }
+                    break;
                 }
                 break;
             default:
-                RecyclerView recyclerView2 = this.b;
-                l0 l0Var = recyclerView2.c0;
-                if (l0Var != null) {
-                    l0Var.m();
+                RecyclerView recyclerView2 = ((c0) this.b).b;
+                if (recyclerView2 != null) {
+                    int k11 = recyclerView2.e.k();
+                    for (int i12 = 0; i12 < k11; i12++) {
+                        recyclerView2.e.j(i12).offsetTopAndBottom(i10);
+                    }
+                    break;
                 }
-                recyclerView2.A0 = false;
                 break;
         }
     }

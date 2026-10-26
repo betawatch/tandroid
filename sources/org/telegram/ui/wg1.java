@@ -3,7 +3,6 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.content.ClipboardManager;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -12,17 +11,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wg1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ wg1(int i10, Object obj, int i11) {
-        this.a = i11;
+    public /* synthetic */ wg1(int i10, wb0 wb0Var) {
+        this.a = 2;
         this.b = i10;
-        this.c = obj;
+        this.c = wb0Var;
     }
 
     @Override // java.lang.Runnable
@@ -30,41 +29,41 @@ public final /* synthetic */ class wg1 implements Runnable {
         CharSequence text;
         int i10 = this.a;
         int i11 = 2;
-        Object obj = this.c;
         final int i12 = this.b;
+        Object obj = this.c;
         switch (i10) {
             case 0:
-                oh1 oh1Var = (oh1) obj;
-                oh1Var.F.setSignalBarCount(i12);
+                ph1 ph1Var = (ph1) obj;
+                ph1Var.F.setSignalBarCount(i12);
                 if (i12 <= 1) {
-                    org.telegram.ui.Components.voip.a3 a3Var = oh1Var.v;
-                    if (a3Var.V != 3) {
-                        a3Var.V = 3;
-                        ValueAnimator ofInt = ValueAnimator.ofInt(a3Var.H, 255);
-                        a3Var.O = ofInt;
-                        ofInt.addUpdateListener(new org.telegram.ui.Components.voip.y2(a3Var, 2));
-                        a3Var.O.setDuration(500L);
-                        a3Var.O.start();
+                    org.telegram.ui.Components.voip.d3 d3Var = ph1Var.v;
+                    if (d3Var.V != 3) {
+                        d3Var.V = 3;
+                        ValueAnimator ofInt = ValueAnimator.ofInt(d3Var.H, 255);
+                        d3Var.O = ofInt;
+                        ofInt.addUpdateListener(new org.telegram.ui.Components.voip.b3(d3Var, 2));
+                        d3Var.O.setDuration(500L);
+                        d3Var.O.start();
                     }
-                    oh1Var.F.c(true);
+                    ph1Var.F.c(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.voip.a3 a3Var2 = oh1Var.v;
-                    if (a3Var2.V != 2) {
-                        a3Var2.V = 2;
-                        a3Var2.c();
-                        ValueAnimator valueAnimator = a3Var2.O;
+                    org.telegram.ui.Components.voip.d3 d3Var2 = ph1Var.v;
+                    if (d3Var2.V != 2) {
+                        d3Var2.V = 2;
+                        d3Var2.c();
+                        ValueAnimator valueAnimator = d3Var2.O;
                         if (valueAnimator != null) {
                             valueAnimator.removeAllUpdateListeners();
-                            a3Var2.O.cancel();
+                            d3Var2.O.cancel();
                         }
-                        ValueAnimator ofInt2 = ValueAnimator.ofInt(a3Var2.H, 0);
-                        a3Var2.O = ofInt2;
-                        ofInt2.addUpdateListener(new org.telegram.ui.Components.voip.y2(a3Var2, 0));
-                        a3Var2.O.setDuration(500L);
-                        a3Var2.O.start();
+                        ValueAnimator ofInt2 = ValueAnimator.ofInt(d3Var2.H, 0);
+                        d3Var2.O = ofInt2;
+                        ofInt2.addUpdateListener(new org.telegram.ui.Components.voip.b3(d3Var2, 0));
+                        d3Var2.O.setDuration(500L);
+                        d3Var2.O.start();
                     }
-                    oh1Var.F.c(false);
+                    ph1Var.F.c(false);
                     break;
                 }
             case 1:
@@ -77,25 +76,25 @@ public final /* synthetic */ class wg1 implements Runnable {
                 }
                 break;
             case 2:
-                org.telegram.ui.Wallet.l0 w9 = org.telegram.ui.Wallet.l0.w(i12);
+                org.telegram.ui.Wallet.l0 w10 = org.telegram.ui.Wallet.l0.w(i12);
                 NotificationCenter notificationCenter = NotificationCenter.getInstance(i12);
-                org.telegram.ui.Wallet.a0 a0Var = new org.telegram.ui.Wallet.a0(notificationCenter, (f80) obj, w9);
+                org.telegram.ui.Wallet.a0 a0Var = new org.telegram.ui.Wallet.a0(notificationCenter, (wb0) obj, w10);
                 notificationCenter.addObserver(a0Var, NotificationCenter.walletUpdate);
                 AndroidUtilities.runOnUIThread(a0Var, 10000L);
-                if (w9.e == null && w9.A < 0) {
-                    w9.W();
+                if (w10.e == null && w10.A < 0) {
+                    w10.W();
                 }
-                w9.U();
+                w10.U();
                 a0Var.a();
                 break;
             case 3:
-                org.telegram.ui.Wallet.p5 p5Var = (org.telegram.ui.Wallet.p5) obj;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.c41(p5Var, i12, org.telegram.ui.Wallet.p5.h(p5Var.R, i12), 19));
+                org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) obj;
+                AndroidUtilities.runOnUIThread(new yx(n5Var, i12, org.telegram.ui.Wallet.n5.h(n5Var.R, i12), 17));
                 break;
             case 4:
-                org.telegram.ui.Wallet.m6 m6Var = (org.telegram.ui.Wallet.m6) obj;
-                if (m6Var.r && !m6Var.x && i12 == m6Var.k0) {
-                    m6Var.postDelayed(m6Var.l0, 500L);
+                org.telegram.ui.Wallet.l6 l6Var = (org.telegram.ui.Wallet.l6) obj;
+                if (l6Var.r && !l6Var.x && i12 == l6Var.k0) {
+                    l6Var.postDelayed(l6Var.l0, 500L);
                     break;
                 }
                 break;
@@ -107,10 +106,10 @@ public final /* synthetic */ class wg1 implements Runnable {
                     if (clipboardManager != null && clipboardManager.getPrimaryClip() != null && clipboardManager.getPrimaryClip().getItemCount() != 0 && (text = clipboardManager.getPrimaryClip().getItemAt(0).getText()) != null) {
                         String[] split = text.toString().trim().toLowerCase().split("\\s+");
                         for (int i13 = 0; i12 < arrayList.size() && i13 < split.length; i13++) {
-                            ((org.telegram.ui.Wallet.ia) arrayList.get(i12)).setText(split[i13]);
+                            ((org.telegram.ui.Wallet.ha) arrayList.get(i12)).setText(split[i13]);
                             i12++;
                         }
-                        w7Var.Y();
+                        w7Var.Z();
                         break;
                     }
                 } catch (Exception unused) {
@@ -118,33 +117,36 @@ public final /* synthetic */ class wg1 implements Runnable {
                 }
                 break;
             case 6:
-                org.telegram.ui.Wallet.s9 s9Var = (org.telegram.ui.Wallet.s9) obj;
-                if (!s9Var.n && i12 == s9Var.I) {
-                    s9Var.K = false;
-                    s9Var.a.Z2.N(true);
+                org.telegram.ui.Wallet.r9 r9Var = (org.telegram.ui.Wallet.r9) obj;
+                if (!r9Var.r && i12 == r9Var.J) {
+                    r9Var.L = false;
+                    r9Var.a.g3.O(true);
                     break;
                 }
                 break;
             case 7:
-                org.telegram.ui.ActionBar.c2[] c2VarArr = (org.telegram.ui.ActionBar.c2[]) obj;
-                org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
-                if (c2Var != null) {
+                ((ph.a) obj).w0(i12, 0, null);
+                break;
+            case 8:
+                org.telegram.ui.ActionBar.e2[] e2VarArr = (org.telegram.ui.ActionBar.e2[]) obj;
+                org.telegram.ui.ActionBar.e2 e2Var = e2VarArr[0];
+                if (e2Var != null) {
                     try {
-                        c2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: pf.a
+                        e2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: qf.a
                             @Override // android.content.DialogInterface.OnCancelListener
                             public final void onCancel(DialogInterface dialogInterface) {
                                 ConnectionsManager.getInstance(UserConfig.selectedAccount).cancelRequest(i12, true);
                             }
                         });
-                        c2VarArr[0].show();
+                        e2VarArr[0].show();
                         break;
                     } catch (Exception unused2) {
                         return;
                     }
                 }
                 break;
-            case 8:
-                rg.j jVar = (rg.j) obj;
+            case 9:
+                sg.j jVar = (sg.j) obj;
                 jVar.L = i12;
                 jVar.K = true;
                 try {
@@ -161,39 +163,33 @@ public final /* synthetic */ class wg1 implements Runnable {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 jVar.P = duration;
-                duration.setInterpolator(org.telegram.ui.Components.bs.f);
-                jVar.P.addUpdateListener(new rg.f(jVar, 5));
-                jVar.P.addListener(new rg.g(jVar, i11));
+                duration.setInterpolator(org.telegram.ui.Components.ds.f);
+                jVar.P.addUpdateListener(new sg.f(jVar, 5));
+                jVar.P.addListener(new sg.g(jVar, i11));
                 jVar.P.start();
                 break;
-            case 9:
-                jt0 jt0Var = (jt0) obj;
-                qg.s1 s1Var = jt0Var.K1;
-                jt0Var.s0(s1Var, null);
-                qg.u0.e(i12).j(s1Var.c);
-                break;
             case 10:
-                rg.o2 o2Var = (rg.o2) obj;
-                o2Var.getClass();
-                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
-                o2Var.h();
+                nt0 nt0Var = (nt0) obj;
+                rg.q1 q1Var = nt0Var.z1;
+                nt0Var.r0(q1Var, null);
+                rg.s0.e(i12).j(q1Var.c);
                 break;
             case 11:
-                org.telegram.ui.Components.y90 y90Var = ((ug.p0) obj).e;
+                sg.p2 p2Var = (sg.p2) obj;
+                p2Var.getClass();
+                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
+                p2Var.h();
+                break;
+            default:
+                org.telegram.ui.Components.z90 z90Var = ((vg.r0) obj).e;
                 try {
-                    if (y90Var.getLayout().getLineForOffset(i12) == 0) {
-                        y90Var.getEditableText().insert(i12, "\n");
+                    if (z90Var.getLayout().getLineForOffset(i12) == 0) {
+                        z90Var.getEditableText().insert(i12, "\n");
                         break;
                     }
                 } catch (Exception e) {
                     FileLog.e(e);
-                    return;
                 }
-                break;
-            default:
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", UserConfig.getInstance(i12).clientUserId);
-                ((org.telegram.ui.ActionBar.h5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
                 break;
         }
     }

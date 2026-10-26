@@ -2,83 +2,110 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.c81;
-import org.telegram.ui.vy0;
+import android.view.View;
+import android.widget.Button;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y3 extends RadialProgressView {
-    public final /* synthetic */ int N = 0;
-    public final Paint O;
-    public final /* synthetic */ Object P;
+public final class y3 extends org.telegram.ui.Components.s6 {
+    public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(d4 d4Var, Context context) {
-        super(context, null);
-        this.P = d4Var;
-        Paint paint = new Paint(1);
-        this.O = paint;
-        paint.setColor(1426063360);
+    public /* synthetic */ y3(Context context, boolean z10, boolean z11, boolean z12, int i10) {
+        super(context, z10, z11, z12);
+        this.s = i10;
     }
 
-    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.N) {
+    @Override // android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.s) {
             case 0:
-                d4 d4Var = (d4) this.P;
-                org.telegram.ui.Components.w9 w9Var = d4Var.b;
-                if (w9Var.getImageReceiver().hasNotThumb() && w9Var.getAlpha() > 0.0f) {
-                    int alpha = (int) (w9Var.getAlpha() * w9Var.getImageReceiver().getCurrentAlpha() * 85.0f);
-                    Paint paint = this.O;
-                    paint.setAlpha(alpha);
-                    canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint);
-                }
-                d4Var.x.setProgressColor(i0.a.o(-1, (int) (w9Var.getAlpha() * w9Var.getImageReceiver().getCurrentAlpha() * 255.0f)));
-                super.onDraw(canvas);
-                break;
+                return Button.class.getName();
             case 1:
-                ProfileActivity profileActivity = (ProfileActivity) this.P;
-                vy0 vy0Var = profileActivity.f0;
-                if (vy0Var != null && vy0Var.getImageReceiver().hasNotThumb()) {
-                    int currentAlpha = (int) (profileActivity.f0.getImageReceiver().getCurrentAlpha() * 85.0f);
-                    Paint paint2 = this.O;
-                    paint2.setAlpha(currentAlpha);
-                    canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint2);
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
+    }
+
+    @Override // android.view.View
+    public int getBaseline() {
+        switch (this.s) {
+            case 5:
+                return Math.round((getHeight() - getDrawable().e) / 2.0f) - getPaint().getFontMetricsInt().ascent;
+            default:
+                return super.getBaseline();
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.s) {
+            case 4:
+                if (!bh.m0.b(this)) {
+                    super.invalidate();
+                    break;
                 }
-                super.onDraw(canvas);
                 break;
             default:
-                c81 c81Var = (c81) this.P;
-                org.telegram.ui.Components.w9 w9Var2 = c81Var.F;
-                if (w9Var2 != null && w9Var2.getImageReceiver().hasNotThumb()) {
-                    int currentAlpha2 = (int) (c81Var.F.getImageReceiver().getCurrentAlpha() * 85.0f);
-                    Paint paint3 = this.O;
-                    paint3.setAlpha(currentAlpha2);
-                    canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint3);
-                }
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.s6, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.s) {
+            case 2:
+                canvas.save();
+                canvas.translate(AndroidUtilities.dp(17.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.restore();
+                break;
+            default:
                 super.onDraw(canvas);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(c81 c81Var, Context context) {
-        super(context, null);
-        this.P = c81Var;
-        Paint paint = new Paint(1);
-        this.O = paint;
-        paint.setColor(1426063360);
+    @Override // org.telegram.ui.Components.s6, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.s) {
+            case 3:
+                super.onMeasure(i10, i11);
+                setPivotX(getMeasuredWidth());
+                break;
+            case 4:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), i11);
+                setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i10), getMeasuredHeight());
+                break;
+        }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(ProfileActivity profileActivity, Context context) {
-        super(context, null);
-        this.P = profileActivity;
-        Paint paint = new Paint(1);
-        this.O = paint;
-        paint.setColor(1426063360);
+    public /* synthetic */ y3(Context context, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        super(context, z10, z11, z12, z13, z14);
+        this.s = 5;
+    }
+
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.s) {
+            case 4:
+                if (!bh.m0.b(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+        }
     }
 }

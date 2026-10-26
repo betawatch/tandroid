@@ -1,23 +1,45 @@
 package y9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.util.HashMap;
+
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
-    public static final g c = new g(0, 0);
-    public final int a;
-    public final int b;
+    public static final g a;
+    public static final HashMap b;
+    public static final /* synthetic */ g[] c;
 
-    public g(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    /* JADX INFO: Fake field, exist only in values array */
+    g EF0;
+
+    static {
+        g gVar = new g("X86_32", 0);
+        g gVar2 = new g("X86_64", 1);
+        g gVar3 = new g("ARM_UNKNOWN", 2);
+        g gVar4 = new g("PPC", 3);
+        g gVar5 = new g("PPC64", 4);
+        g gVar6 = new g("ARMV6", 5);
+        g gVar7 = new g("ARMV7", 6);
+        g gVar8 = new g("UNKNOWN", 7);
+        a = gVar8;
+        g gVar9 = new g("ARMV7S", 8);
+        g gVar10 = new g("ARM64", 9);
+        c = new g[]{gVar, gVar2, gVar3, gVar4, gVar5, gVar6, gVar7, gVar8, gVar9, gVar10};
+        HashMap hashMap = new HashMap(4);
+        b = hashMap;
+        hashMap.put("armeabi-v7a", gVar7);
+        hashMap.put("armeabi", gVar6);
+        hashMap.put("arm64-v8a", gVar10);
+        hashMap.put("x86", gVar);
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(g.class.getSimpleName());
-        sb2.append("[position = ");
-        sb2.append(this.a);
-        sb2.append(", length = ");
-        return a1.g.n(this.b, "]", sb2);
+    public static g valueOf(String str) {
+        return (g) Enum.valueOf(g.class, str);
+    }
+
+    public static g[] values() {
+        return (g[]) c.clone();
     }
 }

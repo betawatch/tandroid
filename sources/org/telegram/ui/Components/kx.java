@@ -1,38 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.view.MotionEvent;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class kx extends aw {
-    public final /* synthetic */ TLRPC.StickerSet W;
-    public final /* synthetic */ tz X;
+public final class kx extends m61 {
+    public final /* synthetic */ sz b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kx(tz tzVar, org.telegram.ui.ActionBar.o2 o2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
-        super(o2Var, context, g6Var, arrayList);
-        this.X = tzVar;
-        this.W = stickerSet;
+    public kx(sz szVar) {
+        this.b = szVar;
     }
 
-    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        this.X.w2 = false;
-        super.dismiss();
+    @Override // org.telegram.ui.Components.m61
+    public final boolean a() {
+        return this.b.t1.b();
     }
 
-    @Override // org.telegram.ui.Components.aw
-    public final void h0(boolean z10) {
-        tz tzVar = this.X;
-        ArrayList arrayList = tzVar.p1;
-        TLRPC.StickerSet stickerSet = this.W;
-        if (!z10) {
-            arrayList.remove(Long.valueOf(stickerSet.id));
-        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
-            arrayList.add(Long.valueOf(stickerSet.id));
+    @Override // org.telegram.ui.Components.m61
+    public final String[] b() {
+        return this.b.W0;
+    }
+
+    @Override // org.telegram.ui.Components.m61
+    public final boolean c() {
+        return this.b.t1.c();
+    }
+
+    @Override // org.telegram.ui.Components.m61
+    public final boolean d(f61 f61Var, MotionEvent motionEvent) {
+        org.telegram.ui.ft o10 = org.telegram.ui.ft.o();
+        sz szVar = this.b;
+        szVar.getMeasuredHeight();
+        return o10.p(motionEvent, f61Var, szVar.g2, szVar.Z1);
+    }
+
+    @Override // org.telegram.ui.Components.m61
+    public final boolean e(f61 f61Var, j jVar, MotionEvent motionEvent) {
+        org.telegram.ui.ft o10 = org.telegram.ui.ft.o();
+        sz szVar = this.b;
+        szVar.getMeasuredHeight();
+        return o10.q(motionEvent, f61Var, jVar, szVar.g2, szVar.Z1);
+    }
+
+    @Override // org.telegram.ui.Components.m61
+    public final void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
+        this.b.t1.m(null, document, null, obj, null, z10, i10);
+    }
+
+    @Override // org.telegram.ui.Components.m61
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
+        sz szVar = this.b;
+        szVar.t1.r(stickerSetCovered);
+        if (z10) {
+            szVar.X(true);
         }
-        tzVar.T();
+    }
+
+    @Override // org.telegram.ui.Components.m61
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        this.b.t1.h(stickerSetCovered);
+    }
+
+    @Override // org.telegram.ui.Components.m61
+    public final void i(String[] strArr) {
+        this.b.W0 = strArr;
     }
 }

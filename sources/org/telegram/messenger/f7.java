@@ -1,37 +1,41 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ f7(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
+    public /* synthetic */ f7(MediaDataController mediaDataController, String str, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = tL_messages_stickerSet;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$saveStickerSetIntoCache$40(this.c);
+                this.b.lambda$fetchNewEmojiKeywords$208(this.c);
                 break;
             case 1:
-                this.b.lambda$loadGroupStickerSet$45(this.c);
+                this.b.lambda$fetchNewEmojiKeywords$210(this.c);
                 break;
             case 2:
-                this.b.lambda$loadGroupStickerSet$43(this.c);
+                this.b.lambda$fetchNewEmojiKeywords$212(this.c);
                 break;
             case 3:
-                this.b.lambda$putSetToCache$47(this.c);
+                this.b.lambda$fetchNewEmojiKeywords$209(this.c);
+                break;
+            case 4:
+                this.b.lambda$fetchNewEmojiKeywords$214(this.c);
+                break;
+            case 5:
+                this.b.lambda$putEmojiKeywords$215(this.c);
                 break;
             default:
-                this.b.lambda$replaceStickerSet$28(this.c);
+                this.b.lambda$processLoadedDiceStickers$86(this.c);
                 break;
         }
     }

@@ -1,11 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface vo0 {
-    void d(float f7);
+public final class vo0 extends s4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.jx b;
 
-    void e(org.telegram.ui.Cells.q2 q2Var);
+    public /* synthetic */ vo0(org.telegram.ui.jx jxVar, int i10) {
+        this.a = i10;
+        this.b = jxVar;
+    }
 
-    void finish();
+    @Override // s4.u0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                this.b.T();
+                break;
+            default:
+                this.b.T();
+                break;
+        }
+    }
 }

@@ -6,27 +6,43 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class m extends FrameLayout implements ne.k {
-    public final g6 a;
+public abstract class m extends FrameLayout implements oe.k {
+    public final u6 a;
     public final c2.b b;
-    public final ne.l c;
+    public final oe.l c;
 
-    public m(Context context, g6 g6Var, c2.b bVar) {
+    public m(Context context, u6 u6Var, c2.b bVar) {
         super(context);
-        this.c = new ne.l(this, bs.h, 350L);
-        this.a = g6Var;
+        this.c = new oe.l(this, ds.h, 350L);
+        this.a = u6Var;
         this.b = bVar;
     }
 
-    public final void b(CharSequence charSequence, boolean z10) {
+    public void b(oe.l lVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            oe.g gVar = (oe.g) it.next();
+            float c10 = gVar.c();
+            Object obj = gVar.a;
+            float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c10);
+            l lVar2 = (l) obj;
+            lVar2.setAlpha(c10);
+            lVar2.setScaleX(lerp);
+            lVar2.setScaleY(lerp);
+            lVar2.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(!gVar.h ? 9.0f : -9.0f), 0, c10));
+        }
+    }
+
+    public final void c(CharSequence charSequence, boolean z10) {
         boolean z11;
         CharSequence charSequence2;
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        ne.l lVar = this.c;
+        oe.l lVar = this.c;
         if (isEmpty) {
             lVar.a.q(null, true);
             return;
@@ -43,44 +59,29 @@ public abstract class m extends FrameLayout implements ne.k {
             charSequence2 = charSequence;
         }
         l lVar2 = new l(this, getContext());
-        int i10 = k6.gl;
-        g6 g6Var = this.a;
-        r6.W(lVar2, i10, g6Var);
-        r6.I(lVar2, i10, g6Var);
+        int i10 = y6.gl;
+        u6 u6Var = this.a;
+        f7.V(lVar2, i10, u6Var);
+        f7.H(lVar2, i10, u6Var);
         lVar2.setTextSize(1, 14.0f);
         lVar2.setAlpha(0.0f);
         lVar2.setText(charSequence2);
         if (z11) {
             bVar.c(lVar2);
         }
-        addView(lVar2, w7.z5.c(-2.0f, -2));
+        addView(lVar2, gb1.g(-2.0f, -2));
         lVar.h(lVar2, true);
     }
 
-    public final void c() {
+    public final void d() {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            ne.g gVar = (ne.g) it.next();
+            oe.g gVar = (oe.g) it.next();
             l lVar = (l) gVar.a;
-            int i10 = k6.gl;
-            g6 g6Var = this.a;
-            lVar.setTextColor(k6.w0(i10, g6Var));
-            ((l) gVar.a).setLinkTextColor(k6.w0(i10, g6Var));
-        }
-    }
-
-    public void e(ne.l lVar) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            ne.g gVar = (ne.g) it.next();
-            float c10 = gVar.c();
-            Object obj = gVar.a;
-            float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c10);
-            l lVar2 = (l) obj;
-            lVar2.setAlpha(c10);
-            lVar2.setScaleX(lerp);
-            lVar2.setScaleY(lerp);
-            lVar2.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(!gVar.h ? 9.0f : -9.0f), 0, c10));
+            int i10 = y6.gl;
+            u6 u6Var = this.a;
+            lVar.setTextColor(y6.w0(i10, u6Var));
+            ((l) gVar.a).setLinkTextColor(y6.w0(i10, u6Var));
         }
     }
 
@@ -88,7 +89,7 @@ public abstract class m extends FrameLayout implements ne.k {
         return this.c.a.d.c.a;
     }
 
-    @Override // ne.k
+    @Override // oe.k
     public final /* synthetic */ void a() {
     }
 }

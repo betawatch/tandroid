@@ -1,41 +1,26 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ int c;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ y(VoIPService voIPService, int i10, int i11) {
-        this.a = i11;
-        this.b = voIPService;
-        this.c = i10;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y implements RequestDelegate {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ y(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$onSignalBarCountChanged$122(this.c);
-                break;
-            case 1:
-                this.b.lambda$onConnectionStateChanged$119(this.c);
-                break;
-            case 2:
-                this.b.lambda$startConferenceGroupCall$36(this.c);
-                break;
-            case 3:
-                this.b.lambda$startGroupCall$25(this.c);
-                break;
-            case 4:
-                this.b.lambda$createGroupInstance$72(this.c);
-                break;
-            case 5:
-                this.b.lambda$startScreenCapture$57(this.c);
+                VoIPService.lambda$callFailed$114(tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$updateConnectionState$81(this.c);
+                VoIPService.lambda$createGroupInstance$67(tLObject, tL_error);
                 break;
         }
     }

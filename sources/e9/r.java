@@ -1,44 +1,54 @@
 package e9;
 
-import java.io.Serializable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class r extends v1 implements Serializable {
-    public final d9.k a;
-    public final v1 b;
+public abstract class r implements l {
+    public static final n a;
+    public static final /* synthetic */ r[] b;
 
-    public r(d9.k kVar, v1 v1Var) {
-        this.a = kVar;
-        this.b = v1Var;
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        d9.k kVar = this.a;
-        return this.b.compare(kVar.apply(obj), kVar.apply(obj2));
-    }
-
-    @Override // java.util.Comparator
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof r) {
-            r rVar = (r) obj;
-            if (this.a.equals(rVar.a) && this.b.equals(rVar.b)) {
-                return true;
+    static {
+        n nVar = new n();
+        a = nVar;
+        b = new r[]{nVar, new r() { // from class: e9.o
+            @Override // e9.l
+            public final boolean apply(Object obj) {
+                return false;
             }
-        }
-        return false;
+
+            @Override // java.lang.Enum
+            public final String toString() {
+                return "Predicates.alwaysFalse()";
+            }
+        }, new r() { // from class: e9.p
+            @Override // e9.l
+            public final boolean apply(Object obj) {
+                return obj == null;
+            }
+
+            @Override // java.lang.Enum
+            public final String toString() {
+                return "Predicates.isNull()";
+            }
+        }, new r() { // from class: e9.q
+            @Override // e9.l
+            public final boolean apply(Object obj) {
+                return obj != null;
+            }
+
+            @Override // java.lang.Enum
+            public final String toString() {
+                return "Predicates.notNull()";
+            }
+        }};
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b});
+    public static r valueOf(String str) {
+        return (r) Enum.valueOf(r.class, str);
     }
 
-    public final String toString() {
-        return this.b + ".onResultOf(" + this.a + ")";
+    public static r[] values() {
+        return (r[]) b.clone();
     }
 }

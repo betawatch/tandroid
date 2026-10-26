@@ -1,57 +1,22 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.PhotoViewer;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q81 b;
+public final class m81 extends i2.k {
+    public final /* synthetic */ s81 d;
 
-    public /* synthetic */ m81(q81 q81Var, int i10) {
-        this.a = i10;
-        this.b = q81Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m81(Context context, s81 s81Var) {
+        super(context);
+        this.d = s81Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                q81 q81Var = this.b;
-                q81Var.h = 0.0f;
-                e6 e6Var = q81Var.b;
-                if (e6Var != null) {
-                    e6Var.u();
-                    q81Var.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                q81 q81Var2 = this.b;
-                q81Var2.a = true;
-                q81Var2.e = null;
-                if (q81Var2.b != null) {
-                    q81Var2.s = true;
-                    PhotoViewer photoViewer = q81Var2.M.a;
-                    if (photoViewer.u3) {
-                        photoViewer.d3(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                q81 q81Var3 = this.b;
-                q81Var3.a = true;
-                q81Var3.e = null;
-                if (q81Var3.b != null) {
-                    q81Var3.s = true;
-                    PhotoViewer photoViewer2 = q81Var3.M.a;
-                    if (photoViewer2.u3) {
-                        photoViewer2.d3(true);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // i2.k
+    public final k2.u0 a(Context context) {
+        di.p4 p4Var = new di.p4(context, 1);
+        p4Var.d = new a8.h0(new c2.o[]{new k2.b1(new r81(this.d))});
+        return p4Var.a();
     }
 }

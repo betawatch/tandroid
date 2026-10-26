@@ -1,175 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qm0 extends Drawable {
-    public final jw e;
-    public final jw f;
-    public float h;
-    public float i;
-    public final Rect a = new Rect();
-    public final bs b = st.b;
-    public final int c = AndroidUtilities.dp(24.0f);
-    public final int d = AndroidUtilities.dp(24.0f);
-    public long g = -1;
+public final class qm0 implements s4.t0 {
+    public RecyclerView a;
+    public boolean c;
+    public int d;
+    public int e;
+    public int f;
+    public boolean g;
+    public boolean h;
+    public int i;
+    public final pm0 k;
+    public int b = -1;
+    public final int j = AndroidUtilities.dp(80.0f);
+    public final m.g3 l = new m.g3(this, 26);
 
-    public qm0() {
-        jw jwVar = new jw();
-        this.e = jwVar;
-        jwVar.c.setColor(-2130706433);
-        jw jwVar2 = new jw();
-        this.f = jwVar2;
-        jwVar2.c.setColor(-2130706433);
+    public qm0(pm0 pm0Var) {
+        this.k = pm0Var;
     }
 
-    public final void a(Canvas canvas, float f7) {
-        Rect bounds = getBounds();
-        float interpolation = this.b.getInterpolation(f7);
-        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
-        Rect rect = this.a;
-        rect.left = dp;
-        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
-        rect.bottom = dp2;
-        rect.right = bounds.right - rect.left;
-        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
-        jw jwVar = this.f;
-        jwVar.setBounds(rect);
-        jwVar.draw(canvas);
-        int dp3 = AndroidUtilities.dp(12.0f);
-        rect.right = dp3;
-        rect.left = dp3;
-        int dp4 = AndroidUtilities.dp(8.0f);
-        rect.bottom = dp4;
-        rect.top = dp4;
-        rect.inset(-AndroidUtilities.dp(AndroidUtilities.lerp(10, 11, interpolation)), -AndroidUtilities.dp(AndroidUtilities.lerp(2, 3, interpolation)));
-        jw jwVar2 = this.e;
-        jwVar2.setBounds(rect);
-        jwVar2.setAlpha(AndroidUtilities.lerp(128, 255, interpolation));
-        jwVar2.draw(canvas);
-    }
-
-    public final void b(Canvas canvas, float f7) {
-        Rect bounds = getBounds();
-        float interpolation = this.b.getInterpolation(f7);
-        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
-        Rect rect = this.a;
-        rect.left = dp;
-        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
-        rect.bottom = dp2;
-        rect.right = bounds.right - rect.left;
-        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
-        rect.offset(0, AndroidUtilities.dp(AndroidUtilities.lerp(0, -8, interpolation)));
-        jw jwVar = this.f;
-        jwVar.setBounds(rect);
-        jwVar.draw(canvas);
-        rect.left = (int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(1, 2, interpolation)) * this.h);
-        int dpf2 = (int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(5, 6, interpolation)) * this.i);
-        rect.top = dpf2;
-        rect.right = bounds.right - rect.left;
-        rect.bottom = dpf2 + ((int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(6, 4, interpolation)) * this.i));
-        rect.offset(0, AndroidUtilities.dp(AndroidUtilities.lerp(0, 8, interpolation)));
-        jw jwVar2 = this.e;
-        jwVar2.setBounds(rect);
-        jwVar2.setAlpha(255);
-        jwVar2.draw(canvas);
-    }
-
-    public final void c(Canvas canvas, float f7) {
-        Rect bounds = getBounds();
-        float interpolation = this.b.getInterpolation(f7);
-        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
-        Rect rect = this.a;
-        rect.left = dp;
-        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
-        rect.bottom = dp2;
-        rect.right = bounds.right - rect.left;
-        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
-        rect.offset(0, AndroidUtilities.dp(-8.0f));
-        jw jwVar = this.f;
-        jwVar.setBounds(rect);
-        jwVar.draw(canvas);
-        rect.left = (int) (AndroidUtilities.dpf2(2.0f) * this.h);
-        int dpf2 = (int) (AndroidUtilities.dpf2(6.0f) * this.i);
-        rect.top = dpf2;
-        rect.right = bounds.right - rect.left;
-        rect.bottom = dpf2 + ((int) (AndroidUtilities.dpf2(4.0f) * this.i));
-        rect.offset(0, AndroidUtilities.dp(8.0f));
-        jw jwVar2 = this.e;
-        jwVar2.setBounds(rect);
-        jwVar2.setAlpha(AndroidUtilities.lerp(255, 128, interpolation));
-        jwVar2.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.g <= 0) {
-            a(canvas, 0.0f);
+    @Override // s4.t0
+    public final void a(RecyclerView recyclerView, MotionEvent motionEvent) {
+        View E = recyclerView.E(motionEvent.getX(), motionEvent.getY());
+        int R = E != null ? RecyclerView.R(E) : -1;
+        float y3 = motionEvent.getY();
+        int action = motionEvent.getAction();
+        pm0 pm0Var = this.k;
+        m.g3 g3Var = this.l;
+        if (action == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            AndroidUtilities.cancelRunOnUIThread(g3Var);
+            pm0Var.a(false);
             return;
         }
-        int currentTimeMillis = (int) (System.currentTimeMillis() - this.g);
-        int i10 = currentTimeMillis - 300;
-        if (i10 < 0) {
-            a(canvas, 0.0f);
-        } else if (i10 < 150) {
-            a(canvas, i10 / 150.0f);
-        } else {
-            int i11 = currentTimeMillis - 750;
-            if (i11 < 0) {
-                a(canvas, 1.0f);
-            } else if (i11 < 200) {
-                b(canvas, i11 / 200.0f);
-            } else {
-                int i12 = currentTimeMillis - 1250;
-                if (i12 < 0) {
-                    b(canvas, 1.0f);
-                } else if (i12 < 150) {
-                    c(canvas, i12 / 150.0f);
-                } else {
-                    c(canvas, 1.0f);
-                    if (currentTimeMillis - 1400 >= 100) {
-                        this.g = System.currentTimeMillis();
-                    }
+        if (action != 2) {
+            return;
+        }
+        if (this.j > -1) {
+            float f7 = 0;
+            if (y3 >= f7 && y3 <= this.d) {
+                this.h = false;
+                if (!this.g) {
+                    this.g = true;
+                    AndroidUtilities.cancelRunOnUIThread(g3Var);
+                    AndroidUtilities.runOnUIThread(g3Var);
                 }
+                this.i = ((int) (this.d - (y3 - f7))) / 2;
+            } else if (y3 >= this.e && y3 <= this.f) {
+                this.g = false;
+                if (!this.h) {
+                    this.h = true;
+                    AndroidUtilities.cancelRunOnUIThread(g3Var);
+                    AndroidUtilities.runOnUIThread(g3Var);
+                }
+                this.i = ((int) ((y3 + this.f) - (this.e + r11))) / 2;
+            } else if (this.g || this.h) {
+                AndroidUtilities.cancelRunOnUIThread(g3Var);
+                this.g = false;
+                this.h = false;
             }
         }
-        invalidateSelf();
+        if (R == -1 || this.b == R) {
+            return;
+        }
+        this.b = R;
+        pm0Var.c(E, !pm0Var.d(R));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.d;
+    @Override // s4.t0
+    public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
+        boolean z10 = this.c && !(recyclerView.getAdapter() == null || recyclerView.getAdapter().h() == 0);
+        if (z10) {
+            this.a = recyclerView;
+            int i10 = this.j;
+            if (i10 > -1) {
+                this.d = i10;
+                this.e = recyclerView.getMeasuredHeight() - i10;
+                this.f = recyclerView.getMeasuredHeight();
+            }
+        }
+        if (z10 && motionEvent.getAction() == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            AndroidUtilities.cancelRunOnUIThread(this.l);
+            this.k.a(false);
+        }
+        return z10;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.c;
+    public final void d(View view, int i10, boolean z10) {
+        if (this.c) {
+            return;
+        }
+        this.b = -1;
+        AndroidUtilities.cancelRunOnUIThread(this.l);
+        this.g = false;
+        this.h = false;
+        pm0 pm0Var = this.k;
+        if (!pm0Var.b(i10)) {
+            this.c = false;
+            return;
+        }
+        pm0Var.a(true);
+        pm0Var.c(view, z10);
+        this.c = true;
+        this.b = i10;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.h = rect.width() / this.c;
-        this.i = rect.height() / this.d;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.e.setColorFilter(colorFilter);
-        this.f.setColorFilter(colorFilter);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    @Override // s4.t0
+    public final void c(boolean z10) {
     }
 }

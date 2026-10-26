@@ -1,32 +1,26 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.Components.gx0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class f3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h3 b;
+public final class f3 extends View {
+    public gx0 a;
+    public boolean b;
 
-    public /* synthetic */ f3(h3 h3Var, int i10) {
-        this.a = i10;
-        this.b = h3Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        gx0 gx0Var;
+        if (this.b || (gx0Var = this.a) == null) {
+            return;
+        }
+        gx0Var.b(canvas, this);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                h3 h3Var = this.b;
-                h3Var.r = 0;
-                h3Var.invalidate();
-                break;
-            default:
-                h3 h3Var2 = this.b;
-                h3Var2.s = 0;
-                h3Var2.invalidate();
-                break;
-        }
+    public void setState(boolean z10) {
+        this.b = z10;
+        invalidate();
     }
 }

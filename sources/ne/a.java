@@ -1,19 +1,24 @@
 package ne;
 
-import android.view.View;
-import org.telegram.ui.Components.z9;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements d, z9 {
-    public final /* synthetic */ View a;
+public abstract class a {
+    public static final DecelerateInterpolator a;
 
-    @Override // ne.d
-    public void o(int i10, float f7, float f10, e eVar) {
-        this.a.invalidate();
-    }
-
-    @Override // ne.d
-    public /* synthetic */ void H(float f7, int i10) {
+    static {
+        new AnticipateOvershootInterpolator();
+        a = new DecelerateInterpolator();
+        new AccelerateInterpolator();
+        new DecelerateInterpolator(1.78f);
+        new LinearInterpolator();
+        new OvershootInterpolator(3.2f);
+        new AccelerateDecelerateInterpolator();
     }
 }

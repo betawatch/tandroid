@@ -1,33 +1,18 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.IMapsProvider;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class jc0 extends s4.r0 {
-    public final /* synthetic */ sc0 a;
-
-    public jc0(sc0 sc0Var) {
-        this.a = sc0Var;
-    }
-
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        boolean z10 = i10 != 0;
-        sc0 sc0Var = this.a;
-        sc0Var.Q = z10;
-        if (z10 || sc0Var.L == null) {
-            return;
-        }
-        sc0Var.L = null;
-    }
-
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        sc0 sc0Var = this.a;
-        sc0Var.A0(false);
-        if (sc0Var.L != null) {
-            sc0Var.N += i11;
-        }
-    }
+public final class jc0 {
+    public long a;
+    public TLRPC.Message b;
+    public TLRPC.User c;
+    public TLRPC.Chat d;
+    public IMapsProvider.IMarker e;
+    public IMapsProvider.IMarker f;
+    public boolean g;
+    public ImageReceiver h;
 }

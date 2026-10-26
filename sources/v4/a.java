@@ -9,9 +9,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import w7.d8;
+import w7.a0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class a {
     public static volatile a d;
@@ -63,8 +63,8 @@ public final class a {
                 while (it2.hasNext()) {
                     b((Class) it2.next(), hashSet2);
                 }
-            } catch (ClassNotFoundException e7) {
-                throw new j(e7);
+            } catch (ClassNotFoundException e10) {
+                throw new j(e10);
             }
         }
     }
@@ -72,9 +72,9 @@ public final class a {
     public final Object b(Class cls, HashSet hashSet) {
         Object obj;
         HashMap hashMap = this.a;
-        if (d8.b()) {
+        if (a0.b()) {
             try {
-                d8.a(cls.getSimpleName());
+                a0.a(cls.getSimpleName());
             } catch (Throwable th2) {
                 Trace.endSection();
                 throw th2;

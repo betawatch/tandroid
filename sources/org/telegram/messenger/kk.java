@@ -1,119 +1,125 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
-import java.io.IOException;
-import java.util.Locale;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.qd0;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.an0;
-import org.telegram.ui.dn;
-import org.telegram.ui.sn;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kk implements org.telegram.ui.ActionBar.z1, e2.j {
-    public final /* synthetic */ int a = 3;
+public final /* synthetic */ class kk implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ kk(a5.a aVar, u2.v vVar, u2.d0 d0Var, IOException iOException, boolean z10) {
-        this.c = aVar;
-        this.d = vVar;
-        this.e = d0Var;
-        this.f = iOException;
+    public /* synthetic */ kk(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10) {
+        this.c = sendMessagesHelper;
+        this.d = arrayList;
+        this.e = arrayList2;
+        this.f = arrayList3;
+        this.g = delayedMessage;
         this.b = z10;
     }
 
-    @Override // e2.j
-    public void accept(Object obj) {
-        a5.a aVar = (a5.a) this.c;
-        ((u2.m0) obj).g(aVar.b, (u2.h0) aVar.c, (u2.v) this.d, (u2.d0) this.e, (IOException) this.f, this.b);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        int i11;
-        int i12 = this.a;
-        boolean z10 = this.b;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i12) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        ArrayList<TLRPC.Document> arrayList;
+        ArrayList<TLRPC.Document> arrayList2;
+        int i10 = this.a;
+        Object obj2 = this.d;
+        Object obj3 = this.g;
+        Object obj4 = this.f;
+        Object obj5 = this.e;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.c;
+        switch (i10) {
             case 0:
-                ((SendMessagesHelper) obj4).lambda$sendCallback$44(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (sn) obj, c2Var, i10);
+                ((SendMessagesHelper) notificationCenterDelegate).lambda$performSendMessageRequestMulti$67((ArrayList) obj2, (ArrayList) obj5, (ArrayList) obj4, (SendMessagesHelper.DelayedMessage) obj3, this.b, (TLObject) obj);
                 break;
             case 1:
-                dn dnVar = (dn) obj4;
-                TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
-                sn snVar = dnVar.a;
-                org.telegram.ui.ActionBar.m3 m3Var = new org.telegram.ui.ActionBar.m3(17, dnVar, (org.telegram.ui.Cells.t1) obj3);
-                if (!((boolean[]) obj2)[0]) {
-                    m3Var.run(Boolean.FALSE);
-                    break;
-                } else if (!z10 && (contentsettings == null || !contentsettings.sensitive_can_change)) {
-                    m3Var.run(Boolean.TRUE);
+                ProfileActivity profileActivity = (ProfileActivity) notificationCenterDelegate;
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj2;
+                TLRPC.User user = (TLRPC.User) obj5;
+                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) obj4;
+                String str = (String) obj3;
+                Integer num = (Integer) obj;
+                int i11 = ProfileActivity.R6;
+                profileActivity.getClass();
+                boolean z10 = this.b;
+                if (channelParticipant != null) {
+                    profileActivity.I4(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z10);
                     break;
                 } else {
-                    Activity parentActivity = snVar.getParentActivity();
-                    i11 = ((org.telegram.ui.ActionBar.o2) snVar).currentAccount;
-                    ThemeActivity.C0(i11, parentActivity, new org.telegram.ui.ActionBar.m3(18, dnVar, m3Var), snVar.getResourceProvider());
+                    profileActivity.I4(num.intValue(), user, chatParticipant, null, null, str, z10);
                     break;
                 }
             default:
-                qd0 qd0Var = (qd0) obj4;
-                qd0 qd0Var2 = (qd0) obj3;
-                qd0 qd0Var3 = (qd0) obj2;
-                hg.b2 b2Var = (hg.b2) obj;
-                if (z10) {
-                    org.telegram.ui.Components.f5.d(qd0Var, qd0Var2, qd0Var3);
-                }
-                int value = qd0Var3.getValue();
-                int value2 = qd0Var2.getValue();
-                int value3 = qd0Var.getValue();
-                an0 an0Var = (an0) b2Var.c;
-                int i13 = b2Var.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) b2Var.d;
-                if (i13 == 8) {
-                    int[] iArr = an0Var.x;
-                    iArr[0] = value;
-                    iArr[1] = value2 + 1;
-                    iArr[2] = value3;
+                c61 c61Var = (c61) notificationCenterDelegate;
+                LinkedHashSet linkedHashSet = (LinkedHashSet) obj5;
+                String str2 = (String) obj4;
+                HashMap hashMap = (HashMap) obj3;
+                ArrayList arrayList3 = (ArrayList) obj2;
+                Runnable runnable = (Runnable) obj;
+                int i12 = c61Var.V;
+                if (this.b) {
+                    ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i12).getStickerSets(5);
+                    for (int i13 = 0; i13 < stickerSets.size(); i13++) {
+                        if (stickerSets.get(i13).documents != null && (arrayList2 = stickerSets.get(i13).documents) != null) {
+                            for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+                                String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(arrayList2.get(i14), null);
+                                long j10 = arrayList2.get(i14).id;
+                                if (findAnimatedEmojiEmoticon != null && !linkedHashSet.contains(Long.valueOf(j10)) && str2.contains(findAnimatedEmojiEmoticon.toLowerCase())) {
+                                    linkedHashSet.add(Long.valueOf(j10));
+                                }
+                            }
+                        }
+                    }
+                    ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i12).getFeaturedEmojiSets();
+                    for (int i15 = 0; i15 < featuredEmojiSets.size(); i15++) {
+                        if ((featuredEmojiSets.get(i15) instanceof TLRPC.TL_stickerSetFullCovered) && ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i15)).keywords != null && (arrayList = ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i15)).documents) != null) {
+                            for (int i16 = 0; i16 < arrayList.size(); i16++) {
+                                String findAnimatedEmojiEmoticon2 = MessageObject.findAnimatedEmojiEmoticon(arrayList.get(i16), null);
+                                long j11 = arrayList.get(i16).id;
+                                if (findAnimatedEmojiEmoticon2 != null && !linkedHashSet.contains(Long.valueOf(j11)) && str2.contains(findAnimatedEmojiEmoticon2)) {
+                                    linkedHashSet.add(Long.valueOf(j11));
+                                }
+                            }
+                        }
+                    }
+                    runnable.run();
+                    break;
                 } else {
-                    an0Var.getClass();
+                    MediaDataController.getInstance(i12).getEmojiSuggestions(c61.b2, str2, false, new bi.p7(c61Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, c61Var.W == 3, false, 30);
+                    break;
                 }
-                editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;
         }
     }
 
-    public /* synthetic */ kk(SendMessagesHelper sendMessagesHelper, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, sn snVar) {
-        this.c = sendMessagesHelper;
+    public /* synthetic */ kk(ProfileActivity profileActivity, TLRPC.ChannelParticipant channelParticipant, TLRPC.User user, TLRPC.ChatParticipant chatParticipant, boolean z10, String str) {
+        this.c = profileActivity;
+        this.d = channelParticipant;
+        this.e = user;
+        this.f = chatParticipant;
         this.b = z10;
-        this.d = messageObject;
-        this.e = keyboardButtonProto;
-        this.f = snVar;
+        this.g = str;
     }
 
-    public /* synthetic */ kk(dn dnVar, org.telegram.ui.Cells.t1 t1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
-        this.c = dnVar;
-        this.d = t1Var;
-        this.e = zArr;
+    public /* synthetic */ kk(c61 c61Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.c = c61Var;
         this.b = z10;
-        this.f = contentsettings;
-    }
-
-    public /* synthetic */ kk(boolean z10, qd0 qd0Var, qd0 qd0Var2, qd0 qd0Var3, hg.b2 b2Var) {
-        this.b = z10;
-        this.c = qd0Var;
-        this.d = qd0Var2;
-        this.e = qd0Var3;
-        this.f = b2Var;
+        this.e = linkedHashSet;
+        this.f = str;
+        this.g = hashMap;
+        this.d = arrayList;
     }
 }

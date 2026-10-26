@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class CacheFetcher<Args, R> {
     private HashMap<Pair<Integer, Args>, R> cachedResults;
@@ -18,17 +18,17 @@ public abstract class CacheFetcher<Args, R> {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    private void cacheResult(Pair<Integer, Args> pair, R r10) {
+    private void cacheResult(Pair<Integer, Args> pair, R r6) {
         if (useCache(pair.second)) {
             if (this.cachedResults == null) {
                 this.cachedResults = new HashMap<>();
             }
-            this.cachedResults.put(pair, r10);
+            this.cachedResults.put(pair, r6);
         }
     }
 
-    private void callCallbacks(Pair<Integer, Args> pair, R r10, boolean z10) {
-        AndroidUtilities.runOnUIThread(new zj(this, pair, r10, z10, 1));
+    private void callCallbacks(Pair<Integer, Args> pair, R r6, boolean z10) {
+        AndroidUtilities.runOnUIThread(new ck(this, pair, r6, z10, 1));
     }
 
     private R getCachedResult(Pair<Integer, Args> pair) {
@@ -69,7 +69,7 @@ public abstract class CacheFetcher<Args, R> {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
     public /* synthetic */ void lambda$fetch$0(Pair pair, Object obj, int i10, Object obj2, Boolean bool, Object obj3, Long l4, Boolean bool2) {
-        R r10;
+        R r6;
         if (bool2.booleanValue()) {
             saveLastRequested(pair);
         }
@@ -79,13 +79,13 @@ public abstract class CacheFetcher<Args, R> {
             return;
         }
         if (obj3 != 0) {
-            r10 = obj3;
-            setLocal(i10, obj2, r10, l4.longValue());
-            cacheResult(pair, r10);
+            r6 = obj3;
+            setLocal(i10, obj2, r6, l4.longValue());
+            cacheResult(pair, r6);
         } else {
-            r10 = obj3;
+            r6 = obj3;
         }
-        callCallbacks(pair, r10, true);
+        callCallbacks(pair, r6, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -100,7 +100,7 @@ public abstract class CacheFetcher<Args, R> {
             cacheResult(pair, obj2);
             callCallbacks(pair, obj2, false);
         }
-        getRemote(i10, obj, l4.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.q0
+        getRemote(i10, obj, l4.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.t0
             @Override // org.telegram.messenger.Utilities.Callback4
             public final void run(Object obj3, Object obj4, Object obj5, Object obj6) {
                 CacheFetcher.this.lambda$fetch$0(pair, obj2, i10, obj, (Boolean) obj3, obj4, (Long) obj5, (Boolean) obj6);
@@ -127,7 +127,7 @@ public abstract class CacheFetcher<Args, R> {
         if (callback == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new g0(this, pair, callback, 11));
+        AndroidUtilities.runOnUIThread(new j0(this, pair, callback, 11));
     }
 
     private void saveLastRequested(Pair<Integer, Args> pair) {
@@ -163,7 +163,7 @@ public abstract class CacheFetcher<Args, R> {
         R cachedResult = getCachedResult(pair);
         if (cachedResult == null || shouldRequest(pair)) {
             saveCallback(pair, callback);
-            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.r0
+            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.u0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     CacheFetcher.this.lambda$fetch$1(pair, args, i10, (Long) obj, obj2);
@@ -211,6 +211,6 @@ public abstract class CacheFetcher<Args, R> {
     public void getRemote(int i10, Args args, long j10, Utilities.Callback4<Boolean, R, Long, Boolean> callback4) {
     }
 
-    public void setLocal(int i10, Args args, R r10, long j10) {
+    public void setLocal(int i10, Args args, R r6, long j10) {
     }
 }

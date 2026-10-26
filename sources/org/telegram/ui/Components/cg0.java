@@ -1,80 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class cg0 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ja b;
-    public final /* synthetic */ hg0 c;
+public final class cg0 extends View {
+    public long E;
+    public float F;
+    public float G;
+    public float H;
+    public wa0 I;
+    public TextPaint a;
+    public TextPaint b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public boolean r;
+    public h6 s;
+    public boolean v;
+    public eg0 w;
+    public fi.p9 x;
+    public boolean y;
 
-    public cg0(hg0 hg0Var, boolean z10, ja jaVar) {
-        this.c = hg0Var;
-        this.a = z10;
-        this.b = jaVar;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        hg0 hg0Var = this.c;
-        TextureView textureView = hg0Var.i0;
-        if (hg0Var.l0 != null || surfaceTexture == null) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e = this.s.e(this.r);
+        if (e <= 0.0f || this.c == null || this.f == null) {
             return;
         }
-        e00 e00Var = new e00(surfaceTexture, hg0Var.C0, hg0Var.H0, hg0Var.w0, this.a, this.b, i10, i11);
-        hg0Var.l0 = e00Var;
-        if (!this.a) {
-            e00Var.i(hg0Var.J0, hg0Var.K0);
-            e00 e00Var2 = hg0Var.l0;
-            Matrix transform = textureView.getTransform(null);
-            int width = textureView.getWidth();
-            int height = textureView.getHeight();
-            pa paVar = e00Var2.I;
-            if (paVar != null) {
-                Matrix matrix = paVar.v;
-                transform.invert(matrix);
-                float f7 = width;
-                float f10 = height;
-                matrix.preScale(f7, f10);
-                matrix.postScale(1.0f / f7, 1.0f / f10);
-                paVar.c(matrix);
-                e00Var2.d(false, false, false);
-            }
-        }
-        hg0Var.l0.f(hg0Var);
-        e00 e00Var3 = hg0Var.l0;
-        e00Var3.getClass();
-        e00Var3.postRunnable(new a00(e00Var3, i10, i11, 1));
-        hg0Var.l0.d(true, true, false);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
+        canvas.save();
+        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
+        this.c.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        hg0 hg0Var = this.c;
-        e00 e00Var = hg0Var.l0;
-        if (e00Var == null) {
-            return true;
-        }
-        e00Var.postRunnable(new b00(e00Var, 0));
-        hg0Var.l0 = null;
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        hg0 hg0Var = this.c;
-        e00 e00Var = hg0Var.l0;
-        if (e00Var != null) {
-            e00Var.postRunnable(new a00(e00Var, i10, i11, 1));
-            hg0Var.l0.d(false, true, false);
-            hg0Var.l0.postRunnable(new yb0(this, 7));
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        TextPaint textPaint = this.a;
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
+        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
+        TextPaint textPaint2 = this.b;
+        textPaint2.setColor(-1);
+        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
+        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
         }
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    public void setAllowTouch(boolean z10) {
+        this.v = z10;
+    }
+
+    public void setFilterView(eg0 eg0Var) {
+        this.w = eg0Var;
     }
 }

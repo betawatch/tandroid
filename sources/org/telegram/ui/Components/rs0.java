@@ -1,19 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class rs0 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
-    public final /* synthetic */ xv0 d;
+public final /* synthetic */ class rs0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ aw0 b;
 
-    public rs0(xv0 xv0Var, Context context, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        this.d = xv0Var;
-        this.a = context;
-        this.b = o2Var;
-        this.c = g6Var;
+    public /* synthetic */ rs0(aw0 aw0Var, int i10) {
+        this.a = i10;
+        this.b = aw0Var;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        int i11 = 18;
+        aw0 aw0Var = this.b;
+        di.a7 a7Var = (di.a7) obj;
+        switch (i10) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new t90(i11, aw0Var, a7Var), 100L);
+                break;
+            default:
+                int[] iArr = aw0.p2;
+                AndroidUtilities.runOnUIThread(new t90(i11, aw0Var, a7Var), 100L);
+                break;
+        }
     }
 }

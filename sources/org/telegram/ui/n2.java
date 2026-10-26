@@ -1,93 +1,63 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Intro;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class n2 implements z4.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class n2 extends a5.a {
+    public final /* synthetic */ p2 c;
 
-    public /* synthetic */ n2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public n2(p2 p2Var) {
+        this.c = p2Var;
     }
 
-    @Override // z4.f
-    public final void a(int i10) {
-        switch (this.a) {
-            case 0:
-                r2 r2Var = (r2) this.b;
-                r2Var.w = i10;
-                r2Var.d.invalidate();
-                break;
-            case 1:
-                ((n70) this.b).H = i10;
-                break;
-            default:
-                ((qc1) this.b).b0.invalidate();
-                break;
+    @Override // a5.a
+    public final void a(a5.m mVar, Object obj) {
+        mVar.removeView(((m2) obj).b);
+    }
+
+    @Override // a5.a
+    public final int b() {
+        TL_iv.pageBlockSlideshow pageblockslideshow = this.c.e;
+        if (pageblockslideshow == null) {
+            return 0;
         }
+        return pageblockslideshow.items.size();
     }
 
-    @Override // z4.f
-    public final void b(float f7, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                r2 r2Var = (r2) this.b;
-                float measuredWidth = r2Var.b.getMeasuredWidth();
-                if (measuredWidth != 0.0f) {
-                    r2Var.v = com.google.android.gms.internal.play_billing.k3.c(r2Var.w, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
-                    r2Var.d.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                n70 n70Var = (n70) this.b;
-                org.telegram.ui.Components.sa saVar = n70Var.e;
-                saVar.b = f7;
-                saVar.c = i10;
-                saVar.invalidate();
-                float measuredWidth2 = n70Var.d.getMeasuredWidth();
-                if (measuredWidth2 != 0.0f) {
-                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (n70Var.H * measuredWidth2)) / measuredWidth2);
-                    break;
-                }
-                break;
+    @Override // a5.a
+    public final int c(Object obj) {
+        return this.c.e.items.contains(((m2) obj).a) ? -1 : -2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // a5.a
+    public final Object e(a5.m mVar, int i10) {
+        w2 w2Var;
+        p2 p2Var = this.c;
+        h4 h4Var = p2Var.x;
+        j4 j4Var = p2Var.y;
+        TL_iv.PageBlock pageBlock = p2Var.e.items.get(i10);
+        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
+            c2 c2Var = new c2(p2Var.getContext(), j4Var, h4Var, 1);
+            c2Var.a((TL_iv.pageBlockPhoto) pageBlock, h4Var.E.cached_page, false, true);
+            w2Var = c2Var;
+        } else {
+            w2 w2Var2 = new w2(p2Var.getContext(), j4Var, h4Var, 1);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            w2Var2.b(pageblockvideo, (x2) j4Var.y.f(pageblockvideo.video_id), false, true);
+            w2Var = w2Var2;
         }
+        mVar.addView(w2Var);
+        m2 m2Var = new m2();
+        m2Var.b = w2Var;
+        m2Var.a = pageBlock;
+        return m2Var;
     }
 
-    @Override // z4.f
-    public final void c(int i10) {
-        switch (this.a) {
-            case 1:
-                n70 n70Var = (n70) this.b;
-                if (i10 != 1) {
-                    if (i10 == 0 || i10 == 2) {
-                        if (n70Var.K) {
-                            n70Var.K = false;
-                        }
-                        if (n70Var.w != n70Var.d.getCurrentItem()) {
-                            n70Var.w = n70Var.d.getCurrentItem();
-                            break;
-                        }
-                    }
-                } else {
-                    n70Var.K = true;
-                    n70Var.d.getCurrentItem();
-                    n70Var.d.getMeasuredWidth();
-                    break;
-                }
-                break;
-        }
-    }
-
-    private final void d(int i10) {
-    }
-
-    private final void e(int i10) {
-    }
-
-    private final void f(float f7, int i10, int i11) {
+    @Override // a5.a
+    public final boolean f(View view, Object obj) {
+        return ((m2) obj).b == view;
     }
 }

@@ -7,12 +7,11 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.util.SparseArray;
-import b2.w;
-import e2.m0;
+import e2.n0;
 import e2.x;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d implements w3.b {
     public int a;
@@ -89,7 +88,7 @@ public final class d implements w3.b {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = w6.b.a((Context) this.c).c(0, "com.google.android.gms");
+                packageInfo = x6.b.a((Context) this.c).b(0, "com.google.android.gms");
             } catch (PackageManager.NameNotFoundException e) {
                 Log.w("Metadata", "Failed to find package ".concat(e.toString()));
                 packageInfo = null;
@@ -108,12 +107,12 @@ public final class d implements w3.b {
         }
         Context context = (Context) this.c;
         PackageManager packageManager = context.getPackageManager();
-        if (w6.b.a(context).a.getPackageManager().checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
+        if (((Context) x6.b.a(context).a).getPackageManager().checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
             Log.e("Metadata", "Google Play services missing or without correct permission.");
             return 0;
         }
         int i11 = 1;
-        if (!u6.b.d()) {
+        if (!v6.b.d()) {
             Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
             intent.setPackage("com.google.android.gms");
             List<ResolveInfo> queryIntentServices = packageManager.queryIntentServices(intent, 0);
@@ -131,7 +130,7 @@ public final class d implements w3.b {
             return i11;
         }
         Log.w("Metadata", "Failed to resolve IID implementation package, falling back");
-        if (true == u6.b.d()) {
+        if (true == v6.b.d()) {
             i11 = 2;
         }
         this.b = i11;
@@ -148,19 +147,19 @@ public final class d implements w3.b {
         this.c = sparseArray;
     }
 
-    public d(f2.e eVar, w wVar) {
-        x xVar = eVar.c;
-        this.c = xVar;
-        xVar.N(12);
-        int E = xVar.E();
-        if ("audio/raw".equals(wVar.s)) {
-            int u10 = m0.u(wVar.M) * wVar.K;
+    public d(f2.e eVar, b2.x xVar) {
+        x xVar2 = eVar.c;
+        this.c = xVar2;
+        xVar2.N(12);
+        int E = xVar2.E();
+        if ("audio/raw".equals(xVar.s)) {
+            int u10 = n0.u(xVar.M) * xVar.K;
             if (E % u10 != 0) {
                 e2.a.l("BoxParsers", "Audio sample size mismatch. stsd sample size: " + u10 + ", stsz sample size: " + E);
                 E = u10;
             }
         }
         this.a = E == 0 ? -1 : E;
-        this.b = xVar.E();
+        this.b = xVar2.E();
     }
 }

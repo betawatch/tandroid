@@ -7,20 +7,20 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class w {
     public final CharSequence a;
     public final long b;
-    public final m0 c;
+    public final l0 c;
     public final Bundle d = new Bundle();
     public String e;
     public Uri f;
 
-    public w(CharSequence charSequence, long j10, m0 m0Var) {
+    public w(CharSequence charSequence, long j10, l0 l0Var) {
         this.a = charSequence;
         this.b = j10;
-        this.c = m0Var;
+        this.c = l0Var;
     }
 
     public static Bundle[] a(ArrayList arrayList) {
@@ -28,19 +28,19 @@ public final class w {
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
             w wVar = (w) arrayList.get(i10);
-            m0 m0Var = wVar.c;
+            l0 l0Var = wVar.c;
             Bundle bundle = new Bundle();
             CharSequence charSequence = wVar.a;
             if (charSequence != null) {
                 bundle.putCharSequence("text", charSequence);
             }
             bundle.putLong("time", wVar.b);
-            if (m0Var != null) {
-                bundle.putCharSequence("sender", m0Var.a);
+            if (l0Var != null) {
+                bundle.putCharSequence("sender", l0Var.a);
                 if (Build.VERSION.SDK_INT >= 28) {
-                    bundle.putParcelable("sender_person", v.a(b5.d.E(m0Var)));
+                    bundle.putParcelable("sender_person", v.a(c5.d.E(l0Var)));
                 } else {
-                    bundle.putBundle("person", m0Var.c());
+                    bundle.putBundle("person", l0Var.c());
                 }
             }
             String str = wVar.e;
@@ -65,11 +65,11 @@ public final class w {
         int i10 = Build.VERSION.SDK_INT;
         long j10 = this.b;
         CharSequence charSequence = this.a;
-        m0 m0Var = this.c;
+        l0 l0Var = this.c;
         if (i10 >= 28) {
-            a2 = v.b(charSequence, j10, m0Var != null ? b5.d.E(m0Var) : null);
+            a2 = v.b(charSequence, j10, l0Var != null ? c5.d.E(l0Var) : null);
         } else {
-            a2 = u.a(charSequence, j10, m0Var != null ? m0Var.a : null);
+            a2 = u.a(charSequence, j10, l0Var != null ? l0Var.a : null);
         }
         String str = this.e;
         if (str != null) {

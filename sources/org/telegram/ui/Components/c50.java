@@ -1,20 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c50 {
-    public final TLObject a;
-    public TLRPC.User b;
-    public final int c;
-    public final boolean d;
-    public boolean e;
+public final class c50 implements org.telegram.ui.zp0 {
+    public final /* synthetic */ g50 a;
 
-    public c50(int i10, TLObject tLObject) {
-        this.a = tLObject;
-        this.c = i10;
-        this.d = (tLObject instanceof TLRPC.User) && ((TLRPC.User) tLObject).self;
+    public c50(g50 g50Var) {
+        this.a = g50Var;
+    }
+
+    @Override // org.telegram.ui.zp0
+    public final void a(ArrayList arrayList) {
+        g50.a(this.a, false, arrayList);
+    }
+
+    @Override // org.telegram.ui.zp0
+    public final void b() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("image/*");
+            this.a.a.startActivityForResult(intent, 14);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

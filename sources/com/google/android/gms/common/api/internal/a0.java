@@ -4,9 +4,9 @@ import android.os.Looper;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a0 implements n6.b {
+public final class a0 implements o6.b {
     public final WeakReference a;
     public final com.google.android.gms.common.api.e b;
     public final boolean c;
@@ -17,14 +17,14 @@ public final class a0 implements n6.b {
         this.c = z10;
     }
 
-    @Override // n6.b
-    public final void a(k6.a aVar) {
+    @Override // o6.b
+    public final void a(l6.a aVar) {
         f0 f0Var = (f0) this.a.get();
         if (f0Var == null) {
             return;
         }
         Lock lock = f0Var.b;
-        n6.l.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == f0Var.a.o.h);
+        o6.l.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == f0Var.a.o.h);
         lock.lock();
         try {
             if (f0Var.i(0)) {

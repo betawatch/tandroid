@@ -1,56 +1,294 @@
 package vh;
 
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
+import android.content.Context;
+import android.graphics.Rect;
+import android.text.TextUtils;
+import android.util.Pair;
+import android.view.View;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import bi.i0;
+import bi.j5;
+import bi.u;
+import ei.n;
+import fi.c2;
+import hi.e2;
+import ig.o;
+import j$.util.Map;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import li.e3;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.bs;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f7;
+import org.telegram.ui.ActionBar.k;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Cells.z3;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.j20;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.ml;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.q20;
+import org.telegram.ui.Components.x30;
+import r0.a0;
+import s4.l;
+import vg.u0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public abstract class f {
-    public static final DecelerateInterpolator a = new DecelerateInterpolator();
-    public static final LinearInterpolator b;
-    public static final e c;
-    public static final e d;
-    public static final e e;
-    public static final e f;
-    public static final e g;
-    public static final e h;
-    public static final e i;
-    public static final e j;
-    public static final e k;
-    public static final e l;
-    public static final e m;
-    public static final e n;
-    public static final e o;
-    public static final e p;
-    public static final e q;
-    public static final e r;
-    public static final e s;
-    public static final e t;
+public final class f extends bb implements oe.d {
+    public static final /* synthetic */ int r0 = 0;
+    public final oe.e X;
+    public final oe.b Y;
+    public final HashMap Z;
+    public final ArrayList a0;
+    public final ArrayList b0;
+    public String c0;
+    public j71 d0;
+    public final fi.d e0;
+    public final n f0;
+    public final j5 g0;
+    public final q20 h0;
+    public final z3 i0;
+    public final HashMap j0;
+    public e3 k0;
+    public int l0;
+    public final int m0;
+    public final FrameLayout n0;
+    public HashSet o0;
+    public final Rect p0;
+    public x30 q0;
 
-    static {
-        LinearInterpolator linearInterpolator = new LinearInterpolator();
-        b = linearInterpolator;
-        c = h.i(new DecelerateInterpolator(), 0, 240, 240, false);
-        d = h.i(linearInterpolator, 0, 240, 240, false);
-        e = h.i(new DecelerateInterpolator(), 220, 240, 240, false);
-        f = h.i(new bs(0.7f, -0.6f, 0.4f, 1.0f), 0, 200, 560, false);
-        g = h.i(new bs(0.7f, -0.6f, 0.4f, 1.0f), 200, 400, 560, true);
-        h = h.i(new DecelerateInterpolator(), 0, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 560, false);
-        i = h.i(new DecelerateInterpolator(), 210, 425, 560, false);
-        bs bsVar = bs.h;
-        j = h.i(bsVar, 0, 320, 560, false);
-        k = h.i(bsVar, 40, 320, 560, false);
-        l = h.i(new DecelerateInterpolator(), 0, MediaDataController.MAX_LINKS_COUNT, 560, false);
-        m = h.i(bsVar, 0, 460, 560, false);
-        n = h.i(bsVar, 0, 325, 560, false);
-        o = h.i(new DecelerateInterpolator(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, MediaDataController.MAX_LINKS_COUNT, 560, false);
-        p = h.i(new DecelerateInterpolator(), 200, 480, 560, false);
-        q = h.i(bsVar, 60, 320, 560, false);
-        r = h.i(bsVar, 90, 380, 560, false);
-        s = h.i(bsVar, 110, 440, 560, false);
-        t = h.i(new DecelerateInterpolator(), 200, 460, 560, false);
+    public f(Context context, u6 u6Var) {
+        super(context, u6Var, true);
+        ds dsVar = ds.h;
+        this.X = new oe.e(3, this, dsVar, 350L);
+        this.Y = new oe.b(4, this, dsVar, 320L, false);
+        this.Z = new HashMap();
+        this.a0 = new ArrayList();
+        this.b0 = new ArrayList();
+        this.j0 = new HashMap();
+        this.p0 = new Rect();
+        this.occupyNavigationBar = true;
+        this.drawNavigationBar = false;
+        this.L = false;
+        this.w = false;
+        this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        mm0 mm0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        mm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        this.d.setClipToPadding(false);
+        this.d.j(new ml(this, 26));
+        this.d.setOnItemClickListener(new c(context, u6Var, this));
+        fi.d dVar = new fi.d(context, u6Var, true);
+        this.e0 = dVar;
+        dVar.f();
+        dVar.setCountFilled(true);
+        dVar.setText(LocaleController.getString(R.string.Save));
+        dVar.setOnClickListener(new a(this, 0));
+        n nVar = new n(this, context);
+        this.f0 = nVar;
+        f7.V(nVar, y6.Sh, u6Var);
+        nVar.setText(LocaleController.getString(R.string.Save));
+        nVar.setTypeface(AndroidUtilities.bold());
+        nVar.setTextSize(1, 14.0f);
+        nVar.setGravity(17);
+        nVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        nVar.setVisibility(8);
+        gb1.b(nVar);
+        this.e.l().addView(nVar, gb1.x(-2, 48, 16, 12, 0, 12, 0));
+        nVar.setOnClickListener(new a(this, 1));
+        m20 m20Var = new m20(context, u6Var);
+        String string = LocaleController.getString(R.string.PollV2SearchHint);
+        c2 c2Var = m20Var.r;
+        c2Var.setHint(string);
+        c2Var.addTextChangedListener(new u(this, 21));
+        q20 q20Var = new q20(context, this.currentAccount);
+        this.h0 = q20Var;
+        q20Var.setDelegate(new b(this));
+        j5 j5Var = new j5(context, u6Var, this);
+        this.g0 = j5Var;
+        int i11 = this.backgroundPaddingLeft;
+        j5Var.setPadding(i11, 0, i11, 0);
+        j5Var.addView(m20Var, gb1.h(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        j5Var.addView(q20Var, gb1.h(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
+        z3 z3Var = new z3(context, 18, u6Var);
+        this.i0 = z3Var;
+        z3Var.setTranslationY(AndroidUtilities.dp(48.0f));
+        z3Var.b(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
+        j5Var.addView(z3Var, gb1.i(-1, 32, 48));
+        this.containerView.addView(j5Var, gb1.i(-1, 216, 48));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
+        frameLayout.addView(dVar, gb1.g(48.0f, -1));
+        this.containerView.addView(frameLayout, gb1.i(-1, -2, 80));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.n0 = frameLayout2;
+        frameLayout2.setTranslationY((-AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(68.0f));
+        this.containerView.addView(frameLayout2, gb1.i(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
+        l lVar = new l();
+        lVar.n(350L);
+        lVar.o(dsVar);
+        lVar.C = false;
+        lVar.m = false;
+        this.d.setItemAnimator(lVar);
+        this.d.i(new d(this, u6Var));
+        o oVar = new o(this, 25);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
+        TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
+        tL_help_getCountriesList.lang_code = LocaleController.getInstance().getCurrentLocaleInfo() != null ? LocaleController.getInstance().getCurrentLocaleInfo().getLangCode() : Locale.getDefault().getCountry();
+        connectionsManager.sendRequest(tL_help_getCountriesList, new i0(oVar, 25));
+        a0.i(getContainer(), new b(this));
+    }
+
+    public static void P(f fVar, Pair pair) {
+        HashMap hashMap = fVar.j0;
+        HashMap hashMap2 = fVar.Z;
+        hashMap2.putAll((Map) pair.first);
+        ArrayList arrayList = fVar.a0;
+        arrayList.addAll((Collection) pair.second);
+        Map.-EL.forEach(hashMap2, new u0(fVar, 1));
+        HashSet hashSet = fVar.o0;
+        if (hashSet != null) {
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                String str = (String) it.next();
+                int size = arrayList.size();
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= size) {
+                        r7 = null;
+                        break;
+                    }
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    for (TLRPC.TL_help_country tL_help_country : (List) hashMap2.get((String) obj)) {
+                        if (TextUtils.equals(str, tL_help_country.iso2)) {
+                            break;
+                        }
+                    }
+                }
+                if (tL_help_country != null) {
+                    x30 x30Var = new x30(fVar.getContext(), tL_help_country);
+                    x30Var.setOnClickListener(new a(fVar, 3));
+                    fVar.h0.a(x30Var);
+                    hashMap.put(tL_help_country.iso2, x30Var);
+                }
+            }
+        }
+        fVar.d0.O(true);
+        fVar.e0.b(hashMap.size(), true);
+    }
+
+    @Override // oe.d
+    public final void E(int i10, float f7, float f10, oe.e eVar) {
+        if (i10 != 3) {
+            if (i10 == 4) {
+                j20.d(this.f0, f7);
+            }
+        } else {
+            Q();
+            this.i0.setTranslationY(AndroidUtilities.dp(48.0f) + f7);
+            this.g0.invalidate();
+        }
+    }
+
+    public final void Q() {
+        int dp = AndroidUtilities.dp(56.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + ((int) this.X.f);
+        int measuredHeight = (this.containerView.getMeasuredHeight() - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(34.0f);
+        Rect rect = this.p0;
+        boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
+        rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
+        mm0 mm0Var = this.d;
+        mm0Var.setClipBounds(rect);
+        if (z10) {
+            mm0Var.invalidate();
+        }
+    }
+
+    public final void R() {
+        mm0 mm0Var;
+        float f7 = AndroidUtilities.displaySize.y;
+        int i10 = 0;
+        while (true) {
+            mm0Var = this.d;
+            if (i10 >= mm0Var.getChildCount()) {
+                break;
+            }
+            View childAt = mm0Var.getChildAt(i10);
+            if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
+                f7 = childAt.getY();
+            }
+            i10++;
+        }
+        float max = Math.max(k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight, f7 + AndroidUtilities.dp(8.0f));
+        j5 j5Var = this.g0;
+        if (j5Var.getTranslationY() != max) {
+            j5Var.setTranslationY(max);
+            mm0Var.invalidate();
+        }
+    }
+
+    public final void S(View view) {
+        x30 x30Var = (x30) view;
+        if (!x30Var.y) {
+            x30 x30Var2 = this.q0;
+            if (x30Var2 != null) {
+                x30Var2.a();
+            }
+            this.q0 = x30Var;
+            x30Var.b();
+            return;
+        }
+        this.q0 = null;
+        this.h0.c(x30Var);
+        String countryIso2 = x30Var.getCountryIso2();
+        HashMap hashMap = this.j0;
+        hashMap.remove(countryIso2);
+        this.e0.b(hashMap.size(), true);
+        this.d0.O(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k3
+    public final void onContainerLayout(int i10, int i11, int i12, int i13) {
+        super.onContainerLayout(i10, i11, i12, i13);
+        Q();
+        R();
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final lm0 v(mm0 mm0Var) {
+        j71 j71Var = new j71(mm0Var, getContext(), this.currentAccount, 0, true, new e2(this, 22), this.resourcesProvider);
+        this.d0 = j71Var;
+        j71Var.r = false;
+        return j71Var;
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.BoostingSelectCountry);
+    }
+
+    @Override // oe.d
+    public final /* synthetic */ void z(float f7, int i10) {
     }
 }

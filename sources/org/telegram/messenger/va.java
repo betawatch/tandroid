@@ -4,7 +4,7 @@ import java.util.Comparator;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class va implements Comparator {
     public final /* synthetic */ int a;
@@ -17,23 +17,23 @@ public final /* synthetic */ class va implements Comparator {
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        int lambda$processUpdatesQueue$326;
-        int lambda$renameSavedReactionTag$487;
-        int lambda$updateSavedReactionTags$486;
+        int lambda$processUpdatesQueue$328;
+        int lambda$renameSavedReactionTag$489;
+        int lambda$updateSavedReactionTags$488;
         int lambda$new$9;
         int lambda$new$10;
         int lambda$new$11;
         int lambda$new$12;
         switch (this.a) {
             case 0:
-                lambda$processUpdatesQueue$326 = this.b.lambda$processUpdatesQueue$326((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processUpdatesQueue$326;
+                lambda$processUpdatesQueue$328 = this.b.lambda$processUpdatesQueue$328((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processUpdatesQueue$328;
             case 1:
-                lambda$renameSavedReactionTag$487 = this.b.lambda$renameSavedReactionTag$487((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
-                return lambda$renameSavedReactionTag$487;
+                lambda$renameSavedReactionTag$489 = this.b.lambda$renameSavedReactionTag$489((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$renameSavedReactionTag$489;
             case 2:
-                lambda$updateSavedReactionTags$486 = this.b.lambda$updateSavedReactionTags$486((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
-                return lambda$updateSavedReactionTags$486;
+                lambda$updateSavedReactionTags$488 = this.b.lambda$updateSavedReactionTags$488((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$updateSavedReactionTags$488;
             case 3:
                 lambda$new$9 = this.b.lambda$new$9((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
                 return lambda$new$9;

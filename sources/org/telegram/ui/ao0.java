@@ -1,94 +1,63 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ao0 implements TextWatcher {
-    public final /* synthetic */ io0 a;
+public final class ao0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ po0 a;
 
-    public ao0(io0 io0Var) {
-        this.a = io0Var;
+    public ao0(po0 po0Var) {
+        this.a = po0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean z10;
-        String str;
-        String str2;
-        io0 io0Var = this.a;
-        HashMap hashMap = io0Var.c;
-        if (io0Var.m0) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        po0 po0Var = this.a;
+        if (i10 == -1) {
+            if (po0Var.P0) {
+                return;
+            }
+            po0Var.finishFragment();
             return;
         }
-        io0Var.m0 = true;
-        String d = jf.b.d(io0Var.f[8].getText().toString(), false);
-        io0Var.f[8].setText(d);
-        org.telegram.ui.Components.o40 o40Var = (org.telegram.ui.Components.o40) io0Var.f[9];
-        if (d.length() == 0) {
-            o40Var.setHintText((String) null);
-            o40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-        } else {
-            int i10 = 4;
-            if (d.length() > 4) {
-                while (true) {
-                    if (i10 < 1) {
-                        z10 = false;
-                        str = null;
-                        break;
-                    }
-                    String substring = d.substring(0, i10);
-                    if (((String) hashMap.get(substring)) != null) {
-                        String str3 = d.substring(i10) + io0Var.f[9].getText().toString();
-                        io0Var.f[8].setText(substring);
-                        str = str3;
-                        d = substring;
-                        z10 = true;
-                        break;
-                    }
-                    i10--;
-                }
-                if (!z10) {
-                    str = d.substring(1) + io0Var.f[9].getText().toString();
-                    EditTextBoldCursor editTextBoldCursor = io0Var.f[8];
-                    d = d.substring(0, 1);
-                    editTextBoldCursor.setText(d);
-                }
-            } else {
-                z10 = false;
-                str = null;
-            }
-            String str4 = (String) hashMap.get(d);
-            if (str4 == null || io0Var.a.indexOf(str4) == -1 || (str2 = (String) io0Var.d.get(d)) == null) {
-                o40Var.setHintText((String) null);
-                o40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-            } else {
-                o40Var.setHintText(str2.replace('X', (char) 8211));
-                o40Var.setHint((CharSequence) null);
-            }
-            if (!z10) {
-                EditTextBoldCursor editTextBoldCursor2 = io0Var.f[8];
-                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
-            }
-            if (str != null) {
-                o40Var.requestFocus();
-                o40Var.setText(str);
-                o40Var.setSelection(o40Var.length());
-            }
+        if (i10 != 1 || po0Var.P0) {
+            return;
         }
-        io0Var.m0 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (po0Var.u0 != 3) {
+            AndroidUtilities.hideKeyboard(po0Var.getParentActivity().getCurrentFocus());
+        }
+        int i11 = po0Var.u0;
+        if (i11 == 0) {
+            po0Var.E0(true);
+            po0.n0(po0Var);
+            return;
+        }
+        int i12 = 0;
+        if (i11 == 1) {
+            while (true) {
+                org.telegram.ui.Cells.o6[] o6VarArr = po0Var.h;
+                if (i12 >= o6VarArr.length) {
+                    break;
+                }
+                if (o6VarArr[i12].b.f) {
+                    po0Var.G0 = po0Var.E0.shipping_options.get(i12);
+                    break;
+                }
+                i12++;
+            }
+            po0Var.u0();
+            return;
+        }
+        if (i11 == 2) {
+            po0.k0(po0Var);
+        } else if (i11 == 3) {
+            po0.l0(po0Var);
+        } else {
+            if (i11 != 6) {
+                return;
+            }
+            po0Var.B0(false);
+        }
     }
 }

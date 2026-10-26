@@ -1,88 +1,65 @@
 package c3;
 
-import b2.s0;
-import b2.t0;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import a8.yb;
+import e2.n0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class y {
-    public static final Pattern c = Pattern.compile("^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})");
-    public int a = -1;
-    public int b = -1;
+public final class y implements b0 {
+    public final d5.z a;
+    public final d5.z b;
+    public long c;
 
-    public final boolean a(String str) {
-        Matcher matcher = c.matcher(str);
-        if (!matcher.find()) {
-            return false;
+    public y(long j10, long[] jArr, long[] jArr2) {
+        yb.g(jArr.length == jArr2.length);
+        int length = jArr2.length;
+        if (length <= 0 || jArr2[0] <= 0) {
+            this.a = new d5.z(length, 3);
+            this.b = new d5.z(length, 3);
+        } else {
+            int i10 = length + 1;
+            d5.z zVar = new d5.z(i10, 3);
+            this.a = zVar;
+            d5.z zVar2 = new d5.z(i10, 3);
+            this.b = zVar2;
+            zVar.c(0L);
+            zVar2.c(0L);
         }
-        try {
-            String group = matcher.group(1);
-            String str2 = e2.m0.a;
-            int parseInt = Integer.parseInt(group, 16);
-            int parseInt2 = Integer.parseInt(matcher.group(2), 16);
-            if (parseInt <= 0 && parseInt2 <= 0) {
-                return false;
-            }
-            this.a = parseInt;
-            this.b = parseInt2;
-            return true;
-        } catch (NumberFormatException unused) {
-            return false;
-        }
+        this.a.d(jArr);
+        this.b.d(jArr2);
+        this.c = j10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x008a, code lost:
-    
-        if ((r7.b.equals("com.apple.iTunes") && r7.c.equals("iTunSMPB")) != false) goto L32;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(t0 t0Var) {
-        s0 s0Var;
-        t0Var.getClass();
-        e9.k0 t10 = e9.n0.t();
-        s0[] s0VarArr = t0Var.a;
-        int length = s0VarArr.length;
-        int i10 = 0;
-        while (true) {
-            s0 s0Var2 = null;
-            if (i10 >= length) {
-                break;
-            }
-            s0 s0Var3 = s0VarArr[i10];
-            if (q3.e.class.isAssignableFrom(s0Var3.getClass())) {
-                s0 s0Var4 = (s0) q3.e.class.cast(s0Var3);
-                if (((q3.e) s0Var4).c.equals("iTunSMPB")) {
-                    s0Var2 = s0Var4;
-                }
-            }
-            if (s0Var2 != null) {
-                t10.c(s0Var2);
-            }
-            i10++;
+    @Override // c3.b0
+    public final boolean d() {
+        return this.b.b > 0;
+    }
+
+    @Override // c3.b0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // c3.b0
+    public final a0 f(long j10) {
+        d5.z zVar = this.b;
+        if (zVar.b == 0) {
+            c0 c0Var = c0.c;
+            return new a0(c0Var, c0Var);
         }
-        e9.l0 listIterator = t10.f().listIterator(0);
-        while (listIterator.hasNext()) {
-            if (a(((q3.e) listIterator.next()).d)) {
-                return;
-            }
+        int c10 = n0.c(zVar, j10);
+        long j11 = zVar.j(c10);
+        d5.z zVar2 = this.a;
+        c0 c0Var2 = new c0(j11, zVar2.j(c10));
+        if (j11 == j10 || c10 == zVar.b - 1) {
+            return new a0(c0Var2, c0Var2);
         }
-        e9.k0 t11 = e9.n0.t();
-        for (s0 s0Var5 : s0VarArr) {
-            if (q3.k.class.isAssignableFrom(s0Var5.getClass())) {
-                s0Var = (s0) q3.k.class.cast(s0Var5);
-                q3.k kVar = (q3.k) s0Var;
-            }
-            s0Var = null;
-            if (s0Var != null) {
-                t11.c(s0Var);
-            }
-        }
-        e9.l0 listIterator2 = t11.f().listIterator(0);
-        while (listIterator2.hasNext() && !a(((q3.k) listIterator2.next()).d)) {
-        }
+        int i10 = c10 + 1;
+        return new a0(c0Var2, new c0(zVar.j(i10), zVar2.j(i10)));
+    }
+
+    @Override // c3.b0
+    public final long h() {
+        return this.c;
     }
 }

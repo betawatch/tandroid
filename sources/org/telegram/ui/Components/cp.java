@@ -1,225 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.view.View;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class cp extends LinearLayout {
-    public gl0 a;
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout b;
-    public FrameLayout c;
-    public int d;
-    public float e;
-    public float f;
-    public float h;
-    public float n;
-    public float r;
+public final class cp extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
+    public final org.telegram.ui.ActionBar.u6 a;
+    public final ImageView b;
+    public final org.telegram.ui.ActionBar.b6 c;
+    public final org.telegram.ui.ActionBar.b6 d;
+    public final org.telegram.ui.ActionBar.b6 e;
+    public final org.telegram.ui.gl f;
+    public boolean h;
+    public boolean n;
 
-    public final void a() {
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setTranslationY(this.h + this.n + this.r);
+    public cp(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        this.a = u6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, gb1.i(52, 46, 51));
+        org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
+        this.c = b6Var;
+        b6Var.setTextSize(14);
+        b6Var.setTypeface(AndroidUtilities.bold());
+        addView(b6Var, gb1.h(-1, 18.0f, 51, 52.0f, 6.0f, 0.0f, 0.0f));
+        org.telegram.ui.ActionBar.b6 b6Var2 = new org.telegram.ui.ActionBar.b6(context);
+        this.d = b6Var2;
+        b6Var2.setTextSize(14);
+        NotificationCenter.listenEmojiLoading(b6Var2);
+        addView(b6Var2, gb1.h(-1, 18.0f, 51, 52.0f, 24.0f, 0.0f, 0.0f));
+        org.telegram.ui.ActionBar.b6 b6Var3 = new org.telegram.ui.ActionBar.b6(context);
+        this.e = b6Var3;
+        b6Var3.setTextSize(14);
+        b6Var3.l(LocaleController.getString(R.string.TapForForwardingOptions), false);
+        b6Var3.setAlpha(0.0f);
+        addView(b6Var3, gb1.h(-1, 18.0f, 51, 52.0f, 24.0f, 0.0f, 0.0f));
+        org.telegram.ui.gl glVar = new org.telegram.ui.gl(this, context, new xh.g());
+        this.f = glVar;
+        glVar.setRoundRadius(AndroidUtilities.dp(6.0f));
+        addView(glVar, gb1.h(34, 34.0f, 51, 52.0f, 6.0f, 0.0f, 0.0f));
+        updateColors();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.te));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.ve));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.Xk));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.gc));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.n) {
+            return super.dispatchTouchEvent(motionEvent);
         }
+        return false;
     }
 
-    public final void b() {
-        float f7 = (1.0f - this.f) * this.e;
-        this.b.setTranslationX(f7);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setTranslationX(f7);
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = i10;
-        int i13 = this.d;
-        int makeMeasureSpec = i13 != 0 ? View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31) : i11;
-        gl0 gl0Var = this.a;
-        if (gl0Var == null || this.b == null) {
-            super.onMeasure(i12, makeMeasureSpec);
-        } else {
-            gl0Var.getLayoutParams().width = -2;
-            ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = 0;
-            this.e = 0.0f;
-            super.onMeasure(i12, makeMeasureSpec);
-            int measuredWidth = this.a.getMeasuredWidth();
-            if (this.b.getSwipeBack() != null && this.b.getSwipeBack().getMeasuredWidth() > measuredWidth) {
-                measuredWidth = this.b.getSwipeBack().getMeasuredWidth();
-            }
-            if (this.b.getMeasuredWidth() > measuredWidth) {
-                measuredWidth = this.b.getMeasuredWidth();
-            }
-            if (this.a.q()) {
-                i12 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-            }
-            gl0 gl0Var2 = this.a;
-            if (!gl0Var2.f1 && gl0Var2.Q0 && gl0Var2.getMeasuredWidth() > 0) {
-                int min = Math.min(AndroidUtilities.dp(320.0f), gl0Var2.getMeasuredWidth() - AndroidUtilities.dp(16.0f));
-                StaticLayout staticLayout = new StaticLayout(gl0Var2.R0.getText(), gl0Var2.R0.getPaint(), min, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                gl0Var2.T0 = staticLayout.getHeight();
-                gl0Var2.S0 = 0;
-                for (int i14 = 0; i14 < staticLayout.getLineCount(); i14++) {
-                    gl0Var2.S0 = Math.max(gl0Var2.S0, (int) Math.ceil(staticLayout.getLineWidth(i14)));
-                }
-                if (staticLayout.getLineCount() <= 1 || gl0Var2.R0.getText().toString().contains("\n")) {
-                    gl0Var2.R0.setWidth(AndroidUtilities.dp(16.0f) + min);
-                } else {
-                    int a2 = ei.x3.a(gl0Var2.R0.getText(), gl0Var2.R0.getPaint());
-                    StaticLayout staticLayout2 = new StaticLayout(gl0Var2.R0.getText(), gl0Var2.R0.getPaint(), a2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    gl0Var2.T0 = staticLayout2.getHeight();
-                    gl0Var2.S0 = 0;
-                    for (int i15 = 0; i15 < staticLayout2.getLineCount(); i15++) {
-                        gl0Var2.S0 = Math.max(gl0Var2.S0, (int) Math.ceil(staticLayout2.getLineWidth(i15)));
-                    }
-                    gl0Var2.R0.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
-                    gl0Var2.R0.setWidth(AndroidUtilities.dp(48.0f) + a2);
-                }
-                int max = Math.max(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(7.0f) + gl0Var2.T0);
-                int i16 = gl0Var2.M0;
-                if (i16 == 1 || i16 == 2) {
-                    max = AndroidUtilities.dp(20.0f);
-                } else {
-                    gl0Var2.getLayoutParams().height = AndroidUtilities.dp(22.0f) + AndroidUtilities.dp(52.0f) + max;
-                }
-                ((FrameLayout.LayoutParams) gl0Var2.z0.getLayoutParams()).topMargin = max;
-                ((FrameLayout.LayoutParams) gl0Var2.b.getLayoutParams()).topMargin = max;
-                gl0Var2.f1 = true;
-            }
-            int totalWidth = this.a.getTotalWidth();
-            View childAt = (this.b.getSwipeBack() != null ? this.b.getSwipeBack() : this.b).getChildAt(0);
-            int dp = AndroidUtilities.dp(36.0f) + AndroidUtilities.dp(16.0f) + AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
-            int hintTextWidth = this.a.getHintTextWidth();
-            if (hintTextWidth > dp) {
-                dp = hintTextWidth;
-            } else if (dp > measuredWidth) {
-                dp = measuredWidth;
-            }
-            this.a.G = AndroidUtilities.dp(36.0f);
-            if (this.a.q()) {
-                this.a.getLayoutParams().width = totalWidth;
-                this.a.G = Math.max((totalWidth - childAt.getMeasuredWidth()) - AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
-            } else if (totalWidth > dp) {
-                int dp2 = ((dp - AndroidUtilities.dp(16.0f)) / AndroidUtilities.dp(36.0f)) + 1;
-                int dp3 = AndroidUtilities.dp(8.0f) + (AndroidUtilities.dp(36.0f) * dp2);
-                if (AndroidUtilities.dp(24.0f) + hintTextWidth > dp3) {
-                    dp3 = AndroidUtilities.dp(24.0f) + hintTextWidth;
-                }
-                if (dp3 <= totalWidth && dp2 != this.a.getItemsCount()) {
-                    totalWidth = dp3;
-                }
-                this.a.getLayoutParams().width = totalWidth;
-            } else {
-                this.a.getLayoutParams().width = -2;
-            }
-            if (this.a.getMeasuredWidth() == measuredWidth && this.a.q()) {
-                float measuredWidth2 = (measuredWidth - childAt.getMeasuredWidth()) * 0.25f;
-                this.e = measuredWidth2;
-                int i17 = (int) (r6.G - measuredWidth2);
-                this.a.G = i17;
-                if (i17 < AndroidUtilities.dp(36.0f)) {
-                    this.e = 0.0f;
-                    this.a.G = AndroidUtilities.dp(36.0f);
-                }
-                b();
-            } else {
-                int measuredWidth3 = this.b.getSwipeBack() != null ? this.b.getSwipeBack().getMeasuredWidth() - this.b.getSwipeBack().getChildAt(0).getMeasuredWidth() : 0;
-                if (this.a.getLayoutParams().width != -2 && this.a.getLayoutParams().width + measuredWidth3 > measuredWidth) {
-                    measuredWidth3 = AndroidUtilities.dp(8.0f) + (measuredWidth - this.a.getLayoutParams().width);
-                }
-                r5 = measuredWidth3 >= 0 ? measuredWidth3 : 0;
-                ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = r5;
-                this.e = 0.0f;
-                b();
-            }
-            if (this.c != null) {
-                if (this.a.q()) {
-                    this.c.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
-                    b();
-                } else {
-                    this.c.getLayoutParams().width = -1;
-                }
-                if (this.b.getSwipeBack() != null) {
-                    ((LinearLayout.LayoutParams) this.c.getLayoutParams()).rightMargin = AndroidUtilities.dp(36.0f) + r5;
-                } else {
-                    ((LinearLayout.LayoutParams) this.c.getLayoutParams()).rightMargin = AndroidUtilities.dp(36.0f);
-                }
-            }
-            super.onMeasure(i12, makeMeasureSpec);
-        }
-        this.d = getMeasuredHeight();
-    }
-
-    public void setExpandSize(float f7) {
-        this.b.setTranslationY(f7);
-        this.n = f7;
-        a();
-    }
-
-    public void setMaxHeight(int i10) {
-        this.d = i10;
-    }
-
-    public void setPopupAlpha(float f7) {
-        this.b.setAlpha(f7);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setAlpha(f7);
-        }
-    }
-
-    public void setPopupWindowLayout(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new p2(15, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
-        if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-            th0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
-            swipeBack.x.add(new sh0() { // from class: org.telegram.ui.Components.bp
-                @Override // org.telegram.ui.Components.sh0
-                public final void a(float f7, float f10) {
-                    cp cpVar = cp.this;
-                    FrameLayout frameLayout = cpVar.c;
-                    if (frameLayout != null) {
-                        frameLayout.setAlpha(1.0f - f10);
-                    }
-                    cpVar.f = f10;
-                    cpVar.b();
-                }
-            });
-        }
-    }
-
-    public void setReactionsLayout(gl0 gl0Var) {
-        this.a = gl0Var;
-        if (gl0Var != null) {
-            gl0Var.setChatScrimView(this);
-        }
-    }
-
-    public void setReactionsTransitionProgress(float f7) {
-        this.b.setReactionsTransitionProgress(f7);
-        FrameLayout frameLayout = this.c;
-        if (frameLayout != null) {
-            frameLayout.setAlpha(f7);
-            float f10 = (f7 * 0.5f) + 0.5f;
-            this.c.setPivotX(r0.getMeasuredWidth());
-            this.c.setPivotY(0.0f);
-            this.r = (1.0f - f7) * (-this.b.getMeasuredHeight());
-            a();
-            this.c.setScaleX(f10);
-            this.c.setScaleY(f10);
-        }
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        int i10 = org.telegram.ui.ActionBar.y6.te;
+        org.telegram.ui.ActionBar.u6 u6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.y6.w0(i10, u6Var), PorterDuff.Mode.MULTIPLY));
+        this.c.setTextColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.ve, u6Var));
+        int i11 = org.telegram.ui.ActionBar.y6.Xk;
+        int w02 = org.telegram.ui.ActionBar.y6.w0(i11, u6Var);
+        org.telegram.ui.ActionBar.b6 b6Var = this.d;
+        b6Var.setTextColor(w02);
+        b6Var.setLinkTextColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.gc, u6Var));
+        this.e.setTextColor(org.telegram.ui.ActionBar.y6.w0(i11, u6Var));
     }
 }

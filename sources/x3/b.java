@@ -1,13 +1,13 @@
 package x3;
 
-import c3.e0;
-import c3.r;
-import e2.m0;
+import a8.yb;
+import c3.b0;
+import c3.p;
+import e2.n0;
 import java.io.EOFException;
 import java.io.IOException;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -24,7 +24,7 @@ public final class b implements g {
     public long w;
 
     public b(i iVar, long j10, long j11, long j12, long j13, boolean z10) {
-        u6.g(j10 >= 0 && j11 > j10);
+        yb.g(j10 >= 0 && j11 > j10);
         this.d = iVar;
         this.b = j10;
         this.c = j11;
@@ -38,13 +38,21 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final void X(long j10) {
-        this.n = m0.j(j10, 0L, this.f - 1);
+    public final void N0(long j10) {
+        this.n = n0.j(j10, 0L, this.f - 1);
         this.e = 2;
         this.r = this.b;
         this.s = this.c;
         this.v = 0L;
         this.w = this.f;
+    }
+
+    @Override // x3.g
+    public final b0 U() {
+        if (this.f != 0) {
+            return new a(this);
+        }
+        return null;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x00c3 A[RETURN] */
@@ -53,7 +61,7 @@ public final class b implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long k(r rVar) {
+    public final long w(p pVar) {
         long j10;
         long j11;
         long j12;
@@ -62,7 +70,7 @@ public final class b implements g {
         f fVar = this.a;
         if (i10 == 0) {
             j10 = 0;
-            long position = rVar.getPosition();
+            long position = pVar.getPosition();
             this.h = position;
             this.e = 1;
             long j14 = j13 - 65307;
@@ -74,10 +82,10 @@ public final class b implements g {
                 if (this.r == this.s) {
                     j12 = -1;
                 } else {
-                    long position2 = rVar.getPosition();
-                    if (fVar.b(rVar, this.s)) {
-                        fVar.a(rVar, false);
-                        rVar.q();
+                    long position2 = pVar.getPosition();
+                    if (fVar.b(pVar, this.s)) {
+                        fVar.a(pVar, false);
+                        pVar.p();
                         long j15 = this.n;
                         long j16 = fVar.b;
                         long j17 = j15 - j16;
@@ -88,7 +96,7 @@ public final class b implements g {
                                 this.s = position2;
                                 this.w = j16;
                             } else {
-                                this.r = rVar.getPosition() + i11;
+                                this.r = pVar.getPosition() + i11;
                                 this.v = fVar.b;
                             }
                             long j18 = this.s;
@@ -97,10 +105,10 @@ public final class b implements g {
                                 this.s = j19;
                                 j12 = j19;
                             } else {
-                                long position3 = rVar.getPosition() - (i11 * (j17 <= 0 ? 2L : 1L));
+                                long position3 = pVar.getPosition() - (i11 * (j17 <= 0 ? 2L : 1L));
                                 long j20 = this.s;
                                 long j21 = this.r;
-                                j12 = m0.j((((j20 - j21) * j17) / (this.w - this.v)) + position3, j21, j20 - 1);
+                                j12 = n0.j((((j20 - j21) * j17) / (this.w - this.v)) + position3, j21, j20 - 1);
                             }
                         } else {
                             j12 = -1;
@@ -129,15 +137,15 @@ public final class b implements g {
                 j11 = 2;
             }
             while (true) {
-                fVar.b(rVar, -1L);
-                fVar.a(rVar, false);
+                fVar.b(pVar, -1L);
+                fVar.a(pVar, false);
                 if (fVar.b > this.n) {
-                    rVar.q();
+                    pVar.p();
                     this.e = 4;
                     return -(this.v + j11);
                 }
-                rVar.r(fVar.d + fVar.e);
-                this.r = rVar.getPosition();
+                pVar.q(fVar.d + fVar.e);
+                this.r = pVar.getPosition();
                 this.v = fVar.b;
             }
         } else {
@@ -148,15 +156,15 @@ public final class b implements g {
         fVar.c = 0;
         fVar.d = 0;
         fVar.e = 0;
-        if (!fVar.b(rVar, -1L)) {
+        if (!fVar.b(pVar, -1L)) {
             throw new EOFException();
         }
-        fVar.a(rVar, false);
-        rVar.r(fVar.d + fVar.e);
+        fVar.a(pVar, false);
+        pVar.q(fVar.d + fVar.e);
         long j22 = fVar.b;
-        while ((fVar.a & 4) != 4 && fVar.b(rVar, -1L) && rVar.getPosition() < j13 && fVar.a(rVar, true)) {
+        while ((fVar.a & 4) != 4 && fVar.b(pVar, -1L) && pVar.getPosition() < j13 && fVar.a(pVar, true)) {
             try {
-                rVar.r(fVar.d + fVar.e);
+                pVar.q(fVar.d + fVar.e);
                 j22 = fVar.b;
             } catch (EOFException unused) {
             }
@@ -164,13 +172,5 @@ public final class b implements g {
         this.f = j22;
         this.e = 4;
         return this.h;
-    }
-
-    @Override // x3.g
-    public final e0 x() {
-        if (this.f != 0) {
-            return new a(this);
-        }
-        return null;
     }
 }

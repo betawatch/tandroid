@@ -8,28 +8,29 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final ah.v a;
+public final class y0 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
+    public final bh.p a;
     public final RadialProgressView b;
-    public final org.telegram.ui.ActionBar.g6 c;
+    public final org.telegram.ui.ActionBar.u6 c;
     public float d;
     public int e;
 
-    public y0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public y0(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
-        this.c = g6Var;
-        ah.v vVar = new ah.v(this, context);
-        this.a = vVar;
-        vVar.setWillNotDraw(false);
-        addView(vVar, w7.z5.e(36, 36, 17));
-        RadialProgressView radialProgressView = new RadialProgressView(context, g6Var);
+        this.c = u6Var;
+        bh.p pVar = new bh.p(this, context);
+        this.a = pVar;
+        pVar.setWillNotDraw(false);
+        addView(pVar, gb1.i(36, 36, 17));
+        RadialProgressView radialProgressView = new RadialProgressView(context, u6Var);
         this.b = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(28.0f));
-        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ic, g6Var));
-        vVar.addView(radialProgressView, w7.z5.e(32, 32, 17));
+        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.ic, u6Var));
+        pVar.addView(radialProgressView, gb1.i(32, 32, 17));
     }
 
     public final void a(float f7, int i10) {
@@ -49,17 +50,17 @@ public final class y0 extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.a.setVisibility(z10 ? 0 : 4);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
         try {
-            this.b.setProgressColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ic, this.c));
+            this.b.setProgressColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.ic, this.c));
             invalidate();
         } catch (Exception e) {
             FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.p6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

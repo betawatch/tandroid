@@ -1,16 +1,16 @@
 package com.google.android.gms.location;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import g8.j;
-import g8.k;
+import h8.j;
+import h8.k;
 import java.util.Arrays;
-import o6.a;
 import org.telegram.messenger.MediaDataController;
-import w7.f0;
+import p6.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class LocationAvailability extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationAvailability> CREATOR = new j(4);
@@ -48,20 +48,20 @@ public final class LocationAvailability extends a implements ReflectedParcelable
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f0.s(parcel, 2, 4);
+        df.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        f0.s(parcel, 3, 8);
+        df.s(parcel, 3, 8);
         parcel.writeLong(this.c);
-        f0.s(parcel, 4, 4);
+        df.s(parcel, 4, 4);
         int i11 = this.d;
         parcel.writeInt(i11);
-        f0.o(parcel, 5, this.e, i10);
+        df.o(parcel, 5, this.e, i10);
         int i12 = i11 >= 1000 ? 0 : 1;
-        f0.s(parcel, 6, 4);
+        df.s(parcel, 6, 4);
         parcel.writeInt(i12);
-        f0.r(parcel, q6);
+        df.r(parcel, q5);
     }
 }

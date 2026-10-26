@@ -1,182 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import java.io.IOException;
-import java.io.RandomAccessFile;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueuePoolBackground;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class wj0 extends yj0 {
-    public volatile RLottieNative U0;
-    public boolean V0;
-    public boolean W0;
-    public volatile boolean X0;
-    public boolean Y0;
-    public final int Z0;
-    public int a1;
+public final /* synthetic */ class wj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xj0 b;
 
-    public wj0(String str, int i10, int i11) {
-        super(i10, i11);
-        String readRes;
-        this.Z0 = -1;
-        this.J = 1;
-        if ("🎲".equals(str)) {
-            readRes = AndroidUtilities.readRes(R.raw.diceloop);
-            this.Z0 = 60;
-        } else {
-            readRes = "🎯".equals(str) ? AndroidUtilities.readRes(R.raw.dartloop) : null;
-        }
-        getPaint().setFlags(2);
-        if (TextUtils.isEmpty(readRes)) {
-            return;
-        }
-        this.m0 = RLottieNative.b(readRes, this.e, null, null);
+    public /* synthetic */ wj0(xj0 xj0Var, int i10) {
+        this.a = i10;
+        this.b = xj0Var;
     }
 
-    @Override // org.telegram.ui.Components.yj0
-    public int B(Bitmap bitmap, boolean z10) {
-        RLottieNative rLottieNative;
-        int i10 = this.J;
-        if (i10 == 1) {
-            rLottieNative = this.m0;
-        } else if (i10 == 2) {
-            rLottieNative = this.U0;
-            if (this.X0) {
-                this.a0 = this.a1 - 1;
-            }
-        } else {
-            rLottieNative = this.m0;
-        }
-        return rLottieNative.c(this.a0, bitmap, z10) < 0 ? 2 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.yj0
-    public void C(boolean z10) {
-        this.k0 = false;
-        this.l0 = true;
-        n();
-        l();
-        if (this.Y0 || this.V0) {
-            this.W0 = true;
-            return;
-        }
-        if (this.P != null || this.x0) {
-            this.V = true;
-            return;
-        }
-        D(z10);
-        zf.e eVar = this.B0;
-        if (eVar != null) {
-            RandomAccessFile randomAccessFile = eVar.s;
-            if (randomAccessFile != null) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xj0 xj0Var = this.b;
+                xj0Var.getClass();
                 try {
-                    randomAccessFile.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    ag.k kVar = xj0Var.B0;
+                    if (kVar != null) {
+                        kVar.b();
+                    }
+                } catch (Throwable unused) {
                 }
-                eVar.s = null;
-            }
-            eVar.r = true;
-            this.B0 = null;
+                AndroidUtilities.runOnUIThread(xj0Var.z0);
+                break;
+            case 1:
+                xj0 xj0Var2 = this.b;
+                xj0Var2.P = null;
+                xj0Var2.p();
+                break;
+            case 2:
+                xj0.h(this.b);
+                break;
+            case 3:
+                xj0.e(this.b);
+                break;
+            case 4:
+                xj0.d(this.b);
+                break;
+            case 5:
+                xj0.f(this.b);
+                break;
+            default:
+                this.b.m();
+                break;
         }
-        E();
-    }
-
-    @Override // org.telegram.ui.Components.yj0
-    public final void D(boolean z10) {
-        RLottieNative rLottieNative = this.m0;
-        RLottieNative rLottieNative2 = this.U0;
-        this.m0 = null;
-        this.U0 = null;
-        if (rLottieNative == null && rLottieNative2 == null) {
-            return;
-        }
-        yt ytVar = new yt(28, rLottieNative, rLottieNative2);
-        if (z10) {
-            DispatchQueuePoolBackground.execute(ytVar);
-        } else {
-            Utilities.globalQueue.postRunnable(ytVar);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yj0
-    public void i() {
-        int i10 = this.J;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                int i11 = this.a0 + 1;
-                if (i11 < this.a1) {
-                    this.a0 = i11;
-                    return;
-                } else {
-                    this.N = true;
-                    this.M++;
-                    return;
-                }
-            }
-            return;
-        }
-        int i12 = this.a0 + 1;
-        int i13 = this.Z0;
-        if (i13 == -1) {
-            i13 = this.e[0];
-        }
-        if (i12 < i13) {
-            this.a0 = i12;
-            return;
-        }
-        this.a0 = 0;
-        this.N = false;
-        if (this.U0 != null) {
-            this.J = 2;
-        }
-        if (this.y) {
-            this.x = null;
-            this.y = false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yj0
-    public int j() {
-        if (this.l0) {
-            return 3;
-        }
-        return (this.m0 == null || (this.J == 2 && this.U0 == null)) ? 2 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.yj0
-    public void p() {
-        if (this.V) {
-            n();
-            if (this.P == null && this.m0 != null) {
-                D(true);
-            }
-        }
-        if (this.m0 == null && this.U0 == null && this.B0 == null) {
-            E();
-            return;
-        }
-        this.T = true;
-        if (!v()) {
-            stop();
-        }
-        if (this.k0) {
-            I();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yj0
-    public final boolean w() {
-        return this.Y0;
-    }
-
-    @Override // org.telegram.ui.Components.yj0
-    public final boolean z() {
-        return false;
     }
 }

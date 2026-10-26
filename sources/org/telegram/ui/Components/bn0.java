@@ -1,96 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class bn0 extends Drawable {
-    public int a = 255;
-    public final /* synthetic */ s90 b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ org.telegram.ui.Cells.t1 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ Bitmap f;
-    public final /* synthetic */ RectF g;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Paint i;
-    public final /* synthetic */ StaticLayout j;
+public final class bn0 extends rx0 {
+    public float d;
+    public final Paint f;
+    public boolean a = false;
+    public long b = 0;
+    public boolean c = false;
+    public int e = 1;
 
-    public bn0(s90 s90Var, int[] iArr, org.telegram.ui.Cells.t1 t1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = s90Var;
-        this.c = iArr;
-        this.d = t1Var;
-        this.e = iArr2;
-        this.f = bitmap;
-        this.g = rectF;
-        this.h = paint;
-        this.i = paint2;
-        this.j = staticLayout;
+    public bn0(boolean z10) {
+        if (z10) {
+            this.f = new Paint(1);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.rx0
+    public final void b(int i10) {
+        Paint paint = this.f;
+        if (paint != null) {
+            paint.setColor(i10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.rx0
+    public final void c(boolean z10) {
+        this.a = z10;
+    }
+
+    @Override // org.telegram.ui.Components.rx0
+    public final void d() {
+        this.b = System.currentTimeMillis();
+        this.c = true;
+        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        if (this.a <= 0) {
-            return;
+        Paint paint = this.f;
+        if (paint == null) {
+            paint = org.telegram.ui.ActionBar.y6.c2;
         }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        float f7 = rectF.left;
-        CornerPathEffect cornerPathEffect = s90.w;
-        rectF.left = f7 - (AndroidUtilities.dp(5.0f) / 2.0f);
-        canvas.save();
-        canvas.saveLayerAlpha(rectF, this.a, 31);
-        int[] iArr = this.c;
-        canvas.translate(iArr[0], iArr[1]);
-        s90 s90Var = this.b;
-        org.telegram.ui.Cells.t1 t1Var = this.d;
-        if (t1Var == null || !t1Var.B1()) {
-            canvas.drawPath(s90Var, this.i);
-        } else {
-            org.telegram.ui.ActionBar.j5 j5Var = t1Var.t8;
-            if (j5Var == null || j5Var.c == null) {
-                canvas.translate(-iArr[0], -iArr[1]);
-                int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], t1Var.getPaddingTop() + iArr2[1]);
-                t1Var.C1(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - t1Var.getPaddingTop());
-                canvas.translate(iArr[0], iArr[1]);
-            } else {
-                canvas.save();
-                t1Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -t1Var.t8.r);
-                canvas.drawPaint(t1Var.t8.c);
-                canvas.restore();
+        paint.setAlpha(((int) (this.d * 200.0f)) + 55);
+        canvas.drawCircle(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.a ? 8.0f : 9.0f), AndroidUtilities.dp(4.0f), paint);
+        if (this.c) {
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = currentTimeMillis - this.b;
+            this.b = currentTimeMillis;
+            if (j10 > 50) {
+                j10 = 50;
             }
-            Bitmap bitmap = this.f;
-            if (bitmap != null) {
-                canvas.save();
-                RectF rectF2 = this.g;
-                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
-                canvas.restore();
+            float f7 = this.d;
+            int i10 = this.e;
+            float f10 = ((i10 * j10) / 400.0f) + f7;
+            this.d = f10;
+            if (i10 > 0 && f10 >= 1.0f) {
+                this.e = -1;
+                this.d = 1.0f;
+            } else if (i10 < 0 && f10 <= 0.0f) {
+                this.e = 1;
+                this.d = 0.0f;
             }
+            a();
         }
-        canvas.clipPath(s90Var);
-        this.j.draw(canvas);
-        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Components.rx0
+    public final void e() {
+        this.c = false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(10.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(12.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return -2;
+        return 0;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        this.a = i10;
     }
 
     @Override // android.graphics.drawable.Drawable

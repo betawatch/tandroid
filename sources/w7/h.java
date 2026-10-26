@@ -1,23 +1,7 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Method from annotation default annotation not found: zzb */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class h {
-    public static kd.f a(kd.f fVar, kd.g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        if (kotlin.jvm.internal.i.a(fVar.getKey(), key)) {
-            return fVar;
-        }
-        return null;
-    }
-
-    public static kd.h b(kd.f fVar, kd.g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        return kotlin.jvm.internal.i.a(fVar.getKey(), key) ? kd.i.a : fVar;
-    }
-
-    public static kd.h c(kd.f fVar, kd.h context) {
-        kotlin.jvm.internal.i.e(context, "context");
-        return context == kd.i.a ? fVar : (kd.h) context.fold(fVar, new b1.e(5));
-    }
+public @interface h {
 }

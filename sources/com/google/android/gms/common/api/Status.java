@@ -1,5 +1,6 @@
 package com.google.android.gms.common.api;
 
+import a8.df;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.PendingIntent;
@@ -9,15 +10,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
-import w7.f0;
+import m4.w1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class Status extends o6.a implements q, ReflectedParcelable {
+public final class Status extends p6.a implements q, ReflectedParcelable {
     public final int a;
     public final String b;
     public final PendingIntent c;
-    public final k6.a d;
+    public final l6.a d;
     public static final Status e = new Status(0, null, null, null);
     public static final Status f = new Status(14, null, null, null);
     public static final Status h = new Status(8, null, null, null);
@@ -25,7 +26,7 @@ public final class Status extends o6.a implements q, ReflectedParcelable {
     public static final Status r = new Status(16, null, null, null);
     public static final Parcelable.Creator<Status> CREATOR = new t(3);
 
-    public Status(int i10, String str, PendingIntent pendingIntent, k6.a aVar) {
+    public Status(int i10, String str, PendingIntent pendingIntent, l6.a aVar) {
         this.a = i10;
         this.b = str;
         this.c = pendingIntent;
@@ -40,7 +41,7 @@ public final class Status extends o6.a implements q, ReflectedParcelable {
         PendingIntent pendingIntent = this.c;
         if (pendingIntent != null) {
             Bundle bundle = Build.VERSION.SDK_INT >= 34 ? ActivityOptions.makeBasic().setPendingIntentBackgroundActivityStartMode(1).toBundle() : null;
-            n6.l.h(pendingIntent);
+            o6.l.h(pendingIntent);
             activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i10, null, 0, 0, 0, bundle);
         }
     }
@@ -50,7 +51,7 @@ public final class Status extends o6.a implements q, ReflectedParcelable {
             return false;
         }
         Status status = (Status) obj;
-        return this.a == status.a && n6.l.l(this.b, status.b) && n6.l.l(this.c, status.c) && n6.l.l(this.d, status.d);
+        return this.a == status.a && o6.l.l(this.b, status.b) && o6.l.l(this.c, status.c) && o6.l.l(this.d, status.d);
     }
 
     public final int hashCode() {
@@ -58,25 +59,25 @@ public final class Status extends o6.a implements q, ReflectedParcelable {
     }
 
     public final String toString() {
-        mi.q qVar = new mi.q(this);
+        w1 w1Var = new w1(this);
         String str = this.b;
         if (str == null) {
-            str = x8.j.a(this.a);
+            str = y8.j.a(this.a);
         }
-        qVar.z(str, "statusCode");
-        qVar.z(this.c, "resolution");
-        return qVar.toString();
+        w1Var.x(str, "statusCode");
+        w1Var.x(this.c, "resolution");
+        return w1Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f0.l(parcel, 2, this.b);
-        f0.k(parcel, 3, this.c, i10);
-        f0.k(parcel, 4, this.d, i10);
-        f0.r(parcel, q6);
+        df.l(parcel, 2, this.b);
+        df.k(parcel, 3, this.c, i10);
+        df.k(parcel, 4, this.d, i10);
+        df.r(parcel, q5);
     }
 
     @Override // com.google.android.gms.common.api.q

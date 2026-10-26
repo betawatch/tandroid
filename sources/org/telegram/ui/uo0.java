@@ -1,68 +1,44 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class uo0 extends Drawable {
-    public final org.telegram.ui.Components.i11 a;
-    public final Drawable b;
-    public final sg.a1 c;
+public final class uo0 extends xo0 {
+    public int G;
+    public final /* synthetic */ rp0 H;
 
-    public uo0(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
-        this.a = new org.telegram.ui.Components.i11(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
-        Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.c = new sg.a1(org.telegram.ui.ActionBar.k6.Lj, org.telegram.ui.ActionBar.k6.Mj, -1, -1, g6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uo0(rp0 rp0Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        this.H = rp0Var;
+        this.G = 0;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10 = getBounds().left;
-        int centerY = getBounds().centerY();
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f7 = centerY;
-        rectF.set(i10, f7 - (AndroidUtilities.dp(18.33f) / 2.0f), getIntrinsicWidth() + i10, (AndroidUtilities.dp(18.33f) / 2.0f) + f7);
-        sg.a1 a1Var = this.c;
-        a1Var.e(rectF);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), a1Var.f);
-        int dp = AndroidUtilities.dp(3.33f) + i10;
-        Drawable drawable = this.b;
-        drawable.setBounds(dp, (int) (f7 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a1.g.B(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f7));
-        drawable.draw(canvas);
-        this.a.c((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.66f) + i10, f7, 1.0f, -1, canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.33f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (this.a.l() + (this.b.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(9.66f));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.xo0
+    public final void a() {
+        rp0 rp0Var = this.H;
+        if (rp0Var.getParentActivity() != null) {
+            AndroidUtilities.setLightStatusBar(rp0Var.getParentActivity(), rp0Var.isLightStatusBar());
+        }
+        int actionBarButtonColor = getActionBarButtonColor();
+        if (this.G != actionBarButtonColor) {
+            ImageView imageView = rp0Var.J;
+            if (imageView != null) {
+                this.G = actionBarButtonColor;
+                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+            ImageView imageView2 = rp0Var.K;
+            if (imageView2 != null) {
+                this.G = actionBarButtonColor;
+                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+        }
+        rp0Var.G0();
+        rp0Var.B0();
     }
 }

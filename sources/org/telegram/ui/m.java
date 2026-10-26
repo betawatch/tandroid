@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class m implements org.telegram.ui.Components.ry0 {
+public final class m implements org.telegram.ui.Components.az0 {
     public final /* synthetic */ View a;
     public final /* synthetic */ TLRPC.StickerSetCovered b;
     public final /* synthetic */ o c;
@@ -16,11 +16,11 @@ public final class m implements org.telegram.ui.Components.ry0 {
         this.b = stickerSetCovered;
     }
 
-    @Override // org.telegram.ui.Components.ry0
+    @Override // org.telegram.ui.Components.az0
     public final void a() {
-        org.telegram.ui.Components.xi0 xi0Var = ((org.telegram.ui.Cells.v) this.a).f;
-        if (xi0Var != null) {
-            xi0Var.a(true, true);
+        org.telegram.ui.Components.wi0 wi0Var = ((org.telegram.ui.Cells.v) this.a).f;
+        if (wi0Var != null) {
+            wi0Var.a(true, true);
         }
         a0.h hVar = this.c.a;
         TLRPC.StickerSetCovered stickerSetCovered = this.b;

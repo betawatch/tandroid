@@ -1,71 +1,71 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ci implements View.OnClickListener {
-    public final /* synthetic */ uh0 a;
-    public final /* synthetic */ org.telegram.ui.Components.mm0 b;
-    public final /* synthetic */ LinearLayout c;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ sn f;
+public final class ci extends gu0 {
+    public final /* synthetic */ un a;
 
-    public ci(sn snVar, uh0 uh0Var, org.telegram.ui.Components.mm0 mm0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.f = snVar;
-        this.a = uh0Var;
-        this.b = mm0Var;
-        this.c = linearLayout;
-        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.e = iArr;
+    public ci(un unVar) {
+        this.a = unVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        uh0 uh0Var = this.a;
-        ArrayList arrayList = uh0Var.b;
-        ArrayList arrayList2 = uh0Var.c;
-        sn snVar = this.f;
-        if (snVar.c9 == null || arrayList2.isEmpty()) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        zj zjVar;
+        ImageReceiver imageReceiver;
+        if (i10 >= 0) {
+            un unVar = this.a;
+            if (i10 < unVar.Ua.size() && (zjVar = unVar.U1) != null && zjVar.getListView() != null) {
+                int childCount = unVar.U1.getListView().getChildCount();
+                Object obj = unVar.Ua.get(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = unVar.U1.getListView().getChildAt(i11);
+                    if (childAt instanceof org.telegram.ui.Cells.d2) {
+                        org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) childAt;
+                        if (d2Var.getResult() == obj) {
+                            imageReceiver = d2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                qu0 qu0Var = new qu0();
+                                qu0Var.b = iArr[0];
+                                qu0Var.c = iArr[1];
+                                qu0Var.d = unVar.U1.getListView();
+                                qu0Var.a = imageReceiver;
+                                qu0Var.e = imageReceiver.getBitmapSafe();
+                                qu0Var.h = imageReceiver.getRoundRadius(true);
+                                return qu0Var;
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
+                    }
+                }
+            }
         }
-        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        if (i10 >= 0) {
+            un unVar = this.a;
+            if (i10 >= unVar.Ua.size()) {
                 return;
             }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            snVar.presentFragment(new ProfileActivity(bundle, null));
-            snVar.D7(true);
-            return;
+            unVar.mb((TLRPC.BotInlineResult) unVar.Ua.get(i10), z10, i11, 0L);
         }
-        if (SharedConfig.messageSeenHintCount > 0 && snVar.j1.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.qa).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            snVar.z1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-        }
-        org.telegram.ui.Components.mm0 mm0Var = this.b;
-        mm0Var.requestLayout();
-        this.c.requestLayout();
-        mm0Var.getAdapter().l();
-        this.d.getSwipeBack().e(this.e[0]);
     }
 }

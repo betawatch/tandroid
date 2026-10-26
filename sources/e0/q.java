@@ -14,15 +14,16 @@ import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class q {
     public f0.f A;
-    public int B;
-    public final boolean C;
-    public o D;
-    public final Notification E;
-    public final ArrayList F;
+    public long B;
+    public int C;
+    public final boolean D;
+    public o E;
+    public final Notification F;
+    public final ArrayList G;
     public final Context a;
     public final ArrayList b;
     public final ArrayList c;
@@ -58,16 +59,16 @@ public final class q {
         this.t = false;
         this.w = 0;
         this.x = 0;
-        this.B = 0;
+        this.C = 0;
         Notification notification = new Notification();
-        this.E = notification;
+        this.F = notification;
         this.a = context;
         this.y = str;
         notification.when = System.currentTimeMillis();
         notification.audioStreamType = -1;
         this.j = 0;
-        this.F = new ArrayList();
-        this.C = true;
+        this.G = new ArrayList();
+        this.D = true;
     }
 
     public static CharSequence d(CharSequence charSequence) {
@@ -81,14 +82,14 @@ public final class q {
     public final Notification b() {
         Notification build;
         Bundle bundle;
-        f0 f0Var = new f0(this);
-        q qVar = (q) f0Var.e;
+        e0 e0Var = new e0(this);
+        q qVar = (q) e0Var.e;
         y yVar = qVar.l;
         if (yVar != null) {
-            yVar.b(f0Var);
+            yVar.b(e0Var);
         }
-        Notification.Builder builder = (Notification.Builder) f0Var.d;
-        int i10 = f0Var.b;
+        Notification.Builder builder = (Notification.Builder) e0Var.d;
+        int i10 = e0Var.b;
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 26) {
             build = builder.build();
@@ -96,21 +97,21 @@ public final class q {
             build = builder.build();
             if (i10 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    f0.d(build);
+                    e0.e(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    f0.d(build);
+                    e0.e(build);
                 }
             }
         } else {
-            builder.setExtras((Bundle) f0Var.f);
+            builder.setExtras((Bundle) e0Var.f);
             build = builder.build();
             if (i10 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    f0.d(build);
+                    e0.e(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    f0.d(build);
+                    e0.e(build);
                 }
             }
         }
@@ -148,9 +149,9 @@ public final class q {
                     c0.a(a10, false);
                 }
                 z.a(a10, bundle3);
-                o0[] o0VarArr = hVar.c;
-                if (o0VarArr != null) {
-                    for (RemoteInput remoteInput : o0.a(o0VarArr)) {
+                n0[] n0VarArr = hVar.c;
+                if (n0VarArr != null) {
+                    for (RemoteInput remoteInput : n0.a(n0VarArr)) {
                         z.b(a10, remoteInput);
                     }
                 }
@@ -205,7 +206,7 @@ public final class q {
     }
 
     public final void h(int i10, boolean z10) {
-        Notification notification = this.E;
+        Notification notification = this.F;
         if (z10) {
             notification.flags = i10 | notification.flags;
         } else {
@@ -214,7 +215,7 @@ public final class q {
     }
 
     public final void i() {
-        this.B = 1;
+        this.C = 1;
     }
 
     public final void j(Bitmap bitmap) {
@@ -245,7 +246,7 @@ public final class q {
     }
 
     public final void m(Uri uri) {
-        Notification notification = this.E;
+        Notification notification = this.F;
         notification.sound = uri;
         notification.audioStreamType = 5;
         notification.audioAttributes = p.a(p.d(p.c(p.b(), 4), 5));
@@ -266,7 +267,7 @@ public final class q {
     }
 
     public final void p(String str) {
-        this.E.tickerText = d(str);
+        this.F.tickerText = d(str);
     }
 
     public q(Context context) {

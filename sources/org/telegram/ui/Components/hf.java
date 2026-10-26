@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class hf implements Runnable {
     public final /* synthetic */ int a;
@@ -40,51 +40,51 @@ public final class hf implements Runnable {
                     if (chatActivityEnterView.z3) {
                         if (chatActivityEnterView.R1 != 0) {
                             chatActivityEnterView.j1(currentPage != 0 ? 1 : 2, true);
-                            chatActivityEnterView.I();
+                            chatActivityEnterView.H();
                         } else if (!z11) {
                             chatActivityEnterView.k1(false, true, false, true);
                         }
                     }
                     if (z10 != chatActivityEnterView.x3 || z12 != chatActivityEnterView.y3) {
-                        chatActivityEnterView.F(true);
+                        chatActivityEnterView.G(true);
                         break;
                     }
                 }
                 break;
             case 1:
                 int i11 = this.b;
-                wp wpVar = (wp) callback;
-                s4.n0 layoutManager = wpVar.w.getLayoutManager();
+                yp ypVar = (yp) callback;
+                s4.p0 layoutManager = ypVar.w.getLayoutManager();
                 if (layoutManager != null) {
-                    int min = i11 > wpVar.P ? Math.min(i11 + 1, wpVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
-                    rp rpVar = wpVar.G;
-                    rpVar.a = min;
-                    layoutManager.w0(rpVar);
+                    int min = i11 > ypVar.P ? Math.min(i11 + 1, ypVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
+                    tp tpVar = ypVar.G;
+                    tpVar.a = min;
+                    layoutManager.w0(tpVar);
                 }
-                wpVar.P = i11;
+                ypVar.P = i11;
                 break;
             default:
                 int i12 = this.b;
-                ei.x8 x8Var = (ei.x8) callback;
-                if (((hf) x8Var.f) == this) {
+                fi.t8 t8Var = (fi.t8) callback;
+                if (((hf) t8Var.f) == this) {
                     ArrayList arrayList = new ArrayList();
-                    TextView textView = (TextView) ((ArrayList) x8Var.b).get(i12);
+                    TextView textView = (TextView) ((ArrayList) t8Var.b).get(i12);
                     Property property = View.SCALE_X;
                     arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
                     Property property2 = View.SCALE_Y;
                     arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f));
                     Property property3 = View.ALPHA;
                     arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f));
-                    TextView textView2 = (TextView) ((ArrayList) x8Var.c).get(i12);
+                    TextView textView2 = (TextView) ((ArrayList) t8Var.c).get(i12);
                     arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 1.0f));
                     arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 1.0f));
                     arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 1.0f));
                     AnimatorSet animatorSet = new AnimatorSet();
-                    x8Var.e = animatorSet;
+                    t8Var.e = animatorSet;
                     animatorSet.setDuration(150L);
-                    ((AnimatorSet) x8Var.e).playTogether(arrayList);
-                    ((AnimatorSet) x8Var.e).addListener(new i60(this, 9));
-                    ((AnimatorSet) x8Var.e).start();
+                    ((AnimatorSet) t8Var.e).playTogether(arrayList);
+                    ((AnimatorSet) t8Var.e).addListener(new i10(this, 10));
+                    ((AnimatorSet) t8Var.e).start();
                     break;
                 }
                 break;

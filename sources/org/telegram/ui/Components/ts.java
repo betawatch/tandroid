@@ -1,45 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ts extends View {
-    public final Paint a;
-    public final Matrix b;
-    public LinearGradient c;
-    public int d;
-    public float e;
-    public float f;
+public final class ts {
+    public final org.telegram.ui.Cells.p2 a;
+    public final ArrayList b = new ArrayList();
+    public final ArrayList c = new ArrayList();
+    public ss d = null;
 
-    public ts(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
+    public ts(org.telegram.ui.Cells.p2 p2Var) {
+        this.a = p2Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.e + this.f, this.a);
-    }
-
-    public void setColor(int i10) {
-        if (this.d != i10) {
-            this.d = i10;
-            int alpha = Color.alpha(i10);
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i10, (alpha * TLRPC.LAYER) / 255), i0.a.o(i10, (alpha * 192) / 255), i0.a.o(i10, (alpha * 144) / 255), i0.a.o(i10, 0)}, (float[]) null, Shader.TileMode.CLAMP);
-            this.c = linearGradient;
-            this.a.setShader(linearGradient);
-            this.c.setLocalMatrix(this.b);
-            invalidate();
+    public final void a(Canvas canvas, int i10) {
+        ArrayList arrayList;
+        canvas.clipRect(0, 0, i10, AndroidUtilities.dp(14.66f));
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f7 = i10;
+        rectF.set(0.0f, 0.0f, f7, AndroidUtilities.dp(14.66f));
+        canvas.saveLayerAlpha(rectF, 255, 31);
+        if (LocaleController.isRTL) {
+            canvas.translate(f7, 0.0f);
         }
+        int dp = i10 - AndroidUtilities.dp(25.0f);
+        int i11 = 0;
+        while (true) {
+            arrayList = this.c;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            ss ssVar = (ss) arrayList.get(i11);
+            dp = org.telegram.messenger.vh.z(4.0f, ssVar.g, dp);
+            if (dp < 0) {
+                break;
+            }
+            if (LocaleController.isRTL) {
+                canvas.translate(-ssVar.g, 0.0f);
+                ssVar.a(canvas);
+                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
+            } else {
+                ssVar.a(canvas);
+                canvas.translate(AndroidUtilities.dp(4.0f) + ssVar.g, 0.0f);
+            }
+            i11++;
+        }
+        if (i11 < arrayList.size()) {
+            int size = arrayList.size() - i11;
+            ss ssVar2 = this.d;
+            if (ssVar2 == null || ssVar2.a != size) {
+                ss ssVar3 = new ss();
+                ssVar3.a = size;
+                q11 q11Var = new q11(ic.a.i(size, "+"), 10.0f, AndroidUtilities.bold());
+                q11Var.s(this.a);
+                ssVar3.c = q11Var;
+                int dp2 = AndroidUtilities.dp(9.32f);
+                q11 q11Var2 = ssVar3.c;
+                ssVar3.g = dp2 + ((int) q11Var2.c);
+                q11Var2.j();
+                int i12 = org.telegram.ui.ActionBar.y6.n8;
+                ssVar3.f = i12;
+                ssVar3.e = true;
+                ssVar3.d = org.telegram.ui.ActionBar.y6.x0(null, i12, false);
+                this.d = ssVar3;
+            }
+            if (LocaleController.isRTL) {
+                canvas.translate(-this.d.g, 0.0f);
+                this.d.a(canvas);
+                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
+            } else {
+                this.d.a(canvas);
+                canvas.translate(AndroidUtilities.dp(4.0f) + this.d.g, 0.0f);
+            }
+        }
+        canvas.restore();
+    }
+
+    public final boolean b() {
+        return this.c.isEmpty();
     }
 }

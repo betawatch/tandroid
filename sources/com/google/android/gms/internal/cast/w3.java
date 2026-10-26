@@ -1,38 +1,22 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class w3 extends f5 {
-    private static final w3 zzb;
-    private int zzd;
-    private int zze;
-    private int zzf;
-    private long zzg;
+import java.util.concurrent.Executor;
 
-    static {
-        w3 w3Var = new w3();
-        zzb = w3Var;
-        f5.e(w3.class, w3Var);
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class w3 {
+    public static final w3 d = new w3();
+    public final Runnable a;
+    public final Executor b;
+    public w3 c;
+
+    public w3() {
+        this.a = null;
+        this.b = null;
     }
 
-    @Override // com.google.android.gms.internal.cast.f5
-    public final Object h(int i10, f5 f5Var) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
-            return (byte) 1;
-        }
-        if (i11 == 2) {
-            return new h6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003ဂ\u0002", new Object[]{"zzd", "zze", z0.D, "zzf", "zzg"});
-        }
-        if (i11 == 3) {
-            return new w3();
-        }
-        if (i11 == 4) {
-            return new d3(zzb);
-        }
-        if (i11 != 5) {
-            return null;
-        }
-        return zzb;
+    public w3(Runnable runnable, Executor executor) {
+        this.a = runnable;
+        this.b = executor;
     }
 }

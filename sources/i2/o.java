@@ -1,13 +1,13 @@
 package i2;
 
+import a8.wb;
+import a8.yb;
 import android.content.Context;
 import android.os.Build;
 import android.os.Looper;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.s6;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class o {
     public static final int C;
@@ -16,18 +16,18 @@ public final class o {
     public final boolean B;
     public final Context a;
     public final e2.g0 b;
-    public d9.u c;
+    public e9.t c;
     public final c2.d d;
-    public d9.u e;
-    public d9.u f;
+    public e9.t e;
+    public e9.t f;
     public final c2.d g;
     public final Looper h;
     public final int i;
     public final b2.f j;
     public final int k;
     public final boolean l;
-    public final s1 m;
-    public final r1 n;
+    public final t1 m;
+    public final s1 n;
     public final long o;
     public final long p;
     public final long q;
@@ -42,8 +42,8 @@ public final class o {
     public boolean z;
 
     static {
-        String str = e2.m0.a;
-        String c10 = s6.c(Build.DEVICE);
+        String str = e2.n0.a;
+        String c10 = wb.c(Build.DEVICE);
         C = (c10.contains("emulator") || c10.contains("emu64a") || c10.contains("emu64x") || c10.contains("generic")) ? 30000 : 10000;
         D = true;
     }
@@ -61,18 +61,18 @@ public final class o {
         this.e = dVar3;
         this.f = sVar;
         this.g = dVar4;
-        String str = e2.m0.a;
+        String str = e2.n0.a;
         Looper myLooper = Looper.myLooper();
         this.h = myLooper == null ? Looper.getMainLooper() : myLooper;
         this.j = b2.f.i;
         this.k = 1;
         this.l = true;
-        this.m = s1.f;
+        this.m = t1.f;
         this.o = 5000L;
         this.p = 15000L;
         this.q = 3000L;
-        this.n = r1.b;
-        this.r = new g(e2.m0.S(20L), e2.m0.S(500L));
+        this.n = s1.b;
+        this.r = new g(e2.n0.S(20L), e2.n0.S(500L));
         this.b = e2.g0.a;
         this.s = 500L;
         this.t = 2000L;
@@ -85,13 +85,13 @@ public final class o {
         this.y = true;
         this.A = "";
         this.i = -1000;
-        new pb.a();
+        new sb.b();
         this.B = true;
     }
 
-    public final h0 a() {
-        u6.p(!this.z);
+    public final j0 a() {
+        yb.p(!this.z);
         this.z = true;
-        return new h0(this);
+        return new j0(this);
     }
 }

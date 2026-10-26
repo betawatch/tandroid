@@ -19,14 +19,15 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static WeakHashMap a = null;
     public static Field b = null;
     public static boolean c = false;
-    public static final v d = new v();
-    public static final x e = new x();
+    public static final int[] d = {R.id.accessibility_custom_action_0, R.id.accessibility_custom_action_1, R.id.accessibility_custom_action_2, R.id.accessibility_custom_action_3, R.id.accessibility_custom_action_4, R.id.accessibility_custom_action_5, R.id.accessibility_custom_action_6, R.id.accessibility_custom_action_7, R.id.accessibility_custom_action_8, R.id.accessibility_custom_action_9, R.id.accessibility_custom_action_10, R.id.accessibility_custom_action_11, R.id.accessibility_custom_action_12, R.id.accessibility_custom_action_13, R.id.accessibility_custom_action_14, R.id.accessibility_custom_action_15, R.id.accessibility_custom_action_16, R.id.accessibility_custom_action_17, R.id.accessibility_custom_action_18, R.id.accessibility_custom_action_19, R.id.accessibility_custom_action_20, R.id.accessibility_custom_action_21, R.id.accessibility_custom_action_22, R.id.accessibility_custom_action_23, R.id.accessibility_custom_action_24, R.id.accessibility_custom_action_25, R.id.accessibility_custom_action_26, R.id.accessibility_custom_action_27, R.id.accessibility_custom_action_28, R.id.accessibility_custom_action_29, R.id.accessibility_custom_action_30, R.id.accessibility_custom_action_31};
+    public static final v e = new v();
+    public static final x f = new x();
 
     public static l0 a(View view) {
         if (a == null) {
@@ -43,10 +44,10 @@ public abstract class i0 {
 
     public static k1 b(View view, k1 k1Var) {
         int i10 = Build.VERSION.SDK_INT;
-        WindowInsets g10 = k1Var.g();
-        if (g10 != null) {
-            WindowInsets a2 = i10 >= 30 ? f0.a(view, g10) : y.a(view, g10);
-            if (!a2.equals(g10)) {
+        WindowInsets g7 = k1Var.g();
+        if (g7 != null) {
+            WindowInsets a2 = i10 >= 30 ? f0.a(view, g7) : y.a(view, g7);
+            if (!a2.equals(g7)) {
                 return k1.h(view, a2);
             }
         }
@@ -137,11 +138,21 @@ public abstract class i0 {
         }
     }
 
-    public static String[] e(m.t tVar) {
-        return Build.VERSION.SDK_INT >= 31 ? g0.a(tVar) : (String[]) tVar.getTag(R.id.tag_on_receive_content_mime_types);
+    public static ArrayList e(View view) {
+        ArrayList arrayList = (ArrayList) view.getTag(R.id.tag_accessibility_actions);
+        if (arrayList != null) {
+            return arrayList;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        view.setTag(R.id.tag_accessibility_actions, arrayList2);
+        return arrayList2;
     }
 
-    public static void f(int i10, View view) {
+    public static String[] f(m.s sVar) {
+        return Build.VERSION.SDK_INT >= 31 ? g0.a(sVar) : (String[]) sVar.getTag(R.id.tag_on_receive_content_mime_types);
+    }
+
+    public static void g(int i10, View view) {
         Object tag;
         AccessibilityManager accessibilityManager = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         if (accessibilityManager.isEnabled()) {
@@ -183,8 +194,8 @@ public abstract class i0 {
                     try {
                         view.getParent().notifySubtreeAccessibilityStateChanged(view, view, i10);
                         return;
-                    } catch (AbstractMethodError e7) {
-                        Log.e("ViewCompat", view.getParent().getClass().getSimpleName().concat(" does not fully implement ViewParent"), e7);
+                    } catch (AbstractMethodError e10) {
+                        Log.e("ViewCompat", view.getParent().getClass().getSimpleName().concat(" does not fully implement ViewParent"), e10);
                         return;
                     }
                 }
@@ -210,11 +221,11 @@ public abstract class i0 {
         }
     }
 
-    public static k1 g(View view, k1 k1Var) {
-        WindowInsets g10 = k1Var.g();
-        if (g10 != null) {
-            WindowInsets b10 = y.b(view, g10);
-            if (!b10.equals(g10)) {
+    public static k1 h(View view, k1 k1Var) {
+        WindowInsets g7 = k1Var.g();
+        if (g7 != null) {
+            WindowInsets b10 = y.b(view, g7);
+            if (!b10.equals(g7)) {
                 return k1.h(view, b10);
             }
         }
@@ -222,7 +233,7 @@ public abstract class i0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static g h(View view, g gVar) {
+    public static g i(View view, g gVar) {
         if (Log.isLoggable("ViewCompat", 3)) {
             Log.d("ViewCompat", "performReceiveContent: " + gVar + ", view=" + view.getClass().getSimpleName() + "[" + view.getId() + "]");
         }
@@ -230,7 +241,7 @@ public abstract class i0 {
             return g0.b(view, gVar);
         }
         u0.j jVar = (u0.j) view.getTag(R.id.tag_on_receive_content_listener);
-        o oVar = d;
+        o oVar = e;
         if (jVar == null) {
             if (view instanceof o) {
                 oVar = (o) view;
@@ -247,13 +258,13 @@ public abstract class i0 {
         return oVar.a(a2);
     }
 
-    public static void i(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i10) {
+    public static void j(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i10) {
         if (Build.VERSION.SDK_INT >= 29) {
             e0.b(view, context, iArr, attributeSet, typedArray, i10, 0);
         }
     }
 
-    public static void j(View view, b bVar) {
+    public static void k(View view, b bVar) {
         if (bVar == null && (d(view) instanceof a)) {
             bVar = new b();
         }
@@ -263,9 +274,9 @@ public abstract class i0 {
         view.setAccessibilityDelegate(bVar == null ? null : bVar.b);
     }
 
-    public static void k(View view, CharSequence charSequence) {
+    public static void l(View view, CharSequence charSequence) {
         new w(R.id.tag_accessibility_pane_title, CharSequence.class, 8, 28, 1).d(view, charSequence);
-        x xVar = e;
+        x xVar = f;
         if (charSequence == null) {
             xVar.a.remove(view);
             view.removeOnAttachStateChangeListener(xVar);
@@ -279,7 +290,7 @@ public abstract class i0 {
         }
     }
 
-    public static void l(View view, n nVar) {
+    public static void m(View view, n nVar) {
         a0.i(view, nVar);
     }
 }

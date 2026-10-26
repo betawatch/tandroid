@@ -1,174 +1,116 @@
 package ei;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.yq;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.u91;
+import org.telegram.ui.Components.us0;
+import org.telegram.ui.Components.ys0;
+import org.telegram.ui.Components.zs0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class a extends View implements org.telegram.ui.ActionBar.b6 {
-    public final ImageReceiver a;
-    public final String b;
-    public final String c;
-    public final TextPaint d;
-    public StaticLayout e;
-    public float f;
-    public float h;
-    public final TextPaint n;
-    public StaticLayout r;
-    public float s;
-    public float v;
-    public final org.telegram.ui.ActionBar.g6 w;
+public final class a extends u91 {
+    public final /* synthetic */ int V = 0;
+    public Object W;
+    public final /* synthetic */ FrameLayout a0;
 
-    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        String str2;
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.a = imageReceiver;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.n = textPaint2;
-        this.w = g6Var;
-        setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.k6.M0(false));
-        setMinimumWidth(AndroidUtilities.dp(196.0f));
-        setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i11 = org.telegram.ui.ActionBar.k6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(i11, g6Var));
-        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.k6.w0(i11, g6Var));
-        textPaint2.setAlpha(102);
-        textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
-        String str3 = "";
-        String str4 = "" + ((Object) str);
-        this.b = str4;
-        this.c = i2.o1.k(i10, "");
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        yq yqVar = new yq(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        yqVar.w = false;
-        int dp = AndroidUtilities.dp(18.0f);
-        int dp2 = AndroidUtilities.dp(18.0f);
-        yqVar.e = dp;
-        yqVar.f = dp2;
-        if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, yqVar, (Object) null, 0);
-        } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(yqVar);
-        } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, yqVar, (Object) null, 0);
-        } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, yqVar, (Object) null, 0);
-        }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append((Object) str4);
-        if (i10 > 0) {
-            str3 = " " + LocaleController.formatPluralStringComma("Media", i10);
-        }
-        sb2.append(str3);
-        setContentDescription(sb2.toString());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(zs0 zs0Var, Context context, ys0 ys0Var) {
+        super(context, null);
+        this.a0 = zs0Var;
+        this.W = ys0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float paddingLeft = getPaddingLeft();
-        float dp = AndroidUtilities.dp(30.0f);
-        float dp2 = AndroidUtilities.dp(30.0f);
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(paddingLeft, (getMeasuredHeight() - AndroidUtilities.dp(30.0f)) / 2.0f, dp, dp2);
-        imageReceiver.draw(canvas);
-        float dp3 = paddingLeft + AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f);
-        if (this.e != null) {
-            canvas.save();
-            canvas.translate(dp3 - this.h, (getMeasuredHeight() - this.e.getHeight()) / 2.0f);
-            this.e.draw(canvas);
-            dp3 = dp3 + this.f + AndroidUtilities.dp(6.0f);
-            canvas.restore();
-        }
-        if (this.r != null) {
-            canvas.save();
-            canvas.translate(dp3 - this.v, AndroidUtilities.dpf2(1.6f) + ((getMeasuredHeight() - this.r.getHeight()) / 2.0f));
-            this.r.draw(canvas);
-            canvas.restore();
+    @Override // org.telegram.ui.Components.u91
+    public final void A(int i10) {
+        switch (this.V) {
+            case 0:
+                us0 us0Var = (us0) this.a0;
+                String currentLang = us0Var.getCurrentLang();
+                if (!TextUtils.equals((String) this.W, currentLang)) {
+                    this.W = currentLang;
+                    us0Var.G.S0();
+                    break;
+                }
+                break;
+            default:
+                ys0 ys0Var = (ys0) this.W;
+                ((zs0) this.a0).b.b0.get(i10, -1);
+                ys0Var.d.Q0(1.0f);
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = (((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(30.0f)) - AndroidUtilities.dp(12.0f)) - getPaddingLeft()) - getPaddingRight();
-        StaticLayout staticLayout = this.e;
-        if (staticLayout == null || staticLayout.getWidth() != size) {
-            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            String str = this.b;
-            TextPaint textPaint = this.d;
-            CharSequence ellipsize = TextUtils.ellipsize(str, textPaint, size, truncateAt);
-            int max = Math.max(0, size);
-            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-            StaticLayout staticLayout2 = new StaticLayout(ellipsize, textPaint, max, alignment, 1.0f, 0.0f, false);
-            this.e = staticLayout2;
-            this.h = staticLayout2.getLineCount() > 0 ? this.e.getLineLeft(0) : 0.0f;
-            float lineWidth = this.e.getLineCount() > 0 ? this.e.getLineWidth(0) : 0.0f;
-            this.f = lineWidth;
-            int dp = size - ((int) (lineWidth + AndroidUtilities.dp(8.0f)));
-            TextPaint textPaint2 = this.n;
-            StaticLayout staticLayout3 = new StaticLayout(TextUtils.ellipsize(this.c, textPaint2, dp, truncateAt), textPaint2, Math.max(0, dp), alignment, 1.0f, 0.0f, false);
-            this.r = staticLayout3;
-            this.v = staticLayout3.getLineCount() > 0 ? this.r.getLineLeft(0) : 0.0f;
-            this.s = this.r.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
-        }
-        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            setMeasuredDimension((int) Math.min(AndroidUtilities.dp(12.0f) + AndroidUtilities.dp(30.0f) + getPaddingLeft() + this.f + AndroidUtilities.dp(8.0f) + this.s + getPaddingRight(), View.MeasureSpec.getSize(i10)), AndroidUtilities.dp(48.0f));
-        } else if (View.MeasureSpec.getMode(i10) == 1073741824) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(48.0f));
+    @Override // org.telegram.ui.Components.u91
+    public boolean i(MotionEvent motionEvent) {
+        switch (this.V) {
+            case 0:
+                return !((us0) this.a0).G.E1;
+            default:
+                return super.i(motionEvent);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        TextPaint textPaint = this.n;
-        try {
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.E8, this.w);
-            this.d.setColor(w02);
-            textPaint.setColor(w02);
-            textPaint.setAlpha(102);
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // org.telegram.ui.Components.u91
+    public final void w(boolean z10) {
+        switch (this.V) {
+            case 0:
+                us0 us0Var = (us0) this.a0;
+                String currentLang = us0Var.getCurrentLang();
+                if (!TextUtils.equals((String) this.W, currentLang)) {
+                    this.W = currentLang;
+                    us0Var.G.S0();
+                    break;
+                }
+                break;
+            default:
+                ys0 ys0Var = (ys0) this.W;
+                ys0Var.d.Q0(((zs0) this.a0).b.getAnimatingIndicatorProgress());
+                break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.u91
+    public void y(int i10) {
+        switch (this.V) {
+            case 0:
+                us0 us0Var = (us0) this.a0;
+                String currentLang = us0Var.getCurrentLang();
+                if (!TextUtils.equals((String) this.W, currentLang)) {
+                    this.W = currentLang;
+                    us0Var.G.S0();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u91
+    public void z(int i10, boolean z10) {
+        switch (this.V) {
+            case 1:
+                ys0 ys0Var = (ys0) this.W;
+                int i11 = ((zs0) this.a0).b.b0.get(i10, -1);
+                aw0 aw0Var = ys0Var.d;
+                if (i11 > 0) {
+                    aw0.u(aw0Var, aw0Var.r1(i11).a, z10);
+                    break;
+                } else {
+                    aw0.u(aw0Var, 8, z10);
+                    break;
+                }
+            default:
+                super.z(i10, z10);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(us0 us0Var, Context context) {
+        super(context, null);
+        this.a0 = us0Var;
     }
 }

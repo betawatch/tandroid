@@ -1,44 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class zn extends org.telegram.ui.Cells.d6 {
-    public final /* synthetic */ co F;
+public final class zn implements TextWatcher {
+    public final /* synthetic */ yn a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ eo c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zn(co coVar, Context context, int i10) {
-        super(context, i10, null, null);
-        this.F = coVar;
+    public zn(eo eoVar, yn ynVar, int i10) {
+        this.c = eoVar;
+        this.a = ynVar;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Cells.d6
-    public final void g(org.telegram.ui.Cells.c6 c6Var, ActionMode actionMode) {
-        if (c6Var.isFocused() && c6Var.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            org.telegram.ui.sn.n8(menu, ((org.telegram.ui.sn) this.F.d.b.f0).h, false, true, true, true);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        go goVar = this.c.d;
+        yn ynVar = this.a;
+        if (ynVar.getTag() != null) {
+            return;
         }
+        int i10 = this.b;
+        int i11 = i10 == 11 ? goVar.n0 : goVar.m0;
+        s4.e1 K = goVar.s.K(i11);
+        if (K != null && goVar.x != null) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
+            }
+            Emoji.replaceEmoji(editable, ynVar.getEditField().getPaint().getFontMetricsInt(), false);
+            goVar.x.setDirection(1);
+            goVar.x.setDelegate(ynVar);
+            goVar.x.setTranslationY(K.a.getY());
+            goVar.x.e();
+        }
+        if (i10 == 11) {
+            goVar.O = editable;
+        } else {
+            goVar.N = editable;
+        }
+        if (K != null) {
+            go.O(goVar, K.a, i11);
+        }
+        goVar.W();
     }
 
-    @Override // org.telegram.ui.Cells.d6
-    public final void i(boolean z10) {
-        fo.P(this.F.d, this, z10);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.Cells.d6
-    public final void j(org.telegram.ui.Cells.d6 d6Var) {
-        fo.Q(this.F.d, d6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.d6
-    public final void k(org.telegram.ui.Cells.c6 c6Var) {
-        this.F.d.b.z1(c6Var, true);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -32,8 +32,8 @@ public final /* synthetic */ class e implements Runnable {
                     try {
                         InputStream open = ApplicationLoader.applicationContext.getAssets().open("currencies.json");
                         try {
-                            String str = e2.m0.a;
-                            JSONObject jSONObject = new JSONObject(new String(f9.f.b(open), d9.j.a));
+                            String str = e2.n0.a;
+                            JSONObject jSONObject = new JSONObject(new String(g9.f.b(open), e9.j.a));
                             ArrayList<TL_wallet.currencyRate> arrayList = currencyrates.rates;
                             int size = arrayList.size();
                             int i10 = 0;

@@ -1,22 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class au0 extends ir0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 e1;
+public final class au0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ KeyEvent.Callback c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public au0(Context context, String str, String str2, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.o2 o2Var) {
-        super(context, null, str, false, str2, false, g6Var);
-        this.e1 = o2Var;
+    public /* synthetic */ au0(KeyEvent.Callback callback, int i10, int i11) {
+        this.a = i11;
+        this.c = callback;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.ir0
-    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.h4(this.e1, hVar, i10, 20), 100L);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        int i10 = this.a;
+        int i11 = this.b;
+        KeyEvent.Callback callback = this.c;
+        switch (i10) {
+            case 0:
+                aw0 aw0Var = (aw0) callback;
+                aw0Var.m0[i11].getViewTreeObserver().removeOnPreDrawListener(this);
+                aw0Var.b0(i11);
+                break;
+            default:
+                b81 b81Var = (b81) callback;
+                bi.r1 r1Var = b81Var.d;
+                r1Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                int childCount = r1Var.getChildCount();
+                AnimatorSet animatorSet = new AnimatorSet();
+                for (int i12 = 0; i12 < childCount; i12++) {
+                    View childAt = r1Var.getChildAt(i12);
+                    r1Var.getClass();
+                    int R = RecyclerView.R(childAt);
+                    if (R >= i11) {
+                        if (R == 1 && r1Var.getAdapter() == b81Var.e && (childAt instanceof org.telegram.ui.Cells.z3)) {
+                            childAt = ((org.telegram.ui.Cells.z3) childAt).getTextView();
+                        }
+                        childAt.setAlpha(0.0f);
+                        int min = (int) ((Math.min(r1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / r1Var.getMeasuredHeight()) * 100.0f);
+                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                        ofFloat.setStartDelay(min);
+                        ofFloat.setDuration(200L);
+                        animatorSet.playTogether(ofFloat);
+                    }
+                }
+                animatorSet.start();
+                break;
+        }
+        return true;
     }
 }

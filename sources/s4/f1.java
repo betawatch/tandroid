@@ -1,41 +1,107 @@
 package s4;
 
-import android.content.Context;
-import android.util.DisplayMetrics;
+import android.os.Bundle;
 import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Wallet.k5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f1 extends c0 {
-    public final /* synthetic */ k5 r;
+public final class f1 extends r0.b {
+    public final RecyclerView d;
+    public final a5.h e = new a5.h(this);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f1(k5 k5Var, Context context) {
-        super(context);
-        this.r = k5Var;
+    public f1(RecyclerView recyclerView) {
+        this.d = recyclerView;
     }
 
-    @Override // s4.c0, s4.x0
-    public final void g(View view, w0 w0Var) {
-        RecyclerView recyclerView = this.r.a;
-        if (recyclerView == null) {
+    @Override // r0.b
+    public final void b(View view, AccessibilityEvent accessibilityEvent) {
+        super.b(view, accessibilityEvent);
+        if (!(view instanceof RecyclerView) || this.d.Z()) {
             return;
         }
-        n0 layoutManager = recyclerView.getLayoutManager();
-        layoutManager.getClass();
-        int[] iArr = {0, n0.z(view) - layoutManager.F()};
-        int i10 = iArr[0];
-        int i11 = iArr[1];
-        int m10 = m(Math.max(Math.abs(i10), Math.abs(i11)));
-        if (m10 > 0) {
-            w0Var.b(i10, i11, m10, this.j);
+        RecyclerView recyclerView = (RecyclerView) view;
+        if (recyclerView.getLayoutManager() != null) {
+            c0 c0Var = (c0) recyclerView.getLayoutManager();
+            RecyclerView recyclerView2 = c0Var.b;
+            rf.e eVar = recyclerView2.b;
+            if (accessibilityEvent != null) {
+                boolean z10 = true;
+                if (!recyclerView2.canScrollVertically(1) && !c0Var.b.canScrollVertically(-1) && !c0Var.b.canScrollHorizontally(-1) && !c0Var.b.canScrollHorizontally(1)) {
+                    z10 = false;
+                }
+                accessibilityEvent.setScrollable(z10);
+                h0 h0Var = c0Var.b.w;
+                if (h0Var != null) {
+                    accessibilityEvent.setItemCount(h0Var.h());
+                }
+            }
+            if (c0Var.r() > 0) {
+                accessibilityEvent.setFromIndex(c0Var.L0());
+                accessibilityEvent.setToIndex(c0Var.N0());
+            }
         }
     }
 
-    @Override // s4.c0
-    public final float l(DisplayMetrics displayMetrics) {
-        return 100.0f / displayMetrics.densityDpi;
+    @Override // r0.b
+    public final void c(View view, s0.d dVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+        RecyclerView recyclerView = this.d;
+        if (recyclerView.Z() || recyclerView.getLayoutManager() == null) {
+            return;
+        }
+        p0 layoutManager = recyclerView.getLayoutManager();
+        RecyclerView recyclerView2 = layoutManager.b;
+        layoutManager.S(recyclerView2.b, recyclerView2.u0, dVar);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0083 A[ADDED_TO_REGION] */
+    @Override // r0.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean d(View view, int i10, Bundle bundle) {
+        int F;
+        int D;
+        if (super.d(view, i10, bundle)) {
+            return true;
+        }
+        RecyclerView recyclerView = this.d;
+        if (!recyclerView.Z() && recyclerView.getLayoutManager() != null) {
+            p0 layoutManager = recyclerView.getLayoutManager();
+            RecyclerView recyclerView2 = layoutManager.b;
+            rf.e eVar = recyclerView2.b;
+            if (i10 == 4096) {
+                F = recyclerView2.canScrollVertically(1) ? (layoutManager.n - layoutManager.F()) - layoutManager.C() : 0;
+                if (layoutManager.b.canScrollHorizontally(1)) {
+                    D = (layoutManager.m - layoutManager.D()) - layoutManager.E();
+                    if (F == 0) {
+                    }
+                    layoutManager.b.w0(D, F, null);
+                    return true;
+                }
+                D = 0;
+                if (F == 0) {
+                }
+                layoutManager.b.w0(D, F, null);
+                return true;
+            }
+            if (i10 != 8192) {
+                D = 0;
+                F = 0;
+            } else {
+                F = recyclerView2.canScrollVertically(-1) ? -((layoutManager.n - layoutManager.F()) - layoutManager.C()) : 0;
+                if (layoutManager.b.canScrollHorizontally(-1)) {
+                    D = -((layoutManager.m - layoutManager.D()) - layoutManager.E());
+                }
+                D = 0;
+            }
+            if (F == 0 || D != 0) {
+                layoutManager.b.w0(D, F, null);
+                return true;
+            }
+        }
+        return false;
     }
 }

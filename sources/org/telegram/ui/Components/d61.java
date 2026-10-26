@@ -1,46 +1,52 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class d61 implements ry0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ i61 b;
+public final class d61 {
+    public final /* synthetic */ m61 a;
+    public final /* synthetic */ p61 b;
 
-    public d61(i61 i61Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = i61Var;
-        this.a = inputStickerSet;
+    public d61(p61 p61Var, m61 m61Var) {
+        this.b = p61Var;
+        this.a = m61Var;
     }
 
-    @Override // org.telegram.ui.Components.ry0
-    public final void a() {
-        i61 i61Var = this.b;
-        s4.g0 adapter = i61Var.n.getAdapter();
-        h61 h61Var = i61Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i10 = 0;
-        if (adapter == h61Var) {
-            while (i10 < h61Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) h61Var.e.get(i10);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    h61Var.F(stickerSetCovered, null);
+    public final int a() {
+        return this.b.s.v;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        p61 p61Var = this.b;
+        f61 f61Var = p61Var.n;
+        if (z10) {
+            s4.h0 adapter = f61Var.getAdapter();
+            ig.d2 d2Var = p61Var.v;
+            if (adapter != d2Var) {
+                f61Var.setAdapter(d2Var);
+                if (f61Var.getAdapter().h() <= 0) {
+                    p61Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-f61Var.getPaddingTop()) + p61Var.E, false);
                     return;
                 }
-                i10++;
-            }
-            return;
-        }
-        hg.e2 e2Var = i61Var.v;
-        ArrayList arrayList = e2Var.E;
-        while (i10 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                e2Var.F(stickerSetCovered2, null);
                 return;
             }
-            i10++;
+        }
+        if (z10) {
+            return;
+        }
+        s4.h0 adapter2 = f61Var.getAdapter();
+        o61 o61Var = p61Var.s;
+        if (adapter2 == o61Var) {
+            return;
+        }
+        f61Var.setAdapter(o61Var);
+        if (f61Var.getAdapter().h() <= 0) {
         }
     }
 }

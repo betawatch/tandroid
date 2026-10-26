@@ -1,45 +1,42 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class r3 extends f5 {
-    private static final r3 zzb;
-    private int zzd;
+public final class r3 extends c5 {
+    private static final f5 zzb = new b1();
+    private static final r3 zzd;
     private int zze;
-    private k5 zzf;
-    private k5 zzg;
-    private int zzh;
+    private int zzf;
+    private int zzg;
+    private int zzi;
+    private long zzk;
+    private e5 zzh = d5.d;
+    private h5 zzj = c6.d;
 
     static {
         r3 r3Var = new r3();
-        zzb = r3Var;
-        f5.e(r3.class, r3Var);
+        zzd = r3Var;
+        c5.e(r3.class, r3Var);
     }
 
-    public r3() {
-        g6 g6Var = g6.d;
-        this.zzf = g6Var;
-        this.zzg = g6Var;
-    }
-
-    @Override // com.google.android.gms.internal.cast.f5
-    public final Object h(int i10, f5 f5Var) {
+    @Override // com.google.android.gms.internal.cast.c5
+    public final Object h(int i10, c5 c5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new h6(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001᠌\u0000\u0002\u001b\u0003\u001b\u0004င\u0001", new Object[]{"zzd", "zze", z0.x, "zzf", e3.class, "zzg", e3.class, "zzh"});
+            return new d6(zzd, "\u0001\u0006\u0000\u0001\u0001\u0007\u0006\u0000\u0002\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003ࠞ\u0005᠌\u0002\u0006\u001b\u0007ဂ\u0003", new Object[]{"zze", "zzf", w0.B, "zzg", x.O, "zzh", w0.A, "zzi", x.I, "zzj", q3.class, "zzk"});
         }
         if (i11 == 3) {
             return new r3();
         }
         if (i11 == 4) {
-            return new d3(zzb);
+            return new a3(zzd);
         }
         if (i11 != 5) {
             return null;
         }
-        return zzb;
+        return zzd;
     }
 }

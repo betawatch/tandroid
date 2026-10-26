@@ -1,9 +1,23 @@
 package s8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import a8.df;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public final Object b = new Object();
-    public long c = Long.MIN_VALUE;
-    public final long a = Math.round(30000.0d);
+public final class a extends p6.a {
+    public static final Parcelable.Creator<a> CREATOR = new q7.m(8);
+    public int a;
+    public String[] b;
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q5 = df.q(parcel, 20293);
+        int i11 = this.a;
+        df.s(parcel, 2, 4);
+        parcel.writeInt(i11);
+        df.m(parcel, 3, this.b);
+        df.r(parcel, q5);
+    }
 }

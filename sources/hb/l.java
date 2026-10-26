@@ -1,339 +1,86 @@
 package hb;
 
-import i2.o1;
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class l extends mb.a {
-    public static final k I = new k();
-    public static final Object J = new Object();
-    public Object[] E;
-    public int F;
-    public String[] G;
-    public int[] H;
+public final class l implements Map.Entry {
+    public l a;
+    public l b;
+    public l c;
+    public l d;
+    public l e;
+    public final Object f;
+    public final boolean h;
+    public Object n;
+    public int r;
 
-    @Override // mb.a
-    public final void C() {
-        int c10 = m1.j.c(x());
-        if (c10 == 1) {
-            e();
-            return;
-        }
-        if (c10 != 9) {
-            if (c10 == 3) {
-                f();
-                return;
-            }
-            if (c10 == 4) {
-                I(true);
-                return;
-            }
-            K();
-            int i10 = this.F;
-            if (i10 > 0) {
-                int[] iArr = this.H;
-                int i11 = i10 - 1;
-                iArr[i11] = iArr[i11] + 1;
-            }
-        }
+    public l(boolean z10) {
+        this.f = null;
+        this.h = z10;
+        this.e = this;
+        this.d = this;
     }
 
-    public final void F(int i10) {
-        if (x() == i10) {
-            return;
-        }
-        throw new IllegalStateException("Expected " + o1.E(i10) + " but was " + o1.E(x()) + H());
-    }
-
-    public final String G(boolean z10) {
-        StringBuilder sb2 = new StringBuilder("$");
-        int i10 = 0;
-        while (true) {
-            int i11 = this.F;
-            if (i10 >= i11) {
-                return sb2.toString();
-            }
-            Object[] objArr = this.E;
-            Object obj = objArr[i10];
-            if (obj instanceof eb.h) {
-                i10++;
-                if (i10 < i11 && (objArr[i10] instanceof Iterator)) {
-                    int i12 = this.H[i10];
-                    if (z10 && i12 > 0 && (i10 == i11 - 1 || i10 == i11 - 2)) {
-                        i12--;
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object obj2 = this.f;
+            if (obj2 != null ? obj2.equals(entry.getKey()) : entry.getKey() == null) {
+                Object obj3 = this.n;
+                if (obj3 == null) {
+                    if (entry.getValue() == null) {
+                        return true;
                     }
-                    sb2.append('[');
-                    sb2.append(i12);
-                    sb2.append(']');
-                }
-            } else if ((obj instanceof eb.l) && (i10 = i10 + 1) < i11 && (objArr[i10] instanceof Iterator)) {
-                sb2.append('.');
-                String str = this.G[i10];
-                if (str != null) {
-                    sb2.append(str);
+                } else if (obj3.equals(entry.getValue())) {
+                    return true;
                 }
             }
-            i10++;
         }
+        return false;
     }
 
-    public final String H() {
-        return " at path " + G(false);
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.f;
     }
 
-    public final String I(boolean z10) {
-        F(5);
-        Map.Entry entry = (Map.Entry) ((Iterator) J()).next();
-        String str = (String) entry.getKey();
-        this.G[this.F - 1] = z10 ? "<skipped>" : str;
-        L(entry.getValue());
-        return str;
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.n;
     }
 
-    public final Object J() {
-        return this.E[this.F - 1];
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        Object obj = this.f;
+        int hashCode = obj == null ? 0 : obj.hashCode();
+        Object obj2 = this.n;
+        return (obj2 != null ? obj2.hashCode() : 0) ^ hashCode;
     }
 
-    public final Object K() {
-        Object[] objArr = this.E;
-        int i10 = this.F - 1;
-        this.F = i10;
-        Object obj = objArr[i10];
-        objArr[i10] = null;
-        return obj;
-    }
-
-    public final void L(Object obj) {
-        int i10 = this.F;
-        Object[] objArr = this.E;
-        if (i10 == objArr.length) {
-            int i11 = i10 * 2;
-            this.E = Arrays.copyOf(objArr, i11);
-            this.H = Arrays.copyOf(this.H, i11);
-            this.G = (String[]) Arrays.copyOf(this.G, i11);
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        if (obj == null && !this.h) {
+            throw new NullPointerException("value == null");
         }
-        Object[] objArr2 = this.E;
-        int i12 = this.F;
-        this.F = i12 + 1;
-        objArr2[i12] = obj;
+        Object obj2 = this.n;
+        this.n = obj;
+        return obj2;
     }
 
-    @Override // mb.a
-    public final void a() {
-        F(1);
-        L(((eb.h) J()).a.iterator());
-        this.H[this.F - 1] = 0;
-    }
-
-    @Override // mb.a
-    public final void b() {
-        F(3);
-        L(((gb.k) ((eb.l) J()).a.entrySet()).iterator());
-    }
-
-    @Override // mb.a, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        this.E = new Object[]{J};
-        this.F = 1;
-    }
-
-    @Override // mb.a
-    public final void e() {
-        F(2);
-        K();
-        K();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-    }
-
-    @Override // mb.a
-    public final void f() {
-        F(4);
-        this.G[this.F - 1] = null;
-        K();
-        K();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-    }
-
-    @Override // mb.a
-    public final String h() {
-        return G(false);
-    }
-
-    @Override // mb.a
-    public final String j() {
-        return G(true);
-    }
-
-    @Override // mb.a
-    public final boolean k() {
-        int x10 = x();
-        return (x10 == 4 || x10 == 2 || x10 == 10) ? false : true;
-    }
-
-    @Override // mb.a
-    public final boolean n() {
-        F(8);
-        boolean o10 = ((eb.m) K()).o();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-        return o10;
-    }
-
-    @Override // mb.a
-    public final double o() {
-        int x10 = x();
-        if (x10 != 7 && x10 != 6) {
-            throw new IllegalStateException("Expected " + o1.E(7) + " but was " + o1.E(x10) + H());
-        }
-        double p5 = ((eb.m) J()).p();
-        if (Double.isNaN(p5) || Double.isInfinite(p5)) {
-            throw new mb.c("JSON forbids NaN and infinities: " + p5);
-        }
-        K();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-        return p5;
-    }
-
-    @Override // mb.a
-    public final int p() {
-        int x10 = x();
-        if (x10 != 7 && x10 != 6) {
-            throw new IllegalStateException("Expected " + o1.E(7) + " but was " + o1.E(x10) + H());
-        }
-        eb.m mVar = (eb.m) J();
-        int intValue = mVar.a instanceof Number ? mVar.q().intValue() : Integer.parseInt(mVar.m());
-        K();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-        return intValue;
-    }
-
-    @Override // mb.a
-    public final long q() {
-        int x10 = x();
-        if (x10 != 7 && x10 != 6) {
-            throw new IllegalStateException("Expected " + o1.E(7) + " but was " + o1.E(x10) + H());
-        }
-        eb.m mVar = (eb.m) J();
-        long longValue = mVar.a instanceof Number ? mVar.q().longValue() : Long.parseLong(mVar.m());
-        K();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-        return longValue;
-    }
-
-    @Override // mb.a
-    public final String r() {
-        return I(false);
-    }
-
-    @Override // mb.a
-    public final void t() {
-        F(9);
-        K();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-    }
-
-    @Override // mb.a
     public final String toString() {
-        return l.class.getSimpleName() + H();
+        return this.f + "=" + this.n;
     }
 
-    @Override // mb.a
-    public final String v() {
-        int x10 = x();
-        if (x10 != 6 && x10 != 7) {
-            throw new IllegalStateException("Expected " + o1.E(6) + " but was " + o1.E(x10) + H());
-        }
-        String m10 = ((eb.m) K()).m();
-        int i10 = this.F;
-        if (i10 > 0) {
-            int[] iArr = this.H;
-            int i11 = i10 - 1;
-            iArr[i11] = iArr[i11] + 1;
-        }
-        return m10;
-    }
-
-    @Override // mb.a
-    public final int x() {
-        if (this.F == 0) {
-            return 10;
-        }
-        Object J2 = J();
-        if (J2 instanceof Iterator) {
-            boolean z10 = this.E[this.F - 2] instanceof eb.l;
-            Iterator it = (Iterator) J2;
-            if (!it.hasNext()) {
-                return z10 ? 4 : 2;
-            }
-            if (z10) {
-                return 5;
-            }
-            L(it.next());
-            return x();
-        }
-        if (J2 instanceof eb.l) {
-            return 3;
-        }
-        if (J2 instanceof eb.h) {
-            return 1;
-        }
-        if (J2 instanceof eb.m) {
-            Serializable serializable = ((eb.m) J2).a;
-            if (serializable instanceof String) {
-                return 6;
-            }
-            if (serializable instanceof Boolean) {
-                return 8;
-            }
-            if (serializable instanceof Number) {
-                return 7;
-            }
-            throw new AssertionError();
-        }
-        if (J2 instanceof eb.k) {
-            return 9;
-        }
-        if (J2 == J) {
-            throw new IllegalStateException("JsonReader is closed");
-        }
-        throw new mb.c("Custom JsonElement subclass " + J2.getClass().getName() + " is not supported");
+    public l(boolean z10, l lVar, Object obj, l lVar2, l lVar3) {
+        this.a = lVar;
+        this.f = obj;
+        this.h = z10;
+        this.r = 1;
+        this.d = lVar2;
+        this.e = lVar3;
+        lVar3.d = this;
+        lVar2.e = this;
     }
 }

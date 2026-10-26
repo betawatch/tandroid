@@ -1,70 +1,29 @@
 package e9;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
-import v7.u6;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class a extends m2 implements ListIterator {
-    public final int a;
-    public int b;
+public final class a extends i {
+    public final i a;
+    public final i b;
 
-    public a(int i10, int i11) {
-        u6.m(i11, i10);
-        this.a = i10;
-        this.b = i11;
+    public a(i iVar, i iVar2) {
+        iVar.getClass();
+        this.a = iVar;
+        iVar2.getClass();
+        this.b = iVar2;
     }
 
-    public abstract Object a(int i10);
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // e9.l
+    public final boolean apply(Object obj) {
+        return c(((Character) obj).charValue());
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.b < this.a;
+    @Override // e9.i
+    public final boolean c(char c10) {
+        return this.a.c(c10) && this.b.c(c10);
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.b > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.b;
-        this.b = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.b - 1;
-        this.b = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.b - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    public final String toString() {
+        return "CharMatcher.and(" + this.a + ", " + this.b + ")";
     }
 }

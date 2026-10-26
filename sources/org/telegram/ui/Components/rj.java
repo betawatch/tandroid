@@ -10,9 +10,9 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class rj extends im0 {
+public final class rj extends hm0 {
     public final int r = UserConfig.selectedAccount;
     public final Context s;
     public final /* synthetic */ xj v;
@@ -22,18 +22,18 @@ public final class rj extends im0 {
         this.s = context;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.tl0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.tl0
     public final void G(mm0 mm0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.hm0
     public final int M(int i10) {
         if (i10 == 0 || i10 == R() - 1) {
             return 1;
@@ -48,7 +48,7 @@ public final class rj extends im0 {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.hm0
     public final Object O(int i10, int i11) {
         if (i10 == 0) {
             return null;
@@ -66,7 +66,7 @@ public final class rj extends im0 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.hm0
     public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
@@ -74,18 +74,18 @@ public final class rj extends im0 {
         return i10 == R() - 1 ? 2 : 0;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.hm0
     public final int R() {
         return ContactsController.getInstance(this.r).phoneBookSectionsArray.size() + 2;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.hm0
     public final View T(int i10, View view) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final boolean V(int i10, int i11, s4.b1 b1Var) {
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean V(int i10, int i11, s4.e1 e1Var) {
         if (i10 == 0 || i10 == R() - 1) {
             return false;
         }
@@ -93,11 +93,11 @@ public final class rj extends im0 {
         return i11 < ContactsController.getInstance(i12).phoneBookSectionsDict.get(ContactsController.getInstance(i12).phoneBookSectionsArray.get(i10 + (-1))).size();
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final void W(int i10, int i11, s4.b1 b1Var) {
+    @Override // org.telegram.ui.Components.hm0
+    public final void W(int i10, int i11, s4.e1 e1Var) {
         TLRPC.User user;
-        if (b1Var.f == 0) {
-            wj wjVar = (wj) b1Var.a;
+        if (e1Var.f == 0) {
+            wj wjVar = (wj) e1Var.a;
             Object O = O(i10, i11);
             boolean z10 = true;
             if (i10 == R() - 2 && i11 == M(i10) - 1) {
@@ -118,22 +118,22 @@ public final class rj extends im0 {
                 wjVar.a(user, null, new qj(0, user), z10);
             }
             boolean containsKey = this.v.w.containsKey(nj.a(O));
-            xp xpVar = wjVar.d;
-            if (xpVar.getVisibility() != 0) {
-                xpVar.setVisibility(0);
+            zp zpVar = wjVar.d;
+            if (zpVar.getVisibility() != 0) {
+                zpVar.setVisibility(0);
             }
-            xpVar.a(containsKey, false);
+            zpVar.a(containsKey, false);
         }
     }
 
-    @Override // org.telegram.ui.Components.im0, s4.g0
+    @Override // org.telegram.ui.Components.hm0, s4.h0
     public final void l() {
         X(false);
         this.v.Q();
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
         View wjVar;
         Context context = this.s;
         if (i10 == 0) {
@@ -143,9 +143,9 @@ public final class rj extends im0 {
             wjVar.setTag(-33024);
         } else {
             wjVar = new View(context);
-            wjVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
+            wjVar.setLayoutParams(new s4.q0(-1, AndroidUtilities.dp(56.0f)));
             wjVar.setTag(-33024);
         }
-        return new wl0(wjVar);
+        return new vl0(wjVar);
     }
 }

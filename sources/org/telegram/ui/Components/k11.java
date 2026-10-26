@@ -1,36 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k11 extends MetricAffectingSpan {
-    public TextPaint a;
+public final class k11 {
+    public final long a;
+    public final TLRPC.InputFile b;
+    public final TLRPC.InputEncryptedFile c;
+    public final byte[] d;
+    public final byte[] e;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 != null) {
-            textPaint.setColor(textPaint2.getColor());
-            textPaint.setTypeface(textPaint2.getTypeface());
-            textPaint.setFlags(textPaint2.getFlags());
-            textPaint.setTextSize(textPaint2.getTextSize());
-            textPaint.baselineShift = textPaint2.baselineShift;
-            textPaint.bgColor = textPaint2.bgColor;
-        }
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 != null) {
-            textPaint.setColor(textPaint2.getColor());
-            textPaint.setTypeface(textPaint2.getTypeface());
-            textPaint.setFlags(textPaint2.getFlags());
-            textPaint.setTextSize(textPaint2.getTextSize());
-            textPaint.baselineShift = textPaint2.baselineShift;
-            textPaint.bgColor = textPaint2.bgColor;
-        }
+    public k11(long j10, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
+        this.a = j10;
+        this.b = inputFile;
+        this.c = inputEncryptedFile;
+        this.d = bArr;
+        this.e = bArr2;
     }
 }

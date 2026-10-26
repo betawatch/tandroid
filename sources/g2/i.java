@@ -1,22 +1,22 @@
 package g2;
 
+import a8.ac;
 import android.content.Context;
 import android.net.Uri;
-import b2.r0;
-import v7.w6;
+import b2.s0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class i implements e2.d {
-    public static final d9.u e = w6.a(new a3.s(2));
-    public final j9.z a;
-    public final qf.b b;
+    public static final e9.t e = ac.a(new a3.s(2));
+    public final k9.z a;
+    public final rf.b b;
     public final int c;
     public final boolean d;
 
-    public i(c5.f fVar) {
-        this.b = new qf.b((Context) fVar.c, 18);
-        j9.z zVar = (j9.z) e.get();
+    public i(d5.f fVar) {
+        this.b = new rf.b((Context) fVar.c, 19);
+        k9.z zVar = (k9.z) e.get();
         zVar.getClass();
         this.a = zVar;
         this.c = fVar.a;
@@ -24,20 +24,20 @@ public final class i implements e2.d {
     }
 
     @Override // e2.d
-    public final j9.y g(r0 r0Var) {
-        byte[] bArr = r0Var.k;
-        if (bArr != null) {
-            return v(bArr);
-        }
-        Uri uri = r0Var.n;
-        if (uri == null) {
-            return null;
-        }
-        return ((j9.a0) this.a).a(new com.google.firebase.messaging.h(2, this, uri));
+    public final k9.y H(byte[] bArr) {
+        return ((k9.a0) this.a).a(new com.google.firebase.messaging.h(1, this, bArr));
     }
 
     @Override // e2.d
-    public final j9.y v(byte[] bArr) {
-        return ((j9.a0) this.a).a(new com.google.firebase.messaging.h(1, this, bArr));
+    public final k9.y t(s0 s0Var) {
+        byte[] bArr = s0Var.k;
+        if (bArr != null) {
+            return H(bArr);
+        }
+        Uri uri = s0Var.n;
+        if (uri == null) {
+            return null;
+        }
+        return ((k9.a0) this.a).a(new com.google.firebase.messaging.h(2, this, uri));
     }
 }

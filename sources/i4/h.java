@@ -1,5 +1,7 @@
 package i4;
 
+import a8.jb;
+import a8.yb;
 import android.graphics.Color;
 import android.text.SpannableStringBuilder;
 import android.text.SpannedString;
@@ -12,7 +14,7 @@ import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import e2.m0;
+import e2.n0;
 import e2.x;
 import j$.util.DesugarCollections;
 import java.nio.charset.StandardCharsets;
@@ -27,10 +29,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import v7.q6;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
@@ -210,7 +210,7 @@ public abstract class h {
                     i11 = 1;
                     i12 = (i22 == 1 ? 1 : 0) | (bVar.m == 1 ? 2 : 0);
                 }
-                q6.a(new StyleSpan(i12), spannableStringBuilder, i13, length);
+                jb.a(new StyleSpan(i12), spannableStringBuilder, i13, length);
             } else {
                 i11 = 1;
             }
@@ -224,24 +224,24 @@ public abstract class h {
                 if (!bVar.g) {
                     throw new IllegalStateException("Font color not defined");
                 }
-                q6.a(new ForegroundColorSpan(bVar.f), spannableStringBuilder, i13, length);
+                jb.a(new ForegroundColorSpan(bVar.f), spannableStringBuilder, i13, length);
             }
             if (bVar.i) {
                 if (!bVar.i) {
                     throw new IllegalStateException("Background color not defined.");
                 }
-                q6.a(new BackgroundColorSpan(bVar.h), spannableStringBuilder, i13, length);
+                jb.a(new BackgroundColorSpan(bVar.h), spannableStringBuilder, i13, length);
             }
             if (bVar.e != null) {
-                q6.a(new TypefaceSpan(bVar.e), spannableStringBuilder, i13, length);
+                jb.a(new TypefaceSpan(bVar.e), spannableStringBuilder, i13, length);
             }
             int i23 = bVar.n;
             if (i23 == 1) {
-                q6.a(new AbsoluteSizeSpan((int) bVar.o, true), spannableStringBuilder, i13, length);
+                jb.a(new AbsoluteSizeSpan((int) bVar.o, true), spannableStringBuilder, i13, length);
             } else if (i23 == 2) {
-                q6.a(new RelativeSizeSpan(bVar.o), spannableStringBuilder, i13, length);
+                jb.a(new RelativeSizeSpan(bVar.o), spannableStringBuilder, i13, length);
             } else if (i23 == 3) {
-                q6.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
+                jb.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
             }
             if (bVar.q) {
                 spannableStringBuilder.setSpan(new d2.e(), i13, length, 33);
@@ -572,8 +572,8 @@ public abstract class h {
                     String substring2 = str2.substring(i13, i12);
                     if (!substring2.trim().isEmpty()) {
                         String trim = substring2.trim();
-                        u6.g(!trim.isEmpty());
-                        String str4 = m0.a;
+                        yb.g(!trim.isEmpty());
+                        String str4 = n0.a;
                         String str5 = trim.split("[ \\.]", 2)[0];
                         str5.getClass();
                         switch (str5.hashCode()) {
@@ -663,7 +663,7 @@ public abstract class h {
                                 } else if (!z11) {
                                     int length = spannableStringBuilder.length();
                                     String trim2 = substring2.trim();
-                                    u6.g(!trim2.isEmpty());
+                                    yb.g(!trim2.isEmpty());
                                     int indexOf4 = trim2.indexOf(" ");
                                     if (indexOf4 == -1) {
                                         c11 = 0;

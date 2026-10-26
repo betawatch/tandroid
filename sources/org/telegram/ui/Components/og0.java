@@ -1,75 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class og0 {
-    public final /* synthetic */ org.telegram.ui.rt0 a;
+public final class og0 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final TextView c;
+    public final boolean d;
 
-    public og0(org.telegram.ui.rt0 rt0Var) {
-        this.a = rt0Var;
+    public og0(Context context) {
+        super(context);
+        this.d = true;
+        setBackgroundColor(-15066598);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(-1);
+        textView.setGravity(17);
+        textView.setBackground(org.telegram.ui.ActionBar.y6.g0(-12763843, 0, -1));
+        textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
+        textView.setTypeface(AndroidUtilities.bold());
+        addView(textView, gb1.i(-2, -1, 51));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(-1);
+        textView2.setGravity(17);
+        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.y6.g0(-12763843, 0, -1));
+        textView2.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        textView2.setText(LocaleController.getString(R.string.Send).toUpperCase());
+        textView2.setTypeface(AndroidUtilities.bold());
+        addView(textView2, gb1.i(-2, -1, 53));
+        TextView textView3 = new TextView(context);
+        this.c = textView3;
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setTextSize(1, 13.0f);
+        textView3.setTextColor(-1);
+        textView3.setGravity(17);
+        textView3.setBackgroundResource(R.drawable.photobadge);
+        textView3.setMinWidth(AndroidUtilities.dp(23.0f));
+        textView3.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
+        addView(textView3, gb1.h(-2, 23.0f, 53, 0.0f, 0.0f, 7.0f, 0.0f));
     }
 
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        AndroidUtilities.runOnUIThread(new d2(this, Integer.parseInt(str), 9));
-    }
-
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        AndroidUtilities.runOnUIThread(new mg0(this, 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f7) {
-        this.a.J = f7;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i10) {
-        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i10) {
-        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.rt0 rt0Var = this.a;
-        rt0Var.H = i11;
-        String str = rt0Var.s;
-        if (str != null) {
-            pg0.a(rt0Var, str);
-            rt0Var.s = null;
-        }
-    }
-
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int parseInt = Integer.parseInt(str);
-        org.telegram.ui.rt0 rt0Var = this.a;
-        boolean z10 = rt0Var.G;
-        boolean z11 = false;
-        int i10 = 1;
-        rt0Var.G = parseInt == 1 || parseInt == 3;
-        rt0Var.b(z10);
-        if (parseInt != 0) {
-            if (parseInt == 1) {
-                z11 = true;
-            } else if (parseInt != 2) {
-                if (parseInt == 3) {
-                    z11 = true;
-                    i10 = 2;
-                }
-            }
-            i10 = 3;
-        } else {
-            i10 = 4;
-        }
-        if (i10 == 3 && rt0Var.h.getVisibility() != 4) {
-            AndroidUtilities.runOnUIThread(new mg0(this, 1), 300L);
-        }
-        AndroidUtilities.runOnUIThread(new ai.z8(this, z11, i10, 2));
+    public final void a() {
+        this.c.setVisibility(8);
+        this.b.setTextColor(this.d ? -1 : -15095832);
     }
 }

@@ -1,17 +1,17 @@
 package com.google.android.recaptcha.internal;
 
+import a8.id;
+import a8.jd;
 import android.app.Application;
-import id.c;
-import id.g;
-import ke.a;
-import ke.d;
-import ke.e;
+import jd.c;
+import jd.g;
 import kotlin.jvm.internal.i;
+import le.a;
+import le.d;
+import le.e;
 import org.telegram.tgnet.TLObject;
-import v7.h8;
-import v7.i8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
@@ -22,11 +22,11 @@ public final class zzeh {
     public zzeh(Application application) {
         this.zza = application;
         int i10 = zzby.zza;
-        this.zzd = h8.a(zzef.zza);
+        this.zzd = id.a(zzef.zza);
         zzdp.zza(application);
     }
 
-    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, kd.c cVar, int i10, Object obj) {
+    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, ld.c cVar, int i10, Object obj) {
         if ((i10 & 8) != 0) {
             zzdqVar = zzdq.zza;
         }
@@ -58,10 +58,10 @@ public final class zzeh {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, kd.c cVar) {
+    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, ld.c cVar) {
         zzea zzeaVar;
         Object obj;
-        ld.a aVar;
+        md.a aVar;
         int i10;
         String str2;
         zzdq zzdqVar2;
@@ -78,10 +78,10 @@ public final class zzeh {
                     zzeaVar.zzg = i13 - TLObject.FLAG_31;
                     zzea zzeaVar2 = zzeaVar;
                     obj = zzeaVar2.zze;
-                    aVar = ld.a.a;
+                    aVar = md.a.a;
                     i10 = zzeaVar2.zzg;
                     if (i10 != 0) {
-                        i8.b(obj);
+                        jd.b(obj);
                         a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
@@ -104,7 +104,7 @@ public final class zzeh {
                         }
                         obj3 = (a) zzeaVar2.zza;
                         try {
-                            i8.b(obj);
+                            jd.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
                             ((d) obj3).e(null);
                             return zzeqVar;
@@ -118,7 +118,7 @@ public final class zzeh {
                     Object obj4 = (a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    i8.b(obj);
+                    jd.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;
@@ -180,7 +180,7 @@ public final class zzeh {
         zzeaVar = new zzea(this, cVar);
         zzea zzeaVar22 = zzeaVar;
         obj = zzeaVar22.zze;
-        aVar = ld.a.a;
+        aVar = md.a.a;
         i10 = zzeaVar22.zzg;
         if (i10 != 0) {
         }

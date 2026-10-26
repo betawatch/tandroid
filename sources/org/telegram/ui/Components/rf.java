@@ -9,7 +9,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class rf implements TextWatcher {
     public boolean a;
@@ -23,13 +23,13 @@ public final class rf implements TextWatcher {
         this.f = chatActivityEnterView;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0110  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0161  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0191  */
     @Override // android.text.TextWatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -83,7 +83,7 @@ public final class rf implements TextWatcher {
                 chatActivityEnterView.b0.animate().setListener(null).cancel();
                 chatActivityEnterView.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
                 if (i11 >= 0) {
-                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.y6));
+                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.y6));
                     z10 = true;
                     if (chatActivityEnterView.q3 != z10) {
                         chatActivityEnterView.q3 = z10;
@@ -102,7 +102,7 @@ public final class rf implements TextWatcher {
                     chatActivityEnterView.C(true);
                     chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 }
-                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.p7));
+                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.p7));
                 z10 = false;
                 if (chatActivityEnterView.q3 != z10 && (xeVar = chatActivityEnterView.F1) != null) {
                     chatActivityEnterView.q3 = z10;
@@ -128,7 +128,7 @@ public final class rf implements TextWatcher {
         }
         NumberTextView numberTextView2 = chatActivityEnterView.b0;
         if (numberTextView2 != null) {
-            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.pq(this, 7));
+            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.qp(this, 8));
         }
         z10 = true;
         if (chatActivityEnterView.q3 != z10) {
@@ -181,14 +181,14 @@ public final class rf implements TextWatcher {
             this.b = true;
         }
         chatActivityEnterView.X1 = false;
-        chatActivityEnterView.F(true);
+        chatActivityEnterView.G(true);
         CharSequence trimmedString = AndroidUtilities.getTrimmedString(charSequence.toString());
         if (chatActivityEnterView.Z2 != null && !chatActivityEnterView.R2) {
             int i13 = i12 + 1;
             if (i11 > i13 || i12 - i11 > 2 || TextUtils.isEmpty(charSequence)) {
                 chatActivityEnterView.Y2 = true;
             }
-            chatActivityEnterView.Z2.g1(charSequence, i11 > i13 || i12 - i11 > 2, false);
+            chatActivityEnterView.Z2.V0(charSequence, i11 > i13 || i12 - i11 > 2, false);
         }
         if (chatActivityEnterView.S2 != 2 && i12 - i11 > 1) {
             this.a = true;
@@ -197,7 +197,7 @@ public final class rf implements TextWatcher {
             chatActivityEnterView.C2 = System.currentTimeMillis();
             og ogVar = chatActivityEnterView.Z2;
             if (ogVar != null) {
-                ogVar.y1();
+                ogVar.o1();
             }
         }
         chatActivityEnterView.O1();

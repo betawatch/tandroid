@@ -1,25 +1,15 @@
 package cc;
 
-import ai.c1;
-import rb.g;
-import z7.wf;
-import z7.xf;
-import z7.zf;
+import androidx.lifecycle.b0;
+import androidx.lifecycle.m;
+import androidx.lifecycle.s;
+import com.google.android.gms.common.api.n;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c extends c1 {
-    public final g b;
-
-    public c(g gVar) {
-        super(6);
-        this.b = gVar;
-    }
-
-    @Override // ai.c1
-    public final Object Q0(Object obj) {
-        wf b10 = zf.b();
-        g gVar = this.b;
-        return new f(gVar, (bc.e) obj, b10, new xf(gVar.b()));
-    }
+public interface c extends Closeable, s, n {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @b0(m.ON_DESTROY)
+    void close();
 }

@@ -1,89 +1,38 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
+import android.app.Activity;
 import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.vg1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class p1 extends FrameLayout {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public boolean e;
+    public final m1 a;
+    public final FrameLayout b;
+    public final o1[] c;
+    public vg1 d;
 
-    public p1(Context context) {
-        super(context);
-        this.d = 68;
-        this.e = true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
+    public p1(Activity activity, r1 r1Var) {
+        super(activity);
+        this.c = new o1[5];
+        setWillNotDraw(false);
+        m1 m1Var = new m1(activity, r1Var);
+        this.a = m1Var;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.b = frameLayout;
+        m1Var.setVisibility(8);
+        frameLayout.setVisibility(8);
+        for (int i10 = 0; i10 < 5; i10++) {
+            this.c[i10] = new o1(activity);
+            int i11 = 0;
+            this.c[i10].setAllStarsProvider(new j1(this, i11));
+            o1 o1Var = this.c[i10];
+            o1Var.d = new k1(i11, this, activity);
+            o1Var.f = i10;
+            this.b.addView(o1Var, gb1.h(-2, -2.0f, 51, i10 * 41, 0.0f, 0.0f, 0.0f));
         }
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        if (this.e) {
-            int childCount = (int) (((getChildCount() - this.a) / 2.0f) * ((this.c * 2) + this.b));
-            for (int i14 = 0; i14 < getChildCount(); i14++) {
-                View childAt = getChildAt(i14);
-                if (childAt.getVisibility() != 8) {
-                    int i15 = this.c;
-                    childAt.layout(childCount + i15, 0, childAt.getMeasuredWidth() + i15 + childCount, childAt.getMeasuredHeight());
-                    childCount = childAt.getMeasuredWidth() + (this.c * 2) + childCount;
-                }
-            }
-            return;
-        }
-        int measuredWidth = this.a > 0 ? (getMeasuredWidth() - this.b) / (this.a - 1) : 0;
-        int i16 = 0;
-        for (int i17 = 0; i17 < getChildCount(); i17++) {
-            View childAt2 = getChildAt(i17);
-            if (childAt2.getVisibility() != 8) {
-                int i18 = i16 * measuredWidth;
-                childAt2.layout(i18, 0, childAt2.getMeasuredWidth() + i18, childAt2.getMeasuredHeight());
-                i16++;
-            }
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        this.a = 0;
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            if (getChildAt(i12).getVisibility() != 8) {
-                this.a++;
-            }
-        }
-        this.b = AndroidUtilities.dp(this.d);
-        this.c = ((size / getChildCount()) - this.b) / 2;
-        int i13 = 0;
-        for (int i14 = 0; i14 < getChildCount(); i14++) {
-            if (getChildAt(i14).getVisibility() != 8) {
-                getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30), i11);
-                if (getChildAt(i14).getMeasuredHeight() > i13) {
-                    i13 = getChildAt(i14).getMeasuredHeight();
-                }
-            }
-        }
-        setMeasuredDimension(size, Math.max(i13, AndroidUtilities.dp(80.0f)));
-    }
-
-    public void setChildSize(int i10) {
-        this.d = i10;
-    }
-
-    public void setUseStartPadding(boolean z10) {
-        this.e = z10;
+        addView(this.a, gb1.h(300, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.b, gb1.h(201, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 }

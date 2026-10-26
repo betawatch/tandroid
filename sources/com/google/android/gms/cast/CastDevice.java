@@ -1,13 +1,14 @@
 package com.google.android.gms.cast;
 
+import a8.df;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
-import c6.v;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import g6.x;
+import d6.v;
+import h6.x;
 import j$.util.DesugarCollections;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -15,11 +16,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import o6.a;
-import org.telegram.ui.Cells.b1;
-import w7.f0;
+import org.telegram.ui.Components.b10;
+import p6.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -111,9 +111,9 @@ public class CastDevice extends a implements ReflectedParcelable {
         if (str3 == null) {
             return str2 == null;
         }
-        if (g6.a.d(str3, str2) && g6.a.d(this.c, castDevice.c) && g6.a.d(this.e, castDevice.e) && g6.a.d(this.d, castDevice.d)) {
+        if (h6.a.d(str3, str2) && h6.a.d(this.c, castDevice.c) && h6.a.d(this.e, castDevice.e) && h6.a.d(this.d, castDevice.d)) {
             String str4 = this.f;
-            if (g6.a.d(str4, str) && (i10 = this.h) == i11 && g6.a.d(this.n, castDevice.n) && this.r == castDevice.r && this.s == castDevice.s && g6.a.d(this.v, castDevice.v) && g6.a.d(Integer.valueOf(this.x), Integer.valueOf(castDevice.x)) && g6.a.d(this.y, castDevice.y) && g6.a.d(this.w, castDevice.w) && g6.a.d(str4, str) && i10 == i11 && ((((bArr = this.E) == null && bArr2 == null) || Arrays.equals(bArr, bArr2)) && g6.a.d(this.F, castDevice.F) && this.G == castDevice.G && g6.a.d(d(), castDevice.d()))) {
+            if (h6.a.d(str4, str) && (i10 = this.h) == i11 && h6.a.d(this.n, castDevice.n) && this.r == castDevice.r && this.s == castDevice.s && h6.a.d(this.v, castDevice.v) && h6.a.d(Integer.valueOf(this.x), Integer.valueOf(castDevice.x)) && h6.a.d(this.y, castDevice.y) && h6.a.d(this.w, castDevice.w) && h6.a.d(str4, str) && i10 == i11 && ((((bArr = this.E) == null && bArr2 == null) || Arrays.equals(bArr, bArr2)) && h6.a.d(this.F, castDevice.F) && this.G == castDevice.G && h6.a.d(d(), castDevice.d()))) {
                 return true;
             }
         }
@@ -135,35 +135,35 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return b1.l("\"", str, "\" (", this.a, ")");
+        return b10.k("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.l(parcel, 3, this.b);
-        f0.l(parcel, 4, this.d);
-        f0.l(parcel, 5, this.e);
-        f0.l(parcel, 6, this.f);
-        f0.s(parcel, 7, 4);
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 2, this.a);
+        df.l(parcel, 3, this.b);
+        df.l(parcel, 4, this.d);
+        df.l(parcel, 5, this.e);
+        df.l(parcel, 6, this.f);
+        df.s(parcel, 7, 4);
         parcel.writeInt(this.h);
-        f0.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
-        f0.s(parcel, 9, 4);
+        df.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        df.s(parcel, 9, 4);
         parcel.writeInt(this.r);
-        f0.s(parcel, 10, 4);
+        df.s(parcel, 10, 4);
         parcel.writeInt(this.s);
-        f0.l(parcel, 11, this.v);
-        f0.l(parcel, 12, this.w);
-        f0.s(parcel, 13, 4);
+        df.l(parcel, 11, this.v);
+        df.l(parcel, 12, this.w);
+        df.s(parcel, 13, 4);
         parcel.writeInt(this.x);
-        f0.l(parcel, 14, this.y);
-        f0.c(parcel, 15, this.E);
-        f0.l(parcel, 16, this.F);
-        f0.s(parcel, 17, 4);
+        df.l(parcel, 14, this.y);
+        df.c(parcel, 15, this.E);
+        df.l(parcel, 16, this.F);
+        df.s(parcel, 17, 4);
         parcel.writeInt(this.G ? 1 : 0);
-        f0.k(parcel, 18, d(), i10);
-        f0.i(parcel, 19, this.I);
-        f0.r(parcel, q6);
+        df.k(parcel, 18, d(), i10);
+        df.i(parcel, 19, this.I);
+        df.r(parcel, q5);
     }
 }

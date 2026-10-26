@@ -11,44 +11,44 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class ok extends li {
-    public final tz n;
+    public final sz n;
     public final mm0 r;
-    public final s4.b0 s;
+    public final s4.c0 s;
     public final HorizontalScrollView v;
     public final boolean w;
 
-    public ok(ti tiVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
-        super(context, g6Var, tiVar);
+    public ok(ti tiVar, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
+        super(context, u6Var, tiVar);
         this.w = z10;
         this.f = true;
-        org.telegram.ui.ActionBar.o2 o2Var = tiVar.f0;
+        org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
         boolean z11 = !z10;
-        tz tzVar = new tz(o2Var, z11, z10, false, getContext(), true, null, null, false, g6Var, false, true);
-        this.n = tzVar;
-        tzVar.w0 = false;
-        tzVar.I(z11, z10, false, false);
-        tzVar.o2 = true;
-        hx hxVar = tzVar.x;
-        if (hxVar != null) {
-            hxVar.setVisibility(8);
+        sz szVar = new sz(r2Var, z11, z10, false, getContext(), true, null, null, false, u6Var, false, true);
+        this.n = szVar;
+        szVar.w0 = false;
+        szVar.I(z11, z10, false, false);
+        szVar.o2 = true;
+        gx gxVar = szVar.x;
+        if (gxVar != null) {
+            gxVar.setVisibility(8);
         }
-        tzVar.p2 = true;
-        ImageView imageView = tzVar.y;
+        szVar.p2 = true;
+        ImageView imageView = szVar.y;
         if (imageView != null) {
             imageView.setVisibility(8);
         }
-        tzVar.S2 = true;
-        addView(tzVar, w7.z5.c(-1.0f, -1));
-        HorizontalScrollView z12 = tzVar.z(z11 ? 1 : 0);
-        this.v = z12;
-        mm0 y3 = tzVar.y(z11 ? 1 : 0);
-        this.r = y3;
-        y3.j(new ah.d0(this, 25));
-        this.s = (s4.b0) y3.getLayoutManager();
-        z12.setTranslationY(Math.max(0, getCurrentItemTop()));
+        szVar.Q2 = true;
+        addView(szVar, gb1.g(-1.0f, -1));
+        HorizontalScrollView y3 = szVar.y(z11 ? 1 : 0);
+        this.v = y3;
+        mm0 x9 = szVar.x(z11 ? 1 : 0);
+        this.r = x9;
+        x9.j(new ai.b(this, 29));
+        this.s = (s4.c0) x9.getLayoutManager();
+        y3.setTranslationY(Math.max(0, getCurrentItemTop()));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x003d  */
@@ -92,7 +92,7 @@ public final class ok extends li {
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void F(li liVar) {
+    public final void G(li liVar) {
         ti tiVar = this.b;
         try {
             tiVar.a1.getTitleTextView().setBuildFullLayout(true);
@@ -104,7 +104,7 @@ public final class ok extends li {
 
     @Override // org.telegram.ui.Components.li
     public final void J() {
-        this.r.x0(0);
+        this.r.y0(0);
     }
 
     @Override // org.telegram.ui.Components.li
@@ -115,10 +115,10 @@ public final class ok extends li {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = mm0Var.getChildAt(0);
-        wl0 wl0Var = (wl0) mm0Var.G(childAt);
+        vl0 vl0Var = (vl0) mm0Var.G(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(36.0f);
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || wl0Var == null || wl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || vl0Var == null || vl0Var.b() != 0) {
             top = dp;
         }
         mm0Var.setTopGlowOffset(top);
@@ -146,8 +146,8 @@ public final class ok extends li {
         this.v.setTranslationY(Math.max(0, getCurrentItemTop()));
     }
 
-    public void setDelegate(uy uyVar) {
-        this.n.setDelegate(uyVar);
+    public void setDelegate(ty tyVar) {
+        this.n.setDelegate(tyVar);
     }
 
     @Override // android.view.View

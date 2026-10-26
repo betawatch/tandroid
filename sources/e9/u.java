@@ -1,108 +1,47 @@
 package e9;
 
-import j$.util.Objects;
-import java.util.AbstractSet;
-import java.util.Iterator;
-import java.util.Map;
-import v7.t6;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class u extends AbstractSet {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x b;
+public final class u implements t, Serializable {
+    public final transient Object a = new Object();
+    public final t b;
+    public volatile transient boolean c;
+    public transient Object d;
 
-    public /* synthetic */ u(x xVar, int i10) {
-        this.a = i10;
-        this.b = xVar;
+    public u(t tVar) {
+        this.b = tVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        switch (this.a) {
-            case 0:
-                this.b.clear();
-                break;
-            default:
-                this.b.clear();
-                break;
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        switch (this.a) {
-            case 0:
-                x xVar = this.b;
-                Map c10 = xVar.c();
-                if (c10 != null) {
-                    return c10.entrySet().contains(obj);
-                }
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry = (Map.Entry) obj;
-                    int e = xVar.e(entry.getKey());
-                    if (e != -1 && t6.a(xVar.k()[e], entry.getValue())) {
-                        return true;
+    @Override // e9.t
+    public final Object get() {
+        if (!this.c) {
+            synchronized (this.a) {
+                try {
+                    if (!this.c) {
+                        Object obj = this.b.get();
+                        this.d = obj;
+                        this.c = true;
+                        return obj;
                     }
+                } finally {
                 }
-                return false;
-            default:
-                return this.b.containsKey(obj);
+            }
         }
+        return this.d;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        switch (this.a) {
-            case 0:
-                x xVar = this.b;
-                Map c10 = xVar.c();
-                return c10 != null ? c10.entrySet().iterator() : new t(xVar, 1);
-            default:
-                x xVar2 = this.b;
-                Map c11 = xVar2.c();
-                return c11 != null ? c11.keySet().iterator() : new t(xVar2, 0);
+    public final String toString() {
+        Object obj;
+        StringBuilder sb2 = new StringBuilder("Suppliers.memoize(");
+        if (this.c) {
+            obj = "<supplier that returned " + this.d + ">";
+        } else {
+            obj = this.b;
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        switch (this.a) {
-            case 0:
-                x xVar = this.b;
-                Map c10 = xVar.c();
-                if (c10 != null) {
-                    return c10.entrySet().remove(obj);
-                }
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry = (Map.Entry) obj;
-                    if (!xVar.g()) {
-                        int d = xVar.d();
-                        Object key = entry.getKey();
-                        Object value = entry.getValue();
-                        Object obj2 = xVar.a;
-                        Objects.requireNonNull(obj2);
-                        int r10 = s.r(key, value, d, obj2, xVar.i(), xVar.j(), xVar.k());
-                        if (r10 != -1) {
-                            xVar.f(r10, d);
-                            xVar.f--;
-                            xVar.e += 32;
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            default:
-                x xVar2 = this.b;
-                Map c11 = xVar2.c();
-                return c11 != null ? c11.keySet().remove(obj) : xVar2.h(obj) != x.s;
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        switch (this.a) {
-        }
-        return this.b.size();
+        sb2.append(obj);
+        sb2.append(")");
+        return sb2.toString();
     }
 }

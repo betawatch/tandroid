@@ -1,29 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dn implements Runnable {
+public final /* synthetic */ class dn implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
+    public final /* synthetic */ go b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ dn(fo foVar, int i10, int i11) {
+    public /* synthetic */ dn(go goVar, int i10, int i11) {
         this.a = i11;
-        this.b = foVar;
+        this.b = goVar;
         this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.h0(this.c, null);
-                break;
-            case 1:
-                this.b.e0(this.c);
+                this.b.h0(this.c, (sh.e) obj);
                 break;
             default:
-                this.b.h0(this.c, null);
+                go goVar = this.b;
+                goVar.getClass();
+                goVar.h0(this.c, new th.e((String) obj));
                 break;
         }
     }

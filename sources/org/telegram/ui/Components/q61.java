@@ -1,53 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
+import android.graphics.Typeface;
 import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class q61 extends URLSpan {
-    public final boolean a;
-    public final q11 b;
-    public TLObject c;
-    public String d;
+public final class q61 extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
 
-    public q61(String str) {
-        this(str, (q11) null);
+    public q61(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            pf.d.r(view.getContext(), url);
-            return;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = this.c;
+        if (i10 >= 0) {
+            this.b = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
         }
-        pf.d.o(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        q11 q11Var = this.b;
-        if (q11Var != null) {
-            q11Var.a(textPaint);
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
         }
-        textPaint.setUnderlineText(i10 == color && !this.a);
+        int i11 = this.b;
+        if (i11 != 0) {
+            textPaint.setColor(i11);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
     }
 
-    public q61(String str, int i10) {
-        this(str, (q11) null);
-        this.a = true;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
     }
 
-    public q61(String str, q11 q11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = q11Var;
+    public q61() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    public q61(Typeface typeface, int i10) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i10;
     }
 }

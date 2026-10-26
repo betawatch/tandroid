@@ -1,39 +1,62 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ex0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hx0 b;
+public class ex0 extends s4.d0 {
+    public final ds r;
+    public int s;
+    public float t;
 
-    public /* synthetic */ ex0(hx0 hx0Var, int i10) {
-        this.a = i10;
-        this.b = hx0Var;
+    public ex0(Context context) {
+        super(context);
+        this.r = ds.f;
+        this.t = 1.0f;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                hx0 hx0Var = this.b;
-                hx0Var.invalidate();
-                AndroidUtilities.runOnUIThread(new ex0(hx0Var, 1));
-                break;
-            default:
-                hx0 hx0Var2 = this.b;
-                gx0 gx0Var = hx0Var2.e;
-                if (gx0Var != null) {
-                    hx0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.qx0) gx0Var).b;
-                    org.telegram.ui.ActionBar.n5[] n5VarArr = profileActivity.r;
-                    n5VarArr[1].setTranslationX(profileActivity.Y3(profileActivity.d6, profileActivity.f6));
-                    n5VarArr[1].setTranslationY(profileActivity.Z3(profileActivity.g6));
-                    break;
-                }
-                break;
+    @Override // s4.d0, s4.a1
+    public final void g(View view, s4.z0 z0Var) {
+        int j10 = j(o(), view);
+        int k10 = k(p(), view);
+        int m10 = m((int) Math.sqrt((k10 * k10) + (j10 * j10)));
+        if (m10 > 0) {
+            z0Var.b(-j10, -k10, m10, this.r);
         }
+        AndroidUtilities.runOnUIThread(new mp0(this, 13), Math.max(0, m10));
+    }
+
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return super.k(i10, view) - this.s;
+    }
+
+    @Override // s4.d0
+    public final int m(int i10) {
+        return Math.round(Math.min(super.m(i10), 500) * this.t);
+    }
+
+    @Override // s4.d0
+    public final int n(int i10) {
+        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
+    }
+
+    @Override // s4.d0
+    public final void q(s4.z0 z0Var) {
+        PointF a2 = a(this.a);
+        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+            z0Var.d = this.a;
+            h();
+            return;
+        }
+        s4.a1.b(a2);
+        this.k = a2;
+        this.o = (int) (a2.x * 10000.0f);
+        this.p = (int) (a2.y * 10000.0f);
+        z0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

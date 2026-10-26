@@ -1,27 +1,16 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class xo0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zo0 b;
+public final class xo0 extends s4.l {
+    public final /* synthetic */ org.telegram.ui.jx F;
 
-    public /* synthetic */ xo0(zo0 zo0Var, int i10) {
-        this.a = i10;
-        this.b = zo0Var;
+    public xo0(org.telegram.ui.jx jxVar) {
+        this.F = jxVar;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                this.b.b.R(i10, i11);
-                break;
-            default:
-                this.b.b.R(i10, i11);
-                break;
-        }
+    @Override // s4.l
+    public final void P(s4.e1 e1Var) {
+        this.F.invalidate();
     }
 }

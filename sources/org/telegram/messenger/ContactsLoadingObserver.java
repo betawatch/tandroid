@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class ContactsLoadingObserver {
     private final Callback callback;
@@ -12,11 +12,11 @@ public final class ContactsLoadingObserver {
     private final int currentAccount;
     private final Handler handler;
     private final NotificationCenter notificationCenter;
-    private final NotificationCenter.NotificationCenterDelegate observer = new a2(this, 0);
+    private final NotificationCenter.NotificationCenterDelegate observer = new b2(this, 0);
     private final Runnable releaseRunnable;
     private boolean released;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public interface Callback {
         void onResult(boolean z10);
     }
@@ -25,7 +25,7 @@ public final class ContactsLoadingObserver {
         this.callback = callback;
         int i10 = UserConfig.selectedAccount;
         this.currentAccount = i10;
-        this.releaseRunnable = new i1(this, 16);
+        this.releaseRunnable = new j1(this, 16);
         this.contactsController = ContactsController.getInstance(i10);
         this.notificationCenter = NotificationCenter.getInstance(i10);
         this.handler = new Handler(Looper.myLooper());

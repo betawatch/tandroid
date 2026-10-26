@@ -1,36 +1,31 @@
 package ai;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.Components.iu;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.e2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class p0 implements b2 {
+    public final /* synthetic */ z0 a;
 
-    public /* synthetic */ p0(int i10, int i11, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.a = i10;
-        this.b = i11;
-        this.c = o2Var;
+    public /* synthetic */ p0(z0 z0Var) {
+        this.a = z0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.c;
-        pf.c h = c2Var.h(-1, true, true);
-        h.d();
-        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
-        tL_resolveStarGiftOffer.offer_msg_id = this.a;
-        int i11 = this.b;
-        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new u0(i11, o2Var, h, c2Var));
-    }
-
-    public /* synthetic */ p0(iu iuVar, int i10, int i11) {
-        this.c = iuVar;
-        this.a = i10;
-        this.b = i11;
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(e2 e2Var, int i10) {
+        z0 z0Var = this.a;
+        z0Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            z0Var.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

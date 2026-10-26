@@ -1,10 +1,10 @@
 package kotlin.jvm.internal;
 
-import be.e0;
+import ce.e0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class m extends b implements xd.g {
+public abstract class m extends b implements yd.g {
     public final boolean a;
 
     public m(Object obj, Class cls, String str, String str2, int i10) {
@@ -13,20 +13,20 @@ public abstract class m extends b implements xd.g {
     }
 
     @Override // kotlin.jvm.internal.b
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final xd.g getReflected() {
+    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    public final yd.g getReflected() {
         if (this.a) {
             throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
         }
-        xd.b compute = compute();
+        yd.b compute = compute();
         if (compute != this) {
-            return (xd.g) compute;
+            return (yd.g) compute;
         }
         throw new e0("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
     }
 
     @Override // kotlin.jvm.internal.b
-    public final xd.b compute() {
+    public final yd.b compute() {
         return this.a ? this : super.compute();
     }
 
@@ -38,7 +38,7 @@ public abstract class m extends b implements xd.g {
             m mVar = (m) obj;
             return getOwner().equals(mVar.getOwner()) && getName().equals(mVar.getName()) && getSignature().equals(mVar.getSignature()) && i.a(getBoundReceiver(), mVar.getBoundReceiver());
         }
-        if (obj instanceof xd.g) {
+        if (obj instanceof yd.g) {
             return obj.equals(compute());
         }
         return false;
@@ -49,7 +49,7 @@ public abstract class m extends b implements xd.g {
     }
 
     public final String toString() {
-        xd.b compute = compute();
+        yd.b compute = compute();
         if (compute != this) {
             return compute.toString();
         }

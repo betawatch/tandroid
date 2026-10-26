@@ -1,222 +1,109 @@
 package hi;
 
-import ai.ud;
-import ai.v3;
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.text.SpannableStringBuilder;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import ei.pc;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y90;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.f7;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class s0 implements ii.e {
-    public final Context a;
-    public final g6 b;
-    public final xc c;
-    public final int d;
-    public final long e;
-    public final TLRPC.Chat f;
-    public r0 h;
-    public ud i;
-    public String k;
-    public int l;
-    public boolean m;
-    public boolean n;
-    public long o;
-    public int p;
-    public c2 q;
-    public int r;
-    public final a0.h g = new a0.h();
-    public ArrayList j = new ArrayList();
+public final class s0 extends FrameLayout {
+    public final xh.n a;
+    public final ImageView b;
+    public final TL_keyboard.KeyboardButton c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public final /* synthetic */ u0 n;
 
-    public s0(Context context, g6 g6Var, xc xcVar, int i10, long j10) {
-        this.a = context;
-        this.b = g6Var;
-        this.c = xcVar;
-        this.d = i10;
-        this.e = j10;
-        this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j10));
-        this.o = MessagesController.getMainSettings(i10).getLong(a1.g.o(j10, "community_requests_last_view_time_"), 0L);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s0(u0 u0Var, Context context, TL_keyboard.KeyboardButton keyboardButton) {
+        super(context);
+        this.n = u0Var;
+        this.c = keyboardButton;
+        xh.n nVar = new xh.n(context);
+        this.a = nVar;
+        nVar.r = false;
+        nVar.setTextSize(1, 14.0f);
+        nVar.setTypeface(AndroidUtilities.bold());
+        NotificationCenter.listenEmojiLoading(nVar);
+        addView(nVar, gb1.i(-2, -2, 17));
+        NotificationCenter.listenEmojiLoading(nVar);
+        setTag(keyboardButton);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;
+        if (keyboardButtonStyle != null && keyboardButtonStyle.icon != 0) {
+            spannableStringBuilder.append((CharSequence) "* ");
+            spannableStringBuilder.setSpan(new c6(keyboardButton.style.icon, nVar.getPaint().getFontMetricsInt()), 0, 1, 33);
+        }
+        spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, nVar.getPaint().getFontMetricsInt(), false));
+        ImageView imageView = new ImageView(getContext());
+        this.b = imageView;
+        f7.t(imageView, y6.Xe, u0Var.a, PorterDuff.Mode.SRC_ATOP);
+        if (bg.c.b(keyboardButton)) {
+            imageView.setImageResource(R.drawable.bot_webview);
+            imageView.setVisibility(0);
+        } else {
+            imageView.setVisibility(8);
+        }
+        addView(imageView, gb1.h(12, 12.0f, 53, 0.0f, 8.0f, 8.0f, 0.0f));
+        nVar.setText(spannableStringBuilder);
     }
 
     public final void a() {
-        this.p = 0;
-        ArrayList arrayList = this.j;
-        if (arrayList == null) {
-            return;
-        }
-        int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (!this.g.d(DialogObject.getPeerDialogId(((TL_communities.CommunityPeerRequest) this.j.get(i10)).peer))) {
-                if (r2.date <= this.o) {
-                    return;
-                } else {
-                    this.p++;
-                }
-            }
-        }
-    }
-
-    public final void b(j71 j71Var) {
-        if (this.m || this.n || j71Var.Y2.N0() + 10 <= j71Var.Z2.y.size()) {
-            return;
-        }
-        d();
-    }
-
-    public final void c(ArrayList arrayList) {
-        ArrayList arrayList2 = this.j;
-        if (arrayList2 == null || arrayList2.isEmpty()) {
-            return;
-        }
-        ArrayList arrayList3 = this.j;
-        if (arrayList3 != null && !arrayList3.isEmpty()) {
-            int size = arrayList3.size();
-            int i10 = 0;
-            while (i10 < size) {
-                TL_communities.CommunityPeerRequest communityPeerRequest = (TL_communities.CommunityPeerRequest) arrayList3.get(i10);
-                long peerDialogId = DialogObject.getPeerDialogId(communityPeerRequest.peer);
-                a0.h hVar = this.g;
-                if (hVar == null || !hVar.d(peerDialogId)) {
-                    TLRPC.User user = MessagesController.getInstance(this.d).getUser(Long.valueOf(communityPeerRequest.requested_by));
-                    boolean z10 = !communityPeerRequest.visible;
-                    boolean z11 = i10 < size + (-1);
-                    int i11 = ii.g.a;
-                    m61 J = m61.J(ii.g.class);
-                    J.G = new ii.f(peerDialogId, user, z10);
-                    J.H = this;
-                    J.j = !z11;
-                    arrayList.add(J);
-                }
-                i10++;
-            }
-        }
-        if (this.n) {
-            return;
-        }
-        arrayList.add(m61.n(29));
-    }
-
-    public final void d() {
-        if (this.m || this.n || !ChatObject.canUserDoAdminAction(this.f, 27)) {
-            return;
-        }
-        this.m = true;
-        MessagesController.getInstance(this.d).fetchCommunityPendingJoinRequests(this.e, this.k, new q0(this, 1));
-    }
-
-    public final void e() {
-        int i10 = this.d;
-        long currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        this.o = currentTime;
-        MessagesController.getMainSettings(i10).edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
-        a();
-    }
-
-    public final void f(boolean z10, boolean z11) {
-        TextView textView;
-        if (this.q == null && this.r == 0) {
-            if (z11) {
-                c2 P = f5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new ah.t(11, this, z10));
-                P.show();
-                if (z10 || (textView = (TextView) P.d(-1)) == null) {
-                    return;
-                }
-                r6.W(textView, k6.q7, null);
-                return;
-            }
-            ud udVar = this.i;
-            if (udVar != null) {
-                udVar.run();
-            }
-            this.i = null;
-            c2 c2Var = new c2(this.a, 3, this.b);
-            this.q = c2Var;
-            c2Var.setOnCancelListener(new pc(this, 3));
-            this.q.r(500L);
-            this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new q0(this, 0));
-        }
-    }
-
-    public final void g(long j10, boolean z10) {
         int i10;
-        this.g.k(null, j10);
-        this.l--;
-        a();
-        r0 r0Var = this.h;
-        if (r0Var != null) {
-            r0Var.q();
-        }
-        int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
-        int i12 = this.d;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i11, DialogObject.getShortName(i12, j10)));
-        ud udVar = this.i;
-        if (udVar != null) {
-            udVar.run();
-        }
-        this.i = new ud(this, j10, z10, 2);
-        Context context = this.a;
-        g6 g6Var = this.b;
-        org.telegram.ui.Components.pc pcVar = new org.telegram.ui.Components.pc(context, g6Var, false);
-        TLObject userOrChat = MessagesController.getInstance(i12).getUserOrChat(j10);
-        k9 k9Var = pcVar.a;
-        if (userOrChat != null) {
-            k9Var.setCount(1);
-            k9Var.b(0, userOrChat, UserConfig.selectedAccount);
-            i10 = 1;
-        } else {
-            i10 = 0;
-        }
-        k9Var.setTranslationX(AndroidUtilities.dp(7.0f));
-        k9Var.setScaleX(1.333f);
-        k9Var.setScaleY(1.333f);
-        k9Var.a(false);
-        y90 y90Var = pcVar.b;
-        y90Var.setSingleLine(false);
-        y90Var.setMaxLines(2);
-        y90Var.setTextSize(1, 14.0f);
-        y90Var.setText(replaceTags);
-        int i13 = 12;
-        if (y90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
-            if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) y90Var.getLayoutParams()).rightMargin = dp;
-            } else {
-                ((ViewGroup.MarginLayoutParams) y90Var.getLayoutParams()).leftMargin = dp;
+        int i11;
+        int o12;
+        int k10;
+        int dp = AndroidUtilities.dp(21.0f);
+        int dp2 = AndroidUtilities.dp(11.0f);
+        int i12 = y6.Ye;
+        u6 u6Var = this.n.a;
+        int w02 = y6.w0(i12, u6Var);
+        int w03 = y6.w0(y6.Ze, u6Var);
+        int w04 = y6.w0(y6.Xe, u6Var);
+        TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.c.style;
+        if (keyboardButtonStyle != null) {
+            if (keyboardButtonStyle.bg_primary) {
+                o12 = y6.o1(0.8f, y6.w0(y6.dl, u6Var));
+                k10 = i0.a.k(y6.w0(y6.i6, u6Var), o12);
+            } else if (keyboardButtonStyle.bg_danger) {
+                o12 = y6.o1(0.8f, y6.w0(y6.el, u6Var));
+                k10 = i0.a.k(y6.w0(y6.i6, u6Var), o12);
+            } else if (keyboardButtonStyle.bg_success) {
+                o12 = y6.o1(0.8f, y6.w0(y6.fl, u6Var));
+                k10 = i0.a.k(y6.w0(y6.i6, u6Var), o12);
             }
+            i10 = o12;
+            i11 = k10;
+            w04 = -1;
+            this.b.setColorFilter(w04);
+            this.a.setTextColor(w04);
+            boolean z10 = this.d;
+            int i13 = (z10 || !this.e) ? dp2 : dp;
+            boolean z11 = this.f;
+            setBackground(y6.j0(i13, (z11 || !this.e) ? dp2 : dp, (z11 || !this.h) ? dp2 : dp, (z10 || !this.h) ? dp2 : dp, i10, i11, i11));
         }
-        if (LocaleController.isRTL) {
-            k9Var.setTranslationX(AndroidUtilities.dp(32 - ((i10 - 1) * 12)));
+        i10 = w02;
+        i11 = w03;
+        this.b.setColorFilter(w04);
+        this.a.setTextColor(w04);
+        boolean z102 = this.d;
+        if (z102) {
         }
-        oc ocVar = new oc(context, g6Var, true, true);
-        ocVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        ocVar.b = new v3(this, j10, i13);
-        ocVar.c = this.i;
-        pcVar.setButton(ocVar);
-        this.c.b(pcVar, 5000).j();
+        boolean z112 = this.f;
+        setBackground(y6.j0(i13, (z112 || !this.e) ? dp2 : dp, (z112 || !this.h) ? dp2 : dp, (z102 || !this.h) ? dp2 : dp, i10, i11, i11));
     }
 }

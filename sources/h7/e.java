@@ -1,47 +1,31 @@
 package h7;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import kotlin.jvm.internal.i;
+import a8.df;
+import android.app.PendingIntent;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e extends n6.g {
-    @Override // n6.g
-    public final boolean C() {
-        return true;
+public final class e extends p6.a {
+    public static final Parcelable.Creator<e> CREATOR = new f6.i(16);
+    public final PendingIntent a;
+    public final g b;
+
+    public e(PendingIntent pendingIntent, g gVar) {
+        this.a = pendingIntent;
+        this.b = gVar;
+        if (pendingIntent == null && gVar == null) {
+            throw new IllegalArgumentException("pendingIntent or createCredentialResponse must be specified.");
+        }
     }
 
-    @Override // n6.g, com.google.android.gms.common.api.c
-    public final int l() {
-        return 17895000;
-    }
-
-    @Override // n6.g
-    public final IInterface q(IBinder iBinder) {
-        i.e(iBinder, "iBinder");
-        int i10 = c.b;
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.identitycredentials.internal.IIdentityCredentialService");
-        return queryLocalInterface instanceof d ? (d) queryLocalInterface : new b(iBinder);
-    }
-
-    @Override // n6.g
-    public final k6.c[] r() {
-        return q7.b.c;
-    }
-
-    @Override // n6.g
-    public final String v() {
-        return "com.google.android.gms.identitycredentials.internal.IIdentityCredentialService";
-    }
-
-    @Override // n6.g
-    public final String w() {
-        return "com.google.android.gms.identitycredentials.service.START";
-    }
-
-    @Override // n6.g
-    public final boolean y() {
-        return true;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.i.e(dest, "dest");
+        int q5 = df.q(dest, 20293);
+        df.k(dest, 1, this.a, i10);
+        df.k(dest, 2, this.b, i10);
+        df.r(dest, q5);
     }
 }

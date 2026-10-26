@@ -1,133 +1,154 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.animation.ObjectAnimator;
+import android.os.SystemClock;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class rz extends lm0 {
-    public final boolean c;
-    public final /* synthetic */ tz d;
+public class rz extends s4.u0 {
+    public final int a;
+    public boolean b;
+    public final /* synthetic */ sz c;
 
-    public rz(tz tzVar, boolean z10) {
-        this.d = tzVar;
-        this.c = z10;
+    public rz(sz szVar, int i10) {
+        this.c = szVar;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        boolean z10 = this.c;
-        tz tzVar = this.d;
-        return (z10 ? tzVar.n1 : tzVar.m1).size();
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        ArrayList<TLRPC.Document> arrayList;
-        ImageLocation forSticker;
-        w9 w9Var = (w9) b1Var.a;
-        tz tzVar = this.d;
-        boolean z10 = this.c;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z10 ? tzVar.n1 : tzVar.m1).get(i10);
-        w9Var.setTag(stickerSetCovered);
-        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(tzVar.c1).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
-            arrayList = stickerSet == null ? null : stickerSet.documents;
-        } else {
-            arrayList = stickerSetCovered.covers;
+    @Override // s4.u0
+    public void a(RecyclerView recyclerView, int i10) {
+        ObjectAnimator objectAnimator;
+        fz fzVar;
+        sz szVar = this.c;
+        ObjectAnimator[] objectAnimatorArr = szVar.R0;
+        s4.a1 a1Var = recyclerView.getLayoutManager().e;
+        if (a1Var != null && a1Var.e) {
+            this.b = true;
+            return;
         }
-        TLRPC.Document document = stickerSetCovered.cover;
-        if (document == null) {
-            if (arrayList == null || arrayList.isEmpty()) {
-                document = null;
-            } else {
-                if (stickerSetCovered.set != null) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11).id == stickerSetCovered.set.thumb_document_id) {
-                            document = arrayList.get(i11);
-                            break;
+        int i11 = this.a;
+        if (i10 != 0) {
+            if (i10 == 1) {
+                if (szVar.J0) {
+                    szVar.J0 = false;
+                }
+                if (i11 == 0) {
+                    fzVar = szVar.G0;
+                } else if (i11 == 1) {
+                    fzVar = szVar.V;
+                } else {
+                    if (i11 != 2) {
+                        throw new IllegalArgumentException(ic.a.i(i11, "Unexpected argument: "));
+                    }
+                    fzVar = szVar.o0;
+                }
+                if (fzVar != null) {
+                    fzVar.b();
+                }
+                this.b = false;
+            }
+            if (!this.b && (objectAnimator = objectAnimatorArr[i11]) != null && objectAnimator.isRunning()) {
+                objectAnimatorArr[i11].cancel();
+            }
+            if (i11 == 0) {
+                if (szVar.T0 == null) {
+                    ig.f1 f1Var = new ig.f1(szVar, szVar.c1, szVar.t1.a(), szVar.t1.f(), 1);
+                    szVar.T0 = f1Var;
+                    f1Var.a();
+                }
+                szVar.T0.b();
+                return;
+            }
+            return;
+        }
+        if (!this.b) {
+            int[] iArr = szVar.Q0;
+            ty tyVar = szVar.t1;
+            if ((tyVar == null || !tyVar.z()) && i11 != 0) {
+                float dpf2 = AndroidUtilities.dpf2(i11 == 1 ? 36.0f : 48.0f);
+                float f7 = iArr[i11] / (-dpf2);
+                if (f7 <= 0.0f || f7 >= 1.0f) {
+                    mm0 x9 = szVar.x(i11);
+                    int dp = AndroidUtilities.dp(i11 == 1 ? 38.0f : 48.0f);
+                    s4.e1 K = x9.K(0);
+                    if (K != null) {
+                        int bottom = K.a.getBottom();
+                        int i12 = iArr[i11];
+                        float f10 = (bottom - (dp + i12)) / szVar.b1;
+                        if (f10 > 0.0f || f10 < 1.0f) {
+                            szVar.i(i11, i12, f10 > 0.5f);
                         }
                     }
-                }
-                document = null;
-                if (document == null) {
-                    document = arrayList.get(0);
+                } else {
+                    HorizontalScrollView y3 = szVar.y(i11);
+                    int i13 = f7 > 0.5f ? (int) (-Math.ceil(dpf2)) : 0;
+                    if (f7 > 0.5f) {
+                        szVar.i(i11, i13, false);
+                    }
+                    if (i11 == 1) {
+                        szVar.m(i13);
+                    }
+                    ObjectAnimator objectAnimator2 = objectAnimatorArr[i11];
+                    if (objectAnimator2 == null) {
+                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(y3, (Property<HorizontalScrollView, Float>) View.TRANSLATION_Y, y3.getTranslationY(), i13);
+                        objectAnimatorArr[i11] = ofFloat;
+                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.u2(szVar, i11, 3));
+                        objectAnimatorArr[i11].setDuration(200L);
+                    } else {
+                        objectAnimator2.setFloatValues(y3.getTranslationY(), i13);
+                    }
+                    objectAnimatorArr[i11].start();
                 }
             }
         }
-        if (document == null) {
-            return;
+        if (szVar.J0) {
+            szVar.J0 = false;
         }
-        if (z10) {
-            w9Var.setColorFilter(MessageObject.isTextColorEmoji(document) ? org.telegram.ui.ActionBar.k6.o0(tzVar.Z1) : null);
-        }
-        TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.k6.c7, 0.2f);
-        if (svgThumb != null) {
-            svgThumb.overrideWidthAndHeight(512, 512);
-        }
-        if (closestPhotoSizeWithSize == null || MessageObject.isVideoSticker(document)) {
-            closestPhotoSizeWithSize = document;
-        }
-        boolean z11 = closestPhotoSizeWithSize instanceof TLRPC.Document;
-        if (z11) {
-            forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document);
-        } else if (!(closestPhotoSizeWithSize instanceof TLRPC.PhotoSize)) {
-            return;
-        } else {
-            forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document, stickerSetCovered.set.thumb_version);
-        }
-        if (forSticker == null) {
-            return;
-        }
-        String str = !LiteMode.isEnabled(z10 ? LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD : 1) ? "30_30_firstframe" : "30_30";
-        if (z11 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
-            if (svgThumb != null) {
-                w9Var.n(ImageLocation.getForDocument(document), str, svgThumb, stickerSetCovered);
-                return;
-            } else {
-                w9Var.j(ImageLocation.getForDocument(document), str, forSticker, null, 0, stickerSetCovered);
-                return;
-            }
-        }
-        String str2 = str;
-        ImageLocation imageLocation = forSticker;
-        if (imageLocation.imageType == 1) {
-            w9Var.i(imageLocation, str2, "tgs", svgThumb, stickerSetCovered);
-        } else {
-            w9Var.i(imageLocation, null, "webp", svgThumb, stickerSetCovered);
-        }
+        this.b = false;
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        qz qzVar = new qz(this, this.d.getContext());
-        qzVar.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        qzVar.setLayerNum(1);
-        qzVar.setAspectFit(true);
-        qzVar.setLayoutParams(new s4.o0(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f)));
-        return new wl0(qzVar);
+    @Override // s4.u0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        sz szVar = this.c;
+        int i12 = this.a;
+        szVar.p(i12);
+        sz.e(szVar, i12, i11);
+        if (i12 == 0) {
+            szVar.q(false);
+        } else if (i12 == 1) {
+            szVar.l(false);
+        } else if (i12 == 2) {
+            sz.f(szVar, false);
+        }
+        if (this.b) {
+            return;
+        }
+        float f7 = i11;
+        FrameLayout frameLayout = szVar.n;
+        if (SystemClock.elapsedRealtime() - szVar.D2 < ViewConfiguration.getTapTimeout()) {
+            return;
+        }
+        szVar.H += f7;
+        int dp = szVar.h.getCurrentItem() == 0 ? AndroidUtilities.dp(38.0f) : AndroidUtilities.dp(48.0f);
+        float f10 = szVar.H;
+        if (f10 >= dp) {
+            szVar.M(false);
+            return;
+        }
+        if (f10 <= (-dp)) {
+            szVar.M(true);
+        } else {
+            if ((frameLayout.getTag() != null || szVar.H >= 0.0f) && (frameLayout.getTag() == null || szVar.H <= 0.0f)) {
+                return;
+            }
+            szVar.H = 0.0f;
+        }
     }
 }

@@ -1,85 +1,134 @@
 package l5;
 
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h {
-    public final String a;
-    public final Integer b;
-    public final m c;
-    public final long d;
-    public final long e;
-    public final Map f;
+public final class h extends a {
+    public final Integer a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final String h;
+    public final String i;
+    public final String j;
+    public final String k;
+    public final String l;
 
-    public h(String str, Integer num, m mVar, long j10, long j11, HashMap hashMap) {
-        this.a = str;
-        this.b = num;
-        this.c = mVar;
-        this.d = j10;
-        this.e = j11;
-        this.f = hashMap;
-    }
-
-    public final String a(String str) {
-        String str2 = (String) this.f.get(str);
-        return str2 == null ? "" : str2;
-    }
-
-    public final int b(String str) {
-        String str2 = (String) this.f.get(str);
-        if (str2 == null) {
-            return 0;
-        }
-        return Integer.valueOf(str2).intValue();
-    }
-
-    public final com.google.firebase.messaging.l c() {
-        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
-        String str = this.a;
-        if (str == null) {
-            throw new NullPointerException("Null transportName");
-        }
-        lVar.a = str;
-        lVar.b = this.b;
-        m mVar = this.c;
-        if (mVar == null) {
-            throw new NullPointerException("Null encodedPayload");
-        }
-        lVar.c = mVar;
-        lVar.d = Long.valueOf(this.d);
-        lVar.e = Long.valueOf(this.e);
-        lVar.f = new HashMap(this.f);
-        return lVar;
+    public h(Integer num, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11) {
+        this.a = num;
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+        this.e = str4;
+        this.f = str5;
+        this.g = str6;
+        this.h = str7;
+        this.i = str8;
+        this.j = str9;
+        this.k = str10;
+        this.l = str11;
     }
 
     public final boolean equals(Object obj) {
-        Integer num;
         if (obj == this) {
             return true;
         }
-        if (obj instanceof h) {
-            h hVar = (h) obj;
-            Integer num2 = hVar.b;
-            if (this.a.equals(hVar.a) && ((num = this.b) != null ? num.equals(num2) : num2 == null) && this.c.equals(hVar.c) && this.d == hVar.d && this.e == hVar.e && this.f.equals(hVar.f)) {
-                return true;
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            Integer num = this.a;
+            if (num != null ? num.equals(((h) aVar).a) : ((h) aVar).a == null) {
+                String str = this.b;
+                if (str != null ? str.equals(((h) aVar).b) : ((h) aVar).b == null) {
+                    String str2 = this.c;
+                    if (str2 != null ? str2.equals(((h) aVar).c) : ((h) aVar).c == null) {
+                        String str3 = this.d;
+                        if (str3 != null ? str3.equals(((h) aVar).d) : ((h) aVar).d == null) {
+                            String str4 = this.e;
+                            if (str4 != null ? str4.equals(((h) aVar).e) : ((h) aVar).e == null) {
+                                String str5 = this.f;
+                                if (str5 != null ? str5.equals(((h) aVar).f) : ((h) aVar).f == null) {
+                                    String str6 = this.g;
+                                    if (str6 != null ? str6.equals(((h) aVar).g) : ((h) aVar).g == null) {
+                                        String str7 = this.h;
+                                        if (str7 != null ? str7.equals(((h) aVar).h) : ((h) aVar).h == null) {
+                                            String str8 = this.i;
+                                            if (str8 != null ? str8.equals(((h) aVar).i) : ((h) aVar).i == null) {
+                                                String str9 = this.j;
+                                                if (str9 != null ? str9.equals(((h) aVar).j) : ((h) aVar).j == null) {
+                                                    String str10 = this.k;
+                                                    if (str10 != null ? str10.equals(((h) aVar).k) : ((h) aVar).k == null) {
+                                                        String str11 = this.l;
+                                                        if (str11 != null ? str11.equals(((h) aVar).l) : ((h) aVar).l == null) {
+                                                            return true;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         return false;
     }
 
     public final int hashCode() {
-        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
-        Integer num = this.b;
-        int hashCode2 = (((hashCode ^ (num == null ? 0 : num.hashCode())) * 1000003) ^ this.c.hashCode()) * 1000003;
-        long j10 = this.d;
-        int i10 = (hashCode2 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
-        long j11 = this.e;
-        return ((i10 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003) ^ this.f.hashCode();
+        Integer num = this.a;
+        int hashCode = ((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003;
+        String str = this.b;
+        int hashCode2 = (hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003;
+        String str2 = this.c;
+        int hashCode3 = (hashCode2 ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
+        String str3 = this.d;
+        int hashCode4 = (hashCode3 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
+        String str4 = this.e;
+        int hashCode5 = (hashCode4 ^ (str4 == null ? 0 : str4.hashCode())) * 1000003;
+        String str5 = this.f;
+        int hashCode6 = (hashCode5 ^ (str5 == null ? 0 : str5.hashCode())) * 1000003;
+        String str6 = this.g;
+        int hashCode7 = (hashCode6 ^ (str6 == null ? 0 : str6.hashCode())) * 1000003;
+        String str7 = this.h;
+        int hashCode8 = (hashCode7 ^ (str7 == null ? 0 : str7.hashCode())) * 1000003;
+        String str8 = this.i;
+        int hashCode9 = (hashCode8 ^ (str8 == null ? 0 : str8.hashCode())) * 1000003;
+        String str9 = this.j;
+        int hashCode10 = (hashCode9 ^ (str9 == null ? 0 : str9.hashCode())) * 1000003;
+        String str10 = this.k;
+        int hashCode11 = (hashCode10 ^ (str10 == null ? 0 : str10.hashCode())) * 1000003;
+        String str11 = this.l;
+        return (str11 != null ? str11.hashCode() : 0) ^ hashCode11;
     }
 
     public final String toString() {
-        return "EventInternal{transportName=" + this.a + ", code=" + this.b + ", encodedPayload=" + this.c + ", eventMillis=" + this.d + ", uptimeMillis=" + this.e + ", autoMetadata=" + this.f + "}";
+        StringBuilder sb2 = new StringBuilder("AndroidClientInfo{sdkVersion=");
+        sb2.append(this.a);
+        sb2.append(", model=");
+        sb2.append(this.b);
+        sb2.append(", hardware=");
+        sb2.append(this.c);
+        sb2.append(", device=");
+        sb2.append(this.d);
+        sb2.append(", product=");
+        sb2.append(this.e);
+        sb2.append(", osBuild=");
+        sb2.append(this.f);
+        sb2.append(", manufacturer=");
+        sb2.append(this.g);
+        sb2.append(", fingerprint=");
+        sb2.append(this.h);
+        sb2.append(", locale=");
+        sb2.append(this.i);
+        sb2.append(", country=");
+        sb2.append(this.j);
+        sb2.append(", mccMnc=");
+        sb2.append(this.k);
+        sb2.append(", applicationBuild=");
+        return a1.g.s(sb2, this.l, "}");
     }
 }

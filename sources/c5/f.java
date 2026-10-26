@@ -1,103 +1,26 @@
 package c5;
 
-import android.animation.AnimatorSet;
-import android.graphics.Point;
-import android.widget.FrameLayout;
-import androidx.appcompat.widget.ActionBarContextView;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.security.MessageDigest;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.og;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.pf;
-import org.telegram.ui.Components.xx;
-import r0.m0;
+import android.webkit.WebView;
+import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
+import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f implements m0, xx {
-    public int a;
-    public boolean b;
-    public Object c;
+public final class f implements p {
+    public static final String[] a = new String[0];
 
-    public /* synthetic */ f(FrameLayout frameLayout) {
-        this.c = frameLayout;
+    @Override // c5.p
+    public final String[] b() {
+        return a;
     }
 
-    @Override // r0.m0
-    public void a() {
-        this.b = true;
+    @Override // c5.p
+    public final WebViewProviderBoundaryInterface createWebView(WebView webView) {
+        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
     }
 
-    @Override // r0.m0
-    public void b() {
-        super/*android.view.ViewGroup*/.setVisibility(0);
-        this.b = false;
-    }
-
-    @Override // r0.m0
-    public void c() {
-        if (this.b) {
-            return;
-        }
-        ActionBarContextView actionBarContextView = (ActionBarContextView) this.c;
-        actionBarContextView.f = null;
-        super/*android.view.ViewGroup*/.setVisibility(this.a);
-    }
-
-    public boolean d() {
-        kz kzVar;
-        pf pfVar;
-        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        if (chatActivityEnterView.x3) {
-            return (chatActivityEnterView.z3 || (pfVar = chatActivityEnterView.E0) == null || pfVar.length() <= 0) && (kzVar = chatActivityEnterView.U0.y0) != null && kzVar.h() > 0 && !chatActivityEnterView.k3;
-        }
-        return false;
-    }
-
-    public void e() {
-        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        ow0 ow0Var = chatActivityEnterView.m1;
-        if (d()) {
-            AnimatorSet animatorSet = chatActivityEnterView.B3;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-            }
-            chatActivityEnterView.E3 = true;
-            this.b = chatActivityEnterView.z3;
-            chatActivityEnterView.z3 = true;
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
-            int height = ((((ow0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
-            chatActivityEnterView.D3 = height;
-            if (chatActivityEnterView.R1 == 2) {
-                int dp = AndroidUtilities.dp(175.0f);
-                Point point = AndroidUtilities.displaySize;
-                chatActivityEnterView.D3 = Math.min(height, dp + (point.x > point.y ? chatActivityEnterView.y2 : chatActivityEnterView.x2));
-            }
-            if (chatActivityEnterView.h5 == null) {
-                chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.D3;
-            }
-            chatActivityEnterView.U0.setLayerType(2, null);
-            ow0Var.requestLayout();
-            if (chatActivityEnterView.y4) {
-                ow0Var.setForeground(new ed(chatActivityEnterView));
-            }
-            this.a = (int) chatActivityEnterView.getTranslationY();
-            og ogVar = chatActivityEnterView.Z2;
-            if (ogVar != null) {
-                ogVar.n1();
-            }
-        }
-    }
-
-    public f(MessageDigest messageDigest, int i10) {
-        ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN);
-        this.c = messageDigest;
-        this.a = i10;
+    @Override // c5.p
+    public final StaticsBoundaryInterface getStatics() {
+        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
     }
 }

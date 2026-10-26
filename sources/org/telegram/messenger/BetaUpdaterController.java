@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
@@ -27,7 +27,7 @@ public class BetaUpdaterController {
     private String version;
     private int versionCode;
     private boolean firstCheck = true;
-    private final Runnable scheduledUpdateCheck = new u(this, 1);
+    private final Runnable scheduledUpdateCheck = new x(this, 1);
 
     public BetaUpdaterController() {
         load();
@@ -125,7 +125,7 @@ public class BetaUpdaterController {
                 if (this.versionCode == i11 || ApplicationLoader.mainInterfacePaused) {
                     return;
                 }
-                Context context = LaunchActivity.J1;
+                Context context = LaunchActivity.I1;
                 if (context == null) {
                     context = ApplicationLoader.applicationContext;
                 }
@@ -140,8 +140,8 @@ public class BetaUpdaterController {
                 if (!TextUtils.isEmpty(this.path)) {
                     try {
                         new File(this.path).delete();
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                     }
                 }
                 this.path = null;
@@ -178,14 +178,14 @@ public class BetaUpdaterController {
             AndroidUtilities.runOnUIThread(this.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
             if (runnable != null) {
             }
-        } catch (Exception e10) {
-            FileLog.e("Failed to check for beta update at https://telegram.org/dl/android/apk-public-beta.json received: " + str, e10);
+        } catch (Exception e11) {
+            FileLog.e("Failed to check for beta update at null received: " + str, e11);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForUpdate$2(Runnable runnable, String str) {
-        AndroidUtilities.runOnUIThread(new g0(this, str, runnable, 8));
+        AndroidUtilities.runOnUIThread(new j0(this, str, runnable, 8));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -216,7 +216,7 @@ public class BetaUpdaterController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$downloadUpdate$5(File file) {
-        AndroidUtilities.runOnUIThread(new i3(11, this, file));
+        AndroidUtilities.runOnUIThread(new j3(11, this, file));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -308,7 +308,7 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new org.telegram.ui.web.i1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
+        new org.telegram.ui.web.i1(new z(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {
@@ -357,13 +357,13 @@ public class BetaUpdaterController {
                 this.downloading = false;
                 return;
             } else {
-                checkForUpdate(true, new u(this, 0));
+                checkForUpdate(true, new x(this, 0));
                 return;
             }
         }
         final int i10 = 0;
         final int i11 = 1;
-        HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.y
             public final /* synthetic */ BetaUpdaterController b;
 
             {
@@ -381,7 +381,7 @@ public class BetaUpdaterController {
                         break;
                 }
             }
-        }, new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+        }, new Utilities.Callback(this) { // from class: org.telegram.messenger.y
             public final /* synthetic */ BetaUpdaterController b;
 
             {

@@ -5,17 +5,18 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
+public final class RuntimeClassNameTypeAdapterFactory<T> implements fb.v {
     private final Class<?> baseType;
-    private final eb.a exclusionStrategy;
+    private final fb.a exclusionStrategy;
     private final Map<String, Class<?>> labelToSubtype = new LinkedHashMap();
     private final Map<Class<?>, String> subtypeToLabel = new LinkedHashMap();
     private final String typeFieldName;
 
-    private RuntimeClassNameTypeAdapterFactory(Class<?> cls, String str, eb.a aVar) {
+    private RuntimeClassNameTypeAdapterFactory(Class<?> cls, String str, fb.a aVar) {
         if (str == null || cls == null) {
             throw null;
         }
@@ -24,13 +25,13 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
         this.exclusionStrategy = aVar;
     }
 
-    public static <T> RuntimeClassNameTypeAdapterFactory<T> of(Class<T> cls, String str, eb.a aVar) {
+    public static <T> RuntimeClassNameTypeAdapterFactory<T> of(Class<T> cls, String str, fb.a aVar) {
         return new RuntimeClassNameTypeAdapterFactory<>(cls, str, aVar);
     }
 
-    @Override // eb.v
-    public <R> eb.u create(final eb.g gVar, final lb.a<R> aVar) {
-        eb.a aVar2 = this.exclusionStrategy;
+    @Override // fb.v
+    public <R> fb.u create(final fb.g gVar, final mb.a<R> aVar) {
+        fb.a aVar2 = this.exclusionStrategy;
         Class cls = aVar.a;
         Class cls2 = aVar.a;
         if (aVar2.shouldSkipClass(cls.getClass())) {
@@ -39,19 +40,19 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
         final LinkedHashMap linkedHashMap = new LinkedHashMap();
         final LinkedHashMap linkedHashMap2 = new LinkedHashMap();
         if (Object.class.isAssignableFrom(cls2)) {
-            eb.u c10 = gVar.c(this, aVar);
+            fb.u c10 = gVar.c(this, aVar);
             linkedHashMap.put(cls2.getSimpleName(), c10);
             linkedHashMap2.put(cls2, c10);
         }
-        return new eb.u() { // from class: org.telegram.messenger.RuntimeClassNameTypeAdapterFactory.1
-            private eb.u getDelegate(Class<?> cls3) {
-                eb.u uVar = (eb.u) linkedHashMap2.get(cls3);
+        return new fb.u() { // from class: org.telegram.messenger.RuntimeClassNameTypeAdapterFactory.1
+            private fb.u getDelegate(Class<?> cls3) {
+                fb.u uVar = (fb.u) linkedHashMap2.get(cls3);
                 if (uVar != null) {
                     return uVar;
                 }
                 for (Map.Entry entry : linkedHashMap2.entrySet()) {
                     if (((Class) entry.getKey()).isAssignableFrom(cls3)) {
-                        return (eb.u) entry.getValue();
+                        return (fb.u) entry.getValue();
                     }
                 }
                 return null;
@@ -61,89 +62,89 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
             /* JADX WARN: Removed duplicated region for block: B:8:0x0034  */
             /* JADX WARN: Type inference failed for: r4v12, types: [R, java.lang.Object] */
             /* JADX WARN: Type inference failed for: r4v8, types: [R, java.lang.Object] */
-            @Override // eb.u
+            @Override // fb.u
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            public R read(mb.a aVar3) {
+            public R read(nb.a aVar3) {
                 boolean z10;
-                eb.i iVar;
+                fb.i iVar;
                 try {
                     try {
                         aVar3.x();
                         z10 = false;
                         try {
-                            iVar = (eb.i) hb.h1.z.read(aVar3);
+                            iVar = (fb.i) ib.h1.z.read(aVar3);
                         } catch (EOFException e) {
                             e = e;
                             if (!z10) {
-                                throw new eb.j(e);
+                                throw new fb.j(e);
                             }
-                            iVar = eb.k.a;
+                            iVar = fb.k.a;
                             iVar.getClass();
-                            if (iVar instanceof eb.l) {
+                            if (iVar instanceof fb.l) {
                             }
                         }
-                    } catch (EOFException e7) {
-                        e = e7;
+                    } catch (EOFException e10) {
+                        e = e10;
                         z10 = true;
                     }
                     iVar.getClass();
-                    if (iVar instanceof eb.l) {
-                        if (iVar instanceof eb.k) {
+                    if (iVar instanceof fb.l) {
+                        if (iVar instanceof fb.k) {
                             return null;
                         }
                         return gVar.c(RuntimeClassNameTypeAdapterFactory.this, aVar).fromJsonTree(iVar);
                     }
-                    eb.i iVar2 = (eb.i) iVar.h().a.remove(RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
+                    fb.i iVar2 = (fb.i) iVar.h().a.remove(RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                     if (iVar2 == null) {
                         throw new androidx.car.app.j("cannot deserialize " + RuntimeClassNameTypeAdapterFactory.this.baseType + " because it does not define a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                     }
                     String m10 = iVar2.m();
-                    eb.u uVar = (eb.u) linkedHashMap.get(m10);
+                    fb.u uVar = (fb.u) linkedHashMap.get(m10);
                     if (uVar == null) {
                         try {
-                            uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new lb.a(Class.forName(m10)));
-                        } catch (ClassNotFoundException e10) {
-                            throw new androidx.car.app.j(si.o0.h("Cannot find class ", m10), e10);
+                            uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new mb.a(Class.forName(m10)));
+                        } catch (ClassNotFoundException e11) {
+                            throw new androidx.car.app.j(b10.j("Cannot find class ", m10), e11);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
-                } catch (NumberFormatException e11) {
-                    throw new eb.j(e11);
-                } catch (mb.c e12) {
-                    throw new eb.j(e12);
-                } catch (IOException e13) {
-                    throw new eb.j(e13);
+                } catch (NumberFormatException e12) {
+                    throw new fb.j(e12);
+                } catch (nb.c e13) {
+                    throw new fb.j(e13);
+                } catch (IOException e14) {
+                    throw new fb.j(e14);
                 }
             }
 
-            @Override // eb.u
-            public void write(mb.b bVar, R r10) {
-                Class<?> cls3 = r10.getClass();
+            @Override // fb.u
+            public void write(nb.b bVar, R r6) {
+                Class<?> cls3 = r6.getClass();
                 String simpleName = cls3.getSimpleName();
-                eb.u delegate = getDelegate(cls3);
+                fb.u delegate = getDelegate(cls3);
                 if (delegate == null) {
                     throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + "; did you forget to register a subtype?");
                 }
-                eb.i jsonTree = delegate.toJsonTree(r10);
+                fb.i jsonTree = delegate.toJsonTree(r6);
                 jsonTree.getClass();
-                if (!(jsonTree instanceof eb.l)) {
-                    gb.d.l(jsonTree, bVar);
+                if (!(jsonTree instanceof fb.l)) {
+                    hb.d.l(jsonTree, bVar);
                     return;
                 }
-                gb.m mVar = jsonTree.h().a;
+                hb.m mVar = jsonTree.h().a;
                 if (mVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
                     throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                 }
-                eb.l lVar = new eb.l();
-                lVar.n(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new eb.m(simpleName));
-                Iterator it = ((gb.k) mVar.entrySet()).iterator();
+                fb.l lVar = new fb.l();
+                lVar.n(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new fb.m(simpleName));
+                Iterator it = ((hb.k) mVar.entrySet()).iterator();
                 while (it.hasNext()) {
                     Map.Entry entry = (Map.Entry) it.next();
-                    lVar.n((String) entry.getKey(), (eb.i) entry.getValue());
+                    lVar.n((String) entry.getKey(), (fb.i) entry.getValue());
                 }
-                gb.d.l(lVar, bVar);
+                hb.d.l(lVar, bVar);
             }
         }.nullSafe();
     }

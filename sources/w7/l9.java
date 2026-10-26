@@ -1,31 +1,48 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class l9 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final ua e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
+import java.util.Iterator;
+import java.util.Set;
 
-    public /* synthetic */ l9(v7.d8 d8Var) {
-        this.a = d8Var.a;
-        this.b = d8Var.b;
-        this.c = d8Var.c;
-        this.d = d8Var.d;
-        this.e = (ua) d8Var.k;
-        this.f = d8Var.e;
-        this.g = (Boolean) d8Var.f;
-        this.h = (Boolean) d8Var.g;
-        this.i = (Boolean) d8Var.h;
-        this.j = d8Var.i;
-        this.k = (Integer) d8Var.j;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public abstract class l9 extends h9 implements Set {
+    public transient k9 b;
+
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this || obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        Iterator it = iterator();
+        int i10 = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i10 += next != null ? next.hashCode() : 0;
+        }
+        return i10;
+    }
+
+    public final k9 p() {
+        k9 k9Var = this.b;
+        if (k9Var != null) {
+            return k9Var;
+        }
+        n9 n9Var = new n9((a) this);
+        this.b = n9Var;
+        return n9Var;
     }
 }

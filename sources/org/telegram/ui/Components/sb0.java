@@ -1,38 +1,36 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class sb0 extends d91 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ rc0 b;
+public final /* synthetic */ class sb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hc0 b;
+    public final /* synthetic */ Context c;
 
-    public sb0(rc0 rc0Var, Context context) {
-        this.b = rc0Var;
-        this.a = context;
+    public /* synthetic */ sb0(hc0 hc0Var, Context context, int i10) {
+        this.a = i10;
+        this.b = hc0Var;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final void b(View view, int i10, int i11) {
-        lc0 lc0Var = (lc0) view;
-        lc0Var.i();
-        lc0Var.l(false);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final View d(int i10) {
-        return new lc0(this.b, this.a, i10);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int e() {
-        return this.b.e.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int h(int i10) {
-        return ((oc0) this.b.e.a.get(i10)).a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                hc0 hc0Var = this.b;
+                hc0Var.c0.a(false);
+                AndroidUtilities.runOnUIThread(new sb0(hc0Var, this.c, 1));
+                break;
+            default:
+                Context context = this.c;
+                if (AndroidUtilities.isContextSafe(context)) {
+                    new tg.y0(context, 43, this.b.c0.F).show();
+                    break;
+                }
+                break;
+        }
     }
 }

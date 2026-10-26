@@ -1,58 +1,68 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p8 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m9 b;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ p8(m9 m9Var, int i10) {
+    public /* synthetic */ p8(int i10, boolean[] zArr) {
         this.a = i10;
-        this.b = m9Var;
+        this.b = zArr;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Long l4 = (Long) view.getTag();
-                m9 m9Var = this.b;
-                ChatObject.Call groupCall = m9Var.getMessagesController().getGroupCall(l4.longValue(), false);
-                TLRPC.Chat chat = m9Var.getMessagesController().getChat(l4);
-                m9Var.Q = chat;
-                if (groupCall == null) {
-                    m9Var.R = l4;
-                    m9Var.getMessagesController().loadFullChat(l4.longValue(), 0, true);
-                    break;
-                } else {
-                    org.telegram.ui.Components.voip.d2.l(chat, null, false, null, m9Var.getParentActivity(), m9Var, m9Var.getAccountInstance());
-                    break;
-                }
+                boolean[] zArr = this.b;
+                boolean z10 = !zArr[0];
+                zArr[0] = z10;
+                ((org.telegram.ui.Cells.y1) view).c(z10, true);
+                break;
             case 1:
-                this.b.j0(true);
+                boolean[] zArr2 = this.b;
+                boolean z11 = !zArr2[1];
+                zArr2[1] = z11;
+                ((org.telegram.ui.Cells.y1) view).c(z11, true);
                 break;
             case 2:
-                m9 m9Var2 = this.b;
-                org.telegram.ui.Components.j80 H = org.telegram.ui.Components.j80.H(m9Var2, m9Var2.F);
-                H.s = 8;
-                if (m9Var2.getUserConfig().showCallsTab) {
-                    H.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new m8(m9Var2, 1), false);
+                boolean[] zArr3 = this.b;
+                boolean z12 = !zArr3[0];
+                zArr3[0] = z12;
+                ((org.telegram.ui.Cells.y1) view).c(z12, true);
+                break;
+            case 3:
+                boolean[] zArr4 = this.b;
+                boolean z13 = !zArr4[0];
+                zArr4[0] = z13;
+                ((org.telegram.ui.Cells.y1) view).c(z13, true);
+                break;
+            case 4:
+                if (view.isEnabled()) {
+                    boolean[] zArr5 = this.b;
+                    boolean z14 = !zArr5[0];
+                    zArr5[0] = z14;
+                    ((org.telegram.ui.Cells.y1) view).c(z14, true);
+                    break;
                 }
-                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteAllCalls), new m8(m9Var2, 2), true);
-                H.Z();
-                H.X(-AndroidUtilities.dp(64.0f));
+                break;
+            case 5:
+                boolean[] zArr6 = this.b;
+                boolean z15 = !zArr6[0];
+                zArr6[0] = z15;
+                ((org.telegram.ui.Cells.y1) view).c(z15, true);
                 break;
             default:
-                m9 m9Var3 = this.b;
-                m9Var3.getClass();
-                m9.l0(m9Var3);
+                if (view.isEnabled()) {
+                    boolean[] zArr7 = this.b;
+                    boolean z16 = !zArr7[0];
+                    zArr7[0] = z16;
+                    ((org.telegram.ui.Cells.y1) view).c(z16, true);
+                    break;
+                }
                 break;
         }
     }

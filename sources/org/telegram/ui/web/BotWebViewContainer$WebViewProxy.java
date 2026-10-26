@@ -3,17 +3,17 @@ package org.telegram.ui.web;
 import android.webkit.JavascriptInterface;
 import java.io.Serializable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.ny0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public class BotWebViewContainer$WebViewProxy {
-    public b1 a;
-    public final y0 b;
+    public a1 a;
+    public final x0 b;
 
-    public BotWebViewContainer$WebViewProxy(y0 y0Var, b1 b1Var) {
-        this.b = y0Var;
-        this.a = b1Var;
+    public BotWebViewContainer$WebViewProxy(x0 x0Var, a1 a1Var) {
+        this.b = x0Var;
+        this.a = a1Var;
     }
 
     @JavascriptInterface
@@ -21,7 +21,7 @@ public class BotWebViewContainer$WebViewProxy {
         if (this.a == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new fy0(this, str, str2, 9));
+        AndroidUtilities.runOnUIThread(new ny0(this, str, str2, 9));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

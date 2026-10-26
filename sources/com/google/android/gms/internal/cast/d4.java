@@ -1,92 +1,16 @@
 package com.google.android.gms.internal.cast;
 
-import java.security.AccessController;
-import java.security.PrivilegedActionException;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d4 extends v7.q5 {
-    public static final Unsafe a;
-    public static final long b;
-    public static final long c;
-    public static final long d;
-    public static final long e;
-    public static final long f;
-
-    static {
-        Unsafe unsafe;
-        try {
-            try {
-                unsafe = Unsafe.getUnsafe();
-            } catch (PrivilegedActionException e7) {
-                throw new RuntimeException("Could not initialize intrinsics", e7.getCause());
+public abstract /* synthetic */ class d4 {
+    public static /* synthetic */ boolean a(Unsafe unsafe, c4 c4Var, long j10, Object obj, Object obj2) {
+        while (!unsafe.compareAndSwapObject(c4Var, j10, obj, obj2)) {
+            if (unsafe.getObject(c4Var, j10) != obj) {
+                return false;
             }
-        } catch (SecurityException unused) {
-            unsafe = (Unsafe) AccessController.doPrivileged(new c4());
         }
-        try {
-            c = unsafe.objectFieldOffset(f4.class.getDeclaredField("c"));
-            b = unsafe.objectFieldOffset(f4.class.getDeclaredField("b"));
-            d = unsafe.objectFieldOffset(f4.class.getDeclaredField("a"));
-            e = unsafe.objectFieldOffset(e4.class.getDeclaredField("a"));
-            f = unsafe.objectFieldOffset(e4.class.getDeclaredField("b"));
-            a = unsafe;
-        } catch (NoSuchFieldException e10) {
-            throw new RuntimeException(e10);
-        } catch (RuntimeException e11) {
-            throw e11;
-        }
-    }
-
-    @Override // v7.q5
-    public final z3 a(f4 f4Var) {
-        z3 z3Var;
-        z3 z3Var2 = z3.d;
-        do {
-            z3Var = f4Var.b;
-            if (z3Var2 == z3Var) {
-                break;
-            }
-        } while (!e(f4Var, z3Var, z3Var2));
-        return z3Var;
-    }
-
-    @Override // v7.q5
-    public final e4 b(f4 f4Var) {
-        e4 e4Var;
-        e4 e4Var2 = e4.c;
-        do {
-            e4Var = f4Var.c;
-            if (e4Var2 == e4Var) {
-                break;
-            }
-        } while (!g(f4Var, e4Var, e4Var2));
-        return e4Var;
-    }
-
-    @Override // v7.q5
-    public final void c(e4 e4Var, e4 e4Var2) {
-        a.putObject(e4Var, f, e4Var2);
-    }
-
-    @Override // v7.q5
-    public final void d(e4 e4Var, Thread thread) {
-        a.putObject(e4Var, e, thread);
-    }
-
-    @Override // v7.q5
-    public final boolean e(f4 f4Var, z3 z3Var, z3 z3Var2) {
-        return h4.a(a, f4Var, b, z3Var, z3Var2);
-    }
-
-    @Override // v7.q5
-    public final boolean f(f4 f4Var, Object obj, Object obj2) {
-        return h4.a(a, f4Var, d, obj, obj2);
-    }
-
-    @Override // v7.q5
-    public final boolean g(f4 f4Var, e4 e4Var, e4 e4Var2) {
-        return h4.a(a, f4Var, c, e4Var, e4Var2);
+        return true;
     }
 }

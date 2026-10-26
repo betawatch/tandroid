@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class RichQuote {
     public static final int MAX_FRAGMENTS = 32;
     public final ArrayList<TL_iv.RichText> fragments;
     public final int offset;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class Position {
         final int offset;
         final RichMessageLayout.QuoteRootSpan root;
@@ -35,7 +35,7 @@ public class RichQuote {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class Range {
         final Sliced first;
         final int fromIndex;
@@ -177,7 +177,7 @@ public class RichQuote {
         }
         if (richText instanceof TL_iv.textDiff) {
             TL_iv.textDiff textdiff = (TL_iv.textDiff) richText;
-            appendFlat(ki.e6.j(textdiff.text) ? textdiff.old_text : textdiff.text, sb2, arrayList);
+            appendFlat(li.f6.j(textdiff.text) ? textdiff.old_text : textdiff.text, sb2, arrayList);
             return;
         }
         appendFlat(richText.text, sb2, arrayList);
@@ -256,7 +256,7 @@ public class RichQuote {
     /* JADX INFO: Access modifiers changed from: private */
     public static TL_iv.RichText copy(TL_iv.RichText richText) {
         try {
-            return (TL_iv.RichText) TLObject.deepCopy(richText, new wg(2));
+            return (TL_iv.RichText) TLObject.deepCopy(richText, new yg(2));
         } catch (Exception e) {
             FileLog.e(e);
             return null;
@@ -327,7 +327,7 @@ public class RichQuote {
                     RichMessageLayout.RichBlock richBlock = arrayList3.get(i13);
                     i13++;
                     RichMessageLayout.RichBlock richBlock2 = richBlock;
-                    org.telegram.ui.Cells.z9[] text = richBlock2.getText();
+                    org.telegram.ui.Cells.da[] text = richBlock2.getText();
                     if (text != null) {
                         int length2 = text.length;
                         int i14 = i11;
@@ -535,8 +535,8 @@ public class RichQuote {
         return null;
     }
 
-    private static CharSequence getText(org.telegram.ui.Cells.z9 z9Var) {
-        Layout layout = z9Var == null ? null : z9Var.getLayout();
+    private static CharSequence getText(org.telegram.ui.Cells.da daVar) {
+        Layout layout = daVar == null ? null : daVar.getLayout();
         if (layout == null) {
             return null;
         }
@@ -654,7 +654,7 @@ public class RichQuote {
                 int max = z11 ? Math.max(i12, Math.min(text3.length(), i10 - intValue3)) : z10 ? i12 : text3.length();
                 RichMessageLayout.QuoteRootSpan[] quoteRootSpanArr = (RichMessageLayout.QuoteRootSpan[]) spanned.getSpans(i12, text3.length(), RichMessageLayout.QuoteRootSpan.class);
                 if (quoteRootSpanArr != null && quoteRootSpanArr.length != 0) {
-                    Arrays.sort(quoteRootSpanArr, new Comparator() { // from class: org.telegram.messenger.wh
+                    Arrays.sort(quoteRootSpanArr, new Comparator() { // from class: org.telegram.messenger.zh
                         @Override // java.util.Comparator
                         public final int compare(Object obj, Object obj2) {
                             int lambda$resolve$0;
@@ -822,7 +822,7 @@ public class RichQuote {
         add(pageBlock.text, arrayList);
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class Sliced {
         final int flags;
         final int length;
@@ -958,7 +958,7 @@ public class RichQuote {
             }
             if (richText instanceof TL_iv.textDiff) {
                 TL_iv.textDiff textdiff = (TL_iv.textDiff) richText;
-                return flatToFormatted(ki.e6.j(textdiff.text) ? textdiff.old_text : textdiff.text, identityHashMap, i10, z10, iArr);
+                return flatToFormatted(li.f6.j(textdiff.text) ? textdiff.old_text : textdiff.text, identityHashMap, i10, z10, iArr);
             }
             boolean z11 = richText instanceof TL_iv.textPlain;
             if (!z11 && !(richText instanceof TL_iv.textMath) && !(richText instanceof TL_iv.textCustomEmoji) && !(richText instanceof TL_iv.textButton)) {

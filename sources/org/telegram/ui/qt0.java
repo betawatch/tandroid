@@ -1,60 +1,62 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qt0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ku0 a;
-    public final /* synthetic */ Integer b;
-    public final /* synthetic */ PhotoViewer c;
+public final class qt0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.ln0 b;
 
-    public qt0(PhotoViewer photoViewer, ku0 ku0Var, Integer num) {
-        this.c = photoViewer;
-        this.a = ku0Var;
-        this.b = num;
+    public /* synthetic */ qt0(org.telegram.ui.Components.ln0 ln0Var, int i10) {
+        this.a = i10;
+        this.b = ln0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        PhotoViewer photoViewer = this.c;
-        photoViewer.g0.getViewTreeObserver().removeOnPreDrawListener(this);
-        photoViewer.F.setTranslationY(-AndroidUtilities.dp(32.0f));
-        ViewPropertyAnimator duration = photoViewer.F.animate().alpha(1.0f).translationY(0.0f).setDuration(150L);
-        org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.f;
-        duration.setInterpolator(bsVar).start();
-        photoViewer.N0.setTranslationY(-AndroidUtilities.dp(32.0f));
-        photoViewer.N0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(bsVar).start();
-        photoViewer.O0.setTranslationY(-AndroidUtilities.dp(32.0f));
-        photoViewer.O0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(bsVar).start();
-        photoViewer.P0.setTranslationY(AndroidUtilities.dp(32.0f));
-        photoViewer.P0.animate().alpha(1.0f).setDuration(150L).setInterpolator(bsVar).start();
-        photoViewer.S0.setTranslationY(AndroidUtilities.dp(32.0f));
-        photoViewer.S0.setAlpha(0.0f);
-        photoViewer.S0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(bsVar).start();
-        photoViewer.s3.setTranslationY(AndroidUtilities.dp(32.0f));
-        photoViewer.s3.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(bsVar).start();
-        photoViewer.e0.setAlpha(0.0f);
-        photoViewer.L0.setAlpha(0);
-        photoViewer.n4 = 4;
-        photoViewer.e0.invalidate();
-        AnimatorSet animatorSet = new AnimatorSet();
-        ai.o5 o5Var = photoViewer.P0;
-        ObjectAnimator duration2 = ObjectAnimator.ofFloat(o5Var, (Property<ai.o5, Float>) View.TRANSLATION_Y, o5Var.getTranslationY(), 0.0f).setDuration(220L);
-        duration2.setInterpolator(bsVar);
-        ai.o5 o5Var2 = photoViewer.P0;
-        Property property = View.ALPHA;
-        ObjectAnimator duration3 = ObjectAnimator.ofFloat(o5Var2, (Property<ai.o5, Float>) property, 1.0f).setDuration(220L);
-        duration3.setInterpolator(bsVar);
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.e0, (Property<eu0, Float>) property, 0.0f, 1.0f).setDuration(220L), ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f).setDuration(220L), duration2, duration3);
-        animatorSet.addListener(new pt0(this));
-        animatorSet.start();
-        return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
+                photoViewer.Q1.getNextView().setText((CharSequence) null);
+                ot0 ot0Var = photoViewer.T1;
+                ot0Var.l0 = false;
+                if (ot0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) ot0Var.o0.getLayoutParams()).topMargin = ot0Var.m0;
+                    ot0Var.m0 = -1;
+                    ot0Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ot0 ot0Var = ((PhotoViewer) this.b.b).T1;
+                Method method = ot0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(ot0Var, null);
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

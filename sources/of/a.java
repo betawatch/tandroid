@@ -1,49 +1,34 @@
 package of;
 
-import com.google.firebase.messaging.d;
-import java.io.InputStream;
+import java.io.FilterInputStream;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a extends d {
-    public final long d;
-
-    public a(InputStream inputStream, long j10, long j11) {
-        super(inputStream, j10);
-        this.d = j10 + j11;
-    }
-
-    public final long e() {
-        return this.d - this.b;
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        if (this.b == this.d) {
-            return -1;
+public abstract class a extends mf.a {
+    public static String b(int i10, int i11, byte[] bArr) {
+        try {
+            String str = new String(bArr, i10, i11, "ISO-8859-1");
+            int indexOf = str.indexOf(0);
+            return indexOf < 0 ? str : str.substring(0, indexOf);
+        } catch (Exception unused) {
+            return "";
         }
-        return super.read();
     }
 
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final long skip(long j10) {
-        long j11 = this.b;
-        long j12 = j11 + j10;
-        long j13 = this.d;
-        if (j12 > j13) {
-            j10 = (int) (j13 - j11);
+    public static boolean c(FilterInputStream filterInputStream) {
+        boolean z10;
+        filterInputStream.mark(3);
+        try {
+            if (filterInputStream.read() == 84 && filterInputStream.read() == 65) {
+                if (filterInputStream.read() == 71) {
+                    z10 = true;
+                    return z10;
+                }
+            }
+            z10 = false;
+            return z10;
+        } finally {
+            filterInputStream.reset();
         }
-        return super.skip(j10);
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        long j10 = this.b;
-        long j11 = i11 + j10;
-        long j12 = this.d;
-        if (j11 <= j12 || (i11 = (int) (j12 - j10)) != 0) {
-            return super.read(bArr, i10, i11);
-        }
-        return -1;
     }
 }

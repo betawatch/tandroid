@@ -1,25 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final class h71 extends g.o {
-    public final /* synthetic */ g71 c;
-    public final /* synthetic */ j71 d;
+import android.graphics.Canvas;
+import android.graphics.drawable.ColorDrawable;
 
-    public h71(j71 j71Var, g71 g71Var) {
-        this.d = j71Var;
-        this.c = g71Var;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class h71 extends ColorDrawable {
+    public final int a;
+    public final org.telegram.ui.ActionBar.u6 b;
+
+    public h71(int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(org.telegram.ui.ActionBar.y6.w0(i10, u6Var));
+        this.a = i10;
+        this.b = u6Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        b71 b71Var = this.d.Z2;
-        g71 g71Var = this.c;
-        if (b71Var == null) {
-            return g71Var.J;
+    @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.y6.w0(this.a, this.b);
+        if (getColor() != w02) {
+            setColor(w02);
         }
-        m61 G = b71Var.G(i10);
-        return (G == null || (i11 = G.u) == -1) ? g71Var.J : i11;
+        super.draw(canvas);
     }
 }

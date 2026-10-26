@@ -9,12 +9,12 @@ import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class FileInfoInternal extends CacheByChatsController.KeepMediaFile {
         final long lastUsageDate;
 
@@ -95,7 +95,7 @@ public class AutoDeleteMediaTask {
         boolean z11 = true;
         long j15 = Long.MAX_VALUE;
         for (int i18 = 0; i18 < 4; i18++) {
-            int i19 = SharedConfig.getPreferences().getInt(i2.o1.k(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
+            int i19 = SharedConfig.getPreferences().getInt(ic.a.i(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
             iArr[i18] = i19;
             if (i19 != CacheByChatsController.KEEP_MEDIA_FOREVER) {
                 z11 = false;
@@ -224,7 +224,7 @@ public class AutoDeleteMediaTask {
                 for (int i31 = 0; i31 < arrayList2.size(); i31++) {
                     ((CacheByChatsController) arrayList2.get(i31)).lookupFiles(arrayList4);
                 }
-                Collections.sort(arrayList4, new p(1));
+                Collections.sort(arrayList4, new s(1));
                 j10 = 0;
                 int i32 = 0;
                 i13 = 0;
@@ -288,7 +288,7 @@ public class AutoDeleteMediaTask {
             return;
         }
         SharedConfig.lastKeepMediaCheckTime = currentTimeMillis;
-        Utilities.cacheClearQueue.postRunnable(new v6(currentTimeMillis, FileLoader.checkDirectory(4), 4));
+        Utilities.cacheClearQueue.postRunnable(new x6(currentTimeMillis, FileLoader.checkDirectory(4), 4));
     }
 
     public static void unlockFile(File file) {

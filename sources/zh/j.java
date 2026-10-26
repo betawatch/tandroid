@@ -1,6 +1,39 @@
 package zh;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import org.telegram.messenger.FileLog;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class j extends s4.b1 {
+public final class j implements TextWatcher {
+    public final /* synthetic */ View[] a;
+    public final /* synthetic */ m b;
+
+    public j(m mVar, View[] viewArr) {
+        this.b = mVar;
+        this.a = viewArr;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        View[] viewArr = this.a;
+        try {
+            boolean z10 = ((long) Integer.parseInt(editable.toString())) >= this.b.l0.getMinimumBid();
+            viewArr[0].animate().alpha(z10 ? 1.0f : 0.6f).setDuration(180L).start();
+            viewArr[0].setEnabled(z10);
+            viewArr[0].setClickable(z10);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
 }

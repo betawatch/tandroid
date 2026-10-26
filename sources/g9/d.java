@@ -1,46 +1,108 @@
 package g9;
 
-import java.math.RoundingMode;
+import a8.yb;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class d {
-    public static final /* synthetic */ int[] a;
+public class d {
+    public static final b d;
+    public final a a;
+    public final Character b;
+    public volatile d c;
 
     static {
-        int[] iArr = new int[RoundingMode.values().length];
-        a = iArr;
-        try {
-            iArr[RoundingMode.UNNECESSARY.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+        new c("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
+        new c("base64Url()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_");
+        new d("base32()", "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567");
+        new d("base32Hex()", "0123456789ABCDEFGHIJKLMNOPQRSTUV");
+        d = new b(new a("base16()", "0123456789ABCDEF".toCharArray()));
+    }
+
+    public d(a aVar, Character ch2) {
+        boolean z10;
+        this.a = aVar;
+        if (ch2 != null) {
+            char charValue = ch2.charValue();
+            byte[] bArr = aVar.g;
+            if (charValue < bArr.length && bArr[charValue] != -1) {
+                z10 = false;
+                yb.h(z10, "Padding character %s was already in alphabet", ch2);
+                this.b = ch2;
+            }
         }
-        try {
-            a[RoundingMode.DOWN.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
+        z10 = true;
+        yb.h(z10, "Padding character %s was already in alphabet", ch2);
+        this.b = ch2;
+    }
+
+    public final void a(StringBuilder sb2, byte[] bArr, int i10, int i11) {
+        yb.n(i10, i10 + i11, bArr.length);
+        a aVar = this.a;
+        int i12 = aVar.f;
+        int i13 = aVar.d;
+        int i14 = 0;
+        yb.g(i11 <= i12);
+        long j10 = 0;
+        for (int i15 = 0; i15 < i11; i15++) {
+            j10 = (j10 | (bArr[i10 + i15] & 255)) << 8;
         }
-        try {
-            a[RoundingMode.FLOOR.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+        int i16 = ((i11 + 1) * 8) - i13;
+        while (i14 < i11 * 8) {
+            sb2.append(aVar.b[((int) (j10 >>> (i16 - i14))) & aVar.c]);
+            i14 += i13;
         }
-        try {
-            a[RoundingMode.UP.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
+        Character ch2 = this.b;
+        if (ch2 != null) {
+            while (i14 < aVar.f * 8) {
+                sb2.append(ch2.charValue());
+                i14 += i13;
+            }
         }
-        try {
-            a[RoundingMode.CEILING.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
+    }
+
+    public void b(StringBuilder sb2, byte[] bArr, int i10) {
+        int i11 = 0;
+        yb.n(0, i10, bArr.length);
+        while (i11 < i10) {
+            a aVar = this.a;
+            a(sb2, bArr, i11, Math.min(aVar.f, i10 - i11));
+            i11 += aVar.f;
         }
-        try {
-            a[RoundingMode.HALF_DOWN.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof d) {
+            d dVar = (d) obj;
+            if (this.a.equals(dVar.a) && Objects.equals(this.b, dVar.b)) {
+                return true;
+            }
         }
-        try {
-            a[RoundingMode.HALF_UP.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() ^ Objects.hashCode(this.b);
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("BaseEncoding.");
+        a aVar = this.a;
+        sb2.append(aVar);
+        if (8 % aVar.d != 0) {
+            Character ch2 = this.b;
+            if (ch2 == null) {
+                sb2.append(".omitPadding()");
+            } else {
+                sb2.append(".withPadChar('");
+                sb2.append(ch2);
+                sb2.append("')");
+            }
         }
-        try {
-            a[RoundingMode.HALF_EVEN.ordinal()] = 8;
-        } catch (NoSuchFieldError unused8) {
-        }
+        return sb2.toString();
+    }
+
+    public d(String str, String str2) {
+        this(new a(str, str2.toCharArray()), (Character) '=');
     }
 }

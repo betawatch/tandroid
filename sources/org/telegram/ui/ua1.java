@@ -1,15 +1,76 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ua1 extends cb1 {
-    public final /* synthetic */ za1 f;
+public final /* synthetic */ class ua1 implements org.telegram.ui.Components.zl0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ua1(za1 za1Var, Context context) {
-        super(context);
-        this.f = za1Var;
+    public /* synthetic */ ua1(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+    }
+
+    @Override // org.telegram.ui.Components.zl0
+    public final void c(int i10, View view) {
+        switch (this.a) {
+            case 0:
+                bb1 bb1Var = (bb1) this.b;
+                db1 db1Var = (db1) this.c;
+                za1 za1Var = (za1) this.d;
+                ThemeActivity themeActivity = bb1Var.e;
+                int i11 = themeActivity.f;
+                org.telegram.ui.ActionBar.x6 C0 = i11 == 1 ? org.telegram.ui.ActionBar.y6.J : org.telegram.ui.ActionBar.y6.C0();
+                if (i10 == db1Var.h() - 1) {
+                    themeActivity.presentFragment(new tc1(C0, false, 1, false, i11 == 1));
+                } else {
+                    org.telegram.ui.ActionBar.w6 w6Var = (org.telegram.ui.ActionBar.w6) db1Var.e.get(i10);
+                    if (!TextUtils.isEmpty(w6Var.o) && w6Var.a != org.telegram.ui.ActionBar.y6.n) {
+                        org.telegram.ui.ActionBar.t6.a(false);
+                    }
+                    int i12 = C0.Y;
+                    int i13 = w6Var.a;
+                    if (i12 != i13) {
+                        org.telegram.ui.ActionBar.y6.H1(C0, i11 == 1, i13, view);
+                        org.telegram.ui.ActionBar.h4.p(C0, w6Var.a);
+                        org.telegram.ui.ActionBar.y6.J1(themeActivity);
+                    } else {
+                        themeActivity.presentFragment(new tc1(C0, false, 1, i13 >= 100, i11 == 1));
+                    }
+                }
+                int left = view.getLeft();
+                int right = view.getRight();
+                int dp = AndroidUtilities.dp(52.0f);
+                int i14 = left - dp;
+                if (i14 < 0) {
+                    za1Var.w0(i14, 0, null);
+                } else {
+                    int i15 = right + dp;
+                    if (i15 > za1Var.getMeasuredWidth()) {
+                        za1Var.w0(i15 - za1Var.getMeasuredWidth(), 0, null);
+                    }
+                }
+                int childCount = za1Var.getChildCount();
+                for (int i16 = 0; i16 < childCount; i16++) {
+                    View childAt = za1Var.getChildAt(i16);
+                    if (childAt instanceof ThemeActivity.InnerAccentView) {
+                        ((ThemeActivity.InnerAccentView) childAt).a(true);
+                    }
+                }
+                break;
+            default:
+                h11.W((h11) this.b, (Context) this.c, (String) this.d, view, i10);
+                break;
+        }
     }
 }

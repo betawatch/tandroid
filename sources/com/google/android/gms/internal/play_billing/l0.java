@@ -1,23 +1,23 @@
 package com.google.android.gms.internal.play_billing;
 
+import a8.sa;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.z5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
     public static final s0 e = new s0(w0.class, 0);
     public static final boolean f;
-    public static final z5 h;
+    public static final sa h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
         boolean z10;
-        z5 i0Var;
+        sa i0Var;
         Throwable th2;
         Throwable th3;
         try {
@@ -31,15 +31,15 @@ public abstract class l0 extends x0 implements t0 {
         if (property == null || property.contains("Android")) {
             try {
                 i0Var = new j0();
-            } catch (Error | Exception e7) {
+            } catch (Error | Exception e10) {
                 try {
                     i0Var = new h0();
-                } catch (Error | Exception e10) {
-                    th4 = e10;
+                } catch (Error | Exception e11) {
+                    th4 = e11;
                     i0Var = new i0();
                 }
                 th2 = th4;
-                th3 = e7;
+                th3 = e10;
             }
         } else {
             try {

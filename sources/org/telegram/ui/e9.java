@@ -1,37 +1,41 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class e9 extends org.telegram.ui.Components.ir0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.h3 e1;
+public final class e9 extends TextView {
+    public final Paint a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e9(Context context, String str, String str2, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.h3 h3Var) {
-        super(context, null, str, false, str2, false, g6Var);
-        this.e1 = h3Var;
+    public e9(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        this.b = u6Var;
+        this.a = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.ir0
-    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String formatString;
-        if (z10) {
-            if (hVar == null || hVar.m() != 1) {
-                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", hVar == null ? 1 : hVar.m(), new Object[0]));
-            } else {
-                long j10 = ((TLRPC.Dialog) hVar.n(0)).id;
-                formatString = (j10 == 0 || j10 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j10, true));
-            }
-            org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.xc(this.e1.topBulletinContainer, this.resourcesProvider).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
-            Q.r = false;
-            Q.j();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int o12 = org.telegram.ui.ActionBar.y6.o1(0.8f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.z6, this.b));
+        Paint paint = this.a;
+        paint.setColor(o12);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        Layout layout = getLayout();
+        int i10 = 0;
+        for (int i11 = 0; i11 < layout.getLineCount(); i11++) {
+            i10 = Math.max(i10, (int) layout.getLineWidth(i11));
         }
+        float f7 = i10 / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - f7) - AndroidUtilities.dp(8.0f), height, paint);
+        canvas.drawLine((getWidth() / 2.0f) + f7 + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

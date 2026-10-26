@@ -1,49 +1,15 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g0 extends h0 {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ h0 e;
+public final class g0 {
+    public final Object a;
+    public final Object b;
+    public final Object c;
 
-    public g0(h0 h0Var, int i10, int i11) {
-        this.e = h0Var;
-        this.c = i10;
-        this.d = i11;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        v7.l5.a(i10, this.d);
-        return this.e.get(i10 + this.c);
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int m() {
-        return this.e.n() + this.c + this.d;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int n() {
-        return this.e.n() + this.c;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final Object[] o() {
-        return this.e.o();
-    }
-
-    @Override // com.google.android.gms.internal.cast.h0, java.util.List
-    /* renamed from: p, reason: merged with bridge method [inline-methods] */
-    public final h0 subList(int i10, int i11) {
-        v7.l5.c(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public g0(Object obj, Object obj2, Object obj3) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = obj3;
     }
 }

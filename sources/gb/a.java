@@ -1,34 +1,13 @@
 package gb;
 
-import j$.util.Objects;
-import java.io.Serializable;
-import java.lang.reflect.GenericArrayType;
-import java.lang.reflect.Type;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+@Retention(RetentionPolicy.RUNTIME)
 /* loaded from: classes.dex */
-public final class a implements GenericArrayType, Serializable {
-    public final Type a;
+public @interface a {
+    boolean nullSafe() default true;
 
-    public a(Type type) {
-        Objects.requireNonNull(type);
-        this.a = d.a(type);
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof GenericArrayType) && d.e(this, (GenericArrayType) obj);
-    }
-
-    @Override // java.lang.reflect.GenericArrayType
-    public final Type getGenericComponentType() {
-        return this.a;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return d.k(this.a) + "[]";
-    }
+    Class value();
 }

@@ -1,9 +1,70 @@
 package f6;
 
-import android.graphics.Bitmap;
+import a8.df;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.RemoteException;
+import d7.r0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface a {
-    void l(Bitmap bitmap);
+public final class a extends p6.a {
+    public final String a;
+    public final String b;
+    public final l c;
+    public final f d;
+    public final boolean e;
+    public final boolean f;
+    public static final h6.b h = new h6.b("CastMediaOptions", null);
+    public static final Parcelable.Creator<a> CREATOR = new r0(29);
+
+    public a(String str, String str2, IBinder iBinder, f fVar, boolean z10, boolean z11) {
+        l lVar;
+        this.a = str;
+        this.b = str2;
+        if (iBinder == null) {
+            lVar = null;
+        } else {
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.IImagePicker");
+            lVar = queryLocalInterface instanceof l ? (l) queryLocalInterface : new l(iBinder, "com.google.android.gms.cast.framework.media.IImagePicker", 2);
+        }
+        this.c = lVar;
+        this.d = fVar;
+        this.e = z10;
+        this.f = z11;
+    }
+
+    public final void b() {
+        l lVar = this.c;
+        if (lVar != null) {
+            try {
+                Parcel P0 = lVar.P0(lVar.N0(), 2);
+                y6.a K0 = y6.b.K0(P0.readStrongBinder());
+                P0.recycle();
+                if (y6.b.L0(K0) == null) {
+                } else {
+                    throw new ClassCastException();
+                }
+            } catch (RemoteException e) {
+                h.a(e, "Unable to call %s on %s.", "getWrappedClientObject", l.class.getSimpleName());
+            }
+        }
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 2, this.a);
+        df.l(parcel, 3, this.b);
+        l lVar = this.c;
+        df.f(parcel, 4, lVar == null ? null : lVar.b);
+        df.k(parcel, 5, this.d, i10);
+        df.s(parcel, 6, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        df.s(parcel, 7, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        df.r(parcel, q5);
+    }
 }

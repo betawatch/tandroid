@@ -1,68 +1,59 @@
 package androidx.activity.result;
 
-import androidx.fragment.app.e0;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
+import androidx.fragment.app.d0;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ e0 c;
+    public final /* synthetic */ d0 c;
     public final /* synthetic */ f d;
 
-    public /* synthetic */ c(f fVar, String str, e0 e0Var, int i10) {
+    public /* synthetic */ c(f fVar, String str, d0 d0Var, int i10) {
         this.a = i10;
         this.d = fVar;
         this.b = str;
-        this.c = e0Var;
+        this.c = d0Var;
     }
 
-    public static Object a(Class cls, InvocationHandler invocationHandler) {
-        if (invocationHandler == null) {
-            return null;
-        }
-        return cls.cast(Proxy.newProxyInstance(c.class.getClassLoader(), new Class[]{cls}, invocationHandler));
-    }
-
-    public final void b(Object obj) {
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
                 f fVar = this.d;
                 HashMap hashMap = fVar.b;
                 String str = this.b;
                 Integer num = (Integer) hashMap.get(str);
-                e0 e0Var = this.c;
+                d0 d0Var = this.c;
                 if (num != null) {
                     fVar.d.add(str);
                     try {
-                        fVar.b(num.intValue(), e0Var, obj);
+                        fVar.b(num.intValue(), d0Var, obj);
                         return;
                     } catch (Exception e) {
                         fVar.d.remove(str);
                         throw e;
                     }
                 }
-                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + e0Var + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
+                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + d0Var + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
             default:
                 f fVar2 = this.d;
                 HashMap hashMap2 = fVar2.b;
                 String str2 = this.b;
                 Integer num2 = (Integer) hashMap2.get(str2);
-                e0 e0Var2 = this.c;
+                d0 d0Var2 = this.c;
                 if (num2 != null) {
                     fVar2.d.add(str2);
                     try {
-                        fVar2.b(num2.intValue(), e0Var2, obj);
+                        fVar2.b(num2.intValue(), d0Var2, obj);
                         return;
-                    } catch (Exception e7) {
+                    } catch (Exception e10) {
                         fVar2.d.remove(str2);
-                        throw e7;
+                        throw e10;
                     }
                 }
-                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + e0Var2 + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
+                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + d0Var2 + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
         }
     }
 }

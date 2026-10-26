@@ -1,139 +1,159 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class px {
-    public final /* synthetic */ ey a;
+public final class px extends org.telegram.ui.ActionBar.s0 {
+    public final /* synthetic */ cy a;
 
-    public px(ey eyVar) {
-        this.a = eyVar;
+    public px(cy cyVar) {
+        this.a = cyVar;
     }
 
-    public final long a() {
-        ey eyVar = this.a;
-        yw ywVar = eyVar.G3;
-        if (ywVar == null || !(ywVar.getFragment() instanceof ye1)) {
-            return 0L;
+    @Override // org.telegram.ui.ActionBar.s0
+    public final boolean b() {
+        cy cyVar = this.a;
+        org.telegram.ui.ActionBar.w0 w0Var = cyVar.D1;
+        if (w0Var != null) {
+            w0Var.setVisibility(0);
         }
-        return -((ye1) eyVar.G3.getFragment()).a;
+        if (cyVar.n2 == null) {
+            return true;
+        }
+        cyVar.finishFragment();
+        return false;
     }
 
-    public final void b() {
-        ey eyVar = this.a;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eyVar.getParentActivity());
-        org.telegram.ui.Components.so0 so0Var = eyVar.C0.b0;
-        if (so0Var.N && so0Var.O()) {
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearSearchAlertPartialTitle);
-            org.telegram.ui.Components.so0 so0Var2 = eyVar.C0.b0;
-            ArrayList arrayList = so0Var2.N ? so0Var2.v0 : so0Var2.u0;
-            alertDialog$Builder.a.T = LocaleController.formatPluralString("ClearSearchAlertPartial", arrayList != null ? arrayList.size() : 0, new Object[0]);
-            final int i10 = 0;
-            alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new org.telegram.ui.ActionBar.z1(this) { // from class: org.telegram.ui.ox
-                public final /* synthetic */ px b;
+    @Override // org.telegram.ui.ActionBar.s0
+    public final boolean c() {
+        org.telegram.ui.ActionBar.k kVar;
+        cy cyVar = this.a;
+        kVar = ((org.telegram.ui.ActionBar.r2) cyVar).actionBar;
+        return !kVar.q() && cyVar.R3 == null;
+    }
 
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.z1
-                public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i11) {
-                    switch (i10) {
-                        case 0:
-                            this.b.a.C0.b0.E();
-                            break;
-                        default:
-                            ey eyVar2 = this.b.a;
-                            if (!eyVar2.C0.b0.O()) {
-                                org.telegram.ui.Components.so0 so0Var3 = eyVar2.C0.b0;
-                                so0Var3.j0.c();
-                                so0Var3.J.clear();
-                                so0Var3.l();
-                                break;
-                            } else {
-                                eyVar2.C0.b0.E();
-                                break;
-                            }
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void h() {
+        oi.q qVar;
+        cy cyVar = this.a;
+        ox oxVar = cyVar.X;
+        if (oxVar != null) {
+            ArrayList arrayList = oxVar.F;
+            if (!arrayList.isEmpty() && oxVar.H != null) {
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    if (((ig.p0) arrayList.get(i10)).h) {
+                        ((ix) oxVar.H).f((ig.p0) arrayList.get(i10));
                     }
-                }
-            });
-        } else {
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearSearchAlertTitle);
-            alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearSearchAlert);
-            final int i11 = 1;
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new org.telegram.ui.ActionBar.z1(this) { // from class: org.telegram.ui.ox
-                public final /* synthetic */ px b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.z1
-                public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i112) {
-                    switch (i11) {
-                        case 0:
-                            this.b.a.C0.b0.E();
-                            break;
-                        default:
-                            ey eyVar2 = this.b.a;
-                            if (!eyVar2.C0.b0.O()) {
-                                org.telegram.ui.Components.so0 so0Var3 = eyVar2.C0.b0;
-                                so0Var3.j0.c();
-                                so0Var3.J.clear();
-                                so0Var3.l();
-                                break;
-                            } else {
-                                eyVar2.C0.b0.E();
-                                break;
-                            }
-                    }
-                }
-            });
-        }
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-        eyVar.showDialog(c2Var);
-        TextView textView = (TextView) c2Var.d(-1);
-        if (textView != null) {
-            org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.q7, eyVar.getResourceProvider());
-        }
-    }
-
-    public final void c() {
-        nx nxVar = this.a.C0;
-        if (nxVar != null) {
-            org.telegram.ui.Components.rl0 rl0Var = nxVar.d0;
-            int i10 = nxVar.S0;
-            rl0Var.b(i10 > 0 ? i10 + 1 : 0);
-            nxVar.S0 = nxVar.b0.h();
-        }
-    }
-
-    public final void d(boolean z10, boolean z11) {
-        ey eyVar = this.a;
-        if (eyVar.C0.W.getVisibility() == 0) {
-            z11 = true;
-        }
-        if (eyVar.j2 && eyVar.k2) {
-            nx nxVar = eyVar.C0;
-            if (nxVar.W != null) {
-                if (z10 || nxVar.b0.h() != 0) {
-                    eyVar.C0.W.e(true, z11);
-                } else {
-                    eyVar.C0.W.e(false, z11);
                 }
             }
         }
-        if (z10 && eyVar.C0.b0.h() == 0) {
-            nx nxVar2 = eyVar.C0;
-            nxVar2.d0.a();
-            nxVar2.V.invalidate();
-            nxVar2.S0 = 0;
+        cyVar.j2 = false;
+        cyVar.k2 = false;
+        ay ayVar = cyVar.e0[0];
+        if (ayVar != null) {
+            ayVar.a.setEmptyView(cyVar.W2 == 0 ? ayVar.w : null);
+            cyVar.W4(false, false, true, false);
+        }
+        cyVar.i5(false, false);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, Boolean.TRUE);
+        cyVar.X.setCloseButtonVisible(false);
+        cyVar.h5(true);
+        cyVar.J3();
+        qVar = ((org.telegram.ui.ActionBar.r2) cyVar).glassEngine;
+        qVar.g();
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void i() {
+        org.telegram.ui.ActionBar.k kVar;
+        oi.q qVar;
+        org.telegram.ui.Components.wo0 wo0Var;
+        org.telegram.ui.Components.wo0 wo0Var2;
+        cy cyVar = this.a;
+        cyVar.j2 = true;
+        org.telegram.ui.ActionBar.w0 w0Var = cyVar.D1;
+        if (w0Var != null) {
+            w0Var.setVisibility(8);
+        }
+        cyVar.U3();
+        ay ayVar = cyVar.e0[0];
+        if (ayVar != null) {
+            if (cyVar.n2 != null) {
+                ayVar.a.c1();
+                jx jxVar = cyVar.C0;
+                if (jxVar != null) {
+                    bi.r1 r1Var = jxVar.a0;
+                    if (r1Var.g1) {
+                        r1Var.g1 = false;
+                        r1Var.K0(false);
+                    }
+                }
+            }
+            if (!cyVar.l2) {
+                fi.v3 v3Var = cyVar.p0;
+                if (v3Var != null) {
+                    v3Var.e(true);
+                }
+                fi.v3 v3Var2 = cyVar.q0;
+                if (v3Var2 != null) {
+                    v3Var2.e(true);
+                }
+            }
+        }
+        qw qwVar = cyVar.E0;
+        if (qwVar != null && qwVar.getPremiumHint() != null) {
+            cyVar.E0.getPremiumHint().e(true);
+        }
+        if (!cyVar.K) {
+            cyVar.K4(0.0f);
+        }
+        cyVar.i5(false, false);
+        kVar = ((org.telegram.ui.ActionBar.r2) cyVar).actionBar;
+        kVar.setBackButtonContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
+        qVar = ((org.telegram.ui.ActionBar.r2) cyVar).glassEngine;
+        qVar.g();
+        jx jxVar2 = cyVar.C0;
+        if (jxVar2 != null && (wo0Var2 = jxVar2.d0) != null) {
+            wo0Var2.c = ig.f0.d;
+        }
+        if ((jxVar2 != null && (wo0Var = jxVar2.d0) != null && wo0Var.M()) || cyVar.getMessagesController().getTotalDialogsCount() > 10 || cyVar.t3 || cyVar.K) {
+            cyVar.k2 = true;
+            if (!cyVar.q3) {
+                cyVar.W4(true, false, true, false);
+            }
+        }
+        cyVar.X.setCloseButtonVisible(true);
+        cyVar.h5(true);
+        cyVar.J3();
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void l(EditText editText) {
+        jx jxVar;
+        org.telegram.ui.Components.wo0 wo0Var;
+        String obj = editText.getText().toString();
+        boolean isEmpty = obj.isEmpty();
+        cy cyVar = this.a;
+        if (!isEmpty || (((jxVar = cyVar.C0) != null && (wo0Var = jxVar.d0) != null && wo0Var.M()) || cyVar.t3 || cyVar.K)) {
+            cyVar.k2 = true;
+            if (!cyVar.q3) {
+                cyVar.W4(true, false, true, false);
+            }
+        }
+        jx jxVar2 = cyVar.C0;
+        if (jxVar2 != null) {
+            View currentView = jxVar2.getCurrentView();
+            boolean z10 = TextUtils.isEmpty(jxVar2.M0) ? true : !jxVar2.g0;
+            jxVar2.M0 = obj;
+            jxVar2.P(currentView, jxVar2.getCurrentPosition(), obj, z10);
         }
     }
 }

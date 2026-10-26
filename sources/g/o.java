@@ -5,7 +5,7 @@ import android.content.IntentFilter;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class o {
     public Object a;
@@ -16,10 +16,10 @@ public abstract class o {
     }
 
     public void c() {
-        androidx.mediarouter.app.f fVar = (androidx.mediarouter.app.f) this.a;
-        if (fVar != null) {
+        androidx.mediarouter.app.g gVar = (androidx.mediarouter.app.g) this.a;
+        if (gVar != null) {
             try {
-                ((r) this.b).e.unregisterReceiver(fVar);
+                ((r) this.b).e.unregisterReceiver(gVar);
             } catch (IllegalArgumentException unused) {
             }
             this.a = null;
@@ -100,10 +100,10 @@ public abstract class o {
         if (d.countActions() == 0) {
             return;
         }
-        if (((androidx.mediarouter.app.f) this.a) == null) {
-            this.a = new androidx.mediarouter.app.f(this, 3);
+        if (((androidx.mediarouter.app.g) this.a) == null) {
+            this.a = new androidx.mediarouter.app.g(this, 3);
         }
-        ((r) this.b).e.registerReceiver((androidx.mediarouter.app.f) this.a, d);
+        ((r) this.b).e.registerReceiver((androidx.mediarouter.app.g) this.a, d);
     }
 
     public o() {

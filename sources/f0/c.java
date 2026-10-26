@@ -8,12 +8,12 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Process;
 import android.text.TextUtils;
-import androidx.biometric.o;
-import e0.k0;
+import androidx.biometric.n;
+import e0.j0;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final Object a = null;
@@ -53,7 +53,7 @@ public abstract class c {
 
     public static int b(Context context, String str) {
         if (str != null) {
-            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new k0(context).a() ? 0 : -1;
+            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new j0(context).a() ? 0 : -1;
         }
         throw new NullPointerException("permission must be non-null");
     }
@@ -63,6 +63,6 @@ public abstract class c {
     }
 
     public static Executor d(Context context) {
-        return Build.VERSION.SDK_INT >= 28 ? b.a(context) : new o(new Handler(context.getMainLooper()), 3);
+        return Build.VERSION.SDK_INT >= 28 ? b.a(context) : new n(new Handler(context.getMainLooper()), 3);
     }
 }

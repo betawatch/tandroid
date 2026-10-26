@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class yv extends LinkMovementMethod {
     public final /* synthetic */ int a;
@@ -33,8 +33,8 @@ public final class yv extends LinkMovementMethod {
             case 1:
                 try {
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                     return false;
                 }
             default:
@@ -43,8 +43,8 @@ public final class yv extends LinkMovementMethod {
                     if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
                     }
                     Selection.removeSelection(spannable);
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                     return false;
                 }
                 break;

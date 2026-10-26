@@ -1,167 +1,21 @@
 package c3;
 
-import android.net.Uri;
-import e9.x1;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class o implements t {
-    public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
-    public static final qf.b n = new qf.b(new aa.a(29));
-    public static final qf.b r = new qf.b(new m(0));
-    public x1 a;
-    public int e;
-    public int f;
-    public t7.u c = new t7.u(28);
-    public boolean b = true;
-    public int d = 3;
+public interface o {
+    boolean a(p pVar);
 
-    public final void a(int i10, ArrayList arrayList) {
-        switch (i10) {
-            case 0:
-                arrayList.add(new j4.a());
-                break;
-            case 1:
-                arrayList.add(new j4.c());
-                break;
-            case 2:
-                arrayList.add(new j4.d(1));
-                break;
-            case 3:
-                arrayList.add(new d3.a(1));
-                break;
-            case 4:
-                q X = n.X(0);
-                if (X == null) {
-                    arrayList.add(new h3.b());
-                    break;
-                } else {
-                    arrayList.add(X);
-                    break;
-                }
-            case 5:
-                arrayList.add(new i3.b());
-                break;
-            case 6:
-                arrayList.add(new u3.f(this.c, this.b ? 0 : 2));
-                break;
-            case 7:
-                arrayList.add(new v3.d(1));
-                break;
-            case 8:
-                t7.u uVar = this.c;
-                int g10 = w3.h.g(this.d) | (this.b ? 0 : 32);
-                e9.l0 l0Var = e9.n0.b;
-                arrayList.add(new w3.h(uVar, g10, null, x1.e, null));
-                t7.u uVar2 = this.c;
-                int i11 = this.d;
-                int i12 = (i11 & 1) == 0 ? 0 : 32;
-                if ((2 & i11) != 0) {
-                    i12 |= 128;
-                }
-                arrayList.add(new w3.l(uVar2, i12 | (this.b ? 0 : 16)));
-                break;
-            case 9:
-                arrayList.add(new x3.d());
-                break;
-            case 10:
-                arrayList.add(new j4.z());
-                break;
-            case 11:
-                if (this.a == null) {
-                    e9.l0 l0Var2 = e9.n0.b;
-                    this.a = x1.e;
-                }
-                arrayList.add(new j4.d0(1, !this.b ? 1 : 0, this.c, new e2.k0(0L), new j4.f(0, this.a)));
-                break;
-            case 12:
-                k4.c cVar = new k4.c();
-                cVar.c = 0;
-                cVar.d = -1L;
-                cVar.f = -1;
-                cVar.g = -1L;
-                arrayList.add(cVar);
-                break;
-            case 14:
-                arrayList.add(new k3.a(this.e));
-                break;
-            case 15:
-                q X2 = r.X(new Object[0]);
-                if (X2 != null) {
-                    arrayList.add(X2);
-                    break;
-                }
-                break;
-            case 16:
-                arrayList.add(new e3.b(!this.b ? 1 : 0, this.c));
-                break;
-            case 17:
-                arrayList.add(new g3.a(1));
-                break;
-            case 18:
-                arrayList.add(new f3.a(1));
-                break;
-            case 19:
-                arrayList.add(new g3.a(0));
-                break;
-            case 20:
-                arrayList.add(new j3.b(this.f));
-                break;
-            case 21:
-                arrayList.add(new f3.a(0));
-                break;
-        }
-    }
+    o b();
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x002b A[Catch: all -> 0x002f, TryCatch #0 {all -> 0x002f, blocks: (B:3:0x0001, B:5:0x0015, B:8:0x001c, B:9:0x0024, B:11:0x002b, B:12:0x0031, B:15:0x0039, B:18:0x003f, B:21:0x0045, B:23:0x0048, B:27:0x004b), top: B:2:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003f A[Catch: all -> 0x002f, TryCatch #0 {all -> 0x002f, blocks: (B:3:0x0001, B:5:0x0015, B:8:0x001c, B:9:0x0024, B:11:0x002b, B:12:0x0031, B:15:0x0039, B:18:0x003f, B:21:0x0045, B:23:0x0048, B:27:0x004b), top: B:2:0x0001 }] */
-    @Override // c3.t
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final synchronized q[] e(Uri uri, Map map) {
-        ArrayList arrayList;
-        String str;
-        int a2;
-        int b10;
-        int i10;
-        try {
-            int[] iArr = h;
-            arrayList = new ArrayList(21);
-            List list = (List) map.get("Content-Type");
-            if (list != null && !list.isEmpty()) {
-                str = (String) list.get(0);
-                a2 = v7.d0.a(str);
-                if (a2 != -1) {
-                    a(a2, arrayList);
-                }
-                b10 = v7.d0.b(uri);
-                if (b10 != -1 && b10 != a2) {
-                    a(b10, arrayList);
-                }
-                for (i10 = 0; i10 < 21; i10++) {
-                    int i11 = iArr[i10];
-                    if (i11 != a2 && i11 != b10) {
-                        a(i11, arrayList);
-                    }
-                }
-            }
-            str = null;
-            a2 = v7.d0.a(str);
-            if (a2 != -1) {
-            }
-            b10 = v7.d0.b(uri);
-            if (b10 != -1) {
-                a(b10, arrayList);
-            }
-            while (i10 < 21) {
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
-        return (q[]) arrayList.toArray(new q[0]);
-    }
+    void c(q qVar);
+
+    void d(long j10, long j11);
+
+    List e();
+
+    int f(p pVar, s sVar);
+
+    void release();
 }

@@ -1,17 +1,17 @@
 package a3;
 
-import b2.a2;
+import b2.b2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface n0 {
-    public static final oa.d g = new oa.d(1);
+    public static final pa.d g = new pa.d();
 
-    void U();
-
-    void Y();
+    void A();
 
     void onFirstFrameRendered();
 
-    void onVideoSizeChanged(a2 a2Var);
+    void onVideoSizeChanged(b2 b2Var);
+
+    void z();
 }

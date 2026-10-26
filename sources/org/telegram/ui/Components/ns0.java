@@ -1,25 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ns0 extends yh.p2 {
-    public final /* synthetic */ xv0 V;
+public final /* synthetic */ class ns0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2[] b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ns0(int i10, long j10, Context context, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.g6 g6Var, xv0 xv0Var) {
-        super(i10, j10, context, o2Var, g6Var);
-        this.V = xv0Var;
+    public /* synthetic */ ns0(org.telegram.ui.ActionBar.e2[] e2VarArr, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = e2VarArr;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // yh.p2
-    public final void p(boolean z10) {
-        xv0 xv0Var = this.V;
-        TextView textView = xv0Var.q0;
-        textView.setVisibility(0);
-        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new b60(4, this, z10)).start();
-        xv0Var.u1(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.e2[] e2VarArr = this.b;
+                org.telegram.ui.ActionBar.e2 e2Var = e2VarArr[0];
+                if (e2Var != null) {
+                    final int i10 = 0;
+                    final int i11 = this.c;
+                    final int i12 = this.d;
+                    e2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.ss0
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i10) {
+                                case 0:
+                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                                    break;
+                            }
+                        }
+                    });
+                    e2VarArr[0].show();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.e2[] e2VarArr2 = this.b;
+                org.telegram.ui.ActionBar.e2 e2Var2 = e2VarArr2[0];
+                if (e2Var2 != null) {
+                    final int i13 = 1;
+                    final int i14 = this.c;
+                    final int i15 = this.d;
+                    e2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.ss0
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i13) {
+                                case 0:
+                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
+                                    break;
+                            }
+                        }
+                    });
+                    e2VarArr2[0].show();
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,23 +1,40 @@
 package x2;
 
-import b2.w;
-import e9.b0;
-import i2.o1;
+import b2.q1;
+import b2.x;
+import c3.h0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g implements Comparable {
-    public final boolean a;
-    public final boolean b;
+public final class g extends m implements Comparable {
+    public final int e;
+    public final int f;
 
-    public g(w wVar, int i10) {
-        this.a = (wVar.e & 1) != 0;
-        this.b = o1.e(i10, false);
+    public g(int i10, q1 q1Var, int i11, j jVar, int i12) {
+        super(i10, q1Var, i11);
+        int i13;
+        this.e = h0.e(i12, jVar.B0) ? 1 : 0;
+        x xVar = this.d;
+        int i14 = xVar.z;
+        int i15 = -1;
+        if (i14 != -1 && (i13 = xVar.A) != -1) {
+            i15 = i14 * i13;
+        }
+        this.f = i15;
+    }
+
+    @Override // x2.m
+    public final int a() {
+        return this.e;
+    }
+
+    @Override // x2.m
+    public final /* bridge */ /* synthetic */ boolean b(m mVar) {
+        return false;
     }
 
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
-        g gVar = (g) obj;
-        return b0.a.c(this.b, gVar.b).c(this.a, gVar.a).e();
+        return Integer.compare(this.f, ((g) obj).f);
     }
 }

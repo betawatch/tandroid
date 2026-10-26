@@ -1,66 +1,63 @@
 package l2;
 
+import a8.ng;
 import g2.b0;
 import java.io.IOException;
-import u2.v;
+import u2.u;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d implements y2.g {
-    public final /* synthetic */ h a;
+    public final /* synthetic */ g a;
 
-    public /* synthetic */ d(h hVar) {
-        this.a = hVar;
+    @Override // y2.g
+    public void B(y2.i iVar, long j10, long j11) {
+        y2.o oVar = (y2.o) iVar;
+        g gVar = this.a;
+        long j12 = oVar.a;
+        g2.m mVar = oVar.b;
+        b0 b0Var = oVar.d;
+        u uVar = new u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        gVar.m.getClass();
+        gVar.q.q(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        gVar.K = ((Long) oVar.f).longValue() - j10;
+        gVar.z(true);
     }
 
     public void a() {
         long j10;
-        h hVar = this.a;
-        synchronized (z2.c.b) {
+        g gVar = this.a;
+        synchronized (z2.b.b) {
             try {
-                j10 = z2.c.c ? z2.c.d : -9223372036854775807L;
+                j10 = z2.b.c ? z2.b.d : -9223372036854775807L;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        hVar.K = j10;
-        hVar.z(true);
+        gVar.K = j10;
+        gVar.z(true);
     }
 
     @Override // y2.g
-    public k4.d e(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
-        y2.o oVar = (y2.o) iVar;
-        h hVar = this.a;
-        a5.a aVar = hVar.q;
-        long j12 = oVar.a;
-        g2.m mVar = oVar.b;
-        b0 b0Var = oVar.d;
-        aVar.t(new v(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b), oVar.c, iOException, true);
-        hVar.m.getClass();
-        hVar.y(iOException);
-        return y2.l.e;
-    }
-
-    @Override // y2.g
-    public void k(y2.i iVar, long j10, long j11) {
-        y2.o oVar = (y2.o) iVar;
-        h hVar = this.a;
-        long j12 = oVar.a;
-        g2.m mVar = oVar.b;
-        b0 b0Var = oVar.d;
-        v vVar = new v(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
-        hVar.m.getClass();
-        hVar.q.r(vVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        hVar.K = ((Long) oVar.f).longValue() - j10;
-        hVar.z(true);
-    }
-
-    @Override // y2.g
-    public void z(y2.i iVar, long j10, long j11, boolean z10) {
+    public void l0(y2.i iVar, long j10, long j11, boolean z10) {
         this.a.x((y2.o) iVar, j10, j11);
     }
 
     @Override // y2.g
-    public /* synthetic */ void j(y2.i iVar, long j10, long j11, int i10) {
+    public k4.d w(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
+        y2.o oVar = (y2.o) iVar;
+        g gVar = this.a;
+        ng ngVar = gVar.q;
+        long j12 = oVar.a;
+        g2.m mVar = oVar.b;
+        b0 b0Var = oVar.d;
+        ngVar.s(new u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b), oVar.c, iOException, true);
+        gVar.m.getClass();
+        gVar.y(iOException);
+        return y2.l.e;
+    }
+
+    @Override // y2.g
+    public /* synthetic */ void z(y2.i iVar, long j10, long j11, int i10) {
     }
 }

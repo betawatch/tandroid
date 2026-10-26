@@ -1,79 +1,153 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
+import android.os.SystemClock;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.Iterator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MediaController;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r10 implements org.telegram.ui.ActionBar.q0, ne.k, org.telegram.ui.ActionBar.z1, aw0 {
-    public final /* synthetic */ FragmentContextView a;
+public abstract class r10 implements Application.ActivityLifecycleCallbacks {
+    private static r10 Instance;
+    private int refs;
+    private boolean wasInBackground = true;
+    private long enterBackgroundTime = 0;
+    private CopyOnWriteArrayList<q10> listeners = new CopyOnWriteArrayList<>();
+    private final ArrayList<WeakReference<Activity>> resumedActivities = new ArrayList<>();
 
-    public /* synthetic */ r10(FragmentContextView fragmentContextView) {
-        this.a = fragmentContextView;
+    public r10(Application application) {
+        Instance = this;
+        application.registerActivityLifecycleCallbacks(this);
     }
 
-    @Override // org.telegram.ui.Components.aw0
-    public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
-        float[] fArr = FragmentContextView.W0;
-        this.a.k(sharingLocationInfo);
+    public static r10 getInstance() {
+        return Instance;
     }
 
-    @Override // ne.k
-    public void e(ne.l lVar) {
-        FragmentContextView fragmentContextView = this.a;
-        ne.l lVar2 = fragmentContextView.U0;
-        float f7 = 1.0f - lVar2.a.d.c.a;
-        fragmentContextView.d.setAlpha(f7);
-        fragmentContextView.d.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, f7));
-        fragmentContextView.d.setScaleY(AndroidUtilities.lerp(0.7f, 1.0f, f7));
-        Iterator it = lVar2.iterator();
-        while (it.hasNext()) {
-            ne.g gVar = (ne.g) it.next();
-            float c10 = gVar.c();
-            Object obj = gVar.a;
-            float lerp = AndroidUtilities.lerp(0.7f, 1.0f, c10);
-            mh.c cVar = ((d20) obj).b;
-            cVar.setAlpha(gVar.c());
-            cVar.setScaleX(lerp);
-            cVar.setScaleY(lerp);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.o2 o2Var = fragmentContextView.h;
-        if (!(o2Var instanceof org.telegram.ui.ey)) {
-            LocationController.getInstance(o2Var.getCurrentAccount()).removeSharingLocation(fragmentContextView.n.a());
-            return;
-        }
-        for (int i11 = 0; i11 < 4; i11++) {
-            LocationController.getInstance(i11).removeAllLocationSharings();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.q0
-    public void h(int i10) {
-        float[] fArr = FragmentContextView.W0;
-        if (i10 >= 0) {
-            float[] fArr2 = FragmentContextView.W0;
-            if (i10 >= 6) {
-                return;
-            }
-            MediaController mediaController = MediaController.getInstance();
-            FragmentContextView fragmentContextView = this.a;
-            float playbackSpeed = mediaController.getPlaybackSpeed(fragmentContextView.W);
-            float f7 = fArr2[i10];
-            MediaController.getInstance().setPlaybackSpeed(fragmentContextView.W, f7);
-            if (playbackSpeed != f7) {
-                fragmentContextView.l(playbackSpeed, f7, false);
+    public final void a(Activity activity) {
+        for (int size = this.resumedActivities.size() - 1; size >= 0; size--) {
+            Activity activity2 = this.resumedActivities.get(size).get();
+            if (activity2 == null || activity2 == activity) {
+                this.resumedActivities.remove(size);
             }
         }
     }
 
-    @Override // ne.k
-    public /* synthetic */ void a() {
+    public void addListener(q10 q10Var) {
+        this.listeners.add(q10Var);
+    }
+
+    public Activity getForegroundActivity() {
+        Activity activity = null;
+        for (int size = this.resumedActivities.size() - 1; size >= 0; size--) {
+            Activity activity2 = this.resumedActivities.get(size).get();
+            if (activity2 == null || activity2.isFinishing() || activity2.isDestroyed()) {
+                this.resumedActivities.remove(size);
+            } else {
+                if (activity2.hasWindowFocus()) {
+                    return activity2;
+                }
+                if (activity == null) {
+                    activity = activity2;
+                }
+            }
+        }
+        return activity;
+    }
+
+    public boolean isBackground() {
+        return this.refs == 0;
+    }
+
+    public boolean isForeground() {
+        return this.refs > 0;
+    }
+
+    public boolean isWasInBackground(boolean z10) {
+        if (z10 && SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+            this.wasInBackground = false;
+        }
+        return this.wasInBackground;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityDestroyed(Activity activity) {
+        a(activity);
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityPaused(Activity activity) {
+        a(activity);
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityResumed(Activity activity) {
+        a(activity);
+        this.resumedActivities.add(new WeakReference<>(activity));
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStarted(Activity activity) {
+        int i10 = this.refs + 1;
+        this.refs = i10;
+        if (i10 == 1) {
+            if (SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+                this.wasInBackground = false;
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to foreground");
+            }
+            Iterator<q10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameForeground();
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            }
+        }
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStopped(Activity activity) {
+        int i10 = this.refs - 1;
+        this.refs = i10;
+        if (i10 == 0) {
+            this.enterBackgroundTime = SystemClock.elapsedRealtime();
+            this.wasInBackground = true;
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to background");
+            }
+            Iterator<q10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameBackground();
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            }
+        }
+    }
+
+    public void removeListener(q10 q10Var) {
+        this.listeners.remove(q10Var);
+    }
+
+    public void resetBackgroundVar() {
+        this.wasInBackground = false;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityCreated(Activity activity, Bundle bundle) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

@@ -11,7 +11,7 @@ import android.support.v4.media.session.b0;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class MediaMetadataCompat implements Parcelable {
     public static final Parcelable.Creator<MediaMetadataCompat> CREATOR;
@@ -60,7 +60,7 @@ public final class MediaMetadataCompat implements Parcelable {
         e = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER"};
         f = new String[]{"android.media.metadata.DISPLAY_ICON", "android.media.metadata.ART", "android.media.metadata.ALBUM_ART"};
         h = new String[]{"android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART_URI"};
-        CREATOR = new w.a(6);
+        CREATOR = new w.a(3);
     }
 
     public MediaMetadataCompat(Bundle bundle) {
@@ -113,8 +113,8 @@ public final class MediaMetadataCompat implements Parcelable {
             }
             try {
                 bitmap = (Bitmap) bundle.getParcelable(strArr2[i13]);
-            } catch (Exception e7) {
-                Log.w("MediaMetadata", "Failed to retrieve a key as Bitmap.", e7);
+            } catch (Exception e10) {
+                Log.w("MediaMetadata", "Failed to retrieve a key as Bitmap.", e10);
                 bitmap = null;
             }
             if (bitmap != null) {

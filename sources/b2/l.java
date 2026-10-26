@@ -1,24 +1,57 @@
 package b2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.os.Bundle;
+import android.os.IBinder;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class l {
-    public static final String e;
-    public static final String f;
-    public static final String g;
-    public final byte[] a;
-    public final i b = new i(this);
-    public j c;
-    public k d;
-
-    static {
-        String str = e2.m0.a;
-        e = Integer.toString(0, 36);
-        f = Integer.toString(1, 36);
-        g = Integer.toString(2, 36);
-    }
+    public static final int b = n.a;
+    public final i a;
 
     public l(byte[] bArr) {
-        this.a = bArr;
+        f9.f0 t10 = f9.i0.t();
+        int length = bArr.length;
+        int i10 = b;
+        int g7 = e2.n0.g(length, i10);
+        for (int i11 = 0; i11 < g7; i11++) {
+            Bundle bundle = new Bundle();
+            int i12 = i11 * i10;
+            bundle.putByteArray("bytes", Arrays.copyOfRange(bArr, i12, Math.min(i12 + i10, bArr.length)));
+            t10.c(bundle);
+        }
+        this.a = new i(t10.f());
+    }
+
+    public static byte[] a(Bundle bundle) {
+        IBinder binder = bundle.getBinder(m.g);
+        if (binder != null) {
+            try {
+                f9.i0 a2 = i.a(binder);
+                if (a2.isEmpty()) {
+                    return e2.n0.b;
+                }
+                byte[] byteArray = ((Bundle) f9.o.m(a2)).getByteArray("bytes");
+                if (byteArray != null) {
+                    int size = a2.size() - 1;
+                    int i10 = b;
+                    int i11 = size * i10;
+                    byte[] bArr = new byte[byteArray.length + i11];
+                    System.arraycopy(byteArray, 0, bArr, i11, byteArray.length);
+                    for (int i12 = 0; i12 < size; i12++) {
+                        byte[] byteArray2 = ((Bundle) a2.get(i12)).getByteArray("bytes");
+                        if (byteArray2 != null && byteArray2.length == i10) {
+                            System.arraycopy(byteArray2, 0, bArr, i12 * i10, i10);
+                        }
+                    }
+                    return bArr;
+                }
+            } catch (RuntimeException e) {
+                e2.a.m("BundleableByteArray", "Failed to read byte array from bundle list retriever", e);
+                return null;
+            }
+        }
+        return null;
     }
 }

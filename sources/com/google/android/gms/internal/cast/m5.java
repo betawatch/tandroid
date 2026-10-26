@@ -1,48 +1,77 @@
 package com.google.android.gms.internal.cast;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class m5 {
-    public static final m5 a;
-    public static final m5 b;
-    public static final m5 c;
-    public static final m5 d;
-    public static final m5 e;
-    public static final m5 f;
-    public static final m5 h;
-    public static final m5 n;
-    public static final m5 r;
-    public static final m5 s;
-    public static final /* synthetic */ m5[] v;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    static {
-        m5 m5Var = new m5("VOID", 0);
-        a = m5Var;
-        m5 m5Var2 = new m5("INT", 1);
-        b = m5Var2;
-        m5 m5Var3 = new m5("LONG", 2);
-        c = m5Var3;
-        m5 m5Var4 = new m5("FLOAT", 3);
-        d = m5Var4;
-        m5 m5Var5 = new m5("DOUBLE", 4);
-        e = m5Var5;
-        m5 m5Var6 = new m5("BOOLEAN", 5);
-        f = m5Var6;
-        m5 m5Var7 = new m5("STRING", 6);
-        h = m5Var7;
-        x4 x4Var = x4.c;
-        m5 m5Var8 = new m5("BYTE_STRING", 7);
-        n = m5Var8;
-        m5 m5Var9 = new m5("ENUM", 8);
-        r = m5Var9;
-        m5 m5Var10 = new m5("MESSAGE", 9);
-        s = m5Var10;
-        v = new m5[]{m5Var, m5Var2, m5Var3, m5Var4, m5Var5, m5Var6, m5Var7, m5Var8, m5Var9, m5Var10};
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class m5 extends o5 {
+    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
+
+    @Override // com.google.android.gms.internal.cast.o5
+    public final void a(Object obj, long j10) {
+        Object unmodifiableList;
+        List list = (List) p6.h(obj, j10);
+        if (list instanceof l5) {
+            unmodifiableList = ((l5) list).zzd();
+        } else {
+            if (c.isAssignableFrom(list.getClass())) {
+                return;
+            }
+            if ((list instanceof a6) && (list instanceof h5)) {
+                r4 r4Var = (r4) ((h5) list);
+                boolean z10 = r4Var.a;
+                if (z10 && z10) {
+                    r4Var.a = false;
+                    return;
+                }
+                return;
+            }
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
+        }
+        p6.l(obj, j10, unmodifiableList);
     }
 
-    public static m5[] values() {
-        return (m5[]) v.clone();
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.google.android.gms.internal.cast.o5
+    public final void b(Object obj, long j10, Object obj2) {
+        k5 k5Var;
+        List list = (List) p6.h(obj2, j10);
+        int size = list.size();
+        List list2 = (List) p6.h(obj, j10);
+        if (list2.isEmpty()) {
+            list2 = list2 instanceof l5 ? new k5(size) : ((list2 instanceof a6) && (list2 instanceof h5)) ? ((h5) list2).zzg(size) : new ArrayList(size);
+            p6.l(obj, j10, list2);
+        } else {
+            if (c.isAssignableFrom(list2.getClass())) {
+                ArrayList arrayList = new ArrayList(list2.size() + size);
+                arrayList.addAll(list2);
+                p6.l(obj, j10, arrayList);
+                k5Var = arrayList;
+            } else if (list2 instanceof k6) {
+                k5 k5Var2 = new k5(list2.size() + size);
+                k5Var2.addAll(k5Var2.b.size(), (k6) list2);
+                p6.l(obj, j10, k5Var2);
+                k5Var = k5Var2;
+            } else if ((list2 instanceof a6) && (list2 instanceof h5)) {
+                h5 h5Var = (h5) list2;
+                if (!((r4) h5Var).a) {
+                    list2 = h5Var.zzg(list2.size() + size);
+                    p6.l(obj, j10, list2);
+                }
+            }
+            list2 = k5Var;
+        }
+        int size2 = list2.size();
+        int size3 = list.size();
+        if (size2 > 0 && size3 > 0) {
+            list2.addAll(list);
+        }
+        if (size2 > 0) {
+            list = list2;
+        }
+        p6.l(obj, j10, list);
     }
 }

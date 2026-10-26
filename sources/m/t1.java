@@ -1,6 +1,45 @@
 package m;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewParent;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface t1 {
+public final class t1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u1 b;
+
+    public /* synthetic */ t1(u1 u1Var, int i10) {
+        this.a = i10;
+        this.b = u1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ViewParent parent = this.b.d.getParent();
+                if (parent != null) {
+                    parent.requestDisallowInterceptTouchEvent(true);
+                    break;
+                }
+                break;
+            default:
+                u1 u1Var = this.b;
+                u1Var.a();
+                View view = u1Var.d;
+                if (view.isEnabled() && !view.isLongClickable() && u1Var.c()) {
+                    view.getParent().requestDisallowInterceptTouchEvent(true);
+                    long uptimeMillis = SystemClock.uptimeMillis();
+                    MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+                    view.onTouchEvent(obtain);
+                    obtain.recycle();
+                    u1Var.h = true;
+                    break;
+                }
+                break;
+        }
+    }
 }

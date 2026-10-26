@@ -1,13 +1,18 @@
 package rb;
 
-import j$.util.DesugarCollections;
-import java.lang.ref.ReferenceQueue;
-import java.util.HashSet;
-import java.util.Set;
+import java.lang.ref.Reference;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public final ReferenceQueue a = new ReferenceQueue();
-    public final Set b = DesugarCollections.synchronizedSet(new HashSet());
+public abstract class a {
+    public static void a(ArrayList arrayList, Object obj) {
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            Object obj2 = ((Reference) arrayList.get(size)).get();
+            if (obj2 == null || obj2 == obj) {
+                arrayList.remove(size);
+                return;
+            }
+        }
+    }
 }

@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -31,7 +31,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static final class GooglePushListenerServiceProvider implements IPushListenerServiceProvider {
         public static final GooglePushListenerServiceProvider INSTANCE = new GooglePushListenerServiceProvider();
         private Boolean hasServices;
@@ -62,15 +62,15 @@ public class PushListenerController {
             FirebaseMessaging firebaseMessaging;
             try {
                 SharedConfig.pushStringGetTimeStart = SystemClock.elapsedRealtime();
-                l9.h.f(ApplicationLoader.applicationContext);
-                a6.i iVar = FirebaseMessaging.l;
+                m9.h.f(ApplicationLoader.applicationContext);
+                a4.l lVar = FirebaseMessaging.l;
                 synchronized (FirebaseMessaging.class) {
-                    firebaseMessaging = FirebaseMessaging.getInstance(l9.h.c());
+                    firebaseMessaging = FirebaseMessaging.getInstance(m9.h.c());
                 }
                 firebaseMessaging.getClass();
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                firebaseMessaging.f.execute(new ci.u7(8, firebaseMessaging, taskCompletionSource));
-                taskCompletionSource.getTask().addOnCompleteListener(new d0(this, 11));
+                firebaseMessaging.f.execute(new bi.f2(20, firebaseMessaging, taskCompletionSource));
+                taskCompletionSource.getTask().addOnCompleteListener(new g0(this, 11));
             } catch (Throwable th2) {
                 FileLog.e(th2);
             }
@@ -90,7 +90,7 @@ public class PushListenerController {
         public boolean hasServices() {
             if (this.hasServices == null) {
                 try {
-                    this.hasServices = Boolean.valueOf(k6.d.d.d(ApplicationLoader.applicationContext, k6.e.a) == 0);
+                    this.hasServices = Boolean.valueOf(l6.d.d.d(ApplicationLoader.applicationContext, l6.e.a) == 0);
                 } catch (Exception e) {
                     FileLog.e(e);
                     this.hasServices = Boolean.FALSE;
@@ -109,11 +109,11 @@ public class PushListenerController {
             } else if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED) {
                 FileLog.d("FCM regId = " + str);
             }
-            Utilities.globalQueue.postRunnable(new fh(this, 3));
+            Utilities.globalQueue.postRunnable(new hh(this, 3));
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -124,7 +124,7 @@ public class PushListenerController {
         void onRequestPushToken();
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PushType {
     }
@@ -280,7 +280,7 @@ public class PushListenerController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$processRemoteMessage$2(int i10, TLRPC.TL_updates tL_updates) {
-        MessagesController.getInstance(i10).lambda$processUpdates$377(tL_updates, false);
+        MessagesController.getInstance(i10).lambda$processUpdates$379(tL_updates, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -626,7 +626,7 @@ public class PushListenerController {
                                     switch (string4.hashCode()) {
                                         case -1963663249:
                                             if (string4.equals("SESSION_REVOKE")) {
-                                                AndroidUtilities.runOnUIThread(new gi.l2(i23, 5));
+                                                AndroidUtilities.runOnUIThread(new hi.t2(i23, 5));
                                                 countDownLatch.countDown();
                                                 break;
                                             }
@@ -1001,7 +1001,7 @@ public class PushListenerController {
                                                                                                                             arrayList4.add(messageObject);
                                                                                                                             FileLog.d("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
                                                                                                                             if (!messageObject.isStoryReactionPush && !messageObject.isReactionPush && !messageObject.isStoryMentionPush && !messageObject.isStoryPush && !messageObject.isStoryPushHidden && !z31 && !z18 && i18 > 0) {
-                                                                                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ph
+                                                                                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.rh
                                                                                                                                     @Override // java.lang.Runnable
                                                                                                                                     public final void run() {
                                                                                                                                         PushListenerController.lambda$processRemoteMessage$5(i14, j23, i18);
@@ -1025,7 +1025,7 @@ public class PushListenerController {
                                                                                                                     arrayList42.add(messageObject);
                                                                                                                     FileLog.d("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
                                                                                                                     if (!messageObject.isStoryReactionPush) {
-                                                                                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ph
+                                                                                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.rh
                                                                                                                             @Override // java.lang.Runnable
                                                                                                                             public final void run() {
                                                                                                                                 PushListenerController.lambda$processRemoteMessage$5(i14, j23, i18);
@@ -6145,7 +6145,7 @@ public class PushListenerController {
                                                 tL_updateServiceNotification.media = new TLRPC.TL_messageMediaEmpty();
                                                 TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
                                                 tL_updates.updates.add(tL_updateServiceNotification);
-                                                Utilities.stageQueue.postRunnable(new v6(i23, tL_updates, 9));
+                                                Utilities.stageQueue.postRunnable(new x6(i23, tL_updates, 9));
                                                 ConnectionsManager.getInstance(i23).resumeNetworkMaybe();
                                                 countDownLatch.countDown();
                                                 break;
@@ -6211,7 +6211,7 @@ public class PushListenerController {
                                             break;
                                         case 1365673842:
                                             if (string4.equals("GEO_LIVE_PENDING")) {
-                                                Utilities.stageQueue.postRunnable(new gi.l2(i23, 6));
+                                                Utilities.stageQueue.postRunnable(new hi.t2(i23, 6));
                                                 countDownLatch.countDown();
                                                 break;
                                             }
@@ -6317,7 +6317,7 @@ public class PushListenerController {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(str + " POST INIT APP");
         }
-        Utilities.stageQueue.postRunnable(new qh(0, j10, str, str2));
+        Utilities.stageQueue.postRunnable(new sh(0, j10, str, str2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6365,7 +6365,7 @@ public class PushListenerController {
                     ConnectionsManager.getInstance(i11).sendRequest(tL_help_saveAppLog, null);
                     z10 = false;
                 }
-                AndroidUtilities.runOnUIThread(new x6(i11, i10, str));
+                AndroidUtilities.runOnUIThread(new z6(i11, i10, str));
             }
         }
     }
@@ -6386,7 +6386,7 @@ public class PushListenerController {
             FileLog.d(str2.concat(" PRE START PROCESSING"));
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        AndroidUtilities.runOnUIThread(new qh(1, j10, str2, str));
+        AndroidUtilities.runOnUIThread(new sh(1, j10, str2, str));
         try {
             countDownLatch.await();
         } catch (Throwable unused) {
@@ -6399,6 +6399,6 @@ public class PushListenerController {
     }
 
     public static void sendRegistrationToServer(int i10, String str) {
-        Utilities.stageQueue.postRunnable(new v6(str, i10, 8));
+        Utilities.stageQueue.postRunnable(new x6(str, i10, 8));
     }
 }

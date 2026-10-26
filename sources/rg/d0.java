@@ -1,66 +1,51 @@
 package rg;
 
-import org.telegram.ui.jt0;
-import org.telegram.ui.tq0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class d0 implements qg.d1 {
-    public final /* synthetic */ tq0 a;
-    public final /* synthetic */ jt0 b;
+public final class d0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ u0 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ m c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ e0 f;
 
-    public d0(jt0 jt0Var, tq0 tq0Var) {
-        this.b = jt0Var;
-        this.a = tq0Var;
+    public d0(e0 e0Var, u0 u0Var, float f7, m mVar, boolean z10, Runnable runnable) {
+        this.f = e0Var;
+        this.a = u0Var;
+        this.b = f7;
+        this.c = mVar;
+        this.d = z10;
+        this.e = runnable;
     }
 
-    @Override // qg.d1
-    public final void a() {
-        this.a.run();
-    }
-
-    @Override // qg.d1
-    public final void b() {
-        e0 e0Var = this.b.X0;
-        if (e0Var != null) {
-            e0Var.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        b1 b1Var;
+        e0 e0Var = this.f;
+        e0Var.x = null;
+        r0 r0Var = new r0(new u0[]{this.a});
+        c1 c1Var = e0Var.a;
+        int currentColor = c1Var.getCurrentColor();
+        float f7 = this.b * 1.0f;
+        r0Var.c = currentColor;
+        r0Var.d = f7;
+        m mVar = this.c;
+        r0Var.e = mVar;
+        mVar.getClass();
+        int currentColor2 = mVar instanceof d ? -1 : c1Var.getCurrentColor();
+        q0 painting = c1Var.getPainting();
+        boolean z10 = this.d;
+        painting.c(r0Var, currentColor2, z10, null);
+        if (z10 && (b1Var = c1Var.a) != null) {
+            b1Var.e();
         }
-    }
-
-    @Override // qg.d1
-    public final void c() {
-        jt0 jt0Var = this.b;
-        if (jt0Var.k1) {
-            jt0Var.k1 = false;
-        } else {
-            jt0Var.t1.b(1);
-            jt0Var.n((qg.m) qg.m.a.get(0));
+        Runnable runnable = this.e;
+        if (runnable != null) {
+            runnable.run();
         }
-    }
-
-    @Override // qg.d1
-    public final boolean d() {
-        jt0 jt0Var = this.b;
-        boolean z10 = jt0Var.S0 == null;
-        if (!z10) {
-            jt0Var.r0(null, true);
-        }
-        return z10;
-    }
-
-    @Override // qg.d1
-    public final void e() {
-        jt0 jt0Var = this.b;
-        jt0Var.F0.a.e();
-        jt0Var.l1.setViewHidden(false);
-    }
-
-    @Override // qg.d1
-    public final void f() {
-        jt0 jt0Var = this.b;
-        if (jt0Var.S0 != null) {
-            jt0Var.r0(null, true);
-        }
-        jt0Var.l1.setViewHidden(true);
     }
 }

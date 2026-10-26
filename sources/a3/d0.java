@@ -2,13 +2,13 @@ package a3;
 
 import android.view.Choreographer;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d0 extends c0 implements Choreographer.FrameCallback {
     @Override // a3.c0
     public final void a() {
         long j10;
-        this.b.registerDisplayListener(this, e2.m0.q(null));
+        this.b.registerDisplayListener(this, e2.n0.q(null));
         this.a.postFrameCallback(this);
         if (this.b.getDisplay(0) != null) {
             j10 = (long) (1.0E9d / r0.getRefreshRate());

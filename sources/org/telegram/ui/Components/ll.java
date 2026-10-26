@@ -6,26 +6,26 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ll extends hg.t0 {
-    public final /* synthetic */ rl N;
+public final class ll extends ig.t0 {
+    public final /* synthetic */ sl N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ll(rl rlVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
-        super(context, g6Var, z10, false);
-        this.N = rlVar;
+    public ll(sl slVar, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
+        super(context, u6Var, z10, false);
+        this.N = slVar;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final void l() {
-        rl rlVar = this.N;
-        ll llVar = rlVar.P;
-        org.telegram.ui.ActionBar.u0 u0Var = rlVar.x;
-        if (u0Var != null) {
-            u0Var.setShowSearchProgress(llVar.J);
+        sl slVar = this.N;
+        ll llVar = slVar.P;
+        org.telegram.ui.ActionBar.w0 w0Var = slVar.x;
+        if (w0Var != null) {
+            w0Var.setShowSearchProgress(llVar.J);
         }
-        TextView textView = rlVar.w;
+        TextView textView = slVar.w;
         if (textView != null) {
             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, llVar.x)));
         }

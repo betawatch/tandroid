@@ -1,40 +1,18 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import org.telegram.messenger.R;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j1 extends FrameLayout {
-    public final Drawable a;
+public final class j1 implements ViewTreeObserver.OnScrollChangedListener {
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout a;
 
-    public j1(Context context, g6 g6Var) {
-        this(context, k6.H8, g6Var);
+    public j1(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, getWidth(), getHeight());
-            drawable.draw(canvas);
-        }
-    }
-
-    public void setColor(int i10) {
-        setBackgroundColor(i10);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(Context context, int i10, g6 g6Var) {
-        super(context);
-        int w02 = k6.w0(i10, g6Var);
-        int w03 = k6.w0(k6.b7, g6Var);
-        this.a = k6.W0(getContext(), R.drawable.greydivider, w03);
-        setBackgroundColor(w02);
+    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
+    public final void onScrollChanged() {
+        this.a.invalidate();
     }
 }

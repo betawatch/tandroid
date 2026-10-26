@@ -1,53 +1,77 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.CopyOnWriteArraySet;
+import a8.ea;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d0 implements c0 {
-    public final /* synthetic */ int a;
-    public Object b;
-    public volatile Object c;
+public final class d0 extends a8.y implements ListIterator {
+    public final int b;
+    public int c;
+    public final f0 d;
 
-    public d0(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = new CopyOnWriteArraySet();
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d0(f0 f0Var, int i10) {
+        super(2);
+        int size = f0Var.size();
+        ea.b(i10, size);
+        this.b = size;
+        this.c = i10;
+        this.d = f0Var;
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 0:
-                Object obj = (c0) this.c;
-                if (obj == z.b) {
-                    obj = a1.g.p("<supplier that returned ", String.valueOf(this.b), ">");
-                }
-                return a1.g.p("Suppliers.memoize(", String.valueOf(obj), ")");
-            default:
-                return super.toString();
-        }
+    public final Object a(int i10) {
+        return this.d.get(i10);
     }
 
-    @Override // com.google.android.gms.internal.cast.c0
-    public Object zza() {
-        c0 c0Var = (c0) this.c;
-        z zVar = z.b;
-        if (c0Var != zVar) {
-            synchronized (this) {
-                try {
-                    if (((c0) this.c) != zVar) {
-                        Object zza = ((c0) this.c).zza();
-                        this.b = zza;
-                        this.c = zVar;
-                        return zza;
-                    }
-                } finally {
-                }
-            }
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
         }
-        return this.b;
+        int i10 = this.c;
+        this.c = i10 + 1;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.c - 1;
+        this.c = i10;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

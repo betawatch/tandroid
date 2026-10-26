@@ -1,32 +1,92 @@
 package a6;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import w7.f0;
+import android.content.Context;
+import android.content.Intent;
+import b6.g;
+import b6.h;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.i;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.common.api.internal.s0;
+import com.google.android.gms.common.api.internal.t;
+import com.google.android.gms.common.api.j;
+import com.google.android.gms.tasks.Task;
+import o6.l;
+import u7.s;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a extends o6.a {
-    public static final Parcelable.Creator<a> CREATOR = new w.a(1);
-    public final int a;
-    public final int b;
-    public final Bundle c;
+public final class a extends j {
+    public static int k = 1;
 
-    public a(int i10, int i11, Bundle bundle) {
-        this.a = i10;
-        this.b = i11;
-        this.c = bundle;
+    public a(Context context, i iVar) {
+        super(context, y8.j.a, y8.i.a, iVar);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        f0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        f0.b(parcel, 3, this.c);
-        f0.r(parcel, q6);
+    public Intent f() {
+        int h = h();
+        int i10 = h - 1;
+        if (h == 0) {
+            throw null;
+        }
+        com.google.android.gms.common.api.b bVar = this.d;
+        Context context = this.a;
+        if (i10 == 2) {
+            h.a.j("getFallbackSignInIntent()", new Object[0]);
+            Intent a2 = h.a(context, (GoogleSignInOptions) bVar);
+            a2.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
+            return a2;
+        }
+        if (i10 == 3) {
+            return h.a(context, (GoogleSignInOptions) bVar);
+        }
+        h.a.j("getNoImplementationSignInIntent()", new Object[0]);
+        Intent a10 = h.a(context, (GoogleSignInOptions) bVar);
+        a10.setAction("com.google.android.gms.auth.NO_IMPL");
+        return a10;
+    }
+
+    public Task g() {
+        BasePendingResult basePendingResult;
+        boolean z10 = h() == 3;
+        h.a.j("Signing out", new Object[0]);
+        h.b(this.a);
+        s0 s0Var = this.h;
+        if (z10) {
+            BasePendingResult tVar = new t(s0Var, 0);
+            tVar.a(Status.e);
+            basePendingResult = tVar;
+        } else {
+            g gVar = new g(s0Var, 0);
+            s0Var.b.d(1, gVar);
+            basePendingResult = gVar;
+        }
+        return l.n(basePendingResult, new s(14));
+    }
+
+    public synchronized int h() {
+        int i10;
+        try {
+            i10 = k;
+            if (i10 == 1) {
+                Context context = this.a;
+                l6.d dVar = l6.d.d;
+                int d = dVar.d(context, 12451000);
+                if (d == 0) {
+                    i10 = 4;
+                    k = 4;
+                } else if (dVar.b(context, null, d) != null || z6.e.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
+                    i10 = 2;
+                    k = 2;
+                } else {
+                    i10 = 3;
+                    k = 3;
+                }
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return i10;
     }
 }

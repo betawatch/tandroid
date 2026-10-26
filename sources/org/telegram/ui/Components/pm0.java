@@ -1,37 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class pm0 extends ic {
-    public final qm0 c;
+public interface pm0 {
+    void a(boolean z10);
 
-    public pm0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        qm0 qm0Var = new qm0();
-        this.c = qm0Var;
-        imageView.setImageDrawable(qm0Var);
-    }
+    boolean b(int i10);
 
-    @Override // org.telegram.ui.Components.ub
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        qm0 qm0Var = this.c;
-        qm0Var.getClass();
-        qm0Var.g = System.currentTimeMillis();
-        qm0Var.invalidateSelf();
-    }
+    void c(View view, boolean z10);
 
-    @Override // org.telegram.ui.Components.ub
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        qm0 qm0Var = this.c;
-        qm0Var.g = -1L;
-        qm0Var.invalidateSelf();
-    }
+    boolean d(int i10);
 }

@@ -1,47 +1,21 @@
 package org.telegram.ui.Cells;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.sl;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class m5 extends FrameLayout {
-    public ImageView a;
-    public ImageView b;
-    public TextView c;
-    public int d;
+public final class m5 extends Switch {
+    public final /* synthetic */ n5 a0;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), sl.C(2.0f, this.d, TLObject.FLAG_30));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m5(n5 n5Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        this.a0 = n5Var;
     }
 
-    public void setItemSize(int i10) {
-        this.d = i10;
-    }
-
-    public void setType(int i10) {
-        TextView textView = this.c;
-        ImageView imageView = this.b;
-        ImageView imageView2 = this.a;
-        if (i10 == 0) {
-            imageView2.setImageResource(R.drawable.permissions_camera1);
-            imageView.setImageResource(R.drawable.permissions_camera2);
-            textView.setText(LocaleController.getString(R.string.CameraPermissionText));
-            imageView2.setLayoutParams(w7.z5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
-            imageView.setLayoutParams(w7.z5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
-            return;
-        }
-        imageView2.setImageResource(R.drawable.permissions_gallery1);
-        imageView.setImageResource(R.drawable.permissions_gallery2);
-        textView.setText(LocaleController.getString(R.string.GalleryPermissionText));
-        imageView2.setLayoutParams(w7.z5.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
-        imageView.setLayoutParams(w7.z5.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
+    @Override // org.telegram.ui.Components.Switch
+    public final int a(int i10) {
+        return this.a0.a(i10);
     }
 }

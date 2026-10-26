@@ -1,24 +1,12 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class v71 extends org.telegram.ui.Components.ir0 {
-    public final /* synthetic */ c81 e1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v71(c81 c81Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.e1 = c81Var;
-    }
-
-    @Override // org.telegram.ui.Components.ir0
-    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new o71(this, hVar, i10), 250L);
-        }
+public final class v71 extends org.telegram.ui.Components.ri0 {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

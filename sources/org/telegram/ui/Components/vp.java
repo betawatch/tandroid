@@ -1,24 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class vp {
-    public final org.telegram.ui.ActionBar.f4 a;
-    public Drawable b;
-    public int c;
-    public boolean d;
+public final class vp implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ yp b;
 
-    public vp(org.telegram.ui.ActionBar.f4 f4Var) {
-        this.a = f4Var;
+    public vp(yp ypVar, ChatThemeController chatThemeController) {
+        this.b = ypVar;
+        this.a = chatThemeController;
     }
 
-    public final String a() {
-        org.telegram.ui.ActionBar.f4 f4Var = this.a;
-        if (f4Var == null || f4Var.a) {
-            return null;
-        }
-        return f4Var.e;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        ChatThemeController chatThemeController = this.a;
+        List<org.telegram.ui.ActionBar.h4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
+        yp ypVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.k3) ypVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new so(2, this, emojiThemes));
+        ypVar.a0 = false;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.k.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

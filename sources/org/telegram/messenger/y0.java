@@ -1,29 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y0 implements Runnable {
+public final /* synthetic */ class y0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatObject.Call b;
+    public final /* synthetic */ ChatMessagesMetadataController b;
 
-    public /* synthetic */ y0(ChatObject.Call call, int i10) {
+    public /* synthetic */ y0(ChatMessagesMetadataController chatMessagesMetadataController, int i10) {
         this.a = i10;
-        this.b = call;
+        this.b = chatMessagesMetadataController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$new$0();
-                break;
-            case 1:
-                this.b.checkQueue();
+                this.b.lambda$loadExtendedMediaForMessages$4(tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$createRtmpStreamParticipant$1();
+                this.b.lambda$loadReactionsForMessages$3(tLObject, tL_error);
                 break;
         }
     }

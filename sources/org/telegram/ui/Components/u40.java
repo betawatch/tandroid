@@ -1,201 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class u40 extends HorizontalScrollView {
-    public static final RectF v = new RectF();
-    public final org.telegram.ui.ActionBar.g6 a;
-    public final f6 b;
-    public final f6 c;
-    public final LinearLayout d;
-    public final Paint e;
-    public final TextPaint f;
-    public boolean h;
-    public int n;
-    public final Path r;
-    public final Path s;
+public final class u40 {
+    public static final u40 d;
+    public static final u40 e;
+    public static final u40 f;
+    public static final u40 h;
+    public static final u40 n;
+    public static final u40 r;
+    public static final u40 s;
+    public static final u40 v;
+    public static final u40 w;
+    public static final /* synthetic */ u40[] x;
+    public final String a;
+    public final int b;
+    public final float c;
 
-    public u40(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.e = new Paint(1);
-        TextPaint textPaint = new TextPaint(1);
-        this.f = textPaint;
-        this.r = new Path();
-        this.s = new Path();
-        this.a = g6Var;
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        linearLayout.setLayerType(0, null);
-        linearLayout.setOrientation(0);
-        addView(linearLayout, w7.z5.x(-1, -1, 8388611));
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        final int i10 = 0;
-        f6 f6Var = new f6(new Runnable(this) { // from class: org.telegram.ui.Components.t40
-            public final /* synthetic */ u40 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        u40 u40Var = this.b;
-                        u40Var.invalidate();
-                        LinearLayout linearLayout2 = u40Var.d;
-                        linearLayout2.invalidate();
-                        for (int i11 = 0; i11 < linearLayout2.getChildCount(); i11++) {
-                            linearLayout2.getChildAt(i11).invalidate();
-                        }
-                        break;
-                    default:
-                        u40 u40Var2 = this.b;
-                        u40Var2.invalidate();
-                        LinearLayout linearLayout3 = u40Var2.d;
-                        linearLayout3.invalidate();
-                        for (int i12 = 0; i12 < linearLayout3.getChildCount(); i12++) {
-                            linearLayout3.getChildAt(i12).invalidate();
-                        }
-                        break;
-                }
-            }
-        });
-        this.b = f6Var;
-        f6Var.g = 180L;
-        final int i11 = 1;
-        f6 f6Var2 = new f6(new Runnable(this) { // from class: org.telegram.ui.Components.t40
-            public final /* synthetic */ u40 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        u40 u40Var = this.b;
-                        u40Var.invalidate();
-                        LinearLayout linearLayout2 = u40Var.d;
-                        linearLayout2.invalidate();
-                        for (int i112 = 0; i112 < linearLayout2.getChildCount(); i112++) {
-                            linearLayout2.getChildAt(i112).invalidate();
-                        }
-                        break;
-                    default:
-                        u40 u40Var2 = this.b;
-                        u40Var2.invalidate();
-                        LinearLayout linearLayout3 = u40Var2.d;
-                        linearLayout3.invalidate();
-                        for (int i12 = 0; i12 < linearLayout3.getChildCount(); i12++) {
-                            linearLayout3.getChildAt(i12).invalidate();
-                        }
-                        break;
-                }
-            }
-        });
-        this.c = f6Var2;
-        f6Var2.g = 180L;
-        setVerticalScrollBarEnabled(false);
-        setHorizontalScrollBarEnabled(false);
+    static {
+        u40 u40Var = new u40("RoundHint2", 0, "needShowRoundHint2", 3, 0.2f);
+        d = u40Var;
+        u40 u40Var2 = new u40("RoundHintChannel2", 1, "needShowRoundHintChannel2", 3, 0.2f);
+        e = u40Var2;
+        u40 u40Var3 = new u40("ChannelSuggestHint", 2, "channelsuggesthint", 3, 0.2f);
+        f = u40Var3;
+        u40 u40Var4 = new u40("ChannelGiftHint", 3, "channelgifthint", 3, 0.2f);
+        h = u40Var4;
+        u40 u40Var5 = new u40("GroupEmojiPackHintShown", 4, "groupEmojiPackShownHint", 1, 1.0f);
+        n = u40Var5;
+        u40 u40Var6 = new u40("AccountSwitchHint", 5, "accountswitchhint", 3, 1.0f);
+        r = u40Var6;
+        u40 u40Var7 = new u40("GiftMessageHint", 6, "giftMessaheHint", 3, 1.0f);
+        s = u40Var7;
+        u40 u40Var8 = new u40("PlaybackSpeedHint", 7, "playbackspeedhint", 3, 0.2f);
+        v = u40Var8;
+        u40 u40Var9 = new u40();
+        w = u40Var9;
+        x = new u40[]{u40Var, u40Var2, u40Var3, u40Var4, u40Var5, u40Var6, u40Var7, u40Var8, u40Var9};
     }
 
-    public final void a(int i10, boolean z10) {
-        this.n = i10;
-        LinearLayout linearLayout = this.d;
-        boolean z11 = !z10;
-        this.b.d(linearLayout.getChildAt(i10).getLeft(), z11);
-        this.c.d(linearLayout.getChildAt(i10).getRight(), z11);
+    public u40() {
+        this.a = "hints_controller_" + this;
+        this.b = 3;
+        this.c = 1.0f;
     }
 
-    public final void b(ArrayList arrayList, MessagesStorage.IntCallback intCallback) {
-        LinearLayout linearLayout = this.d;
-        linearLayout.removeAllViews();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            CharSequence charSequence = (CharSequence) arrayList.get(i10);
-            ai.jc jcVar = new ai.jc(getContext());
-            jcVar.setDrawingCacheEnabled(false);
-            jcVar.setOnClickListener(new ai.ia(this, i10, intCallback, 9));
-            jcVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
-            LinearLayout.LayoutParams n10 = w7.z5.n(-2, -2);
-            if (i10 < arrayList.size() - 1) {
-                n10.rightMargin = AndroidUtilities.dp(4.0f);
+    public static u40 valueOf(String str) {
+        return (u40) Enum.valueOf(u40.class, str);
+    }
+
+    public static u40[] values() {
+        return (u40[]) x.clone();
+    }
+
+    public final void a() {
+        MessagesController.getGlobalMainSettings().edit().putInt(this.a, this.b).apply();
+    }
+
+    public final void b() {
+        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+        String str = this.a;
+        MessagesController.getGlobalMainSettings().edit().putInt(str, globalMainSettings.getInt(str, 0) + 1).apply();
+    }
+
+    public final boolean c() {
+        if (MessagesController.getGlobalMainSettings().getInt(this.a, 0) < this.b) {
+            float f7 = this.c;
+            if (f7 >= 1.0f) {
+                return true;
             }
-            jcVar.b = new i11(charSequence, this.f);
-            linearLayout.addView(jcVar, n10);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float c10 = this.b.c();
-        float c11 = this.c.c();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = v;
-        rectF.set(c10, 0.0f, c11, measuredHeight);
-        Path path = this.r;
-        path.rewind();
-        float dp = AndroidUtilities.dp(13.0f);
-        float dp2 = AndroidUtilities.dp(13.0f);
-        Path.Direction direction = Path.Direction.CW;
-        path.addRoundRect(rectF, dp, dp2, direction);
-        path.close();
-        Path path2 = this.s;
-        path2.rewind();
-        LinearLayout linearLayout = this.d;
-        path2.addRect(0.0f, 0.0f, linearLayout.getMeasuredWidth(), getMeasuredHeight(), direction);
-        path2.addRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), Path.Direction.CCW);
-        path2.close();
-        boolean z10 = this.h;
-        org.telegram.ui.ActionBar.g6 g6Var = this.a;
-        int o12 = z10 ? org.telegram.ui.ActionBar.k6.o1(0.1f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var)) : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, g6Var) & 520093695;
-        Paint paint = this.e;
-        paint.setColor(o12);
-        canvas.drawPath(path, paint);
-        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, g6Var);
-        TextPaint textPaint = this.f;
-        textPaint.setColor(w02);
-        canvas.save();
-        canvas.clipPath(path2);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        textPaint.setColor(this.h ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var) : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Y8, g6Var));
-        canvas.save();
-        canvas.clipPath(path);
-        for (int i10 = 0; i10 < linearLayout.getChildCount(); i10++) {
-            View childAt = linearLayout.getChildAt(i10);
-            if (rectF.right >= childAt.getLeft() && rectF.left <= childAt.getRight()) {
-                canvas.save();
-                canvas.translate(childAt.getLeft(), childAt.getTop());
-                childAt.draw(canvas);
-                canvas.restore();
+            if (f7 > 0.0f && Utilities.fastRandom.nextFloat() < f7) {
+                return true;
             }
         }
-        canvas.restore();
+        return false;
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        a(this.n, false);
-    }
-
-    public void setAccent(boolean z10) {
-        this.h = z10;
+    public u40(String str, int i10, String str2, int i11, float f7) {
+        this.a = str2;
+        this.b = i11;
+        this.c = f7;
     }
 }

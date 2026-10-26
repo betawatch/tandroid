@@ -1,60 +1,55 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a3 b;
+public final class y2 extends View {
+    public final TextPaint a;
+    public final Paint b;
+    public final float c;
+    public final String d;
+    public volatile Bitmap e;
 
-    public /* synthetic */ y2(a3 a3Var, int i10) {
-        this.a = i10;
-        this.b = a3Var;
+    public y2(Context context, String str) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        this.b = new Paint(1);
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+        textPaint.setColor(-1);
+        textPaint.setTypeface(AndroidUtilities.bold());
+        this.c = textPaint.measureText(str);
+        this.d = str;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                a3 a3Var = this.b;
-                a3Var.getClass();
-                a3Var.H = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var.invalidate();
-                a3Var.T.c();
-                break;
-            case 1:
-                a3 a3Var2 = this.b;
-                a3Var2.getClass();
-                a3Var2.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a3Var2.invalidate();
-                a3Var2.T.c();
-                break;
-            case 2:
-                a3 a3Var3 = this.b;
-                a3Var3.getClass();
-                a3Var3.H = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var3.invalidate();
-                a3Var3.T.c();
-                break;
-            case 3:
-                a3 a3Var4 = this.b;
-                a3Var4.getClass();
-                a3Var4.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var4.invalidate();
-                break;
-            case 4:
-                a3 a3Var5 = this.b;
-                a3Var5.getClass();
-                a3Var5.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var5.invalidate();
-                break;
-            default:
-                a3 a3Var6 = this.b;
-                a3Var6.getClass();
-                a3Var6.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                a3Var6.invalidate();
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e != null) {
+            canvas.drawBitmap(this.e, 0.0f, 0.0f, this.b);
         }
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (z10) {
+            Utilities.globalQueue.postRunnable(new k2.c(this, 24));
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.c), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
     }
 }

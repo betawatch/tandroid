@@ -1,118 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ja extends org.telegram.ui.Components.lm0 {
-    public final /* synthetic */ sa c;
+public final class ja extends qa {
+    public final /* synthetic */ int J = 0;
+    public final /* synthetic */ org.telegram.ui.Components.lm0 K;
 
-    public ja(sa saVar) {
-        this.c = saVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ja(ka kaVar, Activity activity, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(activity, u6Var);
+        this.K = kaVar;
+        this.a = true;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f == 4;
+    @Override // org.telegram.ui.qa
+    public final String getUsernameEditable() {
+        switch (this.J) {
+            case 0:
+                return ((ka) this.K).c.r;
+            default:
+                fi.c2 c2Var = ((yo) this.K).c.i3.b;
+                if (c2Var == null) {
+                    return null;
+                }
+                return c2Var.getText().toString();
+        }
     }
 
-    @Override // s4.g0
-    public final int h() {
-        sa saVar = this.c;
-        org.telegram.ui.Components.mm0 mm0Var = saVar.b;
-        ArrayList arrayList = saVar.v;
-        if (mm0Var != null) {
-            ArrayList arrayList2 = mm0Var.J2;
-            if (arrayList2 != null) {
-                arrayList2.clear();
-            } else {
-                mm0Var.J2 = new ArrayList();
-            }
-            if (arrayList.size() > 0) {
-                saVar.b.J2.add(Long.valueOf(AndroidUtilities.pack(3, arrayList.size() + 3)));
-            }
-        }
-        return (saVar.v.size() > 0 ? saVar.v.size() + 2 : 0) + 3;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 == 2) {
-            return 1;
-        }
-        if (i10 == 3) {
-            return 0;
-        }
-        return i10 != h() - 1 ? 4 : 2;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        sa saVar = this.c;
-        long j10 = saVar.x;
-        int i11 = b1Var.f;
-        View view = b1Var.a;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.l4) view).setText(LocaleController.getString(i10 == 0 ? j10 != 0 ? R.string.BotSetPublicLinkHeader : R.string.SetUsernameHeader : R.string.UsernamesProfileHeader));
-            return;
-        }
-        if (i11 == 2) {
-            ((org.telegram.ui.Cells.e9) view).setText(LocaleController.getString(j10 != 0 ? R.string.BotUsernamesHelp : R.string.UsernamesProfileHelp));
-            return;
-        }
-        if (i11 == 3) {
-            saVar.n = true;
-            ma maVar = (ma) view;
-            saVar.y = maVar;
-            maVar.a.setText(saVar.r);
-            saVar.n = false;
-            return;
-        }
-        if (i11 != 4) {
-            return;
-        }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) saVar.v.get(i10 - 4);
-        pa paVar = (pa) view;
-        if (tL_username.editable) {
-            saVar.E = paVar;
-        } else if (saVar.E == paVar) {
-            saVar.E = null;
-        }
-        paVar.a(tL_username, i10 < h() - 2, false, saVar.x);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        sa saVar = this.c;
-        if (i10 == 0) {
-            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.l4(saVar.getParentActivity()));
-        }
-        if (i10 == 1) {
-            ra raVar = new ra(saVar, saVar.getParentActivity());
-            raVar.setTag(-33024);
-            return new org.telegram.ui.Components.wl0(raVar);
-        }
-        if (i10 == 2) {
-            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.e9(saVar.getParentActivity()));
-        }
-        if (i10 == 3) {
-            return new org.telegram.ui.Components.wl0(new ma(saVar, saVar.getParentActivity()));
-        }
-        if (i10 != 4) {
-            return null;
-        }
-        return new org.telegram.ui.Components.wl0(new ia(this, saVar.getParentActivity(), saVar.getResourceProvider()));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ja(yo yoVar, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        this.K = yoVar;
     }
 }

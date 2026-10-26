@@ -1,14 +1,16 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.io.DataInputStream;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class s {
-    public static m1.c a(String name) {
-        ie.d dVar = be.n0.b;
-        be.b2 b2Var = new be.b2();
-        dVar.getClass();
-        ge.e b10 = be.f0.b(h.c(dVar, b2Var));
-        kotlin.jvm.internal.i.e(name, "name");
-        return new m1.c(name, m1.a.b, b10);
+    public static float[] a(DataInputStream dataInputStream) {
+        int readInt = dataInputStream.readInt();
+        float[] fArr = new float[readInt];
+        for (int i10 = 0; i10 < readInt; i10++) {
+            fArr[i10] = dataInputStream.readFloat();
+        }
+        return fArr;
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class hg extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -31,13 +31,13 @@ public final class hg extends AnimatorListenerAdapter {
                 chatActivityEnterView.L3.unlock();
                 og ogVar = chatActivityEnterView.Z2;
                 if (ogVar != null) {
-                    ogVar.z(0.0f);
+                    ogVar.t(0.0f);
                 }
                 chatActivityEnterView.requestLayout();
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView2 = this.c;
-                ow0 ow0Var = chatActivityEnterView2.m1;
+                vw0 vw0Var = chatActivityEnterView2.m1;
                 chatActivityEnterView2.A3 = false;
                 chatActivityEnterView2.B3 = null;
                 dg dgVar = chatActivityEnterView2.U0;
@@ -47,10 +47,10 @@ public final class hg extends AnimatorListenerAdapter {
                     }
                     chatActivityEnterView2.U0.setLayerType(0, null);
                 }
-                if (ow0Var != null) {
-                    ow0Var.requestLayout();
-                    ow0Var.setForeground(null);
-                    ow0Var.setWillNotDraw(false);
+                if (vw0Var != null) {
+                    vw0Var.requestLayout();
+                    vw0Var.setForeground(null);
+                    vw0Var.setWillNotDraw(false);
                 }
                 if (chatActivityEnterView2.z2 && chatActivityEnterView2.q0()) {
                     chatActivityEnterView2.q1(0, chatActivityEnterView2.f2, true, true);

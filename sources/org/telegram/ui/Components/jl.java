@@ -3,25 +3,25 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class jl extends s4.c0 {
-    public final /* synthetic */ ig.d0 r;
+public final class jl extends s4.d0 {
+    public final /* synthetic */ jg.e0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jl(ig.d0 d0Var, Context context) {
+    public jl(jg.e0 e0Var, Context context) {
         super(context);
-        this.r = d0Var;
+        this.r = e0Var;
     }
 
-    @Override // s4.c0
+    @Override // s4.d0
     public final int k(int i10, View view) {
         int k10 = super.k(i10, view);
-        rl rlVar = (rl) this.r.V;
-        return k10 - (rlVar.N.getPaddingTop() - (rlVar.y0 - rlVar.x0));
+        sl slVar = (sl) this.r.V;
+        return k10 - (slVar.N.getPaddingTop() - (slVar.x0 - slVar.w0));
     }
 
-    @Override // s4.c0
+    @Override // s4.d0
     public final int m(int i10) {
         return super.m(i10) * 4;
     }

@@ -1,31 +1,6 @@
 package x7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class i9 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final s e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
-
-    public /* synthetic */ i9(v7.d8 d8Var) {
-        this.a = d8Var.a;
-        this.b = d8Var.b;
-        this.c = d8Var.c;
-        this.d = d8Var.d;
-        this.e = (s) d8Var.k;
-        this.f = d8Var.e;
-        this.g = (Boolean) d8Var.f;
-        this.h = (Boolean) d8Var.g;
-        this.i = (Boolean) d8Var.h;
-        this.j = d8Var.i;
-        this.k = (Integer) d8Var.j;
-    }
+public abstract class i9 {
 }

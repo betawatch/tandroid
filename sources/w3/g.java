@@ -1,36 +1,35 @@
 package w3;
 
-import b2.w;
-import c3.l0;
-import e2.m0;
-import e2.x;
+import b2.x;
+import c3.j0;
+import e2.n0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
-    public final l0 a;
+    public final j0 a;
     public t d;
     public d e;
     public int f;
     public int g;
     public int h;
     public int i;
-    public final w j;
+    public final x j;
     public boolean m;
     public final s b = new s();
-    public final x c = new x();
-    public final x k = new x(1);
-    public final x l = new x();
+    public final e2.x c = new e2.x();
+    public final e2.x k = new e2.x(1);
+    public final e2.x l = new e2.x();
 
-    public g(l0 l0Var, t tVar, d dVar, w wVar) {
-        this.a = l0Var;
+    public g(j0 j0Var, t tVar, d dVar, x xVar) {
+        this.a = j0Var;
         this.d = tVar;
         this.e = dVar;
-        this.j = wVar;
+        this.j = xVar;
         this.d = tVar;
         this.e = dVar;
-        l0Var.b(wVar);
+        j0Var.b(xVar);
         e();
     }
 
@@ -45,7 +44,7 @@ public final class g {
         }
         s sVar = this.b;
         d dVar = sVar.a;
-        String str = m0.a;
+        String str = n0.a;
         int i10 = dVar.a;
         r rVar = sVar.m;
         if (rVar == null) {
@@ -75,7 +74,7 @@ public final class g {
     }
 
     public final int d(int i10, int i11) {
-        x xVar;
+        e2.x xVar;
         r b10 = b();
         if (b10 == null) {
             return 0;
@@ -86,25 +85,25 @@ public final class g {
             xVar = sVar.n;
         } else {
             byte[] bArr = b10.e;
-            String str = m0.a;
+            String str = n0.a;
             int length = bArr.length;
-            x xVar2 = this.l;
+            e2.x xVar2 = this.l;
             xVar2.L(length, bArr);
             i12 = bArr.length;
             xVar = xVar2;
         }
         boolean z10 = sVar.k && sVar.l[this.f];
         boolean z11 = z10 || i11 != 0;
-        x xVar3 = this.k;
+        e2.x xVar3 = this.k;
         xVar3.a[0] = (byte) ((z11 ? 128 : 0) | i12);
         xVar3.N(0);
-        l0 l0Var = this.a;
-        l0Var.g(xVar3, 1, 1);
-        l0Var.g(xVar, i12, 1);
+        j0 j0Var = this.a;
+        j0Var.g(xVar3, 1, 1);
+        j0Var.g(xVar, i12, 1);
         if (!z11) {
             return i12 + 1;
         }
-        x xVar4 = this.c;
+        e2.x xVar4 = this.c;
         if (!z10) {
             xVar4.K(8);
             byte[] bArr2 = xVar4.a;
@@ -116,10 +115,10 @@ public final class g {
             bArr2[5] = (byte) ((i10 >> 16) & 255);
             bArr2[6] = (byte) ((i10 >> 8) & 255);
             bArr2[7] = (byte) (i10 & 255);
-            l0Var.g(xVar4, 8, 1);
+            j0Var.g(xVar4, 8, 1);
             return i12 + 9;
         }
-        x xVar5 = sVar.n;
+        e2.x xVar5 = sVar.n;
         int H = xVar5.H();
         xVar5.O(-2);
         int i13 = (H * 6) + 2;
@@ -133,7 +132,7 @@ public final class g {
         } else {
             xVar4 = xVar5;
         }
-        l0Var.g(xVar4, i13, 1);
+        j0Var.g(xVar4, i13, 1);
         return i12 + 1 + i13;
     }
 

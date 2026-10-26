@@ -1,72 +1,45 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class po implements View.OnClickListener {
+public final /* synthetic */ class po implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yo b;
+    public final /* synthetic */ ap b;
 
-    public /* synthetic */ po(yo yoVar, int i10) {
+    public /* synthetic */ po(ap apVar, int i10) {
         this.a = i10;
-        this.b = yoVar;
+        this.b = apVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        yo yoVar = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yoVar.getParentActivity());
-                String string = LocaleController.getString(R.string.AppName);
-                org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-                c2Var.R = string;
-                if (yoVar.b0) {
-                    c2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, yoVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
-                } else {
-                    c2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, yoVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
-                }
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.w0(20, yoVar, currentChannel));
-                yoVar.showDialog(c2Var);
+                ap apVar = this.b;
+                apVar.c0 = true;
+                apVar.d0();
                 break;
             case 1:
-                if (!yoVar.W) {
-                    yoVar.W = true;
-                    yoVar.c0();
-                    break;
-                }
+                ap apVar2 = this.b;
+                apVar2.X = apVar2.getMessagesController().getChat(Long.valueOf(apVar2.Z));
+                apVar2.a0();
                 break;
             case 2:
-                if (yoVar.W) {
-                    if (!yoVar.d0) {
-                        yoVar.a0();
-                        break;
-                    } else {
-                        yoVar.W = false;
-                        yoVar.c0();
-                        break;
-                    }
-                }
+                this.b.c0(false);
                 break;
             case 3:
-                mh0 mh0Var = new mh0(yoVar.a0, 0L, 0);
-                mh0Var.h0(yoVar.Z, yoVar.m0);
-                yoVar.presentFragment(mh0Var);
+                ap apVar3 = this.b;
+                apVar3.c0 = true;
+                if (apVar3.b.length() > 0) {
+                    apVar3.Y(apVar3.b.getText().toString());
+                }
+                apVar3.d0();
+                break;
+            case 4:
+                this.b.a0();
                 break;
             default:
-                boolean z10 = !yoVar.c0;
-                yoVar.c0 = z10;
-                ((org.telegram.ui.Cells.w8) view).setChecked(z10);
+                this.b.c0(true);
                 break;
         }
     }

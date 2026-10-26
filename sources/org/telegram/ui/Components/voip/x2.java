@@ -1,203 +1,166 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.view.View;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.WindowInsets;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.p5;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.h31;
+import org.telegram.ui.ph1;
+import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class x2 extends View {
-    public boolean E;
-    public int F;
-    public boolean G;
-    public final o1 H;
-    public final Paint I;
-    public final Rect J;
-    public final boolean K;
-    public final m3[] a;
-    public final m3[] b;
-    public ValueAnimator c;
-    public int d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
-    public int s;
-    public int v;
-    public int w;
-    public int x;
-    public boolean y;
+public abstract class x2 extends FrameLayout {
+    public Activity a;
+    public boolean b;
+    public AnimationNotificationsLocker c;
+    public VelocityTracker d;
+    public boolean e;
+    public boolean f;
+    public float h;
+    public float n;
+    public boolean r;
 
-    public x2(Activity activity, TLRPC.User user, o1 o1Var) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.I = paint;
-        this.J = new Rect();
-        boolean isEnabled = LiteMode.isEnabled(512);
-        this.K = isEnabled;
-        this.H = o1Var;
-        if (isEnabled) {
-            this.a = new m3[]{new m3(user, this, AndroidUtilities.dp(32.0f)), new m3(user, this, AndroidUtilities.dp(28.0f)), new m3(user, this, AndroidUtilities.dp(35.0f)), new m3(user, this, AndroidUtilities.dp(28.0f)), new m3(user, this, AndroidUtilities.dp(26.0f))};
-            this.b = new m3[]{new m3(user, this, AndroidUtilities.dp(32.0f)), new m3(user, this, AndroidUtilities.dp(28.0f)), new m3(user, this, AndroidUtilities.dp(35.0f)), new m3(user, this, AndroidUtilities.dp(28.0f)), new m3(user, this, AndroidUtilities.dp(26.0f))};
-            o1Var.a(this);
-            setLayerType(2, null);
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        }
+    public static WindowManager.LayoutParams a() {
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.height = -1;
+        layoutParams.format = -2;
+        layoutParams.width = -1;
+        layoutParams.gravity = 51;
+        layoutParams.type = 99;
+        layoutParams.screenOrientation = 1;
+        AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
+        layoutParams.flags = -2144665216;
+        return layoutParams;
     }
 
-    public final void a() {
-        if (this.K && !this.y) {
-            this.y = true;
-            int dp = AndroidUtilities.dp(12.0f);
-            this.F = dp;
-            ValueAnimator ofInt = ValueAnimator.ofInt(0, dp);
-            this.c = ofInt;
-            ofInt.addUpdateListener(new w2(this, 0));
-            this.c.setInterpolator(bs.g);
-            this.c.setDuration(200L);
-            this.c.start();
-        }
+    public final void b() {
+        c(330L);
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.K) {
-            for (m3 m3Var : this.a) {
-                p5 p5Var = m3Var.a;
-                if (p5Var != null) {
-                    p5Var.a();
-                    ValueAnimator valueAnimator = m3Var.b;
-                    if (valueAnimator != null) {
-                        valueAnimator.start();
+    public final void c(long j10) {
+        if (this.f) {
+            return;
+        }
+        this.f = true;
+        if (ph1.n1 != null) {
+            if (VoIPService.getSharedInstance() != null) {
+                int measuredHeight = ph1.n1.u0.getMeasuredHeight();
+                if (ph1.n1.D0 && !VoIPService.getSharedInstance().isConverting()) {
+                    ph1 ph1Var = ph1.n1;
+                    n2.l(ph1Var.b, ph1Var.a, ph1Var.u0.getMeasuredWidth(), measuredHeight, 0);
+                    WindowInsets windowInsets = ph1.n1.r0;
+                    if (windowInsets != null) {
+                        n2.X = windowInsets.getSystemWindowInsetTop();
+                        ph1.n1.r0.getSystemWindowInsetBottom();
                     }
                 }
             }
-            for (m3 m3Var2 : this.b) {
-                p5 p5Var2 = m3Var2.a;
-                if (p5Var2 != null) {
-                    p5Var2.a();
-                    ValueAnimator valueAnimator2 = m3Var2.b;
-                    if (valueAnimator2 != null) {
-                        valueAnimator2.start();
-                    }
-                }
-            }
+            ph1.n1.c0.d.release();
+            ph1.n1.d0.d.release();
+            ph1.n1.b0.release();
+            ph1.n1.k();
         }
+        ph1.n1 = null;
+        if (this.b) {
+            try {
+                ((WindowManager) this.a.getSystemService("window")).removeView(this);
+            } catch (Exception unused) {
+            }
+        } else {
+            this.c.lock();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new h31(this, 18)).setDuration(j10).setInterpolator(ds.f).start();
+        }
+    }
+
+    public final void d() {
+        if (getParent() != null) {
+            AndroidUtilities.unlockOrientation(this.a);
+            WindowManager windowManager = (WindowManager) this.a.getSystemService("window");
+            setVisibility(8);
+            windowManager.removeView(this);
+            OrientationHelper.cameraRotationDisabled = false;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return onTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        if (this.e) {
+            return;
+        }
+        this.e = true;
+        if (this.b) {
+            return;
+        }
+        setTranslationY(getMeasuredHeight());
+        setAlpha(0.0f);
+        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(ds.f).start();
     }
 
     @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (this.K) {
-            for (m3 m3Var : this.a) {
-                p5 p5Var = m3Var.a;
-                if (p5Var != null) {
-                    ValueAnimator valueAnimator = m3Var.b;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                        m3Var.b = null;
-                    }
-                    p5Var.b();
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (!this.b) {
+            if (motionEvent.getAction() == 0) {
+                this.h = motionEvent.getX();
+                this.n = motionEvent.getY();
+                if (this.d == null) {
+                    this.d = VelocityTracker.obtain();
                 }
+                this.d.clear();
+                return false;
             }
-            for (m3 m3Var2 : this.b) {
-                p5 p5Var2 = m3Var2.a;
-                if (p5Var2 != null) {
-                    ValueAnimator valueAnimator2 = m3Var2.b;
-                    if (valueAnimator2 != null) {
-                        valueAnimator2.cancel();
-                        m3Var2.b = null;
-                    }
-                    p5Var2.b();
+            if (motionEvent.getAction() == 2) {
+                float x9 = motionEvent.getX() - this.h;
+                float y3 = motionEvent.getY() - this.n;
+                if (!this.r && Math.abs(y3) > AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(y3) / 3.0f > x9) {
+                    this.n = motionEvent.getY();
+                    this.r = true;
+                    y3 = 0.0f;
                 }
+                if (this.r) {
+                    float f7 = y3 >= 0.0f ? y3 : 0.0f;
+                    if (this.d == null) {
+                        this.d = VelocityTracker.obtain();
+                    }
+                    this.d.addMovement(motionEvent);
+                    setTranslationY(f7);
+                }
+                return this.r;
             }
-            ValueAnimator valueAnimator3 = this.c;
-            if (valueAnimator3 != null) {
-                valueAnimator3.cancel();
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.K && !this.G) {
-            int width = getWidth();
-            int height = getHeight();
-            Rect rect = this.J;
-            rect.set(0, 0, width, height);
-            float x10 = getX();
-            float y3 = getY();
-            o1 o1Var = this.H;
-            o1Var.d(x10, y3);
-            int measuredWidth = getMeasuredWidth() / 2;
-            m3[] m3VarArr = this.a;
-            m3VarArr[0].b((measuredWidth - AndroidUtilities.dp(120.0f)) - this.d, AndroidUtilities.dp(120.0f) - this.r);
-            m3VarArr[1].b((measuredWidth - AndroidUtilities.dp(180.0f)) - this.e, AndroidUtilities.dp(150.0f) - this.s);
-            m3VarArr[2].b((measuredWidth - AndroidUtilities.dp(150.0f)) - this.f, AndroidUtilities.dp(185.0f) - this.v);
-            m3VarArr[3].b((measuredWidth - AndroidUtilities.dp(176.0f)) - this.h, AndroidUtilities.dp(240.0f) - this.w);
-            m3VarArr[4].b((measuredWidth - AndroidUtilities.dp(130.0f)) - this.n, AndroidUtilities.dp(265.0f) - this.x);
-            for (m3 m3Var : m3VarArr) {
-                m3Var.a(canvas);
-            }
-            m3[] m3VarArr2 = this.b;
-            m3VarArr2[0].b(AndroidUtilities.dp(50.0f) + measuredWidth + this.d, AndroidUtilities.dp(120.0f) - this.r);
-            m3VarArr2[1].b(AndroidUtilities.dp(110.0f) + measuredWidth + this.e, AndroidUtilities.dp(150.0f) - this.s);
-            m3VarArr2[2].b(AndroidUtilities.dp(80.0f) + measuredWidth + this.f, AndroidUtilities.dp(185.0f) - this.v);
-            m3VarArr2[3].b(AndroidUtilities.dp(106.0f) + measuredWidth + this.h, AndroidUtilities.dp(240.0f) - this.w);
-            m3VarArr2[4].b(AndroidUtilities.dp(60.0f) + measuredWidth + this.n, AndroidUtilities.dp(265.0f) - this.x);
-            for (m3 m3Var2 : m3VarArr2) {
-                m3Var2.a(canvas);
-            }
-            int alpha = o1Var.b().getAlpha();
-            Paint paint = this.I;
-            paint.setAlpha(255);
-            canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint, 31);
-            o1Var.b().setAlpha(255);
-            canvas.drawRect(rect, o1Var.b());
-            o1Var.b().setAlpha(alpha);
-            if (o1Var.e) {
-                int alpha2 = ((Paint) o1Var.d.a).getAlpha();
-                ((Paint) o1Var.d.a).setAlpha(255);
-                canvas.drawRect(rect, (Paint) o1Var.d.a);
-                ((Paint) o1Var.d.a).setAlpha(alpha2);
-            }
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.K) {
-            for (m3 m3Var : this.a) {
-                int measuredWidth = getMeasuredWidth();
-                getMeasuredHeight();
-                m3Var.o = measuredWidth;
-                m3Var.k.invalidate();
-            }
-            for (m3 m3Var2 : this.b) {
-                int measuredWidth2 = getMeasuredWidth();
-                getMeasuredHeight();
-                m3Var2.o = measuredWidth2;
-                m3Var2.k.invalidate();
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                float translationY = getTranslationY();
+                if (this.d == null) {
+                    this.d = VelocityTracker.obtain();
+                }
+                this.d.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
+                float xVelocity = this.d.getXVelocity();
+                float yVelocity = this.d.getYVelocity();
+                if (translationY >= getMeasuredHeight() / 3.0f || (xVelocity >= 3500.0f && xVelocity >= yVelocity)) {
+                    c(Math.max((int) ((200.0f / getMeasuredHeight()) * (getMeasuredHeight() - getTranslationY())), 50));
+                } else {
+                    animate().translationY(0.0f).start();
+                }
+                this.r = false;
+                return false;
             }
         }
+        return false;
     }
 
-    public void setState(boolean z10) {
-        this.G = z10;
-        invalidate();
+    public void setLockOnScreen(boolean z10) {
+        this.b = z10;
     }
 }

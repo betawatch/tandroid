@@ -1,33 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qz0 extends qd0 {
-    public final /* synthetic */ rz0 y0;
+public final class qz0 extends lm0 {
+    public final tz0 c;
+    public final /* synthetic */ tz0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qz0(rz0 rz0Var, Context context) {
-        super(context, 13, null);
-        this.y0 = rz0Var;
+    public qz0(tz0 tz0Var, tz0 tz0Var2) {
+        this.d = tz0Var;
+        this.c = tz0Var2;
     }
 
-    @Override // org.telegram.ui.Components.qd0, android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.j5, false);
-        rz0 rz0Var = this.y0;
-        if (x02 != rz0Var.a) {
-            rz0Var.a = x02;
-            setTextColor(x02);
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        ArrayList arrayList = this.c.w;
+        if (arrayList == null) {
+            return 0;
         }
-        super.onDraw(canvas);
-        float dp = AndroidUtilities.dp(31.0f);
-        rz0Var.e.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h7, false));
-        canvas.drawLine(AndroidUtilities.dp(2.0f), dp, getMeasuredWidth() - AndroidUtilities.dp(2.0f), dp, rz0Var.e);
-        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(31.0f);
-        canvas.drawLine(AndroidUtilities.dp(2.0f), measuredHeight, getMeasuredWidth() - AndroidUtilities.dp(2.0f), measuredHeight, rz0Var.e);
+        return arrayList.size();
+    }
+
+    @Override // s4.h0
+    public final long i(int i10) {
+        if (this.c.w == null) {
+            return 0L;
+        }
+        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        sz0 sz0Var = (sz0) e1Var.a;
+        tz0 tz0Var = this.c;
+        ArrayList arrayList = tz0Var.w;
+        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
+        int direction = tz0Var.getDirection();
+        sz0Var.a = str;
+        if (str == null || !str.startsWith("animated_")) {
+            sz0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
+        } else {
+            try {
+                long parseLong = Long.parseLong(str.substring(9));
+                Drawable drawable = sz0Var.b;
+                if (!(drawable instanceof t5) || ((t5) drawable).i() != parseLong) {
+                    sz0Var.setImageDrawable(t5.n(UserConfig.selectedAccount, parseLong, null, sz0Var.f.d()));
+                }
+            } catch (Exception unused) {
+                sz0Var.setImageDrawable(null);
+            }
+        }
+        if (sz0Var.d != direction) {
+            sz0Var.d = direction;
+            sz0Var.requestLayout();
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        return new vl0(new sz0(this.d, this.c.getContext()));
     }
 }

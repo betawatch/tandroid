@@ -1,12 +1,13 @@
 package e2;
 
 import android.content.Context;
-import ci.u7;
+import di.b4;
+import di.s8;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class w {
     public static w f;
@@ -16,7 +17,7 @@ public final class w {
     public final Object d;
     public final Object e;
 
-    public w(ai.a aVar, com.google.android.gms.common.api.internal.p pVar, k6.c[] cVarArr, boolean z10, int i10) {
+    public w(bi.a aVar, com.google.android.gms.common.api.internal.p pVar, l6.c[] cVarArr, boolean z10, int i10) {
         this.e = aVar;
         this.c = pVar;
         this.d = cVarArr;
@@ -66,7 +67,7 @@ public final class w {
                 Iterator it2 = ((CopyOnWriteArrayList) this.d).iterator();
                 while (it2.hasNext()) {
                     v vVar2 = (v) it2.next();
-                    vVar2.b.execute(new com.google.firebase.messaging.s(vVar2, 4));
+                    vVar2.b.execute(new s8(vVar2, 6));
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -80,6 +81,6 @@ public final class w {
         this.d = new CopyOnWriteArrayList();
         this.e = new Object();
         this.b = 0;
-        e.execute(new u7(17, this, context));
+        e.execute(new b4(26, this, context));
     }
 }

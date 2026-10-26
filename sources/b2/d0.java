@@ -1,52 +1,12 @@
 package b2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class d0 {
-    public static final d0 i = new d0(new c0());
-    public static final String j = Integer.toString(0, 36);
-    public static final String k = Integer.toString(1, 36);
-    public static final String l = Integer.toString(2, 36);
-    public static final String m = Integer.toString(3, 36);
-    public static final String n = Integer.toString(4, 36);
-    public static final String o = Integer.toString(5, 36);
-    public static final String p = Integer.toString(6, 36);
-    public static final String q = Integer.toString(7, 36);
-    public final long a;
-    public final long b;
-    public final long c;
-    public final long d;
-    public final boolean e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-
-    public d0(c0 c0Var) {
-        this.a = e2.m0.h0(c0Var.a);
-        this.c = e2.m0.h0(c0Var.b);
-        this.b = c0Var.a;
-        this.d = c0Var.b;
-        this.e = c0Var.c;
-        this.f = c0Var.d;
-        this.g = c0Var.e;
-        this.h = c0Var.f;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof d0)) {
-            return false;
-        }
-        d0 d0Var = (d0) obj;
-        return this.b == d0Var.b && this.d == d0Var.d && this.e == d0Var.e && this.f == d0Var.f && this.g == d0Var.g && this.h == d0Var.h;
-    }
-
-    public final int hashCode() {
-        long j10 = this.b;
-        int i10 = ((int) (j10 ^ (j10 >>> 32))) * 31;
-        long j11 = this.d;
-        return ((((((((i10 + ((int) ((j11 >>> 32) ^ j11))) * 31) + (this.e ? 1 : 0)) * 31) + (this.f ? 1 : 0)) * 31) + (this.g ? 1 : 0)) * 31) + (this.h ? 1 : 0);
-    }
+public final class d0 {
+    public long a;
+    public long b = Long.MIN_VALUE;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
 }

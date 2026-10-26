@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class af implements Runnable {
     public final /* synthetic */ int a;
@@ -20,10 +20,10 @@ public final class af implements Runnable {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.b;
                 af afVar = chatActivityEnterView.r3;
-                if ((!chatActivityEnterView.g0() || !chatActivityEnterView.t()) && !org.telegram.ui.ActionBar.o2.hasSheets(chatActivityEnterView.P2) && !chatActivityEnterView.Y1 && chatActivityEnterView.E0 != null && chatActivityEnterView.k3 && !chatActivityEnterView.z2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
+                if ((!chatActivityEnterView.g0() || !chatActivityEnterView.s()) && !org.telegram.ui.ActionBar.r2.hasSheets(chatActivityEnterView.P2) && !chatActivityEnterView.Y1 && chatActivityEnterView.E0 != null && chatActivityEnterView.k3 && !chatActivityEnterView.z2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
                     og ogVar = chatActivityEnterView.Z2;
                     if (ogVar != null) {
-                        ogVar.m1();
+                        ogVar.b1();
                     }
                     chatActivityEnterView.E0.requestFocus();
                     AndroidUtilities.showKeyboard(chatActivityEnterView.E0);
@@ -35,7 +35,7 @@ public final class af implements Runnable {
             case 1:
                 og ogVar2 = this.b.Z2;
                 if (ogVar2 != null) {
-                    ogVar2.a2(0, 0, 0, 0L, 0L, true);
+                    ogVar2.P1(0, 0, 0, 0L, 0L, true);
                     break;
                 }
                 break;

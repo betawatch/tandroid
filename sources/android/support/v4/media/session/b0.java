@@ -26,12 +26,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b0 {
     public static int d;
     public final v a;
-    public final qf.b b;
+    public final n4.s b;
     public final ArrayList c = new ArrayList();
 
     public b0(Context context, String str, ComponentName componentName, PendingIntent pendingIntent) {
@@ -74,7 +74,7 @@ public final class b0 {
         }
         d(new p(), new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper()));
         this.a.a.setMediaButtonReceiver(pendingIntent);
-        this.b = new qf.b(context, this.a.c);
+        this.b = new n4.s(context, this.a.c);
         if (d == 0) {
             d = (int) (TypedValue.applyDimension(1, 320.0f, context.getResources().getDisplayMetrics()) + 0.5f);
         }

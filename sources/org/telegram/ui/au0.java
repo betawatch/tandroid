@@ -1,85 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import androidx.core.widget.NestedScrollView;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class au0 extends org.telegram.ui.Components.s11 {
-    public boolean a;
-    public float b;
-    public NestedScrollView c;
-    public FrameLayout d;
+public final class au0 extends sg.e2 {
+    public final Path r0;
+    public boolean s0;
+    public final org.telegram.ui.Components.h6 t0;
+    public final /* synthetic */ PhotoViewer u0;
 
-    public au0(Context context) {
-        super(context);
-        this.a = false;
-        this.b = 1.0f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public au0(PhotoViewer photoViewer) {
+        super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
+        this.u0 = photoViewer;
+        this.r0 = new Path();
+        this.t0 = new org.telegram.ui.Components.h6(this, 0L, 420L, org.telegram.ui.Components.ds.h);
     }
 
-    public final void b(int i10, boolean z10) {
-        super.setVisibility(i10);
-        if (this.a && z10) {
-            this.c.setVisibility(i10);
+    public final void m(boolean z10, boolean z11) {
+        this.s0 = z10;
+        if (!z11) {
+            this.t0.f(z10, true);
         }
+        invalidate();
+    }
+
+    @Override // sg.e2, fi.d, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.r0;
+        path.rewind();
+        path.addRoundRect(this.l0, AndroidUtilities.dp(this.p0), AndroidUtilities.dp(this.p0), Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.translate(-getX(), -getY());
+        PhotoViewer photoViewer = this.u0;
+        if (this == photoViewer.v5 || this == photoViewer.w5) {
+            canvas.translate(-photoViewer.u5.getX(), -photoViewer.u5.getY());
+        }
+        photoViewer.U0(canvas, this.k0, -13948117, 855638016, false, true, false);
+        float e = this.t0.e(this.s0);
+        if (e > 0.0f) {
+            canvas.drawColor(org.telegram.ui.ActionBar.y6.o1(e, -1));
+        }
+        setTextColor(i0.a.f(e, -1, -16777216));
+        canvas.restore();
+        super.onDraw(canvas);
     }
 
     @Override // android.view.View
-    public float getAlpha() {
-        return this.a ? this.b : super.getAlpha();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.d == null || getParent() != this.d) {
-            return;
-        }
-        this.a = true;
-        this.c.setVisibility(getVisibility());
-        this.c.setAlpha(this.b);
-        super.setAlpha(1.0f);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (this.a) {
-            this.a = false;
-            this.c.setVisibility(8);
-            super.setAlpha(this.b);
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        this.b = f7;
-        if (this.a) {
-            this.c.setAlpha(f7);
-        } else {
-            super.setAlpha(f7);
-        }
-    }
-
-    public void setContainer(FrameLayout frameLayout) {
-        this.d = frameLayout;
-    }
-
-    public void setScrollView(NestedScrollView nestedScrollView) {
-        this.c = nestedScrollView;
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        if (this.a) {
-            this.c.invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        b(i10, true);
+    public final void onDrawForeground(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.r0);
+        super.onDrawForeground(canvas);
+        canvas.restore();
     }
 }

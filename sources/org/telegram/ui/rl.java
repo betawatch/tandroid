@@ -1,29 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class rl extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ sn d;
+public final class rl extends fi.v3 {
+    public final /* synthetic */ un L0;
 
-    public rl(sn snVar, boolean z10, boolean z11, boolean z12) {
-        this.d = snVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rl(un unVar, Activity activity) {
+        super(activity, 3);
+        this.L0 = unVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        sn snVar = this.d;
-        snVar.Y2 = null;
-        snVar.V2.setVisibility(this.a ? 0 : 4);
-        snVar.X2.setVisibility(this.b ? 0 : 4);
-        snVar.W2.setVisibility(this.c ? 0 : 4);
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        setTranslationY(((-getTop()) - AndroidUtilities.dp(120.0f)) + this.L0.O1);
     }
 }

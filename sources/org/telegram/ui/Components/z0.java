@@ -1,52 +1,71 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+import android.content.DialogInterface;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ z0(int i10, Runnable runnable) {
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class z0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ z0(Object obj, int i10) {
         this.a = i10;
-        this.b = runnable;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        switch (this.a) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                ((org.telegram.ui.jg) obj).run();
                 break;
             case 1:
-                this.b.run();
+                AndroidUtilities.hideKeyboard((f5) obj);
                 break;
             case 2:
-                this.b.run();
+                AndroidUtilities.hideKeyboard((h4) obj);
                 break;
             case 3:
-                this.b.run();
+                ((ChatActivityEnterView) obj).L0 = null;
                 break;
             case 4:
-                this.b.run();
-                c2Var.dismiss();
+                ((ti) obj).F2 = false;
                 break;
             case 5:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
+                al alVar = (al) obj;
+                alVar.T0 = null;
+                alVar.S.post(new uk(alVar, 2));
+                break;
+            case 6:
+                ju.i((ju) obj);
+                break;
+            case 7:
+                float[] fArr = FragmentContextView.W0;
+                ((FragmentContextView) obj).c(false);
+                break;
+            case 8:
+                oo0.H = null;
+                ((View) obj).requestFocus();
+                break;
+            case 9:
+                AndroidUtilities.hideKeyboard((io0) obj);
                 break;
             default:
-                c2Var.dismiss();
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
+                ThemeEditorView themeEditorView = ((h21) obj).d;
+                themeEditorView.n = null;
+                if (themeEditorView.d != null) {
+                    AndroidUtilities.setPreferredMaxRefreshRate(themeEditorView.j, themeEditorView.c, themeEditorView.i);
+                    try {
+                        themeEditorView.j.addView(themeEditorView.c, themeEditorView.i);
+                        themeEditorView.e();
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
                 }
                 break;
         }

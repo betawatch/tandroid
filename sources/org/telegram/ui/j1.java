@@ -1,8 +1,223 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_iv;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j1 {
-    public int[] a;
-    public float[] b;
+public final class j1 extends FrameLayout implements org.telegram.ui.Cells.r9 {
+    public final bi.r1 a;
+    public final g1 b;
+    public a3 c;
+    public a3 d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public boolean r;
+    public TL_iv.pageBlockCollage s;
+    public final i1 v;
+    public final h4 w;
+    public final /* synthetic */ j4 x;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j1(j4 j4Var, Context context, h4 h4Var) {
+        super(context);
+        this.x = j4Var;
+        this.v = new i1(this);
+        this.w = h4Var;
+        bi.r1 r1Var = new bi.r1(this, context, 5);
+        this.a = r1Var;
+        r1Var.i(new d1(this));
+        e1 e1Var = new e1(this);
+        e1Var.O = new f1(this);
+        r1Var.setLayoutManager(e1Var);
+        g1 g1Var = new g1(this);
+        this.b = g1Var;
+        r1Var.setAdapter(g1Var);
+        addView(r1Var, org.telegram.ui.Components.gb1.g(-2.0f, -1));
+        setWillNotDraw(false);
+    }
+
+    @Override // org.telegram.ui.Cells.r9
+    public final void fillTextLayoutBlocks(ArrayList arrayList) {
+        a3 a3Var = this.c;
+        if (a3Var != null) {
+            arrayList.add(a3Var);
+        }
+        a3 a3Var2 = this.d;
+        if (a3Var2 != null) {
+            arrayList.add(a3Var2);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a3 a3Var = this.c;
+        if (a3Var != null) {
+            a3Var.attach(this);
+        }
+        a3 a3Var2 = this.d;
+        if (a3Var2 != null) {
+            a3Var2.attach(this);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        a3 a3Var = this.c;
+        if (a3Var != null) {
+            a3Var.detach(this);
+        }
+        a3 a3Var2 = this.d;
+        if (a3Var2 != null) {
+            a3Var2.detach(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.s == null) {
+            return;
+        }
+        a3 a3Var = this.c;
+        j4 j4Var = this.x;
+        int i10 = 0;
+        if (a3Var != null) {
+            canvas.save();
+            canvas.translate(this.f, this.h);
+            j4.v(j4Var, canvas, this, 0);
+            this.c.draw(canvas, this);
+            canvas.restore();
+            i10 = 1;
+        }
+        if (this.d != null) {
+            canvas.save();
+            canvas.translate(this.f, this.h + this.n);
+            j4.v(j4Var, canvas, this, i10);
+            this.d.draw(canvas, this);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        StringBuilder sb2 = new StringBuilder(LocaleController.getString(R.string.AccDescrCollage));
+        if (this.c != null) {
+            sb2.append(", ");
+            sb2.append(this.c.d.getText());
+        }
+        if (this.d != null) {
+            sb2.append(", ");
+            sb2.append(this.d.d.getText());
+        }
+        accessibilityNodeInfo.setText(sb2);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14 = this.e;
+        int dp = AndroidUtilities.dp(8.0f);
+        int i15 = this.e;
+        bi.r1 r1Var = this.a;
+        r1Var.layout(i14, dp, r1Var.getMeasuredWidth() + i15, AndroidUtilities.dp(8.0f) + r1Var.getMeasuredHeight());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        j1 j1Var;
+        int dp;
+        int i12;
+        int i13 = 1;
+        this.r = true;
+        int size = View.MeasureSpec.getSize(i10);
+        TL_iv.pageBlockCollage pageblockcollage = this.s;
+        if (pageblockcollage != null) {
+            if (pageblockcollage.level > 0) {
+                int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
+                this.e = dp2;
+                this.f = dp2;
+                i12 = org.telegram.messenger.vh.z(18.0f, dp2, size);
+                dp = i12;
+            } else {
+                this.e = 0;
+                this.f = AndroidUtilities.dp(18.0f);
+                dp = size - AndroidUtilities.dp(36.0f);
+                i12 = size;
+            }
+            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30);
+            int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
+            bi.r1 r1Var = this.a;
+            r1Var.measure(makeMeasureSpec, makeMeasureSpec2);
+            int measuredHeight = r1Var.getMeasuredHeight();
+            int dp3 = AndroidUtilities.dp(8.0f) + measuredHeight;
+            this.h = dp3;
+            TL_iv.pageBlockCollage pageblockcollage2 = this.s;
+            TL_iv.RichText richText = pageblockcollage2.caption.text;
+            HashSet hashSet = j4.c1;
+            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+            j4 j4Var = this.x;
+            j1Var = this;
+            a3 p10 = j4.p(j4Var, j1Var, null, richText, dp, dp3, pageblockcollage2, alignment, 0, this.w);
+            j1Var.c = p10;
+            if (p10 != null) {
+                int height = j1Var.c.d.getHeight() + AndroidUtilities.dp(4.0f);
+                j1Var.n = height;
+                measuredHeight = org.telegram.messenger.t.D(4.0f, height, measuredHeight);
+                a3 a3Var = j1Var.c;
+                a3Var.s = j1Var.f;
+                a3Var.v = j1Var.h;
+            } else {
+                j1Var.n = 0;
+            }
+            TL_iv.pageBlockCollage pageblockcollage3 = j1Var.s;
+            TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
+            if (j1Var.w.G) {
+                alignment = org.telegram.ui.Components.px0.a();
+            }
+            a3 p11 = j4.p(j4Var, j1Var, null, richText2, dp, 0, pageblockcollage3, alignment, 0, j1Var.w);
+            j1Var.d = p11;
+            if (p11 != null) {
+                measuredHeight += j1Var.d.d.getHeight() + AndroidUtilities.dp(4.0f);
+                a3 a3Var2 = j1Var.d;
+                a3Var2.s = j1Var.f;
+                a3Var2.v = j1Var.h + j1Var.n;
+            }
+            int dp4 = AndroidUtilities.dp(16.0f) + measuredHeight;
+            TL_iv.pageBlockCollage pageblockcollage4 = j1Var.s;
+            i13 = (pageblockcollage4.level <= 0 || pageblockcollage4.bottom) ? dp4 : AndroidUtilities.dp(8.0f) + dp4;
+        } else {
+            j1Var = this;
+        }
+        setMeasuredDimension(size, i13);
+        j1Var.r = false;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        a3 a3Var = this.c;
+        int i10 = this.f;
+        int i11 = this.h;
+        j4 j4Var = this.x;
+        if (j4.l(j4Var, this.w, motionEvent, this, a3Var, i10, i11)) {
+            return true;
+        }
+        return j4.l(j4Var, this.w, motionEvent, this, this.d, this.f, this.h + this.n) || super.onTouchEvent(motionEvent);
+    }
 }

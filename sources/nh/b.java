@@ -1,0 +1,14 @@
+package nh;
+
+import s4.e1;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final class b extends e1 {
+    public final c v;
+
+    public b(c cVar) {
+        super(cVar);
+        this.v = cVar;
+    }
+}

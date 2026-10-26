@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class h {
     public final MediaController a;
@@ -40,13 +40,13 @@ public class h {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) obj;
-            g gVar = new g(qVar);
-            this.d.put(qVar, gVar);
-            qVar.c = gVar;
+            androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) obj;
+            g gVar = new g(rVar);
+            this.d.put(rVar, gVar);
+            rVar.c = gVar;
             try {
                 mediaSessionCompat$Token.a().o(gVar);
-                qVar.e(13, null, null);
+                rVar.e(13, null, null);
             } catch (RemoteException e) {
                 Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
             }
@@ -54,21 +54,21 @@ public class h {
         arrayList.clear();
     }
 
-    public final void b(androidx.mediarouter.app.q qVar) {
-        this.a.unregisterCallback(qVar.a);
+    public final void b(androidx.mediarouter.app.r rVar) {
+        this.a.unregisterCallback(rVar.a);
         synchronized (this.b) {
             if (this.e.a() != null) {
                 try {
-                    g gVar = (g) this.d.remove(qVar);
+                    g gVar = (g) this.d.remove(rVar);
                     if (gVar != null) {
-                        qVar.c = null;
-                        this.e.a().M(gVar);
+                        rVar.c = null;
+                        this.e.a().L(gVar);
                     }
                 } catch (RemoteException e) {
                     Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
                 }
             } else {
-                this.c.remove(qVar);
+                this.c.remove(rVar);
             }
         }
     }

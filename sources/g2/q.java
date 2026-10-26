@@ -1,15 +1,15 @@
 package g2;
 
-import e9.h2;
+import f9.c2;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class q extends e9.s implements Map {
+public final class q extends f9.o implements Map {
     public final Map b;
 
     public q(Map map) {
@@ -28,7 +28,7 @@ public final class q extends e9.s implements Map {
 
     @Override // java.util.Map
     public final boolean containsValue(Object obj) {
-        Iterator it = ((h2) entrySet()).iterator();
+        Iterator it = ((c2) entrySet()).iterator();
         it.getClass();
         if (obj == null) {
             while (it.hasNext()) {
@@ -48,12 +48,12 @@ public final class q extends e9.s implements Map {
 
     @Override // java.util.Map
     public final Set entrySet() {
-        return e9.s.k(this.b.entrySet(), new p(0));
+        return f9.o.k(this.b.entrySet(), new p(0));
     }
 
     @Override // java.util.Map
     public final boolean equals(Object obj) {
-        return obj != null && e9.s.i(this, obj);
+        return obj != null && f9.o.i(this, obj);
     }
 
     @Override // java.util.Map
@@ -64,14 +64,14 @@ public final class q extends e9.s implements Map {
         return (List) this.b.get(obj);
     }
 
-    @Override // e9.s
+    @Override // f9.o
     public final Object h() {
         return this.b;
     }
 
     @Override // java.util.Map
     public final int hashCode() {
-        return e9.s.n(entrySet());
+        return f9.o.n(entrySet());
     }
 
     @Override // java.util.Map
@@ -82,7 +82,7 @@ public final class q extends e9.s implements Map {
 
     @Override // java.util.Map
     public final Set keySet() {
-        return e9.s.k(this.b.keySet(), new p(1));
+        return f9.o.k(this.b.keySet(), new p(1));
     }
 
     @Override // java.util.Map

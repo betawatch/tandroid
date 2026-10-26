@@ -1,93 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.R;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class wr extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public int d;
-    public int e;
-    public final ArrayList c = new ArrayList();
-    public boolean f = false;
-    public final org.telegram.ui.Components.f6 g = new org.telegram.ui.Components.f6(new ti(this, 14), 420, org.telegram.ui.Components.bs.h);
-    public int h = 255;
+public final class wr implements ActionMode.Callback {
+    public final /* synthetic */ xr a;
 
-    public wr(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
+    public wr(xr xrVar) {
+        this.a = xrVar;
     }
 
-    public final void a(int i10, int i11) {
-        this.d = i10;
-        this.e = i11;
-    }
-
-    public final void b(boolean z10) {
-        if (this.f == z10) {
-            return;
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        ClipboardManager clipboardManager;
+        ClipData primaryClip;
+        int i10;
+        if (menuItem.getItemId() != 16908322) {
+            return true;
         }
-        this.f = z10;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((View) obj).invalidate();
+        xr xrVar = this.a;
+        vr vrVar = xrVar.getParent() instanceof vr ? (vr) xrVar.getParent() : null;
+        if (vrVar != null && (clipboardManager = (ClipboardManager) xrVar.getContext().getSystemService(ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
+            String charSequence = primaryClip.getItemAt(0).getText().toString();
+            try {
+                i10 = Integer.parseInt(charSequence);
+            } catch (Exception unused) {
+                i10 = -1;
+            }
+            if (i10 > 0) {
+                vrVar.c(charSequence, true);
+            }
         }
-        invalidateSelf();
+        xrVar.hideActionMode();
+        return true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float e = this.g.e(this.f);
-        int i10 = this.h;
-        Drawable drawable = this.a;
-        drawable.setAlpha(i10);
-        drawable.setBounds(getBounds());
-        drawable.draw(canvas);
-        if (e > 0.0f) {
-            Drawable drawable2 = this.b;
-            drawable2.setAlpha((int) (this.h * e));
-            drawable2.setBounds(getBounds().left + this.d, getBounds().top + this.e, drawable2.getIntrinsicWidth() + getBounds().left + this.d, drawable2.getIntrinsicHeight() + getBounds().top + this.e);
-            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, e);
-            canvas.save();
-            canvas.scale(lerp, lerp, drawable2.getBounds().centerX(), drawable2.getBounds().centerY());
-            drawable2.draw(canvas);
-            canvas.restore();
-        }
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        menu.add(0, R.id.paste, 0, R.string.paste);
+        return true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        return true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.h = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-        this.b.setColorFilter(colorFilter);
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
     }
 }

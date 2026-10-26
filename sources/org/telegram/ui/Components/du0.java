@@ -1,24 +1,173 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class du0 extends org.telegram.ui.un {
-    public final /* synthetic */ xv0 f;
+public final class du0 extends org.telegram.ui.ActionBar.s0 {
+    public final /* synthetic */ aw0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public du0(xv0 xv0Var, Context context, org.telegram.ui.ActionBar.h5 h5Var, Bundle bundle) {
-        super(context, h5Var, bundle);
-        this.f = xv0Var;
+    public du0(aw0 aw0Var) {
+        this.a = aw0Var;
     }
 
-    @Override // org.telegram.ui.un
-    public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.u0 u0Var = this.f.n0;
-        if (u0Var != null) {
-            u0Var.setShowSearchProgress(z10);
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void g() {
+        this.a.p0.setTranslationX(((View) r0.getParent()).getMeasuredWidth() - r0.getRight());
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void h() {
+        aw0 aw0Var = this.a;
+        rt0 rt0Var = aw0Var.L0;
+        ImageView imageView = aw0Var.t0;
+        aw0Var.X0 = false;
+        aw0Var.Y0 = null;
+        org.telegram.ui.ActionBar.w0 w0Var = aw0Var.o0;
+        if (w0Var != null) {
+            w0Var.setVisibility(0);
         }
+        if (imageView != null && aw0Var.h0(0.0f) > 0.5f) {
+            imageView.setVisibility(0);
+        }
+        if (rt0Var != null) {
+            rt0Var.d.M(new org.telegram.ui.ar(2));
+            rt0Var.h = 0L;
+            rt0Var.g(false);
+        }
+        fu0 fu0Var = aw0Var.V;
+        if (fu0Var != null) {
+            org.telegram.ui.vn vnVar = fu0Var.a;
+            org.telegram.ui.mn mnVar = vnVar.Kc;
+            if (mnVar != null) {
+                mnVar.h();
+            }
+            vnVar.E3 = false;
+            vnVar.o0 = false;
+            vnVar.uc(false);
+            vnVar.Vc();
+        }
+        aw0Var.W0 = false;
+        aw0Var.setSearchItemVisibility(0);
+        aw0Var.i0.G(null, true);
+        aw0Var.k0.G(null, true);
+        aw0Var.j0.G(null, true);
+        aw0Var.l0.F(null, true);
+        mv0 mv0Var = aw0Var.U;
+        if (mv0Var != null) {
+            mv0Var.E(null, null);
+        }
+        aw0Var.R0(false);
+        ak0 ak0Var = aw0Var.u0;
+        if (ak0Var != null) {
+            ak0Var.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(320L).setInterpolator(ds.h).start();
+        }
+        if (aw0Var.B0) {
+            aw0Var.B0 = false;
+        } else {
+            aw0Var.v1(false);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void i() {
+        aw0 aw0Var = this.a;
+        aw0Var.X0 = true;
+        rt0 rt0Var = aw0Var.L0;
+        if (rt0Var != null) {
+            rt0Var.g((aw0Var.getSelectedTab() == 11 || aw0Var.getSelectedTab() == 12) && rt0Var.a());
+        }
+        ImageView imageView = aw0Var.t0;
+        if (imageView != null) {
+            imageView.setVisibility(8);
+        }
+        org.telegram.ui.ActionBar.w0 w0Var = aw0Var.o0;
+        if (w0Var != null) {
+            w0Var.setVisibility(8);
+        }
+        aw0Var.setSearchItemVisibility(8);
+        aw0Var.R0(true);
+        ak0 ak0Var = aw0Var.u0;
+        if (ak0Var != null) {
+            ak0Var.animate().scaleX(0.6f).scaleY(0.6f).alpha(0.0f).setDuration(320L).setInterpolator(ds.h).start();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void k(EditTextBoldCursor editTextBoldCursor) {
+        fu0 fu0Var = this.a.V;
+        if (fu0Var != null) {
+            fu0Var.a.w9();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void l(EditText editText) {
+        mv0 mv0Var;
+        String obj = editText.getText().toString();
+        aw0 aw0Var = this.a;
+        fu0 fu0Var = aw0Var.V;
+        if (fu0Var != null) {
+            org.telegram.ui.vn vnVar = fu0Var.a;
+            org.telegram.ui.ActionBar.w0 w0Var = vnVar.j0;
+            if (w0Var != null) {
+                vnVar.F3 = obj;
+                w0Var.P(obj, false);
+            }
+            if (TextUtils.isEmpty(obj) && aw0Var.Y0 == null) {
+                org.telegram.ui.vn vnVar2 = fu0Var.a;
+                org.telegram.ui.mn mnVar = vnVar2.Kc;
+                if (mnVar != null) {
+                    mnVar.h();
+                }
+                vnVar2.E3 = false;
+                vnVar2.o0 = false;
+                vnVar2.uc(false);
+                vnVar2.Vc();
+            }
+        }
+        aw0Var.setSearchItemVisibility(8);
+        aw0Var.W0 = (obj.length() == 0 && aw0Var.Y0 == null) ? false : true;
+        aw0Var.post(new mp0(this, 6));
+        int i10 = aw0Var.m0[0].E;
+        if (i10 == 1) {
+            wu0 wu0Var = aw0Var.i0;
+            if (wu0Var == null) {
+                return;
+            }
+            wu0Var.G(obj, true);
+            return;
+        }
+        if (i10 == 3) {
+            wu0 wu0Var2 = aw0Var.k0;
+            if (wu0Var2 == null) {
+                return;
+            }
+            wu0Var2.G(obj, true);
+            return;
+        }
+        if (i10 == 4) {
+            wu0 wu0Var3 = aw0Var.j0;
+            if (wu0Var3 == null) {
+                return;
+            }
+            wu0Var3.G(obj, true);
+            return;
+        }
+        if (i10 == 7) {
+            ru0 ru0Var = aw0Var.l0;
+            if (ru0Var == null) {
+                return;
+            }
+            ru0Var.F(obj, true);
+            return;
+        }
+        if (i10 != 11 || (mv0Var = aw0Var.U) == null) {
+            return;
+        }
+        mv0Var.E(aw0Var.Y0, obj);
     }
 }

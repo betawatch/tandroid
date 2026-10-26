@@ -1,41 +1,55 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.view.View;
 import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qw0 extends org.telegram.ui.Components.lm0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ rw0 d;
+public final /* synthetic */ class qw0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ Object d;
 
-    public qw0(rw0 rw0Var, Context context) {
-        this.d = rw0Var;
-        this.c = context;
+    public /* synthetic */ qw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = viewGroup;
+        this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return !((tw0) this.d.n.d.get(b1Var.b())).a.current;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.d.n.d.size();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        sg.r1 r1Var = (sg.r1) b1Var.a;
-        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
-        r1Var.a((tw0) premiumPreviewFragment.d.get(i10), i10 != h() - 1);
-        r1Var.c(premiumPreviewFragment.e == i10, false);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        pw0 pw0Var = new pw0(this, this.c);
-        pw0Var.setCirclePaintProvider(new ql0(9, this, pw0Var));
-        return new org.telegram.ui.Components.wl0(pw0Var);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                vw0 vw0Var = (vw0) this.b;
+                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
+                PremiumPreviewFragment premiumPreviewFragment = vw0Var.n;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = this.c;
+                view.setAlpha(floatValue);
+                view.setScaleX(floatValue);
+                view.setScaleY(floatValue);
+                float animatedFraction = valueAnimator2.getAnimatedFraction();
+                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
+                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
+                    if (childAt != vw0Var.e) {
+                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == vw0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
+                    }
+                }
+                break;
+            default:
+                ga1 ga1Var = (ga1) this.b;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                org.telegram.ui.Components.si siVar = (org.telegram.ui.Components.si) this.d;
+                ga1Var.getClass();
+                ga1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.getEditField().setAlpha(ga1Var.a);
+                siVar.invalidate();
+                break;
+        }
     }
 }

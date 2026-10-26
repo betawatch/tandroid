@@ -8,14 +8,14 @@ import android.view.ActionMode;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import ei.w3;
+import fi.u3;
 import java.util.WeakHashMap;
-import m.q2;
+import m.p2;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ActionBarContainer extends FrameLayout {
     public boolean a;
@@ -251,9 +251,9 @@ public class ActionBarContainer extends FrameLayout {
 
     public ActionBarContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        w3 w3Var = new w3(this);
+        u3 u3Var = new u3(this);
         WeakHashMap weakHashMap = i0.a;
-        setBackground(w3Var);
+        setBackground(u3Var);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.a);
         boolean z10 = false;
         this.d = obtainStyledAttributes.getDrawable(0);
@@ -278,6 +278,6 @@ public class ActionBarContainer extends FrameLayout {
         return null;
     }
 
-    public void setTabContainer(q2 q2Var) {
+    public void setTabContainer(p2 p2Var) {
     }
 }

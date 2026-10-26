@@ -1,48 +1,31 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ed0 implements Runnable {
+public final /* synthetic */ class ed0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ue0 b;
+    public final /* synthetic */ od0 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ ed0(ue0 ue0Var, int i10) {
+    public /* synthetic */ ed0(od0 od0Var, String str, int i10) {
         this.a = i10;
-        this.b = ue0Var;
+        this.b = od0Var;
+        this.c = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.L.m();
-                break;
-            case 1:
-                ue0 ue0Var = this.b;
-                ue0Var.M = null;
-                ue0Var.N = null;
-                ue0Var.o(true);
-                ue0Var.e.h(null, null, ue0Var.f, null);
-                jd jdVar = ue0Var.n;
-                org.telegram.ui.Components.yj0 yj0Var = ue0Var.I;
-                jdVar.setAnimation(yj0Var);
-                yj0Var.M(0);
-                ue0Var.K = true;
-                break;
-            case 2:
-                this.b.K = true;
+                AndroidUtilities.runOnUIThread(new gd0(this.b, tL_error, this.c, tLObject));
                 break;
             default:
-                EditTextBoldCursor editTextBoldCursor = this.b.c;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new gd0(this.b, tL_error, tLObject, this.c));
                 break;
         }
     }

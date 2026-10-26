@@ -1,26 +1,27 @@
 package q3;
 
-import b2.s0;
+import a8.wb;
+import a8.wd;
 import b2.t0;
-import b2.v0;
-import e2.m0;
+import b2.u0;
+import b2.w0;
+import e2.n0;
 import e2.x;
-import e9.k0;
-import e9.n0;
-import e9.x1;
+import f9.f0;
+import f9.i0;
+import f9.s1;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.ui.web.d0;
-import v7.s6;
+import org.telegram.ui.ji1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h extends w7.m {
-    public static final d0 b = new d0(4);
+public final class h extends wd {
+    public static final ji1 b = new ji1(6);
     public final g a;
 
     public h(g gVar) {
@@ -36,22 +37,22 @@ public final class h extends w7.m {
         byte[] bArr = new byte[i12];
         xVar.k(0, i12, bArr);
         if (i11 == 2) {
-            concat = "image/" + s6.c(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
+            concat = "image/" + wb.c(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
             if ("image/jpg".equals(concat)) {
                 concat = "image/jpeg";
             }
             v = 2;
         } else {
             v = v(0, bArr);
-            String c10 = s6.c(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+            String c10 = wb.c(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
             concat = c10.indexOf(47) == -1 ? "image/".concat(c10) : c10;
         }
         int i13 = bArr[v + 1] & 255;
         int i14 = v + 2;
         int u10 = u(i14, A, bArr);
         String str = new String(bArr, i14, u10 - i14, s10);
-        int r10 = r(A) + u10;
-        return new a(i13, concat, str, i12 <= r10 ? m0.b : Arrays.copyOfRange(bArr, r10, i12));
+        int r6 = r(A) + u10;
+        return new a(i13, concat, str, i12 <= r6 ? n0.b : Arrays.copyOfRange(bArr, r6, i12));
     }
 
     public static c e(x xVar, int i10, int i11, boolean z10, int i12, g gVar) {
@@ -119,8 +120,8 @@ public final class h extends w7.m {
         xVar.k(0, i11, bArr2);
         int u10 = u(0, A, bArr2);
         String str2 = new String(bArr2, 0, u10, s10);
-        int r10 = r(A) + u10;
-        return new e(str, str2, l(bArr2, r10, u(r10, A, bArr2), s10));
+        int r6 = r(A) + u10;
+        return new e(str, str2, l(bArr2, r6, u(r6, A, bArr2), s10));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:156:0x01b2, code lost:
@@ -172,7 +173,7 @@ public final class h extends w7.m {
         x xVar3;
         ?? r122;
         x xVar4;
-        s0 bVar;
+        t0 bVar;
         int i16 = i10;
         int A = xVar.A();
         int A2 = xVar.A();
@@ -199,11 +200,11 @@ public final class h extends w7.m {
             return null;
         }
         if (gVar != null) {
-            boolean b10 = gVar.b(i16, A, A2, A3, A4);
+            boolean c10 = gVar.c(i16, A, A2, A3, A4);
             i16 = i16;
             r12 = A;
             i12 = A2;
-            if (!b10) {
+            if (!c10) {
                 xVar.N(i18);
                 return null;
             }
@@ -270,8 +271,8 @@ public final class h extends w7.m {
             if (r122 == 0) {
             }
             return r122;
-        } catch (OutOfMemoryError e7) {
-            e = e7;
+        } catch (OutOfMemoryError e10) {
+            e = e10;
             int i192 = i17;
             i17 = i12;
             i12 = i192;
@@ -298,8 +299,8 @@ public final class h extends w7.m {
             if (r12 != 80 || i12 != 82 || A3 != 73 || A4 != 86) {
                 th2 = null;
                 try {
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e11) {
+                    e = e11;
                     int i20 = i17;
                     i17 = i12;
                     i12 = i20;
@@ -312,8 +313,8 @@ public final class h extends w7.m {
                     if (r122 == 0) {
                     }
                     return r122;
-                } catch (OutOfMemoryError e11) {
-                    e = e11;
+                } catch (OutOfMemoryError e12) {
+                    e = e12;
                     int i202 = i17;
                     i17 = i12;
                     i12 = i202;
@@ -380,8 +381,8 @@ public final class h extends w7.m {
                                 bVar = e(xVar, i12, i16, z10, i11, gVar);
                                 i16 = i10;
                                 r12 = xVar;
-                            } catch (Exception e12) {
-                                e = e12;
+                            } catch (Exception e13) {
+                                e = e13;
                                 i16 = i10;
                                 xVar2 = xVar;
                                 xVar2.N(i18);
@@ -389,8 +390,8 @@ public final class h extends w7.m {
                                 if (r122 == 0) {
                                 }
                                 return r122;
-                            } catch (OutOfMemoryError e13) {
-                                e = e13;
+                            } catch (OutOfMemoryError e14) {
+                                e = e14;
                                 i16 = i10;
                                 xVar2 = xVar;
                                 xVar2.N(i18);
@@ -431,16 +432,16 @@ public final class h extends w7.m {
                                         r12 = xVar4;
                                     }
                                 }
-                            } catch (Exception e14) {
-                                e = e14;
+                            } catch (Exception e15) {
+                                e = e15;
                                 xVar2 = r12;
                                 xVar2.N(i18);
                                 r122 = th2;
                                 if (r122 == 0) {
                                 }
                                 return r122;
-                            } catch (OutOfMemoryError e15) {
-                                e = e15;
+                            } catch (OutOfMemoryError e16) {
+                                e = e16;
                                 xVar2 = r12;
                                 xVar2.N(i18);
                                 r122 = th2;
@@ -503,15 +504,15 @@ public final class h extends w7.m {
         byte[] bArr = new byte[i11];
         xVar.k(0, i11, bArr);
         int v = v(0, bArr);
-        String n10 = v0.n(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+        String n10 = w0.n(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
         int i12 = v + 1;
         int u10 = u(i12, A, bArr);
         String l4 = l(bArr, i12, u10, s10);
-        int r10 = r(A) + u10;
-        int u11 = u(r10, A, bArr);
-        String l10 = l(bArr, r10, u11, s10);
-        int r11 = r(A) + u11;
-        return new f(n10, i11 <= r11 ? m0.b : Arrays.copyOfRange(bArr, r11, i11), l4, l10);
+        int r6 = r(A) + u10;
+        int u11 = u(r6, A, bArr);
+        String l10 = l(bArr, r6, u11, s10);
+        int r10 = r(A) + u11;
+        return new f(n10, i11 <= r10 ? n0.b : Arrays.copyOfRange(bArr, r10, i11), l4, l10);
     }
 
     public static l j(int i10, x xVar) {
@@ -526,10 +527,10 @@ public final class h extends w7.m {
         int[] iArr = new int[i11];
         int[] iArr2 = new int[i11];
         for (int i12 = 0; i12 < i11; i12++) {
-            int g10 = gVar.g(A);
-            int g11 = gVar.g(A2);
-            iArr[i12] = g10;
-            iArr2[i12] = g11;
+            int g7 = gVar.g(A);
+            int g10 = gVar.g(A2);
+            iArr[i12] = g7;
+            iArr2[i12] = g10;
         }
         return new l(H, D, D2, iArr, iArr2);
     }
@@ -540,7 +541,7 @@ public final class h extends w7.m {
         int v = v(0, bArr);
         String str = new String(bArr, 0, v, StandardCharsets.ISO_8859_1);
         int i11 = v + 1;
-        return new m(str, i10 <= i11 ? m0.b : Arrays.copyOfRange(bArr, i11, i10));
+        return new m(str, i10 <= i11 ? n0.b : Arrays.copyOfRange(bArr, i11, i10));
     }
 
     public static String l(byte[] bArr, int i10, int i11, Charset charset) {
@@ -558,19 +559,19 @@ public final class h extends w7.m {
         return new n(str, null, n(A, 0, bArr));
     }
 
-    public static x1 n(int i10, int i11, byte[] bArr) {
+    public static s1 n(int i10, int i11, byte[] bArr) {
         if (i11 >= bArr.length) {
-            return n0.y("");
+            return i0.y("");
         }
-        k0 t10 = n0.t();
+        f0 t10 = i0.t();
         int u10 = u(i11, i10, bArr);
         while (i11 < u10) {
             t10.c(new String(bArr, i11, u10 - i11, s(i10)));
             i11 = r(i10) + u10;
             u10 = u(i11, i10, bArr);
         }
-        x1 f7 = t10.f();
-        return f7.isEmpty() ? n0.y("") : f7;
+        s1 f7 = t10.f();
+        return f7.isEmpty() ? i0.y("") : f7;
     }
 
     public static n o(int i10, x xVar) {
@@ -601,8 +602,8 @@ public final class h extends w7.m {
         xVar.k(0, i11, bArr);
         int u10 = u(0, A, bArr);
         String str = new String(bArr, 0, u10, s(A));
-        int r10 = r(A) + u10;
-        return new o("WXXX", str, l(bArr, r10, v(r10, bArr), StandardCharsets.ISO_8859_1));
+        int r6 = r(A) + u10;
+        return new o("WXXX", str, l(bArr, r6, v(r6, bArr), StandardCharsets.ISO_8859_1));
     }
 
     public static int r(int i10) {
@@ -735,8 +736,8 @@ public final class h extends w7.m {
         }
     }
 
-    @Override // w7.m
-    public final t0 b(l3.a aVar, ByteBuffer byteBuffer) {
+    @Override // a8.wd
+    public final u0 b(l3.a aVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }
 
@@ -745,8 +746,8 @@ public final class h extends w7.m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final t0 c(int i10, byte[] bArr) {
-        af.a aVar;
+    public final u0 c(int i10, byte[] bArr) {
+        bf.a aVar;
         ArrayList arrayList = new ArrayList();
         x xVar = new x(bArr, i10);
         boolean z10 = false;
@@ -763,7 +764,7 @@ public final class h extends w7.m {
                     if ((A2 & 64) != 0) {
                         e2.a.l("Id3Decoder", "Skipped ID3 tag with majorVersion=2 and undefined compression scheme");
                     }
-                    aVar = new af.a(A, A >= 4 && (A2 & 128) != 0, z11);
+                    aVar = new bf.a(A, A >= 4 && (A2 & 128) != 0, z11);
                 } else {
                     if (A == 3) {
                         if ((A2 & 64) != 0) {
@@ -781,9 +782,9 @@ public final class h extends w7.m {
                             z11 -= 10;
                         }
                     } else {
-                        a1.g.x(A, "Skipped ID3 tag with unsupported majorVersion=", "Id3Decoder");
+                        a1.g.z(A, "Skipped ID3 tag with unsupported majorVersion=", "Id3Decoder");
                     }
-                    aVar = new af.a(A, A >= 4 && (A2 & 128) != 0, z11);
+                    aVar = new bf.a(A, A >= 4 && (A2 & 128) != 0, z11);
                 }
                 if (aVar != null) {
                     return null;
@@ -798,7 +799,7 @@ public final class h extends w7.m {
                 xVar.M(i12 + i14);
                 if (!x(xVar, i11, i13, false)) {
                     if (i11 != 4 || !x(xVar, 4, i13, true)) {
-                        a1.g.x(i11, "Failed to validate ID3 tag with majorVersion=", "Id3Decoder");
+                        a1.g.z(i11, "Failed to validate ID3 tag with majorVersion=", "Id3Decoder");
                         return null;
                     }
                     z10 = true;
@@ -809,7 +810,7 @@ public final class h extends w7.m {
                         arrayList.add(h);
                     }
                 }
-                return new t0(arrayList);
+                return new u0(arrayList);
             }
             e2.a.l("Id3Decoder", "Unexpected first three bytes of ID3 tag header: 0x".concat(String.format("%06X", Integer.valueOf(D))));
         }

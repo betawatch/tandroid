@@ -1,23 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class v20 extends FrameLayout {
-    public View a;
-    public TextView b;
+public final class v20 {
+    public static final int w = ViewConfiguration.getTapTimeout();
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final w20 f;
+    public final w20 g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public MotionEvent m;
+    public MotionEvent n;
+    public boolean o;
+    public float p;
+    public float q;
+    public float r;
+    public float s;
+    public boolean t;
+    public VelocityTracker v;
+    public long u = ViewConfiguration.getLongPressTimeout();
+    public final androidx.mediarouter.app.c e = new androidx.mediarouter.app.c(this, 9);
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    public v20(Context context, w20 w20Var) {
+        this.f = w20Var;
+        this.g = w20Var;
+        if (context == null) {
+            throw new IllegalArgumentException("Context must not be null");
+        }
+        this.t = true;
+        ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
+        int scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
+        int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
+        this.c = viewConfiguration.getScaledMinimumFlingVelocity();
+        this.d = viewConfiguration.getScaledMaximumFlingVelocity();
+        this.a = scaledTouchSlop * scaledTouchSlop;
+        this.b = scaledDoubleTapSlop * scaledDoubleTapSlop;
     }
 }

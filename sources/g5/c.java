@@ -1,64 +1,26 @@
 package g5;
 
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
+import c3.h0;
+import li.e3;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c extends a {
-    public int h;
-    public int n;
-    public double r;
-    public double s;
-    public int v;
-    public String w;
-    public int x;
-    public final long[] y;
+public abstract class c extends com.googlecode.mp4parser.c {
+    public static final /* synthetic */ e3 e;
 
-    public c(String str) {
-        super(str);
-        this.r = 72.0d;
-        this.s = 72.0d;
-        this.v = 1;
-        this.w = "";
-        this.x = 24;
-        this.y = new long[3];
+    static {
+        ue.a aVar = new ue.a(c.class, "ChunkOffsetBox.java");
+        e = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.ChunkOffsetBox", "", "", "java.lang.String"));
     }
 
-    @Override // com.googlecode.mp4parser.b, f5.b
-    public final void getBox(WritableByteChannel writableByteChannel) {
-        writableByteChannel.write(d());
-        ByteBuffer allocate = ByteBuffer.allocate(78);
-        allocate.position(6);
-        e5.b.p(this.f, allocate);
-        e5.b.p(0, allocate);
-        e5.b.p(0, allocate);
-        long[] jArr = this.y;
-        allocate.putInt((int) jArr[0]);
-        allocate.putInt((int) jArr[1]);
-        allocate.putInt((int) jArr[2]);
-        e5.b.p(this.h, allocate);
-        e5.b.p(this.n, allocate);
-        e5.b.n(allocate, this.r);
-        e5.b.n(allocate, this.s);
-        allocate.putInt((int) 0);
-        e5.b.p(this.v, allocate);
-        allocate.put((byte) (e5.b.l(this.w) & 255));
-        allocate.put(e5.b.b(this.w));
-        int l4 = e5.b.l(this.w);
-        while (l4 < 31) {
-            l4++;
-            allocate.put((byte) 0);
-        }
-        e5.b.p(this.x, allocate);
-        e5.b.p(65535, allocate);
-        writableByteChannel.write((ByteBuffer) allocate.rewind());
-        c(writableByteChannel);
-    }
-
-    @Override // com.googlecode.mp4parser.b, f5.b
-    public final long getSize() {
-        long b10 = b();
-        return 78 + b10 + (b10 + 86 >= 4294967296L ? 16 : 8);
+    public final String toString() {
+        ti.e b10 = ue.a.b(e, this, this);
+        com.googlecode.mp4parser.g.a().getClass();
+        com.googlecode.mp4parser.g.b(b10);
+        StringBuilder sb2 = new StringBuilder(getClass().getSimpleName());
+        sb2.append("[entryCount=");
+        t tVar = (t) this;
+        h0.s(ue.a.b(t.h, tVar, tVar));
+        return a1.g.n(tVar.f.length, "]", sb2);
     }
 }

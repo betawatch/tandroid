@@ -70,7 +70,7 @@ public final class f0 extends k implements g0, RandomAccess {
         if (!(obj instanceof o)) {
             byte[] bArr = (byte[]) obj;
             String str = new String(bArr, a0.a);
-            if (m1.a.t(bArr, 0, bArr.length)) {
+            if (k1.a.t(bArr, 0, bArr.length)) {
                 arrayList.set(i10, str);
             }
             return str;
@@ -78,7 +78,7 @@ public final class f0 extends k implements g0, RandomAccess {
         o oVar = (o) obj;
         String str2 = oVar.size() == 0 ? "" : new String(oVar.b, oVar.h(), oVar.size(), a0.a);
         int h = oVar.h();
-        if (m1.a.t(oVar.b, h, oVar.size() + h)) {
+        if (k1.a.t(oVar.b, h, oVar.size() + h)) {
             arrayList.set(i10, str2);
         }
         return str2;
@@ -86,7 +86,7 @@ public final class f0 extends k implements g0, RandomAccess {
 
     @Override // com.google.android.gms.internal.clearcut.g0
     public final g0 j() {
-        return this.a ? new e1(this) : this;
+        return this.a ? new d1(this) : this;
     }
 
     @Override // java.util.AbstractList, java.util.List

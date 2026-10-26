@@ -1,146 +1,119 @@
 package org.telegram.messenger;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
-import android.util.LongSparseArray;
-import android.util.SparseIntArray;
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import java.io.IOException;
+import java.util.Locale;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.md0;
+import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.fn;
+import org.telegram.ui.in0;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class nk implements org.telegram.ui.ActionBar.b2, e2.j {
+    public final /* synthetic */ int a = 3;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ nk(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = obj2;
-        this.e = obj3;
-        this.b = obj4;
+    public /* synthetic */ nk(a8.ng ngVar, u2.u uVar, u2.c0 c0Var, IOException iOException, boolean z10) {
+        this.c = ngVar;
+        this.d = uVar;
+        this.e = c0Var;
+        this.f = iOException;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // e2.j
+    public void accept(Object obj) {
+        a8.ng ngVar = (a8.ng) this.c;
+        ((u2.k0) obj).f(ngVar.b, (u2.g0) ngVar.c, (u2.u) this.d, (u2.c0) this.e, (IOException) this.f, this.b);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        int i11;
+        int i12 = this.a;
+        boolean z10 = this.b;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i12) {
             case 0:
-                ((SendMessagesHelper.ImportingHistory.1) this.d).lambda$run$0((TLObject) this.c, (TLRPC.TL_messages_initHistoryImport) this.e, (TLRPC.TL_error) this.b);
+                ((SendMessagesHelper) obj4).lambda$sendCallback$44(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (un) obj, e2Var, i10);
                 break;
             case 1:
-                ((SendMessagesHelper.ImportingStickers.1) this.d).lambda$run$0((TLRPC.TL_error) this.b, (TLRPC.TL_stickers_createStickerSet) this.e, (TLObject) this.c);
-                break;
-            case 2:
-                ((TranslateController) this.d).lambda$detectPhotoLanguage$41((MessageObject) this.c, (TranslateController.MessageKey) this.e, (Utilities.Callback) this.b);
-                break;
-            case 3:
-                ((TranslateController) this.d).lambda$detectStoryLanguage$31((TL_stories.StoryItem) this.c, (String) this.e, (TranslateController.StoryKey) this.b);
-                break;
-            case 4:
-                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.zc[]) this.c, (qi.a) this.e, (Activity) this.b);
-                break;
-            case 5:
-                ((FilePathDatabase) this.d).lambda$lookupFiles$7((ArrayList) this.c, (LongSparseArray) this.e, (CountDownLatch) this.b);
-                break;
-            case 6:
-                ((FilePathDatabase) this.d).lambda$checkMediaExistance$2((ArrayList) this.c, (long[]) this.e, (CountDownLatch) this.b);
-                break;
-            case 7:
-                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (ci.r6) this.b);
-                break;
-            case 8:
-                ((ImageLoader) this.d).lambda$replaceImageInCache$5((String) this.c, (String) this.e, (ImageLocation) this.b);
-                break;
-            case 9:
-                ((LocationController) this.d).lambda$loadSharingLocations$16((ArrayList) this.c, (ArrayList) this.e, (ArrayList) this.b);
-                break;
-            case 10:
-                ((MediaController) this.d).lambda$generateWaveform$41((String) this.c, (byte[]) this.e, (MessageObject) this.b);
-                break;
-            case 11:
-                ((MediaController) this.d).lambda$generateWaveform$42((String) this.c, (String) this.e, (MessageObject) this.b);
-                break;
-            case 12:
-                ((MediaDataController) this.d).lambda$getEmojiSuggestions$220((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
-                break;
-            case 13:
-                MediaDataController.lambda$getEmojiSuggestions$223((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
-                break;
-            case 14:
-                MediaDataController.lambda$getAnimatedEmojiByKeywords$217((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
-                break;
-            case 15:
-                ((MediaDataController) this.d).lambda$getEmojiNames$219((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
-                break;
-            case 16:
-                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$228((boolean[]) this.c, (ArrayList[]) this.e, (a7) this.b);
-                break;
-            case 17:
-                ((MediaDataController) this.d).lambda$loadSavedReactions$240((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
-                break;
-            case 18:
-                ((MessagesController) this.d).lambda$addUsersToChannel$271((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
-                break;
-            case 19:
-                ((MessagesController) this.d).lambda$getDifference$356((TLRPC.updates_Difference) this.c, (a0.h) this.e, (a0.h) this.b);
-                break;
-            case 20:
-                ((MessagesController) this.d).lambda$createChat$255((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_messages_createChat) this.e);
-                break;
-            case 21:
-                ((MessagesController) this.d).lambda$createChat$258((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_channels_createChannel) this.e);
-                break;
-            case 22:
-                ((MessagesController) this.d).lambda$setUserAdminRole$105((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
-                break;
-            case 23:
-                ((MessagesController) this.d).lambda$completeDialogsReset$210((TLRPC.messages_Dialogs) this.c, (a0.h) this.e, (a0.h) this.b);
-                break;
-            case 24:
-                ((MessagesController) this.d).lambda$getDifference$355((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.h) this.b);
-                break;
-            case 25:
-                ((MessagesStorage) this.d).lambda$putEncryptedChat$178((TLRPC.EncryptedChat) this.c, (TLRPC.User) this.e, (TLRPC.Dialog) this.b);
-                break;
-            case 26:
-                ((MessagesStorage) this.d).lambda$addRecentLocalFile$82((TLRPC.Document) this.c, (String) this.e, (String) this.b);
-                break;
-            case 27:
-                ((MessagesStorage) this.d).lambda$markMessagesAsRead$219((LongSparseIntArray) this.c, (LongSparseIntArray) this.e, (SparseIntArray) this.b);
-                break;
-            case 28:
-                ((SavedMessagesController) this.d).lambda$loadDialogs$2((TLObject) this.c, (ArrayList) this.e, (TLRPC.TL_error) this.b);
-                break;
+                fn fnVar = (fn) obj4;
+                TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
+                un unVar = fnVar.a;
+                li.s2 s2Var = new li.s2(19, fnVar, (org.telegram.ui.Cells.s1) obj3);
+                if (!((boolean[]) obj2)[0]) {
+                    s2Var.run(Boolean.FALSE);
+                    break;
+                } else if (!z10 && (contentsettings == null || !contentsettings.sensitive_can_change)) {
+                    s2Var.run(Boolean.TRUE);
+                    break;
+                } else {
+                    Activity parentActivity = unVar.getParentActivity();
+                    i11 = ((org.telegram.ui.ActionBar.r2) unVar).currentAccount;
+                    ThemeActivity.D0(i11, parentActivity, new li.s2(20, fnVar, s2Var), unVar.getResourceProvider());
+                    break;
+                }
             default:
-                ((SendMessagesHelper) this.d).lambda$performSendDelayedMessage$60((TLObject) this.c, (SendMessagesHelper.DelayedMessage) this.e, (String) this.b);
+                md0 md0Var = (md0) obj4;
+                md0 md0Var2 = (md0) obj3;
+                md0 md0Var3 = (md0) obj2;
+                i2.z zVar = (i2.z) obj;
+                if (z10) {
+                    org.telegram.ui.Components.g5.d(md0Var, md0Var2, md0Var3);
+                }
+                int value = md0Var3.getValue();
+                int value2 = md0Var2.getValue();
+                int value3 = md0Var.getValue();
+                in0 in0Var = (in0) zVar.c;
+                int i13 = zVar.b;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) zVar.d;
+                if (i13 == 8) {
+                    int[] iArr = in0Var.x;
+                    iArr[0] = value;
+                    iArr[1] = value2 + 1;
+                    iArr[2] = value3;
+                } else {
+                    in0Var.getClass();
+                }
+                editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;
         }
     }
 
-    public /* synthetic */ nk(BaseController baseController, TLRPC.TL_error tL_error, Object obj, Object obj2, int i10) {
-        this.a = i10;
-        this.d = baseController;
-        this.b = tL_error;
-        this.c = obj;
-        this.e = obj2;
+    public /* synthetic */ nk(SendMessagesHelper sendMessagesHelper, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, un unVar) {
+        this.c = sendMessagesHelper;
+        this.b = z10;
+        this.d = messageObject;
+        this.e = keyboardButtonProto;
+        this.f = unVar;
     }
 
-    public /* synthetic */ nk(SendMessagesHelper.ImportingStickers.1 r22, TLRPC.TL_error tL_error, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet, TLObject tLObject) {
-        this.a = 1;
-        this.d = r22;
-        this.b = tL_error;
-        this.e = tL_stickers_createStickerSet;
-        this.c = tLObject;
+    public /* synthetic */ nk(fn fnVar, org.telegram.ui.Cells.s1 s1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
+        this.c = fnVar;
+        this.d = s1Var;
+        this.e = zArr;
+        this.b = z10;
+        this.f = contentsettings;
+    }
+
+    public /* synthetic */ nk(boolean z10, md0 md0Var, md0 md0Var2, md0 md0Var3, i2.z zVar) {
+        this.b = z10;
+        this.c = md0Var;
+        this.d = md0Var2;
+        this.e = md0Var3;
+        this.f = zVar;
     }
 }

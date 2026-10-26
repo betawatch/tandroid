@@ -4,14 +4,14 @@ import android.content.Context;
 import android.media.MediaRecorder;
 import android.os.Handler;
 import android.os.Looper;
-import com.google.android.gms.internal.play_billing.k3;
+import c3.h0;
 import java.util.Arrays;
 import java.util.List;
+import org.telegram.ui.Components.b10;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
-import si.o0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -203,7 +203,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public enum SwitchState {
         IDLE,
         PENDING,
@@ -287,7 +287,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     public void switchCameraInternal(CameraVideoCapturer.CameraSwitchHandler cameraSwitchHandler, String str) {
         Logging.d(TAG, "switchCamera internal");
         if (!Arrays.asList(this.cameraEnumerator.getDeviceNames()).contains(str)) {
-            reportCameraSwitchError(o0.h("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
+            reportCameraSwitchError(b10.j("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
             return;
         }
         synchronized (this.stateLock) {
@@ -337,9 +337,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void changeCaptureFormat(int i10, int i11, int i12) {
-        StringBuilder k10 = k3.k("changeCaptureFormat: ", i10, "x", i11, "@");
-        k10.append(i12);
-        Logging.d(TAG, k10.toString());
+        StringBuilder n10 = h0.n("changeCaptureFormat: ", i10, "x", i11, "@");
+        n10.append(i12);
+        Logging.d(TAG, n10.toString());
         synchronized (this.stateLock) {
             stopCapture();
             startCapture(i10, i11, i12);
@@ -396,9 +396,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i10, int i11, int i12) {
-        StringBuilder k10 = k3.k("startCapture: ", i10, "x", i11, "@");
-        k10.append(i12);
-        Logging.d(TAG, k10.toString());
+        StringBuilder n10 = h0.n("startCapture: ", i10, "x", i11, "@");
+        n10.append(i12);
+        Logging.d(TAG, n10.toString());
         if (this.applicationContext == null) {
             throw new RuntimeException("CameraCapturer must be initialized before calling startCapture.");
         }

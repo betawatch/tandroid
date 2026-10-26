@@ -3,14 +3,14 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class lv extends aw {
     public final /* synthetic */ aw W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lv(aw awVar, org.telegram.ui.ActionBar.o2 o2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, ArrayList arrayList) {
-        super(o2Var, context, g6Var, arrayList);
+    public lv(aw awVar, org.telegram.ui.ActionBar.r2 r2Var, Context context, org.telegram.ui.ActionBar.u6 u6Var, ArrayList arrayList) {
+        super(r2Var, context, u6Var, arrayList);
         this.W = awVar;
     }
 

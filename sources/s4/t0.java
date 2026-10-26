@@ -1,33 +1,14 @@
 package s4;
 
-import android.util.SparseArray;
+import android.view.MotionEvent;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class t0 {
-    public final SparseArray a = new SparseArray();
-    public int b = 0;
+public interface t0 {
+    void a(RecyclerView recyclerView, MotionEvent motionEvent);
 
-    public final void a() {
-        int i10 = 0;
-        while (true) {
-            SparseArray sparseArray = this.a;
-            if (i10 >= sparseArray.size()) {
-                return;
-            }
-            ((s0) sparseArray.valueAt(i10)).a.clear();
-            i10++;
-        }
-    }
+    boolean b(RecyclerView recyclerView, MotionEvent motionEvent);
 
-    public final s0 b(int i10) {
-        SparseArray sparseArray = this.a;
-        s0 s0Var = (s0) sparseArray.get(i10);
-        if (s0Var != null) {
-            return s0Var;
-        }
-        s0 s0Var2 = new s0();
-        sparseArray.put(i10, s0Var2);
-        return s0Var2;
-    }
+    void c(boolean z10);
 }

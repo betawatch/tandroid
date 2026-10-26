@@ -11,8 +11,9 @@ import java.nio.channels.FileChannel;
 import java.util.Arrays;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class EmojiPack {
     private static final String ASSET_NAME = "emoji.pack";
@@ -44,7 +45,7 @@ public final class EmojiPack {
     private final int[] rootIds;
     private final byte[][] rootMaps;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static final class Holder {
         static final EmojiPack INSTANCE = open();
 
@@ -61,7 +62,7 @@ public final class EmojiPack {
     }
 
     private static IllegalStateException damaged(String str) {
-        return new IllegalStateException(si.o0.h("Damaged emoji.pack: ", str));
+        return new IllegalStateException(b10.j("Damaged emoji.pack: ", str));
     }
 
     private Bitmap decode(int i10) {
@@ -489,7 +490,7 @@ public final class EmojiPack {
             int u16 = u16(entry + 2);
             int i15 = this.emojiCount;
             if ((i14 >= i15 && u16 != NO_MASK) || (i14 < i15 && u16 != NO_MASK && find(u16, i15, this.count) < 0)) {
-                throw new IOException(i2.o1.k(i14, "Invalid mask reference at record "));
+                throw new IOException(ic.a.i(i14, "Invalid mask reference at record "));
             }
             int i16 = this.buffer.getInt(entry + 4);
             int u162 = u16(entry + 8);
@@ -548,16 +549,16 @@ public final class EmojiPack {
                                 }
                             }
                         }
-                        throw new IOException(i2.o1.k(i18, "Invalid palette at record "));
+                        throw new IOException(ic.a.i(i18, "Invalid palette at record "));
                     }
                     i11 = i18;
                     if (u165 != 0 || u8(i17) != 0 || u83 != 0 || (u8(entry + 19) & 127) != 0 || u163 != NO_MASK || u164 != NO_MASK) {
-                        throw new IOException(i2.o1.k(i11, "Invalid full image record "));
+                        throw new IOException(ic.a.i(i11, "Invalid full image record "));
                     }
                     i14 = i11 + 1;
                 }
             }
-            throw new IOException(i2.o1.k(i10, "Invalid EPK3 record "));
+            throw new IOException(ic.a.i(i10, "Invalid EPK3 record "));
         }
     }
 

@@ -1,46 +1,10 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessagesController;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ g3(FileLoader.1 r22, boolean z10, String str, boolean z11) {
-        this.a = 0;
-        this.d = r22;
-        this.b = z10;
-        this.e = str;
-        this.c = z11;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((FileLoader.1) this.d).lambda$didFailedUploadingFile$1(this.b, (String) this.e, this.c);
-                break;
-            case 1:
-                ((MessagesStorage) this.d).lambda$saveDialogFilter$74((MessagesController.DialogFilter) this.e, this.b, this.c);
-                break;
-            default:
-                ((MessagesStorage) this.d).lambda$updateUsers$215((ArrayList) this.e, this.b, this.c);
-                break;
-        }
-    }
-
-    public /* synthetic */ g3(MessagesStorage messagesStorage, Object obj, boolean z10, boolean z11, int i10) {
-        this.a = i10;
-        this.d = messagesStorage;
-        this.e = obj;
-        this.b = z10;
-        this.c = z11;
+public final /* synthetic */ class g3 implements FileLoadOperationStream {
+    @Override // org.telegram.messenger.FileLoadOperationStream
+    public final void newDataAvailable() {
+        FileLoader.lambda$static$14();
     }
 }

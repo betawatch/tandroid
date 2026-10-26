@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class e implements f5.f, Iterator, Closeable {
+public abstract class e implements g5.f, Iterator, Closeable {
     public static final d c = new d("eof ");
-    public f5.b a;
+    public g5.b a;
     public ArrayList b;
 
     static {
-        rc.c.a(e.class);
+        sc.c.a(e.class);
     }
 
-    public final void a(f5.b bVar) {
+    public final void a(g5.b bVar) {
         if (bVar != null) {
             this.b = new ArrayList(this.b);
             bVar.setParent(this);
@@ -28,7 +28,7 @@ public abstract class e implements f5.f, Iterator, Closeable {
     public final long b() {
         long j10 = 0;
         for (int i10 = 0; i10 < this.b.size(); i10++) {
-            j10 += ((f5.b) this.b.get(i10)).getSize();
+            j10 += ((g5.b) this.b.get(i10)).getSize();
         }
         return j10;
     }
@@ -40,7 +40,7 @@ public abstract class e implements f5.f, Iterator, Closeable {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((f5.b) obj).getBox(writableByteChannel);
+            ((g5.b) obj).getBox(writableByteChannel);
         }
     }
 
@@ -51,7 +51,7 @@ public abstract class e implements f5.f, Iterator, Closeable {
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        f5.b bVar = this.a;
+        g5.b bVar = this.a;
         d dVar = c;
         if (bVar == dVar) {
             return false;
@@ -74,7 +74,7 @@ public abstract class e implements f5.f, Iterator, Closeable {
 
     @Override // java.util.Iterator
     public final Object next() {
-        f5.b bVar = this.a;
+        g5.b bVar = this.a;
         d dVar = c;
         if (bVar == null || bVar == dVar) {
             this.a = dVar;
@@ -97,7 +97,7 @@ public abstract class e implements f5.f, Iterator, Closeable {
             if (i10 > 0) {
                 sb2.append(";");
             }
-            sb2.append(((f5.b) this.b.get(i10)).toString());
+            sb2.append(((g5.b) this.b.get(i10)).toString());
         }
         sb2.append("]");
         return sb2.toString();

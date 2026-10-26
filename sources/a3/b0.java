@@ -1,9 +1,9 @@
 package a3;
 
+import a8.yb;
 import android.util.Range;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b0 {
     public long a;
@@ -21,8 +21,8 @@ public final class b0 {
 
     public final void a(long j10, long j11) {
         double doubleValue;
-        u6.g(j10 != -9223372036854775807L);
-        u6.g(j11 != -9223372036854775807L);
+        yb.g(j10 != -9223372036854775807L);
+        yb.g(j11 != -9223372036854775807L);
         long j12 = this.a;
         if (j12 != -9223372036854775807L) {
             if (this.b != -9223372036854775807L && j10 != j12) {
@@ -45,7 +45,7 @@ public final class b0 {
     }
 
     public final void c(float f7) {
-        u6.g(f7 > 0.0f);
+        yb.g(f7 > 0.0f);
         this.d = new Range(Double.valueOf(0.0d), Double.valueOf(1.0d / f7));
         b();
     }

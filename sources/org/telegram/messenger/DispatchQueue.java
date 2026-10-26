@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class DispatchQueue extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -90,14 +90,7 @@ public class DispatchQueue extends Thread {
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new Handler.Callback() { // from class: org.telegram.messenger.b2
-            @Override // android.os.Handler.Callback
-            public final boolean handleMessage(Message message) {
-                boolean lambda$run$0;
-                lambda$run$0 = DispatchQueue.this.lambda$run$0(message);
-                return lambda$run$0;
-            }
-        });
+        this.handler = new Handler(Looper.myLooper(), new c2(this, 0));
         this.syncLatch.countDown();
         int i10 = this.threadPriority;
         if (i10 != THREAD_PRIORITY_DEFAULT) {

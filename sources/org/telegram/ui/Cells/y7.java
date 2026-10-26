@@ -1,244 +1,95 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
+import android.location.Address;
+import android.location.Geocoder;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
-import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bs;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.ui.Components.sl;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y7 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.ActionBar.g6 a;
-    public final org.telegram.ui.Components.q6 b;
-    public final org.telegram.ui.Components.q6 c;
-    public final org.telegram.ui.Components.q6 d;
-    public final i0 e;
-    public int f;
-    public int h;
-    public Utilities.Callback n;
-    public x7 r;
-    public CharSequence s;
-    public float v;
-    public float w;
-    public ValueAnimator x;
+public final /* synthetic */ class y7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ double c;
+    public final /* synthetic */ double d;
 
-    public y7(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.h = TLObject.FLAG_31;
-        this.w = -1.0f;
-        this.a = g6Var;
-        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, true, true, true);
-        this.b = q6Var;
-        bs bsVar = bs.h;
-        q6Var.b(0.3f, 220L, bsVar);
-        q6Var.setTextSize(AndroidUtilities.dp(13.0f));
-        int i10 = org.telegram.ui.ActionBar.k6.y6;
-        org.telegram.ui.ActionBar.r6.a0(q6Var, i10, g6Var);
-        q6Var.setGravity(3);
-        q6Var.setEmojiCacheType(19);
-        q6Var.setEmojiColor(-1);
-        q6Var.setImportantForAccessibility(2);
-        addView(q6Var, w7.z5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
-        org.telegram.ui.Components.q6 q6Var2 = new org.telegram.ui.Components.q6(context, false, true, true);
-        this.c = q6Var2;
-        q6Var2.b(0.3f, 220L, bsVar);
-        q6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        q6Var2.setGravity(17);
-        org.telegram.ui.ActionBar.r6.a0(q6Var2, org.telegram.ui.ActionBar.k6.I6, g6Var);
-        q6Var2.setEmojiColor(-1);
-        q6Var2.setEmojiCacheType(19);
-        q6Var2.setImportantForAccessibility(2);
-        addView(q6Var2, w7.z5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
-        org.telegram.ui.Components.q6 q6Var3 = new org.telegram.ui.Components.q6(context, true, true, true);
-        this.d = q6Var3;
-        q6Var3.b(0.3f, 220L, bsVar);
-        q6Var3.setTextSize(AndroidUtilities.dp(13.0f));
-        q6Var3.setGravity(5);
-        q6Var3.setTextColor(org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
-        q6Var3.setEmojiColor(-1);
-        q6Var3.setEmojiCacheType(19);
-        q6Var3.setImportantForAccessibility(2);
-        addView(q6Var3, w7.z5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
-        i0 i0Var = new i0(2, context, g6Var, false);
-        this.e = i0Var;
-        i0Var.setReportChanges(true);
-        i0Var.setDelegate(new w7(this));
-        addView(i0Var, w7.z5.d(-1, 38.0f, 55, 6.0f, 30.0f, 6.0f, 0.0f));
+    public /* synthetic */ y7(FrameLayout frameLayout, double d, double d10, int i10) {
+        this.a = i10;
+        this.b = frameLayout;
+        this.c = d;
+        this.d = d10;
     }
 
-    public static int[] a(int i10, int[] iArr) {
-        boolean z10 = false;
-        int i11 = 0;
-        for (int i12 : iArr) {
-            if (i12 <= i10) {
-                i11++;
-                if (i12 == i10) {
-                    z10 = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                z7 z7Var = (z7) this.b;
+                double d = this.c;
+                double d10 = this.d;
+                try {
+                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, LocaleController.getInstance().getCurrentLocale()).getFromLocation(d, d10, 1);
+                    if (fromLocation.isEmpty()) {
+                        String detectOcean = LocationController.detectOcean(d10, d);
+                        z7Var.K = detectOcean;
+                        if (detectOcean == null) {
+                            z7Var.K = "";
+                        } else {
+                            z7Var.K = "🌊 " + ((Object) z7Var.K);
+                        }
+                    } else {
+                        Address address = fromLocation.get(0);
+                        StringBuilder sb2 = new StringBuilder();
+                        HashSet hashSet = new HashSet();
+                        hashSet.add(address.getSubAdminArea());
+                        hashSet.add(address.getAdminArea());
+                        hashSet.add(address.getLocality());
+                        hashSet.add(address.getCountryName());
+                        Iterator it = hashSet.iterator();
+                        while (it.hasNext()) {
+                            String str = (String) it.next();
+                            if (!TextUtils.isEmpty(str)) {
+                                if (sb2.length() > 0) {
+                                    sb2.append(", ");
+                                }
+                                sb2.append(str);
+                            }
+                        }
+                        z7Var.K = sb2.toString();
+                        String countryCodeToEmoji = LocationController.countryCodeToEmoji(address.getCountryCode());
+                        if (countryCodeToEmoji != null && Emoji.getEmojiDrawable(countryCodeToEmoji) != null) {
+                            z7Var.K = countryCodeToEmoji + " " + ((Object) z7Var.K);
+                        }
+                    }
+                } catch (Exception unused) {
                 }
-            }
+                AndroidUtilities.runOnUIThread(new y7(z7Var, d, d10, 1));
+                break;
+            case 1:
+                z7 z7Var2 = (z7) this.b;
+                double d11 = this.c;
+                double d12 = this.d;
+                z7Var2.H = d11;
+                z7Var2.I = d12;
+                z7Var2.G = false;
+                CharSequence charSequence = z7Var2.K;
+                org.telegram.ui.ActionBar.b6 b6Var = z7Var2.d;
+                CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, b6Var.getPaint().getFontMetricsInt(), false);
+                z7Var2.K = replaceEmoji;
+                b6Var.l(replaceEmoji, false);
+                break;
+            default:
+                ((sl) this.b).e0(this.c, this.d);
+                break;
         }
-        if (!z10) {
-            i11++;
-        }
-        if (i11 == iArr.length) {
-            return iArr;
-        }
-        int[] iArr2 = new int[i11];
-        int i13 = 0;
-        for (int i14 : iArr) {
-            if (i14 <= i10) {
-                iArr2[i13] = i14;
-                i13++;
-            }
-        }
-        if (!z10) {
-            iArr2[i13] = i10;
-        }
-        return iArr2;
-    }
-
-    public final float b(int i10) {
-        if (this.r.c != null) {
-            int i11 = 1;
-            while (true) {
-                int[] iArr = this.r.c;
-                if (i11 >= iArr.length) {
-                    break;
-                }
-                int i12 = iArr[i11 - 1];
-                int i13 = iArr[i11];
-                if (i10 >= i12 && i10 <= i13) {
-                    return (1.0f / (iArr.length - 1)) * ((Math.round(((i10 - i12) / (i13 - i12)) * r2.d) / this.r.d) + r4);
-                }
-                i11++;
-            }
-        }
-        return Utilities.clamp01((i10 - this.r.b()) / (this.r.a() - this.r.b()));
-    }
-
-    public final int c(int i10) {
-        if (this.r.c != null) {
-            int i11 = 1;
-            while (true) {
-                int[] iArr = this.r.c;
-                if (i11 >= iArr.length) {
-                    break;
-                }
-                int i12 = i11 - 1;
-                int i13 = iArr[i12];
-                int i14 = iArr[i11];
-                if (i10 >= i13 && i10 <= i14) {
-                    return i12;
-                }
-                i11++;
-            }
-        }
-        return i10;
-    }
-
-    public final void d(int i10, x7 x7Var, Utilities.Callback callback) {
-        this.f = i10;
-        this.r = x7Var;
-        this.n = callback;
-        this.e.e(b(i10), false);
-        e(i10, false);
-    }
-
-    public final void e(int i10, boolean z10) {
-        x7 x7Var = this.r;
-        if (x7Var == null || x7Var.e == null) {
-            return;
-        }
-        org.telegram.ui.Components.q6 q6Var = this.b;
-        q6Var.a();
-        org.telegram.ui.Components.q6 q6Var2 = this.d;
-        q6Var2.a();
-        org.telegram.ui.Components.q6 q6Var3 = this.c;
-        q6Var3.a();
-        q6Var3.c((CharSequence) this.r.e.run(0, Integer.valueOf(i10)), z10, true);
-        q6Var.c((CharSequence) this.r.e.run(-1, Integer.valueOf(this.r.b())), z10, true);
-        q6Var2.c((CharSequence) this.r.e.run(1, Integer.valueOf(this.r.a())), z10, true);
-        q6Var2.c.v(org.telegram.ui.ActionBar.k6.w0(i10 >= this.r.a() ? org.telegram.ui.ActionBar.k6.I6 : org.telegram.ui.ActionBar.k6.y6, this.a), z10);
-        q6Var2.invalidate();
-        float f7 = i10 >= this.r.a() ? 1.0f : 0.0f;
-        if (Math.abs(this.w - f7) < 0.01f) {
-            return;
-        }
-        ValueAnimator valueAnimator = this.x;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.x = null;
-        }
-        this.w = f7;
-        if (z10) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.v, f7);
-            this.x = ofFloat;
-            ofFloat.addUpdateListener(new r(this, 6));
-            this.x.addListener(new org.telegram.ui.ActionBar.y0(this, f7, 3));
-            this.x.setDuration(240L);
-            this.x.start();
-            return;
-        }
-        ColorMatrix colorMatrix = new ColorMatrix();
-        this.v = f7;
-        colorMatrix.setSaturation(f7);
-        if (org.telegram.ui.ActionBar.k6.I.q()) {
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - this.v) * (-0.3f));
-        }
-        q6Var2.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(75.0f), TLObject.FLAG_30));
-        if (Build.VERSION.SDK_INT >= 29) {
-            setSystemGestureExclusionRects(Arrays.asList(new Rect(0, 0, AndroidUtilities.dp(80.0f), getMeasuredHeight()), new Rect(getMeasuredWidth() - AndroidUtilities.dp(80.0f), 0, getMeasuredWidth(), getMeasuredHeight())));
-        }
-    }
-
-    public void setLabel(CharSequence charSequence) {
-        this.s = charSequence;
-    }
-
-    public void setMinValueAllowed(int i10) {
-        this.h = i10;
-        if (this.f < i10) {
-            this.f = i10;
-        }
-        if (this.r == null) {
-            return;
-        }
-        this.e.setMinProgress(b(i10));
-        e(this.f, false);
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        org.telegram.ui.Components.q6 q6Var;
-        try {
-            x7 x7Var = this.r;
-            if (x7Var != null && (q6Var = this.d) != null) {
-                q6Var.c.v(org.telegram.ui.ActionBar.k6.w0(this.f >= x7Var.a() ? org.telegram.ui.ActionBar.k6.I6 : org.telegram.ui.ActionBar.k6.y6, this.a), false);
-                q6Var.invalidate();
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

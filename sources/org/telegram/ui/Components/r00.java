@@ -9,50 +9,50 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class r00 extends s4.v {
-    public final zp d = new zp(this, 18);
+public final class r00 extends s4.w {
+    public final bq d = new bq(this, 19);
     public final /* synthetic */ s00 e;
 
     public r00(s00 s00Var) {
         this.e = s00Var;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
-        super.a(recyclerView, b1Var);
-        View view = b1Var.a;
+    @Override // s4.w
+    public final void a(RecyclerView recyclerView, s4.e1 e1Var) {
+        super.a(recyclerView, e1Var);
+        View view = e1Var.a;
         view.setPressed(false);
         view.setBackground(null);
         view.setTag(R.id.dragging, null);
     }
 
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
+    @Override // s4.w
+    public final int e(RecyclerView recyclerView, s4.e1 e1Var) {
         if (MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
             s00 s00Var = this.e;
-            if (!s00Var.n || (b1Var.b() == 0 && ((p00) s00Var.h.get(0)).e && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
-                return s4.v.l(0, 0);
+            if (!s00Var.n || (e1Var.b() == 0 && ((p00) s00Var.h.get(0)).e && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
+                return s4.w.l(0, 0);
             }
         }
-        return s4.v.l(12, 0);
+        return s4.w.l(12, 0);
     }
 
-    @Override // s4.v
+    @Override // s4.w
     public final boolean k() {
         return this.e.n;
     }
 
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+    @Override // s4.w
+    public final boolean n(RecyclerView recyclerView, s4.e1 e1Var, s4.e1 e1Var2) {
         int i10 = 0;
-        if (MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked() && ((b1Var.b() == 0 || b1Var2.b() == 0) && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
+        if (MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked() && ((e1Var.b() == 0 || e1Var2.b() == 0) && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
             return false;
         }
         o00 o00Var = this.e.I;
-        int b10 = b1Var.b();
-        int b11 = b1Var2.b();
+        int b10 = e1Var.b();
+        int b11 = e1Var2.b();
         s00 s00Var = o00Var.d;
         ArrayList arrayList = s00Var.h;
         SparseIntArray sparseIntArray = s00Var.k0;
@@ -77,18 +77,18 @@ public final class r00 extends s4.v {
             n00 n00Var = s00Var.J;
             int i14 = p00Var2.a;
             int i15 = p00Var.a;
-            org.telegram.ui.dw dwVar = (org.telegram.ui.dw) n00Var;
+            org.telegram.ui.rx rxVar = (org.telegram.ui.rx) n00Var;
             while (true) {
-                org.telegram.ui.dy[] dyVarArr = dwVar.b.e0;
-                if (i10 >= dyVarArr.length) {
+                org.telegram.ui.ay[] ayVarArr = rxVar.b.e0;
+                if (i10 >= ayVarArr.length) {
                     break;
                 }
-                org.telegram.ui.dy dyVar = dyVarArr[i10];
-                int i16 = dyVar.h;
+                org.telegram.ui.ay ayVar = ayVarArr[i10];
+                int i16 = ayVar.h;
                 if (i16 == i14) {
-                    dyVar.h = i15;
+                    ayVar.h = i15;
                 } else if (i16 == i15) {
-                    dyVar.h = i14;
+                    ayVar.h = i14;
                 }
                 i10++;
             }
@@ -118,24 +118,24 @@ public final class r00 extends s4.v {
         return true;
     }
 
-    @Override // s4.v
-    public final void p(s4.b1 b1Var, int i10) {
+    @Override // s4.w
+    public final void p(s4.e1 e1Var, int i10) {
         if (i10 != 0) {
             s00 s00Var = this.e;
             s00Var.F.I0(false);
-            b1Var.a.setPressed(true);
-            org.telegram.ui.ActionBar.r6.i(s00Var.b0, b1Var.a, s00Var.a);
+            e1Var.a.setPressed(true);
+            org.telegram.ui.ActionBar.f7.i(s00Var.b0, e1Var.a, s00Var.a);
         } else {
-            zp zpVar = this.d;
-            AndroidUtilities.cancelRunOnUIThread(zpVar);
-            AndroidUtilities.runOnUIThread(zpVar, 320L);
+            bq bqVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(bqVar);
+            AndroidUtilities.runOnUIThread(bqVar, 320L);
         }
-        if (b1Var != null) {
-            b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        if (e1Var != null) {
+            e1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
         }
     }
 
-    @Override // s4.v
-    public final void q(s4.b1 b1Var) {
+    @Override // s4.w
+    public final void q(s4.e1 e1Var) {
     }
 }

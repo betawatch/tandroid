@@ -3,16 +3,16 @@ package e2;
 import android.media.MediaFormat;
 import android.text.TextUtils;
 import android.util.Log;
-import i2.o1;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.telegram.ui.Components.b10;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -44,10 +44,10 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder i10 = si.o0.i(str, "\n  ");
-        i10.append(replace.replace("\n", "\n  "));
-        i10.append('\n');
-        return i10.toString();
+        StringBuilder l4 = b10.l(str, "\n  ");
+        l4.append(replace.replace("\n", "\n  "));
+        l4.append('\n');
+        return l4.toString();
     }
 
     public static void b(String str, String str2) {
@@ -73,7 +73,7 @@ public abstract class a {
         synchronized (a.class) {
             try {
                 if (a == null) {
-                    String str = m0.a;
+                    String str = n0.a;
                     a = Executors.newSingleThreadExecutor(new androidx.emoji2.text.a("ExoPlayer:BackgroundExecutor", 1));
                 }
                 executorService = a;
@@ -116,7 +116,7 @@ public abstract class a {
 
     public static void k(MediaFormat mediaFormat, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(o1.k(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+            mediaFormat.setByteBuffer(ic.a.i(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
         }
     }
 

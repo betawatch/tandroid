@@ -1,62 +1,60 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.sl;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.ActionBar.g6 a;
-    public final ImageView b;
-    public final TextView c;
-    public final TextView d;
+public final class f5 extends LinearLayout {
+    public final RectF a;
+    public final RectF b;
+    public final RectF c;
+    public final Paint d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 e;
+    public final /* synthetic */ g5 f;
 
-    public f5(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f5(g5 g5Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
-        this.a = g6Var;
-        setPadding(AndroidUtilities.dp(36.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(8.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        addView(imageView, w7.z5.d(28, 28.0f, 51, 0.0f, 2.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.z5.d(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
-        TextView f7 = sl.f(linearLayout, textView, w7.z5.t(-1, -2, 55, 0, 0, 0, 2), context);
-        this.d = f7;
-        f7.setTextSize(1, 14.0f);
-        linearLayout.addView(f7, w7.z5.t(-1, -2, 55, 0, 0, 0, 2));
-        updateColors();
+        this.f = g5Var;
+        this.e = u6Var;
+        this.a = new RectF();
+        this.b = new RectF();
+        this.c = new RectF();
+        this.d = new Paint(1);
     }
 
-    public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {
-        this.b.setImageResource(i10);
-        this.c.setText(charSequence);
-        this.d.setText(charSequence2);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.z6));
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        int i10 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.ActionBar.g6 g6Var = this.a;
-        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(i10, g6Var), PorterDuff.Mode.SRC_IN));
-        this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
-        this.d.setTextColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.z6, g6Var));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        g5 g5Var = this.f;
+        float d = g5Var.f.d(g5Var.d, false);
+        double d10 = d;
+        int floor = (int) Math.floor(d10);
+        TextView[] textViewArr = g5Var.c;
+        int clamp = Utilities.clamp(floor, textViewArr.length, 0);
+        int clamp2 = Utilities.clamp((int) Math.ceil(d10), textViewArr.length, 0);
+        RectF rectF = this.a;
+        if (clamp >= 0 && clamp < textViewArr.length) {
+            TextView textView = textViewArr[clamp];
+            rectF.set(textView.getX(), textView.getY(), textView.getX() + textView.getWidth(), textView.getY() + textView.getHeight());
+        }
+        RectF rectF2 = this.b;
+        if (clamp2 >= 0 && clamp2 < textViewArr.length) {
+            TextView textView2 = textViewArr[clamp2];
+            rectF2.set(textView2.getX(), textView2.getY(), textView2.getX() + textView2.getWidth(), textView2.getY() + textView2.getHeight());
+        }
+        RectF rectF3 = this.c;
+        AndroidUtilities.lerp(rectF, rectF2, d - clamp, rectF3);
+        int o12 = org.telegram.ui.ActionBar.y6.o1(0.1f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, this.e));
+        Paint paint = this.d;
+        paint.setColor(o12);
+        canvas.drawRoundRect(rectF3, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint);
+        super.dispatchDraw(canvas);
     }
 }

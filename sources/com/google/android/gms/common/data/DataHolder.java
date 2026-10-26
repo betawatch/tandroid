@@ -1,24 +1,24 @@
 package com.google.android.gms.common.data;
 
+import a8.df;
 import android.database.CursorIndexOutOfBoundsException;
 import android.database.CursorWindow;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import g8.j;
+import h8.j;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import n6.l;
-import o6.a;
+import o6.l;
 import org.telegram.messenger.MediaDataController;
-import w7.f0;
+import p6.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class DataHolder extends a implements Closeable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new j(20);
+    public static final Parcelable.Creator<DataHolder> CREATOR = new j(21);
     public final int a;
     public final String[] b;
     public Bundle c;
@@ -119,15 +119,15 @@ public final class DataHolder extends a implements Closeable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.m(parcel, 1, this.b);
-        f0.o(parcel, 2, this.d, i10);
-        f0.s(parcel, 3, 4);
+        int q5 = df.q(parcel, 20293);
+        df.m(parcel, 1, this.b);
+        df.o(parcel, 2, this.d, i10);
+        df.s(parcel, 3, 4);
         parcel.writeInt(this.e);
-        f0.b(parcel, 4, this.f);
-        f0.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
+        df.b(parcel, 4, this.f);
+        df.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
         parcel.writeInt(this.a);
-        f0.r(parcel, q6);
+        df.r(parcel, q5);
         if ((i10 & 1) != 0) {
             close();
         }

@@ -1,94 +1,47 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class t0 extends k0 {
-    public static final Object[] r;
-    public static final t0 s;
-    public final transient Object[] d;
-    public final transient int e;
-    public final transient Object[] f;
-    public final transient int h;
-    public final transient int n;
+public final class t0 extends c5 {
+    private static final t0 zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private int zzg;
+    private int zzh;
+    private int zzi;
+    private int zzj;
+    private int zzk;
+    private int zzl;
+    private int zzm;
+    private int zzn;
+    private int zzo;
+    private boolean zzp;
 
     static {
-        Object[] objArr = new Object[0];
-        r = objArr;
-        s = new t0(0, 0, 0, objArr, objArr);
+        t0 t0Var = new t0();
+        zzb = t0Var;
+        c5.e(t0.class, t0Var);
     }
 
-    public t0(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
-        this.d = objArr;
-        this.e = i10;
-        this.f = objArr2;
-        this.h = i11;
-        this.n = i12;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj != null) {
-            Object[] objArr = this.f;
-            if (objArr.length != 0) {
-                int a2 = v7.o5.a(obj.hashCode());
-                while (true) {
-                    int i10 = a2 & this.h;
-                    Object obj2 = objArr[i10];
-                    if (obj2 == null) {
-                        return false;
-                    }
-                    if (obj2.equals(obj)) {
-                        return true;
-                    }
-                    a2 = i10 + 1;
-                }
-            }
+    @Override // com.google.android.gms.internal.cast.c5
+    public final Object h(int i10, c5 c5Var) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
         }
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int h(Object[] objArr) {
-        Object[] objArr2 = this.d;
-        int i10 = this.n;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.k0, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.e;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        h0 h0Var = this.b;
-        if (h0Var == null) {
-            h0Var = h0.q(this.n, this.d);
-            this.b = h0Var;
+        if (i11 == 2) {
+            return new d6(zzb, "\u0001\f\u0000\u0001\u0001\f\f\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007᠌\u0006\b᠌\u0007\tင\b\nင\t\u000bင\n\fဇ\u000b", new Object[]{"zzd", "zze", "zzf", "zzg", x.e, "zzh", x.f, "zzi", x.d, "zzj", x.h, "zzk", x.n, "zzl", x.c, "zzm", "zzn", "zzo", "zzp"});
         }
-        return h0Var.listIterator(0);
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int m() {
-        return this.n;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int n() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final Object[] o() {
-        return this.d;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.n;
+        if (i11 == 3) {
+            return new t0();
+        }
+        if (i11 == 4) {
+            return new s0(zzb);
+        }
+        if (i11 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

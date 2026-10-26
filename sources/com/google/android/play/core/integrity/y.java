@@ -1,20 +1,20 @@
 package com.google.android.play.core.integrity;
 
-import a9.j0;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import b9.h0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import org.telegram.ui.Cells.b1;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 abstract class y {
     private final String b;
     private final long c;
     private boolean e;
-    private final j0 a = new j0("IntegrityDialogWrapper");
+    private final h0 a = new h0("IntegrityDialogWrapper");
     private final Object d = new Object();
 
     public y(String str, long j10) {
@@ -29,19 +29,19 @@ abstract class y {
                     return Tasks.forResult(0);
                 }
                 this.e = true;
-                j0 j0Var = this.a;
+                h0 h0Var = this.a;
                 Object[] objArr = {Integer.valueOf(i10)};
-                j0Var.getClass();
+                h0Var.getClass();
                 if (Log.isLoggable("PlayCore", 3)) {
-                    Log.d("PlayCore", j0.d(j0Var.a, "checkAndShowDialog(%s)", objArr));
+                    Log.d("PlayCore", h0.d(h0Var.a, "checkAndShowDialog(%s)", objArr));
                 }
-                Bundle i11 = b1.i(i10, "dialog.intent.type");
-                i11.putString("package.name", this.b);
-                i11.putInt("playcore.integrity.version.major", 1);
-                i11.putInt("playcore.integrity.version.minor", 4);
-                i11.putInt("playcore.integrity.version.patch", 0);
-                i11.putLong("request.token.sid", this.c);
-                return b(activity, i11);
+                Bundle g7 = b10.g(i10, "dialog.intent.type");
+                g7.putString("package.name", this.b);
+                g7.putInt("playcore.integrity.version.major", 1);
+                g7.putInt("playcore.integrity.version.minor", 4);
+                g7.putInt("playcore.integrity.version.patch", 0);
+                g7.putLong("request.token.sid", this.c);
+                return b(activity, g7);
             } catch (Throwable th2) {
                 throw th2;
             }

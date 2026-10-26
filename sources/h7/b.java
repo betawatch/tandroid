@@ -1,31 +1,17 @@
 package h7;
 
-import android.os.IBinder;
-import android.os.IInterface;
+import a8.df;
 import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b implements d, IInterface {
-    public final IBinder a;
+public final class b extends p6.a {
+    public static final Parcelable.Creator<b> CREATOR = new f6.i(13);
 
-    public b(IBinder iBinder) {
-        this.a = iBinder;
-    }
-
-    public final void F0(Parcel parcel, int i10) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            this.a.transact(i10, parcel, obtain, 0);
-            obtain.readException();
-        } finally {
-            parcel.recycle();
-            obtain.recycle();
-        }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.i.e(dest, "dest");
+        df.r(dest, df.q(dest, 20293));
     }
 }

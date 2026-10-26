@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public class z00 extends View {
     public static final int[] E;
@@ -113,7 +113,7 @@ public class z00 extends View {
                 } else {
                     y00Var.g = getWidthForAnimation() + dp;
                 }
-                y00Var.j = com.google.android.gms.internal.play_billing.k3.A(Utilities.random.nextFloat(), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.2f), y00Var.c == 0 ? 1 : -1);
+                y00Var.j = c3.h0.C(Utilities.random.nextFloat(), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.2f), y00Var.c == 0 ? 1 : -1);
                 y00Var.k = -((Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f));
                 y00Var.h = (heightForAnimation / 2) + Utilities.random.nextInt(Math.max(1, heightForAnimation * 2));
                 return y00Var;
@@ -243,15 +243,15 @@ public class z00 extends View {
             if (y00Var.e != 0) {
                 float dp = AndroidUtilities.dp(1.0f) * 0.5f;
                 if (y00Var.e == 1) {
-                    float t10 = com.google.android.gms.internal.play_billing.k3.t(dp, f12, 0.05f, y00Var.j);
-                    y00Var.j = t10;
-                    if (t10 >= dp) {
+                    float u10 = c3.h0.u(dp, f12, 0.05f, y00Var.j);
+                    y00Var.j = u10;
+                    if (u10 >= dp) {
                         y00Var.e = (byte) 2;
                     }
                 } else {
-                    float x10 = org.telegram.ui.Cells.b1.x(dp, f12, 0.05f, y00Var.j);
-                    y00Var.j = x10;
-                    if (x10 <= (-dp)) {
+                    float A = org.telegram.ui.d3.A(dp, f12, 0.05f, y00Var.j);
+                    y00Var.j = A;
+                    if (A <= (-dp)) {
                         y00Var.e = (byte) 1;
                     }
                 }
@@ -278,7 +278,7 @@ public class z00 extends View {
             if (f18 > f17) {
                 y00Var.k = ((AndroidUtilities.dp(1.0f) / 3.0f) * f12 * z00Var2.e) + f18;
             } else {
-                y00Var.k = a1.g.d(AndroidUtilities.dp(1.0f), 3.0f, f12, f18);
+                y00Var.k = a1.g.c(AndroidUtilities.dp(1.0f), 3.0f, f12, f18);
             }
             if (z10 && y00Var.k > f17) {
                 z00Var2.f++;
@@ -305,9 +305,9 @@ public class z00 extends View {
                     arrayList.add(a(true));
                 }
             }
-            float x11 = org.telegram.messenger.sl.x(i10, 16.0f, 0.15f, this.e);
-            this.e = x11;
-            if (x11 < 0.2f) {
+            float w10 = org.telegram.messenger.vh.w(i10, 16.0f, 0.15f, this.e);
+            this.e = w10;
+            if (w10 < 0.2f) {
                 this.e = 0.2f;
             }
         }
@@ -316,7 +316,7 @@ public class z00 extends View {
             return;
         }
         this.c = false;
-        AndroidUtilities.runOnUIThread(new zp(this, 19));
+        AndroidUtilities.runOnUIThread(new bq(this, 20));
         b();
     }
 

@@ -5,42 +5,42 @@ import android.graphics.Typeface;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class lc extends nb {
-    public final w9 a;
-    public final y90 b;
-    public final y90 c;
+    public final y9 a;
+    public final z90 b;
+    public final z90 c;
 
-    public lc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        int i10 = org.telegram.ui.ActionBar.k6.Hi;
+    public lc(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        int i10 = org.telegram.ui.ActionBar.y6.Hi;
         getThemedColor(i10);
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.k6.Fi));
-        w9 w9Var = new w9(context);
-        this.a = w9Var;
-        addView(w9Var, w7.z5.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.y6.Fi));
+        y9 y9Var = new y9(context);
+        this.a = y9Var;
+        addView(y9Var, gb1.m(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
         getThemedColor(i10);
-        int i11 = org.telegram.ui.ActionBar.k6.Gi;
+        int i11 = org.telegram.ui.ActionBar.y6.Gi;
         getThemedColor(i11);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, w7.z5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        y90 y90Var = new y90(context, null);
-        this.b = y90Var;
-        y90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        org.telegram.ui.ActionBar.r6.W(y90Var, i10, g6Var);
-        y90Var.setTextSize(1, 14.0f);
-        y90Var.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(y90Var);
-        y90 y90Var2 = new y90(context, null);
-        this.c = y90Var2;
-        y90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        org.telegram.ui.ActionBar.r6.W(y90Var2, i10, g6Var);
-        org.telegram.ui.ActionBar.r6.I(y90Var2, i11, g6Var);
-        y90Var2.setTypeface(Typeface.SANS_SERIF);
-        y90Var2.setTextSize(1, 13.0f);
-        linearLayout.addView(y90Var2);
+        addView(linearLayout, gb1.m(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        z90 z90Var = new z90(context, null);
+        this.b = z90Var;
+        z90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        org.telegram.ui.ActionBar.f7.V(z90Var, i10, u6Var);
+        z90Var.setTextSize(1, 14.0f);
+        z90Var.setTypeface(AndroidUtilities.bold());
+        linearLayout.addView(z90Var);
+        z90 z90Var2 = new z90(context, null);
+        this.c = z90Var2;
+        z90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        org.telegram.ui.ActionBar.f7.V(z90Var2, i10, u6Var);
+        org.telegram.ui.ActionBar.f7.H(z90Var2, i11, u6Var);
+        z90Var2.setTypeface(Typeface.SANS_SERIF);
+        z90Var2.setTextSize(1, 13.0f);
+        linearLayout.addView(z90Var2);
     }
 
     @Override // org.telegram.ui.Components.ub

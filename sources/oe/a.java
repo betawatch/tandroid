@@ -1,36 +1,19 @@
 package oe;
 
-import android.view.MotionEvent;
 import android.view.View;
+import org.telegram.ui.Components.ca;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface a {
-    boolean forceEnableVibration();
+public final /* synthetic */ class a implements d, ca {
+    public final /* synthetic */ View a;
 
-    long getLongPressDuration();
+    @Override // oe.d
+    public void E(int i10, float f7, float f10, e eVar) {
+        this.a.invalidate();
+    }
 
-    boolean ignoreHapticFeedbackSettings(float f7, float f10);
-
-    boolean needCancelTouchBySlopMove();
-
-    boolean needClickAt(View view, float f7, float f10);
-
-    boolean needLongPress(float f7, float f10);
-
-    void onClickAt(View view, float f7, float f10);
-
-    void onClickTouchDown(View view, float f7, float f10);
-
-    void onClickTouchMove(View view, float f7, float f10);
-
-    void onClickTouchUp(View view, float f7, float f10);
-
-    void onLongPressCancelled(View view, float f7, float f10);
-
-    void onLongPressFinish(View view, float f7, float f10);
-
-    void onLongPressMove(View view, MotionEvent motionEvent, float f7, float f10, float f11, float f12);
-
-    boolean onLongPressRequestedAt(View view, float f7, float f10);
+    @Override // oe.d
+    public /* synthetic */ void z(float f7, int i10) {
+    }
 }

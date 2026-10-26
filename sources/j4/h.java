@@ -1,13 +1,12 @@
 package j4;
 
-import b2.v0;
-import c3.l0;
-import i2.o1;
+import a8.yb;
+import b2.w0;
+import c3.j0;
 import java.util.Collections;
 import java.util.List;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -21,7 +20,7 @@ public final class h implements i {
     public h(List list) {
         this.a = 0;
         this.f = list;
-        this.g = new l0[list.size()];
+        this.g = new j0[list.size()];
         this.c = -9223372036854775807L;
     }
 
@@ -60,9 +59,9 @@ public final class h implements i {
                     }
                     int i10 = xVar.b;
                     int a2 = xVar.a();
-                    for (l0 l0Var : (l0[]) this.g) {
+                    for (j0 j0Var : (j0[]) this.g) {
                         xVar.N(i10);
-                        l0Var.d(a2, xVar);
+                        j0Var.d(a2, xVar);
                     }
                     this.e += a2;
                     break;
@@ -70,7 +69,7 @@ public final class h implements i {
                 break;
             default:
                 e2.x xVar2 = (e2.x) this.f;
-                ((l0) this.g).getClass();
+                ((j0) this.g).getClass();
                 if (this.b) {
                     int a10 = xVar.a();
                     int i11 = this.e;
@@ -90,7 +89,7 @@ public final class h implements i {
                         }
                     }
                     int min2 = Math.min(a10, this.d - this.e);
-                    ((l0) this.g).d(min2, xVar);
+                    ((j0) this.g).d(min2, xVar);
                     this.e += min2;
                     break;
                 }
@@ -113,37 +112,37 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.s sVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
-                l0[] l0VarArr = (l0[]) this.g;
-                for (int i10 = 0; i10 < l0VarArr.length; i10++) {
+                j0[] j0VarArr = (j0[]) this.g;
+                for (int i10 = 0; i10 < j0VarArr.length; i10++) {
                     e0 e0Var = (e0) ((List) this.f).get(i10);
                     f0Var.b();
                     f0Var.c();
-                    l0 j02 = sVar.j0(f0Var.c, 3);
-                    b2.v vVar = new b2.v();
+                    j0 F1 = qVar.F1(f0Var.c, 3);
+                    b2.w wVar = new b2.w();
                     f0Var.c();
-                    vVar.a = (String) f0Var.e;
-                    vVar.q = v0.n("video/mp2t");
-                    vVar.r = v0.n("application/dvbsubs");
-                    vVar.u = Collections.singletonList(e0Var.b);
-                    vVar.d = e0Var.a;
-                    o1.v(vVar, j02);
-                    l0VarArr[i10] = j02;
+                    wVar.a = (String) f0Var.e;
+                    wVar.q = w0.n("video/mp2t");
+                    wVar.r = w0.n("application/dvbsubs");
+                    wVar.u = Collections.singletonList(e0Var.b);
+                    wVar.d = e0Var.a;
+                    ic.a.u(wVar, F1);
+                    j0VarArr[i10] = F1;
                 }
                 break;
             default:
                 f0Var.b();
                 f0Var.c();
-                l0 j03 = sVar.j0(f0Var.c, 5);
-                this.g = j03;
-                b2.v vVar2 = new b2.v();
+                j0 F12 = qVar.F1(f0Var.c, 5);
+                this.g = F12;
+                b2.w wVar2 = new b2.w();
                 f0Var.c();
-                vVar2.a = (String) f0Var.e;
-                vVar2.q = v0.n("video/mp2t");
-                vVar2.r = v0.n("application/id3");
-                o1.v(vVar2, j03);
+                wVar2.a = (String) f0Var.e;
+                wVar2.q = w0.n("video/mp2t");
+                wVar2.r = w0.n("application/id3");
+                ic.a.u(wVar2, F12);
                 break;
         }
     }
@@ -154,19 +153,19 @@ public final class h implements i {
         switch (this.a) {
             case 0:
                 if (this.b) {
-                    u6.p(this.c != -9223372036854775807L);
-                    for (l0 l0Var : (l0[]) this.g) {
-                        l0Var.c(this.c, 1, this.e, 0, null);
+                    yb.p(this.c != -9223372036854775807L);
+                    for (j0 j0Var : (j0[]) this.g) {
+                        j0Var.c(this.c, 1, this.e, 0, null);
                     }
                     this.b = false;
                     break;
                 }
                 break;
             default:
-                ((l0) this.g).getClass();
+                ((j0) this.g).getClass();
                 if (this.b && (i10 = this.d) != 0 && this.e == i10) {
-                    u6.p(this.c != -9223372036854775807L);
-                    ((l0) this.g).c(this.c, 1, this.d, 0, null);
+                    yb.p(this.c != -9223372036854775807L);
+                    ((j0) this.g).c(this.c, 1, this.d, 0, null);
                     this.b = false;
                     break;
                 }

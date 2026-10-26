@@ -1,16 +1,8 @@
 package androidx.fragment.app;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public abstract /* synthetic */ class v0 {
-    public static final /* synthetic */ int[] a;
+import android.util.AndroidRuntimeException;
 
-    static {
-        int[] iArr = new int[m1.j.d(3).length];
-        try {
-            iArr[0] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        a = iArr;
-    }
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class v0 extends AndroidRuntimeException {
 }

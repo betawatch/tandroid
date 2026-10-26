@@ -1,10 +1,70 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class qx0 {
-    public String a;
-    public boolean b;
-    public long c;
-    public String d;
+    public final r5 a;
+    public Drawable b;
+
+    public qx0(FrameLayout frameLayout) {
+        this(18, frameLayout);
+    }
+
+    public final r5 a(TLObject tLObject, boolean z10, int i10) {
+        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i10, z10) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i10, z10) : b(null, null, i10, z10);
+    }
+
+    public final r5 b(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
+        r5 r5Var = this.a;
+        if (chat != null && chat.verified) {
+            Drawable drawable = this.b;
+            if (drawable == null) {
+                drawable = new ar(org.telegram.ui.ActionBar.y6.f1, org.telegram.ui.ActionBar.y6.i1);
+            }
+            this.b = drawable;
+            r5Var.g(drawable, z10);
+            r5Var.k(null);
+            return r5Var;
+        }
+        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
+            r5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
+            r5Var.k(Integer.valueOf(i10));
+            return r5Var;
+        }
+        if (user != null && user.verified) {
+            Drawable drawable2 = this.b;
+            if (drawable2 == null) {
+                drawable2 = new ar(org.telegram.ui.ActionBar.y6.f1, org.telegram.ui.ActionBar.y6.i1);
+            }
+            this.b = drawable2;
+            r5Var.g(drawable2, z10);
+            r5Var.k(null);
+            return r5Var;
+        }
+        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
+            r5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
+            r5Var.k(Integer.valueOf(i10));
+            return r5Var;
+        }
+        if (user == null || !user.premium) {
+            r5Var.g(null, z10);
+            r5Var.k(null);
+            return r5Var;
+        }
+        r5Var.g(tg.b1.d().e, z10);
+        r5Var.k(Integer.valueOf(i10));
+        return r5Var;
+    }
+
+    public qx0(int i10, View view) {
+        this.a = new r5(AndroidUtilities.dp(i10), view);
+    }
 }

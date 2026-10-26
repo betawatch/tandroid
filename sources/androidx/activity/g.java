@@ -4,29 +4,24 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.graphics.Typeface;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.p0;
-import com.google.android.gms.internal.cast.r1;
-import com.google.android.gms.internal.cast.s1;
+import com.google.android.gms.internal.cast.m0;
+import com.google.android.gms.internal.cast.o1;
+import com.google.android.gms.internal.cast.p1;
 import com.google.android.gms.internal.vision.f0;
 import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import m4.x0;
 import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
-    public int b;
+    public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
-    public Object d;
+    public final /* synthetic */ Object d;
 
     public /* synthetic */ g(Object obj, int i10, Object obj2, int i11) {
         this.a = i11;
@@ -35,22 +30,22 @@ public final class g implements Runnable {
         this.d = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        i5.a aVar;
-        l5.s sVar;
+        j5.a aVar;
+        m5.s sVar;
         VisionClearcutLogger visionClearcutLogger;
         int i10 = 0;
         switch (this.a) {
             case 0:
                 h hVar = (h) this.c;
                 int i11 = this.b;
-                Object obj = ((a9.r) this.d).a;
+                Object obj = ((za.c) this.d).b;
                 String str = (String) hVar.a.get(Integer.valueOf(i11));
                 if (str == null) {
                     return;
@@ -63,7 +58,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.h(obj);
+                        bVar.d(obj);
                         return;
                     }
                     return;
@@ -72,54 +67,54 @@ public final class g implements Runnable {
                 ((h) this.c).a(this.b, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", (IntentSender.SendIntentException) this.d));
                 return;
             case 2:
-                com.google.android.gms.internal.cast.r rVar = (com.google.android.gms.internal.cast.r) this.d;
-                p4.r rVar2 = (p4.r) this.c;
+                com.google.android.gms.internal.cast.p pVar = (com.google.android.gms.internal.cast.p) this.d;
+                p4.r rVar = (p4.r) this.c;
                 int i12 = this.b;
-                synchronized (rVar.e) {
-                    rVar.L0(rVar2, i12);
+                synchronized (pVar.e) {
+                    pVar.L0(rVar, i12);
                 }
                 return;
             case 3:
-                p0 p0Var = (p0) this.d;
-                s1 s1Var = (s1) this.c;
+                m0 m0Var = (m0) this.d;
+                p1 p1Var = (p1) this.c;
                 int i13 = this.b;
-                r1 n10 = s1.n(s1Var);
-                String str2 = p0Var.d;
+                o1 n10 = p1.n(p1Var);
+                String str2 = m0Var.d;
                 n10.c();
-                s1.v((s1) n10.b, str2);
+                p1.v((p1) n10.b, str2);
                 n10.c();
-                s1.w((s1) n10.b, str2);
-                Long l4 = p0Var.e;
+                p1.w((p1) n10.b, str2);
+                Long l4 = m0Var.e;
                 if (l4 != null) {
                     int longValue = (int) l4.longValue();
                     n10.c();
-                    s1.x((s1) n10.b, longValue);
+                    p1.x((p1) n10.b, longValue);
                 }
-                s1 s1Var2 = (s1) n10.a();
-                int i14 = p0Var.h;
+                p1 p1Var2 = (p1) n10.a();
+                int i14 = m0Var.h;
                 int i15 = i14 - 1;
-                i5.a aVar2 = null;
+                j5.a aVar2 = null;
                 if (i14 == 0) {
                     throw null;
                 }
                 if (i15 != 0) {
                     if (i15 == 1) {
-                        aVar = new i5.a(Integer.valueOf(i13 - 1), s1Var2, i5.d.a, null);
+                        aVar = new j5.a(Integer.valueOf(i13 - 1), p1Var2, j5.d.a, null);
                     }
-                    p0.i.b("analytics event: %s", aVar2);
-                    n6.l.h(aVar2);
-                    sVar = p0Var.g;
+                    m0.i.b("analytics event: %s", aVar2);
+                    o6.l.h(aVar2);
+                    sVar = m0Var.g;
                     if (sVar == null) {
-                        sVar.a(aVar2, new k2.f(8));
+                        sVar.a(aVar2, new x0(11));
                         return;
                     }
                     return;
                 }
-                aVar = new i5.a(Integer.valueOf(i13 - 1), s1Var2, i5.d.b, null);
+                aVar = new j5.a(Integer.valueOf(i13 - 1), p1Var2, j5.d.b, null);
                 aVar2 = aVar;
-                p0.i.b("analytics event: %s", aVar2);
-                n6.l.h(aVar2);
-                sVar = p0Var.g;
+                m0.i.b("analytics event: %s", aVar2);
+                o6.l.h(aVar2);
+                sVar = m0Var.g;
                 if (sVar == null) {
                 }
             case 4:
@@ -139,21 +134,6 @@ public final class g implements Runnable {
                     return;
                 }
                 return;
-            case 6:
-                long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((kw0) this.d).c, this.b);
-                ((kw0) this.d).getClass();
-                ow0 ow0Var = (ow0) this.c;
-                ow0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + ow0Var.j0);
-                int i16 = ow0Var.i0 + 1;
-                ow0Var.i0 = i16;
-                if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (ow0Var.j0 / ow0Var.i0));
-                    ow0Var.i0 = 0;
-                    ow0Var.j0 = 0;
-                }
-                AndroidUtilities.runOnUIThread(new jw0(this, i10));
-                return;
             default:
                 visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
                 visionClearcutLogger.zza(this.b, (f0) this.d);
@@ -166,10 +146,5 @@ public final class g implements Runnable {
         this.d = obj;
         this.c = obj2;
         this.b = i10;
-    }
-
-    public g(ow0 ow0Var) {
-        this.a = 6;
-        this.c = ow0Var;
     }
 }

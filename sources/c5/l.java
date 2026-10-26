@@ -1,94 +1,35 @@
 package c5;
 
-import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import a8.v1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class l {
-    public final String a;
-    public final long b;
-    public final String c;
-    public final String d;
-    public final ArrayList e;
-    public final String f;
-    public final t7.u g;
+public final class l extends b {
+    public final /* synthetic */ int e;
 
-    public l(JSONObject jSONObject) {
-        this.a = jSONObject.optString("formattedPrice");
-        this.b = jSONObject.optLong("priceAmountMicros");
-        this.c = jSONObject.optString("priceCurrencyCode");
-        String optString = jSONObject.optString("offerIdToken");
-        t7.u uVar = null;
-        this.d = true == optString.isEmpty() ? null : optString;
-        jSONObject.optString("offerId").getClass();
-        jSONObject.optString("purchaseOptionId").getClass();
-        jSONObject.optInt("offerType");
-        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
-        this.e = new ArrayList();
-        if (optJSONArray != null) {
-            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
-                this.e.add(optJSONArray.getString(i10));
-            }
-        }
-        if (jSONObject.has("fullPriceMicros")) {
-            jSONObject.optLong("fullPriceMicros");
-        }
-        JSONObject optJSONObject = jSONObject.optJSONObject("discountDisplayInfo");
-        if (optJSONObject != null) {
-            if (optJSONObject.has("percentageDiscount")) {
-                optJSONObject.optInt("percentageDiscount");
-            }
-            JSONObject optJSONObject2 = optJSONObject.optJSONObject("discountAmount");
-            if (optJSONObject2 != null) {
-                optJSONObject2.optString("formattedDiscountAmount");
-                optJSONObject2.optLong("discountAmountMicros");
-                optJSONObject2.optString("discountAmountCurrencyCode");
-            }
-        }
-        JSONObject optJSONObject3 = jSONObject.optJSONObject("validTimeWindow");
-        if (optJSONObject3 != null) {
-            if (optJSONObject3.has("startTimeMillis")) {
-                optJSONObject3.optLong("startTimeMillis");
-            }
-            if (optJSONObject3.has("endTimeMillis")) {
-                optJSONObject3.optLong("endTimeMillis");
-            }
-        }
-        JSONObject optJSONObject4 = jSONObject.optJSONObject("limitedQuantityInfo");
-        if (optJSONObject4 != null) {
-            optJSONObject4.getInt("maximumQuantity");
-            optJSONObject4.getInt("remainingQuantity");
-        }
-        this.f = jSONObject.optString("serializedDocid");
-        JSONObject optJSONObject5 = jSONObject.optJSONObject("preorderDetails");
-        if (optJSONObject5 != null) {
-            optJSONObject5.getLong("preorderReleaseTimeMillis");
-            optJSONObject5.getLong("preorderPresaleEndTimeMillis");
-        }
-        JSONObject optJSONObject6 = jSONObject.optJSONObject("rentalDetails");
-        if (optJSONObject6 != null) {
-            optJSONObject6.getString("rentalPeriod");
-            optJSONObject6.optString("rentalExpirationPeriod").getClass();
-        }
-        JSONObject optJSONObject7 = jSONObject.optJSONObject("autoPayDetails");
-        if (optJSONObject7 != null) {
-            uVar = new t7.u(4);
-            optJSONObject7.getString(TeXSymbolParser.TYPE_ATTR);
-        }
-        this.g = uVar;
-        JSONArray optJSONArray2 = jSONObject.optJSONArray("pricingPhases");
-        if (optJSONArray2 == null) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        for (int i11 = 0; i11 < optJSONArray2.length(); i11++) {
-            JSONObject optJSONObject8 = optJSONArray2.optJSONObject(i11);
-            if (optJSONObject8 != null) {
-                arrayList.add(new m(optJSONObject8));
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l(int i10, String str, String str2) {
+        super(2, str, str2);
+        this.e = i10;
+    }
+
+    @Override // c5.c
+    public final boolean b() {
+        switch (this.e) {
+            case 0:
+                if (!super.b() || !v1.a("MULTI_PROCESS")) {
+                    return false;
+                }
+                boolean z10 = b5.a.a;
+                if (m.b.b()) {
+                    return n.a.getStatics().isMultiProcessEnabled();
+                }
+                throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+            default:
+                if (v1.a("MULTI_PROFILE")) {
+                    return super.b();
+                }
+                return false;
         }
     }
 }

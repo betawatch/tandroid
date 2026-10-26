@@ -10,13 +10,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ProxyRotationController implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_TIMEOUT_INDEX = 1;
     private static final ProxyRotationController INSTANCE = new ProxyRotationController();
     public static final List<Integer> ROTATION_TIMEOUTS = Arrays.asList(5, 10, 15, 30, 60);
-    private Runnable checkProxyAndSwitchRunnable = new fh(this, 2);
+    private Runnable checkProxyAndSwitchRunnable = new hh(this, 2);
     private boolean isCurrentlyChecking;
 
     public static void init() {
@@ -47,7 +47,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$1(SharedConfig.ProxyInfo proxyInfo, long j10) {
-        AndroidUtilities.runOnUIThread(new oh(proxyInfo, j10, 0));
+        AndroidUtilities.runOnUIThread(new qh(proxyInfo, j10, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,7 +59,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
             SharedConfig.ProxyInfo proxyInfo = SharedConfig.proxyList.get(i11);
             if (!proxyInfo.checking && SystemClock.elapsedRealtime() - proxyInfo.availableCheckTime >= 120000) {
                 proxyInfo.checking = true;
-                ConnectionsManager.getInstance(i10).checkProxy(proxyInfo.settings, new d0(proxyInfo, 10));
+                ConnectionsManager.getInstance(i10).checkProxy(proxyInfo.settings, new g0(proxyInfo, 10));
                 z10 = true;
             }
         }
@@ -79,7 +79,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
         this.isCurrentlyChecking = false;
         if (SharedConfig.proxyRotationEnabled) {
             ArrayList arrayList = new ArrayList(SharedConfig.proxyList);
-            Collections.sort(arrayList, new p(27));
+            Collections.sort(arrayList, new s(27));
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {

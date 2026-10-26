@@ -1,60 +1,30 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
-import java.util.Map;
+import a8.ea;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class o0 extends k0 {
-    public final transient j0 d;
-    public final transient Object[] e;
-    public final transient int f;
+public final class o0 extends f0 {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e;
 
-    public o0(j0 j0Var, Object[] objArr, int i10) {
-        this.d = j0Var;
-        this.e = objArr;
-        this.f = i10;
+    public o0(int i10, int i11, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
+        this.e = i11;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.d.get(key))) {
-                return true;
-            }
-        }
-        return false;
+    @Override // java.util.List
+    public final Object get(int i10) {
+        ea.a(i10, this.e);
+        Object obj = this.c[i10 + i10 + this.d];
+        obj.getClass();
+        return obj;
     }
 
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int h(Object[] objArr) {
-        h0 h0Var = this.b;
-        if (h0Var == null) {
-            h0Var = r();
-            this.b = h0Var;
-        }
-        return h0Var.h(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        h0 h0Var = this.b;
-        if (h0Var == null) {
-            h0Var = r();
-            this.b = h0Var;
-        }
-        return h0Var.listIterator(0);
-    }
-
-    public final h0 r() {
-        return new n0(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.f;
+        return this.e;
     }
 }

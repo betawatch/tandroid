@@ -1,30 +1,51 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qe implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.cn0 b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ qe(org.telegram.ui.Components.cn0 cn0Var, int i10) {
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class qe implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ un b;
+
+    public /* synthetic */ qe(un unVar, int i10) {
         this.a = i10;
-        this.b = cn0Var;
+        this.b = unVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.cn0 cn0Var = this.b;
-                if (!cn0Var.M) {
-                    cn0Var.M = true;
-                    cn0Var.c(new org.telegram.ui.Components.an0(cn0Var, 0), false);
-                    cn0Var.s.invalidate();
+                bk bkVar = this.b.j2;
+                if (bkVar != null) {
+                    bkVar.c(false);
                     break;
                 }
                 break;
+            case 1:
+                un.j1(this.b);
+                break;
+            case 2:
+                this.b.n8(false, true, 0.0f);
+                break;
+            case 3:
+                this.b.n8(false, true, 0.0f);
+                break;
+            case 4:
+                this.b.n8(false, true, 0.0f);
+                break;
+            case 5:
+                this.b.n8(false, true, 0.0f);
+                break;
+            case 6:
+                this.b.n8(false, true, 0.0f);
+                break;
+            case 7:
+                this.b.n8(false, true, 0.0f);
+                break;
             default:
-                this.b.dismiss();
+                this.b.cc = null;
                 break;
         }
     }

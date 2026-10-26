@@ -1,9 +1,9 @@
 package g2;
 
+import a8.yb;
 import java.io.InputStream;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k extends InputStream {
     public final h a;
@@ -50,7 +50,7 @@ public final class k extends InputStream {
 
     @Override // java.io.InputStream
     public final int read(byte[] bArr, int i10, int i11) {
-        u6.p(!this.e);
+        yb.p(!this.e);
         a();
         int read = this.a.read(bArr, i10, i11);
         if (read == -1) {

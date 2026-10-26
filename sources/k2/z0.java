@@ -1,13 +1,13 @@
 package k2;
 
+import a8.yb;
+import a8.zb;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.MediaDataController;
-import v7.u6;
-import v7.v6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class z0 extends c2.o {
+public final class z0 extends c2.p {
     public int n;
     public boolean o;
     public int p;
@@ -24,13 +24,13 @@ public final class z0 extends c2.o {
     public final short j = 1024;
 
     public z0() {
-        byte[] bArr = e2.m0.b;
+        byte[] bArr = e2.n0.b;
         this.s = bArr;
         this.v = bArr;
     }
 
-    @Override // c2.n
-    public final void c(ByteBuffer byteBuffer) {
+    @Override // c2.o
+    public final void b(ByteBuffer byteBuffer) {
         int limit;
         int position;
         while (byteBuffer.hasRemaining() && !this.g.hasRemaining()) {
@@ -63,7 +63,7 @@ public final class z0 extends c2.o {
                 if (i10 != 1) {
                     throw new IllegalStateException();
                 }
-                u6.p(this.t < this.s.length);
+                yb.p(this.t < this.s.length);
                 int limit4 = byteBuffer.limit();
                 int position2 = byteBuffer.position() + 1;
                 while (true) {
@@ -95,7 +95,7 @@ public final class z0 extends c2.o {
                 byteBuffer.get(this.s, i15, min);
                 int i17 = this.u + min;
                 this.u = i17;
-                u6.p(i17 <= this.s.length);
+                yb.p(i17 <= this.s.length);
                 boolean z11 = z10 && position3 < i16;
                 n(z11);
                 if (z11) {
@@ -107,15 +107,15 @@ public final class z0 extends c2.o {
         }
     }
 
-    @Override // c2.o
-    public final c2.k h(c2.k kVar) {
-        if (kVar.c == 2) {
-            return kVar.a == -1 ? c2.k.e : kVar;
+    @Override // c2.p
+    public final c2.l h(c2.l lVar) {
+        if (lVar.c == 2) {
+            return lVar.a == -1 ? c2.l.e : lVar;
         }
-        throw new c2.m(kVar);
+        throw new c2.n(lVar);
     }
 
-    @Override // c2.o
+    @Override // c2.p
     public final void i() {
         if (isActive()) {
             int i10 = this.b.b * 2;
@@ -133,12 +133,12 @@ public final class z0 extends c2.o {
         this.u = 0;
     }
 
-    @Override // c2.o, c2.n
+    @Override // c2.p, c2.o
     public final boolean isActive() {
         return super.isActive() && this.o;
     }
 
-    @Override // c2.o
+    @Override // c2.p
     public final void j() {
         if (this.u > 0) {
             n(true);
@@ -146,17 +146,17 @@ public final class z0 extends c2.o {
         }
     }
 
-    @Override // c2.o
+    @Override // c2.p
     public final void k() {
         this.o = false;
-        byte[] bArr = e2.m0.b;
+        byte[] bArr = e2.n0.b;
         this.s = bArr;
         this.v = bArr;
     }
 
     public final int m(int i10) {
         int length = ((((int) ((this.m * this.b.a) / 1000000)) - this.r) * this.n) - (this.s.length / 2);
-        u6.p(length >= 0);
+        yb.p(length >= 0);
         int min = (int) Math.min((i10 * this.i) + 0.5f, length);
         int i11 = this.n;
         return (min / i11) * i11;
@@ -173,7 +173,7 @@ public final class z0 extends c2.o {
                     o(i10, 3);
                     length = i10;
                 } else {
-                    u6.p(i10 >= bArr.length / 2);
+                    yb.p(i10 >= bArr.length / 2);
                     length = this.s.length / 2;
                     o(length, 0);
                 }
@@ -191,9 +191,9 @@ public final class z0 extends c2.o {
                 o(m10, 1);
             }
             if (!(length % this.n == 0)) {
-                throw new IllegalStateException(v6.a("bytesConsumed is not aligned to frame size: %s", Integer.valueOf(length)));
+                throw new IllegalStateException(zb.a("bytesConsumed is not aligned to frame size: %s", Integer.valueOf(length)));
             }
-            u6.p(i10 >= m10);
+            yb.p(i10 >= m10);
             this.u -= length;
             int i11 = this.t + length;
             this.t = i11;
@@ -207,7 +207,7 @@ public final class z0 extends c2.o {
         if (i10 == 0) {
             return;
         }
-        u6.g(this.u >= i10);
+        yb.g(this.u >= i10);
         if (i11 == 2) {
             int i12 = this.t;
             int i13 = this.u;
@@ -237,10 +237,10 @@ public final class z0 extends c2.o {
                 System.arraycopy(this.s, 0, this.v, length2, i10 - length2);
             }
         }
-        u6.b(i10, "sizeToOutput is not aligned to frame size: %s", i10 % this.n == 0);
-        u6.p(this.t < this.s.length);
+        yb.b(i10, "sizeToOutput is not aligned to frame size: %s", i10 % this.n == 0);
+        yb.p(this.t < this.s.length);
         byte[] bArr3 = this.v;
-        u6.b(i10, "byteOutput size is not aligned to frame size %s", i10 % this.n == 0);
+        yb.b(i10, "byteOutput size is not aligned to frame size %s", i10 % this.n == 0);
         if (i11 != 3) {
             for (int i18 = 0; i18 < i10; i18 += 2) {
                 int i19 = i18 + 1;

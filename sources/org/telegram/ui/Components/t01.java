@@ -1,49 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t01 implements TextWatcher {
-    public final /* synthetic */ a11 a;
+public final class t01 extends FrameLayout {
+    public final w01 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
 
-    public t01(a11 a11Var) {
-        this.a = a11Var;
+    public t01(w01 w01Var, View view, boolean z10) {
+        super(w01Var.getContext());
+        this.d = false;
+        this.e = true;
+        this.a = w01Var;
+        setWillNotDraw(false);
+        if (!z10) {
+            setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
+        }
+        addView(view, gb1.g(-1.0f, -1));
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        a11 a11Var = this.a;
-        q6 q6Var = a11Var.n;
-        if (a11Var.x) {
-            return;
-        }
-        String trim = editable.toString().trim();
-        if (trim.length() > 16) {
-            q6Var.setText("-" + (trim.length() - 16));
-            trim = trim.substring(0, 16);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z10 = this.b;
+        w01 w01Var = this.a;
+        if (z10 || this.c) {
+            canvas2 = canvas;
+            float dp = AndroidUtilities.dp(10.0f);
+            float[] fArr = w01Var.c;
+            boolean z11 = this.b;
+            float f7 = (z11 && this.d) ? dp : 0.0f;
+            fArr[1] = f7;
+            fArr[0] = f7;
+            float f10 = (z11 && this.e) ? dp : 0.0f;
+            fArr[3] = f10;
+            fArr[2] = f10;
+            boolean z12 = this.c;
+            float f11 = (z12 && this.e) ? dp : 0.0f;
+            fArr[5] = f11;
+            fArr[4] = f11;
+            if (!z12 || !this.d) {
+                dp = 0.0f;
+            }
+            fArr[7] = dp;
+            fArr[6] = dp;
+            w01Var.b.rewind();
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f12 = w01Var.h;
+            rectF.set(f12, f12, getWidth() - w01Var.h, (w01Var.h * (this.c ? -1.0f : 1.0f)) + getHeight());
+            if (!this.e) {
+                rectF.right += w01Var.f;
+            }
+            w01Var.b.addRoundRect(rectF, w01Var.c, Path.Direction.CW);
+            canvas2.drawPath(w01Var.b, w01Var.e);
         } else {
-            q6Var.setText("");
+            float f13 = w01Var.h;
+            canvas2 = canvas;
+            canvas2.drawRect(f13, f13, getWidth() - w01Var.h, getHeight() + w01Var.h, w01Var.e);
         }
-        Utilities.Callback callback = a11Var.w;
-        if (callback != null) {
-            callback.run(trim);
-        }
-        MessageObject messageObject = a11Var.r;
-        if (messageObject != null) {
-            messageObject.forceUpdate = true;
-            a11Var.d.W3(messageObject, null, false, false, false, false);
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onDraw(canvas2);
     }
 }

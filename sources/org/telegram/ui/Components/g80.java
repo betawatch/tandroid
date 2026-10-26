@@ -1,14 +1,40 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class g80 extends ScrollView {
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+public final class g80 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ ViewGroup a;
+    public final /* synthetic */ k80 b;
+
+    public g80(k80 k80Var, ViewGroup viewGroup) {
+        this.b = k80Var;
+        this.a = viewGroup;
+    }
+
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        View view;
+        k80 k80Var = this.b;
+        k80Var.m = null;
+        k80.a(k80Var, this.a);
+        View view2 = k80Var.p0;
+        if (view2 != null) {
+            view2.setPressed(false);
+            k80Var.p0 = null;
+        }
+        if (k80Var.o0 != null && (view = k80Var.f) != null) {
+            view.setOnTouchListener(null);
+        }
+        k80Var.o0 = null;
+        k80Var.N();
+        Runnable runnable = k80Var.p;
+        if (runnable != null) {
+            runnable.run();
+            k80Var.p = null;
+        }
     }
 }

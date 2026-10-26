@@ -1,27 +1,26 @@
 package e2;
 
 import android.os.Handler;
-import b2.a2;
-import b2.b1;
+import b2.a1;
+import b2.b2;
 import b2.c1;
 import b2.d1;
 import b2.e1;
 import b2.f1;
-import b2.o1;
-import b2.r0;
-import b2.t0;
-import b2.t1;
-import b2.v1;
-import b2.y0;
+import b2.g1;
+import b2.p1;
+import b2.u0;
+import b2.u1;
+import b2.w1;
 import b2.z0;
 import java.util.List;
-import org.telegram.ui.Components.j81;
-import org.telegram.ui.Components.m60;
-import si.u0;
+import org.telegram.ui.Components.n60;
+import org.telegram.ui.Components.s81;
+import vi.s0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class z implements d1 {
+public final class z implements e1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -30,28 +29,28 @@ public final class z implements d1 {
         this.b = obj;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onAudioAttributesChanged(b2.f fVar) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onAudioSessionIdChanged(int i10) {
         int i11 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onAvailableCommandsChanged(b1 b1Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onAvailableCommandsChanged(c1 c1Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onCues(d2.c cVar) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
-    public final void onEvents(f1 f1Var, c1 c1Var) {
+    @Override // b2.e1
+    public final void onEvents(g1 g1Var, d1 d1Var) {
         switch (this.a) {
             case 0:
                 e0 e0Var = (e0) this.b;
@@ -63,21 +62,21 @@ public final class z implements d1 {
         }
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onIsLoadingChanged(boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final void onIsPlayingChanged(boolean z10) {
         switch (this.a) {
             case 0:
             case 1:
                 break;
             case 2:
-                ri.o oVar = (ri.o) this.b;
-                ri.f fVar = oVar.f;
-                ri.d dVar = oVar.F;
+                ui.o oVar = (ui.o) this.b;
+                ui.f fVar = oVar.f;
+                ui.d dVar = oVar.F;
                 Handler handler = oVar.i;
                 if (oVar.v != z10) {
                     oVar.v = z10;
@@ -91,109 +90,109 @@ public final class z implements d1 {
                 }
                 break;
             default:
-                u0 u0Var = (u0) this.b;
-                if (u0Var.W == 5) {
-                    u0Var.x(z10);
+                s0 s0Var = (s0) this.b;
+                if (s0Var.W == 5) {
+                    s0Var.x(z10);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onLoadingChanged(boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onMediaItemTransition(b2.o0 o0Var, int i10) {
+    @Override // b2.e1
+    public final /* synthetic */ void onMediaItemTransition(b2.p0 p0Var, int i10) {
         int i11 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onMediaMetadataChanged(r0 r0Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onMediaMetadataChanged(b2.s0 s0Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onMetadata(t0 t0Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onMetadata(u0 u0Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i10) {
         int i11 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onPlaybackParametersChanged(z0 z0Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onPlaybackParametersChanged(a1 a1Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final void onPlaybackStateChanged(int i10) {
-        i2.h0 h0Var;
-        i2.h0 h0Var2;
+        i2.j0 j0Var;
+        i2.j0 j0Var2;
         switch (this.a) {
             case 0:
             case 1:
                 break;
             case 2:
-                ri.o oVar = (ri.o) this.b;
-                if (i10 == 4 && oVar.n == ri.m.e && (h0Var = oVar.B) != null) {
-                    h0Var.Z0(5, oVar.s);
+                ui.o oVar = (ui.o) this.b;
+                if (i10 == 4 && oVar.n == ui.m.e && (j0Var = oVar.B) != null) {
+                    j0Var.Z0(5, oVar.s);
                     oVar.B.e();
                     break;
                 }
                 break;
             default:
-                u0 u0Var = (u0) this.b;
-                u0Var.m.b("preview playback state=" + i10);
-                if (u0Var.W == 5 && i10 == 4 && (h0Var2 = u0Var.S) != null) {
-                    h0Var2.Z0(5, u0Var.G);
-                    u0Var.S.i();
+                s0 s0Var = (s0) this.b;
+                s0Var.m.b("preview playback state=" + i10);
+                if (s0Var.W == 5 && i10 == 4 && (j0Var2 = s0Var.S) != null) {
+                    j0Var2.Z0(5, s0Var.G);
+                    s0Var.S.i();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onPlaybackSuppressionReasonChanged(int i10) {
         int i11 = this.a;
     }
 
-    @Override // b2.d1
-    public final void onPlayerError(y0 y0Var) {
+    @Override // b2.e1
+    public final void onPlayerError(z0 z0Var) {
         switch (this.a) {
             case 0:
             case 1:
                 break;
             case 2:
-                ((ri.o) this.b).g(y0Var);
+                ((ui.o) this.b).g(z0Var);
                 break;
             default:
-                u0 u0Var = (u0) this.b;
-                u0Var.m.b("preview player error: code=" + y0Var.a);
-                u0Var.h(y0Var);
+                s0 s0Var = (s0) this.b;
+                s0Var.m.b("preview player error: code=" + z0Var.a);
+                s0Var.h(z0Var);
                 break;
         }
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onPlayerErrorChanged(y0 y0Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onPlayerErrorChanged(z0 z0Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final void onPlayerStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                j81 j81Var = (j81) this.b;
-                if (!j81Var.H && i10 == 3) {
-                    j81Var.H = true;
-                    if (j81Var.G && j81Var.I) {
-                        j81Var.C();
+                s81 s81Var = (s81) this.b;
+                if (!s81Var.H && i10 == 3) {
+                    s81Var.H = true;
+                    if (s81Var.G && s81Var.I) {
+                        s81Var.C();
                         break;
                     }
                 }
@@ -201,17 +200,17 @@ public final class z implements d1 {
         }
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onPlaylistMetadataChanged(r0 r0Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onPlaylistMetadataChanged(b2.s0 s0Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onPositionDiscontinuity(int i10) {
         int i11 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final void onRenderedFirstFrame() {
         switch (this.a) {
             case 0:
@@ -219,67 +218,67 @@ public final class z implements d1 {
             case 2:
                 break;
             default:
-                u0 u0Var = (u0) this.b;
-                if (u0Var.W == 5) {
-                    m60.m((m60) u0Var.d.b);
+                s0 s0Var = (s0) this.b;
+                if (s0Var.W == 5) {
+                    n60.m((n60) s0Var.d.b);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onRepeatModeChanged(int i10) {
         int i11 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onShuffleModeEnabledChanged(boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onSkipSilenceEnabledChanged(boolean z10) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onSurfaceSizeChanged(int i10, int i11) {
         int i12 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onTimelineChanged(o1 o1Var, int i10) {
+    @Override // b2.e1
+    public final /* synthetic */ void onTimelineChanged(p1 p1Var, int i10) {
         int i11 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onTrackSelectionParametersChanged(t1 t1Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onTrackSelectionParametersChanged(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onTracksChanged(v1 v1Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onTracksChanged(w1 w1Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onVideoSizeChanged(a2 a2Var) {
+    @Override // b2.e1
+    public final /* synthetic */ void onVideoSizeChanged(b2 b2Var) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onVolumeChanged(float f7) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
+    @Override // b2.e1
     public final /* synthetic */ void onCues(List list) {
         int i10 = this.a;
     }
 
-    @Override // b2.d1
-    public final /* synthetic */ void onPositionDiscontinuity(e1 e1Var, e1 e1Var2, int i10) {
+    @Override // b2.e1
+    public final /* synthetic */ void onPositionDiscontinuity(f1 f1Var, f1 f1Var2, int i10) {
         int i11 = this.a;
     }
 
@@ -334,67 +333,67 @@ public final class z implements d1 {
     private final /* synthetic */ void K0(boolean z10) {
     }
 
-    private final /* synthetic */ void L(r0 r0Var) {
+    private final /* synthetic */ void L(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void L0(boolean z10) {
     }
 
-    private final /* synthetic */ void M(r0 r0Var) {
+    private final /* synthetic */ void M(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void M0(boolean z10) {
     }
 
-    private final /* synthetic */ void N(r0 r0Var) {
+    private final /* synthetic */ void N(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void N0(boolean z10) {
     }
 
-    private final /* synthetic */ void O(r0 r0Var) {
+    private final /* synthetic */ void O(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void O0(boolean z10) {
     }
 
-    private final /* synthetic */ void P(t0 t0Var) {
+    private final /* synthetic */ void P(u0 u0Var) {
     }
 
     private final /* synthetic */ void P0(boolean z10) {
     }
 
-    private final /* synthetic */ void Q(t0 t0Var) {
+    private final /* synthetic */ void Q(u0 u0Var) {
     }
 
     private final /* synthetic */ void Q0(boolean z10) {
     }
 
-    private final /* synthetic */ void R(t0 t0Var) {
+    private final /* synthetic */ void R(u0 u0Var) {
     }
 
-    private final /* synthetic */ void S(t0 t0Var) {
+    private final /* synthetic */ void S(u0 u0Var) {
     }
 
-    private final /* synthetic */ void X(z0 z0Var) {
+    private final /* synthetic */ void X(a1 a1Var) {
     }
 
-    private final /* synthetic */ void Y(z0 z0Var) {
+    private final /* synthetic */ void Y(a1 a1Var) {
     }
 
-    private final /* synthetic */ void Z(z0 z0Var) {
+    private final /* synthetic */ void Z(a1 a1Var) {
     }
 
-    private final /* synthetic */ void Z0(t1 t1Var) {
+    private final /* synthetic */ void Z0(u1 u1Var) {
     }
 
     private final /* synthetic */ void a(b2.f fVar) {
     }
 
-    private final /* synthetic */ void a0(z0 z0Var) {
+    private final /* synthetic */ void a0(a1 a1Var) {
     }
 
-    private final /* synthetic */ void a1(t1 t1Var) {
+    private final /* synthetic */ void a1(u1 u1Var) {
     }
 
     private final /* synthetic */ void b(b2.f fVar) {
@@ -403,7 +402,7 @@ public final class z implements d1 {
     private final /* synthetic */ void b0(int i10) {
     }
 
-    private final /* synthetic */ void b1(t1 t1Var) {
+    private final /* synthetic */ void b1(u1 u1Var) {
     }
 
     private final /* synthetic */ void c(b2.f fVar) {
@@ -412,7 +411,7 @@ public final class z implements d1 {
     private final /* synthetic */ void c0(int i10) {
     }
 
-    private final /* synthetic */ void c1(t1 t1Var) {
+    private final /* synthetic */ void c1(u1 u1Var) {
     }
 
     private final /* synthetic */ void d(b2.f fVar) {
@@ -421,7 +420,7 @@ public final class z implements d1 {
     private final /* synthetic */ void d0(int i10) {
     }
 
-    private final /* synthetic */ void d1(v1 v1Var) {
+    private final /* synthetic */ void d1(w1 w1Var) {
     }
 
     private final /* synthetic */ void e(int i10) {
@@ -430,7 +429,7 @@ public final class z implements d1 {
     private final /* synthetic */ void e0(int i10) {
     }
 
-    private final /* synthetic */ void e1(v1 v1Var) {
+    private final /* synthetic */ void e1(w1 w1Var) {
     }
 
     private final /* synthetic */ void f(int i10) {
@@ -439,7 +438,7 @@ public final class z implements d1 {
     private final /* synthetic */ void f0(int i10) {
     }
 
-    private final /* synthetic */ void f1(v1 v1Var) {
+    private final /* synthetic */ void f1(w1 w1Var) {
     }
 
     private final /* synthetic */ void g(int i10) {
@@ -448,49 +447,49 @@ public final class z implements d1 {
     private final /* synthetic */ void g0(int i10) {
     }
 
-    private final /* synthetic */ void g1(v1 v1Var) {
+    private final /* synthetic */ void g1(w1 w1Var) {
     }
 
     private final /* synthetic */ void h(int i10) {
     }
 
-    private final /* synthetic */ void h0(y0 y0Var) {
+    private final /* synthetic */ void h0(z0 z0Var) {
     }
 
-    private final /* synthetic */ void h1(a2 a2Var) {
+    private final /* synthetic */ void h1(b2 b2Var) {
     }
 
-    private final /* synthetic */ void i(b1 b1Var) {
+    private final /* synthetic */ void i(c1 c1Var) {
     }
 
-    private final /* synthetic */ void i0(y0 y0Var) {
+    private final /* synthetic */ void i0(z0 z0Var) {
     }
 
-    private final /* synthetic */ void i1(a2 a2Var) {
+    private final /* synthetic */ void i1(b2 b2Var) {
     }
 
-    private final /* synthetic */ void j(b1 b1Var) {
+    private final /* synthetic */ void j(c1 c1Var) {
     }
 
-    private final /* synthetic */ void j0(y0 y0Var) {
+    private final /* synthetic */ void j0(z0 z0Var) {
     }
 
-    private final /* synthetic */ void j1(a2 a2Var) {
+    private final /* synthetic */ void j1(b2 b2Var) {
     }
 
-    private final /* synthetic */ void k(b1 b1Var) {
+    private final /* synthetic */ void k(c1 c1Var) {
     }
 
-    private final /* synthetic */ void k0(y0 y0Var) {
+    private final /* synthetic */ void k0(z0 z0Var) {
     }
 
-    private final /* synthetic */ void k1(a2 a2Var) {
+    private final /* synthetic */ void k1(b2 b2Var) {
     }
 
-    private final /* synthetic */ void l(b1 b1Var) {
+    private final /* synthetic */ void l(c1 c1Var) {
     }
 
-    private final /* synthetic */ void l0(y0 y0Var) {
+    private final /* synthetic */ void l0(z0 z0Var) {
     }
 
     private final /* synthetic */ void l1(float f7) {
@@ -499,7 +498,7 @@ public final class z implements d1 {
     private final /* synthetic */ void m(d2.c cVar) {
     }
 
-    private final /* synthetic */ void m0(y0 y0Var) {
+    private final /* synthetic */ void m0(z0 z0Var) {
     }
 
     private final /* synthetic */ void m1(float f7) {
@@ -523,25 +522,25 @@ public final class z implements d1 {
     private final /* synthetic */ void q(d2.c cVar) {
     }
 
-    private final /* synthetic */ void q0(r0 r0Var) {
+    private final /* synthetic */ void q0(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void r(List list) {
     }
 
-    private final /* synthetic */ void r0(r0 r0Var) {
+    private final /* synthetic */ void r0(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void s(d2.c cVar) {
     }
 
-    private final /* synthetic */ void s0(r0 r0Var) {
+    private final /* synthetic */ void s0(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void t(List list) {
     }
 
-    private final /* synthetic */ void t0(r0 r0Var) {
+    private final /* synthetic */ void t0(b2.s0 s0Var) {
     }
 
     private final /* synthetic */ void u0(int i10) {
@@ -562,16 +561,16 @@ public final class z implements d1 {
     private final /* synthetic */ void z(boolean z10) {
     }
 
-    private final /* synthetic */ void H(b2.o0 o0Var, int i10) {
+    private final /* synthetic */ void H(b2.p0 p0Var, int i10) {
     }
 
-    private final /* synthetic */ void I(b2.o0 o0Var, int i10) {
+    private final /* synthetic */ void I(b2.p0 p0Var, int i10) {
     }
 
-    private final /* synthetic */ void J(b2.o0 o0Var, int i10) {
+    private final /* synthetic */ void J(b2.p0 p0Var, int i10) {
     }
 
-    private final /* synthetic */ void K(b2.o0 o0Var, int i10) {
+    private final /* synthetic */ void K(b2.p0 p0Var, int i10) {
     }
 
     private final /* synthetic */ void R0(int i10, int i11) {
@@ -595,19 +594,19 @@ public final class z implements d1 {
     private final /* synthetic */ void V(int i10, boolean z10) {
     }
 
-    private final /* synthetic */ void V0(o1 o1Var, int i10) {
+    private final /* synthetic */ void V0(p1 p1Var, int i10) {
     }
 
     private final /* synthetic */ void W(int i10, boolean z10) {
     }
 
-    private final /* synthetic */ void W0(o1 o1Var, int i10) {
+    private final /* synthetic */ void W0(p1 p1Var, int i10) {
     }
 
-    private final /* synthetic */ void X0(o1 o1Var, int i10) {
+    private final /* synthetic */ void X0(p1 p1Var, int i10) {
     }
 
-    private final /* synthetic */ void Y0(o1 o1Var, int i10) {
+    private final /* synthetic */ void Y0(p1 p1Var, int i10) {
     }
 
     private final /* synthetic */ void n0(int i10, boolean z10) {
@@ -619,24 +618,24 @@ public final class z implements d1 {
     private final /* synthetic */ void p0(int i10, boolean z10) {
     }
 
-    private final /* synthetic */ void u(f1 f1Var, c1 c1Var) {
+    private final /* synthetic */ void u(g1 g1Var, d1 d1Var) {
     }
 
-    private final /* synthetic */ void v(f1 f1Var, c1 c1Var) {
+    private final /* synthetic */ void v(g1 g1Var, d1 d1Var) {
     }
 
-    private final /* synthetic */ void w(f1 f1Var, c1 c1Var) {
+    private final /* synthetic */ void w(g1 g1Var, d1 d1Var) {
     }
 
-    private final /* synthetic */ void B0(e1 e1Var, e1 e1Var2, int i10) {
+    private final /* synthetic */ void B0(f1 f1Var, f1 f1Var2, int i10) {
     }
 
-    private final /* synthetic */ void v0(e1 e1Var, e1 e1Var2, int i10) {
+    private final /* synthetic */ void v0(f1 f1Var, f1 f1Var2, int i10) {
     }
 
-    private final /* synthetic */ void x0(e1 e1Var, e1 e1Var2, int i10) {
+    private final /* synthetic */ void x0(f1 f1Var, f1 f1Var2, int i10) {
     }
 
-    private final /* synthetic */ void z0(e1 e1Var, e1 e1Var2, int i10) {
+    private final /* synthetic */ void z0(f1 f1Var, f1 f1Var2, int i10) {
     }
 }

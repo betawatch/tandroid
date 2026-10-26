@@ -1,85 +1,26 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ MessagesController.DialogPhotos b;
 
-    public /* synthetic */ qe(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
+    public /* synthetic */ qe(MessagesController.DialogPhotos dialogPhotos, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
+        this.b = dialogPhotos;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessagesAsDeletedInternal$230(this.c);
-                break;
-            case 1:
-                this.b.lambda$markVoiceMessageContentAsRead$216(this.c);
-                break;
-            case 2:
-                this.b.lambda$emptyMessagesMedia$96(this.c);
-                break;
-            case 3:
-                this.b.lambda$emptyMessagesMedia$97(this.c);
-                break;
-            case 4:
-                this.b.lambda$loadUserInfo$128(this.c);
-                break;
-            case 5:
-                this.b.lambda$replaceMessageIfExists$233(this.c);
-                break;
-            case 6:
-                this.b.lambda$markMessagesAsDeletedByRandoms$220(this.c);
-                break;
-            case 7:
-                this.b.lambda$deleteFromDownloadQueue$183(this.c);
-                break;
-            case 8:
-                this.b.lambda$deleteContacts$147(this.c);
-                break;
-            case 9:
-                this.b.lambda$updateMessageVerifyFlags$195(this.c);
-                break;
-            case 10:
-                this.b.lambda$putMessagesInternal$198(this.c);
-                break;
-            case 11:
-                this.b.lambda$putMessagesInternal$197(this.c);
-                break;
-            case 12:
-                this.b.lambda$markMessagesAsDeletedByRandoms$221(this.c);
-                break;
-            case 13:
-                this.b.lambda$markMessagesAsDeletedInternal$224(this.c);
-                break;
-            case 14:
-                this.b.lambda$markMessagesAsDeletedInternal$227(this.c);
-                break;
-            case 15:
-                this.b.lambda$onReactionsUpdate$105(this.c);
-                break;
-            case 16:
-                this.b.lambda$deleteDialog$88(this.c);
-                break;
-            case 17:
-                this.b.lambda$saveDialogFiltersOrder$75(this.c);
-                break;
-            case 18:
-                this.b.lambda$putMessages$236(this.c);
-                break;
-            case 19:
-                this.b.lambda$putMessages$237(this.c);
+                this.b.lambda$loadCache$5();
                 break;
             default:
-                this.b.lambda$putWebPages$187(this.c);
+                this.b.lambda$saveCache$6();
                 break;
         }
     }

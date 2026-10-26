@@ -1,27 +1,9 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import org.telegram.messenger.LocationController;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class dw0 {
-    public static final dw0 a;
-    public static final dw0 b;
-    public static final /* synthetic */ dw0[] c;
-
-    static {
-        dw0 dw0Var = new dw0("DEFAULT", 0);
-        a = dw0Var;
-        dw0 dw0Var2 = new dw0("RECORDING", 1);
-        b = dw0Var2;
-        c = new dw0[]{dw0Var, dw0Var2};
-    }
-
-    public static dw0 valueOf(String str) {
-        return (dw0) Enum.valueOf(dw0.class, str);
-    }
-
-    public static dw0[] values() {
-        return (dw0[]) c.clone();
-    }
+public interface dw0 {
+    void d(LocationController.SharingLocationInfo sharingLocationInfo);
 }

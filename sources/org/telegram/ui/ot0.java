@@ -1,217 +1,105 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import java.util.ArrayList;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ClippingImageView;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ot0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ClippingImageView[] a;
-    public final /* synthetic */ ViewGroup.LayoutParams b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ mu0 d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ ku0 f;
-    public final /* synthetic */ ArrayList h;
-    public final /* synthetic */ Integer n;
-    public final /* synthetic */ PhotoViewer r;
+public final class ot0 extends bu0 {
+    public final /* synthetic */ int p0;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate q0;
 
-    public ot0(PhotoViewer photoViewer, ClippingImageView[] clippingImageViewArr, ViewGroup.LayoutParams layoutParams, float f7, mu0 mu0Var, float f10, ku0 ku0Var, ArrayList arrayList, Integer num) {
-        this.r = photoViewer;
-        this.a = clippingImageViewArr;
-        this.b = layoutParams;
-        this.c = f7;
-        this.d = mu0Var;
-        this.e = f10;
-        this.f = ku0Var;
-        this.h = arrayList;
-        this.n = num;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ot0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, eu0 eu0Var, FrameLayout frameLayout, int i10) {
+        super(context, eu0Var, frameLayout);
+        this.p0 = i10;
+        this.q0 = notificationCenterDelegate;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        int i10;
-        float t22;
-        float c10;
-        float c11;
-        boolean z10;
-        PhotoViewer photoViewer = this.r;
-        Rect rect = photoViewer.s2;
-        PhotoViewer.BackgroundDrawable backgroundDrawable = photoViewer.L0;
-        float[][] fArr = photoViewer.k4;
-        ClippingImageView[] clippingImageViewArr = this.a;
-        if (clippingImageViewArr.length > 1) {
-            clippingImageViewArr[1].setAlpha(1.0f);
-            clippingImageViewArr[1].setAdditionalTranslationX(-rect.left);
+    @Override // org.telegram.ui.bu0
+    public boolean D() {
+        switch (this.p0) {
+            case 0:
+                return !((PhotoViewer) this.q0).s;
+            default:
+                return super.D();
         }
-        ClippingImageView clippingImageView = clippingImageViewArr[0];
-        clippingImageView.setTranslationX(clippingImageView.getTranslationX() + rect.left);
-        photoViewer.g0.getViewTreeObserver().removeOnPreDrawListener(this);
-        int i11 = photoViewer.c2;
-        ViewGroup.LayoutParams layoutParams = this.b;
-        if (i11 == 1) {
-            float f7 = !photoViewer.s ? AndroidUtilities.statusBarHeight : 0;
-            float measuredHeight = (photoViewer.C1.getMeasuredHeight() - AndroidUtilities.dp(64.0f)) - f7;
-            i10 = 0;
-            float min = Math.min(photoViewer.C1.getMeasuredWidth(), measuredHeight) - (AndroidUtilities.dp(16.0f) * 2);
-            float measuredWidth = photoViewer.C1.getMeasuredWidth() / 2.0f;
-            float f10 = (measuredHeight / 2.0f) + f7;
-            float f11 = min / 2.0f;
-            float f12 = f10 - f11;
-            float f13 = (f10 + f11) - f12;
-            t22 = Math.max(((measuredWidth + f11) - (measuredWidth - f11)) / layoutParams.width, f13 / layoutParams.height);
-            c10 = ((f13 - (layoutParams.height * t22)) / 2.0f) + f12;
-            int measuredWidth2 = photoViewer.g0.getMeasuredWidth();
-            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, t22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
-        } else {
-            i10 = 0;
-            float min2 = Math.min(photoViewer.g0.getMeasuredWidth() / layoutParams.width, (AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0)) / layoutParams.height);
-            t22 = photoViewer.c2 == 11 ? photoViewer.t2(true) * min2 : min2;
-            c10 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.height, t22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
-            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, t22, photoViewer.g0.getMeasuredWidth(), 2.0f);
-            photoViewer.b6 = 0.0f;
-            photoViewer.f6 = 0.0f;
-        }
-        mu0 mu0Var = this.d;
-        int abs = (int) Math.abs(this.c - mu0Var.a.getImageX());
-        float imageY = mu0Var.a.getImageY();
-        float f14 = this.e;
-        int abs2 = (int) Math.abs(f14 - imageY);
-        if (mu0Var.a.isAspectFit()) {
-            abs = i10;
-        }
-        int[] iArr = new int[2];
-        int i12 = 2;
-        mu0Var.d.getLocationInWindow(iArr);
-        float f15 = mu0Var.c + f14;
-        int i13 = (int) ((iArr[1] - f15) + mu0Var.j);
-        if (i13 < 0) {
-            i13 = i10;
-        }
-        int height = (int) (((f15 + layoutParams.height) - (mu0Var.d.getHeight() + r10)) + mu0Var.i);
-        if (height < 0) {
-            height = i10;
-        }
-        int max = Math.max(i13, abs2);
-        int max2 = Math.max(height, abs2);
-        fArr[i10][i10] = photoViewer.h0.getScaleX();
-        fArr[i10][1] = photoViewer.h0.getScaleY();
-        fArr[i10][2] = photoViewer.h0.getTranslationX();
-        fArr[i10][3] = photoViewer.h0.getTranslationY();
-        float[] fArr2 = fArr[i10];
-        float f16 = abs;
-        float f17 = mu0Var.k;
-        fArr2[4] = f16 * f17;
-        fArr2[5] = max * f17;
-        float f18 = max2 * f17;
-        char c12 = 6;
-        fArr2[6] = f18;
-        int[] radius = photoViewer.h0.getRadius();
-        int i14 = i10;
-        while (i14 < 4) {
-            char c13 = c12;
-            fArr[i10][i14 + 7] = radius != null ? radius[i14] : 0.0f;
-            i14++;
-            c12 = c13;
-        }
-        float[] fArr3 = fArr[i10];
-        float f19 = mu0Var.k;
-        fArr3[11] = abs2 * f19;
-        fArr3[12] = f16 * f19;
-        float[] fArr4 = fArr[1];
-        fArr4[i10] = t22;
-        fArr4[1] = t22;
-        fArr4[2] = c11;
-        fArr4[3] = c10;
-        fArr4[4] = 0.0f;
-        fArr4[5] = 0.0f;
-        fArr4[c12] = 0.0f;
-        fArr4[7] = 0.0f;
-        fArr4[8] = 0.0f;
-        fArr4[9] = 0.0f;
-        fArr4[10] = 0.0f;
-        fArr4[11] = 0.0f;
-        fArr4[12] = 0.0f;
-        for (int i15 = i10; i15 < clippingImageViewArr.length; i15++) {
-            clippingImageViewArr[i15].setAnimationProgress(0.0f);
-        }
-        backgroundDrawable.setAlpha(i10);
-        photoViewer.e0.setAlpha(0.0f);
-        photoViewer.j0.setAlpha(0.0f);
-        org.telegram.ui.Components.g30 g30Var = new org.telegram.ui.Components.g30(this, clippingImageViewArr, this.h, this.n, this.f, 23);
-        photoViewer.p4 = g30Var;
-        if (photoViewer.l2) {
-            g30Var.run();
-            photoViewer.p4 = null;
-            photoViewer.e0.setAlpha(1.0f);
-            backgroundDrawable.setAlpha(255);
-            for (ClippingImageView clippingImageView2 : clippingImageViewArr) {
-                clippingImageView2.setAnimationProgress(1.0f);
-            }
-            if (photoViewer.c2 == 1) {
-                photoViewer.C1.setAlpha(1.0f);
-            }
-        } else {
-            AnimatorSet animatorSet = new AnimatorSet();
-            ArrayList arrayList = new ArrayList((photoViewer.c2 != 1 ? 2 : 3) + clippingImageViewArr.length + (clippingImageViewArr.length > 1 ? 1 : 0));
-            int i16 = 0;
-            while (i16 < clippingImageViewArr.length) {
-                float[] fArr5 = new float[i12];
-                // fill-array-data instruction
-                fArr5[0] = 0.0f;
-                fArr5[1] = 1.0f;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i16], org.telegram.ui.Components.t6.f, fArr5);
-                if (i16 == 0) {
-                    ofFloat.addUpdateListener(new d3(this, 23));
+    }
+
+    @Override // org.telegram.ui.bu0
+    public void E() {
+        switch (this.p0) {
+            case 1:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
+                if (secretMediaViewer.J && getScrollY() <= 0) {
+                    AndroidUtilities.runOnUIThread(secretMediaViewer.r1, 3000L);
+                    break;
                 }
-                arrayList.add(ofFloat);
-                i16++;
-                i12 = 2;
-            }
-            if (clippingImageViewArr.length > 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.h0, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
-            }
-            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.t6.d, 0, 255));
-            eu0 eu0Var = photoViewer.e0;
-            Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(eu0Var, (Property<eu0, Float>) property, 0.0f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f));
-            if (photoViewer.c2 == 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.rf0, Float>) property, 0.0f, 1.0f));
-            }
-            animatorSet.playTogether(arrayList);
-            animatorSet.setDuration(200L);
-            animatorSet.addListener(new v70(this, 14));
-            photoViewer.e0.setLayerType(2, null);
-            photoViewer.A2(false);
-            photoViewer.o4 = System.currentTimeMillis();
-            AndroidUtilities.runOnUIThread(new bh0(27, this, animatorSet));
+                break;
         }
-        backgroundDrawable.d = new bh0(28, this, mu0Var);
-        sn snVar = photoViewer.l4;
-        if (snVar == null || snVar.getFragmentView() == null) {
-            return true;
+    }
+
+    @Override // org.telegram.ui.bu0
+    public void F() {
+        switch (this.p0) {
+            case 1:
+                AndroidUtilities.cancelRunOnUIThread(((SecretMediaViewer) this.q0).r1);
+                break;
         }
-        sn snVar2 = photoViewer.l4;
-        snVar2.T7();
-        UndoView undoView = snVar2.K3;
-        if (undoView != null) {
-            z10 = true;
-            undoView.d(1, false);
-        } else {
-            z10 = true;
+    }
+
+    @Override // org.telegram.ui.bu0
+    public void G() {
+        switch (this.p0) {
+            case 1:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
+                if (secretMediaViewer.K0 == null) {
+                    secretMediaViewer.k(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.k0, true);
+                    break;
+                }
+                break;
         }
-        photoViewer.l4.getFragmentView().invalidate();
-        return z10;
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.p0) {
+            case 0:
+                super.invalidate();
+                PhotoViewer photoViewer = (PhotoViewer) this.q0;
+                mu0[] mu0VarArr = photoViewer.W0;
+                ImageView[] imageViewArr = photoViewer.y3;
+                if (photoViewer.J) {
+                    int scrollY = getScrollY();
+                    float translationY = photoViewer.Q1.getTranslationY();
+                    boolean z10 = scrollY == 0 && translationY == 0.0f;
+                    boolean z11 = scrollY == 0 && translationY == 0.0f;
+                    if (!z10) {
+                        int b10 = mu0VarArr[0].b() + mu0VarArr[0].j;
+                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (D() ? AndroidUtilities.statusBarHeight : 0))) - AndroidUtilities.dp(12.0f);
+                        boolean z12 = top > AndroidUtilities.dp(32.0f) + ((int) imageViewArr[0].getY());
+                        z10 = top > b10;
+                        z11 = z12;
+                    }
+                    if (photoViewer.z3) {
+                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z11) {
+                            imageViewArr[0].setTag(2);
+                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new i50(this, 13)).start();
+                        } else if (imageViewArr[0].getTag() == null && !z11) {
+                            imageViewArr[0].setTag(3);
+                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
+                        }
+                    }
+                    mu0VarArr[0].e(2, z10 ? 1.0f : 0.0f, true);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
     }
 }

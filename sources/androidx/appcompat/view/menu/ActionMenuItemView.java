@@ -1,5 +1,6 @@
 package androidx.appcompat.view.menu;
 
+import a8.de;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -14,17 +15,17 @@ import android.widget.Button;
 import f.a;
 import l.b;
 import l.c;
+import l.j;
 import l.k;
 import l.m;
 import l.y;
-import m.a1;
-import m.j;
+import m.i;
+import m.z0;
 import org.telegram.tgnet.TLObject;
-import w7.q;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j {
+public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i {
     public boolean E;
     public final int F;
     public int G;
@@ -32,7 +33,7 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
     public m n;
     public CharSequence r;
     public Drawable s;
-    public l.j v;
+    public j v;
     public b w;
     public c x;
     public boolean y;
@@ -41,7 +42,7 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         this(context, null);
     }
 
-    @Override // m.j
+    @Override // m.i
     public final boolean a() {
         return !TextUtils.isEmpty(getText());
     }
@@ -59,7 +60,7 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         }
     }
 
-    @Override // m.j
+    @Override // m.i
     public final boolean c() {
         return !TextUtils.isEmpty(getText()) && this.n.getIcon() == null;
     }
@@ -90,9 +91,9 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            q.a(this, z12 ? null : this.n.e);
+            de.a(this, z12 ? null : this.n.e);
         } else {
-            q.a(this, charSequence2);
+            de.a(this, charSequence2);
         }
     }
 
@@ -108,7 +109,7 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        l.j jVar = this.v;
+        j jVar = this.v;
         if (jVar != null) {
             jVar.a(this.n);
         }
@@ -121,7 +122,7 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         g();
     }
 
-    @Override // m.a1, android.widget.TextView, android.view.View
+    @Override // m.z0, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         boolean isEmpty = TextUtils.isEmpty(getText());
@@ -190,7 +191,7 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         g();
     }
 
-    public void setItemInvoker(l.j jVar) {
+    public void setItemInvoker(j jVar) {
         this.v = jVar;
     }
 

@@ -1,10 +1,10 @@
 package h2;
 
+import a8.yb;
 import java.util.ArrayDeque;
 import org.telegram.tgnet.TLObject;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class l implements e {
     public final k a;
@@ -45,11 +45,11 @@ public abstract class l implements e {
             try {
                 if (this.g != this.e.length && !this.k) {
                     z10 = false;
-                    u6.p(z10);
+                    yb.p(z10);
                     this.n = j10;
                 }
                 z10 = true;
-                u6.p(z10);
+                yb.p(z10);
                 this.n = j10;
             } catch (Throwable th2) {
                 throw th2;
@@ -66,7 +66,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                u6.p(this.i == null);
+                yb.p(this.i == null);
                 int i10 = this.g;
                 if (i10 == 0) {
                     hVar = null;
@@ -160,8 +160,8 @@ public abstract class l implements e {
                     h = i(hVar, jVar, z10);
                 } catch (OutOfMemoryError e) {
                     h = h(e);
-                } catch (RuntimeException e7) {
-                    h = h(e7);
+                } catch (RuntimeException e10) {
+                    h = h(e10);
                 }
                 if (h != null) {
                     synchronized (this.b) {
@@ -231,7 +231,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                u6.g(hVar == this.i);
+                yb.g(hVar == this.i);
                 this.c.addLast(hVar);
                 if (!this.c.isEmpty() && this.h > 0) {
                     this.b.notify();
@@ -259,7 +259,7 @@ public abstract class l implements e {
     public final void o(int i10) {
         int i11 = this.g;
         h[] hVarArr = this.e;
-        u6.p(i11 == hVarArr.length);
+        yb.p(i11 == hVarArr.length);
         for (h hVar : hVarArr) {
             hVar.b(i10);
         }

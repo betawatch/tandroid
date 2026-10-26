@@ -1,43 +1,27 @@
 package bg;
 
-import org.telegram.messenger.video.AudioConversions;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends a {
-    public final long b;
-    public int c;
+public final class b {
+    public static final b a;
+    public static final b b;
+    public static final /* synthetic */ b[] c;
 
-    public b(long j10) {
-        this.b = j10;
+    static {
+        b bVar = new b("STARS", 0);
+        a = bVar;
+        b bVar2 = new b("TON", 1);
+        b = bVar2;
+        c = new b[]{bVar, bVar2};
     }
 
-    @Override // bg.a
-    public final short a() {
-        if (!c()) {
-            throw new RuntimeException("Audio input has no remaining value.");
-        }
-        this.c--;
-        return (short) 0;
+    public static b valueOf(String str) {
+        return (b) Enum.valueOf(b.class, str);
     }
 
-    @Override // bg.a
-    public final int b() {
-        return -1;
-    }
-
-    @Override // bg.a
-    public final boolean c() {
-        return this.c > 0;
-    }
-
-    @Override // bg.a
-    public final void d() {
-        this.c = 0;
-    }
-
-    @Override // bg.a
-    public final void e(int i10, int i11) {
-        this.c = AudioConversions.usToShorts(this.b, i10, i11);
+    public static b[] values() {
+        return (b[]) c.clone();
     }
 }

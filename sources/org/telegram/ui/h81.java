@@ -1,8 +1,22 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class h81 extends FrameLayout {
+public final class h81 implements View.OnClickListener {
+    public final /* synthetic */ Context a;
+
+    public h81(Activity activity) {
+        this.a = activity;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        qf.d.r(this.a, LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
+    }
 }

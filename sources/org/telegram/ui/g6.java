@@ -1,164 +1,146 @@
 package org.telegram.ui;
 
+import android.os.StatFs;
 import android.text.TextUtils;
 import android.util.LongSparseArray;
-import android.util.SparseArray;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ c7 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ bi.c f;
 
-    public /* synthetic */ g6(c7 c7Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, bi.c cVar, int i10) {
+    public /* synthetic */ g6(c7 c7Var, int i10) {
         this.a = i10;
         this.b = c7Var;
-        this.c = arrayList;
-        this.d = arrayList2;
-        this.e = arrayList3;
-        this.f = cVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z10;
-        boolean z11;
         switch (this.a) {
             case 0:
                 c7 c7Var = this.b;
-                ArrayList<Long> arrayList = this.c;
-                ArrayList arrayList2 = this.d;
-                ArrayList arrayList3 = this.e;
-                bi.c cVar = this.f;
-                ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
-                ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
-                if (!arrayList.isEmpty()) {
-                    try {
-                        c7Var.getMessagesStorage().getUsersInternal(arrayList, arrayList4);
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                c7Var.resumeDelayedFragmentAnimation();
+                c7Var.K = false;
+                c7Var.w0(true);
+                c7Var.u0();
+                break;
+            case 1:
+                c7 c7Var2 = this.b;
+                c7Var2.getFileLoader().getFileDatabase().ensureDatabaseCreated();
+                ci.b bVar = new ci.b(false);
+                LongSparseArray longSparseArray = new LongSparseArray();
+                c7Var2.m0(FileLoader.checkDirectory(4), 6, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(0), 0, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(100), 0, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(2), 1, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(101), 1, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(1), 4, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(6), 6, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(3), 2, longSparseArray, bVar);
+                c7Var2.m0(FileLoader.checkDirectory(5), 2, longSparseArray, bVar);
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                for (int i10 = 0; i10 < longSparseArray.size(); i10++) {
+                    w6 w6Var = (w6) longSparseArray.valueAt(i10);
+                    arrayList.add(w6Var);
+                    if (c7Var2.getMessagesController().getUserOrChat(((w6) arrayList.get(i10)).a) == null) {
+                        long j10 = w6Var.a;
+                        if (j10 > 0) {
+                            arrayList2.add(Long.valueOf(j10));
+                        } else {
+                            arrayList3.add(Long.valueOf(j10));
+                        }
                     }
                 }
-                if (!arrayList2.isEmpty()) {
-                    try {
-                        c7Var.getMessagesStorage().getChatsInternal(TextUtils.join(",", arrayList2), arrayList5);
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                    }
-                }
-                int i10 = 0;
-                while (i10 < arrayList3.size()) {
-                    if (((v6) arrayList3.get(i10)).c <= 0) {
-                        arrayList3.remove(i10);
-                        i10--;
-                    }
-                    i10++;
-                }
-                Collections.sort(arrayList3, new org.telegram.ui.ActionBar.l4(4));
-                AndroidUtilities.runOnUIThread(new g6(c7Var, arrayList4, arrayList5, arrayList3, cVar, 1));
+                Collections.sort(bVar.d, new a4.d(6));
+                Collections.sort(bVar.e, new a4.d(6));
+                Collections.sort(bVar.f, new a4.d(6));
+                Collections.sort(bVar.g, new a4.d(6));
+                Collections.sort(bVar.h, new a4.d(6));
+                c7Var2.getMessagesStorage().getStorageQueue().postRunnable(new h6(c7Var2, arrayList2, arrayList3, arrayList, bVar, 0));
                 break;
             default:
-                c7 c7Var2 = this.b;
-                ArrayList<TLRPC.User> arrayList6 = this.c;
-                ArrayList<TLRPC.Chat> arrayList7 = this.d;
-                ArrayList arrayList8 = this.e;
-                bi.c cVar2 = this.f;
-                boolean z12 = true;
-                c7Var2.getMessagesController().putUsers(arrayList6, true);
-                c7Var2.getMessagesController().putChats(arrayList7, true);
-                boolean z13 = false;
-                v6 v6Var = null;
-                int i11 = 0;
-                while (i11 < arrayList8.size()) {
-                    v6 v6Var2 = (v6) arrayList8.get(i11);
-                    if (c7Var2.getMessagesController().getUserOrChat(v6Var2.a) == null) {
-                        v6Var2.a = Long.MAX_VALUE;
-                        if (v6Var != null) {
-                            SparseArray sparseArray = v6Var.d;
-                            int i12 = 0;
-                            while (true) {
-                                SparseArray sparseArray2 = v6Var2.d;
-                                if (i12 < sparseArray2.size()) {
-                                    int keyAt = sparseArray2.keyAt(i12);
-                                    w6 w6Var = (w6) sparseArray2.valueAt(i12);
-                                    w6 w6Var2 = (w6) sparseArray.get(keyAt, z13);
-                                    if (w6Var2 == null) {
-                                        w6Var2 = new w6();
-                                        sparseArray.put(keyAt, w6Var2);
+                c7 c7Var3 = this.b;
+                c7Var3.f = c7.o0(5, FileLoader.checkDirectory(4));
+                if (!c7.i0) {
+                    c7Var3.n = c7.o0(4, FileLoader.checkDirectory(4));
+                    if (!c7.i0) {
+                        long o02 = c7.o0(0, FileLoader.checkDirectory(0));
+                        c7Var3.x = o02;
+                        c7Var3.x = c7.o0(0, FileLoader.checkDirectory(100)) + o02;
+                        if (!c7.i0) {
+                            long o03 = c7.o0(0, FileLoader.checkDirectory(2));
+                            c7Var3.y = o03;
+                            c7Var3.y = c7.o0(0, FileLoader.checkDirectory(101)) + o03;
+                            if (!c7.i0) {
+                                long o04 = c7.o0(1, AndroidUtilities.getLogsDir());
+                                c7Var3.E = o04;
+                                if (!BuildVars.DEBUG_VERSION && o04 < 268435456) {
+                                    c7Var3.E = 0L;
+                                }
+                                if (!c7.i0) {
+                                    long o05 = c7.o0(1, FileLoader.checkDirectory(3));
+                                    c7Var3.r = o05;
+                                    c7Var3.r = c7.o0(1, FileLoader.checkDirectory(5)) + o05;
+                                    if (!c7.i0) {
+                                        long o06 = c7.o0(2, FileLoader.checkDirectory(3));
+                                        c7Var3.w = o06;
+                                        c7Var3.w = c7.o0(2, FileLoader.checkDirectory(5)) + o06;
+                                        if (!c7.i0) {
+                                            c7Var3.F = c7.o0(0, new File(FileLoader.checkDirectory(4), "acache"));
+                                            if (!c7.i0) {
+                                                c7Var3.h = c7.o0(3, FileLoader.checkDirectory(4));
+                                                if (!c7.i0) {
+                                                    c7Var3.F += c7Var3.h;
+                                                    c7Var3.s = c7.o0(0, FileLoader.checkDirectory(1));
+                                                    c7Var3.v = c7.o0(0, FileLoader.checkDirectory(6));
+                                                    if (!c7.i0) {
+                                                        long j11 = c7Var3.f + c7Var3.n + c7Var3.y + c7Var3.E + c7Var3.s + c7Var3.x + c7Var3.r + c7Var3.w + c7Var3.v + c7Var3.F;
+                                                        c7.k0 = Long.valueOf(j11);
+                                                        c7Var3.G = j11;
+                                                        c7.j0 = System.currentTimeMillis();
+                                                        ArrayList<File> rootDirs = AndroidUtilities.getRootDirs();
+                                                        File file = rootDirs.get(0);
+                                                        file.getAbsolutePath();
+                                                        if (!TextUtils.isEmpty(SharedConfig.storageCacheDir)) {
+                                                            int size = rootDirs.size();
+                                                            for (int i11 = 0; i11 < size; i11++) {
+                                                                File file2 = rootDirs.get(i11);
+                                                                if (file2.getAbsolutePath().startsWith(SharedConfig.storageCacheDir)) {
+                                                                    file = file2;
+                                                                }
+                                                            }
+                                                        }
+                                                        try {
+                                                            StatFs statFs = new StatFs(file.getPath());
+                                                            long blockSizeLong = statFs.getBlockSizeLong();
+                                                            long availableBlocksLong = statFs.getAvailableBlocksLong();
+                                                            c7Var3.H = statFs.getBlockCountLong() * blockSizeLong;
+                                                            c7Var3.I = availableBlocksLong * blockSizeLong;
+                                                        } catch (Exception e) {
+                                                            FileLog.e(e);
+                                                        }
+                                                        AndroidUtilities.runOnUIThread(new g6(c7Var3, 0));
+                                                        c7Var3.getFileLoader().getFileDatabase().getQueue().postRunnable(new g6(c7Var3, 1));
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
-                                    w6Var.getClass();
-                                    v6 v6Var3 = v6Var;
-                                    w6Var2.a += w6Var.a;
-                                    v6Var3.c += w6Var.a;
-                                    w6Var2.b.addAll(w6Var.b);
-                                    i12++;
-                                    v6Var = v6Var3;
-                                    z12 = z12;
-                                    z13 = false;
-                                } else {
-                                    z10 = z12;
-                                    v6Var.b += v6Var2.b;
-                                    arrayList8.remove(i11);
-                                    i11--;
-                                    z11 = z10;
                                 }
                             }
-                        } else {
-                            z10 = z12;
-                            v6Var = v6Var2;
-                            z11 = false;
                         }
-                        if (z11) {
-                            Collections.sort(arrayList8, new org.telegram.ui.ActionBar.l4(4));
-                        }
-                    } else {
-                        z10 = z12;
-                    }
-                    i11++;
-                    z12 = z10;
-                    z13 = false;
-                }
-                boolean z14 = z12;
-                cVar2.b = arrayList8;
-                LongSparseArray longSparseArray = cVar2.c;
-                longSparseArray.clear();
-                int size = arrayList8.size();
-                int i13 = 0;
-                while (i13 < size) {
-                    Object obj = arrayList8.get(i13);
-                    i13++;
-                    v6 v6Var4 = (v6) obj;
-                    longSparseArray.put(v6Var4.a, v6Var4);
-                }
-                if (!c7.k0) {
-                    c7Var2.Y = cVar2;
-                    z6 z6Var = c7Var2.N;
-                    if (z6Var != null) {
-                        z6Var.setCacheModel(cVar2);
-                    }
-                    c7Var2.x0(z14);
-                    c7Var2.w0();
-                    if (c7Var2.R != null && !c7Var2.L && System.currentTimeMillis() - c7Var2.U > 120) {
-                        n6 n6Var = c7Var2.R;
-                        long j10 = c7Var2.H;
-                        boolean z15 = j10 > 0 ? z14 : false;
-                        long j11 = c7Var2.I;
-                        float f7 = 0.0f;
-                        float f10 = j11 <= 0 ? 0.0f : j10 / j11;
-                        if (c7Var2.J > 0 && j11 > 0) {
-                            f7 = (j11 - r11) / j11;
-                        }
-                        n6Var.b(f10, f7, z15);
-                        break;
                     }
                 }
                 break;

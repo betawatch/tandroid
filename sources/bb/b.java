@@ -1,32 +1,47 @@
 package bb;
 
-import java.util.Iterator;
-import java.util.Map;
-import org.telegram.tgnet.TLObject;
+import android.os.Build;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends md.c {
-    public Map a;
-    public Iterator b;
-    public d c;
-    public ke.d d;
-    public Map e;
-    public Object f;
-    public /* synthetic */ Object h;
-    public final /* synthetic */ c n;
-    public int r;
+public final class b {
+    public final String a;
+    public final a b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(c cVar, md.c cVar2) {
-        super(cVar2);
-        this.n = cVar;
+    public b(String appId, a aVar) {
+        String deviceModel = Build.MODEL;
+        String osVersion = Build.VERSION.RELEASE;
+        kotlin.jvm.internal.i.e(appId, "appId");
+        kotlin.jvm.internal.i.e(deviceModel, "deviceModel");
+        kotlin.jvm.internal.i.e(osVersion, "osVersion");
+        this.a = appId;
+        this.b = aVar;
     }
 
-    @Override // md.a
-    public final Object invokeSuspend(Object obj) {
-        this.h = obj;
-        this.r |= TLObject.FLAG_31;
-        return this.n.b(this);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        if (!kotlin.jvm.internal.i.a(this.a, bVar.a)) {
+            return false;
+        }
+        String str = Build.MODEL;
+        if (!kotlin.jvm.internal.i.a(str, str)) {
+            return false;
+        }
+        String str2 = Build.VERSION.RELEASE;
+        return kotlin.jvm.internal.i.a(str2, str2) && this.b.equals(bVar.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + ((p.b.hashCode() + a1.g.f((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 46672439) * 31, 31, Build.VERSION.RELEASE)) * 31);
+    }
+
+    public final String toString() {
+        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=1.2.0, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + p.b + ", androidAppInfo=" + this.b + ')';
     }
 }

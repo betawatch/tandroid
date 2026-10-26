@@ -1,106 +1,59 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.drawable.Drawable;
+import android.animation.AnimatorSet;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xp;
+import org.telegram.ui.Components.pf0;
+import org.telegram.ui.Components.qf0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
-    public org.telegram.ui.Components.w9 a;
-    public FrameLayout b;
-    public xp c;
-    public TextView d;
-    public ai.o5 e;
-    public int f;
-    public int h;
+    public TextView a;
+    public TextView b;
+    public qf0 c;
+    public AnimatorSet d;
+    public m.g3 e;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.b(org.telegram.ui.ActionBar.k6.W9, org.telegram.ui.ActionBar.k6.X9, org.telegram.ui.ActionBar.k6.V9);
+    public final void a(String str, int i10, float f7) {
+        TextView textView = this.a;
+        TextView textView2 = this.b;
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.e);
+        textView2.setTag(null);
+        textView.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        if (f7 > 0.0f) {
+            textView2.setText("+" + ((int) f7));
+        } else {
+            textView2.setText("" + ((int) f7));
+        }
+        textView2.setAlpha(0.0f);
+        textView.setAlpha(1.0f);
+        qf0 qf0Var = this.c;
+        qf0Var.h = i10;
+        qf0Var.n = 100;
+        qf0Var.a((int) f7, false);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.f + this.h, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.f, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
-    public void setImage(MediaController.PhotoEntry photoEntry) {
-        ai.o5 o5Var = this.e;
-        org.telegram.ui.Components.w9 w9Var = this.a;
-        Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
-        String str = photoEntry.thumbPath;
-        if (str != null) {
-            w9Var.g(str, null, drawable);
-            return;
-        }
-        if (photoEntry.path == null) {
-            w9Var.setImageDrawable(drawable);
-            return;
-        }
-        w9Var.p(photoEntry.orientation, photoEntry.invert, true);
-        if (photoEntry.isLivePhoto()) {
-            o5Var.setVisibility(4);
-            setContentDescription(LocaleController.getString(R.string.AttachLivePhoto));
-            w9Var.g("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
-            return;
-        }
-        if (!photoEntry.isVideo) {
-            o5Var.setVisibility(4);
-            setContentDescription(LocaleController.getString(R.string.AttachPhoto));
-            w9Var.g("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
-            return;
-        }
-        o5Var.setVisibility(0);
-        this.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
-        StringBuilder sb2 = new StringBuilder();
-        b1.o(R.string.AttachVideo, ", ", sb2);
-        sb2.append(LocaleController.formatDuration(photoEntry.duration));
-        setContentDescription(sb2.toString());
-        w9Var.g("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
+    public void setSeekBarDelegate(pf0 pf0Var) {
+        this.c.setDelegate(new o9(this, pf0Var));
     }
 
-    public void setNum(int i10) {
-        this.c.setNum(i10);
-    }
-
-    public void setImage(MediaController.SearchImage searchImage) {
-        org.telegram.ui.Components.w9 w9Var = this.a;
-        Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
-        TLRPC.PhotoSize photoSize = searchImage.thumbPhotoSize;
-        if (photoSize != null) {
-            w9Var.h(ImageLocation.getForPhoto(photoSize, searchImage.photo), null, drawable, searchImage);
-            return;
-        }
-        TLRPC.PhotoSize photoSize2 = searchImage.photoSize;
-        if (photoSize2 != null) {
-            w9Var.h(ImageLocation.getForPhoto(photoSize2, searchImage.photo), "80_80", drawable, searchImage);
-            return;
-        }
-        String str = searchImage.thumbPath;
-        if (str != null) {
-            w9Var.g(str, null, drawable);
-            return;
-        }
-        String str2 = searchImage.thumbUrl;
-        if (str2 != null && str2.length() > 0) {
-            w9Var.g(searchImage.thumbUrl, null, drawable);
-        } else if (MessageObject.isDocumentHasThumb(searchImage.document)) {
-            w9Var.h(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 320), searchImage.document), null, drawable, searchImage);
-        } else {
-            w9Var.setImageDrawable(drawable);
-        }
+    @Override // android.view.View
+    public void setTag(Object obj) {
+        super.setTag(obj);
+        this.c.setTag(obj);
     }
 }

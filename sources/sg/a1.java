@@ -1,107 +1,132 @@
 package sg;
 
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
+import android.view.MotionEvent;
+import android.view.TextureView;
+import fi.n6;
+import fi.q5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Components.pa;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class a1 {
-    public final g6 a;
-    public LinearGradient d;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public boolean m;
-    public boolean n;
-    public float b = 0.5f;
-    public float c = 0.5f;
-    public final Matrix e = new Matrix();
-    public final Paint f = new Paint(1);
-    public final int[] l = new int[5];
-    public float o = 1.0f;
-    public float p = 1.5f;
-    public float q = 0.0f;
-    public final int k = -1;
+public final class a1 extends org.telegram.ui.Cells.s1 {
+    public final pa He;
+    public final float[] Ie;
+    public final Path Je;
+    public final Paint Ke;
+    public final Rect Le;
+    public final RectF Me;
+    public final /* synthetic */ b1 Ne;
 
-    public a1(int i10, int i11, int i12, int i13, g6 g6Var) {
-        this.a = g6Var;
-        this.g = i10;
-        this.h = i11;
-        this.i = i12;
-        this.j = i13;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a1(b1 b1Var, Context context, int i10, f1 f1Var) {
+        super(context, i10, false, null, f1Var);
+        this.Ne = b1Var;
+        this.He = new pa(b1Var.d, this, 10, false);
+        this.Ie = new float[8];
+        this.Je = new Path();
+        Paint paint = new Paint();
+        this.Ke = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        this.Le = new Rect();
+        this.Me = new RectF();
     }
 
-    public final void a() {
-        int b10 = b(this.g);
-        int b11 = b(this.h);
-        int i10 = this.i;
-        int b12 = i10 < 0 ? 0 : b(i10);
-        int i11 = this.j;
-        int b13 = i11 < 0 ? 0 : b(i11);
-        int i12 = this.k;
-        int b14 = i12 < 0 ? 0 : b(i12);
-        LinearGradient linearGradient = this.d;
-        int[] iArr = this.l;
-        if (linearGradient != null && iArr[0] == b10 && iArr[1] == b11 && iArr[2] == b12 && iArr[3] == b13 && iArr[4] == b14) {
-            return;
+    @Override // org.telegram.ui.Cells.s1
+    public final Paint M2(String str) {
+        if ("paintChatActionBackground".equals(str)) {
+            this.Ne.h.v0 = true;
+            Paint c10 = this.He.c(1.0f);
+            if (c10 != null) {
+                return c10;
+            }
         }
-        iArr[0] = b10;
-        iArr[1] = b11;
-        iArr[2] = b12;
-        iArr[3] = b13;
-        iArr[4] = b14;
-        if (b12 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1]}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else if (b13 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2]}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP);
-        } else if (b14 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3]}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
+        return super.M2(str);
+    }
+
+    @Override // org.telegram.ui.Cells.s1
+    public final boolean a2(Canvas canvas) {
+        n6 n6Var;
+        float[] fArr;
+        ImageReceiver photoImage = getPhotoImage();
+        b1 b1Var = this.Ne;
+        q5 q5Var = b1Var.h;
+        if (!b1Var.f || photoImage == null || (((n6Var = b1Var.e) == null || !n6Var.g || !n6Var.d || !q5Var.x0) && !q5Var.u0 && (q5Var.w0 == null || !q5Var.M0.x0))) {
+            return super.a2(canvas);
+        }
+        int i10 = 0;
+        while (true) {
+            int length = photoImage.getRoundRadius().length;
+            fArr = this.Ie;
+            if (i10 >= length) {
+                break;
+            }
+            int i11 = i10 * 2;
+            fArr[i11] = photoImage.getRoundRadius()[i10];
+            fArr[i11 + 1] = photoImage.getRoundRadius()[i10];
+            i10++;
+        }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(photoImage.getImageX(), photoImage.getImageY(), photoImage.getImageX2(), photoImage.getImageY2());
+        Path path = this.Je;
+        path.rewind();
+        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+        TextureView textureView = q5Var.w0;
+        if (textureView == null || !q5Var.M0.x0) {
+            canvas.drawPath(path, this.Ke);
+            return true;
+        }
+        Bitmap bitmap = textureView.getBitmap();
+        if (bitmap == null) {
+            return super.a2(canvas);
+        }
+        canvas.save();
+        canvas.clipPath(path);
+        canvas.translate(-getX(), -getY());
+        float max = Math.max(photoImage.getImageWidth() / q5Var.y0, photoImage.getImageHeight() / q5Var.z0);
+        canvas.translate(photoImage.getCenterX() - ((q5Var.y0 * max) / 2.0f), photoImage.getCenterY() - ((q5Var.z0 * max) / 2.0f));
+        canvas.scale((q5Var.y0 / q5Var.w0.getWidth()) * max, (q5Var.z0 / q5Var.w0.getHeight()) * max);
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        Rect rect = this.Le;
+        rect.set(0, 0, width, height);
+        float width2 = q5Var.w0.getWidth();
+        float height2 = q5Var.w0.getHeight();
+        RectF rectF2 = this.Me;
+        rectF2.set(0.0f, 0.0f, width2, height2);
+        canvas.drawBitmap(bitmap, rect, rectF2, (Paint) null);
+        canvas.restore();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.s1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        b1 b1Var = this.Ne;
+        n6 n6Var = b1Var.e;
+        if ((n6Var != null && n6Var.g && n6Var.d) || b1Var.h.u0) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
         } else {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3], iArr[4]}, new float[]{0.0f, 0.425f, 0.655f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
+            canvas2 = canvas;
+            canvas2.save();
         }
-        this.d.setLocalMatrix(this.e);
-        this.f.setShader(this.d);
+        S1(canvas2);
+        canvas2.restore();
     }
 
-    public final int b(int i10) {
-        int c10 = c(i10);
-        if (!this.n) {
-            return c10;
-        }
-        return Color.argb(Color.alpha(c10), Color.red(c10) - 15, Color.green(c10) - 15, Color.blue(c10) - 15);
-    }
-
-    public int c(int i10) {
-        return k6.w0(i10, this.a);
-    }
-
-    public final void d(int i10, float f7, int i11, int i12, float f10, int i13) {
-        a();
-        boolean z10 = this.m;
-        Matrix matrix = this.e;
-        if (z10) {
-            matrix.reset();
-            matrix.postScale((i12 - i10) / 100.0f, (i13 - i11) / 100.0f, this.b * 100.0f, this.c * 100.0f);
-            matrix.postTranslate(f7, f10);
-            this.d.setLocalMatrix(matrix);
-            return;
-        }
-        int i14 = i13 - i11;
-        a();
-        matrix.reset();
-        matrix.postScale((i12 - i10) / 100.0f, (i14 + i14) / 100.0f, 75.0f, 50.0f);
-        matrix.postTranslate(f7, (-r9) + f10);
-        this.d.setLocalMatrix(matrix);
-    }
-
-    public final void e(RectF rectF) {
-        d((int) rectF.left, 0.0f, (int) rectF.top, (int) rectF.right, 0.0f, (int) rectF.bottom);
+    @Override // org.telegram.ui.Cells.s1, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

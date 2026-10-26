@@ -1,37 +1,37 @@
 package x2;
 
 import android.os.Build;
-import b2.w;
+import b2.x;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements d9.m {
-    public final /* synthetic */ n a;
-    public final /* synthetic */ i b;
+public final /* synthetic */ class d implements e9.l {
+    public final /* synthetic */ o a;
+    public final /* synthetic */ j b;
 
-    public /* synthetic */ d(n nVar, i iVar) {
-        this.a = nVar;
-        this.b = iVar;
+    public /* synthetic */ d(o oVar, j jVar) {
+        this.a = oVar;
+        this.b = jVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0069, code lost:
     
         if (r1.b != false) goto L42;
      */
-    @Override // d9.m
+    @Override // e9.l
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean apply(Object obj) {
         Boolean bool;
-        z2.e eVar;
-        w wVar = (w) obj;
-        n nVar = this.a;
-        nVar.getClass();
-        if (this.b.A0 && ((bool = nVar.k) == null || !bool.booleanValue())) {
-            int i10 = wVar.K;
+        z2.d dVar;
+        x xVar = (x) obj;
+        o oVar = this.a;
+        oVar.getClass();
+        if (this.b.A0 && ((bool = oVar.k) == null || !bool.booleanValue())) {
+            int i10 = xVar.K;
             if (i10 != -1 && i10 > 2) {
-                String str = wVar.s;
+                String str = xVar.s;
                 if (str != null) {
                     switch (str) {
                         case "audio/eac3-joc":
@@ -39,14 +39,14 @@ public final /* synthetic */ class d implements d9.m {
                         case "audio/ac4":
                         case "audio/eac3":
                             if (Build.VERSION.SDK_INT >= 32) {
-                                z2.e eVar2 = nVar.i;
-                                if (eVar2 != null) {
+                                z2.d dVar2 = oVar.i;
+                                if (dVar2 != null) {
                                     break;
                                 }
                             }
                             break;
                         default:
-                            if (Build.VERSION.SDK_INT >= 32 || (eVar = nVar.i) == null || !eVar.b || !eVar.c() || !nVar.i.d() || !nVar.i.a(nVar.j, wVar)) {
+                            if (Build.VERSION.SDK_INT >= 32 || (dVar = oVar.i) == null || !dVar.b || !dVar.c() || !oVar.i.d() || !oVar.i.a(oVar.j, xVar)) {
                                 return false;
                             }
                             break;

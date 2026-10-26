@@ -1,166 +1,23 @@
 package gd;
 
-import df.m;
-import df.p;
-import df.s;
-import java.util.Locale;
-import java.util.Map;
-import java.util.regex.Pattern;
-import v7.e5;
-import v7.p7;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e extends h {
-    public static final Pattern e = i.n;
+public final class e extends f2.f {
+    public final StringBuilder c;
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0176  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01cf  */
-    @Override // gd.h
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final p b() {
-        boolean z10;
-        String str;
-        String str2;
-        int i10 = this.d + 1;
-        this.d = i10;
-        i iVar = this.a;
-        af.e eVar = iVar.i;
-        if (eVar == null) {
-            return f("]");
-        }
-        s sVar = (s) eVar.e;
-        boolean z11 = eVar.a;
-        if (!eVar.c) {
-            iVar.i = (af.e) eVar.f;
-            return f("]");
-        }
-        if (c() == '(') {
-            this.d++;
-            e();
-            i iVar2 = this.a;
-            int i11 = this.d;
-            iVar2.g = i11;
-            int a2 = e5.a(i11, iVar2.f);
-            if (a2 == -1) {
-                str = null;
-            } else {
-                String substring = iVar2.d() == '<' ? iVar2.f.substring(iVar2.g + 1, a2 - 1) : iVar2.f.substring(iVar2.g, a2);
-                iVar2.g = a2;
-                str = cf.a.a(substring);
-            }
-            this.d = this.a.g;
-            if (str != null) {
-                e();
-                String str3 = this.c;
-                int i12 = this.d;
-                if (e.matcher(str3.substring(i12 - 1, i12)).matches()) {
-                    i iVar3 = this.a;
-                    int i13 = this.d;
-                    iVar3.g = i13;
-                    int c10 = e5.c(i13, iVar3.f);
-                    if (c10 == -1) {
-                        str2 = null;
-                    } else {
-                        String substring2 = iVar3.f.substring(iVar3.g + 1, c10 - 1);
-                        iVar3.g = c10;
-                        str2 = cf.a.a(substring2);
-                    }
-                    this.d = this.a.g;
-                    e();
-                } else {
-                    str2 = null;
-                }
-                if (c() == ')') {
-                    this.d++;
-                    z10 = true;
-                } else {
-                    this.d = i10;
-                    z10 = false;
-                }
-                if (!z10) {
-                    int i14 = this.d;
-                    i iVar4 = this.a;
-                    iVar4.g = i14;
-                    if (i14 < iVar4.f.length() && iVar4.f.charAt(iVar4.g) == '[') {
-                        int i15 = iVar4.g + 1;
-                        int b10 = e5.b(i15, iVar4.f);
-                        int i16 = b10 - i15;
-                        if (b10 != -1 && i16 <= 999 && b10 < iVar4.f.length() && iVar4.f.charAt(b10) == ']') {
-                            iVar4.g = b10 + 1;
-                        }
-                    }
-                    int i17 = this.a.g;
-                    this.d = i17;
-                    int i18 = i17 - i14;
-                    String substring3 = i18 > 2 ? this.c.substring(i14, i18 + i14) : !eVar.d ? this.c.substring(eVar.b, i10) : null;
-                    if (substring3 != null) {
-                        Pattern pattern = cf.a.a;
-                        String replaceAll = cf.a.c.matcher(substring3.substring(1, substring3.length() - 1).trim().toLowerCase(Locale.ROOT)).replaceAll(" ");
-                        i iVar5 = this.a;
-                        iVar5.getClass();
-                        m mVar = (m) ((Map) iVar5.a.c).get(replaceAll);
-                        if (mVar != null) {
-                            str = mVar.h;
-                            str2 = mVar.i;
-                            z10 = true;
-                        }
-                    }
-                }
-                if (z10) {
-                    this.d = i10;
-                    i iVar6 = this.a;
-                    iVar6.i = (af.e) iVar6.i.f;
-                    return f("]");
-                }
-                df.k kVar = z11 ? new df.k(0, str, str2) : new df.k(1, str, str2);
-                p pVar = (p) sVar.f;
-                while (pVar != null) {
-                    p pVar2 = (p) pVar.f;
-                    kVar.b(pVar);
-                    pVar = pVar2;
-                }
-                af.f fVar = (af.f) eVar.g;
-                i iVar7 = this.a;
-                iVar7.g = this.d;
-                iVar7.e(fVar);
-                this.d = this.a.g;
-                p pVar3 = (p) kVar.c;
-                p pVar4 = (p) kVar.d;
-                if (pVar3 != pVar4) {
-                    p7.b(pVar3, pVar4);
-                }
-                sVar.g();
-                i iVar8 = this.a;
-                af.e eVar2 = (af.e) iVar8.i.f;
-                iVar8.i = eVar2;
-                if (!z11) {
-                    while (eVar2 != null) {
-                        if (!eVar2.a) {
-                            eVar2.c = false;
-                        }
-                        eVar2 = (af.e) eVar2.f;
-                    }
-                }
-                return kVar;
-            }
-            z10 = false;
-        } else {
-            z10 = false;
-            str = null;
-        }
-        str2 = null;
-        if (!z10) {
-        }
-        if (z10) {
-        }
+    public e() {
+        super(4, 1);
+        this.c = new StringBuilder();
     }
 
-    @Override // gd.h
-    public final char d() {
-        return ']';
+    @Override // f2.f
+    public final f2.f b() {
+        f2.f.c(this.c);
+        return this;
+    }
+
+    @Override // f2.f
+    public final String toString() {
+        return "<!--" + this.c.toString() + "-->";
     }
 }

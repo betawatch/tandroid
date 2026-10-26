@@ -10,9 +10,9 @@ import java.util.List;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.m5;
+import org.telegram.messenger.o5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
@@ -44,8 +44,8 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         }
         if (drawableSafe != null) {
             Drawable drawable = drawableSafe.drawable;
-            if (drawable instanceof eg.b) {
-                list = ((eg.b) drawable).a;
+            if (drawable instanceof fg.b) {
+                list = ((fg.b) drawable).a;
                 bitmap = bitmapSafe.bitmap;
                 if (bitmap == null) {
                     Drawable drawable2 = bitmapSafe.drawable;
@@ -53,7 +53,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                         bitmap = ((BitmapDrawable) drawable2).getBitmap();
                     }
                 }
-                eg.a aVar = new eg.a(bitmap, this.a, list);
+                fg.a aVar = new fg.a(bitmap, this.a, list);
                 if (callback != null) {
                     callback.run(aVar);
                 }
@@ -64,7 +64,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         bitmap = bitmapSafe.bitmap;
         if (bitmap == null) {
         }
-        eg.a aVar2 = new eg.a(bitmap, this.a, list);
+        fg.a aVar2 = new fg.a(bitmap, this.a, list);
         if (callback != null) {
         }
         ChatThemeController.getInstance(this.c).saveWallpaperBitmap(aVar2, this.b);
@@ -72,12 +72,12 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        m5.a(this, i10, str, drawable);
+        o5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        m5.b(this, imageReceiver);
+        o5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener

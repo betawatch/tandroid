@@ -3,105 +3,26 @@ package c2;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class o implements n {
-    public k b;
-    public k c;
-    public k d;
-    public k e;
-    public ByteBuffer f;
-    public ByteBuffer g;
-    public boolean h;
+public interface o {
+    public static final ByteBuffer a = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
 
-    public o() {
-        ByteBuffer byteBuffer = n.a;
-        this.f = byteBuffer;
-        this.g = byteBuffer;
-        k kVar = k.e;
-        this.d = kVar;
-        this.e = kVar;
-        this.b = kVar;
-        this.c = kVar;
-    }
+    ByteBuffer a();
 
-    @Override // c2.n
-    public ByteBuffer a() {
-        ByteBuffer byteBuffer = this.g;
-        this.g = n.a;
-        return byteBuffer;
-    }
+    void b(ByteBuffer byteBuffer);
 
-    @Override // c2.n
-    public boolean b() {
-        return this.h && this.g == n.a;
-    }
+    boolean c();
 
-    @Override // c2.n
-    public final void d(l lVar) {
-        this.g = n.a;
-        this.h = false;
-        this.b = this.d;
-        this.c = this.e;
-        i();
-    }
+    void d(m mVar);
 
-    @Override // c2.n
-    public final k e(k kVar) {
-        this.d = kVar;
-        this.e = h(kVar);
-        return isActive() ? this.e : k.e;
-    }
+    l e(l lVar);
 
-    @Override // c2.n
-    public final void f() {
-        this.h = true;
-        j();
-    }
+    void f();
 
-    public abstract k h(k kVar);
+    long g(long j10);
 
-    @Override // c2.n
-    public boolean isActive() {
-        return this.e != k.e;
-    }
+    boolean isActive();
 
-    public final ByteBuffer l(int i10) {
-        if (this.f.capacity() < i10) {
-            this.f = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
-        } else {
-            this.f.clear();
-        }
-        ByteBuffer byteBuffer = this.f;
-        this.g = byteBuffer;
-        return byteBuffer;
-    }
-
-    @Override // c2.n
-    public final void reset() {
-        ByteBuffer byteBuffer = n.a;
-        this.g = byteBuffer;
-        this.h = false;
-        this.f = byteBuffer;
-        k kVar = k.e;
-        this.d = kVar;
-        this.e = kVar;
-        this.b = kVar;
-        this.c = kVar;
-        k();
-    }
-
-    public void i() {
-    }
-
-    public void j() {
-    }
-
-    public void k() {
-    }
-
-    @Override // c2.n
-    public long g(long j10) {
-        return j10;
-    }
+    void reset();
 }

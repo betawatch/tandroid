@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
+import bi.u6;
 import java.util.concurrent.Executor;
-import td.l;
+import ud.l;
 import v0.i;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements l {
     public final /* synthetic */ int a;
@@ -23,7 +24,7 @@ public final /* synthetic */ class f implements l {
         this.c = obj2;
     }
 
-    @Override // td.l
+    @Override // ud.l
     public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
@@ -32,12 +33,12 @@ public final /* synthetic */ class f implements l {
                 w0.i e = (w0.i) obj;
                 kotlin.jvm.internal.i.e(e, "e");
                 executor.execute(new h(iVar, e, 1));
-                return id.i.a;
+                return jd.i.a;
             case 1:
                 CancellationSignal cancellationSignal = (CancellationSignal) this.b;
                 c1.e eVar = (c1.e) this.c;
                 Context context = eVar.e;
-                x5.f fVar = (x5.f) obj;
+                y5.f fVar = (y5.f) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (!a1.h.a(cancellationSignal)) {
                     Intent intent = new Intent(context, (Class<?>) HiddenActivity.class);
@@ -48,11 +49,11 @@ public final /* synthetic */ class f implements l {
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.h.a(cancellationSignal)) {
-                            eVar.f().execute(new androidx.fragment.app.d(eVar, 3));
+                            eVar.f().execute(new u6(eVar, 7));
                         }
                     }
                 }
-                return id.i.a;
+                return jd.i.a;
             default:
                 CancellationSignal cancellationSignal2 = (CancellationSignal) this.b;
                 d1.e eVar2 = (d1.e) this.c;
@@ -78,7 +79,7 @@ public final /* synthetic */ class f implements l {
                         }
                     }
                 }
-                return id.i.a;
+                return jd.i.a;
         }
     }
 }

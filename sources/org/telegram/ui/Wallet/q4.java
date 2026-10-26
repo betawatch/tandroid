@@ -1,71 +1,48 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import java.nio.charset.StandardCharsets;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bs;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class q4 extends EditTextBoldCursor {
-    public int b;
-    public final org.telegram.ui.Components.i5 c;
-    public final org.telegram.ui.Components.p6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
+public final class q4 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TL_wallet.walletTransaction[] b;
+    public final /* synthetic */ di.s c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.e = g6Var;
-        this.b = 960;
-        this.c = new org.telegram.ui.Components.i5(this);
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, true, true);
-        this.d = p6Var;
-        p6Var.n(0.2f, 160L, bs.h);
-        p6Var.w(AndroidUtilities.dp(15.33f));
-        p6Var.b = 5;
-        p6Var.setCallback(this);
+    public q4(int i10, TL_wallet.walletTransaction[] wallettransactionArr, di.s sVar) {
+        this.a = i10;
+        this.b = wallettransactionArr;
+        this.c = sVar;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.c.a(org.telegram.ui.ActionBar.k6.w0(this.b <= 0 ? org.telegram.ui.ActionBar.k6.p7 : org.telegram.ui.ActionBar.k6.P5, this.e), false);
-        org.telegram.ui.Components.p6 p6Var = this.d;
-        p6Var.u(a2);
-        int dp = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-        int height = getHeight() + getScrollY();
-        p6Var.setBounds(dp - AndroidUtilities.dp(48.0f), height - Math.min(AndroidUtilities.dp(44.0f), getHeight()), dp, height);
-        p6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ku, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(getPaddingLeft() + getScrollX(), getScrollY(), (getWidth() + getScrollX()) - getPaddingRight(), getHeight() + getScrollY());
-        super.onDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ku, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        org.telegram.ui.Components.p6 p6Var = this.d;
-        if (p6Var == null) {
-            return;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        TL_wallet.walletTransaction[] wallettransactionArr;
+        TL_wallet.walletTransaction wallettransaction;
+        if (i10 == NotificationCenter.walletUpdate || i10 == NotificationCenter.walletTransactionsUpdate) {
+            ArrayList arrayList = l0.w(this.a).A().c;
+            int size = arrayList.size();
+            int i12 = 0;
+            while (true) {
+                wallettransactionArr = this.b;
+                if (i12 >= size) {
+                    wallettransaction = null;
+                    break;
+                }
+                Object obj = arrayList.get(i12);
+                i12++;
+                wallettransaction = (TL_wallet.walletTransaction) obj;
+                TL_wallet.walletTransaction wallettransaction2 = wallettransactionArr[0];
+                if (wallettransaction == wallettransaction2 || l0.f0(wallettransaction2, wallettransaction)) {
+                    break;
+                }
+            }
+            if (wallettransaction != null) {
+                wallettransactionArr[0] = wallettransaction;
+                this.c.run(wallettransaction);
+            }
         }
-        this.b = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-        p6Var.a();
-        int i13 = this.b;
-        p6Var.t(i13 <= 100 ? Integer.toString(i13) : "", isAttachedToWindow(), true);
-        invalidate();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

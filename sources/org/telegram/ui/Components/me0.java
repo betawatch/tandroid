@@ -1,96 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class me0 extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
+public final class me0 extends le0 {
+    public final /* synthetic */ ne0 j0;
 
-    public me0(Context context) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.fingerprint);
-        addView(imageView, w7.z5.e(-1, -1, 119));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 26.0f);
-        textView.setGravity(17);
-        addView(textView, w7.z5.d(-1, -2.0f, 17, 0.0f, -5.33f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setTextSize(1, 10.0f);
-        textView2.setTextColor(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        textView2.setGravity(17);
-        addView(textView2, w7.z5.d(-1, -2.0f, 17, 0.0f, 14.0f, 0.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public me0(ne0 ne0Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.j0 = ne0Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-    }
-
-    public void setImage(int i10) {
-        ImageView imageView = this.a;
-        imageView.setVisibility(0);
-        this.b.setVisibility(8);
-        this.c.setVisibility(8);
-        imageView.setImageResource(i10);
-    }
-
-    public void setNum(int i10) {
-        this.a.setVisibility(8);
-        TextView textView = this.b;
-        textView.setVisibility(0);
-        TextView textView2 = this.c;
-        textView2.setVisibility(0);
-        String str = "";
-        textView.setText("" + i10);
-        if (i10 != 0) {
-            switch (i10) {
-                case 2:
-                    str = "ABC";
-                    break;
-                case 3:
-                    str = "DEF";
-                    break;
-                case 4:
-                    str = "GHI";
-                    break;
-                case 5:
-                    str = "JKL";
-                    break;
-                case 6:
-                    str = "MNO";
-                    break;
-                case 7:
-                    str = "PQRS";
-                    break;
-                case 8:
-                    str = "TUV";
-                    break;
-                case 9:
-                    str = "WXYZ";
-                    break;
-            }
-        } else {
-            str = "+";
+    @Override // org.telegram.ui.Components.le0
+    public final void h(float f7) {
+        LaunchActivity launchActivity = LaunchActivity.I1;
+        if (launchActivity == null) {
+            return;
         }
-        textView2.setText(str);
+        org.telegram.ui.ActionBar.d4 d4Var = launchActivity.z0;
+        d4Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+        d4Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+    }
+
+    @Override // org.telegram.ui.Components.le0
+    public final void j() {
+        super/*android.app.Dialog*/.dismiss();
+        LaunchActivity launchActivity = LaunchActivity.I1;
+        if (launchActivity == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.d4 d4Var = launchActivity.z0;
+        d4Var.setScaleX(1.0f);
+        d4Var.setScaleY(1.0f);
     }
 }

@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class qf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -41,8 +41,8 @@ public final class qf implements View.OnKeyListener {
             chatActivityEnterView.C0 = keyEvent.isCtrlPressed();
         }
         if (i10 == 4 && !chatActivityEnterView.z2 && chatActivityEnterView.q0() && keyEvent.getAction() == 1) {
-            if (org.telegram.ui.ht.g0 != null && org.telegram.ui.ht.o().E) {
-                org.telegram.ui.ht.o().m();
+            if (org.telegram.ui.ft.g0 != null && org.telegram.ui.ft.o().E) {
+                org.telegram.ui.ft.o().m();
                 return true;
             }
             if (chatActivityEnterView.f2 != 1 || chatActivityEnterView.m2 == null) {
@@ -54,7 +54,7 @@ public final class qf implements View.OnKeyListener {
                         chatActivityEnterView.j1(0, true);
                         dg dgVar = chatActivityEnterView.U0;
                         if (dgVar != null) {
-                            dgVar.u(true);
+                            dgVar.t(true);
                         }
                         chatActivityEnterView.E0.requestFocus();
                         return true;

@@ -1,25 +1,25 @@
 package q3;
 
-import b2.q0;
-import e2.m0;
-import e9.n0;
-import e9.x1;
+import a8.ed;
+import a8.yb;
+import b2.r0;
+import e2.n0;
+import f9.i0;
+import f9.s1;
 import j$.util.Objects;
 import java.util.ArrayList;
-import v7.b8;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class n extends i {
     public final String b;
-    public final n0 c;
+    public final i0 c;
 
-    public n(String str, String str2, x1 x1Var) {
+    public n(String str, String str2, s1 s1Var) {
         super(str);
-        u6.g(!x1Var.isEmpty());
+        yb.g(!s1Var.isEmpty());
         this.b = str2;
-        n0 u10 = n0.u(x1Var);
+        i0 u10 = i0.u(s1Var);
         this.c = u10;
     }
 
@@ -47,8 +47,8 @@ public final class n extends i {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // q3.i, b2.s0
-    public final void b(q0 q0Var) {
+    @Override // q3.i, b2.t0
+    public final void b(r0 r0Var) {
         char c10;
         String str = this.a;
         switch (str.hashCode()) {
@@ -217,97 +217,97 @@ public final class n extends i {
                 c10 = 65535;
                 break;
         }
-        n0 n0Var = this.c;
+        i0 i0Var = this.c;
         try {
             switch (c10) {
                 case 0:
                 case '\n':
-                    q0Var.c = (CharSequence) n0Var.get(0);
+                    r0Var.c = (CharSequence) i0Var.get(0);
                     break;
                 case 1:
                 case 11:
-                    q0Var.A = (CharSequence) n0Var.get(0);
+                    r0Var.A = (CharSequence) i0Var.get(0);
                     break;
                 case 2:
                 case '\r':
-                    String str2 = (String) n0Var.get(0);
+                    String str2 = (String) i0Var.get(0);
                     int parseInt = Integer.parseInt(str2.substring(2, 4));
                     int parseInt2 = Integer.parseInt(str2.substring(0, 2));
-                    q0Var.u = Integer.valueOf(parseInt);
-                    q0Var.v = Integer.valueOf(parseInt2);
+                    r0Var.u = Integer.valueOf(parseInt);
+                    r0Var.v = Integer.valueOf(parseInt2);
                     break;
                 case 3:
                 case 18:
-                    q0Var.b = (CharSequence) n0Var.get(0);
+                    r0Var.b = (CharSequence) i0Var.get(0);
                     break;
                 case 4:
                 case 19:
-                    q0Var.d = (CharSequence) n0Var.get(0);
+                    r0Var.d = (CharSequence) i0Var.get(0);
                     break;
                 case 5:
                 case 20:
-                    q0Var.B = (CharSequence) n0Var.get(0);
+                    r0Var.B = (CharSequence) i0Var.get(0);
                     break;
                 case 6:
                 case 21:
-                    String str3 = (String) n0Var.get(0);
-                    String str4 = m0.a;
+                    String str3 = (String) i0Var.get(0);
+                    String str4 = n0.a;
                     String[] split = str3.split("/", -1);
                     int parseInt3 = Integer.parseInt(split[0]);
                     Integer valueOf = split.length > 1 ? Integer.valueOf(Integer.parseInt(split[1])) : null;
-                    q0Var.o = Integer.valueOf(parseInt3);
-                    q0Var.p = valueOf;
+                    r0Var.o = Integer.valueOf(parseInt3);
+                    r0Var.p = valueOf;
                     break;
                 case 7:
                 case 17:
-                    q0Var.a = (CharSequence) n0Var.get(0);
+                    r0Var.a = (CharSequence) i0Var.get(0);
                     break;
                 case '\b':
                 case 16:
-                    q0Var.z = (CharSequence) n0Var.get(0);
+                    r0Var.z = (CharSequence) i0Var.get(0);
                     break;
                 case '\t':
                 case 22:
-                    q0Var.t = Integer.valueOf(Integer.parseInt((String) n0Var.get(0)));
+                    r0Var.t = Integer.valueOf(Integer.parseInt((String) i0Var.get(0)));
                     break;
                 case '\f':
-                    Integer g10 = b8.g((String) n0Var.get(0));
-                    if (g10 != null) {
-                        String a2 = j.a(g10.intValue());
+                    Integer g7 = ed.g((String) i0Var.get(0));
+                    if (g7 != null) {
+                        String a2 = j.a(g7.intValue());
                         if (a2 != null) {
-                            q0Var.E = a2;
+                            r0Var.E = a2;
                             break;
                         }
                     } else {
-                        q0Var.E = (CharSequence) n0Var.get(0);
+                        r0Var.E = (CharSequence) i0Var.get(0);
                         break;
                     }
                     break;
                 case 14:
-                    ArrayList d = d((String) n0Var.get(0));
+                    ArrayList d = d((String) i0Var.get(0));
                     int size = d.size();
                     if (size != 1) {
                         if (size != 2) {
                             if (size == 3) {
-                                q0Var.v = (Integer) d.get(2);
+                                r0Var.v = (Integer) d.get(2);
                             }
                         }
-                        q0Var.u = (Integer) d.get(1);
+                        r0Var.u = (Integer) d.get(1);
                     }
-                    q0Var.t = (Integer) d.get(0);
+                    r0Var.t = (Integer) d.get(0);
                     break;
                 case 15:
-                    ArrayList d10 = d((String) n0Var.get(0));
+                    ArrayList d10 = d((String) i0Var.get(0));
                     int size2 = d10.size();
                     if (size2 != 1) {
                         if (size2 != 2) {
                             if (size2 == 3) {
-                                q0Var.y = (Integer) d10.get(2);
+                                r0Var.y = (Integer) d10.get(2);
                             }
                         }
-                        q0Var.x = (Integer) d10.get(1);
+                        r0Var.x = (Integer) d10.get(1);
                     }
-                    q0Var.w = (Integer) d10.get(0);
+                    r0Var.w = (Integer) d10.get(0);
                     break;
             }
         } catch (NumberFormatException | StringIndexOutOfBoundsException unused) {
@@ -328,9 +328,9 @@ public final class n extends i {
     }
 
     public final int hashCode() {
-        int g10 = a1.g.g(527, 31, this.a);
+        int f7 = a1.g.f(527, 31, this.a);
         String str = this.b;
-        return this.c.hashCode() + ((g10 + (str != null ? str.hashCode() : 0)) * 31);
+        return this.c.hashCode() + ((f7 + (str != null ? str.hashCode() : 0)) * 31);
     }
 
     @Override // q3.i

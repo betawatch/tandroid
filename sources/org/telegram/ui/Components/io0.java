@@ -2,135 +2,64 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class io0 extends View {
-    public ho0 a;
-    public final f6 b;
-    public final dh.d c;
-    public ah.i1 d;
-    public boolean e;
-    public final Path f;
-    public final RectF h;
-    public final RectF n;
-    public boolean r;
-    public final /* synthetic */ jo0 s;
+public final class io0 extends EditTextBoldCursor {
+    public final j5 b;
+    public int c;
+    public final r6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public io0(jo0 jo0Var, Context context) {
+    public io0(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
-        this.s = jo0Var;
-        this.b = new f6(this, 0L, 260L, bs.h);
-        this.f = new Path();
-        this.h = new RectF();
-        this.n = new RectF();
-        w7.b6.a(this);
-        bh.b bVar = jo0Var.v;
-        if (bVar != null) {
-            dh.d c10 = bVar.c(this, null, false);
-            c10.o(jo0Var.w);
-            c10.u(AndroidUtilities.dp(5.0f));
-            dh.d n10 = c10.n();
-            n10.q(AndroidUtilities.dp(6.0f));
-            n10.p(AndroidUtilities.dp(4.0f));
-            this.c = n10;
-        }
-    }
-
-    public final void a(boolean z10, boolean z11) {
-        if (this.e == z10) {
-            return;
-        }
-        this.e = z10;
-        ho0 ho0Var = this.a;
-        if (ho0Var != null) {
-            ho0Var.p = z10;
-            f6 f6Var = this.b;
-            if (z11) {
-                ho0Var.i = ho0Var.N;
-                ho0Var.g = ho0Var.O;
-                ho0Var.h = ho0Var.P;
-                f6Var.d(0.0f, true);
-            } else {
-                f6Var.d(1.0f, true);
-            }
-            invalidate();
-        }
+        this.e = u6Var;
+        this.b = new j5(this);
+        r6 r6Var = new r6(false, true, true);
+        this.d = r6Var;
+        r6Var.n(0.2f, 160L, ds.h);
+        r6Var.w(AndroidUtilities.dp(15.33f));
+        r6Var.setCallback(this);
+        r6Var.b = 5;
     }
 
     @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.r) {
-            return;
-        }
-        ho0 ho0Var = this.a;
-        if (ho0Var != null) {
-            ho0Var.a();
-        }
-        this.r = true;
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(org.telegram.ui.ActionBar.y6.w0(this.c < 0 ? org.telegram.ui.ActionBar.y6.p7 : org.telegram.ui.ActionBar.y6.P5, this.e), false);
+        r6 r6Var = this.d;
+        r6Var.u(a2);
+        r6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        r6Var.draw(canvas);
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (this.r) {
-            ho0 ho0Var = this.a;
-            if (ho0Var != null) {
-                ho0Var.b();
-            }
-            this.r = false;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        jo0 jo0Var = this.s;
-        Paint paint = jo0Var.x;
-        int width = (getWidth() - this.a.A) / 2;
-        int height = getHeight();
-        ho0 ho0Var = this.a;
-        int i10 = ho0Var.B;
-        int i11 = (height - i10) / 2;
-        dh.d dVar = this.c;
-        if (dVar != null) {
-            Rect rect = AndroidUtilities.rectTmp2;
-            rect.set(width, i11, ho0Var.A + width, i10 + i11);
-            RectF rectF = this.n;
-            rectF.set(rect);
-            RectF rectF2 = this.h;
-            boolean equals = rectF.equals(rectF2);
-            Path path = this.f;
-            if (!equals) {
-                rectF2.set(rectF);
-                ah.j1.h(rectF2, rectF, path);
-            }
-            rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-            rect.right = AndroidUtilities.dp(1.0f) + rect.right;
-            dVar.setBounds(rect);
-            canvas.save();
-            canvas.clipPath(path);
-            dVar.draw(canvas);
-            org.telegram.ui.ActionBar.g6 g6Var = jo0Var.c;
-            paint.setColor((g6Var == null ? !org.telegram.ui.ActionBar.k6.I.q() : !g6Var.a()) ? -1 : 687865855);
-            canvas.drawPath(path, paint);
-            canvas.restore();
-        }
-        this.a.d(canvas, width, i11, this.b.d(1.0f, false), 1.0f, false, false, 0.0f);
-    }
-
-    @Override // android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
-        int dp = AndroidUtilities.dp(8.67f);
-        ho0 ho0Var = this.a;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp + (ho0Var != null ? ho0Var.A : AndroidUtilities.dp(44.33f)), TLObject.FLAG_30), i11);
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.lu, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        r6 r6Var = this.d;
+        if (r6Var != null) {
+            this.c = 12 - charSequence.length();
+            r6Var.a();
+            String str = "";
+            if (this.c <= 4) {
+                str = "" + this.c;
+            }
+            r6Var.t(str, true, true);
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

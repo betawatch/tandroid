@@ -1,37 +1,22 @@
 package u2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class q1 implements f1 {
-    public final f1 a;
-    public final long b;
+public final class q1 extends s {
+    public final b2.p0 f;
 
-    public q1(f1 f1Var, long j10) {
-        this.a = f1Var;
-        this.b = j10;
+    public q1(b2.p1 p1Var, b2.p0 p0Var) {
+        super(p1Var);
+        this.f = p0Var;
     }
 
-    @Override // u2.f1
-    public final void a() {
-        this.a.a();
-    }
-
-    @Override // u2.f1
-    public final boolean f() {
-        return this.a.f();
-    }
-
-    @Override // u2.f1
-    public final int g(qf.b bVar, h2.h hVar, int i10) {
-        int g10 = this.a.g(bVar, hVar, i10);
-        if (g10 == -4) {
-            hVar.e += this.b;
-        }
-        return g10;
-    }
-
-    @Override // u2.f1
-    public final int m(long j10) {
-        return this.a.m(j10 - this.b);
+    @Override // u2.s, b2.p1
+    public final b2.o1 m(int i10, b2.o1 o1Var, long j10) {
+        super.m(i10, o1Var, j10);
+        b2.p0 p0Var = this.f;
+        o1Var.c = p0Var;
+        b2.k0 k0Var = p0Var.b;
+        o1Var.b = null;
+        return o1Var;
     }
 }

@@ -1,74 +1,42 @@
 package org.telegram.ui;
 
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.os.Bundle;
+import android.view.View;
+import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q8 implements RequestDelegate {
+public final /* synthetic */ class q8 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m9 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
-    public final /* synthetic */ HashSet d;
-    public final /* synthetic */ TLRPC.TL_inputGroupCallInviteMessage e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ o9 b;
 
-    public /* synthetic */ q8(m9 m9Var, org.telegram.ui.ActionBar.c2 c2Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z10, int i10) {
+    public /* synthetic */ q8(o9 o9Var, int i10) {
         this.a = i10;
-        this.b = m9Var;
-        this.c = c2Var;
-        this.d = hashSet;
-        this.e = tL_inputGroupCallInviteMessage;
-        this.f = z10;
+        this.b = o9Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final m9 m9Var = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var = this.c;
-                final HashSet hashSet = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage = this.e;
-                final boolean z10 = this.f;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.t8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                m9.U(m9Var, c2Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
-                                break;
-                            default:
-                                m9.X(m9Var, c2Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
+                Long l4 = (Long) view.getTag();
+                o9 o9Var = this.b;
+                ChatObject.Call groupCall = o9Var.getMessagesController().getGroupCall(l4.longValue(), false);
+                TLRPC.Chat chat = o9Var.getMessagesController().getChat(l4);
+                o9Var.L = chat;
+                if (groupCall == null) {
+                    o9Var.M = l4;
+                    o9Var.getMessagesController().loadFullChat(l4.longValue(), 0, true);
+                    break;
+                } else {
+                    org.telegram.ui.Components.voip.g2.l(chat, null, false, null, o9Var.getParentActivity(), o9Var, o9Var.getAccountInstance());
+                    break;
+                }
             default:
-                final int i11 = 1;
-                final m9 m9Var2 = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var2 = this.c;
-                final HashSet hashSet2 = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage2 = this.e;
-                final boolean z11 = this.f;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.t8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                m9.U(m9Var2, c2Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
-                                break;
-                            default:
-                                m9.X(m9Var2, c2Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
-                                break;
-                        }
-                    }
-                });
+                Bundle i10 = a1.g.i("isCall", true);
+                o9 o9Var2 = this.b;
+                o9Var2.presentFragment(new h9(i10, o9Var2.getCurrentAccount(), o9Var2));
                 break;
         }
     }

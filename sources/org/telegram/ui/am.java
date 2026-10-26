@@ -1,30 +1,17 @@
 package org.telegram.ui;
 
-import android.view.View;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class am extends org.telegram.ui.Components.s6 {
-    public final /* synthetic */ dm b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public am(dm dmVar) {
-        super("p2", 0);
-        this.b = dmVar;
-    }
-
-    @Override // org.telegram.ui.Components.s6
+public final class am extends org.telegram.ui.Components.u6 {
+    @Override // org.telegram.ui.Components.u6
     public final void c(Object obj, float f7) {
-        ((MessageObject.SendAnimationData) obj).currentX = f7;
-        View view = this.b.b.Q.fragmentView;
-        if (view != null) {
-            view.invalidate();
-        }
+        ((MessageObject.SendAnimationData) obj).currentScale = f7;
     }
 
     @Override // android.util.Property
     public final Object get(Object obj) {
-        return Float.valueOf(((MessageObject.SendAnimationData) obj).currentX);
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).currentScale);
     }
 }

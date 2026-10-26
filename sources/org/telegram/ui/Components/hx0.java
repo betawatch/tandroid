@@ -1,198 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.HashSet;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class hx0 extends View implements org.telegram.ui.ActionBar.b6 {
-    public final x9 a;
-    public final fx0 b;
-    public final f6 c;
-    public boolean d;
-    public gx0 e;
-    public boolean f;
-    public boolean h;
+public final class hx0 extends CharacterStyle {
+    public final Paint a;
+    public final Path b;
 
-    public hx0(Context context) {
-        super(context);
-        fx0 fx0Var = new fx0();
-        fx0Var.c = -16777216;
-        fx0Var.d = -1;
-        this.b = fx0Var;
-        f6 f6Var = new f6(new ex0(this, 0), 380L, bs.h);
-        this.c = f6Var;
-        x9 x9Var = new x9(context);
-        this.a = x9Var;
-        x9Var.setCallback(this);
-        this.d = false;
-        f6Var.d(0.0f, false);
-        a();
+    public hx0() {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Path();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
     }
 
-    public final void a() {
-        boolean z10 = this.h && this.f;
-        this.d = z10;
-        this.c.e(z10);
-        setEnabled(this.d);
-        setClickable(this.d);
-        invalidate();
-    }
-
-    public final void b(MessagesController.PeerColor peerColor) {
-        this.b.a(peerColor);
-        invalidate();
-    }
-
-    public float getVisibilityFactor() {
-        return this.c.c;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.getClass();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.getClass();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e = this.c.e(this.d);
-        int A = org.telegram.messenger.sl.A(24.0f, getMeasuredWidth(), 2);
-        int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
-        canvas.save();
-        canvas.translate(A, measuredHeight);
-        canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
-        int dp = AndroidUtilities.dp(24.0f);
-        int dp2 = AndroidUtilities.dp(24.0f);
-        x9 x9Var = this.a;
-        x9Var.setBounds(0, 0, dp, dp2);
-        fx0 fx0Var = this.b;
-        int i10 = fx0Var.c;
-        if (x9Var.f != i10) {
-            x9Var.f = i10;
-            if (x9Var.c != null) {
-                x9Var.d.setColorFilter(i10, PorterDuff.Mode.MULTIPLY);
-                x9Var.invalidateSelf();
-            }
-        }
-        int i11 = fx0Var.d;
-        if (x9Var.e != i11) {
-            x9Var.e = i11;
-            Drawable drawable = x9Var.c;
-            if (drawable != null) {
-                drawable.setColorFilter(i11, PorterDuff.Mode.MULTIPLY);
-                x9Var.invalidateSelf();
-            }
-        }
-        int i12 = fx0Var.c | (-16777216);
-        if (x9Var.h != i12) {
-            x9Var.h = i12;
-            x9Var.b.v(i12, false);
-            x9Var.invalidateSelf();
-        }
-        x9Var.draw(canvas);
-        canvas.restore();
-    }
-
-    public void set(TL_stars.Tl_starsRating tl_starsRating) {
-        int b10;
-        this.f = tl_starsRating != null;
-        a();
-        if (tl_starsRating == null) {
+    public static void a(Canvas canvas, Layout layout) {
+        CharSequence text;
+        Layout layout2 = layout;
+        if (layout2 == null || (text = layout2.getText()) == null || !(text instanceof Spanned)) {
             return;
         }
-        int i10 = tl_starsRating.level;
-        x9 x9Var = this.a;
-        if (x9Var.r != i10 || x9Var.c == null || x9Var.d == null) {
-            x9Var.b.t(i10 >= 0 ? Integer.toString(i10) : "!", true, true);
-            x9Var.r = i10;
-            if (i10 < 0) {
-                b10 = 18;
-            } else {
-                b10 = w7.r.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
-            }
-            Context context = x9Var.a;
-            if (x9Var.n != b10 || x9Var.c == null || x9Var.d == null) {
-                int i11 = b10 * 2;
-                Drawable mutate = context.getResources().getDrawable(x9.s[i11]).mutate();
-                x9Var.c = mutate;
-                int i12 = x9Var.e;
-                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                mutate.setColorFilter(i12, mode);
-                Drawable mutate2 = context.getResources().getDrawable(x9.s[i11 + 1]).mutate();
-                x9Var.d = mutate2;
-                mutate2.setColorFilter(x9Var.f, mode);
-                x9Var.n = b10;
-                Drawable drawable = x9Var.c;
-                if (drawable != null) {
-                    drawable.setBounds(x9Var.getBounds());
-                }
-                Drawable drawable2 = x9Var.d;
-                if (drawable2 != null) {
-                    drawable2.setBounds(x9Var.getBounds());
-                }
-            }
-            x9Var.invalidateSelf();
+        Spanned spanned = (Spanned) text;
+        hx0[] hx0VarArr = (hx0[]) spanned.getSpans(0, spanned.length(), hx0.class);
+        if (hx0VarArr == null || hx0VarArr.length == 0) {
+            return;
         }
-        StringBuilder sb2 = new StringBuilder();
-        org.telegram.ui.Cells.b1.o(R.string.AccDescrProfileRatingLevel, " ", sb2);
-        sb2.append(tl_starsRating.level);
-        setContentDescription(sb2.toString());
-        invalidate();
-    }
-
-    public void setDelegate(gx0 gx0Var) {
-        this.e = gx0Var;
-    }
-
-    public void setParentExpanded(float f7) {
-        fx0 fx0Var = this.b;
-        fx0Var.e = f7;
-        fx0Var.a(fx0Var.a);
-        invalidate();
-    }
-
-    public void setResourcesProvider(org.telegram.ui.ActionBar.g6 g6Var) {
-        this.b.b = g6Var;
-    }
-
-    public void setVisibility(boolean z10) {
-        this.h = z10;
-        a();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        try {
-            fx0 fx0Var = this.b;
-            fx0Var.a(fx0Var.a);
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+        int i10 = 0;
+        while (i10 < hx0VarArr.length) {
+            hx0 hx0Var = hx0VarArr[i10];
+            int spanStart = spanned.getSpanStart(hx0Var);
+            int spanEnd = spanned.getSpanEnd(hx0Var);
+            int lineForOffset = layout2.getLineForOffset(spanStart);
+            int lineForOffset2 = layout2.getLineForOffset(spanEnd);
+            int i11 = lineForOffset;
+            while (i11 <= lineForOffset2) {
+                float lineBottom = layout2.getLineBottom(i11) - AndroidUtilities.dp(1.0f);
+                float primaryHorizontal = layout2.getPrimaryHorizontal(i11 == lineForOffset ? spanStart : layout2.getLineStart(i11));
+                float primaryHorizontal2 = layout2.getPrimaryHorizontal(i11 == lineForOffset2 ? spanEnd : layout2.getLineEnd(i11) - 1);
+                hx0Var.getClass();
+                float dp = AndroidUtilities.dp(1.33f);
+                float dp2 = AndroidUtilities.dp(10.0f);
+                float dp3 = AndroidUtilities.dp(2.0f);
+                Paint paint = hx0Var.a;
+                Spanned spanned2 = spanned;
+                hx0[] hx0VarArr2 = hx0VarArr;
+                int i12 = i10;
+                paint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Oh, false));
+                paint.setStrokeWidth(dp);
+                Path path = hx0Var.b;
+                path.rewind();
+                path.moveTo(primaryHorizontal, lineBottom);
+                float f7 = primaryHorizontal;
+                while (f7 < primaryHorizontal2) {
+                    float f10 = f7;
+                    float f11 = dp2;
+                    path.quadTo((dp2 / 4.0f) + f7, lineBottom - dp3, (dp2 / 2.0f) + f10, lineBottom);
+                    float f12 = f10 + f11;
+                    path.quadTo(((f11 * 3.0f) / 4.0f) + f10, lineBottom + dp3, f12, lineBottom);
+                    f7 = f12;
+                    dp2 = f11;
+                }
+                if (f7 > primaryHorizontal2) {
+                    canvas.save();
+                    float f13 = dp / 2.0f;
+                    canvas.clipRect(primaryHorizontal - f13, (lineBottom - dp3) - f13, primaryHorizontal2 + f13, lineBottom + dp3 + f13);
+                    canvas.drawPath(path, paint);
+                    canvas.restore();
+                } else {
+                    canvas.drawPath(path, paint);
+                }
+                i11++;
+                layout2 = layout;
+                spanned = spanned2;
+                hx0VarArr = hx0VarArr2;
+                i10 = i12;
+            }
+            i10++;
+            layout2 = layout;
         }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
     }
 }

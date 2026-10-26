@@ -1,44 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class hb0 extends s4.m0 {
-    public final /* synthetic */ ib0 a;
+public final class hb0 implements Menu {
+    public final k80 a;
+    public final b3 b;
+    public final Runnable c;
 
-    public hb0(ib0 ib0Var) {
-        this.a = ib0Var;
+    public hb0(k80 k80Var, b3 b3Var, Runnable runnable) {
+        this.a = k80Var;
+        this.b = b3Var;
+        this.c = runnable;
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        int R;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        s4.n0 layoutManager = recyclerView.getLayoutManager();
-        jb0 jb0Var = this.a.c3;
-        if (layoutManager != jb0Var.d || (R = RecyclerView.R(view)) == 0 || jb0Var.f.N()) {
-            return;
-        }
-        if (jb0Var.f.I() == null && jb0Var.f.U == null) {
-            rect.top = AndroidUtilities.dp(2.0f);
-        } else {
-            if (R == 0) {
-                return;
+    @Override // android.view.Menu
+    public final MenuItem add(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final int addIntentOptions(int i10, int i11, int i12, ComponentName componentName, Intent[] intentArr, Intent intent, int i13, MenuItem[] menuItemArr) {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem findItem(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem getItem(int i10) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final boolean hasVisibleItems() {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean isShortcutKey(int i10, KeyEvent keyEvent) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performIdentifierAction(int i10, int i11) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
+        return false;
+    }
+
+    @Override // android.view.Menu
+    public final int size() {
+        return 0;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10, int i11, int i12, int i13) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i10, int i11, int i12, CharSequence charSequence) {
+        Runnable runnable = this.c;
+        if (runnable == null || !org.telegram.ui.ActionBar.c5.r.contains(Integer.valueOf(i11)) || !MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+            h2 h2Var = new h2(this, i11, 8);
+            k80 k80Var = this.a;
+            k80Var.c(0, charSequence, h2Var, false);
+            if (runnable != null && org.telegram.ui.ActionBar.c5.r.contains(Integer.valueOf(i11))) {
+                k80Var.M(runnable);
             }
-            R--;
-            cb0 cb0Var = jb0Var.d;
-            cb0Var.B1();
-            if (R > cb0Var.U) {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
         }
-        rect.right = jb0Var.d.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i10, int i11, int i12, CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(CharSequence charSequence) {
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i10, int i11, int i12, int i13) {
+        add(i10, i11, i12, LocaleController.getString(i13));
+        return null;
+    }
+
+    @Override // android.view.Menu
+    public final void clear() {
+    }
+
+    @Override // android.view.Menu
+    public final void close() {
+    }
+
+    @Override // android.view.Menu
+    public final void removeGroup(int i10) {
+    }
+
+    @Override // android.view.Menu
+    public final void removeItem(int i10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setQwertyMode(boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupEnabled(int i10, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupVisible(int i10, boolean z10) {
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupCheckable(int i10, boolean z10, boolean z11) {
     }
 }

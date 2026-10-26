@@ -3,12 +3,12 @@ package w3;
 import e2.x;
 import f2.w;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements d9.k, w {
+public final /* synthetic */ class e implements e9.k, w {
     public final /* synthetic */ h a;
 
-    @Override // d9.k
+    @Override // e9.k
     public Object apply(Object obj) {
         q qVar = (q) obj;
         this.a.getClass();
@@ -16,7 +16,7 @@ public final /* synthetic */ class e implements d9.k, w {
     }
 
     @Override // f2.w
-    public void b(long j10, x xVar) {
+    public void e(long j10, x xVar) {
         c3.b.c(j10, xVar, this.a.K);
     }
 }

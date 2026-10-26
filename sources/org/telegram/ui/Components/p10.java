@@ -1,91 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class p10 extends URLSpan {
-    public static final /* synthetic */ int e = 0;
-    public final String a;
-    public final TLRPC.TL_messageEntityFormattedDate b;
-    public final q11 c;
-    public final boolean d;
+public class p10 extends CharacterStyle implements UpdateAppearance {
+    public int a;
+    public int b;
+    public float c;
+    public final org.telegram.ui.ActionBar.u6 d;
 
-    public p10(String str, q11 q11Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
-        super(str);
-        this.a = str;
-        this.b = tL_messageEntityFormattedDate;
-        this.c = q11Var;
-        this.d = false;
+    public p10(int i10) {
+        this(i10, null);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v0 */
-    /* JADX WARN: Type inference failed for: r4v1 */
-    /* JADX WARN: Type inference failed for: r4v2 */
-    /* JADX WARN: Type inference failed for: r4v3, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r4v4 */
-    /* JADX WARN: Type inference failed for: r4v5 */
-    public static CharSequence a(CharSequence charSequence, boolean z10) {
-        if (charSequence instanceof Spanned) {
-            Spanned spanned = (Spanned) charSequence;
-            int i10 = 0;
-            p10[] p10VarArr = (p10[]) spanned.getSpans(0, spanned.length(), p10.class);
-            int length = p10VarArr.length;
-            ?? r42 = 0;
-            while (i10 < length) {
-                p10 p10Var = p10VarArr[i10];
-                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = p10Var.b;
-                if (tL_messageEntityFormattedDate.flags != 0 && (p10Var.d != z10 || (z10 && tL_messageEntityFormattedDate.relative))) {
-                    if (r42 == 0) {
-                        charSequence = new SpannableStringBuilder(spanned);
-                        r42 = charSequence;
-                    }
-                    int spanStart = r42.getSpanStart(p10Var);
-                    int spanEnd = r42.getSpanEnd(p10Var);
-                    String formatEntityFormattedDate = z10 ? LocaleController.formatEntityFormattedDate(p10Var.b) : p10Var.a;
-                    r42.removeSpan(p10Var);
-                    r42.replace(spanStart, spanEnd, formatEntityFormattedDate);
-                    r42.setSpan(new p10(p10Var, z10), spanStart, formatEntityFormattedDate.length() + spanStart, 33);
-                }
-                i10++;
-                r42 = r42;
-            }
-        }
-        return charSequence;
-    }
-
-    public static CharSequence b(SpannableStringBuilder spannableStringBuilder) {
-        return a(spannableStringBuilder, false);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
+    @Override // android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        this.a = org.telegram.ui.ActionBar.y6.o1(this.c, org.telegram.ui.ActionBar.y6.w0(this.b, this.d));
         int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        q11 q11Var = this.c;
-        if (q11Var != null) {
-            q11Var.a(textPaint);
+        int i10 = this.a;
+        if (color != i10) {
+            textPaint.setColor(i10);
         }
-        textPaint.setUnderlineText(i10 == color);
     }
 
-    public p10(p10 p10Var, boolean z10) {
-        super(p10Var.a);
-        this.a = p10Var.a;
-        this.b = p10Var.b;
-        this.c = p10Var.c;
-        this.d = z10;
-    }
-
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
+    public p10(int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+        this.c = 1.0f;
+        this.b = i10;
+        this.d = u6Var;
     }
 }

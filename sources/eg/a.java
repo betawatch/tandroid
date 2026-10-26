@@ -1,18 +1,20 @@
 package eg;
 
-import android.graphics.Bitmap;
-import java.util.List;
+import java.nio.ShortBuffer;
+import sb.b;
+import u7.s;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public final int a;
-    public final Bitmap b;
-    public final List c;
+public interface a {
+    public static final b q;
+    public static final s t;
 
-    public a(Bitmap bitmap, int i10, List list) {
-        this.c = list;
-        this.b = bitmap;
-        this.a = i10;
+    static {
+        int i10 = 7;
+        q = new b(i10);
+        t = new s(i10);
     }
+
+    void k0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
 }

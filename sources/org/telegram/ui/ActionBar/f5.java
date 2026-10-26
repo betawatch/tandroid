@@ -1,156 +1,19 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.util.SparseIntArray;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class f5 implements g6 {
-    public final /* synthetic */ int a;
-    public SparseIntArray b;
-    public Object c;
+public interface f5 {
+    void a(float f7);
 
-    public /* synthetic */ f5() {
-        this.a = 0;
-    }
+    void b(ActionBarLayout actionBarLayout, boolean z10);
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // org.telegram.ui.ActionBar.g6
-    public final boolean a() {
-        switch (this.a) {
-        }
-        return k6.I.q();
-    }
+    void e(int[] iArr);
 
-    @Override // org.telegram.ui.ActionBar.g6
-    public final void b(float f7, float f10, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                k6.q(f7, f10, i10, i11);
-                break;
-            default:
-                g6 g6Var = (g6) this.c;
-                if (g6Var != null) {
-                    g6Var.b(f7, f10, i10, i11);
-                    break;
-                } else {
-                    k6.q(f7, f10, i10, i11);
-                    break;
-                }
-        }
-    }
+    boolean h(r2 r2Var, ActionBarLayout actionBarLayout);
 
-    @Override // org.telegram.ui.ActionBar.g6
-    public final ColorFilter c() {
-        switch (this.a) {
-            case 0:
-                return k6.v3;
-            default:
-                g6 g6Var = (g6) this.c;
-                return g6Var == null ? k6.v3 : g6Var.c();
-        }
-    }
+    boolean j();
 
-    @Override // org.telegram.ui.ActionBar.g6
-    public final Paint d(String str) {
-        switch (this.a) {
-            case 0:
-                return k6.U0(str);
-            default:
-                g6 g6Var = (g6) this.c;
-                return g6Var == null ? k6.U0(str) : g6Var.d(str);
-        }
-    }
+    boolean k(ActionBarLayout actionBarLayout);
 
-    @Override // org.telegram.ui.ActionBar.g6
-    public final int e(int i10) {
-        switch (this.a) {
-            case 0:
-                return g(i10);
-            default:
-                g6 g6Var = (g6) this.c;
-                return g6Var == null ? k6.x0(null, i10, false) : g6Var.e(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g6
-    public final boolean f() {
-        switch (this.a) {
-            case 0:
-                return false;
-            default:
-                g6 g6Var = (g6) this.c;
-                return g6Var == null ? k6.c1() : g6Var.f();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g6
-    public final int g(int i10) {
-        switch (this.a) {
-            case 0:
-                SparseIntArray sparseIntArray = this.b;
-                int indexOfKey = sparseIntArray.indexOfKey(i10);
-                return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : k6.x0(null, i10, false);
-            default:
-                SparseIntArray sparseIntArray2 = this.b;
-                int indexOfKey2 = sparseIntArray2.indexOfKey(i10);
-                if (indexOfKey2 >= 0) {
-                    return sparseIntArray2.valueAt(indexOfKey2);
-                }
-                g6 g6Var = (g6) this.c;
-                return g6Var == null ? k6.x0(null, i10, false) : g6Var.g(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g6
-    public final Drawable getDrawable(String str) {
-        switch (this.a) {
-            case 0:
-                return null;
-            default:
-                g6 g6Var = (g6) this.c;
-                return g6Var == null ? k6.Q0(str) : g6Var.getDrawable(str);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g6
-    public final void h(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                g6 g6Var = (g6) this.c;
-                if (g6Var != null) {
-                    g6Var.h(i10, i11);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g6
-    public final int i(int i10) {
-        switch (this.a) {
-            case 0:
-                return this.b.get(i10);
-            default:
-                g6 g6Var = (g6) this.c;
-                return g6Var == null ? k6.x0(null, i10, false) : g6Var.i(i10);
-        }
-    }
-
-    public f5(g6 g6Var) {
-        this.a = 1;
-        this.b = new SparseIntArray();
-        this.c = g6Var;
-        j();
-    }
-
-    public void j() {
-    }
-
-    private final /* synthetic */ void k(int i10, int i11) {
-    }
+    boolean l(ActionBarLayout actionBarLayout, g5 g5Var);
 }

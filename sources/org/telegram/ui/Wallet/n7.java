@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class n7 extends View {
     public final /* synthetic */ t7 a;
@@ -47,12 +47,12 @@ public final class n7 extends View {
         int i12;
         t7 t7Var;
         Path path;
-        x5 x5Var;
+        w5 w5Var;
         float f14;
         t7 t7Var2 = this.a;
         RectF rectF7 = t7Var2.D1;
         Path path2 = t7Var2.I;
-        x5 x5Var2 = t7Var2.c;
+        w5 w5Var2 = t7Var2.c;
         Matrix matrix = t7Var2.W;
         Paint paint2 = t7Var2.F;
         RectF rectF8 = t7Var2.H;
@@ -78,20 +78,20 @@ public final class n7 extends View {
                 f14 = f16 * f16;
             }
             ArrayList arrayList2 = arrayList;
-            float A = com.google.android.gms.internal.play_billing.k3.A(f14, 0.4f, 0.6f, q7Var.e);
+            float C = c3.h0.C(f14, 0.4f, 0.6f, q7Var.e);
             paint3.setColor(-1);
             paint3.setAlpha((int) (Utilities.clamp01(f14) * 130.0f));
             canvas.save();
             canvas.translate(q7Var.a, q7Var.b);
             canvas.rotate(q7Var.g);
             path3.rewind();
-            float f17 = -A;
+            float f17 = -C;
             float f18 = f17 * 2.0f;
             path3.moveTo(0.0f, f18);
-            float f19 = A * 0.35f;
+            float f19 = C * 0.35f;
             float f20 = f17 * 0.35f;
             path3.lineTo(f19, f20);
-            float f21 = A * 2.0f;
+            float f21 = C * 2.0f;
             path3.lineTo(f21, 0.0f);
             path3.lineTo(f19, f19);
             path3.lineTo(0.0f, f21);
@@ -114,11 +114,11 @@ public final class n7 extends View {
             i15++;
             p7 p7Var = (p7) obj2;
             float clamp01 = f22 - Utilities.clamp01(p7Var.c / 0.42f);
-            float x10 = org.telegram.ui.Cells.b1.x(clamp01, clamp01, clamp01, f22);
+            float A = org.telegram.ui.d3.A(clamp01, clamp01, clamp01, f22);
             paint2.setColor(-1);
             paint2.setAlpha((int) (clamp01 * 90.0f));
             paint2.setStrokeWidth(AndroidUtilities.dp(2.4f) * clamp01);
-            canvas.drawCircle(p7Var.a, p7Var.b, com.google.android.gms.internal.play_billing.k3.A(x10, 0.43f, 0.42f, t7Var2.U()), paint2);
+            canvas.drawCircle(p7Var.a, p7Var.b, c3.h0.C(A, 0.43f, 0.42f, t7Var2.U()), paint2);
             arrayList3 = arrayList3;
             size2 = size2;
             f22 = 1.0f;
@@ -144,13 +144,13 @@ public final class n7 extends View {
             paint5.setColor(Color.argb((int) (clamp012 * 180.0f), 255, 255, 255));
             canvas.drawPath(path4, paint5);
         }
-        float w9 = com.google.android.gms.internal.play_billing.k3.w(t7Var2.a0, 0.6f, t7Var2.b0, 10.0f);
+        float x9 = c3.h0.x(t7Var2.a0, 0.6f, t7Var2.b0, 10.0f);
         matrix.setScale(t7Var2.Y0 * 1.5f, 1.0f);
         matrix.postRotate(-24.0f);
         float f24 = t7Var2.Y0;
-        matrix.postTranslate(com.google.android.gms.internal.play_billing.k3.t(w9, f24, 0.45f, (-f24) * 0.25f), 0.0f);
+        matrix.postTranslate(c3.h0.u(x9, f24, 0.45f, (-f24) * 0.25f), 0.0f);
         t7Var2.V.setLocalMatrix(matrix);
-        ArrayList<RectF> stickerObstacles = x5Var2.getStickerObstacles();
+        ArrayList<RectF> stickerObstacles = w5Var2.getStickerObstacles();
         RectF rectF9 = stickerObstacles.get(0);
         RectF rectF10 = stickerObstacles.get(i10);
         RectF rectF11 = stickerObstacles.get(2);
@@ -162,7 +162,7 @@ public final class n7 extends View {
         int size3 = G.size();
         int i16 = 0;
         Paint paint6 = paint3;
-        x5 x5Var3 = x5Var2;
+        w5 w5Var3 = w5Var2;
         float f25 = 0.0f;
         float f26 = 0.0f;
         float f27 = 0.0f;
@@ -191,14 +191,14 @@ public final class n7 extends View {
                 max = f26;
                 rectF = rectF7;
                 path = path5;
-                x5Var = x5Var3;
+                w5Var = w5Var3;
                 paint = paint6;
                 rectF3 = rectF16;
                 t7Var = t7Var2;
                 path5 = path;
                 t7Var2 = t7Var;
                 paint6 = paint;
-                x5Var3 = x5Var;
+                w5Var3 = w5Var;
                 rectF7 = rectF;
                 rectF9 = rectF4;
                 rectF12 = rectF6;
@@ -218,13 +218,13 @@ public final class n7 extends View {
             float clamp013 = Utilities.clamp01(s7Var.r.a);
             RectF rectF17 = rectF10;
             float f32 = f26;
-            float A2 = com.google.android.gms.internal.play_billing.k3.A(clamp013, 0.2f, 0.8f, (((1.0f - (s7Var.q.a * 0.9f)) * 0.04f * f31) + 1.0f) * t7Var2.U() * s7Var.g.a * s7Var.h.a);
-            if (a2 == null || A2 < 1.0f) {
+            float C2 = c3.h0.C(clamp013, 0.2f, 0.8f, (((1.0f - (s7Var.q.a * 0.9f)) * 0.04f * f31) + 1.0f) * t7Var2.U() * s7Var.g.a * s7Var.h.a);
+            if (a2 == null || C2 < 1.0f) {
                 f27 = f29;
                 path5 = path5;
                 f28 = f28;
                 paint6 = paint6;
-                x5Var3 = x5Var3;
+                w5Var3 = w5Var3;
                 rectF7 = rectF7;
                 rectF9 = rectF9;
                 rectF12 = rectF12;
@@ -249,9 +249,9 @@ public final class n7 extends View {
                 float f34 = r7Var3.a - (sin * 0.3f);
                 float f35 = (dp3 * 0.22f) + (r7Var2.a - (sin2 * 0.3f));
                 float clamp014 = Utilities.clamp01((f31 * 1.5f) + (3.0f * max2) + r7Var6.a + r7Var5.a);
-                rectF7.set(Math.min(f33, f34) - A2, Math.min(dp4, f35) - A2, Math.max(f33, f34) + A2, Math.max(dp4, f35) + A2);
+                rectF7.set(Math.min(f33, f34) - C2, Math.min(dp4, f35) - C2, Math.max(f33, f34) + C2, Math.max(dp4, f35) + C2);
                 boolean intersects = RectF.intersects(rectF7, rectF12);
-                float f36 = A2 * 0.4f;
+                float f36 = C2 * 0.4f;
                 rectF8.set(f33 - f36, dp4 - f36, f33 + f36, dp4 + f36);
                 max = Math.max(f32, Math.max(t7.n(rectF8, rectF9), t7.n(rectF8, rectF13)) * clamp013);
                 f30 = Math.max(f30, t7.n(rectF8, rectF17) * clamp013);
@@ -274,18 +274,18 @@ public final class n7 extends View {
                 rectF5 = rectF13;
                 rectF6 = rectF18;
                 rectF15 = rectF15;
-                t7Var3.t(canvas, s7Var, f34, f35, com.google.android.gms.internal.play_billing.k3.A(r7Var6.a, 0.07f, (0.08f * max2) + 0.97f, A2), Math.max(max2, r7Var5.a * 0.5f), r7Var6.a, clamp014 * clamp013);
+                t7Var3.t(canvas, s7Var, f34, f35, c3.h0.C(r7Var6.a, 0.07f, (0.08f * max2) + 0.97f, C2), Math.max(max2, r7Var5.a * 0.5f), r7Var6.a, clamp014 * clamp013);
                 canvas.restore();
-                float f37 = f33 - A2;
-                float f38 = dp4 - A2;
-                float f39 = f33 + A2;
-                float f40 = dp4 + A2;
+                float f37 = f33 - C2;
+                float f38 = dp4 - C2;
+                float f39 = f33 + C2;
+                float f40 = dp4 + C2;
                 int saveLayer = canvas.saveLayer(f37, f38, f39, f40, null);
                 Paint paint7 = paint6;
                 paint7.setAlpha((int) (clamp013 * 255.0f));
                 float f41 = r7Var5.a;
                 if (f41 > 0.004f) {
-                    t7Var3.r(canvas, a2, f33, dp4, A2, f41, 1.0f, r7Var.a, s7Var.U, s7Var.V);
+                    t7Var3.r(canvas, a2, f33, dp4, C2, f41, 1.0f, r7Var.a, s7Var.U, s7Var.V);
                     t7Var = t7Var3;
                     canvas2 = canvas;
                     i12 = saveLayer;
@@ -297,7 +297,7 @@ public final class n7 extends View {
                     t7Var = t7Var3;
                     canvas2.save();
                     canvas2.rotate(r7Var.a, f33, dp4);
-                    float f42 = A2 / 2.0f;
+                    float f42 = C2 / 2.0f;
                     rectF8.set(f33 - f42, dp4 - f42, f33 + f42, dp4 + f42);
                     canvas2.drawBitmap(a2, (Rect) null, rectF8, paint);
                     canvas2.restore();
@@ -308,22 +308,22 @@ public final class n7 extends View {
                 if (intersects) {
                     if (intersects) {
                         path = path5;
-                        x5Var = x5Var3;
-                        x5Var.h(path, t7Var.Y0, t7Var.Z0);
+                        w5Var = w5Var3;
+                        w5Var.h(path, t7Var.Y0, t7Var.Z0);
                         canvas2.drawPath(path, t7Var.E1);
                     } else {
                         path = path5;
-                        x5Var = x5Var3;
+                        w5Var = w5Var3;
                     }
                     canvas2.restoreToCount(i11);
                 } else {
                     path = path5;
-                    x5Var = x5Var3;
+                    w5Var = w5Var3;
                 }
                 path5 = path;
                 t7Var2 = t7Var;
                 paint6 = paint;
-                x5Var3 = x5Var;
+                w5Var3 = w5Var;
                 rectF7 = rectF;
                 rectF9 = rectF4;
                 rectF12 = rectF6;
@@ -343,7 +343,7 @@ public final class n7 extends View {
         float f43 = f25;
         float f44 = f26;
         float f45 = f27;
-        x5 x5Var4 = x5Var3;
+        w5 w5Var4 = w5Var3;
         float f46 = f28;
         Paint paint8 = t7Var4.k0;
         Paint paint9 = t7Var4.l0;
@@ -394,27 +394,27 @@ public final class n7 extends View {
             }
             canvas.restore();
         }
-        v5 v5Var = x5Var4.N;
+        u5 u5Var = w5Var4.N;
         float round = Math.round(f12 * 20.0f) / 20.0f;
-        if (round != x5Var4.J) {
-            x5Var4.J = round;
-            x5Var4.H.invalidate();
+        if (round != w5Var4.J) {
+            w5Var4.J = round;
+            w5Var4.H.invalidate();
         }
         float f54 = Math.max(f11, f7) > 0.0f ? 1.0f : 0.0f;
-        if (f54 != x5Var4.h) {
-            x5Var4.h = f54;
-            v5Var.invalidate();
+        if (f54 != w5Var4.h) {
+            w5Var4.h = f54;
+            u5Var.invalidate();
         }
         float round2 = Math.round(f7 * 20.0f) / 20.0f;
         float round3 = Math.round(f10 * 20.0f) / 20.0f;
-        if (round2 != x5Var4.d0) {
-            x5Var4.d0 = round2;
-            v5Var.invalidate();
-            x5Var4.O.invalidate();
+        if (round2 != w5Var4.d0) {
+            w5Var4.d0 = round2;
+            u5Var.invalidate();
+            w5Var4.O.invalidate();
         }
-        if (round3 != x5Var4.e0) {
-            x5Var4.e0 = round3;
-            x5Var4.G.invalidate();
+        if (round3 != w5Var4.e0) {
+            w5Var4.e0 = round3;
+            w5Var4.G.invalidate();
         }
     }
 }

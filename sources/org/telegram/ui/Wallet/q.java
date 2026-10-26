@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.o71;
+import org.telegram.ui.zc1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -55,14 +55,14 @@ public final /* synthetic */ class q implements Runnable {
                 q qVar = new q(l0Var, str, callback, this.e, this.f, this.h, this.n, this.r, this.s, this.v, this.w, this.x, 1);
                 if (l0Var.I() && !l0Var.H()) {
                     l0.F("send " + str + ": asking passcode");
-                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                     if (U != null) {
-                        org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                        m2Var.a = true;
+                        org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
+                        p2Var.a = true;
                         boolean[] zArr = {false};
                         y yVar = new y(zArr, callback);
-                        yVar.V = new o71(25, zArr, qVar);
-                        U.showAsSheet(yVar, m2Var);
+                        yVar.V = new zc1(15, zArr, qVar);
+                        U.showAsSheet(yVar, p2Var);
                         break;
                     }
                 } else {
@@ -205,41 +205,41 @@ public final /* synthetic */ class q implements Runnable {
                                 l0.F("prepare sending");
                                 String str10 = str9;
                                 long j14 = j11;
-                                final t tVar = new t(l0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, k0Var2, j14, user2);
+                                final u uVar = new u(l0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, k0Var2, j14, user2);
                                 if (d2Var2 == null) {
                                     final int i11 = 0;
-                                    l0Var4.b.prepareTonConnectTransfer(i0Var, d2Var2, a1.g.o(j14, "deposit:"), new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.u
+                                    l0Var4.b.prepareTonConnectTransfer(i0Var, d2Var2, a1.g.o(j14, "deposit:"), new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.v
                                         @Override // org.telegram.messenger.Utilities.Callback2
                                         public final void run(Object obj3, Object obj4) {
                                             TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
                                             String str11 = (String) obj4;
                                             switch (i11) {
                                                 case 0:
-                                                    tVar.run(sendtransfer, null, str11);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                                 default:
-                                                    tVar.run(sendtransfer, null, str11);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                             }
                                         }
                                     });
                                     return;
                                 } else if (nftitem4 == null) {
-                                    l0Var4.b.prepareSend(i0Var, str8, j12, str7, bArr2, str10, tVar);
+                                    l0Var4.b.prepareSend(i0Var, str8, j12, str7, bArr2, str10, uVar);
                                     return;
                                 } else {
                                     final int i12 = 1;
-                                    l0Var4.b.prepareSendNFT(i0Var, str8, nftitem4.address, str7, new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.u
+                                    l0Var4.b.prepareSendNFT(i0Var, str8, nftitem4.address, str7, new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.v
                                         @Override // org.telegram.messenger.Utilities.Callback2
                                         public final void run(Object obj3, Object obj4) {
                                             TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
                                             String str11 = (String) obj4;
                                             switch (i12) {
                                                 case 0:
-                                                    tVar.run(sendtransfer, null, str11);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                                 default:
-                                                    tVar.run(sendtransfer, null, str11);
+                                                    uVar.run(sendtransfer, null, str11);
                                                     break;
                                             }
                                         }
@@ -271,7 +271,7 @@ public final /* synthetic */ class q implements Runnable {
                         l0.F("prepare sending");
                         String str102 = str92;
                         long j142 = j11;
-                        final t tVar2 = new t(l0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, k0Var2, j142, user2);
+                        final u uVar2 = new u(l0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, k0Var2, j142, user2);
                         if (d2Var2 == null) {
                         }
                     }

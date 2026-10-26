@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ImportingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private e0.q builder;
@@ -55,7 +55,7 @@ public class ImportingService extends Service implements NotificationCenter.Noti
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.k0(ApplicationLoader.applicationContext).b(5, null);
+        new e0.j0(ApplicationLoader.applicationContext).b(5, null);
         for (int i10 = 0; i10 < 4; i10++) {
             NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.historyImportProgressChanged);
             NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.stickersImportProgressChanged);
@@ -78,8 +78,8 @@ public class ImportingService extends Service implements NotificationCenter.Noti
             NotificationsController.checkOtherNotificationsChannel();
             e0.q qVar = new e0.q(ApplicationLoader.applicationContext, null);
             this.builder = qVar;
-            qVar.E.icon = android.R.drawable.stat_sys_upload;
-            qVar.E.when = System.currentTimeMillis();
+            qVar.F.icon = android.R.drawable.stat_sys_upload;
+            qVar.F.when = System.currentTimeMillis();
             e0.q qVar2 = this.builder;
             qVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
             qVar2.g(LocaleController.getString(R.string.AppName));
@@ -95,8 +95,21 @@ public class ImportingService extends Service implements NotificationCenter.Noti
         qVar3.n = 100;
         qVar3.o = 0;
         qVar3.p = true;
-        startForeground(5, qVar3.b());
-        new e0.k0(ApplicationLoader.applicationContext).e(null, 5, this.builder.b());
+        try {
+            startForeground(5, qVar3.b());
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+        new e0.j0(ApplicationLoader.applicationContext).e(null, 5, this.builder.b());
         return 2;
+    }
+
+    public void onTimeout(int i10, int i11) {
+        FileLog.d("ImportingService timeout, type = " + i11);
+        try {
+            stopForeground(true);
+        } catch (Throwable unused) {
+        }
+        stopSelf();
     }
 }

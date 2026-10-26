@@ -65,8 +65,8 @@ public abstract class t3 implements b8 {
                 try {
                     g gVar = (g) it.next();
                     hashSet.add(gVar == null ? null : gVar == g.CONCURRENT ? Collector.Characteristics.CONCURRENT : gVar == g.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
-                } catch (ClassCastException e7) {
-                    j$.util.g.a(e7, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e10) {
+                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }
@@ -80,8 +80,8 @@ public abstract class t3 implements b8 {
                 try {
                     Collector.Characteristics characteristics = (Collector.Characteristics) it2.next();
                     hashSet.add(characteristics == null ? null : characteristics == Collector.Characteristics.CONCURRENT ? g.CONCURRENT : characteristics == Collector.Characteristics.UNORDERED ? g.UNORDERED : g.IDENTITY_FINISH);
-                } catch (ClassCastException e10) {
-                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e11) {
+                    j$.util.g.a(e11, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }

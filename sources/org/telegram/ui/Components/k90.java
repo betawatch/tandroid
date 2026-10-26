@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k90 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -22,13 +22,13 @@ public final /* synthetic */ class k90 implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.r.j();
+                this.b.r.e();
                 break;
             case 1:
                 r90 r90Var = this.b;
-                org.telegram.ui.ActionBar.m1 m1Var = r90Var.s;
-                if (m1Var != null) {
-                    m1Var.d(true);
+                org.telegram.ui.ActionBar.o1 o1Var = r90Var.s;
+                if (o1Var != null) {
+                    o1Var.d(true);
                 }
                 r90Var.r.a();
                 break;
@@ -47,28 +47,28 @@ public final /* synthetic */ class k90 implements View.OnClickListener {
                 r90Var2.E = o90Var;
                 o90Var.m(R.raw.qr_code_logo);
                 r90Var2.E.show();
-                org.telegram.ui.ActionBar.m1 m1Var2 = r90Var2.s;
-                if (m1Var2 != null) {
-                    m1Var2.d(true);
+                org.telegram.ui.ActionBar.o1 o1Var2 = r90Var2.s;
+                if (o1Var2 != null) {
+                    o1Var2.d(true);
                     break;
                 }
                 break;
             default:
                 r90 r90Var3 = this.b;
-                org.telegram.ui.ActionBar.m1 m1Var3 = r90Var3.s;
-                if (m1Var3 != null) {
-                    m1Var3.d(true);
+                org.telegram.ui.ActionBar.o1 o1Var3 = r90Var3.s;
+                if (o1Var3 != null) {
+                    o1Var3.d(true);
                 }
-                org.telegram.ui.ActionBar.o2 o2Var = r90Var3.c;
-                if (o2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o2Var.getParentActivity());
+                org.telegram.ui.ActionBar.r2 r2Var = r90Var3.c;
+                if (r2Var.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(r2Var.getParentActivity());
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.RevokeLink);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.RevokeAlert);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new i90(r90Var3, 1));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new j90(r90Var3, 1));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                     TextView textView = (TextView) alertDialog$Builder.a.d(-1);
                     if (textView != null) {
-                        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.q7, null);
+                        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.q7, null);
                     }
                     alertDialog$Builder.p();
                     break;

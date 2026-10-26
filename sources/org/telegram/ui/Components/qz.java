@@ -1,34 +1,133 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qz extends w9 {
-    public final /* synthetic */ rz G;
+public final class qz extends lm0 {
+    public final boolean c;
+    public final /* synthetic */ sz d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qz(rz rzVar, Context context) {
-        super(context);
-        this.G = rzVar;
+    public qz(sz szVar, boolean z10) {
+        this.d = szVar;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        rz rzVar = this.G;
-        tz tzVar = rzVar.d;
-        boolean z10 = rzVar.c;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        boolean z10 = this.c;
+        sz szVar = this.d;
+        return (z10 ? szVar.n1 : szVar.m1).size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        ArrayList<TLRPC.Document> arrayList;
+        ImageLocation forSticker;
+        y9 y9Var = (y9) e1Var.a;
+        sz szVar = this.d;
+        boolean z10 = this.c;
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z10 ? szVar.n1 : szVar.m1).get(i10);
+        y9Var.setTag(stickerSetCovered);
+        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
+            TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(szVar.c1).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
+            arrayList = stickerSet == null ? null : stickerSet.documents;
+        } else {
+            arrayList = stickerSetCovered.covers;
+        }
+        TLRPC.Document document = stickerSetCovered.cover;
+        if (document == null) {
+            if (arrayList == null || arrayList.isEmpty()) {
+                document = null;
+            } else {
+                if (stickerSetCovered.set != null) {
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        if (arrayList.get(i11).id == stickerSetCovered.set.thumb_document_id) {
+                            document = arrayList.get(i11);
+                            break;
+                        }
+                    }
+                }
+                document = null;
+                if (document == null) {
+                    document = arrayList.get(0);
+                }
+            }
+        }
+        if (document == null) {
+            return;
+        }
         if (z10) {
+            y9Var.setColorFilter(MessageObject.isTextColorEmoji(document) ? org.telegram.ui.ActionBar.y6.o0(szVar.Z1) : null);
+        }
+        TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.y6.c7, 0.2f);
+        if (svgThumb != null) {
+            svgThumb.overrideWidthAndHeight(512, 512);
+        }
+        if (closestPhotoSizeWithSize == null || MessageObject.isVideoSticker(document)) {
+            closestPhotoSizeWithSize = document;
+        }
+        boolean z11 = closestPhotoSizeWithSize instanceof TLRPC.Document;
+        if (z11) {
+            forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document);
+        } else if (!(closestPhotoSizeWithSize instanceof TLRPC.PhotoSize)) {
+            return;
+        } else {
+            forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document, stickerSetCovered.set.thumb_version);
+        }
+        if (forSticker == null) {
             return;
         }
-        if (!MediaDataController.getInstance(tzVar.c1).isStickerPackUnread(z10, ((TLRPC.StickerSetCovered) getTag()).set.id) || tzVar.s1 == null) {
-            return;
+        String str = !LiteMode.isEnabled(z10 ? LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD : 1) ? "30_30_firstframe" : "30_30";
+        if (z11 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
+            if (svgThumb != null) {
+                y9Var.n(ImageLocation.getForDocument(document), str, svgThumb, stickerSetCovered);
+                return;
+            } else {
+                y9Var.j(ImageLocation.getForDocument(document), str, forSticker, null, 0, stickerSetCovered);
+                return;
+            }
         }
-        canvas.drawCircle(canvas.getWidth() - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f), tzVar.s1);
+        String str2 = str;
+        ImageLocation imageLocation = forSticker;
+        if (imageLocation.imageType == 1) {
+            y9Var.i(imageLocation, str2, "tgs", svgThumb, stickerSetCovered);
+        } else {
+            y9Var.i(imageLocation, null, "webp", svgThumb, stickerSetCovered);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        pz pzVar = new pz(this, this.d.getContext());
+        pzVar.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+        pzVar.setLayerNum(1);
+        pzVar.setAspectFit(true);
+        pzVar.setLayoutParams(new s4.q0(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f)));
+        return new vl0(pzVar);
     }
 }

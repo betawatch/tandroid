@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kh implements ch.a {
+public final /* synthetic */ class kh implements dh.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -15,19 +15,18 @@ public final /* synthetic */ class kh implements ch.a {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // ch.a
-    public final void e(bh.a aVar, RectF rectF) {
+    @Override // dh.a
+    public final void b(ch.a aVar, RectF rectF) {
         switch (this.a) {
         }
         aVar.a = true;
     }
 
-    @Override // ch.a
+    @Override // dh.a
     public final void f(Canvas canvas, RectF rectF) {
         Canvas canvas2;
         RectF rectF2;
         li liVar;
-        ei.m7 m7Var;
         switch (this.a) {
             case 0:
                 ti tiVar = (ti) this.b;
@@ -40,7 +39,7 @@ public final /* synthetic */ class kh implements ch.a {
                     } else {
                         canvas2 = canvas;
                         rectF2 = rectF;
-                        hh.d.b(liVar2.c, canvas2, rectF2, liVar2.d, tiVar.getContainerView(), (int) (((i10 == 0 && (liVar = tiVar.C0) != null && liVar.getVisibility() == 0) ? (1.0f - tiVar.C0.getAlpha()) * liVar2.getAlpha() : liVar2.getAlpha()) * 255.0f));
+                        ih.d.b(liVar2.c, canvas2, rectF2, liVar2.d, tiVar.getContainerView(), (int) (((i10 == 0 && (liVar = tiVar.C0) != null && liVar.getVisibility() == 0) ? (1.0f - tiVar.C0.getAlpha()) * liVar2.getAlpha() : liVar2.getAlpha()) * 255.0f));
                     }
                     i10++;
                     canvas = canvas2;
@@ -48,27 +47,16 @@ public final /* synthetic */ class kh implements ch.a {
                 }
                 break;
             case 1:
-                tz tzVar = (tz) this.b;
-                ey eyVar = tzVar.P;
-                hh.d.a(eyVar, canvas, rectF, eyVar, tzVar);
-                uw uwVar = tzVar.h0;
-                hh.d.a(uwVar, canvas, rectF, uwVar, tzVar);
-                ax axVar = tzVar.D0;
-                hh.d.a(axVar, canvas, rectF, axVar, tzVar);
+                sz szVar = (sz) this.b;
+                dy dyVar = szVar.P;
+                ih.d.a(dyVar, canvas, rectF, dyVar, szVar);
+                uw uwVar = szVar.h0;
+                ih.d.a(uwVar, canvas, rectF, uwVar, szVar);
+                zw zwVar = szVar.D0;
+                ih.d.a(zwVar, canvas, rectF, zwVar, szVar);
                 break;
             default:
-                xv0 xv0Var = (xv0) this.b;
-                for (qu0 qu0Var : xv0Var.k0) {
-                    bh.l lVar = qu0Var.n;
-                    if (lVar != null) {
-                        lVar.f(canvas, rectF);
-                    }
-                }
-                ns0 ns0Var = xv0Var.V;
-                if (ns0Var != null && (m7Var = ns0Var.S) != null) {
-                    m7Var.f(canvas, rectF);
-                    break;
-                }
+                mr0.n((mr0) this.b, canvas, rectF);
                 break;
         }
     }

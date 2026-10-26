@@ -3,19 +3,22 @@ package org.telegram.messenger;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.os.BatteryManager;
+import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import w7.r;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class LiteMode {
     private static int BATTERY_HIGH = 10;
+    private static final long BATTERY_LEVEL_QUERY_INTERVAL = 60000;
     private static int BATTERY_LOW = 10;
     private static int BATTERY_MEDIUM = 10;
     public static final int FLAGS_ANIMATED_EMOJI = 28700;
@@ -47,20 +50,23 @@ public class LiteMode {
     public static int PRESET_LOW = 198684;
     public static int PRESET_MEDIUM = 204383;
     public static int PRESET_POWER_SAVER = 0;
-    private static int lastBatteryLevelCached = -1;
-    private static long lastBatteryLevelChecked;
+    private static volatile boolean batteryLevelQueryRunning = false;
+    private static volatile int lastBatteryLevel = -1;
+    private static volatile long lastBatteryLevelChecked;
     private static boolean lastPowerSaverApplied;
     private static boolean loaded;
     private static HashSet<Utilities.Callback<Boolean>> onPowerSaverAppliedListeners;
     private static int powerSaverLevel;
     private static int value;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class BatteryReceiver extends BroadcastReceiver {
+        private BatteryReceiver() {
+        }
+
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
-            long unused = LiteMode.lastBatteryLevelChecked = 0L;
-            LiteMode.getValue();
+            LiteMode.onBatteryChanged(intent);
         }
     }
 
@@ -71,52 +77,14 @@ public class LiteMode {
         onPowerSaverAppliedListeners.add(callback);
     }
 
-    /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
-        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v4 long, still in use, count: 2, list:
-          (r0v4 long) from 0x000a: ARITH (r0v4 long) - (wrap:long:0x0008: SGET  A[WRAPPED] (LINE:9) org.telegram.messenger.LiteMode.lastBatteryLevelChecked long) A[WRAPPED] (LINE:11)
-          (r0v4 long) from 0x0015: PHI (r0v2 long) = (r0v1 long), (r0v4 long) binds: [B:11:0x0013, B:4:0x0010] A[DONT_GENERATE, DONT_INLINE]
-        	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
-        	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
-        	at jadx.core.dex.visitors.regions.TernaryMod.makeTernaryInsn(TernaryMod.java:114)
-        	at jadx.core.dex.visitors.regions.TernaryMod.processRegion(TernaryMod.java:62)
-        	at jadx.core.dex.visitors.regions.TernaryMod.enterRegion(TernaryMod.java:45)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:67)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
-        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverse(DepthRegionTraversal.java:19)
-        	at jadx.core.dex.visitors.regions.TernaryMod.process(TernaryMod.java:35)
-        	at jadx.core.dex.visitors.regions.IfRegionVisitor.process(IfRegionVisitor.java:34)
-        	at jadx.core.dex.visitors.regions.IfRegionVisitor.visit(IfRegionVisitor.java:30)
-        */
     public static int getBatteryLevel() {
-        /*
-            int r0 = org.telegram.messenger.LiteMode.lastBatteryLevelCached
-            if (r0 < 0) goto L13
-            long r0 = java.lang.System.currentTimeMillis()
-            long r2 = org.telegram.messenger.LiteMode.lastBatteryLevelChecked
-            long r2 = r0 - r2
-            r4 = 12000(0x2ee0, double:5.929E-320)
-            int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r2 <= 0) goto L2a
-            goto L15
-        L13:
-            r0 = 0
-        L15:
-            android.content.Context r2 = org.telegram.messenger.ApplicationLoader.applicationContext
-            java.lang.String r3 = "batterymanager"
-            java.lang.Object r2 = r2.getSystemService(r3)
-            android.os.BatteryManager r2 = (android.os.BatteryManager) r2
-            if (r2 == 0) goto L2a
-            r3 = 4
-            int r2 = r2.getIntProperty(r3)
-            org.telegram.messenger.LiteMode.lastBatteryLevelCached = r2
-            org.telegram.messenger.LiteMode.lastBatteryLevelChecked = r0
-        L2a:
-            int r0 = org.telegram.messenger.LiteMode.lastBatteryLevelCached
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.LiteMode.getBatteryLevel():int");
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (!batteryLevelQueryRunning && (lastBatteryLevelChecked == 0 || elapsedRealtime - lastBatteryLevelChecked > BATTERY_LEVEL_QUERY_INTERVAL)) {
+            batteryLevelQueryRunning = true;
+            lastBatteryLevelChecked = elapsedRealtime;
+            Utilities.globalQueue.postRunnable(new a2(13));
+        }
+        return lastBatteryLevel;
     }
 
     public static int getPowerSaverLevel() {
@@ -128,6 +96,14 @@ public class LiteMode {
 
     public static int getValue() {
         return getValue(false);
+    }
+
+    private static boolean isBatteryLow(int i10) {
+        int i11 = powerSaverLevel;
+        if (i11 < 100) {
+            return i10 >= 0 && i10 <= i11;
+        }
+        return true;
     }
 
     public static boolean isEnabled(int i10) {
@@ -147,7 +123,7 @@ public class LiteMode {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPowerSaverApplied$0(boolean z10) {
+    public static /* synthetic */ void lambda$onPowerSaverApplied$1(boolean z10) {
         Iterator<Utilities.Callback<Boolean>> it = onPowerSaverAppliedListeners.iterator();
         while (it.hasNext()) {
             Utilities.Callback<Boolean> next = it.next();
@@ -214,17 +190,33 @@ public class LiteMode {
         loaded = true;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void onBatteryChanged(Intent intent) {
+        if (intent == null) {
+            return;
+        }
+        int intExtra = intent.getIntExtra("level", -1);
+        int intExtra2 = intent.getIntExtra("scale", -1);
+        if (intExtra < 0 || intExtra2 <= 0) {
+            return;
+        }
+        setBatteryLevel(a8.ee.b(Math.round((intExtra * 100.0f) / intExtra2), 0, 100));
+    }
+
     private static void onFlagsUpdate(int i10, int i11) {
         int i12 = (~i10) & i11;
         if ((i12 & FLAGS_ANIMATED_EMOJI) > 0) {
-            org.telegram.ui.Components.r5.u();
+            org.telegram.ui.Components.t5.u();
         }
         int i13 = i12 & 32;
         if (i13 > 0) {
             SvgHelper.SvgDrawable.updateLiteValues();
         }
         if (i13 > 0) {
-            org.telegram.ui.ActionBar.k6.r1(true);
+            org.telegram.ui.ActionBar.y6.r1(true);
+        }
+        if (a8.pf.a(i12, 256) || a8.pf.a(i12, 262144)) {
+            oi.q.f();
         }
     }
 
@@ -235,7 +227,7 @@ public class LiteMode {
             onFlagsUpdate(PRESET_POWER_SAVER, getValue(true));
         }
         if (onPowerSaverAppliedListeners != null) {
-            AndroidUtilities.runOnUIThread(new c4(2, z10));
+            AndroidUtilities.runOnUIThread(new e4(2, z10));
         }
     }
 
@@ -250,6 +242,33 @@ public class LiteMode {
             return (i10 & (-4113)) | (UserConfig.hasPremiumOnAccounts() ? 16 : 4096);
         }
         return i10;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void queryBatteryLevel() {
+        int i10 = -1;
+        try {
+            BatteryManager batteryManager = (BatteryManager) ApplicationLoader.applicationContext.getSystemService("batterymanager");
+            if (batteryManager != null) {
+                i10 = batteryManager.getIntProperty(4);
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+        lastBatteryLevelChecked = SystemClock.elapsedRealtime();
+        batteryLevelQueryRunning = false;
+        if (i10 < 0 || i10 > 100) {
+            return;
+        }
+        setBatteryLevel(i10);
+    }
+
+    public static void registerBatteryReceiver() {
+        try {
+            onBatteryChanged(ApplicationLoader.applicationContext.registerReceiver(new BatteryReceiver(), new IntentFilter("android.intent.action.BATTERY_CHANGED")));
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
     }
 
     public static void removeOnPowerSaverAppliedListener(Utilities.Callback<Boolean> callback) {
@@ -268,8 +287,17 @@ public class LiteMode {
         savePreference();
     }
 
+    private static void setBatteryLevel(int i10) {
+        lastBatteryLevelChecked = SystemClock.elapsedRealtime();
+        if (lastBatteryLevel == i10) {
+            return;
+        }
+        lastBatteryLevel = i10;
+        AndroidUtilities.runOnUIThread(new a2(12));
+    }
+
     public static void setPowerSaverLevel(int i10) {
-        powerSaverLevel = r.b(i10, 0, 100);
+        powerSaverLevel = a8.ee.b(i10, 0, 100);
         savePreference();
         getValue(false);
     }
@@ -302,8 +330,8 @@ public class LiteMode {
                         BATTERY_LOW = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(0)).value;
                         BATTERY_MEDIUM = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(1)).value;
                         BATTERY_HIGH = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(2)).value;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                     }
                 }
             }
@@ -316,9 +344,7 @@ public class LiteMode {
             loadPreference();
         }
         if (!z10) {
-            int batteryLevel = getBatteryLevel();
-            int i10 = powerSaverLevel;
-            if (batteryLevel <= i10 && i10 > 0) {
+            if (powerSaverLevel > 0 && isBatteryLow(getBatteryLevel())) {
                 if (!lastPowerSaverApplied) {
                     lastPowerSaverApplied = true;
                     onPowerSaverApplied(true);

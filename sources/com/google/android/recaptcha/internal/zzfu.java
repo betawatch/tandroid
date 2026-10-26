@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import kd.c;
-import ld.a;
-import md.i;
-import td.p;
-import v7.i8;
+import a8.jd;
+import ld.c;
+import md.a;
+import nd.i;
+import ud.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzfu extends i implements p {
     int zza;
@@ -21,16 +21,16 @@ final class zzfu extends i implements p {
         this.zzc = j10;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final c create(Object obj, c cVar) {
         zzfu zzfuVar = new zzfu(this.zzb, this.zzc, cVar);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // td.p
+    @Override // ud.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(id.i.a);
+        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0040, code lost:
@@ -43,7 +43,7 @@ final class zzfu extends i implements p {
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x006a A[Catch: Exception -> 0x0011, TRY_ENTER, TryCatch #0 {Exception -> 0x0011, blocks: (B:6:0x000d, B:7:0x0055, B:13:0x006a, B:14:0x0078, B:17:0x0042), top: B:2:0x0007 }] */
-    @Override // md.a
+    @Override // nd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -57,7 +57,7 @@ final class zzfu extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                i8.b(obj);
+                jd.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j10 = this.zzc;
@@ -66,17 +66,17 @@ final class zzfu extends i implements p {
                 obj = zzgbVar.zzq(j10, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                i8.b(obj);
+                jd.b(obj);
             } else {
                 if (i10 != 2) {
-                    i8.b(obj);
+                    jd.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                i8.b(obj);
+                jd.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;

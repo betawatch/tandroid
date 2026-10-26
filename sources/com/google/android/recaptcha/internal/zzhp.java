@@ -1,24 +1,24 @@
 package com.google.android.recaptcha.internal;
 
-import id.c;
-import id.g;
+import a8.id;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
+import jd.c;
+import jd.g;
 import kotlin.jvm.internal.i;
-import v7.h8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
     private final c zza;
 
     public zzhp() {
         int i10 = zzby.zza;
-        this.zza = h8.a(zzho.zza);
+        this.zza = id.a(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -43,11 +43,11 @@ public final class zzhp implements zzhn {
                 }
                 try {
                     throw zzcf.zza(zzzj.zzg(zzhlVar.zzb().getErrorStream()).zzi());
-                } catch (Exception e7) {
-                    throw new zzcg(zzce.zzc, zzcd.zzG, e7.getMessage(), null, 8, null);
+                } catch (Exception e10) {
+                    throw new zzcg(zzce.zzc, zzcd.zzG, e10.getMessage(), null, 8, null);
                 }
-            } catch (Exception e10) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e10.getMessage(), null, 8, null);
+            } catch (Exception e11) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e11.getMessage(), null, 8, null);
             }
         } finally {
         }

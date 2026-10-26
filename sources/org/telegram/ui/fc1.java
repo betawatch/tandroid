@@ -1,145 +1,195 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.ImageView;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class fc1 extends org.telegram.ui.Components.w9 {
-    public Drawable G;
-    public final boolean H;
-    public float I;
-    public float J;
-    public final /* synthetic */ qc1 K;
+public final class fc1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fc1(qc1 qc1Var, Activity activity) {
-        super(activity);
-        this.K = qc1Var;
-        this.H = true;
+    public /* synthetic */ fc1(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public Drawable getBackground() {
-        return this.G;
-    }
-
-    @Override // org.telegram.ui.Components.w9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.I = 0.0f;
-        this.J = 0.0f;
-        boolean z10 = this.H;
-        qc1 qc1Var = this.K;
-        if (z10) {
-            Drawable drawable = this.G;
-            if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.yc0)) {
-                drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.G.draw(canvas);
-            } else if (drawable instanceof BitmapDrawable) {
-                if (((BitmapDrawable) drawable).getTileModeX() == Shader.TileMode.REPEAT) {
-                    canvas.save();
-                    float f7 = 2.0f / AndroidUtilities.density;
-                    canvas.scale(f7, f7);
-                    this.G.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
-                    this.G.draw(canvas);
-                    canvas.restore();
-                } else {
-                    int measuredHeight = getMeasuredHeight();
-                    float max = Math.max(getMeasuredWidth() / this.G.getIntrinsicWidth(), measuredHeight / this.G.getIntrinsicHeight());
-                    int ceil = (int) Math.ceil(this.G.getIntrinsicWidth() * max * qc1Var.z1);
-                    int ceil2 = (int) Math.ceil(this.G.getIntrinsicHeight() * max * qc1Var.z1);
-                    int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-                    int i10 = (measuredHeight - ceil2) / 2;
-                    this.J = i10;
-                    this.G.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
-                    this.G.draw(canvas);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                tc1 tc1Var = ((hc1) obj).a;
+                if (!tc1Var.q1.a()) {
+                    tc1Var.S1.setVisibility(8);
+                    break;
                 }
-            }
-        }
-        if (qc1Var.b2) {
-            if (!qc1Var.c.isFinished() && qc1Var.c.computeScrollOffset()) {
-                if (qc1Var.c.getStartX() < qc1Var.X1 && qc1Var.c.getStartX() > 0) {
-                    qc1Var.Y1 = qc1Var.c.getCurrX();
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                ((ud1) obj).a = null;
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                ((ye1) obj).setScrollEnabled(true);
+                break;
+            case 3:
+                cg1 cg1Var = (cg1) obj;
+                if (animator.equals(cg1Var.d.K)) {
+                    cg1Var.d.K = null;
+                    break;
                 }
-                qc1Var.V0();
-                invalidate();
-            }
-            canvas.save();
-            float f10 = -qc1Var.Y1;
-            this.I = f10;
-            canvas.translate(f10, 0.0f);
-            super.onDraw(canvas);
-            canvas.restore();
-        } else {
-            super.onDraw(canvas);
-        }
-        if (qc1Var.N1) {
-            float f11 = qc1Var.o1;
-            if (f11 > 0.0f) {
-                canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * qc1Var.p1)));
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        qc1 qc1Var = this.K;
-        org.telegram.ui.Components.o91 o91Var = qc1Var.w1;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        o91Var.getClass();
-        float a2 = org.telegram.ui.Components.o91.a(measuredWidth, measuredHeight);
-        qc1Var.z1 = a2;
-        if (qc1Var.F1) {
-            setScaleX(a2);
-            setScaleY(qc1Var.z1);
-        }
-        if (qc1Var.b == 2) {
-            getMeasuredWidth();
-            getMeasuredHeight();
-        }
-        int measuredWidth2 = getMeasuredWidth() + (getMeasuredHeight() << 16);
-        if (qc1Var.c2 != measuredWidth2) {
-            qc1Var.b2 = false;
-            if (qc1Var.D1 != null) {
-                int measuredHeight2 = (int) ((getMeasuredHeight() / qc1Var.D1.getHeight()) * r1.getWidth());
-                if (measuredHeight2 - getMeasuredWidth() > 100) {
-                    qc1Var.b2 = true;
-                    qc1Var.a2 = (int) ((qc1Var.D1.getHeight() / getMeasuredHeight()) * getMeasuredWidth());
-                    float measuredWidth3 = (measuredHeight2 - getMeasuredWidth()) / 2.0f;
-                    qc1Var.Y1 = measuredWidth3;
-                    qc1Var.Z1 = measuredWidth3;
-                    qc1Var.X1 = measuredWidth3 * 2.0f;
-                    s(measuredHeight2, getMeasuredHeight());
-                    this.v = true;
-                    qc1Var.V0();
+                break;
+            case 4:
+                rg1 rg1Var = (rg1) obj;
+                rg1Var.d = null;
+                rg1Var.a = null;
+                rg1Var.b = false;
+                rg1Var.f.c.setAllowDrawCursor(true);
+                break;
+            case 5:
+                ((org.telegram.ui.Wallet.f3) obj).K = null;
+                break;
+            case 6:
+                ((org.telegram.ui.Wallet.m3) obj).f();
+                break;
+            case 7:
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) obj;
+                if (m5Var.J0 == animator) {
+                    m5Var.J0 = null;
+                    break;
                 }
-            }
-            if (!qc1Var.b2) {
-                s(-1, -1);
-                this.v = false;
-            }
+                break;
+            case 8:
+                org.telegram.ui.Wallet.k5 k5Var = (org.telegram.ui.Wallet.k5) obj;
+                k5Var.h = false;
+                k5Var.n = null;
+                k5Var.b.setLayerType(0, null);
+                break;
+            case 9:
+                org.telegram.ui.Wallet.r5 r5Var = (org.telegram.ui.Wallet.r5) obj;
+                r5Var.N = 0.0f;
+                r5Var.O = 0.0f;
+                r5Var.b0 = null;
+                break;
+            case 10:
+                org.telegram.ui.Wallet.l6 l6Var = (org.telegram.ui.Wallet.l6) obj;
+                l6Var.I = null;
+                l6Var.i0 = 1.0f;
+                l6Var.h0 = 0.0f;
+                l6Var.g0 = 0.0f;
+                l6Var.e();
+                break;
+            case 11:
+                org.telegram.ui.Wallet.n8 n8Var = (org.telegram.ui.Wallet.n8) obj;
+                EditTextBoldCursor editTextBoldCursor = n8Var.b;
+                if (n8Var.s == animator) {
+                    n8Var.s = null;
+                    n8Var.a.setVisibility(n8Var.x ? 4 : 0);
+                    editTextBoldCursor.setVisibility(n8Var.x ? 0 : 4);
+                    if (n8Var.x && !n8Var.y) {
+                        editTextBoldCursor.requestFocus();
+                        AndroidUtilities.showKeyboard(editTextBoldCursor);
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                org.telegram.ui.Wallet.h9 h9Var = (org.telegram.ui.Wallet.h9) obj;
+                h9Var.n = null;
+                h9Var.d.setVisibility(h9Var.w ? 4 : 0);
+                h9Var.f.setVisibility(h9Var.x ? 0 : 4);
+                break;
+            case 13:
+                org.telegram.ui.Components.ig0 ig0Var = (org.telegram.ui.Components.ig0) obj;
+                ((ni1) ig0Var.b).getClass();
+                ((ni1) ig0Var.b).c.setVisibility(4);
+                break;
+            case 14:
+                ((org.telegram.ui.web.a1) obj).s.setVisibility(8);
+                break;
+            case 15:
+                rg.e0 e0Var = (rg.e0) obj;
+                e0Var.a.getPainting().c(null, e0Var.a.getCurrentColor(), true, null);
+                e0Var.r = null;
+                break;
+            case 16:
+                super.onAnimationEnd(animator);
+                sg.m0 m0Var = (sg.m0) obj;
+                ImageView imageView = m0Var.c;
+                m0Var.c = m0Var.d;
+                m0Var.d = imageView;
+                imageView.bringToFront();
+                m0Var.d.setVisibility(8);
+                m0Var.h = null;
+                break;
+            case 17:
+                sg.t1 t1Var = (sg.t1) obj;
+                if (animator == t1Var.r) {
+                    t1Var.f = t1Var.h;
+                    t1Var.h = -1;
+                    t1Var.r = null;
+                    break;
+                }
+                break;
+            case 18:
+                tg.p0 p0Var = (tg.p0) obj;
+                p0Var.s = p0Var.r ? 1.0f : 0.0f;
+                p0Var.e();
+                break;
+            case 19:
+                tg.a2 a2Var = (tg.a2) ((fi.c0) obj).b;
+                a2Var.F = true;
+                a2Var.invalidate();
+                break;
+            case 20:
+                ug.f fVar = (ug.f) ((ug.e) obj).b;
+                int i11 = ug.f.K;
+                fVar.d();
+                break;
+            case 21:
+                ug.f fVar2 = (ug.f) obj;
+                fVar2.d = null;
+                fVar2.e();
+                break;
+            case 22:
+                super.onAnimationEnd(animator);
+                ug.n nVar = ((ug.i) obj).b;
+                nVar.b.d = 0.0f;
+                nVar.d0 = null;
+                nVar.j(nVar.L);
+                break;
+            case 23:
+                vg.b bVar = (vg.b) obj;
+                bVar.b = 1.0f;
+                bVar.invalidate();
+                break;
+            case 24:
+                xh.g gVar = (xh.g) obj;
+                Iterator it = gVar.h.iterator();
+                while (it.hasNext()) {
+                    xh.c cVar = (xh.c) it.next();
+                    if (gVar.c.size() < gVar.d) {
+                        gVar.c.push(cVar);
+                    }
+                    it.remove();
+                }
+                Runnable runnable = gVar.q;
+                if (runnable != null) {
+                    runnable.run();
+                    gVar.q = null;
+                }
+                gVar.r = null;
+                gVar.invalidateSelf();
+                break;
+            default:
+                ((zh.g0) obj).b.w.setVisibility(8);
+                break;
         }
-        qc1Var.c2 = measuredWidth2;
-    }
-
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        this.G = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.w9, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.G == drawable || super.verifyDrawable(drawable);
     }
 }

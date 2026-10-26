@@ -1,84 +1,121 @@
 package ji;
 
-import ai.p;
-import ai.vc;
+import ag.v;
 import android.content.Context;
-import android.text.SpannableStringBuilder;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import ei.d;
-import hg.o;
-import hg.r0;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.xq;
-import w7.z5;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class b extends bb {
-    public final vc X;
-    public b71 Y;
+public final class b extends FrameLayout implements p6 {
+    public final u6 a;
+    public final y9 b;
+    public final TextView c;
+    public final TextView d;
+    public final ImageView e;
 
-    public b(Context context, TLRPC.Chat chat, Runnable runnable) {
-        super(context, (g6) null, false);
-        this.K = AndroidUtilities.dp(30.0f);
-        mm0 mm0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(130.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.setClipToPadding(false);
-        d dVar = new d(context, this.resourcesProvider, true);
-        dVar.setText(LocaleController.getString(R.string.Cancel));
-        dVar.e();
-        dVar.f();
-        dVar.setOnClickListener(new r0(this, 7));
-        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-        d dVar2 = new d(context, this.resourcesProvider, true);
-        dVar2.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.CommunityInviteOnlyChannelMessageOwner : R.string.CommunityInviteOnlyGroupMessageOwner));
-        dVar2.f();
-        dVar2.setOnClickListener(new p(22, this, runnable));
-        vc vcVar = new vc(context, 3);
-        TextView textView = (TextView) vcVar.d;
-        TextView textView2 = (TextView) vcVar.c;
-        this.X = vcVar;
-        vcVar.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(17.0f));
-        ((w9) vcVar.b).e(chat, new h9(chat));
-        textView2.setText(DialogObject.getName(chat));
-        int i11 = k6.G6;
-        r6.W(textView2, i11, this.resourcesProvider);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "* ");
-        spannableStringBuilder.setSpan(new xq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(isChannelAndNotMegaGroup ? R.string.CommunityInviteOnlyChannelInfo : R.string.CommunityInviteOnlyGroupInfo));
-        r6.W(textView, i11, this.resourcesProvider);
-        textView.setText(spannableStringBuilder);
-        this.containerView.addView(dVar2, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(70.0f) + AndroidUtilities.navigationBarHeight));
-        this.containerView.addView(dVar, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
-        this.Y.N(false);
+    public b(Context context, u6 u6Var) {
+        super(context);
+        this.a = u6Var;
+        y9 y9Var = new y9(context);
+        this.b = y9Var;
+        y9Var.setRoundRadius(AndroidUtilities.dp(7.3125f));
+        addView(y9Var, gb1.h(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(16);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, gb1.r(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setSingleLine(true);
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, gb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, gb1.h(-1, -2.0f, 19, 58.0f, 0.0f, 48.0f, 1.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.msg_inputarrow);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, gb1.h(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        updateColors();
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final lm0 w(mm0 mm0Var) {
-        b71 b71Var = new b71(this.d, getContext(), this.currentAccount, 0, true, new o(this, 12), this.resourcesProvider);
-        this.Y = b71Var;
-        b71Var.r = false;
-        return b71Var;
+    public final void a(int i10, TLRPC.Chat chat) {
+        if (chat == null) {
+            return;
+        }
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(chat.id);
+        setTitle(DialogObject.getShortName(chat));
+        setSubtitle(LocaleController.formatPluralString("CommunityWithChats", chatFull != null ? chatFull.linked_peers.size() : 0, new Object[0]));
+        this.b.f(chat, new j9(chat));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence z() {
-        return null;
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(y6.z6));
+        hashSet.add(Integer.valueOf(y6.G6));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Drawable drawable = y6.S0;
+        y9 y9Var = this.b;
+        v.a(canvas, drawable, (y9Var.getWidth() / 2.0f) + y9Var.getLeft(), (y9Var.getHeight() / 2.0f) + y9Var.getTop(), y9Var.getHeight());
+        super.dispatchDraw(canvas);
+        u6 u6Var = this.a;
+        Paint d = u6Var != null ? u6Var.d("paintDivider") : null;
+        if (d == null) {
+            d = y6.k0;
+        }
+        canvas.drawLine(AndroidUtilities.dp(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, d);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        int i10 = y6.z6;
+        u6 u6Var = this.a;
+        this.e.setColorFilter(y6.w0(i10, u6Var));
+        this.c.setTextColor(y6.w0(y6.G6, u6Var));
+        this.d.setTextColor(y6.w0(i10, u6Var));
     }
 }

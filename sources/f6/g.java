@@ -1,156 +1,53 @@
 package f6;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.media.session.s;
-import android.view.KeyEvent;
-import c6.p;
-import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import e6.j;
-import n6.l;
+import com.google.android.gms.cast.MediaError;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g extends s {
-    public final /* synthetic */ h a;
-
-    public g(h hVar) {
-        this.a = hVar;
+public abstract class g {
+    public void a() {
     }
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    @Override // android.support.v4.media.session.s
-    public final void onCustomAction(String str, Bundle bundle) {
-        h.v.b("onCustomAction with action = %s", str);
-        int hashCode = str.hashCode();
-        h hVar = this.a;
-        switch (hashCode) {
-            case -1699820260:
-                if (str.equals(MediaIntentReceiver.ACTION_REWIND)) {
-                    long j10 = -hVar.e.c;
-                    e6.h hVar2 = hVar.n;
-                    if (hVar2 == null) {
-                        return;
-                    }
-                    long min = Math.min(hVar2.g(), Math.max(0L, hVar2.a() + j10));
-                    e6.h hVar3 = hVar.n;
-                    if (hVar3 == null) {
-                        return;
-                    }
-                    hVar3.q(new p(min));
-                    return;
-                }
-                break;
-            case -668151673:
-                if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                    d6.g gVar = hVar.d;
-                    if (gVar != null) {
-                        gVar.b(true);
-                        return;
-                    }
-                    return;
-                }
-                break;
-            case -124479363:
-                if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                    d6.g gVar2 = hVar.d;
-                    if (gVar2 != null) {
-                        gVar2.b(false);
-                        return;
-                    }
-                    return;
-                }
-                break;
-            case 1362116196:
-                if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
-                    long j11 = hVar.e.c;
-                    e6.h hVar4 = hVar.n;
-                    if (hVar4 == null) {
-                        return;
-                    }
-                    long min2 = Math.min(hVar4.g(), Math.max(0L, hVar4.a() + j11));
-                    e6.h hVar5 = hVar.n;
-                    if (hVar5 == null) {
-                        return;
-                    }
-                    hVar5.q(new p(min2));
-                    return;
-                }
-                break;
-        }
-        Intent intent = new Intent(str);
-        intent.setComponent(hVar.g);
-        hVar.a.sendBroadcast(intent);
+    public void c() {
     }
 
-    @Override // android.support.v4.media.session.s
-    public final boolean onMediaButtonEvent(Intent intent) {
-        e6.h hVar;
-        h.v.b("onMediaButtonEvent", new Object[0]);
-        KeyEvent keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT");
-        if (keyEvent == null) {
-            return true;
-        }
-        if ((keyEvent.getKeyCode() != 127 && keyEvent.getKeyCode() != 126) || (hVar = this.a.n) == null) {
-            return true;
-        }
-        hVar.r();
-        return true;
+    public void d() {
     }
 
-    @Override // android.support.v4.media.session.s
-    public final void onPause() {
-        h.v.b("onPause", new Object[0]);
-        e6.h hVar = this.a.n;
-        if (hVar != null) {
-            hVar.r();
-        }
+    public void e() {
     }
 
-    @Override // android.support.v4.media.session.s
-    public final void onPlay() {
-        h.v.b("onPlay", new Object[0]);
-        e6.h hVar = this.a.n;
-        if (hVar != null) {
-            hVar.r();
-        }
+    public void f() {
     }
 
-    @Override // android.support.v4.media.session.s
-    public final void onSeekTo(long j10) {
-        h.v.b("onSeekTo %d", Long.valueOf(j10));
-        e6.h hVar = this.a.n;
-        if (hVar == null) {
-            return;
-        }
-        hVar.q(new p(j10));
+    public void g() {
     }
 
-    @Override // android.support.v4.media.session.s
-    public final void onSkipToNext() {
-        h.v.b("onSkipToNext", new Object[0]);
-        e6.h hVar = this.a.n;
-        if (hVar != null) {
-            l.e("Must be called from the main thread.");
-            if (hVar.w()) {
-                e6.h.x(new j(hVar, 2));
-            } else {
-                e6.h.t();
-            }
-        }
+    public void o() {
     }
 
-    @Override // android.support.v4.media.session.s
-    public final void onSkipToPrevious() {
-        h.v.b("onSkipToPrevious", new Object[0]);
-        e6.h hVar = this.a.n;
-        if (hVar != null) {
-            l.e("Must be called from the main thread.");
-            if (hVar.w()) {
-                e6.h.x(new j(hVar, 1));
-            } else {
-                e6.h.t();
-            }
-        }
+    public void b(MediaError mediaError) {
+    }
+
+    public void i(int[] iArr) {
+    }
+
+    public void k(d6.o[] oVarArr) {
+    }
+
+    public void l(int[] iArr) {
+    }
+
+    public void n(int[] iArr) {
+    }
+
+    public void j(int[] iArr, int i10) {
+    }
+
+    public void m(ArrayList arrayList, ArrayList arrayList2, int i10) {
+    }
+
+    public void h(String str, long j10, int i10, long j11, long j12) {
     }
 }

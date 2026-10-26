@@ -1,13 +1,104 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface vq {
-    void j0(int i10, int i11, boolean z10);
+public final class vq implements TextWatcher {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    void k(boolean z10);
+    public vq(yq yqVar, int i10) {
+        this.c = yqVar;
+        this.b = i10;
+    }
 
-    int r0(int i10);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10;
+        int i11 = this.a;
+        int i12 = this.b;
+        View view = this.c;
+        switch (i11) {
+            case 0:
+                yq yqVar = (yq) view;
+                EditTextBoldCursor[] editTextBoldCursorArr = yqVar.E;
+                if (!yqVar.r) {
+                    yqVar.r = true;
+                    int i13 = 0;
+                    while (i13 < editable.length()) {
+                        char charAt = editable.charAt(i13);
+                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
+                            editable.replace(i13, i13 + 1, "");
+                            i13--;
+                        }
+                        i13++;
+                    }
+                    if (editable.length() != 0) {
+                        try {
+                            i10 = Integer.parseInt(editTextBoldCursorArr[i12].getText().toString(), 16) | (-16777216);
+                        } catch (Exception unused) {
+                            i10 = -1;
+                        }
+                        yqVar.setColorInner(i10);
+                        int color = yqVar.getColor();
+                        if (editable.length() == 6) {
+                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                            editTextBoldCursorArr[i12].setSelection(editable.length());
+                        }
+                        yqVar.v[yqVar.S].a(color);
+                        yqVar.a.x0(color, yqVar.S, true);
+                        yqVar.r = false;
+                        break;
+                    } else {
+                        yqVar.r = false;
+                        break;
+                    }
+                }
+                break;
+            default:
+                NumberTextView numberTextView = (NumberTextView) view;
+                int codePointCount = i12 - Character.codePointCount(editable, 0, editable.length());
+                if (codePointCount >= 30) {
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false);
+                    break;
+                } else {
+                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, true);
+                    break;
+                }
+        }
+    }
 
-    void u();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public vq(int i10, NumberTextView numberTextView) {
+        this.b = i10;
+        this.c = numberTextView;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
 }

@@ -1,44 +1,57 @@
 package ai;
 
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.text.TextUtils;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class i1 {
-    public final long a;
-    public final TLRPC.Document b;
-    public final long c;
-    public final int d;
-    public final String e;
-    public ee f;
-    public int g = -1;
-    public RadialGradient h;
-    public Paint i;
-    public org.telegram.ui.Components.r5 j;
-    public org.telegram.ui.Components.f6 k;
-    public final RectF l;
-    public final org.telegram.ui.Components.yc m;
+public final /* synthetic */ class i1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t1 b;
+    public final /* synthetic */ String c;
 
-    public i1(j1 j1Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        new Matrix();
-        this.l = new RectF();
-        this.m = new org.telegram.ui.Components.yc(j1Var);
-        this.a = tL_starGiftUnique.id;
-        TLRPC.Document document = tL_starGiftUnique.getDocument();
-        this.b = document;
-        this.c = document == null ? 0L : document.id;
-        this.d = ((TL_stars.starGiftAttributeBackdrop) ha.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
-        this.e = tL_starGiftUnique.slug;
-        this.f = new ee(1, 6);
-        float dp = AndroidUtilities.dp(36.0f);
-        float f7 = (-dp) / 2.0f;
-        float f10 = dp / 2.0f;
-        this.f.c.set(f7, f7, f10, f10);
+    public /* synthetic */ i1(t1 t1Var, String str, int i10) {
+        this.a = i10;
+        this.b = t1Var;
+        this.c = str;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        g gVar = (g) obj;
+        switch (this.a) {
+            case 0:
+                t1 t1Var = this.b;
+                if (TextUtils.equals(t1Var.d, this.c)) {
+                    boolean z10 = t1Var.t0 == null;
+                    t1Var.t0 = gVar;
+                    if (!t1Var.v0) {
+                        if (!z10) {
+                            t1Var.j1(gVar);
+                            break;
+                        } else {
+                            t1Var.s0.a(gVar);
+                            t1Var.invalidate();
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                t1 t1Var2 = this.b;
+                if (TextUtils.equals(t1Var2.e, this.c)) {
+                    t1Var2.u0 = gVar;
+                    if (t1Var2.v0 && t1Var2.w0 && t1Var2.A0) {
+                        t1Var2.A0 = false;
+                        t1Var2.z0 = System.currentTimeMillis() + 60000;
+                        t1Var2.A2 = -1;
+                    }
+                    if (t1Var2.v0) {
+                        t1Var2.j1(gVar);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

@@ -1,31 +1,29 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import java.util.List;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e1 implements Utilities.Callback {
+public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ChatObject.Call b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ e1(Object obj, int i10) {
+    public /* synthetic */ e1(ChatObject.Call call, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = call;
+        this.c = tLObject;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((ChatThemeController) this.b).lambda$init$0((List) obj);
-                break;
-            case 1:
-                ((Runnable) this.b).run();
+                this.b.lambda$reloadGroupCall$8(this.c);
                 break;
             default:
-                ((View) this.b).invalidate();
+                this.b.lambda$loadGroupCall$10(this.c);
                 break;
         }
     }

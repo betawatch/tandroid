@@ -1,80 +1,15 @@
 package androidx.biometric;
 
-import android.os.Looper;
-import androidx.lifecycle.p0;
-import java.util.concurrent.Executor;
+import android.os.CancellationSignal;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class y extends p0 {
-    public androidx.lifecycle.z A;
-    public Executor d;
-    public v7.l e;
-    public j6.l f;
-    public u g;
-    public e h;
-    public n4.s i;
-    public x j;
-    public String k;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public androidx.lifecycle.z r;
-    public androidx.lifecycle.z s;
-    public androidx.lifecycle.z t;
-    public androidx.lifecycle.z u;
-    public androidx.lifecycle.z v;
-    public androidx.lifecycle.z x;
-    public androidx.lifecycle.z z;
-    public int l = 0;
-    public boolean w = true;
-    public int y = 0;
-
-    public static void h(androidx.lifecycle.z zVar, Object obj) {
-        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-            zVar.j(obj);
-        } else {
-            zVar.h(obj);
-        }
+public abstract class y {
+    public static void a(CancellationSignal cancellationSignal) {
+        cancellationSignal.cancel();
     }
 
-    public final int c() {
-        j6.l lVar = this.f;
-        if (lVar == null) {
-            return 0;
-        }
-        u uVar = this.g;
-        int i10 = lVar.a;
-        return i10 != 0 ? i10 : uVar != null ? 15 : 255;
-    }
-
-    public final void d(f fVar) {
-        if (this.s == null) {
-            this.s = new androidx.lifecycle.z();
-        }
-        h(this.s, fVar);
-    }
-
-    public final void e(CharSequence charSequence) {
-        if (this.A == null) {
-            this.A = new androidx.lifecycle.z();
-        }
-        h(this.A, charSequence);
-    }
-
-    public final void f(int i10) {
-        if (this.z == null) {
-            this.z = new androidx.lifecycle.z();
-        }
-        h(this.z, Integer.valueOf(i10));
-    }
-
-    public final void g(boolean z10) {
-        if (this.v == null) {
-            this.v = new androidx.lifecycle.z();
-        }
-        h(this.v, Boolean.valueOf(z10));
+    public static CancellationSignal b() {
+        return new CancellationSignal();
     }
 }

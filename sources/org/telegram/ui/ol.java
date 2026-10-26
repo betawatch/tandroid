@@ -1,69 +1,50 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ol extends cu0 {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ sn c;
+public final class ol extends gu0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ un c;
 
-    public ol(sn snVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
-        this.c = snVar;
-        this.a = messageObject;
-        this.b = photoEntry;
+    public ol(un unVar, ArrayList arrayList, boolean[] zArr) {
+        this.c = unVar;
+        this.a = arrayList;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final mu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return sn.E1(this.c, this.a, null, i10, z10, true);
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final boolean P() {
-        sn snVar = this.c;
-        if (snVar.Y == null || !snVar.C9()) {
-            return false;
-        }
-        snVar.Y.M();
-        return true;
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final MessageObject V() {
-        MessageObject messageObject = this.c.B5;
-        MessageObject messageObject2 = this.a;
-        if (messageObject == messageObject2) {
-            return messageObject2;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final void e(CharSequence charSequence) {
-        this.c.Y.c1(charSequence, false);
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final boolean g() {
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    public final boolean T() {
         return false;
     }
 
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        sn snVar = this.c;
-        if (snVar.B5 != this.a) {
-            return;
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            if (!this.b[size]) {
+                arrayList.remove(size);
+            }
         }
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
-            snVar.s(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
-        } else {
-            snVar.Y.a0();
-        }
+        this.c.pb(arrayList, i11, z10, z11);
+    }
+
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    public final boolean x(int i10) {
+        return this.b[i10];
+    }
+
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return i10;
     }
 }

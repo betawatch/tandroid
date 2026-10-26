@@ -1,39 +1,30 @@
 package zh;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.view.Menu;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n0 b;
+public final class f0 extends ChatActivityEnterView {
+    public final /* synthetic */ i0 s5;
 
-    public /* synthetic */ f0(n0 n0Var, int i10) {
-        this.a = i10;
-        this.b = n0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f0(i0 i0Var, Activity activity, e0 e0Var) {
+        super(activity, e0Var, null, false, null);
+        this.s5 = i0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                String str = (String) obj;
-                n0 n0Var = this.b;
-                if (n0Var.getParentActivity() != null) {
-                    pf.d.r(n0Var.getParentActivity(), str);
-                    break;
-                }
-                break;
-            default:
-                n0 n0Var2 = this.b;
-                c1 c1Var = n0Var2.d;
-                if (c1Var != null && !n0Var2.isFinished) {
-                    c1Var.d1(R.drawable.msg_download, LocaleController.getString(R.string.QrSavedToGallery), null);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void e0(Menu menu) {
+        un.r8(menu, null, false, false, false, false);
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void y0(float f7) {
+        i0 i0Var = this.s5;
+        i0Var.f.setInputBubbleHeight(f7);
+        i0Var.q();
     }
 }

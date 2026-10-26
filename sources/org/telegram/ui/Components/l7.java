@@ -1,53 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l7 implements o1.g {
+public final /* synthetic */ class l7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ m8 b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ l7(Object obj, int i10) {
+    public /* synthetic */ l7(m8 m8Var, TLRPC.TL_error tL_error, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = m8Var;
+        this.c = tL_error;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        ViewGroup viewGroup;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((k8) this.b).S.setBufferedProgress(f7 / 1000.0f);
+                m8.t(this.b, this.c);
                 break;
             case 1:
-                qc qcVar = (qc) this.b;
-                qcVar.o = (int) f7;
-                qcVar.l();
+                m8.w(this.b, this.c);
                 break;
             case 2:
-                if (Math.abs(f7) > ((ub) this.b).getWidth()) {
-                    hVar.c();
-                    break;
-                }
-                break;
-            case 3:
-                ti tiVar = (ti) ((ai.c5) this.b).d;
-                li liVar = tiVar.C0;
-                if (liVar == tiVar.m0 || liVar == tiVar.n0 || (tiVar.F && tiVar.w1 != null)) {
-                    tiVar.i2(1);
-                }
-                tiVar.C0.l(tiVar.o2);
-                viewGroup = ((org.telegram.ui.ActionBar.h3) tiVar).containerView;
-                viewGroup.invalidate();
-                break;
-            case 4:
-                al alVar = (al) this.b;
-                alVar.m0 = f7;
-                alVar.k0();
+                m8.C(this.b, this.c);
                 break;
             default:
-                ((yc0) this.b).y();
+                m8.y(this.b, this.c);
                 break;
         }
     }

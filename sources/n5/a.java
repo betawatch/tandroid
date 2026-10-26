@@ -1,46 +1,45 @@
 package n5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class a implements hd.a {
-    public static final Object c = new Object();
-    public volatile b a;
-    public volatile Object b;
+import a1.g;
+import m1.j;
+import org.telegram.messenger.BuildConfig;
 
-    public static hd.a a(b bVar) {
-        if (bVar instanceof a) {
-            return bVar;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class a {
+    public final int a;
+    public final long b;
+
+    public a(int i10, long j10) {
+        if (i10 == 0) {
+            throw new NullPointerException("Null status");
         }
-        a aVar = new a();
-        aVar.b = c;
-        aVar.a = bVar;
-        return aVar;
+        this.a = i10;
+        this.b = j10;
     }
 
-    @Override // hd.a
-    public final Object get() {
-        Object obj;
-        Object obj2 = this.b;
-        Object obj3 = c;
-        if (obj2 != obj3) {
-            return obj2;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        synchronized (this) {
-            try {
-                obj = this.b;
-                if (obj == obj3) {
-                    obj = this.a.get();
-                    Object obj4 = this.b;
-                    if (obj4 != obj3 && obj4 != obj) {
-                        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj4 + " & " + obj + ". This is likely due to a circular dependency.");
-                    }
-                    this.b = obj;
-                    this.a = null;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+        if (!(obj instanceof a)) {
+            return false;
         }
-        return obj;
+        a aVar = (a) obj;
+        return j.b(this.a, aVar.a) && this.b == aVar.b;
+    }
+
+    public final int hashCode() {
+        int c10 = (j.c(this.a) ^ 1000003) * 1000003;
+        long j10 = this.b;
+        return c10 ^ ((int) (j10 ^ (j10 >>> 32)));
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("BackendResponse{status=");
+        int i10 = this.a;
+        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
+        sb2.append(", nextRequestWaitMillis=");
+        return g.r(sb2, this.b, "}");
     }
 }

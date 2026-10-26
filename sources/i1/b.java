@@ -1,72 +1,40 @@
 package i1;
 
+import a5.k;
 import android.os.Parcel;
 import android.os.Parcelable;
-import m.m3;
-import m.y2;
-import s4.v0;
-import z4.g;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b implements Parcelable.ClassLoaderCreator {
-    public final /* synthetic */ int a;
+public abstract class b implements Parcelable {
+    public final Parcelable a;
+    public static final a b = new a();
+    public static final Parcelable.Creator<b> CREATOR = new k(1);
 
-    public /* synthetic */ b(int i10) {
-        this.a = i10;
+    public b() {
+        this.a = null;
     }
 
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        switch (this.a) {
-            case 0:
-                if (parcel.readParcelable(classLoader) == null) {
-                    return c.b;
-                }
-                throw new IllegalStateException("superState must be null");
-            case 1:
-                return new y2(parcel, classLoader);
-            case 2:
-                return new m3(parcel, classLoader);
-            case 3:
-                return new v0(parcel, classLoader);
-            default:
-                return new g(parcel, classLoader);
-        }
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i10) {
-        switch (this.a) {
-            case 0:
-                return new c[i10];
-            case 1:
-                return new y2[i10];
-            case 2:
-                return new m3[i10];
-            case 3:
-                return new v0[i10];
-            default:
-                return new g[i10];
-        }
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeParcelable(this.a, i10);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        switch (this.a) {
-            case 0:
-                if (parcel.readParcelable(null) == null) {
-                    return c.b;
-                }
-                throw new IllegalStateException("superState must be null");
-            case 1:
-                return new y2(parcel, null);
-            case 2:
-                return new m3(parcel, null);
-            case 3:
-                return new v0(parcel, null);
-            default:
-                return new g(parcel, null);
+    public b(Parcelable parcelable) {
+        if (parcelable != null) {
+            this.a = parcelable == b ? null : parcelable;
+            return;
         }
+        throw new IllegalArgumentException("superState must not be null");
+    }
+
+    public b(Parcel parcel, ClassLoader classLoader) {
+        Parcelable readParcelable = parcel.readParcelable(classLoader);
+        this.a = readParcelable == null ? b : readParcelable;
     }
 }

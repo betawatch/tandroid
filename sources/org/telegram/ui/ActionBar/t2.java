@@ -1,56 +1,59 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.view.View;
-import ei.o8;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.qc;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t2 extends e3 {
-    public final /* synthetic */ h3 H;
+public final /* synthetic */ class t2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t2(h3 h3Var, Context context) {
-        super(h3Var, context);
-        this.H = h3Var;
+    public /* synthetic */ t2(k3 k3Var, int i10) {
+        this.a = i10;
+        this.b = k3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.H.mainContainerDispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e3, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        try {
-            return super.drawChild(canvas, view, j10);
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                k3 k3Var = this.b;
+                k3Var.getClass();
+                k3Var.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h3 h3Var = k3Var.container;
+                if (h3Var != null) {
+                    h3Var.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                k3 k3Var2 = this.b;
+                k3Var2.getClass();
+                k3Var2.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h3 h3Var2 = k3Var2.container;
+                if (h3Var2 != null) {
+                    h3Var2.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.onContainerViewTranslation();
+                break;
+            case 3:
+                this.b.onContainerViewTranslation();
+                break;
+            case 4:
+                this.b.onContainerViewTranslation();
+                break;
+            case 5:
+                k3.j(this.b, valueAnimator);
+                break;
+            case 6:
+                this.b.onContainerViewTranslation();
+                break;
+            default:
+                k3.i(this.b, valueAnimator);
+                break;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        qc.a(this, new o8(5));
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        h3 h3Var = this.H;
-        h3Var.lastInsets = null;
-        h3Var.container.requestApplyInsets();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        qc.h(this);
     }
 }

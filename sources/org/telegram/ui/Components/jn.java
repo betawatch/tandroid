@@ -1,36 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class jn extends org.telegram.ui.cu0 {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ fo c;
+public final class jn extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ go b;
 
-    public jn(fo foVar, int i10) {
-        this.c = foVar;
-        this.b = i10;
+    public /* synthetic */ jn(go goVar, int i10) {
+        this.a = i10;
+        this.b = goVar;
     }
 
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final void D() {
-        if (this.a) {
-            this.c.e0(this.b);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.E.setTranslationY(0.0f);
+                break;
+            case 1:
+                this.b.E.setTranslationY(0.0f);
+                break;
+            default:
+                go goVar = this.b;
+                goVar.f1 = false;
+                goVar.E.setTranslationY(0.0f);
+                goVar.d0();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final void J() {
-        this.c.h0(this.b, null);
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final void W() {
-        this.a = true;
-    }
-
-    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
-    public final boolean z() {
-        return false;
     }
 }

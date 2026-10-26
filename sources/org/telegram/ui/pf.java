@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ un b;
     public final /* synthetic */ int c;
     public final /* synthetic */ ArrayList d;
     public final /* synthetic */ String e;
@@ -22,9 +22,9 @@ public final /* synthetic */ class pf implements View.OnClickListener {
     public final /* synthetic */ of v;
     public final /* synthetic */ Object w;
 
-    public /* synthetic */ pf(sn snVar, int i10, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, of ofVar, int i11) {
+    public /* synthetic */ pf(un unVar, int i10, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, of ofVar, int i11) {
         this.a = i11;
-        this.b = snVar;
+        this.b = unVar;
         this.c = i10;
         this.d = arrayList;
         this.e = str;
@@ -41,21 +41,21 @@ public final /* synthetic */ class pf implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                sn.b0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.w, this.s, this.v);
+                un.C1(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.w, this.s, this.v);
                 break;
             case 1:
-                sn.d0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.w, this.s, this.v);
+                un.V(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.w, this.s, this.v);
                 break;
             default:
-                sn.t0(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.w, this.s, this.v);
+                un.P0(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.w, this.s, this.v);
                 break;
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ pf(sn snVar, int i10, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, of ofVar) {
+    public /* synthetic */ pf(un unVar, int i10, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, of ofVar) {
         this.a = 2;
-        this.b = snVar;
+        this.b = unVar;
         this.c = i10;
         this.d = arrayList;
         this.h = strArr;

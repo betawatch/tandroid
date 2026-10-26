@@ -1,11 +1,11 @@
 package c0;
 
-import j9.y;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import k9.y;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class l implements y {
     public final WeakReference a;
@@ -15,7 +15,7 @@ public final class l implements y {
         this.a = new WeakReference(iVar);
     }
 
-    @Override // j9.y
+    @Override // k9.y
     public final void a(Runnable runnable, Executor executor) {
         this.b.a(runnable, executor);
     }

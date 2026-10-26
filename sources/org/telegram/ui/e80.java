@@ -5,7 +5,7 @@ import j$.util.function.Predicate$-CC;
 import java.util.function.Predicate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e80 implements Predicate {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class e80 implements Predicate {
                 String str2 = (String) obj;
                 return str2 != null && str2.equals((String) this.b);
             default:
-                return sn.T0((sn) this.b, (TLRPC.MessageEntity) obj);
+                return un.W0((un) this.b, (TLRPC.MessageEntity) obj);
         }
     }
 }

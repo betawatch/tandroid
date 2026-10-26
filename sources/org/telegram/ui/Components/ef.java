@@ -16,13 +16,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ef extends wp0 {
+public final class ef extends bq0 {
     public final /* synthetic */ ChatActivityEnterView H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ef(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.sn snVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final ai.u2 u2Var, org.telegram.ui.ActionBar.g6 g6Var) {
+    public ef(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.un unVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final androidx.car.app.utils.a aVar, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
         this.H = chatActivityEnterView;
         this.b = true;
@@ -34,45 +34,45 @@ public final class ef extends wp0 {
         this.G = new ArrayList();
         this.r = peer;
         this.s = tL_channels_sendAsPeers;
-        ah.x xVar = new ah.x(this, context, 21);
-        this.t = xVar;
-        xVar.setLayoutParams(w7.z5.c(-2.0f, -2));
-        setContentView(xVar);
+        bh.r rVar = new bh.r(this, context, 22);
+        this.t = rVar;
+        rVar.setLayoutParams(gb1.g(-2.0f, -2));
+        setContentView(rVar);
         setWidth(-2);
         setHeight(-2);
         setBackgroundDrawable(null);
         Drawable mutate = context.getDrawable(R.drawable.popup_fixed_alert4).mutate();
-        org.telegram.ui.ActionBar.r6.z(xVar, mutate, org.telegram.ui.ActionBar.k6.G8, g6Var, PorterDuff.Mode.MULTIPLY);
-        xVar.setBackground(mutate);
+        org.telegram.ui.ActionBar.f7.y(rVar, mutate, org.telegram.ui.ActionBar.y6.G8, u6Var, PorterDuff.Mode.MULTIPLY);
+        rVar.setBackground(mutate);
         Rect rect = new Rect();
         mutate.getPadding(rect);
-        xVar.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        int width = (int) ((snVar == null ? AndroidUtilities.displaySize.x : snVar.j1.getWidth()) * 0.75f);
-        qp0 qp0Var = new qp0(context, width, AndroidUtilities.dp(450.0f));
-        this.o = qp0Var;
-        qp0Var.setOrientation(1);
+        rVar.setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        int width = (int) ((unVar == null ? AndroidUtilities.displaySize.x : unVar.j1.getWidth()) * 0.75f);
+        vp0 vp0Var = new vp0(context, width, AndroidUtilities.dp(450.0f));
+        this.o = vp0Var;
+        vp0Var.setOrientation(1);
         TextView textView = new TextView(context);
         this.p = textView;
-        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.m5, g6Var);
+        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.m5, u6Var);
         textView.setTextSize(1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SendMessageAsTitle));
         textView.setTypeface(AndroidUtilities.bold(), 1);
         int dp = AndroidUtilities.dp(18.0f);
         textView.setPadding(dp, AndroidUtilities.dp(12.0f), dp, AndroidUtilities.dp(12.0f));
-        qp0Var.addView(textView);
+        vp0Var.addView(textView);
         FrameLayout frameLayout = new FrameLayout(context);
         final ArrayList<TLRPC.TL_sendAsPeer> arrayList = tL_channels_sendAsPeers.peers;
         mm0 mm0Var = new mm0(context, null);
         this.v = mm0Var;
-        s4.b0 b0Var = new s4.b0();
-        this.w = b0Var;
-        mm0Var.setLayoutManager(b0Var);
-        mm0Var.setAdapter(new rp0(g6Var, arrayList, messagesController, width, peer));
-        mm0Var.j(new sp0(this));
-        mm0Var.setOnItemClickListener(new am0() { // from class: org.telegram.ui.Components.pp0
-            @Override // org.telegram.ui.Components.am0
-            public final void d(int i10, View view) {
-                wp0.k(ef.this, arrayList, context, snVar, z10, u2Var, view, i10);
+        s4.c0 c0Var = new s4.c0();
+        this.w = c0Var;
+        mm0Var.setLayoutManager(c0Var);
+        mm0Var.setAdapter(new wp0(u6Var, arrayList, messagesController, width, peer));
+        mm0Var.j(new xp0(this));
+        mm0Var.setOnItemClickListener(new zl0() { // from class: org.telegram.ui.Components.up0
+            @Override // org.telegram.ui.Components.zl0
+            public final void c(int i10, View view) {
+                bq0.k(ef.this, arrayList, context, unVar, z10, aVar, view, i10);
             }
         });
         mm0Var.setOverScrollMode(2);
@@ -83,12 +83,12 @@ public final class ef extends wp0 {
         drawable.setAlpha(153);
         view.setBackground(drawable);
         view.setAlpha(0.0f);
-        frameLayout.addView(view, w7.z5.c(4.0f, -1));
-        qp0Var.addView(frameLayout, w7.z5.c(-2.0f, -1));
-        xVar.addView(qp0Var);
+        frameLayout.addView(view, gb1.g(4.0f, -1));
+        vp0Var.addView(frameLayout, gb1.g(-2.0f, -1));
+        rVar.addView(vp0Var);
     }
 
-    @Override // org.telegram.ui.Components.wp0, org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    @Override // org.telegram.ui.Components.bq0, org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
     public final void dismiss() {
         ArrayList arrayList = this.z;
         ChatActivityEnterView chatActivityEnterView = this.H;
@@ -99,7 +99,7 @@ public final class ef extends wp0 {
         chatActivityEnterView.q0 = null;
         int i10 = 0;
         if (!this.q) {
-            l(new o1.k[0]);
+            l(new o1.j[0]);
             chatActivityEnterView.p0.a(true, true, 0.0f);
             return;
         }
@@ -107,7 +107,7 @@ public final class ef extends wp0 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((o1.k) obj).c();
+            ((o1.j) obj).c();
         }
         arrayList.clear();
         super.dismiss();

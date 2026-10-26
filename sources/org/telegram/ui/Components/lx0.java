@@ -1,115 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.text.TextUtils;
-import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class lx0 extends lm0 {
-    public int c;
-    public final /* synthetic */ ux0 d;
+public final /* synthetic */ class lx0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ox0 b;
 
-    public lx0(ux0 ux0Var) {
-        this.d = ux0Var;
+    public /* synthetic */ lx0(ox0 ox0Var, int i10) {
+        this.a = i10;
+        this.b = ox0Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f == 1;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        ux0 ux0Var = this.d;
-        qx0[] qx0VarArr = ux0Var.Z2;
-        int length = (qx0VarArr == null ? 0 : qx0VarArr.length) + 1;
-        if (length != this.c) {
-            ai.jc jcVar = ux0Var.m3;
-            if (jcVar != null) {
-                jcVar.requestLayout();
-            }
-            this.c = length;
-        }
-        return length;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return i10 == 0 ? 0 : 1;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        ux0 ux0Var;
-        qx0[] qx0VarArr;
-        if (b1Var.f != 1 || (qx0VarArr = (ux0Var = this.d).Z2) == null) {
-            return;
-        }
-        int i11 = i10 - 1;
-        qx0 qx0Var = qx0VarArr[i11];
-        final px0 px0Var = (px0) b1Var.a;
-        boolean z10 = ux0Var.n3 == i11;
-        px0Var.getClass();
-        if (!TextUtils.isEmpty(qx0Var.d)) {
-            px0Var.setContentDescription(qx0Var.d);
-        } else if (TextUtils.isEmpty(qx0Var.a)) {
-            px0Var.setContentDescription(null);
-        } else {
-            px0Var.setContentDescription(qx0Var.a);
-        }
-        ValueAnimator valueAnimator = px0Var.G;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            px0Var.G = null;
-        }
-        px0Var.setImageResource(0);
-        px0Var.a();
-        final boolean G1 = px0Var.H.G1();
-        px0Var.w = false;
-        px0Var.y = 1.0f;
-        r5.h(UserConfig.selectedAccount).b(qx0Var.c, new o5() { // from class: org.telegram.ui.Components.nx0
-            @Override // org.telegram.ui.Components.o5
-            public final void a(TLRPC.Document document) {
-                boolean z11 = !G1;
-                px0 px0Var2 = px0.this;
-                px0Var2.setOnlyLastFrame(z11);
-                px0Var2.g(24, 24, document);
-                px0Var2.d();
-            }
-        });
-        AndroidUtilities.runOnUIThread(new kr0(px0Var, 10), 60L);
-        px0Var.l(z10, false);
-        px0Var.setAlpha(ux0Var.p3);
-        px0Var.setScaleX(ux0Var.p3);
-        px0Var.setScaleY(ux0Var.p3);
-        px0Var.j();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        px0 px0Var;
-        ux0 ux0Var = this.d;
-        if (i10 == 0) {
-            ai.jc jcVar = new ai.jc(this, ux0Var.getContext(), 25);
-            ux0Var.m3 = jcVar;
-            px0Var = jcVar;
-        } else {
-            px0Var = new px0(ux0Var, ux0Var.getContext());
-        }
-        return new wl0(px0Var);
-    }
-
-    @Override // s4.g0
-    public final void y(s4.b1 b1Var) {
-        if (b1Var.f == 1) {
-            px0 px0Var = (px0) b1Var.a;
-            px0Var.l(this.d.n3 == b1Var.b() - 1, false);
-            px0Var.j();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ox0 ox0Var = this.b;
+                ox0Var.invalidate();
+                AndroidUtilities.runOnUIThread(new lx0(ox0Var, 1));
+                break;
+            default:
+                ox0 ox0Var2 = this.b;
+                nx0 nx0Var = ox0Var2.e;
+                if (nx0Var != null) {
+                    ox0Var2.getVisibilityFactor();
+                    ProfileActivity profileActivity = ((org.telegram.ui.wx0) nx0Var).b;
+                    profileActivity.r.setTranslationX(profileActivity.e4(profileActivity.l6, profileActivity.n6));
+                    profileActivity.r.setTranslationY(profileActivity.f4(profileActivity.o6));
+                    break;
+                }
+                break;
         }
     }
 }

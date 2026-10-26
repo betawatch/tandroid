@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.play_billing;
 
+import a8.cb;
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Locale;
-import v7.g6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -27,7 +27,7 @@ public class l1 implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(i2.o1.l(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(ic.a.j(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
             throw new IndexOutOfBoundsException(a1.g.l(i10, i11, "Beginning index larger than ending index: ", ", "));
@@ -119,10 +119,10 @@ public class l1 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int n10 = n();
         if (n() <= 50) {
-            concat = g6.a(this);
+            concat = cb.a(this);
         } else {
             int o10 = o(0, 47, n());
-            concat = g6.a(o10 == 0 ? c : new k1(this.b, o10)).concat("...");
+            concat = cb.a(o10 == 0 ? c : new k1(this.b, o10)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);

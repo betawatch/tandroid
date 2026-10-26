@@ -1,35 +1,19 @@
 package e9;
 
-import java.util.Map;
-import v7.t6;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class n implements Map.Entry {
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            if (t6.a(getKey(), entry.getKey()) && t6.a(getValue(), entry.getValue())) {
-                return true;
-            }
-        }
-        return false;
+public enum n extends r {
+    public n() {
+        super("ALWAYS_TRUE", 0);
     }
 
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        Object key = getKey();
-        Object value = getValue();
-        return (key == null ? 0 : key.hashCode()) ^ (value != null ? value.hashCode() : 0);
+    @Override // e9.l
+    public final boolean apply(Object obj) {
+        return true;
     }
 
-    @Override // java.util.Map.Entry
-    public Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
+    @Override // java.lang.Enum
     public final String toString() {
-        return getKey() + "=" + getValue();
+        return "Predicates.alwaysTrue()";
     }
 }

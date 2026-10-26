@@ -14,7 +14,7 @@ import android.os.Message;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class o extends HandlerThread implements Handler.Callback {
     public e2.l a;
@@ -38,7 +38,7 @@ public final class o extends HandlerThread implements Handler.Callback {
         boolean eglChooseConfig = EGL14.eglChooseConfig(eglGetDisplay, e2.l.h, 0, eGLConfigArr, 0, 1, iArr3, 0);
         boolean z10 = eglChooseConfig && iArr3[0] > 0 && eGLConfigArr[0] != null;
         Object[] objArr = {Boolean.valueOf(eglChooseConfig), Integer.valueOf(iArr3[0]), eGLConfigArr[0]};
-        String str = e2.m0.a;
+        String str = e2.n0.a;
         e2.e.a(String.format(Locale.US, "eglChooseConfig failed: success=%b, numConfigs[0]=%d, configs[0]=%s", objArr), z10);
         EGLConfig eGLConfig = eGLConfigArr[0];
         EGLContext eglCreateContext = EGL14.eglCreateContext(lVar.c, eGLConfig, EGL14.EGL_NO_CONTEXT, i10 == 0 ? new int[]{12440, 2, 12344} : new int[]{12440, 2, 12992, 1, 12344}, 0);
@@ -55,7 +55,7 @@ public final class o extends HandlerThread implements Handler.Callback {
         lVar.e = eglCreatePbufferSurface;
         GLES20.glGenTextures(1, iArr, 0);
         StringBuilder sb2 = new StringBuilder();
-        e9.s.f(4, "initialCapacity");
+        f9.o.f(4, "initialCapacity");
         Object[] objArr2 = new Object[4];
         boolean z11 = false;
         int i11 = 0;
@@ -75,7 +75,7 @@ public final class o extends HandlerThread implements Handler.Callback {
             sb2.append(gluErrorString);
             Integer valueOf = Integer.valueOf(glGetError);
             int i12 = i11 + 1;
-            int b10 = e9.h0.b(objArr2.length, i12);
+            int b10 = f9.c0.b(objArr2.length, i12);
             if (b10 > objArr2.length) {
                 objArr2 = Arrays.copyOf(objArr2, b10);
             }
@@ -84,7 +84,7 @@ public final class o extends HandlerThread implements Handler.Callback {
             z11 = true;
         }
         if (z11) {
-            throw new e2.m(sb2.toString(), e9.n0.s(i11, objArr2));
+            throw new e2.m(sb2.toString(), f9.i0.s(i11, objArr2));
         }
         SurfaceTexture surfaceTexture = new SurfaceTexture(iArr[0]);
         lVar.f = surfaceTexture;
@@ -149,15 +149,15 @@ public final class o extends HandlerThread implements Handler.Callback {
                     synchronized (this) {
                         notify();
                     }
-                } catch (Error e7) {
-                    e2.a.d("PlaceholderSurface", "Failed to initialize placeholder surface", e7);
-                    this.c = e7;
+                } catch (Error e10) {
+                    e2.a.d("PlaceholderSurface", "Failed to initialize placeholder surface", e10);
+                    this.c = e10;
                     synchronized (this) {
                         notify();
                     }
-                } catch (RuntimeException e10) {
-                    e2.a.d("PlaceholderSurface", "Failed to initialize placeholder surface", e10);
-                    this.d = e10;
+                } catch (RuntimeException e11) {
+                    e2.a.d("PlaceholderSurface", "Failed to initialize placeholder surface", e11);
+                    this.d = e11;
                     synchronized (this) {
                         notify();
                     }

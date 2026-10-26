@@ -1,55 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c01 extends View {
-    public int a;
-    public int b;
-    public final /* synthetic */ f01 c;
+public final class c01 extends ClickableSpan {
+    public final /* synthetic */ TLRPC.TL_username a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ j01 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c01(f01 f01Var, Context context) {
-        super(context);
-        this.c = f01Var;
-        this.a = 0;
-        this.b = 0;
+    public c01(j01 j01Var, TLRPC.TL_username tL_username, String str) {
+        this.c = j01Var;
+        this.a = tL_username;
+        this.b = str;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = this.b;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
         ProfileActivity profileActivity = this.c.e;
-        if (i12 != profileActivity.a.getMeasuredHeight()) {
-            this.a = 0;
-        }
-        this.b = profileActivity.a.getMeasuredHeight();
-        int childCount = profileActivity.a.getChildCount();
-        if (childCount != profileActivity.d.e.O2) {
-            setMeasuredDimension(profileActivity.a.getMeasuredWidth(), this.a);
+        TLRPC.TL_username tL_username = this.a;
+        if (!tL_username.editable) {
+            if (profileActivity.o5 == this) {
+                return;
+            }
+            profileActivity.V4(this);
+            TL_fragment.TL_getCollectibleInfo tL_getCollectibleInfo = new TL_fragment.TL_getCollectibleInfo();
+            TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
+            tL_inputCollectibleUsername.username = tL_username.username;
+            tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
+            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new j10(27, this, tL_username)), profileActivity.getClassGuid());
             return;
         }
-        int i13 = 0;
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = profileActivity.a.getChildAt(i14);
-            profileActivity.a.getClass();
-            int R = RecyclerView.R(childAt);
-            if (R >= 0 && R != profileActivity.D3) {
-                i13 += profileActivity.a.getChildAt(i14).getMeasuredHeight();
-            }
+        profileActivity.V4(null);
+        String str = profileActivity.getMessagesController().linkPrefix + "/" + this.b;
+        TLRPC.Chat chat = profileActivity.E2;
+        if (chat == null || !chat.noforwards) {
+            AndroidUtilities.addToClipboard(str);
+            profileActivity.L.j(56, 0L, null);
         }
-        View view = profileActivity.fragmentView;
-        int measuredHeight = (((view == null ? 0 : view.getMeasuredHeight()) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - i13;
-        if (measuredHeight > profileActivity.V3()) {
-            measuredHeight = 0;
-        }
-        int i15 = measuredHeight > 0 ? measuredHeight : 0;
-        int measuredWidth = profileActivity.a.getMeasuredWidth();
-        this.a = i15;
-        setMeasuredDimension(measuredWidth, i15);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        textPaint.setColor(textPaint.linkColor);
     }
 }

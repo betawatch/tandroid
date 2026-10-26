@@ -1,34 +1,47 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class je1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ke1 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ je1(ke1 ke1Var, int i10) {
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class je1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ af1 c;
+
+    public /* synthetic */ je1(af1 af1Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = ke1Var;
+        this.c = af1Var;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
         switch (this.a) {
             case 0:
-                ke1 ke1Var = this.b;
-                ke1Var.F = null;
-                if (ke1Var.G != -1) {
-                    ke1Var.H.getNotificationCenter().onAnimationFinish(ke1Var.G);
-                    ke1Var.G = -1;
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f7 = z10 ? 1.0f : 0.0f;
+                af1 af1Var = this.c;
+                af1Var.S0(f7);
+                if (!z10) {
+                    Activity parentActivity = af1Var.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.r2) af1Var).classGuid;
+                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
+                    af1Var.r0.setVisibility(8);
+                    af1Var.Q0(true);
+                    break;
+                } else {
+                    af1Var.q0.setVisibility(8);
                     break;
                 }
-                break;
             default:
-                ke1 ke1Var2 = this.b;
-                ke1Var2.F = null;
-                if (ke1Var2.G != -1) {
-                    ke1Var2.H.getNotificationCenter().onAnimationFinish(ke1Var2.G);
-                    ke1Var2.G = -1;
+                if (!this.b) {
+                    this.c.o0.setVisibility(8);
                     break;
                 }
                 break;

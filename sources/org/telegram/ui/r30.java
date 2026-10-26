@@ -1,45 +1,23 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class r30 implements mh.a {
-    public final /* synthetic */ u50 a;
+public final class r30 extends View {
+    public final /* synthetic */ v50 a;
 
-    public r30(u50 u50Var) {
-        this.a = u50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r30(v50 v50Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = v50Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        if (getAlpha() != f7) {
+            super.setAlpha(f7);
+            this.a.S0();
         }
-        boolean z10 = R instanceof ProfileActivity;
-        u50 u50Var = this.a;
-        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            u50Var.dismiss();
-            return;
-        }
-        int P0 = u50Var.P0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == u50Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (P0 > 0 && P0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        R.presentFragment(profileActivity, false, z11);
-        u50Var.dismiss();
     }
 }

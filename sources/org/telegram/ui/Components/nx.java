@@ -1,36 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class nx extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ tz c;
+public final class nx extends s4.d0 {
+    public final /* synthetic */ int r;
 
-    public /* synthetic */ nx(tz tzVar, boolean z10, int i10) {
-        this.a = i10;
-        this.c = tzVar;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nx(Context context, int i10) {
+        super(context);
+        this.r = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    this.c.x.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    this.c.y.setVisibility(4);
-                    break;
-                }
-                break;
-        }
+    @Override // s4.d0
+    public final int i(int i10, int i11, int i12, int i13, int i14) {
+        return super.i(i10, i11, i12, i13, i14) + this.r;
+    }
+
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 16;
+    }
+
+    @Override // s4.d0
+    public final int p() {
+        return -1;
     }
 }

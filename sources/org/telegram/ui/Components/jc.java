@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public class jc extends View {
     public final Paint a;
@@ -27,7 +27,7 @@ public class jc extends View {
     public long v;
     public final RectF w;
 
-    public jc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public jc(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
         this.r = 1.0f;
         this.w = new RectF();
@@ -40,7 +40,7 @@ public class jc extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Hi, g6Var));
+        setColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Hi, u6Var));
     }
 
     @Override // android.view.View
@@ -95,7 +95,7 @@ public class jc extends View {
                 textPaint.setAlpha((int) (alpha * f12));
             }
             canvas.save();
-            canvas.translate(rectF.centerX() - (this.e / 2.0f), com.google.android.gms.internal.play_billing.k3.D(1.0f, this.r, AndroidUtilities.dp(10.0f), rectF.centerY() - (this.f.getHeight() / 2.0f)) - AndroidUtilities.dp(0.5f));
+            canvas.translate(rectF.centerX() - (this.e / 2.0f), ic.a.d(1.0f, this.r, AndroidUtilities.dp(10.0f), rectF.centerY() - (this.f.getHeight() / 2.0f)) - AndroidUtilities.dp(0.5f));
             this.f.draw(canvas);
             if (this.r != 1.0f) {
                 textPaint.setAlpha(alpha);

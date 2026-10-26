@@ -1,70 +1,113 @@
 package uh;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.ui.Components.fo;
+import ag.v;
+import android.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import oe.e;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.ds;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
+public final class a extends c implements oe.d {
+    public final oe.b d;
+    public final int[] e;
+    public final Drawable f;
+    public final TextPaint h;
+    public StaticLayout n;
+    public int r;
+    public int s;
 
-    public /* synthetic */ a(f fVar, int i10) {
-        this.a = i10;
-        this.b = fVar;
+    public a(Context context, u6 u6Var) {
+        super(u6Var);
+        this.d = new oe.b(0, this, ds.h, 320L, false);
+        this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
+        this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
+        this.h = new TextPaint(y6.P2);
+        int w02 = y6.w0(y6.i6, u6Var);
+        if (this.b != w02) {
+            y6.E1(this.a, w02, false);
+            this.b = w02;
+        }
+        b();
+        c();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        f fVar = this.b;
-        switch (i10) {
-            case 0:
-                l2.f fVar2 = fVar.k0;
-                if (fVar2 != null) {
-                    ArrayList arrayList = new ArrayList(fVar.j0.keySet());
-                    fo foVar = (fo) fVar2.b;
-                    ArrayList arrayList2 = foVar.P0;
-                    arrayList2.clear();
-                    arrayList2.addAll(arrayList);
-                    int i11 = foVar.L0;
-                    if (i11 >= 0) {
-                        foVar.r.m(i11);
-                    }
-                }
-                fVar.dismiss();
-                break;
-            case 1:
-                l2.f fVar3 = fVar.k0;
-                if (fVar3 != null) {
-                    ArrayList arrayList3 = new ArrayList(fVar.j0.keySet());
-                    fo foVar2 = (fo) fVar3.b;
-                    ArrayList arrayList4 = foVar2.P0;
-                    arrayList4.clear();
-                    arrayList4.addAll(arrayList3);
-                    int i12 = foVar2.L0;
-                    if (i12 >= 0) {
-                        foVar2.r.m(i12);
-                    }
-                }
-                fVar.dismiss();
-                break;
-            case 2:
-                HashMap hashMap = fVar.j0;
-                hashMap.clear();
-                fVar.h0.b();
-                fVar.d0.N(true);
-                fVar.e0.b(hashMap.size(), true);
-                break;
-            case 3:
-                fVar.S(view);
-                break;
-            default:
-                int i13 = f.r0;
-                fVar.S(view);
-                break;
+    @Override // oe.d
+    public final void E(int i10, float f7, float f10, e eVar) {
+        b();
+        c();
+        invalidateSelf();
+    }
+
+    @Override // uh.c
+    public final void a(int i10) {
+        this.a.setAlpha(i10);
+        b();
+        c();
+    }
+
+    public final void b() {
+        this.f.setAlpha((int) ((1.0f - this.d.e) * this.c));
+    }
+
+    public final void c() {
+        this.h.setAlpha((int) ((1.0f - this.d.e) * this.c));
+    }
+
+    public final void d(boolean z10, boolean z11) {
+        this.d.a(z10, z11);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        this.a.draw(canvas);
+        v.b(canvas, this.f, 1.0f - this.d.e);
+        if (this.n != null) {
+            canvas.save();
+            canvas.translate(AndroidUtilities.dp(44.0f) + bounds.left, AndroidUtilities.dp(13.66f) + bounds.top);
+            this.n.draw(canvas);
+            canvas.restore();
         }
+    }
+
+    public final void e(int i10) {
+        if (this.s != i10) {
+            this.s = i10;
+            this.h.setColor(i10);
+            this.f.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
+            c();
+        }
+    }
+
+    @Override // uh.c, android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        float exactCenterY = rect.exactCenterY();
+        float dp = AndroidUtilities.dp(22.33f) + rect.left;
+        AndroidUtilities.dp(27.0f);
+        AndroidUtilities.dp(44.0f);
+        v.d(this.f, dp, exactCenterY, 17);
+        int width = rect.width() - AndroidUtilities.dp(56.0f);
+        if (this.n == null || this.r != width) {
+            this.r = width;
+            this.n = new StaticLayout(LocaleController.getString(org.telegram.messenger.R.string.PollAddAnOption), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        }
+    }
+
+    @Override // oe.d
+    public final /* synthetic */ void z(float f7, int i10) {
     }
 }

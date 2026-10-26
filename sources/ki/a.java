@@ -1,61 +1,133 @@
 package ki;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import ai.k;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import bi.u7;
+import bi.w0;
+import fi.d;
+import hi.e2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Cells.m6;
+import org.telegram.ui.Cells.n6;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.mm0;
+import s4.q0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class a {
-    public static long u = 1;
-    public final long a;
-    public TL_iv.PageBlock b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public t g;
-    public ArrayList h;
-    public boolean i;
-    public final ArrayList j;
-    public final ArrayList k;
-    public int l;
-    public int m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public long t;
+public final class a extends bb {
+    public j71 X;
+    public boolean Y;
+    public final FrameLayout Z;
+    public final boolean a0;
+    public final boolean b0;
+    public int c0;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a(TL_iv.PageBlock pageBlock, int i10, int i11) {
-        this(pageBlock, i10, i11, r4);
-        long j10 = u;
-        u = 1 + j10;
+    public a(Context context, TLRPC.Chat chat, long j10, Utilities.Callback callback) {
+        super(context, (u6) null, false);
+        int i10;
+        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10));
+        TLRPC.Chat chat2 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
+        this.b0 = UserObject.isBot(user);
+        this.a0 = ChatObject.isChannelAndNotMegaGroup(chat2);
+        this.L = false;
+        this.K = AndroidUtilities.dp(12.0f);
+        this.e.setTitle(y());
+        setBackgroundColorKey(y6.a7);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.Z = frameLayout;
+        frameLayout.setPadding(0, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f));
+        frameLayout.setLayoutParams(new q0(-1, -2));
+        m6 m6Var = new m6(context, null);
+        if (chat2 != null) {
+            i10 = -1;
+            m6Var.s(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
+        } else {
+            i10 = -1;
+            if (user != null) {
+                m6Var.s(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
+            }
+        }
+        frameLayout.addView(m6Var, gb1.g(-2.0f, i10));
+        mm0 mm0Var = this.d;
+        int i11 = this.backgroundPaddingLeft;
+        mm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
+        this.d.u1();
+        this.d.setClipToPadding(false);
+        this.d.setOnItemClickListener(new k(this, 17));
+        d dVar = new d(context, this.resourcesProvider, true);
+        if (chat != null) {
+            dVar.setText(LocaleController.getString(ChatObject.canAddChatToCommunity(chat) ? R.string.CommunityAddToCommunityButton : R.string.CommunityAddToCommunityRequestButton));
+        } else {
+            dVar.setText(LocaleController.getString(R.string.CommunityCreateCommunity));
+        }
+        dVar.f();
+        dVar.setOnClickListener(new w0(this, callback, chat, 12));
+        this.containerView.addView(dVar, gb1.j(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.X.O(false);
     }
 
-    public final boolean a() {
-        return this.c > 0 && this.e;
+    public final void P(Utilities.Callback callback, boolean z10, boolean z11) {
+        if (z11 && !z10 && !this.b0) {
+            g5.O(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.a0 ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new u7(this, callback, z10, 6)).show();
+        } else {
+            callback.run(Boolean.valueOf(z10));
+            dismiss();
+        }
     }
 
-    public final boolean b() {
-        return this.c > 0;
+    public final void Q(boolean z10) {
+        boolean z11;
+        if (this.Y == z10) {
+            return;
+        }
+        this.Y = z10;
+        int i10 = this.c0 + 1;
+        mm0 mm0Var = this.d;
+        View U0 = mm0Var.U0(i10);
+        if (U0 instanceof n6) {
+            ((n6) U0).a(!z10);
+            z11 = false;
+        } else {
+            z11 = true;
+        }
+        View U02 = mm0Var.U0(this.c0 + 2);
+        if (U02 instanceof n6) {
+            ((n6) U02).a(z10);
+        } else {
+            z11 = true;
+        }
+        if (z11) {
+            this.X.O(true);
+        }
     }
 
-    public final boolean c() {
-        return this.d > 0;
+    @Override // org.telegram.ui.Components.bb
+    public final lm0 v(mm0 mm0Var) {
+        j71 j71Var = new j71(this.d, getContext(), this.currentAccount, 0, false, new e2(this, 14), this.resourcesProvider);
+        this.X = j71Var;
+        j71Var.r = false;
+        return j71Var;
     }
 
-    public a(TL_iv.PageBlock pageBlock, int i10, int i11, long j10) {
-        this.j = new ArrayList();
-        this.k = new ArrayList();
-        this.b = pageBlock;
-        this.c = i10;
-        this.d = i11;
-        this.a = j10;
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence y() {
+        return LocaleController.getString(this.b0 ? R.string.CommunityAddBotTitle : R.string.CommunityAddChatTitle);
     }
 }

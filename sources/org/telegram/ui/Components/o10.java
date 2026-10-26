@@ -1,153 +1,116 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.app.Application;
-import android.os.Bundle;
-import android.os.SystemClock;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class o10 implements Application.ActivityLifecycleCallbacks {
-    private static o10 Instance;
-    private int refs;
-    private boolean wasInBackground = true;
-    private long enterBackgroundTime = 0;
-    private CopyOnWriteArrayList<n10> listeners = new CopyOnWriteArrayList<>();
-    private final ArrayList<WeakReference<Activity>> resumedActivities = new ArrayList<>();
+public final class o10 extends Drawable {
+    public final Drawable a;
+    public final Path b;
+    public boolean c = true;
+    public final Paint d;
+    public final Paint e;
 
-    public o10(Application application) {
-        Instance = this;
-        application.registerActivityLifecycleCallbacks(this);
-    }
-
-    public static o10 getInstance() {
-        return Instance;
-    }
-
-    public final void a(Activity activity) {
-        for (int size = this.resumedActivities.size() - 1; size >= 0; size--) {
-            Activity activity2 = this.resumedActivities.get(size).get();
-            if (activity2 == null || activity2 == activity) {
-                this.resumedActivities.remove(size);
-            }
+    public o10(Context context, int i10, int i11) {
+        this.a = context.getResources().getDrawable(i10);
+        if (i11 < 0) {
+            this.b = null;
+            this.d = null;
+            this.e = null;
+            return;
         }
+        this.b = new Path();
+        Paint paint = new Paint(1);
+        this.d = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(-16777216);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        Paint paint2 = new Paint(1);
+        this.e = paint2;
+        paint2.setStyle(Paint.Style.FILL);
+        int[] iArr = org.telegram.ui.ActionBar.y6.r8;
+        paint2.setColor(org.telegram.ui.ActionBar.y6.x0(null, iArr[i11 % iArr.length], false));
+        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
     }
 
-    public void addListener(n10 n10Var) {
-        this.listeners.add(n10Var);
+    public final int a(float f7) {
+        return AndroidUtilities.lerp(getBounds().left, getBounds().right, f7);
     }
 
-    public Activity getForegroundActivity() {
-        Activity activity = null;
-        for (int size = this.resumedActivities.size() - 1; size >= 0; size--) {
-            Activity activity2 = this.resumedActivities.get(size).get();
-            if (activity2 == null || activity2.isFinishing() || activity2.isDestroyed()) {
-                this.resumedActivities.remove(size);
-            } else {
-                if (activity2.hasWindowFocus()) {
-                    return activity2;
-                }
-                if (activity == null) {
-                    activity = activity2;
-                }
-            }
+    public final int b(float f7) {
+        return AndroidUtilities.lerp(getBounds().top, getBounds().bottom, f7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        Path path = this.b;
+        if (path == null) {
+            drawable.setBounds(getBounds());
+            drawable.draw(canvas);
+            return;
         }
-        return activity;
-    }
-
-    public boolean isBackground() {
-        return this.refs == 0;
-    }
-
-    public boolean isForeground() {
-        return this.refs > 0;
-    }
-
-    public boolean isWasInBackground(boolean z10) {
-        if (z10 && SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
-            this.wasInBackground = false;
+        canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, 255);
+        drawable.setBounds(getBounds());
+        drawable.draw(canvas);
+        boolean z10 = this.c;
+        Paint paint = this.d;
+        if (z10) {
+            path.rewind();
+            path.moveTo(a(0.4871f), b(0.6025f));
+            path.lineTo(a(0.8974f), b(0.6025f));
+            path.lineTo(a(1.0f), b(0.7564f));
+            path.lineTo(a(0.8974f), b(0.9102f));
+            path.lineTo(a(0.4871f), b(0.9102f));
+            path.close();
+            this.c = false;
+            paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
         }
-        return this.wasInBackground;
+        canvas.drawPath(path, paint);
+        canvas.drawPath(path, this.e);
+        canvas.restore();
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityDestroyed(Activity activity) {
-        a(activity);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityPaused(Activity activity) {
-        a(activity);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityResumed(Activity activity) {
-        a(activity);
-        this.resumedActivities.add(new WeakReference<>(activity));
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return this.a.getOpacity();
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityStarted(Activity activity) {
-        int i10 = this.refs + 1;
-        this.refs = i10;
-        if (i10 == 1) {
-            if (SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
-                this.wasInBackground = false;
-            }
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.d("switch to foreground");
-            }
-            Iterator<n10> it = this.listeners.iterator();
-            while (it.hasNext()) {
-                try {
-                    it.next().onBecameForeground();
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityStopped(Activity activity) {
-        int i10 = this.refs - 1;
-        this.refs = i10;
-        if (i10 == 0) {
-            this.enterBackgroundTime = SystemClock.elapsedRealtime();
-            this.wasInBackground = true;
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.d("switch to background");
-            }
-            Iterator<n10> it = this.listeners.iterator();
-            while (it.hasNext()) {
-                try {
-                    it.next().onBecameBackground();
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        super.setBounds(i10, i11, i12, i13);
+        this.c = true;
     }
 
-    public void removeListener(n10 n10Var) {
-        this.listeners.remove(n10Var);
-    }
-
-    public void resetBackgroundVar() {
-        this.wasInBackground = false;
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivityCreated(Activity activity, Bundle bundle) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

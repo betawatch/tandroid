@@ -1,83 +1,80 @@
 package org.telegram.messenger;
 
-import java.util.HashSet;
-import java.util.Set;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ua implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+public final /* synthetic */ class ua implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ BaseController d;
+    public final /* synthetic */ int d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ ua(BaseController baseController, Object obj, boolean z10, long j10, Object obj2, int i10) {
-        this.a = i10;
-        this.d = baseController;
-        this.e = obj;
-        this.b = z10;
-        this.c = j10;
-        this.f = obj2;
+    public /* synthetic */ ua(MessagesController messagesController, TLRPC.updates_ChannelDifference updates_channeldifference, long j10, TLRPC.Chat chat, a0.h hVar, int i10, long j11) {
+        this.e = messagesController;
+        this.f = updates_channeldifference;
+        this.b = j10;
+        this.h = chat;
+        this.n = hVar;
+        this.d = i10;
+        this.c = j11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$getSendAsPeers$446((a0.h) this.e, this.c, (MessagesController.SendAsPeersInfo) this.f, this.b, tLObject, tL_error);
+                ((MessagesController) this.e).lambda$getChannelDifference$347((TLRPC.updates_ChannelDifference) this.f, this.b, (TLRPC.Chat) this.h, (a0.h) this.n, this.d, this.c);
                 break;
             case 1:
-                TranslateController translateController = (TranslateController) this.d;
-                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
-                Set set = (Set) this.f;
-                translateController.lambda$pushToTranslate$23(pendingTranslation, this.b, this.c, set, tLObject, tL_error);
-                break;
-            case 2:
-                ((ChatThemeController) this.d).lambda$setWallpaperToPeer$17(this.c, this.b, (String) this.e, (Runnable) this.f, tLObject, tL_error);
-                break;
-            case 3:
-                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                RequestDelegate requestDelegate = (RequestDelegate) this.f;
-                memberRequestsController.lambda$getImporters$1(tL_chatInviteImporter, this.b, this.c, requestDelegate, tLObject, tL_error);
+                ((SendMessagesHelper) this.e).lambda$completeSendingGramTransfer$7(this.b, this.c, this.d, (TLRPC.Message) this.f, (ArrayList) this.h, (MessageObject) this.n);
                 break;
             default:
-                ((TopicsController) this.d).lambda$reloadTopics$16(this.b, this.c, (HashSet) this.e, (Runnable) this.f, tLObject, tL_error);
+                k80 k80Var = (k80) this.e;
+                k80 k80Var2 = (k80) this.f;
+                org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) this.h;
+                org.telegram.ui.ActionBar.u6 u6Var = (org.telegram.ui.ActionBar.u6) this.n;
+                k80Var.u();
+                SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.d);
+                StringBuilder sb2 = new StringBuilder("sound_enabled_");
+                long j10 = this.b;
+                long j11 = this.c;
+                boolean z10 = notificationsSettings.getBoolean(t.j(j10, j11, sb2), true);
+                notificationsSettings.edit().putBoolean(t.j(j10, j11, new StringBuilder("sound_enabled_")), !z10).apply();
+                k80Var2.u();
+                if (org.telegram.ui.Components.wc.a(r2Var)) {
+                    org.telegram.ui.Components.wc.T(z10 ? 1 : 0, r2Var, u6Var).j();
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ ua(ChatThemeController chatThemeController, long j10, boolean z10, String str, Runnable runnable) {
-        this.a = 2;
-        this.d = chatThemeController;
-        this.c = j10;
-        this.b = z10;
-        this.e = str;
-        this.f = runnable;
+    public /* synthetic */ ua(SendMessagesHelper sendMessagesHelper, long j10, long j11, int i10, TLRPC.Message message, ArrayList arrayList, MessageObject messageObject) {
+        this.e = sendMessagesHelper;
+        this.b = j10;
+        this.c = j11;
+        this.d = i10;
+        this.f = message;
+        this.h = arrayList;
+        this.n = messageObject;
     }
 
-    public /* synthetic */ ua(MessagesController messagesController, a0.h hVar, long j10, MessagesController.SendAsPeersInfo sendAsPeersInfo, boolean z10) {
-        this.a = 0;
-        this.d = messagesController;
-        this.e = hVar;
-        this.c = j10;
-        this.f = sendAsPeersInfo;
-        this.b = z10;
-    }
-
-    public /* synthetic */ ua(TopicsController topicsController, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
-        this.a = 4;
-        this.d = topicsController;
-        this.b = z10;
-        this.c = j10;
-        this.e = hashSet;
-        this.f = runnable;
+    public /* synthetic */ ua(k80 k80Var, int i10, long j10, long j11, k80 k80Var2, un unVar, org.telegram.ui.ActionBar.u6 u6Var) {
+        this.e = k80Var;
+        this.d = i10;
+        this.b = j10;
+        this.c = j11;
+        this.f = k80Var2;
+        this.h = unVar;
+        this.n = u6Var;
     }
 }

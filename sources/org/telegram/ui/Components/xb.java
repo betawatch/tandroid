@@ -7,18 +7,18 @@ import android.widget.TextView;
 import org.telegram.messenger.Emoji;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class xb extends y90 {
+public final class xb extends z90 {
     public final /* synthetic */ int L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xb(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
+    public /* synthetic */ xb(Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
         this.L = i10;
     }
 
-    @Override // org.telegram.ui.Components.y90
+    @Override // org.telegram.ui.Components.z90
     public int a() {
         switch (this.L) {
             case 4:
@@ -41,7 +41,7 @@ public final class xb extends y90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.y90, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.z90, android.widget.TextView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.L) {
             case 5:
@@ -53,7 +53,7 @@ public final class xb extends y90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.y90, android.widget.TextView
+    @Override // org.telegram.ui.Components.z90, android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         switch (this.L) {
             case 0:

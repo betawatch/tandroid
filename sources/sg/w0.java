@@ -1,125 +1,51 @@
 package sg;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.sw0;
+import android.graphics.drawable.Drawable;
+import fi.e4;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class w0 implements z4.f {
-    public final /* synthetic */ sa a;
-    public final /* synthetic */ y0 b;
+public final class w0 implements rg.b1 {
+    public final /* synthetic */ x0 a;
 
-    public w0(y0 y0Var, sa saVar) {
-        this.b = y0Var;
-        this.a = saVar;
+    public w0(x0 x0Var) {
+        this.a = x0Var;
     }
 
-    @Override // z4.f
-    public final void a(int i10) {
-        y0 y0Var = this.b;
-        ArrayList arrayList = y0Var.d;
-        if (((sw0) arrayList.get(i10)).a == 0) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.DoubledLimits));
-            y0Var.N.requestLayout();
-        } else if (((sw0) arrayList.get(i10)).a == 14) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.UpgradedStories));
-            y0Var.N.requestLayout();
-        } else if (((sw0) arrayList.get(i10)).a == 40) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
-            y0Var.N.requestLayout();
-        } else if (((sw0) arrayList.get(i10)).a == 28) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.TelegramBusiness));
-            y0Var.N.requestLayout();
-        }
-        d();
+    @Override // rg.b1
+    public final void a() {
+        x0 x0Var = this.a;
+        x0Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new e4(x0Var, 19)).setInterpolator(ds.h);
     }
 
-    @Override // z4.f
-    public final void b(float f7, int i10, int i11) {
-        sa saVar = this.a;
-        saVar.b = f7;
-        saVar.c = i10;
-        saVar.invalidate();
-        y0 y0Var = this.b;
-        y0Var.G = i10;
-        y0Var.H = i11 > 0 ? i10 + 1 : i10 - 1;
-        y0Var.I = f7;
-        d();
+    @Override // rg.b1
+    public final boolean d() {
+        return true;
     }
 
-    public final void d() {
-        int i10;
-        int i11;
-        y0 y0Var = this.b;
-        v0 v0Var = y0Var.n;
-        ArrayList arrayList = y0Var.d;
-        int i12 = 0;
-        while (true) {
-            float f7 = 0.0f;
-            if (i12 >= v0Var.getChildCount()) {
-                break;
-            }
-            x0 x0Var = (x0) v0Var.getChildAt(i12);
-            if (!y0Var.w || !(x0Var.f instanceof n0)) {
-                int i13 = x0Var.a;
-                l0 l0Var = x0Var.e;
-                if (i13 == y0Var.G) {
-                    f7 = (-x0Var.getMeasuredWidth()) * y0Var.I;
-                    l0Var.setOffset(f7);
-                } else if (i13 == y0Var.H) {
-                    f7 = ((-x0Var.getMeasuredWidth()) * y0Var.I) + x0Var.getMeasuredWidth();
-                    l0Var.setOffset(f7);
-                } else {
-                    l0Var.setOffset(x0Var.getMeasuredWidth());
-                }
-            }
-            if (x0Var.f instanceof n0) {
-                x0Var.setTranslationX(-f7);
-                x0Var.b.setTranslationX(f7);
-                x0Var.c.setTranslationX(f7);
-            }
-            i12++;
-        }
-        int i14 = y0Var.G;
-        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((sw0) arrayList.get(y0Var.G)).a) == 0 || i11 == 14 || i11 == 28);
-        int i15 = y0Var.H;
-        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((sw0) arrayList.get(y0Var.H)).a) == 0 || i10 == 14 || i10 == 28);
-        if (z10 && z11) {
-            y0Var.f = 1.0f;
-            float f10 = y0Var.I;
-            if (f10 == 0.0f) {
-                f10 = 1.0f;
-            }
-            y0Var.e = f10;
-            y0Var.h = true;
-        } else if (z10) {
-            float f11 = 1.0f - y0Var.I;
-            y0Var.e = f11;
-            y0Var.f = f11;
-            y0Var.h = true;
-        } else if (z11) {
-            float f12 = y0Var.I;
-            y0Var.e = f12;
-            y0Var.f = f12;
-            y0Var.h = false;
-        } else {
-            y0Var.e = 0.0f;
-            y0Var.f = 0.0f;
-            y0Var.h = true;
-        }
-        int i16 = (int) ((1.0f - y0Var.e) * 255.0f);
-        if (i16 != y0Var.K) {
-            y0Var.K = i16;
-            y0Var.r.invalidate();
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(this, 23));
-        }
+    @Override // rg.b1
+    public final void e() {
+        x0 x0Var = this.a;
+        x0Var.b.a.a();
+        x0Var.w.setViewHidden(false);
+        PhotoViewer photoViewer = ((mt0) x0Var).K;
+        Drawable[] drawableArr = PhotoViewer.U8;
+        photoViewer.Z2(true, true);
     }
 
-    @Override // z4.f
-    public final void c(int i10) {
+    @Override // rg.b1
+    public final void f() {
+        this.a.w.setViewHidden(true);
+    }
+
+    @Override // rg.b1
+    public final /* synthetic */ void b() {
+    }
+
+    @Override // rg.b1
+    public final void c() {
     }
 }

@@ -1,32 +1,35 @@
 package s4;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c implements d0 {
-    public final d0 a;
+public final class c implements e0 {
+    public final e0 a;
     public int b = 0;
     public int c = -1;
     public int d = -1;
 
-    public c(d0 d0Var) {
-        this.a = d0Var;
+    public c(e0 e0Var) {
+        this.a = e0Var;
     }
 
-    @Override // s4.d0
-    public final void X(int i10, int i11) {
-        int i12;
-        if (this.b == 1 && i10 >= (i12 = this.c)) {
-            int i13 = this.d;
-            if (i10 <= i12 + i13) {
-                this.d = i13 + i11;
-                this.c = Math.min(i10, i12);
-                return;
-            }
-        }
+    @Override // s4.e0
+    public final void A(int i10, int i11) {
         a();
-        this.c = i10;
-        this.d = i11;
-        this.b = 1;
+        this.a.A(i10, i11);
+    }
+
+    @Override // s4.e0
+    public final void N0(int i10, int i11) {
+        int i12;
+        if (this.b == 2 && (i12 = this.c) >= i10 && i12 <= i10 + i11) {
+            this.d += i11;
+            this.c = i10;
+        } else {
+            a();
+            this.c = i10;
+            this.d = i11;
+            this.b = 2;
+        }
     }
 
     public final void a() {
@@ -34,19 +37,19 @@ public final class c implements d0 {
         if (i10 == 0) {
             return;
         }
-        d0 d0Var = this.a;
+        e0 e0Var = this.a;
         if (i10 == 1) {
-            d0Var.X(this.c, this.d);
+            e0Var.i0(this.c, this.d);
         } else if (i10 == 2) {
-            d0Var.t0(this.c, this.d);
+            e0Var.N0(this.c, this.d);
         } else if (i10 == 3) {
-            d0Var.a1(this.c, this.d);
+            e0Var.g1(this.c, this.d);
         }
         this.b = 0;
     }
 
-    @Override // s4.d0
-    public final void a1(int i10, int i11) {
+    @Override // s4.e0
+    public final void g1(int i10, int i11) {
         int i12;
         int i13;
         int i14;
@@ -61,23 +64,20 @@ public final class c implements d0 {
         }
     }
 
-    @Override // s4.d0
-    public final void t0(int i10, int i11) {
+    @Override // s4.e0
+    public final void i0(int i10, int i11) {
         int i12;
-        if (this.b == 2 && (i12 = this.c) >= i10 && i12 <= i10 + i11) {
-            this.d += i11;
-            this.c = i10;
-        } else {
-            a();
-            this.c = i10;
-            this.d = i11;
-            this.b = 2;
+        if (this.b == 1 && i10 >= (i12 = this.c)) {
+            int i13 = this.d;
+            if (i10 <= i12 + i13) {
+                this.d = i13 + i11;
+                this.c = Math.min(i10, i12);
+                return;
+            }
         }
-    }
-
-    @Override // s4.d0
-    public final void y(int i10, int i11) {
         a();
-        this.a.y(i10, i11);
+        this.c = i10;
+        this.d = i11;
+        this.b = 1;
     }
 }

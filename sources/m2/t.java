@@ -4,17 +4,16 @@ import android.content.Context;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
-import si.o0;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class t {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 0;
     public final String b;
     public final String c;
 
-    public /* synthetic */ t(int i10, String str, String str2) {
-        this.a = i10;
+    public t(String str, String str2) {
         this.b = str;
         this.c = str2;
     }
@@ -28,24 +27,16 @@ public final class t {
         }
     }
 
-    public t(String str, String str2) {
-        this.a = 1;
-        n6.l.c(str.length() <= 23, "tag \"%s\" is longer than the %d character maximum", str, 23);
-        this.b = str;
-        this.c = (str2 == null || str2.length() <= 0) ? null : str2;
-    }
-
-    public t(mi.q qVar) {
-        this.a = 3;
-        Context context = (Context) qVar.b;
-        int e = x9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
+    public t(m4.c cVar) {
+        Context context = (Context) cVar.b;
+        int e = y9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
         if (e != 0) {
             this.b = "Unity";
             String string = context.getResources().getString(e);
             this.c = string;
-            String h = o0.h("Unity Editor version is: ", string);
+            String j10 = b10.j("Unity Editor version is: ", string);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", h, null);
+                Log.v("FirebaseCrashlytics", j10, null);
                 return;
             }
             return;

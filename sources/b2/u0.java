@@ -1,36 +1,71 @@
 package b2;
 
-import org.telegram.tgnet.TLObject;
+import a8.fd;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class u0 {
-    public int a;
-    public int b;
+public final class u0 {
+    public final t0[] a;
+    public final long b;
 
-    public /* synthetic */ u0(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public u0(t0... t0VarArr) {
+        this(-9223372036854775807L, t0VarArr);
     }
 
-    public int a() {
-        int i10 = this.b;
-        if (i10 == 2) {
-            return 10;
+    public final u0 a(t0... t0VarArr) {
+        if (t0VarArr.length == 0) {
+            return this;
         }
-        if (i10 == 5) {
-            return 11;
-        }
-        if (i10 == 29) {
-            return 12;
-        }
-        if (i10 != 42) {
-            return i10 != 22 ? i10 != 23 ? 0 : 15 : TLObject.FLAG_30;
-        }
-        return 16;
+        String str = e2.n0.a;
+        t0[] t0VarArr2 = this.a;
+        Object[] copyOf = Arrays.copyOf(t0VarArr2, t0VarArr2.length + t0VarArr.length);
+        System.arraycopy(t0VarArr, 0, copyOf, t0VarArr2.length, t0VarArr.length);
+        return new u0(this.b, (t0[]) copyOf);
     }
 
-    public int b() {
-        return this.a | this.b;
+    public final u0 b(u0 u0Var) {
+        return u0Var == null ? this : a(u0Var.a);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && u0.class == obj.getClass()) {
+            u0 u0Var = (u0) obj;
+            if (Arrays.equals(this.a, u0Var.a) && this.b == u0Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return fd.b(this.b) + (Arrays.hashCode(this.a) * 31);
+    }
+
+    public final String toString() {
+        String str;
+        StringBuilder sb2 = new StringBuilder("entries=");
+        sb2.append(Arrays.toString(this.a));
+        long j10 = this.b;
+        if (j10 == -9223372036854775807L) {
+            str = "";
+        } else {
+            str = ", presentationTimeUs=" + j10;
+        }
+        sb2.append(str);
+        return sb2.toString();
+    }
+
+    public u0(long j10, t0... t0VarArr) {
+        this.b = j10;
+        this.a = t0VarArr;
+    }
+
+    public u0(List list) {
+        this((t0[]) list.toArray(new t0[0]));
     }
 }

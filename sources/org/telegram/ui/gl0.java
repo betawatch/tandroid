@@ -1,57 +1,43 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gl0 implements Utilities.Callback2 {
+public final /* synthetic */ class gl0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PasskeysActivity b;
+    public final /* synthetic */ PasscodeActivity b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ gl0(PasskeysActivity passkeysActivity, int i10) {
+    public /* synthetic */ gl0(PasscodeActivity passcodeActivity, boolean z10, int i10) {
         this.a = i10;
-        this.b = passkeysActivity;
+        this.b = passcodeActivity;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        int i10 = this.a;
-        PasskeysActivity passkeysActivity = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = passkeysActivity.b;
-                passkeysActivity.addPasskeyRow = -1;
-                String string = LocaleController.getString(R.string.PasskeyTopInfo);
-                int i11 = R.raw.passkey;
-                org.telegram.ui.Components.m61 m61Var = new org.telegram.ui.Components.m61(2);
-                m61Var.l = string;
-                m61Var.k = i11;
-                arrayList.add(m61Var);
-                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
-                    w50 w50Var = new w50(passkeysActivity, 15);
-                    int i13 = hl0.a;
-                    org.telegram.ui.Components.m61 J = org.telegram.ui.Components.m61.J(hl0.class);
-                    J.G = passkey;
-                    J.D = w50Var;
-                    arrayList.add(J);
+                PasscodeActivity passcodeActivity = this.b;
+                passcodeActivity.getMediaDataController().buildShortcuts();
+                if (this.c) {
+                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
+                    hb0 hb0Var = passcodeActivity.U;
+                    if (hb0Var != null) {
+                        AndroidUtilities.runOnUIThread(hb0Var);
+                        passcodeActivity.U = null;
+                    }
+                } else {
+                    passcodeActivity.finishFragment();
                 }
-                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
-                    passkeysActivity.addPasskeyRow = arrayList.size();
-                    org.telegram.ui.Components.m61 c10 = org.telegram.ui.Components.m61.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
-                    c10.q = true;
-                    arrayList.add(c10);
-                }
-                arrayList.add(org.telegram.ui.Components.m61.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new oj0(passkeysActivity, 3)), true)));
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
                 break;
             default:
-                PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
+                PasscodeActivity passcodeActivity2 = this.b;
+                passcodeActivity2.w.e(true, this.c);
+                AndroidUtilities.cancelRunOnUIThread(passcodeActivity2.T);
                 break;
         }
     }

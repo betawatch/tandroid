@@ -1,62 +1,32 @@
 package org.telegram.ui;
 
-import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qi extends pf.c {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
-    public final /* synthetic */ sn g;
-    public final /* synthetic */ Object h;
+public final class qi implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ai.h1 b;
+    public final /* synthetic */ un c;
+    public final /* synthetic */ un d;
 
-    public /* synthetic */ qi(sn snVar, int i10, Object obj, org.telegram.ui.Cells.t1 t1Var, int i11) {
-        this.d = i11;
-        this.g = snVar;
-        this.e = i10;
-        this.h = obj;
-        this.f = t1Var;
+    public qi(un unVar, int i10, ai.h1 h1Var, un unVar2) {
+        this.d = unVar;
+        this.a = i10;
+        this.b = h1Var;
+        this.c = unVar2;
     }
 
-    @Override // pf.c
-    public final void c(boolean z10) {
-        switch (this.d) {
-            case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 22), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 25), 240L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // pf.c
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                sn snVar = this.g;
-                snVar.Jb = i10;
-                snVar.Kb = 1;
-                snVar.Lb = (CharacterStyle) this.h;
-                this.f.invalidate();
-                break;
-            default:
-                int i11 = this.e;
-                sn snVar2 = this.g;
-                snVar2.Jb = i11;
-                snVar2.Kb = 3;
-                snVar2.Mb = (String) this.h;
-                this.f.invalidate();
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        int i13 = NotificationCenter.messagesDidLoad;
+        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
+            this.b.run();
+            AndroidUtilities.runOnUIThread(new i2.b0(this.c, i10, i11, objArr), 50L);
+            i12 = ((org.telegram.ui.ActionBar.r2) this.d).currentAccount;
+            NotificationCenter.getInstance(i12).removeObserver(this, i13);
         }
     }
 }

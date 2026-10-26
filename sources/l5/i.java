@@ -1,63 +1,31 @@
 package l5;
 
-import android.util.Base64;
-import java.util.Arrays;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class i {
-    public final String a;
-    public final byte[] b;
-    public final i5.d c;
+public final class i extends o {
+    public final ArrayList a;
 
-    public i(String str, byte[] bArr, i5.d dVar) {
-        this.a = str;
-        this.b = bArr;
-        this.c = dVar;
-    }
-
-    public static androidx.biometric.e a() {
-        androidx.biometric.e eVar = new androidx.biometric.e(28);
-        eVar.d = i5.d.a;
-        return eVar;
-    }
-
-    public final i b(i5.d dVar) {
-        androidx.biometric.e a2 = a();
-        a2.u(this.a);
-        if (dVar == null) {
-            throw new NullPointerException("Null priority");
-        }
-        a2.d = dVar;
-        a2.c = this.b;
-        return a2.e();
+    public i(ArrayList arrayList) {
+        this.a = arrayList;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof i) {
-            i iVar = (i) obj;
-            if (this.a.equals(iVar.a) && Arrays.equals(this.b, iVar.b) && this.c.equals(iVar.c)) {
-                return true;
-            }
+        if (!(obj instanceof o)) {
+            return false;
         }
-        return false;
+        return this.a.equals(((i) ((o) obj)).a);
     }
 
     public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b)) * 1000003) ^ this.c.hashCode();
+        return this.a.hashCode() ^ 1000003;
     }
 
     public final String toString() {
-        byte[] bArr = this.b;
-        String encodeToString = bArr == null ? "" : Base64.encodeToString(bArr, 2);
-        StringBuilder sb2 = new StringBuilder("TransportContext(");
-        sb2.append(this.a);
-        sb2.append(", ");
-        sb2.append(this.c);
-        sb2.append(", ");
-        return a1.g.s(sb2, encodeToString, ")");
+        return "BatchedLogRequest{logRequests=" + this.a + "}";
     }
 }

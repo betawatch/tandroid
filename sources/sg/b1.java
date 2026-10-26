@@ -1,106 +1,84 @@
 package sg;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import fi.n6;
+import fi.q5;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.la;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class b1 {
-    public static b1 j;
-    public final a1 a;
-    public final Paint b;
-    public Paint c;
-    public final Drawable d;
-    public final Drawable e;
-    public z0 f;
-    public z0 g;
-    public final z0 h;
-    public int i;
+public final class b1 extends lm0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ la d;
+    public final /* synthetic */ n6 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ q5 h;
 
-    public b1() {
-        a1 a1Var = new a1(k6.Lj, k6.Mj, k6.Nj, k6.Oj, null);
-        this.a = a1Var;
-        a1 a1Var2 = new a1(k6.fk, k6.gk, -1, -1, null);
-        this.b = a1Var.f;
-        this.e = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
-        this.f = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), a1Var);
-        this.h = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), a1Var2);
-        this.g = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_normal), a1Var);
-        this.d = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
-        a1Var.a();
-        b();
+    public b1(q5 q5Var, Context context, la laVar, n6 n6Var, boolean z10) {
+        this.h = q5Var;
+        this.c = context;
+        this.d = laVar;
+        this.e = n6Var;
+        this.f = z10;
     }
 
-    public static z0 c(Drawable drawable, a1 a1Var) {
-        if (drawable == null) {
-            return null;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.h.s0.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return ((MessageObject) this.h.s0.get((r0.size() - 1) - i10)).contentType;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        boolean z10;
+        MessageObject.GroupedMessagePosition position;
+        q5 q5Var = this.h;
+        ArrayList arrayList = q5Var.s0;
+        MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
+        View view = e1Var.a;
+        if (!(view instanceof org.telegram.ui.Cells.s1)) {
+            if (view instanceof org.telegram.ui.Cells.v0) {
+                ((org.telegram.ui.Cells.v0) view).setMessageObject(messageObject);
+                return;
+            }
+            return;
         }
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int minimumHeight = drawable.getMinimumHeight();
-        Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, minimumHeight, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        drawable.setBounds(0, 0, intrinsicWidth, minimumHeight);
-        drawable.draw(canvas);
-        a1Var.f.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        a1Var.d(0, -intrinsicWidth, 0, intrinsicWidth, 0.0f, minimumHeight);
-        canvas.drawRect(0.0f, 0.0f, intrinsicWidth, minimumHeight, a1Var.f);
-        a1Var.f.setXfermode(null);
-        int[] iArr = a1Var.l;
-        z0 z0Var = new z0(ApplicationLoader.applicationContext.getResources(), createBitmap);
-        z0Var.b = drawable;
-        int[] iArr2 = new int[iArr.length];
-        z0Var.a = iArr2;
-        System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
-        return z0Var;
-    }
-
-    public static b1 d() {
-        if (j == null) {
-            j = new b1();
+        org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view;
+        MessageObject.GroupedMessages groupedMessages = q5Var.t0;
+        if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
+            z10 = false;
+        } else {
+            z10 = position.minY != 0;
         }
-        return j;
+        MessageObject.GroupedMessages groupedMessages2 = q5Var.t0;
+        s1Var.Z3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
     }
 
-    public final z0 a(z0 z0Var) {
-        a1 a1Var = this.a;
-        int[] iArr = a1Var.l;
-        int i10 = iArr[0];
-        int[] iArr2 = z0Var.a;
-        return (i10 == iArr2[0] && iArr[1] == iArr2[1] && iArr[2] == iArr2[2] && iArr[3] == iArr2[3]) ? z0Var : c(z0Var.b, a1Var);
-    }
-
-    public final void b() {
-        int i10 = k6.z9;
-        if (k6.x0(null, i10, false) != this.i) {
-            this.i = k6.x0(null, i10, false);
-            this.e.setColorFilter(new PorterDuffColorFilter(this.i, PorterDuff.Mode.MULTIPLY));
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        f1 f1Var = this.h.D0;
+        Context context = this.c;
+        if (i10 == 1) {
+            return new vl0(new z0(this, context, f1Var));
         }
-        this.f = a(this.f);
-        this.g = a(this.g);
-    }
-
-    public final Paint e() {
-        if (!MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
-            return this.b;
-        }
-        if (this.c == null) {
-            this.c = new Paint(1);
-        }
-        this.c.setColor(k6.x0(null, k6.Oh, false));
-        return this.c;
-    }
-
-    public final void f(float f7, float f10, int i10, int i11) {
-        this.a.d(0, f7, 0, i10, f10, i11);
+        a1 a1Var = new a1(this, context, UserConfig.selectedAccount, f1Var);
+        a1Var.N7 = true;
+        return new vl0(a1Var);
     }
 }

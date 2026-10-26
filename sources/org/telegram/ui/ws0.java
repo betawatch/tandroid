@@ -1,53 +1,68 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.OrientationEventListener;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ws0 extends OrientationEventListener {
-    public final /* synthetic */ PhotoViewer a;
+public final class ws0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ PhotoViewer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ws0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.a = photoViewer;
+    public ws0(PhotoViewer photoViewer, float f7, Runnable runnable) {
+        this.c = photoViewer;
+        this.a = f7;
+        this.b = runnable;
     }
 
-    @Override // android.view.OrientationEventListener
-    public final void onOrientationChanged(int i10) {
-        bt0 bt0Var;
-        Activity activity;
-        int i11;
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.W3 == null || (bt0Var = photoViewer.y2) == null || bt0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.Y3) == 0) {
-            return;
-        }
-        if (i11 != 1) {
-            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
-                photoViewer.Z3 = true;
-                return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        PhotoViewer photoViewer = this.c;
+        photoViewer.p6 = null;
+        photoViewer.f6 = 0.0f;
+        photoViewer.b6 = 0.0f;
+        photoViewer.g6 = 0.0f;
+        float t22 = photoViewer.t2(false);
+        photoViewer.e6 = t22;
+        photoViewer.a6 = t22;
+        photoViewer.e0.invalidate();
+        CropAreaView cropAreaView = photoViewer.C1.b.a;
+        float t23 = photoViewer.t2(false);
+        cropAreaView.n0 = 0.0f;
+        cropAreaView.o0 = t23;
+        cropAreaView.p0 = 0.0f;
+        cropAreaView.q0 = 0.0f;
+        cropAreaView.invalidate();
+        photoViewer.C1.c.setRotated(false);
+        float f7 = this.a;
+        if (Math.abs(f7) > 0.0f) {
+            org.telegram.ui.Components.of0 of0Var = photoViewer.C1;
+            ng.f fVar = of0Var.c;
+            if (fVar != null) {
+                fVar.b(0.0f);
+                fVar.setRotated(false);
             }
-            if (!photoViewer.Z3 || i10 < 240 || i10 > 300) {
-                return;
+            if (of0Var.b.m(f7)) {
+                org.telegram.ui.ActionBar.f7.t(photoViewer.b1, org.telegram.ui.ActionBar.y6.zf, photoViewer.v2, PorterDuff.Mode.MULTIPLY);
+            } else {
+                photoViewer.b1.setColorFilter((ColorFilter) null);
             }
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
-            return;
         }
-        if (i10 >= 240 && i10 <= 300) {
-            photoViewer.Z3 = true;
-            return;
+        MediaController.CropState cropState = photoViewer.X4.c;
+        if (cropState != null) {
+            cropState.cropPy = 0.0f;
+            cropState.cropPx = 0.0f;
+            cropState.cropPh = 1.0f;
+            cropState.cropPw = 1.0f;
         }
-        if (!photoViewer.Z3 || i10 <= 0) {
-            return;
-        }
-        if (i10 >= 330 || i10 <= 30) {
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 }

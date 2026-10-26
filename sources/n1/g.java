@@ -16,7 +16,7 @@ import m1.h;
 import m1.j;
 import m1.k;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
     public static final g a = new g();
@@ -41,8 +41,8 @@ public final class g {
                 k value = (k) entry.getValue();
                 i.d(name, "name");
                 i.d(value, "value");
-                int x10 = value.x();
-                switch (x10 == 0 ? -1 : f.a[j.c(x10)]) {
+                int x9 = value.x();
+                switch (x9 == 0 ? -1 : f.a[j.c(x9)]) {
                     case -1:
                         throw new k1.a("Value case is null.", null);
                     case 0:
@@ -73,7 +73,7 @@ public final class g {
                         d dVar2 = new d(name);
                         y k10 = value.w().k();
                         i.d(k10, "value.stringSet.stringsList");
-                        bVar.b(dVar2, jd.g.p(k10));
+                        bVar.b(dVar2, kd.g.p(k10));
                         break;
                     case 8:
                         throw new k1.a("Value not set.", null);

@@ -1,40 +1,34 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class q8 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ImageReceiver b;
+public final class q8 extends LinearLayout {
+    public TextView a;
+    public boolean b;
 
-    public /* synthetic */ q8(ImageReceiver imageReceiver, int i10) {
-        this.a = i10;
-        this.b = imageReceiver;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View view;
+        int measuredHeight;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+        if (!this.b || (view = (View) getParent()) == null || getMeasuredHeight() >= (measuredHeight = ((view.getMeasuredHeight() - view.getPaddingBottom()) - view.getPaddingTop()) - AndroidUtilities.dp(24.0f))) {
+            return;
+        }
+        setMeasuredDimension(getMeasuredWidth(), measuredHeight);
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.onAttachedToWindow();
-                break;
-            default:
-                this.b.onAttachedToWindow();
-                break;
-        }
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.a.setOnClickListener(onClickListener);
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.onDetachedFromWindow();
-                break;
-            default:
-                this.b.onDetachedFromWindow();
-                break;
-        }
+    public void setIsLast(boolean z10) {
+        this.b = z10;
+        requestLayout();
     }
 }

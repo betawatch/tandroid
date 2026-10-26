@@ -1,84 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
-import org.telegram.messenger.LiteMode;
+import android.text.TextUtils;
+import android.view.ViewGroup;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class f20 {
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public RadialGradient g;
-    public final int i;
-    public int j;
-    public int k;
-    public int l;
-    public float a = -1.0f;
-    public float b = -1.0f;
-    public final Matrix h = new Matrix();
-    public final int m = org.telegram.ui.ActionBar.k6.Xg;
-    public final int n = org.telegram.ui.ActionBar.k6.Yg;
-    public final int o = org.telegram.ui.ActionBar.k6.Zg;
-    public final int p = org.telegram.ui.ActionBar.k6.ah;
-    public final int q = org.telegram.ui.ActionBar.k6.ih;
-    public final int r = org.telegram.ui.ActionBar.k6.jh;
-    public final int s = org.telegram.ui.ActionBar.k6.kh;
+public final class f20 implements re.a {
+    public final ViewGroup a;
+    public final nh.c b;
 
-    public f20(int i10) {
-        this.i = i10;
-        a();
+    public f20(di.i4 i4Var, GroupCallMessage groupCallMessage) {
+        nh.c cVar = new nh.c(i4Var.getContext());
+        this.b = cVar;
+        cVar.setBackgroundColor(i0.a.o(-16777216, 34));
+        xh.n nVar = cVar.v;
+        nVar.setMaxLines(1);
+        nVar.setSingleLine(true);
+        nVar.setEllipsize(TextUtils.TruncateAt.END);
+        cVar.set(groupCallMessage);
+        cVar.setAlpha(0.0f);
+        this.a = i4Var;
+        i4Var.addView(cVar);
     }
 
+    @Override // re.a
     public final void a() {
-        int i10 = this.i;
-        if (i10 == 0) {
-            int x02 = org.telegram.ui.ActionBar.k6.x0(null, this.m, false);
-            this.j = x02;
-            int x03 = org.telegram.ui.ActionBar.k6.x0(null, this.n, false);
-            this.k = x03;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x02, x03}, (float[]) null, Shader.TileMode.CLAMP);
-            return;
-        }
-        if (i10 == 1) {
-            int x04 = org.telegram.ui.ActionBar.k6.x0(null, this.o, false);
-            this.j = x04;
-            int x05 = org.telegram.ui.ActionBar.k6.x0(null, this.p, false);
-            this.k = x05;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x04, x05}, (float[]) null, Shader.TileMode.CLAMP);
-            return;
-        }
-        if (i10 == 3) {
-            int x06 = org.telegram.ui.ActionBar.k6.x0(null, this.q, false);
-            this.j = x06;
-            int x07 = org.telegram.ui.ActionBar.k6.x0(null, this.s, false);
-            this.l = x07;
-            int x08 = org.telegram.ui.ActionBar.k6.x0(null, this.r, false);
-            this.k = x08;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x06, x07, x08}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-    }
-
-    public final void b(Paint paint) {
-        int i10 = this.i;
-        if (i10 != 0 && i10 != 1 && i10 != 3) {
-            paint.setShader(null);
-            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.bh, false));
-        } else {
-            if (LiteMode.isEnabled(512)) {
-                paint.setShader(this.g);
-                return;
-            }
-            paint.setShader(null);
-            if (i10 == 3) {
-                paint.setColor(i0.a.f(0.5f, i0.a.f(0.5f, this.j, this.k), this.l));
-            } else {
-                paint.setColor(i0.a.f(0.5f, this.j, this.k));
-            }
-        }
+        this.a.removeView(this.b);
     }
 }

@@ -1,19 +1,24 @@
 package org.telegram.messenger;
 
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import java.util.ArrayList;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements NotificationCenter.NotificationCenterDelegate {
+    private static final String PAUSED_NOTIFICATION_TAG = "live_location_paused";
     private e0.q builder;
     private Handler handler;
     private Runnable runnable;
@@ -31,6 +36,10 @@ public class LocationSharingService extends Service implements NotificationCente
             }
         }
         return arrayList;
+    }
+
+    public static void hidePausedNotification() {
+        new e0.j0(ApplicationLoader.applicationContext).b(6, PAUSED_NOTIFICATION_TAG);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -52,7 +61,71 @@ public class LocationSharingService extends Service implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onCreate$1() {
         this.handler.postDelayed(this.runnable, 1000L);
-        Utilities.stageQueue.postRunnable(new z1(14));
+        Utilities.stageQueue.postRunnable(new a2(16));
+    }
+
+    public static void showPausedNotification() {
+        boolean z10 = false;
+        boolean z11 = false;
+        long j10 = 0;
+        for (int i10 = 0; i10 < 4; i10++) {
+            ArrayList<LocationController.SharingLocationInfo> arrayList = LocationController.getInstance(i10).sharingLocationsUI;
+            int i11 = 0;
+            while (i11 < arrayList.size()) {
+                int i12 = arrayList.get(i11).stopTime;
+                if (i12 == Integer.MAX_VALUE) {
+                    z11 = true;
+                } else {
+                    j10 = Math.max(j10, (i12 - ConnectionsManager.getInstance(r4.account).getCurrentTime()) * 1000);
+                }
+                i11++;
+                z10 = true;
+            }
+        }
+        if (z10) {
+            if (z11 || j10 > 0) {
+                try {
+                    Context context = ApplicationLoader.applicationContext;
+                    Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
+                    intent.setAction("org.tmessages.openlocations");
+                    intent.addCategory("android.intent.category.LAUNCHER");
+                    PendingIntent activity = PendingIntent.getActivity(context, 0, intent, 167772160);
+                    Intent intent2 = new Intent(context, (Class<?>) StopLiveLocationReceiver.class);
+                    String string = LocaleController.getString(R.string.LiveLocationPausedText);
+                    NotificationsController.checkOtherNotificationsChannel();
+                    e0.q qVar = new e0.q(context, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
+                    qVar.F.icon = R.drawable.live_loc;
+                    qVar.g(LocaleController.getString(R.string.LiveLocationPausedTitle));
+                    qVar.f(string);
+                    e0.l lVar = new e0.l(false);
+                    lVar.f = e0.q.d(string);
+                    qVar.n(lVar);
+                    qVar.g = activity;
+                    qVar.h(16, true);
+                    qVar.a(0, LocaleController.getString(R.string.StopLiveLocation), PendingIntent.getBroadcast(context, 2, intent2, 167772160));
+                    if (!z11) {
+                        qVar.B = j10;
+                    }
+                    new e0.j0(context).e(PAUSED_NOTIFICATION_TAG, 6, qVar.b());
+                } catch (Throwable th2) {
+                    FileLog.e(th2);
+                }
+            }
+        }
+    }
+
+    private boolean startForegroundCompat(Notification notification) {
+        if (Build.VERSION.SDK_INT < 29) {
+            startForeground(6, notification);
+            return true;
+        }
+        try {
+            startForeground(6, notification, 8);
+            return true;
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+            return false;
+        }
     }
 
     private void updateNotification(boolean z10) {
@@ -82,7 +155,7 @@ public class LocationSharingService extends Service implements NotificationCente
         this.builder.p(format);
         this.builder.f(format);
         if (z10) {
-            new e0.k0(ApplicationLoader.applicationContext).e(null, 6, this.builder.b());
+            new e0.j0(ApplicationLoader.applicationContext).e(null, 6, this.builder.b());
         }
     }
 
@@ -92,7 +165,7 @@ public class LocationSharingService extends Service implements NotificationCente
         if (i10 != NotificationCenter.liveLocationsChanged || (handler = this.handler) == null) {
             return;
         }
-        handler.post(new z5(this, 1));
+        handler.post(new b6(this, 1));
     }
 
     @Override // android.app.Service
@@ -105,9 +178,9 @@ public class LocationSharingService extends Service implements NotificationCente
         super.onCreate();
         Handler handler = new Handler();
         this.handler = handler;
-        z5 z5Var = new z5(this, 0);
-        this.runnable = z5Var;
-        handler.postDelayed(z5Var, 1000L);
+        b6 b6Var = new b6(this, 0);
+        this.runnable = b6Var;
+        handler.postDelayed(b6Var, 1000L);
     }
 
     @Override // android.app.Service
@@ -118,7 +191,7 @@ public class LocationSharingService extends Service implements NotificationCente
             handler.removeCallbacks(this.runnable);
         }
         stopForeground(true);
-        new e0.k0(ApplicationLoader.applicationContext).b(6, null);
+        new e0.j0(ApplicationLoader.applicationContext).b(6, null);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.liveLocationsChanged);
     }
 
@@ -126,6 +199,7 @@ public class LocationSharingService extends Service implements NotificationCente
     public int onStartCommand(Intent intent, int i10, int i11) {
         if (getInfos().isEmpty()) {
             stopSelf();
+            return 2;
         }
         try {
             if (this.builder == null) {
@@ -135,9 +209,9 @@ public class LocationSharingService extends Service implements NotificationCente
                 PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 167772160);
                 e0.q qVar = new e0.q(ApplicationLoader.applicationContext, null);
                 this.builder = qVar;
-                qVar.E.when = System.currentTimeMillis();
+                qVar.F.when = System.currentTimeMillis();
                 e0.q qVar2 = this.builder;
-                qVar2.E.icon = R.drawable.live_loc;
+                qVar2.F.icon = R.drawable.live_loc;
                 qVar2.g = activity;
                 NotificationsController.checkOtherNotificationsChannel();
                 e0.q qVar3 = this.builder;
@@ -146,7 +220,12 @@ public class LocationSharingService extends Service implements NotificationCente
                 this.builder.a(0, LocaleController.getString(R.string.StopLiveLocation), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, new Intent(ApplicationLoader.applicationContext, (Class<?>) StopLiveLocationReceiver.class), 167772160));
             }
             updateNotification(false);
-            startForeground(6, this.builder.b());
+            if (startForegroundCompat(this.builder.b())) {
+                hidePausedNotification();
+                return 2;
+            }
+            showPausedNotification();
+            stopSelf();
             return 2;
         } catch (Throwable th2) {
             FileLog.e(th2);

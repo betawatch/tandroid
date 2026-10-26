@@ -1,86 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.util.Property;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class lr0 extends FrameLayout {
-    public final LinearLayout a;
-    public final ImageView b;
-    public final org.telegram.ui.ActionBar.n5 c;
-    public final org.telegram.ui.ActionBar.n5 d;
-    public final org.telegram.ui.ActionBar.n5 e;
-    public final FrameLayout f;
-    public final w9[] h;
-    public final w9 n;
-    public final ImageView r;
-    public final /* synthetic */ nr0 s;
+public abstract class lr0 extends FrameLayout {
+    public View a;
+    public org.telegram.ui.ActionBar.b6 b;
+    public org.telegram.ui.ActionBar.b6 c;
+    public bi.cc d;
+    public int e;
+    public AnimatorSet f;
+    public Paint h;
+    public RectF n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lr0(nr0 nr0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.s = nr0Var;
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(0);
-        linearLayout.setBackground(org.telegram.ui.ActionBar.k6.b0(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i6, g6Var), 20, 20, 6, 6));
-        w7.b6.b(linearLayout, 0.02f, 1.2f);
-        addView(linearLayout, w7.z5.d(-1, -1.0f, 119, 4.0f, 4.0f, 4.0f, 4.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.te, g6Var, PorterDuff.Mode.MULTIPLY);
-        linearLayout.addView(imageView, w7.z5.q(40, 38, 51));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.f = frameLayout;
-        linearLayout.addView(frameLayout, w7.z5.t(-2, -1, 115, 6, 0, 0, 0));
-        this.h = new w9[3];
-        for (int i10 = 2; i10 >= 0; i10--) {
-            this.h[i10] = new w9(context);
-            this.h[i10].setRoundRadius(AndroidUtilities.dp(6.0f));
-            this.h[i10].setVisibility(8);
-            int i11 = 32 - (i10 * 4);
-            this.f.addView(this.h[i10], w7.z5.d(i11, i11, 19, i10 * 12, 0.0f, 0.0f, 0.0f));
+    public final void a(int i10) {
+        if (this.e == i10) {
+            return;
         }
-        w9 w9Var = new w9(context);
-        this.n = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
-        w9Var.setVisibility(8);
-        this.a.addView(w9Var, w7.z5.t(34, 34, 19, 6, 0, 0, 0));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.a.addView(frameLayout2, w7.z5.o(0, -1, 1.0f, 119));
-        org.telegram.ui.ActionBar.n5 n5Var = new org.telegram.ui.ActionBar.n5(context);
-        this.c = n5Var;
-        n5Var.setTextSize(14);
-        n5Var.setTypeface(AndroidUtilities.bold());
-        org.telegram.ui.ActionBar.r6.Z(n5Var, org.telegram.ui.ActionBar.k6.ve, g6Var);
-        frameLayout2.addView(n5Var, w7.z5.d(-1, 18.0f, 51, 8.0f, 2.0f, 8.0f, 0.0f));
-        org.telegram.ui.ActionBar.n5 n5Var2 = new org.telegram.ui.ActionBar.n5(context);
-        this.d = n5Var2;
-        n5Var2.setTextSize(14);
-        int i12 = org.telegram.ui.ActionBar.k6.Xk;
-        org.telegram.ui.ActionBar.r6.Z(n5Var2, i12, g6Var);
-        frameLayout2.addView(n5Var2, w7.z5.d(-1, 18.0f, 51, 8.0f, 20.0f, 8.0f, 0.0f));
-        org.telegram.ui.ActionBar.n5 n5Var3 = new org.telegram.ui.ActionBar.n5(context);
-        this.e = n5Var3;
-        n5Var3.setTextSize(14);
-        org.telegram.ui.ActionBar.r6.Z(n5Var3, i12, g6Var);
-        n5Var3.setAlpha(0.0f);
-        frameLayout2.addView(n5Var3, w7.z5.d(-1, 18.0f, 51, 8.0f, 20.0f, 8.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.r = imageView2;
-        imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        imageView2.setImageResource(R.drawable.input_clear);
-        org.telegram.ui.ActionBar.r6.t(imageView2, org.telegram.ui.ActionBar.k6.Wk, g6Var, PorterDuff.Mode.MULTIPLY);
-        imageView2.setBackground(org.telegram.ui.ActionBar.k6.g0(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i6, g6Var), 1, AndroidUtilities.dp(18.0f)));
-        imageView2.setVisibility(8);
-        imageView2.setOnClickListener(new v80(this, 14));
-        this.a.addView(imageView2, w7.z5.t(36, 36, 21, 0, 0, 4, 0));
+        this.e = i10;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.f = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.d, (Property<bi.cc, Float>) View.TRANSLATION_X, this.e == 0 ? 0.0f : r0.getMeasuredWidth()));
+        this.f.setDuration(180L);
+        this.f.setInterpolator(ds.g);
+        this.f.addListener(new i10(this, 20));
+        this.f.start();
+        ((yq0) this).r.c1();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = (View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(28.0f)) / 2;
+        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).width = size;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
+        layoutParams.width = size;
+        layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
+        bi.cc ccVar = this.d;
+        ((FrameLayout.LayoutParams) ccVar.getLayoutParams()).width = size;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        ccVar.setTranslationX(this.e == 0 ? 0.0f : r2.width);
+        super.onMeasure(i10, i11);
     }
 }

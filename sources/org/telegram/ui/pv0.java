@@ -1,88 +1,68 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.MessageObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class pv0 implements org.telegram.ui.Components.fl0 {
-    public final /* synthetic */ sn a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ org.telegram.ui.Components.gl0 c;
-    public final /* synthetic */ uv0 d;
+public final /* synthetic */ class pv0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ xv0 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ TLRPC.PollAnswer d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 e;
+    public final /* synthetic */ ArrayList f;
 
-    public pv0(uv0 uv0Var, sn snVar, MessageObject messageObject, org.telegram.ui.Components.gl0 gl0Var) {
-        this.d = uv0Var;
-        this.a = snVar;
-        this.b = messageObject;
-        this.c = gl0Var;
+    public /* synthetic */ pv0(xv0 xv0Var, boolean z10, TLRPC.PollAnswer pollAnswer, org.telegram.ui.ActionBar.r2 r2Var, ArrayList arrayList) {
+        this.b = xv0Var;
+        this.c = z10;
+        this.d = pollAnswer;
+        this.e = r2Var;
+        this.f = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean i() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean l() {
-        return false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
-    @Override // org.telegram.ui.Components.fl0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void m(View view, ah.i1 i1Var, boolean z10, boolean z11) {
-        float f7;
-        ah.j1 j1Var;
-        ah.g1 l4;
-        float f10;
-        int i10;
-        float f11;
-        int id2 = this.b.getId();
-        sn snVar = this.a;
-        org.telegram.ui.Cells.z t82 = snVar.t8(id2, true);
-        float f12 = 0.0f;
-        if (t82 instanceof org.telegram.ui.Cells.t1) {
-            ah.j1 j1Var2 = ((org.telegram.ui.Cells.t1) t82).N;
-            ah.g1 l10 = j1Var2.l(i1Var);
-            if (l10 == null) {
-                f11 = 0.0f;
-                f7 = f11;
-                snVar.eb(t82, this.b, this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
-                this.d.c(false);
-            }
-            f12 = j1Var2.c + l10.x + (l10.A / 2.0f);
-            f10 = j1Var2.d + l10.y;
-            i10 = l10.B;
-        } else if (!(t82 instanceof org.telegram.ui.Cells.v0) || (l4 = (j1Var = ((org.telegram.ui.Cells.v0) t82).E0).l(i1Var)) == null) {
-            f7 = 0.0f;
-            snVar.eb(t82, this.b, this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
-            this.d.c(false);
-        } else {
-            f12 = j1Var.c + l4.x + (l4.A / 2.0f);
-            f10 = j1Var.d + l4.y;
-            i10 = l4.B;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xv0 xv0Var = this.b;
+                xv0Var.getClass();
+                boolean z10 = this.c;
+                org.telegram.ui.ActionBar.r2 r2Var = this.e;
+                if (z10) {
+                    ArrayList<TLRPC.PollAnswer> arrayList = this.f;
+                    arrayList.remove(this.d);
+                    r2Var.getSendMessagesHelper().sendVote(xv0Var.H, arrayList, null);
+                } else {
+                    r2Var.getSendMessagesHelper().sendVote(xv0Var.H, null, null);
+                }
+                xv0Var.c(true);
+                break;
+            default:
+                xv0 xv0Var2 = this.b;
+                xv0Var2.getClass();
+                boolean z11 = this.c;
+                TLRPC.PollAnswer pollAnswer = this.d;
+                org.telegram.ui.ActionBar.r2 r2Var2 = this.e;
+                if (z11) {
+                    ArrayList<TLRPC.PollAnswer> arrayList2 = this.f;
+                    arrayList2.add(pollAnswer);
+                    r2Var2.getSendMessagesHelper().sendVote(xv0Var2.H, arrayList2, null);
+                } else {
+                    ArrayList<TLRPC.PollAnswer> arrayList3 = new ArrayList<>(1);
+                    arrayList3.add(pollAnswer);
+                    r2Var2.getSendMessagesHelper().sendVote(xv0Var2.H, arrayList3, null);
+                }
+                xv0Var2.c(true);
+                break;
         }
-        f11 = f10 + (i10 / 2.0f);
-        f7 = f11;
-        snVar.eb(t82, this.b, this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
-        this.d.c(false);
     }
 
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean w() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ void s(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public /* synthetic */ pv0(xv0 xv0Var, boolean z10, org.telegram.ui.ActionBar.r2 r2Var, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
+        this.b = xv0Var;
+        this.c = z10;
+        this.e = r2Var;
+        this.f = arrayList;
+        this.d = pollAnswer;
     }
 }

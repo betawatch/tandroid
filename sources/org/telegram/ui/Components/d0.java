@@ -17,34 +17,34 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.ActionBar.g6 b;
+    public final org.telegram.ui.ActionBar.u6 b;
     public final b0 c;
     public int d;
     public boolean e;
     public int f;
-    public final f6 h;
-    public ei.e5 n;
+    public final h6 h;
+    public fi.d5 n;
 
-    public d0(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
+    public d0(int i10, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
         super(context);
         this.a = i10;
-        this.b = g6Var;
-        b0 b0Var = new b0(this, context, g6Var);
+        this.b = u6Var;
+        b0 b0Var = new b0(this, context, u6Var);
         this.c = b0Var;
         b0Var.setOrientation(0);
-        this.h = new f6(b0Var, 0L, 320L, bs.h);
+        this.h = new h6(b0Var, 0L, 320L, ds.h);
         if (!z10) {
-            addView(b0Var, w7.z5.e(-1, -1, 119));
+            addView(b0Var, gb1.i(-1, -1, 119));
             return;
         }
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(b0Var);
-        addView(horizontalScrollView, w7.z5.e(-1, -1, 119));
+        addView(horizontalScrollView, gb1.i(-1, -1, 119));
     }
 
     public final void a(int i10, String str, Utilities.Callback callback) {
@@ -57,7 +57,7 @@ public final class d0 extends FrameLayout {
         c0Var.h.setImageResource(i10);
         c0Var.n.setText(str);
         c0Var.setOnClickListener(new a0(childCount, 0, callback));
-        b0Var.addView(c0Var, w7.z5.o(0, -1, 1.0f, 119));
+        b0Var.addView(c0Var, gb1.s(0, -1, 1.0f, 119));
     }
 
     public final void b(TL_aicompose.AiComposeTone aiComposeTone, Utilities.Callback callback) {
@@ -66,14 +66,14 @@ public final class d0 extends FrameLayout {
         c0Var.c = this.d;
         c0Var.updateColors();
         TextView textView = c0Var.n;
-        w9 w9Var = c0Var.h;
+        y9 y9Var = c0Var.h;
         if (aiComposeTone == null) {
             c0Var.d = false;
             c0Var.updateColors();
             int i10 = R.drawable.tone_create;
             String string = LocaleController.getString(R.string.AIEditorStyleNewCreate);
             c0Var.f = false;
-            w9Var.setImageResource(i10);
+            y9Var.setImageResource(i10);
             textView.setText(string);
         } else if (aiComposeTone instanceof z) {
             c0Var.d = false;
@@ -81,26 +81,26 @@ public final class d0 extends FrameLayout {
             int i11 = R.drawable.iv_prompt;
             String string2 = LocaleController.getString(R.string.AIEditorStylePrompt);
             c0Var.f = false;
-            w9Var.setImageResource(i11);
+            y9Var.setImageResource(i11);
             textView.setText(string2);
         } else {
             String str = aiComposeTone.title;
             long j10 = aiComposeTone.emoji_id;
             c0Var.f = true;
-            w9Var.setColorFilter(null);
-            w9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
+            y9Var.setColorFilter(null);
+            y9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
             textView.setText(str);
             int i12 = c0Var.a;
             if (ConnectionsManager.getInstance(i12).isTestBackend()) {
                 for (int i13 = 0; i13 < 4 && (!UserConfig.getInstance(i13).isClientActivated() || ConnectionsManager.getInstance(i13).isTestBackend()); i13++) {
                 }
             }
-            w9Var.setAnimatedEmojiDrawable(new r5(9, i12, j10));
+            y9Var.setAnimatedEmojiDrawable(new t5(9, i12, j10));
         }
-        c0Var.setOnClickListener(new org.telegram.ui.ActionBar.s1(20, callback, aiComposeTone));
-        c0Var.setOnLongClickListener(new ci.l2(1, this, c0Var));
+        c0Var.setOnClickListener(new org.telegram.ui.ActionBar.u1(20, callback, aiComposeTone));
+        c0Var.setOnLongClickListener(new di.l2(1, this, c0Var));
         b0 b0Var = this.c;
-        b0Var.addView(c0Var, w7.z5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
+        b0Var.addView(c0Var, gb1.s(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
     }
 
     public final void c(int i10) {
@@ -112,14 +112,14 @@ public final class d0 extends FrameLayout {
         if (i10 >= 0 && i10 < b0Var.getChildCount()) {
             View childAt = b0Var.getChildAt(i10);
             if (childAt instanceof c0) {
-                w9 w9Var = ((c0) childAt).h;
-                if (w9Var.getAnimatedEmojiDrawable() != null) {
-                    ci.f3 f3Var = w9Var.getAnimatedEmojiDrawable().k;
+                y9 y9Var = ((c0) childAt).h;
+                if (y9Var.getAnimatedEmojiDrawable() != null) {
+                    di.f3 f3Var = y9Var.getAnimatedEmojiDrawable().k;
                     if (f3Var != null) {
                         f3Var.startAnimation();
                     }
                 } else {
-                    w9Var.getImageReceiver().startAnimation();
+                    y9Var.getImageReceiver().startAnimation();
                 }
             }
         }
@@ -147,9 +147,9 @@ public final class d0 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            Paint V0 = org.telegram.ui.ActionBar.k6.V0("paintDivider", this.b);
+            Paint V0 = org.telegram.ui.ActionBar.y6.V0("paintDivider", this.b);
             if (V0 == null) {
-                V0 = org.telegram.ui.ActionBar.k6.k0;
+                V0 = org.telegram.ui.ActionBar.y6.k0;
             }
             canvas.drawRect(AndroidUtilities.dp(10.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(10.0f), getHeight(), V0);
         }

@@ -12,12 +12,12 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.ds;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class f2 extends FrameLayout {
-    public final org.telegram.ui.Components.f6 a;
+    public final org.telegram.ui.Components.h6 a;
     public final Paint b;
     public final Path c;
     public float d;
@@ -27,12 +27,12 @@ public final class f2 extends FrameLayout {
     public f2(i2 i2Var, Context context) {
         super(context);
         this.e = i2Var;
-        this.a = new org.telegram.ui.Components.f6(this, 250L, bs.h);
+        this.a = new org.telegram.ui.Components.h6(this, 250L, ds.h);
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new Path();
         setWillNotDraw(false);
-        paint.setColor(i2Var.getThemedColor(org.telegram.ui.ActionBar.k6.h5));
+        paint.setColor(i2Var.getThemedColor(org.telegram.ui.ActionBar.y6.h5));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -45,41 +45,41 @@ public final class f2 extends FrameLayout {
         float f7;
         i2 i2Var = this.e;
         Integer num = i2Var.f;
-        int intValue = num != null ? num.intValue() : i2Var.getThemedColor(org.telegram.ui.ActionBar.k6.h5);
+        int intValue = num != null ? num.intValue() : i2Var.getThemedColor(org.telegram.ui.ActionBar.y6.h5);
         Paint paint = this.b;
         paint.setColor(intValue);
         View[] viewPages = i2Var.b.getViewPages();
         this.d = 0.0f;
-        for (ah.v vVar : viewPages) {
-            if (vVar != 0) {
-                float clamp = Utilities.clamp(1.0f - Math.abs(vVar.getTranslationX() / Math.max(1, vVar.getMeasuredWidth())), 1.0f, 0.0f);
+        for (ai.t1 t1Var : viewPages) {
+            if (t1Var != 0) {
+                float clamp = Utilities.clamp(1.0f - Math.abs(t1Var.getTranslationX() / Math.max(1, t1Var.getMeasuredWidth())), 1.0f, 0.0f);
                 float f10 = this.d;
-                boolean z10 = vVar instanceof g2;
+                boolean z10 = t1Var instanceof g2;
                 if (z10) {
-                    h2 h2Var = (h2) ((g2) vVar);
+                    h2 h2Var = (h2) ((g2) t1Var);
                     f7 = Math.max(0.0f, h2Var.getHeight() - h2Var.a.getMeasuredHeight());
                 } else {
                     f7 = 0.0f;
                 }
                 this.d = (f7 * clamp) + f10;
-                if (vVar.getVisibility() == 0 && z10) {
+                if (t1Var.getVisibility() == 0 && z10) {
                 }
             }
         }
         float d = this.a.d(this.d <= ((float) AndroidUtilities.statusBarHeight) ? 1.0f : 0.0f, false);
         this.d = Math.max(AndroidUtilities.statusBarHeight, this.d) - (AndroidUtilities.statusBarHeight * d);
         RectF rectF = AndroidUtilities.rectTmp;
-        i10 = ((org.telegram.ui.ActionBar.h3) i2Var).backgroundPaddingLeft;
+        i10 = ((org.telegram.ui.ActionBar.k3) i2Var).backgroundPaddingLeft;
         float f11 = this.d;
         int width = getWidth();
-        i11 = ((org.telegram.ui.ActionBar.h3) i2Var).backgroundPaddingLeft;
+        i11 = ((org.telegram.ui.ActionBar.k3) i2Var).backgroundPaddingLeft;
         rectF.set(i10, f11, width - i11, AndroidUtilities.dp(8.0f) + getHeight());
         float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), 0, d);
         canvas.drawRoundRect(rectF, lerp, lerp, paint);
         if (i2Var.topBulletinContainer != null) {
-            viewGroup = ((org.telegram.ui.ActionBar.h3) i2Var).containerView;
+            viewGroup = ((org.telegram.ui.ActionBar.k3) i2Var).containerView;
             float y3 = viewGroup.getY() + this.d;
-            i12 = ((org.telegram.ui.ActionBar.h3) i2Var).backgroundPaddingTop;
+            i12 = ((org.telegram.ui.ActionBar.k3) i2Var).backgroundPaddingTop;
             i2Var.topBulletinContainer.setTranslationY(Math.max(y3 + i12, i2Var.topBulletinContainer.getHeight() + (AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight)) - i2Var.topBulletinContainer.getBottom());
         }
         canvas.save();

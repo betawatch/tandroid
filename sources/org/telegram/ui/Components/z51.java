@@ -1,69 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z51 extends xz {
-    public final /* synthetic */ i61 Y;
+public final class z51 implements uw0 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ a61 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z51(i61 i61Var, int i10, y51 y51Var) {
-        super(5, i10, y51Var);
-        this.Y = i61Var;
+    public z51(a61 a61Var) {
+        this.c = a61Var;
     }
 
-    @Override // org.telegram.ui.Components.xz
-    public final boolean D1() {
-        i61 i61Var = this.Y;
-        return i61Var.n.getAdapter() == i61Var.v;
-    }
-
-    @Override // s4.b0
-    public final boolean Y0() {
-        return LocaleController.isRTL;
-    }
-
-    @Override // s4.s, s4.b0, s4.n0
-    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
-        int i11;
-        View m10;
-        i61 i61Var = this.Y;
-        if (i61Var.N) {
-            return super.o0(i10, eVar, y0Var);
+    @Override // org.telegram.ui.Components.uw0
+    public final void I(int i10, boolean z10) {
+        if (this.a == i10 && this.b == z10) {
+            return;
         }
-        int i12 = 0;
-        if (i61Var.L != null) {
-            return 0;
-        }
-        if (i61Var.M) {
-            while (true) {
-                i11 = 1;
-                if (i12 >= r()) {
-                    break;
-                }
-                y51 y51Var = i61Var.n;
-                View q6 = q(i12);
-                y51Var.getClass();
-                int R = RecyclerView.R(q6);
-                if (R < 1) {
-                    i11 = R;
-                    break;
-                }
-                i12++;
+        this.a = i10;
+        this.b = z10;
+        if (i10 > AndroidUtilities.dp(20.0f)) {
+            a61 a61Var = this.c;
+            if (a61Var.m0) {
+                return;
             }
-            if (i11 == 0 && (m10 = i61Var.r.m(i11)) != null && m10.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
-                i10 = m10.getTop() - AndroidUtilities.dp(58.0f);
-            }
+            a61Var.t0.setAllowNestedScroll(false);
+            a61Var.m0 = true;
         }
-        return super.o0(i10, eVar, y0Var);
-    }
-
-    @Override // s4.s, s4.b0, s4.n0
-    public final boolean y0() {
-        return false;
     }
 }

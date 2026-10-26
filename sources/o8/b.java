@@ -1,39 +1,21 @@
 package o8;
 
-import android.content.Intent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
-import w7.f0;
+import b8.d;
+import com.google.android.gms.common.api.Scope;
+import com.google.android.gms.common.api.e;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends o6.a implements q {
-    public static final Parcelable.Creator<b> CREATOR = new m8.h(20);
-    public final int a;
-    public final int b;
-    public final Intent c;
+public abstract class b {
+    public static final d a;
+    public static final e b;
 
-    public b(int i10, int i11, Intent intent) {
-        this.a = i10;
-        this.b = i11;
-        this.c = intent;
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status h() {
-        return this.b == 0 ? Status.e : Status.r;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        f0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        f0.k(parcel, 3, this.c, i10);
-        f0.r(parcel, q6);
+    static {
+        com.google.android.gms.common.api.d dVar = new com.google.android.gms.common.api.d();
+        d dVar2 = new d(9);
+        a = dVar2;
+        new Scope(1, "profile");
+        new Scope(1, "email");
+        b = new e("SignIn.API", dVar2, dVar);
     }
 }

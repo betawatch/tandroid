@@ -2,10 +2,10 @@ package f2;
 
 import e2.x;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a implements gb.n {
-    public String a;
+public final class a implements hb.n {
+    public final String a;
 
     public /* synthetic */ a(String str) {
         this.a = str;
@@ -35,8 +35,8 @@ public final class a implements gb.n {
         return new a(u10.toString());
     }
 
-    @Override // gb.n
-    public Object f2() {
-        throw new eb.j(this.a);
+    @Override // hb.n
+    public Object U1() {
+        throw new fb.j(this.a);
     }
 }

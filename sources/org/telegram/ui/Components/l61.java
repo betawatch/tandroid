@@ -1,87 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class l61 {
-    private ArrayList<View> cache;
-    public final int viewType;
+public final class l61 implements ValueAnimator.AnimatorUpdateListener {
+    public int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ p61 c;
 
-    public l61() {
-        int i10 = m61.J;
-        m61.J = i10 + 1;
-        this.viewType = i10;
+    public l61(p61 p61Var, int i10) {
+        this.c = p61Var;
+        this.b = i10;
     }
 
-    public static void setup(l61 l61Var) {
-        if (m61.L == null) {
-            m61.L = new HashMap();
-        }
-        if (m61.K == null) {
-            m61.K = new LongSparseArray();
-        }
-        Class<?> cls = l61Var.getClass();
-        if (m61.L.containsKey(cls)) {
-            return;
-        }
-        m61.L.put(cls, l61Var);
-        m61.K.put(l61Var.viewType, l61Var);
-    }
-
-    public boolean contentsEquals(m61 m61Var, m61 m61Var2) {
-        return m61Var.H(m61Var2);
-    }
-
-    public abstract View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var);
-
-    public boolean equals(m61 m61Var, m61 m61Var2) {
-        return m61Var.I(m61Var2);
-    }
-
-    public View getCached() {
-        ArrayList<View> arrayList = this.cache;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return null;
-        }
-        return this.cache.remove(0);
-    }
-
-    public boolean isClickable() {
-        return !(this instanceof dj);
-    }
-
-    public boolean isShadow() {
-        return false;
-    }
-
-    public void precache(org.telegram.ui.ActionBar.o2 o2Var, int i10) {
-        precache(o2Var.getContext(), o2Var.getCurrentAccount(), o2Var.getClassGuid(), o2Var.getResourceProvider(), i10);
-    }
-
-    public void precache(Context context, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var, int i12) {
-        if (context == null) {
-            return;
-        }
-        if (this.cache == null) {
-            this.cache = new ArrayList<>();
-        }
-        int i13 = 0;
-        while (i13 < this.cache.size() - i12) {
-            Context context2 = context;
-            this.cache.add(createView(context2, null, i10, i11, g6Var));
-            i13++;
-            context = context2;
-        }
-    }
-
-    public void attachedView(mm0 mm0Var, View view, m61 m61Var) {
-    }
-
-    public void bindView(View view, m61 m61Var, boolean z10, b71 b71Var, j71 j71Var) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
+        p61 p61Var = this.c;
+        p61Var.N = true;
+        p61Var.n.scrollBy(0, floatValue - this.a);
+        p61Var.N = false;
+        this.a = floatValue;
     }
 }

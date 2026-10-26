@@ -1,39 +1,41 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.ui.t91;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class d8 extends ImageReceiver {
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 a;
-    public final /* synthetic */ e8 b;
+public final class d8 extends org.telegram.ui.Components.y9 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 G;
+    public final /* synthetic */ f8 H;
 
-    public d8(e8 e8Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        this.b = e8Var;
-        this.a = g6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d8(f8 f8Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        this.H = f8Var;
+        this.G = u6Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
-        if (drawable instanceof BitmapDrawable) {
-            e8 e8Var = this.b;
-            if (e8Var.K == 0) {
-                e8Var.K = AndroidUtilities.getDominantColor(((BitmapDrawable) drawable).getBitmap());
-                int i12 = e8Var.K;
-                if (i12 == -1 || i12 == 0) {
-                    int i13 = org.telegram.ui.ActionBar.k6.q5;
-                    org.telegram.ui.ActionBar.g6 g6Var = this.a;
-                    e8Var.K = org.telegram.ui.ActionBar.k6.w0(i13, g6Var);
-                    org.telegram.ui.ActionBar.r6.D(e8Var.J, org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(12.0f), e8Var.K), org.telegram.ui.ActionBar.r6.O(i13), g6Var);
-                } else {
-                    e8Var.J.setBackground(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(12.0f), e8Var.K));
-                }
-                invalidate();
-            }
+    @Override // org.telegram.ui.Components.y9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        f8 f8Var = this.H;
+        t91 t91Var = f8Var.v;
+        if (t91Var == null || !(t91Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
+            super.onDraw(canvas);
+            return;
         }
-        return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+        float dp = AndroidUtilities.dp(1.0f);
+        f8Var.r.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
+        di.w7 w7Var = f8Var.r;
+        w7Var.a = false;
+        w7Var.b = false;
+        w7Var.v = true;
+        w7Var.o = false;
+        w7Var.z = 1;
+        w7Var.J = this.G;
+        di.a8.h(0L, canvas, this.a, w7Var);
     }
 }

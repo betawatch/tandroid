@@ -17,7 +17,7 @@ import u4.b;
 import u4.c;
 import u4.d;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
     @Override // android.service.chooser.ChooserTargetService
@@ -116,8 +116,8 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
                 f7 = f10;
             }
             return arrayList4;
-        } catch (Exception e7) {
-            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e7);
+        } catch (Exception e10) {
+            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e10);
             return Collections.EMPTY_LIST;
         }
     }

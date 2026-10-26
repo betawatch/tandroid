@@ -14,7 +14,7 @@ import l.m;
 import l.n;
 import l.r;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -109,8 +109,8 @@ public final class g {
                         rVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
                     }
                     rVar.d.invoke(aVar, Boolean.TRUE);
-                } catch (Exception e7) {
-                    Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e7);
+                } catch (Exception e10) {
+                    Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e10);
                 }
             }
         }
@@ -140,34 +140,34 @@ public final class g {
         if (z11) {
             ((l0.a) menuItem).setContentDescription(charSequence);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            w6.a.e(menuItem, charSequence);
+            x6.a.e(menuItem, charSequence);
         }
         CharSequence charSequence2 = this.B;
         if (z11) {
             ((l0.a) menuItem).setTooltipText(charSequence2);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            w6.a.i(menuItem, charSequence2);
+            x6.a.i(menuItem, charSequence2);
         }
         char c10 = this.n;
         int i12 = this.o;
         if (z11) {
             ((l0.a) menuItem).setAlphabeticShortcut(c10, i12);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            w6.a.d(menuItem, c10, i12);
+            x6.a.d(menuItem, c10, i12);
         }
         char c11 = this.p;
         int i13 = this.q;
         if (z11) {
             ((l0.a) menuItem).setNumericShortcut(c11, i13);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            w6.a.h(menuItem, c11, i13);
+            x6.a.h(menuItem, c11, i13);
         }
         PorterDuff.Mode mode = this.D;
         if (mode != null) {
             if (z11) {
                 ((l0.a) menuItem).setIconTintMode(mode);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                w6.a.g(menuItem, mode);
+                x6.a.g(menuItem, mode);
             }
         }
         ColorStateList colorStateList = this.C;
@@ -175,7 +175,7 @@ public final class g {
             if (z11) {
                 ((l0.a) menuItem).setIconTintList(colorStateList);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                w6.a.f(menuItem, colorStateList);
+                x6.a.f(menuItem, colorStateList);
             }
         }
     }

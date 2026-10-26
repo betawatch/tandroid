@@ -1,51 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.os.AsyncTask;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e91 implements bm0, cm0 {
-    public final /* synthetic */ k91 a;
+public final class e91 extends AsyncTask {
+    public int a = 0;
+    public final /* synthetic */ h91 b;
 
-    public /* synthetic */ e91(k91 k91Var) {
-        this.a = k91Var;
+    public e91(h91 h91Var) {
+        this.b = h91Var;
     }
 
-    @Override // org.telegram.ui.Components.bm0
-    public /* synthetic */ boolean P0(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.bm0
-    public void c(float f7, float f10, int i10, View view) {
-        k91 k91Var = this.a;
-        j91 j91Var = k91Var.y;
-        if (j91Var != null) {
-            l91 l91Var = (l91) ((l2.f) j91Var).b;
-            if (l91Var.x || l91Var.H) {
-                return;
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        Bitmap frameAtTime;
+        h91 h91Var = this.b;
+        this.a = ((Integer[]) objArr)[0].intValue();
+        Bitmap bitmap = null;
+        if (!isCancelled()) {
+            try {
+                frameAtTime = h91Var.r.getFrameAtTime(h91Var.x * this.a * 1000, 2);
+            } catch (Exception e) {
+                e = e;
+            }
+            try {
+                if (!isCancelled()) {
+                    if (frameAtTime == null) {
+                        return frameAtTime;
+                    }
+                    Bitmap createBitmap = Bitmap.createBitmap(h91Var.y, h91Var.E, frameAtTime.getConfig());
+                    Canvas canvas = new Canvas(createBitmap);
+                    float max = Math.max(h91Var.y / frameAtTime.getWidth(), h91Var.E / frameAtTime.getHeight());
+                    int width = (int) (frameAtTime.getWidth() * max);
+                    int height = (int) (frameAtTime.getHeight() * max);
+                    canvas.drawBitmap(frameAtTime, new Rect(0, 0, frameAtTime.getWidth(), frameAtTime.getHeight()), new Rect((h91Var.y - width) / 2, (h91Var.E - height) / 2, width, height), (Paint) null);
+                    frameAtTime.recycle();
+                    return createBitmap;
+                }
+            } catch (Exception e10) {
+                e = e10;
+                bitmap = frameAtTime;
+                FileLog.e(e);
+                return bitmap;
             }
         }
-        i91 i91Var = (i91) view;
-        if (i10 != k91Var.F || j91Var == null) {
-            Utilities.Callback2Return callback2Return = k91Var.l0;
-            if (callback2Return == null || !((Boolean) callback2Return.run(Integer.valueOf(i91Var.a.a), Integer.valueOf(i10))).booleanValue()) {
-                k91Var.d(i91Var.a.a, i10);
-            }
-        }
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.cm0
-    public boolean d(int i10, View view) {
-        Utilities.Callback2Return callback2Return = this.a.b;
-        if (callback2Return == null) {
-            return false;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        if (isCancelled()) {
+            return;
         }
-        return ((Boolean) callback2Return.run(Integer.valueOf(((i91) view).a.a), view)).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.bm0
-    public /* synthetic */ void a0(View view, float f7, float f10) {
+        h91 h91Var = this.b;
+        h91Var.v.add(bitmap);
+        h91Var.invalidate();
+        int i10 = this.a;
+        if (i10 < h91Var.F) {
+            h91Var.b(i10 + 1);
+        } else {
+            h91Var.O = true;
+        }
     }
 }

@@ -1,41 +1,53 @@
 package v7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import j$.util.Objects;
+import w7.v;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class e implements h {
-    public final int a;
+public final class e extends d {
+    public static final e e = new e(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public e(int i10) {
-        this.a = i10;
+    public e(int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return h.class;
+    @Override // java.util.List
+    public final Object get(int i10) {
+        v.a(i10, this.d);
+        Object obj = this.c[i10];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof h)) {
-            return false;
-        }
-        if (this.a != ((e) ((h) obj)).a) {
-            return false;
-        }
-        Object obj2 = g.a;
-        return obj2.equals(obj2);
+    @Override // v7.d, v7.a
+    public final int h(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i10 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i10);
+        return i10;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (g.a.hashCode() ^ 2041407134);
+    @Override // v7.a
+    public final int m() {
+        return this.d;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + g.a + ')';
+    @Override // v7.a
+    public final int n() {
+        return 0;
+    }
+
+    @Override // v7.a
+    public final Object[] o() {
+        return this.c;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

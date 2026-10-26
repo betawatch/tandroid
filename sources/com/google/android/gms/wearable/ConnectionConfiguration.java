@@ -1,17 +1,17 @@
 package com.google.android.gms.wearable;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import n6.l;
-import o6.a;
-import w7.f0;
-import x8.o;
+import o6.l;
+import p6.a;
+import y8.o;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new o(0);
@@ -61,31 +61,31 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.l(parcel, 3, this.b);
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 2, this.a);
+        df.l(parcel, 3, this.b);
         int i11 = this.c;
-        f0.s(parcel, 4, 4);
+        df.s(parcel, 4, 4);
         parcel.writeInt(i11);
         int i12 = this.d;
-        f0.s(parcel, 5, 4);
+        df.s(parcel, 5, 4);
         parcel.writeInt(i12);
         boolean z10 = this.e;
-        f0.s(parcel, 6, 4);
+        df.s(parcel, 6, 4);
         parcel.writeInt(z10 ? 1 : 0);
         boolean z11 = this.f;
-        f0.s(parcel, 7, 4);
+        df.s(parcel, 7, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        f0.l(parcel, 8, this.h);
+        df.l(parcel, 8, this.h);
         boolean z12 = this.n;
-        f0.s(parcel, 9, 4);
+        df.s(parcel, 9, 4);
         parcel.writeInt(z12 ? 1 : 0);
-        f0.l(parcel, 10, this.r);
-        f0.l(parcel, 11, this.s);
+        df.l(parcel, 10, this.r);
+        df.l(parcel, 11, this.s);
         int i13 = this.v;
-        f0.s(parcel, 12, 4);
+        df.s(parcel, 12, 4);
         parcel.writeInt(i13);
-        f0.n(parcel, 13, this.w);
-        f0.r(parcel, q6);
+        df.n(parcel, 13, this.w);
+        df.r(parcel, q5);
     }
 }

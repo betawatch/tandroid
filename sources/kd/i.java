@@ -1,41 +1,15 @@
 package kd;
 
-import java.io.Serializable;
-import td.p;
+import java.util.Collection;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class i implements h, Serializable {
-    public static final i a = new i();
-
-    @Override // kd.h
-    public final f get(g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        return null;
-    }
-
-    public final int hashCode() {
-        return 0;
-    }
-
-    @Override // kd.h
-    public final h minusKey(g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        return this;
-    }
-
-    @Override // kd.h
-    public final h plus(h context) {
-        kotlin.jvm.internal.i.e(context, "context");
-        return context;
-    }
-
-    public final String toString() {
-        return "EmptyCoroutineContext";
-    }
-
-    @Override // kd.h
-    public final Object fold(Object obj, p pVar) {
-        return obj;
+public abstract class i extends h {
+    public static int d(Iterable iterable) {
+        kotlin.jvm.internal.i.e(iterable, "<this>");
+        if (iterable instanceof Collection) {
+            return ((Collection) iterable).size();
+        }
+        return 10;
     }
 }

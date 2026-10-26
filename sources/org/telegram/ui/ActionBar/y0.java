@@ -1,132 +1,80 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.y7;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.th0;
-import org.telegram.ui.Components.y9;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class y0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ y0(Object obj, float f7, int i10) {
+    public /* synthetic */ y0(Object obj, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f7;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        int i11 = 1;
-        float f7 = this.b;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                b1 b1Var = (b1) obj;
-                b1Var.T = null;
-                b1Var.a = f7;
-                b1Var.invalidate();
-                break;
-            case 1:
-                y3 y3Var = (y3) obj;
-                y3Var.i = f7;
-                z3 z3Var = y3Var.b;
-                if (z3Var != null) {
-                    z3Var.invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Cells.o6 o6Var = (org.telegram.ui.Cells.o6) obj;
-                o6Var.F = f7;
-                o6Var.invalidate();
-                break;
-            case 3:
-                ColorMatrix colorMatrix = new ColorMatrix();
-                y7 y7Var = (y7) obj;
-                y7Var.v = f7;
-                colorMatrix.setSaturation(f7);
-                if (k6.I.q()) {
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - y7Var.v) * (-0.3f));
-                }
-                y7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                break;
-            case 4:
-                y9 y9Var = (y9) obj;
-                y9Var.g = f7;
-                y9Var.invalidateSelf();
-                break;
-            case 5:
-                th0 th0Var = (th0) obj;
-                th0Var.H.unlock();
-                th0Var.b = f7;
-                if (f7 <= 0.0f) {
-                    th0Var.G = -1;
-                }
-                th0Var.c(true);
-                th0Var.f = false;
-                if (th0Var.O != null && Math.abs(f7 - 1.0f) < 0.01f) {
-                    th0Var.O.run();
-                    break;
-                }
-                break;
-            case 6:
-                org.telegram.ui.Wallet.y2 y2Var = (org.telegram.ui.Wallet.y2) obj;
-                org.telegram.ui.Wallet.x5 x5Var = y2Var.r;
-                x5Var.getClass();
-                x5Var.setLayerType(0, null);
-                if (f7 != 0.0f) {
-                    if (!y2Var.R) {
-                        ValueAnimator valueAnimator = y2Var.P;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                        }
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(y2Var.Q, 1.0f);
-                        y2Var.P = ofFloat;
-                        ofFloat.setDuration(320L);
-                        y2Var.P.setInterpolator(bs.g);
-                        y2Var.P.addUpdateListener(new org.telegram.ui.Wallet.v2(y2Var, i11));
-                        y2Var.P.start();
-                        break;
-                    }
-                } else {
-                    y2Var.b();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj;
-                if (o5Var.l0 == animator) {
-                    o5Var.l0 = null;
-                    o5Var.H0(f7);
-                    o5Var.o0.o(false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
-            case 5:
-                th0 th0Var = (th0) this.c;
-                th0Var.f = true;
-                th0Var.c = this.b;
+            case 0:
+                d1 d1Var = (d1) this.b;
+                Bitmap bitmap = (Bitmap) obj;
+                Paint paint = d1Var.F;
+                d1Var.W = false;
+                d1Var.f = bitmap;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                d1Var.h = new BitmapShader(bitmap, tileMode, tileMode);
+                Matrix matrix = d1Var.n;
+                if (matrix == null) {
+                    d1Var.n = new Matrix();
+                } else {
+                    matrix.reset();
+                }
+                d1Var.n.postScale(8.0f, 8.0f);
+                Matrix matrix2 = d1Var.n;
+                int[] iArr = d1Var.r;
+                matrix2.postTranslate(-iArr[0], -iArr[1]);
+                d1Var.h.setLocalMatrix(d1Var.n);
+                paint.setShader(d1Var.h);
+                ColorMatrix colorMatrix = new ColorMatrix();
+                AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, -0.2f);
+                paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                d1Var.invalidate();
                 break;
             default:
-                super.onAnimationStart(animator);
-                break;
+                e2 e2Var = (e2) this.b;
+                Bitmap bitmap2 = (Bitmap) obj;
+                if (bitmap2 != null) {
+                    if (e2Var.H0 == null) {
+                        e2Var.H0 = new Paint(1);
+                    }
+                    e2Var.E0 = bitmap2;
+                    Bitmap bitmap3 = e2Var.E0;
+                    Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
+                    BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode2, tileMode2);
+                    e2Var.G0 = bitmapShader;
+                    e2Var.H0.setShader(bitmapShader);
+                    Matrix matrix3 = new Matrix();
+                    e2Var.F0 = matrix3;
+                    matrix3.postScale(8.0f, 8.0f);
+                    Matrix matrix4 = e2Var.F0;
+                    int[] iArr2 = e2Var.z0;
+                    matrix4.postTranslate(-iArr2[0], -iArr2[1]);
+                    e2Var.G0.setLocalMatrix(e2Var.F0);
+                    e2Var.c1.invalidate();
+                    break;
+                } else {
+                    e2Var.getClass();
+                    break;
+                }
         }
     }
 }

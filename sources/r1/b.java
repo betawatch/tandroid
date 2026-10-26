@@ -1,7 +1,6 @@
 package r1;
 
 import android.util.Log;
-import i2.o1;
 import java.io.ByteArrayInputStream;
 import java.io.DataInput;
 import java.io.DataInputStream;
@@ -10,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class b extends InputStream implements DataInput {
     public static final ByteOrder e = ByteOrder.LITTLE_ENDIAN;
@@ -42,7 +41,7 @@ public class b extends InputStream implements DataInput {
                 }
                 skip = dataInputStream.read(this.d, 0, Math.min(8192, i12));
                 if (skip == -1) {
-                    throw new EOFException(o1.l(i10, "Reached EOF while skipping ", " bytes."));
+                    throw new EOFException(ic.a.j(i10, "Reached EOF while skipping ", " bytes."));
                 }
             }
             i11 += skip;

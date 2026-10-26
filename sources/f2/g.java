@@ -1,27 +1,28 @@
 package f2;
 
-import b2.q0;
-import b2.s0;
-import v7.u6;
+import a8.yb;
+import b2.r0;
+import b2.t0;
+import b2.x;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g implements s0 {
+public final class g implements t0 {
     public final float a;
     public final float b;
 
     public g(float f7, float f10) {
-        u6.f("Invalid latitude or longitude", f7 >= -90.0f && f7 <= 90.0f && f10 >= -180.0f && f10 <= 180.0f);
+        yb.f("Invalid latitude or longitude", f7 >= -90.0f && f7 <= 90.0f && f10 >= -180.0f && f10 <= 180.0f);
         this.a = f7;
         this.b = f10;
     }
 
-    @Override // b2.s0
-    public final /* synthetic */ b2.w a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.s0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -47,7 +48,7 @@ public final class g implements s0 {
         return "xyz: latitude=" + this.a + ", longitude=" + this.b;
     }
 
-    @Override // b2.s0
-    public final /* synthetic */ void b(q0 q0Var) {
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

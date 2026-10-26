@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import a8.cb;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -10,9 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import v7.g6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class m2 {
     public static final char[] a;
@@ -56,13 +56,13 @@ public abstract class m2 {
         if (obj instanceof String) {
             sb2.append(": \"");
             l1 l1Var = l1.c;
-            sb2.append(g6.a(new l1(((String) obj).getBytes(a2.a))));
+            sb2.append(cb.a(new l1(((String) obj).getBytes(a2.a))));
             sb2.append('\"');
             return;
         }
         if (obj instanceof l1) {
             sb2.append(": \"");
-            sb2.append(g6.a((l1) obj));
+            sb2.append(cb.a((l1) obj));
             sb2.append('\"');
             return;
         }

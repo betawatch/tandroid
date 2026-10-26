@@ -1,48 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class tm0 extends TextView {
+public final /* synthetic */ class tm0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ um0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ tm0(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public /* synthetic */ tm0(um0 um0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 0;
+        this.b = um0Var;
+        this.d = tLObject;
+        this.c = tL_error;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 3:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
+                um0 um0Var = this.b;
+                TLObject tLObject = this.d;
+                TLRPC.TL_error tL_error = this.c;
+                in0 in0Var = um0Var.e;
+                if (tLObject instanceof Vector) {
+                    in0Var.y = new TL_account.authorizationForm();
+                    Vector vector = (Vector) tLObject;
+                    int size = vector.objects.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        in0Var.y.values.add((TLRPC.TL_secureValue) vector.objects.get(i10));
+                    }
+                    um0Var.a();
+                    break;
+                } else {
+                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
+                        org.telegram.ui.Components.g5.w0(in0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                    } else {
+                        in0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
+                    }
+                    in0Var.N1(true, false);
+                    break;
+                }
             case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
-                break;
+                um0 um0Var2 = this.b;
+                TLRPC.TL_error tL_error2 = this.c;
+                TLObject tLObject2 = this.d;
+                if (tL_error2 == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject2;
+                    um0Var2.e.J = password;
+                    TwoStepVerificationActivity.n0(password);
+                    um0Var2.b();
+                    break;
+                } else {
+                    um0Var2.getClass();
+                    break;
+                }
             default:
-                super.onMeasure(i10, i11);
+                um0 um0Var3 = this.b;
+                TLRPC.TL_error tL_error3 = this.c;
+                TLObject tLObject3 = this.d;
+                if (tL_error3 == null) {
+                    TL_account.Password password2 = (TL_account.Password) tLObject3;
+                    um0Var3.e.J = password2;
+                    TwoStepVerificationActivity.n0(password2);
+                    Utilities.globalQueue.postRunnable(new oe0(um0Var3, um0Var3.b, um0Var3.d, 15));
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ tm0(um0 um0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = um0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 }

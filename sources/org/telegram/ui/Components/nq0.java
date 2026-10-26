@@ -1,91 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class nq0 extends qu {
-    public boolean V;
-    public int W;
-    public int a0;
-    public ValueAnimator b0;
-    public final /* synthetic */ ir0 c0;
+public final class nq0 extends mm0 {
+    public final /* synthetic */ int f3;
+    public final /* synthetic */ mr0 g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nq0(ir0 ir0Var, Context context, tq0 tq0Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, tq0Var, null, 1, true, g6Var);
-        this.c0 = ir0Var;
+    public /* synthetic */ nq0(mr0 mr0Var, Context context, org.telegram.ui.ActionBar.u6 u6Var, int i10) {
+        super(context, u6Var);
+        this.f3 = i10;
+        this.g3 = mr0Var;
     }
 
-    @Override // org.telegram.ui.Components.qu
-    public final void c(float f7) {
-        this.c0.e1();
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean E0(float f7) {
+        switch (this.f3) {
+            case 0:
+                mr0 mr0Var = this.g3;
+                if (f7 >= AndroidUtilities.dp((!mr0Var.i0 || mr0Var.p0[1] == null) ? 58.0f : 111.0f) + mr0Var.H0.b) {
+                }
+                break;
+            default:
+                mr0 mr0Var2 = this.g3;
+                if (f7 >= AndroidUtilities.dp((!mr0Var2.i0 || mr0Var2.p0[1] == null) ? 58.0f : 111.0f) + mr0Var2.H0.b) {
+                }
+                break;
+        }
+        return true;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.V) {
-            iu editText = this.c0.d.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new d80(editText, 19));
-            ValueAnimator valueAnimator = this.b0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.b0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(bs.f);
-            ofFloat.start();
-            this.V = false;
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.f3) {
+            case 0:
+                mr0 mr0Var = this.g3;
+                mm0 mm0Var = mr0Var.F;
+                if (mm0Var.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!mr0Var.i0 || mr0Var.p0[1] == null) ? 58.0f : 111.0f) + mr0Var.q0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (mm0Var.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
+            default:
+                mr0 mr0Var2 = this.g3;
+                mm0 mm0Var2 = mr0Var2.F;
+                if (mm0Var2.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, AndroidUtilities.dp((!mr0Var2.i0 || mr0Var2.p0[1] == null) ? 58.0f : 111.0f) + mr0Var2.q0, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (mm0Var2.getVisibility() != 8) {
+                    canvas.restore();
+                    break;
+                }
+                break;
         }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.qu
-    public final void f() {
-        super.f();
-        tz emojiView = getEmojiView();
-        ir0 ir0Var = this.c0;
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.x2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(ir0Var.H0.d);
-        }
-        FrameLayout frameLayout = ir0Var.d0;
-        if (frameLayout != null) {
-            frameLayout.bringToFront();
-        }
-        mq0 mq0Var = ir0Var.c;
-        if (mq0Var != null) {
-            mq0Var.bringToFront();
-        }
-        mq0 mq0Var2 = ir0Var.f;
-        if (mq0Var2 != null) {
-            mq0Var2.bringToFront();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qu
-    public final void q(int i10, int i11) {
-        ir0 ir0Var = this.c0;
-        mq0 mq0Var = ir0Var.c;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.V = false;
-        } else {
-            this.V = true;
-            this.W = getEditText().getMeasuredHeight();
-            this.a0 = getEditText().getScrollY();
-            invalidate();
-        }
-        ir0Var.w0 = mq0Var.getTop() + ir0Var.v0;
-        mq0Var.invalidate();
     }
 }

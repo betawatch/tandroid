@@ -1,28 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.function.ToIntFunction;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cf implements ToIntFunction {
+public final /* synthetic */ class cf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ cf(Object obj, int i10) {
+    public /* synthetic */ cf(un unVar, long j10, long j11, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = unVar;
+        this.c = j10;
+        this.d = j11;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return ((Integer) ((HashMap) this.b).get((View) obj)).intValue();
+                un.E0(this.b, this.c, this.d);
+                break;
             default:
-                return ((Integer) ((ArrayList) this.b).get(((Integer) obj).intValue())).intValue();
+                un.A1(this.b, this.c, this.d);
+                break;
         }
     }
 }

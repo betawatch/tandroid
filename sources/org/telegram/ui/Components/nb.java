@@ -5,18 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public abstract class nb extends ub {
     private mb button;
     private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.g6 resourcesProvider;
+    org.telegram.ui.ActionBar.u6 resourcesProvider;
     public jc timerView;
     private boolean wrapWidth;
 
-    public nb(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.resourcesProvider = g6Var;
+    public nb(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        this.resourcesProvider = u6Var;
     }
 
     public mb getButton() {
@@ -27,7 +27,7 @@ public abstract class nb extends ub {
     public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
         mb mbVar = this.button;
         if (mbVar != null && view != mbVar) {
-            i11 = org.telegram.messenger.sl.D(12.0f, mbVar.getMeasuredWidth(), i11);
+            i11 = org.telegram.ui.d3.w(12.0f, mbVar.getMeasuredWidth(), i11);
         }
         super.measureChildWithMargins(view, i10, i11, i12, i13);
         if (view != this.button) {
@@ -58,7 +58,7 @@ public abstract class nb extends ub {
         this.button = mbVar;
         if (mbVar != null) {
             addCallback(mbVar);
-            addView(mbVar, 0, w7.z5.h(-2.0f, -2.0f, 8388629));
+            addView(mbVar, 0, gb1.l(-2.0f, -2.0f, 8388629));
         }
     }
 
@@ -66,7 +66,7 @@ public abstract class nb extends ub {
         jc jcVar = new jc(getContext(), this.resourcesProvider);
         this.timerView = jcVar;
         jcVar.b = 5000L;
-        addView(jcVar, w7.z5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(jcVar, gb1.m(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public void setWrapWidth() {

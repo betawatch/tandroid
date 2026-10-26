@@ -1,24 +1,10 @@
 package x2;
 
-import b2.p1;
-import b2.w;
+import b2.q1;
+import f9.s1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class l {
-    public final int a;
-    public final p1 b;
-    public final int c;
-    public final w d;
-
-    public l(int i10, p1 p1Var, int i11) {
-        this.a = i10;
-        this.b = p1Var;
-        this.c = i11;
-        this.d = p1Var.d[i11];
-    }
-
-    public abstract int a();
-
-    public abstract boolean b(l lVar);
+public interface l {
+    s1 a(int i10, q1 q1Var, int[] iArr);
 }

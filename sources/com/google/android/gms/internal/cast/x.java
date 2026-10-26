@@ -1,54 +1,65 @@
 package com.google.android.gms.internal.cast;
 
-import android.net.ConnectivityManager;
-import android.net.LinkProperties;
-import android.net.Network;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class x extends ConnectivityManager.NetworkCallback {
-    public final /* synthetic */ y a;
+public final /* synthetic */ class x implements j5.e, a0 {
+    public static final /* synthetic */ x a = new x();
+    public static final /* synthetic */ x b = new x();
+    public static final x c = new x();
+    public static final x d = new x();
+    public static final x e = new x();
+    public static final x f = new x();
+    public static final x h = new x();
+    public static final x n = new x();
+    public static final x r = new x();
+    public static final x s = new x();
+    public static final x v = new x();
+    public static final x w = new x();
+    public static final x x = new x();
+    public static final x y = new x();
+    public static final x E = new x();
+    public static final x F = new x();
+    public static final x G = new x();
+    public static final x H = new x();
+    public static final x I = new x();
+    public static final x J = new x();
+    public static final x K = new x();
+    public static final x L = new x();
+    public static final x M = new x();
+    public static final x N = new x();
+    public static final x O = new x();
+    public static final x P = new x();
+    public static final x Q = new x();
+    public static final x R = new x();
+    public static final x S = new x();
+    public static final x T = new x();
 
-    public x(y yVar) {
-        this.a = yVar;
-    }
-
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
-        this.a.a(network, linkProperties);
-    }
-
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onLost(Network network) {
-        y yVar = this.a;
-        synchronized (yVar.h) {
-            try {
-                if (yVar.d != null && yVar.e != null) {
-                    y.j.b("the network is lost", new Object[0]);
-                    if (yVar.e.remove(network)) {
-                        yVar.d.remove(network);
-                    }
-                    yVar.b();
-                }
-            } finally {
+    @Override // j5.e
+    public Object apply(Object obj) {
+        p1 p1Var = (p1) obj;
+        try {
+            int i10 = p1Var.i();
+            byte[] bArr = new byte[i10];
+            v4 v4Var = new v4(bArr, i10);
+            e6 a2 = b6.c.a(p1.class);
+            r5 r5Var = v4Var.a;
+            if (r5Var == null) {
+                r5Var = new r5(v4Var);
             }
+            a2.e(p1Var, r5Var);
+            if (i10 - v4Var.d == 0) {
+                return bArr;
+            }
+            throw new IllegalStateException("Did not write as much data as expected.");
+        } catch (IOException e10) {
+            throw new RuntimeException(a1.g.p("Serializing ", p1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
         }
     }
 
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onUnavailable() {
-        y yVar = this.a;
-        synchronized (yVar.h) {
-            if (yVar.d != null && yVar.e != null) {
-                y.j.b("all networks are unavailable.", new Object[0]);
-                yVar.d.clear();
-                yVar.e.clear();
-                yVar.b();
-            }
-        }
-    }
-
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onAvailable(Network network) {
+    @Override // com.google.android.gms.internal.cast.a0
+    public Object zza() {
+        throw new IllegalStateException();
     }
 }

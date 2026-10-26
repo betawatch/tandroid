@@ -1,87 +1,59 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class u0 extends org.telegram.ui.Components.s6 {
-    public final /* synthetic */ int b;
+public final class u0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ j4 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u0(String str, int i10) {
-        super(str, 0);
-        this.b = i10;
+    public u0(j4 j4Var) {
+        this.a = j4Var;
     }
 
-    @Override // org.telegram.ui.Components.s6
-    public final void c(Object obj, float f7) {
-        switch (this.b) {
-            case 0:
-                ((ArticleViewer$WindowView) obj).setInnerTranslationX(f7);
-                break;
-            case 1:
-                sn.Vc = (int) f7;
-                break;
-            case 2:
-                ((org.telegram.ui.Cells.t1) obj).setTimeAlpha(f7);
-                break;
-            case 3:
-                ((sz0) obj).setCrossfadeProgress(f7);
-                break;
-            case 4:
-                ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f7);
-                break;
-            case 5:
-                ((SecretMediaViewer) obj).setAnimationValue(f7);
-                break;
-            default:
-                v31 v31Var = (v31) obj;
-                if (v31Var.a != f7) {
-                    v31Var.a = f7;
-                    SecretMediaViewer secretMediaViewer = v31Var.r;
-                    secretMediaViewer.S.setAlpha(f7);
-                    if (!v31Var.b) {
-                        if (v31Var.c) {
-                            v31Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
-                        }
-                        secretMediaViewer.R.setAlpha(f7);
-                        break;
-                    } else {
-                        secretMediaViewer.S.setPivotX(r4.getWidth());
-                        secretMediaViewer.S.setPivotY(r4.getHeight());
-                        float f10 = 1.0f - f7;
-                        float f11 = 1.0f - (0.1f * f10);
-                        secretMediaViewer.S.setScaleX(f11);
-                        secretMediaViewer.S.setScaleY(f11);
-                        org.telegram.ui.Components.l81 l81Var = secretMediaViewer.Q;
-                        if (l81Var.y != f10) {
-                            l81Var.y = f10;
-                            l81Var.v.invalidate();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        j4 j4Var = this.a;
+        v3 v3Var = j4Var.K;
+        if (j4Var.f0.e) {
+            j4Var.u0[0].setBackgroundDrawable(null);
+            m3[] m3VarArr = j4Var.u0;
+            m3 m3Var = m3VarArr[1];
+            m3VarArr[1] = m3VarArr[0];
+            m3VarArr[0] = m3Var;
+            j4Var.h0.i();
+            j4Var.a1.a(j4Var.u0[0].getBackgroundColor(), true);
+            j4Var.b1.a(j4Var.u0[1].getBackgroundColor(), true);
+            if (v3Var != null) {
+                v3Var.m();
+            }
+            Object y3 = ic.a.y(1, j4Var.d0);
+            j4Var.P0.S(j4Var.u0[0].b);
+            org.telegram.ui.Cells.s9 s9Var = j4Var.P0;
+            s9Var.z0 = j4Var.u0[0].d;
+            s9Var.f(true);
+            j4Var.i0(false);
+            j4Var.f0();
+            j4Var.u0[1].b();
+            j4Var.u0[1].setVisibility(8);
+            if (y3 instanceof y2) {
+                ((y2) y3).a();
+            }
+            if (y3 instanceof TLRPC.WebPage) {
+                org.telegram.ui.web.h2.o((TLRPC.WebPage) y3);
+            }
+        } else if (v3Var != null) {
+            v3Var.release();
+            j4Var.s();
+        } else {
+            j4Var.U();
+            j4Var.M();
         }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(((ArticleViewer$WindowView) obj).getInnerTranslationX());
-            case 1:
-                return Float.valueOf(sn.Vc);
-            case 2:
-                return Float.valueOf(((org.telegram.ui.Cells.t1) obj).getTimeAlpha());
-            case 3:
-                return Float.valueOf(((sz0) obj).S);
-            case 4:
-                return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
-            case 5:
-                return Float.valueOf(((SecretMediaViewer) obj).getAnimationValue());
-            default:
-                return Float.valueOf(((v31) obj).a);
-        }
+        ArticleViewer$WindowView articleViewer$WindowView = j4Var.f0;
+        articleViewer$WindowView.e = false;
+        articleViewer$WindowView.d = false;
+        j4Var.U0 = false;
     }
 }

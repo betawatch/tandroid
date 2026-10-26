@@ -6,19 +6,18 @@ import androidx.lifecycle.s;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
+import d5.a;
 import java.io.Closeable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
-import m2.t;
-import rb.e;
+import sb.e;
 import u4.f;
-import xb.a;
-import xb.d;
+import yb.d;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class MobileVisionBase<DetectionResultT> implements Closeable, s {
-    public static final t e = new t("MobileVisionBase", "");
+    public static final a e = new a("MobileVisionBase", "");
     public final AtomicBoolean a = new AtomicBoolean(false);
     public final e b;
     public final CancellationTokenSource c;
@@ -30,7 +29,7 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, s {
         this.c = cancellationTokenSource;
         this.d = executor;
         eVar.b.incrementAndGet();
-        eVar.a(executor, d.a, cancellationTokenSource.getToken()).addOnFailureListener(a.b);
+        eVar.a(executor, d.a, cancellationTokenSource.getToken()).addOnFailureListener(yb.a.b);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
@@ -43,12 +42,12 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, s {
         this.b.d(this.d);
     }
 
-    public final synchronized Task g(wb.a aVar) {
+    public final synchronized Task g(xb.a aVar) {
         if (this.a.get()) {
-            return Tasks.forException(new nb.a("This detector is already closed!", 14));
+            return Tasks.forException(new ob.a("This detector is already closed!", 14));
         }
         if (aVar.b < 32 || aVar.c < 32) {
-            return Tasks.forException(new nb.a("InputImage width and height should be at least 32!", 3));
+            return Tasks.forException(new ob.a("InputImage width and height should be at least 32!", 3));
         }
         return this.b.a(this.d, new f(this, aVar), this.c.getToken());
     }

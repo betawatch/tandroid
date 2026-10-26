@@ -11,27 +11,27 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.h80;
+import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class g7 extends yh.g1 {
+public final class g7 extends zh.g1 {
     public ValueAnimator A0;
     public TL_wallet.nftItem w0;
     public t7 x0;
     public float y0;
     public boolean z0;
 
-    @Override // yh.g1
-    public final void b(h80 h80Var, Canvas canvas, float f7, float f10, float f11) {
+    @Override // zh.g1
+    public final void b(i80 i80Var, Canvas canvas, float f7, float f10, float f11) {
         if (this.y0 == 1.0f) {
-            super.b(h80Var, canvas, f7, f10, f11);
+            super.b(i80Var, canvas, f7, f10, f11);
             return;
         }
         canvas.save();
         float f12 = this.y0;
         canvas.scale(f12, f12, f7 / 2.0f, f10 / 2.0f);
-        super.b(h80Var, canvas, f7, f10, f11);
+        super.b(i80Var, canvas, f7, f10, f11);
         canvas.restore();
     }
 
@@ -69,12 +69,12 @@ public final class g7 extends yh.g1 {
                 float f12 = D[1] * clamp01;
                 float f13 = D[2] * clamp01;
                 int left = frameLayout.getLeft();
-                org.telegram.ui.Components.w9 w9Var = this.y;
-                float left2 = w9Var.getLeft() + left + (w9Var.getWidth() / 2.0f);
-                float height = (w9Var.getHeight() / 2.0f) + w9Var.getTop() + frameLayout.getTop();
-                float B = com.google.android.gms.internal.play_billing.k3.B(f13, 0.025f, (0.07f * f12) + 1.0f, (w9Var.getWidth() * 288) / 268.0f);
+                org.telegram.ui.Components.y9 y9Var = this.y;
+                float left2 = y9Var.getLeft() + left + (y9Var.getWidth() / 2.0f);
+                float height = (y9Var.getHeight() / 2.0f) + y9Var.getTop() + frameLayout.getTop();
+                float D2 = c3.h0.D(f13, 0.025f, (0.07f * f12) + 1.0f, (y9Var.getWidth() * 288) / 268.0f);
                 if (f12 > 0.01f && s7Var.w != null) {
-                    float f14 = ((176.0f * B) / 128.0f) / 2.0f;
+                    float f14 = ((176.0f * D2) / 128.0f) / 2.0f;
                     float dp = (AndroidUtilities.dp(2.0f) * f12) + height;
                     rectF.set(left2 - f14, dp - f14, left2 + f14, dp + f14);
                     paint.setColor(-16777216);
@@ -88,11 +88,11 @@ public final class g7 extends yh.g1 {
                 if (clamp012 < 0.99f) {
                     paint.setAlpha(255);
                     f10 = dp2;
-                    f7 = B;
+                    f7 = D2;
                     i10 = 255;
                     t7Var.r(canvas, s7Var.v, left2, f10, f7, f11, 1.0f, f15, 0.24f, 0.97f);
                 } else {
-                    f7 = B;
+                    f7 = D2;
                     i10 = 255;
                     f10 = dp2;
                 }

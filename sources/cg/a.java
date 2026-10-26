@@ -1,26 +1,17 @@
 package cg;
 
-import java.nio.ShortBuffer;
-import oa.d;
-import rb.b;
-import t7.u;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface a {
-    public static final u k = new u(5);
-    public static final b l;
-    public static final d m;
-    public static final pb.a o;
+public abstract class a {
+    public float a = 1.0f;
 
-    static {
-        int i10 = 6;
-        l = new b(i10);
-        m = new d(i10);
-        o = new pb.a(i10);
-    }
+    public abstract short a();
 
-    int E1(int i10, int i11, int i12);
+    public abstract int b();
 
-    void P0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+    public abstract boolean c();
+
+    public abstract void d();
+
+    public abstract void e(int i10, int i11);
 }

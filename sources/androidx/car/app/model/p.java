@@ -4,9 +4,9 @@ import android.os.Binder;
 import androidx.car.app.model.InputCallbackDelegateImpl;
 import androidx.car.app.model.TabCallbackDelegateImpl;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p implements androidx.car.app.utils.a {
+public final /* synthetic */ class p implements androidx.car.app.utils.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Binder b;
     public final /* synthetic */ String c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class p implements androidx.car.app.utils.a {
         this.c = str;
     }
 
-    @Override // androidx.car.app.utils.a
+    @Override // androidx.car.app.utils.b
     public final Object a() {
         Object lambda$onInputTextChanged$1;
         Object lambda$onInputSubmitted$0;

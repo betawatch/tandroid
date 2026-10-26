@@ -1,5 +1,6 @@
 package i0;
 
+import a8.tc;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
@@ -17,9 +18,8 @@ import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
-import v7.z7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class h extends f {
     public final Class f;
@@ -71,7 +71,7 @@ public class h extends f {
         return cls.getMethod("addFontFromAssetManager", AssetManager.class, String.class, cls2, Boolean.TYPE, cls2, cls2, cls2, FontVariationAxis[].class);
     }
 
-    @Override // i0.f, v7.y7
+    @Override // i0.f, a8.sc
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         Method method = this.h;
@@ -114,7 +114,7 @@ public class h extends f {
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x009e A[SYNTHETIC] */
-    @Override // i0.f, v7.y7
+    @Override // i0.f, a8.sc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -140,7 +140,7 @@ public class h extends f {
                         if (hVar.e == 0) {
                             Uri uri = hVar.a;
                             if (!hashMap.containsKey(uri)) {
-                                hashMap.put(uri, z7.e(context, uri));
+                                hashMap.put(uri, tc.e(context, uri));
                             }
                         }
                     }
@@ -224,7 +224,7 @@ public class h extends f {
         return null;
     }
 
-    @Override // v7.y7
+    @Override // a8.sc
     public final Typeface e(Context context, Resources resources, int i10, String str, int i11) {
         Object obj;
         Method method = this.h;

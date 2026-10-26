@@ -1,5 +1,6 @@
 package l;
 
+import a8.kc;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -15,9 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import v7.q7;
+import jg.s0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class m implements l0.a {
     public n A;
@@ -73,7 +74,7 @@ public final class m implements l0.a {
         this.n.p(true);
         n nVar2 = this.A;
         if (nVar2 != null) {
-            nVar2.b = new a4.l(this, 28);
+            nVar2.b = new s0(this, 3);
             nVar2.a.setVisibilityListener(nVar2);
         }
         return this;
@@ -194,7 +195,7 @@ public final class m implements l0.a {
         if (i10 == 0) {
             return null;
         }
-        Drawable b10 = q7.b(this.n.a, i10);
+        Drawable b10 = kc.b(this.n.a, i10);
         this.m = 0;
         this.l = b10;
         return d(b10);

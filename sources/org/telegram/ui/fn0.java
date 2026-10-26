@@ -1,53 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fn0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ io0 b;
+public final class fn0 extends View implements org.telegram.ui.ActionBar.p6 {
+    public Paint a;
+    public Paint b;
+    public float c;
 
-    public /* synthetic */ fn0(io0 io0Var, int i10) {
-        this.a = i10;
-        this.b = io0Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = (int) (getMeasuredWidth() * this.c);
+        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
+        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                io0 io0Var = this.b;
-                io0Var.f[0].requestFocus();
-                AndroidUtilities.showKeyboard(io0Var.f[0]);
-                break;
-            case 1:
-                this.b.t0();
-                break;
-            case 2:
-                io0 io0Var2 = this.b;
-                io0Var2.getMessagesController().newMessageCallback = null;
-                if (io0Var2.f1 == 3 && !io0Var2.isFinishing()) {
-                    io0Var2.f1 = 4;
-                    ho0 ho0Var = io0Var2.Z0;
-                    if (ho0Var != null) {
-                        ho0Var.a(4);
-                    }
-                    io0Var2.finishFragment();
-                    break;
-                } else if (io0Var2.f1 == 1 && !io0Var2.isFinishing()) {
-                    io0Var2.finishFragment();
-                    break;
-                }
-                break;
-            default:
-                io0 io0Var3 = this.b;
-                if (io0Var3.d0 != null) {
-                    io0Var3.w0();
-                    io0Var3.d0 = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.gi, false));
+            this.b.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.hi, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

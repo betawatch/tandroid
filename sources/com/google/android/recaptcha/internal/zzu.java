@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
+import a8.id;
 import android.app.Application;
-import be.i0;
-import id.c;
-import id.g;
-import l8.e;
-import v7.h8;
+import ce.i0;
+import jd.c;
+import jd.g;
+import m8.e;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzu extends zzg {
     private final zzcz zza;
@@ -24,19 +24,19 @@ public final class zzu extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zza(String str, kd.c cVar) {
+    public final Object zza(String str, ld.c cVar) {
         zzxw zzf = zzxx.zzf();
         zzf.zze(str);
         return zzf.zzk();
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzb(String str, kd.c cVar) {
+    public final Object zzb(String str, ld.c cVar) {
         return new zzhg(new zzr(this, str, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzd(zzxn zzxnVar, kd.c cVar) {
+    public final Object zzd(zzxn zzxnVar, ld.c cVar) {
         return new zzhg(new zzs(this, zzxnVar, null));
     }
 
@@ -53,10 +53,10 @@ public final class zzu extends zzg {
     public zzu(zzcz zzczVar, e eVar) {
         this.zza = zzczVar;
         int i10 = zzby.zza;
-        this.zzd = h8.a(zzt.zza);
+        this.zzd = id.a(zzt.zza);
     }
 
     public zzu(zzcz zzczVar, e eVar, int i10, kotlin.jvm.internal.e eVar2) {
-        this(new zzcz(k6.e.b), null);
+        this(new zzcz(l6.e.b), null);
     }
 }

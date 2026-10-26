@@ -4,14 +4,14 @@ import android.media.session.MediaSession;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class r implements Parcelable {
-    public static final Parcelable.Creator<r> CREATOR = new m8.h(6);
+    public static final Parcelable.Creator<r> CREATOR = new h8.j(29);
     public final MediaSession.Token b;
     public d c;
     public final Object a = new Object();
-    public y4.d d = null;
+    public z4.d d = null;
 
     public r(MediaSession.Token token, m mVar) {
         this.b = token;
@@ -32,7 +32,7 @@ public final class r implements Parcelable {
         }
     }
 
-    public final void c(y4.d dVar) {
+    public final void c(z4.d dVar) {
         synchronized (this.a) {
             this.d = dVar;
         }

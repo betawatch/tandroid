@@ -1,31 +1,106 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import a8.ha;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class p0 {
-    public static final g6.b i = new g6.b("ClientCastAnalytics", null);
-    public static final boolean j = true;
-    public final d6.g a;
-    public final u b;
-    public final d c;
-    public Long e;
-    public l5.s g;
-    public int h = 1;
-    public final String d = UUID.randomUUID().toString();
-    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
+public final class p0 extends a8.m {
+    public static final p0 n = new p0(null, new Object[0], 0);
+    public final transient Object e;
+    public final transient Object[] f;
+    public final transient int h;
 
-    public p0(Context context, g6.r rVar, d6.g gVar, u uVar, d dVar) {
-        this.a = gVar;
-        this.b = uVar;
-        this.c = dVar;
+    public p0(Object obj, Object[] objArr, int i10) {
+        super(1);
+        this.e = obj;
+        this.f = objArr;
+        this.h = i10;
     }
 
-    public final void a(s1 s1Var, int i10) {
-        this.f.execute(new androidx.activity.g(this, s1Var, i10, 3));
+    /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x009f A[RETURN] */
+    @Override // a8.m, java.util.Map
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object get(Object obj) {
+        Object obj2;
+        if (obj != null) {
+            int i10 = this.h;
+            Object[] objArr = this.f;
+            if (i10 == 1) {
+                Object obj3 = objArr[0];
+                obj3.getClass();
+                if (obj3.equals(obj)) {
+                    obj2 = objArr[1];
+                    obj2.getClass();
+                }
+            } else {
+                Object obj4 = this.e;
+                if (obj4 != null) {
+                    if (obj4 instanceof byte[]) {
+                        byte[] bArr = (byte[]) obj4;
+                        int length = bArr.length - 1;
+                        int a2 = ha.a(obj.hashCode());
+                        while (true) {
+                            int i11 = a2 & length;
+                            int i12 = bArr[i11] & 255;
+                            if (i12 == 255) {
+                                break;
+                            }
+                            if (obj.equals(objArr[i12])) {
+                                obj2 = objArr[i12 ^ 1];
+                                break;
+                            }
+                            a2 = i11 + 1;
+                        }
+                    } else if (obj4 instanceof short[]) {
+                        short[] sArr = (short[]) obj4;
+                        int length2 = sArr.length - 1;
+                        int a10 = ha.a(obj.hashCode());
+                        while (true) {
+                            int i13 = a10 & length2;
+                            char c10 = (char) sArr[i13];
+                            if (c10 == 65535) {
+                                break;
+                            }
+                            if (obj.equals(objArr[c10])) {
+                                obj2 = objArr[c10 ^ 1];
+                                break;
+                            }
+                            a10 = i13 + 1;
+                        }
+                    } else {
+                        int[] iArr = (int[]) obj4;
+                        int length3 = iArr.length - 1;
+                        int a11 = ha.a(obj.hashCode());
+                        while (true) {
+                            int i14 = a11 & length3;
+                            int i15 = iArr[i14];
+                            if (i15 == -1) {
+                                break;
+                            }
+                            if (obj.equals(objArr[i15])) {
+                                obj2 = objArr[i15 ^ 1];
+                                break;
+                            }
+                            a11 = i14 + 1;
+                        }
+                    }
+                }
+            }
+            if (obj2 != null) {
+                return null;
+            }
+            return obj2;
+        }
+        obj2 = null;
+        if (obj2 != null) {
+        }
+    }
+
+    @Override // java.util.Map
+    public final int size() {
+        return this.h;
     }
 }

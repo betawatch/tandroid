@@ -5,9 +5,9 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.qk0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a = 1;
@@ -17,12 +17,12 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, rk0 rk0Var, rk0 rk0Var2) {
+    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, qk0 qk0Var, qk0 qk0Var2) {
         this.d = horizontalScrollView;
         this.b = f7;
         this.c = f10;
-        this.e = rk0Var;
-        this.f = rk0Var2;
+        this.e = qk0Var;
+        this.f = qk0Var2;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -61,14 +61,14 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
                 break;
             default:
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) this.d;
-                rk0 rk0Var = (rk0) this.e;
-                rk0 rk0Var2 = (rk0) this.f;
+                qk0 qk0Var = (qk0) this.e;
+                qk0 qk0Var2 = (qk0) this.f;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f15 = this.c;
                 float f16 = this.b;
-                horizontalScrollView.setScrollX((int) com.google.android.gms.internal.play_billing.k3.y(f15, f16, floatValue3, f16));
-                rk0Var.setOutlineProgress(1.0f - floatValue3);
-                rk0Var2.setOutlineProgress(floatValue3);
+                horizontalScrollView.setScrollX((int) c3.h0.z(f15, f16, floatValue3, f16));
+                qk0Var.setOutlineProgress(1.0f - floatValue3);
+                qk0Var2.setOutlineProgress(floatValue3);
                 break;
         }
     }

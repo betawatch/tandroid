@@ -1,33 +1,16 @@
 package x2;
 
-import b2.v1;
-import i2.p1;
-import j$.util.Objects;
-import v7.u6;
+import b2.u1;
+import i2.s0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class t {
-    public final int a;
-    public final p1[] b;
-    public final p[] c;
-    public final v1 d;
-    public final Object e;
+public abstract class t {
+    public s0 a;
+    public y2.c b;
+    public s c;
 
-    public t(p1[] p1VarArr, p[] pVarArr, v1 v1Var, Object obj) {
-        u6.g(p1VarArr.length == pVarArr.length);
-        this.b = p1VarArr;
-        this.c = (p[]) pVarArr.clone();
-        this.d = v1Var;
-        this.e = obj;
-        this.a = p1VarArr.length;
-    }
+    public abstract void a();
 
-    public final boolean a(t tVar, int i10) {
-        return tVar != null && Objects.equals(this.b[i10], tVar.b[i10]) && Objects.equals(this.c[i10], tVar.c[i10]);
-    }
-
-    public final boolean b(int i10) {
-        return this.b[i10] != null;
-    }
+    public abstract void b(u1 u1Var);
 }

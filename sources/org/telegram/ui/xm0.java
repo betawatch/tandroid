@@ -1,37 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class xm0 extends View implements org.telegram.ui.ActionBar.b6 {
-    public Paint a;
-    public Paint b;
-    public float c;
+public final class xm0 extends ClickableSpan {
+    public final /* synthetic */ in0 a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public xm0(in0 in0Var) {
+        this.a = in0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        try {
-            this.a.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.gi, false));
-            this.b.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.hi, false));
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        in0 in0Var = this.a;
+        qf.d.r(in0Var.getParentActivity(), in0Var.y.privacy_policy_url);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
+        textPaint.setTypeface(AndroidUtilities.bold());
     }
 }

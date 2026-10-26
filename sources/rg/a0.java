@@ -1,30 +1,30 @@
 package rg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class a0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+    public final /* synthetic */ e0 b;
 
-    public /* synthetic */ a0(m0 m0Var, int i10) {
+    public /* synthetic */ a0(e0 e0Var, int i10) {
         this.a = i10;
-        this.b = m0Var;
+        this.b = e0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.f2.setTranslationY(0.0f);
+                e0 e0Var = this.b;
+                m mVar = e0Var.A;
+                if (mVar != null) {
+                    e0Var.a.g(mVar);
+                    e0Var.A = null;
+                    break;
+                }
                 break;
             default:
-                m0 m0Var = this.b;
-                m0Var.i2 = false;
-                m0Var.f2.setTranslationY(0.0f);
-                m0Var.m0();
+                this.b.a(null, true, null);
                 break;
         }
     }

@@ -1,18 +1,18 @@
 package com.google.android.play.core.integrity;
 
-import a9.c0;
-import a9.e0;
-import a9.j0;
-import a9.k0;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
+import b9.a0;
+import b9.c0;
+import b9.h0;
+import b9.i0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-final class ag extends k0 {
+final class ag extends i0 {
     final /* synthetic */ Bundle a;
     final /* synthetic */ Activity b;
     final /* synthetic */ TaskCompletionSource c;
@@ -29,30 +29,30 @@ final class ag extends k0 {
         this.e = ajVar;
     }
 
-    @Override // a9.k0
+    @Override // b9.i0
     public final void b() {
-        j0 j0Var;
+        h0 h0Var;
         at atVar;
         try {
             aj ajVar = this.e;
-            e0 e0Var = (e0) ajVar.a.n;
+            c0 c0Var = (c0) ajVar.a.n;
             Bundle bundle = this.a;
             atVar = ajVar.e;
             as a2 = atVar.a(this.b, this.c, ajVar.a);
-            c0 c0Var = (c0) e0Var;
-            c0Var.getClass();
+            a0 a0Var = (a0) c0Var;
+            a0Var.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(c0Var.c);
-            int i10 = a9.v.a;
+            obtain.writeInterfaceToken(a0Var.c);
+            int i10 = b9.t.a;
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a2);
-            c0Var.G0(obtain, 3);
+            a0Var.G0(obtain, 3);
         } catch (RemoteException e) {
             aj ajVar2 = this.e;
             int i11 = this.d;
-            j0Var = ajVar2.b;
-            j0Var.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i11));
+            h0Var = ajVar2.b;
+            h0Var.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i11));
             this.c.trySetException(new IntegrityServiceException(-100, e));
         }
     }

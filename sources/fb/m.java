@@ -1,0 +1,131 @@
+package fb;
+
+import j$.util.Objects;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class m extends i {
+    public final Serializable a;
+
+    public m(Boolean bool) {
+        Objects.requireNonNull(bool);
+        this.a = bool;
+    }
+
+    public static boolean r(m mVar) {
+        Serializable serializable = mVar.a;
+        if (!(serializable instanceof Number)) {
+            return false;
+        }
+        Number number = (Number) serializable;
+        return (number instanceof BigInteger) || (number instanceof Long) || (number instanceof Integer) || (number instanceof Short) || (number instanceof Byte);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || m.class != obj.getClass()) {
+            return false;
+        }
+        m mVar = (m) obj;
+        Serializable serializable = mVar.a;
+        Serializable serializable2 = this.a;
+        if (serializable2 == null) {
+            return serializable == null;
+        }
+        if (r(this) && r(mVar)) {
+            return ((serializable2 instanceof BigInteger) || (serializable instanceof BigInteger)) ? n().equals(mVar.n()) : q().longValue() == mVar.q().longValue();
+        }
+        if (!(serializable2 instanceof Number) || !(serializable instanceof Number)) {
+            return serializable2.equals(serializable);
+        }
+        if ((serializable2 instanceof BigDecimal) && (serializable instanceof BigDecimal)) {
+            return (serializable2 instanceof BigDecimal ? (BigDecimal) serializable2 : hb.d.i(m())).compareTo(serializable instanceof BigDecimal ? (BigDecimal) serializable : hb.d.i(mVar.m())) == 0;
+        }
+        double p10 = p();
+        double p11 = mVar.p();
+        if (p10 != p11) {
+            return Double.isNaN(p10) && Double.isNaN(p11);
+        }
+        return true;
+    }
+
+    public final int hashCode() {
+        long doubleToLongBits;
+        Serializable serializable = this.a;
+        if (serializable == null) {
+            return 31;
+        }
+        if (r(this)) {
+            doubleToLongBits = q().longValue();
+        } else {
+            if (!(serializable instanceof Number)) {
+                return serializable.hashCode();
+            }
+            doubleToLongBits = Double.doubleToLongBits(q().doubleValue());
+        }
+        return (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+    }
+
+    @Override // fb.i
+    public final String m() {
+        Serializable serializable = this.a;
+        if (serializable instanceof String) {
+            return (String) serializable;
+        }
+        if (serializable instanceof Number) {
+            return q().toString();
+        }
+        if (serializable instanceof Boolean) {
+            return ((Boolean) serializable).toString();
+        }
+        throw new AssertionError("Unexpected value type: " + serializable.getClass());
+    }
+
+    public final BigInteger n() {
+        Serializable serializable = this.a;
+        if (serializable instanceof BigInteger) {
+            return (BigInteger) serializable;
+        }
+        if (r(this)) {
+            return BigInteger.valueOf(q().longValue());
+        }
+        String m10 = m();
+        hb.d.d(m10);
+        return new BigInteger(m10);
+    }
+
+    public final boolean o() {
+        Serializable serializable = this.a;
+        return serializable instanceof Boolean ? ((Boolean) serializable).booleanValue() : Boolean.parseBoolean(m());
+    }
+
+    public final double p() {
+        return this.a instanceof Number ? q().doubleValue() : Double.parseDouble(m());
+    }
+
+    public final Number q() {
+        Serializable serializable = this.a;
+        if (serializable instanceof Number) {
+            return (Number) serializable;
+        }
+        if (serializable instanceof String) {
+            return new hb.i((String) serializable);
+        }
+        throw new UnsupportedOperationException("Primitive is neither a number nor a string");
+    }
+
+    public m(Number number) {
+        Objects.requireNonNull(number);
+        this.a = number;
+    }
+
+    public m(String str) {
+        Objects.requireNonNull(str);
+        this.a = str;
+    }
+}

@@ -1,24 +1,45 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ry0 extends org.telegram.ui.Components.ir0 {
-    public final /* synthetic */ sy0 e1;
+public final class ry0 extends s4.c0 {
+    public final /* synthetic */ ProfileActivity I;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ry0(sy0 sy0Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.e1 = sy0Var;
+    public ry0(ProfileActivity profileActivity) {
+        this.I = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.ir0
-    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new mv0(this, hVar, i10, 15), 250L);
+    @Override // s4.c0, s4.p0
+    public final int o0(int i10, rf.e eVar, s4.b1 b1Var) {
+        ProfileActivity profileActivity = this.I;
+        View m10 = profileActivity.c.m(0);
+        if (m10 != null && !profileActivity.F0) {
+            int top = m10.getTop() - profileActivity.c4();
+            boolean z10 = profileActivity.o2;
+            if (z10 || top <= i10) {
+                if (z10) {
+                    if (i10 >= top) {
+                        profileActivity.o2 = false;
+                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.p2) {
+                        i10 /= 2;
+                    }
+                }
+            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().hasNotThumb() && !AndroidUtilities.isAccessibilityScreenReaderEnabled() && ((!profileActivity.n2 && !AndroidUtilities.isTablet()) || profileActivity.I0)) {
+                profileActivity.o2 = profileActivity.J2 == null;
+            }
+            i10 = top;
         }
+        if (!profileActivity.O1 || profileActivity.a.P0) {
+            return super.o0(i10, eVar, b1Var);
+        }
+        return 0;
+    }
+
+    @Override // s4.c0, s4.p0
+    public final boolean y0() {
+        return this.I.q0 != null;
     }
 }

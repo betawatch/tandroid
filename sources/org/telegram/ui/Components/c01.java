@@ -1,32 +1,65 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c01 {
-    public final int a;
-    public final int b;
+public final class c01 extends gb1 {
+    public final /* synthetic */ int c;
 
-    public c01(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public /* synthetic */ c01(int i10) {
+        this.c = i10;
     }
 
-    public final int a() {
-        return this.b - this.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.gb1
+    public final int F(j01 j01Var, int i10) {
+        switch (this.c) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
         }
-        if (obj == null || c01.class != obj.getClass()) {
-            return false;
-        }
-        c01 c01Var = (c01) obj;
-        return this.b == c01Var.b && this.a == c01Var.a;
     }
 
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
+    @Override // org.telegram.ui.Components.gb1
+    public h01 G() {
+        switch (this.c) {
+            case 3:
+                return new d01();
+            default:
+                return super.G();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.gb1
+    public final int H(j01 j01Var, int i10) {
+        switch (this.c) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.gb1
+    public int J(int i10, int i11) {
+        switch (this.c) {
+            case 4:
+                return i11;
+            default:
+                return i10;
+        }
     }
 }

@@ -1,44 +1,33 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ld1 extends org.telegram.ui.Components.lm0 {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public kd1 e;
-    public int f;
-    public final /* synthetic */ md1 h;
+public final class ld1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pd1 b;
 
-    public ld1(md1 md1Var) {
-        this.h = md1Var;
+    public /* synthetic */ ld1(pd1 pd1Var, int i10) {
+        this.a = i10;
+        this.b = pd1Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.c.size();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        ArrayList arrayList = this.c;
-        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i10);
-        String str = (String) this.d.get(i10);
-        org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) b1Var.a;
-        f4Var.e(chat, chat.title, str, i10 != arrayList.size() - 1);
-        f4Var.c(this.h.w.contains(Long.valueOf(chat.id)), false);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.f4(viewGroup.getContext(), 1, 0, false));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                pd1 pd1Var = this.b;
+                pd1Var.v = 0;
+                pd1Var.n.setVisibility(8);
+                break;
+            case 1:
+                this.b.v = 0;
+                break;
+            default:
+                this.b.F.setVisibility(8);
+                break;
+        }
     }
 }

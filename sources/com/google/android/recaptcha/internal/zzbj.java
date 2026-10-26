@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
+import a8.jd;
 import java.util.Timer;
-import kd.c;
-import ld.a;
-import md.i;
-import td.p;
-import v7.i8;
+import ld.c;
+import md.a;
+import nd.i;
+import ud.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzbj extends i implements p {
     final /* synthetic */ zzbo zza;
@@ -19,23 +19,23 @@ final class zzbj extends i implements p {
         this.zza = zzboVar;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final c create(Object obj, c cVar) {
         zzbj zzbjVar = new zzbj(this.zza, cVar);
         zzbjVar.zzb = obj;
         return zzbjVar;
     }
 
-    @Override // td.p
+    @Override // ud.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbj) create((zzhk) obj, (c) obj2)).invokeSuspend(id.i.a);
+        return ((zzbj) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final Object invokeSuspend(Object obj) {
         boolean z10;
         a aVar = a.a;
-        i8.b(obj);
+        jd.b(obj);
         zzhk zzhkVar = (zzhk) this.zzb;
         zzbo zzboVar = this.zza;
         z10 = zzboVar.zzg;
@@ -43,6 +43,6 @@ final class zzbj extends i implements p {
             new Timer().schedule(new zzbi(zzboVar, zzhkVar), 28800000L, 28800000L);
             zzboVar.zzg = true;
         }
-        return id.i.a;
+        return jd.i.a;
     }
 }

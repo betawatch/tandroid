@@ -1,179 +1,77 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class dx implements v60 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 a;
-    public final /* synthetic */ ey b;
+public final class dx extends UndoView {
+    public final /* synthetic */ cy j0;
 
-    public dx(ey eyVar, org.telegram.ui.ActionBar.c2 c2Var) {
-        this.b = eyVar;
-        this.a = c2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dx(cy cyVar, Activity activity) {
+        super(activity);
+        this.j0 = cyVar;
     }
 
-    @Override // org.telegram.ui.v60
-    public final void a(w60 w60Var, final long j10) {
-        final int i10 = 0;
-        final int i11 = 1;
-        final org.telegram.ui.ActionBar.o2[] o2VarArr = {w60Var, null};
-        final int i12 = 0;
-        Utilities.Callback callback = new Utilities.Callback(this) { // from class: org.telegram.ui.bx
-            public final /* synthetic */ dx b;
-
-            {
-                this.b = this;
+    @Override // org.telegram.ui.Components.UndoView
+    public final boolean a() {
+        int i10 = 0;
+        while (true) {
+            ay[] ayVarArr = this.j0.e0;
+            if (i10 >= ayVarArr.length) {
+                return true;
             }
+            if (ayVarArr[i10].x.k()) {
+                return false;
+            }
+            i10++;
+        }
+    }
 
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                Runnable runnable = (Runnable) obj;
-                switch (i12) {
-                    case 0:
-                        ey eyVar = this.b.b;
-                        Boolean bool = eyVar.G.has_username;
-                        if (bool != null && bool.booleanValue()) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("step", 1);
-                            bundle.putLong("chat_id", j10);
-                            bundle.putBoolean("forcePublic", eyVar.G.has_username.booleanValue());
-                            md mdVar = new md(bundle);
-                            mdVar.u0 = new f5(runnable, 12);
-                            eyVar.presentFragment(mdVar);
-                            o2VarArr[1] = mdVar;
-                            break;
-                        } else {
-                            runnable.run();
-                            break;
-                        }
-                    default:
-                        dx dxVar = this.b;
-                        ey eyVar2 = dxVar.b;
-                        eyVar2.O4(eyVar2.getMessagesController().getChat(Long.valueOf(j10)), runnable, new ot(10, dxVar, o2VarArr));
+    @Override // org.telegram.ui.Components.UndoView
+    public final void g(int i10, long j10) {
+        if (i10 == 1 || i10 == 27) {
+            cy cyVar = this.j0;
+            cyVar.z3 = 1;
+            cyVar.I4(true, true);
+            if (cyVar.R1 != null) {
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= cyVar.R1.size()) {
+                        i11 = -1;
                         break;
-                }
-            }
-        };
-        final int i13 = 1;
-        Utilities.Callback callback2 = new Utilities.Callback(this) { // from class: org.telegram.ui.bx
-            public final /* synthetic */ dx b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                Runnable runnable = (Runnable) obj;
-                switch (i13) {
-                    case 0:
-                        ey eyVar = this.b.b;
-                        Boolean bool = eyVar.G.has_username;
-                        if (bool != null && bool.booleanValue()) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("step", 1);
-                            bundle.putLong("chat_id", j10);
-                            bundle.putBoolean("forcePublic", eyVar.G.has_username.booleanValue());
-                            md mdVar = new md(bundle);
-                            mdVar.u0 = new f5(runnable, 12);
-                            eyVar.presentFragment(mdVar);
-                            o2VarArr[1] = mdVar;
-                            break;
-                        } else {
-                            runnable.run();
-                            break;
-                        }
-                    default:
-                        dx dxVar = this.b;
-                        ey eyVar2 = dxVar.b;
-                        eyVar2.O4(eyVar2.getMessagesController().getChat(Long.valueOf(j10)), runnable, new ot(10, dxVar, o2VarArr));
+                    } else if (((TLRPC.Dialog) cyVar.R1.get(i11)).id == j10) {
                         break;
+                    } else {
+                        i11++;
+                    }
+                }
+                if (i11 >= 0) {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) cyVar.R1.remove(i11);
+                    cyVar.e0[0].d.l();
+                    AndroidUtilities.runOnUIThread(new g4(this, i11, dialog, 29));
+                } else {
+                    cyVar.I4(false, true);
                 }
             }
-        };
-        org.telegram.ui.ActionBar.c2 c2Var = this.a;
-        Utilities.doCallbacks(callback, callback2, new ai.f2(this, c2Var, j10, 2), new Utilities.Callback(this) { // from class: org.telegram.ui.cx
-            public final /* synthetic */ dx b;
+            cyVar.w3();
+        }
+    }
 
-            {
-                this.b = this;
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        cy cyVar = this.j0;
+        UndoView[] undoViewArr = cyVar.y0;
+        if (this == undoViewArr[0]) {
+            UndoView undoView = undoViewArr[1];
+            if (undoView == null || undoView.getVisibility() != 0) {
+                cyVar.u1 = Math.max(0.0f, (AndroidUtilities.dp(8.0f) + getMeasuredHeight()) - f7);
+                cyVar.g5();
             }
-
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                switch (i10) {
-                    case 0:
-                        Runnable runnable = (Runnable) obj;
-                        ey eyVar = this.b.b;
-                        if (eyVar.G.bot_admin_rights == null) {
-                            runnable.run();
-                            break;
-                        } else {
-                            TLRPC.User user = eyVar.getMessagesController().getUser(Long.valueOf(eyVar.H));
-                            MessagesController messagesController = eyVar.getMessagesController();
-                            TLRPC.RequestPeerType requestPeerType = eyVar.G;
-                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
-                            Boolean bool = requestPeerType.bot_participant;
-                            messagesController.setUserAdminRole(j10, user, tL_chatAdminRights, null, false, eyVar, bool == null || !bool.booleanValue(), true, null, runnable, new gf(6, runnable));
-                            break;
-                        }
-                    default:
-                        Runnable runnable2 = (Runnable) obj;
-                        ey eyVar2 = this.b.b;
-                        if (eyVar2.G.user_admin_rights == null) {
-                            runnable2.run();
-                            break;
-                        } else {
-                            MessagesController messagesController2 = eyVar2.getMessagesController();
-                            long j11 = j10;
-                            eyVar2.getMessagesController().setUserAdminRole(j11, eyVar2.getAccountInstance().getUserConfig().getCurrentUser(), dq.s0(messagesController2.getChat(Long.valueOf(j11)).admin_rights, eyVar2.G.user_admin_rights), null, false, eyVar2, false, true, null, runnable2, new gf(7, runnable2));
-                            break;
-                        }
-                }
-            }
-        }, new Utilities.Callback(this) { // from class: org.telegram.ui.cx
-            public final /* synthetic */ dx b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                switch (i11) {
-                    case 0:
-                        Runnable runnable = (Runnable) obj;
-                        ey eyVar = this.b.b;
-                        if (eyVar.G.bot_admin_rights == null) {
-                            runnable.run();
-                            break;
-                        } else {
-                            TLRPC.User user = eyVar.getMessagesController().getUser(Long.valueOf(eyVar.H));
-                            MessagesController messagesController = eyVar.getMessagesController();
-                            TLRPC.RequestPeerType requestPeerType = eyVar.G;
-                            TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
-                            Boolean bool = requestPeerType.bot_participant;
-                            messagesController.setUserAdminRole(j10, user, tL_chatAdminRights, null, false, eyVar, bool == null || !bool.booleanValue(), true, null, runnable, new gf(6, runnable));
-                            break;
-                        }
-                    default:
-                        Runnable runnable2 = (Runnable) obj;
-                        ey eyVar2 = this.b.b;
-                        if (eyVar2.G.user_admin_rights == null) {
-                            runnable2.run();
-                            break;
-                        } else {
-                            MessagesController messagesController2 = eyVar2.getMessagesController();
-                            long j11 = j10;
-                            eyVar2.getMessagesController().setUserAdminRole(j11, eyVar2.getAccountInstance().getUserConfig().getCurrentUser(), dq.s0(messagesController2.getChat(Long.valueOf(j11)).admin_rights, eyVar2.G.user_admin_rights), null, false, eyVar2, false, true, null, runnable2, new gf(7, runnable2));
-                            break;
-                        }
-                }
-            }
-        }, new ai.x2(this, c2Var, j10, o2VarArr, 5));
+        }
     }
 }

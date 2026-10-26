@@ -7,8 +7,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
+import org.telegram.ui.ji1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class j extends MediaRouter2$TransferCallback {
     public final /* synthetic */ k a;
@@ -24,7 +25,7 @@ public final class j extends MediaRouter2$TransferCallback {
             Log.w("MR2Provider", "onStop: No matching routeController found. routingController=" + routingController);
             return;
         }
-        e eVar = (e) kVar.s.b;
+        e eVar = (e) kVar.s.a;
         if (qVar != eVar.e) {
             int i10 = e.F;
             return;
@@ -39,7 +40,7 @@ public final class j extends MediaRouter2$TransferCallback {
         v vVar;
         this.a.v.remove(routingController);
         if (routingController2 == this.a.r.getSystemController()) {
-            e eVar = (e) this.a.s.b;
+            e eVar = (e) this.a.s.a;
             v c10 = eVar.c();
             if (eVar.e() != c10) {
                 eVar.j(c10, 3);
@@ -53,9 +54,9 @@ public final class j extends MediaRouter2$TransferCallback {
             return;
         }
         int i10 = 0;
-        String id2 = org.telegram.ui.web.d0.d(selectedRoutes.get(0)).getId();
+        String id2 = ji1.d(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new g(this.a, routingController2, id2));
-        e eVar2 = (e) this.a.s.b;
+        e eVar2 = (e) this.a.s.a;
         ArrayList arrayList = eVar2.j;
         int size = arrayList.size();
         while (true) {

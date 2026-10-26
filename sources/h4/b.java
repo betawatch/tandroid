@@ -4,21 +4,21 @@ import a1.g;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import e2.j;
-import e2.m0;
+import e2.n0;
 import e2.x;
-import e9.l0;
-import e9.n0;
-import e9.x1;
+import f9.g0;
+import f9.i0;
+import f9.s1;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
-import si.o0;
+import org.telegram.ui.Components.b10;
 import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b implements m {
     public static final z3.a e;
@@ -28,8 +28,8 @@ public final class b implements m {
     public Inflater d;
 
     static {
-        l0 l0Var = n0.b;
-        e = new z3.a(-9223372036854775807L, -9223372036854775807L, x1.e);
+        g0 g0Var = i0.b;
+        e = new z3.a(-9223372036854775807L, -9223372036854775807L, s1.e);
     }
 
     public b(List list) {
@@ -37,7 +37,7 @@ public final class b implements m {
         a aVar = new a();
         this.c = aVar;
         String trim = new String((byte[]) list.get(0), StandardCharsets.UTF_8).trim();
-        String str = m0.a;
+        String str = n0.a;
         for (String str2 : trim.split("\\r?\\n", -1)) {
             if (str2.startsWith("palette: ")) {
                 String[] split = str2.substring(9).split(",", -1);
@@ -46,8 +46,8 @@ public final class b implements m {
                     int[] iArr = aVar.f;
                     try {
                         i10 = Integer.parseInt(split[i11].trim(), 16);
-                    } catch (RuntimeException e7) {
-                        e2.a.m("VobsubParser", "Parsing color failed", e7);
+                    } catch (RuntimeException e10) {
+                        e2.a.m("VobsubParser", "Parsing color failed", e10);
                         i10 = 0;
                     }
                     iArr[i11] = i10;
@@ -61,22 +61,12 @@ public final class b implements m {
                         aVar.g = Integer.parseInt(split2[0]);
                         aVar.h = Integer.parseInt(split2[1]);
                         aVar.d = true;
-                    } catch (RuntimeException e10) {
-                        e2.a.m("VobsubParser", "Parsing IDX failed", e10);
+                    } catch (RuntimeException e11) {
+                        e2.a.m("VobsubParser", "Parsing IDX failed", e11);
                     }
                 }
             }
         }
-    }
-
-    @Override // z3.m
-    public final /* synthetic */ d a(int i10, int i11, byte[] bArr) {
-        return o0.a(this, bArr, i11);
-    }
-
-    @Override // z3.m
-    public final int c() {
-        return 2;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -89,7 +79,7 @@ public final class b implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+    public final void G(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         z3.a aVar;
         boolean z10;
         long j10;
@@ -107,7 +97,7 @@ public final class b implements m {
         }
         Inflater inflater = this.d;
         x xVar2 = this.b;
-        if (m0.Q(xVar, xVar2, inflater)) {
+        if (n0.Q(xVar, xVar2, inflater)) {
             xVar.L(xVar2.c, xVar2.a);
         }
         a aVar2 = this.c;
@@ -224,7 +214,7 @@ public final class b implements m {
                                             break;
                                         }
                                     default:
-                                        g.x(A, "Unrecognized command: ", "VobsubParser");
+                                        g.z(A, "Unrecognized command: ", "VobsubParser");
                                         break;
                                 }
                                 z12 = z14 ? 1 : 0;
@@ -262,7 +252,7 @@ public final class b implements m {
                         } else {
                             j12 = j10;
                         }
-                        aVar = new z3.a(aVar2.b, j12, bVar == null ? n0.y(bVar) : x1.e);
+                        aVar = new z3.a(aVar2.b, j12, bVar == null ? i0.y(bVar) : s1.e);
                     }
                 }
             } else {
@@ -276,9 +266,19 @@ public final class b implements m {
             j11 = aVar2.c;
             if (j11 == j10) {
             }
-            aVar = new z3.a(aVar2.b, j12, bVar == null ? n0.y(bVar) : x1.e);
+            aVar = new z3.a(aVar2.b, j12, bVar == null ? i0.y(bVar) : s1.e);
         }
         jVar.accept(aVar);
+    }
+
+    @Override // z3.m
+    public final /* synthetic */ d j(int i10, int i11, byte[] bArr) {
+        return b10.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int y() {
+        return 2;
     }
 
     @Override // z3.m

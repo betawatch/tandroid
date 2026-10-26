@@ -1,140 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ m1(int i10, long j10, Activity activity, ArrayList arrayList, HashMap hashMap, Utilities.Callback callback, org.telegram.ui.ActionBar.g6 g6Var) {
-        this.c = i10;
-        this.b = j10;
-        this.d = activity;
-        this.e = arrayList;
-        this.f = g6Var;
-        this.h = callback;
-        this.n = hashMap;
+    public /* synthetic */ m1(ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        org.telegram.ui.ActionBar.r2 R;
         switch (this.a) {
             case 0:
-                Activity activity = (Activity) this.d;
-                ArrayList arrayList = (ArrayList) this.e;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.f;
-                Utilities.Callback callback = (Utilities.Callback) this.h;
-                HashMap hashMap = (HashMap) this.n;
-                int i10 = this.c;
-                long j10 = ai.ha.y(i10, false).p().amount;
-                long j11 = this.b;
-                if (j10 >= j11) {
-                    callback.run(hashMap);
-                    break;
-                } else if (activity != null) {
-                    long longValue = ((Long) arrayList.get(0)).longValue();
-                    new ai.dd(activity, g6Var, j11, 13, DialogObject.getShortName(i10, longValue), new a2(callback, hashMap, 0), longValue).show();
+                if (this.b != null && (R = LaunchActivity.R()) != null) {
+                    org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
+                    p2Var.a = true;
+                    R.showAsSheet(new PrivacyControlActivity(11, false), p2Var);
                     break;
                 }
                 break;
             default:
-                final org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.d;
-                final org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) this.e;
-                final org.telegram.ui.Wallet.r1 r1Var = (org.telegram.ui.Wallet.r1) this.f;
-                String str = (String) this.h;
-                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) this.n;
-                e2Var.h = false;
-                if (a2Var != null) {
-                    String str2 = a2Var.e;
-                    if (e2Var.y(a2Var) && !e2Var.i(a2Var)) {
-                        e2Var.g = a2Var;
-                        if ("sendTransaction".equals(str2) && a2Var.f != null) {
-                            if (MessagesController.getMainSettings(e2Var.a).contains(org.telegram.ui.Wallet.e2.j(this.b, this.c) + ".transfer")) {
-                                a2Var.m = true;
-                                final int i11 = 0;
-                                e2Var.z(a2Var, i0Var, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.v1
-                                    @Override // org.telegram.messenger.Utilities.Callback
-                                    public final void run(Object obj) {
-                                        String str3 = (String) obj;
-                                        switch (i11) {
-                                            case 0:
-                                                e2 e2Var2 = e2Var;
-                                                e2Var2.getClass();
-                                                a2 a2Var2 = a2Var;
-                                                a2Var2.m = false;
-                                                e2Var2.s(a2Var2);
-                                                r1Var.run(null, str3);
-                                                break;
-                                            default:
-                                                e2Var.s(a2Var);
-                                                r1Var.run(null, str3);
-                                                break;
-                                        }
-                                    }
-                                });
-                                break;
-                            }
-                        }
-                        if (a2Var.l < 0 && !"disconnect".equals(str2)) {
-                            r1Var.run(a2Var, null);
-                            break;
-                        } else {
-                            i0Var.close();
-                            final int i12 = 1;
-                            e2Var.e(a2Var, false, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.v1
-                                @Override // org.telegram.messenger.Utilities.Callback
-                                public final void run(Object obj) {
-                                    String str3 = (String) obj;
-                                    switch (i12) {
-                                        case 0:
-                                            e2 e2Var2 = e2Var;
-                                            e2Var2.getClass();
-                                            a2 a2Var2 = a2Var;
-                                            a2Var2.m = false;
-                                            e2Var2.s(a2Var2);
-                                            r1Var.run(null, str3);
-                                            break;
-                                        default:
-                                            e2Var.s(a2Var);
-                                            r1Var.run(null, str3);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                        }
-                    } else {
-                        r1Var.run(null, "Request expired or wallet changed");
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    if (i10 >= arrayList.size()) {
                         break;
+                    } else {
+                        ((View) arrayList.get(i10)).setVisibility(8);
+                        if (arrayList.get(i10) instanceof org.telegram.ui.Cells.s1) {
+                            ((org.telegram.ui.Cells.s1) arrayList.get(i10)).L3(false, false);
+                            ((org.telegram.ui.Cells.s1) arrayList.get(i10)).N3(false, false, false);
+                        }
+                        i10++;
                     }
-                } else {
-                    r1Var.run(null, str);
-                    break;
                 }
-                break;
         }
-    }
-
-    public /* synthetic */ m1(org.telegram.ui.Wallet.e2 e2Var, org.telegram.ui.Wallet.a2 a2Var, org.telegram.ui.Wallet.r1 r1Var, String str, long j10, int i10, org.telegram.ui.Wallet.i0 i0Var) {
-        this.d = e2Var;
-        this.e = a2Var;
-        this.f = r1Var;
-        this.h = str;
-        this.b = j10;
-        this.c = i10;
-        this.n = i0Var;
     }
 }

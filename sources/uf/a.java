@@ -1,40 +1,26 @@
 package uf;
 
-import android.content.SharedPreferences;
-import android.os.SystemClock;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.NotificationBadge;
-import w7.r;
+import a8.fg;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public final SharedPreferences a;
-    public long b;
-    public long c;
-    public int d;
+public interface a {
+    void a(fg fgVar);
 
-    public a(String str) {
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("pip_duration_".concat(str), 0);
-        this.a = sharedPreferences;
-        this.b = sharedPreferences.getLong("estimated", 400L);
-        this.d = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
-    }
+    void b(fg fgVar);
 
-    public final void a() {
-        if (this.c == 0) {
-            return;
-        }
-        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * r.b(this.d, 0, 9)) / 10);
-        this.c = 0L;
-        this.d++;
-        this.a.edit().putLong("estimated", this.b).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.d).apply();
-    }
+    Bitmap c();
 
-    public final float b() {
-        if (this.b > 0) {
-            return r.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
-        }
-        return 0.5f;
-    }
+    void d(Canvas canvas);
+
+    Bitmap e();
+
+    void f(Canvas canvas);
+
+    boolean g();
+
+    View h();
 }

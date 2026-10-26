@@ -2,136 +2,74 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.text.TextUtils;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.sl;
-import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.v40;
+import org.telegram.messenger.R;
+import org.telegram.messenger.vh;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class a6 extends FrameLayout {
-    public final TextView a;
+    public final org.telegram.ui.Components.y9 a;
     public final TextView b;
-    public final ImageView c;
-    public final Switch d;
-    public boolean e;
-    public boolean f;
-    public final org.telegram.ui.ActionBar.g6 h;
+    public final TextView c;
+    public final View d;
+    public final /* synthetic */ c6 e;
 
-    public a6(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a6(c6 c6Var, Context context) {
         super(context);
-        this.h = g6Var;
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setFocusable(false);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.z5.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
+        this.e = c6Var;
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
+        this.a = y9Var;
+        addView(y9Var, gb1.g(-1.0f, -1));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setBackgroundResource(R.drawable.album_shadow);
+        addView(linearLayout, gb1.i(-1, 60, 83));
         TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.G6, g6Var);
-        sl.u(textView, 1, 16.0f, 1, 1);
+        this.b = textView;
+        textView.setTextSize(1, 13.0f);
+        textView.setTextColor(-1);
         textView.setSingleLine(true);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.z5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        org.telegram.ui.ActionBar.r6.W(textView2, org.telegram.ui.ActionBar.k6.z6, g6Var);
-        textView2.setTextSize(1, 13.0f);
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView2.setLines(0);
-        textView2.setMaxLines(0);
-        textView2.setSingleLine(false);
-        textView2.setEllipsize(null);
-        textView2.setLineSpacing(AndroidUtilities.dp(1.66f), 1.0f);
-        boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f));
-        Switch r32 = new Switch(context, g6Var);
-        this.d = r32;
-        int i10 = org.telegram.ui.ActionBar.k6.M6;
-        int i11 = org.telegram.ui.ActionBar.k6.N6;
-        int i12 = org.telegram.ui.ActionBar.k6.d6;
-        r32.d(i10, i11, i12, i12);
-        addView(r32, w7.z5.d(37, 40.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 10.0f, 19.0f, 0.0f));
-        r32.setFocusable(false);
-    }
-
-    public final void a(String str, String str2, v40 v40Var, int i10, boolean z10) {
-        this.a.setText(str);
-        org.telegram.ui.ActionBar.g6 g6Var = this.h;
-        boolean a2 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
-        mc0 mc0Var = new mc0(1);
-        mc0Var.b(v40Var.a, v40Var.b);
-        mc0Var.b = a2;
-        ImageView imageView = this.c;
-        imageView.setBackground(mc0Var);
-        imageView.setImageResource(i10);
-        boolean z11 = this.e;
-        Switch r02 = this.d;
-        r02.b(0, z10, z11);
-        this.b.setText(str2);
-        r02.setContentDescription(str);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.f) {
-            org.telegram.ui.ActionBar.g6 g6Var = this.h;
-            Paint d = g6Var != null ? g6Var.d("paintDivider") : org.telegram.ui.ActionBar.k6.k0;
-            if (d == null) {
-                d = org.telegram.ui.ActionBar.k6.k0;
-            }
-            Paint paint = d;
-            if (paint != null) {
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(19.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(19.0f) : 0), getMeasuredHeight() - 1, paint);
-            }
-        }
-    }
-
-    public Switch getCheckBox() {
-        return this.d;
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        textView.setMaxLines(1);
+        textView.setGravity(80);
+        TextView e = vh.e(linearLayout, textView, gb1.q(1.0f, 0, -1, 8, 0, 5), context);
+        this.c = e;
+        e.setTextSize(1, 13.0f);
+        e.setTextColor(-1);
+        e.setSingleLine(true);
+        e.setEllipsize(truncateAt);
+        e.setMaxLines(1);
+        e.setGravity(80);
+        linearLayout.addView(e, gb1.o(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
+        View view = new View(context);
+        this.d = view;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.y6.M0(false));
+        addView(view, gb1.g(-1.0f, -1));
     }
 
     @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Switch");
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.a.getText());
-        TextView textView = this.b;
-        if (textView != null && !TextUtils.isEmpty(textView.getText())) {
-            sb2.append("\n");
-            sb2.append(textView.getText());
+    public final void onDraw(Canvas canvas) {
+        org.telegram.ui.Components.y9 y9Var = this.a;
+        if (y9Var.getImageReceiver().hasNotThumb() && y9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
+            return;
         }
-        accessibilityNodeInfo.setContentDescription(sb2);
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.d.h);
+        c6 c6Var = this.e;
+        c6Var.e.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.X9, false));
+        canvas.drawRect(0.0f, 0.0f, y9Var.getMeasuredWidth(), y9Var.getMeasuredHeight(), c6Var.e);
     }
 
-    public void setAnimationsEnabled(boolean z10) {
-        this.e = z10;
-    }
-
-    public void setChecked(boolean z10) {
-        this.d.b(0, z10, true);
-    }
-
-    public void setDivider(boolean z10) {
-        this.f = z10;
-        invalidate();
-    }
-
-    public void setValue(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.d.drawableHotspotChanged(motionEvent.getX(), motionEvent.getY());
+        return super.onTouchEvent(motionEvent);
     }
 }

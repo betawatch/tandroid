@@ -1,34 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class e30 implements Runnable {
-    public final /* synthetic */ f30 a;
+public final class e30 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k30 b;
 
-    public e30(f30 f30Var) {
-        this.a = f30Var;
+    public /* synthetic */ e30(k30 k30Var, int i10) {
+        this.a = i10;
+        this.b = k30Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !sharedInstance.isMicMute()) {
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.f(sharedInstance.getSelfId());
-        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
-            f30 f30Var = this.a;
-            AndroidUtilities.runOnUIThread(f30Var.f, 90L);
-            try {
-                f30Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            f30Var.c = true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                k30 k30Var = this.b;
+                k30Var.b.setVisibility(8);
+                k30Var.y = false;
+                k30Var.E = 0.0f;
+                break;
+            default:
+                this.b.e.setVisibility(8);
+                break;
         }
     }
 }

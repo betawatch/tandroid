@@ -1,58 +1,117 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qq0 implements View.OnTouchListener {
+public final class qq0 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final Rect b;
-    public final /* synthetic */ ir0 c;
+    public final /* synthetic */ mr0 b;
 
-    public qq0(ir0 ir0Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ qq0(mr0 mr0Var, Context context, int i10) {
+        super(context);
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = ir0Var;
-                this.b = new Rect();
+        this.b = mr0Var;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                mr0 mr0Var = this.b;
+                mr0Var.X0.setBounds(0, (int) mr0Var.v0, getMeasuredWidth(), getMeasuredHeight());
+                mr0Var.X0.draw(canvas);
+                canvas.save();
+                canvas.clipRect(0.0f, mr0Var.v0, getMeasuredWidth(), getMeasuredHeight());
+                super.dispatchDraw(canvas);
+                canvas.restore();
                 break;
             default:
-                this.c = ir0Var;
-                this.b = new Rect();
+                super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        ir0 ir0Var;
-        org.telegram.ui.ActionBar.m1 m1Var;
-        ir0 ir0Var2;
-        org.telegram.ui.ActionBar.m1 m1Var2;
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                if (motionEvent.getActionMasked() == 0 && (m1Var = (ir0Var = this.c).K0) != null && m1Var.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        ir0Var.K0.d(true);
-                        break;
+                mr0 mr0Var = this.b;
+                qq0 qq0Var = mr0Var.c;
+                float f7 = mr0Var.w0;
+                if (f7 != 0.0f && f7 != qq0Var.getTop() + mr0Var.w0) {
+                    ValueAnimator valueAnimator = mr0Var.x0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
                     }
+                    float top = mr0Var.w0 - (qq0Var.getTop() + mr0Var.v0);
+                    mr0Var.v0 = top;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
+                    mr0Var.x0 = ofFloat;
+                    ofFloat.addUpdateListener(new e80(this, 18));
+                    mr0Var.x0.setInterpolator(ds.f);
+                    mr0Var.x0.setDuration(200L);
+                    mr0Var.x0.start();
+                    mr0Var.w0 = 0.0f;
+                }
+                mr0Var.T[1].setTranslationY((-(qq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + mr0Var.v0 + mr0Var.u0 + ((1.0f - getAlpha()) * (qq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 1:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.V.m(), new Object[0]));
+                accessibilityNodeInfo.setClassName(Button.class.getName());
+                accessibilityNodeInfo.setLongClickable(true);
+                accessibilityNodeInfo.setClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f7);
+                invalidate();
+                break;
+            default:
+                super.setAlpha(f7);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    this.b.T[1].setTranslationY(0.0f);
+                    break;
                 }
                 break;
             default:
-                if (motionEvent.getActionMasked() == 0 && (m1Var2 = (ir0Var2 = this.c).K0) != null && m1Var2.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        ir0Var2.K0.d(true);
-                        break;
-                    }
-                }
+                super.setVisibility(i10);
                 break;
         }
-        return false;
     }
 }

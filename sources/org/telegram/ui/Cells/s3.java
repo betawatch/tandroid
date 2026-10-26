@@ -1,42 +1,18 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s3 extends View {
-    public final /* synthetic */ int a;
-    public final int b;
+public final class s3 {
+    public final ArrayList a;
+    public final HashSet b;
+    public final org.telegram.ui.t3 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s3(Context context, int i10, int i11) {
-        super(context);
-        this.a = i11;
-        this.b = i10;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b), TLObject.FLAG_30));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30));
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s3(Context context, int i10) {
-        super(context);
-        this.a = 0;
-        this.b = i10;
+    public s3(ArrayList arrayList, HashSet hashSet, org.telegram.ui.t3 t3Var) {
+        this.a = new ArrayList(arrayList);
+        this.b = new HashSet(hashSet);
+        this.c = t3Var;
     }
 }

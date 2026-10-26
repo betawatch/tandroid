@@ -1,262 +1,796 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.util.Property;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.net.Uri;
+import android.os.Build;
+import android.util.Pair;
 import android.widget.TextView;
+import androidx.core.content.FileProvider;
+import j$.util.Objects;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class g50 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
-    public final TextView[] b;
-    public final TextView c;
-    public final h90 d;
-    public final org.telegram.ui.sn e;
-    public final bk0 f;
-    public final f50 h;
-    public boolean n;
-    public final yj0 r;
-    public final TextView[] s;
-    public final String v;
+public final class g50 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.cq0 {
+    public String E;
+    public boolean F;
+    public boolean H;
+    public final boolean I;
+    public TLRPC.User L;
+    public TLRPC.InputFile M;
+    public TLRPC.InputFile N;
+    public TLRPC.VideoSize O;
+    public double P;
+    public final boolean Q;
+    public boolean R;
+    public boolean S;
+    public boolean T;
+    public int U;
+    public final int V;
+    public float W;
+    public org.telegram.ui.ActionBar.r2 a;
+    public f50 b;
+    public ti c;
+    public String f;
+    public TLRPC.PhotoSize h;
+    public TLRPC.PhotoSize n;
+    public Bitmap r;
+    public boolean s;
+    public String v;
+    public String w;
+    public String x;
+    public MessageObject y;
+    public final int d = UserConfig.selectedAccount;
+    public boolean G = true;
+    public boolean J = true;
+    public boolean K = true;
+    public final ImageReceiver e = new ImageReceiver(null);
 
-    public g50(Context context, String str, org.telegram.ui.sn snVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(1, context, g6Var, false);
-        this.b = new TextView[2];
-        this.s = new TextView[2];
-        zp zpVar = new zp(this, 24);
-        setApplyBottomPadding(false);
-        setApplyTopPadding(false);
-        this.e = snVar;
-        this.v = str;
-        FrameLayout frameLayout = new FrameLayout(context);
-        setCustomView(frameLayout);
-        TextView textView = new TextView(context);
-        org.telegram.messenger.sl.k(20.0f, 1, textView);
-        int i10 = org.telegram.ui.ActionBar.k6.j5;
-        org.telegram.ui.ActionBar.r6.W(textView, i10, g6Var);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 17.0f, 20.0f, 17.0f, 0.0f));
-        yj0 yj0Var = new yj0(R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
-        this.r = yj0Var;
-        yj0Var.J(true);
-        bk0 bk0Var = new bk0(context);
-        this.f = bk0Var;
-        bk0Var.setAutoRepeat(true);
-        bk0Var.f(R.raw.import_loop, 120, 120, null);
-        bk0Var.d();
-        frameLayout.addView(bk0Var, w7.z5.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
-        bk0Var.getAnimatedDrawable().S(178, zpVar);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        org.telegram.messenger.sl.k(24.0f, 1, textView2);
-        org.telegram.ui.ActionBar.r6.W(textView2, i10, g6Var);
-        frameLayout.addView(textView2, w7.z5.d(-2, -2.0f, 49, 17.0f, 262.0f, 17.0f, 0.0f));
-        h90 h90Var = new h90(getContext());
-        this.d = h90Var;
-        int i11 = org.telegram.ui.ActionBar.k6.Oh;
-        h90Var.setProgressColor(getThemedColor(i11));
-        h90Var.setBackColor(getThemedColor(org.telegram.ui.ActionBar.k6.G5));
-        frameLayout.addView(h90Var, w7.z5.d(-1, 4.0f, 51, 50.0f, 307.0f, 50.0f, 0.0f));
-        f50 f50Var = new f50(context);
-        View view = new View(context);
-        f50Var.a = view;
-        int dp = AndroidUtilities.dp(4.0f);
-        int w02 = org.telegram.ui.ActionBar.k6.w0(i11, g6Var);
-        int i12 = org.telegram.ui.ActionBar.k6.Qh;
-        int w03 = org.telegram.ui.ActionBar.k6.w0(i12, g6Var);
-        Drawable j02 = org.telegram.ui.ActionBar.k6.j0(dp, dp, dp, dp, w02, w03, w03);
-        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i11);
-        org.telegram.ui.ActionBar.n6 O2 = org.telegram.ui.ActionBar.r6.O(i12);
-        view.setBackground(j02);
-        org.telegram.ui.ActionBar.r6.k(view, j02, O, O2, g6Var);
-        f50Var.addView(view, w7.z5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        f50Var.d = linearLayout;
-        linearLayout.setOrientation(0);
-        f50Var.addView(linearLayout, w7.z5.e(-2, -2, 17));
-        bk0 bk0Var2 = new bk0(context);
-        f50Var.c = bk0Var2;
-        int dp2 = AndroidUtilities.dp(20.0f);
-        int i13 = org.telegram.ui.ActionBar.k6.Sh;
-        ShapeDrawable K = org.telegram.ui.ActionBar.k6.K(dp2, org.telegram.ui.ActionBar.k6.w0(i13, g6Var));
-        org.telegram.ui.ActionBar.n6 O3 = org.telegram.ui.ActionBar.r6.O(i13);
-        bk0Var2.setBackground(K);
-        org.telegram.ui.ActionBar.r6.k(bk0Var2, K, O3, null, g6Var);
-        bk0Var2.setScaleType(ImageView.ScaleType.CENTER);
-        org.telegram.ui.ActionBar.r6.t(bk0Var2, i11, g6Var, PorterDuff.Mode.MULTIPLY);
-        bk0Var2.f(R.raw.import_check, 26, 26, null);
-        bk0Var2.setScaleX(0.8f);
-        bk0Var2.setScaleY(0.8f);
-        linearLayout.addView(bk0Var2, w7.z5.q(20, 20, 16));
-        TextView textView3 = new TextView(context);
-        f50Var.b = textView3;
-        textView3.setLines(1);
-        textView3.setSingleLine(true);
-        textView3.setGravity(1);
-        textView3.setEllipsize(truncateAt);
-        textView3.setGravity(17);
-        org.telegram.messenger.v0.q(textView3, i13, g6Var, 1, 14.0f);
-        linearLayout.addView(textView3, w7.z5.t(-2, -2, 16, 10, 0, 0, 0));
-        this.h = f50Var;
-        f50Var.setBackground(null);
-        f50Var.setText(LocaleController.getString(R.string.ImportDone));
-        f50Var.setVisibility(4);
-        view.setOnClickListener(new f0(this, 26));
-        view.setPivotY(AndroidUtilities.dp(48.0f));
-        view.setScaleY(0.04f);
-        frameLayout.addView(f50Var, w7.z5.d(-1, 50.0f, 51, 34.0f, 247.0f, 34.0f, 0.0f));
-        for (int i14 = 0; i14 < 2; i14++) {
-            this.b[i14] = new TextView(context);
-            this.b[i14].setTextSize(1, 16.0f);
-            this.b[i14].setTypeface(AndroidUtilities.bold());
-            org.telegram.ui.ActionBar.r6.W(this.b[i14], org.telegram.ui.ActionBar.k6.j5, g6Var);
-            frameLayout.addView(this.b[i14], w7.z5.d(-2, -2.0f, 49, 17.0f, 340.0f, 17.0f, 0.0f));
-            this.s[i14] = new TextView(context);
-            this.s[i14].setTextSize(1, 14.0f);
-            org.telegram.ui.ActionBar.r6.W(this.s[i14], org.telegram.ui.ActionBar.k6.r5, g6Var);
-            this.s[i14].setGravity(1);
-            frameLayout.addView(this.s[i14], w7.z5.d(-2, -2.0f, 49, 30.0f, 368.0f, 30.0f, 44.0f));
-            if (i14 == 0) {
-                this.s[i14].setText(LocaleController.getString(R.string.ImportImportingInfo));
-            } else {
-                this.s[i14].setAlpha(0.0f);
-                this.s[i14].setTranslationY(AndroidUtilities.dp(10.0f));
-                this.b[i14].setAlpha(0.0f);
-                this.b[i14].setTranslationY(AndroidUtilities.dp(10.0f));
-            }
-        }
-        if (this.e != null) {
-            textView.setText(LocaleController.getString(R.string.ImportImportingTitle));
-            SendMessagesHelper.ImportingHistory importingHistory = this.e.getSendMessagesHelper().getImportingHistory(this.e.a());
-            this.c.setText(String.format("%d%%", Integer.valueOf(importingHistory.uploadProgress)));
-            this.d.a(importingHistory.uploadProgress / 100.0f, false);
-            this.b[0].setText(LocaleController.formatString("ImportCount", R.string.ImportCount, AndroidUtilities.formatFileSize(importingHistory.getUploadedCount()), AndroidUtilities.formatFileSize(importingHistory.getTotalCount())));
-            this.s[1].setText(LocaleController.getString(R.string.ImportDoneInfo));
-            this.b[1].setText(LocaleController.getString(R.string.ImportDoneTitle));
-            this.e.getNotificationCenter().addObserver(this, NotificationCenter.historyImportProgressChanged);
+    public g50(int i10, boolean z10, boolean z11) {
+        this.Q = z10;
+        this.I = z11;
+        this.V = i10;
+    }
+
+    public static void a(g50 g50Var, boolean z10, ArrayList arrayList) {
+        MessageObject messageObject;
+        Bitmap loadBitmap;
+        ImageReceiver imageReceiver = g50Var.e;
+        int i10 = g50Var.d;
+        if (arrayList.isEmpty()) {
             return;
         }
-        textView.setText(LocaleController.getString(R.string.ImportStickersImportingTitle));
-        SendMessagesHelper.ImportingStickers importingStickers = SendMessagesHelper.getInstance(this.currentAccount).getImportingStickers(str);
-        this.c.setText(String.format("%d%%", Integer.valueOf(importingStickers.uploadProgress)));
-        this.d.a(importingStickers.uploadProgress / 100.0f, false);
-        this.b[0].setText(LocaleController.formatString("ImportCount", R.string.ImportCount, AndroidUtilities.formatFileSize(importingStickers.getUploadedCount()), AndroidUtilities.formatFileSize(importingStickers.getTotalCount())));
-        this.s[1].setText(LocaleController.getString(R.string.ImportStickersDoneInfo));
-        this.b[1].setText(LocaleController.getString(R.string.ImportStickersDoneTitle));
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.stickersImportProgressChanged);
+        SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
+        Bitmap bitmap = null;
+        if ((sendingMediaInfo.isVideo || sendingMediaInfo.videoEditedInfo != null) && !sendingMediaInfo.isLivePhoto) {
+            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+            tL_message.id = 0;
+            tL_message.message = "";
+            tL_message.media = new TLRPC.TL_messageMediaEmpty();
+            tL_message.action = new TLRPC.TL_messageActionEmpty();
+            tL_message.dialog_id = 0L;
+            messageObject = new MessageObject(UserConfig.selectedAccount, tL_message, false, false);
+            messageObject.messageOwner.attachPath = new File(FileLoader.getDirectory(4), SharedConfig.getLastLocalId() + "_avatar.mp4").getAbsolutePath();
+            messageObject.videoEditedInfo = sendingMediaInfo.videoEditedInfo;
+            messageObject.emojiMarkup = sendingMediaInfo.emojiMarkup;
+            bitmap = ImageLoader.loadBitmap(sendingMediaInfo.thumbPath, null, 800.0f, 800.0f, true);
+        } else {
+            String str = sendingMediaInfo.path;
+            if (str != null) {
+                loadBitmap = ImageLoader.loadBitmap(str, null, 800.0f, 800.0f, true);
+            } else {
+                MediaController.SearchImage searchImage = sendingMediaInfo.searchImage;
+                if (searchImage != null) {
+                    TLRPC.Photo photo = searchImage.photo;
+                    if (photo != null) {
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
+                        if (closestPhotoSizeWithSize != null) {
+                            File pathToAttach = FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize, true);
+                            g50Var.E = pathToAttach.getAbsolutePath();
+                            if (!pathToAttach.exists()) {
+                                pathToAttach = FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize, false);
+                                if (!pathToAttach.exists()) {
+                                    pathToAttach = null;
+                                }
+                            }
+                            if (pathToAttach != null) {
+                                loadBitmap = ImageLoader.loadBitmap(pathToAttach.getAbsolutePath(), null, 800.0f, 800.0f, true);
+                            } else {
+                                NotificationCenter.getInstance(i10).addObserver(g50Var, NotificationCenter.fileLoaded);
+                                NotificationCenter.getInstance(i10).addObserver(g50Var, NotificationCenter.fileLoadFailed);
+                                g50Var.v = FileLoader.getAttachFileName(closestPhotoSizeWithSize.location);
+                                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, sendingMediaInfo.searchImage.photo), null, null, "jpg", null, 1);
+                            }
+                        }
+                        loadBitmap = null;
+                    } else if (searchImage.imageUrl != null) {
+                        File file = new File(FileLoader.getDirectory(4), Utilities.MD5(sendingMediaInfo.searchImage.imageUrl) + "." + ImageLoader.getHttpUrlExtension(sendingMediaInfo.searchImage.imageUrl, "jpg"));
+                        g50Var.E = file.getAbsolutePath();
+                        if (!file.exists() || file.length() == 0) {
+                            g50Var.v = sendingMediaInfo.searchImage.imageUrl;
+                            NotificationCenter.getInstance(i10).addObserver(g50Var, NotificationCenter.httpFileDidLoad);
+                            NotificationCenter.getInstance(i10).addObserver(g50Var, NotificationCenter.httpFileDidFailedLoad);
+                            imageReceiver.setImage(sendingMediaInfo.searchImage.imageUrl, null, null, "jpg", 1L);
+                        } else {
+                            loadBitmap = ImageLoader.loadBitmap(file.getAbsolutePath(), null, 800.0f, 800.0f, true);
+                        }
+                    }
+                }
+                messageObject = null;
+            }
+            messageObject = null;
+            bitmap = loadBitmap;
+        }
+        g50Var.r(z10, bitmap, messageObject);
+    }
+
+    public final void b() {
+        this.T = true;
+        String str = this.v;
+        int i10 = this.d;
+        if (str != null) {
+            FileLoader.getInstance(i10).cancelFileUpload(this.v, false);
+        }
+        if (this.w != null) {
+            FileLoader.getInstance(i10).cancelFileUpload(this.w, false);
+        }
+        f50 f50Var = this.b;
+        if (f50Var != null) {
+            f50Var.Q();
+        }
+    }
+
+    public final void c() {
+        this.v = null;
+        this.w = null;
+        this.x = null;
+        this.y = null;
+        if (this.F) {
+            this.e.setImageBitmap((Drawable) null);
+            this.a = null;
+            this.b = null;
+        }
+    }
+
+    public final void d() {
+        this.T = false;
+        if (this.v == null && this.w == null && this.y == null) {
+            this.a = null;
+            this.b = null;
+        } else {
+            this.F = true;
+        }
+        ti tiVar = this.c;
+        if (tiVar != null) {
+            tiVar.dismissInternal();
+            this.c.A1();
+        }
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = NotificationCenter.historyImportProgressChanged;
-        h90 h90Var = this.d;
-        TextView[] textViewArr = this.b;
-        TextView textView = this.c;
-        bk0 bk0Var = this.f;
-        if (i10 == i12) {
-            if (objArr.length > 1) {
-                dismiss();
+        f50 f50Var;
+        org.telegram.ui.ActionBar.r2 r2Var;
+        int i12 = NotificationCenter.fileUploaded;
+        int i13 = this.d;
+        if (i10 == i12 || i10 == NotificationCenter.fileUploadFailed) {
+            String str = (String) objArr[0];
+            if (str.equals(this.v)) {
+                this.v = null;
+                if (i10 == i12) {
+                    this.M = (TLRPC.InputFile) objArr[1];
+                }
+            } else {
+                if (!str.equals(this.w)) {
+                    return;
+                }
+                this.w = null;
+                if (i10 == i12) {
+                    this.N = (TLRPC.InputFile) objArr[1];
+                }
+            }
+            if (this.v == null && this.w == null && this.y == null) {
+                NotificationCenter.getInstance(i13).removeObserver(this, i12);
+                NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.fileUploadProgressChanged);
+                NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.fileUploadFailed);
+                if (i10 == i12 && (f50Var = this.b) != null) {
+                    f50Var.R(this.M, this.N, this.P, this.x, this.h, this.n, this.s, this.O);
+                }
+                c();
                 return;
             }
-            org.telegram.ui.sn snVar = this.e;
-            SendMessagesHelper.ImportingHistory importingHistory = snVar.getSendMessagesHelper().getImportingHistory(snVar.a());
-            if (importingHistory == null) {
-                m();
-                return;
-            }
-            if (!this.n && ((180 - bk0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingHistory.timeUntilFinish) {
-                bk0Var.setAutoRepeat(false);
-                this.n = true;
-            }
-            textView.setText(String.format("%d%%", Integer.valueOf(importingHistory.uploadProgress)));
-            textViewArr[0].setText(LocaleController.formatString("ImportCount", R.string.ImportCount, AndroidUtilities.formatFileSize(importingHistory.getUploadedCount()), AndroidUtilities.formatFileSize(importingHistory.getTotalCount())));
-            h90Var.a(importingHistory.uploadProgress / 100.0f, true);
             return;
         }
-        if (i10 == NotificationCenter.stickersImportProgressChanged) {
-            if (objArr.length > 1) {
-                dismiss();
+        if (i10 == NotificationCenter.fileUploadProgressChanged) {
+            String str2 = (String) objArr[0];
+            String str3 = this.y != null ? this.w : this.v;
+            if (this.b == null || !str2.equals(str3)) {
                 return;
             }
-            SendMessagesHelper.ImportingStickers importingStickers = SendMessagesHelper.getInstance(this.currentAccount).getImportingStickers(this.v);
-            if (importingStickers == null) {
-                m();
+            float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
+            f50 f50Var2 = this.b;
+            this.W = min;
+            f50Var2.F(min);
+            return;
+        }
+        int i14 = NotificationCenter.fileLoaded;
+        if (i10 == i14 || i10 == NotificationCenter.fileLoadFailed || i10 == NotificationCenter.httpFileDidLoad || i10 == NotificationCenter.httpFileDidFailedLoad) {
+            String str4 = (String) objArr[0];
+            this.W = 1.0f;
+            if (str4.equals(this.v)) {
+                NotificationCenter.getInstance(i13).removeObserver(this, i14);
+                NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.fileLoadFailed);
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(i13);
+                int i15 = NotificationCenter.httpFileDidLoad;
+                notificationCenter.removeObserver(this, i15);
+                NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.httpFileDidFailedLoad);
+                this.v = null;
+                if (i10 == i14 || i10 == i15) {
+                    r(false, ImageLoader.loadBitmap(this.E, null, 800.0f, 800.0f, true), null);
+                    return;
+                }
+                this.e.setImageBitmap((Drawable) null);
+                f50 f50Var3 = this.b;
+                if (f50Var3 != null) {
+                    f50Var3.Q();
+                    return;
+                }
                 return;
             }
-            if (!this.n && ((180 - bk0Var.getAnimatedDrawable().a0) * 16.6d) + 3000.0d >= importingStickers.timeUntilFinish) {
-                bk0Var.setAutoRepeat(false);
-                this.n = true;
+            return;
+        }
+        int i16 = NotificationCenter.filePreparingFailed;
+        if (i10 == i16) {
+            if (((MessageObject) objArr[0]) != this.y || this.a == null) {
+                return;
             }
-            textView.setText(String.format("%d%%", Integer.valueOf(importingStickers.uploadProgress)));
-            textViewArr[0].setText(LocaleController.formatString("ImportCount", R.string.ImportCount, AndroidUtilities.formatFileSize(importingStickers.getUploadedCount()), AndroidUtilities.formatFileSize(importingStickers.getTotalCount())));
-            h90Var.a(importingStickers.uploadProgress / 100.0f, true);
+            NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.filePreparingStarted);
+            NotificationCenter.getInstance(i13).removeObserver(this, i16);
+            NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.fileNewChunkAvailable);
+            c();
+            return;
+        }
+        if (i10 != NotificationCenter.fileNewChunkAvailable) {
+            if (i10 == NotificationCenter.filePreparingStarted && ((MessageObject) objArr[0]) == this.y && (r2Var = this.a) != null) {
+                this.w = (String) objArr[1];
+                r2Var.getFileLoader().uploadFile(this.w, false, false, (int) this.y.videoEditedInfo.estimatedSize, 33554432, false);
+                return;
+            }
+            return;
+        }
+        if (((MessageObject) objArr[0]) != this.y || this.a == null) {
+            return;
+        }
+        String str5 = (String) objArr[1];
+        long longValue = ((Long) objArr[2]).longValue();
+        long longValue2 = ((Long) objArr[3]).longValue();
+        this.a.getFileLoader().checkUploadNewDataAvailable(str5, false, longValue, longValue2);
+        if (longValue2 != 0) {
+            double longValue3 = ((Long) objArr[5]).longValue() / 1000000.0d;
+            if (this.P > longValue3) {
+                this.P = longValue3;
+            }
+            Bitmap createVideoThumbnailAtTime = SendMessagesHelper.createVideoThumbnailAtTime(str5, (long) (this.P * 1000.0d), null, true);
+            if (createVideoThumbnailAtTime != null) {
+                File pathToAttach = FileLoader.getInstance(i13).getPathToAttach(this.n, true);
+                if (pathToAttach != null) {
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.e("delete file " + pathToAttach);
+                    }
+                    pathToAttach.delete();
+                }
+                File pathToAttach2 = FileLoader.getInstance(i13).getPathToAttach(this.h, true);
+                if (pathToAttach2 != null) {
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.e("delete file " + pathToAttach2);
+                    }
+                    pathToAttach2.delete();
+                }
+                this.h = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 800.0f, 800.0f, 80, false, 320, 320);
+                TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 150.0f, 150.0f, 80, false, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+                this.n = scaleAndSaveImage;
+                if (scaleAndSaveImage != null) {
+                    try {
+                        ImageLoader.getInstance().putImageToCache(new BitmapDrawable(BitmapFactory.decodeFile(FileLoader.getInstance(i13).getPathToAttach(this.n, true).getAbsolutePath())), this.n.location.volume_id + "_" + this.n.location.local_id + "@50_50", true);
+                    } catch (Throwable unused) {
+                    }
+                }
+            }
+            NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.filePreparingStarted);
+            NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.filePreparingFailed);
+            NotificationCenter.getInstance(i13).removeObserver(this, NotificationCenter.fileNewChunkAvailable);
+            this.x = str5;
+            this.w = str5;
+            this.y = null;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        org.telegram.ui.sn snVar = this.e;
-        if (snVar != null) {
-            snVar.getNotificationCenter().removeObserver(this, NotificationCenter.historyImportProgressChanged);
-        } else {
-            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.stickersImportProgressChanged);
+    public final void e() {
+        au auVar;
+        org.telegram.ui.ActionBar.r2 r2Var = this.a;
+        if (r2Var == null || r2Var.getParentActivity() == null) {
+            return;
+        }
+        if (this.c == null) {
+            ti tiVar = new ti(this.a.getParentActivity(), this.a, this.R, this.S);
+            this.c = tiVar;
+            int i10 = this.Q ? 2 : 1;
+            f50 f50Var = this.b;
+            if (f50Var == null || !f50Var.u()) {
+                auVar = null;
+            } else {
+                f50 f50Var2 = this.b;
+                Objects.requireNonNull(f50Var2);
+                auVar = new au(f50Var2, 1);
+            }
+            tiVar.T0 = i10;
+            tiVar.U0 = auVar;
+            tiVar.V0 = false;
+            li liVar = tiVar.B0;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tiVar.j0;
+            if (liVar == null || liVar == chatAttachAlertPhotoLayout) {
+                tiVar.A1.setVisibility(8);
+            }
+            int i11 = tiVar.T0;
+            TextView textView = tiVar.m1;
+            if (i11 == 2) {
+                textView.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
+            } else {
+                textView.setText(LocaleController.getString(R.string.ChoosePhoto));
+            }
+            if (chatAttachAlertPhotoLayout != null) {
+                ti tiVar2 = chatAttachAlertPhotoLayout.b;
+                chatAttachAlertPhotoLayout.g1 = (tiVar2.T0 == 0 || tiVar2.F) ? false : true;
+            }
+            ti tiVar3 = this.c;
+            tiVar3.c2 = new b50(this);
+            tiVar3.U = this;
+        }
+        int i12 = this.U;
+        if (i12 == 1) {
+            this.c.m1.setText(LocaleController.formatString("SetPhotoFor", R.string.SetPhotoFor, this.L.first_name));
+        } else if (i12 == 2) {
+            this.c.m1.setText(LocaleController.formatString("SuggestPhotoFor", R.string.SuggestPhotoFor, this.L.first_name));
+        }
+    }
+
+    public final boolean f(Dialog dialog) {
+        ti tiVar = this.c;
+        if (tiVar == null || dialog != tiVar) {
+            return false;
+        }
+        tiVar.j0.a0(false);
+        this.c.dismissInternal();
+        this.c.j0.d0(true);
+        return true;
+    }
+
+    public final boolean g() {
+        return (this.v == null && this.w == null && this.y == null) ? false : true;
+    }
+
+    public final void h(int i10, int i11, Intent intent) {
+        if (i11 == -1) {
+            if (i10 == 0 || i10 == 2) {
+                e();
+                ti tiVar = this.c;
+                if (tiVar != null) {
+                    tiVar.j0.g0(i10, intent, this.f);
+                }
+                this.f = null;
+                return;
+            }
+            if (i10 == 13) {
+                this.a.getParentActivity().overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
+                PhotoViewer.u1().M2(null, this.a, null);
+                o(this.f, null, AndroidUtilities.getImageOrientation(this.f), false);
+                AndroidUtilities.addMediaToGallery(this.f);
+                this.f = null;
+                return;
+            }
+            if (i10 == 14) {
+                if (intent == null || intent.getData() == null) {
+                    return;
+                }
+                AndroidUtilities.runOnUIThread(new so(23, this, intent.getData()));
+                return;
+            }
+            if (i10 == 15) {
+                p(this.f, null, true);
+                AndroidUtilities.addMediaToGallery(this.f);
+                this.f = null;
+            }
+        }
+    }
+
+    public final void i() {
+        ti tiVar = this.c;
+        if (tiVar != null) {
+            tiVar.C1();
+        }
+    }
+
+    public final void j(int i10, String[] strArr, int[] iArr) {
+        ti tiVar = this.c;
+        if (tiVar != null) {
+            if (i10 == 17) {
+                tiVar.j0.U(false);
+                this.c.j0.Y();
+            } else if (i10 == 4) {
+                tiVar.j0.Y();
+            }
+        }
+    }
+
+    public final void k() {
+        ti tiVar = this.c;
+        if (tiVar != null) {
+            tiVar.D1();
+        }
+    }
+
+    public final void l() {
+        org.telegram.ui.ActionBar.r2 r2Var = this.a;
+        if (r2Var == null || r2Var.getParentActivity() == null) {
+            return;
+        }
+        try {
+            int i10 = Build.VERSION.SDK_INT;
+            if (this.a.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
+                this.a.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 20);
+                return;
+            }
+            Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+            File generatePicturePath = AndroidUtilities.generatePicturePath();
+            if (generatePicturePath != null) {
+                if (i10 >= 24) {
+                    intent.putExtra("output", FileProvider.d(this.a.getParentActivity(), ApplicationLoader.getApplicationId() + ".provider", generatePicturePath));
+                    intent.addFlags(2);
+                    intent.addFlags(1);
+                } else {
+                    intent.putExtra("output", Uri.fromFile(generatePicturePath));
+                }
+                this.f = generatePicturePath.getAbsolutePath();
+            }
+            this.a.startActivityForResult(intent, 13);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
     public final void m() {
-        this.n = true;
-        this.f.setAutoRepeat(false);
-        f50 f50Var = this.h;
-        f50Var.setVisibility(0);
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.setDuration(250L);
-        animatorSet.setInterpolator(bs.g);
-        Property property = View.ALPHA;
-        TextView textView = this.c;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f);
-        Property property2 = View.TRANSLATION_Y;
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, -AndroidUtilities.dp(10.0f));
-        TextView[] textViewArr = this.s;
-        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property, 0.0f);
-        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property2, -AndroidUtilities.dp(10.0f));
-        TextView[] textViewArr2 = this.b;
-        animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property2, -AndroidUtilities.dp(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.d, (Property<h90, Float>) property, 0.0f), ObjectAnimator.ofFloat(f50Var.d, (Property<LinearLayout, Float>) property2, AndroidUtilities.dp(8.0f), 0.0f));
-        f50Var.a.animate().scaleY(1.0f).setInterpolator(new OvershootInterpolator(1.02f)).setDuration(250L).start();
-        f50Var.c.animate().scaleY(1.0f).scaleX(1.0f).setInterpolator(new OvershootInterpolator(1.02f)).setDuration(250L).start();
-        f50Var.c.d();
-        animatorSet.start();
+        org.telegram.ui.ActionBar.r2 r2Var = this.a;
+        if (r2Var == null) {
+            return;
+        }
+        Activity parentActivity = r2Var.getParentActivity();
+        if (Build.VERSION.SDK_INT < 33 || parentActivity == null) {
+            if (parentActivity != null && parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
+                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 151);
+                return;
+            }
+        } else if (parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0 || parentActivity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO") != 0) {
+            parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, 151);
+            return;
+        }
+        org.telegram.ui.aq0 aq0Var = new org.telegram.ui.aq0(this.Q ? 3 : 1, false, false, null);
+        aq0Var.x = this.J;
+        aq0Var.V = new c50(this);
+        this.a.presentFragment(aq0Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.h3
-    public final void onThemeColorsChanged() {
-        try {
-            super.onThemeColorsChanged();
-            h90 h90Var = this.d;
-            if (h90Var != null) {
-                h90Var.setProgressColor(getThemedColor(org.telegram.ui.ActionBar.k6.Oh));
-                h90Var.setBackColor(getThemedColor(org.telegram.ui.ActionBar.k6.G5));
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+    public final void n(boolean z10, final Runnable runnable, DialogInterface.OnDismissListener onDismissListener, int i10) {
+        org.telegram.ui.ActionBar.c3 c3Var;
+        org.telegram.ui.ActionBar.r2 r2Var = this.a;
+        if (r2Var == null || r2Var.getParentActivity() == null) {
+            return;
         }
+        this.T = false;
+        this.U = i10;
+        if (this.G) {
+            org.telegram.ui.ActionBar.r2 r2Var2 = this.a;
+            if (r2Var2 == null || r2Var2.getParentActivity() == null) {
+                return;
+            }
+            e();
+            ti tiVar = this.c;
+            tiVar.X1 = this.H;
+            tiVar.Q1(1, false);
+            this.c.j0.f0();
+            this.c.v1();
+            this.c.setOnHideListener(onDismissListener);
+            int i11 = this.U;
+            if (i11 != 0) {
+                this.c.Q = new e50(i11, this.L);
+            }
+            ti tiVar2 = this.c;
+            tiVar2.getClass();
+            this.a.showDialog(tiVar2);
+            return;
+        }
+        org.telegram.ui.ActionBar.k3 k3Var = new org.telegram.ui.ActionBar.k3(1, (Context) this.a.getParentActivity(), (org.telegram.ui.ActionBar.u6) null, false);
+        k3Var.fixNavigationBar();
+        if (i10 == 1) {
+            k3Var.title = LocaleController.formatString("SetPhotoFor", R.string.SetPhotoFor, this.L.first_name);
+            k3Var.bigTitle = true;
+        } else if (i10 == 2) {
+            k3Var.title = LocaleController.formatString("SuggestPhotoFor", R.string.SuggestPhotoFor, this.L.first_name);
+            k3Var.bigTitle = true;
+        } else {
+            k3Var.title = LocaleController.getString(R.string.ChoosePhoto);
+            k3Var.bigTitle = true;
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        final ArrayList arrayList3 = new ArrayList();
+        arrayList.add(LocaleController.getString(R.string.ChooseTakePhoto));
+        org.telegram.ui.d3.n(R.drawable.msg_camera, 0, arrayList2, arrayList3);
+        if (this.Q) {
+            arrayList.add(LocaleController.getString(R.string.ChooseRecordVideo));
+            org.telegram.ui.d3.n(R.drawable.msg_video, 4, arrayList2, arrayList3);
+        }
+        arrayList.add(LocaleController.getString(R.string.ChooseFromGallery));
+        org.telegram.ui.d3.n(R.drawable.msg_photos, 1, arrayList2, arrayList3);
+        if (this.J) {
+            arrayList.add(LocaleController.getString(R.string.ChooseFromSearch));
+            org.telegram.ui.d3.n(R.drawable.msg_search, 2, arrayList2, arrayList3);
+        }
+        if (z10) {
+            arrayList.add(LocaleController.getString(R.string.DeletePhoto));
+            org.telegram.ui.d3.n(R.drawable.msg_delete, 3, arrayList2, arrayList3);
+        }
+        int[] iArr = new int[arrayList2.size()];
+        int size = arrayList2.size();
+        for (int i12 = 0; i12 < size; i12++) {
+            iArr[i12] = ((Integer) arrayList2.get(i12)).intValue();
+        }
+        CharSequence[] charSequenceArr = (CharSequence[]) arrayList.toArray(new CharSequence[0]);
+        DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.z40
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i13) {
+                org.telegram.ui.ActionBar.r2 r2Var3;
+                g50 g50Var = g50.this;
+                g50Var.getClass();
+                int intValue = ((Integer) arrayList3.get(i13)).intValue();
+                if (intValue == 0) {
+                    g50Var.l();
+                    return;
+                }
+                if (intValue == 1) {
+                    g50Var.m();
+                    return;
+                }
+                if (intValue == 2) {
+                    g50Var.q();
+                    return;
+                }
+                if (intValue == 3) {
+                    runnable.run();
+                    return;
+                }
+                if (intValue != 4 || (r2Var3 = g50Var.a) == null || r2Var3.getParentActivity() == null) {
+                    return;
+                }
+                try {
+                    int i14 = Build.VERSION.SDK_INT;
+                    if (g50Var.a.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
+                        g50Var.a.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 19);
+                        return;
+                    }
+                    Intent intent = new Intent("android.media.action.VIDEO_CAPTURE");
+                    File generateVideoPath = AndroidUtilities.generateVideoPath();
+                    if (generateVideoPath != null) {
+                        if (i14 >= 24) {
+                            intent.putExtra("output", FileProvider.d(g50Var.a.getParentActivity(), ApplicationLoader.getApplicationId() + ".provider", generateVideoPath));
+                            intent.addFlags(2);
+                            intent.addFlags(1);
+                        } else {
+                            intent.putExtra("output", Uri.fromFile(generateVideoPath));
+                        }
+                        intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
+                        intent.putExtra("android.intent.extras.LENS_FACING_FRONT", 1);
+                        intent.putExtra("android.intent.extra.USE_FRONT_CAMERA", true);
+                        intent.putExtra("android.intent.extra.durationLimit", 10);
+                        g50Var.f = generateVideoPath.getAbsolutePath();
+                    }
+                    g50Var.a.startActivityForResult(intent, 15);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            }
+        };
+        k3Var.items = charSequenceArr;
+        k3Var.itemIcons = iArr;
+        k3Var.onClickListener = onClickListener;
+        k3Var.setOnHideListener(onDismissListener);
+        this.a.showDialog(k3Var);
+        if (z10) {
+            int size2 = arrayList.size() - 1;
+            int i13 = org.telegram.ui.ActionBar.y6.q7;
+            int x02 = org.telegram.ui.ActionBar.y6.x0(null, i13, false);
+            int i14 = org.telegram.ui.ActionBar.y6.p7;
+            k3Var.setItemColor(size2, x02, org.telegram.ui.ActionBar.y6.x0(null, i14, false));
+            int size3 = arrayList.size() - 1;
+            if (size3 < 0 || size3 >= k3Var.getItemViews().size() || (c3Var = k3Var.getItemViews().get(size3)) == null || c3Var.getTextView() == null || c3Var.getImageView() == null) {
+                return;
+            }
+            org.telegram.ui.ActionBar.f7.V(c3Var.getTextView(), i13, null);
+            org.telegram.ui.ActionBar.f7.t(c3Var.getImageView(), i14, null, PorterDuff.Mode.MULTIPLY);
+        }
+    }
+
+    public final void o(String str, String str2, Pair pair, boolean z10) {
+        ArrayList arrayList = new ArrayList();
+        MediaController.PhotoEntry orientation = new MediaController.PhotoEntry(0, 0, 0L, str, ((Integer) pair.first).intValue(), false, 0, 0, 0L).setOrientation(pair);
+        orientation.isVideo = z10;
+        orientation.thumbPath = str2;
+        arrayList.add(orientation);
+        PhotoViewer.u1().M2(null, this.a, null);
+        PhotoViewer.u1().i2(arrayList, 0, 1, false, new d50(this, arrayList), null);
+        PhotoViewer.u1().P = true;
+    }
+
+    public final void p(String str, String str2, boolean z10) {
+        o(str, str2, new Pair(0, 0), z10);
+    }
+
+    public final void q() {
+        if (this.a == null) {
+            return;
+        }
+        HashMap hashMap = new HashMap();
+        ArrayList arrayList = new ArrayList();
+        org.telegram.ui.rq0 rq0Var = new org.telegram.ui.rq0(0, null, hashMap, arrayList, 1, false, null, this.R);
+        rq0Var.s0 = new a50(this, hashMap, arrayList);
+        rq0Var.g0(1, false);
+        rq0Var.p0 = this.b.getInitialSearchString();
+        if (this.S) {
+            this.a.showAsSheet(rq0Var);
+        } else {
+            this.a.presentFragment(rq0Var);
+        }
+    }
+
+    public final void r(boolean z10, Bitmap bitmap, MessageObject messageObject) {
+        if (bitmap == null) {
+            return;
+        }
+        this.N = null;
+        this.M = null;
+        this.y = null;
+        this.x = null;
+        this.O = messageObject == null ? null : messageObject.emojiMarkup;
+        this.h = ImageLoader.scaleAndSaveImage(bitmap, 800.0f, 800.0f, 80, false, 320, 320);
+        TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap, 150.0f, 150.0f, 80, false, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        this.n = scaleAndSaveImage;
+        int i10 = this.d;
+        if (scaleAndSaveImage != null) {
+            try {
+                Bitmap decodeFile = BitmapFactory.decodeFile(FileLoader.getInstance(i10).getPathToAttach(this.n, true).getAbsolutePath());
+                this.r = decodeFile;
+                ImageLoader.getInstance().putImageToCache(new BitmapDrawable(decodeFile), this.n.location.volume_id + "_" + this.n.location.local_id + "@50_50", true);
+            } catch (Throwable unused) {
+            }
+        }
+        bitmap.recycle();
+        if (this.h != null) {
+            UserConfig.getInstance(i10).saveConfig(false);
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(FileLoader.getDirectory(4));
+            sb2.append("/");
+            sb2.append(this.h.location.volume_id);
+            sb2.append("_");
+            this.v = a1.g.n(this.h.location.local_id, ".jpg", sb2);
+            if (this.K) {
+                if (messageObject == null || messageObject.videoEditedInfo == null) {
+                    f50 f50Var = this.b;
+                    if (f50Var != null) {
+                        f50Var.L(z10, false);
+                    }
+                    this.s = false;
+                } else {
+                    if (this.I && !MessagesController.getInstance(i10).uploadMarkupVideo) {
+                        f50 f50Var2 = this.b;
+                        if (f50Var2 != null) {
+                            f50Var2.L(z10, true);
+                        }
+                        f50 f50Var3 = this.b;
+                        if (f50Var3 != null) {
+                            f50Var3.R(null, null, 0.0d, null, this.h, this.n, this.s, null);
+                            this.b.R(null, null, this.P, this.x, this.h, this.n, this.s, this.O);
+                            c();
+                            return;
+                        }
+                        return;
+                    }
+                    this.y = messageObject;
+                    VideoEditedInfo videoEditedInfo = messageObject.videoEditedInfo;
+                    long j10 = videoEditedInfo.startTime;
+                    if (j10 < 0) {
+                        j10 = 0;
+                    }
+                    this.P = (videoEditedInfo.avatarStartTime - j10) / 1000000.0d;
+                    videoEditedInfo.shouldLimitFps = false;
+                    NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingStarted);
+                    NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingFailed);
+                    NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileNewChunkAvailable);
+                    MediaController.getInstance().scheduleVideoConvert(messageObject, true, true, false);
+                    this.v = null;
+                    f50 f50Var4 = this.b;
+                    if (f50Var4 != null) {
+                        f50Var4.L(z10, true);
+                    }
+                    this.s = true;
+                }
+                NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploaded);
+                NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploadProgressChanged);
+                NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploadFailed);
+                if (this.v != null) {
+                    FileLoader.getInstance(i10).uploadFile(this.v, false, true, 16777216);
+                }
+            }
+            f50 f50Var5 = this.b;
+            if (f50Var5 != null) {
+                f50Var5.R(null, null, 0.0d, null, this.h, this.n, this.s, null);
+            }
+        }
+    }
+
+    public final void s(MediaController.PhotoEntry photoEntry) {
+        Bitmap loadBitmap;
+        String str = photoEntry.imagePath;
+        if (str == null) {
+            str = photoEntry.path;
+        }
+        MessageObject messageObject = null;
+        if ((photoEntry.isVideo || photoEntry.editedInfo != null) && !photoEntry.isLivePhoto()) {
+            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+            tL_message.id = 0;
+            tL_message.message = "";
+            tL_message.media = new TLRPC.TL_messageMediaEmpty();
+            tL_message.action = new TLRPC.TL_messageActionEmpty();
+            tL_message.dialog_id = 0L;
+            MessageObject messageObject2 = new MessageObject(UserConfig.selectedAccount, tL_message, false, false);
+            messageObject2.messageOwner.attachPath = new File(FileLoader.getDirectory(4), SharedConfig.getLastLocalId() + "_avatar.mp4").getAbsolutePath();
+            messageObject2.videoEditedInfo = photoEntry.editedInfo;
+            messageObject2.emojiMarkup = photoEntry.emojiMarkup;
+            loadBitmap = ImageLoader.loadBitmap(photoEntry.thumbPath, null, 800.0f, 800.0f, true);
+            messageObject = messageObject2;
+        } else {
+            loadBitmap = ImageLoader.loadBitmap(str, null, 800.0f, 800.0f, true);
+        }
+        r(false, loadBitmap, messageObject);
     }
 }

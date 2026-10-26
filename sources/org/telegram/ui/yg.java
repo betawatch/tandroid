@@ -1,30 +1,30 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.content.DialogInterface;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yg implements View.OnClickListener {
+public final /* synthetic */ class yg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.j80 b;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ yg(org.telegram.ui.Components.j80 j80Var, int i10) {
+    public /* synthetic */ yg(int i10, boolean[] zArr) {
         this.a = i10;
-        this.b = j80Var;
+        this.b = zArr;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         int i10 = this.a;
-        org.telegram.ui.Components.j80 j80Var = this.b;
+        boolean[] zArr = this.b;
         switch (i10) {
             case 0:
-                j80Var.s();
+                zArr[0] = true;
                 break;
             default:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                j80Var.s();
+                Pattern pattern = LaunchActivity.D1;
+                zArr[0] = true;
                 break;
         }
     }

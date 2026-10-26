@@ -1,5 +1,7 @@
 package f4;
 
+import a8.cc;
+import a8.jb;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
@@ -12,7 +14,7 @@ import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Pair;
 import d2.g;
-import e2.m0;
+import e2.n0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,10 +22,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import v7.b7;
-import v7.q6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -176,7 +176,7 @@ public final class c {
                     e eVar = (e) hashMap.get(str3);
                     eVar.getClass();
                     int i16 = eVar.j;
-                    f a10 = b7.a(this.f, this.g, map2);
+                    f a10 = cc.a(this.f, this.g, map2);
                     SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) aVar.a;
                     if (spannableStringBuilder == null) {
                         spannableStringBuilder = new SpannableStringBuilder();
@@ -216,16 +216,16 @@ public final class c {
                             if (!a10.c) {
                                 throw new IllegalStateException("Font color has not been defined.");
                             }
-                            q6.a(new ForegroundColorSpan(a10.b), spannableStringBuilder, intValue, intValue2);
+                            jb.a(new ForegroundColorSpan(a10.b), spannableStringBuilder, intValue, intValue2);
                         }
                         if (a10.e) {
                             if (!a10.e) {
                                 throw new IllegalStateException("Background color has not been defined.");
                             }
-                            q6.a(new BackgroundColorSpan(a10.d), spannableStringBuilder, intValue, intValue2);
+                            jb.a(new BackgroundColorSpan(a10.d), spannableStringBuilder, intValue, intValue2);
                         }
                         if (a10.a != null) {
-                            q6.a(new TypefaceSpan(a10.a), spannableStringBuilder, intValue, intValue2);
+                            jb.a(new TypefaceSpan(a10.a), spannableStringBuilder, intValue, intValue2);
                         }
                         b bVar = a10.r;
                         if (bVar != null) {
@@ -240,7 +240,7 @@ public final class c {
                             if (i21 == -2) {
                                 i21 = 1;
                             }
-                            q6.a(new g(i20, i14, i21), spannableStringBuilder, intValue, intValue2);
+                            jb.a(new g(i20, i14, i21), spannableStringBuilder, intValue, intValue2);
                         }
                         int i22 = a10.m;
                         if (i22 == 2) {
@@ -250,7 +250,7 @@ public final class c {
                                     cVar2 = null;
                                     break;
                                 }
-                                f a11 = b7.a(cVar2.f, cVar2.g, map2);
+                                f a11 = cc.a(cVar2.f, cVar2.g, map2);
                                 if (a11 != null && a11.m == 1) {
                                     break;
                                 } else {
@@ -266,7 +266,7 @@ public final class c {
                                         break;
                                     }
                                     c cVar3 = (c) arrayDeque.pop();
-                                    f a12 = b7.a(cVar3.f, cVar3.g, map2);
+                                    f a12 = cc.a(cVar3.f, cVar3.g, map2);
                                     if (a12 != null && a12.m == 3) {
                                         cVar = cVar3;
                                         break;
@@ -280,26 +280,26 @@ public final class c {
                                         i11 = 0;
                                         if (cVar.b(0).b != null) {
                                             String str5 = cVar.b(0).b;
-                                            String str6 = m0.a;
-                                            f a13 = b7.a(cVar.f, cVar.g, map2);
+                                            String str6 = n0.a;
+                                            f a13 = cc.a(cVar.f, cVar.g, map2);
                                             int i23 = a13 != null ? a13.n : -1;
-                                            if (i23 == -1 && (a2 = b7.a(cVar2.f, cVar2.g, map2)) != null) {
+                                            if (i23 == -1 && (a2 = cc.a(cVar2.f, cVar2.g, map2)) != null) {
                                                 i23 = a2.n;
                                             }
                                             spannableStringBuilder.setSpan(new d2.f(str5, i23), intValue, intValue2, 33);
                                             if (a10.q == 1) {
-                                                q6.a(new d2.e(), spannableStringBuilder, intValue, intValue2);
+                                                jb.a(new d2.e(), spannableStringBuilder, intValue, intValue2);
                                             }
                                             i12 = a10.j;
                                             float f10 = 100.0f;
                                             if (i12 == 1) {
                                                 it = it2;
                                                 f7 = 100.0f;
-                                                q6.a(new AbsoluteSizeSpan((int) a10.k, true), spannableStringBuilder, intValue, intValue2);
+                                                jb.a(new AbsoluteSizeSpan((int) a10.k, true), spannableStringBuilder, intValue, intValue2);
                                             } else if (i12 == 2) {
                                                 it = it2;
                                                 f7 = 100.0f;
-                                                q6.a(new RelativeSizeSpan(a10.k), spannableStringBuilder, intValue, intValue2);
+                                                jb.a(new RelativeSizeSpan(a10.k), spannableStringBuilder, intValue, intValue2);
                                             } else if (i12 != 3) {
                                                 it = it2;
                                                 f7 = 100.0f;
@@ -438,13 +438,13 @@ public final class c {
                 b10.i(j11, z11, str4, treeMap2);
             }
             if (equals) {
-                SpannableStringBuilder e7 = e(str4, treeMap);
-                int length = e7.length() - 1;
-                while (length >= 0 && e7.charAt(length) == ' ') {
+                SpannableStringBuilder e10 = e(str4, treeMap);
+                int length = e10.length() - 1;
+                while (length >= 0 && e10.charAt(length) == ' ') {
                     length--;
                 }
-                if (length >= 0 && e7.charAt(length) != '\n') {
-                    e7.append('\n');
+                if (length >= 0 && e10.charAt(length) != '\n') {
+                    e10.append('\n');
                 }
             }
             for (Map.Entry entry2 : treeMap.entrySet()) {

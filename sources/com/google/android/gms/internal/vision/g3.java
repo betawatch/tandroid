@@ -1,14 +1,14 @@
 package com.google.android.gms.internal.vision;
 
+import a8.uf;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import w7.m6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public final Context a;
@@ -51,15 +51,15 @@ public abstract class g3 {
 
     public abstract void f(p4.n nVar);
 
-    public void g(b2.t tVar) {
+    public void g(b2.u uVar) {
         p4.x.b();
-        if (((b2.t) this.n) != tVar) {
-            this.n = tVar;
+        if (((b2.u) this.n) != uVar) {
+            this.n = uVar;
             if (this.c) {
                 return;
             }
             this.c = true;
-            ((ab.o0) this.e).sendEmptyMessage(1);
+            ((androidx.mediarouter.app.c) this.e).sendEmptyMessage(1);
         }
     }
 
@@ -73,10 +73,10 @@ public abstract class g3 {
             return;
         }
         this.b = true;
-        ((ab.o0) this.e).sendEmptyMessage(2);
+        ((androidx.mediarouter.app.c) this.e).sendEmptyMessage(2);
     }
 
-    public abstract Object i(y6.e eVar, Context context);
+    public abstract Object i(z6.e eVar, Context context);
 
     public abstract void j();
 
@@ -98,23 +98,23 @@ public abstract class g3 {
     }
 
     public Object m() {
-        y6.e eVar;
+        z6.e eVar;
         synchronized (this.d) {
             Object obj = this.e;
             if (obj != null) {
                 return obj;
             }
             try {
-                eVar = y6.e.c(this.a, y6.e.c, (String) this.h);
-            } catch (y6.b unused) {
+                eVar = z6.e.c(this.a, z6.e.c, (String) this.h);
+            } catch (z6.b unused) {
                 String str = "com.google.android.gms.vision." + ((String) this.n);
                 if (Log.isLoggable("Vision", 3)) {
                     Log.d("Vision", "Cannot load thick client module, fall back to load optional module " + str);
                 }
                 try {
-                    eVar = y6.e.c(this.a, y6.e.b, str);
-                } catch (y6.b e) {
-                    m6.a(e, "Error loading optional module %s", str);
+                    eVar = z6.e.c(this.a, z6.e.b, str);
+                } catch (z6.b e) {
+                    uf.a(e, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -134,8 +134,8 @@ public abstract class g3 {
             if (eVar != null) {
                 try {
                     this.e = i(eVar, this.a);
-                } catch (RemoteException | y6.b e7) {
-                    Log.e((String) this.f, "Error creating remote native handle", e7);
+                } catch (RemoteException | z6.b e10) {
+                    Log.e((String) this.f, "Error creating remote native handle", e10);
                 }
             }
             boolean z10 = this.c;
@@ -149,15 +149,15 @@ public abstract class g3 {
         }
     }
 
-    public g3(Context context, le.b bVar) {
-        this.e = new ab.o0(this, 11);
+    public g3(Context context, li.e3 e3Var) {
+        this.e = new androidx.mediarouter.app.c(this, 11);
         if (context != null) {
             this.a = context;
-            if (bVar == null) {
-                this.d = new le.b(new ComponentName(context, getClass()), 14);
+            if (e3Var == null) {
+                this.d = new li.e3(new ComponentName(context, getClass()), 14);
                 return;
             } else {
-                this.d = bVar;
+                this.d = e3Var;
                 return;
             }
         }

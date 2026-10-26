@@ -1,17 +1,58 @@
 package w7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.Bundle;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class t {
-    public static void a(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
+    public static v0.c a(String type, Bundle data) {
+        kotlin.jvm.internal.i.e(type, "type");
+        kotlin.jvm.internal.i.e(data, "data");
+        try {
+            int hashCode = type.hashCode();
+            if (hashCode != -1678407252) {
+                if (hashCode != -543568185) {
+                    if (hashCode == -95037569 && type.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
+                        try {
+                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
+                            kotlin.jvm.internal.i.b(string);
+                            return new v0.f(string, data);
+                        } catch (Exception unused) {
+                            throw new z0.a();
+                        }
+                    }
+                } else if (type.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
+                    return new v0.d("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
+                }
+                throw new z0.a();
+            }
+            if (type.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
+                try {
+                    String string2 = data.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
+                    kotlin.jvm.internal.i.b(string2);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
+                    v0.d dVar = new v0.d("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle);
+                    if (string2.length() != 0) {
+                        try {
+                            new JSONObject(string2);
+                            return dVar;
+                        } catch (Exception unused2) {
+                        }
+                    }
+                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
+                } catch (Exception unused3) {
+                    throw new z0.a();
+                }
+            }
+            throw new z0.a();
+        } catch (z0.a unused4) {
+            v0.d dVar2 = new v0.d(type, data);
+            if (type.length() > 0) {
+                return dVar2;
+            }
+            throw new IllegalArgumentException("type should not be empty");
         }
     }
 }

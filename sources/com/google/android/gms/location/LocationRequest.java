@@ -1,26 +1,26 @@
 package com.google.android.gms.location;
 
 import a1.g;
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.os.WorkSource;
 import android.util.Log;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import g8.j;
+import h8.j;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import n6.l;
-import o6.a;
-import r7.p;
-import u6.f;
-import w7.f0;
+import o6.l;
+import p6.a;
+import s7.p;
+import v6.f;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new j(5);
-    public final r7.j E;
+    public final s7.j E;
     public int a;
     public long b;
     public long c;
@@ -36,7 +36,7 @@ public final class LocationRequest extends a implements ReflectedParcelable {
     public final boolean x;
     public final WorkSource y;
 
-    public LocationRequest(int i10, long j10, long j11, long j12, long j13, long j14, int i11, float f7, boolean z10, long j15, int i12, int i13, String str, boolean z11, WorkSource workSource, r7.j jVar) {
+    public LocationRequest(int i10, long j10, long j11, long j12, long j13, long j14, int i11, float f7, boolean z10, long j15, int i12, int i13, String str, boolean z11, WorkSource workSource, s7.j jVar) {
         this.a = i10;
         this.b = j10;
         this.c = j11;
@@ -99,14 +99,14 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final String toString() {
-        r7.j jVar;
+        s7.j jVar;
         int intValue;
         String str;
         String str2;
         StringBuilder u10 = g.u("Request[");
         int i10 = this.a;
         if (i10 == 105) {
-            u10.append(g8.l.a(i10));
+            u10.append(h8.l.a(i10));
         } else {
             u10.append("@");
             if (b()) {
@@ -117,7 +117,7 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 p.a(u10, this.b);
             }
             u10.append(" ");
-            u10.append(g8.l.a(this.a));
+            u10.append(h8.l.a(this.a));
         }
         if (this.a == 105 || this.c != this.b) {
             u10.append(", minUpdateInterval=");
@@ -212,8 +212,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 Object invoke2 = method2.invoke(workSource, null);
                 l.h(invoke2);
                 intValue = ((Integer) invoke2).intValue();
-            } catch (Exception e7) {
-                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e7);
+            } catch (Exception e10) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e10);
             }
             if (intValue != 0) {
                 z10 = false;
@@ -240,38 +240,38 @@ public final class LocationRequest extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
+        int q5 = df.q(parcel, 20293);
         int i11 = this.a;
-        f0.s(parcel, 1, 4);
+        df.s(parcel, 1, 4);
         parcel.writeInt(i11);
         long j10 = this.b;
-        f0.s(parcel, 2, 8);
+        df.s(parcel, 2, 8);
         parcel.writeLong(j10);
         long j11 = this.c;
-        f0.s(parcel, 3, 8);
+        df.s(parcel, 3, 8);
         parcel.writeLong(j11);
-        f0.s(parcel, 6, 4);
+        df.s(parcel, 6, 4);
         parcel.writeInt(this.f);
-        f0.s(parcel, 7, 4);
+        df.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        f0.s(parcel, 8, 8);
+        df.s(parcel, 8, 8);
         parcel.writeLong(this.d);
-        f0.s(parcel, 9, 4);
+        df.s(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        f0.s(parcel, 10, 8);
+        df.s(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j12 = this.r;
-        f0.s(parcel, 11, 8);
+        df.s(parcel, 11, 8);
         parcel.writeLong(j12);
-        f0.s(parcel, 12, 4);
+        df.s(parcel, 12, 4);
         parcel.writeInt(this.s);
-        f0.s(parcel, 13, 4);
+        df.s(parcel, 13, 4);
         parcel.writeInt(this.v);
-        f0.l(parcel, 14, this.w);
-        f0.s(parcel, 15, 4);
+        df.l(parcel, 14, this.w);
+        df.s(parcel, 15, 4);
         parcel.writeInt(this.x ? 1 : 0);
-        f0.k(parcel, 16, this.y, i10);
-        f0.k(parcel, 17, this.E, i10);
-        f0.r(parcel, q6);
+        df.k(parcel, 16, this.y, i10);
+        df.k(parcel, 17, this.E, i10);
+        df.r(parcel, q5);
     }
 }

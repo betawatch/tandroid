@@ -1,29 +1,69 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class i5 extends d5 {
-    @Override // org.telegram.ui.d5
-    public final void a() {
-        MessagesController.getInstance(UserConfig.selectedAccount).loadUserInfo((TLRPC.User) this.c, false, this.d);
+public final class i5 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ i5(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.d5
-    public final void b(Object... objArr) {
-        if (((Long) objArr[0]).longValue() == ((TLRPC.User) this.c).id) {
-            TLRPC.UserFull userFull = (TLRPC.UserFull) objArr[1];
-            boolean z10 = this.g;
-            if (z10) {
-                if (z10) {
-                    this.g = false;
-                    this.b.removeObserver(this.a, this.e);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        switch (this.a) {
+            case 0:
+                ((j5) this.b).b.onAttachedToWindow();
+                break;
+            case 1:
+                ((org.telegram.ui.Components.r5) this.b).a();
+                break;
+            case 2:
+                ((j70) this.b).b.onAttachedToWindow();
+                break;
+            case 3:
+                org.telegram.ui.Components.r5 r5Var = ((mp0) this.b).i;
+                if (r5Var != null) {
+                    r5Var.a();
+                    break;
                 }
-                this.f.accept(userFull);
-            }
+                break;
+            default:
+                y71 y71Var = (y71) this.b;
+                y71Var.h.a();
+                y71Var.n.a();
+                break;
+        }
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        switch (this.a) {
+            case 0:
+                ((j5) this.b).b.onDetachedFromWindow();
+                break;
+            case 1:
+                ((org.telegram.ui.Components.r5) this.b).b();
+                break;
+            case 2:
+                ((j70) this.b).b.onDetachedFromWindow();
+                break;
+            case 3:
+                org.telegram.ui.Components.r5 r5Var = ((mp0) this.b).i;
+                if (r5Var != null) {
+                    r5Var.b();
+                    break;
+                }
+                break;
+            default:
+                y71 y71Var = (y71) this.b;
+                y71Var.h.b();
+                y71Var.n.b();
+                break;
         }
     }
 }

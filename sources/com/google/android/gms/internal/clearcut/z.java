@@ -8,12 +8,12 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public abstract class z extends j {
     private static Map<Object, z> zzjr = new ConcurrentHashMap();
-    protected c1 zzjp;
+    protected b1 zzjp;
     private int zzjq;
 
     public z() {
         this.zzex = 0;
-        this.zzjp = c1.e;
+        this.zzjp = b1.e;
         this.zzjq = -1;
     }
 
@@ -22,8 +22,8 @@ public abstract class z extends j {
             return method.invoke(zVar, objArr);
         } catch (IllegalAccessException e) {
             throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e7) {
-            Throwable cause = e7.getCause();
+        } catch (InvocationTargetException e10) {
+            Throwable cause = e10.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -64,9 +64,9 @@ public abstract class z extends j {
         if (!((z) a(6)).getClass().isInstance(obj)) {
             return false;
         }
-        w0 w0Var = w0.c;
-        w0Var.getClass();
-        return w0Var.a(getClass()).d(this, (z) obj);
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        return v0Var.a(getClass()).d(this, (z) obj);
     }
 
     public final int hashCode() {
@@ -74,9 +74,9 @@ public abstract class z extends j {
         if (i10 != 0) {
             return i10;
         }
-        w0 w0Var = w0.c;
-        w0Var.getClass();
-        int e = w0Var.a(getClass()).e(this);
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        int e = v0Var.a(getClass()).e(this);
         this.zzex = e;
         return e;
     }
@@ -86,7 +86,7 @@ public abstract class z extends j {
         StringBuilder sb2 = new StringBuilder();
         sb2.append("# ");
         sb2.append(obj);
-        n1.i(this, sb2, 0);
+        l1.i(this, sb2, 0);
         return sb2.toString();
     }
 }

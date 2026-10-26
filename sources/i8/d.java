@@ -1,94 +1,179 @@
 package i8;
 
+import a8.h0;
+import android.content.Context;
 import android.os.Bundle;
-import android.os.Parcelable;
-import kotlin.jvm.internal.i;
-import n6.l;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.os.StrictMode;
+import android.widget.FrameLayout;
+import o6.l;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class d {
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x005d, code lost:
-    
-        if (r8 > 4611686018427387903L) goto L14;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final long a(int i10, ae.c unit) {
-        i.e(unit, "unit");
-        if (unit.compareTo(ae.c.d) <= 0) {
-            long a2 = l9.b.a(i10, unit, ae.c.b) << 1;
-            int i11 = ae.a.d;
-            int i12 = ae.b.a;
-            return a2;
-        }
-        long j10 = i10;
-        ae.c cVar = ae.c.b;
-        long a10 = l9.b.a(4611686018426999999L, cVar, unit);
-        if ((-a10) <= j10 && j10 <= a10) {
-            long a11 = l9.b.a(j10, unit, cVar) << 1;
-            int i13 = ae.a.d;
-            int i14 = ae.b.a;
-            return a11;
-        }
-        ae.c targetUnit = ae.c.c;
-        i.e(targetUnit, "targetUnit");
-        long convert = targetUnit.a.convert(j10, unit.a);
-        long j11 = convert >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
-        convert = j11;
-        long j12 = (convert << 1) + 1;
-        int i15 = ae.a.d;
-        int i16 = ae.b.a;
-        return j12;
+public abstract class d extends FrameLayout {
+    private final j zza;
+
+    public d(Context context) {
+        super(context);
+        this.zza = new j(this, context);
+        setClickable(true);
     }
 
-    public static Parcelable b(String str, Bundle bundle) {
-        ClassLoader classLoader = d.class.getClassLoader();
-        l.h(classLoader);
-        bundle.setClassLoader(classLoader);
-        Bundle bundle2 = bundle.getBundle("map_state");
-        if (bundle2 == null) {
-            return null;
+    public void getMapAsync(f fVar) {
+        l.e("getMapAsync() must be called on the main thread");
+        l.i(fVar, "callback must not be null.");
+        j jVar = this.zza;
+        h0 h0Var = jVar.a;
+        if (h0Var != null) {
+            h0Var.p(fVar);
+        } else {
+            jVar.h.add(fVar);
         }
-        bundle2.setClassLoader(classLoader);
-        return bundle2.getParcelable(str);
     }
 
-    public static void c(Bundle bundle, Bundle bundle2) {
-        if (bundle == null || bundle2 == null) {
+    public void onCreate(Bundle bundle) {
+        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(threadPolicy).permitAll().build());
+        try {
+            j jVar = this.zza;
+            jVar.getClass();
+            jVar.c(bundle, new y6.c(jVar, bundle));
+            if (this.zza.a == null) {
+                j.a(this);
+            }
+        } finally {
+            StrictMode.setThreadPolicy(threadPolicy);
+        }
+    }
+
+    public void onDestroy() {
+        j jVar = this.zza;
+        h0 h0Var = jVar.a;
+        if (h0Var == null) {
+            jVar.b(1);
             return;
         }
-        Parcelable b10 = b("MapOptions", bundle);
-        if (b10 != null) {
-            d(bundle2, "MapOptions", b10);
-        }
-        Parcelable b11 = b("StreetViewPanoramaOptions", bundle);
-        if (b11 != null) {
-            d(bundle2, "StreetViewPanoramaOptions", b11);
-        }
-        Parcelable b12 = b("camera", bundle);
-        if (b12 != null) {
-            d(bundle2, "camera", b12);
-        }
-        if (bundle.containsKey("position")) {
-            bundle2.putString("position", bundle.getString("position"));
-        }
-        if (bundle.containsKey("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT")) {
-            bundle2.putBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", bundle.getBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", false));
+        try {
+            j8.g gVar = (j8.g) h0Var.c;
+            gVar.R0(gVar.N0(), 5);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
         }
     }
 
-    public static void d(Bundle bundle, String str, Parcelable parcelable) {
-        ClassLoader classLoader = d.class.getClassLoader();
-        l.h(classLoader);
-        bundle.setClassLoader(classLoader);
-        Bundle bundle2 = bundle.getBundle("map_state");
-        if (bundle2 == null) {
-            bundle2 = new Bundle();
+    public void onEnterAmbient(Bundle bundle) {
+        l.e("onEnterAmbient() must be called on the main thread");
+        h0 h0Var = this.zza.a;
+        if (h0Var != null) {
+            h0Var.getClass();
+            try {
+                Bundle bundle2 = new Bundle();
+                j8.d.c(bundle, bundle2);
+                j8.g gVar = (j8.g) h0Var.c;
+                Parcel N0 = gVar.N0();
+                t7.b.b(N0, bundle2);
+                gVar.R0(N0, 10);
+                j8.d.c(bundle2, bundle);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
+            }
         }
-        bundle2.setClassLoader(classLoader);
-        bundle2.putParcelable(str, parcelable);
-        bundle.putBundle("map_state", bundle2);
+    }
+
+    public void onExitAmbient() {
+        l.e("onExitAmbient() must be called on the main thread");
+        h0 h0Var = this.zza.a;
+        if (h0Var != null) {
+            h0Var.getClass();
+            try {
+                j8.g gVar = (j8.g) h0Var.c;
+                gVar.R0(gVar.N0(), 11);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
+            }
+        }
+    }
+
+    public void onLowMemory() {
+        h0 h0Var = this.zza.a;
+        if (h0Var != null) {
+            try {
+                j8.g gVar = (j8.g) h0Var.c;
+                gVar.R0(gVar.N0(), 6);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
+            }
+        }
+    }
+
+    public void onPause() {
+        j jVar = this.zza;
+        h0 h0Var = jVar.a;
+        if (h0Var == null) {
+            jVar.b(5);
+            return;
+        }
+        try {
+            j8.g gVar = (j8.g) h0Var.c;
+            gVar.R0(gVar.N0(), 4);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
+        }
+    }
+
+    public void onResume() {
+        j jVar = this.zza;
+        jVar.getClass();
+        jVar.c(null, new y6.d(jVar, 1));
+    }
+
+    public void onSaveInstanceState(Bundle bundle) {
+        j jVar = this.zza;
+        h0 h0Var = jVar.a;
+        if (h0Var == null) {
+            Bundle bundle2 = jVar.b;
+            if (bundle2 != null) {
+                bundle.putAll(bundle2);
+                return;
+            }
+            return;
+        }
+        try {
+            Bundle bundle3 = new Bundle();
+            j8.d.c(bundle, bundle3);
+            j8.g gVar = (j8.g) h0Var.c;
+            Parcel N0 = gVar.N0();
+            t7.b.b(N0, bundle3);
+            Parcel M0 = gVar.M0(N0, 7);
+            if (M0.readInt() != 0) {
+                bundle3.readFromParcel(M0);
+            }
+            M0.recycle();
+            j8.d.c(bundle3, bundle);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
+        }
+    }
+
+    public void onStart() {
+        j jVar = this.zza;
+        jVar.getClass();
+        jVar.c(null, new y6.d(jVar, 0));
+    }
+
+    public void onStop() {
+        j jVar = this.zza;
+        h0 h0Var = jVar.a;
+        if (h0Var == null) {
+            jVar.b(4);
+            return;
+        }
+        try {
+            j8.g gVar = (j8.g) h0Var.c;
+            gVar.R0(gVar.N0(), 13);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
+        }
     }
 }

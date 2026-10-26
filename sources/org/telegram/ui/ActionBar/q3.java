@@ -1,584 +1,123 @@
 package org.telegram.ui.ActionBar;
 
-import ai.r9;
-import ai.t7;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.i11;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gk;
-import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class q3 extends FrameLayout {
-    public static final HashMap K = new HashMap();
-    public static final HashMap L = new HashMap();
-    public static TextPaint M;
-    public final RectF E;
-    public ValueAnimator F;
-    public float G;
-    public int H;
-    public final HashSet I;
-    public final HashSet J;
-    public final Paint a;
-    public boolean b;
-    public boolean c;
-    public final ActionBarLayout d;
-    public final o3 e;
-    public int f;
-    public final org.telegram.ui.Components.i5 h;
-    public int n;
-    public final org.telegram.ui.Components.i5 r;
-    public boolean s;
-    public final org.telegram.ui.Components.f6 v;
-    public int w;
-    public boolean x;
-    public boolean y;
+public final class q3 extends j1.b {
+    public static final /* synthetic */ int r = 0;
+    public final RectF o;
+    public final Rect p;
+    public final /* synthetic */ s3 q;
 
-    public q3(Context context, ActionBarLayout actionBarLayout) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = true;
-        this.c = false;
-        bs bsVar = bs.h;
-        this.h = new org.telegram.ui.Components.i5(this, 200L, bsVar, 0);
-        this.r = new org.telegram.ui.Components.i5(this, 200L, bsVar, 0);
-        this.v = new org.telegram.ui.Components.f6(this, 0L, 200L, bsVar);
-        this.w = UserConfig.selectedAccount;
-        this.E = new RectF();
-        this.I = new HashSet();
-        this.J = new HashSet();
-        this.d = actionBarLayout;
-        setNavigationBarColor(k6.x0(null, k6.a7, false));
-        o3 o3Var = new o3(this, this);
-        this.e = o3Var;
-        r0.i0.j(this, o3Var);
-        n();
-        o(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q3(s3 s3Var, s3 s3Var2) {
+        super(s3Var2);
+        this.q = s3Var;
+        this.o = new RectF();
+        this.p = new Rect();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static TextPaint getTextPaint() {
-        if (M == null) {
-            TextPaint textPaint = new TextPaint(1);
-            M = textPaint;
-            textPaint.setTypeface(AndroidUtilities.bold());
-            M.setTextSize(AndroidUtilities.dp(17.0f));
+    @Override // j1.b
+    public final int g(float f7, float f10) {
+        p3 c10;
+        s3 s3Var = this.q;
+        if (!s3Var.b) {
+            return -1;
         }
-        return M;
+        ArrayList<r3> tabs = s3Var.getTabs();
+        if (tabs.isEmpty() || (c10 = s3Var.c(tabs.get(0))) == null) {
+            return -1;
+        }
+        float c11 = c10.c();
+        RectF rectF = this.o;
+        s3Var.d(rectF, c11);
+        Rect bounds = c10.l.getBounds();
+        if (bounds.isEmpty() || !bounds.contains((int) (f7 - rectF.left), (int) (f10 - rectF.centerY()))) {
+            return rectF.contains(f7, f10) ? 1 : -1;
+        }
+        return 2;
     }
 
-    public static String p(String str) {
-        if (str == null) {
-            return null;
-        }
-        int indexOf = str.indexOf(35);
-        return indexOf >= 0 ? str.substring(0, indexOf + 1) : str;
-    }
-
-    public final void b() {
-        ValueAnimator valueAnimator;
-        ArrayList<p3> tabs = getTabs();
-        int size = tabs.size();
-        if (size == 0) {
-            return;
-        }
-        p3 p3Var = (p3) i2.o1.i(1, tabs);
-        LaunchActivity launchActivity = LaunchActivity.J1;
-        z3 z3Var = launchActivity == null ? null : launchActivity.y0;
-        if (z3Var != null && (valueAnimator = z3Var.d) != null) {
-            valueAnimator.cancel();
-            z3Var.d = null;
-        }
-        if (size == 1 || z3Var == null) {
-            e(p3Var);
-        } else {
-            z3Var.f();
-        }
-    }
-
-    public final n3 c(p3 p3Var) {
-        ArrayList<n3> tabDrawables = getTabDrawables();
-        for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
-            if (tabDrawables.get(i10).a == p3Var) {
-                return tabDrawables.get(i10);
-            }
-        }
-        return null;
-    }
-
-    public final void d(RectF rectF, float f7) {
-        rectF.set(AndroidUtilities.dp(4.0f), (getHeight() - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(50.0f), getWidth() - AndroidUtilities.dp(4.0f), getHeight() - AndroidUtilities.dp(4.0f));
-        rectF.offset(0.0f, (-AndroidUtilities.dp(8.0f)) * f7);
-        float lerp = AndroidUtilities.lerp(1.0f, 0.95f, Math.abs(f7));
-        float centerX = rectF.centerX();
-        float centerY = rectF.centerY();
-        float width = rectF.width();
-        float height = rectF.height();
-        float f10 = (width / 2.0f) * lerp;
-        rectF.left = centerX - f10;
-        rectF.right = centerX + f10;
-        float f11 = (height / 2.0f) * lerp;
-        rectF.top = centerY - f11;
-        rectF.bottom = centerY + f11;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        getTabs();
-        ArrayList<n3> tabDrawables = getTabDrawables();
-        if (this.G <= 0.0f) {
-            return;
-        }
-        this.a.setColor(this.h.a(this.f, false));
-        super.dispatchDraw(canvas);
-        int a2 = this.r.a(this.n, false);
-        float e = this.v.e(this.s);
-        if (this.b) {
-            int i10 = 0;
-            while (i10 < tabDrawables.size()) {
-                n3 n3Var = tabDrawables.get(i10);
-                float c10 = n3Var.c();
-                float b10 = n3Var.b();
-                if (b10 > 0.0f && c10 <= 1.99f) {
-                    RectF rectF = this.E;
-                    d(rectF, c10);
-                    n3Var.w = 0.0f;
-                    boolean z10 = e > 0.5f;
-                    n3Var.m = a2;
-                    n3Var.o = z10;
-                    canvas2 = canvas;
-                    n3Var.a(canvas2, rectF, AndroidUtilities.dp(18.0f), b10, 1.0f);
-                } else {
-                    canvas2 = canvas;
-                }
-                i10++;
-                canvas = canvas2;
-            }
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchHoverEvent(MotionEvent motionEvent) {
-        o3 o3Var;
-        if (!this.b || getTabs().isEmpty() || (o3Var = this.e) == null || !o3Var.f(motionEvent)) {
-            return super.dispatchHoverEvent(motionEvent);
-        }
-        return true;
-    }
-
-    public final void e(p3 p3Var) {
-        sn snVar;
-        gk gkVar;
-        o2 R = LaunchActivity.R();
-        if (R == null || R.getParentActivity() == null) {
-            return;
-        }
-        boolean z10 = R instanceof sn;
-        if (z10 && (gkVar = (snVar = (sn) R).Y) != null) {
-            gkVar.M();
-            snVar.Y.k0(true, false, true);
-        }
-        if (p3Var.J == null) {
-            new m3(0, this, p3Var).run(R);
-            if (p3Var.C) {
-                if (z10 && ((sn) R).a() == p3Var.a.c) {
-                    return;
-                }
-                this.c = true;
-                AndroidUtilities.runOnUIThread(new ig.d2(this, R, sn.W9(p3Var.a.c), 20), 220L);
+    @Override // j1.b
+    public final void h(ArrayList arrayList) {
+        s3 s3Var = this.q;
+        if (s3Var.b) {
+            ArrayList<r3> tabs = s3Var.getTabs();
+            if (tabs.isEmpty() || s3Var.c(tabs.get(0)) == null) {
                 return;
             }
-            return;
+            arrayList.add(1);
+            arrayList.add(2);
         }
-        o2 sheetFragment = this.d.getSheetFragment();
-        org.telegram.ui.k4 k4Var = p3Var.J;
-        org.telegram.ui.w3 w3Var = k4Var.K;
-        l3.b(w3Var);
-        sheetFragment.addSheet(w3Var);
-        org.telegram.ui.v3 v3Var = w3Var.c;
-        w3Var.h = false;
-        w3Var.n = false;
-        ValueAnimator valueAnimator = w3Var.y;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator valueAnimator2 = w3Var.E;
-        if (valueAnimator2 != null) {
-            valueAnimator2.cancel();
-        }
-        w3Var.x = 0.0f;
-        w3Var.w = 0.0f;
-        w3Var.h();
-        w3Var.n();
-        v3Var.invalidate();
-        v3Var.requestLayout();
-        k4Var.Y(sheetFragment.getParentActivity(), sheetFragment);
-        w3Var.g(sheetFragment);
-        w3Var.f();
-        h(this.w, p3Var, false);
     }
 
-    public final void f() {
-        ArrayList<p3> tabs = getTabs();
-        ArrayList<n3> tabDrawables = getTabDrawables();
-        for (int i10 = 0; i10 < tabs.size(); i10++) {
-            tabs.get(i10).a();
+    @Override // j1.b
+    public final boolean k(int i10, int i11) {
+        if (i11 == 16) {
+            s3 s3Var = this.q;
+            ArrayList<r3> tabs = s3Var.getTabs();
+            if (!tabs.isEmpty()) {
+                r3 r3Var = tabs.get(0);
+                if (i10 == 1) {
+                    s3Var.b();
+                    return true;
+                }
+                if (i10 == 2) {
+                    s3Var.g(r3Var, new di.e(7));
+                    return true;
+                }
+            }
         }
-        tabs.clear();
-        for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
-            tabDrawables.get(i11).d = -1;
-        }
-        n();
-        o(true);
-        invalidate();
-        tabs.isEmpty();
+        return false;
     }
 
-    public final void g(p3 p3Var, Utilities.Callback callback) {
+    @Override // j1.b
+    public final void l(int i10, s0.d dVar) {
         String str;
-        if (p3Var == null) {
-            callback.run(Boolean.TRUE);
+        String str2;
+        s3 s3Var = this.q;
+        ArrayList<r3> tabs = s3Var.getTabs();
+        r3 r3Var = tabs.isEmpty() ? null : tabs.get(0);
+        p3 c10 = r3Var != null ? s3Var.c(r3Var) : null;
+        dVar.i("android.widget.Button");
+        dVar.b(s0.c.e);
+        Rect rect = this.p;
+        if (c10 == null) {
+            rect.set(0, 0, 1, 1);
+            dVar.h(rect);
+            dVar.j("");
+            dVar.p(false);
             return;
         }
-        if (!p3Var.y) {
-            h(this.w, p3Var, true);
-            callback.run(Boolean.TRUE);
-            return;
-        }
-        TLRPC.User user = MessagesController.getInstance(p3Var.a.a).getUser(Long.valueOf(p3Var.a.c));
-        if (user != null) {
-            str = ContactsController.formatName(user.first_name, user.last_name);
-        } else {
-            gi.t4 t4Var = p3Var.a;
-            str = t4Var.g == 6 ? t4Var.e : null;
-        }
-        boolean[] zArr = {false};
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
-        c2 c2Var = alertDialog$Builder.a;
-        c2Var.R = str;
-        c2Var.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
-        alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new t7(this, zArr, p3Var, callback, r8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.u2(zArr, callback, r8, 17));
-        c2[] c2VarArr = {c2Var};
-        c2Var.setOnDismissListener(new r9(zArr, callback));
-        c2VarArr[0].show();
-        r6.W((TextView) c2VarArr[0].d(-1), k6.q7, null);
-    }
-
-    public Paint getBackgroundPaint() {
-        return this.a;
-    }
-
-    public int getExpandedHeight() {
-        int size = getTabs().size();
-        if (size == 0) {
-            return 0;
-        }
-        return size == 1 ? AndroidUtilities.dp(60.0f) : AndroidUtilities.dp(68.0f);
-    }
-
-    public ArrayList<n3> getTabDrawables() {
-        int i10 = this.w;
-        Integer valueOf = Integer.valueOf(i10);
-        HashMap hashMap = L;
-        ArrayList<n3> arrayList = (ArrayList) hashMap.get(valueOf);
-        if (arrayList != null) {
-            return arrayList;
-        }
-        Integer valueOf2 = Integer.valueOf(i10);
-        ArrayList<n3> arrayList2 = new ArrayList<>();
-        hashMap.put(valueOf2, arrayList2);
-        return arrayList2;
-    }
-
-    public ArrayList<p3> getTabs() {
-        int i10 = this.w;
-        Integer valueOf = Integer.valueOf(i10);
-        HashMap hashMap = K;
-        ArrayList<p3> arrayList = (ArrayList) hashMap.get(valueOf);
-        if (arrayList != null) {
-            return arrayList;
-        }
-        Integer valueOf2 = Integer.valueOf(i10);
-        ArrayList<p3> arrayList2 = new ArrayList<>();
-        hashMap.put(valueOf2, arrayList2);
-        return arrayList2;
-    }
-
-    public final boolean h(int i10, p3 p3Var, boolean z10) {
-        Integer valueOf = Integer.valueOf(i10);
-        HashMap hashMap = K;
-        ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
-        if (arrayList == null) {
-            Integer valueOf2 = Integer.valueOf(i10);
-            ArrayList arrayList2 = new ArrayList();
-            hashMap.put(valueOf2, arrayList2);
-            arrayList = arrayList2;
-        }
-        Integer valueOf3 = Integer.valueOf(i10);
-        HashMap hashMap2 = L;
-        ArrayList arrayList3 = (ArrayList) hashMap2.get(valueOf3);
-        if (arrayList3 == null) {
-            Integer valueOf4 = Integer.valueOf(i10);
-            arrayList3 = new ArrayList();
-            hashMap2.put(valueOf4, arrayList3);
-        }
-        arrayList.remove(p3Var);
-        if (z10) {
-            p3Var.a();
-        }
-        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-            n3 n3Var = (n3) arrayList3.get(i11);
-            int indexOf = arrayList.indexOf(n3Var.a);
-            n3Var.d = indexOf;
-            if (indexOf >= 0) {
-                n3Var.c = indexOf;
-            }
-        }
-        n();
-        AndroidUtilities.runOnUIThread(new ig.d2(this, arrayList3, p3Var, 21), 320L);
-        o(true);
-        invalidate();
-        o3 o3Var = this.e;
-        if (o3Var != null) {
-            o3Var.i();
-        }
-        return arrayList.isEmpty();
-    }
-
-    public final void i(int i10, boolean z10) {
-        if (i10 != this.f) {
-            ActionBarLayout actionBarLayout = this.d;
-            if (!actionBarLayout.Q || actionBarLayout.T) {
-                z10 = false;
-            }
-            this.f = i10;
-            int v = k6.v(i10, k6.o1((AndroidUtilities.computePerceivedBrightness(i10) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
-            this.n = v;
-            this.s = AndroidUtilities.computePerceivedBrightness(v) < 0.721f;
-            if (!z10) {
-                this.h.a(this.f, true);
-                this.r.a(this.n, true);
-                this.v.f(this.s, true);
-            }
-            invalidate();
-        }
-    }
-
-    public final boolean j(float f7, float f10, int i10) {
-        ArrayList<p3> tabs = getTabs();
-        ArrayList<n3> tabDrawables = getTabDrawables();
-        if (this.b) {
-            p3 p3Var = tabs.isEmpty() ? null : tabs.get(0);
-            n3 c10 = c(p3Var);
-            if (c10 != null) {
-                org.telegram.ui.Cells.y yVar = c10.l;
-                float c11 = c10.c();
-                RectF rectF = this.E;
-                d(rectF, c11);
-                if (i10 == 0 || i10 == 2) {
-                    boolean contains = yVar.getBounds().contains((int) (f7 - rectF.left), (int) (f10 - rectF.centerY()));
-                    this.x = contains;
-                    this.y = !contains && rectF.contains(f7, f10);
-                    yVar.setState(this.x ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0]);
-                } else if (i10 == 1 || i10 == 3) {
-                    if (this.y && i10 == 1) {
-                        b();
-                    } else if (this.x && i10 == 1) {
-                        g(p3Var, new ci.e(6));
-                    }
-                    this.x = false;
-                    this.y = false;
-                    yVar.setState(new int[0]);
-                }
-                for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
-                    if (tabDrawables.get(i11) != c10) {
-                        tabDrawables.get(i11).l.setState(new int[0]);
-                    }
-                }
+        float c11 = c10.c();
+        RectF rectF = this.o;
+        s3Var.d(rectF, c11);
+        String b10 = r3Var.b() != null ? r3Var.b() : "";
+        if (i10 != 2) {
+            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            dVar.h(rect);
+            if (TextUtils.isEmpty(b10)) {
+                str = LocaleController.getString(R.string.Open);
             } else {
-                this.y = false;
-                this.x = false;
+                str = LocaleController.getString(R.string.Open) + ", " + b10;
             }
-        } else {
-            this.y = false;
-            this.x = false;
-        }
-        return this.y || this.x;
-    }
-
-    public final p3 k(gi.t4 t4Var) {
-        Integer valueOf = Integer.valueOf(this.w);
-        HashMap hashMap = K;
-        ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
-        if (arrayList == null) {
-            Integer valueOf2 = Integer.valueOf(this.w);
-            ArrayList arrayList2 = new ArrayList();
-            hashMap.put(valueOf2, arrayList2);
-            arrayList = arrayList2;
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            p3 p3Var = (p3) arrayList.get(i10);
-            if (t4Var.equals(p3Var.a)) {
-                e(p3Var);
-                return p3Var;
-            }
-        }
-        return null;
-    }
-
-    public final p3 l(MessageObject messageObject) {
-        TLRPC.Message message;
-        TLRPC.MessageMedia messageMedia;
-        TLRPC.WebPage webPage;
-        if (messageObject == null || (message = messageObject.messageOwner) == null || (messageMedia = message.media) == null || (webPage = messageMedia.webpage) == null) {
-            return null;
-        }
-        return m(webPage);
-    }
-
-    public final p3 m(TLRPC.WebPage webPage) {
-        if (webPage == null) {
-            return null;
-        }
-        ArrayList<p3> tabs = getTabs();
-        for (int i10 = 0; i10 < tabs.size(); i10++) {
-            p3 p3Var = tabs.get(i10);
-            org.telegram.ui.k4 k4Var = p3Var.J;
-            if (k4Var != null && !k4Var.d0.isEmpty()) {
-                Object i11 = i2.o1.i(1, p3Var.J.d0);
-                if ((i11 instanceof TLRPC.WebPage) && ((TLRPC.WebPage) i11).id == webPage.id) {
-                    e(p3Var);
-                    return p3Var;
-                }
-            }
-        }
-        return null;
-    }
-
-    public final void n() {
-        CharSequence replaceEmoji;
-        ArrayList<p3> tabs = getTabs();
-        ArrayList<n3> tabDrawables = getTabDrawables();
-        CharSequence charSequence = null;
-        for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
-            n3 n3Var = tabDrawables.get(i10);
-            if (tabs.size() <= 1 || n3Var.c != 0) {
-                replaceEmoji = Emoji.replaceEmoji(n3Var.a.b(), getTextPaint().getFontMetricsInt(), false);
-                n3Var.v = null;
-            } else {
-                replaceEmoji = Emoji.replaceEmoji(LocaleController.formatPluralString("BotMoreTabs", tabs.size() - 1, n3Var.a.b()), getTextPaint().getFontMetricsInt(), false);
-                if (replaceEmoji == null) {
-                    n3Var.v = null;
-                } else {
-                    n3Var.v = new i11(replaceEmoji, 17.0f, AndroidUtilities.bold());
-                }
-            }
-            charSequence = replaceEmoji;
-        }
-        if (tabs.isEmpty()) {
-            setImportantForAccessibility(2);
-            setContentDescription(LocaleController.formatString(R.string.AccDescrTabs, ""));
+            dVar.j(str);
             return;
         }
-        setImportantForAccessibility(1);
-        int i11 = R.string.AccDescrTabs;
-        if (charSequence == null) {
-            charSequence = "";
-        }
-        setContentDescription(LocaleController.formatString(i11, charSequence));
-    }
-
-    public final void o(boolean z10) {
-        if (this.H == getExpandedHeight()) {
-            return;
-        }
-        ValueAnimator valueAnimator = this.F;
-        if (valueAnimator != null) {
-            this.F = null;
-            valueAnimator.cancel();
-        }
-        this.H = getExpandedHeight();
-        Iterator it = this.J.iterator();
-        while (it.hasNext()) {
-            ((Runnable) it.next()).run();
-        }
-        if (z10) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, this.H);
-            this.F = ofFloat;
-            ofFloat.addUpdateListener(new v0(this, 4));
-            this.F.addListener(new h(this, 3));
-            this.F.setDuration(250L);
-            this.F.setInterpolator(o1.w);
-            this.F.start();
+        Rect bounds = c10.l.getBounds();
+        rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
+        dVar.h(rect);
+        if (TextUtils.isEmpty(b10)) {
+            str2 = LocaleController.getString(R.string.Close);
         } else {
-            this.G = this.H;
-            invalidate();
+            str2 = LocaleController.getString(R.string.Close) + ", " + b10;
         }
-        Object parent = getParent();
-        if (parent instanceof View) {
-            WeakHashMap weakHashMap = r0.i0.a;
-            r0.y.c((View) parent);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return j(motionEvent.getX(), motionEvent.getY(), motionEvent.getAction()) || super.onTouchEvent(motionEvent);
-    }
-
-    public void setCurrentAccount(int i10) {
-        if (this.w != i10) {
-            this.w = i10;
-            o(false);
-            invalidate();
-        }
-    }
-
-    public void setNavigationBarColor(int i10) {
-        i(i10, true);
-    }
-
-    public void setupTab(n3 n3Var) {
-        int a2 = this.r.a(this.n, false);
-        float e = this.v.e(this.s);
-        n3Var.w = 0.0f;
-        boolean z10 = e > 0.5f;
-        n3Var.m = a2;
-        n3Var.o = z10;
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        super.verifyDrawable(drawable);
-        return true;
+        dVar.j(str2);
     }
 }

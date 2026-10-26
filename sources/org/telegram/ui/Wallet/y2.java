@@ -25,19 +25,20 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.cn0;
-import org.telegram.ui.Components.di0;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.ae0;
+import org.telegram.ui.Components.ci0;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.hn0;
+import org.telegram.ui.Components.zq;
 import org.telegram.ui.w10;
+import org.telegram.ui.xd0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class y2 extends Dialog {
     public static final /* synthetic */ int W = 0;
-    public final gh.b E;
-    public final bh.b F;
+    public final hh.b E;
+    public final ch.b F;
     public Bitmap G;
     public i0.b H;
     public float I;
@@ -54,44 +55,44 @@ public final class y2 extends Dialog {
     public boolean T;
     public Runnable U;
     public final int[] V;
-    public final org.telegram.ui.ActionBar.o2 a;
-    public final di0 b;
+    public final org.telegram.ui.ActionBar.r2 a;
+    public final ci0 b;
     public final boolean c;
     public final boolean d;
     public final boolean e;
     public final RectF f;
     public final w2 h;
     public final x2 n;
-    public final x5 r;
+    public final w5 r;
     public final t7 s;
-    public final ci.h4 v;
+    public final di.i4 v;
     public final TextView w;
     public final Paint x;
     public final RectF y;
 
-    public y2(org.telegram.ui.ActionBar.o2 o2Var, di0 di0Var, TLRPC.User user, TL_wallet.card cardVar) {
-        super(o2Var.getParentActivity(), R.style.TransparentDialog);
+    public y2(org.telegram.ui.ActionBar.r2 r2Var, ci0 ci0Var, TLRPC.User user, TL_wallet.card cardVar) {
+        super(r2Var.getParentActivity(), R.style.TransparentDialog);
         RectF rectF = new RectF();
         this.f = rectF;
         this.x = new Paint(3);
         this.y = new RectF();
-        gh.b bVar = new gh.b();
+        hh.b bVar = new hh.b();
         this.E = bVar;
         this.H = i0.b.e;
         this.L = new w10();
         this.M = new RectF();
         this.N = new RectF();
         this.V = new int[2];
-        this.a = o2Var;
-        this.b = di0Var;
+        this.a = r2Var;
+        this.b = ci0Var;
         int i10 = 1;
-        boolean z10 = user != null && user.id == UserConfig.getInstance(o2Var.getCurrentAccount()).getClientUserId();
+        boolean z10 = user != null && user.id == UserConfig.getInstance(r2Var.getCurrentAccount()).getClientUserId();
         this.e = z10;
-        boolean z11 = (user == null || z10 || !MessagesController.getInstance(o2Var.getCurrentAccount()).config.walletAvailable.get()) ? false : true;
+        boolean z11 = (user == null || z10 || !MessagesController.getInstance(r2Var.getCurrentAccount()).config.walletAvailable.get()) ? false : true;
         this.c = z11;
         this.d = (user == null || z10 || z11) ? false : true;
-        di0Var.getLocationOnScreen(new int[2]);
-        rectF.set(di0Var.v);
+        ci0Var.getLocationOnScreen(new int[2]);
+        rectF.set(ci0Var.v);
         rectF.offset(r12[0], r12[1]);
         AndroidUtilities.enableEdgeToEdge(getWindow());
         w2 w2Var = new w2(this, getContext());
@@ -99,69 +100,69 @@ public final class y2 extends Dialog {
         x2 x2Var = new x2(this, getContext());
         this.n = x2Var;
         x2Var.setAlpha(0.0f);
-        w2Var.addView(x2Var, w7.z5.c(-1.0f, -1));
+        w2Var.addView(x2Var, gb1.g(-1.0f, -1));
         w2Var.setClipChildren(false);
         w2Var.setClipToPadding(false);
         w2Var.setOnClickListener(new s2(this, r9));
         n2 n2Var = new n2(this, 1);
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.i(w2Var, n2Var);
-        x5 x5Var = new x5(getContext());
-        this.r = x5Var;
-        x5Var.setDiamondOnCard(true);
-        int currentAccount = o2Var.getCurrentAccount();
+        w5 w5Var = new w5(getContext());
+        this.r = w5Var;
+        w5Var.setDiamondOnCard(true);
+        int currentAccount = r2Var.getCurrentAccount();
         String userName = UserObject.getUserName(user);
         Locale locale = Locale.ROOT;
-        x5Var.setCardHolder(userName.toUpperCase(locale));
+        w5Var.setCardHolder(userName.toUpperCase(locale));
         if (!TextUtils.isEmpty(cardVar.address)) {
-            x5Var.setCardNumber(x5.d(cardVar.address.toUpperCase(locale)));
+            w5Var.setCardNumber(w5.d(cardVar.address.toUpperCase(locale)));
         }
-        x5Var.j(currentAccount, cardVar.balance);
+        w5Var.j(currentAccount, cardVar.balance);
         CharSequence l4 = l0.w(currentAccount).l(cardVar.balance, false);
         if (!TextUtils.isEmpty(l4)) {
-            x5Var.O.c(l4, false, true);
+            w5Var.O.c(l4, false, true);
         }
         int i11 = 24;
-        x5Var.setCardOnClickListener(new ae0(i11, this, o2Var));
-        x5Var.setOnClickListener(new ah.f(i11));
-        x5Var.setAlpha(0.0f);
-        w2Var.addView(x5Var, w7.z5.c(-2.0f, -2));
-        t7 t7Var = new t7(o2Var, x5Var, null, cardVar);
+        w5Var.setCardOnClickListener(new xd0(i11, this, r2Var));
+        w5Var.setOnClickListener(new bh.f(i11));
+        w5Var.setAlpha(0.0f);
+        w2Var.addView(w5Var, gb1.g(-2.0f, -2));
+        t7 t7Var = new t7(r2Var, w5Var, null, cardVar);
         this.s = t7Var;
-        w2Var.addView(t7Var, w7.z5.c(-1.0f, -1));
-        bh.b bVar2 = new bh.b(bVar);
+        w2Var.addView(t7Var, gb1.g(-1.0f, -1));
+        ch.b bVar2 = new ch.b(bVar);
         this.F = bVar2;
-        bVar2.f = new ih.k(w2Var);
+        bVar2.f = new jh.k(w2Var);
         bVar2.g = w2Var;
-        ci.h4 h4Var = new ci.h4(getContext());
-        this.v = h4Var;
-        dh.d c10 = bVar2.c(h4Var, new eh.b(org.telegram.ui.ActionBar.k6.d6, o2Var.getResourceProvider()), false);
-        c10.p(AndroidUtilities.dp(8.0f));
-        c10.q(AndroidUtilities.dp(22.0f));
-        h4Var.setBackground(c10);
-        w7.b6.b(h4Var, 0.02f, 1.2f);
-        ei.d dVar = new ei.d(getContext(), o2Var.getResourceProvider(), true);
+        di.i4 i4Var = new di.i4(getContext());
+        this.v = i4Var;
+        eh.d c10 = bVar2.c(i4Var, new fh.b(org.telegram.ui.ActionBar.y6.d6, r2Var.getResourceProvider()), false);
+        c10.w(AndroidUtilities.dp(8.0f));
+        c10.x(AndroidUtilities.dp(22.0f));
+        i4Var.setBackground(c10);
+        gb1.c(i4Var, 0.02f, 1.2f);
+        fi.d dVar = new fi.d(getContext(), r2Var.getResourceProvider(), true);
         dVar.setUseWrapContent(true);
         dVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         dVar.setRoundRadius(19);
         CharSequence string = LocaleController.getString(z10 ? R.string.WalletOpenMyMoney : z11 ? R.string.WalletSendMoney : R.string.HowDoesItWork);
         if (z11) {
             SpannableStringBuilder append = new SpannableStringBuilder("G  ").append(string);
-            xq xqVar = new xq(R.drawable.mini_gram_24, 0);
-            xqVar.setSize(AndroidUtilities.dp(20.0f));
-            xqVar.setOverrideColor(-1);
-            append.setSpan(xqVar, 0, 1, 33);
+            zq zqVar = new zq(R.drawable.mini_gram_24, 0);
+            zqVar.setSize(AndroidUtilities.dp(20.0f));
+            zqVar.setOverrideColor(-1);
+            append.setSpan(zqVar, 0, 1, 33);
             dVar.i(append, false, true);
         } else {
             dVar.i(string, false, true);
         }
         dVar.setStateListAnimator(null);
-        h4Var.addView(dVar, w7.z5.e(-2, -1, 17));
-        h4Var.setContentDescription(string);
-        h4Var.setOnClickListener(new m1(this, o2Var, cardVar, i10));
-        h4Var.setAlpha(0.0f);
-        h4Var.setVisibility(c() ? 0 : 8);
-        w2Var.addView(h4Var, w7.z5.e(-2, 60, 81));
+        i4Var.addView(dVar, gb1.i(-2, -1, 17));
+        i4Var.setContentDescription(string);
+        i4Var.setOnClickListener(new m1(this, r2Var, cardVar, i10));
+        i4Var.setAlpha(0.0f);
+        i4Var.setVisibility(c() ? 0 : 8);
+        w2Var.addView(i4Var, gb1.i(-2, 60, 81));
         TextView textView = new TextView(getContext());
         this.w = textView;
         textView.setTextSize(14.0f);
@@ -174,10 +175,10 @@ public final class y2 extends Dialog {
             textView.setText(LocaleController.getString(R.string.WalletPublicBalanceNote));
         } else if (user != null) {
             String firstName = UserObject.getFirstName(user);
-            textView.setText(ei.x3.b(new BigDecimal(l0.o(cardVar.balance, false)).signum() == 0 ? LocaleController.formatString(R.string.WalletProfileOwnsNoGrams, firstName) : LocaleController.formatString(R.string.WalletProfileOwnsGrams, firstName, l0.k("Grams", x5.e(cardVar.balance).toString(), R.string.Grams_other).toString().replace(' ', (char) 160)), textView.getPaint()));
+            textView.setText(fi.v3.b(new BigDecimal(l0.o(cardVar.balance, false)).signum() == 0 ? LocaleController.formatString(R.string.WalletProfileOwnsNoGrams, firstName) : LocaleController.formatString(R.string.WalletProfileOwnsGrams, firstName, l0.k("Grams", w5.e(cardVar.balance).toString(), R.string.Grams_other).toString().replace(' ', (char) 160)), textView.getPaint()));
         }
         textView.setVisibility(user == null ? 8 : 0);
-        w2Var.addView(textView, w7.z5.e(-2, -2, 49));
+        w2Var.addView(textView, gb1.i(-2, -2, 49));
     }
 
     public final void a(float f7) {
@@ -192,15 +193,15 @@ public final class y2 extends Dialog {
             this.T = true;
         }
         this.K = f7 == 1.0f;
-        x5 x5Var = this.r;
-        x5Var.getClass();
-        x5Var.setLayerType(2, null);
+        w5 w5Var = this.r;
+        w5Var.getClass();
+        w5Var.setLayerType(2, null);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.I, f7);
         this.O = ofFloat;
         ofFloat.setDuration(f7 == 1.0f ? 650L : 380L);
         this.O.setInterpolator(new LinearInterpolator());
         this.O.addUpdateListener(new v2(this, 0));
-        this.O.addListener(new org.telegram.ui.ActionBar.y0(this, f7, 6));
+        this.O.addListener(new org.telegram.ui.ActionBar.a1(this, f7, 7));
         this.O.start();
     }
 
@@ -228,16 +229,16 @@ public final class y2 extends Dialog {
     }
 
     public final void d() {
-        boolean q6 = org.telegram.ui.ActionBar.k6.I.q();
+        boolean q5 = org.telegram.ui.ActionBar.y6.I.q();
         Bitmap bitmap = this.G;
         TextView textView = this.w;
         if (bitmap != null && !bitmap.isRecycled()) {
             w2 w2Var = this.h;
             if (w2Var.getWidth() > 0 && w2Var.getHeight() > 0) {
-                q6 = AndroidUtilities.computePerceivedBrightness(this.G.getPixel(Utilities.clamp((int) (((((float) (textView.getRight() + textView.getLeft())) / 2.0f) / ((float) w2Var.getWidth())) * ((float) this.G.getWidth())), this.G.getWidth() - 1, 0), Utilities.clamp((int) (((((float) (textView.getBottom() + textView.getTop())) / 2.0f) / ((float) w2Var.getHeight())) * ((float) this.G.getHeight())), this.G.getHeight() - 1, 0))) < 0.5f;
+                q5 = AndroidUtilities.computePerceivedBrightness(this.G.getPixel(Utilities.clamp((int) (((((float) (textView.getRight() + textView.getLeft())) / 2.0f) / ((float) w2Var.getWidth())) * ((float) this.G.getWidth())), this.G.getWidth() - 1, 0), Utilities.clamp((int) (((((float) (textView.getBottom() + textView.getTop())) / 2.0f) / ((float) w2Var.getHeight())) * ((float) this.G.getHeight())), this.G.getHeight() - 1, 0))) < 0.5f;
             }
         }
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.o1(0.41f, q6 ? -1 : -16777216));
+        textView.setTextColor(org.telegram.ui.ActionBar.y6.o1(0.41f, q5 ? -1 : -16777216));
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface
@@ -260,9 +261,9 @@ public final class y2 extends Dialog {
 
     public final void e() {
         float f7;
-        float interpolation = bs.g.getInterpolation(Math.max(0.0f, Math.min(1.0f, this.I / 0.4f)));
+        float interpolation = ds.g.getInterpolation(Math.max(0.0f, Math.min(1.0f, this.I / 0.4f)));
         float max = Math.max(0.0f, Math.min(1.0f, (this.I - 0.3f) / 0.7f));
-        float interpolation2 = bs.h.getInterpolation(max);
+        float interpolation2 = ds.h.getInterpolation(max);
         if (this.K) {
             float sqrt = ((float) Math.sqrt(0.4375d)) * 10.0f;
             double d = max * sqrt;
@@ -270,9 +271,9 @@ public final class y2 extends Dialog {
         } else {
             f7 = interpolation2;
         }
-        x5 x5Var = this.r;
-        float width = x5Var.getWidth();
-        float height = x5Var.getHeight();
+        w5 w5Var = this.r;
+        float width = w5Var.getWidth();
+        float height = w5Var.getHeight();
         RectF rectF = this.f;
         float max2 = Math.max(0.2f, Math.min(1.0f, rectF.width() / Math.max(1.0f, height)));
         float lerp = AndroidUtilities.lerp(max2, 1.0f, f7);
@@ -283,8 +284,8 @@ public final class y2 extends Dialog {
         float centerX = rectF.centerX() - iArr[0];
         float f12 = width / 2.0f;
         float f13 = height / 2.0f;
-        float lerp2 = AndroidUtilities.lerp(centerX, x5Var.getLeft() + f12, f7);
-        float lerp3 = AndroidUtilities.lerp((f11 * interpolation) + (f10 - (f11 / 2.0f)), x5Var.getTop() + f13, f7);
+        float lerp2 = AndroidUtilities.lerp(centerX, w5Var.getLeft() + f12, f7);
+        float lerp3 = AndroidUtilities.lerp((f11 * interpolation) + (f10 - (f11 / 2.0f)), w5Var.getTop() + f13, f7);
         float f14 = 1.0f - f7;
         float f15 = (-90.0f) * f14;
         double d10 = f15;
@@ -293,34 +294,34 @@ public final class y2 extends Dialog {
         float f16 = centerX - lerp2;
         float f17 = f10 - lerp3;
         float f18 = (((sin * f17) + (cos * f16)) / lerp) + f12;
-        float f19 = (((f17 * cos) + ((-sin) * f16)) / lerp) + f13;
+        float f19 = (((cos * f17) + ((-sin) * f16)) / lerp) + f13;
         float lerp4 = AndroidUtilities.lerp(f18, f12, interpolation2);
         float lerp5 = AndroidUtilities.lerp(f19, f13, interpolation2);
         float f20 = lerp4 - f12;
         float f21 = lerp5 - f13;
-        x5Var.setPivotX(lerp4);
-        x5Var.setPivotY(lerp5);
-        x5Var.setScaleX(lerp);
-        x5Var.setScaleY(lerp);
-        x5Var.setRotation(f15);
-        x5Var.setRotationX(35.0f * f14);
-        x5Var.setTranslationX((((cos * f20) - (sin * f21)) * lerp) + ((lerp2 - x5Var.getLeft()) - lerp4));
-        x5Var.setTranslationY((((cos * f21) + (sin * f20)) * lerp) + ((lerp3 - x5Var.getTop()) - lerp5));
-        x5Var.setAlpha(this.I > 0.0f ? 1.0f : 0.0f);
-        x5Var.setUseGyroscope(this.Q * interpolation2);
+        w5Var.setPivotX(lerp4);
+        w5Var.setPivotY(lerp5);
+        w5Var.setScaleX(lerp);
+        w5Var.setScaleY(lerp);
+        w5Var.setRotation(f15);
+        w5Var.setRotationX(35.0f * f14);
+        w5Var.setTranslationX((((cos * f20) - (sin * f21)) * lerp) + ((lerp2 - w5Var.getLeft()) - lerp4));
+        w5Var.setTranslationY(org.telegram.ui.d3.e(cos, f21, sin * f20, lerp, (lerp3 - w5Var.getTop()) - lerp5));
+        w5Var.setAlpha(this.I > 0.0f ? 1.0f : 0.0f);
+        w5Var.setUseGyroscope(this.Q * interpolation2);
         float f22 = 1.0f - interpolation2;
         this.J = Math.max(0.0f, f10 * f22);
         this.b.setEjectProgress(interpolation);
         this.n.setAlpha(this.I);
         this.s.setAlpha(interpolation2);
-        ci.h4 h4Var = this.v;
-        h4Var.setAlpha(interpolation2);
+        di.i4 i4Var = this.v;
+        i4Var.setAlpha(interpolation2);
         TextView textView = this.w;
         textView.setAlpha(interpolation2);
         textView.setTranslationY((-AndroidUtilities.dp(8.0f)) * f22);
-        h4Var.setTranslationY(AndroidUtilities.dp(16.0f) * f22);
-        h4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
-        h4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
+        i4Var.setTranslationY(AndroidUtilities.dp(16.0f) * f22);
+        i4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
+        i4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, interpolation2));
         this.h.invalidate();
     }
 
@@ -342,14 +343,14 @@ public final class y2 extends Dialog {
         window.setStatusBarColor(0);
         window.setNavigationBarColor(0);
         w2Var.setSystemUiVisibility(1792);
-        AndroidUtilities.setLightNavigationBar(w2Var, !org.telegram.ui.ActionBar.k6.I.q());
-        AndroidUtilities.setLightStatusBar(window, !org.telegram.ui.ActionBar.k6.I.q());
+        AndroidUtilities.setLightNavigationBar(w2Var, !org.telegram.ui.ActionBar.y6.I.q());
+        AndroidUtilities.setLightStatusBar(window, !org.telegram.ui.ActionBar.y6.I.q());
     }
 
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
-            cn0.d(new d(this, 6));
+            hn0.d(new d(this, 6));
             super.show();
             WeakHashMap weakHashMap = r0.i0.a;
             r0.y.c(this.h);

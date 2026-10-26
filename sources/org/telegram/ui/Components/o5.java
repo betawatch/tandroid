@@ -1,9 +1,58 @@
 package org.telegram.ui.Components;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface o5 {
-    void a(TLRPC.Document document);
+public final /* synthetic */ class o5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p5 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ TLObject d;
+
+    public /* synthetic */ o5(p5 p5Var, ArrayList arrayList, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = p5Var;
+        this.c = arrayList;
+        this.d = tLObject;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new o5(this.b, this.c, this.d, 1));
+                break;
+            default:
+                p5 p5Var = this.b;
+                int i10 = p5Var.e;
+                HashSet hashSet = new HashSet(this.c);
+                TLObject tLObject = this.d;
+                if (tLObject instanceof Vector) {
+                    ArrayList arrayList = ((Vector) tLObject).objects;
+                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new m5(p5Var, arrayList, 1));
+                    p5Var.d(arrayList);
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        if (arrayList.get(i11) instanceof TLRPC.Document) {
+                            hashSet.remove(Long.valueOf(((TLRPC.Document) arrayList.get(i11)).id));
+                        }
+                    }
+                    if (!hashSet.isEmpty()) {
+                        ArrayList<Long> arrayList2 = new ArrayList<>(hashSet);
+                        TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                        tL_messages_getCustomEmojiDocuments.document_id = arrayList2;
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.z7(11, p5Var, arrayList2));
+                        break;
+                    }
+                }
+                break;
+        }
+    }
 }

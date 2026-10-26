@@ -1,108 +1,35 @@
 package si;
 
-import android.os.Handler;
+import ag.e;
+import android.util.SparseArray;
+import j$.util.Comparator$-CC;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
+public final class a {
+    public SparseArray a;
 
-    public /* synthetic */ a(j jVar, int i10) {
-        this.a = i10;
-        this.b = jVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        m mVar;
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                this.b.u();
-                return;
-            case 1:
-                this.b.d0();
-                return;
-            case 2:
-                j jVar = this.b;
-                Handler handler = jVar.n;
-                if (handler != null) {
-                    handler.post(new a(jVar, 3));
-                    return;
-                }
-                return;
-            case 3:
-                j jVar2 = this.b;
-                if (!jVar2.V || jVar2.A == null || (mVar = jVar2.x) == null) {
-                    return;
-                }
-                synchronized (mVar) {
-                    z10 = mVar.z;
-                }
-                if (z10) {
-                    return;
-                }
-                try {
-                    m mVar2 = jVar2.x;
-                    jVar2.y = mVar2;
-                    Handler handler2 = jVar2.n;
-                    if (handler2 != null) {
-                        handler2.removeCallbacks(jVar2.m1);
-                        handler2.postDelayed(jVar2.m1, 3000L);
-                    }
-                    mVar2.p(new d(jVar2, mVar2, 0), new d(jVar2, mVar2, 1));
-                    jVar2.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + j.z(jVar2.E0));
-                    return;
-                } catch (RuntimeException e) {
-                    jVar2.k();
-                    jVar2.N(e);
-                    return;
-                }
-            case 4:
-                j jVar3 = this.b;
-                m mVar3 = jVar3.y;
-                if (!jVar3.V || jVar3.b0 || mVar3 == null || jVar3.x != mVar3) {
-                    return;
-                }
-                jVar3.y = null;
-                jVar3.N(new IllegalStateException("Timed out waiting for synchronized audio and video start"));
-                return;
-            case 5:
-                this.b.g();
-                return;
-            case 6:
-                j jVar4 = this.b;
-                jVar4.V = false;
-                jVar4.k();
-                m mVar4 = jVar4.x;
-                if (mVar4 != null) {
-                    long l4 = mVar4.l();
-                    t tVar = jVar4.w;
-                    if (tVar != null && l4 != Long.MAX_VALUE) {
-                        tVar.q = Math.max(0L, l4) * 1000;
-                        Handler handler3 = tVar.u;
-                        if (handler3 != null) {
-                            handler3.removeCallbacks(tVar.x0);
-                        }
-                    }
-                }
-                jVar4.p();
-                m mVar5 = jVar4.x;
-                if (mVar5 != null) {
-                    mVar5.q();
-                    jVar4.x = null;
-                }
-                jVar4.b0 = false;
-                u0 u0Var = (u0) jVar4.k.b;
-                u0Var.i.post(new j0(u0Var, 3));
-                return;
-            case 7:
-                this.b.I();
-                return;
-            default:
-                this.b.d0();
-                return;
+    public final void a(HashMap hashMap) {
+        if (this.a != null) {
+            for (Map.Entry entry : hashMap.entrySet()) {
+                this.a.put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
+            }
+            return;
+        }
+        this.a = new SparseArray(hashMap.size());
+        ArrayList arrayList = new ArrayList(hashMap.entrySet());
+        Collections.sort(arrayList, Comparator$-CC.comparingInt(new e(20)));
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            Map.Entry entry2 = (Map.Entry) obj;
+            this.a.append(((String) entry2.getKey()).hashCode(), (String) entry2.getValue());
         }
     }
 }

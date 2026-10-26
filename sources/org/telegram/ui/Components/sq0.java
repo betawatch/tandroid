@@ -1,138 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class sq0 extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ tq0 x;
+public final class sq0 implements ig.g0 {
+    public final /* synthetic */ mr0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sq0(tq0 tq0Var, tq0 tq0Var2) {
-        super(tq0Var2);
-        this.x = tq0Var;
+    public sq0(mr0 mr0Var) {
+        this.a = mr0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1
-    public final boolean b() {
-        ir0 ir0Var = this.x.G0;
-        if (ir0Var.isDismissed() || !ir0Var.Z) {
-            return false;
+    @Override // ig.g0
+    public final void a(a0.h hVar, ArrayList arrayList) {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            TLObject tLObject = ((ig.h0) arrayList.get(i13)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i13);
+                i13--;
+            }
+            i13++;
         }
-        return !ir0Var.d.m();
-    }
-
-    /* JADX WARN: Incorrect condition in loop: B:3:0x000f */
-    @Override // org.telegram.ui.ActionBar.o1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void e(float f7, float f10, boolean z10) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        tq0 tq0Var = this.x;
-        ir0 ir0Var = tq0Var.G0;
-        int i10 = ir0.d1;
-        for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.h3) ir0Var).containerView;
-            View childAt = viewGroup2.getChildAt(i11);
-            if (childAt != ir0Var.h && childAt != ir0Var.w && childAt != ir0Var.T[1] && childAt != ir0Var.y && childAt != ir0Var.c && childAt != ir0Var.d0 && childAt != ir0Var.f) {
-                childAt.setTranslationY(f7);
+        mr0 mr0Var = this.a;
+        mr0Var.F0 = arrayList;
+        for (int i14 = 0; i14 < mr0Var.F0.size(); i14++) {
+            ig.h0 h0Var = (ig.h0) mr0Var.F0.get(i14);
+            TLObject tLObject2 = h0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                i12 = ((org.telegram.ui.ActionBar.k3) mr0Var).currentAccount;
+                MessagesController.getInstance(i12).putUser((TLRPC.User) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                i11 = ((org.telegram.ui.ActionBar.k3) mr0Var).currentAccount;
+                MessagesController.getInstance(i11).putChat((TLRPC.Chat) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                i10 = ((org.telegram.ui.ActionBar.k3) mr0Var).currentAccount;
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) h0Var.a, true);
             }
         }
-        lq0 lq0Var = ir0Var.G;
-        ir0Var.u0 = f7;
-        int i12 = tq0Var.B0;
-        if (i12 != -1) {
-            if (!z10) {
-                f10 = 1.0f - f10;
-            }
-            float f11 = 1.0f - f10;
-            ir0Var.q0 = (int) ((tq0Var.C0 * f10) + (i12 * f11));
-            float f12 = ((i12 - r6) * f11) + f7;
-            lq0Var.setTranslationY(f12);
-            if (z10) {
-                ir0Var.H.setTranslationY(f12);
-            } else {
-                ir0Var.H.setTranslationY(f12 + ir0Var.G.getPaddingTop());
-            }
-        } else {
-            int i13 = tq0Var.D0;
-            if (i13 != -1) {
-                float f13 = 1.0f - f10;
-                ir0Var.q0 = (int) ((tq0Var.E0 * f10) + (i13 * f13));
-                if (!z10) {
-                    f13 = f10;
-                }
-                if (z10) {
-                    lq0Var.setTranslationY(f7 - ((i13 - r6) * f10));
-                } else {
-                    lq0Var.setTranslationY(((r6 - i13) * f13) + f7);
-                }
-            }
-        }
-        ir0Var.G.setTopGlowOffset((int) (ir0Var.q0 + ir0Var.u0));
-        ir0Var.b.setTranslationY(ir0Var.q0 + ir0Var.u0);
-        ir0Var.R.setTranslationY(ir0Var.q0 + ir0Var.u0);
-        ir0Var.c.invalidate();
-        ir0Var.setCurrentPanTranslationY(ir0Var.u0);
-        ir0Var.e1();
-        tq0Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.o1
-    public final void f() {
-        ir0 ir0Var = this.x.G0;
-        nq0 nq0Var = ir0Var.d;
-        if (nq0Var == null || !nq0Var.m()) {
-            int i10 = ir0Var.O0;
-            AndroidUtilities.dp(20.0f);
-        }
-        ir0Var.s0 = false;
-        int i11 = ir0Var.q0;
-        ir0Var.r0 = i11;
-        ir0Var.G.setTopGlowOffset(i11);
-        ir0Var.b.setTranslationY(ir0Var.q0);
-        ir0Var.R.setTranslationY(ir0Var.q0);
-        ir0Var.G.setTranslationY(0.0f);
-        ir0Var.H.setTranslationY(0.0f);
-        ir0Var.e1();
-    }
-
-    @Override // org.telegram.ui.ActionBar.o1
-    public final void g(int i10, boolean z10) {
-        tq0 tq0Var = this.x;
-        ir0 ir0Var = tq0Var.G0;
-        int i11 = ir0Var.r0;
-        int i12 = ir0Var.q0;
-        if (i11 != i12) {
-            tq0Var.B0 = i11;
-            tq0Var.C0 = i12;
-            ir0Var.s0 = true;
-            ir0Var.q0 = i11;
-        } else {
-            tq0Var.B0 = -1;
-        }
-        int i13 = tq0Var.z0;
-        int i14 = tq0Var.A0;
-        if (i13 != i14) {
-            tq0Var.D0 = 0;
-            tq0Var.E0 = 0;
-            ir0Var.s0 = true;
-            if (z10) {
-                tq0Var.E0 = i13 - i14;
-            } else {
-                tq0Var.E0 = 0 - (i13 - i14);
-            }
-            ir0Var.q0 = z10 ? tq0Var.B0 : tq0Var.C0;
-        } else {
-            tq0Var.D0 = -1;
-        }
-        ir0Var.G.setTopGlowOffset((int) (ir0Var.u0 + ir0Var.q0));
-        ir0Var.b.setTranslationY(ir0Var.u0 + ir0Var.q0);
-        ir0Var.R.setTranslationY(ir0Var.u0 + ir0Var.q0);
-        tq0Var.invalidate();
+        mr0Var.N.l();
     }
 }

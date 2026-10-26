@@ -1,88 +1,48 @@
 package m;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.widget.HeaderViewListAdapter;
-import android.widget.ListAdapter;
-import androidx.appcompat.view.menu.ListMenuItemView;
+import android.os.Build;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.PopupWindow;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class j2 extends s1 {
-    public f2 E;
-    public l.m F;
-    public final int x;
-    public final int y;
+public final class j2 extends d2 implements e2 {
+    public static final Method T;
+    public jg.i S;
 
-    public j2(Context context, boolean z10) {
-        super(context, z10);
-        if (1 == i2.a(context.getResources().getConfiguration())) {
-            this.x = 21;
-            this.y = 22;
-        } else {
-            this.x = 22;
-            this.y = 21;
-        }
-    }
-
-    @Override // m.s1, android.view.View
-    public final boolean onHoverEvent(MotionEvent motionEvent) {
-        l.h hVar;
-        int i10;
-        int pointToPosition;
-        int i11;
-        if (this.E != null) {
-            ListAdapter adapter = getAdapter();
-            if (adapter instanceof HeaderViewListAdapter) {
-                HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
-                i10 = headerViewListAdapter.getHeadersCount();
-                hVar = (l.h) headerViewListAdapter.getWrappedAdapter();
-            } else {
-                hVar = (l.h) adapter;
-                i10 = 0;
+    static {
+        try {
+            if (Build.VERSION.SDK_INT <= 28) {
+                T = PopupWindow.class.getDeclaredMethod("setTouchModal", Boolean.TYPE);
             }
-            l.m item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i11 = pointToPosition - i10) < 0 || i11 >= hVar.getCount()) ? null : hVar.getItem(i11);
-            l.m mVar = this.F;
-            if (mVar != item) {
-                l.k kVar = hVar.a;
-                if (mVar != null) {
-                    this.E.l(kVar, mVar);
-                }
-                this.F = item;
-                if (item != null) {
-                    this.E.q(kVar, item);
-                }
-            }
+        } catch (NoSuchMethodException unused) {
+            Log.i("MenuPopupWindow", "Could not find method setTouchModal() on PopupWindow. Oh well.");
         }
-        return super.onHoverEvent(motionEvent);
     }
 
-    @Override // android.widget.ListView, android.widget.AbsListView, android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
-        ListMenuItemView listMenuItemView = (ListMenuItemView) getSelectedView();
-        if (listMenuItemView != null && i10 == this.x) {
-            if (listMenuItemView.isEnabled() && listMenuItemView.getItemData().hasSubMenu()) {
-                performItemClick(listMenuItemView, getSelectedItemPosition(), getSelectedItemId());
-            }
-            return true;
+    @Override // m.e2
+    public final void Q(l.k kVar, l.m mVar) {
+        jg.i iVar = this.S;
+        if (iVar != null) {
+            iVar.Q(kVar, mVar);
         }
-        if (listMenuItemView == null || i10 != this.y) {
-            return super.onKeyDown(i10, keyEvent);
-        }
-        setSelection(-1);
-        ListAdapter adapter = getAdapter();
-        (adapter instanceof HeaderViewListAdapter ? (l.h) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (l.h) adapter).a.c(false);
-        return true;
     }
 
-    public void setHoverListener(f2 f2Var) {
-        this.E = f2Var;
+    @Override // m.d2
+    public final r1 o(Context context, boolean z10) {
+        i2 i2Var = new i2(context, z10);
+        i2Var.setHoverListener(this);
+        return i2Var;
     }
 
-    @Override // m.s1, android.widget.AbsListView
-    public /* bridge */ /* synthetic */ void setSelector(Drawable drawable) {
-        super.setSelector(drawable);
+    @Override // m.e2
+    public final void q(l.k kVar, MenuItem menuItem) {
+        jg.i iVar = this.S;
+        if (iVar != null) {
+            iVar.q(kVar, menuItem);
+        }
     }
 }

@@ -1,15 +1,15 @@
 package g2;
 
+import a8.yb;
 import android.net.Uri;
 import android.util.Base64;
-import b2.w0;
-import e2.m0;
+import b2.x0;
+import e2.n0;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
-import si.o0;
-import v7.u6;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f extends c {
     public m a;
@@ -43,19 +43,19 @@ public final class f extends c {
         long j10 = mVar.f;
         Uri normalizeScheme = uri.normalizeScheme();
         String scheme = normalizeScheme.getScheme();
-        u6.h("data".equals(scheme), "Unsupported scheme: %s", scheme);
+        yb.h("data".equals(scheme), "Unsupported scheme: %s", scheme);
         String schemeSpecificPart = normalizeScheme.getSchemeSpecificPart();
-        String str = m0.a;
+        String str = n0.a;
         String[] split = schemeSpecificPart.split(",", -1);
         if (split.length != 2) {
-            throw new w0("Unexpected URI format: " + normalizeScheme, null, true, 0);
+            throw new x0("Unexpected URI format: " + normalizeScheme, null, true, 0);
         }
         String str2 = split[1];
         if (split[0].contains(";base64")) {
             try {
                 this.b = Base64.decode(str2, 0);
             } catch (IllegalArgumentException e) {
-                throw new w0(o0.h("Error while parsing Base64 encoded string: ", str2), e, true, 0);
+                throw new x0(b10.j("Error while parsing Base64 encoded string: ", str2), e, true, 0);
             }
         } else {
             this.b = URLDecoder.decode(str2, StandardCharsets.US_ASCII.name()).getBytes(StandardCharsets.UTF_8);
@@ -77,7 +77,7 @@ public final class f extends c {
         return j10 != -1 ? j10 : this.d;
     }
 
-    @Override // b2.o
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
@@ -88,7 +88,7 @@ public final class f extends c {
         }
         int min = Math.min(i11, i12);
         byte[] bArr2 = this.b;
-        String str = m0.a;
+        String str = n0.a;
         System.arraycopy(bArr2, this.c, bArr, i10, min);
         this.c += min;
         this.d -= min;

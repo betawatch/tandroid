@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class h1 extends v0 {
     public final TaskCompletionSource b;
@@ -34,10 +34,10 @@ public final class h1 extends v0 {
         } catch (DeadObjectException e) {
             a(j1.e(e));
             throw e;
-        } catch (RemoteException e7) {
-            a(j1.e(e7));
-        } catch (RuntimeException e10) {
-            this.b.trySetException(e10);
+        } catch (RemoteException e10) {
+            a(j1.e(e10));
+        } catch (RuntimeException e11) {
+            this.b.trySetException(e11);
         }
     }
 
@@ -58,16 +58,16 @@ public final class h1 extends v0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final k6.c[] g(o0 o0Var) {
+    public final l6.c[] g(o0 o0Var) {
         switch (this.c) {
             case 0:
-                return (k6.c[]) ((a1) this.d).a.d;
+                return (l6.c[]) ((a1) this.d).a.d;
             default:
                 a1 a1Var = (a1) o0Var.f.get((n) this.d);
                 if (a1Var == null) {
                     return null;
                 }
-                return (k6.c[]) a1Var.a.d;
+                return (l6.c[]) a1Var.a.d;
         }
     }
 
@@ -75,7 +75,7 @@ public final class h1 extends v0 {
         switch (this.c) {
             case 0:
                 e2.w wVar = ((a1) this.d).a;
-                ((r) ((ai.a) wVar.e).c).accept(o0Var.b, this.b);
+                ((r) ((bi.a) wVar.e).c).accept(o0Var.b, this.b);
                 n nVar = ((p) ((a1) this.d).a.c).c;
                 if (nVar != null) {
                     o0Var.f.put(nVar, (a1) this.d);
@@ -89,7 +89,7 @@ public final class h1 extends v0 {
                     taskCompletionSource.trySetResult(Boolean.FALSE);
                     break;
                 } else {
-                    ((r) ((ai.a) a1Var.b.b).d).accept(o0Var.b, taskCompletionSource);
+                    ((r) ((bi.a) a1Var.b.b).d).accept(o0Var.b, taskCompletionSource);
                     p pVar = (p) a1Var.a.c;
                     pVar.b = null;
                     pVar.c = null;

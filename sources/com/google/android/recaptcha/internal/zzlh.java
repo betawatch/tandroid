@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import be.f0;
-import be.t;
-import kd.c;
-import ld.a;
-import md.i;
-import td.p;
-import v7.i8;
+import a8.jd;
+import ce.f0;
+import ce.t;
+import ld.c;
+import md.a;
+import nd.i;
+import ud.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzlh extends i implements p {
     Object zza;
@@ -24,19 +24,19 @@ final class zzlh extends i implements p {
         this.zzd = zzxnVar;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final c create(Object obj, c cVar) {
         zzlh zzlhVar = new zzlh(this.zzc, this.zzd, cVar);
         zzlhVar.zze = obj;
         return zzlhVar;
     }
 
-    @Override // td.p
+    @Override // ud.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlh) create((zzhk) obj, (c) obj2)).invokeSuspend(id.i.a);
+        return ((zzlh) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzhk zzhkVar2;
@@ -49,7 +49,7 @@ final class zzlh extends i implements p {
             ((t) this.zzc.zzz()).L(e);
         }
         if (i10 == 0) {
-            i8.b(obj);
+            jd.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzib zzp = zzly.zzp(this.zzc);
             zzxn zzxnVar = this.zzd;
@@ -64,15 +64,15 @@ final class zzlh extends i implements p {
         }
         if (i10 != 1) {
             zzhkVar3 = (zzhk) this.zze;
-            i8.b(obj);
+            jd.b(obj);
             zzly zzlyVar = this.zzc;
             zzD = zzlyVar.zzD();
             f0.q(zzD.zzb(), new zzlg(zzlyVar, zzhkVar3, (String) obj, null));
-            return id.i.a;
+            return jd.i.a;
         }
         zzhk zzhkVar4 = (zzhk) this.zza;
         zzhk zzhkVar5 = (zzhk) this.zze;
-        i8.b(obj);
+        jd.b(obj);
         zzhkVar2 = zzhkVar4;
         zzhkVar = zzhkVar5;
         this.zze = zzhkVar;
@@ -86,6 +86,6 @@ final class zzlh extends i implements p {
         zzly zzlyVar2 = this.zzc;
         zzD = zzlyVar2.zzD();
         f0.q(zzD.zzb(), new zzlg(zzlyVar2, zzhkVar3, (String) obj, null));
-        return id.i.a;
+        return jd.i.a;
     }
 }

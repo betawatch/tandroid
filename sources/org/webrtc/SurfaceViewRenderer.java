@@ -7,12 +7,12 @@ import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import com.google.android.gms.internal.play_billing.k3;
+import c3.h0;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
@@ -90,7 +90,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        k3.r(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        h0.q(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);
@@ -144,7 +144,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         if (i12 == 0 || i12 == 180) {
             i10 = i11;
         }
-        postOrRun(new hg.n(this, i13, i10, 13));
+        postOrRun(new i2.v(this, i13, i10, 13));
     }
 
     @Override // android.view.View

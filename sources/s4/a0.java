@@ -1,25 +1,70 @@
 package s4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.view.View;
+import java.util.List;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a0 implements Parcelable {
-    public static final Parcelable.Creator<a0> CREATOR = new p7.m(20);
-    public int a;
+public final class a0 {
+    public boolean a;
     public int b;
-    public boolean c;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public List k;
+    public boolean l;
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    public final void a(View view) {
+        int b10;
+        int size = this.k.size();
+        View view2 = null;
+        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        for (int i11 = 0; i11 < size; i11++) {
+            View view3 = ((e1) this.k.get(i11)).a;
+            q0 q0Var = (q0) view3.getLayoutParams();
+            if (view3 != view && !q0Var.a.j() && (b10 = (q0Var.b() - this.d) * this.e) >= 0 && b10 < i10) {
+                view2 = view3;
+                if (b10 == 0) {
+                    break;
+                } else {
+                    i10 = b10;
+                }
+            }
+        }
+        if (view2 == null) {
+            this.d = -1;
+        } else {
+            this.d = ((q0) view2.getLayoutParams()).b();
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeInt(this.a);
-        parcel.writeInt(this.b);
-        parcel.writeInt(this.c ? 1 : 0);
+    public final boolean b(b1 b1Var) {
+        int i10 = this.d;
+        return i10 >= 0 && i10 < b1Var.b();
+    }
+
+    public final View c(rf.e eVar) {
+        List list = this.k;
+        if (list == null) {
+            View view = eVar.j(this.d, Long.MAX_VALUE).a;
+            this.d += this.e;
+            return view;
+        }
+        int size = list.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            View view2 = ((e1) this.k.get(i10)).a;
+            q0 q0Var = (q0) view2.getLayoutParams();
+            if (!q0Var.a.j() && this.d == q0Var.b()) {
+                a(view2);
+                return view2;
+            }
+        }
+        return null;
     }
 }

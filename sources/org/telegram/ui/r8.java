@@ -1,28 +1,24 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r8 implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class r8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m9 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ o9 b;
 
-    public /* synthetic */ r8(m9 m9Var, int i10, int i11) {
-        this.a = i11;
-        this.b = m9Var;
-        this.c = i10;
+    public /* synthetic */ r8(o9 o9Var, int i10) {
+        this.a = i10;
+        this.b = o9Var;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                this.b.h0(false);
                 break;
             default:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                this.b.d0();
                 break;
         }
     }

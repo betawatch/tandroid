@@ -1,10 +1,11 @@
 package e2;
 
 import java.util.concurrent.ThreadFactory;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -24,19 +25,23 @@ public final /* synthetic */ class l0 implements ThreadFactory {
                 thread.setDaemon(true);
                 return thread;
             case 2:
-                return new Thread(runnable, "Lottie-" + yj0.P0.getAndIncrement());
+                return new Thread(runnable, "Lottie-" + xj0.P0.getAndIncrement());
             case 3:
-                return new Thread(runnable, "LottieLow-" + yj0.Q0.getAndIncrement());
+                return new Thread(runnable, "LottieLow-" + xj0.Q0.getAndIncrement());
             case 4:
-                return new Thread(runnable, "GramWalletStorage");
+                Thread thread2 = new Thread(new s51(runnable, 12), "widget-sandbox-io");
+                thread2.setDaemon(true);
+                return thread2;
             case 5:
+                return new Thread(runnable, "GramWalletStorage");
+            case 6:
                 lambda$new$0 = WalletEngine2.lambda$new$0(runnable);
                 return lambda$new$0;
-            case 6:
-                return new Thread(runnable, "AudioRecorderFiles");
             case 7:
-                return new Thread(runnable, "AudioRecorderOutput");
+                return new Thread(runnable, "AudioRecorderFiles");
             case 8:
+                return new Thread(runnable, "AudioRecorderOutput");
+            case 9:
                 return new Thread(runnable, "RoundVideoFiles");
             default:
                 return new Thread(runnable, "RoundVideoOutput");

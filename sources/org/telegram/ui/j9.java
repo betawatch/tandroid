@@ -1,77 +1,69 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class j9 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public final TextView a;
-    public final TextView b;
-    public final View c;
-    public final org.telegram.ui.Components.bk0 d;
+    public final int a;
+    public final org.telegram.ui.Components.m9 b;
+    public final ImageView c;
+    public final org.telegram.ui.Cells.m6 d;
+    public final org.telegram.ui.Components.zp e;
+    public Drawable f;
+    public Drawable h;
 
-    public j9(m9 m9Var, Context context, org.telegram.ui.Components.b10 b10Var) {
+    public j9(Context context, int i10) {
         super(context);
-        addView(b10Var, w7.z5.c(-1.0f, -1));
-        this.c = b10Var;
-        org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
-        this.d = bk0Var;
-        bk0Var.f(R.raw.utyan_call, 110, 110, null);
-        bk0Var.setAutoRepeat(false);
-        addView(bk0Var, w7.z5.d(110, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
-        bk0Var.setOnClickListener(new a(this, 10));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.G6, null);
-        textView.setText(LocaleController.getString(R.string.MakeYourFirstCall));
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        addView(textView, w7.z5.d(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        String formatString = LocaleController.formatString(R.string.MakeYourFirstCallHint, Integer.valueOf(m9Var.getMessagesController().conferenceCallSizeLimit));
-        if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
-            formatString = formatString.replace('\n', ' ');
+        this.a = i10;
+        org.telegram.ui.Cells.m6 m6Var = new org.telegram.ui.Cells.m6(context, null);
+        this.d = m6Var;
+        m6Var.M0 = true;
+        m6Var.E0 = true;
+        m6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(32.0f), 0);
+        int dp = AndroidUtilities.dp(LocaleController.isRTL ? 2.0f : -2.0f);
+        int i11 = -AndroidUtilities.dp(7.0f);
+        m6Var.b0 = dp;
+        m6Var.c0 = i11;
+        addView(m6Var, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        org.telegram.ui.Components.m9 m9Var = new org.telegram.ui.Components.m9(context, false);
+        this.b = m9Var;
+        m9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
+        m9Var.setStepFactor(0.4f);
+        m9Var.setSize(AndroidUtilities.dp(29.0f));
+        m9Var.setCentered(true);
+        m9Var.setVisibility(8);
+        addView(m9Var, org.telegram.ui.Components.gb1.h(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.il, null, PorterDuff.Mode.SRC_IN);
+        int i12 = org.telegram.ui.ActionBar.y6.i6;
+        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(org.telegram.ui.ActionBar.y6.x0(null, i12, false), 1, -1);
+        org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i12);
+        imageView.setBackground(g02);
+        org.telegram.ui.ActionBar.f7.k(imageView, g02, null, N, null);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setContentDescription(LocaleController.getString(R.string.Call));
+        addView(imageView, org.telegram.ui.Components.gb1.h(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
+        org.telegram.ui.Components.zp zpVar = new org.telegram.ui.Components.zp(context, 21, null);
+        this.e = zpVar;
+        CheckBoxBase checkBoxBase = zpVar.getCheckBoxBase();
+        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.hl, false);
+        if (checkBoxBase.x != x02) {
+            checkBoxBase.x = x02;
+            checkBoxBase.b();
         }
-        textView2.setText(formatString);
-        org.telegram.ui.ActionBar.r6.W(textView2, org.telegram.ui.ActionBar.k6.c7, null);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, w7.z5.d(-1, -2.0f, 17, 17.0f, 80.0f, 17.0f, 0.0f));
-        b10Var.setAlpha(0.0f);
-        bk0Var.setAlpha(0.0f);
-        textView.setAlpha(0.0f);
-        textView2.setAlpha(0.0f);
-        setOnTouchListener(new di.d(4));
-    }
-
-    public final void a() {
-        this.d.animate().alpha(0.0f).setDuration(150L).start();
-        this.a.animate().alpha(0.0f).setDuration(150L).start();
-        this.b.animate().alpha(0.0f).setDuration(150L).start();
-        this.c.animate().alpha(1.0f).setDuration(150L).start();
-    }
-
-    public final void b() {
-        org.telegram.ui.Components.bk0 bk0Var = this.d;
-        bk0Var.animate().alpha(1.0f).setDuration(150L).start();
-        this.a.animate().alpha(1.0f).setDuration(150L).start();
-        this.b.animate().alpha(1.0f).setDuration(150L).start();
-        this.c.animate().alpha(0.0f).setDuration(150L).start();
-        bk0Var.d();
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+        zpVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+        zpVar.setDrawUnchecked(false);
+        zpVar.setDrawBackgroundAsArc(3);
+        addView(zpVar, org.telegram.ui.Components.gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
     }
 }

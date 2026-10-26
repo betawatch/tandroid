@@ -1,32 +1,113 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class mz0 implements aq {
-    public final /* synthetic */ ey a;
-    public final /* synthetic */ nz0 b;
+public final class mz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public mz0(nz0 nz0Var, ey eyVar) {
-        this.b = nz0Var;
-        this.a = eyVar;
+    public /* synthetic */ mz0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.aq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        nz0 nz0Var = this.b;
-        nz0Var.b.O1 = true;
-        this.a.removeSelfFromStack();
-        NotificationCenter notificationCenter = nz0Var.b.getNotificationCenter();
-        ProfileActivity profileActivity = nz0Var.b;
-        int i11 = NotificationCenter.closeChats;
-        notificationCenter.removeObserver(profileActivity, i11);
-        nz0Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.I5 = null;
+                break;
+            case 3:
+                ProfileActivity profileActivity = this.b;
+                profileActivity.O1 = false;
+                profileActivity.a.O0 = true;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.aq
-    public final void a(TLRPC.User user) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (i10) {
+            case 0:
+                if (profileActivity.I5 != null) {
+                    if (profileActivity.L5) {
+                        if (profileActivity.L0) {
+                            profileActivity.Q0.setVisibility(8);
+                        }
+                        if (profileActivity.M0) {
+                            profileActivity.R0.setVisibility(8);
+                        }
+                        if (profileActivity.N0) {
+                            profileActivity.S0.setVisibility(8);
+                        }
+                        profileActivity.T0.setVisibility(8);
+                    } else {
+                        AnimatorSet animatorSet = new AnimatorSet();
+                        profileActivity.J5 = animatorSet;
+                        animatorSet.playTogether(ObjectAnimator.ofFloat(profileActivity, profileActivity.p5, 1.0f));
+                        profileActivity.J5.setDuration(100L);
+                        profileActivity.J5.addListener(new i50(this, 22));
+                        profileActivity.J5.start();
+                    }
+                }
+                profileActivity.x5(false);
+                profileActivity.I5 = null;
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                int i11 = ProfileActivity.R6;
+                profileActivity.r4(true);
+                break;
+            case 2:
+                AnimatorSet animatorSet2 = profileActivity.v;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    profileActivity.v = null;
+                    break;
+                }
+                break;
+            case 3:
+                profileActivity.O1 = false;
+                profileActivity.a.O0 = true;
+                profileActivity.j2.removeListener(this);
+                profileActivity.d1.setBackgroundColor(-16777216);
+                profileActivity.X.setVisibility(8);
+                profileActivity.n0.setVisibility(0);
+                profileActivity.n0.setAlpha(1.0f);
+                break;
+            case 4:
+                profileActivity.j2.removeListener(this);
+                profileActivity.n0.setVisibility(8);
+                profileActivity.n0.setAlpha(1.0f);
+                break;
+            default:
+                profileActivity.w0 = null;
+                profileActivity.fragmentView.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 3:
+                ProfileActivity profileActivity = this.b;
+                ProfileActivity.z3(profileActivity, false);
+                profileActivity.n0.setAnimatedFileMaybe(profileActivity.e0.getImageReceiver().getAnimation());
+                profileActivity.n0.L();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

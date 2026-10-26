@@ -1,37 +1,25 @@
 package org.telegram.messenger;
 
-import android.app.NotificationChannel;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_iv;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wg implements Vector.TLDeserializer, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class wg implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter b;
 
-    public /* synthetic */ wg(int i10) {
+    public /* synthetic */ wg(NotificationCenter notificationCenter, int i10) {
         this.a = i10;
+        this.b = notificationCenter;
     }
 
-    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
-        return (NotificationChannel) obj;
-    }
-
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 2:
-                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z10);
+            case 0:
+                this.b.lambda$checkForExpiredNotifications$0();
+                break;
             default:
-                return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
+                this.b.checkForExpiredNotifications();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        SharedConfig.lambda$checkSdCard$1(c2Var, i10);
     }
 }

@@ -1,54 +1,18 @@
 package gd;
 
-import df.p;
-import df.s;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d extends h {
-    public final /* synthetic */ int e;
+public class d extends f2.f {
+    public String c;
 
-    @Override // gd.h
-    public final p b() {
-        switch (this.e) {
-            case 0:
-                int i10 = this.d + 1;
-                this.d = i10;
-                if (c() != '[') {
-                    return null;
-                }
-                this.d++;
-                s f7 = f("![");
-                i iVar = this.a;
-                af.e eVar = iVar.i;
-                af.e eVar2 = new af.e(f7, i10, eVar, iVar.h, true);
-                if (eVar != null) {
-                    eVar.d = true;
-                }
-                iVar.i = eVar2;
-                return f7;
-            default:
-                int i11 = this.d;
-                this.d = i11 + 1;
-                s f10 = f("[");
-                i iVar2 = this.a;
-                af.e eVar3 = iVar2.i;
-                af.e eVar4 = new af.e(f10, i11, eVar3, iVar2.h, false);
-                if (eVar3 != null) {
-                    eVar3.d = true;
-                }
-                iVar2.i = eVar4;
-                return f10;
-        }
+    @Override // f2.f
+    public final f2.f b() {
+        this.c = null;
+        return this;
     }
 
-    @Override // gd.h
-    public final char d() {
-        switch (this.e) {
-            case 0:
-                return '!';
-            default:
-                return '[';
-        }
+    @Override // f2.f
+    public String toString() {
+        return this.c;
     }
 }

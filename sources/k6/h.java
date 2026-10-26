@@ -1,103 +1,69 @@
 package k6;
 
-import a3.l0;
+import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.Signature;
-import android.util.Log;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import v7.t;
+import android.content.Intent;
+import android.os.Parcelable;
+import com.google.firebase.iid.FirebaseInstanceIdReceiver;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.r2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h implements androidx.emoji2.text.k {
-    public static h b;
-    public final Context a;
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public h(Context context, int i10) {
-        switch (i10) {
-            case 1:
-                this.a = context.getApplicationContext();
-                break;
-            case 2:
-                this.a = context.getApplicationContext();
-                break;
-            default:
-                this.a = context.getApplicationContext();
-                break;
-        }
+    public /* synthetic */ h(FirebaseInstanceIdReceiver firebaseInstanceIdReceiver, Intent intent, Context context, boolean z10, BroadcastReceiver.PendingResult pendingResult) {
+        this.c = intent;
+        this.d = context;
+        this.b = z10;
+        this.e = pendingResult;
     }
 
-    public static h b(Context context) {
-        n6.l.h(context);
-        synchronized (h.class) {
-            try {
-                if (b == null) {
-                    o.a(context);
-                    b = new h(context, 0);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return b;
-    }
-
-    public static final l c(PackageInfo packageInfo, l... lVarArr) {
-        Signature[] signatureArr = packageInfo.signatures;
-        if (signatureArr != null) {
-            if (signatureArr.length != 1) {
-                Log.w("GoogleSignatureVerifier", "Package has more than one signature.");
-                return null;
-            }
-            m mVar = new m(packageInfo.signatures[0].toByteArray());
-            for (int i10 = 0; i10 < lVarArr.length; i10++) {
-                if (lVarArr[i10].equals(mVar)) {
-                    return lVarArr[i10];
-                }
-            }
-        }
-        return null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0032  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0047 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0039  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final boolean d(PackageInfo packageInfo, boolean z10) {
-        PackageInfo packageInfo2;
-        if (z10) {
-            if (packageInfo == null) {
-                packageInfo2 = null;
-                if (packageInfo != null && packageInfo2.signatures != null) {
-                    if ((!z10 ? c(packageInfo2, n.a) : c(packageInfo2, n.a[0])) == null) {
-                        return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                Intent intent = (Intent) this.c;
+                Context context = (Context) this.d;
+                BroadcastReceiver.PendingResult pendingResult = (BroadcastReceiver.PendingResult) this.e;
+                try {
+                    Parcelable parcelableExtra = intent.getParcelableExtra("wrapped_intent");
+                    Intent intent2 = parcelableExtra instanceof Intent ? (Intent) parcelableExtra : null;
+                    int b10 = intent2 != null ? FirebaseInstanceIdReceiver.b(intent2) : FirebaseInstanceIdReceiver.a(context, intent);
+                    if (this.b) {
+                        pendingResult.setResultCode(b10);
                     }
+                    pendingResult.finish();
+                    return;
+                } catch (Throwable th2) {
+                    pendingResult.finish();
+                    throw th2;
                 }
-                return false;
-            }
-            if ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName)) {
-                ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-                z10 = (applicationInfo == null || (applicationInfo.flags & 129) == 0) ? false : true;
-            }
+            default:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) this.e;
+                if (actionBarLayout.e != this) {
+                    return;
+                }
+                actionBarLayout.e = null;
+                r2 r2Var = (r2) this.c;
+                if (r2Var != null) {
+                    r2Var.onTransitionAnimationStart(false, false);
+                }
+                ((r2) this.d).onTransitionAnimationStart(true, false);
+                actionBarLayout.g0(true, true, this.b);
+                return;
         }
-        packageInfo2 = packageInfo;
-        if (packageInfo != null) {
-            if ((!z10 ? c(packageInfo2, n.a) : c(packageInfo2, n.a[0])) == null) {
-            }
-        }
-        return false;
     }
 
-    @Override // androidx.emoji2.text.k
-    public void a(t tVar) {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new androidx.emoji2.text.a("EmojiCompatInitializer", 0));
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
-        threadPoolExecutor.execute(new l0(this, tVar, threadPoolExecutor, 18));
+    public h(ActionBarLayout actionBarLayout, r2 r2Var, r2 r2Var2, boolean z10) {
+        this.e = actionBarLayout;
+        this.c = r2Var;
+        this.d = r2Var2;
+        this.b = z10;
     }
 }

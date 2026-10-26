@@ -1,41 +1,23 @@
 package x7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class ha {
-    public static t7.r a;
+public final class ha extends ia {
+    public static final ha h = new ha("unusedTag");
 
-    public static synchronized fa a(ba baVar) {
-        fa faVar;
-        synchronized (ha.class) {
-            try {
-                if (a == null) {
-                    a = new t7.r(3);
-                }
-                faVar = (fa) a.R0(baVar);
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return faVar;
+    @Override // x7.ia
+    public final /* bridge */ /* synthetic */ void a() {
     }
 
-    public static synchronized fa b() {
-        fa a2;
-        synchronized (ha.class) {
-            byte b10 = (byte) (((byte) 1) | 2);
-            if (b10 != 3) {
-                StringBuilder sb2 = new StringBuilder();
-                if ((b10 & 1) == 0) {
-                    sb2.append(" enableFirelog");
-                }
-                if ((b10 & 2) == 0) {
-                    sb2.append(" firelogEventType");
-                }
-                throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
-            }
-            a2 = a(new ba());
-        }
-        return a2;
+    @Override // x7.ia, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+    }
+
+    @Override // x7.ia
+    public final void b(long j10) {
+    }
+
+    @Override // x7.ia
+    public final void c(long j10) {
     }
 }

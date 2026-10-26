@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -157,7 +157,6 @@ public class SharedConfig {
     public static String searchEngineCustomURLQuery;
     public static int searchEngineType;
     public static boolean searchMessagesAsListUsed;
-    public static boolean shadowsInSections;
     public static boolean showNotificationsForAllAccounts;
     public static boolean shuffleMusic;
     public static boolean sortContactsByName;
@@ -185,8 +184,9 @@ public class SharedConfig {
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
     public static boolean walletUseFingerprintLock;
+    public static boolean widgetStaticLayers;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -207,25 +207,25 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
         public boolean checking;
         public long ping;
-        public qi.a settings;
+        public ti.a settings;
 
-        public ProxyInfo(qi.a aVar) {
+        public ProxyInfo(ti.a aVar) {
             this.settings = aVar;
         }
 
@@ -233,7 +233,7 @@ public class SharedConfig {
         public static ProxyInfo fromSerializedData(int i10, InputSerializedData inputSerializedData) {
             long j10;
             long j11;
-            k2.q0 a2 = qi.a.a();
+            k2.r0 a2 = ti.a.a();
             String readString = inputSerializedData.readString(false);
             if (readString == null) {
                 readString = "";
@@ -260,7 +260,7 @@ public class SharedConfig {
                 j11 = 0;
             }
             if (i10 >= 3) {
-                int e = qi.a.e(inputSerializedData.readInt32(false));
+                int e = ti.a.e(inputSerializedData.readInt32(false));
                 if (e == 0) {
                     e = 1;
                 }
@@ -337,6 +337,7 @@ public class SharedConfig {
         saveStreamMedia = true;
         pauseMusicOnRecord = false;
         pauseMusicOnMedia = false;
+        widgetStaticLayers = true;
         showNotificationsForAllAccounts = true;
         debugVideoQualities = false;
         fontSize = 16;
@@ -424,7 +425,7 @@ public class SharedConfig {
                 return;
             }
             lastLogsCheckTime = currentTimeMillis;
-            Utilities.cacheClearQueue.postRunnable(new gi.l2(currentTimeMillis, 7));
+            Utilities.cacheClearQueue.postRunnable(new hi.t2(currentTimeMillis, 7));
         }
     }
 
@@ -457,22 +458,22 @@ public class SharedConfig {
                 passcodeHash = Utilities.bytesToHex(Utilities.computeSHA256(bArr2, 0, length2));
                 saveConfig();
                 return equals;
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         return equals;
     }
 
     public static void checkSaveToGalleryFiles() {
-        Utilities.globalQueue.postRunnable(new z1(22));
+        Utilities.globalQueue.postRunnable(new a2(24));
     }
 
     public static void checkSdCard(File file) {
         if (file == null || storageCacheDir == null || readOnlyStorageDirAlertShowed || !file.getPath().startsWith(storageCacheDir)) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new z1(21));
+        AndroidUtilities.runOnUIThread(new a2(23));
     }
 
     public static void clearConfig() {
@@ -835,21 +836,21 @@ public class SharedConfig {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$checkSdCard$2() {
-        org.telegram.ui.ActionBar.o2 R;
+        org.telegram.ui.ActionBar.r2 R;
         if (readOnlyStorageDirAlertShowed || (R = LaunchActivity.R()) == null || R.getParentActivity() == null) {
             return;
         }
         storageCacheDir = null;
         saveConfig();
-        ImageLoader.getInstance().checkMediaPaths(new z1(20));
+        ImageLoader.getInstance().checkMediaPaths(new a2(22));
         readOnlyStorageDirAlertShowed = true;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getParentActivity());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.SdCardError);
         alertDialog$Builder.a.S = LocaleController.getString(R.string.SdCardErrorDescription);
-        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new wg(3));
-        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-        c2Var.setCanceledOnTouchOutside(false);
-        c2Var.show();
+        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new yg(3));
+        org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
+        e2Var.setCanceledOnTouchOutside(false);
+        e2Var.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -866,13 +867,13 @@ public class SharedConfig {
         return Long.compare(proxyInfo.ping + j10, proxyInfo2.ping + j11);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x02b8 A[Catch: all -> 0x00fc, TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0487, B:48:0x0495, B:49:0x04fd, B:53:0x047c, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x047b  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0492  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0494  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x047c A[Catch: all -> 0x00fc, TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0487, B:48:0x0495, B:49:0x04fd, B:53:0x047c, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0192 A[Catch: all -> 0x00fc, Exception -> 0x016d, Merged into TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0487, B:48:0x0495, B:49:0x04fd, B:53:0x047c, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0198 A[Catch: all -> 0x00fc, Exception -> 0x016d, Merged into TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0487, B:48:0x0495, B:49:0x04fd, B:53:0x047c, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x02b8 A[Catch: all -> 0x00fc, TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0490, B:48:0x049e, B:49:0x04fd, B:53:0x0485, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0484  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x049b  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x049d  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0485 A[Catch: all -> 0x00fc, TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0490, B:48:0x049e, B:49:0x04fd, B:53:0x0485, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0192 A[Catch: all -> 0x00fc, Exception -> 0x016d, Merged into TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0490, B:48:0x049e, B:49:0x04fd, B:53:0x0485, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0198 A[Catch: all -> 0x00fc, Exception -> 0x016d, Merged into TryCatch #3 {all -> 0x00fc, Exception -> 0x016d, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00f5, B:12:0x00ff, B:14:0x0107, B:16:0x010b, B:17:0x0118, B:19:0x0127, B:20:0x0132, B:22:0x013e, B:24:0x0146, B:26:0x0158, B:27:0x016f, B:57:0x0173, B:60:0x0185, B:62:0x0192, B:64:0x0198, B:65:0x019a, B:67:0x019e, B:69:0x01a4, B:71:0x01aa, B:73:0x01ae, B:77:0x018c, B:29:0x01be, B:31:0x0223, B:34:0x022f, B:36:0x0254, B:39:0x025f, B:41:0x02b8, B:42:0x02ba, B:45:0x0490, B:48:0x049e, B:49:0x04fd, B:53:0x0485, B:82:0x01bb, B:83:0x012e, B:84:0x04ff), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -941,14 +942,14 @@ public class SharedConfig {
                     try {
                         packageInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
                         i10 = packageInfo.versionCode;
-                    } catch (Exception e7) {
-                        e = e7;
+                    } catch (Exception e10) {
+                        e = e10;
                         i10 = 0;
                     }
                     try {
                         str = packageInfo.versionName;
-                    } catch (Exception e10) {
-                        e = e10;
+                    } catch (Exception e11) {
+                        e = e11;
                         FileLog.e(e);
                         str = null;
                         if (i10 == 0) {
@@ -958,7 +959,7 @@ public class SharedConfig {
                         if (pendingAppUpdateBuildVersion == i10) {
                         }
                         pendingAppUpdate = null;
-                        AndroidUtilities.runOnUIThread(new z1(19));
+                        AndroidUtilities.runOnUIThread(new a2(21));
                         sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
                         SaveToGallerySettingsHelper.load(sharedPreferences);
                         mapPreviewType = sharedPreferences.getInt("mapPreviewType", 2);
@@ -1009,6 +1010,7 @@ public class SharedConfig {
                         distanceSystemType = sharedPreferences.getInt("distanceSystemType", 0);
                         keepMedia = sharedPreferences.getInt("keep_media", CacheByChatsController.KEEP_MEDIA_ONE_MONTH);
                         debugWebView = sharedPreferences.getBoolean("debugWebView", false);
+                        widgetStaticLayers = sharedPreferences.getBoolean("widgetStaticLayers", true);
                         lastKeepMediaCheckTime = sharedPreferences.getInt("lastKeepMediaCheckTime", 0);
                         lastLogsCheckTime = sharedPreferences.getInt("lastLogsCheckTime", 0);
                         searchMessagesAsListUsed = sharedPreferences.getBoolean("searchMessagesAsListUsed", false);
@@ -1049,7 +1051,6 @@ public class SharedConfig {
                         multipleReactionsPromoShowed = sharedPreferences.getBoolean("multipleReactionsPromoShowed", false);
                         callEncryptionHintDisplayedCount = sharedPreferences.getInt("callEncryptionHintDisplayedCount", 0);
                         debugVideoQualities = sharedPreferences.getBoolean("debugVideoQualities", false);
-                        shadowsInSections = sharedPreferences.getBoolean("shadowsInSections", false);
                         debugViewMetrics = sharedPreferences.getBoolean("debugViewMetrics", false);
                         photoHighQualityDefault = sharedPreferences.getBoolean("photoHighQualityDefault", false);
                         photoLiveDefault = sharedPreferences.getBoolean("photoLiveDefault", false);
@@ -1065,7 +1066,7 @@ public class SharedConfig {
                     }
                     if (pendingAppUpdateBuildVersion == i10 || (str2 = pendingAppUpdate.version) == null || str.compareTo(str2) >= 0 || BuildVars.DEBUG_PRIVATE_VERSION) {
                         pendingAppUpdate = null;
-                        AndroidUtilities.runOnUIThread(new z1(19));
+                        AndroidUtilities.runOnUIThread(new a2(21));
                     }
                 }
                 sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
@@ -1119,6 +1120,7 @@ public class SharedConfig {
                 distanceSystemType = sharedPreferences.getInt("distanceSystemType", 0);
                 keepMedia = sharedPreferences.getInt("keep_media", CacheByChatsController.KEEP_MEDIA_ONE_MONTH);
                 debugWebView = sharedPreferences.getBoolean("debugWebView", false);
+                widgetStaticLayers = sharedPreferences.getBoolean("widgetStaticLayers", true);
                 lastKeepMediaCheckTime = sharedPreferences.getInt("lastKeepMediaCheckTime", 0);
                 lastLogsCheckTime = sharedPreferences.getInt("lastLogsCheckTime", 0);
                 searchMessagesAsListUsed = sharedPreferences.getBoolean("searchMessagesAsListUsed", false);
@@ -1160,7 +1162,6 @@ public class SharedConfig {
                 multipleReactionsPromoShowed = sharedPreferences.getBoolean("multipleReactionsPromoShowed", false);
                 callEncryptionHintDisplayedCount = sharedPreferences.getInt("callEncryptionHintDisplayedCount", 0);
                 debugVideoQualities = sharedPreferences.getBoolean("debugVideoQualities", false);
-                shadowsInSections = sharedPreferences.getBoolean("shadowsInSections", false);
                 debugViewMetrics = sharedPreferences.getBoolean("debugViewMetrics", false);
                 photoHighQualityDefault = sharedPreferences.getBoolean("photoHighQualityDefault", false);
                 photoLiveDefault = sharedPreferences.getBoolean("photoLiveDefault", false);
@@ -1180,7 +1181,7 @@ public class SharedConfig {
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-        qi.a c10 = qi.a.c(sharedPreferences);
+        ti.a c10 = ti.a.c(sharedPreferences);
         proxyListLoaded = true;
         proxyList.clear();
         currentProxy = null;
@@ -1279,17 +1280,17 @@ public class SharedConfig {
             i12 = (i11 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i11 == 8 && i10 <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder k10 = com.google.android.gms.internal.play_billing.k3.k("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            com.google.android.gms.internal.play_billing.k3.r(k10, ceil, ", memoryClass = ", memoryClass, ", android version ");
-            k10.append(i10);
-            k10.append(", manufacture ");
-            k10.append(Build.MANUFACTURER);
-            k10.append(", screenRefreshRate=");
-            k10.append(AndroidUtilities.screenRefreshRate);
-            k10.append(", screenMaxRefreshRate=");
-            k10.append(AndroidUtilities.screenMaxRefreshRate);
-            k10.append(")");
-            FileLog.d(k10.toString());
+            StringBuilder n10 = c3.h0.n("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
+            c3.h0.q(n10, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            n10.append(i10);
+            n10.append(", manufacture ");
+            n10.append(Build.MANUFACTURER);
+            n10.append(", screenRefreshRate=");
+            n10.append(AndroidUtilities.screenRefreshRate);
+            n10.append(", screenMaxRefreshRate=");
+            n10.append(AndroidUtilities.screenMaxRefreshRate);
+            n10.append(")");
+            FileLog.d(n10.toString());
         }
         return i12;
     }
@@ -1413,7 +1414,7 @@ public class SharedConfig {
 
     public static void saveProxyList() {
         ArrayList arrayList = new ArrayList(proxyList);
-        Collections.sort(arrayList, new yh(4));
+        Collections.sort(arrayList, new bi(4));
         SerializedData serializedData = new SerializedData();
         serializedData.writeInt32(-1);
         serializedData.writeByte(3);
@@ -1490,8 +1491,8 @@ public class SharedConfig {
         }
         try {
             str = packageInfo.versionName;
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e10) {
+            e = e10;
             FileLog.e(e);
             str = null;
             if (i10 == 0) {
@@ -1885,6 +1886,11 @@ public class SharedConfig {
         edit.apply();
     }
 
+    public static void toggleWidgetStaticLayers() {
+        widgetStaticLayers = !widgetStaticLayers;
+        MessagesController.getGlobalMainSettings().edit().putBoolean("widgetStaticLayers", widgetStaticLayers).apply();
+    }
+
     public static void updateChatListSwipeSetting(int i10) {
         chatSwipeAction = i10;
         ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", chatSwipeAction).apply();
@@ -1940,6 +1946,6 @@ public class SharedConfig {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
     }
 }

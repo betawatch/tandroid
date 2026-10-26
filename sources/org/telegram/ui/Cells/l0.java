@@ -7,9 +7,9 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ir0;
+import org.telegram.ui.Components.mr0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class l0 extends Drawable {
     public final /* synthetic */ int a;
@@ -17,9 +17,9 @@ public final class l0 extends Drawable {
     public final Object c;
     public final /* synthetic */ Object d;
 
-    public l0(t1 t1Var, int[] iArr, Paint paint) {
+    public l0(s1 s1Var, int[] iArr, Paint paint) {
         this.a = 0;
-        this.c = t1Var;
+        this.c = s1Var;
         this.d = iArr;
         this.b = paint;
     }
@@ -28,8 +28,8 @@ public final class l0 extends Drawable {
     public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                t1 t1Var = (t1) this.c;
-                int v = org.telegram.ui.ActionBar.k6.v(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ra, t1Var.Id), org.telegram.ui.ActionBar.k6.o1(0.5f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, t1Var.Id)));
+                s1 s1Var = (s1) this.c;
+                int v = org.telegram.ui.ActionBar.y6.v(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.ra, s1Var.Id), org.telegram.ui.ActionBar.y6.o1(0.5f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.y6, s1Var.Id)));
                 int[] iArr = (int[]) this.d;
                 int i10 = iArr[0];
                 Paint paint = this.b;
@@ -45,9 +45,9 @@ public final class l0 extends Drawable {
                 Rect bounds = getBounds();
                 float dp = AndroidUtilities.dp(25.0f);
                 float f7 = bounds.top;
-                ir0 ir0Var = (ir0) this.d;
-                float min = Math.min(f7, ir0Var.n - ir0Var.b.getY());
-                int themedColor = ir0Var.getThemedColor(org.telegram.ui.ActionBar.k6.h5);
+                mr0 mr0Var = (mr0) this.d;
+                float min = Math.min(f7, mr0Var.n - mr0Var.b.getY());
+                int themedColor = mr0Var.getThemedColor(org.telegram.ui.ActionBar.y6.h5);
                 Paint paint2 = this.b;
                 paint2.setColor(themedColor);
                 Path path = (Path) this.c;
@@ -75,7 +75,7 @@ public final class l0 extends Drawable {
     public final void setAlpha(int i10) {
         switch (this.a) {
             case 0:
-                this.b.setAlpha(org.telegram.ui.ActionBar.k6.o1(i10 / 255.0f, ((int[]) this.d)[0]));
+                this.b.setAlpha(org.telegram.ui.ActionBar.y6.o1(i10 / 255.0f, ((int[]) this.d)[0]));
                 break;
         }
     }
@@ -89,9 +89,9 @@ public final class l0 extends Drawable {
         }
     }
 
-    public l0(ir0 ir0Var) {
+    public l0(mr0 mr0Var) {
         this.a = 1;
-        this.d = ir0Var;
+        this.d = mr0Var;
         this.b = new Paint(1);
         this.c = new Path();
     }

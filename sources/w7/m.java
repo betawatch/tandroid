@@ -1,16 +1,42 @@
 package w7;
 
-import java.nio.ByteBuffer;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class m {
-    public b2.t0 a(l3.a aVar) {
-        ByteBuffer byteBuffer = aVar.c;
-        byteBuffer.getClass();
-        v7.u6.g(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
-        return b(aVar, byteBuffer);
+    public static void a(int i10, int i11) {
+        String a2;
+        if (i10 < 0 || i10 >= i11) {
+            if (i10 < 0) {
+                a2 = n.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
+            } else {
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(ic.a.i(i11, "negative size: "));
+                }
+                a2 = n.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
+            }
+            throw new IndexOutOfBoundsException(a2);
+        }
     }
 
-    public abstract b2.t0 b(l3.a aVar, ByteBuffer byteBuffer);
+    public static void b(int i10, int i11) {
+        if (i10 < 0 || i10 > i11) {
+            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
+        }
+    }
+
+    public static void c(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : n.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+        }
+    }
+
+    public static String d(int i10, int i11, String str) {
+        if (i10 < 0) {
+            return n.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        }
+        if (i11 >= 0) {
+            return n.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        }
+        throw new IllegalArgumentException(ic.a.i(i11, "negative size: "));
+    }
 }

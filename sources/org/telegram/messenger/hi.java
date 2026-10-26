@@ -1,33 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class hi implements RequestDelegate {
+public final /* synthetic */ class hi implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLRPC.InputMedia c;
-    public final /* synthetic */ SendMessagesHelper.DelayedMessage d;
+    public final /* synthetic */ SecretChatHelper b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ hi(SendMessagesHelper sendMessagesHelper, TLRPC.InputMedia inputMedia, SendMessagesHelper.DelayedMessage delayedMessage, int i10) {
+    public /* synthetic */ hi(SecretChatHelper secretChatHelper, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = sendMessagesHelper;
-        this.c = inputMedia;
-        this.d = delayedMessage;
+        this.b = secretChatHelper;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$performSendDelayedMessage$55(this.c, this.d, tLObject, tL_error);
+                this.b.lambda$resendMessages$14(this.c);
                 break;
             default:
-                this.b.lambda$uploadMultiMedia$63(this.c, this.d, tLObject, tL_error);
+                this.b.lambda$processPendingEncMessages$0(this.c);
                 break;
         }
     }

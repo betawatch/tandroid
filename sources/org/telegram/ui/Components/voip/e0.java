@@ -4,25 +4,25 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.k30;
+import org.telegram.ui.m30;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class e0 extends ImageView {
-    public final /* synthetic */ k30 a;
+    public final /* synthetic */ m30 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(k30 k30Var, Context context) {
+    public e0(m30 m30Var, Context context) {
         super(context);
-        this.a = k30Var;
+        this.a = m30Var;
     }
 
     @Override // android.view.View
     public final void invalidate() {
         super.invalidate();
-        k30 k30Var = this.a;
-        k30Var.f0.invalidate();
-        k30Var.invalidate();
+        m30 m30Var = this.a;
+        m30Var.f0.invalidate();
+        m30Var.invalidate();
     }
 
     @Override // android.widget.ImageView, android.view.View

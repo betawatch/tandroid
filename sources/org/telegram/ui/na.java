@@ -1,81 +1,93 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class na extends s4.v {
-    public final /* synthetic */ sa d;
+public final class na extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
+    public final EditTextBoldCursor a;
+    public final TextView b;
+    public final /* synthetic */ ta c;
 
-    public na(sa saVar) {
-        this.d = saVar;
-    }
-
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
-        super.a(recyclerView, b1Var);
-        View view = b1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
-        return (b1Var.f == 4 && ((pa) b1Var.a).G) ? s4.v.l(3, 0) : s4.v.l(0, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
-        if (b1Var.f != b1Var2.f) {
-            return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public na(ta taVar, Activity activity) {
+        super(activity);
+        this.c = taVar;
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(0);
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
+        this.a = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 17.0f);
+        org.telegram.ui.ActionBar.f7.E(editTextBoldCursor, org.telegram.ui.ActionBar.y6.H6, null);
+        int i10 = org.telegram.ui.ActionBar.y6.G6;
+        org.telegram.ui.ActionBar.f7.V(editTextBoldCursor, i10, null);
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        editTextBoldCursor.setInputType(180224);
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setHint(LocaleController.getString(R.string.UsernameLinkPlaceholder));
+        org.telegram.ui.ActionBar.f7.m(editTextBoldCursor, 30, i10, null);
+        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(19.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setOnEditorActionListener(new la(this, 0));
+        String str = taVar.r;
+        long j10 = taVar.x;
+        editTextBoldCursor.setText(str);
+        editTextBoldCursor.addTextChangedListener(new ma(this));
+        if (j10 != 0) {
+            editTextBoldCursor.setEnabled(false);
         }
-        View view = b1Var2.a;
-        if ((view instanceof pa) && !((pa) view).G) {
-            return false;
-        }
-        ja jaVar = this.d.c;
-        int b10 = b1Var.b();
-        int b11 = b1Var2.b();
-        int i10 = b10 - 4;
-        int i11 = b11 - 4;
-        sa saVar = jaVar.c;
-        ArrayList arrayList = saVar.v;
-        if (i10 < arrayList.size() && i11 < arrayList.size()) {
-            if (b10 != b11) {
-                saVar.d = true;
-            }
-            TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i10);
-            arrayList.set(i10, (TLRPC.TL_username) arrayList.get(i11));
-            arrayList.set(i11, tL_username);
-            jaVar.p(b10, b11);
-            int size = arrayList.size() + 3;
-            if (b10 == size || b11 == size) {
-                jaVar.n(b10, 3);
-                jaVar.n(b11, 3);
-            }
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.b1 b1Var, int i10) {
-        sa saVar = this.d;
-        if (i10 == 0) {
-            sa.Y(saVar);
-        } else {
-            saVar.b.I0(false);
-            b1Var.a.setPressed(true);
-        }
-        if (b1Var != null) {
-            b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        textView.setMaxLines(1);
+        textView.setLines(1);
+        textView.setPadding(0, 0, 0, 0);
+        textView.setSingleLine(true);
+        textView.setText(taVar.getMessagesController().linkPrefix + "/");
+        textView.setTextSize(1, 17.0f);
+        org.telegram.ui.ActionBar.f7.V(textView, i10, null);
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        textView.setTranslationY(-AndroidUtilities.dp(3.0f));
+        linearLayout.addView(textView, org.telegram.ui.Components.gb1.t(-2, -2, 0.0f, 16, 21, 15, 0, 15));
+        linearLayout.addView(editTextBoldCursor, org.telegram.ui.Components.gb1.t(-2, -2, 1.0f, 16, 0, 15, 21, 15));
+        addView(linearLayout, org.telegram.ui.Components.gb1.i(-1, -1, 48));
+        if (j10 != 0) {
+            editTextBoldCursor.setAlpha(0.6f);
+            textView.setAlpha(0.6f);
         }
     }
 
-    @Override // s4.v
-    public final void q(s4.b1 b1Var) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        try {
+            this.a.setCursorColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.G6, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

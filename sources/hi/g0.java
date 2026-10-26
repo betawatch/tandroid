@@ -1,57 +1,17 @@
 package hi;
 
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.h3;
-import s4.b1;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import bi.md;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class g0 extends s4.k {
-    public final /* synthetic */ h0 F;
+public final class g0 extends LinearLayout {
+    public TextView a;
+    public md b;
+    public String c;
 
-    public g0(h0 h0Var) {
-        this.F = h0Var;
-    }
-
-    @Override // s4.k
-    public final void M() {
-        ViewGroup viewGroup;
-        h0 h0Var = this.F;
-        viewGroup = ((h3) h0Var.f).containerView;
-        viewGroup.invalidate();
-        h0Var.c.invalidate();
-    }
-
-    @Override // s4.k
-    public final void O() {
-        ViewGroup viewGroup;
-        h0 h0Var = this.F;
-        viewGroup = ((h3) h0Var.f).containerView;
-        viewGroup.invalidate();
-        h0Var.c.invalidate();
-    }
-
-    @Override // s4.k
-    public final void P(b1 b1Var) {
-        ViewGroup viewGroup;
-        h0 h0Var = this.F;
-        viewGroup = ((h3) h0Var.f).containerView;
-        viewGroup.invalidate();
-        h0Var.c.invalidate();
-        h0Var.d.invalidate();
-    }
-
-    @Override // s4.k
-    public final void Q() {
-        ViewGroup viewGroup;
-        h0 h0Var = this.F;
-        viewGroup = ((h3) h0Var.f).containerView;
-        viewGroup.invalidate();
-        h0Var.c.invalidate();
-    }
-
-    @Override // s4.e1
-    public final boolean t(b1 b1Var) {
-        return true;
+    public String getCommand() {
+        return this.c;
     }
 }

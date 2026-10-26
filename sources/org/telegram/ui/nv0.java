@@ -1,19 +1,52 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class nv0 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.j80 a;
+public final /* synthetic */ class nv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xv0 b;
 
-    public nv0(org.telegram.ui.Components.j80 j80Var) {
-        this.a = j80Var;
+    public /* synthetic */ nv0(xv0 xv0Var, int i10) {
+        this.a = i10;
+        this.b = xv0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.qc.e();
-        this.a.s();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xv0 xv0Var = this.b;
+                AndroidUtilities.runOnUIThread(new nv0(xv0Var, 3));
+                org.telegram.ui.Cells.s1 s1Var = xv0Var.L;
+                if (s1Var != null) {
+                    s1Var.setVisibility(0);
+                    org.telegram.ui.Cells.s1 s1Var2 = xv0Var.L;
+                    s1Var2.L7 = null;
+                    s1Var2.invalidate();
+                }
+                qm qmVar = xv0Var.e0;
+                if (qmVar != null) {
+                    AndroidUtilities.runOnUIThread(qmVar);
+                    xv0Var.e0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.c(false);
+                break;
+            case 2:
+                this.b.c(false);
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+        }
+    }
+
+    public /* synthetic */ nv0(xv0 xv0Var, boolean z10) {
+        this.a = 0;
+        this.b = xv0Var;
     }
 }

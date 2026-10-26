@@ -1,50 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.content.Context;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class m0 extends h0 {
-    public static final m0 e = new m0(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class m0 {
+    public static final h6.b i = new h6.b("ClientCastAnalytics", null);
+    public static final boolean j = true;
+    public final e6.g a;
+    public final s b;
+    public final c c;
+    public Long e;
+    public m5.s g;
+    public int h = 1;
+    public final String d = UUID.randomUUID().toString();
+    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
 
-    public m0(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    public m0(Context context, h6.r rVar, e6.g gVar, s sVar, c cVar) {
+        this.a = gVar;
+        this.b = sVar;
+        this.c = cVar;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        v7.l5.a(i10, this.d);
-        Object obj = this.c[i10];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // com.google.android.gms.internal.cast.h0, com.google.android.gms.internal.cast.e0
-    public final int h(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int m() {
-        return this.d;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int n() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public final Object[] o() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public final void a(p1 p1Var, int i10) {
+        this.f.execute(new androidx.activity.g(this, p1Var, i10, 3));
     }
 }

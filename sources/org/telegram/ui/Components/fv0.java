@@ -1,81 +1,61 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class fv0 extends s4.v {
-    public final /* synthetic */ hv0 d;
+public final class fv0 extends org.telegram.ui.gu0 {
+    public final /* synthetic */ gv0 a;
 
-    public fv0(hv0 hv0Var) {
-        this.d = hv0Var;
+    public fv0(gv0 gv0Var) {
+        this.a = gv0Var;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
-        super.a(recyclerView, b1Var);
-        b1Var.a.setPressed(false);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
-        SavedMessagesController.SavedDialog r10;
-        int l4 = s4.v.l(0, 0);
-        xv0 xv0Var = this.d.x;
-        return (!xv0Var.C1 || recyclerView.getAdapter() == xv0Var.S || (r10 = r(b1Var)) == null || !r10.pinned) ? l4 : s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
-        hv0 hv0Var = this.d;
-        ArrayList arrayList = hv0Var.f;
-        xv0 xv0Var = hv0Var.x;
-        if (!xv0Var.C1 || recyclerView.getAdapter() == xv0Var.S) {
-            return false;
-        }
-        SavedMessagesController.SavedDialog r10 = r(b1Var);
-        SavedMessagesController.SavedDialog r11 = r(b1Var2);
-        if (r10 == null || r11 == null || !r10.pinned || !r11.pinned) {
-            return false;
-        }
-        int b10 = b1Var.b();
-        int b11 = b1Var2.b();
-        arrayList.remove(b10);
-        arrayList.add(b11, r10);
-        hv0Var.p(b10, b11);
-        hv0Var.h = true;
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.b1 b1Var, int i10) {
-        pu0 pu0Var;
-        hv0 hv0Var = this.d;
-        kr0 kr0Var = hv0Var.n;
-        if (b1Var != null && (pu0Var = hv0Var.s) != null) {
-            pu0Var.e1(false);
-        }
-        if (i10 == 0) {
-            AndroidUtilities.cancelRunOnUIThread(kr0Var);
-            AndroidUtilities.runOnUIThread(kr0Var, 300L);
-        }
-    }
-
-    public final SavedMessagesController.SavedDialog r(s4.b1 b1Var) {
-        int b10;
-        if (b1Var != null && (b10 = b1Var.b()) >= 0) {
-            hv0 hv0Var = this.d;
-            if (b10 < hv0Var.f.size()) {
-                return (SavedMessagesController.SavedDialog) hv0Var.f.get(b10);
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    public final org.telegram.ui.qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        org.telegram.ui.Cells.s1 s1Var;
+        MessageObject messageObject2;
+        iv0 iv0Var = this.a.c;
+        su0 su0Var = iv0Var.r;
+        if (su0Var != null) {
+            int childCount = su0Var.getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = iv0Var.r.getChildAt(i11);
+                if (!(childAt instanceof org.telegram.ui.Cells.s1) || messageObject == null || (messageObject2 = (s1Var = (org.telegram.ui.Cells.s1) childAt).getMessageObject()) == null || messageObject2.getId() != messageObject.getId()) {
+                    imageReceiver = null;
+                } else {
+                    ArrayList<Integer> arrayList = messageObject2.pollMediaMapping;
+                    imageReceiver = (arrayList == null || i10 < 0 || i10 >= arrayList.size()) ? s1Var.F2(i10) : s1Var.F2(messageObject2.pollMediaMapping.get(i10).intValue());
+                }
+                if (imageReceiver != null) {
+                    int[] iArr = new int[2];
+                    childAt.getLocationInWindow(iArr);
+                    org.telegram.ui.qu0 qu0Var = new org.telegram.ui.qu0();
+                    qu0Var.b = iArr[0];
+                    qu0Var.c = childAt.getPaddingTop() + iArr[1];
+                    qu0Var.d = iv0Var.r;
+                    qu0Var.m = null;
+                    qu0Var.a = imageReceiver;
+                    if (z10) {
+                        qu0Var.e = imageReceiver.getBitmapSafe();
+                    }
+                    qu0Var.h = imageReceiver.getRoundRadius(true);
+                    qu0Var.j = 0;
+                    qu0Var.i = 0;
+                    return qu0Var;
+                }
             }
         }
         return null;
     }
 
-    @Override // s4.v
-    public final void q(s4.b1 b1Var) {
+    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    public final boolean L() {
+        return true;
     }
 }

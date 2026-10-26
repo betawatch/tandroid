@@ -7,21 +7,21 @@ import android.view.ViewConfiguration;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
-import m.s1;
-import org.telegram.ui.Wallet.m4;
+import m.r1;
+import org.telegram.ui.Components.cy0;
 import r0.i0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int H = ViewConfiguration.getTapTimeout();
     public boolean E;
     public boolean F;
-    public final s1 G;
+    public final r1 G;
     public final a a;
     public final AccelerateInterpolator b;
-    public final s1 c;
-    public m4 d;
+    public final r1 c;
+    public cy0 d;
     public final float[] e;
     public final float[] f;
     public final int h;
@@ -33,7 +33,7 @@ public final class d implements View.OnTouchListener {
     public boolean x;
     public boolean y;
 
-    public d(s1 s1Var) {
+    public d(r1 r1Var) {
         a aVar = new a();
         aVar.e = Long.MIN_VALUE;
         aVar.g = -1L;
@@ -50,7 +50,7 @@ public final class d implements View.OnTouchListener {
         this.s = fArr4;
         float[] fArr5 = {Float.MAX_VALUE, Float.MAX_VALUE};
         this.v = fArr5;
-        this.c = s1Var;
+        this.c = r1Var;
         float f7 = Resources.getSystem().getDisplayMetrics().density;
         float f10 = ((int) ((1575.0f * f7) + 0.5f)) / 1000.0f;
         fArr5[0] = f10;
@@ -68,7 +68,7 @@ public final class d implements View.OnTouchListener {
         this.n = H;
         aVar.a = 500;
         aVar.b = 500;
-        this.G = s1Var;
+        this.G = r1Var;
     }
 
     public static float b(float f7, float f10, float f11) {
@@ -147,17 +147,17 @@ public final class d implements View.OnTouchListener {
     }
 
     public final boolean e() {
-        s1 s1Var;
+        r1 r1Var;
         int count;
         a aVar = this.a;
         float f7 = aVar.d;
         int abs = (int) (f7 / Math.abs(f7));
         Math.abs(aVar.c);
-        if (abs != 0 && (count = (s1Var = this.G).getCount()) != 0) {
-            int childCount = s1Var.getChildCount();
-            int firstVisiblePosition = s1Var.getFirstVisiblePosition();
+        if (abs != 0 && (count = (r1Var = this.G).getCount()) != 0) {
+            int childCount = r1Var.getChildCount();
+            int firstVisiblePosition = r1Var.getFirstVisiblePosition();
             int i10 = firstVisiblePosition + childCount;
-            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && s1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && s1Var.getChildAt(childCount - 1).getBottom() <= s1Var.getHeight())) {
+            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && r1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && r1Var.getChildAt(childCount - 1).getBottom() <= r1Var.getHeight())) {
                 return true;
             }
         }
@@ -186,27 +186,27 @@ public final class d implements View.OnTouchListener {
             }
             this.y = true;
             this.w = false;
-            float x10 = motionEvent.getX();
+            float x9 = motionEvent.getX();
             float width = view.getWidth();
-            s1 s1Var = this.c;
-            float a2 = a(x10, width, s1Var.getWidth(), 0);
-            float a10 = a(motionEvent.getY(), view.getHeight(), s1Var.getHeight(), 1);
+            r1 r1Var = this.c;
+            float a2 = a(x9, width, r1Var.getWidth(), 0);
+            float a10 = a(motionEvent.getY(), view.getHeight(), r1Var.getHeight(), 1);
             a aVar = this.a;
             aVar.c = a2;
             aVar.d = a10;
             if (!this.E && e()) {
                 if (this.d == null) {
-                    this.d = new m4(this, 10);
+                    this.d = new cy0(this, 15);
                 }
                 this.E = true;
                 this.x = true;
                 if (this.w || (i10 = this.n) <= 0) {
                     this.d.run();
                 } else {
-                    m4 m4Var = this.d;
+                    cy0 cy0Var = this.d;
                     long j10 = i10;
                     WeakHashMap weakHashMap = i0.a;
-                    s1Var.postOnAnimationDelayed(m4Var, j10);
+                    r1Var.postOnAnimationDelayed(cy0Var, j10);
                 }
                 this.w = true;
             }

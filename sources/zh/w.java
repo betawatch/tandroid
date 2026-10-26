@@ -1,27 +1,49 @@
 package zh;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class w implements a0 {
-    public final /* synthetic */ Utilities.Callback a;
-    public final /* synthetic */ Runnable b;
+public final class w extends FrameLayout {
+    public final RectF a;
+    public final RectF b;
+    public final /* synthetic */ c0 c;
 
-    public w(Utilities.Callback callback, Runnable runnable) {
-        this.a = callback;
-        this.b = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w(c0 c0Var, Context context) {
+        super(context);
+        this.c = c0Var;
+        this.a = new RectF();
+        this.b = new RectF();
     }
 
-    @Override // zh.a0
-    public final void a(String str) {
-        this.a.run(str);
-    }
-
-    @Override // zh.a0
-    public final void b(b0 b0Var) {
-        AndroidUtilities.removeFromParent(b0Var);
-        this.b.run();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        c0 c0Var = this.c;
+        x xVar = c0Var.a0;
+        FrameLayout frameLayout = xVar.b;
+        RectF rectF = this.a;
+        if (jh.k.c(frameLayout, this, rectF)) {
+            TextView textView = c0Var.b0;
+            RectF rectF2 = this.b;
+            if (jh.k.c(textView, this, rectF2)) {
+                float dp = rectF2.right - AndroidUtilities.dp(32.0f);
+                float centerY = rectF2.centerY() - AndroidUtilities.dp(16.0f);
+                if (rectF.isEmpty()) {
+                    return;
+                }
+                canvas.save();
+                canvas.translate(dp, centerY);
+                canvas.scale(AndroidUtilities.dp(32.0f) / rectF.width(), AndroidUtilities.dp(32.0f) / rectF.height());
+                xVar.b.draw(canvas);
+                canvas.restore();
+            }
+        }
     }
 }

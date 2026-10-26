@@ -1,142 +1,118 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ka implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ka extends org.telegram.ui.Components.lm0 {
+    public final /* synthetic */ ta c;
 
-    public /* synthetic */ ka(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public ka(ta taVar) {
+        this.c = taVar;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.u0 u0Var;
-        org.telegram.ui.Cells.t1 t1Var;
-        org.telegram.ui.ActionBar.u0 u0Var2;
-        switch (this.a) {
-            case 0:
-                ma maVar = (ma) this.b;
-                if (i10 != 6 || (u0Var = maVar.c.a) == null) {
-                    return false;
-                }
-                u0Var.performClick();
-                return true;
-            case 1:
-                sn snVar = (sn) this.b;
-                if (i10 == 6) {
-                    rh.c cVar = snVar.Qc;
-                    if (cVar != null && (t1Var = cVar.n) != null) {
-                        snVar.ya(t1Var);
-                        return true;
-                    }
-                } else {
-                    snVar.getClass();
-                }
-                return false;
-            case 2:
-                ko koVar = (ko) this.b;
-                if (i10 != 6 || (u0Var2 = koVar.a) == null) {
-                    return false;
-                }
-                u0Var2.performClick();
-                return true;
-            case 3:
-                sr srVar = (sr) this.b;
-                if (i10 == 5) {
-                    srVar.a();
-                    return true;
-                }
-                srVar.getClass();
-                return false;
-            case 4:
-                return i10 == 6 && ((p60) this.b).o0();
-            case 5:
-                be0 be0Var = (be0) this.b;
-                if (i10 == 5) {
-                    be0Var.h(null);
-                    return true;
-                }
-                be0Var.getClass();
-                return false;
-            case 6:
-                je0 je0Var = (je0) this.b;
-                if (i10 == 5) {
-                    je0Var.h(null);
-                    return true;
-                }
-                je0Var.getClass();
-                return false;
-            case 7:
-                ye0 ye0Var = (ye0) this.b;
-                if (i10 == 5) {
-                    ye0Var.h(null);
-                    return true;
-                }
-                ye0Var.getClass();
-                return false;
-            case 8:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                int i11 = passcodeActivity.E;
-                if (i11 == 0) {
-                    passcodeActivity.k0();
-                    return true;
-                }
-                if (i11 != 1) {
-                    return false;
-                }
-                passcodeActivity.j0();
-                return true;
-            case 9:
-                wm0 wm0Var = (wm0) this.b;
-                if (i10 == 5) {
-                    wm0Var.h(null);
-                    return true;
-                }
-                wm0Var.getClass();
-                return false;
-            case 10:
-                w11 w11Var = (w11) this.b;
-                w11Var.getClass();
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        return false;
-                    }
-                    w11Var.finishFragment();
-                    return true;
-                }
-                int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                EditTextBoldCursor[] editTextBoldCursorArr = w11Var.a;
-                if (intValue >= editTextBoldCursorArr.length) {
-                    return true;
-                }
-                editTextBoldCursorArr[intValue].requestFocus();
-                return true;
-            case 11:
-                l61 l61Var = (l61) this.b;
-                if (keyEvent == null) {
-                    return false;
-                }
-                if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
-                    return false;
-                }
-                AndroidUtilities.hideKeyboard(l61Var.c0);
-                return false;
-            default:
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                twoStepVerificationActivity.getClass();
-                if (i10 != 5 && i10 != 6) {
-                    return false;
-                }
-                twoStepVerificationActivity.t0();
-                return true;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.e1 e1Var) {
+        return e1Var.f == 4;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        ta taVar = this.c;
+        org.telegram.ui.Components.mm0 mm0Var = taVar.b;
+        ArrayList arrayList = taVar.v;
+        if (mm0Var != null) {
+            ArrayList arrayList2 = mm0Var.K2;
+            if (arrayList2 != null) {
+                arrayList2.clear();
+            } else {
+                mm0Var.K2 = new ArrayList();
+            }
+            if (arrayList.size() > 0) {
+                taVar.b.K2.add(Long.valueOf(AndroidUtilities.pack(3, arrayList.size() + 3)));
+            }
         }
+        return (taVar.v.size() > 0 ? taVar.v.size() + 2 : 0) + 3;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        if (i10 == 1) {
+            return 3;
+        }
+        if (i10 == 2) {
+            return 1;
+        }
+        if (i10 == 3) {
+            return 0;
+        }
+        return i10 != h() - 1 ? 4 : 2;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        ta taVar = this.c;
+        long j10 = taVar.x;
+        int i11 = e1Var.f;
+        View view = e1Var.a;
+        if (i11 == 0) {
+            ((org.telegram.ui.Cells.q4) view).setText(LocaleController.getString(i10 == 0 ? j10 != 0 ? R.string.BotSetPublicLinkHeader : R.string.SetUsernameHeader : R.string.UsernamesProfileHeader));
+            return;
+        }
+        if (i11 == 2) {
+            ((org.telegram.ui.Cells.i9) view).setText(LocaleController.getString(j10 != 0 ? R.string.BotUsernamesHelp : R.string.UsernamesProfileHelp));
+            return;
+        }
+        if (i11 == 3) {
+            taVar.n = true;
+            na naVar = (na) view;
+            taVar.y = naVar;
+            naVar.a.setText(taVar.r);
+            taVar.n = false;
+            return;
+        }
+        if (i11 != 4) {
+            return;
+        }
+        TLRPC.TL_username tL_username = (TLRPC.TL_username) taVar.v.get(i10 - 4);
+        qa qaVar = (qa) view;
+        if (tL_username.editable) {
+            taVar.E = qaVar;
+        } else if (taVar.E == qaVar) {
+            taVar.E = null;
+        }
+        qaVar.a(tL_username, i10 < h() - 2, false, taVar.x);
+    }
+
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        ta taVar = this.c;
+        if (i10 == 0) {
+            return new org.telegram.ui.Components.vl0(new org.telegram.ui.Cells.q4(taVar.getParentActivity()));
+        }
+        if (i10 == 1) {
+            sa saVar = new sa(taVar, taVar.getParentActivity());
+            saVar.setTag(-33024);
+            return new org.telegram.ui.Components.vl0(saVar);
+        }
+        if (i10 == 2) {
+            return new org.telegram.ui.Components.vl0(new org.telegram.ui.Cells.i9(taVar.getParentActivity()));
+        }
+        if (i10 == 3) {
+            return new org.telegram.ui.Components.vl0(new na(taVar, taVar.getParentActivity()));
+        }
+        if (i10 != 4) {
+            return null;
+        }
+        return new org.telegram.ui.Components.vl0(new ja(this, taVar.getParentActivity(), taVar.getResourceProvider()));
     }
 }

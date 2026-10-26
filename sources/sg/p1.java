@@ -1,89 +1,64 @@
 package sg;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import w7.z5;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.vh;
+import org.telegram.ui.ActionBar.o6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class p1 extends FrameLayout {
-    public float a;
-    public final o1 b;
-    public final ImageReceiver c;
-    public final ImageReceiver d;
-    public boolean e;
-    public boolean f;
-    public float h;
-    public float n;
-    public TLRPC.Document r;
-    public boolean s;
-    public final /* synthetic */ s0 v;
+public final class p1 extends TextView {
+    public boolean a;
+    public Drawable b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p1(s0 s0Var, Context context) {
+    public p1(Context context) {
         super(context);
-        this.v = s0Var;
-        this.f = true;
-        o1 o1Var = new o1(this, context);
-        this.b = o1Var;
-        ImageReceiver imageReceiver = new ImageReceiver(o1Var);
-        this.c = imageReceiver;
-        ImageReceiver imageReceiver2 = new ImageReceiver(o1Var);
-        this.d = imageReceiver2;
-        imageReceiver.setAllowStartAnimation(false);
-        imageReceiver2.setAllowStartAnimation(false);
-        setClipChildren(false);
-        addView(o1Var, z5.e(-1, -2, 21));
+        setTextColor(-1);
+        setTextSize(1, 14.0f);
+        setCurrent(false);
+        setEllipsize(TextUtils.TruncateAt.END);
+        setSingleLine();
     }
 
-    public final void a(boolean z10, boolean z11, boolean z12) {
-        boolean z13 = this.e;
-        o1 o1Var = this.b;
-        if (z13 != z11) {
-            this.e = z11;
-            if (!z12) {
-                this.h = z11 ? 1.0f : 0.0f;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(-1.0f));
+        super.onDraw(canvas);
+        canvas.restore();
+        if (this.a) {
+            int B = vh.B(16.0f, getHeight(), 2);
+            if (LocaleController.isRTL) {
+                this.b.setBounds(AndroidUtilities.dp(7.0f), B, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + B);
+            } else {
+                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), B, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + B);
             }
-            o1Var.invalidate();
-        }
-        if (this.f != z10) {
-            this.f = z10;
-            if (!z12) {
-                this.n = z10 ? 1.0f : 0.0f;
-            }
-            o1Var.invalidate();
+            this.b.draw(canvas);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.onAttachedToWindow();
-        this.d.onAttachedToWindow();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.onDetachedFromWindow();
-        this.d.onDetachedFromWindow();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = (int) (this.v.l3 * 0.6f);
-        o1 o1Var = this.b;
-        ViewGroup.LayoutParams layoutParams = o1Var.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = o1Var.getLayoutParams();
-        int dp = i12 - AndroidUtilities.dp(16.0f);
-        layoutParams2.height = dp;
-        layoutParams.width = dp;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i12 * 0.7f), TLObject.FLAG_30));
+    public void setCurrent(boolean z10) {
+        this.a = z10;
+        if (z10) {
+            setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 27.0f : 12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 27.0f), AndroidUtilities.dp(6.0f));
+            setBackground(o6.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, o6.b(1090519039)));
+        } else {
+            setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f));
+            setBackground(o6.d(new float[]{0.0f}, 0, o6.b(-14145495)));
+        }
+        if (this.a && this.b == null) {
+            Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);
+            this.b = drawable;
+            drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
     }
 }

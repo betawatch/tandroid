@@ -1,125 +1,132 @@
 package wg;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.ImageView;
-import ci.k4;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.w9;
-import w7.z5;
+import vg.c1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final class g extends c implements b6 {
-    public final ImageView s;
-    public f v;
-    public TLRPC.Chat w;
-    public boolean x;
-    public int y;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final class g extends qg.a {
+    public TLRPC.User c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public TLRPC.TL_help_country f;
+    public CharSequence g;
+    public CharSequence h;
+    public int i;
+    public int j;
+    public boolean k;
+    public int l;
+    public org.telegram.ui.web.c m;
+    public org.telegram.ui.web.c n;
+    public c1 o;
+    public c1 p;
+    public View q;
+    public Drawable r;
 
-    public g(Context context, g6 g6Var) {
-        super(context, g6Var);
-        this.d.setTypeface(AndroidUtilities.bold());
-        ImageView imageView = new ImageView(context);
-        this.s = imageView;
-        imageView.setFocusable(false);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int x02 = k6.x0(null, k6.Vh, false);
-        this.y = x02;
-        imageView.setBackground(k6.g0(x02, 1, -1));
-        imageView.setImageResource(R.drawable.poll_remove);
-        r6.t(imageView, k6.m6, null, PorterDuff.Mode.MULTIPLY);
-        imageView.setContentDescription(LocaleController.getString(R.string.Delete));
-        boolean z10 = LocaleController.isRTL;
-        addView(imageView, z5.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
-        this.d.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), 0);
+    public g(int i10, boolean z10) {
+        super(i10, z10);
+        this.l = -1;
     }
 
-    @Override // wg.c
-    public final boolean b() {
-        return false;
+    public static g b(CharSequence charSequence) {
+        g gVar = new g(8, false);
+        gVar.g = charSequence;
+        return gVar;
     }
 
-    public final void f(TLRPC.Chat chat, int i10, boolean z10, int i11) {
-        String string;
-        this.x = z10;
-        this.w = chat;
-        h9 h9Var = this.b;
-        h9Var.q(chat);
-        int dp = AndroidUtilities.dp(20.0f);
-        w9 w9Var = this.c;
-        w9Var.setRoundRadius(dp);
-        w9Var.e(chat, h9Var);
-        String str = chat.title;
-        k4 k4Var = this.d;
-        k4Var.k(Emoji.replaceEmoji(str, k4Var.getPaint().getFontMetricsInt(), false));
-        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-        if (z10) {
-            if (i11 >= 1) {
-                string = LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "Subscribers" : "Members", i11, new Object[0]);
+    public static g c(TLRPC.User user, boolean z10) {
+        g gVar = new g(3, true);
+        gVar.c = user;
+        gVar.d = null;
+        gVar.e = null;
+        gVar.k = z10;
+        return gVar;
+    }
+
+    @Override // qg.a
+    public final boolean a(qg.a aVar) {
+        if (this != aVar) {
+            if (g.class == aVar.getClass()) {
+                g gVar = (g) aVar;
+                if (this.k == gVar.k) {
+                    if (this.a == 8) {
+                        if (TextUtils.equals(this.h, gVar.h)) {
+                            if ((this.m == null) == (gVar.m == null)) {
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    public final boolean equals(Object obj) {
+        long peerDialogId;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || g.class != obj.getClass()) {
+            return false;
+        }
+        g gVar = (g) obj;
+        int i10 = this.a;
+        if (i10 != gVar.a) {
+            return false;
+        }
+        if (i10 == -1 && this.l != gVar.l) {
+            return false;
+        }
+        if (i10 == 3) {
+            TLRPC.User user = this.c;
+            long j10 = 0;
+            if (user != null) {
+                peerDialogId = user.id;
             } else {
-                string = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.DiscussChannel : R.string.AccDescrGroup);
+                TLRPC.Chat chat = this.e;
+                if (chat != null) {
+                    peerDialogId = -chat.id;
+                } else {
+                    TLRPC.InputPeer inputPeer = this.d;
+                    peerDialogId = inputPeer != null ? DialogObject.getPeerDialogId(inputPeer) : 0L;
+                }
             }
-            setSubtitle(string);
-        } else {
-            setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", i10, new Object[0]));
-        }
-        r6.Z(this.e, k6.r5, this.a);
-        setDivider(true);
-        ImageView imageView = this.s;
-        if (z10) {
-            imageView.setVisibility(0);
-        } else {
-            imageView.setVisibility(4);
-        }
-        imageView.setOnClickListener(new org.telegram.ui.web.c(9, this, chat));
-    }
-
-    public TLRPC.Chat getChat() {
-        return this.w;
-    }
-
-    @Override // wg.c, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.s.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setChatDeleteListener(f fVar) {
-        this.v = fVar;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        try {
-            int x02 = k6.x0(null, k6.Vh, false);
-            ImageView imageView = this.s;
-            if (imageView == null || x02 == this.y) {
-                return;
+            TLRPC.User user2 = gVar.c;
+            if (user2 != null) {
+                j10 = user2.id;
+            } else {
+                TLRPC.Chat chat2 = gVar.e;
+                if (chat2 != null) {
+                    j10 = -chat2.id;
+                } else {
+                    TLRPC.InputPeer inputPeer2 = gVar.d;
+                    if (inputPeer2 != null) {
+                        j10 = DialogObject.getPeerDialogId(inputPeer2);
+                    }
+                }
             }
-            this.y = x02;
-            k6.E1(imageView.getBackground(), x02, true);
-            imageView.invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+            if (peerDialogId != j10) {
+                return false;
+            }
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+        int i11 = this.a;
+        if (i11 == 6 && this.f != gVar.f) {
+            return false;
+        }
+        if (i11 == 7 && !TextUtils.equals(this.g, gVar.g)) {
+            return false;
+        }
+        if (this.a == 8 && !TextUtils.equals(this.g, gVar.g)) {
+            return false;
+        }
+        if (this.a != 9 || (TextUtils.equals(this.g, gVar.g) && this.i == gVar.i && this.j == gVar.j)) {
+            return this.a != 10 || this.q == gVar.q;
+        }
+        return false;
     }
 }

@@ -1,41 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import java.lang.ref.WeakReference;
-import org.telegram.messenger.Emoji;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class v5 implements x5 {
-    public final WeakReference a;
-    public final boolean b;
-    public Layout c;
-    public a6 d;
-    public Rect e;
-    public r5 f;
-    public Emoji.EmojiDrawable h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean v;
+public final /* synthetic */ class v5 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Object f;
 
-    public v5(View view, boolean z10) {
-        this.a = new WeakReference(view);
-        this.b = z10;
+    public /* synthetic */ v5(Object obj, float f7, float f10, float f11, float f12, int i10) {
+        this.a = i10;
+        this.f = obj;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
     }
 
-    @Override // org.telegram.ui.Components.x5
-    public final void invalidate() {
-        View view = (View) this.a.get();
-        if (view == null) {
-            return;
-        }
-        if (!this.b || view.getParent() == null) {
-            view.invalidate();
-        } else {
-            ((View) view.getParent()).invalidate();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i10 = this.a;
+        float f7 = this.e;
+        float f10 = this.d;
+        float f11 = this.c;
+        float f12 = this.b;
+        Object obj = this.f;
+        switch (i10) {
+            case 0:
+                c6 c6Var = (c6) obj;
+                c6Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c6Var.lastDrawnCy = AndroidUtilities.lerp(f12, f11, floatValue);
+                c6Var.lastDrawnCx = AndroidUtilities.lerp(f10, f7, floatValue);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                int i11 = ChatActivityEnterView.r5;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float z10 = c3.h0.z(f11, f12, floatValue2, f12);
+                cq0 cq0Var = chatActivityEnterView.p0;
+                if (cq0Var != null) {
+                    cq0Var.setAlpha(((f7 - f10) * floatValue2) + f10);
+                    chatActivityEnterView.p0.setTranslationX(z10);
+                }
+                chatActivityEnterView.Q0.setTranslationX(z10);
+                chatActivityEnterView.G = z10;
+                chatActivityEnterView.G1();
+                break;
         }
     }
 }

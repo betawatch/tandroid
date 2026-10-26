@@ -1,32 +1,44 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.graphics.Canvas;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r40 implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ Object d;
+public final class r40 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ org.telegram.ui.Components.eq x1;
+    public final /* synthetic */ v50 y1;
 
-    public /* synthetic */ r40(Object obj, org.telegram.ui.ActionBar.c2 c2Var, EditTextBoldCursor editTextBoldCursor, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = c2Var;
-        this.c = editTextBoldCursor;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r40(v50 v50Var, LaunchActivity launchActivity, org.telegram.ui.Components.eq eqVar) {
+        super(launchActivity, null);
+        this.y1 = v50Var;
+        this.x1 = eqVar;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                ((w40) this.d).b.s1(null, this.b, this.c, true);
-                break;
-            default:
-                ((s40) this.d).n.b.s1(null, this.b, this.c, true);
-                break;
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
+            canvas.save();
+            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - AndroidUtilities.dp(1.0f));
+            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
+            org.telegram.ui.Components.eq eqVar = this.x1;
+            eqVar.f = alpha;
+            eqVar.draw(canvas);
+            canvas.restore();
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        ViewGroup viewGroup;
+        if (getAlpha() != f7) {
+            super.setAlpha(f7);
+            viewGroup = ((org.telegram.ui.ActionBar.k3) this.y1).containerView;
+            viewGroup.invalidate();
         }
     }
 }

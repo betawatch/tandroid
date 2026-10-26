@@ -1,19 +1,19 @@
 package k0;
 
+import a8.h0;
 import android.hardware.fingerprint.FingerprintManager;
-import androidx.biometric.e;
+import androidx.biometric.s;
 import androidx.biometric.t;
-import androidx.biometric.u;
-import androidx.biometric.w;
-import androidx.biometric.y;
+import androidx.biometric.v;
+import androidx.biometric.x;
 import androidx.lifecycle.z;
 import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import qb.c;
+import rb.c;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ c a;
@@ -24,31 +24,31 @@ public final class a extends FingerprintManager.AuthenticationCallback {
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationError(int i10, CharSequence charSequence) {
-        ((w) ((e) this.a.b).d).a(i10, charSequence);
+        ((v) ((h0) this.a.b).d).a(i10, charSequence);
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationFailed() {
-        WeakReference weakReference = ((w) ((e) this.a.b).d).a;
-        if (weakReference.get() == null || !((y) weakReference.get()).n) {
+        WeakReference weakReference = ((v) ((h0) this.a.b).d).a;
+        if (weakReference.get() == null || !((x) weakReference.get()).n) {
             return;
         }
-        y yVar = (y) weakReference.get();
-        if (yVar.u == null) {
-            yVar.u = new z();
+        x xVar = (x) weakReference.get();
+        if (xVar.u == null) {
+            xVar.u = new z();
         }
-        y.h(yVar.u, Boolean.TRUE);
+        x.h(xVar.u, Boolean.TRUE);
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationHelp(int i10, CharSequence charSequence) {
-        WeakReference weakReference = ((w) ((e) this.a.b).d).a;
+        WeakReference weakReference = ((v) ((h0) this.a.b).d).a;
         if (weakReference.get() != null) {
-            y yVar = (y) weakReference.get();
-            if (yVar.t == null) {
-                yVar.t = new z();
+            x xVar = (x) weakReference.get();
+            if (xVar.t == null) {
+                xVar.t = new z();
             }
-            y.h(yVar.t, charSequence);
+            x.h(xVar.t, charSequence);
         }
     }
 
@@ -58,42 +58,42 @@ public final class a extends FingerprintManager.AuthenticationCallback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
-        e eVar;
+        h0 h0Var;
         FingerprintManager.CryptoObject cryptoObject = authenticationResult.getCryptoObject();
-        u uVar = null;
+        t tVar = null;
         if (cryptoObject != null) {
             if (cryptoObject.getCipher() != null) {
-                eVar = new e(cryptoObject.getCipher());
+                h0Var = new h0(cryptoObject.getCipher());
             } else if (cryptoObject.getSignature() != null) {
-                eVar = new e(cryptoObject.getSignature());
+                h0Var = new h0(cryptoObject.getSignature());
             } else if (cryptoObject.getMac() != null) {
-                eVar = new e(cryptoObject.getMac());
+                h0Var = new h0(cryptoObject.getMac());
             }
             c cVar = this.a;
             cVar.getClass();
-            if (eVar != null) {
-                Cipher cipher = (Cipher) eVar.c;
+            if (h0Var != null) {
+                Cipher cipher = (Cipher) h0Var.c;
                 if (cipher != null) {
-                    uVar = new u(cipher);
+                    tVar = new t(cipher);
                 } else {
-                    Signature signature = (Signature) eVar.b;
+                    Signature signature = (Signature) h0Var.b;
                     if (signature != null) {
-                        uVar = new u(signature);
+                        tVar = new t(signature);
                     } else {
-                        Mac mac = (Mac) eVar.d;
+                        Mac mac = (Mac) h0Var.d;
                         if (mac != null) {
-                            uVar = new u(mac);
+                            tVar = new t(mac);
                         }
                     }
                 }
             }
-            ((w) ((e) cVar.b).d).b(new t(uVar, 2));
+            ((v) ((h0) cVar.b).d).b(new s(tVar, 2));
         }
-        eVar = null;
+        h0Var = null;
         c cVar2 = this.a;
         cVar2.getClass();
-        if (eVar != null) {
+        if (h0Var != null) {
         }
-        ((w) ((e) cVar2.b).d).b(new t(uVar, 2));
+        ((v) ((h0) cVar2.b).d).b(new s(tVar, 2));
     }
 }

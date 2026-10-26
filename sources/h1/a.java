@@ -1,83 +1,139 @@
 package h1;
 
-import android.database.DataSetObserver;
-import m.b3;
-import m.e2;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.i01;
-import org.telegram.ui.my0;
-import z4.h;
+import a5.j;
+import android.database.Cursor;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
+import android.widget.ImageView;
+import com.google.android.gms.internal.clearcut.c;
+import m.a3;
+import m.z2;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a extends DataSetObserver {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class a extends BaseAdapter implements Filterable {
+    public boolean a;
+    public boolean b;
+    public Cursor c;
+    public int d;
+    public c e;
+    public j f;
+    public b h;
 
-    public /* synthetic */ a(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
+    public abstract void a(View view, Cursor cursor);
 
-    @Override // android.database.DataSetObserver
-    public final void onChanged() {
-        switch (this.a) {
-            case 0:
-                b3 b3Var = (b3) this.b;
-                b3Var.a = true;
-                b3Var.notifyDataSetChanged();
-                break;
-            case 1:
-                e2 e2Var = (e2) this.b;
-                if (e2Var.O.isShowing()) {
-                    e2Var.g();
-                    break;
+    public void b(Cursor cursor) {
+        Cursor cursor2 = this.c;
+        if (cursor == cursor2) {
+            cursor2 = null;
+        } else {
+            if (cursor2 != null) {
+                c cVar = this.e;
+                if (cVar != null) {
+                    cursor2.unregisterContentObserver(cVar);
                 }
-                break;
-            case 2:
-                i01 i01Var = (i01) this.b;
-                ProfileActivity profileActivity = i01Var.n;
-                int realCount = profileActivity.o0.getRealCount();
-                if (profileActivity.B0 == 0 && realCount > 1 && realCount <= 20 && profileActivity.N.E) {
-                    profileActivity.B0 = 1;
+                j jVar = this.f;
+                if (jVar != null) {
+                    cursor2.unregisterDataSetObserver(jVar);
                 }
-                i01Var.a(false);
-                i01Var.b(1.0f);
-                if (profileActivity.r0 != null) {
-                    if (!profileActivity.U0.t()) {
-                        i01Var.c();
-                        break;
-                    } else {
-                        AndroidUtilities.runOnUIThread(new my0(i01Var, 4), 500L);
-                        break;
-                    }
+            }
+            this.c = cursor;
+            if (cursor != null) {
+                c cVar2 = this.e;
+                if (cVar2 != null) {
+                    cursor.registerContentObserver(cVar2);
                 }
-                break;
-            default:
-                ((h) this.b).f();
-                break;
+                j jVar2 = this.f;
+                if (jVar2 != null) {
+                    cursor.registerDataSetObserver(jVar2);
+                }
+                this.d = cursor.getColumnIndexOrThrow("_id");
+                this.a = true;
+                notifyDataSetChanged();
+            } else {
+                this.d = -1;
+                this.a = false;
+                notifyDataSetInvalidated();
+            }
+        }
+        if (cursor2 != null) {
+            cursor2.close();
         }
     }
 
-    @Override // android.database.DataSetObserver
-    public void onInvalidated() {
-        switch (this.a) {
-            case 0:
-                b3 b3Var = (b3) this.b;
-                b3Var.a = false;
-                b3Var.notifyDataSetInvalidated();
-                break;
-            case 1:
-                ((e2) this.b).dismiss();
-                break;
-            case 2:
-            default:
-                super.onInvalidated();
-                break;
-            case 3:
-                ((h) this.b).f();
-                break;
+    public abstract String c(Cursor cursor);
+
+    @Override // android.widget.Adapter
+    public final int getCount() {
+        Cursor cursor;
+        if (!this.a || (cursor = this.c) == null) {
+            return 0;
         }
+        return cursor.getCount();
+    }
+
+    @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
+    public View getDropDownView(int i10, View view, ViewGroup viewGroup) {
+        if (!this.a) {
+            return null;
+        }
+        this.c.moveToPosition(i10);
+        if (view == null) {
+            a3 a3Var = (a3) this;
+            view = a3Var.s.inflate(a3Var.r, viewGroup, false);
+        }
+        a(view, this.c);
+        return view;
+    }
+
+    @Override // android.widget.Filterable
+    public final Filter getFilter() {
+        if (this.h == null) {
+            b bVar = new b();
+            bVar.a = this;
+            this.h = bVar;
+        }
+        return this.h;
+    }
+
+    @Override // android.widget.Adapter
+    public final Object getItem(int i10) {
+        Cursor cursor;
+        if (!this.a || (cursor = this.c) == null) {
+            return null;
+        }
+        cursor.moveToPosition(i10);
+        return this.c;
+    }
+
+    @Override // android.widget.Adapter
+    public final long getItemId(int i10) {
+        Cursor cursor;
+        if (this.a && (cursor = this.c) != null && cursor.moveToPosition(i10)) {
+            return this.c.getLong(this.d);
+        }
+        return 0L;
+    }
+
+    @Override // android.widget.Adapter
+    public View getView(int i10, View view, ViewGroup viewGroup) {
+        if (!this.a) {
+            throw new IllegalStateException("this should only be called when the cursor is valid");
+        }
+        if (!this.c.moveToPosition(i10)) {
+            throw new IllegalStateException(ic.a.i(i10, "couldn't move cursor to position "));
+        }
+        if (view == null) {
+            a3 a3Var = (a3) this;
+            view = a3Var.s.inflate(a3Var.n, viewGroup, false);
+            view.setTag(new z2(view));
+            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(a3Var.E);
+        }
+        a(view, this.c);
+        return view;
     }
 }

@@ -1,64 +1,50 @@
 package k6;
 
-import android.os.Parcel;
-import android.os.RemoteException;
+import android.os.Bundle;
 import android.util.Log;
-import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
-import n6.x;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.firebase.messaging.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class l extends b8.b implements x {
-    public final int b;
+public final class l {
+    public final int a;
+    public final TaskCompletionSource b = new TaskCompletionSource();
+    public final int c;
+    public final Bundle d;
+    public final /* synthetic */ int e;
 
-    public l(byte[] bArr) {
-        super("com.google.android.gms.common.internal.ICertData", 7);
-        n6.l.b(bArr.length == 25);
-        this.b = Arrays.hashCode(bArr);
+    public l(int i10, int i11, Bundle bundle, int i12) {
+        this.e = i12;
+        this.a = i10;
+        this.c = i11;
+        this.d = bundle;
     }
 
-    public static byte[] K0(String str) {
-        try {
-            return str.getBytes("ISO-8859-1");
-        } catch (UnsupportedEncodingException e) {
-            throw new AssertionError(e);
+    public final boolean a() {
+        switch (this.e) {
+            case 0:
+                return true;
+            default:
+                return false;
         }
     }
 
-    @Override // b8.b
-    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
-        if (i10 == 1) {
-            x6.b bVar = new x6.b(L0());
-            parcel2.writeNoException();
-            m7.a.c(parcel2, bVar);
-            return true;
+    public final void b(p pVar) {
+        if (Log.isLoggable("MessengerIpcClient", 3)) {
+            Log.d("MessengerIpcClient", "Failing " + toString() + " with " + pVar.toString());
         }
-        if (i10 != 2) {
-            return false;
-        }
-        parcel2.writeNoException();
-        parcel2.writeInt(this.b);
-        return true;
+        this.b.setException(pVar);
     }
 
-    public abstract byte[] L0();
-
-    public final boolean equals(Object obj) {
-        if (obj != null && (obj instanceof x)) {
-            try {
-                x xVar = (x) obj;
-                if (((l) xVar).b == this.b) {
-                    return Arrays.equals(L0(), (byte[]) x6.b.L0(new x6.b(((l) xVar).L0())));
-                }
-            } catch (RemoteException e) {
-                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
-            }
+    public final void c(Bundle bundle) {
+        if (Log.isLoggable("MessengerIpcClient", 3)) {
+            Log.d("MessengerIpcClient", "Finishing " + toString() + " with " + String.valueOf(bundle));
         }
-        return false;
+        this.b.setResult(bundle);
     }
 
-    public final int hashCode() {
-        return this.b;
+    public final String toString() {
+        return "Request { what=" + this.c + " id=" + this.a + " oneWay=" + a() + "}";
     }
 }

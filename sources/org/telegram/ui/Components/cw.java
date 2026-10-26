@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class cw extends LinearLayout {
     public final a0.h a;
@@ -42,7 +42,7 @@ public final class cw extends LinearLayout {
     }
 
     public final void a(RectF rectF, int i10) {
-        View childAt = getChildAt(w7.r.b(i10, 0, getChildCount() - 1));
+        View childAt = getChildAt(a8.ee.b(i10, 0, getChildCount() - 1));
         if (childAt == null) {
             return;
         }
@@ -67,7 +67,7 @@ public final class cw extends LinearLayout {
             }
         }
         if (kwVar.s == null) {
-            kwVar.s = new f6(this, 350L, bs.h);
+            kwVar.s = new h6(this, 350L, ds.h);
         }
         float d = kwVar.s.d(kwVar.r ? 1.0f : 0.0f, false);
         int floor = (int) Math.floor(kwVar.K);
@@ -82,15 +82,15 @@ public final class cw extends LinearLayout {
         float clamp01 = iwVar != null ? 1.0f - Utilities.clamp01(Math.abs(kwVar.K - ((kwVar.E != null ? 1 : 0) + 1))) : 0.0f;
         float f10 = kwVar.L;
         float f11 = (1.0f - f10) * 4.0f * f10;
-        float A = com.google.android.gms.internal.play_billing.k3.A(f11, 0.3f, 1.0f, rectF3.width() / 2.0f);
-        float B = com.google.android.gms.internal.play_billing.k3.B(f11, 0.05f, 1.0f, rectF3.height() / 2.0f);
-        rectF3.set(rectF3.centerX() - A, rectF3.centerY() - B, rectF3.centerX() + A, rectF3.centerY() + B);
+        float C = c3.h0.C(f11, 0.3f, 1.0f, rectF3.width() / 2.0f);
+        float D = c3.h0.D(f11, 0.05f, 1.0f, rectF3.height() / 2.0f);
+        rectF3.set(rectF3.centerX() - C, rectF3.centerY() - D, rectF3.centerX() + C, rectF3.centerY() + D);
         float dp = AndroidUtilities.dp(AndroidUtilities.lerp(8.0f, 16.0f, clamp01));
         int k10 = kwVar.k();
         Paint paint = this.b;
         paint.setColor(k10);
         if (z10) {
-            paint.setAlpha((int) com.google.android.gms.internal.play_billing.k3.B(clamp01, 0.5f, 1.0f, paint.getAlpha() * d));
+            paint.setAlpha((int) c3.h0.D(clamp01, 0.5f, 1.0f, paint.getAlpha() * d));
         } else {
             paint.setAlpha((int) (paint.getAlpha() * d));
         }
@@ -139,13 +139,13 @@ public final class cw extends LinearLayout {
         int i14 = (i13 - i11) / 2;
         if (!this.h) {
             int childCount = (getChildCount() - (!kwVar.W ? 1 : 0)) - (!kwVar.b0 ? 1 : 0);
-            int B = (int) (org.telegram.messenger.sl.B(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
+            int C = (int) (org.telegram.messenger.vh.C(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
             int paddingLeft = getPaddingLeft();
             for (int i15 = 0; i15 < childCount; i15++) {
                 View childAt = getChildAt((!kwVar.W ? 1 : 0) + (!kwVar.b0 ? 1 : 0) + i15);
                 if (childAt != null) {
                     childAt.layout(paddingLeft, i14 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i14);
-                    paddingLeft = childAt.getMeasuredWidth() + B + paddingLeft;
+                    paddingLeft = childAt.getMeasuredWidth() + C + paddingLeft;
                 }
             }
             return;
@@ -167,8 +167,8 @@ public final class cw extends LinearLayout {
                     gw gwVar2 = (gw) childAt2;
                     Long l10 = gwVar2.a;
                     if (l10 == null) {
-                        fy fyVar = gwVar2.v;
-                        if (fyVar == null || (stickerSet = fyVar.b) == null) {
+                        ey eyVar = gwVar2.v;
+                        if (eyVar == null || (stickerSet = eyVar.b) == null) {
                             l10 = gwVar2.r;
                             if (l10 == null) {
                                 TLRPC.Document document = gwVar2.s;
@@ -191,19 +191,19 @@ public final class cw extends LinearLayout {
                         childAt2.setScaleX(0.0f);
                         childAt2.setScaleY(0.0f);
                         childAt2.setAlpha(0.0f);
-                        childAt2.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(ah.x0.d() ? 0L : 200L).setInterpolator(bs.h).start();
+                        childAt2.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(bh.m0.d() ? 0L : 200L).setInterpolator(ds.h).start();
                     }
                 }
                 if (l4 != null) {
                     Integer num = (Integer) hVar.f(l4.longValue());
                     if (num != null && num.intValue() != paddingLeft2 && Math.abs(num.intValue() - paddingLeft2) < AndroidUtilities.dp(45.0f)) {
                         childAt2.setTranslationX(num.intValue() - paddingLeft2);
-                        childAt2.animate().translationX(0.0f).setDuration(250L).setInterpolator(bs.h).start();
+                        childAt2.animate().translationX(0.0f).setDuration(250L).setInterpolator(ds.h).start();
                     }
                     hVar.k(Integer.valueOf(paddingLeft2), l4.longValue());
                 }
                 if ((childAt2 != kwVar.y || kwVar.W) && (childAt2 != kwVar.E || kwVar.b0)) {
-                    paddingLeft2 = org.telegram.messenger.v0.C(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
+                    paddingLeft2 = org.telegram.messenger.t.D(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
                 }
             }
             i16++;

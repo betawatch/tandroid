@@ -1,86 +1,46 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class r30 extends TextView {
-    public final Paint[] a;
-    public final /* synthetic */ org.telegram.ui.s40 b;
+public final class r30 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.u40 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r30(org.telegram.ui.s40 s40Var, Context context) {
+    public r30(org.telegram.ui.u40 u40Var, Context context) {
         super(context);
-        this.b = s40Var;
-        this.a = new Paint[s40Var.e.length];
-        int i10 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i10 >= paintArr.length) {
-                return;
-            }
-            paintArr[i10] = new Paint(1);
-            i10++;
-        }
+        this.a = u40Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        org.telegram.ui.s40 s40Var = this.b;
-        int i11 = s40Var.h;
-        Paint[] paintArr = this.a;
-        paintArr[i11].setAlpha(255);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[s40Var.h]);
-        float f7 = s40Var.f;
-        if (f7 > 0.0f && (i10 = s40Var.h + 1) < paintArr.length) {
-            paintArr[i10].setAlpha((int) (f7 * 255.0f));
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[s40Var.h + 1]);
-        }
-        super.onDraw(canvas);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        w30.m(this.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x003e  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0029  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        super.onSizeChanged(i10, i11, i12, i13);
-        int i16 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i16 >= paintArr.length) {
-                return;
-            }
-            int i17 = -9015575;
-            if (i16 == 0) {
-                i14 = -9015575;
-                i17 = -11033346;
-            } else if (i16 == 1) {
-                i17 = -8919716;
-                i14 = -11089922;
-            } else {
-                i14 = -1026983;
-                i15 = -1792170;
-                paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
-                i16++;
-            }
-            i15 = 0;
-            paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
-            i16++;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
+        org.telegram.ui.u40 u40Var = this.a;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) u40Var.c.getLayoutParams();
+        if (z10) {
+            int dp = AndroidUtilities.dp(80.0f);
+            marginLayoutParams.leftMargin = dp;
+            marginLayoutParams.rightMargin = dp;
+        } else {
+            int dp2 = AndroidUtilities.dp(16.0f);
+            marginLayoutParams.leftMargin = dp2;
+            marginLayoutParams.rightMargin = dp2;
         }
+        int B = org.telegram.messenger.vh.B(200.0f, View.MeasureSpec.getSize(i10), 2);
+        u40Var.b.setPadding(B, 0, B, 0);
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLObject.FLAG_30));
+        measureChildWithMargins(u40Var.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
     }
 }

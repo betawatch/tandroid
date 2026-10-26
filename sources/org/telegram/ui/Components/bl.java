@@ -5,15 +5,15 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rl b;
+    public final /* synthetic */ sl b;
 
-    public /* synthetic */ bl(rl rlVar, int i10) {
+    public /* synthetic */ bl(sl slVar, int i10) {
         this.a = i10;
-        this.b = rlVar;
+        this.b = slVar;
     }
 
     @Override // java.lang.Runnable
@@ -21,49 +21,46 @@ public final /* synthetic */ class bl implements Runnable {
         Location location;
         switch (this.a) {
             case 0:
-                rl rlVar = this.b;
-                double[] dArr = rlVar.b.D2;
-                rlVar.f0(dArr[0], dArr[1]);
+                sl slVar = this.b;
+                double[] dArr = slVar.b.D2;
+                slVar.e0(dArr[0], dArr[1]);
                 break;
             case 1:
-                rl.P(this.b);
+                sl.P(this.b);
                 break;
             case 2:
-                this.b.c0();
+                AndroidUtilities.runOnUIThread(new bl(this.b, 3));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new bl(this.b, 4));
-                break;
-            case 4:
                 View view = this.b.K;
                 view.setTag(1);
                 view.animate().alpha(0.0f).setDuration(180L).start();
                 break;
-            case 5:
-                rl rlVar2 = this.b;
-                hg.s0 s0Var = rlVar2.M;
-                if (!rlVar2.r0) {
-                    IMapsProvider.IMap iMap = rlVar2.F;
-                    if (iMap != null && (location = rlVar2.p0) != null) {
+            case 4:
+                sl slVar2 = this.b;
+                ig.s0 s0Var = slVar2.M;
+                if (!slVar2.q0) {
+                    IMapsProvider.IMap iMap = slVar2.F;
+                    if (iMap != null && (location = slVar2.o0) != null) {
                         location.setLatitude(iMap.getCameraPosition().target.latitude);
-                        rlVar2.p0.setLongitude(rlVar2.F.getCameraPosition().target.longitude);
+                        slVar2.o0.setLongitude(slVar2.F.getCameraPosition().target.longitude);
                     }
-                    s0Var.L(rlVar2.p0);
+                    s0Var.L(slVar2.o0);
                     s0Var.I();
                     break;
                 } else {
-                    rlVar2.r0 = false;
+                    slVar2.q0 = false;
+                    break;
+                }
+                break;
+            case 5:
+                pl plVar = this.b.y;
+                if (plVar != null) {
+                    plVar.a();
                     break;
                 }
                 break;
             case 6:
-                ol olVar = this.b.y;
-                if (olVar != null) {
-                    olVar.a();
-                    break;
-                }
-                break;
-            case 7:
                 View view2 = this.b.K;
                 if (view2.getTag() == null) {
                     view2.animate().alpha(0.0f).setDuration(180L).start();
@@ -71,7 +68,7 @@ public final /* synthetic */ class bl implements Runnable {
                 }
                 break;
             default:
-                this.b.f0(0.0d, 0.0d);
+                this.b.e0(0.0d, 0.0d);
                 break;
         }
     }

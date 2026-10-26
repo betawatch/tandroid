@@ -1,47 +1,54 @@
 package com.google.android.gms.internal.cast;
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.net.ConnectivityManager;
+import android.net.LinkProperties;
+import android.net.Network;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class v {
-    public static final /* synthetic */ int a = 0;
+public final class v extends ConnectivityManager.NetworkCallback {
+    public final /* synthetic */ w a;
 
-    static {
-        v.class.getClassLoader();
+    public v(w wVar) {
+        this.a = wVar;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
+        this.a.a(network, linkProperties);
     }
 
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(i2.o1.k(dataAvail, "Parcel data not fully consumed, unread size: "));
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLost(Network network) {
+        w wVar = this.a;
+        synchronized (wVar.h) {
+            try {
+                if (wVar.d != null && wVar.e != null) {
+                    w.j.b("the network is lost", new Object[0]);
+                    if (wVar.e.remove(network)) {
+                        wVar.d.remove(network);
+                    }
+                    wVar.b();
+                }
+            } finally {
+            }
         }
     }
 
-    public static void c(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onUnavailable() {
+        w wVar = this.a;
+        synchronized (wVar.h) {
+            if (wVar.d != null && wVar.e != null) {
+                w.j.b("all networks are unavailable.", new Object[0]);
+                wVar.d.clear();
+                wVar.e.clear();
+                wVar.b();
+            }
         }
     }
 
-    public static void d(Parcel parcel, IInterface iInterface) {
-        if (iInterface == null) {
-            parcel.writeStrongBinder(null);
-        } else {
-            parcel.writeStrongBinder(iInterface.asBinder());
-        }
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onAvailable(Network network) {
     }
 }

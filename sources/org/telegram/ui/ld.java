@@ -1,43 +1,69 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
+import android.view.ContextThemeWrapper;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ld implements TextWatcher {
-    public final /* synthetic */ int a;
+public final class ld extends RadialProgressView {
+    public final /* synthetic */ int N;
+    public final /* synthetic */ Object O;
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10 = this.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ld(org.telegram.ui.Components.f50 f50Var, Context context, int i10) {
+        super(context, null);
+        this.N = i10;
+        this.O = f50Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.N) {
+            case 3:
+                super.invalidate();
+                iu0 iu0Var = ((PhotoViewer) this.O).e0;
+                if (iu0Var != null) {
+                    iu0Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
+    public final void setAlpha(float f7) {
+        switch (this.N) {
+            case 0:
+                super.setAlpha(f7);
+                ((nd) this.O).h.invalidate();
+                break;
+            case 1:
+                super.setAlpha(f7);
+                ((x60) this.O).e.invalidate();
+                break;
+            case 2:
+                super.setAlpha(f7);
+                ((re0) this.O).h.invalidate();
+                break;
+            default:
+                super.setAlpha(f7);
+                iu0 iu0Var = ((PhotoViewer) this.O).e0;
+                if (iu0Var != null) {
+                    iu0Var.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ld(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(contextThemeWrapper, u6Var);
+        this.N = 3;
+        this.O = photoViewer;
     }
 }

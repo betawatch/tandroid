@@ -1,55 +1,19 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatActivityEnterView;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mw0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ Object d;
+public final class mw0 extends t51 {
+    public final /* synthetic */ PremiumPreviewFragment e;
 
-    public /* synthetic */ mw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = viewGroup;
-        this.d = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mw0(PremiumPreviewFragment premiumPreviewFragment, lw0 lw0Var) {
+        super(lw0Var);
+        this.e = premiumPreviewFragment;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                rw0 rw0Var = (rw0) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
-                PremiumPreviewFragment premiumPreviewFragment = rw0Var.n;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = this.c;
-                view.setAlpha(floatValue);
-                view.setScaleX(floatValue);
-                view.setScaleY(floatValue);
-                float animatedFraction = valueAnimator2.getAnimatedFraction();
-                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
-                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
-                    if (childAt != rw0Var.e) {
-                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == rw0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
-                    }
-                }
-                break;
-            default:
-                ea1 ea1Var = (ea1) this.b;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.si siVar = (org.telegram.ui.Components.si) this.d;
-                ea1Var.getClass();
-                ea1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(ea1Var.a);
-                siVar.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.t51, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.v0 = null;
     }
 }

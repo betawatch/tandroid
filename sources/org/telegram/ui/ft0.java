@@ -1,96 +1,65 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.util.Property;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.SurfaceView;
+import android.view.TextureView;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ft0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class ft0 extends m4 {
+    public final /* synthetic */ PhotoViewer h;
 
-    public ft0(PhotoViewer photoViewer, int i10) {
-        this.b = photoViewer;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ft0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.h = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        PhotoViewer photoViewer = this.b;
-        bu0 bu0Var = photoViewer.X4;
-        photoViewer.q6 = null;
-        photoViewer.P0.setVisibility(8);
-        photoViewer.S0.setVisibility(8);
-        photoViewer.n0.setVisibility(8);
-        photoViewer.e1.setVisibility(8);
-        photoViewer.f1.setVisibility(8);
-        photoViewer.g1.setVisibility(8);
-        photoViewer.o1.setVisibility(8);
-        photoViewer.o1.setAlpha(0.0f);
-        photoViewer.o1.setTranslationY(-AndroidUtilities.dp(10.0f));
-        photoViewer.O0.setRotationX(0.0f);
-        photoViewer.o1.setEnabled(false);
-        photoViewer.K = false;
-        if (photoViewer.i2) {
-            photoViewer.Q1.setVisibility(4);
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (this.h.T8) {
+            return;
         }
-        int i10 = photoViewer.c2;
-        if (i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) {
-            photoViewer.N0.setVisibility(8);
-            photoViewer.O0.setVisibility(8);
-            photoViewer.u3();
+        super.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        PhotoViewer photoViewer = this.h;
+        if (view == photoViewer.E3 && photoViewer.g4) {
+            return true;
         }
-        if (photoViewer.c2 == 11) {
-            photoViewer.i6 = photoViewer.Y5;
-            photoViewer.h6 = photoViewer.X5;
-            photoViewer.j6 = photoViewer.a6;
-            photoViewer.k6 = photoViewer.b6;
-            photoViewer.f6 = 0.0f;
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // org.telegram.ui.m4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        PhotoViewer photoViewer = this.h;
+        ImageView imageView = photoViewer.x3;
+        if (imageView != null) {
+            ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
+            layoutParams.width = getMeasuredWidth();
+            layoutParams.height = getMeasuredHeight();
         }
-        Bitmap bitmap = photoViewer.C4.getBitmap();
-        if (bitmap != null || photoViewer.r1) {
-            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.z71) photoViewer.B2 : null, bu0Var.c);
-            photoViewer.C1.a();
-            int bitmapWidth = photoViewer.C4.getBitmapWidth();
-            int bitmapHeight = photoViewer.C4.getBitmapHeight();
-            MediaController.CropState cropState = bu0Var.c;
-            if (cropState != null) {
-                int i11 = cropState.transformRotation;
-                if (i11 == 90 || i11 == 270) {
-                    bitmapHeight = bitmapWidth;
-                    bitmapWidth = bitmapHeight;
-                }
-                bitmapWidth = (int) (bitmapWidth * cropState.cropPw);
-                bitmapHeight = (int) (bitmapHeight * cropState.cropPh);
+        TextureView textureView = photoViewer.B2;
+        if (textureView instanceof org.telegram.ui.Components.h81) {
+            textureView.setPivotX(textureView.getMeasuredWidth() / 2);
+            photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
+        } else {
+            if (textureView != null) {
+                textureView.setPivotX(0.0f);
             }
-            float f7 = bitmapWidth;
-            float f10 = bitmapHeight;
-            float min = Math.min(photoViewer.l1(photoViewer.u4) / f7, photoViewer.j1() / f10);
-            float min2 = Math.min(photoViewer.l1(1) / f7, photoViewer.i1(1, false) / f10);
-            if (photoViewer.c2 == 1) {
-                float min3 = Math.min(photoViewer.l1(1), photoViewer.i1(1, false));
-                min2 = Math.max(min3 / f7, min3 / f10);
+            SurfaceView surfaceView = photoViewer.C2;
+            if (surfaceView != null) {
+                surfaceView.setPivotX(0.0f);
             }
-            photoViewer.e6 = min2 / min;
-            Rect rect = photoViewer.s2;
-            photoViewer.c6 = (rect.left / 2) - (rect.right / 2);
-            photoViewer.d6 = (-AndroidUtilities.dp(56.0f)) + (!photoViewer.s ? AndroidUtilities.statusBarHeight / 2 : 0);
-            photoViewer.n6 = System.currentTimeMillis();
-            photoViewer.R6 = true;
+            photoViewer.E2.setPivotX(0.0f);
         }
-        AnimatorSet animatorSet = new AnimatorSet();
-        photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.U0, (Property<org.telegram.ui.Components.rg0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.t6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.rf0, Float>) View.ALPHA, 0.0f, 1.0f));
-        photoViewer.p6.setDuration(200L);
-        photoViewer.p6.addListener(new v70(this, 9));
-        photoViewer.p6.start();
+        photoViewer.A0();
     }
 }

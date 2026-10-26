@@ -1,27 +1,29 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class rx extends s4.s {
-    public final /* synthetic */ tz Q;
+public final class rx extends g.o {
+    public final /* synthetic */ sz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rx(tz tzVar) {
-        super(8);
-        this.Q = tzVar;
+    public rx(sz szVar) {
+        this.c = szVar;
     }
 
-    @Override // s4.b0, s4.n0
-    public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
-        try {
-            ei.l1 l1Var = new ei.l1(this, recyclerView.getContext(), 2);
-            l1Var.a = i10;
-            w0(l1Var);
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // g.o
+    public final int i(int i10) {
+        sz szVar = this.c;
+        zx zxVar = szVar.R;
+        qx qxVar = szVar.Q;
+        s4.h0 adapter = szVar.P.getAdapter();
+        sy syVar = szVar.S;
+        if (adapter == syVar) {
+            int j10 = syVar.j(i10);
+            if (j10 == 1 || j10 == 3 || j10 == 2 || j10 == 4 || j10 == 5) {
+                return qxVar.J;
+            }
+        } else if ((szVar.d0 && i10 == 0) || i10 == zxVar.d || i10 == zxVar.c || i10 == zxVar.f || zxVar.r.indexOfKey(i10) >= 0 || zxVar.v.indexOfKey(i10) >= 0) {
+            return qxVar.J;
         }
+        return 1;
     }
 }

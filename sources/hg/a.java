@@ -1,37 +1,6 @@
 package hg;
 
-import android.location.Location;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Location d;
-
-    public /* synthetic */ a(c cVar, String str, Location location, int i10) {
-        this.a = i10;
-        this.b = cVar;
-        this.c = str;
-        this.d = location;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                c cVar = this.b;
-                cVar.getClass();
-                AndroidUtilities.runOnUIThread(new a(cVar, this.c, this.d, 1));
-                break;
-            default:
-                c cVar2 = this.b;
-                cVar2.E = null;
-                cVar2.v = null;
-                cVar2.H(this.c, this.d, true);
-                break;
-        }
-    }
+public interface a {
 }

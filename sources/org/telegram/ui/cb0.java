@@ -1,34 +1,14 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.EditText;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class cb0 extends EditText {
-    public final /* synthetic */ int a;
+public interface cb0 {
+    void a(TLRPC.TL_chatInviteExported tL_chatInviteExported);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ cb0(Context context, int i10) {
-        super(context);
-        this.a = i10;
-    }
+    void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject);
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (motionEvent.getAction() == 1) {
-                    setCursorVisible(true);
-                }
-                break;
-            default:
-                if (motionEvent.getAction() == 1) {
-                    setCursorVisible(true);
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
+    void c(TLObject tLObject);
 }

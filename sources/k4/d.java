@@ -1,10 +1,10 @@
 package k4;
 
-import c3.r;
+import a8.yb;
+import c3.p;
 import e2.x;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d {
     public final int a;
@@ -15,8 +15,8 @@ public final class d {
         this.b = j10;
     }
 
-    public static d b(r rVar, x xVar) {
-        rVar.a(0, 8, xVar.a);
+    public static d b(p pVar, x xVar) {
+        pVar.b(0, 8, xVar.a);
         xVar.N(0);
         return new d(xVar.m(), xVar.r(), false);
     }
@@ -27,7 +27,7 @@ public final class d {
     }
 
     public d(int i10, long j10) {
-        u6.g(j10 >= 0);
+        yb.g(j10 >= 0);
         this.a = i10;
         this.b = j10;
     }

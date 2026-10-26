@@ -1,5 +1,6 @@
 package com.google.android.gms.common.api.internal;
 
+import a8.ng;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
@@ -10,11 +11,11 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class p1 extends Fragment implements m {
     public static final WeakHashMap b = new WeakHashMap();
-    public final a5.a a = new a5.a(1, (byte) 0);
+    public final ng a = new ng(3, (byte) 0);
 
     @Override // com.google.android.gms.common.api.internal.m
     public final void a(String str, l lVar) {
@@ -58,9 +59,9 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onDestroy() {
         super.onDestroy();
-        a5.a aVar = this.a;
-        aVar.b = 5;
-        Iterator it = ((Map) aVar.c).values().iterator();
+        ng ngVar = this.a;
+        ngVar.b = 5;
+        Iterator it = ((Map) ngVar.c).values().iterator();
         while (it.hasNext()) {
             ((l) it.next()).onDestroy();
         }
@@ -69,9 +70,9 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onResume() {
         super.onResume();
-        a5.a aVar = this.a;
-        aVar.b = 3;
-        Iterator it = ((Map) aVar.c).values().iterator();
+        ng ngVar = this.a;
+        ngVar.b = 3;
+        Iterator it = ((Map) ngVar.c).values().iterator();
         while (it.hasNext()) {
             ((l) it.next()).onResume();
         }
@@ -86,9 +87,9 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onStart() {
         super.onStart();
-        a5.a aVar = this.a;
-        aVar.b = 2;
-        Iterator it = ((Map) aVar.c).values().iterator();
+        ng ngVar = this.a;
+        ngVar.b = 2;
+        Iterator it = ((Map) ngVar.c).values().iterator();
         while (it.hasNext()) {
             ((l) it.next()).onStart();
         }
@@ -97,9 +98,9 @@ public final class p1 extends Fragment implements m {
     @Override // android.app.Fragment
     public final void onStop() {
         super.onStop();
-        a5.a aVar = this.a;
-        aVar.b = 4;
-        Iterator it = ((Map) aVar.c).values().iterator();
+        ng ngVar = this.a;
+        ngVar.b = 4;
+        Iterator it = ((Map) ngVar.c).values().iterator();
         while (it.hasNext()) {
             ((l) it.next()).onStop();
         }

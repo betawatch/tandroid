@@ -1,22 +1,22 @@
 package e2;
 
+import a8.yb;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
-import ei.bc;
+import fi.ua;
 import java.lang.ref.WeakReference;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.WeakHashMap;
+import m.v0;
 import m.w0;
-import m.x0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class j0 {
     public int a;
@@ -25,7 +25,7 @@ public class j0 {
     public Object d;
 
     public j0(int[] iArr) {
-        SecureRandom secureRandom = tc.k.a;
+        SecureRandom secureRandom = uc.k.a;
         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         for (int i11 : iArr) {
             if (i11 < i10) {
@@ -92,7 +92,7 @@ public class j0 {
     }
 
     public void b() {
-        new Handler(Looper.getMainLooper()).post(new bc(this, 12));
+        new Handler(Looper.getMainLooper()).post(new ua(this, 6));
     }
 
     public synchronized void c() {
@@ -126,19 +126,19 @@ public class j0 {
     public void e(Typeface typeface) {
         int i10;
         if (Build.VERSION.SDK_INT >= 28 && (i10 = this.a) != -1) {
-            typeface = w0.a(typeface, i10, (this.b & 2) != 0);
+            typeface = v0.a(typeface, i10, (this.b & 2) != 0);
         }
-        x0 x0Var = (x0) this.d;
+        w0 w0Var = (w0) this.d;
         WeakReference weakReference = (WeakReference) this.c;
-        if (x0Var.m) {
-            x0Var.l = typeface;
+        if (w0Var.m) {
+            w0Var.l = typeface;
             TextView textView = (TextView) weakReference.get();
             if (textView != null) {
                 WeakHashMap weakHashMap = r0.i0.a;
                 if (textView.isAttachedToWindow()) {
-                    textView.post(new androidx.activity.g(textView, typeface, x0Var.j, 4));
+                    textView.post(new androidx.activity.g(textView, typeface, w0Var.j, 4));
                 } else {
-                    textView.setTypeface(typeface, x0Var.j);
+                    textView.setTypeface(typeface, w0Var.j);
                 }
             }
         }
@@ -158,7 +158,7 @@ public class j0 {
     }
 
     public Object h() {
-        u6.p(this.b > 0);
+        yb.p(this.b > 0);
         Object[] objArr = (Object[]) this.d;
         int i10 = this.a;
         Object obj = objArr[i10];
@@ -168,12 +168,12 @@ public class j0 {
         return obj;
     }
 
-    public int i(c5.c0 c0Var, int[] iArr) {
+    public int i(d5.z zVar, int[] iArr) {
         int i10 = this.a;
         while (true) {
             int i11 = 1;
             if (i10 > this.b) {
-                throw new com.google.firebase.messaging.q(String.format("[%s] Bad code at the bit index '%d'.", getClass().getSimpleName(), Integer.valueOf(iArr[0])));
+                throw new com.google.firebase.messaging.p(String.format("[%s] Bad code at the bit index '%d'.", getClass().getSimpleName(), Integer.valueOf(iArr[0])));
             }
             int i12 = ((int[]) this.c)[i10];
             if (i12 >= 0) {
@@ -181,7 +181,7 @@ public class j0 {
                 int i14 = i10 - 1;
                 int i15 = 0;
                 while (i14 >= 0) {
-                    if (c0Var.o(i13 + i14)) {
+                    if (zVar.k(i13 + i14)) {
                         i15 += i11;
                     }
                     i14--;

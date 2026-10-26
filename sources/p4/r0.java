@@ -12,15 +12,17 @@ import android.util.Log;
 import com.google.android.gms.internal.vision.g3;
 import java.util.ArrayList;
 import java.util.List;
+import li.e3;
+import org.telegram.ui.Components.voip.j1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class r0 extends g3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
     public boolean E;
-    public j5.b F;
+    public j1 F;
     public final ComponentName r;
-    public final com.google.android.gms.internal.cast.a0 s;
+    public final com.google.android.gms.internal.cast.y s;
     public final ArrayList v;
     public boolean w;
     public boolean x;
@@ -31,10 +33,10 @@ public final class r0 extends g3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new le.b(componentName, 14));
+        super(context, new e3(componentName, 14));
         this.v = new ArrayList();
         this.r = componentName;
-        this.s = new com.google.android.gms.internal.cast.a0();
+        this.s = new com.google.android.gms.internal.cast.y();
     }
 
     @Override // com.google.android.gms.internal.vision.g3
@@ -42,11 +44,11 @@ public final class r0 extends g3 implements ServiceConnection {
         if (str == null) {
             throw new IllegalArgumentException("initialMemberRouteId cannot be null.");
         }
-        b2.t tVar = (b2.t) this.n;
-        if (tVar == null) {
+        b2.u uVar = (b2.u) this.n;
+        if (uVar == null) {
             return null;
         }
-        List list = (List) tVar.c;
+        List list = (List) uVar.c;
         int size = list.size();
         for (int i10 = 0; i10 < size; i10++) {
             if (((m) list.get(i10)).d().equals(str)) {
@@ -105,11 +107,11 @@ public final class r0 extends g3 implements ServiceConnection {
     }
 
     public final q0 o(String str, String str2) {
-        b2.t tVar = (b2.t) this.n;
-        if (tVar == null) {
+        b2.u uVar = (b2.u) this.n;
+        if (uVar == null) {
             return null;
         }
-        List list = (List) tVar.c;
+        List list = (List) uVar.c;
         int size = list.size();
         for (int i10 = 0; i10 < size; i10++) {
             if (((m) list.get(i10)).d().equals(str)) {

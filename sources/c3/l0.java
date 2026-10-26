@@ -1,19 +1,28 @@
 package c3;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.os.Parcel;
+import com.google.android.gms.tasks.TaskCompletionSource;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface l0 {
-    int a(b2.o oVar, int i10, boolean z10);
+public final class l0 implements com.google.android.gms.common.api.internal.r {
+    public final String[] a;
 
-    void b(b2.w wVar);
+    public /* synthetic */ l0(h6.r rVar, String[] strArr) {
+        this.a = strArr;
+    }
 
-    void c(long j10, int i10, int i11, int i12, k0 k0Var);
+    @Override // com.google.android.gms.common.api.internal.r
+    public void accept(Object obj, Object obj2) {
+        h6.q qVar = new h6.q(1, (TaskCompletionSource) obj2);
+        h6.i iVar = (h6.i) ((h6.s) obj).u();
+        Parcel N0 = iVar.N0();
+        com.google.android.gms.internal.cast.t.d(N0, qVar);
+        N0.writeStringArray(this.a);
+        iVar.S0(N0, 6);
+    }
 
-    void d(int i10, e2.x xVar);
-
-    void e(long j10);
-
-    int f(b2.o oVar, int i10, boolean z10);
-
-    void g(e2.x xVar, int i10, int i11);
+    public l0(String[] strArr) {
+        this.a = strArr;
+    }
 }

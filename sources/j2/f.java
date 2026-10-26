@@ -1,65 +1,65 @@
 package j2;
 
-import b2.n1;
 import b2.o1;
-import u2.h0;
+import b2.p1;
+import u2.g0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
     public int b;
     public long c;
-    public final h0 d;
+    public final g0 d;
     public boolean e;
     public boolean f;
     public final /* synthetic */ g g;
 
-    public f(g gVar, String str, int i10, h0 h0Var) {
+    public f(g gVar, String str, int i10, g0 g0Var) {
         this.g = gVar;
         this.a = str;
         this.b = i10;
-        this.c = h0Var == null ? -1L : h0Var.d;
-        if (h0Var == null || !h0Var.b()) {
+        this.c = g0Var == null ? -1L : g0Var.d;
+        if (g0Var == null || !g0Var.b()) {
             return;
         }
-        this.d = h0Var;
+        this.d = g0Var;
     }
 
     public final boolean a(a aVar) {
-        h0 h0Var = aVar.d;
-        o1 o1Var = aVar.b;
-        if (h0Var == null) {
+        g0 g0Var = aVar.d;
+        p1 p1Var = aVar.b;
+        if (g0Var == null) {
             return this.b != aVar.c;
         }
         long j10 = this.c;
         if (j10 == -1) {
             return false;
         }
-        if (h0Var.d > j10) {
+        if (g0Var.d > j10) {
             return true;
         }
-        h0 h0Var2 = this.d;
-        if (h0Var2 == null) {
+        g0 g0Var2 = this.d;
+        if (g0Var2 == null) {
             return false;
         }
-        int i10 = h0Var2.b;
-        int b10 = o1Var.b(h0Var.a);
-        int b11 = o1Var.b(h0Var2.a);
-        if (h0Var.d < h0Var2.d || b10 < b11) {
+        int i10 = g0Var2.b;
+        int b10 = p1Var.b(g0Var.a);
+        int b11 = p1Var.b(g0Var2.a);
+        if (g0Var.d < g0Var2.d || b10 < b11) {
             return false;
         }
         if (b10 > b11) {
             return true;
         }
-        if (!h0Var.b()) {
-            int i11 = h0Var.e;
+        if (!g0Var.b()) {
+            int i11 = g0Var.e;
             return i11 == -1 || i11 > i10;
         }
-        int i12 = h0Var.b;
-        int i13 = h0Var.c;
+        int i12 = g0Var.b;
+        int i13 = g0Var.c;
         if (i12 <= i10) {
-            return i12 == i10 && i13 > h0Var2.c;
+            return i12 == i10 && i13 > g0Var2.c;
         }
         return true;
     }
@@ -71,23 +71,23 @@ public final class f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(o1 o1Var, o1 o1Var2) {
-        h0 h0Var;
+    public final boolean b(p1 p1Var, p1 p1Var2) {
+        g0 g0Var;
         int i10 = this.b;
-        if (i10 < o1Var.o()) {
+        if (i10 < p1Var.o()) {
             g gVar = this.g;
-            n1 n1Var = gVar.a;
-            o1Var.n(i10, n1Var);
-            for (int i11 = n1Var.n; i11 <= n1Var.o; i11++) {
-                int b10 = o1Var2.b(o1Var.l(i11));
+            o1 o1Var = gVar.a;
+            p1Var.n(i10, o1Var);
+            for (int i11 = o1Var.n; i11 <= o1Var.o; i11++) {
+                int b10 = p1Var2.b(p1Var.l(i11));
                 if (b10 != -1) {
-                    i10 = o1Var2.f(b10, gVar.b, false).c;
+                    i10 = p1Var2.f(b10, gVar.b, false).c;
                     break;
                 }
             }
             i10 = -1;
         }
         this.b = i10;
-        return i10 != -1 && ((h0Var = this.d) == null || o1Var2.b(h0Var.a) != -1);
+        return i10 != -1 && ((g0Var = this.d) == null || p1Var2.b(g0Var.a) != -1);
     }
 }

@@ -1,10 +1,74 @@
 package fd;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import java.util.Arrays;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c extends d {
-    @Override // fd.d, f2.f
-    public final String toString() {
-        return a1.g.s(new StringBuilder("<![CDATA["), this.c, "]]>");
+public final class c implements Iterable, Cloneable {
+    public static final String[] d = new String[0];
+    public int a = 0;
+    public String[] b;
+    public String[] c;
+
+    public c() {
+        String[] strArr = d;
+        this.b = strArr;
+        this.c = strArr;
+    }
+
+    public final Object clone() {
+        try {
+            c cVar = (c) super.clone();
+            cVar.a = this.a;
+            String[] strArr = this.b;
+            int i10 = this.a;
+            String[] strArr2 = new String[i10];
+            System.arraycopy(strArr, 0, strArr2, 0, Math.min(strArr.length, i10));
+            this.b = strArr2;
+            String[] strArr3 = this.c;
+            int i11 = this.a;
+            String[] strArr4 = new String[i11];
+            System.arraycopy(strArr3, 0, strArr4, 0, Math.min(strArr3.length, i11));
+            this.c = strArr4;
+            return cVar;
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || c.class != obj.getClass()) {
+            return false;
+        }
+        c cVar = (c) obj;
+        if (this.a == cVar.a && Arrays.equals(this.b, cVar.b)) {
+            return Arrays.equals(this.c, cVar.c);
+        }
+        return false;
+    }
+
+    public final int h(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("Object must not be null");
+        }
+        for (int i10 = 0; i10 < this.a; i10++) {
+            if (str.equals(this.b[i10])) {
+                return i10;
+            }
+        }
+        return -1;
+    }
+
+    public final int hashCode() {
+        return (((this.a * 31) + Arrays.hashCode(this.b)) * 31) + Arrays.hashCode(this.c);
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return new b(this);
     }
 }

@@ -1,61 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.widget.ImageView;
+import android.content.Context;
 import android.widget.LinearLayout;
-import android.widget.Space;
-import android.widget.TextView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class nd extends LinearLayout {
-    public ImageView a;
-    public TextView b;
-    public Space c;
-    public boolean d;
+public final class nd extends LinearLayout {
+    public final od[] a;
 
-    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = imageView;
-            addView(imageView, layoutParams);
+    public nd(Context context) {
+        super(context);
+        this.a = new od[2];
+    }
+
+    public final void a(org.telegram.ui.jk jkVar, LinearLayout.LayoutParams layoutParams) {
+        int childCount = getChildCount();
+        if (childCount < 2) {
+            this.a[childCount] = jkVar;
+            addView(jkVar, layoutParams);
         }
     }
 
-    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
-        if (this.c == null) {
-            this.c = space;
-            addView(space, layoutParams);
-        }
-    }
-
-    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = textView;
-            addView(textView, layoutParams);
-        }
-    }
-
-    public abstract void d();
-
-    public ImageView getImageView() {
+    public od[] getButtons() {
         return this.a;
-    }
-
-    public TextView getTextView() {
-        return this.b;
-    }
-
-    public void setEditButton(boolean z10) {
-        this.d = z10;
-    }
-
-    public void setOnlyIconMode(boolean z10) {
-        TextView textView = this.b;
-        if (textView != null) {
-            textView.setVisibility(z10 ? 8 : 0);
-        }
-        Space space = this.c;
-        if (space != null) {
-            space.setVisibility(z10 ? 8 : 0);
-        }
     }
 }

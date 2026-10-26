@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 class PredefMacroInfo extends MacroInfo {
     private int id;
@@ -344,11 +344,11 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.hphantom_macro(teXParser, strArr);
                 case 178:
                     return PredefMacros.vphantom_macro(teXParser, strArr);
-                case MessagesStorage.LAST_DB_VERSION /* 179 */:
+                case 179:
                     return PredefMacros.spATbreve_macro(teXParser, strArr);
                 case 180:
                     return PredefMacros.spAThat_macro(teXParser, strArr);
-                case 181:
+                case MessagesStorage.LAST_DB_VERSION /* 181 */:
                     return PredefMacros.definecolor_macro(teXParser, strArr);
                 case 182:
                     return PredefMacros.textcolor_macro(teXParser, strArr);
@@ -441,9 +441,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.simcoloncolon_macro(teXParser, strArr);
                 case 231:
                     return PredefMacros.approxcolon_macro(teXParser, strArr);
-                case TLRPC.LAYER /* 232 */:
+                case 232:
                     return PredefMacros.approxcoloncolon_macro(teXParser, strArr);
-                case 233:
+                case TLRPC.LAYER /* 233 */:
                     return PredefMacros.coloncolon_macro(teXParser, strArr);
                 case 234:
                     return PredefMacros.equalscolon_macro(teXParser, strArr);

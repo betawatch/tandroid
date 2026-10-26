@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class CarText {
     private final List<SpanWrapper> mSpans;
@@ -16,7 +16,7 @@ public final class CarText {
     private final String mText;
     private final List<String> mTextVariants;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static final class Builder {
         CharSequence mText;
         List<CharSequence> mTextVariants = new ArrayList();
@@ -133,10 +133,10 @@ public final class CarText {
                 }
             }
         }
-        return androidx.car.app.utils.g.g(arrayList);
+        return androidx.car.app.utils.h.g(arrayList);
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class SpanWrapper {
         private final CarSpan mCarSpan;
         private final int mEnd;
@@ -219,7 +219,7 @@ public final class CarText {
             arrayList.add(charSequence.toString());
             arrayList2.add(getSpans(charSequence));
         }
-        this.mTextVariants = androidx.car.app.utils.g.g(arrayList);
-        this.mSpansForVariants = androidx.car.app.utils.g.g(arrayList2);
+        this.mTextVariants = androidx.car.app.utils.h.g(arrayList);
+        this.mSpansForVariants = androidx.car.app.utils.h.g(arrayList2);
     }
 }

@@ -2,14 +2,14 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class s {
-    private final a9.t a;
-    private final a9.t b;
-    private final a9.t c;
-    private final a9.t d;
-    private final a9.t e;
+    private final b9.r a;
+    private final b9.r b;
+    private final b9.r c;
+    private final b9.r d;
+    private final b9.r e;
 
     public s(Context context, r rVar) {
         ad adVar;
@@ -18,18 +18,18 @@ final class s {
         if (context == null) {
             throw new NullPointerException("instance cannot be null");
         }
-        a9.r rVar2 = new a9.r(context);
-        this.a = rVar2;
+        b9.p pVar = new b9.p(context);
+        this.a = pVar;
         adVar = ac.a;
-        a9.p b10 = a9.p.b(adVar);
+        b9.n b10 = b9.n.b(adVar);
         this.b = b10;
         mVar = l.a;
-        au auVar = new au(rVar2, mVar);
+        au auVar = new au(pVar, mVar);
         this.c = auVar;
         mVar2 = l.a;
-        a9.p b11 = a9.p.b(new al(rVar2, b10, auVar, mVar2));
+        b9.n b11 = b9.n.b(new al(pVar, b10, auVar, mVar2));
         this.d = b11;
-        this.e = a9.p.b(new ab(b11));
+        this.e = b9.n.b(new ab(b11));
     }
 
     public final IntegrityManager a() {

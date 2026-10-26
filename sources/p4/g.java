@@ -13,9 +13,9 @@ import android.util.Log;
 import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.ui.web.a2;
+import org.telegram.ui.web.h1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g extends p {
     public final String f;
@@ -27,7 +27,7 @@ public final class g extends p {
     public final /* synthetic */ k p;
     public final SparseArray j = new SparseArray();
     public final AtomicInteger l = new AtomicInteger(1);
-    public final a2 m = new a2(this, 2);
+    public final h1 m = new h1(this, 5);
     public int n = -1;
 
     public g(k kVar, MediaRouter2.RoutingController routingController, String str) {
@@ -36,7 +36,7 @@ public final class g extends p {
         this.f = str;
         Messenger n10 = k.n(routingController);
         this.h = n10;
-        this.i = n10 == null ? null : new Messenger(new ab.o0(this));
+        this.i = n10 == null ? null : new Messenger(new androidx.mediarouter.app.c(this));
         this.k = new Handler(Looper.getMainLooper());
     }
 
@@ -54,9 +54,9 @@ public final class g extends p {
         routingController.setVolume(i10);
         this.n = i10;
         Handler handler = this.k;
-        a2 a2Var = this.m;
-        handler.removeCallbacks(a2Var);
-        handler.postDelayed(a2Var, 1000L);
+        h1 h1Var = this.m;
+        handler.removeCallbacks(h1Var);
+        handler.postDelayed(h1Var, 1000L);
     }
 
     @Override // p4.q
@@ -73,9 +73,9 @@ public final class g extends p {
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
-        a2 a2Var = this.m;
-        handler.removeCallbacks(a2Var);
-        handler.postDelayed(a2Var, 1000L);
+        h1 h1Var = this.m;
+        handler.removeCallbacks(h1Var);
+        handler.postDelayed(h1Var, 1000L);
     }
 
     @Override // p4.p

@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dh implements Runnable {
     public final /* synthetic */ int a;
@@ -34,24 +34,27 @@ public final /* synthetic */ class dh implements Runnable {
                 view.setBackgroundDrawable(null);
                 break;
             case 2:
+                view.setVisibility(8);
+                break;
+            case 3:
                 Drawable[] drawableArr = PhotoViewer.U8;
                 AndroidUtilities.removeFromParent(view);
                 break;
-            case 3:
+            case 4:
                 Drawable[] drawableArr2 = PhotoViewer.U8;
                 view.setVisibility(8);
                 break;
-            case 4:
-                SharedConfig.setSuggestStickers(0);
-                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersAll), true, true);
-                break;
             case 5:
+                SharedConfig.setSuggestStickers(0);
+                ((org.telegram.ui.Cells.ga) view).c.c(LocaleController.getString(R.string.SuggestStickersAll), true, true);
+                break;
+            case 6:
                 SharedConfig.setSuggestStickers(1);
-                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersInstalled), true, true);
+                ((org.telegram.ui.Cells.ga) view).c.c(LocaleController.getString(R.string.SuggestStickersInstalled), true, true);
                 break;
             default:
                 SharedConfig.setSuggestStickers(2);
-                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersNone), true, true);
+                ((org.telegram.ui.Cells.ga) view).c.c(LocaleController.getString(R.string.SuggestStickersNone), true, true);
                 break;
         }
     }

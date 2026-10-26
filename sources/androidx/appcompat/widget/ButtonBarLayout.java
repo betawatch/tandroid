@@ -10,7 +10,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ButtonBarLayout extends LinearLayout {
     public boolean a;
@@ -22,7 +22,7 @@ public class ButtonBarLayout extends LinearLayout {
         this.c = -1;
         int[] iArr = f.a.k;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr);
-        i0.i(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
+        i0.j(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
         this.a = obtainStyledAttributes.getBoolean(0, true);
         obtainStyledAttributes.recycle();
         if (getOrientation() == 1) {

@@ -5,12 +5,12 @@ import android.media.MediaFormat;
 import java.io.File;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class Mp4Movie {
     private File cacheFile;
     private int height;
-    private rc.d matrix = rc.d.j;
+    private sc.d matrix = sc.d.j;
     private ArrayList<Track> tracks = new ArrayList<>();
     private int width;
 
@@ -41,7 +41,7 @@ public class Mp4Movie {
         return this.tracks.get(i10).getLastFrameTimestamp();
     }
 
-    public rc.d getMatrix() {
+    public sc.d getMatrix() {
         return this.matrix;
     }
 
@@ -59,15 +59,15 @@ public class Mp4Movie {
 
     public void setRotation(int i10) {
         if (i10 == 0) {
-            this.matrix = rc.d.j;
+            this.matrix = sc.d.j;
             return;
         }
         if (i10 == 90) {
-            this.matrix = rc.d.k;
+            this.matrix = sc.d.k;
         } else if (i10 == 180) {
-            this.matrix = rc.d.l;
+            this.matrix = sc.d.l;
         } else if (i10 == 270) {
-            this.matrix = rc.d.m;
+            this.matrix = sc.d.m;
         }
     }
 

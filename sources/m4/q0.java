@@ -2,38 +2,38 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q0 implements e1, f1, e2.j {
-    public final /* synthetic */ i1 a;
+public final /* synthetic */ class q0 implements f1, g1, e2.j {
+    public final /* synthetic */ j1 a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ q0(i1 i1Var, int i10, int i11) {
-        this.a = i1Var;
+    public /* synthetic */ q0(j1 j1Var, int i10, int i11) {
+        this.a = j1Var;
         this.b = i10;
         this.c = i11;
     }
 
     @Override // e2.j
     public void accept(Object obj) {
-        i1 i1Var = this.a;
-        ((f0) i1Var.a.get()).getClass();
-        h1 h1Var = i1Var.i;
-        if (h1Var != null) {
-            h1Var.setFixedSize(this.b, this.c);
+        j1 j1Var = this.a;
+        ((f0) j1Var.a.get()).getClass();
+        i1 i1Var = j1Var.i;
+        if (i1Var != null) {
+            i1Var.setFixedSize(this.b, this.c);
         }
     }
 
-    @Override // m4.f1
-    public void b(m1 m1Var, v vVar, List list) {
-        i1 i1Var = this.a;
-        m1Var.O(i1Var.K0(vVar, m1Var, this.b), i1Var.K0(vVar, m1Var, this.c), list);
+    @Override // m4.g1
+    public void b(n1 n1Var, w wVar, List list) {
+        j1 j1Var = this.a;
+        n1Var.O(j1Var.K0(wVar, n1Var, this.b), j1Var.K0(wVar, n1Var, this.c), list);
     }
 
-    @Override // m4.e1
-    public void c(m1 m1Var, v vVar) {
-        i1 i1Var = this.a;
-        m1Var.R(i1Var.K0(vVar, m1Var, this.b), i1Var.K0(vVar, m1Var, this.c));
+    @Override // m4.f1
+    public void e(n1 n1Var, w wVar) {
+        j1 j1Var = this.a;
+        n1Var.R(j1Var.K0(wVar, n1Var, this.b), j1Var.K0(wVar, n1Var, this.c));
     }
 }

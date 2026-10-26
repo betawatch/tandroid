@@ -1,74 +1,111 @@
 package ai;
 
+import bi.x1;
+import fi.z1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b90;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ob0;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.ij;
+import org.telegram.ui.Components.sz;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.vz;
+import org.telegram.ui.Components.xy;
+import org.telegram.ui.Components.yy;
+import org.telegram.ui.lp0;
+import zh.g4;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
+public final class l extends g.o {
+    public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ l(MessagesController messagesController, boolean z10, TLRPC.User user, long j10) {
-        this.a = 1;
-        this.d = messagesController;
-        this.b = z10;
-        this.e = user;
-        this.c = j10;
+    public /* synthetic */ l(Object obj, int i10) {
+        this.c = i10;
+        this.d = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        int i12;
+        switch (this.c) {
             case 0:
-                AndroidUtilities.runOnUIThread(new m((x) this.d, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.b, this.c));
-                break;
+                x0 x0Var = (x0) this.d;
+                if (x0Var.e.j(i10) == 0) {
+                    return x0Var.r;
+                }
+                return 1;
             case 1:
-                ((MessagesController) this.d).lambda$deleteParticipantFromChat$315(this.b, (TLRPC.User) this.e, this.c, tLObject, tL_error);
-                break;
+                x1 x1Var = (x1) this.d;
+                vz vzVar = x1Var.h0;
+                bi.q1 q1Var = x1Var.k0;
+                if (q1Var == null || i10 == 0) {
+                    return vzVar.J;
+                }
+                t61 G = q1Var.G(i10 - 1);
+                return (G == null || (i11 = G.u) == -1) ? vzVar.J : i11;
             case 2:
-                ((MessagesController) this.d).lambda$checkChatInviter$374((TLRPC.Chat) this.e, this.b, this.c, tLObject, tL_error);
-                break;
+                fi.t1 t1Var = (fi.t1) this.d;
+                if (t1Var.Y.c.F(i10) == null) {
+                    return t1Var.J;
+                }
+                t1Var.C1();
+                return t1Var.R.get(i10);
             case 3:
-                b90.t((b90) this.d, this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
-                break;
+                z1 z1Var = (z1) this.d;
+                if (z1Var.c.j(i10) != 2) {
+                    return z1Var.h;
+                }
+                return 1;
+            case 4:
+                ij ijVar = (ij) this.d;
+                int i13 = ijVar.r;
+                int i14 = ijVar.w;
+                return i13 + (i10 % i14 != i14 + (-1) ? AndroidUtilities.dp(5.0f) : 0);
+            case 5:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.d;
+                if (i10 == chatAttachAlertPhotoLayout.G.n - 1 || ((chatAttachAlertPhotoLayout.P0 || chatAttachAlertPhotoLayout.O0) && i10 == 0)) {
+                    return chatAttachAlertPhotoLayout.F.J;
+                }
+                if (chatAttachAlertPhotoLayout.O0) {
+                    i10--;
+                }
+                int i15 = chatAttachAlertPhotoLayout.K0;
+                int i16 = chatAttachAlertPhotoLayout.M0;
+                return i15 + (i10 % i16 != i16 + (-1) ? AndroidUtilities.dp(2.0f) : 0);
+            case 6:
+                yy yyVar = (yy) this.d;
+                sz szVar = yyVar.Y;
+                if (i10 == 0) {
+                    szVar.n0.getClass();
+                }
+                s4.h0 adapter = szVar.h0.getAdapter();
+                xy xyVar = szVar.j0;
+                if (adapter == xyVar && xyVar.x.isEmpty()) {
+                    return yyVar.J;
+                }
+                szVar.n0.getClass();
+                yyVar.C1();
+                return yyVar.R.get(i10);
+            case 7:
+                cz0 cz0Var = (cz0) this.d;
+                if ((cz0Var.W == null || !(cz0Var.d.e.get(i10) instanceof Integer)) && i10 != cz0Var.d.h) {
+                    return 1;
+                }
+                return cz0Var.d.d;
+            case 8:
+                lp0 lp0Var = (lp0) this.d;
+                if (i10 < lp0Var.b0 || i10 >= lp0Var.c0) {
+                    return (i10 < lp0Var.d0 || i10 >= lp0Var.e0) ? 3 : 1;
+                }
+                return 1;
             default:
-                AndroidUtilities.runOnUIThread(new m((ob0) this.d, tLObject, this.c, (String) this.e, this.b, tL_error));
-                break;
+                t61 G2 = ((g4) this.d).i0.G(i10 - 1);
+                if (G2 == null || (i12 = G2.u) == -1) {
+                    return 3;
+                }
+                return i12;
         }
-    }
-
-    public /* synthetic */ l(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, boolean z10, long j10, int i10) {
-        this.a = i10;
-        this.d = notificationCenterDelegate;
-        this.e = obj;
-        this.b = z10;
-        this.c = j10;
-    }
-
-    public /* synthetic */ l(b90 b90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        this.a = 3;
-        this.d = b90Var;
-        this.c = j10;
-        this.b = z10;
-        this.e = tL_messages_importChatInvite;
-    }
-
-    public /* synthetic */ l(ob0 ob0Var, long j10, String str, boolean z10) {
-        this.a = 4;
-        this.d = ob0Var;
-        this.c = j10;
-        this.e = str;
-        this.b = z10;
     }
 }

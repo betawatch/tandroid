@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class sa extends View {
     public final Paint a;
@@ -16,19 +16,19 @@ public final class sa extends View {
     public int c;
     public int d;
     public final RectF e;
-    public final z4.h f;
+    public final a5.m f;
     public final int h;
     public int n;
     public int r;
 
-    public sa(Context context, z4.h hVar, int i10) {
+    public sa(Context context, a5.m mVar, int i10) {
         super(context);
         this.a = new Paint(1);
         new DecelerateInterpolator();
         this.e = new RectF();
         this.n = -1;
         this.r = -1;
-        this.f = hVar;
+        this.f = mVar;
         this.h = i10;
     }
 
@@ -39,9 +39,9 @@ public final class sa extends View {
         int i10 = this.n;
         Paint paint = this.a;
         if (i10 >= 0) {
-            paint.setColor((org.telegram.ui.ActionBar.k6.x0(null, i10, false) & 16777215) | (-1275068416));
+            paint.setColor((org.telegram.ui.ActionBar.y6.x0(null, i10, false) & 16777215) | (-1275068416));
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.k6.C0().q() ? -11184811 : -4473925);
+            paint.setColor(org.telegram.ui.ActionBar.y6.C0().q() ? -11184811 : -4473925);
         }
         this.d = this.f.getCurrentItem();
         int i11 = 0;
@@ -59,7 +59,7 @@ public final class sa extends View {
         }
         int i13 = this.r;
         if (i13 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i13, false));
+            paint.setColor(org.telegram.ui.ActionBar.y6.x0(null, i13, false));
         } else {
             paint.setColor(-14509328);
         }
@@ -69,7 +69,7 @@ public final class sa extends View {
         } else if (this.c >= this.d) {
             rectF.set(dp, 0.0f, (AndroidUtilities.dp(11.0f) * this.b) + AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
         } else {
-            rectF.set(com.google.android.gms.internal.play_billing.k3.D(1.0f, this.b, AndroidUtilities.dp(11.0f), dp), 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+            rectF.set(ic.a.d(1.0f, this.b, AndroidUtilities.dp(11.0f), dp), 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
         }
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), paint);
     }

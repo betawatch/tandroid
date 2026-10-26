@@ -1,10 +1,10 @@
 package a4;
 
-import e2.m0;
+import a8.yb;
+import e2.n0;
 import e2.x;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
     public final /* synthetic */ int a;
@@ -15,13 +15,13 @@ public final class g {
 
     public g() {
         this.a = 2;
-        this.b = m0.b;
+        this.b = n0.b;
     }
 
     public void a() {
         int i10;
         int i11 = this.c;
-        u6.p(i11 >= 0 && (i11 < (i10 = this.e) || (i11 == i10 && this.d == 0)));
+        yb.p(i11 >= 0 && (i11 < (i10 = this.e) || (i11 == i10 && this.d == 0)));
     }
 
     public int b() {
@@ -38,7 +38,7 @@ public final class g {
     }
 
     public int d() {
-        u6.p(this.d == 0);
+        yb.p(this.d == 0);
         return this.c;
     }
 
@@ -145,18 +145,18 @@ public final class g {
 
     public long i(int i10) {
         if (i10 <= 32) {
-            int g10 = g(i10);
-            String str = m0.a;
-            return 4294967295L & g10;
+            int g7 = g(i10);
+            String str = n0.a;
+            return 4294967295L & g7;
         }
-        int g11 = g(i10 - 32);
-        int g12 = g(32);
-        String str2 = m0.a;
-        return (4294967295L & g12) | ((g11 & 4294967295L) << 32);
+        int g10 = g(i10 - 32);
+        int g11 = g(32);
+        String str2 = n0.a;
+        return (4294967295L & g11) | ((g10 & 4294967295L) << 32);
     }
 
     public void j(int i10, byte[] bArr) {
-        u6.p(this.d == 0);
+        yb.p(this.d == 0);
         System.arraycopy(this.b, this.c, bArr, 0, i10);
         this.c += i10;
         a();
@@ -209,7 +209,7 @@ public final class g {
                 if (i15 < 0 || (i15 >= (i11 = this.c) && (i15 != i11 || this.e != 0))) {
                     z10 = false;
                 }
-                u6.p(z10);
+                yb.p(z10);
                 break;
             default:
                 int i16 = i10 / 8;
@@ -227,7 +227,7 @@ public final class g {
     }
 
     public void p(int i10) {
-        u6.p(this.d == 0);
+        yb.p(this.d == 0);
         this.c += i10;
         a();
     }

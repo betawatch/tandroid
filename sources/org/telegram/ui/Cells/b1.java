@@ -1,149 +1,58 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Random;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y90;
+import android.util.Property;
+import android.view.View;
+import org.telegram.ui.Components.b31;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.xu0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class b1 {
-    public static boolean a(MessageObject messageObject) {
-        return messageObject != null && messageObject.getDialogId() == UserObject.REPLY_BOT;
+public final class b1 extends Property {
+    public final /* synthetic */ int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b1(Class cls, String str, int i10) {
+        super(cls, str);
+        this.a = i10;
     }
 
-    public static float b(float f7, float f10, float f11) {
-        return (AndroidUtilities.dpf2(f7) * f10) + f11;
-    }
-
-    public static float c(float f7, float f10, float f11, float f12) {
-        return Math.min(f12, (f7 / f10) + f11);
-    }
-
-    public static float d(Random random, float f7, float f10) {
-        return (random.nextFloat() * f7) + f10;
-    }
-
-    public static int e(float f7, int i10, TextView textView) {
-        textView.setText(LocaleController.getString(i10));
-        return AndroidUtilities.dp(f7);
-    }
-
-    public static int f(int i10, int i11, Drawable drawable) {
-        return i11 - (drawable.getIntrinsicWidth() / i10);
-    }
-
-    public static int g(Random random, int i10) {
-        return Math.abs(random.nextInt() % i10);
-    }
-
-    public static int h(b10 b10Var, int i10) {
-        return b10Var.c(b10Var.getMeasuredWidth()) + i10;
-    }
-
-    public static Bundle i(int i10, String str) {
-        Bundle bundle = new Bundle();
-        bundle.putInt(str, i10);
-        return bundle;
-    }
-
-    public static TextView j(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
-        frameLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static String k(long j10, String str, String str2) {
-        return str + j10 + str2;
-    }
-
-    public static String l(String str, String str2, String str3, String str4, String str5) {
-        return str + str2 + str3 + str4 + str5;
-    }
-
-    public static o1.l m(float f7, float f10, float f11) {
-        o1.l lVar = new o1.l(f7);
-        lVar.b(f10);
-        lVar.a(f11);
-        return lVar;
-    }
-
-    public static void n(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
-        arrayList.add(Integer.valueOf(i10));
-        arrayList2.add(Integer.valueOf(i11));
-    }
-
-    public static void o(int i10, String str, StringBuilder sb2) {
-        sb2.append(LocaleController.getString(i10));
-        sb2.append(str);
-    }
-
-    public static void p(int i10, String str, ArrayList arrayList) {
-        arrayList.add(new s6(str, i10));
-    }
-
-    public static void q(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(Integer.valueOf(i10));
-        arrayList2.add(num);
-    }
-
-    public static void r(int i10, y90 y90Var) {
-        y90Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
-    }
-
-    public static void s(FrameLayout frameLayout, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new xc(frameLayout, g6Var).f0(tL_error, z10);
-    }
-
-    public static float t(float f7, float f10, float f11, float f12) {
-        return Math.max(f12, f11 - (f7 / f10));
-    }
-
-    public static int u(int i10, int i11, Drawable drawable) {
-        return (drawable.getIntrinsicHeight() / i10) + i11;
-    }
-
-    public static void v(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
-        arrayList.add(LocaleController.getString(i10));
-        arrayList2.add(Integer.valueOf(i11));
-    }
-
-    public static void w(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(LocaleController.getString(i10));
-        arrayList2.add(num);
-    }
-
-    public static float x(float f7, float f10, float f11, float f12) {
-        return f12 - ((f7 * f10) * f11);
-    }
-
-    public static int y(int i10, int i11, Drawable drawable) {
-        return (drawable.getIntrinsicWidth() / i10) + i11;
-    }
-
-    public static /* synthetic */ String z(int i10) {
-        if (i10 == 1) {
-            return "PAID";
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.a) {
+            case 0:
+                return Float.valueOf(((s1) obj).Be);
+            case 1:
+                return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
+            case 2:
+                return Float.valueOf(((fl0) obj).v);
+            case 3:
+                return Float.valueOf(((b31) obj).h);
+            default:
+                return Float.valueOf(((xu0) obj).a);
         }
-        if (i10 == 2) {
-            return "CANCELLED";
+    }
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                ((s1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
+                break;
+            case 1:
+                ((View) obj).setTranslationY(((Integer) obj2).intValue());
+                break;
+            case 2:
+                ((fl0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                break;
+            case 3:
+                b31 b31Var = (b31) obj;
+                b31Var.h = ((Float) obj2).floatValue();
+                b31Var.invalidate();
+                break;
+            default:
+                ((xu0) obj).b(((Float) obj2).floatValue());
+                break;
         }
-        if (i10 == 3) {
-            return "PENDING";
-        }
-        if (i10 == 4) {
-            return "FAILED";
-        }
-        throw null;
     }
 }

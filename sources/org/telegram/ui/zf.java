@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zf implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -26,25 +26,25 @@ public final /* synthetic */ class zf implements View.OnLongClickListener {
     public final boolean onLongClick(View view) {
         switch (this.a) {
             case 0:
-                sn snVar = (sn) this.b;
+                un unVar = (un) this.b;
                 TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) this.c;
                 MessageObject messageObject = (MessageObject) this.d;
-                hn hnVar = (hn) this.e;
-                TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) ag.c.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
-                if (snVar.getParentActivity() == null) {
+                jn jnVar = (jn) this.e;
+                TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) bg.c.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                if (unVar.getParentActivity() == null) {
                     return false;
                 }
-                if ((snVar.a1.getVisibility() == 0 && tL_inlineButtonTypeUrl == null && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null) {
+                if ((unVar.a1.getVisibility() == 0 && tL_inlineButtonTypeUrl == null && !bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) && !bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) && !bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) && !bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) && !bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) && !bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null) {
                     return false;
                 }
-                snVar.ea(null, tL_inlineButtonTypeUrl.url, true, null, messageObject);
+                unVar.ja(null, tL_inlineButtonTypeUrl.url, true, null, messageObject);
                 try {
-                    hnVar.performHapticFeedback(0, 1);
+                    jnVar.performHapticFeedback(0, 1);
                 } catch (Exception unused) {
                 }
                 return true;
             default:
-                return org.telegram.ui.Components.ti.q((org.telegram.ui.Components.ti) this.b, (Context) this.c, (org.telegram.ui.ActionBar.g6) this.d, (org.telegram.ui.ActionBar.o2) this.e, view);
+                return org.telegram.ui.Components.ti.y((org.telegram.ui.Components.ti) this.b, (Context) this.c, (org.telegram.ui.ActionBar.u6) this.d, (org.telegram.ui.ActionBar.r2) this.e, view);
         }
     }
 }

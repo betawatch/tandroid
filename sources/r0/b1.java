@@ -1,5 +1,6 @@
 package r0;
 
+import a8.rf;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.Log;
@@ -8,9 +9,8 @@ import android.view.WindowInsets;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import w7.s6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class b1 extends h1 {
     public static boolean i = false;
@@ -97,11 +97,11 @@ public abstract class b1 extends h1 {
 
     @Override // r0.h1
     public void d(View view) {
-        i0.b x10 = x(view);
-        if (x10 == null) {
-            x10 = i0.b.e;
+        i0.b x9 = x(view);
+        if (x9 == null) {
+            x9 = i0.b.e;
         }
-        A(x10);
+        A(x9);
     }
 
     @Override // r0.h1
@@ -180,18 +180,18 @@ public abstract class b1 extends h1 {
             if (i10 != 2) {
                 if (i10 == 8) {
                     i0.b[] bVarArr = this.d;
-                    i11 = bVarArr != null ? bVarArr[s6.a(8)] : null;
+                    i11 = bVarArr != null ? bVarArr[rf.a(8)] : null;
                     if (i11 != null) {
                         return i11;
                     }
                     i0.b k10 = k();
-                    i0.b w9 = w();
+                    i0.b w10 = w();
                     int i13 = k10.d;
-                    if (i13 > w9.d) {
+                    if (i13 > w10.d) {
                         return i0.b.b(0, 0, 0, i13);
                     }
                     i0.b bVar2 = this.g;
-                    if (bVar2 != null && !bVar2.equals(bVar) && (i12 = this.g.d) > w9.d) {
+                    if (bVar2 != null && !bVar2.equals(bVar) && (i12 = this.g.d) > w10.d) {
                         return i0.b.b(0, 0, 0, i12);
                     }
                 } else {
@@ -209,15 +209,15 @@ public abstract class b1 extends h1 {
                         i e = k1Var != null ? k1Var.a.e() : e();
                         if (e != null) {
                             int i14 = Build.VERSION.SDK_INT;
-                            return i0.b.b(i14 >= 28 ? b5.d.l(e.a) : 0, i14 >= 28 ? b5.d.n(e.a) : 0, i14 >= 28 ? b5.d.m(e.a) : 0, i14 >= 28 ? b5.d.k(e.a) : 0);
+                            return i0.b.b(i14 >= 28 ? c5.d.l(e.a) : 0, i14 >= 28 ? c5.d.n(e.a) : 0, i14 >= 28 ? c5.d.m(e.a) : 0, i14 >= 28 ? c5.d.k(e.a) : 0);
                         }
                     }
                 }
             } else {
                 if (z10) {
-                    i0.b w10 = w();
+                    i0.b w11 = w();
                     i0.b i15 = i();
-                    return i0.b.b(Math.max(w10.a, i15.a), 0, Math.max(w10.c, i15.c), Math.max(w10.d, i15.d));
+                    return i0.b.b(Math.max(w11.a, i15.a), 0, Math.max(w11.c, i15.c), Math.max(w11.d, i15.d));
                 }
                 if ((this.h & 2) == 0) {
                     i0.b k11 = k();

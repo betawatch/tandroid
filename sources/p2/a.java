@@ -2,65 +2,64 @@ package p2;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import c5.c0;
-import e9.l0;
-import e9.m2;
-import e9.y0;
-import i2.o1;
+import d5.z;
+import f9.g0;
+import f9.g2;
+import f9.t0;
 import java.util.HashMap;
-import si.z;
+import vi.y;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a implements v {
-    public final /* synthetic */ e a;
+public final class a implements u {
+    public final /* synthetic */ d a;
 
-    public a(e eVar) {
-        this.a = eVar;
+    public a(d dVar) {
+        this.a = dVar;
     }
 
-    @Override // p2.v
+    @Override // p2.u
     public final void a() {
         this.a.e.remove(this);
     }
 
-    @Override // p2.v
-    public final boolean b(Uri uri, c0 c0Var, boolean z10) {
-        d dVar;
-        e eVar = this.a;
-        HashMap hashMap = eVar.d;
-        if (eVar.G == null) {
+    @Override // p2.u
+    public final boolean d(Uri uri, z zVar, boolean z10) {
+        c cVar;
+        d dVar = this.a;
+        HashMap hashMap = dVar.d;
+        if (dVar.G == null) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            d dVar2 = (d) hashMap.get(uri);
-            dVar2.getClass();
-            x xVar = dVar2.a;
-            int size = xVar.b.size();
-            m2 it = y0.u(xVar.b.values()).iterator();
+            c cVar2 = (c) hashMap.get(uri);
+            cVar2.getClass();
+            w wVar = cVar2.a;
+            int size = wVar.b.size();
+            g2 it = t0.u(wVar.b.values()).iterator();
             int i10 = 0;
             while (it.hasNext()) {
                 Uri uri2 = (Uri) it.next();
-                d dVar3 = (d) hashMap.get(uri2);
-                if (dVar3 != null) {
-                    c cVar = (c) o1.j(dVar3.b, uri2, uri2);
-                    cVar.getClass();
-                    if (elapsedRealtime <= cVar.r) {
+                c cVar3 = (c) hashMap.get(uri2);
+                if (cVar3 != null) {
+                    b bVar = (b) ic.a.h(cVar3.b, uri2, uri2);
+                    bVar.getClass();
+                    if (elapsedRealtime <= bVar.r) {
                         i10++;
                     }
                 }
             }
-            int size2 = eVar.w.size();
-            l0 listIterator = eVar.w.listIterator(0);
+            int size2 = dVar.w.size();
+            g0 listIterator = dVar.w.listIterator(0);
             int i11 = 0;
             while (listIterator.hasNext()) {
-                if (eVar.f((x) listIterator.next(), elapsedRealtime)) {
+                if (dVar.e((w) listIterator.next(), elapsedRealtime)) {
                     i11++;
                 }
             }
-            z zVar = new z(size, i10, size2, i11);
-            eVar.c.getClass();
-            k4.d x32 = oa.d.x3(zVar, c0Var);
-            if (x32 != null && (dVar = (d) hashMap.get(uri)) != null) {
-                return d.c(dVar, uri, x32.b);
+            y yVar = new y(size, i10, size2, i11);
+            dVar.c.getClass();
+            k4.d z02 = u7.s.z0(yVar, zVar);
+            if (z02 != null && (cVar = (c) hashMap.get(uri)) != null) {
+                return c.c(cVar, uri, z02.b);
             }
         }
         return false;

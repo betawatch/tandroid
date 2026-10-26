@@ -1,13 +1,13 @@
 package j2;
 
+import a8.yb;
 import android.content.ClipData;
 import android.media.metrics.LogSessionId;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContentInfo;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class i implements r0.d, r0.f {
     public final /* synthetic */ int a = 0;
@@ -53,7 +53,7 @@ public final class i implements r0.d, r0.f {
         LogSessionId logSessionId2;
         LogSessionId logSessionId3 = (LogSessionId) this.b;
         logSessionId2 = LogSessionId.LOG_SESSION_ID_NONE;
-        u6.p(logSessionId3.equals(logSessionId2));
+        yb.p(logSessionId3.equals(logSessionId2));
         this.b = logSessionId;
     }
 

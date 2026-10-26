@@ -1,33 +1,29 @@
 package w7;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tm0;
+import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static void a(tm0 tm0Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        tm0Var.r(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var), g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.k6.I.q());
+public final /* synthetic */ class i implements ka.d {
+    public static final /* synthetic */ i b = new i(0);
+    public static final /* synthetic */ i c = new i(1);
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ i(int i10) {
+        this.a = i10;
     }
 
-    public static int b(ki.a aVar) {
-        if (aVar == null) {
-            return 0;
+    @Override // ka.a
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Map.Entry entry = (Map.Entry) obj;
+                ka.e eVar = (ka.e) obj2;
+                eVar.a(j.g, entry.getKey());
+                eVar.a(j.h, entry.getValue());
+                return;
+            default:
+                throw new ka.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
         }
-        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r4, 1, 24, 28)) : 0);
-    }
-
-    public static int c(ki.a aVar) {
-        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
-            return 0;
-        }
-        return AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r3, 1, 16, 12));
-    }
-
-    public static int d(ki.a aVar) {
-        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
-            return 0;
-        }
-        return AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r3, 1, 16, 8));
     }
 }

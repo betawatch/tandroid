@@ -1,36 +1,113 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x4 implements Runnable {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ x4(int i10, String str, boolean z10) {
+    public /* synthetic */ x4(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.c = obj;
         this.b = i10;
-        this.d = str;
-        this.c = z10;
+        this.d = obj2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ImageLoader.5.lambda$fileDidFailedUpload$3(this.b, (String) this.d, this.c);
+                ((ImageLoader) this.c).lambda$runHttpFileLoadTasks$14((ImageLoader.HttpFileTask) this.d, this.b);
+                break;
+            case 1:
+                ((MediaDataController.1) this.c).lambda$run$0((Runnable) this.d, this.b);
+                break;
+            case 2:
+                ((DownloadController) this.c).lambda$onDownloadFail$8((MessageObject) this.d, this.b);
+                break;
+            case 3:
+                ((FileLoader) this.c).lambda$changePriority$11((String) this.d, this.b);
+                break;
+            case 4:
+                ((ImageLoader) this.c).lambda$changeFileLoadingPriorityForImageReceiver$3((ImageReceiver) this.d, this.b);
+                break;
+            case 5:
+                ((LocationController) this.c).lambda$saveSharingLocation$18(this.b, (LocationController.SharingLocationInfo) this.d);
+                break;
+            case 6:
+                ((MediaDataController) this.c).lambda$putPremiumPromoToCache$10((TLRPC.TL_help_premiumPromo) this.d, this.b);
+                break;
+            case 7:
+                ((MediaDataController) this.c).lambda$addRecentSticker$23(this.b, (TLRPC.Document) this.d);
+                break;
+            case 8:
+                ((MediaDataController) this.c).lambda$updateEmojiStatuses$235(this.b, (TL_account.TL_emojiStatuses) this.d);
+                break;
+            case 9:
+                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$116((TLRPC.StickerSet) this.d, this.b);
+                break;
+            case 10:
+                ((MediaDataController) this.c).lambda$loadStickers$93(this.b, (Utilities.Callback) this.d);
+                break;
+            case 11:
+                ((MessagesController) this.c).lambda$migrateDialogs$213((TLRPC.messages_Dialogs) this.d, this.b);
+                break;
+            case 12:
+                ((MessagesController) this.c).lambda$toggleChatNoForwards$275((Utilities.Callback2) this.d, this.b);
+                break;
+            case 13:
+                ((MessagesController) this.c).lambda$loadGlobalNotificationsSettings$199((TLObject) this.d, this.b);
+                break;
+            case 14:
+                ((MessagesController) this.c).lambda$checkCanOpenChat$459(this.b, (org.telegram.ui.ActionBar.r2) this.d);
+                break;
+            case 15:
+                ((MessagesController.DialogPhotos) this.c).lambda$loadCache$4(this.b, (HashMap) this.d);
+                break;
+            case 16:
+                ((MessagesStorage) this.c).lambda$markMessageAsSendError$212(this.b, (TLRPC.Message) this.d);
+                break;
+            case 17:
+                ((MessagesStorage) this.c).lambda$broadcastScheduledMessagesChange$225((Long) this.d, this.b);
+                break;
+            case 18:
+                ((MessagesStorage) this.c).lambda$putDialogs$256((TLRPC.messages_Dialogs) this.d, this.b);
+                break;
+            case 19:
+                ((NotificationCenter) this.c).lambda$postNotificationNameOnUIThread$1(this.b, (Object[]) this.d);
+                break;
+            case 20:
+                ((NotificationsController) this.c).lambda$processNewMessages$26((ArrayList) this.d, this.b);
+                break;
+            case 21:
+                ((SecretChatHelper) this.c).lambda$performSendEncryptedRequest$4((TLRPC.Message) this.d, this.b);
+                break;
+            case 22:
+                ((TelegramMediaSession) this.c).lambda$loadChats$5((MessagesStorage) this.d, this.b);
                 break;
             default:
-                ((MessagesController) this.d).lambda$removeFolderTemporarily$482(this.b, this.c);
+                ((UserNameResolver) this.c).lambda$resolve$2((String) this.d, this.b);
                 break;
         }
     }
 
-    public /* synthetic */ x4(int i10, MessagesController messagesController, boolean z10) {
-        this.d = messagesController;
+    public /* synthetic */ x4(Object obj, Object obj2, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.d = obj2;
         this.b = i10;
-        this.c = z10;
     }
 }

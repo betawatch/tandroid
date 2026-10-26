@@ -20,14 +20,14 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class e00 extends DispatchQueue {
     public final int[] E;
     public boolean F;
     public boolean G;
-    public final ja H;
-    public pa I;
+    public final la H;
+    public ra I;
     public final i00 J;
     public int K;
     public int L;
@@ -64,7 +64,7 @@ public final class e00 extends DispatchQueue {
     public boolean x;
     public final float[] y;
 
-    public e00(SurfaceTexture surfaceTexture, Bitmap bitmap, int i10, boolean z10, boolean z11, ja jaVar, int i11, int i12) {
+    public e00(SurfaceTexture surfaceTexture, Bitmap bitmap, int i10, boolean z10, boolean z11, la laVar, int i11, int i12) {
         super("PhotoFilterGLThread", false);
         this.y = new float[16];
         this.E = new int[1];
@@ -74,20 +74,20 @@ public final class e00 extends DispatchQueue {
         this.r = i12;
         this.s = bitmap;
         this.v = i10;
-        this.H = jaVar;
-        boolean z12 = jaVar != null;
+        this.H = laVar;
+        boolean z12 = laVar != null;
         this.G = z12;
         if (z12) {
-            pa paVar = new pa();
-            this.I = paVar;
-            ja jaVar2 = paVar.t;
-            if (jaVar2 != null && jaVar2.m != null) {
-                jaVar2.m = null;
+            ra raVar = new ra();
+            this.I = raVar;
+            la laVar2 = raVar.t;
+            if (laVar2 != null && laVar2.m != null) {
+                laVar2.m = null;
             }
-            paVar.t = jaVar;
-            if (jaVar != null && jaVar.m != paVar) {
-                jaVar.m = paVar;
-                jaVar.d();
+            raVar.t = laVar;
+            if (laVar != null && laVar.m != raVar) {
+                laVar.m = raVar;
+                laVar.d();
             }
         }
         this.h = false;
@@ -144,9 +144,9 @@ public final class e00 extends DispatchQueue {
                     GLES20.glUniformMatrix4fv(e00Var.Q, 1, false, e00Var.y, 0);
                     GLES20.glDrawArrays(5, 0, 4);
                     e00Var.b.eglSwapBuffers(e00Var.c, e00Var.e);
-                    pa paVar = e00Var.I;
-                    if (paVar != null) {
-                        paVar.a(e00Var.y, e00Var.E[0], e00Var.W, e00Var.X);
+                    ra raVar = e00Var.I;
+                    if (raVar != null) {
+                        raVar.a(e00Var.y, e00Var.E[0], e00Var.W, e00Var.X);
                         return;
                     }
                     return;
@@ -165,10 +165,10 @@ public final class e00 extends DispatchQueue {
                 if (e00Var.c0) {
                     GLES20.glViewport(0, 0, e00Var.n, e00Var.r);
                     GLES20.glBindFramebuffer(36160, 0);
-                    int g10 = e00Var.J.g(1 ^ (e00Var.T ? 1 : 0));
+                    int g7 = e00Var.J.g(1 ^ (e00Var.T ? 1 : 0));
                     GLES20.glUseProgram(e00Var.K);
                     GLES20.glActiveTexture(33984);
-                    GLES20.glBindTexture(3553, g10);
+                    GLES20.glBindTexture(3553, g7);
                     GLES20.glUniform1i(e00Var.N, 0);
                     GLES20.glEnableVertexAttribArray(e00Var.M);
                     int i11 = e00Var.M;
@@ -181,9 +181,9 @@ public final class e00 extends DispatchQueue {
                     GLES20.glVertexAttribPointer(e00Var.L, 2, 5126, false, 8, (Buffer) e00Var.J.Z0);
                     GLES20.glDrawArrays(5, 0, 4);
                     e00Var.b.eglSwapBuffers(e00Var.c, e00Var.e);
-                    pa paVar2 = e00Var.I;
-                    if (paVar2 != null) {
-                        paVar2.a(null, g10, e00Var.U, e00Var.V);
+                    ra raVar2 = e00Var.I;
+                    if (raVar2 != null) {
+                        raVar2.a(null, g7, e00Var.U, e00Var.V);
                     }
                 }
             }
@@ -200,7 +200,7 @@ public final class e00 extends DispatchQueue {
         if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.d) || !BuildVars.LOGS_ENABLED) {
             return;
         }
-        org.telegram.messenger.sl.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+        org.telegram.messenger.vh.t(this.b, new StringBuilder("eglMakeCurrent failed "));
     }
 
     public final void d(boolean z10, boolean z11, boolean z12) {
@@ -208,7 +208,7 @@ public final class e00 extends DispatchQueue {
     }
 
     public final void f(h00 h00Var) {
-        postRunnable(new yt(10, this, h00Var));
+        postRunnable(new so(20, this, h00Var));
     }
 
     public final void finish() {
@@ -223,12 +223,12 @@ public final class e00 extends DispatchQueue {
         }
         EGLContext eGLContext = this.d;
         if (eGLContext != null) {
-            ja jaVar = this.H;
-            if (jaVar != null) {
-                synchronized (jaVar.f) {
+            la laVar = this.H;
+            if (laVar != null) {
+                synchronized (laVar.f) {
                     try {
-                        if (jaVar.g == eGLContext) {
-                            jaVar.g = null;
+                        if (laVar.g == eGLContext) {
+                            laVar.g = null;
                         }
                     } finally {
                     }
@@ -261,10 +261,10 @@ public final class e00 extends DispatchQueue {
         this.V = i00Var.Y0;
     }
 
-    public final boolean h(ei.z7 z7Var) {
+    public final boolean h(fi.v7 v7Var) {
         int h;
         int h10;
-        int a2 = z7Var != null ? z7Var.a() : 0;
+        int a2 = v7Var != null ? v7Var.a() : 0;
         String readRes = a2 == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : a2 == 2 ? AndroidUtilities.readRes(R.raw.hdr2sdr_pq) : "";
         if (a2 != 0) {
             h = i00.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
@@ -313,7 +313,7 @@ public final class e00 extends DispatchQueue {
         EGLContext eGLContext;
         int i10;
         int i11;
-        pa paVar;
+        ra raVar;
         EGL10 egl10 = (EGL10) EGLContext.getEGL();
         this.b = egl10;
         EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
@@ -321,7 +321,7 @@ public final class e00 extends DispatchQueue {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.sl.v(this.b, new StringBuilder("eglGetDisplay failed "));
+                org.telegram.messenger.vh.t(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else {
@@ -331,17 +331,17 @@ public final class e00 extends DispatchQueue {
                 EGLConfig[] eGLConfigArr = new EGLConfig[1];
                 if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.sl.v(this.b, new StringBuilder("eglChooseConfig failed "));
+                        org.telegram.messenger.vh.t(this.b, new StringBuilder("eglChooseConfig failed "));
                     }
                     finish();
                 } else if (iArr[0] > 0) {
                     EGLConfig eGLConfig = eGLConfigArr[0];
                     int[] iArr2 = {12440, 2, 12344};
-                    ja jaVar = this.H;
-                    if (jaVar != null) {
-                        synchronized (jaVar.f) {
+                    la laVar = this.H;
+                    if (laVar != null) {
+                        synchronized (laVar.f) {
                             try {
-                                eGLContext = jaVar.g;
+                                eGLContext = laVar.g;
                                 if (eGLContext == null) {
                                     eGLContext = EGL10.EGL_NO_CONTEXT;
                                 }
@@ -355,13 +355,13 @@ public final class e00 extends DispatchQueue {
                     this.d = eglCreateContext;
                     if (eglCreateContext == null) {
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.sl.v(this.b, new StringBuilder("eglCreateContext failed "));
+                            org.telegram.messenger.vh.t(this.b, new StringBuilder("eglCreateContext failed "));
                         }
                         finish();
                     } else {
-                        ja jaVar2 = this.H;
-                        if (jaVar2 != null) {
-                            jaVar2.a(eglCreateContext);
+                        la laVar2 = this.H;
+                        if (laVar2 != null) {
+                            laVar2.a(eglCreateContext);
                         }
                         SurfaceTexture surfaceTexture = this.a;
                         if (surfaceTexture != null) {
@@ -369,7 +369,7 @@ public final class e00 extends DispatchQueue {
                             this.e = eglCreateWindowSurface;
                             if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                                 if (BuildVars.LOGS_ENABLED) {
-                                    org.telegram.messenger.sl.v(this.b, new StringBuilder("createWindowSurface failed "));
+                                    org.telegram.messenger.vh.t(this.b, new StringBuilder("createWindowSurface failed "));
                                 }
                                 finish();
                             } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -417,7 +417,7 @@ public final class e00 extends DispatchQueue {
                                             GLES20.glTexParameteri(36197, 10243, 33071);
                                             AndroidUtilities.runOnUIThread(new b00(this, i12));
                                         }
-                                        if (this.G && (paVar = this.I) != null && !paVar.b(this.n / this.r, this.H.a)) {
+                                        if (this.G && (raVar = this.I) != null && !raVar.b(this.n / this.r, this.H.a)) {
                                             FileLog.e("Failed to create uiBlurFramebuffer");
                                             this.G = false;
                                             this.I = null;
@@ -438,7 +438,7 @@ public final class e00 extends DispatchQueue {
                                 }
                             } else {
                                 if (BuildVars.LOGS_ENABLED) {
-                                    org.telegram.messenger.sl.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                    org.telegram.messenger.vh.t(this.b, new StringBuilder("eglMakeCurrent failed "));
                                 }
                                 finish();
                             }
@@ -454,7 +454,7 @@ public final class e00 extends DispatchQueue {
                 }
             } else {
                 if (BuildVars.LOGS_ENABLED) {
-                    org.telegram.messenger.sl.v(this.b, new StringBuilder("eglInitialize failed "));
+                    org.telegram.messenger.vh.t(this.b, new StringBuilder("eglInitialize failed "));
                 }
                 finish();
             }
@@ -463,7 +463,7 @@ public final class e00 extends DispatchQueue {
         super.run();
     }
 
-    public e00(SurfaceTexture surfaceTexture, tv tvVar, ei.z7 z7Var, ja jaVar, int i10, int i11) {
+    public e00(SurfaceTexture surfaceTexture, tv tvVar, fi.v7 v7Var, la laVar, int i10, int i11) {
         super("VideoFilterGLThread", false);
         this.y = new float[16];
         this.E = new int[1];
@@ -472,24 +472,24 @@ public final class e00 extends DispatchQueue {
         this.n = i10;
         this.r = i11;
         this.b0 = tvVar;
-        this.H = jaVar;
-        boolean z10 = jaVar != null;
+        this.H = laVar;
+        boolean z10 = laVar != null;
         this.G = z10;
         if (z10) {
-            pa paVar = new pa();
-            this.I = paVar;
-            ja jaVar2 = paVar.t;
-            if (jaVar2 != null && jaVar2.m != null) {
-                jaVar2.m = null;
+            ra raVar = new ra();
+            this.I = raVar;
+            la laVar2 = raVar.t;
+            if (laVar2 != null && laVar2.m != null) {
+                laVar2.m = null;
             }
-            paVar.t = jaVar;
-            if (jaVar != null && jaVar.m != paVar) {
-                jaVar.m = paVar;
-                jaVar.d();
+            raVar.t = laVar;
+            if (laVar != null && laVar.m != raVar) {
+                laVar.m = raVar;
+                laVar.d();
             }
         }
         this.h = true;
-        this.J = new i00(true, z7Var);
+        this.J = new i00(true, v7Var);
         start();
     }
 }

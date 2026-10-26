@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -24,8 +24,8 @@ public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ w(k4 k4Var, TLObject tLObject, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z10, String str) {
-        this.e = k4Var;
+    public /* synthetic */ w(j4 j4Var, TLObject tLObject, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z10, String str) {
+        this.e = j4Var;
         this.b = tLObject;
         this.c = i10;
         this.f = webPage;
@@ -36,11 +36,11 @@ public final /* synthetic */ class w implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        s4.b1 K;
+        s4.e1 K;
         int i10 = 0;
         switch (this.a) {
             case 0:
-                k4 k4Var = (k4) this.e;
+                j4 j4Var = (j4) this.e;
                 TLObject tLObject = this.b;
                 int i11 = this.c;
                 TLRPC.WebPage webPage = (TLRPC.WebPage) this.f;
@@ -66,8 +66,8 @@ public final /* synthetic */ class w implements Runnable {
                                 page.views = i13;
                                 page.flags |= 8;
                                 while (true) {
-                                    n3[] n3VarArr = k4Var.u0;
-                                    if (i10 >= n3VarArr.length) {
+                                    m3[] m3VarArr = j4Var.u0;
+                                    if (i10 >= m3VarArr.length) {
                                         if (messageObject != null) {
                                             TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
                                             tL_messages_messages.messages.add(messageObject.messageOwner);
@@ -75,9 +75,9 @@ public final /* synthetic */ class w implements Runnable {
                                             break;
                                         }
                                     } else {
-                                        i4 i4Var = n3VarArr[i10].c;
-                                        if (i4Var.E == webPage && (K = k4Var.u0[i10].b.K(i4Var.h() - 1)) != null) {
-                                            k4Var.u0[i10].c.y(K);
+                                        h4 h4Var = m3VarArr[i10].c;
+                                        if (h4Var.E == webPage && (K = j4Var.u0[i10].b.K(h4Var.h() - 1)) != null) {
+                                            j4Var.u0[i10].c.y(K);
                                         }
                                         i10++;
                                     }
@@ -88,7 +88,7 @@ public final /* synthetic */ class w implements Runnable {
                 } else {
                     TLRPC.TL_webPage tL_webPage = (TLRPC.TL_webPage) tLObject2;
                     if (tL_webPage.cached_page != null) {
-                        if (!k4Var.d0.isEmpty() && k4Var.d0.get(0) == webPage) {
+                        if (!j4Var.d0.isEmpty() && j4Var.d0.get(0) == webPage) {
                             if (messageObject != null) {
                                 messageObject.messageOwner.media.webpage = tL_webPage;
                                 TLRPC.TL_messages_messages tL_messages_messages2 = new TLRPC.TL_messages_messages();
@@ -96,15 +96,15 @@ public final /* synthetic */ class w implements Runnable {
                                 MessagesStorage.getInstance(i11).putMessages((TLRPC.messages_Messages) tL_messages_messages2, messageObject.getDialogId(), -2, 0, false, messageObject.scheduled ? 1 : 0, 0L);
                             }
                             if (z10) {
-                                k4Var.d0.add(tL_webPage);
+                                j4Var.d0.add(tL_webPage);
                             } else {
-                                k4Var.d0.set(0, tL_webPage);
+                                j4Var.d0.set(0, tL_webPage);
                             }
-                            if (k4Var.d0.size() == 1) {
+                            if (j4Var.d0.size() == 1) {
                                 ApplicationLoader.applicationContext.getSharedPreferences("articles", 0).edit().remove("article" + tL_webPage.id).commit();
-                                k4Var.e0(z10 ? 1 : 0, tL_webPage, false);
+                                j4Var.e0(z10 ? 1 : 0, tL_webPage, false);
                                 if (str != null) {
-                                    k4Var.V(str, false);
+                                    j4Var.V(str, false);
                                 }
                             }
                         }
@@ -116,8 +116,8 @@ public final /* synthetic */ class w implements Runnable {
                 }
                 break;
             default:
-                pf.c cVar = (pf.c) this.e;
-                org.telegram.ui.ActionBar.c2[] c2VarArr = (org.telegram.ui.ActionBar.c2[]) this.f;
+                qf.c cVar = (qf.c) this.e;
+                org.telegram.ui.ActionBar.e2[] e2VarArr = (org.telegram.ui.ActionBar.e2[]) this.f;
                 TLObject tLObject3 = this.b;
                 int i14 = this.c;
                 Uri uri = (Uri) this.h;
@@ -127,10 +127,10 @@ public final /* synthetic */ class w implements Runnable {
                     cVar.b();
                 } else {
                     try {
-                        c2VarArr[0].dismiss();
+                        e2VarArr[0].dismiss();
                     } catch (Throwable unused) {
                     }
-                    c2VarArr[0] = null;
+                    e2VarArr[0] = null;
                 }
                 if (tLObject3 instanceof TL_account.webPagePreview) {
                     TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject3;
@@ -146,14 +146,14 @@ public final /* synthetic */ class w implements Runnable {
                         }
                     }
                 }
-                pf.d.o(context, uri, z12, false);
+                qf.d.o(context, uri, z12, false);
                 break;
         }
     }
 
-    public /* synthetic */ w(pf.c cVar, org.telegram.ui.ActionBar.c2[] c2VarArr, TLObject tLObject, int i10, Uri uri, Context context, boolean z10) {
+    public /* synthetic */ w(qf.c cVar, org.telegram.ui.ActionBar.e2[] e2VarArr, TLObject tLObject, int i10, Uri uri, Context context, boolean z10) {
         this.e = cVar;
-        this.f = c2VarArr;
+        this.f = e2VarArr;
         this.b = tLObject;
         this.c = i10;
         this.h = uri;

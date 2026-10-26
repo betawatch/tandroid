@@ -5,14 +5,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_agent;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.tgnet.tl.TL_feed;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Vector.TLDeserializer {
     public final /* synthetic */ int a;
@@ -61,31 +63,29 @@ public final /* synthetic */ class c implements Vector.TLDeserializer {
             case 16:
                 return TLRPC.TL_webAuthorization.TLdeserialize(inputSerializedData, i10, z10);
             case 17:
-                return TL_aicompose.AiComposeTone.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_agent.agentProvider.TLdeserialize(inputSerializedData, i10, z10);
             case 18:
-                return TLRPC.BotCommand.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_agent.providerKey.TLdeserialize(inputSerializedData, i10, z10);
             case 19:
-                return TL_bots.botPreviewMedia.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_aicompose.AiComposeTone.TLdeserialize(inputSerializedData, i10, z10);
             case 20:
-                return TL_chatlists.TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, i10, z10);
+                return TLRPC.BotCommand.TLdeserialize(inputSerializedData, i10, z10);
             case 21:
-                return TL_communities.CommunityPeerRequest.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_bots.botPreviewMedia.TLdeserialize(inputSerializedData, i10, z10);
             case 22:
-                return TL_iv.PageBlock.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_chatlists.TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, i10, z10);
             case 23:
-                return TLRPC.InputPhoto.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_communities.CommunityPeerRequest.TLdeserialize(inputSerializedData, i10, z10);
             case 24:
-                return TL_keyboard.PageButton.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_feed.FeedItem.TLdeserialize(inputSerializedData, i10, z10);
             case 25:
-                return TL_iv.PageListItem.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_feed.InterestCategory.TLdeserialize(inputSerializedData, i10, z10);
             case 26:
-                return TL_iv.PageListOrderedItem.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_iv.PageBlock.TLdeserialize(inputSerializedData, i10, z10);
             case 27:
-                return TL_iv.pageRelatedArticle.TLdeserialize(inputSerializedData, i10, z10);
-            case 28:
-                return TL_iv.pageTableRow.TLdeserialize(inputSerializedData, i10, z10);
+                return TLRPC.InputPhoto.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                return TL_iv.pageTableCell.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_keyboard.PageButton.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 }

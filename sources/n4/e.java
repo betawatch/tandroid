@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.Parcel;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e extends Binder implements b {
     public static final /* synthetic */ int b = 0;
@@ -34,7 +34,7 @@ public final class e extends Binder implements b {
     public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
         if (i10 == 3) {
             parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-            t(parcel.readInt() != 0 ? y.CREATOR.createFromParcel(parcel) : null);
+            r(parcel.readInt() != 0 ? z.CREATOR.createFromParcel(parcel) : null);
             return true;
         }
         if (i10 == 9) {
@@ -72,7 +72,7 @@ public final class e extends Binder implements b {
     }
 
     @Override // n4.b
-    public final void t(y yVar) {
+    public final void r(z zVar) {
         if (this.a.get() != null) {
             throw new ClassCastException();
         }

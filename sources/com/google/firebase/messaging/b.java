@@ -1,15 +1,13 @@
 package com.google.firebase.messaging;
 
-import i2.o1;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b implements ja.d {
+public final class b implements ka.d {
     public static final b a = new b();
-    public static final ja.c b = new ja.c("messagingClientEvent", o1.p(o1.o(ma.e.class, new ma.a(1))));
+    public static final ka.c b = new ka.c("messagingClientEvent", ic.a.m(ic.a.l(na.d.class, new na.a(1))));
 
-    @Override // ja.a
+    @Override // ka.a
     public final void a(Object obj, Object obj2) {
-        ((ja.e) obj2).d(b, ((xa.e) obj).a);
+        ((ka.e) obj2).a(b, ((ya.e) obj).a);
     }
 }

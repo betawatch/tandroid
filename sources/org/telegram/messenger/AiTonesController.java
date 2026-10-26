@@ -7,7 +7,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class AiTonesController {
     public final int currentAccount;
@@ -133,7 +133,7 @@ public final class AiTonesController {
         if (this.requestId < 0 && System.currentTimeMillis() - this.requestedTime >= 1800000) {
             TL_aicompose.getTones gettones = new TL_aicompose.getTones();
             gettones.hash = this.hash;
-            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(gettones, new a(), new ne(this, 1));
+            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(gettones, new a(), new pe(this, 1));
         }
     }
 

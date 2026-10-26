@@ -1,5 +1,6 @@
 package h0;
 
+import a8.ee;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -9,14 +10,13 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import android.util.TypedValue;
 import android.util.Xml;
-import com.google.android.gms.internal.play_billing.k3;
+import c3.h0;
 import java.lang.reflect.Array;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import w7.r;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -138,7 +138,7 @@ public abstract class c {
                         float f13 = 100.0f;
                         c10 = (f11 >= 0.0f || f11 > 100.0f) ? (char) 0 : c11;
                         if (f7 == 1.0f || c10 != 0) {
-                            int b10 = r.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                            int b10 = ee.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
                             if (c10 == 0) {
                                 a a2 = a.a(color);
                                 float f14 = a2.a;
@@ -166,18 +166,18 @@ public abstract class c {
                                                     i11 = depth2;
                                                     break;
                                                 }
-                                                float z11 = k3.z(f18, f19, 2.0f, f19);
+                                                float B = h0.B(f18, f19, 2.0f, f19);
                                                 float f21 = f18;
-                                                int c13 = a.b(z11, f16, min).c(k.k);
+                                                int c13 = a.b(B, f16, min).c(k.k);
                                                 float e = b.e(Color.red(c13));
-                                                float e7 = b.e(Color.green(c13));
-                                                float e10 = b.e(Color.blue(c13));
+                                                float e10 = b.e(Color.green(c13));
+                                                float e11 = b.e(Color.blue(c13));
                                                 float[] fArr = b.d[c11];
-                                                float f22 = (e7 * fArr[c11]) + (e * fArr[0]);
+                                                float f22 = (e10 * fArr[c11]) + (e * fArr[0]);
                                                 float f23 = fArr[2];
                                                 i11 = depth2;
-                                                float w9 = k3.w(e10, f23, f22, 100.0f);
-                                                float cbrt = w9 <= 0.008856452f ? w9 * 903.2963f : (((float) Math.cbrt(w9)) * 116.0f) - 16.0f;
+                                                float x9 = h0.x(e11, f23, f22, 100.0f);
+                                                float cbrt = x9 <= 0.008856452f ? x9 * 903.2963f : (((float) Math.cbrt(x9)) * 116.0f) - 16.0f;
                                                 float abs = Math.abs(f11 - cbrt);
                                                 if (abs < 0.2f) {
                                                     a a10 = a.a(c13);
@@ -200,9 +200,9 @@ public abstract class c {
                                                 }
                                                 if (f10 < f11) {
                                                     f18 = f21;
-                                                    f19 = z11;
+                                                    f19 = B;
                                                 } else {
-                                                    f18 = z11;
+                                                    f18 = B;
                                                 }
                                                 depth2 = i11;
                                             }
@@ -214,7 +214,7 @@ public abstract class c {
                                                     aVar = aVar3;
                                                     f12 = f16;
                                                 }
-                                                f16 = k3.z(f15, f12, 2.0f, f12);
+                                                f16 = h0.B(f15, f12, 2.0f, f12);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
                                                 f13 = 100.0f;
@@ -223,7 +223,7 @@ public abstract class c {
                                                     d = aVar3.c(kVar);
                                                     break;
                                                 }
-                                                f16 = k3.z(f15, f12, 2.0f, f12);
+                                                f16 = h0.B(f15, f12, 2.0f, f12);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
                                                 f13 = 100.0f;
@@ -289,7 +289,7 @@ public abstract class c {
                 }
                 if (f7 == 1.0f) {
                 }
-                int b102 = r.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                int b102 = ee.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
                 if (c10 == 0) {
                 }
                 color = (16777215 & color) | (b102 << 24);

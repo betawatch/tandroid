@@ -1,143 +1,66 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Rect;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.fu;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class m9 extends ActionMode.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final ActionMode.Callback b;
-    public final /* synthetic */ Object c;
+public final class m9 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fa b;
 
-    public m9(EditTextBoldCursor editTextBoldCursor, ActionMode.Callback callback) {
-        this.c = editTextBoldCursor;
-        this.b = callback;
+    public /* synthetic */ m9(fa faVar, int i10) {
+        this.a = i10;
+        this.b = faVar;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        switch (this.a) {
-            case 0:
-                ((l9) this.b).onActionItemClicked(actionMode, menuItem);
-                return true;
-            case 1:
-                return this.b.onActionItemClicked(actionMode, menuItem);
-            default:
-                return ((fu) this.b).onActionItemClicked(actionMode, menuItem);
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-            case 0:
-                ((l9) this.b).onCreateActionMode(actionMode, menu);
-                return true;
-            case 1:
-                return this.b.onCreateActionMode(actionMode, menu);
-            default:
-                return ((fu) this.b).onCreateActionMode(actionMode, menu);
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                this.b.onDestroyActionMode(actionMode);
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                editTextBoldCursor.f();
-                editTextBoldCursor.floatingActionMode = null;
-                break;
-            default:
-                ((fu) this.b).onDestroyActionMode(actionMode);
-                break;
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback2
-    public final void onGetContentRect(ActionMode actionMode, View view, Rect rect) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int m10;
         int i10;
+        int p10;
         switch (this.a) {
             case 0:
-                ba baVar = (ba) this.c;
-                if (baVar.x()) {
-                    baVar.O();
-                    int[] l4 = baVar.l();
-                    int i11 = 1;
-                    if (baVar.W != null) {
-                        int i12 = -baVar.m();
-                        int[] B = baVar.B(baVar.u);
-                        i10 = B[0] + baVar.a;
-                        int dp = ((i12 / 2) + ((B[1] + baVar.b) + l4[1])) - AndroidUtilities.dp(4.0f);
-                        if (dp >= 1) {
-                            i11 = dp;
+                fa faVar = this.b;
+                if (faVar.N && faVar.E != null) {
+                    if (faVar.Z && faVar.W == null) {
+                        m10 = AndroidUtilities.dp(8.0f);
+                    } else if (faVar.W != null) {
+                        m10 = faVar.m() >> 1;
+                    }
+                    if (!faVar.Z && !faVar.j0) {
+                        if (faVar.O) {
+                            if (faVar.W.getBottom() - m10 < faVar.F.getMeasuredHeight() - faVar.o()) {
+                                i10 = faVar.W.getBottom() - faVar.F.getMeasuredHeight();
+                                p10 = faVar.o();
+                                m10 = i10 + p10;
+                            }
+                        } else if (faVar.W.getTop() + m10 > faVar.p()) {
+                            i10 = -faVar.W.getTop();
+                            p10 = faVar.p();
+                            m10 = i10 + p10;
                         }
-                    } else {
-                        i10 = 0;
                     }
-                    int width = baVar.F.getWidth();
-                    baVar.N();
-                    if (baVar.W != null) {
-                        width = baVar.B(baVar.v)[0] + baVar.a;
+                    mm0 mm0Var = faVar.E;
+                    if (mm0Var != null) {
+                        if (!faVar.O) {
+                            m10 = -m10;
+                        }
+                        mm0Var.scrollBy(0, m10);
                     }
-                    rect.set(Math.min(i10, width), i11, Math.max(i10, width), i11 + 1);
+                    AndroidUtilities.runOnUIThread(this);
                     break;
                 }
                 break;
-            case 1:
-                ActionMode.Callback callback = this.b;
-                if (!(callback instanceof ActionMode.Callback2)) {
-                    super.onGetContentRect(actionMode, view, rect);
-                    break;
-                } else {
-                    ((ActionMode.Callback2) callback).onGetContentRect(actionMode, view, rect);
+            default:
+                fa faVar2 = this.b;
+                org.telegram.ui.ActionBar.m4 m4Var = faVar2.Y;
+                if (m4Var != null && !faVar2.P) {
+                    m4Var.hide(Long.MAX_VALUE);
+                    AndroidUtilities.runOnUIThread(faVar2.n0, 1000L);
                     break;
                 }
-            default:
-                ActionMode.Callback callback2 = (ActionMode.Callback) this.c;
-                if (!(callback2 instanceof ActionMode.Callback2)) {
-                    super.onGetContentRect(actionMode, view, rect);
-                    break;
-                } else {
-                    ((ActionMode.Callback2) callback2).onGetContentRect(actionMode, view, rect);
-                    break;
-                }
+                break;
         }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-            case 0:
-                ((l9) this.b).onPrepareActionMode(actionMode, menu);
-                return true;
-            case 1:
-                return this.b.onPrepareActionMode(actionMode, menu);
-            default:
-                return ((fu) this.b).a.onPrepareActionMode(actionMode, menu);
-        }
-    }
-
-    public m9(fu fuVar, ActionMode.Callback callback) {
-        this.b = fuVar;
-        this.c = callback;
-    }
-
-    public m9(ba baVar, l9 l9Var) {
-        this.c = baVar;
-        this.b = l9Var;
-    }
-
-    private final void a(ActionMode actionMode) {
     }
 }

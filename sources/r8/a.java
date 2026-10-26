@@ -1,23 +1,30 @@
 package r8;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import w7.f0;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a extends o6.a {
-    public static final Parcelable.Creator<a> CREATOR = new p7.m(7);
-    public int a;
-    public String[] b;
+public final class a {
+    public static final Object c = new Object();
+    public static int d;
+    public final SparseIntArray a = new SparseIntArray();
+    public final SparseIntArray b = new SparseIntArray();
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        int i11 = this.a;
-        f0.s(parcel, 2, 4);
-        parcel.writeInt(i11);
-        f0.m(parcel, 3, this.b);
-        f0.r(parcel, q6);
+    public final int a(int i10) {
+        synchronized (c) {
+            try {
+                int i11 = this.a.get(i10, -1);
+                if (i11 != -1) {
+                    return i11;
+                }
+                int i12 = d;
+                d = i12 + 1;
+                this.a.append(i10, i12);
+                this.b.append(i12, i10);
+                return i12;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 }

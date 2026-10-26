@@ -1,61 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.text.style.ClickableSpan;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b51 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k51 b;
+public final class b51 extends s6 {
+    public final Paint s;
+    public final w90 v;
+    public final /* synthetic */ d51 w;
 
-    public /* synthetic */ b51(k51 k51Var, int i10) {
-        this.a = i10;
-        this.b = k51Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b51(d51 d51Var, Context context) {
+        super(context, false, false, false);
+        this.w = d51Var;
+        this.s = new Paint(1);
+        this.v = new w90();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                b71 b71Var = (b71) obj2;
-                final k51 k51Var = this.b;
-                String[] strArr = k51Var.i0;
-                arrayList.add(m61.B(null));
-                b71Var.F = 1;
-                b71Var.U();
-                String str = k51Var.e0;
-                arrayList.add(e51.b(3, "", str != null ? y41.J(y41.N(str, null, null)) : LocaleController.getString(R.string.AIEditorOriginalText), null, null));
-                arrayList.add(i51.a(4, k51Var.a0, k51Var.k0, new ca(29, k51Var, b71Var), new x90() { // from class: org.telegram.ui.Components.c51
-                    @Override // org.telegram.ui.Components.x90
-                    public final void a(ClickableSpan clickableSpan) {
-                        k51.Q(k51.this, clickableSpan);
-                    }
-                }, null));
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(y41.N(k51Var.f0, null, null));
-                sb2.append((k51Var.g0 == 1 || strArr == null) ? "" : a1.g.s(new StringBuilder(" ("), strArr[k51Var.g0], ")"));
-                arrayList.add(e51.b(5, "", y41.J(sb2.toString()), null, new a51(k51Var, 4)));
-                arrayList.add(i51.a(6, k51Var.c0, false, null, new x90() { // from class: org.telegram.ui.Components.c51
-                    @Override // org.telegram.ui.Components.x90
-                    public final void a(ClickableSpan clickableSpan) {
-                        k51.Q(k51.this, clickableSpan);
-                    }
-                }, null));
-                b71Var.T();
-                arrayList.add(m61.B(null));
-                b71Var.U();
-                arrayList.add(m61.c(1, R.drawable.msg_copy, LocaleController.getString(R.string.TranslateCopy)));
-                b71Var.T();
-                break;
-            default:
-                k51.R(this.b, (TLRPC.TL_messages_translateResult) obj, (TLRPC.TL_error) obj2);
-                break;
+    @Override // org.telegram.ui.Components.s6, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (LocaleController.isRTL) {
+            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
         }
+        f51 f51Var = this.w.n;
+        int i10 = org.telegram.ui.ActionBar.y6.Pi;
+        String[] strArr = f51.X;
+        int o12 = org.telegram.ui.ActionBar.y6.o1(0.1175f, f51Var.getThemedColor(i10));
+        Paint paint = this.s;
+        paint.setColor(o12);
+        canvas.drawRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
+        if (this.v.f(canvas)) {
+            invalidate();
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.u6 u6Var;
+        f51 f51Var = this.w.n;
+        int action = motionEvent.getAction();
+        w90 w90Var = this.v;
+        if (action != 0) {
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (motionEvent.getAction() == 1) {
+                    performClick();
+                }
+                w90Var.d(true);
+                invalidate();
+            }
+            return super.onTouchEvent(motionEvent);
+        }
+        u6Var = ((org.telegram.ui.ActionBar.k3) f51Var).resourcesProvider;
+        aa0 aa0Var = new aa0(null, u6Var, motionEvent.getX(), motionEvent.getY(), 0);
+        aa0Var.d(org.telegram.ui.ActionBar.y6.o1(0.1175f, f51Var.getThemedColor(org.telegram.ui.ActionBar.y6.Pi)));
+        s90 b10 = aa0Var.b();
+        if (LocaleController.isRTL) {
+            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        }
+        b10.addRect(AndroidUtilities.rectTmp, Path.Direction.CW);
+        w90Var.a(aa0Var, null);
+        invalidate();
+        return true;
     }
 }

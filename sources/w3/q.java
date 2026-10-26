@@ -1,8 +1,8 @@
 package w3;
 
-import b2.w;
+import b2.x;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class q {
     public final int a;
@@ -11,21 +11,21 @@ public final class q {
     public final long d;
     public final long e;
     public final long f;
-    public final w g;
+    public final x g;
     public final int h;
     public final long[] i;
     public final long[] j;
     public final int k;
     public final r[] l;
 
-    public q(int i10, int i11, long j10, long j11, long j12, long j13, w wVar, int i12, r[] rVarArr, int i13, long[] jArr, long[] jArr2) {
+    public q(int i10, int i11, long j10, long j11, long j12, long j13, x xVar, int i12, r[] rVarArr, int i13, long[] jArr, long[] jArr2) {
         this.a = i10;
         this.b = i11;
         this.c = j10;
         this.d = j11;
         this.e = j12;
         this.f = j13;
-        this.g = wVar;
+        this.g = xVar;
         this.h = i12;
         this.l = rVarArr;
         this.k = i13;
@@ -33,7 +33,7 @@ public final class q {
         this.j = jArr2;
     }
 
-    public final q a(w wVar) {
-        return new q(this.a, this.b, this.c, this.d, this.e, this.f, wVar, this.h, this.l, this.k, this.i, this.j);
+    public final q a(x xVar) {
+        return new q(this.a, this.b, this.c, this.d, this.e, this.f, xVar, this.h, this.l, this.k, this.i, this.j);
     }
 }

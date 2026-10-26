@@ -10,13 +10,13 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class lb extends Dialog {
     public final kb a;
     public final WindowManager.LayoutParams b;
 
-    public lb(Context context, ei.o8 o8Var) {
+    public lb(Context context, fi.k8 k8Var) {
         super(context);
         AndroidUtilities.enableEdgeToEdge(getWindow());
         kb kbVar = new kb(this, context);
@@ -31,7 +31,7 @@ public final class lb extends Dialog {
         } else {
             kbVar.setSystemUiVisibility(1280);
         }
-        qc.a(kbVar, new ah.m0(o8Var, 7));
+        qc.a(kbVar, new bh.c0(k8Var, 7));
         try {
             Window window = getWindow();
             window.setWindowAnimations(R.style.DialogNoAnimation);
@@ -49,7 +49,7 @@ public final class lb extends Dialog {
                 attributes.layoutInDisplayCutoutMode = 1;
             }
             window.setAttributes(attributes);
-            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.a7, false)) <= 0.721f) {
+            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.a7, false)) <= 0.721f) {
                 z10 = false;
             }
             AndroidUtilities.setLightNavigationBar(this, z10);

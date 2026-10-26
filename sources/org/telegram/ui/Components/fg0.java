@@ -1,79 +1,101 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class fg0 extends View {
-    public long E;
-    public float F;
-    public float G;
-    public float H;
-    public yb0 I;
-    public TextPaint a;
-    public TextPaint b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public StaticLayout f;
-    public float h;
-    public float n;
-    public boolean r;
-    public f6 s;
-    public boolean v;
-    public hg0 w;
-    public ei.t9 x;
-    public boolean y;
+public final class fg0 extends FrameLayout {
+    public final fi.cc a;
+    public final fi.d b;
+    public final zt c;
+    public s81 d;
+    public long e;
+    public float f;
+    public fi.s3 h;
+    public Utilities.Callback n;
+    public Runnable r;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e = this.s.e(this.r);
-        if (e <= 0.0f || this.c == null || this.f == null) {
-            return;
+    public fg0(Context context, org.telegram.ui.ActionBar.u6 u6Var, la laVar) {
+        super(context);
+        this.e = -1L;
+        this.f = 1.39f;
+        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, u6Var);
+        kVar.setBackButtonImage(R.drawable.ic_ab_back);
+        kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
+        kVar.y(-1, false);
+        kVar.x(587202559, false);
+        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.ga(this, 14));
+        addView(kVar, gb1.i(-1, -2, 55));
+        fi.cc ccVar = new fi.cc(context, null, null, u6Var, laVar);
+        this.a = ccVar;
+        ccVar.X0 = true;
+        addView(ccVar, gb1.h(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
+        fi.d dVar = new fi.d(context, u6Var, true);
+        this.b = dVar;
+        dVar.i(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
+        dVar.f();
+        addView(dVar, gb1.h(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
+        zt ztVar = new zt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
+        this.c = ztVar;
+        ztVar.setOnClickListener(new bi.w0(this, context, u6Var, 29));
+        addView(ztVar, gb1.h(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
+        ccVar.setDelegate(new m4.w1(this));
+    }
+
+    public final void a(MediaController.PhotoEntry photoEntry, s81 s81Var, org.telegram.ui.ActionBar.u6 u6Var) {
+        int i10;
+        fi.d dVar = this.b;
+        dVar.a = u6Var;
+        dVar.E = false;
+        dVar.updateColors();
+        int i11 = photoEntry.width;
+        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
+            this.f = 1.39f;
+        } else {
+            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
-        canvas.save();
-        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
-        this.c.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
-        this.f.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        TextPaint textPaint = this.a;
-        textPaint.setColor(-1);
-        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
-        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
-        TextPaint textPaint2 = this.b;
-        textPaint2.setColor(-1);
-        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
-        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
-            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
+        this.d = s81Var;
+        long j10 = photoEntry.coverSavedPosition;
+        if (j10 >= 0) {
+            this.e = j10;
+            s81Var.L(j10, false);
+        } else {
+            this.e = s81Var.n();
         }
+        String path = s81Var.F.getPath();
+        long p10 = s81Var.p();
+        i2.j0 j0Var = s81Var.d;
+        j0Var.F1();
+        this.a.o(false, path, p10, j0Var.b0);
+        long p11 = s81Var.p();
+        float max = 2.8f / Math.max(60L, p11);
+        float max2 = (1.0f - max) * (this.e / Math.max(1L, s81Var.p()));
+        fi.cc ccVar = this.a;
+        ccVar.setVideoLeft(max2);
+        ccVar.setVideoRight(max2 + max);
+        ccVar.Z0 = 0L;
+        ccVar.a1 = p11;
+        fi.xb xbVar = ccVar.h;
+        if (xbVar != null) {
+            fi.xb.a(xbVar, true);
+        }
+        ccVar.k();
     }
 
-    public void setAllowTouch(boolean z10) {
-        this.v = z10;
+    public long getTime() {
+        return this.e;
     }
 
-    public void setFilterView(hg0 hg0Var) {
-        this.w = hg0Var;
+    public void setOnClose(Runnable runnable) {
+        this.r = runnable;
+    }
+
+    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
+        this.n = callback;
     }
 }

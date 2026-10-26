@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g implements x, AdapterView.OnItemClickListener {
     public Context a;
@@ -34,15 +34,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
     }
 
     @Override // l.x
-    public final void d(k kVar, boolean z10) {
-        w wVar = this.e;
-        if (wVar != null) {
-            wVar.d(kVar, z10);
-        }
-    }
-
-    @Override // l.x
-    public final void e() {
+    public final void d() {
         f fVar = this.f;
         if (fVar != null) {
             fVar.notifyDataSetChanged();
@@ -50,8 +42,16 @@ public final class g implements x, AdapterView.OnItemClickListener {
     }
 
     @Override // l.x
-    public final void h(w wVar) {
+    public final void e(w wVar) {
         throw null;
+    }
+
+    @Override // l.x
+    public final void g(k kVar, boolean z10) {
+        w wVar = this.e;
+        if (wVar != null) {
+            wVar.g(kVar, z10);
+        }
     }
 
     @Override // l.x
@@ -78,8 +78,8 @@ public final class g implements x, AdapterView.OnItemClickListener {
         }
         l lVar = new l();
         lVar.a = d0Var;
-        c5.c0 c0Var = new c5.c0(context);
-        g.b bVar = (g.b) c0Var.c;
+        d5.z zVar = new d5.z(context);
+        g.b bVar = (g.b) zVar.c;
         g gVar = new g(bVar.a);
         lVar.c = gVar;
         gVar.e = lVar;
@@ -98,9 +98,9 @@ public final class g implements x, AdapterView.OnItemClickListener {
             bVar.d = d0Var.m;
         }
         bVar.h = lVar;
-        g.f i10 = c0Var.i();
-        lVar.b = i10;
-        i10.setOnDismissListener(lVar);
+        g.f f7 = zVar.f();
+        lVar.b = f7;
+        f7.setOnDismissListener(lVar);
         WindowManager.LayoutParams attributes = lVar.b.getWindow().getAttributes();
         attributes.type = 1003;
         attributes.flags |= 131072;
@@ -109,7 +109,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
         if (wVar == null) {
             return true;
         }
-        wVar.o(d0Var);
+        wVar.t(d0Var);
         return true;
     }
 

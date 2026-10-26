@@ -1,47 +1,30 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y31 implements r0.n, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class y31 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b41 b;
+    public final /* synthetic */ c41 b;
 
-    public /* synthetic */ y31(b41 b41Var, int i10) {
+    public /* synthetic */ y31(c41 c41Var, int i10) {
         this.a = i10;
-        this.b = b41Var;
+        this.b = c41Var;
     }
 
-    @Override // r0.n
-    public r0.k1 B0(View view, r0.k1 k1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        b41 b41Var = this.b;
-        b41Var.e = defaultWindowInsets;
-        b41Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        b41Var.b.requestLayout();
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
-            case 1:
-                org.telegram.ui.ActionBar.c2 c2Var2 = this.b.c0;
-                if (c2Var2 != null) {
-                    c2Var2.dismiss();
+            case 0:
+                c41 c41Var = this.b;
+                if (c41Var.Y == null) {
+                    c41Var.dismiss();
                     break;
                 }
                 break;
             default:
-                b41 b41Var = this.b;
-                org.telegram.ui.ActionBar.c2 c2Var3 = b41Var.c0;
-                if (c2Var3 != null) {
-                    c2Var3.dismiss();
-                    b41Var.c0 = null;
-                }
-                b41Var.dismiss();
+                this.b.dismiss();
                 break;
         }
     }

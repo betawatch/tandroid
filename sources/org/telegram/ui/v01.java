@@ -1,43 +1,98 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class v01 implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ Runnable[] a;
+public final class v01 extends Drawable implements org.telegram.ui.ActionBar.a6 {
+    public final org.telegram.ui.Components.r6 a;
+    public final Paint b;
+    public int c;
+    public float d;
+    public float e;
+    public final org.telegram.ui.Cells.k0 f;
+    public org.telegram.ui.Cells.v0 h;
 
-    public v01(Runnable[] runnableArr) {
-        this.a = runnableArr;
+    public v01(String str) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.d = 1.0f;
+        this.e = 1.0f;
+        this.f = new org.telegram.ui.Cells.k0(this);
+        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, false, false);
+        this.a = r6Var;
+        r6Var.setCallback(new pr(1, this));
+        r6Var.t(str, true, true);
+        r6Var.w(AndroidUtilities.dp(11.0f));
+        r6Var.b = 17;
+        paint.setColor(520093696);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        if (imageReceiver.hasBitmapImage()) {
-            Runnable[] runnableArr = this.a;
-            if (runnableArr[0] != null) {
-                org.telegram.ui.Components.yj0 lottieAnimation = imageReceiver.getLottieAnimation();
-                if (lottieAnimation == null) {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
-                } else if (lottieAnimation.y()) {
-                    lottieAnimation.A0 = new my0(runnableArr, 7);
-                } else {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
-                }
-            }
+    public final void a(int i10) {
+        Paint paint = this.b;
+        if (paint.getColor() != i10) {
+            paint.setColor(i10);
+            invalidateSelf();
         }
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.m5.a(this, i10, str, drawable);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = this.d * this.e;
+        if (f7 <= 0.0f) {
+            return;
+        }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        canvas.save();
+        float a2 = this.f.a(0.1f);
+        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+        Paint paint = this.b;
+        int alpha = paint.getAlpha();
+        paint.setAlpha((int) (alpha * f7));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
+        paint.setAlpha(alpha);
+        int i10 = this.c;
+        org.telegram.ui.Components.r6 r6Var = this.a;
+        r6Var.u(i10);
+        r6Var.B = (int) (f7 * 255.0f);
+        r6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        r6Var.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.m5.b(this, imageReceiver);
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return (int) (this.d * 255.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(17.33f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.d + AndroidUtilities.dp(11.0f));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10 / 255.0f;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

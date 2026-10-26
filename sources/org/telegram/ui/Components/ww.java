@@ -1,26 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ww extends sz {
-    public final /* synthetic */ tz d;
+public final class ww extends fz {
+    public final /* synthetic */ sz H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ww(tz tzVar) {
-        super(tzVar, 2);
-        this.d = tzVar;
+    public ww(sz szVar, Context context) {
+        super(szVar, context, 2);
+        this.H = szVar;
     }
 
-    @Override // org.telegram.ui.Components.sz, s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        super.b(recyclerView, i10, i11);
-        if (Build.VERSION.SDK_INT < 31 || (fVar = this.d.j2) == null) {
-            return;
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            this.H.g0.invalidate();
         }
-        fVar.f(i10, i11);
     }
 }

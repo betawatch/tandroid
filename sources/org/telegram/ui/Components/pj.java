@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.ContactsController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pj implements vj {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final /* synthetic */ class pj implements vj {
         switch (this.a) {
             case 0:
                 ContactsController.Contact contact = this.b;
-                return contact.phones.isEmpty() ? "" : jf.b.c().b(contact.phones.get(0));
+                return contact.phones.isEmpty() ? "" : kf.b.c().b(contact.phones.get(0));
             default:
                 ContactsController.Contact contact2 = this.b;
-                return contact2.phones.isEmpty() ? "" : jf.b.c().b(contact2.phones.get(0));
+                return contact2.phones.isEmpty() ? "" : kf.b.c().b(contact2.phones.get(0));
         }
     }
 }

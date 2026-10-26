@@ -1,37 +1,117 @@
 package sg;
 
+import android.content.Context;
+import android.graphics.PointF;
 import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.ActionBar.h3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.vh;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.hl0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class r0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y0 b;
+public final class r0 extends j {
+    public final p0 q0;
+    public int r0;
+    public int s0;
+    public boolean t0;
+    public o0 u0;
 
-    public /* synthetic */ r0(y0 y0Var, int i10) {
-        this.a = i10;
-        this.b = y0Var;
+    public r0(Context context, PointF pointF, int i10, o0 o0Var, float f7, int i11) {
+        super(context, pointF);
+        p0 p0Var = new p0(context, f7);
+        this.q0 = p0Var;
+        p0Var.setMaxWidth(i11);
+        this.u0 = o0Var;
+        p0Var.b(i10, o0Var, false);
+        m();
+        this.s0 = 3;
+        p0Var.c(3, this.r0);
+        addView(p0Var, gb1.i(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        switch (this.a) {
-            case 0:
-                y0 y0Var = this.b;
-                viewGroup = ((h3) y0Var).containerView;
-                viewGroup.invalidate();
-                y0Var.B();
-                break;
-            default:
-                y0 y0Var2 = this.b;
-                viewGroup2 = ((h3) y0Var2).containerView;
-                viewGroup2.invalidate();
-                y0Var2.B();
-                break;
+    @Override // sg.j
+    public final i a() {
+        return new q0(this, getContext());
+    }
+
+    public int getColor() {
+        return this.r0;
+    }
+
+    @Override // sg.j
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    public int getNextType() {
+        int i10 = this.s0 + 1;
+        return i10 == 4 ? !this.t0 ? 1 : 0 : i10;
+    }
+
+    @Override // sg.j
+    public hl0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new hl0();
         }
+        float scaleX = viewGroup.getScaleX();
+        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float y3 = vh.y(dp, 2.0f, getPositionX(), scaleX);
+        return new hl0(y3, vh.y(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + y3) - y3, dp2 * scaleX);
+    }
+
+    @Override // sg.j
+    public float getStickyPaddingBottom() {
+        return this.q0.h;
+    }
+
+    @Override // sg.j
+    public float getStickyPaddingLeft() {
+        return this.q0.f;
+    }
+
+    @Override // sg.j
+    public float getStickyPaddingRight() {
+        return this.q0.f;
+    }
+
+    @Override // sg.j
+    public float getStickyPaddingTop() {
+        return this.q0.h;
+    }
+
+    public int getType() {
+        return this.s0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        k();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        k();
+    }
+
+    public void setColor(int i10) {
+        this.t0 = true;
+        this.r0 = i10;
+    }
+
+    public void setMaxWidth(int i10) {
+        this.q0.setMaxWidth(i10);
+    }
+
+    public void setType(int i10) {
+        this.s0 = i10;
+        this.q0.c(i10, this.r0);
     }
 }

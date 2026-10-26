@@ -1,44 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.KeyEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class mn0 extends z5 {
-    public final f6 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ScrollSlidingTextTabStrip f;
+public final class mn0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mn0(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i10) {
-        super(context);
-        this.f = scrollSlidingTextTabStrip;
-        this.e = i10;
-        this.d = new f6(this, 360L, bs.h);
+    public /* synthetic */ mn0(KeyEvent.Callback callback, boolean z10, float f7, int i10) {
+        this.a = i10;
+        this.d = callback;
+        this.b = z10;
+        this.c = f7;
     }
 
-    @Override // org.telegram.ui.Components.z5, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e = this.d.e(this.f.n0);
-        if (e > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (AndroidUtilities.lerp(1.0f, 0.5f, e) * 255.0f));
-        } else {
-            canvas2 = canvas;
-        }
-        super.onDraw(canvas2);
-        if (e > 0.0f) {
-            canvas2.restore();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                pn0 pn0Var = (pn0) this.d;
+                org.telegram.ui.xa1 xa1Var = pn0Var.e;
+                pn0Var.h0 = null;
+                boolean z10 = this.b;
+                pn0Var.i0 = z10 ? 1.0f : 0.0f;
+                for (int i10 = 0; i10 < xa1Var.getChildCount(); i10++) {
+                    xa1Var.getChildAt(i10).invalidate();
+                }
+                xa1Var.invalidate();
+                pn0Var.p();
+                if (!z10) {
+                    float childCount = pn0Var.k0 * xa1Var.getChildCount();
+                    float scrollX = pn0Var.getScrollX();
+                    float f7 = this.c;
+                    float childCount2 = (scrollX + f7) / (pn0Var.j0 * xa1Var.getChildCount());
+                    float measuredWidth = (childCount - pn0Var.getMeasuredWidth()) / childCount;
+                    if (childCount2 > measuredWidth) {
+                        f7 = 0.0f;
+                        childCount2 = measuredWidth;
+                    }
+                    float f10 = childCount * childCount2;
+                    if (f10 - f7 < 0.0f) {
+                        f10 = f7;
+                    }
+                    pn0Var.l0 = (pn0Var.getScrollX() + f7) - f10;
+                    int i11 = (int) (f10 - f7);
+                    pn0Var.m0 = i11;
+                    if (i11 < 0) {
+                        pn0Var.m0 = 0;
+                    }
+                    for (int i12 = 0; i12 < xa1Var.getChildCount(); i12++) {
+                        View childAt = xa1Var.getChildAt(i12);
+                        if (childAt instanceof jy0) {
+                            ((jy0) childAt).setExpanded(false);
+                        }
+                        childAt.getLayoutParams().width = AndroidUtilities.dp(33.0f);
+                    }
+                    pn0Var.g0 = false;
+                    pn0Var.getLayoutParams().height = AndroidUtilities.dp(36.0f);
+                    xa1Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                if (!this.b) {
+                    super/*android.app.Dialog*/.dismiss();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setSelected(this.f.r == this.e);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                super.onAnimationStart(animator);
+                yh.i iVar = ((yh.j) this.d).y;
+                iVar.setVisibility(0);
+                if (this.b) {
+                    float f7 = this.c;
+                    iVar.setScaleX(f7);
+                    iVar.setScaleY(f7);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

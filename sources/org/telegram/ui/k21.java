@@ -1,37 +1,42 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k21 implements o21 {
-    public final /* synthetic */ sn a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
-    public final /* synthetic */ MessageObject d;
+public final /* synthetic */ class k21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.video.a b;
+    public final /* synthetic */ org.telegram.ui.Components.wc c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ di.k0 e;
 
-    public k21(sn snVar, Activity activity, org.telegram.ui.ActionBar.g6 g6Var, MessageObject messageObject) {
-        this.a = snVar;
-        this.b = activity;
-        this.c = g6Var;
-        this.d = messageObject;
+    public /* synthetic */ k21(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.wc wcVar, Context context, di.k0 k0Var, int i10) {
+        this.a = i10;
+        this.b = aVar;
+        this.c = wcVar;
+        this.d = context;
+        this.e = k0Var;
     }
 
-    @Override // org.telegram.ui.o21
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new e21(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.o21
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new se(this.a, this.d, 8), 200L);
-    }
-
-    @Override // org.telegram.ui.o21
-    public final void c() {
-        sn snVar = this.a;
-        snVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.o2) snVar, 3, true));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new av(this.d, 2), this.e)).j();
+                break;
+            case 1:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new av(this.d, 5), this.e)).j();
+                break;
+            default:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new av(this.d, 6), this.e)).j();
+                break;
+        }
     }
 }

@@ -1,60 +1,108 @@
 package og;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+import m4.w1;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.t;
+import org.telegram.messenger.vh;
+import org.telegram.ui.ActionBar.f7;
+import org.telegram.ui.ActionBar.p4;
+import org.telegram.ui.ActionBar.r2;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.lp0;
+import org.telegram.ui.Components.vw0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.l5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class c extends Drawable {
-    public Drawable a;
-    public float b;
-    public int c;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public final void a(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+    public /* synthetic */ c(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                r2 R = LaunchActivity.R();
+                l5 l5Var = new l5(R.getParentActivity(), false);
+                if (R.getFragmentView() instanceof vw0) {
+                    l5Var.b = (vw0) R.getFragmentView();
+                }
+                Activity parentActivity = R.getParentActivity();
+                LinearLayout f7 = t.f(parentActivity, 1);
+                TextView textView = new TextView(parentActivity);
+                textView.setText("Saturation " + (l5.c * 5.0f));
+                int i10 = y6.n5;
+                f7.V(textView, i10, null);
+                vh.r(textView, 1, 16.0f, 1, 1);
+                textView.setSingleLine(true);
+                textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView, gb1.h(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                lp0 lp0Var = new lp0(parentActivity);
+                lp0Var.setDelegate(new m4.c(l5Var, textView, false, 7));
+                lp0Var.setReportChanges(true);
+                f7.addView(lp0Var, gb1.h(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView2 = new TextView(parentActivity);
+                textView2.setText("Alpha " + l5.e);
+                f7.V(textView2, i10, null);
+                vh.r(textView2, 1, 16.0f, 1, 1);
+                textView2.setSingleLine(true);
+                textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView2, gb1.h(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                lp0 lp0Var2 = new lp0(parentActivity);
+                lp0Var2.setDelegate(new w1(l5Var, textView2, false, 9));
+                lp0Var2.setReportChanges(true);
+                f7.addView(lp0Var2, gb1.h(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView3 = new TextView(parentActivity);
+                textView3.setText("Blur Radius");
+                f7.V(textView3, i10, null);
+                vh.r(textView3, 1, 16.0f, 1, 1);
+                textView3.setSingleLine(true);
+                textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView3, gb1.h(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                lp0 lp0Var3 = new lp0(parentActivity);
+                lp0Var3.setDelegate(new org.telegram.ui.f(l5Var, 5));
+                lp0Var3.setReportChanges(true);
+                f7.addView(lp0Var3, gb1.h(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                f7.addOnLayoutChangeListener(new p4(lp0Var, lp0Var3, lp0Var2));
+                ScrollView scrollView = new ScrollView(parentActivity);
+                scrollView.addView(f7);
+                l5Var.setCustomView(scrollView);
+                l5Var.show();
+                this.b.c(false);
+                break;
+            case 1:
+                i iVar = this.b;
+                iVar.getClass();
+                SharedConfig.toggleDebugWebView();
+                Toast.makeText(iVar.getContext(), LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuWebViewDebugEnabled : R.string.DebugMenuWebViewDebugDisabled), 0).show();
+                break;
+            case 2:
+                ProfileActivity.P4((Activity) this.b.getContext(), false);
+                break;
+            default:
+                i iVar2 = this.b;
+                iVar2.n = true;
+                try {
+                    iVar2.performHapticFeedback(0);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        Rect bounds = getBounds();
-        float f7 = this.b;
-        if (f7 == 1.0f) {
-            drawable.setBounds(bounds);
-        } else {
-            drawable.setBounds((int) (bounds.centerX() - ((bounds.width() / 2.0f) * f7)), (int) (bounds.centerY() - ((bounds.height() / 2.0f) * f7)), (int) (((bounds.width() / 2.0f) * f7) + bounds.centerX()), (int) (((bounds.height() / 2.0f) * f7) + bounds.centerY()));
-        }
-        drawable.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final ColorFilter getColorFilter() {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            return drawable.getColorFilter();
-        }
-        return null;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

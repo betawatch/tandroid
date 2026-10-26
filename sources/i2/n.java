@@ -1,8 +1,8 @@
 package i2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n implements d9.u {
+public final /* synthetic */ class n implements e9.t {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -11,18 +11,18 @@ public final /* synthetic */ class n implements d9.u {
         this.b = obj;
     }
 
-    @Override // d9.u
+    @Override // e9.t
     public final Object get() {
         switch (this.a) {
             case 0:
                 return (i) this.b;
             case 1:
-                return (x2.s) this.b;
+                return (x2.t) this.b;
             case 2:
                 return (k) this.b;
             default:
                 try {
-                    return (u2.g0) ((Class) this.b).getConstructor(null).newInstance(null);
+                    return (u2.f0) ((Class) this.b).getConstructor(null).newInstance(null);
                 } catch (Exception e) {
                     throw new IllegalStateException(e);
                 }

@@ -1,55 +1,84 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.view.View;
-import java.util.HashSet;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j3 extends View implements b6 {
-    public final /* synthetic */ l3 a;
+public final class j3 extends Drawable {
+    public final Paint a;
+    public final Rect b;
+    public final Rect c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j3(l3 l3Var, Context context) {
-        super(context);
-        this.a = l3Var;
+    public j3() {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Rect();
+        this.c = new Rect();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
+        paint.setColor(-16777216);
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a.d);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.navigationBarHeight);
-        setTranslationY(AndroidUtilities.navigationBarHeight);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        l3 l3Var = this.a;
-        try {
-            w3 w3Var = l3Var.a;
-            if (w3Var == null) {
-                return;
-            }
-            int navigationBarColor = w3Var.getNavigationBarColor(k6.x0(null, k6.a7, false));
-            if (l3Var.d.getColor() != navigationBarColor) {
-                l3Var.d.setColor(navigationBarColor);
-                invalidate();
-                AndroidUtilities.setNavigationBarColor(l3Var, navigationBarColor);
-                AndroidUtilities.setLightNavigationBar(l3Var, AndroidUtilities.computePerceivedBrightness(navigationBarColor) >= 0.721f);
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+    public final void a(int i10) {
+        Rect rect = this.b;
+        if (rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == i10) {
+            return;
         }
+        rect.set(0, 0, 0, i10);
+        onBoundsChange(getBounds());
+        invalidateSelf();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect rect = this.c;
+        if (rect.isEmpty()) {
+            return;
+        }
+        Paint paint = this.a;
+        if (paint.getAlpha() == 0 || AndroidUtilities.makingGlobalBlurBitmap) {
+            return;
+        }
+        canvas.drawRect(rect, paint);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.a.getAlpha();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        Rect rect2 = this.c;
+        rect2.set(rect);
+        int i10 = rect2.left;
+        Rect rect3 = this.b;
+        rect2.left = Math.max(0, rect3.left) + i10;
+        rect2.top = Math.max(0, rect3.top) + rect2.top;
+        rect2.right -= Math.max(0, rect3.right);
+        rect2.bottom -= Math.max(0, rect3.bottom);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

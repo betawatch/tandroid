@@ -1,47 +1,46 @@
 package com.google.firebase.installations;
 
-import b2.m0;
+import b2.n0;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-import l9.h;
-import n9.a;
-import oa.e;
-import org.telegram.ui.web.d0;
-import qg.g0;
-import r9.b;
-import r9.r;
-import ra.c;
-import ra.d;
-import s9.j;
-import w7.w8;
+import m9.h;
+import o9.a;
+import org.telegram.ui.Components.voip.j1;
+import pa.e;
+import s9.b;
+import s9.r;
+import sa.c;
+import sa.d;
+import t9.j;
+import w7.o5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
     /* JADX INFO: Access modifiers changed from: private */
     public static d lambda$getComponents$0(b bVar) {
-        return new c((h) bVar.a(h.class), bVar.b(e.class), (ExecutorService) bVar.c(new r(a.class, ExecutorService.class)), new j((Executor) bVar.c(new r(n9.b.class, Executor.class))));
+        return new c((h) bVar.a(h.class), bVar.d(e.class), (ExecutorService) bVar.n(new r(a.class, ExecutorService.class)), new j((Executor) bVar.n(new r(o9.b.class, Executor.class))));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<r9.a> getComponents() {
-        m0 a2 = r9.a.a(d.class);
+    public List<s9.a> getComponents() {
+        n0 a2 = s9.a.a(d.class);
         a2.d = LIBRARY_NAME;
-        a2.a(r9.j.a(h.class));
-        a2.a(new r9.j(0, 1, e.class));
-        a2.a(new r9.j(new r(a.class, ExecutorService.class), 1, 0));
-        a2.a(new r9.j(new r(n9.b.class, Executor.class), 1, 0));
-        a2.f = new d0(20);
-        r9.a b10 = a2.b();
-        oa.d dVar = new oa.d(0);
-        m0 a10 = r9.a.a(oa.d.class);
+        a2.a(s9.j.a(h.class));
+        a2.a(new s9.j(0, 1, e.class));
+        a2.a(new s9.j(new r(a.class, ExecutorService.class), 1, 0));
+        a2.a(new s9.j(new r(o9.b.class, Executor.class), 1, 0));
+        a2.f = new s0.b(6);
+        s9.a b10 = a2.b();
+        pa.d dVar = new pa.d();
+        n0 a10 = s9.a.a(pa.d.class);
         a10.b = 1;
-        a10.f = new g0(dVar, 6);
-        return Arrays.asList(b10, a10.b(), w8.a(LIBRARY_NAME, "17.2.0"));
+        a10.f = new j1(dVar, 10);
+        return Arrays.asList(b10, a10.b(), o5.a(LIBRARY_NAME, "17.2.0"));
     }
 }

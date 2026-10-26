@@ -16,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     public static final ConcurrentHashMap<Long, FileStreamLoadOperation> allStreams = new ConcurrentHashMap<>();
@@ -114,7 +114,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
 
     public final void bytesTransferred(int i10) {
         g2.m mVar = this.dataSpec;
-        String str = e2.m0.a;
+        String str = e2.n0.a;
         for (int i11 = 0; i11 < this.listenerCount; i11++) {
             g2.c0 c0Var = this.listeners.get(i11);
             boolean z10 = this.isNetwork;
@@ -251,7 +251,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     
         if (r12.opened == false) goto L21;
      */
-    @Override // b2.o
+    @Override // b2.p
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -259,7 +259,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
         Exception exc;
         InterruptedException interruptedException;
         Exception e;
-        InterruptedException e7;
+        InterruptedException e10;
         FileStreamLoadOperation fileStreamLoadOperation;
         RandomAccessFile randomAccessFile;
         if (i11 == 0) {
@@ -276,12 +276,12 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
         while (true) {
             if (i12 == 0) {
                 try {
-                } catch (InterruptedException e10) {
-                    interruptedException = e10;
+                } catch (InterruptedException e11) {
+                    interruptedException = e11;
                     FileLog.e(interruptedException);
                     return -3;
-                } catch (Exception e11) {
-                    exc = e11;
+                } catch (Exception e12) {
+                    exc = e12;
                     throw new IOException(exc);
                 }
             }
@@ -306,13 +306,13 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                             countDownLatch.await();
                             fileStreamLoadOperation.countDownLatch = null;
                         }
-                    } catch (InterruptedException e12) {
-                        e7 = e12;
-                        interruptedException = e7;
+                    } catch (InterruptedException e13) {
+                        e10 = e13;
+                        interruptedException = e10;
                         FileLog.e(interruptedException);
                         return -3;
-                    } catch (Exception e13) {
-                        e = e13;
+                    } catch (Exception e14) {
+                        e = e14;
                         exc = e;
                         throw new IOException(exc);
                     }
@@ -359,13 +359,13 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                         }
                     }
                 }
-            } catch (InterruptedException e14) {
-                e7 = e14;
-                interruptedException = e7;
+            } catch (InterruptedException e15) {
+                e10 = e15;
+                interruptedException = e10;
                 FileLog.e(interruptedException);
                 return -3;
-            } catch (Exception e15) {
-                e = e15;
+            } catch (Exception e16) {
+                e = e16;
                 exc = e;
                 throw new IOException(exc);
             }
@@ -386,7 +386,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
 
     public final void transferEnded() {
         g2.m mVar = this.dataSpec;
-        String str = e2.m0.a;
+        String str = e2.n0.a;
         for (int i10 = 0; i10 < this.listenerCount; i10++) {
             ((y2.f) this.listeners.get(i10)).e(mVar, this.isNetwork);
         }

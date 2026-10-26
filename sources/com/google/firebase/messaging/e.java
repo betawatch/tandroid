@@ -22,7 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final AtomicInteger a = new AtomicInteger((int) SystemClock.elapsedRealtime());
@@ -84,35 +84,35 @@ public abstract class e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static i a(FirebaseMessagingService firebaseMessagingService, ya.c cVar) {
+    public static i a(FirebaseMessagingService firebaseMessagingService, b6.i iVar) {
         Bundle bundle;
         String string;
         String packageName;
         PackageManager packageManager;
-        String T;
-        String T2;
         String W;
-        int i10;
         String W2;
+        String X;
+        int i10;
+        String X2;
         Uri defaultUri;
-        String W3;
+        String X3;
         Intent launchIntentForPackage;
         PendingIntent activity;
         PendingIntent broadcast;
-        String W4;
+        String X4;
         Integer valueOf;
-        String W5;
-        Integer Q;
-        Integer Q2;
-        Integer Q3;
-        String W6;
+        String X5;
+        Integer T;
+        Integer T2;
+        Integer T3;
+        String X6;
         Long valueOf2;
-        JSONArray S;
+        JSONArray V;
         long[] jArr;
-        JSONArray S2;
+        JSONArray V2;
         int[] iArr;
         ?? r02;
-        String W7;
+        String X7;
         int i11;
         try {
             ApplicationInfo applicationInfo = firebaseMessagingService.getPackageManager().getApplicationInfo(firebaseMessagingService.getPackageName(), 128);
@@ -124,61 +124,61 @@ public abstract class e {
         }
         bundle = Bundle.EMPTY;
         Bundle bundle2 = bundle;
-        String W8 = cVar.W("gcm.n.android_channel_id");
+        String X8 = iVar.X("gcm.n.android_channel_id");
         int i12 = 0;
         if (Build.VERSION.SDK_INT >= 26) {
             if (firebaseMessagingService.getPackageManager().getApplicationInfo(firebaseMessagingService.getPackageName(), 0).targetSdkVersion >= 26) {
                 NotificationManager notificationManager = (NotificationManager) firebaseMessagingService.getSystemService(NotificationManager.class);
-                if (!TextUtils.isEmpty(W8)) {
-                    if (notificationManager.getNotificationChannel(W8) == null) {
-                        Log.w("FirebaseMessaging", "Notification Channel requested (" + W8 + ") has not been created by the app. Manifest configuration, or default, value will be used.");
+                if (!TextUtils.isEmpty(X8)) {
+                    if (notificationManager.getNotificationChannel(X8) == null) {
+                        Log.w("FirebaseMessaging", "Notification Channel requested (" + X8 + ") has not been created by the app. Manifest configuration, or default, value will be used.");
                     }
                     packageName = firebaseMessagingService.getPackageName();
                     Resources resources = firebaseMessagingService.getResources();
                     packageManager = firebaseMessagingService.getPackageManager();
-                    e0.q qVar = new e0.q(firebaseMessagingService, W8);
-                    T = cVar.T(resources, packageName, "gcm.n.title");
-                    if (!TextUtils.isEmpty(T)) {
-                        qVar.g(T);
+                    e0.q qVar = new e0.q(firebaseMessagingService, X8);
+                    W = iVar.W(resources, packageName, "gcm.n.title");
+                    if (!TextUtils.isEmpty(W)) {
+                        qVar.g(W);
                     }
-                    T2 = cVar.T(resources, packageName, "gcm.n.body");
-                    if (!TextUtils.isEmpty(T2)) {
-                        qVar.f(T2);
+                    W2 = iVar.W(resources, packageName, "gcm.n.body");
+                    if (!TextUtils.isEmpty(W2)) {
+                        qVar.f(W2);
                         e0.l lVar = new e0.l(false);
-                        lVar.f = e0.q.d(T2);
+                        lVar.f = e0.q.d(W2);
                         qVar.n(lVar);
                     }
-                    W = cVar.W("gcm.n.icon");
-                    if (!TextUtils.isEmpty(W)) {
-                        i10 = resources.getIdentifier(W, "drawable", packageName);
-                        if ((i10 == 0 || !b(resources, i10)) && ((i10 = resources.getIdentifier(W, "mipmap", packageName)) == 0 || !b(resources, i10))) {
-                            Log.w("FirebaseMessaging", "Icon resource " + W + " not found. Notification will use default icon.");
+                    X = iVar.X("gcm.n.icon");
+                    if (!TextUtils.isEmpty(X)) {
+                        i10 = resources.getIdentifier(X, "drawable", packageName);
+                        if ((i10 == 0 || !b(resources, i10)) && ((i10 = resources.getIdentifier(X, "mipmap", packageName)) == 0 || !b(resources, i10))) {
+                            Log.w("FirebaseMessaging", "Icon resource " + X + " not found. Notification will use default icon.");
                         }
-                        qVar.E.icon = i10;
-                        W2 = cVar.W("gcm.n.sound2");
-                        if (TextUtils.isEmpty(W2)) {
-                            W2 = cVar.W("gcm.n.sound");
+                        qVar.F.icon = i10;
+                        X2 = iVar.X("gcm.n.sound2");
+                        if (TextUtils.isEmpty(X2)) {
+                            X2 = iVar.X("gcm.n.sound");
                         }
-                        if (TextUtils.isEmpty(W2)) {
+                        if (TextUtils.isEmpty(X2)) {
                             defaultUri = null;
-                        } else if ("default".equals(W2) || resources.getIdentifier(W2, "raw", packageName) == 0) {
+                        } else if ("default".equals(X2) || resources.getIdentifier(X2, "raw", packageName) == 0) {
                             defaultUri = RingtoneManager.getDefaultUri(2);
                         } else {
-                            defaultUri = Uri.parse("android.resource://" + packageName + "/raw/" + W2);
+                            defaultUri = Uri.parse("android.resource://" + packageName + "/raw/" + X2);
                         }
                         if (defaultUri != null) {
-                            Notification notification = qVar.E;
+                            Notification notification = qVar.F;
                             notification.sound = defaultUri;
                             notification.audioStreamType = -1;
                             notification.audioAttributes = e0.p.a(e0.p.e(e0.p.c(e0.p.b(), 4), 5));
                         }
-                        W3 = cVar.W("gcm.n.click_action");
-                        if (TextUtils.isEmpty(W3)) {
-                            String W9 = cVar.W("gcm.n.link_android");
-                            if (TextUtils.isEmpty(W9)) {
-                                W9 = cVar.W("gcm.n.link");
+                        X3 = iVar.X("gcm.n.click_action");
+                        if (TextUtils.isEmpty(X3)) {
+                            String X9 = iVar.X("gcm.n.link_android");
+                            if (TextUtils.isEmpty(X9)) {
+                                X9 = iVar.X("gcm.n.link");
                             }
-                            Uri parse = !TextUtils.isEmpty(W9) ? Uri.parse(W9) : null;
+                            Uri parse = !TextUtils.isEmpty(X9) ? Uri.parse(X9) : null;
                             if (parse != null) {
                                 launchIntentForPackage = new Intent("android.intent.action.VIEW");
                                 launchIntentForPackage.setPackage(packageName);
@@ -190,7 +190,7 @@ public abstract class e {
                                 }
                             }
                         } else {
-                            launchIntentForPackage = new Intent(W3);
+                            launchIntentForPackage = new Intent(X3);
                             launchIntentForPackage.setPackage(packageName);
                             launchIntentForPackage.setFlags(TLObject.FLAG_28);
                         }
@@ -199,7 +199,7 @@ public abstract class e {
                             activity = null;
                         } else {
                             launchIntentForPackage.addFlags(67108864);
-                            Bundle bundle3 = (Bundle) cVar.b;
+                            Bundle bundle3 = (Bundle) iVar.b;
                             Bundle bundle4 = new Bundle(bundle3);
                             for (String str : bundle3.keySet()) {
                                 if (str.startsWith("google.c.") || str.startsWith("gcm.n.") || str.startsWith("gcm.notification.")) {
@@ -207,109 +207,109 @@ public abstract class e {
                                 }
                             }
                             launchIntentForPackage.putExtras(bundle4);
-                            if (cVar.N("google.c.a.e")) {
-                                launchIntentForPackage.putExtra("gcm.n.analytics_data", cVar.c0());
+                            if (iVar.R("google.c.a.e")) {
+                                launchIntentForPackage.putExtra("gcm.n.analytics_data", iVar.Z());
                             }
                             activity = PendingIntent.getActivity(firebaseMessagingService, atomicInteger.incrementAndGet(), launchIntentForPackage, 1140850688);
                         }
                         qVar.g = activity;
-                        broadcast = !cVar.N("google.c.a.e") ? null : PendingIntent.getBroadcast(firebaseMessagingService, atomicInteger.incrementAndGet(), new Intent("com.google.android.c2dm.intent.RECEIVE").setPackage(firebaseMessagingService.getPackageName()).putExtra("wrapped_intent", new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(cVar.c0())), 1140850688);
+                        broadcast = !iVar.R("google.c.a.e") ? null : PendingIntent.getBroadcast(firebaseMessagingService, atomicInteger.incrementAndGet(), new Intent("com.google.android.c2dm.intent.RECEIVE").setPackage(firebaseMessagingService.getPackageName()).putExtra("wrapped_intent", new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(iVar.Z())), 1140850688);
                         if (broadcast != null) {
-                            qVar.E.deleteIntent = broadcast;
+                            qVar.F.deleteIntent = broadcast;
                         }
-                        W4 = cVar.W("gcm.n.color");
-                        if (!TextUtils.isEmpty(W4)) {
+                        X4 = iVar.X("gcm.n.color");
+                        if (!TextUtils.isEmpty(X4)) {
                             try {
-                                valueOf = Integer.valueOf(Color.parseColor(W4));
+                                valueOf = Integer.valueOf(Color.parseColor(X4));
                             } catch (IllegalArgumentException unused) {
-                                Log.w("FirebaseMessaging", "Color is invalid: " + W4 + ". Notification will use default color.");
+                                Log.w("FirebaseMessaging", "Color is invalid: " + X4 + ". Notification will use default color.");
                             }
                             if (valueOf != null) {
                                 qVar.w = valueOf.intValue();
                             }
-                            qVar.h(16, !cVar.N("gcm.n.sticky"));
-                            qVar.t = cVar.N("gcm.n.local_only");
-                            W5 = cVar.W("gcm.n.ticker");
-                            if (W5 != null) {
-                                qVar.p(W5);
+                            qVar.h(16, !iVar.R("gcm.n.sticky"));
+                            qVar.t = iVar.R("gcm.n.local_only");
+                            X5 = iVar.X("gcm.n.ticker");
+                            if (X5 != null) {
+                                qVar.p(X5);
                             }
-                            Q = cVar.Q("gcm.n.notification_priority");
-                            if (Q != null) {
-                                if (Q.intValue() < -2 || Q.intValue() > 2) {
-                                    Log.w("FirebaseMessaging", "notificationPriority is invalid " + Q + ". Skipping setting notificationPriority.");
+                            T = iVar.T("gcm.n.notification_priority");
+                            if (T != null) {
+                                if (T.intValue() < -2 || T.intValue() > 2) {
+                                    Log.w("FirebaseMessaging", "notificationPriority is invalid " + T + ". Skipping setting notificationPriority.");
                                 }
-                                if (Q != null) {
-                                    qVar.j = Q.intValue();
+                                if (T != null) {
+                                    qVar.j = T.intValue();
                                 }
-                                Q2 = cVar.Q("gcm.n.visibility");
-                                if (Q2 != null) {
-                                    if (Q2.intValue() < -1 || Q2.intValue() > 1) {
-                                        Log.w("NotificationParams", "visibility is invalid: " + Q2 + ". Skipping setting visibility.");
+                                T2 = iVar.T("gcm.n.visibility");
+                                if (T2 != null) {
+                                    if (T2.intValue() < -1 || T2.intValue() > 1) {
+                                        Log.w("NotificationParams", "visibility is invalid: " + T2 + ". Skipping setting visibility.");
                                     }
-                                    if (Q2 != null) {
-                                        qVar.x = Q2.intValue();
+                                    if (T2 != null) {
+                                        qVar.x = T2.intValue();
                                     }
-                                    Q3 = cVar.Q("gcm.n.notification_count");
-                                    if (Q3 != null) {
-                                        if (Q3.intValue() < 0) {
-                                            Log.w("FirebaseMessaging", "notificationCount is invalid: " + Q3 + ". Skipping setting notificationCount.");
+                                    T3 = iVar.T("gcm.n.notification_count");
+                                    if (T3 != null) {
+                                        if (T3.intValue() < 0) {
+                                            Log.w("FirebaseMessaging", "notificationCount is invalid: " + T3 + ". Skipping setting notificationCount.");
                                         }
-                                        if (Q3 != null) {
-                                            qVar.i = Q3.intValue();
+                                        if (T3 != null) {
+                                            qVar.i = T3.intValue();
                                         }
-                                        W6 = cVar.W("gcm.n.event_time");
-                                        if (!TextUtils.isEmpty(W6)) {
+                                        X6 = iVar.X("gcm.n.event_time");
+                                        if (!TextUtils.isEmpty(X6)) {
                                             try {
-                                                valueOf2 = Long.valueOf(Long.parseLong(W6));
+                                                valueOf2 = Long.valueOf(Long.parseLong(X6));
                                             } catch (NumberFormatException unused2) {
-                                                Log.w("NotificationParams", "Couldn't parse value of " + ya.c.g0("gcm.n.event_time") + "(" + W6 + ") into a long");
+                                                Log.w("NotificationParams", "Couldn't parse value of " + b6.i.d0("gcm.n.event_time") + "(" + X6 + ") into a long");
                                             }
                                             if (valueOf2 != null) {
                                                 qVar.k = true;
-                                                qVar.E.when = valueOf2.longValue();
+                                                qVar.F.when = valueOf2.longValue();
                                             }
-                                            S = cVar.S("gcm.n.vibrate_timings");
-                                            if (S != null) {
+                                            V = iVar.V("gcm.n.vibrate_timings");
+                                            if (V != null) {
                                                 try {
                                                 } catch (NumberFormatException | JSONException unused3) {
-                                                    Log.w("NotificationParams", "User defined vibrateTimings is invalid: " + S + ". Skipping setting vibrateTimings.");
+                                                    Log.w("NotificationParams", "User defined vibrateTimings is invalid: " + V + ". Skipping setting vibrateTimings.");
                                                 }
-                                                if (S.length() <= 1) {
+                                                if (V.length() <= 1) {
                                                     throw new JSONException("vibrateTimings have invalid length");
                                                 }
-                                                int length = S.length();
+                                                int length = V.length();
                                                 jArr = new long[length];
                                                 for (int i13 = 0; i13 < length; i13++) {
-                                                    jArr[i13] = S.optLong(i13);
+                                                    jArr[i13] = V.optLong(i13);
                                                 }
                                                 if (jArr != null) {
-                                                    qVar.E.vibrate = jArr;
+                                                    qVar.F.vibrate = jArr;
                                                 }
-                                                S2 = cVar.S("gcm.n.light_settings");
-                                                if (S2 != null) {
+                                                V2 = iVar.V("gcm.n.light_settings");
+                                                if (V2 != null) {
                                                     int[] iArr2 = new int[3];
                                                     try {
-                                                    } catch (IllegalArgumentException e7) {
-                                                        Log.w("NotificationParams", "LightSettings is invalid: " + S2 + ". " + e7.getMessage() + ". Skipping setting LightSettings");
+                                                    } catch (IllegalArgumentException e10) {
+                                                        Log.w("NotificationParams", "LightSettings is invalid: " + V2 + ". " + e10.getMessage() + ". Skipping setting LightSettings");
                                                     } catch (JSONException unused4) {
-                                                        Log.w("NotificationParams", "LightSettings is invalid: " + S2 + ". Skipping setting LightSettings");
+                                                        Log.w("NotificationParams", "LightSettings is invalid: " + V2 + ". Skipping setting LightSettings");
                                                     }
-                                                    if (S2.length() != 3) {
+                                                    if (V2.length() != 3) {
                                                         throw new JSONException("lightSettings don't have all three fields");
                                                     }
-                                                    int parseColor = Color.parseColor(S2.optString(0));
+                                                    int parseColor = Color.parseColor(V2.optString(0));
                                                     if (parseColor == -16777216) {
                                                         throw new IllegalArgumentException("Transparent color is invalid");
                                                     }
                                                     iArr2[0] = parseColor;
-                                                    iArr2[1] = S2.optInt(1);
-                                                    iArr2[2] = S2.optInt(2);
+                                                    iArr2[1] = V2.optInt(1);
+                                                    iArr2[2] = V2.optInt(2);
                                                     iArr = iArr2;
                                                     if (iArr != null) {
                                                         int i14 = iArr[0];
                                                         int i15 = iArr[1];
                                                         int i16 = iArr[2];
-                                                        Notification notification2 = qVar.E;
+                                                        Notification notification2 = qVar.F;
                                                         notification2.ledARGB = i14;
                                                         notification2.ledOnMS = i15;
                                                         notification2.ledOffMS = i16;
@@ -318,229 +318,229 @@ public abstract class e {
                                                         }
                                                         notification2.flags = (notification2.flags & (-2)) | i12;
                                                     }
-                                                    boolean N = cVar.N("gcm.n.default_sound");
-                                                    boolean z10 = N;
-                                                    if (cVar.N("gcm.n.default_vibrate_timings")) {
-                                                        z10 = (N ? 1 : 0) | 2;
+                                                    boolean R = iVar.R("gcm.n.default_sound");
+                                                    boolean z10 = R;
+                                                    if (iVar.R("gcm.n.default_vibrate_timings")) {
+                                                        z10 = (R ? 1 : 0) | 2;
                                                     }
                                                     r02 = z10;
-                                                    if (cVar.N("gcm.n.default_light_settings")) {
+                                                    if (iVar.R("gcm.n.default_light_settings")) {
                                                         r02 = (z10 ? 1 : 0) | 4;
                                                     }
-                                                    Notification notification3 = qVar.E;
+                                                    Notification notification3 = qVar.F;
                                                     notification3.defaults = r02;
                                                     if ((r02 & 4) != 0) {
                                                         notification3.flags |= 1;
                                                     }
-                                                    W7 = cVar.W("gcm.n.tag");
-                                                    if (TextUtils.isEmpty(W7)) {
-                                                        W7 = "FCM-Notification:" + SystemClock.uptimeMillis();
+                                                    X7 = iVar.X("gcm.n.tag");
+                                                    if (TextUtils.isEmpty(X7)) {
+                                                        X7 = "FCM-Notification:" + SystemClock.uptimeMillis();
                                                     }
-                                                    return new i(qVar, W7);
+                                                    return new i(qVar, X7);
                                                 }
                                                 iArr = null;
                                                 if (iArr != null) {
                                                 }
-                                                boolean N2 = cVar.N("gcm.n.default_sound");
-                                                boolean z102 = N2;
-                                                if (cVar.N("gcm.n.default_vibrate_timings")) {
+                                                boolean R2 = iVar.R("gcm.n.default_sound");
+                                                boolean z102 = R2;
+                                                if (iVar.R("gcm.n.default_vibrate_timings")) {
                                                 }
                                                 r02 = z102;
-                                                if (cVar.N("gcm.n.default_light_settings")) {
+                                                if (iVar.R("gcm.n.default_light_settings")) {
                                                 }
-                                                Notification notification32 = qVar.E;
+                                                Notification notification32 = qVar.F;
                                                 notification32.defaults = r02;
                                                 if ((r02 & 4) != 0) {
                                                 }
-                                                W7 = cVar.W("gcm.n.tag");
-                                                if (TextUtils.isEmpty(W7)) {
+                                                X7 = iVar.X("gcm.n.tag");
+                                                if (TextUtils.isEmpty(X7)) {
                                                 }
-                                                return new i(qVar, W7);
+                                                return new i(qVar, X7);
                                             }
                                             jArr = null;
                                             if (jArr != null) {
                                             }
-                                            S2 = cVar.S("gcm.n.light_settings");
-                                            if (S2 != null) {
+                                            V2 = iVar.V("gcm.n.light_settings");
+                                            if (V2 != null) {
                                             }
                                             iArr = null;
                                             if (iArr != null) {
                                             }
-                                            boolean N22 = cVar.N("gcm.n.default_sound");
-                                            boolean z1022 = N22;
-                                            if (cVar.N("gcm.n.default_vibrate_timings")) {
+                                            boolean R22 = iVar.R("gcm.n.default_sound");
+                                            boolean z1022 = R22;
+                                            if (iVar.R("gcm.n.default_vibrate_timings")) {
                                             }
                                             r02 = z1022;
-                                            if (cVar.N("gcm.n.default_light_settings")) {
+                                            if (iVar.R("gcm.n.default_light_settings")) {
                                             }
-                                            Notification notification322 = qVar.E;
+                                            Notification notification322 = qVar.F;
                                             notification322.defaults = r02;
                                             if ((r02 & 4) != 0) {
                                             }
-                                            W7 = cVar.W("gcm.n.tag");
-                                            if (TextUtils.isEmpty(W7)) {
+                                            X7 = iVar.X("gcm.n.tag");
+                                            if (TextUtils.isEmpty(X7)) {
                                             }
-                                            return new i(qVar, W7);
+                                            return new i(qVar, X7);
                                         }
                                         valueOf2 = null;
                                         if (valueOf2 != null) {
                                         }
-                                        S = cVar.S("gcm.n.vibrate_timings");
-                                        if (S != null) {
+                                        V = iVar.V("gcm.n.vibrate_timings");
+                                        if (V != null) {
                                         }
                                         jArr = null;
                                         if (jArr != null) {
                                         }
-                                        S2 = cVar.S("gcm.n.light_settings");
-                                        if (S2 != null) {
+                                        V2 = iVar.V("gcm.n.light_settings");
+                                        if (V2 != null) {
                                         }
                                         iArr = null;
                                         if (iArr != null) {
                                         }
-                                        boolean N222 = cVar.N("gcm.n.default_sound");
-                                        boolean z10222 = N222;
-                                        if (cVar.N("gcm.n.default_vibrate_timings")) {
+                                        boolean R222 = iVar.R("gcm.n.default_sound");
+                                        boolean z10222 = R222;
+                                        if (iVar.R("gcm.n.default_vibrate_timings")) {
                                         }
                                         r02 = z10222;
-                                        if (cVar.N("gcm.n.default_light_settings")) {
+                                        if (iVar.R("gcm.n.default_light_settings")) {
                                         }
-                                        Notification notification3222 = qVar.E;
+                                        Notification notification3222 = qVar.F;
                                         notification3222.defaults = r02;
                                         if ((r02 & 4) != 0) {
                                         }
-                                        W7 = cVar.W("gcm.n.tag");
-                                        if (TextUtils.isEmpty(W7)) {
+                                        X7 = iVar.X("gcm.n.tag");
+                                        if (TextUtils.isEmpty(X7)) {
                                         }
-                                        return new i(qVar, W7);
+                                        return new i(qVar, X7);
                                     }
-                                    Q3 = null;
-                                    if (Q3 != null) {
+                                    T3 = null;
+                                    if (T3 != null) {
                                     }
-                                    W6 = cVar.W("gcm.n.event_time");
-                                    if (!TextUtils.isEmpty(W6)) {
+                                    X6 = iVar.X("gcm.n.event_time");
+                                    if (!TextUtils.isEmpty(X6)) {
                                     }
                                     valueOf2 = null;
                                     if (valueOf2 != null) {
                                     }
-                                    S = cVar.S("gcm.n.vibrate_timings");
-                                    if (S != null) {
+                                    V = iVar.V("gcm.n.vibrate_timings");
+                                    if (V != null) {
                                     }
                                     jArr = null;
                                     if (jArr != null) {
                                     }
-                                    S2 = cVar.S("gcm.n.light_settings");
-                                    if (S2 != null) {
+                                    V2 = iVar.V("gcm.n.light_settings");
+                                    if (V2 != null) {
                                     }
                                     iArr = null;
                                     if (iArr != null) {
                                     }
-                                    boolean N2222 = cVar.N("gcm.n.default_sound");
-                                    boolean z102222 = N2222;
-                                    if (cVar.N("gcm.n.default_vibrate_timings")) {
+                                    boolean R2222 = iVar.R("gcm.n.default_sound");
+                                    boolean z102222 = R2222;
+                                    if (iVar.R("gcm.n.default_vibrate_timings")) {
                                     }
                                     r02 = z102222;
-                                    if (cVar.N("gcm.n.default_light_settings")) {
+                                    if (iVar.R("gcm.n.default_light_settings")) {
                                     }
-                                    Notification notification32222 = qVar.E;
+                                    Notification notification32222 = qVar.F;
                                     notification32222.defaults = r02;
                                     if ((r02 & 4) != 0) {
                                     }
-                                    W7 = cVar.W("gcm.n.tag");
-                                    if (TextUtils.isEmpty(W7)) {
+                                    X7 = iVar.X("gcm.n.tag");
+                                    if (TextUtils.isEmpty(X7)) {
                                     }
-                                    return new i(qVar, W7);
+                                    return new i(qVar, X7);
                                 }
-                                Q2 = null;
-                                if (Q2 != null) {
+                                T2 = null;
+                                if (T2 != null) {
                                 }
-                                Q3 = cVar.Q("gcm.n.notification_count");
-                                if (Q3 != null) {
+                                T3 = iVar.T("gcm.n.notification_count");
+                                if (T3 != null) {
                                 }
-                                Q3 = null;
-                                if (Q3 != null) {
+                                T3 = null;
+                                if (T3 != null) {
                                 }
-                                W6 = cVar.W("gcm.n.event_time");
-                                if (!TextUtils.isEmpty(W6)) {
+                                X6 = iVar.X("gcm.n.event_time");
+                                if (!TextUtils.isEmpty(X6)) {
                                 }
                                 valueOf2 = null;
                                 if (valueOf2 != null) {
                                 }
-                                S = cVar.S("gcm.n.vibrate_timings");
-                                if (S != null) {
+                                V = iVar.V("gcm.n.vibrate_timings");
+                                if (V != null) {
                                 }
                                 jArr = null;
                                 if (jArr != null) {
                                 }
-                                S2 = cVar.S("gcm.n.light_settings");
-                                if (S2 != null) {
+                                V2 = iVar.V("gcm.n.light_settings");
+                                if (V2 != null) {
                                 }
                                 iArr = null;
                                 if (iArr != null) {
                                 }
-                                boolean N22222 = cVar.N("gcm.n.default_sound");
-                                boolean z1022222 = N22222;
-                                if (cVar.N("gcm.n.default_vibrate_timings")) {
+                                boolean R22222 = iVar.R("gcm.n.default_sound");
+                                boolean z1022222 = R22222;
+                                if (iVar.R("gcm.n.default_vibrate_timings")) {
                                 }
                                 r02 = z1022222;
-                                if (cVar.N("gcm.n.default_light_settings")) {
+                                if (iVar.R("gcm.n.default_light_settings")) {
                                 }
-                                Notification notification322222 = qVar.E;
+                                Notification notification322222 = qVar.F;
                                 notification322222.defaults = r02;
                                 if ((r02 & 4) != 0) {
                                 }
-                                W7 = cVar.W("gcm.n.tag");
-                                if (TextUtils.isEmpty(W7)) {
+                                X7 = iVar.X("gcm.n.tag");
+                                if (TextUtils.isEmpty(X7)) {
                                 }
-                                return new i(qVar, W7);
+                                return new i(qVar, X7);
                             }
-                            Q = null;
-                            if (Q != null) {
+                            T = null;
+                            if (T != null) {
                             }
-                            Q2 = cVar.Q("gcm.n.visibility");
-                            if (Q2 != null) {
+                            T2 = iVar.T("gcm.n.visibility");
+                            if (T2 != null) {
                             }
-                            Q2 = null;
-                            if (Q2 != null) {
+                            T2 = null;
+                            if (T2 != null) {
                             }
-                            Q3 = cVar.Q("gcm.n.notification_count");
-                            if (Q3 != null) {
+                            T3 = iVar.T("gcm.n.notification_count");
+                            if (T3 != null) {
                             }
-                            Q3 = null;
-                            if (Q3 != null) {
+                            T3 = null;
+                            if (T3 != null) {
                             }
-                            W6 = cVar.W("gcm.n.event_time");
-                            if (!TextUtils.isEmpty(W6)) {
+                            X6 = iVar.X("gcm.n.event_time");
+                            if (!TextUtils.isEmpty(X6)) {
                             }
                             valueOf2 = null;
                             if (valueOf2 != null) {
                             }
-                            S = cVar.S("gcm.n.vibrate_timings");
-                            if (S != null) {
+                            V = iVar.V("gcm.n.vibrate_timings");
+                            if (V != null) {
                             }
                             jArr = null;
                             if (jArr != null) {
                             }
-                            S2 = cVar.S("gcm.n.light_settings");
-                            if (S2 != null) {
+                            V2 = iVar.V("gcm.n.light_settings");
+                            if (V2 != null) {
                             }
                             iArr = null;
                             if (iArr != null) {
                             }
-                            boolean N222222 = cVar.N("gcm.n.default_sound");
-                            boolean z10222222 = N222222;
-                            if (cVar.N("gcm.n.default_vibrate_timings")) {
+                            boolean R222222 = iVar.R("gcm.n.default_sound");
+                            boolean z10222222 = R222222;
+                            if (iVar.R("gcm.n.default_vibrate_timings")) {
                             }
                             r02 = z10222222;
-                            if (cVar.N("gcm.n.default_light_settings")) {
+                            if (iVar.R("gcm.n.default_light_settings")) {
                             }
-                            Notification notification3222222 = qVar.E;
+                            Notification notification3222222 = qVar.F;
                             notification3222222.defaults = r02;
                             if ((r02 & 4) != 0) {
                             }
-                            W7 = cVar.W("gcm.n.tag");
-                            if (TextUtils.isEmpty(W7)) {
+                            X7 = iVar.X("gcm.n.tag");
+                            if (TextUtils.isEmpty(X7)) {
                             }
-                            return new i(qVar, W7);
+                            return new i(qVar, X7);
                         }
                         i11 = bundle2.getInt("com.google.firebase.messaging.default_notification_color", 0);
                         if (i11 != 0) {
@@ -551,122 +551,122 @@ public abstract class e {
                             }
                             if (valueOf != null) {
                             }
-                            qVar.h(16, !cVar.N("gcm.n.sticky"));
-                            qVar.t = cVar.N("gcm.n.local_only");
-                            W5 = cVar.W("gcm.n.ticker");
-                            if (W5 != null) {
+                            qVar.h(16, !iVar.R("gcm.n.sticky"));
+                            qVar.t = iVar.R("gcm.n.local_only");
+                            X5 = iVar.X("gcm.n.ticker");
+                            if (X5 != null) {
                             }
-                            Q = cVar.Q("gcm.n.notification_priority");
-                            if (Q != null) {
+                            T = iVar.T("gcm.n.notification_priority");
+                            if (T != null) {
                             }
-                            Q = null;
-                            if (Q != null) {
+                            T = null;
+                            if (T != null) {
                             }
-                            Q2 = cVar.Q("gcm.n.visibility");
-                            if (Q2 != null) {
+                            T2 = iVar.T("gcm.n.visibility");
+                            if (T2 != null) {
                             }
-                            Q2 = null;
-                            if (Q2 != null) {
+                            T2 = null;
+                            if (T2 != null) {
                             }
-                            Q3 = cVar.Q("gcm.n.notification_count");
-                            if (Q3 != null) {
+                            T3 = iVar.T("gcm.n.notification_count");
+                            if (T3 != null) {
                             }
-                            Q3 = null;
-                            if (Q3 != null) {
+                            T3 = null;
+                            if (T3 != null) {
                             }
-                            W6 = cVar.W("gcm.n.event_time");
-                            if (!TextUtils.isEmpty(W6)) {
+                            X6 = iVar.X("gcm.n.event_time");
+                            if (!TextUtils.isEmpty(X6)) {
                             }
                             valueOf2 = null;
                             if (valueOf2 != null) {
                             }
-                            S = cVar.S("gcm.n.vibrate_timings");
-                            if (S != null) {
+                            V = iVar.V("gcm.n.vibrate_timings");
+                            if (V != null) {
                             }
                             jArr = null;
                             if (jArr != null) {
                             }
-                            S2 = cVar.S("gcm.n.light_settings");
-                            if (S2 != null) {
+                            V2 = iVar.V("gcm.n.light_settings");
+                            if (V2 != null) {
                             }
                             iArr = null;
                             if (iArr != null) {
                             }
-                            boolean N2222222 = cVar.N("gcm.n.default_sound");
-                            boolean z102222222 = N2222222;
-                            if (cVar.N("gcm.n.default_vibrate_timings")) {
+                            boolean R2222222 = iVar.R("gcm.n.default_sound");
+                            boolean z102222222 = R2222222;
+                            if (iVar.R("gcm.n.default_vibrate_timings")) {
                             }
                             r02 = z102222222;
-                            if (cVar.N("gcm.n.default_light_settings")) {
+                            if (iVar.R("gcm.n.default_light_settings")) {
                             }
-                            Notification notification32222222 = qVar.E;
+                            Notification notification32222222 = qVar.F;
                             notification32222222.defaults = r02;
                             if ((r02 & 4) != 0) {
                             }
-                            W7 = cVar.W("gcm.n.tag");
-                            if (TextUtils.isEmpty(W7)) {
+                            X7 = iVar.X("gcm.n.tag");
+                            if (TextUtils.isEmpty(X7)) {
                             }
-                            return new i(qVar, W7);
+                            return new i(qVar, X7);
                         }
                         valueOf = null;
                         if (valueOf != null) {
                         }
-                        qVar.h(16, !cVar.N("gcm.n.sticky"));
-                        qVar.t = cVar.N("gcm.n.local_only");
-                        W5 = cVar.W("gcm.n.ticker");
-                        if (W5 != null) {
+                        qVar.h(16, !iVar.R("gcm.n.sticky"));
+                        qVar.t = iVar.R("gcm.n.local_only");
+                        X5 = iVar.X("gcm.n.ticker");
+                        if (X5 != null) {
                         }
-                        Q = cVar.Q("gcm.n.notification_priority");
-                        if (Q != null) {
+                        T = iVar.T("gcm.n.notification_priority");
+                        if (T != null) {
                         }
-                        Q = null;
-                        if (Q != null) {
+                        T = null;
+                        if (T != null) {
                         }
-                        Q2 = cVar.Q("gcm.n.visibility");
-                        if (Q2 != null) {
+                        T2 = iVar.T("gcm.n.visibility");
+                        if (T2 != null) {
                         }
-                        Q2 = null;
-                        if (Q2 != null) {
+                        T2 = null;
+                        if (T2 != null) {
                         }
-                        Q3 = cVar.Q("gcm.n.notification_count");
-                        if (Q3 != null) {
+                        T3 = iVar.T("gcm.n.notification_count");
+                        if (T3 != null) {
                         }
-                        Q3 = null;
-                        if (Q3 != null) {
+                        T3 = null;
+                        if (T3 != null) {
                         }
-                        W6 = cVar.W("gcm.n.event_time");
-                        if (!TextUtils.isEmpty(W6)) {
+                        X6 = iVar.X("gcm.n.event_time");
+                        if (!TextUtils.isEmpty(X6)) {
                         }
                         valueOf2 = null;
                         if (valueOf2 != null) {
                         }
-                        S = cVar.S("gcm.n.vibrate_timings");
-                        if (S != null) {
+                        V = iVar.V("gcm.n.vibrate_timings");
+                        if (V != null) {
                         }
                         jArr = null;
                         if (jArr != null) {
                         }
-                        S2 = cVar.S("gcm.n.light_settings");
-                        if (S2 != null) {
+                        V2 = iVar.V("gcm.n.light_settings");
+                        if (V2 != null) {
                         }
                         iArr = null;
                         if (iArr != null) {
                         }
-                        boolean N22222222 = cVar.N("gcm.n.default_sound");
-                        boolean z1022222222 = N22222222;
-                        if (cVar.N("gcm.n.default_vibrate_timings")) {
+                        boolean R22222222 = iVar.R("gcm.n.default_sound");
+                        boolean z1022222222 = R22222222;
+                        if (iVar.R("gcm.n.default_vibrate_timings")) {
                         }
                         r02 = z1022222222;
-                        if (cVar.N("gcm.n.default_light_settings")) {
+                        if (iVar.R("gcm.n.default_light_settings")) {
                         }
-                        Notification notification322222222 = qVar.E;
+                        Notification notification322222222 = qVar.F;
                         notification322222222.defaults = r02;
                         if ((r02 & 4) != 0) {
                         }
-                        W7 = cVar.W("gcm.n.tag");
-                        if (TextUtils.isEmpty(W7)) {
+                        X7 = iVar.X("gcm.n.tag");
+                        if (TextUtils.isEmpty(X7)) {
                         }
-                        return new i(qVar, W7);
+                        return new i(qVar, X7);
                     }
                     i10 = bundle2.getInt("com.google.firebase.messaging.default_notification_icon", 0);
                     if (i10 != 0 || !b(resources, i10)) {
@@ -675,27 +675,27 @@ public abstract class e {
                     if (i10 != 0 || !b(resources, i10)) {
                         i10 = 17301651;
                     }
-                    qVar.E.icon = i10;
-                    W2 = cVar.W("gcm.n.sound2");
-                    if (TextUtils.isEmpty(W2)) {
+                    qVar.F.icon = i10;
+                    X2 = iVar.X("gcm.n.sound2");
+                    if (TextUtils.isEmpty(X2)) {
                     }
-                    if (TextUtils.isEmpty(W2)) {
+                    if (TextUtils.isEmpty(X2)) {
                     }
                     if (defaultUri != null) {
                     }
-                    W3 = cVar.W("gcm.n.click_action");
-                    if (TextUtils.isEmpty(W3)) {
+                    X3 = iVar.X("gcm.n.click_action");
+                    if (TextUtils.isEmpty(X3)) {
                     }
                     AtomicInteger atomicInteger2 = a;
                     if (launchIntentForPackage == null) {
                     }
                     qVar.g = activity;
-                    if (!cVar.N("google.c.a.e")) {
+                    if (!iVar.R("google.c.a.e")) {
                     }
                     if (broadcast != null) {
                     }
-                    W4 = cVar.W("gcm.n.color");
-                    if (!TextUtils.isEmpty(W4)) {
+                    X4 = iVar.X("gcm.n.color");
+                    if (!TextUtils.isEmpty(X4)) {
                     }
                     i11 = bundle2.getInt("com.google.firebase.messaging.default_notification_color", 0);
                     if (i11 != 0) {
@@ -703,80 +703,80 @@ public abstract class e {
                     valueOf = null;
                     if (valueOf != null) {
                     }
-                    qVar.h(16, !cVar.N("gcm.n.sticky"));
-                    qVar.t = cVar.N("gcm.n.local_only");
-                    W5 = cVar.W("gcm.n.ticker");
-                    if (W5 != null) {
+                    qVar.h(16, !iVar.R("gcm.n.sticky"));
+                    qVar.t = iVar.R("gcm.n.local_only");
+                    X5 = iVar.X("gcm.n.ticker");
+                    if (X5 != null) {
                     }
-                    Q = cVar.Q("gcm.n.notification_priority");
-                    if (Q != null) {
+                    T = iVar.T("gcm.n.notification_priority");
+                    if (T != null) {
                     }
-                    Q = null;
-                    if (Q != null) {
+                    T = null;
+                    if (T != null) {
                     }
-                    Q2 = cVar.Q("gcm.n.visibility");
-                    if (Q2 != null) {
+                    T2 = iVar.T("gcm.n.visibility");
+                    if (T2 != null) {
                     }
-                    Q2 = null;
-                    if (Q2 != null) {
+                    T2 = null;
+                    if (T2 != null) {
                     }
-                    Q3 = cVar.Q("gcm.n.notification_count");
-                    if (Q3 != null) {
+                    T3 = iVar.T("gcm.n.notification_count");
+                    if (T3 != null) {
                     }
-                    Q3 = null;
-                    if (Q3 != null) {
+                    T3 = null;
+                    if (T3 != null) {
                     }
-                    W6 = cVar.W("gcm.n.event_time");
-                    if (!TextUtils.isEmpty(W6)) {
+                    X6 = iVar.X("gcm.n.event_time");
+                    if (!TextUtils.isEmpty(X6)) {
                     }
                     valueOf2 = null;
                     if (valueOf2 != null) {
                     }
-                    S = cVar.S("gcm.n.vibrate_timings");
-                    if (S != null) {
+                    V = iVar.V("gcm.n.vibrate_timings");
+                    if (V != null) {
                     }
                     jArr = null;
                     if (jArr != null) {
                     }
-                    S2 = cVar.S("gcm.n.light_settings");
-                    if (S2 != null) {
+                    V2 = iVar.V("gcm.n.light_settings");
+                    if (V2 != null) {
                     }
                     iArr = null;
                     if (iArr != null) {
                     }
-                    boolean N222222222 = cVar.N("gcm.n.default_sound");
-                    boolean z10222222222 = N222222222;
-                    if (cVar.N("gcm.n.default_vibrate_timings")) {
+                    boolean R222222222 = iVar.R("gcm.n.default_sound");
+                    boolean z10222222222 = R222222222;
+                    if (iVar.R("gcm.n.default_vibrate_timings")) {
                     }
                     r02 = z10222222222;
-                    if (cVar.N("gcm.n.default_light_settings")) {
+                    if (iVar.R("gcm.n.default_light_settings")) {
                     }
-                    Notification notification3222222222 = qVar.E;
+                    Notification notification3222222222 = qVar.F;
                     notification3222222222.defaults = r02;
                     if ((r02 & 4) != 0) {
                     }
-                    W7 = cVar.W("gcm.n.tag");
-                    if (TextUtils.isEmpty(W7)) {
+                    X7 = iVar.X("gcm.n.tag");
+                    if (TextUtils.isEmpty(X7)) {
                     }
-                    return new i(qVar, W7);
+                    return new i(qVar, X7);
                 }
-                W8 = bundle2.getString("com.google.firebase.messaging.default_notification_channel_id");
-                if (!TextUtils.isEmpty(W8)) {
-                    if (notificationManager.getNotificationChannel(W8) == null) {
+                X8 = bundle2.getString("com.google.firebase.messaging.default_notification_channel_id");
+                if (!TextUtils.isEmpty(X8)) {
+                    if (notificationManager.getNotificationChannel(X8) == null) {
                         Log.w("FirebaseMessaging", "Notification Channel set in AndroidManifest.xml has not been created by the app. Default value will be used.");
                     }
                     packageName = firebaseMessagingService.getPackageName();
                     Resources resources2 = firebaseMessagingService.getResources();
                     packageManager = firebaseMessagingService.getPackageManager();
-                    e0.q qVar2 = new e0.q(firebaseMessagingService, W8);
-                    T = cVar.T(resources2, packageName, "gcm.n.title");
-                    if (!TextUtils.isEmpty(T)) {
-                    }
-                    T2 = cVar.T(resources2, packageName, "gcm.n.body");
-                    if (!TextUtils.isEmpty(T2)) {
-                    }
-                    W = cVar.W("gcm.n.icon");
+                    e0.q qVar2 = new e0.q(firebaseMessagingService, X8);
+                    W = iVar.W(resources2, packageName, "gcm.n.title");
                     if (!TextUtils.isEmpty(W)) {
+                    }
+                    W2 = iVar.W(resources2, packageName, "gcm.n.body");
+                    if (!TextUtils.isEmpty(W2)) {
+                    }
+                    X = iVar.X("gcm.n.icon");
+                    if (!TextUtils.isEmpty(X)) {
                     }
                     i10 = bundle2.getInt("com.google.firebase.messaging.default_notification_icon", 0);
                     if (i10 != 0) {
@@ -785,27 +785,27 @@ public abstract class e {
                     if (i10 != 0) {
                     }
                     i10 = 17301651;
-                    qVar2.E.icon = i10;
-                    W2 = cVar.W("gcm.n.sound2");
-                    if (TextUtils.isEmpty(W2)) {
+                    qVar2.F.icon = i10;
+                    X2 = iVar.X("gcm.n.sound2");
+                    if (TextUtils.isEmpty(X2)) {
                     }
-                    if (TextUtils.isEmpty(W2)) {
+                    if (TextUtils.isEmpty(X2)) {
                     }
                     if (defaultUri != null) {
                     }
-                    W3 = cVar.W("gcm.n.click_action");
-                    if (TextUtils.isEmpty(W3)) {
+                    X3 = iVar.X("gcm.n.click_action");
+                    if (TextUtils.isEmpty(X3)) {
                     }
                     AtomicInteger atomicInteger22 = a;
                     if (launchIntentForPackage == null) {
                     }
                     qVar2.g = activity;
-                    if (!cVar.N("google.c.a.e")) {
+                    if (!iVar.R("google.c.a.e")) {
                     }
                     if (broadcast != null) {
                     }
-                    W4 = cVar.W("gcm.n.color");
-                    if (!TextUtils.isEmpty(W4)) {
+                    X4 = iVar.X("gcm.n.color");
+                    if (!TextUtils.isEmpty(X4)) {
                     }
                     i11 = bundle2.getInt("com.google.firebase.messaging.default_notification_color", 0);
                     if (i11 != 0) {
@@ -813,65 +813,65 @@ public abstract class e {
                     valueOf = null;
                     if (valueOf != null) {
                     }
-                    qVar2.h(16, !cVar.N("gcm.n.sticky"));
-                    qVar2.t = cVar.N("gcm.n.local_only");
-                    W5 = cVar.W("gcm.n.ticker");
-                    if (W5 != null) {
+                    qVar2.h(16, !iVar.R("gcm.n.sticky"));
+                    qVar2.t = iVar.R("gcm.n.local_only");
+                    X5 = iVar.X("gcm.n.ticker");
+                    if (X5 != null) {
                     }
-                    Q = cVar.Q("gcm.n.notification_priority");
-                    if (Q != null) {
+                    T = iVar.T("gcm.n.notification_priority");
+                    if (T != null) {
                     }
-                    Q = null;
-                    if (Q != null) {
+                    T = null;
+                    if (T != null) {
                     }
-                    Q2 = cVar.Q("gcm.n.visibility");
-                    if (Q2 != null) {
+                    T2 = iVar.T("gcm.n.visibility");
+                    if (T2 != null) {
                     }
-                    Q2 = null;
-                    if (Q2 != null) {
+                    T2 = null;
+                    if (T2 != null) {
                     }
-                    Q3 = cVar.Q("gcm.n.notification_count");
-                    if (Q3 != null) {
+                    T3 = iVar.T("gcm.n.notification_count");
+                    if (T3 != null) {
                     }
-                    Q3 = null;
-                    if (Q3 != null) {
+                    T3 = null;
+                    if (T3 != null) {
                     }
-                    W6 = cVar.W("gcm.n.event_time");
-                    if (!TextUtils.isEmpty(W6)) {
+                    X6 = iVar.X("gcm.n.event_time");
+                    if (!TextUtils.isEmpty(X6)) {
                     }
                     valueOf2 = null;
                     if (valueOf2 != null) {
                     }
-                    S = cVar.S("gcm.n.vibrate_timings");
-                    if (S != null) {
+                    V = iVar.V("gcm.n.vibrate_timings");
+                    if (V != null) {
                     }
                     jArr = null;
                     if (jArr != null) {
                     }
-                    S2 = cVar.S("gcm.n.light_settings");
-                    if (S2 != null) {
+                    V2 = iVar.V("gcm.n.light_settings");
+                    if (V2 != null) {
                     }
                     iArr = null;
                     if (iArr != null) {
                     }
-                    boolean N2222222222 = cVar.N("gcm.n.default_sound");
-                    boolean z102222222222 = N2222222222;
-                    if (cVar.N("gcm.n.default_vibrate_timings")) {
+                    boolean R2222222222 = iVar.R("gcm.n.default_sound");
+                    boolean z102222222222 = R2222222222;
+                    if (iVar.R("gcm.n.default_vibrate_timings")) {
                     }
                     r02 = z102222222222;
-                    if (cVar.N("gcm.n.default_light_settings")) {
+                    if (iVar.R("gcm.n.default_light_settings")) {
                     }
-                    Notification notification32222222222 = qVar2.E;
+                    Notification notification32222222222 = qVar2.F;
                     notification32222222222.defaults = r02;
                     if ((r02 & 4) != 0) {
                     }
-                    W7 = cVar.W("gcm.n.tag");
-                    if (TextUtils.isEmpty(W7)) {
+                    X7 = iVar.X("gcm.n.tag");
+                    if (TextUtils.isEmpty(X7)) {
                     }
-                    return new i(qVar2, W7);
+                    return new i(qVar2, X7);
                 }
                 Log.w("FirebaseMessaging", "Missing Default Notification Channel metadata in AndroidManifest. Default value will be used.");
-                W8 = "fcm_fallback_notification_channel";
+                X8 = "fcm_fallback_notification_channel";
                 if (notificationManager.getNotificationChannel("fcm_fallback_notification_channel") == null) {
                     int identifier = firebaseMessagingService.getResources().getIdentifier("fcm_fallback_notification_channel_label", "string", firebaseMessagingService.getPackageName());
                     if (identifier == 0) {
@@ -885,15 +885,15 @@ public abstract class e {
                 packageName = firebaseMessagingService.getPackageName();
                 Resources resources22 = firebaseMessagingService.getResources();
                 packageManager = firebaseMessagingService.getPackageManager();
-                e0.q qVar22 = new e0.q(firebaseMessagingService, W8);
-                T = cVar.T(resources22, packageName, "gcm.n.title");
-                if (!TextUtils.isEmpty(T)) {
-                }
-                T2 = cVar.T(resources22, packageName, "gcm.n.body");
-                if (!TextUtils.isEmpty(T2)) {
-                }
-                W = cVar.W("gcm.n.icon");
+                e0.q qVar22 = new e0.q(firebaseMessagingService, X8);
+                W = iVar.W(resources22, packageName, "gcm.n.title");
                 if (!TextUtils.isEmpty(W)) {
+                }
+                W2 = iVar.W(resources22, packageName, "gcm.n.body");
+                if (!TextUtils.isEmpty(W2)) {
+                }
+                X = iVar.X("gcm.n.icon");
+                if (!TextUtils.isEmpty(X)) {
                 }
                 i10 = bundle2.getInt("com.google.firebase.messaging.default_notification_icon", 0);
                 if (i10 != 0) {
@@ -902,27 +902,27 @@ public abstract class e {
                 if (i10 != 0) {
                 }
                 i10 = 17301651;
-                qVar22.E.icon = i10;
-                W2 = cVar.W("gcm.n.sound2");
-                if (TextUtils.isEmpty(W2)) {
+                qVar22.F.icon = i10;
+                X2 = iVar.X("gcm.n.sound2");
+                if (TextUtils.isEmpty(X2)) {
                 }
-                if (TextUtils.isEmpty(W2)) {
+                if (TextUtils.isEmpty(X2)) {
                 }
                 if (defaultUri != null) {
                 }
-                W3 = cVar.W("gcm.n.click_action");
-                if (TextUtils.isEmpty(W3)) {
+                X3 = iVar.X("gcm.n.click_action");
+                if (TextUtils.isEmpty(X3)) {
                 }
                 AtomicInteger atomicInteger222 = a;
                 if (launchIntentForPackage == null) {
                 }
                 qVar22.g = activity;
-                if (!cVar.N("google.c.a.e")) {
+                if (!iVar.R("google.c.a.e")) {
                 }
                 if (broadcast != null) {
                 }
-                W4 = cVar.W("gcm.n.color");
-                if (!TextUtils.isEmpty(W4)) {
+                X4 = iVar.X("gcm.n.color");
+                if (!TextUtils.isEmpty(X4)) {
                 }
                 i11 = bundle2.getInt("com.google.firebase.messaging.default_notification_color", 0);
                 if (i11 != 0) {
@@ -930,77 +930,77 @@ public abstract class e {
                 valueOf = null;
                 if (valueOf != null) {
                 }
-                qVar22.h(16, !cVar.N("gcm.n.sticky"));
-                qVar22.t = cVar.N("gcm.n.local_only");
-                W5 = cVar.W("gcm.n.ticker");
-                if (W5 != null) {
+                qVar22.h(16, !iVar.R("gcm.n.sticky"));
+                qVar22.t = iVar.R("gcm.n.local_only");
+                X5 = iVar.X("gcm.n.ticker");
+                if (X5 != null) {
                 }
-                Q = cVar.Q("gcm.n.notification_priority");
-                if (Q != null) {
+                T = iVar.T("gcm.n.notification_priority");
+                if (T != null) {
                 }
-                Q = null;
-                if (Q != null) {
+                T = null;
+                if (T != null) {
                 }
-                Q2 = cVar.Q("gcm.n.visibility");
-                if (Q2 != null) {
+                T2 = iVar.T("gcm.n.visibility");
+                if (T2 != null) {
                 }
-                Q2 = null;
-                if (Q2 != null) {
+                T2 = null;
+                if (T2 != null) {
                 }
-                Q3 = cVar.Q("gcm.n.notification_count");
-                if (Q3 != null) {
+                T3 = iVar.T("gcm.n.notification_count");
+                if (T3 != null) {
                 }
-                Q3 = null;
-                if (Q3 != null) {
+                T3 = null;
+                if (T3 != null) {
                 }
-                W6 = cVar.W("gcm.n.event_time");
-                if (!TextUtils.isEmpty(W6)) {
+                X6 = iVar.X("gcm.n.event_time");
+                if (!TextUtils.isEmpty(X6)) {
                 }
                 valueOf2 = null;
                 if (valueOf2 != null) {
                 }
-                S = cVar.S("gcm.n.vibrate_timings");
-                if (S != null) {
+                V = iVar.V("gcm.n.vibrate_timings");
+                if (V != null) {
                 }
                 jArr = null;
                 if (jArr != null) {
                 }
-                S2 = cVar.S("gcm.n.light_settings");
-                if (S2 != null) {
+                V2 = iVar.V("gcm.n.light_settings");
+                if (V2 != null) {
                 }
                 iArr = null;
                 if (iArr != null) {
                 }
-                boolean N22222222222 = cVar.N("gcm.n.default_sound");
-                boolean z1022222222222 = N22222222222;
-                if (cVar.N("gcm.n.default_vibrate_timings")) {
+                boolean R22222222222 = iVar.R("gcm.n.default_sound");
+                boolean z1022222222222 = R22222222222;
+                if (iVar.R("gcm.n.default_vibrate_timings")) {
                 }
                 r02 = z1022222222222;
-                if (cVar.N("gcm.n.default_light_settings")) {
+                if (iVar.R("gcm.n.default_light_settings")) {
                 }
-                Notification notification322222222222 = qVar22.E;
+                Notification notification322222222222 = qVar22.F;
                 notification322222222222.defaults = r02;
                 if ((r02 & 4) != 0) {
                 }
-                W7 = cVar.W("gcm.n.tag");
-                if (TextUtils.isEmpty(W7)) {
+                X7 = iVar.X("gcm.n.tag");
+                if (TextUtils.isEmpty(X7)) {
                 }
-                return new i(qVar22, W7);
+                return new i(qVar22, X7);
             }
         }
-        W8 = null;
+        X8 = null;
         packageName = firebaseMessagingService.getPackageName();
         Resources resources222 = firebaseMessagingService.getResources();
         packageManager = firebaseMessagingService.getPackageManager();
-        e0.q qVar222 = new e0.q(firebaseMessagingService, W8);
-        T = cVar.T(resources222, packageName, "gcm.n.title");
-        if (!TextUtils.isEmpty(T)) {
-        }
-        T2 = cVar.T(resources222, packageName, "gcm.n.body");
-        if (!TextUtils.isEmpty(T2)) {
-        }
-        W = cVar.W("gcm.n.icon");
+        e0.q qVar222 = new e0.q(firebaseMessagingService, X8);
+        W = iVar.W(resources222, packageName, "gcm.n.title");
         if (!TextUtils.isEmpty(W)) {
+        }
+        W2 = iVar.W(resources222, packageName, "gcm.n.body");
+        if (!TextUtils.isEmpty(W2)) {
+        }
+        X = iVar.X("gcm.n.icon");
+        if (!TextUtils.isEmpty(X)) {
         }
         i10 = bundle2.getInt("com.google.firebase.messaging.default_notification_icon", 0);
         if (i10 != 0) {
@@ -1009,27 +1009,27 @@ public abstract class e {
         if (i10 != 0) {
         }
         i10 = 17301651;
-        qVar222.E.icon = i10;
-        W2 = cVar.W("gcm.n.sound2");
-        if (TextUtils.isEmpty(W2)) {
+        qVar222.F.icon = i10;
+        X2 = iVar.X("gcm.n.sound2");
+        if (TextUtils.isEmpty(X2)) {
         }
-        if (TextUtils.isEmpty(W2)) {
+        if (TextUtils.isEmpty(X2)) {
         }
         if (defaultUri != null) {
         }
-        W3 = cVar.W("gcm.n.click_action");
-        if (TextUtils.isEmpty(W3)) {
+        X3 = iVar.X("gcm.n.click_action");
+        if (TextUtils.isEmpty(X3)) {
         }
         AtomicInteger atomicInteger2222 = a;
         if (launchIntentForPackage == null) {
         }
         qVar222.g = activity;
-        if (!cVar.N("google.c.a.e")) {
+        if (!iVar.R("google.c.a.e")) {
         }
         if (broadcast != null) {
         }
-        W4 = cVar.W("gcm.n.color");
-        if (!TextUtils.isEmpty(W4)) {
+        X4 = iVar.X("gcm.n.color");
+        if (!TextUtils.isEmpty(X4)) {
         }
         i11 = bundle2.getInt("com.google.firebase.messaging.default_notification_color", 0);
         if (i11 != 0) {
@@ -1037,62 +1037,62 @@ public abstract class e {
         valueOf = null;
         if (valueOf != null) {
         }
-        qVar222.h(16, !cVar.N("gcm.n.sticky"));
-        qVar222.t = cVar.N("gcm.n.local_only");
-        W5 = cVar.W("gcm.n.ticker");
-        if (W5 != null) {
+        qVar222.h(16, !iVar.R("gcm.n.sticky"));
+        qVar222.t = iVar.R("gcm.n.local_only");
+        X5 = iVar.X("gcm.n.ticker");
+        if (X5 != null) {
         }
-        Q = cVar.Q("gcm.n.notification_priority");
-        if (Q != null) {
+        T = iVar.T("gcm.n.notification_priority");
+        if (T != null) {
         }
-        Q = null;
-        if (Q != null) {
+        T = null;
+        if (T != null) {
         }
-        Q2 = cVar.Q("gcm.n.visibility");
-        if (Q2 != null) {
+        T2 = iVar.T("gcm.n.visibility");
+        if (T2 != null) {
         }
-        Q2 = null;
-        if (Q2 != null) {
+        T2 = null;
+        if (T2 != null) {
         }
-        Q3 = cVar.Q("gcm.n.notification_count");
-        if (Q3 != null) {
+        T3 = iVar.T("gcm.n.notification_count");
+        if (T3 != null) {
         }
-        Q3 = null;
-        if (Q3 != null) {
+        T3 = null;
+        if (T3 != null) {
         }
-        W6 = cVar.W("gcm.n.event_time");
-        if (!TextUtils.isEmpty(W6)) {
+        X6 = iVar.X("gcm.n.event_time");
+        if (!TextUtils.isEmpty(X6)) {
         }
         valueOf2 = null;
         if (valueOf2 != null) {
         }
-        S = cVar.S("gcm.n.vibrate_timings");
-        if (S != null) {
+        V = iVar.V("gcm.n.vibrate_timings");
+        if (V != null) {
         }
         jArr = null;
         if (jArr != null) {
         }
-        S2 = cVar.S("gcm.n.light_settings");
-        if (S2 != null) {
+        V2 = iVar.V("gcm.n.light_settings");
+        if (V2 != null) {
         }
         iArr = null;
         if (iArr != null) {
         }
-        boolean N222222222222 = cVar.N("gcm.n.default_sound");
-        boolean z10222222222222 = N222222222222;
-        if (cVar.N("gcm.n.default_vibrate_timings")) {
+        boolean R222222222222 = iVar.R("gcm.n.default_sound");
+        boolean z10222222222222 = R222222222222;
+        if (iVar.R("gcm.n.default_vibrate_timings")) {
         }
         r02 = z10222222222222;
-        if (cVar.N("gcm.n.default_light_settings")) {
+        if (iVar.R("gcm.n.default_light_settings")) {
         }
-        Notification notification3222222222222 = qVar222.E;
+        Notification notification3222222222222 = qVar222.F;
         notification3222222222222.defaults = r02;
         if ((r02 & 4) != 0) {
         }
-        W7 = cVar.W("gcm.n.tag");
-        if (TextUtils.isEmpty(W7)) {
+        X7 = iVar.X("gcm.n.tag");
+        if (TextUtils.isEmpty(X7)) {
         }
-        return new i(qVar222, W7);
+        return new i(qVar222, X7);
     }
 
     public static boolean b(Resources resources, int i10) {

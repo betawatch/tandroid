@@ -1,48 +1,31 @@
 package org.telegram.ui.Components;
 
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d3 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ Runnable d;
+public final /* synthetic */ class d3 implements org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ boolean[] c;
 
-    public /* synthetic */ d3(int i10, int[] iArr, org.telegram.ui.f80 f80Var) {
-        this.b = i10;
-        this.c = iArr;
-        this.d = f80Var;
+    public /* synthetic */ d3(int i10, Utilities.Callback callback, boolean[] zArr) {
+        this.a = i10;
+        this.b = callback;
+        this.c = zArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Runnable runnable = this.d;
-        int[] iArr = this.c;
-        int i11 = this.b;
-        switch (i10) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        switch (this.a) {
             case 0:
-                iArr[0] = i11;
-                runnable.run();
+                this.b.run(Boolean.valueOf(this.c[0]));
                 break;
             default:
-                Pattern pattern = LaunchActivity.E1;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.run(Boolean.TRUE);
+                this.c[0] = true;
+                e2Var.dismiss();
                 break;
         }
-    }
-
-    public /* synthetic */ d3(int[] iArr, Runnable runnable, int i10) {
-        this.c = iArr;
-        this.b = i10;
-        this.d = runnable;
     }
 }

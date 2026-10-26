@@ -1,5 +1,6 @@
 package a4;
 
+import a8.yb;
 import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -8,9 +9,8 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f {
     public static final boolean[] A;
@@ -73,10 +73,10 @@ public final class f {
     */
     public static int c(int i10, int i11, int i12, int i13) {
         int i14;
-        u6.j(i10, 4);
-        u6.j(i11, 4);
-        u6.j(i12, 4);
-        u6.j(i13, 4);
+        yb.j(i10, 4);
+        yb.j(i11, 4);
+        yb.j(i12, 4);
+        yb.j(i13, 4);
         if (i13 != 0 && i13 != 1) {
             if (i13 == 2) {
                 i14 = 127;

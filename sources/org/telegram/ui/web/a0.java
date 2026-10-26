@@ -1,26 +1,26 @@
 package org.telegram.ui.web;
 
-import ai.g3;
-import ci.y7;
+import bi.c3;
+import di.x7;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ b1 b;
+    public final /* synthetic */ a1 b;
     public final /* synthetic */ String c;
     public final /* synthetic */ String d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ a0(b1 b1Var, y7 y7Var, String str, gi.p1 p1Var, String str2) {
-        this.b = b1Var;
-        this.e = y7Var;
+    public /* synthetic */ a0(a1 a1Var, x7 x7Var, String str, hi.w1 w1Var, String str2) {
+        this.b = a1Var;
+        this.e = x7Var;
         this.c = str;
-        this.f = p1Var;
+        this.f = w1Var;
         this.d = str2;
     }
 
@@ -28,35 +28,35 @@ public final /* synthetic */ class a0 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                y7 y7Var = (y7) this.e;
-                gi.p1 p1Var = (gi.p1) this.f;
+                x7 x7Var = (x7) this.e;
+                hi.w1 w1Var = (hi.w1) this.f;
                 String str = this.d;
                 String str2 = (String) obj;
-                b1 b1Var = this.b;
+                a1 a1Var = this.b;
                 String str3 = this.c;
                 if (str2 == null) {
-                    b1Var.x(y7Var, "secure_storage_failed", b1.B("req_id", str3, "error", "RESTORE_CANCELLED"));
+                    a1Var.x(x7Var, "secure_storage_failed", a1.B("req_id", str3, "error", "RESTORE_CANCELLED"));
                     break;
                 } else {
                     try {
-                        p1Var.j(str2);
-                        b1Var.x(y7Var, "secure_storage_key_restored", b1.B("req_id", str3, "value", (String) p1Var.f(str).first));
+                        w1Var.j(str2);
+                        a1Var.x(x7Var, "secure_storage_key_restored", a1.B("req_id", str3, "value", (String) w1Var.f(str).first));
                         break;
                     } catch (Exception e) {
-                        b1Var.x(y7Var, "secure_storage_failed", b1.B("req_id", str3, "error", e.getMessage()));
+                        a1Var.x(x7Var, "secure_storage_failed", a1.B("req_id", str3, "error", e.getMessage()));
                         return;
                     }
                 }
             default:
-                b1 b1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new g3(b1Var2, (File) obj, (org.telegram.ui.ActionBar.c2) this.e, this.c, this.d, (String) this.f, 26));
+                a1 a1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new c3(a1Var2, (File) obj, (org.telegram.ui.ActionBar.e2) this.e, this.c, this.d, (String) this.f, 26));
                 break;
         }
     }
 
-    public /* synthetic */ a0(b1 b1Var, org.telegram.ui.ActionBar.c2 c2Var, String str, String str2, String str3) {
-        this.b = b1Var;
-        this.e = c2Var;
+    public /* synthetic */ a0(a1 a1Var, org.telegram.ui.ActionBar.e2 e2Var, String str, String str2, String str3) {
+        this.b = a1Var;
+        this.e = e2Var;
         this.c = str;
         this.d = str2;
         this.f = str3;

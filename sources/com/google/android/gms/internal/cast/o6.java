@@ -1,53 +1,27 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class o6 extends AbstractList implements RandomAccess, o5 {
-    public final n5 a;
+public abstract class o6 {
+    public final Unsafe a;
 
-    public o6(n5 n5Var) {
-        this.a = n5Var;
+    public o6(Unsafe unsafe) {
+        this.a = unsafe;
     }
 
-    @Override // com.google.android.gms.internal.cast.o5
-    public final Object c(int i10) {
-        return this.a.b.get(i10);
-    }
+    public abstract double a(Object obj, long j10);
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        return this.a.get(i10);
-    }
+    public abstract float b(Object obj, long j10);
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return new n6(this);
-    }
+    public abstract void c(Object obj, long j10, boolean z10);
 
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i10) {
-        return new m6(this, i10);
-    }
+    public abstract void d(Object obj, long j10, byte b10);
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.b.size();
-    }
+    public abstract void e(Object obj, long j10, double d);
 
-    @Override // com.google.android.gms.internal.cast.o5
-    public final List zzh() {
-        return DesugarCollections.unmodifiableList(this.a.b);
-    }
+    public abstract void f(Object obj, long j10, float f7);
 
-    @Override // com.google.android.gms.internal.cast.o5
-    public final o5 zzd() {
-        return this;
-    }
+    public abstract boolean g(Object obj, long j10);
 }

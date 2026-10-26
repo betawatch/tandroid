@@ -1,38 +1,38 @@
 package k1;
 
-import v7.i8;
+import a8.jd;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d extends md.i implements td.l {
+public final class d extends nd.i implements ud.l {
     public int a;
 
-    @Override // md.a
-    public final kd.c create(kd.c cVar) {
+    @Override // nd.a
+    public final ld.c create(ld.c cVar) {
         return new d(1, cVar);
     }
 
-    @Override // td.l
+    @Override // ud.l
     public final Object invoke(Object obj) {
-        d dVar = (d) create((kd.c) obj);
-        id.i iVar = id.i.a;
+        d dVar = (d) create((ld.c) obj);
+        jd.i iVar = jd.i.a;
         dVar.invokeSuspend(iVar);
         return iVar;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final Object invokeSuspend(Object obj) {
-        ld.a aVar = ld.a.a;
+        md.a aVar = md.a.a;
         int i10 = this.a;
         if (i10 == 0) {
-            i8.b(obj);
+            jd.b(obj);
             this.a = 1;
             throw null;
         }
         if (i10 != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        i8.b(obj);
-        return id.i.a;
+        jd.b(obj);
+        return jd.i.a;
     }
 }

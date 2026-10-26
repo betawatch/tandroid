@@ -1,54 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.IMapsProvider;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sc0 b;
-    public final /* synthetic */ IMapsProvider.IMapView c;
+public final class cc0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ pc0 a;
 
-    public /* synthetic */ cc0(sc0 sc0Var, IMapsProvider.IMapView iMapView, int i10) {
-        this.a = i10;
-        this.b = sc0Var;
-        this.c = iMapView;
+    public cc0(pc0 pc0Var) {
+        this.a = pc0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                sc0 sc0Var = this.b;
-                IMapsProvider.IMapView iMapView = this.c;
-                if (sc0Var.K != null && sc0Var.getParentActivity() != null) {
-                    try {
-                        iMapView.onCreate(null);
-                        ApplicationLoader.getMapsProvider().initializeMaps(ApplicationLoader.applicationContext);
-                        sc0Var.K.getMapAsync(new dc0(sc0Var, 0));
-                        sc0Var.u0 = true;
-                        if (sc0Var.v0) {
-                            sc0Var.K.onResume();
-                            break;
-                        }
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        pc0 pc0Var = this.a;
+        if (i10 == -1) {
+            pc0Var.finishFragment();
+            return;
+        }
+        if (i10 != 1) {
+            if (i10 == 5) {
+                pc0Var.t0(false);
+                return;
+            } else {
+                if (i10 == 6) {
+                    pc0Var.s0(null);
+                    return;
                 }
-                break;
-            default:
-                sc0 sc0Var2 = this.b;
-                IMapsProvider.IMapView iMapView2 = this.c;
-                try {
-                    iMapView2.onCreate(null);
-                } catch (Exception unused) {
-                }
-                AndroidUtilities.runOnUIThread(new cc0(sc0Var2, iMapView2, 0));
-                break;
+                return;
+            }
+        }
+        try {
+            TLRPC.GeoPoint geoPoint = pc0Var.A0.messageOwner.media.geo;
+            double d = geoPoint.lat;
+            double d10 = geoPoint._long;
+            pc0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

@@ -1,15 +1,15 @@
 package org.scilab.forge.jlatexmath;
 
 import a1.g;
-import com.google.android.gms.internal.play_billing.k3;
-import i2.o1;
+import c3.h0;
+import ic.a;
 import java.lang.Character;
 import java.util.HashSet;
 import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -220,9 +220,9 @@ public class TeXParser {
                         optsArgs[0] = command;
                         try {
                             this.parseString.replace(i14, this.pos, (String) macroInfo.invoke(this, optsArgs));
-                        } catch (ParseException e7) {
+                        } catch (ParseException e10) {
                             if (!this.isPartial) {
-                                throw e7;
+                                throw e10;
                             }
                             i14 += command.length() + 1;
                         }
@@ -251,9 +251,9 @@ public class TeXParser {
                                 this.parseString.replace(i14, this.pos, str + "{" + group + "}\\makeatother}");
                                 this.len = this.parseString.length();
                                 this.pos = i14;
-                            } catch (ParseException e10) {
+                            } catch (ParseException e11) {
                                 if (!this.isPartial) {
-                                    throw e10;
+                                    throw e11;
                                 }
                             }
                         } else if (!this.isPartial) {
@@ -758,7 +758,7 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!(equals && TeXFormula.isRegisteredBlock(unicodeBlock)) && equals) ? null : TeXFormula.getExternalFont(of2);
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(o1.l(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(a.j(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }
@@ -1398,7 +1398,7 @@ public class TeXParser {
             if (this.isPartial) {
                 return stringBuffer.toString();
             }
-            throw new ParseException(k3.j("The token ", str, " must be closed by ", str2));
+            throw new ParseException(h0.m("The token ", str, " must be closed by ", str2));
         }
         return stringBuffer.substring(0, (stringBuffer.length() - this.pos) + i12);
     }

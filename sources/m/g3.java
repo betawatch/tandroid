@@ -1,1144 +1,573 @@
 package m;
 
-import android.app.job.JobInfo;
-import android.app.job.JobScheduler;
-import android.content.ClipDescription;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.media.AudioAttributes;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.PersistableBundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.util.AttributeSet;
-import android.util.Base64;
-import android.util.Log;
-import android.util.TypedValue;
-import android.view.Choreographer;
+import android.os.SystemClock;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewConfiguration;
+import android.view.ViewPropertyAnimator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.widget.TextView;
+import androidx.appcompat.widget.ActionMenuView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
-import ei.p6;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.EOFException;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Set;
-import java.util.UUID;
-import java.util.WeakHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.zip.Adler32;
-import java.util.zip.InflaterInputStream;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.i01;
-import org.telegram.ui.Components.nk;
-import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.uz0;
-import org.telegram.ui.Components.v71;
-import org.telegram.ui.lq0;
-import org.telegram.ui.sn;
-import org.xmlpull.v1.XmlPullParserException;
-import v7.b8;
-import v7.q7;
-import v7.u6;
-import w7.i6;
+import org.telegram.messenger.R;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.vh;
+import org.telegram.ui.Cells.h6;
+import org.telegram.ui.Cells.r7;
+import org.telegram.ui.Cells.x6;
+import org.telegram.ui.Cells.z5;
+import org.telegram.ui.Cells.z7;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
+import org.telegram.ui.Components.ShutterButton;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.bn;
+import org.telegram.ui.Components.cn;
+import org.telegram.ui.Components.dm;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.go;
+import org.telegram.ui.Components.gw0;
+import org.telegram.ui.Components.h60;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.m70;
+import org.telegram.ui.Components.m8;
+import org.telegram.ui.Components.mk;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.mu;
+import org.telegram.ui.Components.n00;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.nc0;
+import org.telegram.ui.Components.nm;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.s00;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.sn0;
+import org.telegram.ui.Components.so;
+import org.telegram.ui.Components.sz;
+import org.telegram.ui.Components.v7;
+import org.telegram.ui.Components.wc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.rx;
+import org.telegram.ui.ti;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class g3 implements fl0, lq0, n5.b, t0.h {
+public final class g3 implements Runnable {
     public final /* synthetic */ int a;
-    public Object b;
-    public Object c;
-    public Object d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ g3(int i10, boolean z10) {
+    public /* synthetic */ g3(Object obj, int i10) {
         this.a = i10;
+        this.b = obj;
     }
 
-    public static g3 P(Context context, AttributeSet attributeSet, int[] iArr, int i10) {
-        return new g3(context, context.obtainStyledAttributes(attributeSet, iArr, i10, 0));
-    }
-
-    public static void T(File file, File file2) {
-        if (file2.isDirectory() && !file2.delete()) {
-            Log.e("AtomicFile", "Failed to delete file which is a directory " + file2);
-        }
-        if (file.renameTo(file2)) {
-            return;
-        }
-        Log.e("AtomicFile", "Failed to rename " + file + " to " + file2);
-    }
-
-    public static g3 p(View view) {
-        return new g3(view);
-    }
-
-    public static Object[] v(Object[] objArr, int[] iArr) {
-        int length = objArr.length;
-        Class<?> componentType = objArr.getClass().getComponentType();
-        uz0 uz0Var = i01.R;
-        int i10 = -1;
-        for (int i11 : iArr) {
-            i10 = Math.max(i10, i11);
-        }
-        Object[] objArr2 = (Object[]) Array.newInstance(componentType, i10 + 1);
-        for (int i12 = 0; i12 < length; i12++) {
-            objArr2[iArr[i12]] = objArr[i12];
-        }
-        return objArr2;
-    }
-
-    public static n2.f x(b2.g0 g0Var) {
-        g2.o oVar = new g2.o();
-        oVar.c = null;
-        Uri uri = g0Var.b;
-        String uri2 = uri == null ? null : uri.toString();
-        boolean z10 = g0Var.f;
-        c2.b bVar = new c2.b();
-        u6.g((z10 && TextUtils.isEmpty(uri2)) ? false : true);
-        bVar.b = oVar;
-        bVar.c = uri2;
-        bVar.a = z10;
-        bVar.d = new HashMap();
-        e9.q0 q0Var = g0Var.c;
-        e9.y0 y0Var = q0Var.a;
-        if (y0Var == null) {
-            y0Var = q0Var.b();
-            q0Var.a = y0Var;
-        }
-        e9.m2 it = y0Var.iterator();
-        while (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            String str = (String) entry.getKey();
-            String str2 = (String) entry.getValue();
-            str.getClass();
-            str2.getClass();
-            synchronized (((HashMap) bVar.d)) {
-                ((HashMap) bVar.d).put(str, str2);
-            }
-        }
-        HashMap hashMap = new HashMap();
-        int i10 = b2.m.a;
-        oa.d dVar = new oa.d(27);
-        UUID uuid = g0Var.a;
-        uuid.getClass();
-        boolean z11 = g0Var.d;
-        boolean z12 = g0Var.e;
-        int[] f7 = b8.f(g0Var.g);
-        int length = f7.length;
-        for (int i11 = 0; i11 < length; i11++) {
-            int i12 = f7[i11];
-            u6.g(i12 == 2 || i12 == 1);
-        }
-        n2.f fVar = new n2.f(uuid, bVar, hashMap, z11, (int[]) f7.clone(), z12, dVar);
-        byte[] bArr = g0Var.h;
-        byte[] copyOf = bArr != null ? Arrays.copyOf(bArr, bArr.length) : null;
-        u6.p(fVar.w.isEmpty());
-        fVar.K = copyOf;
-        return fVar;
-    }
-
-    public nf.e A(nf.f fVar) {
-        InputStream inputStream;
-        int i10 = fVar.c;
-        InputStream inputStream2 = (of.a) this.b;
-        if (fVar.d) {
-            k2.w0 w0Var = (k2.w0) this.d;
-            w0Var.getClass();
-            byte[] bArr = new byte[i10];
-            int i11 = 0;
-            while (i11 < i10) {
-                int read = ((com.google.firebase.messaging.d) w0Var.b).read(bArr, i11, i10 - i11);
-                if (read <= 0) {
-                    throw new EOFException();
+    /* JADX WARN: Type inference failed for: r2v79, types: [org.telegram.ui.Components.cm] */
+    @Override // java.lang.Runnable
+    public final void run() {
+        h hVar;
+        int dp;
+        int i10 = this.a;
+        final int i11 = 1;
+        final int i12 = 0;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                ActionMenuView actionMenuView = ((Toolbar) obj).a;
+                if (actionMenuView == null || (hVar = actionMenuView.J) == null) {
+                    return;
                 }
-                i11 += read;
-            }
-            int i12 = 0;
-            boolean z10 = false;
-            for (int i13 = 0; i13 < i10; i13++) {
-                byte b10 = bArr[i13];
-                if (!z10 || b10 != 0) {
-                    bArr[i12] = b10;
-                    i12++;
+                hVar.l();
+                return;
+            case 1:
+                mg.e eVar = (mg.e) obj;
+                eVar.f.animate().setDuration(120L).alpha(0.0f);
+                eVar.h.animate().setListener(null).start();
+                if (eVar.h.getVisibility() != 0) {
+                    eVar.h.setVisibility(0);
+                    eVar.h.setAlpha(0.0f);
                 }
-                z10 = b10 == -1;
-            }
-            inputStream2 = new ByteArrayInputStream(bArr, 0, i12);
-            i10 = i12;
-        }
-        if (fVar.f) {
-            throw new nf.c("Frame encryption is not supported");
-        }
-        if (fVar.e) {
-            i10 = fVar.g;
-            inputStream = new InflaterInputStream(inputStream2);
-        } else {
-            inputStream = inputStream2;
-        }
-        return new nf.e(inputStream, fVar.b, i10, (nf.h) this.c, fVar);
-    }
-
-    public n2.n B(b2.o0 o0Var) {
-        n2.f fVar;
-        o0Var.b.getClass();
-        b2.g0 g0Var = o0Var.b.c;
-        if (g0Var == null) {
-            return n2.n.z;
-        }
-        synchronized (this.b) {
-            try {
-                if (!g0Var.equals((b2.g0) this.c)) {
-                    this.c = g0Var;
-                    this.d = x(g0Var);
+                eVar.h.animate().setDuration(120L).alpha(1.0f).start();
+                return;
+            case 2:
+                Object obj2 = ((b6.i) obj).b;
+                return;
+            case 3:
+                org.telegram.ui.Cells.z zVar = (org.telegram.ui.Cells.z) obj;
+                if (zVar.b == null) {
+                    zVar.b = new androidx.emoji2.text.j(zVar, 3);
                 }
-                fVar = (n2.f) this.d;
-                fVar.getClass();
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return fVar;
-    }
-
-    public View C(int i10) {
-        return ((RecyclerView) ((ki.t1) this.b).b).getChildAt(J(i10));
-    }
-
-    public int D() {
-        return ((RecyclerView) ((ki.t1) this.b).b).getChildCount() - ((ArrayList) this.d).size();
-    }
-
-    public ColorStateList E(int i10) {
-        int resourceId;
-        ColorStateList a2;
-        TypedArray typedArray = (TypedArray) this.c;
-        return (!typedArray.hasValue(i10) || (resourceId = typedArray.getResourceId(i10, 0)) == 0 || (a2 = q7.a((Context) this.b, resourceId)) == null) ? typedArray.getColorStateList(i10) : a2;
-    }
-
-    public Drawable F(int i10) {
-        int resourceId;
-        TypedArray typedArray = (TypedArray) this.c;
-        return (!typedArray.hasValue(i10) || (resourceId = typedArray.getResourceId(i10, 0)) == 0) ? typedArray.getDrawable(i10) : q7.b((Context) this.b, resourceId);
-    }
-
-    public Drawable G(int i10) {
-        int resourceId;
-        Drawable f7;
-        if (!((TypedArray) this.c).hasValue(i10) || (resourceId = ((TypedArray) this.c).getResourceId(i10, 0)) == 0) {
-            return null;
-        }
-        r a2 = r.a();
-        Context context = (Context) this.b;
-        synchronized (a2) {
-            f7 = a2.a.f(resourceId, context, true);
-        }
-        return f7;
-    }
-
-    public Typeface H(int i10, int i11, e2.j0 j0Var) {
-        e2.j0 j0Var2;
-        XmlPullParserException xmlPullParserException;
-        IOException iOException;
-        int resourceId = ((TypedArray) this.c).getResourceId(i10, 0);
-        if (resourceId != 0) {
-            if (((TypedValue) this.d) == null) {
-                this.d = new TypedValue();
-            }
-            Context context = (Context) this.b;
-            TypedValue typedValue = (TypedValue) this.d;
-            ThreadLocal threadLocal = h0.j.a;
-            if (!context.isRestricted()) {
-                Resources resources = context.getResources();
-                resources.getValue(resourceId, typedValue, true);
-                CharSequence charSequence = typedValue.string;
-                if (charSequence == null) {
-                    throw new Resources.NotFoundException("Resource \"" + resources.getResourceName(resourceId) + "\" (" + Integer.toHexString(resourceId) + ") is not a Font: " + typedValue);
+                androidx.emoji2.text.j jVar = zVar.b;
+                int i13 = zVar.c + 1;
+                zVar.c = i13;
+                jVar.b = i13;
+                zVar.postDelayed(jVar, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
+                return;
+            case 4:
+                z5 z5Var = (z5) obj;
+                TextView textView = z5Var.b;
+                textView.setTag(null);
+                AnimatorSet animatorSet = new AnimatorSet();
+                z5Var.d = animatorSet;
+                Property property = View.ALPHA;
+                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(z5Var.a, (Property<TextView, Float>) property, 1.0f));
+                z5Var.d.setDuration(250L);
+                z5Var.d.setInterpolator(new DecelerateInterpolator());
+                z5Var.d.addListener(new kg.e(this, 16));
+                z5Var.d.start();
+                return;
+            case 5:
+                x6 x6Var = (x6) obj;
+                x6Var.a();
+                RectF rectF = x6Var.r;
+                x6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
+                AndroidUtilities.runOnUIThread(x6Var.y, 1000L);
+                return;
+            case 6:
+                r7 r7Var = (r7) obj;
+                if (r7Var.b == null) {
+                    r7Var.b = new androidx.emoji2.text.j(r7Var, 4);
                 }
-                String charSequence2 = charSequence.toString();
-                if (!charSequence2.startsWith("res/")) {
-                    j0Var.b();
-                    return null;
+                androidx.emoji2.text.j jVar2 = r7Var.b;
+                int i14 = r7Var.c + 1;
+                r7Var.c = i14;
+                jVar2.b = i14;
+                r7Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
+                return;
+            case 7:
+                z7 z7Var = (z7) obj;
+                RectF rectF2 = z7Var.s;
+                z7Var.invalidate(((int) rectF2.left) - 5, ((int) rectF2.top) - 5, ((int) rectF2.right) + 5, ((int) rectF2.bottom) + 5);
+                AndroidUtilities.runOnUIThread(z7Var.F, 1000L);
+                return;
+            case 8:
+                v7 v7Var = (v7) obj;
+                m8 m8Var = v7Var.y;
+                if (MediaController.getInstance().getPlayingMessageObject() == null) {
+                    return;
                 }
-                int i12 = typedValue.assetCookie;
-                a0.j jVar = i0.e.b;
-                Typeface typeface = (Typeface) jVar.a(i0.e.b(resources, resourceId, charSequence2, i12, i11));
-                int i13 = 22;
-                if (typeface != null) {
-                    new Handler(Looper.getMainLooper()).post(new p6(i13, j0Var, typeface));
-                    return typeface;
-                }
-                try {
-                    if (!charSequence2.toLowerCase().endsWith(".xml")) {
-                        j0Var2 = j0Var;
-                        try {
-                            int i14 = typedValue.assetCookie;
-                            Typeface e = i0.e.a.e(context, resources, resourceId, charSequence2, i11);
-                            if (e != null) {
-                                jVar.b(i0.e.b(resources, resourceId, charSequence2, i14, i11), e);
-                            }
-                            if (e != null) {
-                                new Handler(Looper.getMainLooper()).post(new p6(i13, j0Var2, e));
-                            } else {
-                                j0Var2.b();
-                            }
-                            return e;
-                        } catch (IOException e7) {
-                            e = e7;
-                            iOException = e;
-                            Log.e("ResourcesCompat", "Failed to read xml resource ".concat(charSequence2), iOException);
-                            j0Var2.b();
-                            return null;
-                        } catch (XmlPullParserException e10) {
-                            e = e10;
-                            xmlPullParserException = e;
-                            Log.e("ResourcesCompat", "Failed to parse xml resource ".concat(charSequence2), xmlPullParserException);
-                            j0Var2.b();
-                            return null;
-                        }
-                    }
-                    h0.d g10 = h0.b.g(resources.getXml(resourceId), resources);
-                    if (g10 != null) {
-                        try {
-                            return i0.e.a(context, g10, resources, resourceId, charSequence2, typedValue.assetCookie, i11, j0Var);
-                        } catch (IOException e11) {
-                            e = e11;
-                            j0Var2 = j0Var;
-                            iOException = e;
-                            Log.e("ResourcesCompat", "Failed to read xml resource ".concat(charSequence2), iOException);
-                            j0Var2.b();
-                            return null;
-                        } catch (XmlPullParserException e12) {
-                            e = e12;
-                            j0Var2 = j0Var;
-                            xmlPullParserException = e;
-                            Log.e("ResourcesCompat", "Failed to parse xml resource ".concat(charSequence2), xmlPullParserException);
-                            j0Var2.b();
-                            return null;
-                        }
-                    }
-                    try {
-                        Log.e("ResourcesCompat", "Failed to find font-family tag");
-                        j0Var.b();
-                        return null;
-                    } catch (IOException e13) {
-                        iOException = e13;
-                        j0Var2 = j0Var;
-                        Log.e("ResourcesCompat", "Failed to read xml resource ".concat(charSequence2), iOException);
-                        j0Var2.b();
-                        return null;
-                    } catch (XmlPullParserException e14) {
-                        xmlPullParserException = e14;
-                        j0Var2 = j0Var;
-                        Log.e("ResourcesCompat", "Failed to parse xml resource ".concat(charSequence2), xmlPullParserException);
-                        j0Var2.b();
-                        return null;
-                    }
-                } catch (IOException e15) {
-                    e = e15;
-                    j0Var2 = j0Var;
-                } catch (XmlPullParserException e16) {
-                    e = e16;
-                    j0Var2 = j0Var;
-                }
-            }
-        }
-        return null;
-    }
-
-    public ByteBuffer I() {
-        Bitmap bitmap = (Bitmap) this.d;
-        if (bitmap == null) {
-            return (ByteBuffer) this.c;
-        }
-        if (bitmap == null) {
-            return null;
-        }
-        int width = bitmap.getWidth();
-        int height = ((Bitmap) this.d).getHeight();
-        int i10 = width * height;
-        ((Bitmap) this.d).getPixels(new int[i10], 0, width, 0, 0, width, height);
-        byte[] bArr = new byte[i10];
-        for (int i11 = 0; i11 < i10; i11++) {
-            bArr[i11] = (byte) ((Color.blue(r2[i11]) * 0.114f) + (Color.green(r2[i11]) * 0.587f) + (Color.red(r2[i11]) * 0.299f));
-        }
-        return ByteBuffer.wrap(bArr);
-    }
-
-    public int J(int i10) {
-        ad.d dVar = (ad.d) this.c;
-        if (i10 < 0) {
-            return -1;
-        }
-        int childCount = ((RecyclerView) ((ki.t1) this.b).b).getChildCount();
-        int i11 = i10;
-        while (i11 < childCount) {
-            int y3 = i10 - (i11 - dVar.y(i11));
-            if (y3 == 0) {
-                while (dVar.E(i11)) {
-                    i11++;
-                }
-                return i11;
-            }
-            i11 += y3;
-        }
-        return -1;
-    }
-
-    public View K(int i10) {
-        return ((RecyclerView) ((ki.t1) this.b).b).getChildAt(i10);
-    }
-
-    public int L() {
-        return ((RecyclerView) ((ki.t1) this.b).b).getChildCount();
-    }
-
-    public boolean M() {
-        String trim;
-        ArrayDeque arrayDeque = (ArrayDeque) this.c;
-        if (((String) this.d) == null) {
-            if (!arrayDeque.isEmpty()) {
-                String str = (String) arrayDeque.poll();
-                str.getClass();
-                this.d = str;
-                return true;
-            }
-            do {
-                String readLine = ((BufferedReader) this.b).readLine();
-                this.d = readLine;
-                if (readLine == null) {
-                    return false;
-                }
-                trim = readLine.trim();
-                this.d = trim;
-            } while (trim.isEmpty());
-        }
-        return true;
-    }
-
-    public void N(View view) {
-        ((ArrayList) this.d).add(view);
-        ki.t1 t1Var = (ki.t1) this.b;
-        s4.b1 U = RecyclerView.U(view);
-        if (U != null) {
-            View view2 = U.a;
-            RecyclerView recyclerView = (RecyclerView) t1Var.b;
-            int i10 = U.s;
-            if (i10 != -1) {
-                U.r = i10;
-            } else {
-                WeakHashMap weakHashMap = r0.i0.a;
-                U.r = view2.getImportantForAccessibility();
-            }
-            if (recyclerView.b0()) {
-                U.s = 4;
-                recyclerView.K0.add(U);
-            } else {
-                WeakHashMap weakHashMap2 = r0.i0.a;
-                view2.setImportantForAccessibility(4);
-            }
-        }
-    }
-
-    public String O() {
-        if (!M()) {
-            throw new NoSuchElementException();
-        }
-        String str = (String) this.d;
-        this.d = null;
-        return str;
-    }
-
-    public void Q() {
-        ((TypedArray) this.c).recycle();
-    }
-
-    public void R() {
-        int i10;
-        RecyclerView recyclerView = (RecyclerView) ((ki.t1) this.b).b;
-        ((ad.d) this.c).H();
-        ArrayList arrayList = (ArrayList) this.d;
-        int size = arrayList.size();
-        while (true) {
-            size--;
-            if (size < 0) {
-                break;
-            }
-            s4.b1 U = RecyclerView.U((View) arrayList.get(size));
-            if (U != null) {
-                int i11 = U.r;
-                if (recyclerView.b0()) {
-                    U.s = i11;
-                    recyclerView.K0.add(U);
-                } else {
-                    View view = U.a;
-                    WeakHashMap weakHashMap = r0.i0.a;
-                    view.setImportantForAccessibility(i11);
-                }
-                U.r = 0;
-            }
-            arrayList.remove(size);
-        }
-        int childCount = recyclerView.getChildCount();
-        for (i10 = 0; i10 < childCount; i10++) {
-            View childAt = recyclerView.getChildAt(i10);
-            recyclerView.r(childAt);
-            childAt.clearAnimation();
-        }
-        recyclerView.removeAllViews();
-    }
-
-    public void S(qf.g gVar) {
-        if (((qf.d) this.b) == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < gVar.a.size(); i10++) {
-            qf.d dVar = (qf.d) this.b;
-            dVar.h.remove(gVar.a(i10).d);
-            dVar.h();
-        }
-    }
-
-    public void U(l5.i iVar, int i10, boolean z10) {
-        char c10;
-        r5.a aVar = (r5.a) this.d;
-        Context context = (Context) this.b;
-        ComponentName componentName = new ComponentName(context, (Class<?>) JobInfoSchedulerService.class);
-        JobScheduler jobScheduler = (JobScheduler) context.getSystemService("jobscheduler");
-        Adler32 adler32 = new Adler32();
-        adler32.update(context.getPackageName().getBytes(Charset.forName("UTF-8")));
-        String str = iVar.a;
-        String str2 = iVar.a;
-        adler32.update(str.getBytes(Charset.forName("UTF-8")));
-        ByteBuffer allocate = ByteBuffer.allocate(4);
-        i5.d dVar = iVar.c;
-        adler32.update(allocate.putInt(v5.a.a(dVar)).array());
-        byte[] bArr = iVar.b;
-        if (bArr != null) {
-            adler32.update(bArr);
-        }
-        int value = (int) adler32.getValue();
-        if (!z10) {
-            Iterator<JobInfo> it = jobScheduler.getAllPendingJobs().iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
-                }
-                JobInfo next = it.next();
-                int i11 = next.getExtras().getInt("attemptNumber");
-                if (next.getId() == value) {
-                    if (i11 >= i10) {
-                        i6.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
+                int i15 = m8Var.I0 + 1;
+                m8Var.I0 = i15;
+                if (i15 != 1) {
+                    if (i15 != 2) {
+                        MediaController.getInstance().setPlaybackSpeed(true, 13.0f);
+                        return;
+                    } else {
+                        MediaController.getInstance().setPlaybackSpeed(true, 7.0f);
+                        AndroidUtilities.runOnUIThread(this, 2000L);
                         return;
                     }
                 }
-            }
-        }
-        Cursor rawQuery = ((s5.g) ((s5.d) this.c)).a().rawQuery("SELECT next_request_ms FROM transport_contexts WHERE backend_name = ? and priority = ?", new String[]{str2, String.valueOf(v5.a.a(dVar))});
-        try {
-            Long valueOf = rawQuery.moveToNext() ? Long.valueOf(rawQuery.getLong(0)) : 0L;
-            rawQuery.close();
-            long longValue = valueOf.longValue();
-            JobInfo.Builder builder = new JobInfo.Builder(value, componentName);
-            builder.setMinimumLatency(aVar.a(dVar, longValue, i10));
-            Set set = ((r5.b) aVar.b.get(dVar)).c;
-            if (set.contains(r5.c.a)) {
-                builder.setRequiredNetworkType(2);
-            } else {
-                builder.setRequiredNetworkType(1);
-            }
-            if (set.contains(r5.c.c)) {
-                builder.setRequiresCharging(true);
-            }
-            if (set.contains(r5.c.b)) {
-                builder.setRequiresDeviceIdle(true);
-            }
-            PersistableBundle persistableBundle = new PersistableBundle();
-            persistableBundle.putInt("attemptNumber", i10);
-            persistableBundle.putString("backendName", str2);
-            persistableBundle.putInt("priority", v5.a.a(dVar));
-            if (bArr != null) {
-                c10 = 0;
-                persistableBundle.putString("extras", Base64.encodeToString(bArr, 0));
-            } else {
-                c10 = 0;
-            }
-            builder.setExtras(persistableBundle);
-            Integer valueOf2 = Integer.valueOf(value);
-            Long valueOf3 = Long.valueOf(aVar.a(dVar, longValue, i10));
-            Integer valueOf4 = Integer.valueOf(i10);
-            Object[] objArr = new Object[5];
-            objArr[c10] = iVar;
-            objArr[1] = valueOf2;
-            objArr[2] = valueOf3;
-            objArr[3] = valueOf;
-            objArr[4] = valueOf4;
-            String c11 = i6.c("JobInfoScheduler");
-            if (Log.isLoggable(c11, 3)) {
-                Log.d(c11, String.format("Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", objArr));
-            }
-            jobScheduler.schedule(builder.build());
-        } catch (Throwable th2) {
-            rawQuery.close();
-            throw th2;
-        }
-    }
-
-    public void V(qf.a aVar) {
-        qf.g gVar;
-        qf.g gVar2 = (qf.g) this.c;
-        if (gVar2 != null && ((qf.a) this.d) == null && aVar != null) {
-            n(gVar2);
-        }
-        if (((qf.a) this.d) != null && (gVar = (qf.g) this.c) != null && aVar == null) {
-            S(gVar);
-        }
-        qf.a aVar2 = (qf.a) this.d;
-        if (aVar2 != null) {
-            e6.h hVar = aVar2.a;
-            n6.l.e("Must be called from the main thread.");
-            hVar.i.remove(aVar2);
-        }
-        if (aVar != null) {
-            aVar.a.p(aVar);
-            qf.g gVar3 = (qf.g) this.c;
-            if (gVar3 != null) {
-                aVar.d = gVar3;
-                aVar.g = 0;
-                aVar.h = 0;
-                aVar.p();
-            }
-        }
-        this.d = aVar;
-    }
-
-    public FileOutputStream W() {
-        File file = (File) this.c;
-        File file2 = (File) this.d;
-        if (file2.exists()) {
-            T(file2, (File) this.b);
-        }
-        try {
-            return new FileOutputStream(file);
-        } catch (FileNotFoundException unused) {
-            if (!file.getParentFile().mkdirs()) {
-                throw new IOException("Failed to create directory for " + file);
-            }
-            try {
-                return new FileOutputStream(file);
-            } catch (FileNotFoundException e) {
-                throw new IOException("Failed to create new file " + file, e);
-            }
-        }
-    }
-
-    public void X(View view) {
-        if (((ArrayList) this.d).remove(view)) {
-            ki.t1 t1Var = (ki.t1) this.b;
-            s4.b1 U = RecyclerView.U(view);
-            if (U != null) {
-                RecyclerView recyclerView = (RecyclerView) t1Var.b;
-                int i10 = U.r;
-                if (recyclerView.b0()) {
-                    U.s = i10;
-                    recyclerView.K0.add(U);
-                } else {
-                    View view2 = U.a;
-                    WeakHashMap weakHashMap = r0.i0.a;
-                    view2.setImportantForAccessibility(i10);
+                v7Var.v = true;
+                m8Var.G0 = 1;
+                if (MediaController.getInstance().isMessagePaused()) {
+                    m8Var.J0();
+                } else if (m8Var.G0 == 1) {
+                    AndroidUtilities.cancelRunOnUIThread(m8Var.N0);
+                    m8Var.K0 = 0L;
                 }
-                U.r = 0;
-            }
-        }
-    }
-
-    public void Y(Object obj, String str) {
-        g3 g3Var = new g3(7, false);
-        ((g3) this.d).d = g3Var;
-        this.d = g3Var;
-        g3Var.c = obj;
-        g3Var.b = str;
-    }
-
-    @Override // t0.h
-    public Uri c() {
-        return (Uri) this.b;
-    }
-
-    @Override // org.telegram.ui.lq0
-    public /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // t0.h
-    public Uri f() {
-        return (Uri) this.d;
-    }
-
-    @Override // org.telegram.ui.lq0
-    public void g() {
-        ((nk) this.d).Q.y();
-    }
-
-    @Override // hd.a
-    public Object get() {
-        return new g3((Context) ((hd.a) this.b).get(), (s5.d) ((hd.a) this.c).get(), (r5.a) ((oa.d) this.d).get(), 26);
-    }
-
-    @Override // t0.h
-    public ClipDescription getDescription() {
-        return (ClipDescription) this.c;
-    }
-
-    @Override // org.telegram.ui.lq0
-    public void h(int i10, boolean z10, boolean z11) {
-        if (z10) {
-            return;
-        }
-        nk nkVar = (nk) this.d;
-        HashMap hashMap = (HashMap) this.b;
-        ArrayList arrayList = (ArrayList) this.c;
-        ti tiVar = nkVar.b;
-        if (hashMap.isEmpty() || nkVar.Q == null || nkVar.K) {
-            return;
-        }
-        nkVar.K = true;
-        ArrayList arrayList2 = new ArrayList();
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            Object obj = hashMap.get(arrayList.get(i11));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            arrayList2.add(sendingMediaInfo);
-            if (obj instanceof MediaController.PhotoEntry) {
-                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-                String str = photoEntry.imagePath;
-                if (str != null) {
-                    sendingMediaInfo.path = str;
-                } else {
-                    sendingMediaInfo.path = photoEntry.path;
-                }
-                sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-                sendingMediaInfo.coverPath = photoEntry.coverPath;
-                sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
-                sendingMediaInfo.isVideo = photoEntry.isVideo;
-                CharSequence charSequence = photoEntry.caption;
-                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-                sendingMediaInfo.entities = photoEntry.entities;
-                sendingMediaInfo.masks = photoEntry.stickers;
-                sendingMediaInfo.ttl = photoEntry.ttl;
-            }
-        }
-        f5.a0(tiVar.M1, tiVar.o1() + arrayList2.size(), tiVar.s1(), new ci.x2(i10, 2, nkVar, arrayList2, z11));
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public /* synthetic */ boolean i() {
-        return true;
-    }
-
-    @Override // t0.h
-    public Object j() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public /* synthetic */ boolean l() {
-        return false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.fl0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void m(View view, ah.i1 i1Var, boolean z10, boolean z11) {
-        float f7;
-        ah.j1 j1Var;
-        ah.g1 l4;
-        float f10;
-        int i10;
-        float f11;
-        sn snVar = (sn) this.d;
-        org.telegram.ui.Cells.z t82 = snVar.t8(((MessageObject) this.b).getId(), true);
-        float f12 = 0.0f;
-        if (t82 instanceof org.telegram.ui.Cells.t1) {
-            ah.j1 j1Var2 = ((org.telegram.ui.Cells.t1) t82).N;
-            ah.g1 l10 = j1Var2.l(i1Var);
-            if (l10 == null) {
-                f11 = 0.0f;
-                f7 = f11;
-                snVar.eb(t82, (MessageObject) this.b, (gl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
-            } else {
-                f12 = j1Var2.c + l10.x + (l10.A / 2.0f);
-                f10 = j1Var2.d + l10.y;
-                i10 = l10.B;
-            }
-        } else if (!(t82 instanceof org.telegram.ui.Cells.v0) || (l4 = (j1Var = ((org.telegram.ui.Cells.v0) t82).E0).l(i1Var)) == null) {
-            f7 = 0.0f;
-            snVar.eb(t82, (MessageObject) this.b, (gl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
-        } else {
-            f12 = j1Var.c + l4.x + (l4.A / 2.0f);
-            f10 = j1Var.d + l4.y;
-            i10 = l4.B;
-        }
-        f11 = f10 + (i10 / 2.0f);
-        f7 = f11;
-        snVar.eb(t82, (MessageObject) this.b, (gl0) this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
-    }
-
-    public void n(qf.g gVar) {
-        if (((qf.d) this.b) == null) {
-            this.b = new qf.d();
-        }
-        for (int i10 = 0; i10 < gVar.a.size(); i10++) {
-            qf.d dVar = (qf.d) this.b;
-            qf.f a2 = gVar.a(i10);
-            dVar.h.put(a2.d, a2);
-            dVar.h();
-        }
-    }
-
-    public void o(View view, int i10, boolean z10) {
-        RecyclerView recyclerView = (RecyclerView) ((ki.t1) this.b).b;
-        int childCount = i10 < 0 ? recyclerView.getChildCount() : J(i10);
-        ((ad.d) this.c).F(childCount, z10);
-        if (z10) {
-            N(view);
-        }
-        recyclerView.addView(view, childCount);
-        s4.b1 U = RecyclerView.U(view);
-        recyclerView.f0(view);
-        s4.g0 g0Var = recyclerView.w;
-        if (g0Var != null && U != null) {
-            g0Var.y(U);
-        }
-        ArrayList arrayList = recyclerView.P;
-        if (arrayList != null) {
-            for (int size = arrayList.size() - 1; size >= 0; size--) {
-                ((s4.y) recyclerView.P.get(size)).getClass();
-            }
-        }
-    }
-
-    public void q(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z10) {
-        RecyclerView recyclerView = (RecyclerView) ((ki.t1) this.b).b;
-        int childCount = i10 < 0 ? recyclerView.getChildCount() : J(i10);
-        ((ad.d) this.c).F(childCount, z10);
-        if (z10) {
-            N(view);
-        }
-        s4.b1 U = RecyclerView.U(view);
-        if (U != null) {
-            if (!U.l() && !U.r()) {
-                throw new IllegalArgumentException("Called attach on a child which is not detached: " + U + recyclerView.C());
-            }
-            U.l &= -257;
-        }
-        recyclerView.attachViewToParent(view, childCount, layoutParams);
-    }
-
-    public String r(int i10, String str, long j10, long j11) {
-        ArrayList arrayList = (ArrayList) this.b;
-        ArrayList arrayList2 = (ArrayList) this.d;
-        ArrayList arrayList3 = (ArrayList) this.c;
-        StringBuilder sb2 = new StringBuilder();
-        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-            sb2.append((String) arrayList.get(i11));
-            if (((Integer) arrayList3.get(i11)).intValue() == 1) {
-                sb2.append(str);
-            } else if (((Integer) arrayList3.get(i11)).intValue() == 2) {
-                sb2.append(String.format(Locale.US, (String) arrayList2.get(i11), Long.valueOf(j10)));
-            } else if (((Integer) arrayList3.get(i11)).intValue() == 3) {
-                sb2.append(String.format(Locale.US, (String) arrayList2.get(i11), Integer.valueOf(i10)));
-            } else if (((Integer) arrayList3.get(i11)).intValue() == 4) {
-                sb2.append(String.format(Locale.US, (String) arrayList2.get(i11), Long.valueOf(j11)));
-            }
-        }
-        sb2.append((String) arrayList.get(arrayList3.size()));
-        return sb2.toString();
-    }
-
-    public void t() {
-        android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) this.b;
-        if (b0Var != null) {
-            int i10 = ((p4.e) this.d).n.d;
-            android.support.v4.media.session.v vVar = b0Var.a;
-            vVar.getClass();
-            AudioAttributes.Builder builder = new AudioAttributes.Builder();
-            builder.setLegacyStreamType(i10);
-            vVar.a.setPlaybackToLocal(builder.build());
-            this.c = null;
-        }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 8:
-                StringBuilder sb2 = new StringBuilder(32);
-                sb2.append((String) this.b);
-                sb2.append('{');
-                g3 g3Var = (g3) ((g3) this.c).d;
-                String str = "";
-                while (g3Var != null) {
-                    Object obj = g3Var.c;
-                    sb2.append(str);
-                    String str2 = (String) g3Var.b;
-                    if (str2 != null) {
-                        sb2.append(str2);
-                        sb2.append('=');
-                    }
-                    if (obj == null || !obj.getClass().isArray()) {
-                        sb2.append(obj);
-                    } else {
-                        sb2.append((CharSequence) Arrays.deepToString(new Object[]{obj}), 1, r4.length() - 1);
-                    }
-                    g3Var = (g3) g3Var.d;
-                    str = ", ";
-                }
-                sb2.append('}');
-                return sb2.toString();
+                MediaController.getInstance().setPlaybackSpeed(true, 4.0f);
+                AndroidUtilities.runOnUIThread(this, 2000L);
+                return;
             case 9:
-                StringBuilder sb3 = new StringBuilder("id3v2tag[pos=");
-                of.a aVar = (of.a) this.b;
-                sb3.append(aVar.b);
-                sb3.append(", ");
-                sb3.append(aVar.e());
-                sb3.append(" left]");
-                return sb3.toString();
-            case 27:
-                return ((ad.d) this.c).toString() + ", hidden list:" + ((ArrayList) this.d).size();
-            default:
-                return super.toString();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public /* synthetic */ boolean w() {
-        return false;
-    }
-
-    public void y(int i10) {
-        s4.b1 U;
-        int J = J(i10);
-        ((ad.d) this.c).G(J);
-        RecyclerView recyclerView = (RecyclerView) ((ki.t1) this.b).b;
-        View childAt = recyclerView.getChildAt(J);
-        if (childAt != null && (U = RecyclerView.U(childAt)) != null) {
-            if (U.l() && !U.r()) {
-                throw new IllegalArgumentException("called detach on an already detached child " + U + recyclerView.C());
-            }
-            U.a(256);
-        }
-        recyclerView.detachViewFromParent(J);
-    }
-
-    public void z(Object obj, ByteArrayOutputStream byteArrayOutputStream) {
-        HashMap hashMap = (HashMap) this.b;
-        ma.f fVar = new ma.f(byteArrayOutputStream, hashMap, (HashMap) this.c, (ja.d) this.d);
-        if (obj == null) {
-            return;
-        }
-        ja.d dVar = (ja.d) hashMap.get(obj.getClass());
-        if (dVar != null) {
-            dVar.a(obj, fVar);
-        } else {
-            throw new ja.b("No encoder for " + obj.getClass());
-        }
-    }
-
-    public /* synthetic */ g3(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-    }
-
-    public /* synthetic */ g3(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = obj2;
-        this.c = obj3;
-    }
-
-    public g3(String str) {
-        this.a = 8;
-        g3 g3Var = new g3(7, false);
-        this.c = g3Var;
-        this.d = g3Var;
-        this.b = str;
-    }
-
-    public g3(InputStream inputStream, long j10, int i10, nf.h hVar) {
-        this.a = 9;
-        of.a aVar = new of.a(inputStream, j10, i10);
-        this.b = aVar;
-        this.d = new k2.w0(aVar, 7);
-        this.c = hVar;
-    }
-
-    public g3(View view) {
-        this.a = 15;
-        this.d = view;
-        v71 v71Var = new v71(this, view);
-        this.b = v71Var;
-        view.addOnLayoutChangeListener(v71Var);
-    }
-
-    public g3(int i10) {
-        this.a = i10;
-        switch (i10) {
+                m8 m8Var2 = (m8) obj;
+                long duration = MediaController.getInstance().getDuration();
+                if (duration == 0 || duration == -9223372036854775807L) {
+                    m8Var2.J0 = System.currentTimeMillis();
+                    return;
+                }
+                float f7 = m8Var2.H0;
+                long currentTimeMillis = System.currentTimeMillis();
+                long j10 = currentTimeMillis - m8Var2.J0;
+                m8Var2.J0 = currentTimeMillis;
+                long j11 = currentTimeMillis - m8Var2.K0;
+                int i16 = m8Var2.I0;
+                float f10 = ((long) ((f7 * r3) + (((i16 == 1 ? 3L : i16 == 2 ? 6L : 12L) * j10) - j10))) / duration;
+                if (f10 < 0.0f) {
+                    f10 = 0.0f;
+                }
+                m8Var2.H0 = f10;
+                MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                if (playingMessageObject != null && playingMessageObject.isMusic()) {
+                    if (!MediaController.getInstance().isMessagePaused()) {
+                        MediaController.getInstance().getPlayingMessageObject().audioProgress = m8Var2.H0;
+                    }
+                    m8Var2.M0(playingMessageObject, false);
+                }
+                if (m8Var2.G0 == 1 && m8Var2.I0 > 0 && MediaController.getInstance().isMessagePaused()) {
+                    if (j11 > 200 || m8Var2.H0 == 0.0f) {
+                        m8Var2.K0 = currentTimeMillis;
+                        MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f10);
+                    }
+                    if (m8Var2.I0 <= 0 || m8Var2.H0 <= 0.0f) {
+                        return;
+                    }
+                    AndroidUtilities.runOnUIThread(m8Var2.N0, 16L);
+                    return;
+                }
+                return;
+            case 10:
+                ed edVar = (ed) obj;
+                edVar.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                edVar.f.performHapticFeedback(0);
+                Runnable runnable = edVar.j;
+                if (runnable != null) {
+                    runnable.run();
+                    return;
+                }
+                return;
+            case 11:
+                mk mkVar = (mk) obj;
+                if (mkVar.S) {
+                    mkVar.N.clear();
+                    mkVar.P.clear();
+                    mkVar.Q.clear();
+                    mkVar.l();
+                    return;
+                }
+                return;
+            case 12:
+                bn bnVar = (bn) obj;
+                cn cnVar = bnVar.P;
+                if (cnVar.J == null || cnVar.K) {
+                    return;
+                }
+                int computeVerticalScrollOffset = cnVar.r.computeVerticalScrollOffset();
+                boolean z10 = cnVar.r.computeVerticalScrollExtent() + computeVerticalScrollOffset >= (bnVar.e() - bnVar.r) + bnVar.n;
+                float max = Math.max(0.0f, (cnVar.E - Math.max(0, computeVerticalScrollOffset - cnVar.getListTopPadding())) - AndroidUtilities.dp(52.0f));
+                float max2 = Math.max(0.0f, ((cnVar.r.getMeasuredHeight() - (cnVar.E - computeVerticalScrollOffset)) - cnVar.getListTopPadding()) - AndroidUtilities.dp(84.0f));
+                float dp2 = AndroidUtilities.dp(32.0f);
+                float dp3 = (max >= dp2 || computeVerticalScrollOffset <= cnVar.getListTopPadding()) ? max2 < dp2 ? AndroidUtilities.dp(6.0f) * (1.0f - (max2 / dp2)) : 0.0f : (-(1.0f - (max / dp2))) * AndroidUtilities.dp(6.0f);
+                int i17 = (int) dp3;
+                if (Math.abs(i17) > 0 && cnVar.r.canScrollVertically(i17) && (dp3 <= 0.0f || !z10)) {
+                    cnVar.E += dp3;
+                    cnVar.r.scrollBy(0, i17);
+                    bnVar.invalidate();
+                }
+                bnVar.L = true;
+                bnVar.postDelayed(this, 15L);
+                return;
+            case 13:
+                go goVar = (go) obj;
+                g3 g3Var = goVar.U0;
+                h6 h6Var = goVar.g1;
+                if (h6Var != null) {
+                    EditTextBoldCursor editField = h6Var.getEditField();
+                    if (goVar.H || editField == null || !goVar.G || goVar.e1 || AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow || !AndroidUtilities.isTablet()) {
+                        return;
+                    }
+                    editField.requestFocus();
+                    AndroidUtilities.showKeyboard(editField);
+                    AndroidUtilities.cancelRunOnUIThread(g3Var);
+                    AndroidUtilities.runOnUIThread(g3Var, 100L);
+                    return;
+                }
+                return;
+            case 14:
+                ru ruVar = (ru) obj;
+                g3 g3Var2 = ruVar.P;
+                mu muVar = ruVar.a;
+                if (ruVar.y || muVar == null || !ruVar.N || ruVar.v || AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow || !AndroidUtilities.isTablet()) {
+                    return;
+                }
+                muVar.requestFocus();
+                AndroidUtilities.showKeyboard(muVar);
+                AndroidUtilities.cancelRunOnUIThread(g3Var2);
+                AndroidUtilities.runOnUIThread(g3Var2, 100L);
+                return;
+            case 15:
+                c2.b bVar = (c2.b) ((di.o3) obj).d;
+                if (!bVar.a || ((ArrayList) bVar.d).isEmpty() || ((AnimatorSet) bVar.c).isRunning()) {
+                    return;
+                }
+                try {
+                    ((AnimatorSet) bVar.c).start();
+                    return;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 16:
+                sz szVar = (sz) obj;
+                if (szVar.B0.s != null) {
+                    return;
+                }
+                szVar.X1 = false;
+                szVar.Y();
+                return;
+            case 17:
+                s00 s00Var = (s00) obj;
+                if (s00Var.O) {
+                    long elapsedRealtime = SystemClock.elapsedRealtime();
+                    if (elapsedRealtime > 17) {
+                        elapsedRealtime = 17;
+                    }
+                    float f11 = s00Var.p0 + (elapsedRealtime / 320.0f);
+                    s00Var.p0 = f11;
+                    s00Var.setAnimationIdicatorProgress(s00Var.i0.getInterpolation(f11));
+                    if (s00Var.p0 > 1.0f) {
+                        s00Var.p0 = 1.0f;
+                    }
+                    if (s00Var.p0 < 1.0f) {
+                        AndroidUtilities.runOnUIThread(s00Var.v0);
+                        return;
+                    }
+                    s00Var.O = false;
+                    s00Var.setEnabled(true);
+                    n00 n00Var = s00Var.J;
+                    if (n00Var != null) {
+                        ((rx) n00Var).b(1.0f);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            case 18:
+                FragmentContextView fragmentContextView = (FragmentContextView) obj;
+                float[] fArr = FragmentContextView.W0;
+                fragmentContextView.f();
+                AndroidUtilities.runOnUIThread(fragmentContextView.t0, 1000L);
+                return;
+            case 19:
+                TextureView textureView = ((h60) obj).H0.q0;
+                if (textureView != null) {
+                    try {
+                        AndroidUtilities.runOnUIThread(new so(25, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
+                        return;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                return;
+            case 20:
+                m70 m70Var = (m70) obj;
+                n70 n70Var = m70Var.y;
+                a70 a70Var = n70Var.V;
+                if (a70Var != null && a70Var.getAdapter() != null) {
+                    n70Var.V.getClass();
+                    int R = RecyclerView.R(m70Var);
+                    if (R >= 0) {
+                        n70Var.T.v(n70Var.V.T(m70Var), R);
+                    }
+                }
+                AndroidUtilities.runOnUIThread(this);
+                return;
+            case 21:
+                nc0 nc0Var = (nc0) obj;
+                ValueAnimator valueAnimator = nc0Var.h;
+                if (valueAnimator == null || valueAnimator.isRunning()) {
+                    return;
+                }
+                nc0Var.h.start();
+                return;
             case 22:
-                this.b = new a3.l();
-                this.c = null;
-                this.d = null;
-                break;
+                ((le0) obj).e();
+                return;
+            case 23:
+                hj0 hj0Var = (hj0) obj;
+                hj0Var.y = true;
+                ValueAnimator valueAnimator2 = hj0Var.z;
+                if (valueAnimator2 != null) {
+                    valueAnimator2.cancel();
+                }
+                hj0Var.x = 0.0f;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                hj0Var.z = ofFloat;
+                ofFloat.addUpdateListener(hj0Var.b0);
+                hj0Var.z.setInterpolator(new LinearInterpolator());
+                hj0Var.z.setDuration(150L);
+                hj0Var.z.start();
+                return;
+            case 24:
+                mm0 mm0Var = (mm0) obj;
+                ti tiVar = mm0Var.f2;
+                int[] iArr = mm0Var.k2;
+                un unVar = tiVar.d;
+                iArr[0] = (int) unVar.E9;
+                iArr[1] = unVar.Na;
+                if (mm0Var.h2) {
+                    dp = -AndroidUtilities.dp(12.0f);
+                    mm0Var.M0(0.0f, mm0Var.k2[0]);
+                } else {
+                    dp = AndroidUtilities.dp(12.0f);
+                    mm0Var.M0(0.0f, mm0Var.getMeasuredHeight() - mm0Var.k2[1]);
+                }
+                mm0Var.f2.d.x0.scrollBy(0, dp);
+                if (mm0Var.g2) {
+                    AndroidUtilities.runOnUIThread(mm0Var.C2);
+                    return;
+                }
+                return;
+            case 25:
+                sl0 sl0Var = (sl0) obj;
+                g3 g3Var3 = sl0Var.i0;
+                if (sl0Var.n) {
+                    AndroidUtilities.cancelRunOnUIThread(g3Var3);
+                    AndroidUtilities.runOnUIThread(g3Var3, 4000L);
+                    return;
+                } else {
+                    sl0Var.U = false;
+                    sl0Var.invalidate();
+                    return;
+                }
+            case 26:
+                qm0 qm0Var = (qm0) obj;
+                RecyclerView recyclerView = qm0Var.a;
+                if (recyclerView == null) {
+                    return;
+                }
+                if (qm0Var.g) {
+                    recyclerView.scrollBy(0, -qm0Var.i);
+                    AndroidUtilities.runOnUIThread(this);
+                    return;
+                } else {
+                    if (qm0Var.h) {
+                        recyclerView.scrollBy(0, qm0Var.i);
+                        AndroidUtilities.runOnUIThread(this);
+                        return;
+                    }
+                    return;
+                }
+            case 27:
+                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
+                if (scrollSlidingTextTabStrip.H) {
+                    long elapsedRealtime2 = SystemClock.elapsedRealtime();
+                    if (elapsedRealtime2 > 17) {
+                        elapsedRealtime2 = 17;
+                    }
+                    float f12 = scrollSlidingTextTabStrip.S + (elapsedRealtime2 / scrollSlidingTextTabStrip.b0);
+                    scrollSlidingTextTabStrip.S = f12;
+                    scrollSlidingTextTabStrip.setAnimationIdicatorProgress(scrollSlidingTextTabStrip.N.getInterpolation(f12));
+                    if (scrollSlidingTextTabStrip.S > 1.0f) {
+                        scrollSlidingTextTabStrip.S = 1.0f;
+                    }
+                    if (scrollSlidingTextTabStrip.S < 1.0f) {
+                        AndroidUtilities.runOnUIThread(scrollSlidingTextTabStrip.d0);
+                        return;
+                    }
+                    scrollSlidingTextTabStrip.H = false;
+                    scrollSlidingTextTabStrip.setEnabled(true);
+                    sn0 sn0Var = scrollSlidingTextTabStrip.b;
+                    if (sn0Var != null) {
+                        sn0Var.z0(1.0f);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            case 28:
+                ShutterButton shutterButton = (ShutterButton) obj;
+                fw0 fw0Var = shutterButton.e;
+                if (fw0Var != null) {
+                    final dm dmVar = (dm) fw0Var;
+                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = dmVar.e;
+                    org.telegram.ui.Components.ti tiVar2 = chatAttachAlertPhotoLayout.b;
+                    nm nmVar = chatAttachAlertPhotoLayout.R;
+                    int i18 = tiVar2.T0;
+                    org.telegram.ui.ActionBar.r2 r2Var = tiVar2.f0;
+                    if ((i18 == 2 || (r2Var instanceof un)) && !chatAttachAlertPhotoLayout.s0 && !tiVar2.V && chatAttachAlertPhotoLayout.P != null && !tiVar2.G) {
+                        if (r2Var == null) {
+                            r2Var = LaunchActivity.R();
+                        }
+                        if (r2Var != null && r2Var.getParentActivity() != null) {
+                            if (chatAttachAlertPhotoLayout.w0) {
+                                int i19 = 21;
+                                if (chatAttachAlertPhotoLayout.getContext().checkSelfPermission("android.permission.RECORD_AUDIO") == 0) {
+                                    for (int i20 = 0; i20 < 2; i20++) {
+                                        chatAttachAlertPhotoLayout.S[i20].animate().alpha(0.0f).translationX(AndroidUtilities.dp(30.0f)).setDuration(150L).setInterpolator(ds.f).start();
+                                    }
+                                    ViewPropertyAnimator duration2 = chatAttachAlertPhotoLayout.r0.animate().alpha(0.0f).translationX(-AndroidUtilities.dp(30.0f)).setDuration(150L);
+                                    ds dsVar = ds.f;
+                                    duration2.setInterpolator(dsVar).start();
+                                    chatAttachAlertPhotoLayout.q0.animate().alpha(0.0f).setDuration(150L).setInterpolator(dsVar).start();
+                                    org.telegram.ui.ActionBar.r2 r2Var2 = tiVar2.f0;
+                                    dmVar.a = AndroidUtilities.generateVideoPath((r2Var2 instanceof un) && ((un) r2Var2).w());
+                                    AndroidUtilities.updateViewVisibilityAnimated(nmVar, true);
+                                    nmVar.setText(AndroidUtilities.formatLongDuration(0));
+                                    chatAttachAlertPhotoLayout.g0 = 0;
+                                    chatAttachAlertPhotoLayout.h0 = new Runnable() { // from class: org.telegram.ui.Components.cm
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i12) {
+                                                case 0:
+                                                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = dmVar.e;
+                                                    if (chatAttachAlertPhotoLayout2.h0 != null) {
+                                                        int i21 = chatAttachAlertPhotoLayout2.g0 + 1;
+                                                        chatAttachAlertPhotoLayout2.g0 = i21;
+                                                        chatAttachAlertPhotoLayout2.R.setText(AndroidUtilities.formatLongDuration(i21));
+                                                        AndroidUtilities.runOnUIThread(chatAttachAlertPhotoLayout2.h0, 1000L);
+                                                        break;
+                                                    }
+                                                    break;
+                                                default:
+                                                    AndroidUtilities.runOnUIThread(dmVar.e.h0, 1000L);
+                                                    break;
+                                            }
+                                        }
+                                    };
+                                    AndroidUtilities.lockOrientation(r2Var.getParentActivity());
+                                    CameraController.getInstance().recordVideo(chatAttachAlertPhotoLayout.P.getCameraSessionObject(), dmVar.a, tiVar2.T0 != 0, new org.telegram.ui.Components.s(dmVar, i19), new Runnable() { // from class: org.telegram.ui.Components.cm
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            switch (i11) {
+                                                case 0:
+                                                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = dmVar.e;
+                                                    if (chatAttachAlertPhotoLayout2.h0 != null) {
+                                                        int i21 = chatAttachAlertPhotoLayout2.g0 + 1;
+                                                        chatAttachAlertPhotoLayout2.g0 = i21;
+                                                        chatAttachAlertPhotoLayout2.R.setText(AndroidUtilities.formatLongDuration(i21));
+                                                        AndroidUtilities.runOnUIThread(chatAttachAlertPhotoLayout2.h0, 1000L);
+                                                        break;
+                                                    }
+                                                    break;
+                                                default:
+                                                    AndroidUtilities.runOnUIThread(dmVar.e.h0, 1000L);
+                                                    break;
+                                            }
+                                        }
+                                    }, chatAttachAlertPhotoLayout.P);
+                                    chatAttachAlertPhotoLayout.k0.a(gw0.b);
+                                    chatAttachAlertPhotoLayout.P.runHaptic();
+                                    return;
+                                }
+                                chatAttachAlertPhotoLayout.Q0 = true;
+                                r2Var.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 21);
+                            } else {
+                                vh.n(R.string.GlobalAttachVideoRestricted, new wc(chatAttachAlertPhotoLayout.P, dmVar.c), null);
+                            }
+                        }
+                    }
+                    shutterButton.v = false;
+                    return;
+                }
+                return;
             default:
-                this.b = new Object();
-                break;
+                System.currentTimeMillis();
+                throw null;
         }
     }
 
-    public g3(ki.t1 t1Var) {
-        this.a = 27;
-        this.b = t1Var;
-        this.c = new ad.d(7);
-        this.d = new ArrayList();
-    }
-
-    @Override // org.telegram.ui.lq0
-    public void a() {
-    }
-
-    @Override // t0.h
-    public void d() {
-    }
-
-    @Override // t0.h
-    public void k() {
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public /* synthetic */ void u() {
-    }
-
-    public g3(File file) {
-        this.a = 20;
-        this.b = file;
-        this.c = new File(file.getPath() + ".new");
-        this.d = new File(file.getPath() + ".bak");
-    }
-
-    @Override // org.telegram.ui.lq0
-    public void b(Editable editable) {
-    }
-
-    public g3(Runnable runnable) {
-        this.a = 25;
-        this.c = new CopyOnWriteArrayList();
-        this.d = new HashMap();
-        this.b = runnable;
-    }
-
-    public g3(Context context, TypedArray typedArray) {
-        this.a = 0;
-        this.b = context;
-        this.c = typedArray;
-    }
-
-    public g3(byte[] bArr, j9.y yVar) {
+    public g3(b6.i iVar, int i10) {
         this.a = 2;
-        this.b = bArr;
-        this.c = null;
-        this.d = yVar;
-    }
-
-    public g3(b2.r0 r0Var, j9.y yVar) {
-        this.a = 2;
-        this.b = r0Var.k;
-        this.c = r0Var.n;
-        this.d = yVar;
-    }
-
-    public g3(k2.w0 w0Var) {
-        this.a = 10;
-        this.a = 10;
-        this.b = w0Var;
-        this.c = Choreographer.getInstance();
-        this.d = new o1.a(this, 0);
-    }
-
-    public g3(String str, String str2) {
-        this.a = 24;
-        this.b = str;
-        this.c = str2;
-        this.d = str2.isEmpty() ? str : a1.g.D(str, "/", str2);
-    }
-
-    public g3(p4.e eVar, android.support.v4.media.session.b0 b0Var) {
-        this.a = 19;
-        this.d = eVar;
-        this.b = b0Var;
-    }
-
-    public g3(ArrayDeque arrayDeque, BufferedReader bufferedReader) {
-        this.a = 18;
-        this.c = arrayDeque;
-        this.b = bufferedReader;
-    }
-
-    public g3(Object[] objArr, Object[] objArr2) {
-        this.a = 14;
-        int length = objArr.length;
-        int[] iArr = new int[length];
-        HashMap hashMap = new HashMap();
-        for (int i10 = 0; i10 < length; i10++) {
-            Object obj = objArr[i10];
-            Integer num = (Integer) hashMap.get(obj);
-            if (num == null) {
-                num = Integer.valueOf(hashMap.size());
-                hashMap.put(obj, num);
-            }
-            iArr[i10] = num.intValue();
-        }
-        this.b = iArr;
-        this.c = v(objArr, iArr);
-        this.d = v(objArr2, iArr);
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public /* synthetic */ void s(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+        this.b = iVar;
     }
 }

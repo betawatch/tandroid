@@ -1,11 +1,12 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final class nc1 {
-    public final /* synthetic */ oc1 a;
+import org.telegram.messenger.MessageObject;
 
-    public nc1(oc1 oc1Var) {
-        this.a = oc1Var;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class nc1 extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final boolean needDrawAvatar() {
+        return false;
     }
 }

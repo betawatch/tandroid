@@ -1,34 +1,32 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fl implements Runnable {
+public final /* synthetic */ class fl implements e5 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rl b;
-    public final /* synthetic */ IMapsProvider.IMapView c;
+    public final /* synthetic */ sl b;
+    public final /* synthetic */ TLRPC.TL_messageMediaVenue c;
 
-    public /* synthetic */ fl(rl rlVar, IMapsProvider.IMapView iMapView, int i10) {
+    public /* synthetic */ fl(sl slVar, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, int i10) {
         this.a = i10;
-        this.b = rlVar;
-        this.c = iMapView;
+        this.b = slVar;
+        this.c = tL_messageMediaVenue;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.e5
+    public final void G(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 0:
-                rl.U(this.b, this.c);
+                sl slVar = this.b;
+                slVar.u0.d(this.c, slVar.v0, z10, i10, 0L);
+                slVar.b.dismiss(true);
                 break;
             default:
-                IMapsProvider.IMapView iMapView = this.c;
-                try {
-                    iMapView.onCreate(null);
-                } catch (Exception unused) {
-                }
-                AndroidUtilities.runOnUIThread(new fl(this.b, iMapView, 0));
+                sl slVar2 = this.b;
+                slVar2.u0.d(this.c, slVar2.v0, z10, i10, 0L);
+                slVar2.b.dismiss(true);
                 break;
         }
     }

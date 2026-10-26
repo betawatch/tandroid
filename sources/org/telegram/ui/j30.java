@@ -1,21 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j30 extends s4.m0 {
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        recyclerView.getClass();
-        RecyclerView.R(view);
-        if (u50.F3) {
-            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
-        } else {
-            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        }
+public final class j30 extends s4.l {
+    public final /* synthetic */ v50 F;
+
+    public j30(v50 v50Var) {
+        this.F = v50Var;
+    }
+
+    @Override // s4.l
+    public final void P(s4.e1 e1Var) {
+        ViewGroup viewGroup;
+        v50 v50Var = this.F;
+        v50Var.Q.invalidate();
+        v50Var.a2.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.k3) v50Var).containerView;
+        viewGroup.invalidate();
+        v50.J0(v50Var);
     }
 }

@@ -1,81 +1,61 @@
 package sg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.q6;
+import android.text.TextUtils;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class o0 extends q6 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ p0 v;
+public final class o0 extends TLObject {
+    public static final /* synthetic */ int j = 0;
+    public int a;
+    public String b;
+    public String c;
+    public TLRPC.WebPage d;
+    public boolean e;
+    public boolean f = true;
+    public int i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o0(p0 p0Var, Context context, int i10) {
-        super(context, true, true, true);
-        this.s = i10;
-        this.v = p0Var;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        int readInt32 = inputSerializedData.readInt32(z10);
+        this.a = readInt32;
+        this.e = (readInt32 & 8) != 0;
+        this.f = (readInt32 & 16) != 0;
+        this.c = inputSerializedData.readString(z10);
+        if ((this.a & 1) != 0) {
+            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        }
+        if ((this.a & 2) != 0) {
+            this.b = inputSerializedData.readString(z10);
+        }
+        if ((this.a & 4) != 0) {
+            this.i = inputSerializedData.readInt32(z10);
+        }
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                p0 p0Var = this.v;
-                if (p0Var.O > 0.0f) {
-                    if (p0Var.N == null) {
-                        p0Var.N = new eq(p0Var.f.getTextColor());
-                    }
-                    int dp = (int) ((1.0f - p0Var.O) * AndroidUtilities.dp(24.0f));
-                    p0Var.N.setBounds(0, dp, getWidth(), getHeight() + dp);
-                    p0Var.N.setAlpha((int) (p0Var.O * 255.0f));
-                    p0Var.N.draw(canvas);
-                    invalidate();
-                }
-                float f7 = p0Var.O;
-                if (f7 < 1.0f) {
-                    if (f7 == 0.0f) {
-                        super.onDraw(canvas);
-                        break;
-                    } else {
-                        canvas.save();
-                        canvas.translate(0.0f, (int) (p0Var.O * AndroidUtilities.dp(-24.0f)));
-                        canvas.scale(1.0f, 1.0f - (p0Var.O * 0.4f));
-                        super.onDraw(canvas);
-                        canvas.restore();
-                        break;
-                    }
-                }
-                break;
-            default:
-                p0 p0Var2 = this.v;
-                if (p0Var2.O > 0.0f) {
-                    if (p0Var2.N == null) {
-                        p0Var2.N = new eq(p0Var2.f.getTextColor());
-                    }
-                    int dp2 = (int) ((1.0f - p0Var2.O) * AndroidUtilities.dp(24.0f));
-                    p0Var2.N.setBounds(0, dp2, getWidth(), getHeight() + dp2);
-                    p0Var2.N.setAlpha((int) (p0Var2.O * 255.0f));
-                    p0Var2.N.draw(canvas);
-                    invalidate();
-                }
-                float f10 = p0Var2.O;
-                if (f10 < 1.0f) {
-                    if (f10 == 0.0f) {
-                        super.onDraw(canvas);
-                        break;
-                    } else {
-                        canvas.save();
-                        canvas.translate(0.0f, (int) (p0Var2.O * AndroidUtilities.dp(-24.0f)));
-                        canvas.scale(1.0f, 1.0f - (p0Var2.O * 0.4f));
-                        super.onDraw(canvas);
-                        canvas.restore();
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-625858389);
+        this.a = this.d != null ? this.a | 1 : this.a & (-2);
+        int i10 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
+        this.a = i10;
+        int i11 = this.e ? i10 | 8 : i10 & (-9);
+        this.a = i11;
+        int i12 = this.f ? i11 | 16 : i11 & (-17);
+        this.a = i12;
+        outputSerializedData.writeInt32(i12);
+        outputSerializedData.writeString(this.c);
+        if ((this.a & 1) != 0) {
+            this.d.serializeToStream(outputSerializedData);
+        }
+        if ((this.a & 2) != 0) {
+            outputSerializedData.writeString(this.b);
+        }
+        if ((this.a & 4) != 0) {
+            outputSerializedData.writeInt32(this.i);
         }
     }
 }

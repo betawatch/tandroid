@@ -1,48 +1,33 @@
 package m4;
 
-import android.content.Context;
 import android.os.Bundle;
-import e9.x1;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.LaunchActivity;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class r {
-    public static final AtomicReference n = new AtomicReference(null);
-    public final Context a;
-    public final b2.f1 b;
-    public String c;
-    public final pb.a d;
-    public final Bundle e;
-    public final Bundle f;
-    public e2.d g;
-    public final boolean h;
-    public final x1 i;
-    public final x1 j;
-    public final x1 k;
-    public final boolean l;
-    public boolean m;
+    public static final String a;
+    public static final String b;
+    public static final String c;
+    public static final String d;
 
-    public r(LaunchActivity launchActivity, b2.f1 f1Var) {
-        pb.a aVar = new pb.a(13);
-        Context applicationContext = launchActivity.getApplicationContext();
-        applicationContext.getClass();
-        this.a = applicationContext;
-        f1Var.getClass();
-        this.b = f1Var;
-        u6.g(f1Var.P());
-        this.c = "";
-        this.d = aVar;
-        this.e = new Bundle();
-        this.f = new Bundle();
-        e9.l0 l0Var = e9.n0.b;
-        x1 x1Var = x1.e;
-        this.i = x1Var;
-        this.j = x1Var;
-        this.h = true;
-        this.l = true;
-        this.k = x1Var;
+    static {
+        String str = e2.n0.a;
+        a = Integer.toString(0, 36);
+        b = Integer.toString(1, 36);
+        c = Integer.toString(2, 36);
+        d = Integer.toString(3, 36);
+    }
+
+    public static r a(Bundle bundle) {
+        Bundle o10 = e2.n0.o(bundle.getBundle(a));
+        bundle.getBoolean(b, false);
+        bundle.getBoolean(c, false);
+        bundle.getBoolean(d, false);
+        if (o10 == null) {
+            o10 = Bundle.EMPTY;
+        }
+        r rVar = new r();
+        new Bundle(o10);
+        return rVar;
     }
 }

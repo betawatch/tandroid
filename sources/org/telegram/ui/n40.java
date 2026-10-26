@@ -1,29 +1,27 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class n40 extends org.telegram.ui.Components.ir0 {
-    public final /* synthetic */ u50 e1;
+public final class n40 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ v50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n40(u50 u50Var, Context context, String str, String str2, String str3, String str4) {
-        super(context, null, str, str2, false, str3, str4, true);
-        this.e1 = u50Var;
+    public n40(v50 v50Var) {
+        this.a = v50Var;
     }
 
-    @Override // org.telegram.ui.Components.ir0
-    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = hVar.m();
-            u50 u50Var = this.e1;
-            if (m10 == 1) {
-                u50Var.k1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
-            } else {
-                u50Var.k1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
-            }
-        }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        ViewGroup viewGroup;
+        v50 v50Var = this.a;
+        v50Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
+        v50Var.a2.j(null);
+        AndroidUtilities.updateVisibleRows(v50Var.m2);
+        viewGroup = ((org.telegram.ui.ActionBar.k3) v50Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

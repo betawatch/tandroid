@@ -1,8 +1,8 @@
 package h0;
 
-import com.google.android.gms.internal.play_billing.k3;
+import c3.h0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k {
     public static final k k;
@@ -33,17 +33,17 @@ public final class k {
         float[] fArr5 = fArr2[2];
         float f16 = (f13 * fArr5[2]) + (f11 * fArr5[1]) + (f7 * fArr5[0]);
         float f17 = ((double) 1.0f) >= 0.9d ? 0.69f : 0.655f;
-        float B = k3.B((float) Math.exp(((-j10) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
-        double d = B;
+        float D = h0.D((float) Math.exp(((-j10) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
+        double d = D;
         if (d > 1.0d) {
-            B = 1.0f;
+            D = 1.0f;
         } else if (d < 0.0d) {
-            B = 0.0f;
+            D = 0.0f;
         }
         float f18 = 1.0f / ((5.0f * j10) + 1.0f);
-        float C = k3.C(f18, f18, f18, f18);
-        float f19 = 1.0f - C;
-        float cbrt = (0.1f * f19 * f19 * ((float) Math.cbrt(j10 * 5.0d))) + (C * j10);
+        float E = h0.E(f18, f18, f18, f18);
+        float f19 = 1.0f - E;
+        float cbrt = (0.1f * f19 * f19 * ((float) Math.cbrt(j10 * 5.0d))) + (E * j10);
         float j11 = b.j() / fArr[1];
         double d10 = j11;
         float sqrt = ((float) Math.sqrt(d10)) + 1.48f;
@@ -55,7 +55,7 @@ public final class k {
         float f23 = (f22 * 400.0f) / (f22 + 27.13f);
         float f24 = fArr6[2];
         float[] fArr7 = {f21, f23, (400.0f * f24) / (f24 + 27.13f)};
-        k = new k(j11, k3.A(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f17, 1.0f, new float[]{(((100.0f / f14) * B) + 1.0f) - B, (((100.0f / f15) * B) + 1.0f) - B, (((100.0f / f16) * B) + 1.0f) - B}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
+        k = new k(j11, h0.C(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f17, 1.0f, new float[]{(((100.0f / f14) * D) + 1.0f) - D, (((100.0f / f15) * D) + 1.0f) - D, (((100.0f / f16) * D) + 1.0f) - D}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
     }
 
     public k(float f7, float f10, float f11, float f12, float f13, float f14, float[] fArr, float f15, float f16, float f17) {

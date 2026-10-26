@@ -1,55 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import org.telegram.messenger.SharedConfig;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class jv0 extends ScrollSlidingTextTabStrip {
-    public Paint p0;
-    public int q0;
-    public final Rect r0;
-    public final /* synthetic */ xv0 s0;
+public final class jv0 extends s4.w {
+    public final /* synthetic */ lv0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jv0(xv0 xv0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.s0 = xv0Var;
-        this.q0 = 0;
-        this.r0 = new Rect();
+    public jv0(lv0 lv0Var) {
+        this.d = lv0Var;
     }
 
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.q0 != 0) {
-            if (this.p0 == null) {
-                this.p0 = new Paint();
-            }
-            this.p0.setColor(this.q0);
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            Rect rect = this.r0;
-            rect.set(0, 0, measuredWidth, measuredHeight);
-            canvas.save();
-            canvas.translate(getScrollX(), 0.0f);
-            canvas.clipPath(this.f0);
-            if (SharedConfig.chatBlurEnabled()) {
-                this.s0.Q(canvas, getY(), rect, this.p0);
-            } else {
-                canvas.drawPaint(this.p0);
-            }
-            canvas.translate(-getScrollX(), 0.0f);
-            canvas.restore();
+    @Override // s4.w
+    public final void a(RecyclerView recyclerView, s4.e1 e1Var) {
+        super.a(recyclerView, e1Var);
+        e1Var.a.setPressed(false);
+    }
+
+    @Override // s4.w
+    public final int e(RecyclerView recyclerView, s4.e1 e1Var) {
+        SavedMessagesController.SavedDialog r6;
+        int l4 = s4.w.l(0, 0);
+        aw0 aw0Var = this.d.x;
+        return (!aw0Var.E1 || recyclerView.getAdapter() == aw0Var.U || (r6 = r(e1Var)) == null || !r6.pinned) ? l4 : s4.w.l(3, 0);
+    }
+
+    @Override // s4.w
+    public final boolean n(RecyclerView recyclerView, s4.e1 e1Var, s4.e1 e1Var2) {
+        lv0 lv0Var = this.d;
+        ArrayList arrayList = lv0Var.f;
+        aw0 aw0Var = lv0Var.x;
+        if (!aw0Var.E1 || recyclerView.getAdapter() == aw0Var.U) {
+            return false;
         }
-        super.dispatchDraw(canvas);
+        SavedMessagesController.SavedDialog r6 = r(e1Var);
+        SavedMessagesController.SavedDialog r10 = r(e1Var2);
+        if (r6 == null || r10 == null || !r6.pinned || !r10.pinned) {
+            return false;
+        }
+        int b10 = e1Var.b();
+        int b11 = e1Var2.b();
+        arrayList.remove(b10);
+        arrayList.add(b11, r6);
+        lv0Var.p(b10, b11);
+        lv0Var.h = true;
+        return true;
     }
 
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.q0 = i10;
-        invalidate();
+    @Override // s4.w
+    public final void p(s4.e1 e1Var, int i10) {
+        su0 su0Var;
+        lv0 lv0Var = this.d;
+        mp0 mp0Var = lv0Var.n;
+        if (e1Var != null && (su0Var = lv0Var.s) != null) {
+            su0Var.d1(false);
+        }
+        if (i10 == 0) {
+            AndroidUtilities.cancelRunOnUIThread(mp0Var);
+            AndroidUtilities.runOnUIThread(mp0Var, 300L);
+        }
+    }
+
+    public final SavedMessagesController.SavedDialog r(s4.e1 e1Var) {
+        int b10;
+        if (e1Var != null && (b10 = e1Var.b()) >= 0) {
+            lv0 lv0Var = this.d;
+            if (b10 < lv0Var.f.size()) {
+                return (SavedMessagesController.SavedDialog) lv0Var.f.get(b10);
+            }
+        }
+        return null;
+    }
+
+    @Override // s4.w
+    public final void q(s4.e1 e1Var) {
     }
 }

@@ -5,25 +5,25 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dd implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ md b;
+    public final /* synthetic */ nd b;
 
-    public /* synthetic */ dd(md mdVar, int i10) {
+    public /* synthetic */ dd(nd ndVar, int i10) {
         this.a = i10;
-        this.b = mdVar;
+        this.b = ndVar;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new h0(19, this.b, tLObject));
+                AndroidUtilities.runOnUIThread(new ed(0, this.b, tLObject));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new h0(17, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(28, this.b, tL_error));
                 break;
             case 2:
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
@@ -32,7 +32,7 @@ public final /* synthetic */ class dd implements RequestDelegate {
                 }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new s1(this.b, tL_error, tLObject, 11));
+                AndroidUtilities.runOnUIThread(new q1(this.b, tL_error, tLObject, 11));
                 break;
         }
     }

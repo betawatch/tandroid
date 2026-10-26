@@ -1,58 +1,67 @@
 package hb;
 
-import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class j implements eb.v {
-    public static final i c;
-    public static final i d;
-    public final qf.b a;
-    public final ConcurrentHashMap b = new ConcurrentHashMap();
+public final class j implements Iterator {
+    public l a;
+    public l b = null;
+    public int c;
+    public final /* synthetic */ m d;
+    public final /* synthetic */ int e;
 
-    static {
-        int i10 = 0;
-        c = new i(i10);
-        d = new i(i10);
+    public j(m mVar, int i10) {
+        this.e = i10;
+        this.d = mVar;
+        this.a = mVar.f.d;
+        this.c = mVar.e;
     }
 
-    public j(qf.b bVar) {
-        this.a = bVar;
+    public final Object a() {
+        return b();
     }
 
-    public final eb.u a(qf.b bVar, eb.g gVar, lb.a aVar, fb.a aVar2, boolean z10) {
-        eb.u uVar;
-        Object f22 = bVar.W(new lb.a(aVar2.value())).f2();
-        boolean nullSafe = aVar2.nullSafe();
-        if (f22 instanceof eb.u) {
-            uVar = (eb.u) f22;
-        } else if (f22 instanceof eb.v) {
-            eb.v vVar = (eb.v) f22;
-            if (z10) {
-                eb.v vVar2 = (eb.v) this.b.putIfAbsent(aVar.a, vVar);
-                if (vVar2 != null) {
-                    vVar = vVar2;
-                }
-            }
-            uVar = vVar.create(gVar, aVar);
-        } else {
-            boolean z11 = f22 instanceof eb.o;
-            if (!z11) {
-                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + f22.getClass().getName() + " as a @JsonAdapter for " + gb.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
-            }
-            a0 a0Var = new a0(z11 ? (eb.o) f22 : null, gVar, aVar, z10 ? c : d, nullSafe);
-            nullSafe = false;
-            uVar = a0Var;
+    public final l b() {
+        l lVar = this.a;
+        m mVar = this.d;
+        if (lVar == mVar.f) {
+            throw new NoSuchElementException();
         }
-        return (uVar == null || !nullSafe) ? uVar : uVar.nullSafe();
+        if (mVar.e != this.c) {
+            throw new ConcurrentModificationException();
+        }
+        this.a = lVar.d;
+        this.b = lVar;
+        return lVar;
     }
 
-    @Override // eb.v
-    public final eb.u create(eb.g gVar, lb.a aVar) {
-        fb.a aVar2 = (fb.a) aVar.a.getAnnotation(fb.a.class);
-        if (aVar2 == null) {
-            return null;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.a != this.d.f;
+    }
+
+    @Override // java.util.Iterator
+    public Object next() {
+        switch (this.e) {
+            case 1:
+                return b().f;
+            default:
+                return a();
         }
-        return a(this.a, gVar, aVar, aVar2, true);
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        l lVar = this.b;
+        if (lVar == null) {
+            throw new IllegalStateException();
+        }
+        m mVar = this.d;
+        mVar.c(lVar, true);
+        this.b = null;
+        this.c = mVar.e;
     }
 }

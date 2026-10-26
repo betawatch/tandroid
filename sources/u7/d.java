@@ -8,12 +8,11 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
-import w7.x7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class d extends a implements List, RandomAccess, j$.util.List {
-    public static final b b = new b(e.e, 0);
+    public static final b b = new b(g.e, 0);
 
     @Override // java.util.List
     public final void add(int i10, Object obj) {
@@ -125,18 +124,15 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: p */
     public d subList(int i10, int i11) {
-        x7.b(i10, i11, size());
+        w7.m.c(i10, i11, size());
         int i12 = i11 - i10;
-        return i12 == size() ? this : i12 == 0 ? e.e : new c(this, i10, i12);
+        return i12 == size() ? this : i12 == 0 ? g.e : new c(this, i10, i12);
     }
 
     @Override // java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final b listIterator(int i10) {
-        int size = size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(x7.c(i10, size, "index"));
-        }
+        w7.m.b(i10, size());
         return isEmpty() ? b : new b(this, i10);
     }
 

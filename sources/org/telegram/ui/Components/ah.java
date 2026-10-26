@@ -5,13 +5,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class ah extends bk0 {
+public class ah extends ak0 {
     public yg r;
     public zg s;
     public final int v;
-    public final ad.g w;
+    public final bd.e w;
 
     public ah(Context context) {
         this(context, 32);
@@ -35,7 +35,7 @@ public class ah extends bk0 {
         yg ygVar2 = this.r;
         this.r = ygVar;
         zg zgVar2 = null;
-        ad.g gVar = this.w;
+        bd.e eVar = this.w;
         if (z10 && ygVar2 != null) {
             zg[] values = zg.values();
             int length = values.length;
@@ -72,21 +72,21 @@ public class ah extends bk0 {
                     return;
                 }
                 this.s = zgVar2;
-                yj0 yj0Var = (yj0) gVar.get(zgVar2);
-                yj0Var.stop();
+                xj0 xj0Var = (xj0) eVar.get(zgVar2);
+                xj0Var.stop();
                 if (zgVar2 == zg.e) {
-                    yj0Var.P(30);
-                    yj0Var.T(0.0f, false);
+                    xj0Var.P(30);
+                    xj0Var.T(0.0f, false);
                 } else if (zgVar2 == zg.d) {
-                    yj0Var.P(60);
-                    yj0Var.T(0.5f, false);
+                    xj0Var.P(60);
+                    xj0Var.T(0.5f, false);
                 } else {
-                    yj0Var.T(0.0f, false);
+                    xj0Var.T(0.0f, false);
                 }
-                yj0Var.K(0);
-                yj0Var.t0 = new pg(this, 21);
-                setAnimation(yj0Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(yj0Var, 1));
+                xj0Var.K(0);
+                xj0Var.t0 = new pg(this, 21);
+                setAnimation(xj0Var);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(xj0Var, 1));
                 ordinal = ygVar.ordinal();
                 if (ordinal != 0) {
                     setContentDescription(LocaleController.getString(R.string.AccDescrVoiceMessage));
@@ -115,10 +115,10 @@ public class ah extends bk0 {
             }
             i12++;
         }
-        yj0 yj0Var2 = (yj0) gVar.get(zgVar2);
-        yj0Var2.stop();
-        yj0Var2.T(ygVar != yg.a ? 0.0f : 0.5f, false);
-        setAnimation(yj0Var2);
+        xj0 xj0Var2 = (xj0) eVar.get(zgVar2);
+        xj0Var2.stop();
+        xj0Var2.T(ygVar != yg.a ? 0.0f : 0.5f, false);
+        setAnimation(xj0Var2);
         ordinal = ygVar.ordinal();
         if (ordinal != 0) {
         }
@@ -126,7 +126,7 @@ public class ah extends bk0 {
 
     public ah(Context context, int i10) {
         super(context);
-        this.w = new ad.g(this, 1);
+        this.w = new bd.e(this, 1);
         this.v = i10;
     }
 }

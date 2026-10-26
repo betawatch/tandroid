@@ -2,308 +2,232 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import android.util.SparseArray;
 import android.view.View;
-import j$.util.Objects;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public class r5 extends Drawable {
-    public static SparseArray r;
-    public static HashMap s;
-    public static boolean t;
-    public static boolean u;
-    public static boolean v;
-    public static final ah.j w = new ah.j(28);
-    public static HashMap x;
+public class r5 extends Drawable implements z5 {
+    public bi.td E;
+    public Integer F;
+    public int G;
+    public PorterDuffColorFilter H;
+    public int I;
+    public int J;
+    public final Rect K;
+    public final pg L;
     public boolean a;
-    public ArrayList b;
-    public ArrayList c;
-    public int d;
-    public TLRPC.Document e;
-    public long f;
-    public int g;
-    public int h;
-    public String i;
-    public boolean j;
-    public ci.f3 k;
-    public boolean m;
-    public ColorFilter p;
-    public ColorFilter q;
-    public float l = 1.0f;
-    public Boolean n = null;
-    public Boolean o = null;
+    public final int b;
+    public final OvershootInterpolator c;
+    public final h6 d;
+    public final h6 e;
+    public final Drawable[] f;
+    public View h;
+    public org.telegram.ui.c61 n;
+    public final boolean r;
+    public final int s;
+    public int v;
+    public boolean w;
+    public Integer x;
+    public boolean y;
 
-    public r5(int i10, int i11, long j10) {
-        this.h = i11;
-        this.g = i10;
-        y();
-        this.f = j10;
-        h(i11).b(j10, new j5(this, 0));
+    public r5(int i10, View view) {
+        this(i10, 7, view, false);
     }
 
-    public static TLRPC.Document f(int i10, long j10) {
-        HashMap hashMap = h(i10).a;
-        if (hashMap == null) {
-            return null;
-        }
-        return (TLRPC.Document) hashMap.get(Long.valueOf(j10));
-    }
-
-    public static int g() {
-        return SharedConfig.getDevicePerformanceClass() == 0 ? 0 : 2;
-    }
-
-    public static n5 h(int i10) {
-        if (s == null) {
-            s = new HashMap();
-        }
-        n5 n5Var = (n5) s.get(Integer.valueOf(i10));
-        if (n5Var != null) {
-            return n5Var;
-        }
-        HashMap hashMap = s;
-        Integer valueOf = Integer.valueOf(i10);
-        n5 n5Var2 = new n5(i10);
-        hashMap.put(valueOf, n5Var2);
-        return n5Var2;
-    }
-
-    public static r5 m(int i10, int i11, TLRPC.Document document) {
-        if (r == null) {
-            r = new SparseArray();
-        }
-        int hash = Objects.hash(Integer.valueOf(i10), Integer.valueOf(i11));
-        LongSparseArray longSparseArray = (LongSparseArray) r.get(hash);
-        if (longSparseArray == null) {
-            SparseArray sparseArray = r;
-            LongSparseArray longSparseArray2 = new LongSparseArray();
-            sparseArray.put(hash, longSparseArray2);
-            longSparseArray = longSparseArray2;
-        }
-        r5 r5Var = (r5) longSparseArray.get(document.id);
-        if (r5Var != null) {
-            return r5Var;
-        }
-        long j10 = document.id;
-        r5 r5Var2 = new r5(i11, i10, document);
-        longSparseArray.put(j10, r5Var2);
-        return r5Var2;
-    }
-
-    public static r5 n(int i10, long j10, String str, int i11) {
-        if (r == null) {
-            r = new SparseArray();
-        }
-        int i12 = 1;
-        int hash = Objects.hash(Integer.valueOf(i10), Integer.valueOf(i11));
-        LongSparseArray longSparseArray = (LongSparseArray) r.get(hash);
-        if (longSparseArray == null) {
-            SparseArray sparseArray = r;
-            LongSparseArray longSparseArray2 = new LongSparseArray();
-            sparseArray.put(hash, longSparseArray2);
-            longSparseArray = longSparseArray2;
-        }
-        r5 r5Var = (r5) longSparseArray.get(j10);
-        if (r5Var != null) {
-            return r5Var;
-        }
-        r5 r5Var2 = new r5();
-        r5Var2.l = 1.0f;
-        r5Var2.n = null;
-        r5Var2.o = null;
-        r5Var2.h = i10;
-        r5Var2.g = i11;
-        r5Var2.y();
-        r5Var2.f = j10;
-        r5Var2.i = str;
-        h(i10).b(j10, new j5(r5Var2, i12));
-        longSparseArray.put(j10, r5Var2);
-        return r5Var2;
-    }
-
-    public static void s(int i10, boolean z10) {
-        LongSparseArray longSparseArray;
-        ci.f3 f3Var;
-        boolean z11 = !z10;
-        if (v == z11) {
+    public final void a() {
+        if (this.w) {
             return;
         }
-        v = z11;
-        if (r == null || (longSparseArray = (LongSparseArray) r.get(Objects.hash(Integer.valueOf(i10), 25))) == null) {
-            return;
+        this.w = true;
+        Drawable[] drawableArr = this.f;
+        Drawable drawable = drawableArr[0];
+        if (drawable instanceof t5) {
+            ((t5) drawable).b(this);
         }
-        for (int i11 = 0; i11 < longSparseArray.size(); i11++) {
-            r5 r5Var = (r5) longSparseArray.valueAt(i11);
-            if (r5Var != null && (f3Var = r5Var.k) != null) {
-                if (z10) {
-                    f3Var.setAllowStartLottieAnimation(true);
-                    f3Var.setAllowStartAnimation(true);
-                    f3Var.setAutoRepeat(1);
-                    e6 animation = f3Var.getAnimation();
-                    if (animation != null) {
-                        boolean z12 = f3Var.useSharedAnimationQueue;
-                        if (!animation.n0) {
-                            animation.v0 = z12;
-                        }
-                        animation.start();
-                    } else {
-                        yj0 lottieAnimation = f3Var.getLottieAnimation();
-                        if (lottieAnimation != null) {
-                            lottieAnimation.start();
-                        }
-                    }
-                } else {
-                    f3Var.setAllowStartAnimation(false);
-                    f3Var.setAllowStartLottieAnimation(false);
-                    f3Var.setAutoRepeat(0);
-                    f3Var.stopAnimation();
-                }
+        Drawable drawable2 = drawableArr[1];
+        if (drawable2 instanceof t5) {
+            ((t5) drawable2).b(this);
+        }
+    }
+
+    public final void b() {
+        if (this.w) {
+            this.w = false;
+            Drawable[] drawableArr = this.f;
+            Drawable drawable = drawableArr[0];
+            if (drawable instanceof t5) {
+                ((t5) drawable).p(this);
+            }
+            Drawable drawable2 = drawableArr[1];
+            if (drawable2 instanceof t5) {
+                ((t5) drawable2).p(this);
             }
         }
     }
 
-    public static void u() {
-        if (r == null) {
-            return;
-        }
-        x();
-        for (int i10 = 0; i10 < r.size(); i10++) {
-            LongSparseArray longSparseArray = (LongSparseArray) r.valueAt(i10);
-            for (int i11 = 0; i11 < longSparseArray.size(); i11++) {
-                long keyAt = longSparseArray.keyAt(i11);
-                r5 r5Var = (r5) longSparseArray.get(keyAt);
-                if (r5Var == null || !r5Var.a) {
-                    longSparseArray.remove(keyAt);
-                } else {
-                    r5Var.j(true);
-                }
-            }
-        }
+    public final Drawable c() {
+        return this.f[0];
     }
 
-    public static void x() {
-        t = LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
-        u = LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
-    }
-
-    public final void a(View view) {
-        if (view instanceof org.telegram.ui.d51) {
-            throw new RuntimeException();
-        }
-        this.m = false;
-        if (this.b == null) {
-            this.b = new ArrayList(10);
-        }
-        if (!this.b.contains(view)) {
-            this.b.add(view);
-        }
-        v();
-    }
-
-    public final void b(x5 x5Var) {
-        if (this.c == null) {
-            this.c = new ArrayList(10);
-        }
-        this.m = false;
-        if (!this.c.contains(x5Var)) {
-            this.c.add(x5Var);
-        }
-        v();
-    }
-
-    public final boolean c() {
-        boolean z10 = true;
-        if (this.g == 19) {
-            return true;
-        }
-        Boolean bool = this.n;
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        if (this.e == null) {
-            return false;
-        }
-        if (!l() && !MessageObject.isTextColorEmoji(this.e)) {
-            z10 = false;
-        }
-        this.n = Boolean.valueOf(z10);
-        return z10;
-    }
-
-    public final void d() {
-        ArrayList arrayList = this.c;
-        if (arrayList != null) {
-            arrayList.clear();
-        }
-        ArrayList arrayList2 = this.b;
-        if (arrayList2 != null) {
-            arrayList2.clear();
-        }
-        this.m = false;
-        v();
+    public final boolean d() {
+        return this.f[0] == null;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        ci.f3 f3Var = this.k;
-        if (f3Var == null) {
+        float d = this.d.d(1.0f, false);
+        Rect bounds = getBounds();
+        Rect rect = this.K;
+        rect.set(bounds);
+        rect.offset(this.I, this.J);
+        float e = this.e.e(this.y);
+        pg pgVar = this.L;
+        if (e > 0.0f) {
+            bi.td tdVar = this.E;
+            tdVar.c.set(rect);
+            tdVar.e();
+            this.E.d();
+            bi.td tdVar2 = this.E;
+            Integer num = this.F;
+            tdVar2.a(canvas, org.telegram.ui.ActionBar.y6.o1(e, num == null ? -1 : num.intValue()));
+            ag.n.d().a(15, pgVar);
+        } else {
+            ag.n.d().g(pgVar);
+        }
+        Drawable[] drawableArr = this.f;
+        Drawable drawable = drawableArr[1];
+        int i10 = this.s;
+        if (drawable != null && d < 1.0f) {
+            drawable.setAlpha((int) ((1.0f - d) * this.v));
+            int intrinsicWidth = drawableArr[1].getIntrinsicWidth() < 0 ? i10 : drawableArr[1].getIntrinsicWidth();
+            int intrinsicHeight = drawableArr[1].getIntrinsicHeight() < 0 ? i10 : drawableArr[1].getIntrinsicHeight();
+            Drawable drawable2 = drawableArr[1];
+            if (drawable2 instanceof t5) {
+                drawable2.setBounds(rect);
+            } else if (this.a) {
+                int i11 = intrinsicWidth / 2;
+                int i12 = intrinsicHeight / 2;
+                drawable2.setBounds(rect.centerX() - i11, rect.centerY() - i12, rect.centerX() + i11, rect.centerY() + i12);
+            } else {
+                int i13 = intrinsicHeight / 2;
+                drawable2.setBounds(rect.left, rect.centerY() - i13, rect.left + intrinsicWidth, rect.centerY() + i13);
+            }
+            drawableArr[1].setColorFilter(this.H);
+            drawableArr[1].draw(canvas);
+            drawableArr[1].setColorFilter(null);
+        }
+        if (drawableArr[0] != null) {
+            canvas.save();
+            int intrinsicWidth2 = drawableArr[0].getIntrinsicWidth() < 0 ? i10 : drawableArr[0].getIntrinsicWidth();
+            if (drawableArr[0].getIntrinsicHeight() >= 0) {
+                i10 = drawableArr[0].getIntrinsicHeight();
+            }
+            Drawable drawable3 = drawableArr[0];
+            boolean z10 = drawable3 instanceof t5;
+            OvershootInterpolator overshootInterpolator = this.c;
+            if (z10) {
+                di.f3 f3Var = ((t5) drawable3).k;
+                if (f3Var != null) {
+                    f3Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+                }
+                if (d < 1.0f) {
+                    float interpolation = overshootInterpolator.getInterpolation(d);
+                    canvas.scale(interpolation, interpolation, rect.centerX(), rect.centerY());
+                }
+                drawableArr[0].setBounds(rect);
+            } else if (this.a) {
+                if (d < 1.0f) {
+                    float interpolation2 = overshootInterpolator.getInterpolation(d);
+                    canvas.scale(interpolation2, interpolation2, rect.centerX(), rect.centerY());
+                }
+                int i14 = intrinsicWidth2 / 2;
+                int i15 = i10 / 2;
+                drawableArr[0].setBounds(rect.centerX() - i14, rect.centerY() - i15, rect.centerX() + i14, rect.centerY() + i15);
+            } else {
+                if (d < 1.0f) {
+                    float interpolation3 = overshootInterpolator.getInterpolation(d);
+                    canvas.scale(interpolation3, interpolation3, (intrinsicWidth2 / 2.0f) + rect.left, rect.centerY());
+                }
+                int i16 = i10 / 2;
+                drawableArr[0].setBounds(rect.left, rect.centerY() - i16, rect.left + intrinsicWidth2, rect.centerY() + i16);
+            }
+            drawableArr[0].setAlpha(this.v);
+            drawableArr[0].setColorFilter(this.H);
+            drawableArr[0].draw(canvas);
+            drawableArr[0].setColorFilter(null);
+            canvas.restore();
+        }
+    }
+
+    public final float e() {
+        Drawable[] drawableArr = this.f;
+        Drawable drawable = drawableArr[1];
+        h6 h6Var = this.d;
+        return (drawable != null ? 1.0f - h6Var.c : 0.0f) + (drawableArr[0] != null ? h6Var.c : 0.0f);
+    }
+
+    public final void f() {
+        t5 t5Var;
+        di.f3 f3Var;
+        Drawable drawable = this.f[0];
+        if (!(drawable instanceof t5) || (f3Var = (t5Var = (t5) drawable).k) == null) {
             return;
         }
-        f3Var.setImageCoords(getBounds());
-        this.k.setAlpha(this.l);
-        this.k.draw(canvas);
+        t5Var.w(f3Var);
+        f3Var.startAnimation();
     }
 
-    public final void e() {
-        if (this.k == null) {
-            ci.f3 f3Var = new ci.f3(this, 4);
-            this.k = f3Var;
-            f3Var.setCurrentAccount(this.h);
-            this.k.setAllowLoadingOnAttachedOnly(true);
-            if (this.g == 12) {
-                this.k.ignoreNotifications = true;
+    public final void g(Drawable drawable, boolean z10) {
+        Drawable[] drawableArr = this.f;
+        if (drawableArr[0] == drawable) {
+            return;
+        }
+        h6 h6Var = this.d;
+        if (z10) {
+            h6Var.d(0.0f, true);
+            Drawable drawable2 = drawableArr[1];
+            if (drawable2 != null) {
+                if (this.w && (drawable2 instanceof t5)) {
+                    ((t5) drawable2).p(this);
+                }
+                drawableArr[1] = null;
+            }
+            drawableArr[1] = drawableArr[0];
+            drawableArr[0] = drawable;
+        } else {
+            h6Var.d(1.0f, true);
+            boolean z11 = this.w;
+            if (z11) {
+                b();
+            }
+            drawableArr[0] = drawable;
+            if (z11) {
+                a();
             }
         }
+        this.F = null;
+        this.H = null;
+        this.G = 0;
+        f();
+        invalidate();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return (int) (this.l * 255.0f);
+    public final int getIntrinsicHeight() {
+        return this.s;
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final ColorFilter getColorFilter() {
-        return this.q;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        return AndroidUtilities.dp(this.d);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        return AndroidUtilities.dp(this.d);
+    public final int getIntrinsicWidth() {
+        return this.s;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -311,403 +235,200 @@ public class r5 extends Drawable {
         return -2;
     }
 
-    public final long i() {
-        TLRPC.Document document = this.e;
-        return document != null ? document.id : this.f;
+    public final void h(TLRPC.Document document, int i10, boolean z10) {
+        Drawable[] drawableArr = this.f;
+        Drawable drawable = drawableArr[0];
+        if ((drawable instanceof t5) && document != null && ((t5) drawable).i() == document.id) {
+            return;
+        }
+        h6 h6Var = this.d;
+        if (z10) {
+            h6Var.d(0.0f, true);
+            Drawable drawable2 = drawableArr[1];
+            if (drawable2 != null) {
+                if (drawable2 instanceof t5) {
+                    ((t5) drawable2).p(this);
+                }
+                drawableArr[1] = null;
+            }
+            drawableArr[1] = drawableArr[0];
+            if (document != null) {
+                Integer num = this.x;
+                t5 m10 = t5.m(num != null ? num.intValue() : UserConfig.selectedAccount, i10, document);
+                drawableArr[0] = m10;
+                if (this.w) {
+                    m10.b(this);
+                }
+            } else {
+                drawableArr[0] = null;
+            }
+        } else {
+            h6Var.d(1.0f, true);
+            boolean z11 = this.w;
+            if (z11) {
+                b();
+            }
+            if (document != null) {
+                Integer num2 = this.x;
+                drawableArr[0] = t5.m(num2 != null ? num2.intValue() : UserConfig.selectedAccount, i10, document);
+            } else {
+                drawableArr[0] = null;
+            }
+            if (z11) {
+                a();
+            }
+        }
+        this.F = null;
+        this.H = null;
+        this.G = 0;
+        f();
+        invalidate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:120:0x020e  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01db  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void j(boolean z10) {
-        SvgHelper.SvgDrawable svgThumb;
-        String str;
-        int i10;
-        ImageLocation imageLocation;
-        ImageLocation imageLocation2;
-        Drawable drawable;
-        int i11;
-        String str2 = this.i;
-        int i12 = this.g;
-        TLRPC.Document document = this.e;
-        if (document != null) {
-            if (this.k == null || this.j || z10) {
-                if ((i12 == 20 || i12 == 21) && (document instanceof TLRPC.TL_documentEmpty)) {
-                    return;
+    public final void i(TLRPC.Document document, boolean z10) {
+        h(document, this.b, z10);
+    }
+
+    @Override // org.telegram.ui.Components.z5
+    public void invalidate() {
+        View view = this.h;
+        if (view != null) {
+            if (this.r && (view.getParent() instanceof View)) {
+                ((View) this.h.getParent()).invalidate();
+            } else {
+                this.h.invalidate();
+            }
+        }
+        org.telegram.ui.c61 c61Var = this.n;
+        if (c61Var != null) {
+            c61Var.invalidate();
+        }
+        invalidateSelf();
+    }
+
+    public final boolean j(long j10, boolean z10) {
+        Drawable[] drawableArr = this.f;
+        Drawable drawable = drawableArr[0];
+        if ((drawable instanceof t5) && ((t5) drawable).i() == j10) {
+            return false;
+        }
+        int i10 = this.b;
+        h6 h6Var = this.d;
+        if (z10) {
+            h6Var.d(0.0f, true);
+            Drawable drawable2 = drawableArr[1];
+            if (drawable2 != null) {
+                if (this.w && (drawable2 instanceof t5)) {
+                    ((t5) drawable2).p(this);
                 }
-                this.j = false;
-                e();
-                if (this.p != null && c()) {
-                    this.k.setColorFilter(this.p);
-                }
-                if (i12 != 0) {
-                    int i13 = i12 == 12 ? 2 : i12;
-                    this.k.setUniqKeyPrefix(i13 + "_");
-                }
-                this.k.setVideoThumbIsSame(true);
-                boolean z11 = (SharedConfig.getDevicePerformanceClass() == 0 && i12 == 5) || ((i12 == 2 || i12 == 25) && !t) || (i12 == 3 && !u);
-                if (i12 == 13 || i12 == 16) {
-                    z11 = true;
-                }
-                if (i12 == 24 || i12 == 27) {
-                    z11 = false;
-                }
-                String str3 = this.d + "_" + this.d;
-                if (i12 == 12) {
-                    str3 = si.o0.u(str3, "_d_nostream");
-                }
-                if (i12 != 17 && i12 != 15 && i12 != 14 && i12 != 8 && ((i12 != 1 || SharedConfig.getDevicePerformanceClass() < 2) && i12 != 12)) {
-                    str3 = si.o0.u(str3, "_pcache");
-                }
-                if (i12 != 17 && i12 != 0 && i12 != 26 && i12 != 1 && i12 != 14 && i12 != 15 && i12 != 19 && i12 != 20 && i12 != 21) {
-                    str3 = si.o0.u(str3, "_compress");
-                }
-                if (i12 == 8) {
-                    str3 = si.o0.u(str3, "firstframe");
-                }
-                TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.e.thumbs, 90);
-                if ("video/webm".equals(this.e.mime_type)) {
-                    ImageLocation forDocument = ImageLocation.getForDocument(this.e);
-                    String u10 = si.o0.u(str3, "_g");
-                    svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.k6.m6, 0.2f, true);
-                    str = u10;
-                    i10 = 20;
-                    imageLocation = forDocument;
-                } else if ("application/x-tgsticker".equals(this.e.mime_type)) {
-                    StringBuilder sb2 = new StringBuilder();
-                    sb2.append(i12 != 0 ? a1.g.m(i12, "_") : "");
-                    sb2.append(this.f);
-                    sb2.append("@");
-                    sb2.append(str3);
-                    String sb3 = sb2.toString();
-                    if (SharedConfig.getDevicePerformanceClass() != 0 || i12 == 2 || i12 == 25 || i12 == 22 || !ImageLoader.getInstance().hasLottieMemCache(sb3)) {
-                        SvgHelper.SvgDrawable svgThumb2 = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.k6.m6, i12 == 22 ? 0.8f : 0.2f);
-                        if (svgThumb2 != null && MessageObject.isAnimatedStickerDocument(this.e, true)) {
-                            svgThumb2.overrideWidthAndHeight(512, 512);
-                        }
-                        svgThumb = svgThumb2;
-                    } else {
-                        svgThumb = null;
-                    }
-                    str = str3;
-                    imageLocation = ImageLocation.getForDocument(this.e);
-                    i10 = 20;
+                drawableArr[1] = null;
+            }
+            drawableArr[1] = drawableArr[0];
+            Integer num = this.x;
+            t5 n10 = t5.n(num != null ? num.intValue() : UserConfig.selectedAccount, j10, null, i10);
+            drawableArr[0] = n10;
+            if (this.w) {
+                n10.b(this);
+            }
+        } else {
+            h6Var.d(1.0f, true);
+            boolean z11 = this.w;
+            if (z11) {
+                b();
+            }
+            Integer num2 = this.x;
+            drawableArr[0] = t5.n(num2 != null ? num2.intValue() : UserConfig.selectedAccount, j10, null, i10);
+            if (z11) {
+                a();
+            }
+        }
+        this.F = null;
+        this.H = null;
+        this.G = 0;
+        f();
+        invalidate();
+        return true;
+    }
+
+    public final void k(Integer num) {
+        PorterDuffColorFilter porterDuffColorFilter;
+        Integer num2 = this.F;
+        if (num2 == null && num == null) {
+            return;
+        }
+        if (num2 == null || !num2.equals(num)) {
+            this.F = num;
+            if (num == null || this.G != num.intValue()) {
+                if (num != null) {
+                    int intValue = num.intValue();
+                    this.G = intValue;
+                    porterDuffColorFilter = new PorterDuffColorFilter(intValue, PorterDuff.Mode.SRC_IN);
                 } else {
-                    svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.k6.m6, 0.2f, true);
-                    if (svgThumb != null && MessageObject.isAnimatedStickerDocument(this.e, true)) {
-                        svgThumb.overrideWidthAndHeight(512, 512);
-                    }
-                    str = str3;
-                    i10 = 20;
-                    imageLocation = null;
+                    porterDuffColorFilter = null;
                 }
-                if (i12 == i10 || i12 == 21) {
-                    imageLocation2 = null;
-                    Drawable emojiDrawable = Emoji.getEmojiDrawable(MessageObject.findAnimatedEmojiEmoticon(this.e, null));
-                    if (emojiDrawable != null) {
-                        drawable = emojiDrawable;
-                        if (str2 == null) {
-                            this.k.setImageBitmap(new e6(new File(str2), true, 0L, 0, null, null, null, 0L, this.h, true, 512, 512, null, 0, true));
-                        } else if (i12 == 8) {
-                            ci.f3 f3Var = this.k;
-                            TLRPC.Document document2 = this.e;
-                            f3Var.setImage(null, null, imageLocation, str, null, null, drawable, document2.size, null, document2, 1);
-                        } else {
-                            ImageLocation imageLocation3 = imageLocation;
-                            String str4 = str;
-                            if (z11 || !(t || i12 == 14)) {
-                                ImageLocation forDocument2 = i12 == 16 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
-                                if ("video/webm".equals(this.e.mime_type)) {
-                                    ci.f3 f3Var2 = this.k;
-                                    ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
-                                    String str5 = this.d + "_" + this.d;
-                                    TLRPC.Document document3 = this.e;
-                                    f3Var2.setImage(null, null, forDocument3, str5, forDocument2, null, drawable, document3.size, null, document3, 1);
-                                } else if (MessageObject.isAnimatedStickerDocument(this.e, true)) {
-                                    ci.f3 f3Var3 = this.k;
-                                    String u11 = si.o0.u(str4, "_firstframe");
-                                    TLRPC.Document document4 = this.e;
-                                    f3Var3.setImage(imageLocation3, u11, forDocument2, null, drawable, document4.size, null, document4, 1);
-                                } else {
-                                    ci.f3 f3Var4 = this.k;
-                                    ImageLocation forDocument4 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
-                                    String str6 = this.d + "_" + this.d;
-                                    TLRPC.Document document5 = this.e;
-                                    f3Var4.setImage(forDocument4, str6, forDocument2, null, drawable, document5.size, null, document5, 1);
-                                }
-                            } else {
-                                ImageLocation forDocument5 = i12 == 17 ? ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e) : imageLocation2;
-                                ci.f3 f3Var5 = this.k;
-                                ImageLocation forDocument6 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
-                                String str7 = this.d + "_" + this.d;
-                                TLRPC.Document document6 = this.e;
-                                f3Var5.setImage(imageLocation3, str4, forDocument6, str7, forDocument5, null, drawable, document6.size, null, document6, 1);
-                            }
-                        }
-                        w(this.k);
-                        if (i12 != 13 || i12 == 16 || i12 == 3 || i12 == 5 || i12 == 4 || i12 == 24) {
-                            this.k.setLayerNum(7);
-                        }
-                        if (i12 != 9 || i12 == 21 || i12 == 27) {
-                            this.k.setLayerNum(6656);
-                        }
-                        this.k.setAspectFit(true);
-                        if (i12 != 12 || i12 == 26 || i12 == 18 || i12 == 8 || i12 == 6 || i12 == 5 || (i12 == 25 && v)) {
-                            i11 = 0;
-                            this.k.setAllowStartAnimation(false);
-                            this.k.setAllowStartLottieAnimation(false);
-                            this.k.setAutoRepeat(0);
-                        } else {
-                            this.k.setAllowStartLottieAnimation(true);
-                            this.k.setAllowStartAnimation(true);
-                            this.k.setAutoRepeat(1);
-                            i11 = 0;
-                        }
-                        this.k.setAllowDecodeSingleFrame(true);
-                        this.k.setRoundRadius((i12 != 5 || i12 == 6 || i12 == 27) ? AndroidUtilities.dp(6.0f) : i12 == 24 ? AndroidUtilities.dp(14.0f) : i11);
-                        v();
-                        k();
-                    }
-                } else {
-                    imageLocation2 = null;
-                }
-                drawable = svgThumb;
-                if (str2 == null) {
-                }
-                w(this.k);
-                if (i12 != 13) {
-                }
-                this.k.setLayerNum(7);
-                if (i12 != 9) {
-                }
-                this.k.setLayerNum(6656);
-                this.k.setAspectFit(true);
-                if (i12 != 12) {
-                }
-                i11 = 0;
-                this.k.setAllowStartAnimation(false);
-                this.k.setAllowStartLottieAnimation(false);
-                this.k.setAutoRepeat(0);
-                this.k.setAllowDecodeSingleFrame(true);
-                this.k.setRoundRadius((i12 != 5 || i12 == 6 || i12 == 27) ? AndroidUtilities.dp(6.0f) : i12 == 24 ? AndroidUtilities.dp(14.0f) : i11);
-                v();
-                k();
+                this.H = porterDuffColorFilter;
             }
         }
     }
 
-    public final void k() {
-        if (this.b != null) {
-            for (int i10 = 0; i10 < this.b.size(); i10++) {
-                View view = (View) this.b.get(i10);
-                if (view != null) {
-                    view.invalidate();
-                }
+    public final void l(View view) {
+        this.d.a = view;
+        this.e.a = view;
+        this.h = view;
+    }
+
+    public final void m(boolean z10, boolean z11) {
+        if (this.y == z10) {
+            return;
+        }
+        if (z11) {
+            if (this.E == null) {
+                this.E = new bi.td(1, 8);
             }
+            this.y = z10;
+            invalidate();
+            return;
         }
-        if (this.c != null) {
-            for (int i11 = 0; i11 < this.c.size(); i11++) {
-                x5 x5Var = (x5) this.c.get(i11);
-                if (x5Var != null) {
-                    x5Var.invalidate();
-                }
-            }
+        this.y = z10;
+        if (z10 && this.E == null) {
+            this.E = new bi.td(1, 8);
+        } else if (!z10 && this.E != null) {
+            this.E = null;
         }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x002c, code lost:
-    
-        if (r2 != 2964141614563343L) goto L17;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean l() {
-        Boolean bool = this.o;
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        TLRPC.Document document = this.e;
-        boolean z10 = false;
-        if (document != null) {
-            TLRPC.InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(document);
-            if (!(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmojiDefaultStatuses)) {
-                if (inputStickerSet instanceof TLRPC.TL_inputStickerSetID) {
-                    long j10 = inputStickerSet.id;
-                    if (j10 != 773947703670341676L) {
-                    }
-                }
-                this.o = Boolean.valueOf(z10);
-            }
-            z10 = true;
-            this.o = Boolean.valueOf(z10);
-        }
-        return z10;
-    }
-
-    public final void o(View view) {
-        ArrayList arrayList = this.b;
-        if (arrayList != null) {
-            arrayList.remove(view);
-        }
-        this.m = false;
-        v();
-    }
-
-    public final void p(x5 x5Var) {
-        ArrayList arrayList = this.c;
-        if (arrayList != null) {
-            arrayList.remove(x5Var);
-        }
-        this.m = false;
-        v();
-    }
-
-    public final void q(long j10) {
-        ci.f3 f3Var = this.k;
-        if (f3Var != null) {
-            if (this.g == 8) {
-                j10 = 0;
-            }
-            f3Var.setCurrentTime(j10);
-        }
-    }
-
-    public final void r(String str) {
-        int i10 = this.g;
-        if ((i10 == 20 || i10 == 21) && !TextUtils.isEmpty(str) && this.k == null) {
-            e();
-            this.j = true;
-            this.k.setImageBitmap(Emoji.getEmojiDrawable(str));
-            this.k.setCrossfadeWithOldImage(true);
-        }
+        this.e.f(z10, true);
+        invalidate();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        float f7 = i10 / 255.0f;
-        this.l = f7;
-        ci.f3 f3Var = this.k;
-        if (f3Var != null) {
-            f3Var.setAlpha(f7);
-        }
+        this.v = i10;
+    }
+
+    public r5(View view, int i10, boolean z10) {
+        this(i10, 7, view, z10);
+    }
+
+    public r5(int i10, int i11, View view, boolean z10) {
+        this.a = false;
+        this.c = new OvershootInterpolator(2.0f);
+        ds dsVar = ds.g;
+        h6 h6Var = new h6((View) null, 300L, dsVar);
+        this.d = h6Var;
+        h6 h6Var2 = new h6((View) null, 300L, dsVar);
+        this.e = h6Var2;
+        this.f = new Drawable[2];
+        this.v = 255;
+        this.K = new Rect();
+        this.L = new pg(this, 7);
+        h6Var.a = view;
+        this.h = view;
+        h6Var2.a = view;
+        this.s = i10;
+        this.b = i11;
+        this.r = z10;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.q = colorFilter;
-        if (this.k == null || this.e == null) {
-            this.p = colorFilter;
-        } else if (c()) {
-            this.k.setColorFilter(colorFilter);
-        }
-    }
-
-    public final void t(long j10) {
-        ci.f3 f3Var = this.k;
-        if (f3Var != null) {
-            if (this.g == 8) {
-                j10 = 0;
-            }
-            if (f3Var.getLottieAnimation() != null) {
-                this.k.getLottieAnimation().V(j10);
-            }
-            if (this.k.getAnimation() != null) {
-                this.k.getAnimation().D(j10);
-            }
-        }
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("AnimatedEmojiDrawable{");
-        TLRPC.Document document = this.e;
-        return a1.g.s(sb2, document == null ? "null" : MessageObject.findAnimatedEmojiEmoticon(document, null), "}");
-    }
-
-    public final void v() {
-        ArrayList arrayList;
-        if (this.k == null) {
-            return;
-        }
-        ArrayList arrayList2 = this.b;
-        boolean z10 = (arrayList2 != null && arrayList2.size() > 0) || ((arrayList = this.c) != null && arrayList.size() > 0) || this.m;
-        if (z10 != this.a) {
-            this.a = z10;
-            if (z10) {
-                this.k.onAttachedToWindow();
-            } else {
-                this.k.onDetachedFromWindow();
-            }
-            if (this.a) {
-                return;
-            }
-            ah.j jVar = w;
-            AndroidUtilities.cancelRunOnUIThread(jVar);
-            AndroidUtilities.runOnUIThread(jVar, 5000L);
-        }
-    }
-
-    public final void w(ImageReceiver imageReceiver) {
-        int i10 = this.g;
-        if (i10 == 7 || i10 == 9 || i10 == 10) {
-            imageReceiver.setAutoRepeatCount(2);
-            return;
-        }
-        if (i10 == 11 || i10 == 18 || i10 == 14 || i10 == 6 || i10 == 5 || i10 == 22) {
-            imageReceiver.setAutoRepeatCount(1);
-        } else if (i10 == 17) {
-            imageReceiver.setAutoRepeatCount(0);
-        }
-    }
-
-    public final void y() {
-        int i10 = this.g;
-        if (i10 == 0 || i10 == 26) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.k6.o2.descent()) + Math.abs(org.telegram.ui.ActionBar.k6.o2.ascent())) * 1.15f) / AndroidUtilities.density);
-            return;
-        }
-        TextPaint[] textPaintArr = org.telegram.ui.ActionBar.k6.y2;
-        if (textPaintArr != null && (i10 == 1 || i10 == 4 || i10 == 19 || i10 == 20)) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.k6.y2[2].descent()) + Math.abs(textPaintArr[2].ascent())) * 1.15f) / AndroidUtilities.density);
-            return;
-        }
-        if (textPaintArr != null && i10 == 8) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.k6.y2[0].descent()) + Math.abs(textPaintArr[0].ascent())) * 1.15f) / AndroidUtilities.density);
-            return;
-        }
-        if (i10 == 14 || i10 == 15 || i10 == 17) {
-            this.d = 100;
-            return;
-        }
-        if (i10 == 11 || i10 == 22) {
-            this.d = 56;
-            return;
-        }
-        if (i10 == 27) {
-            this.d = 50;
-            return;
-        }
-        if (i10 == 24) {
-            this.d = 140;
-            return;
-        }
-        if (i10 == 23) {
-            this.d = 14;
-        } else if (i10 == 21) {
-            this.d = 90;
-        } else {
-            this.d = 34;
-        }
-    }
-
-    public r5(int i10, int i11, TLRPC.Document document) {
-        this.g = i10;
-        this.h = i11;
-        this.e = document;
-        y();
-        x();
-        j(false);
     }
 }

@@ -1,28 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class gt extends LinearLayout {
-    public final org.telegram.ui.Components.w9 a;
-    public final org.telegram.ui.ActionBar.n5 b;
-    public final org.telegram.ui.ActionBar.g6 c;
-    public TLRPC.StickerSetCovered d;
+public final /* synthetic */ class gt implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public gt(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        this.c = g6Var;
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.a = w9Var;
-        org.telegram.ui.ActionBar.n5 n5Var = new org.telegram.ui.ActionBar.n5(context);
-        this.b = n5Var;
-        n5Var.setTextSize(16);
-        n5Var.setTextColor(-1);
-        setOrientation(0);
-        addView(w9Var, w7.z5.t(24, 24, 17, 17, 0, 17, 0));
-        addView(n5Var, w7.z5.t(-2, -2, 17, 0, 0, 12, 0));
+    public /* synthetic */ gt(int i10, View view) {
+        this.a = i10;
+        this.b = view;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Cells.ga gaVar = (org.telegram.ui.Cells.ga) this.b;
+                if (i10 == NotificationCenter.emojiLoaded) {
+                    gaVar.getTextView().invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((kj0) this.b).invalidate();
+                break;
+        }
     }
 }

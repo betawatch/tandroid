@@ -7,18 +7,18 @@ import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import c0.m;
-import c5.w;
-import e0.m0;
-import j9.y;
+import com.google.android.gms.common.api.internal.q1;
+import e0.l0;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import s9.i;
+import k9.y;
+import t9.i;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -33,19 +33,15 @@ public final class e implements Runnable {
         this.c = mVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0037, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0034, code lost:
     
-        if (r4 != 5) goto L23;
+        if (r8 != 5) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x011d, code lost:
-    
-        throw new java.lang.IllegalArgumentException("Shortcut must have an intent");
-     */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x011e A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0116 A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -54,7 +50,7 @@ public final class e implements Runnable {
         String str;
         String str2;
         g0.c cVar;
-        m0[] m0VarArr;
+        l0[] l0VarArr;
         PersistableBundle persistableBundle;
         switch (this.a) {
             case 0:
@@ -86,15 +82,16 @@ public final class e implements Runnable {
                         shortcutInfoCompatSaverImpl2.h(this.c);
                         return;
                     }
-                    int i12 = i11 + 1;
-                    g0.c cVar2 = (g0.c) arrayList2.get(i11);
+                    Object obj2 = arrayList2.get(i11);
+                    i11++;
+                    g0.c cVar2 = (g0.c) obj2;
                     Set set = cVar2.j;
                     if (set != null && !set.isEmpty()) {
                         IconCompat iconCompat = cVar2.h;
                         if (iconCompat != null) {
-                            int i13 = iconCompat.i();
-                            if (i13 != 1) {
-                                if (i13 != 2) {
+                            int i12 = iconCompat.i();
+                            if (i12 != 1) {
+                                if (i12 != 2) {
                                     break;
                                 } else {
                                     str = shortcutInfoCompatSaverImpl2.a.getResources().getResourceName(iconCompat.g());
@@ -112,9 +109,9 @@ public final class e implements Runnable {
                                     cVar.k = cVar2.k;
                                     cVar.l = cVar2.l;
                                     cVar.m = cVar2.m;
-                                    m0VarArr = cVar2.i;
-                                    if (m0VarArr != null) {
-                                        cVar.i = (m0[]) Arrays.copyOf(m0VarArr, m0VarArr.length);
+                                    l0VarArr = cVar2.i;
+                                    if (l0VarArr != null) {
+                                        cVar.i = (l0[]) Arrays.copyOf(l0VarArr, l0VarArr.length);
                                     }
                                     if (cVar2.j != null) {
                                         cVar.j = new HashSet(cVar2.j);
@@ -134,14 +131,14 @@ public final class e implements Runnable {
                                         String str4 = cVar2.b;
                                         shortcutInfoCompatSaverImpl2.b.put(str4, gVar);
                                         if (f7 != null) {
-                                            w wVar = new w(shortcutInfoCompatSaverImpl2, f7, str2, false, 10);
+                                            q1 q1Var = new q1(shortcutInfoCompatSaverImpl2, f7, str2, 10);
                                             m mVar = new m();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new i(5, mVar, wVar));
+                                            shortcutInfoCompatSaverImpl2.e.submit(new i(5, mVar, q1Var));
                                             y yVar2 = (y) shortcutInfoCompatSaverImpl2.c.put(str4, mVar);
                                             if (yVar2 != null) {
                                                 yVar2.cancel(false);
                                             }
-                                            mVar.a(new w(this, str4, mVar, false, 9), shortcutInfoCompatSaverImpl2.d);
+                                            mVar.a(new q1(this, str4, mVar), shortcutInfoCompatSaverImpl2.d);
                                         }
                                     }
                                 }
@@ -161,8 +158,8 @@ public final class e implements Runnable {
                             cVar.k = cVar2.k;
                             cVar.l = cVar2.l;
                             cVar.m = cVar2.m;
-                            m0VarArr = cVar2.i;
-                            if (m0VarArr != null) {
+                            l0VarArr = cVar2.i;
+                            if (l0VarArr != null) {
                             }
                             if (cVar2.j != null) {
                             }
@@ -188,8 +185,8 @@ public final class e implements Runnable {
                         cVar.k = cVar2.k;
                         cVar.l = cVar2.l;
                         cVar.m = cVar2.m;
-                        m0VarArr = cVar2.i;
-                        if (m0VarArr != null) {
+                        l0VarArr = cVar2.i;
+                        if (l0VarArr != null) {
                         }
                         if (cVar2.j != null) {
                         }
@@ -200,9 +197,8 @@ public final class e implements Runnable {
                         if (TextUtils.isEmpty(cVar.e)) {
                         }
                     }
-                    i11 = i12;
                 }
-                break;
+                throw new IllegalArgumentException("Shortcut must have an intent");
         }
     }
 }

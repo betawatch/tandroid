@@ -5,15 +5,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import li.h5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
     public static final q0 b = new q0();
     public static final q0 c = new q0();
 
-    public static final void a(p0 p0Var, m.q registry, o lifecycle) {
+    public static final void a(p0 p0Var, m.p registry, o lifecycle) {
         Object obj;
         kotlin.jvm.internal.i.e(registry, "registry");
         kotlin.jvm.internal.i.e(lifecycle, "lifecycle");
@@ -125,6 +126,10 @@ public abstract class j0 {
         kotlin.jvm.internal.i.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new v1.c(a2));
         v1.c[] cVarArr = (v1.c[]) arrayList.toArray(new v1.c[0]);
-        return (m0) new androidx.biometric.e(u0Var.f(), new le.b((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).l(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        v1.c[] initializers = (v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length);
+        kotlin.jvm.internal.i.e(initializers, "initializers");
+        h5 h5Var = new h5();
+        h5Var.a = initializers;
+        return (m0) new a8.h0(u0Var.f(), h5Var, u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).n(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

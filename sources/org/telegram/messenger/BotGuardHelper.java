@@ -7,13 +7,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class BotGuardHelper extends BaseController {
     private static volatile BotGuardHelper[] Instance = new BotGuardHelper[4];
     private final LongSparseLongArray queryIdToBotId;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class GuardBotDecisionResultNotification {
         public final long dialogId;
         public final long guardBotId;
@@ -63,18 +63,18 @@ public class BotGuardHelper extends BaseController {
 
     public void closeGuardBotWebApp(long j10, long j11, TLRPC.JoinChatBotResult joinChatBotResult) {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.guardBotDecisionResult, new GuardBotDecisionResultNotification(j10, this.queryIdToBotId.get(j11, 0L), j11, joinChatBotResult));
-        HashSet hashSet = gi.d3.a1;
+        HashSet hashSet = hi.m3.a1;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                gi.d3 d3Var = (gi.d3) it.next();
-                gi.t4 t4Var = d3Var.w0;
-                if (t4Var != null && t4Var.g == 5) {
-                    long j12 = t4Var.b;
+                hi.m3 m3Var = (hi.m3) it.next();
+                hi.c5 c5Var = m3Var.w0;
+                if (c5Var != null && c5Var.g == 5) {
+                    long j12 = c5Var.b;
                     if (j12 == j10 || j12 == 0) {
-                        TLObject tLObject = t4Var.q;
+                        TLObject tLObject = c5Var.q;
                         if ((tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j11) {
-                            d3Var.k(false);
+                            m3Var.k(false);
                             return;
                         }
                     }
@@ -88,8 +88,8 @@ public class BotGuardHelper extends BaseController {
     }
 
     private void openGuardBotWebApp(long j10, long j11, long j12, boolean z10) {
-        org.telegram.ui.ActionBar.o2 R;
-        if (LaunchActivity.J1 == null || (R = LaunchActivity.R()) == null) {
+        org.telegram.ui.ActionBar.r2 R;
+        if (LaunchActivity.I1 == null || (R = LaunchActivity.R()) == null) {
             return;
         }
         TLRPC.User user = getMessagesController().getUser(Long.valueOf(j11));
@@ -98,20 +98,20 @@ public class BotGuardHelper extends BaseController {
                 openGuardBotWebApp(j10, j11, j12, true);
                 return;
             } else {
-                org.telegram.ui.Components.f5.o(R, user, new n0(this, j10, j11, j12, 0), new z1(8));
+                org.telegram.ui.Components.g5.n(R, user, new q0(this, j10, j11, j12, 0), new a2(8));
                 return;
             }
         }
         this.queryIdToBotId.put(j12, j11);
-        org.telegram.ui.ActionBar.o2 R2 = LaunchActivity.R();
-        gi.t4 b10 = gi.t4.b(this.currentAccount, j10, j11, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
+        org.telegram.ui.ActionBar.r2 R2 = LaunchActivity.R();
+        hi.c5 b10 = hi.c5.b(this.currentAccount, j10, j11, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
         b10.d = j12;
-        gi.d3 d3Var = new gi.d3(LaunchActivity.J1, null);
-        d3Var.x(false);
-        d3Var.B0 = true;
-        d3Var.l0 = LaunchActivity.J1;
-        d3Var.t(R2, b10);
-        d3Var.show();
+        hi.m3 m3Var = new hi.m3(LaunchActivity.I1, null);
+        m3Var.x(false);
+        m3Var.B0 = true;
+        m3Var.l0 = LaunchActivity.I1;
+        m3Var.t(R2, b10);
+        m3Var.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

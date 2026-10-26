@@ -1,257 +1,57 @@
 package fh;
 
-import android.graphics.Color;
-import c3.m;
-import eh.e;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import w7.r;
+import b2.e1;
+import e2.j;
+import e2.o;
+import m4.e0;
+import m4.n1;
+import m4.v;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public abstract class c {
-    public static e a(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new m(29);
-        eVar.d(385875968, 402653183);
-        eVar.c(385875968, 402653183);
-        eVar.b(285212672, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
+public final /* synthetic */ class c implements d, o, e0, j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ c(int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = i10;
+        this.c = i11;
     }
 
-    public static e b(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new a(0, g6Var);
-        eVar.d(-1, 687865855);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(0.5f);
-        float dpf22 = AndroidUtilities.dpf2(0.5f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static boolean c(int i10, g6 g6Var) {
-        boolean a2 = g6Var != null ? g6Var.a() : k6.I.q();
-        boolean chatBlurEnabled = SharedConfig.chatBlurEnabled();
-        if (chatBlurEnabled && !a2 && MessagesController.getInstance(i10).config.disableBlurInLightTheme.get()) {
-            chatBlurEnabled = false;
+    @Override // e2.j
+    public void accept(Object obj) {
+        switch (this.a) {
+            case 4:
+                ((n1) obj).L(this.b, this.c);
+                break;
+            default:
+                ((n1) obj).s0(this.b, this.c);
+                break;
         }
-        if (chatBlurEnabled && a2 && MessagesController.getInstance(i10).config.disableBlurInDarkTheme.get()) {
-            return false;
+    }
+
+    @Override // m4.e0
+    public void d(v vVar, int i10) {
+        vVar.d(i10, this.b, this.c);
+    }
+
+    @Override // fh.d
+    public int i(u6 u6Var, boolean z10) {
+        return z10 ? this.b : this.c;
+    }
+
+    @Override // e2.o
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 1:
+                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
+                break;
+            default:
+                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
+                break;
         }
-        return chatBlurEnabled;
-    }
-
-    public static e d(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new b(3);
-        eVar.d(-1, 687865855);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_30, 0);
-        float dpf2 = AndroidUtilities.dpf2(3.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.5f);
-        float dpf24 = AndroidUtilities.dpf2(0.5f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e e(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new m(19);
-        eVar.d(687865855, 687865855);
-        eVar.c(352321535, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(3.3333333f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(1.0f);
-        float dpf24 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e f(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new m(28);
-        eVar.d(285212672, 117440511);
-        eVar.c(TLObject.FLAG_29, 301989887);
-        eVar.b(TLObject.FLAG_29, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.667f);
-        float dpf22 = AndroidUtilities.dpf2(0.85f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e g(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new m(20);
-        eVar.d(1157627903, 0);
-        eVar.c(587202559, 0);
-        eVar.b(939524096, 0);
-        eVar.n = AndroidUtilities.dpf2(3.5f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e h(g6 g6Var) {
-        return g(g6Var);
-    }
-
-    public static e i(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new b(2);
-        eVar.d(687865855, 687865855);
-        eVar.c(352321535, 352321535);
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e j(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new b(0);
-        eVar.d(-1, 553648127);
-        eVar.c(0, 553648127);
-        eVar.b(1207959552, 83886079);
-        eVar.n = AndroidUtilities.dpf2(0.6666667f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.67f);
-        float dpf22 = AndroidUtilities.dpf2(0.67f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e k(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new m(27);
-        eVar.d(1157627903, 0);
-        eVar.c(587202559, 0);
-        eVar.b(637534208, 0);
-        eVar.n = AndroidUtilities.dpf2(4.0f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e l(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.d(0, 687865855);
-        eVar.c(0, 352321535);
-        eVar.b(805306368, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(4.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static int m(float f7, int i10, int i11) {
-        float a2 = r.a(f7, 0.0f, 1.0f);
-        if (a2 <= 0.0f) {
-            return Color.argb(0, 0, 0, 0);
-        }
-        if (a2 >= 1.0f) {
-            return Color.argb(255, Color.red(i11), Color.green(i11), Color.blue(i11));
-        }
-        int red = Color.red(i10);
-        int green = Color.green(i10);
-        int blue = Color.blue(i10);
-        float f10 = 1.0f - a2;
-        return Color.argb(r.b(Math.round(a2 * 255.0f), 0, 255), r.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, 255), r.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, 255), r.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, 255));
-    }
-
-    public static e n(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new m(21);
-        eVar.d(285212672, 117440511);
-        eVar.c(TLObject.FLAG_29, 301989887);
-        eVar.b(TLObject.FLAG_29, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.667f);
-        float dpf22 = AndroidUtilities.dpf2(0.85f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e o(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new a(2, g6Var);
-        eVar.d(-1, 553648127);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(0.55f);
-        float dpf22 = AndroidUtilities.dpf2(0.55f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e p(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new b(1);
-        eVar.d(0, 0);
-        eVar.c(0, 0);
-        eVar.b(0, 0);
-        eVar.n = 0.0f;
-        eVar.r = 0.0f;
-        eVar.f = 0.0f;
-        eVar.h = 0.0f;
-        return eVar;
-    }
-
-    public static e q(g6 g6Var) {
-        e eVar = new e(g6Var);
-        eVar.e = new a(1, g6Var);
-        eVar.d(0, 0);
-        eVar.c(0, 0);
-        eVar.b(0, 0);
-        eVar.n = 0.0f;
-        eVar.r = 0.0f;
-        eVar.f = 0.0f;
-        eVar.h = 0.0f;
-        return eVar;
     }
 }

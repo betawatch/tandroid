@@ -1,39 +1,38 @@
 package org.telegram.messenger;
 
-import android.content.Intent;
-import org.telegram.messenger.NotificationBadge;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Intent b;
+    public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ i(Intent intent, int i10) {
+    public /* synthetic */ i(ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = intent;
+        this.b = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.lambda$googleVoiceClientService_performAction$2(this.b);
+                AndroidUtilities.lambda$recycleBitmaps$0(this.b);
                 break;
             case 1:
-                NotificationBadge.AdwHomeBadger.lambda$executeBadge$0(this.b);
+                AndroidUtilities.lambda$recycleBitmaps$1(this.b);
                 break;
             case 2:
-                NotificationBadge.ApexHomeBadger.lambda$executeBadge$0(this.b);
+                DispatchQueuePoolBackground.lambda$finishCollectUpdateRunnables$3(this.b);
                 break;
             case 3:
-                NotificationBadge.AsusHomeBadger.lambda$executeBadge$0(this.b);
+                DispatchQueuePoolBackground.lambda$finishCollectUpdateRunnables$2(this.b);
                 break;
             case 4:
-                NotificationBadge.DefaultBadger.lambda$executeBadge$0(this.b);
+                MessagesStorage.lambda$updateWidgets$168(this.b);
                 break;
             default:
-                NotificationBadge.SonyHomeBadger.lambda$executeBadgeByBroadcast$0(this.b);
+                MessagesStorage.lambda$getWallpapers$83(this.b);
                 break;
         }
     }

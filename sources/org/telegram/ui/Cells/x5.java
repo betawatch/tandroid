@@ -1,6 +1,635 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.vh;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.zq;
+import org.telegram.ui.PhotoViewer;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface x5 {
+public final class x5 extends FrameLayout {
+    public static final Rect a0 = new Rect();
+    public boolean E;
+    public final boolean F;
+    public MediaController.PhotoEntry G;
+    public MediaController.SearchImage H;
+    public final Paint I;
+    public AnimatorSet J;
+    public final org.telegram.ui.ActionBar.u6 K;
+    public xh.g L;
+    public xh.f M;
+    public boolean N;
+    public boolean O;
+    public long P;
+    public boolean Q;
+    public Bitmap R;
+    public Float S;
+    public float T;
+    public v5 U;
+    public SpannableString V;
+    public SpannableString W;
+    public final t5 a;
+    public final s5 b;
+    public final FrameLayout c;
+    public final zp d;
+    public final ImageView e;
+    public final TextView f;
+    public final u5 h;
+    public AnimatorSet n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public w5 w;
+    public boolean x;
+    public int y;
+
+    public x5(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        this.F = true;
+        this.I = new Paint();
+        new Path();
+        this.T = 1.0f;
+        this.K = u6Var;
+        setWillNotDraw(false);
+        s5 s5Var = new s5(this, context);
+        this.b = s5Var;
+        addView(s5Var, gb1.g(80.0f, 80));
+        t5 t5Var = new t5(this, context);
+        this.a = t5Var;
+        t5Var.setBlurAllowed(true);
+        s5Var.addView(t5Var, gb1.g(-1.0f, -1));
+        u5 u5Var = new u5(context, 0);
+        u5Var.b = new RectF();
+        this.h = u5Var;
+        u5Var.setWillNotDraw(false);
+        u5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
+        s5Var.addView(u5Var, gb1.h(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.play_mini_video);
+        u5Var.addView(imageView, gb1.i(-2, -2, 19));
+        TextView textView = new TextView(context);
+        this.f = textView;
+        textView.setTextColor(-1);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 12.0f);
+        textView.setImportantForAccessibility(2);
+        u5Var.addView(textView, gb1.h(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
+        zp zpVar = new zp(context, 24, u6Var);
+        this.d = zpVar;
+        zpVar.setDrawBackgroundAsArc(7);
+        zpVar.b(org.telegram.ui.ActionBar.y6.W9, org.telegram.ui.ActionBar.y6.X9, org.telegram.ui.ActionBar.y6.V9);
+        addView(zpVar, gb1.h(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
+        zpVar.setVisibility(0);
+        setFocusable(true);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        addView(frameLayout, gb1.h(42, 42.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
+        this.y = AndroidUtilities.dp(80.0f);
+    }
+
+    public final boolean a() {
+        return this.d.a.q;
+    }
+
+    public final void b(int i10, boolean z10, boolean z11) {
+        this.d.a.f(i10, z10, z11);
+        boolean z12 = false;
+        if (this.x) {
+            AnimatorSet animatorSet = this.J;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+                this.J = null;
+            }
+            s5 s5Var = this.b;
+            if (z11) {
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                this.J = animatorSet2;
+                animatorSet2.playTogether(ObjectAnimator.ofFloat(s5Var, (Property<s5, Float>) View.SCALE_X, z10 ? 0.787f : 1.0f), ObjectAnimator.ofFloat(s5Var, (Property<s5, Float>) View.SCALE_Y, z10 ? 0.787f : 1.0f));
+                this.J.setDuration(200L);
+                this.J.addListener(new bh.f0(24, this, z10));
+                this.J.start();
+            } else {
+                s5Var.setScaleX(z10 ? 0.787f : 1.0f);
+                s5Var.setScaleY(z10 ? 0.787f : 1.0f);
+            }
+        }
+        MediaController.PhotoEntry photoEntry = this.G;
+        if (photoEntry != null && photoEntry.isHighQuality() && a()) {
+            z12 = true;
+        }
+        setHighQuality(z12);
+    }
+
+    public final void c(boolean z10, Float f7) {
+        if (this.N != z10) {
+            boolean isLaidOut = isLaidOut();
+            t5 t5Var = this.a;
+            if (isLaidOut) {
+                Bitmap bitmap = this.R;
+                this.R = AndroidUtilities.snapshotView(t5Var);
+                if (bitmap != null) {
+                    bitmap.recycle();
+                }
+                this.T = 0.0f;
+            } else {
+                Bitmap bitmap2 = this.R;
+                if (bitmap2 != null) {
+                    bitmap2.recycle();
+                    this.R = null;
+                }
+                this.T = 1.0f;
+            }
+            this.N = z10;
+            this.S = f7;
+            t5Var.setHasBlur(z10);
+            t5Var.invalidate();
+            if (z10) {
+                h(z10);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final void clearAnimation() {
+        super.clearAnimation();
+        AnimatorSet animatorSet = this.J;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.J = null;
+            zp zpVar = this.d;
+            float f7 = zpVar.a.q ? 0.787f : 1.0f;
+            s5 s5Var = this.b;
+            s5Var.setScaleX(f7);
+            s5Var.setScaleY(zpVar.a.q ? 0.787f : 1.0f);
+        }
+    }
+
+    public final void d(MediaController.PhotoEntry photoEntry, boolean z10, boolean z11, boolean z12, boolean z13) {
+        boolean z14 = false;
+        this.v = false;
+        this.G = photoEntry;
+        this.r = z12;
+        this.s = z13;
+        boolean z15 = photoEntry.isVideo;
+        ImageView imageView = this.e;
+        TextView textView = this.f;
+        u5 u5Var = this.h;
+        t5 t5Var = this.a;
+        if (z15 && !photoEntry.isLivePhoto()) {
+            t5Var.q(0, true);
+            u5Var.setVisibility(0);
+            imageView.setVisibility(0);
+            ((FrameLayout.LayoutParams) textView.getLayoutParams()).leftMargin = AndroidUtilities.dp(13.0f);
+            textView.setText(AndroidUtilities.formatShortDuration(this.G.duration));
+        } else if (this.G.isHighQuality() && a()) {
+            u5Var.setVisibility(0);
+            imageView.setVisibility(8);
+            ((FrameLayout.LayoutParams) textView.getLayoutParams()).leftMargin = AndroidUtilities.dp(0.0f);
+            textView.setText(LocaleController.getString(R.string.ShortHighQuality));
+        } else {
+            imageView.setVisibility(8);
+            u5Var.setVisibility(4);
+        }
+        MediaController.PhotoEntry photoEntry2 = this.G;
+        String str = photoEntry2.coverPath;
+        if (str != null) {
+            t5Var.g(str, null, org.telegram.ui.ActionBar.y6.R4);
+        } else {
+            String str2 = photoEntry2.thumbPath;
+            if (str2 != null) {
+                t5Var.g(str2, null, org.telegram.ui.ActionBar.y6.R4);
+            } else if (photoEntry2.path == null) {
+                t5Var.setImageDrawable(org.telegram.ui.ActionBar.y6.R4);
+            } else if (!photoEntry2.isVideo || photoEntry2.isLivePhoto()) {
+                MediaController.PhotoEntry photoEntry3 = this.G;
+                t5Var.p(photoEntry3.orientation, photoEntry3.invert, true);
+                t5Var.g("thumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.y6.R4);
+            } else {
+                t5Var.g("vthumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.y6.R4);
+            }
+        }
+        boolean z16 = z11 && PhotoViewer.O1(this.G.path);
+        t5Var.getImageReceiver().setVisible(!z16, true);
+        this.d.setAlpha(z16 ? 0.0f : 1.0f);
+        u5Var.setAlpha(z16 ? 0.0f : 1.0f);
+        requestLayout();
+        setHasSpoiler(photoEntry.hasSpoiler);
+        if (photoEntry.isHighQuality() && a()) {
+            z14 = true;
+        }
+        setHighQuality(z14);
+        f(photoEntry.starsAmount, z10);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00cb  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00cd  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void e(MediaController.SearchImage searchImage) {
+        t5 t5Var;
+        this.v = false;
+        this.H = searchImage;
+        this.r = false;
+        Drawable drawable = this.F ? org.telegram.ui.ActionBar.y6.R4 : getResources().getDrawable(R.drawable.nophotos);
+        TLRPC.PhotoSize photoSize = searchImage.thumbPhotoSize;
+        t5 t5Var2 = this.a;
+        if (photoSize != null) {
+            t5Var2.h(ImageLocation.getForPhoto(photoSize, searchImage.photo), null, drawable, searchImage);
+        } else {
+            TLRPC.PhotoSize photoSize2 = searchImage.photoSize;
+            if (photoSize2 != null) {
+                t5Var2.h(ImageLocation.getForPhoto(photoSize2, searchImage.photo), "80_80", drawable, searchImage);
+            } else {
+                String str = searchImage.thumbPath;
+                if (str != null) {
+                    t5Var2.g(str, null, drawable);
+                } else {
+                    if (TextUtils.isEmpty(searchImage.thumbUrl)) {
+                        TLRPC.Document document = searchImage.document;
+                        if (document != null) {
+                            MessageObject.getDocumentVideoThumb(document);
+                            TLRPC.VideoSize documentVideoThumb = MessageObject.getDocumentVideoThumb(searchImage.document);
+                            if (documentVideoThumb != null) {
+                                t5Var2.k(ImageLocation.getForDocument(documentVideoThumb, searchImage.document), null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 90), searchImage.document), "52_52", -1L, null, searchImage, 1);
+                                t5Var = t5Var2;
+                            } else {
+                                t5Var = t5Var2;
+                                t5Var.h(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 320), searchImage.document), null, drawable, searchImage);
+                            }
+                        } else {
+                            t5Var = t5Var2;
+                            t5Var.setImageDrawable(drawable);
+                        }
+                        boolean O1 = PhotoViewer.O1(searchImage.getPathToAttach());
+                        t5Var.getImageReceiver().setVisible(!O1, true);
+                        this.d.setAlpha(!O1 ? 0.0f : 1.0f);
+                        this.h.setAlpha(O1 ? 0.0f : 1.0f);
+                        requestLayout();
+                        setHasSpoiler(false);
+                        setHighQuality(false);
+                        f(0L, false);
+                    }
+                    ImageLocation forPath = ImageLocation.getForPath(searchImage.thumbUrl);
+                    if (searchImage.type == 1 && searchImage.thumbUrl.endsWith("mp4")) {
+                        forPath.imageType = 2;
+                    }
+                    t5Var2.h(forPath, null, drawable, searchImage);
+                }
+            }
+        }
+        t5Var = t5Var2;
+        boolean O12 = PhotoViewer.O1(searchImage.getPathToAttach());
+        t5Var.getImageReceiver().setVisible(!O12, true);
+        this.d.setAlpha(!O12 ? 0.0f : 1.0f);
+        this.h.setAlpha(O12 ? 0.0f : 1.0f);
+        requestLayout();
+        setHasSpoiler(false);
+        setHighQuality(false);
+        f(0L, false);
+    }
+
+    public final void f(long j10, boolean z10) {
+        SpannableStringBuilder spannableStringBuilder;
+        if (z10 == this.Q && j10 == this.P) {
+            return;
+        }
+        this.P = j10;
+        this.Q = z10;
+        if (j10 > 0) {
+            spannableStringBuilder = new SpannableStringBuilder();
+            if (this.V == null) {
+                this.V = new SpannableString("⭐");
+                zq zqVar = new zq(R.drawable.star_small_inner, 0);
+                zqVar.setScale(0.7f, 0.7f);
+                SpannableString spannableString = this.V;
+                spannableString.setSpan(zqVar, 0, spannableString.length(), 33);
+            }
+            spannableStringBuilder.append((CharSequence) this.V);
+            spannableStringBuilder.append((CharSequence) "\u2009");
+            if (z10) {
+                if (this.W == null) {
+                    this.W = new SpannableString("l");
+                    zq zqVar2 = new zq(R.drawable.msg_mini_lock2, 0);
+                    SpannableString spannableString2 = this.W;
+                    spannableString2.setSpan(zqVar2, 0, spannableString2.length(), 33);
+                }
+                spannableStringBuilder.append((CharSequence) this.W);
+            } else {
+                spannableStringBuilder.append((CharSequence) Long.toString(j10));
+            }
+        } else {
+            spannableStringBuilder = null;
+        }
+        t5 t5Var = this.a;
+        t5Var.setBlurredText(spannableStringBuilder);
+        t5Var.invalidate();
+        this.b.invalidate();
+    }
+
+    public final void g(boolean z10) {
+        zp zpVar = this.d;
+        if (z10 && zpVar.getAlpha() == 1.0f) {
+            return;
+        }
+        if (z10 || zpVar.getAlpha() != 0.0f) {
+            AnimatorSet animatorSet = this.n;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+                this.n = null;
+            }
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            this.n = animatorSet2;
+            animatorSet2.setInterpolator(new DecelerateInterpolator());
+            this.n.setDuration(180L);
+            AnimatorSet animatorSet3 = this.n;
+            float[] fArr = {z10 ? 1.0f : 0.0f};
+            u5 u5Var = this.h;
+            Property property = View.ALPHA;
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(u5Var, (Property<u5, Float>) property, fArr), ObjectAnimator.ofFloat(zpVar, (Property<zp, Float>) property, z10 ? 1.0f : 0.0f));
+            this.n.addListener(new kg.e(this, 15));
+            this.n.start();
+        }
+    }
+
+    public zp getCheckBox() {
+        return this.d;
+    }
+
+    public FrameLayout getCheckFrame() {
+        return this.c;
+    }
+
+    public org.telegram.ui.Components.y9 getImageView() {
+        return this.a;
+    }
+
+    public MediaController.PhotoEntry getPhotoEntry() {
+        return this.G;
+    }
+
+    public float getScale() {
+        return this.b.getScaleX();
+    }
+
+    public View getVideoInfoContainer() {
+        return this.h;
+    }
+
+    public final void h(boolean z10) {
+        t5 t5Var;
+        s5 s5Var = this.b;
+        if (s5Var == null || (t5Var = this.a) == null || t5Var.getMeasuredHeight() <= 0 || t5Var.getMeasuredWidth() <= 0) {
+            return;
+        }
+        if (z10) {
+            if (this.M == null) {
+                this.M = xh.f.e(s5Var);
+            }
+        } else {
+            xh.f fVar = this.M;
+            if (fVar != null) {
+                fVar.b(this);
+                this.M = null;
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        xh.f fVar = this.M;
+        if (fVar != null) {
+            if (fVar.i) {
+                this.M = xh.f.e(this);
+            } else {
+                fVar.a(this);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        xh.f fVar = this.M;
+        if (fVar != null) {
+            fVar.b(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        MediaController.PhotoEntry photoEntry;
+        MediaController.SearchImage searchImage;
+        boolean z10 = this.d.a.q;
+        t5 t5Var = this.a;
+        if (!z10 && this.b.getScaleX() == 1.0f && t5Var.getImageReceiver().hasNotThumb() && t5Var.getImageReceiver().getCurrentAlpha() == 1.0f && (((photoEntry = this.G) == null || !PhotoViewer.O1(photoEntry.path)) && ((searchImage = this.H) == null || !PhotoViewer.O1(searchImage.getPathToAttach())))) {
+            return;
+        }
+        int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.X9, this.K);
+        Paint paint = this.I;
+        paint.setColor(w02);
+        canvas.drawRect(0.0f, 0.0f, t5Var.getMeasuredWidth(), t5Var.getMeasuredHeight(), paint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        StringBuilder sb2 = new StringBuilder();
+        MediaController.PhotoEntry photoEntry = this.G;
+        if (photoEntry == null || !photoEntry.isLivePhoto()) {
+            MediaController.PhotoEntry photoEntry2 = this.G;
+            if (photoEntry2 == null || !photoEntry2.isVideo) {
+                sb2.append(LocaleController.getString(R.string.AttachPhoto));
+            } else {
+                StringBuilder sb3 = new StringBuilder();
+                org.telegram.ui.d3.p(R.string.AttachVideo, ", ", sb3);
+                sb3.append(LocaleController.formatDuration(this.G.duration));
+                sb2.append(sb3.toString());
+            }
+        } else {
+            sb2.append(LocaleController.getString(R.string.AttachLivePhoto));
+        }
+        if (this.G != null) {
+            sb2.append(". ");
+            sb2.append(LocaleController.getInstance().getFormatterStats().format(this.G.dateTaken * 1000));
+        }
+        accessibilityNodeInfo.setText(sb2);
+        if (this.d.a.q) {
+            accessibilityNodeInfo.setSelected(true);
+        }
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_photo, LocaleController.getString(R.string.Open)));
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (this.x) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), vh.D(2.0f, this.y, TLObject.FLAG_30));
+            return;
+        }
+        if (this.E) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.r ? 0 : 6) + 80), TLObject.FLAG_30));
+        } else {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp((this.r ? 0 : 6) + 80), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0078 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0073  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        FrameLayout frameLayout = this.c;
+        Rect rect = a0;
+        frameLayout.getHitRect(rect);
+        boolean z10 = true;
+        if (motionEvent.getAction() == 0) {
+            if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                this.v = true;
+                invalidate();
+                return z10 ? super.onTouchEvent(motionEvent) : z10;
+            }
+        } else if (this.v) {
+            if (motionEvent.getAction() == 1) {
+                getParent().requestDisallowInterceptTouchEvent(true);
+                this.v = false;
+                playSoundEffect(0);
+                sendAccessibilityEvent(1);
+                this.w.b(this);
+                invalidate();
+            } else if (motionEvent.getAction() == 3) {
+                this.v = false;
+                invalidate();
+            } else if (motionEvent.getAction() == 2 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                this.v = false;
+                invalidate();
+            }
+        }
+        z10 = false;
+        if (z10) {
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
+        if (i10 == R.id.acc_action_open_photo) {
+            View view = (View) getParent();
+            view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), 0, getLeft(), (getHeight() + getTop()) - 1, 0));
+            view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), 1, getLeft(), (getHeight() + getTop()) - 1, 0));
+        }
+        return super.performAccessibilityAction(i10, bundle);
+    }
+
+    public void setDelegate(w5 w5Var) {
+        this.w = w5Var;
+    }
+
+    public void setFastScrollDelegate(v5 v5Var) {
+        this.U = v5Var;
+    }
+
+    public void setHasSpoiler(boolean z10) {
+        c(z10, null);
+    }
+
+    public void setHighQuality(boolean z10) {
+        boolean z11 = z10 && a();
+        if (this.O != z11) {
+            this.O = z11;
+            MediaController.PhotoEntry photoEntry = this.G;
+            if (photoEntry != null) {
+                boolean z12 = photoEntry.isVideo;
+                ImageView imageView = this.e;
+                u5 u5Var = this.h;
+                TextView textView = this.f;
+                if (z12 && !photoEntry.isLivePhoto()) {
+                    this.a.q(0, true);
+                    u5Var.setVisibility(0);
+                    imageView.setVisibility(0);
+                    ((FrameLayout.LayoutParams) textView.getLayoutParams()).leftMargin = AndroidUtilities.dp(13.0f);
+                    textView.setText(AndroidUtilities.formatShortDuration(this.G.duration));
+                    return;
+                }
+                if (!this.G.isHighQuality()) {
+                    imageView.setVisibility(8);
+                    u5Var.setVisibility(4);
+                } else {
+                    u5Var.setVisibility(0);
+                    imageView.setVisibility(8);
+                    ((FrameLayout.LayoutParams) textView.getLayoutParams()).leftMargin = AndroidUtilities.dp(0.0f);
+                    textView.setText(LocaleController.getString(R.string.ShortHighQuality));
+                }
+            }
+        }
+    }
+
+    public void setIsVertical(boolean z10) {
+        this.E = z10;
+    }
+
+    public void setItemSize(int i10) {
+        this.y = i10;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
+        int i11 = this.y;
+        layoutParams.height = i11;
+        layoutParams.width = i11;
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.c.getLayoutParams();
+        layoutParams2.gravity = 53;
+        layoutParams2.leftMargin = 0;
+        zp zpVar = this.d;
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) zpVar.getLayoutParams();
+        layoutParams3.gravity = 53;
+        layoutParams3.leftMargin = 0;
+        int dp = AndroidUtilities.dp(5.0f);
+        layoutParams3.topMargin = dp;
+        layoutParams3.rightMargin = dp;
+        zpVar.setDrawBackgroundAsArc(6);
+        this.x = true;
+    }
+
+    public void setNum(int i10) {
+        this.d.setNum(i10);
+    }
+
+    public void setOnCheckClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
+    }
 }

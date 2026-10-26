@@ -1,22 +1,22 @@
 package com.google.android.gms.cast;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c6.v;
 import com.google.android.gms.common.internal.ReflectedParcelable;
+import d6.v;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import o6.a;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import u6.c;
-import w7.f0;
+import p6.a;
+import v6.c;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class MediaTrack extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaTrack> CREATOR = new v(16);
@@ -110,7 +110,7 @@ public final class MediaTrack extends a implements ReflectedParcelable {
         if (z10 != (jSONObject2 == null)) {
             return false;
         }
-        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && g6.a.d(this.c, mediaTrack.c) && g6.a.d(this.d, mediaTrack.d) && g6.a.d(this.e, mediaTrack.e) && g6.a.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && g6.a.d(this.n, mediaTrack.n);
+        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && h6.a.d(this.c, mediaTrack.c) && h6.a.d(this.d, mediaTrack.d) && h6.a.d(this.e, mediaTrack.e) && h6.a.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && h6.a.d(this.n, mediaTrack.n);
     }
 
     public final int hashCode() {
@@ -121,19 +121,19 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.s;
         this.r = jSONObject == null ? null : jSONObject.toString();
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 2, 8);
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 2, 8);
         parcel.writeLong(this.a);
-        f0.s(parcel, 3, 4);
+        df.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        f0.l(parcel, 4, this.c);
-        f0.l(parcel, 5, this.d);
-        f0.l(parcel, 6, this.e);
-        f0.l(parcel, 7, this.f);
-        f0.s(parcel, 8, 4);
+        df.l(parcel, 4, this.c);
+        df.l(parcel, 5, this.d);
+        df.l(parcel, 6, this.e);
+        df.l(parcel, 7, this.f);
+        df.s(parcel, 8, 4);
         parcel.writeInt(this.h);
-        f0.n(parcel, 9, this.n);
-        f0.l(parcel, 10, this.r);
-        f0.r(parcel, q6);
+        df.n(parcel, 9, this.n);
+        df.l(parcel, 10, this.r);
+        df.r(parcel, q5);
     }
 }

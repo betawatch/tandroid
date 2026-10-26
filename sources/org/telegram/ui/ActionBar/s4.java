@@ -1,37 +1,83 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
+import android.widget.RelativeLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s4 extends ArrayAdapter {
-    public final /* synthetic */ y4 a;
+public final class s4 extends Animation {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ a5 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s4(y4 y4Var, Context context) {
-        super(context, 0);
-        this.a = y4Var;
+    public /* synthetic */ s4(a5 a5Var, int i10, int i11, float f7, float f10, int i12) {
+        this.a = i12;
+        this.e = a5Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = f10;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        y4 y4Var = this.a;
-        com.google.firebase.messaging.n nVar = y4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i10);
-        int width = y4Var.I.getWidth();
-        if (view != null) {
-            int i11 = nVar.a;
-            a5.e(view, menuItem, ((y4) nVar.e).Q.j != null);
-        } else {
-            view = a5.b(((y4) nVar.e).Q, (Context) nVar.c, menuItem, true, false, false);
-            int i12 = nVar.b;
-            view.setPadding(i12, 0, i12, 0);
+    @Override // android.view.animation.Animation
+    public final void applyTransformation(float f7, Transformation transformation) {
+        switch (this.a) {
+            case 0:
+                int i10 = this.b;
+                int i11 = this.c;
+                int i12 = (int) (f7 * (i10 - i11));
+                a5 a5Var = this.e;
+                RelativeLayout relativeLayout = a5Var.f;
+                a5.l(relativeLayout, relativeLayout.getLayoutParams().width, i11 + i12);
+                if (a5Var.M) {
+                    relativeLayout.setY(this.d - relativeLayout.getHeight());
+                    a5.a(a5Var);
+                    break;
+                }
+                break;
+            case 1:
+                int i13 = this.b;
+                int i14 = this.c;
+                a5 a5Var2 = this.e;
+                RelativeLayout relativeLayout2 = a5Var2.f;
+                a5.l(relativeLayout2, ((int) (f7 * (i13 - i14))) + i14, relativeLayout2.getLayoutParams().height);
+                relativeLayout2.setX(this.d - relativeLayout2.getWidth());
+                a5Var2.g.setX(relativeLayout2.getWidth() - i14);
+                a5Var2.h.setX(relativeLayout2.getWidth() - i13);
+                break;
+            case 2:
+                int i15 = this.b;
+                int i16 = this.c;
+                int i17 = (int) (f7 * (i15 - i16));
+                a5 a5Var3 = this.e;
+                RelativeLayout relativeLayout3 = a5Var3.f;
+                a5.l(relativeLayout3, relativeLayout3.getLayoutParams().width, i17 + i16);
+                if (a5Var3.M) {
+                    relativeLayout3.setY(this.d - (relativeLayout3.getHeight() - i16));
+                    a5.a(a5Var3);
+                    break;
+                }
+                break;
+            default:
+                int i18 = this.b;
+                int i19 = this.c;
+                a5 a5Var4 = this.e;
+                RelativeLayout relativeLayout4 = a5Var4.f;
+                a5.l(relativeLayout4, ((int) (f7 * (i18 - i19))) + i19, relativeLayout4.getLayoutParams().height);
+                relativeLayout4.setX(this.d - relativeLayout4.getWidth());
+                a5Var4.g.setX(relativeLayout4.getWidth() - i18);
+                a5Var4.h.setX(relativeLayout4.getWidth() - i19);
+                break;
         }
-        view.setMinimumWidth(width);
-        return view;
+    }
+
+    public /* synthetic */ s4(a5 a5Var, int i10, int i11, float f7, int i12) {
+        this.a = i12;
+        this.e = a5Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = f7;
     }
 }

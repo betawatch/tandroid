@@ -1,28 +1,29 @@
 package j2;
 
-import b2.a2;
-import b2.f1;
-import b2.y0;
-import u2.d0;
+import b2.b2;
+import b2.g1;
+import b2.z0;
+import n4.s;
+import u2.c0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface b {
     void a(i2.e eVar);
 
-    void b(d0 d0Var);
+    void b(c0 c0Var);
 
-    void c(a2 a2Var);
+    void c(b2 b2Var);
 
-    void d(f1 f1Var, qf.b bVar);
+    void d(a aVar, c0 c0Var);
 
-    void e(a aVar, d0 d0Var);
+    void e(g1 g1Var, s sVar);
 
     void f(a aVar, int i10, long j10);
 
     void g(a aVar, int i10);
 
-    void h(y0 y0Var);
+    void h(z0 z0Var);
 
     void onRenderedFirstFrame(a aVar);
 

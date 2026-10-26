@@ -1,15 +1,15 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class k7 {
-    public final l9 a;
-    public final j7 b;
-    public final e7 c;
+    public final d6 a;
+    public final i6 b;
+    public final i7 c;
 
-    public /* synthetic */ k7(u2.c cVar) {
-        this.a = (l9) cVar.b;
-        this.b = (j7) cVar.c;
-        this.c = (e7) cVar.d;
+    public /* synthetic */ k7(s4.d dVar) {
+        this.a = (d6) dVar.b;
+        this.b = (i6) dVar.c;
+        this.c = (i7) dVar.d;
     }
 }

@@ -1,13 +1,16 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class e4 {
-    public static final e4 c = new e4();
-    public volatile Thread a;
-    public volatile e4 b;
+import sun.misc.Unsafe;
 
-    public e4() {
-        f4.f.d(this, Thread.currentThread());
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public abstract /* synthetic */ class e4 {
+    public static /* synthetic */ boolean a(Unsafe unsafe, c4 c4Var, long j10, Object obj, Object obj2) {
+        while (!d4.a(unsafe, c4Var, j10, obj, obj2)) {
+            if (unsafe.getObject(c4Var, j10) != obj) {
+                return false;
+            }
+        }
+        return true;
     }
 }

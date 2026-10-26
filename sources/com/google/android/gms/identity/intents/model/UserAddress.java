@@ -1,13 +1,13 @@
 package com.google.android.gms.identity.intents.model;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import e6.i;
-import o6.a;
-import w7.f0;
+import f6.i;
+import p6.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class UserAddress extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<UserAddress> CREATOR = new i(8);
@@ -29,24 +29,24 @@ public final class UserAddress extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.l(parcel, 3, this.b);
-        f0.l(parcel, 4, this.c);
-        f0.l(parcel, 5, this.d);
-        f0.l(parcel, 6, this.e);
-        f0.l(parcel, 7, this.f);
-        f0.l(parcel, 8, this.h);
-        f0.l(parcel, 9, this.n);
-        f0.l(parcel, 10, this.r);
-        f0.l(parcel, 11, this.s);
-        f0.l(parcel, 12, this.v);
-        f0.l(parcel, 13, this.w);
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 2, this.a);
+        df.l(parcel, 3, this.b);
+        df.l(parcel, 4, this.c);
+        df.l(parcel, 5, this.d);
+        df.l(parcel, 6, this.e);
+        df.l(parcel, 7, this.f);
+        df.l(parcel, 8, this.h);
+        df.l(parcel, 9, this.n);
+        df.l(parcel, 10, this.r);
+        df.l(parcel, 11, this.s);
+        df.l(parcel, 12, this.v);
+        df.l(parcel, 13, this.w);
         boolean z10 = this.x;
-        f0.s(parcel, 14, 4);
+        df.s(parcel, 14, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        f0.l(parcel, 15, this.y);
-        f0.l(parcel, 16, this.E);
-        f0.r(parcel, q6);
+        df.l(parcel, 15, this.y);
+        df.l(parcel, 16, this.E);
+        df.r(parcel, q5);
     }
 }

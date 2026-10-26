@@ -1,30 +1,19 @@
 package bc;
 
-import k2.h;
+import y7.ca;
+import y7.ea;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d {
-    public boolean a;
-    public boolean b;
-    public boolean c;
+    public final e a;
+    public final sb.d b;
+    public final ca c;
 
-    public d() {
-        this.a = false;
-        this.b = false;
-        this.c = false;
-    }
-
-    public h a() {
-        if (this.a || !(this.b || this.c)) {
-            return new h(this);
-        }
-        throw new IllegalStateException("Secondary offload attribute fields are true but primary isFormatSupported is false");
-    }
-
-    public /* synthetic */ d(boolean z10, boolean z11, boolean z12) {
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
+    public d(e eVar, sb.d dVar) {
+        ca b10 = ea.b();
+        this.a = eVar;
+        this.b = dVar;
+        this.c = b10;
     }
 }

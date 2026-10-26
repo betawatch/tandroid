@@ -1,98 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.TextureView;
-import android.view.View;
-import java.util.ArrayList;
+import android.graphics.Typeface;
+import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class y11 extends TextureView {
-    public static Boolean f;
-    public w11 a;
-    public final o1.a b;
-    public final ArrayList c;
-    public Runnable d;
+public final class y11 {
+    public int a;
+    public int b;
+    public int c;
+    public TLRPC.MessageEntity d;
     public boolean e;
 
-    public y11(Context context, Runnable runnable) {
-        super(context);
-        this.b = new o1.a(this, 1);
-        this.c = new ArrayList();
-        this.d = runnable;
-        setOpaque(false);
-        setSurfaceTextureListener(new t50(this, 2));
+    public y11() {
     }
 
-    public static void b(Runnable runnable) {
-        if (runnable == null) {
-            return;
+    public final void a(TextPaint textPaint) {
+        Typeface b10 = b();
+        if (b10 != null) {
+            textPaint.setTypeface(b10);
         }
-        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
-            AndroidUtilities.runOnUIThread(runnable);
+        if ((this.a & 16) != 0) {
+            textPaint.setFlags(textPaint.getFlags() | 8);
         } else {
-            runnable.run();
+            textPaint.setFlags(textPaint.getFlags() & (-9));
+        }
+        int i10 = this.a;
+        if ((i10 & 8) == 0 && (i10 & 8192) == 0) {
+            textPaint.setFlags(textPaint.getFlags() & (-17));
+        } else {
+            textPaint.setFlags(textPaint.getFlags() | 16);
+        }
+        if ((this.a & 512) != 0) {
+            textPaint.bgColor = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.R9, false);
+        }
+        int i11 = this.a;
+        if ((i11 & 8192) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.q7, false));
+        } else if ((i11 & 4096) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Oh, false));
         }
     }
 
-    public static boolean c() {
-        if (f == null) {
-            f = Boolean.valueOf(MessagesController.getGlobalMainSettings().getBoolean("nothanos", false));
+    public final Typeface b() {
+        if (this.e) {
+            return (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
         }
-        Boolean bool = f;
-        return bool == null || !bool.booleanValue();
+        int i10 = this.a;
+        if ((i10 & 4) != 0 || (i10 & 2048) != 0) {
+            return Typeface.MONOSPACE;
+        }
+        if ((i10 & 1) != 0 && (i10 & 2) != 0) {
+            return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+        }
+        if ((i10 & 1) != 0) {
+            return AndroidUtilities.bold();
+        }
+        if ((i10 & 2) != 0) {
+            return AndroidUtilities.getTypeface("fonts/ritalic.ttf");
+        }
+        return null;
     }
 
-    public final void a(View view) {
-        int i10 = 0;
-        int i11 = 0;
-        boolean z10 = false;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            x11 x11Var = (x11) arrayList.get(i11);
-            if (x11Var.a == view) {
-                Runnable runnable = x11Var.d;
-                if (runnable != null) {
-                    b(runnable);
-                    x11Var.d = null;
-                }
-                arrayList.remove(i11);
-                i11--;
-                z10 = true;
-            }
-            i11++;
-        }
-        if (z10) {
+    public final void c(y11 y11Var) {
+        TLRPC.MessageEntity messageEntity;
+        this.a |= y11Var.a;
+        if (this.d != null || (messageEntity = y11Var.d) == null) {
             return;
         }
-        w11 w11Var = this.a;
-        ArrayList arrayList2 = w11Var.W;
-        if (w11Var.b.get()) {
-            Handler handler = w11Var.getHandler();
-            if (handler != null) {
-                handler.sendMessage(handler.obtainMessage(5, view));
-                return;
-            }
-            while (i10 < arrayList2.size()) {
-                v11 v11Var = (v11) arrayList2.get(i10);
-                if (v11Var.a.contains(view)) {
-                    Runnable runnable2 = v11Var.f;
-                    if (runnable2 != null) {
-                        b(runnable2);
-                        v11Var.f = null;
-                    }
-                    arrayList2.remove(i10);
-                    i10--;
-                }
-                i10++;
-            }
-        }
+        this.d = messageEntity;
+    }
+
+    public y11(y11 y11Var) {
+        this.a = y11Var.a;
+        this.b = y11Var.b;
+        this.c = y11Var.c;
+        this.d = y11Var.d;
+        this.e = y11Var.e;
     }
 }

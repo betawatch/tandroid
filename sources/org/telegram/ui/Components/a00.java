@@ -4,7 +4,7 @@ import android.graphics.Point;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a00 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,9 +72,9 @@ public final /* synthetic */ class a00 implements Runnable {
                 e00 e00Var3 = this.b;
                 int i18 = this.c;
                 int i19 = this.d;
-                pa paVar = e00Var3.I;
-                paVar.l = i18;
-                paVar.m = i19;
+                ra raVar = e00Var3.I;
+                raVar.l = i18;
+                raVar.m = i19;
                 break;
         }
     }

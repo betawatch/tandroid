@@ -1,64 +1,35 @@
 package m4;
 
-import android.os.Bundle;
 import j$.util.Objects;
-import v7.u6;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class q1 {
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public final int a;
-    public final String b;
-    public final Bundle c;
+    public static final String b;
+    public final f9.t0 a;
 
     static {
-        String str = e2.m0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
+        new q1(new HashSet());
+        String str = e2.n0.a;
+        b = Integer.toString(0, 36);
     }
 
-    public q1(int i10) {
-        this("no error message provided", i10, Bundle.EMPTY);
-    }
-
-    public final Bundle a() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(d, this.a);
-        bundle.putString(e, this.b);
-        Bundle bundle2 = this.c;
-        if (!bundle2.isEmpty()) {
-            bundle.putBundle(f, bundle2);
-        }
-        return bundle;
+    public q1(HashSet hashSet) {
+        this.a = f9.t0.u(hashSet);
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof q1)) {
-            return false;
+        if (obj instanceof q1) {
+            return this.a.equals(((q1) obj).a);
         }
-        q1 q1Var = (q1) obj;
-        return this.a == q1Var.a && Objects.equals(this.b, q1Var.b);
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), this.b);
-    }
-
-    public q1(String str, int i10, Bundle bundle) {
-        boolean z10 = true;
-        if (i10 >= 0 && i10 != 1) {
-            z10 = false;
-        }
-        u6.g(z10);
-        this.a = i10;
-        this.b = str;
-        this.c = bundle;
+        return Objects.hash(this.a);
     }
 }

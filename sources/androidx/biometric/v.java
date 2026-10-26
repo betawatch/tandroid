@@ -1,6 +1,45 @@
 package androidx.biometric;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import a8.z0;
+import java.lang.ref.WeakReference;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class v extends v7.l {
+public final class v extends d {
+    public final WeakReference a;
+
+    public v(x xVar) {
+        this.a = new WeakReference(xVar);
+    }
+
+    @Override // androidx.biometric.d
+    public final void a(int i10, CharSequence charSequence) {
+        WeakReference weakReference = this.a;
+        if (weakReference.get() == null || ((x) weakReference.get()).o || !((x) weakReference.get()).n) {
+            return;
+        }
+        ((x) weakReference.get()).d(new e(i10, charSequence));
+    }
+
+    @Override // androidx.biometric.d
+    public final void b(s sVar) {
+        WeakReference weakReference = this.a;
+        if (weakReference.get() == null || !((x) weakReference.get()).n) {
+            return;
+        }
+        int i10 = -1;
+        if (sVar.b == -1) {
+            t tVar = sVar.a;
+            int c10 = ((x) weakReference.get()).c();
+            if ((c10 & 32767) != 0 && !z0.a(c10)) {
+                i10 = 2;
+            }
+            sVar = new s(tVar, i10);
+        }
+        x xVar = (x) weakReference.get();
+        if (xVar.r == null) {
+            xVar.r = new androidx.lifecycle.z();
+        }
+        x.h(xVar.r, sVar);
+    }
 }

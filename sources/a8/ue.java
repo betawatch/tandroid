@@ -1,0 +1,22 @@
+package a8;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public abstract class ue {
+    public static Parcelable a(Parcelable parcelable, Parcelable.Creator creator) {
+        if (parcelable == null) {
+            return null;
+        }
+        Parcel obtain = Parcel.obtain();
+        try {
+            parcelable.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            return (Parcelable) creator.createFromParcel(obtain);
+        } finally {
+            obtain.recycle();
+        }
+    }
+}

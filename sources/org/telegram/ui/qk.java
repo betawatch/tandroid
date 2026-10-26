@@ -1,20 +1,38 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class qk extends qy {
-    public final /* synthetic */ sn N;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk(sn snVar, sn snVar2, FrameLayout frameLayout, nj njVar, int i10, long j10, long j11) {
-        super(snVar2, frameLayout, njVar, i10, j10, j11);
-        this.N = snVar;
+public final class qk extends cv0 {
+    public qk(ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
     }
 
-    @Override // org.telegram.ui.qy
-    public final void h() {
-        this.N.Bc();
+    @Override // org.telegram.ui.cv0
+    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
+        if (f7 > 0.0f) {
+            View view = this.e;
+            if (view instanceof org.telegram.ui.Cells.s1) {
+                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view;
+                int max = (int) Math.max(f12, f11);
+                int min = (int) Math.min(f13, s1Var.getMeasuredHeight() + f11);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(f10, max, s1Var.getMeasuredWidth() + f10, min);
+                canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
+                canvas.translate(f10, f11 + s1Var.getPaddingTop());
+                s1Var.Ed = true;
+                s1Var.Y1(canvas);
+                if (s1Var.h4() && s1Var.getCurrentMessagesGroup() == null) {
+                    s1Var.m2(1.0f, canvas, false);
+                }
+                s1Var.Ed = false;
+                canvas.restore();
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class m extends Binder implements d {
     public static final /* synthetic */ int b = 0;
@@ -40,7 +40,7 @@ public final class m extends Binder implements d {
         b bVar = null;
         r5 = null;
         Bundle bundle2 = null;
-        y yVar = null;
+        z zVar = null;
         a aVar = null;
         if (i10 == 3) {
             parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
@@ -89,13 +89,13 @@ public final class m extends Binder implements d {
             parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
             n nVar2 = (n) this.a.get();
             if (nVar2 != null) {
-                yVar = nVar2.g;
+                zVar = nVar2.g;
                 i iVar = nVar2.i;
-                if (yVar != null) {
-                    float f7 = yVar.d;
-                    long j10 = yVar.n;
-                    int i13 = yVar.a;
-                    long j11 = yVar.b;
+                if (zVar != null) {
+                    float f7 = zVar.d;
+                    long j10 = zVar.n;
+                    int i13 = zVar.a;
+                    long j11 = zVar.b;
                     long j12 = -1;
                     if (j11 != -1 && ((i13 == 3 || i13 == 4 || i13 == 5) && j10 > 0)) {
                         long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -108,26 +108,26 @@ public final class m extends Binder implements d {
                         }
                         long j14 = (j12 < 0 || j13 <= j12) ? j13 < 0 ? 0L : j13 : j12;
                         ArrayList arrayList = new ArrayList();
-                        long j15 = yVar.c;
-                        long j16 = yVar.e;
-                        int i14 = yVar.f;
-                        CharSequence charSequence = yVar.h;
-                        AbstractCollection abstractCollection = yVar.r;
+                        long j15 = zVar.c;
+                        long j16 = zVar.e;
+                        int i14 = zVar.f;
+                        CharSequence charSequence = zVar.h;
+                        AbstractCollection abstractCollection = zVar.r;
                         if (abstractCollection != null) {
                             arrayList.addAll(abstractCollection);
                         }
-                        yVar = new y(yVar.a, j14, j15, yVar.d, j16, i14, charSequence, elapsedRealtime, arrayList, yVar.s, yVar.v);
+                        zVar = new z(zVar.a, j14, j15, zVar.d, j16, i14, charSequence, elapsedRealtime, arrayList, zVar.s, zVar.v);
                     }
                 }
             }
             parcel2.getClass();
             parcel2.writeNoException();
-            if (yVar == null) {
+            if (zVar == null) {
                 parcel2.writeInt(0);
                 return true;
             }
             parcel2.writeInt(1);
-            yVar.writeToParcel(parcel2, 1);
+            zVar.writeToParcel(parcel2, 1);
             return true;
         }
         if (i10 == 37) {

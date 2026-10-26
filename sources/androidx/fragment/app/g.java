@@ -1,25 +1,53 @@
 package androidx.fragment.app;
 
+import android.animation.AnimatorSet;
 import android.content.Context;
+import android.os.Build;
+import android.util.Log;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class g extends v7.v {
-    public final boolean a;
-    public boolean b;
-    public n4.s c;
+public final class g extends s0 {
+    public final f b;
+    public AnimatorSet c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(u0 operation, boolean z10) {
-        super(operation);
-        kotlin.jvm.internal.i.e(operation, "operation");
-        this.a = z10;
+    public g(f fVar) {
+        this.b = fVar;
     }
 
-    public final n4.s b(Context context) {
-        if (this.b) {
-            return this.c;
+    @Override // androidx.fragment.app.s0
+    public final void a(ViewGroup container) {
+        kotlin.jvm.internal.i.e(container, "container");
+        AnimatorSet animatorSet = this.c;
+        animatorSet.getClass();
+        animatorSet.start();
+        if (i0.K(2)) {
+            Log.v("FragmentManager", "Animator from operation " + ((Object) null) + " has started.");
         }
+    }
+
+    @Override // androidx.fragment.app.s0
+    public final void b(androidx.activity.b backEvent, ViewGroup container) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        kotlin.jvm.internal.i.e(container, "container");
+        this.c.getClass();
+        if (Build.VERSION.SDK_INT >= 34) {
+            throw null;
+        }
+    }
+
+    @Override // androidx.fragment.app.s0
+    public final void c(ViewGroup container) {
+        kotlin.jvm.internal.i.e(container, "container");
+        f fVar = this.b;
+        if (fVar.a()) {
+            return;
+        }
+        Context context = container.getContext();
+        kotlin.jvm.internal.i.d(context, "context");
+        rf.b b10 = fVar.b(context);
+        this.c = b10 != null ? (AnimatorSet) b10.c : null;
         throw null;
     }
 }

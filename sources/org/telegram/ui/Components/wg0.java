@@ -1,65 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class wg0 extends org.telegram.ui.n4 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class wg0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PipRoundVideoView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wg0(Object obj, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = obj;
+    public /* synthetic */ wg0(PipRoundVideoView pipRoundVideoView, int i10) {
+        this.a = i10;
+        this.b = pipRoundVideoView;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        MessageObject playingMessageObject;
-        switch (this.h) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
-                    pipRoundVideoView.E.set(AndroidUtilities.dpf2(1.5f), AndroidUtilities.dpf2(1.5f), getMeasuredWidth() - AndroidUtilities.dpf2(1.5f), getMeasuredHeight() - AndroidUtilities.dpf2(1.5f));
-                    canvas.drawArc(pipRoundVideoView.E, -90.0f, playingMessageObject.audioProgress * 360.0f, false, org.telegram.ui.ActionBar.k6.k2);
-                }
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // org.telegram.ui.n4, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.h) {
-            case 1:
-                super.onMeasure(i10, i11);
-                da1 da1Var = (da1) this.n;
-                if (da1Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = da1Var.d.getLayoutParams();
-                    layoutParams.width = getMeasuredWidth();
-                    layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = da1Var.e;
-                    if (imageView != null) {
-                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
-                        layoutParams2.width = getMeasuredWidth();
-                        layoutParams2.height = getMeasuredHeight();
-                        break;
-                    }
+                PipRoundVideoView pipRoundVideoView = this.b;
+                if (animator.equals(pipRoundVideoView.r)) {
+                    pipRoundVideoView.r = null;
+                    break;
                 }
                 break;
             default:
-                super.onMeasure(i10, i11);
+                PipRoundVideoView pipRoundVideoView2 = this.b;
+                pipRoundVideoView2.a(false);
+                Runnable runnable = pipRoundVideoView2.s;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }

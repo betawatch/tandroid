@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class e1 {
     public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7};
@@ -139,17 +139,17 @@ public abstract class e1 {
     }
 
     public static int e(n2 n2Var, int i10, byte[] bArr, int i11, int i12, o1 o1Var, com.google.android.gms.internal.clearcut.m mVar) {
-        int g10 = g(n2Var, bArr, i11, i12, mVar);
+        int g7 = g(n2Var, bArr, i11, i12, mVar);
         o1Var.add(mVar.c);
-        while (g10 < i12) {
-            int j10 = j(bArr, g10, mVar);
+        while (g7 < i12) {
+            int j10 = j(bArr, g7, mVar);
             if (i10 != mVar.a) {
                 break;
             }
-            g10 = g(n2Var, bArr, j10, i12, mVar);
+            g7 = g(n2Var, bArr, j10, i12, mVar);
             o1Var.add(mVar.c);
         }
-        return g10;
+        return g7;
     }
 
     public static int f(n2 n2Var, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.m mVar) {

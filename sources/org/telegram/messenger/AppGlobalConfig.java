@@ -10,9 +10,10 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class AppGlobalConfig {
+    public final ConfigLongSet agentBotIds;
     public final ConfigInt aicomposeToneExamplesNum;
     public final ConfigInt aicomposeTonePromptLengthMax;
     public final ConfigInt aicomposeToneSavedLimitDefault;
@@ -87,11 +88,11 @@ public class AppGlobalConfig {
     public final ConfigLong tonSuggestedPostAmountMin = ofLong("ton_suggested_post_amount_min", 10000000);
     public final ConfigLong tonSuggestedPostAmountMax = ofLong("ton_suggested_post_amount_max", 10000000000000L);
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConfigBoolean {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
         public static class Internal implements ConfigInternal {
             private final boolean defaultValue;
             private final String name;
@@ -128,11 +129,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConfigDouble {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
         public static class Internal implements ConfigInternal {
             private final double defaultValue;
             private final String name;
@@ -172,11 +173,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConfigInt {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
         public static class Internal implements ConfigInternal {
             private final int defaultValue;
             private final String name;
@@ -217,18 +218,18 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public interface ConfigInternal {
         boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
 
         void load(SharedPreferences sharedPreferences);
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConfigLong {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
         public static class Internal implements ConfigInternal {
             private final long defaultValue;
             private final String name;
@@ -269,11 +270,86 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    public static class ConfigLongSet {
+        private final Internal handler;
+
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        public static class Internal implements ConfigInternal {
+            private final String name;
+            private Set<Long> value;
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+                if (jSONValue instanceof TLRPC.TL_jsonArray) {
+                    TLRPC.TL_jsonArray tL_jsonArray = (TLRPC.TL_jsonArray) jSONValue;
+                    HashSet hashSet = new HashSet();
+                    int size = tL_jsonArray.value.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        TLRPC.JSONValue jSONValue2 = tL_jsonArray.value.get(i10);
+                        if (jSONValue2 instanceof TLRPC.TL_jsonNumber) {
+                            hashSet.add(Long.valueOf((long) ((TLRPC.TL_jsonNumber) jSONValue2).value));
+                        } else if (jSONValue2 instanceof TLRPC.TL_jsonString) {
+                            try {
+                                hashSet.add(Long.valueOf(Long.parseLong(((TLRPC.TL_jsonString) jSONValue2).value)));
+                            } catch (NumberFormatException unused) {
+                            }
+                        }
+                    }
+                    if (!hashSet.equals(this.value)) {
+                        this.value = hashSet;
+                        HashSet hashSet2 = new HashSet();
+                        Iterator<Long> it = this.value.iterator();
+                        while (it.hasNext()) {
+                            hashSet2.add(Long.toString(it.next().longValue()));
+                        }
+                        editor.putStringSet(this.name, hashSet2);
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
+            public void load(SharedPreferences sharedPreferences) {
+                Set<String> stringSet = sharedPreferences.getStringSet(this.name, null);
+                HashSet hashSet = new HashSet();
+                if (stringSet != null) {
+                    Iterator<String> it = stringSet.iterator();
+                    while (it.hasNext()) {
+                        try {
+                            hashSet.add(Long.valueOf(Long.parseLong(it.next())));
+                        } catch (NumberFormatException unused) {
+                        }
+                    }
+                }
+                this.value = hashSet;
+            }
+
+            private Internal(String str) {
+                this.value = Collections.EMPTY_SET;
+                this.name = str;
+            }
+        }
+
+        public boolean contains(long j10) {
+            return this.handler.value.contains(Long.valueOf(j10));
+        }
+
+        public Set<Long> get() {
+            return this.handler.value;
+        }
+
+        private ConfigLongSet(String str) {
+            this.handler = new Internal(str);
+        }
+    }
+
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConfigString {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
         public static class Internal implements ConfigInternal {
             private final String defaultValue;
             private final String name;
@@ -318,11 +394,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConfigStringSet {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
         public static class Internal implements ConfigInternal {
             private final Set<String> defaultValue;
             private final String name;
@@ -370,7 +446,7 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConfigTime {
         private final ConfigLong.Internal handler;
         private final TimeUnit timeUnit;
@@ -452,6 +528,7 @@ public class AppGlobalConfig {
         this.walletTransferMinNanos = ofLong("wallet_transfer_min_nanos", 100000000L);
         this.walletGaslessMinNanos = ofLong("wallet_gasless_min_nanos", 100000000L);
         this.walletCardBgGifts = ofStringSet("wallet_card_bg_gifts", Collections.EMPTY_SET);
+        this.agentBotIds = ofLongSet("agent_bot_ids");
     }
 
     public static AppGlobalConfig getInstance(int i10) {
@@ -480,6 +557,12 @@ public class AppGlobalConfig {
         ConfigLong configLong = new ConfigLong(str, j10);
         this.map.put(str, configLong.handler);
         return configLong;
+    }
+
+    private ConfigLongSet ofLongSet(String str) {
+        ConfigLongSet configLongSet = new ConfigLongSet(str);
+        this.map.put(str, configLongSet.handler);
+        return configLongSet;
     }
 
     private ConfigString ofString(String str, String str2) {

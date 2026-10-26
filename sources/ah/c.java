@@ -1,64 +1,64 @@
 package ah;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Cells.ab;
+import org.telegram.ui.Components.j9;
+import vg.s;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public final class c extends ReplacementSpan {
-    public final TextPaint a;
-    public final RectF b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public int f;
-    public final g6 h;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final class c extends ab {
+    public final a b0;
+    public TL_stories.PrepaidGiveaway c0;
 
-    public c(g6 g6Var) {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new RectF();
-        this.h = g6Var;
-        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint.setColor(k6.w0(k6.C6, g6Var));
+    public c(Context context) {
+        super(context, 0, 0, false);
+        this.b0 = new a(context);
     }
 
-    public final void a() {
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.ReactionAddReactionsHint), this.a, AndroidUtilities.displaySize.x, LocaleController.isRTL ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineWidth(0);
-            this.e = this.c.getHeight();
+    public TL_stories.PrepaidGiveaway getPrepaidGiveaway() {
+        return this.c0;
+    }
+
+    @Override // org.telegram.ui.Cells.ab, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.S) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, y6.k0);
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        a();
-        this.a.setColor(k6.w0(k6.C6, this.h));
-        Rect clipBounds = canvas.getClipBounds();
-        RectF rectF = this.b;
-        rectF.set(clipBounds);
-        canvas.saveLayerAlpha(rectF, this.f, 31);
-        canvas.translate(f7 + AndroidUtilities.dp(4.0f), (((i14 - i12) / 2.0f) + i12) - (this.e / 2.0f));
-        this.c.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        a();
-        return (int) (AndroidUtilities.dp(8.0f) + this.d);
+    public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
+        this.c0 = prepaidGiveaway;
+        boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
+        j9 j9Var = this.E;
+        if (z10) {
+            j9Var.g(26);
+            String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
+            a aVar = this.b0;
+            aVar.f = valueOf;
+            aVar.e = aVar.a.measureText(valueOf);
+            aVar.invalidateSelf();
+        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
+            j9Var.g(16);
+            int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
+            if (i10 == 12) {
+                j9Var.i(-31392, -2796986);
+            } else if (i10 == 6) {
+                j9Var.i(-10703110, -12481584);
+            } else {
+                j9Var.i(-6631068, -11945404);
+            }
+            String valueOf2 = String.valueOf(s.g() * prepaidGiveaway.quantity);
+            a aVar2 = this.b0;
+            aVar2.f = valueOf2;
+            aVar2.e = aVar2.a.measureText(valueOf2);
+            aVar2.invalidateSelf();
+        }
+        this.b.i(this.b0);
     }
 }

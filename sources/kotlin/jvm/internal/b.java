@@ -5,15 +5,15 @@ import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class b implements xd.b, Serializable {
+public abstract class b implements yd.b, Serializable {
     public static final Object NO_RECEIVER = a.a;
     private final boolean isTopLevel;
     private final String name;
     private final Class owner;
     protected final Object receiver;
-    private transient xd.b reflected;
+    private transient yd.b reflected;
     private final String signature;
 
     public b(Object obj, Class cls, String str, String str2, boolean z10) {
@@ -24,29 +24,29 @@ public abstract class b implements xd.b, Serializable {
         this.isTopLevel = z10;
     }
 
-    @Override // xd.b
+    @Override // yd.b
     public Object call(Object... objArr) {
         return getReflected().call(objArr);
     }
 
-    @Override // xd.b
+    @Override // yd.b
     public Object callBy(Map map) {
         return getReflected().callBy(map);
     }
 
-    public xd.b compute() {
-        xd.b bVar = this.reflected;
+    public yd.b compute() {
+        yd.b bVar = this.reflected;
         if (bVar != null) {
             return bVar;
         }
-        xd.b computeReflected = computeReflected();
+        yd.b computeReflected = computeReflected();
         this.reflected = computeReflected;
         return computeReflected;
     }
 
-    public abstract xd.b computeReflected();
+    public abstract yd.b computeReflected();
 
-    @Override // xd.a
+    @Override // yd.a
     public List<Annotation> getAnnotations() {
         return getReflected().getAnnotations();
     }
@@ -59,7 +59,7 @@ public abstract class b implements xd.b, Serializable {
         return this.name;
     }
 
-    public xd.d getOwner() {
+    public yd.d getOwner() {
         Class cls = this.owner;
         if (cls == null) {
             return null;
@@ -71,15 +71,15 @@ public abstract class b implements xd.b, Serializable {
         return new k(cls);
     }
 
-    @Override // xd.b
+    @Override // yd.b
     public List<Object> getParameters() {
         return getReflected().getParameters();
     }
 
-    public abstract xd.b getReflected();
+    public abstract yd.b getReflected();
 
-    @Override // xd.b
-    public xd.h getReturnType() {
+    @Override // yd.b
+    public yd.h getReturnType() {
         getReflected().getReturnType();
         return null;
     }
@@ -88,27 +88,27 @@ public abstract class b implements xd.b, Serializable {
         return this.signature;
     }
 
-    @Override // xd.b
+    @Override // yd.b
     public List<Object> getTypeParameters() {
         return getReflected().getTypeParameters();
     }
 
-    @Override // xd.b
-    public xd.i getVisibility() {
+    @Override // yd.b
+    public yd.i getVisibility() {
         return getReflected().getVisibility();
     }
 
-    @Override // xd.b
+    @Override // yd.b
     public boolean isAbstract() {
         return getReflected().isAbstract();
     }
 
-    @Override // xd.b
+    @Override // yd.b
     public boolean isFinal() {
         return getReflected().isFinal();
     }
 
-    @Override // xd.b
+    @Override // yd.b
     public boolean isOpen() {
         return getReflected().isOpen();
     }

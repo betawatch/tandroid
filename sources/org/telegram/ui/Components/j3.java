@@ -1,29 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Region;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.TextView;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j3 extends w9 {
-    public final Path G;
-
-    public j3(Context context) {
-        super(context);
-        this.G = new Path();
-    }
-
-    @Override // org.telegram.ui.Components.w9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.G;
-        path.rewind();
-        path.addCircle(AndroidUtilities.dp(54.0f), AndroidUtilities.dp(53.0f), AndroidUtilities.dp(14.0f), Path.Direction.CW);
-        canvas.clipPath(path, Region.Op.DIFFERENCE);
-        super.onDraw(canvas);
-        canvas.restore();
+public final class j3 extends TextView {
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
     }
 }

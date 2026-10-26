@@ -3,32 +3,32 @@ package org.telegram.ui.Components;
 import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e5 b;
+    public final /* synthetic */ f5 b;
 
-    public /* synthetic */ e1(int i10, e5 e5Var) {
+    public /* synthetic */ e1(int i10, f5 f5Var) {
         this.a = i10;
-        this.b = e5Var;
+        this.b = f5Var;
     }
 
     @Override // android.content.DialogInterface.OnShowListener
     public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                e5 e5Var = this.b;
-                e5Var.requestFocus();
-                AndroidUtilities.showKeyboard(e5Var);
+                f5 f5Var = this.b;
+                f5Var.requestFocus();
+                AndroidUtilities.showKeyboard(f5Var);
                 break;
             case 1:
-                e5 e5Var2 = this.b;
-                e5Var2.requestFocus();
-                AndroidUtilities.showKeyboard(e5Var2);
+                f5 f5Var2 = this.b;
+                f5Var2.requestFocus();
+                AndroidUtilities.showKeyboard(f5Var2);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new pg(this.b, 4));
+                AndroidUtilities.runOnUIThread(new pg(this.b, 3));
                 break;
         }
     }

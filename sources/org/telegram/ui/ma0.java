@@ -1,20 +1,48 @@
 package org.telegram.ui;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ma0 implements Consumer {
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        ((Boolean) obj).getClass();
-        Pattern pattern = LaunchActivity.E1;
+public final class ma0 implements tf.c {
+    public final ag.b1 a;
+    public final /* synthetic */ LaunchActivity b;
+
+    public ma0(LaunchActivity launchActivity) {
+        this.b = launchActivity;
+        Pattern pattern = LaunchActivity.D1;
+        this.a = new ag.b1(launchActivity, false);
     }
 
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    @Override // tf.c
+    public final void b() {
+        Pattern pattern = LaunchActivity.D1;
+        this.b.getWindow();
+    }
+
+    @Override // tf.c
+    public final void d() {
+        this.a.a(false);
+    }
+
+    @Override // tf.c
+    public final void f() {
+        Pattern pattern = LaunchActivity.D1;
+        LaunchActivity launchActivity = this.b;
+        launchActivity.getClass();
+        this.a.a(true);
+        launchActivity.getWindow();
+    }
+
+    @Override // tf.c
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // tf.c
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // tf.c
+    public final /* synthetic */ void e() {
     }
 }

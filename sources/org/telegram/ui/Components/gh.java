@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements Runnable {
     public final /* synthetic */ int a;
@@ -15,44 +15,44 @@ public final /* synthetic */ class gh implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean N1;
+        boolean M1;
         switch (this.a) {
             case 0:
                 ti tiVar = this.b;
-                qu quVar = tiVar.c0 ? tiVar.S0 : tiVar.H0;
-                tiVar.U1(quVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(quVar.getText().toString().trim()));
+                ru ruVar = tiVar.c0 ? tiVar.S0 : tiVar.H0;
+                tiVar.T1(ruVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ruVar.getText().toString().trim()));
                 break;
             case 1:
-                ti.u(this.b);
+                ti.n(this.b);
                 break;
             case 2:
                 ti tiVar2 = this.b;
                 mf mfVar = tiVar2.h0;
                 long j10 = mfVar != null ? mfVar.j() : 0L;
-                ei eiVar = tiVar2.L0;
+                bi biVar = tiVar2.L0;
                 tiVar2.Q0 = j10;
-                eiVar.setEffect(j10);
+                biVar.setEffect(j10);
                 li liVar = tiVar2.B0;
                 if (liVar == tiVar2.j0 || liVar == tiVar2.q0) {
-                    N1 = tiVar2.N1(0, false, 0, tiVar2.x1(), j10);
+                    M1 = tiVar2.M1(0, false, 0, tiVar2.w1(), j10);
                 } else {
-                    if (!liVar.K(0, false, 0, tiVar2.x1(), j10)) {
+                    if (!liVar.K(0, false, 0, tiVar2.w1(), j10)) {
                         tiVar2.dismiss();
                     }
-                    N1 = false;
+                    M1 = false;
                 }
                 mf mfVar2 = tiVar2.h0;
                 if (mfVar2 != null) {
-                    mfVar2.g(!N1);
+                    mfVar2.g(!M1);
                     tiVar2.h0 = null;
                     break;
                 }
                 break;
             case 3:
-                this.b.M1();
+                this.b.L1();
                 break;
             default:
-                ti.y(this.b);
+                ti.m(this.b);
                 break;
         }
     }

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g3 extends v1 {
     private static final g3 zzb;
@@ -10,7 +10,7 @@ public final class g3 extends v1 {
     private int zze = 0;
     private Object zzf;
     private int zzg;
-    private l3 zzh;
+    private k3 zzh;
     private int zzi;
 
     static {
@@ -36,13 +36,13 @@ public final class g3 extends v1 {
                 g3Var = r22;
             } catch (c2 e) {
                 throw e;
-            } catch (w2 e7) {
-                throw new c2(e7.getMessage());
-            } catch (IOException e10) {
-                if (e10.getCause() instanceof c2) {
-                    throw ((c2) e10.getCause());
+            } catch (w2 e10) {
+                throw new c2(e10.getMessage());
+            } catch (IOException e11) {
+                if (e11.getCause() instanceof c2) {
+                    throw ((c2) e11.getCause());
                 }
-                throw new c2(e10.getMessage(), e10);
+                throw new c2(e11.getMessage(), e11);
             } catch (IndexOutOfBoundsException unused) {
                 throw new c2("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             }
@@ -53,23 +53,23 @@ public final class g3 extends v1 {
         throw new c2(new w2().getMessage());
     }
 
-    public static void p(g3 g3Var, n3 n3Var) {
-        g3Var.zzi = n3Var.a;
+    public static void p(g3 g3Var, m3 m3Var) {
+        g3Var.zzi = m3Var.a;
         g3Var.zzd |= 4;
     }
 
-    public static /* synthetic */ void q(g3 g3Var, l3 l3Var) {
-        g3Var.zzh = l3Var;
+    public static /* synthetic */ void q(g3 g3Var, k3 k3Var) {
+        g3Var.zzh = k3Var;
         g3Var.zzd |= 2;
     }
 
-    public static /* synthetic */ void r(g3 g3Var, w3 w3Var) {
-        g3Var.zzf = w3Var;
+    public static /* synthetic */ void r(g3 g3Var, v3 v3Var) {
+        g3Var.zzf = v3Var;
         g3Var.zze = 7;
     }
 
-    public static /* synthetic */ void s(g3 g3Var, e4 e4Var) {
-        g3Var.zzf = e4Var;
+    public static /* synthetic */ void s(g3 g3Var, d4 d4Var) {
+        g3Var.zzf = d4Var;
         g3Var.zze = 6;
     }
 
@@ -89,7 +89,7 @@ public final class g3 extends v1 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0006\u0001\u0001\u0001\u0007\u0006\u0000\u0000\u0000\u0001᠌\u0000\u0002ဉ\u0001\u0004<\u0000\u0005᠌\u0002\u0006<\u0000\u0007<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", d1.c, "zzh", s3.class, "zzi", d1.e, e4.class, w3.class});
+            return new s2(zzb, "\u0004\u0006\u0001\u0001\u0001\u0007\u0006\u0000\u0000\u0000\u0001᠌\u0000\u0002ဉ\u0001\u0004<\u0000\u0005᠌\u0002\u0006<\u0000\u0007<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", d1.c, "zzh", r3.class, "zzi", d1.e, d4.class, v3.class});
         }
         if (i11 == 3) {
             return new g3();
@@ -103,7 +103,7 @@ public final class g3 extends v1 {
         throw null;
     }
 
-    public final w3 o() {
-        return this.zze == 7 ? (w3) this.zzf : w3.o();
+    public final v3 o() {
+        return this.zze == 7 ? (v3) this.zzf : v3.o();
     }
 }

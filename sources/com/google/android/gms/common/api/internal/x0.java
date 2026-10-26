@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class x0 implements OnCompleteListener {
     public final h a;
@@ -26,9 +26,9 @@ public final class x0 implements OnCompleteListener {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static n6.e a(o0 o0Var, n6.g gVar, int i10) {
-        n6.f0 f0Var = gVar.Q;
-        n6.e eVar = f0Var == null ? null : f0Var.d;
+    public static o6.e a(o0 o0Var, o6.g gVar, int i10) {
+        o6.f0 f0Var = gVar.Q;
+        o6.e eVar = f0Var == null ? null : f0Var.d;
         if (eVar != null && eVar.b) {
             int[] iArr = eVar.d;
             int i11 = 0;
@@ -70,13 +70,13 @@ public final class x0 implements OnCompleteListener {
         long j12 = this.d;
         h hVar = this.a;
         if (hVar.b()) {
-            n6.n nVar = (n6.n) n6.m.a().a;
+            o6.n nVar = (o6.n) o6.m.a().a;
             if (nVar == null || nVar.b) {
                 o0 o0Var = (o0) hVar.s.get(this.c);
                 if (o0Var != null) {
                     com.google.android.gms.common.api.c cVar = o0Var.b;
-                    if (cVar instanceof n6.g) {
-                        n6.g gVar = (n6.g) cVar;
+                    if (cVar instanceof o6.g) {
+                        o6.g gVar = (o6.g) cVar;
                         int i15 = 0;
                         boolean z10 = j12 > 0;
                         int i16 = gVar.L;
@@ -85,11 +85,11 @@ public final class x0 implements OnCompleteListener {
                             i10 = nVar.d;
                             int i17 = nVar.e;
                             int i18 = nVar.a;
-                            if (gVar.Q == null || gVar.f()) {
+                            if (gVar.Q == null || gVar.d()) {
                                 i11 = i18;
                                 i12 = i17;
                             } else {
-                                n6.e a2 = a(o0Var, gVar, this.b);
+                                o6.e a2 = a(o0Var, gVar, this.b);
                                 if (a2 == null) {
                                     return;
                                 }
@@ -115,7 +115,7 @@ public final class x0 implements OnCompleteListener {
                             if (exception instanceof com.google.android.gms.common.api.f) {
                                 Status status = ((com.google.android.gms.common.api.f) exception).getStatus();
                                 i13 = status.a;
-                                k6.a aVar = status.d;
+                                l6.a aVar = status.d;
                                 if (aVar != null) {
                                     i14 = i13;
                                     i15 = aVar.b;
@@ -136,9 +136,9 @@ public final class x0 implements OnCompleteListener {
                             j10 = 0;
                             j11 = 0;
                         }
-                        y0 y0Var = new y0(new n6.j(this.b, i14, i15, j10, j11, null, null, i16, i20), i11, i19, i12);
-                        com.google.android.gms.internal.cast.a0 a0Var = hVar.x;
-                        a0Var.sendMessage(a0Var.obtainMessage(18, y0Var));
+                        y0 y0Var = new y0(new o6.j(this.b, i14, i15, j10, j11, null, null, i16, i20), i11, i19, i12);
+                        com.google.android.gms.internal.cast.y yVar = hVar.x;
+                        yVar.sendMessage(yVar.obtainMessage(18, y0Var));
                     }
                 }
             }

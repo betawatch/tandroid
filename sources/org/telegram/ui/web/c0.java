@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import ci.y7;
+import di.x7;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -9,39 +9,39 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ej0;
-import org.telegram.ui.ey;
-import org.telegram.ui.xx;
-import org.telegram.ui.ye1;
+import org.telegram.ui.af1;
+import org.telegram.ui.bj0;
+import org.telegram.ui.cy;
+import org.telegram.ui.ux;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c0 implements ej0, xx {
-    public final /* synthetic */ b1 a;
+public final /* synthetic */ class c0 implements bj0, ux {
+    public final /* synthetic */ a1 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
     public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer d;
-    public final /* synthetic */ y7 e;
+    public final /* synthetic */ x7 e;
 
-    public /* synthetic */ c0(b1 b1Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, y7 y7Var) {
-        this.a = b1Var;
+    public /* synthetic */ c0(a1 a1Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, x7 x7Var) {
+        this.a = a1Var;
         this.b = zArr;
         this.c = str;
         this.d = tL_buttonTypeRequestPeer;
-        this.e = y7Var;
+        this.e = x7Var;
     }
 
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean D() {
+    @Override // org.telegram.ui.ux
+    public /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean J(ey eyVar) {
+    @Override // org.telegram.ui.ux
+    public /* synthetic */ boolean K(cy cyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.ej0
+    @Override // org.telegram.ui.bj0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -49,9 +49,9 @@ public final /* synthetic */ class c0 implements ej0, xx {
         int i10 = 0;
         this.b[0] = true;
         TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-        b1 b1Var = this.a;
-        MessagesController.getInstance(b1Var.M);
-        tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(b1Var.U);
+        a1 a1Var = this.a;
+        MessagesController.getInstance(a1Var.M);
+        tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(a1Var.U);
         String str = this.c;
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
         tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
@@ -59,20 +59,20 @@ public final /* synthetic */ class c0 implements ej0, xx {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(b1Var.M).getInputPeer(((Long) obj).longValue()));
+            tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(a1Var.M).getInputPeer(((Long) obj).longValue()));
         }
-        ConnectionsManager.getInstance(b1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new v(b1Var, this.e, str, 2));
+        ConnectionsManager.getInstance(a1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new v(a1Var, this.e, str, 2));
     }
 
-    @Override // org.telegram.ui.xx
-    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, ye1 ye1Var) {
+    @Override // org.telegram.ui.ux
+    public boolean v(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, af1 af1Var) {
         if (!arrayList.isEmpty()) {
             int i12 = 0;
             this.b[0] = true;
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-            b1 b1Var = this.a;
-            MessagesController.getInstance(b1Var.M);
-            tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(b1Var.U);
+            a1 a1Var = this.a;
+            MessagesController.getInstance(a1Var.M);
+            tL_messages_sendBotRequestedPeer.peer = MessagesController.getInputPeer(a1Var.U);
             String str = this.c;
             tL_messages_sendBotRequestedPeer.webapp_req_id = str;
             tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
@@ -85,11 +85,11 @@ public final /* synthetic */ class c0 implements ej0, xx {
             }
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(b1Var.M).getInputPeer(((Long) it.next()).longValue()));
+                tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(a1Var.M).getInputPeer(((Long) it.next()).longValue()));
             }
-            ConnectionsManager.getInstance(b1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new v(b1Var, this.e, str, 1));
+            ConnectionsManager.getInstance(a1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new v(a1Var, this.e, str, 1));
         }
-        eyVar.finishFragment();
+        cyVar.finishFragment();
         return true;
     }
 }

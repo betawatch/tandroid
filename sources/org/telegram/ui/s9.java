@@ -1,61 +1,36 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s9 extends org.telegram.ui.ActionBar.h3 {
-    public final r9 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h5[] c;
-    public final /* synthetic */ v9 d;
+public final /* synthetic */ class s9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s9(Activity activity, org.telegram.ui.ActionBar.h5[] h5VarArr, int i10, v9 v9Var) {
-        super(activity, false);
-        this.c = h5VarArr;
-        this.d = v9Var;
-        h5VarArr[0].setFragmentStack(new ArrayList());
-        r9 r9Var = new r9(this, i10);
-        this.b = r9Var;
-        r9Var.x = true;
-        ((ActionBarLayout) h5VarArr[0]).c(-1, r9Var);
-        ((ActionBarLayout) h5VarArr[0]).d0();
-        ViewGroup view = h5VarArr[0].getView();
-        int i11 = this.backgroundPaddingLeft;
-        view.setPadding(i11, 0, i11, 0);
-        r9Var.M = v9Var;
-        if (v9Var.p0() != null) {
-            r9Var.c.setText(v9Var.p0());
-        }
-        this.containerView = h5VarArr[0].getView();
-        setApplyBottomPadding(false);
-        setApplyBottomPadding(false);
-        setOnDismissListener(new v5(this, 1));
+    public /* synthetic */ s9(y9 y9Var, int i10) {
+        this.a = i10;
+        this.b = y9Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.h3
-    public final boolean canDismissWithSwipe() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        super.dismiss();
-        this.c[0] = null;
-        this.d.onDismiss();
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
-    public final void onBackPressed() {
-        org.telegram.ui.ActionBar.h5[] h5VarArr = this.c;
-        org.telegram.ui.ActionBar.h5 h5Var = h5VarArr[0];
-        if (h5Var == null || h5Var.getFragmentStack().size() <= 1) {
-            super.onBackPressed();
-        } else {
-            ((ActionBarLayout) h5VarArr[0]).H();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y9 y9Var = this.b;
+                y9Var.Y = floatValue;
+                y9Var.b.setAlpha(1.0f - floatValue);
+                if (y9Var.W == 3) {
+                    y9Var.c.setAlpha(1.0f - y9Var.Y);
+                }
+                y9Var.s.setAlpha(1.0f - y9Var.Y);
+                y9Var.w = (y9Var.Y * 0.25f) + 0.5f;
+                y9Var.fragmentView.invalidate();
+                break;
+            default:
+                this.b.s.invalidate();
+                break;
         }
     }
 }

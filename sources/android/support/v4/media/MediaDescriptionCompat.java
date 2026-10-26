@@ -8,10 +8,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.media.session.b0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class MediaDescriptionCompat implements Parcelable {
-    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new w.a(5);
+    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new w.a(2);
     public final String a;
     public final CharSequence b;
     public final CharSequence c;
@@ -43,7 +43,7 @@ public final class MediaDescriptionCompat implements Parcelable {
             return null;
         }
         MediaDescription mediaDescription = (MediaDescription) obj;
-        String g10 = a.g(mediaDescription);
+        String g7 = a.g(mediaDescription);
         CharSequence i10 = a.i(mediaDescription);
         CharSequence h = a.h(mediaDescription);
         CharSequence c10 = a.c(mediaDescription);
@@ -60,7 +60,7 @@ public final class MediaDescriptionCompat implements Parcelable {
                 if (uri == null) {
                     uri = b.a(mediaDescription);
                 }
-                MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(g10, i10, h, c10, e, f7, bundle, uri);
+                MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(g7, i10, h, c10, e, f7, bundle, uri);
                 mediaDescriptionCompat.r = mediaDescription;
                 return mediaDescriptionCompat;
             }
@@ -70,7 +70,7 @@ public final class MediaDescriptionCompat implements Parcelable {
         bundle = d;
         if (uri == null) {
         }
-        MediaDescriptionCompat mediaDescriptionCompat2 = new MediaDescriptionCompat(g10, i10, h, c10, e, f7, bundle, uri);
+        MediaDescriptionCompat mediaDescriptionCompat2 = new MediaDescriptionCompat(g7, i10, h, c10, e, f7, bundle, uri);
         mediaDescriptionCompat2.r = mediaDescription;
         return mediaDescriptionCompat2;
     }

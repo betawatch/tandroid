@@ -1,55 +1,79 @@
 package b2;
 
-import android.os.Bundle;
-import j$.util.Objects;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class j1 extends g1 {
+public final class j1 implements Comparable, Parcelable {
+    public static final Parcelable.Creator<j1> CREATOR = new r(2);
     public static final String d;
     public static final String e;
-    public final boolean b;
-    public final boolean c;
+    public static final String f;
+    public final int a;
+    public final int b;
+    public final int c;
 
     static {
-        String str = e2.m0.a;
-        d = Integer.toString(1, 36);
-        e = Integer.toString(2, 36);
+        String str = e2.n0.a;
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
-    public j1() {
-        this.b = false;
-        this.c = false;
+    public j1(int i10, int i11, int i12) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 
-    @Override // b2.g1
-    public final boolean b() {
-        return this.b;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        j1 j1Var = (j1) obj;
+        int i10 = this.a - j1Var.a;
+        if (i10 != 0) {
+            return i10;
+        }
+        int i11 = this.b - j1Var.b;
+        return i11 == 0 ? this.c - j1Var.c : i11;
     }
 
-    @Override // b2.g1
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(g1.a, 3);
-        bundle.putBoolean(d, this.b);
-        bundle.putBoolean(e, this.c);
-        return bundle;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof j1)) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        j1 j1Var = (j1) obj;
-        return this.c == j1Var.c && this.b == j1Var.b;
+        if (obj != null && j1.class == obj.getClass()) {
+            j1 j1Var = (j1) obj;
+            if (this.a == j1Var.a && this.b == j1Var.b && this.c == j1Var.c) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.b), Boolean.valueOf(this.c));
+        return (((this.a * 31) + this.b) * 31) + this.c;
     }
 
-    public j1(boolean z10) {
-        this.b = true;
-        this.c = z10;
+    public final String toString() {
+        return this.a + "." + this.b + "." + this.c;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeInt(this.a);
+        parcel.writeInt(this.b);
+        parcel.writeInt(this.c);
+    }
+
+    public j1(Parcel parcel) {
+        this.a = parcel.readInt();
+        this.b = parcel.readInt();
+        this.c = parcel.readInt();
     }
 }

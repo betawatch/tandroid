@@ -1,17 +1,17 @@
 package com.google.android.gms.auth.api.signin;
 
+import a6.e;
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import n6.l;
-import o6.a;
-import w7.f0;
-import z5.d;
+import o6.l;
+import p6.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class SignInAccount extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<SignInAccount> CREATOR = new d(2);
+    public static final Parcelable.Creator<SignInAccount> CREATOR = new e(2);
     public final String a;
     public final GoogleSignInAccount b;
     public final String c;
@@ -26,10 +26,10 @@ public class SignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 4, this.a);
-        f0.k(parcel, 7, this.b, i10);
-        f0.l(parcel, 8, this.c);
-        f0.r(parcel, q6);
+        int q5 = df.q(parcel, 20293);
+        df.l(parcel, 4, this.a);
+        df.k(parcel, 7, this.b, i10);
+        df.l(parcel, 8, this.c);
+        df.r(parcel, q5);
     }
 }

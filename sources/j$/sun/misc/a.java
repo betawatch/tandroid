@@ -12,10 +12,10 @@ public final class a {
     public final Unsafe a;
 
     static {
-        Field g10 = g();
-        g10.setAccessible(true);
+        Field g7 = g();
+        g7.setAccessible(true);
         try {
-            b = new a((Unsafe) g10.get(null));
+            b = new a((Unsafe) g7.get(null));
         } catch (IllegalAccessException e) {
             throw new AssertionError("Couldn't get the Unsafe", e);
         }

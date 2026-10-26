@@ -1,13 +1,13 @@
 package com.google.android.gms.common.api;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.f0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class h extends o6.a {
+public final class h extends p6.a {
     public static final Parcelable.Creator<h> CREATOR = new t(1);
     public final int a;
     public final int b;
@@ -39,15 +39,15 @@ public final class h extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f0.s(parcel, 2, 4);
+        df.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        f0.s(parcel, 3, 4);
+        df.s(parcel, 3, 4);
         parcel.writeInt(this.c);
-        f0.s(parcel, 4, 4);
+        df.s(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        f0.r(parcel, q6);
+        df.r(parcel, q5);
     }
 }

@@ -1,18 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface h01 {
-    a01 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10);
+public class h01 {
+    public int a;
+    public int b;
+    public int c;
 
-    Paint getHeaderPaint();
+    public h01() {
+        c();
+    }
 
-    Paint getLinePaint();
+    public int a(q01 q01Var, j01 j01Var, gb1 gb1Var, int i10, boolean z10) {
+        return this.a - gb1Var.F(j01Var, i10);
+    }
 
-    Paint getStripPaint();
+    public void b(int i10, int i11) {
+        this.a = Math.max(this.a, i10);
+        this.b = Math.max(this.b, i11);
+    }
 
-    void onLayoutChild(a01 a01Var, int i10, int i11);
+    public void c() {
+        this.a = TLObject.FLAG_31;
+        this.b = TLObject.FLAG_31;
+        this.c = 2;
+    }
+
+    public int d(boolean z10) {
+        if (!z10) {
+            int i10 = this.c;
+            c01 c01Var = q01.R;
+            if ((i10 & 2) != 0) {
+                return 100000;
+            }
+        }
+        return this.a + this.b;
+    }
 }

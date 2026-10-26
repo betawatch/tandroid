@@ -1,6 +1,5 @@
 package com.google.firebase.sessions;
 
-import ab.q0;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Build;
@@ -10,13 +9,14 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
+import bb.p0;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class SessionLifecycleService extends Service {
     public final HandlerThread a = new HandlerThread("FirebaseSessions_HandlerThread");
-    public q0 b;
+    public p0 b;
     public Messenger c;
 
     @Override // android.app.Service
@@ -30,9 +30,9 @@ public final class SessionLifecycleService extends Service {
         if (messenger != null) {
             Message obtain = Message.obtain(null, 4, 0, 0);
             obtain.replyTo = messenger;
-            q0 q0Var = this.b;
-            if (q0Var != null) {
-                q0Var.sendMessage(obtain);
+            p0 p0Var = this.b;
+            if (p0Var != null) {
+                p0Var.sendMessage(obtain);
             }
         }
         Messenger messenger2 = this.c;
@@ -49,7 +49,7 @@ public final class SessionLifecycleService extends Service {
         handlerThread.start();
         Looper looper = handlerThread.getLooper();
         i.d(looper, "handlerThread.looper");
-        this.b = new q0(looper);
+        this.b = new p0(looper);
         this.c = new Messenger(this.b);
     }
 

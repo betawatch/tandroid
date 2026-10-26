@@ -1,79 +1,82 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Paint;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
+import org.telegram.ui.Components.gb1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
-    public w5[] a;
-    public MediaController.AlbumEntry[] b;
-    public int c;
-    public x5 d;
-    public Paint e;
+    public final TextView a;
+    public final LinearLayout b;
+    public View.OnClickListener c;
+    public int d;
+    public final int[] e;
 
-    public final void a(int i10, MediaController.AlbumEntry albumEntry) {
-        w5[] w5VarArr = this.a;
-        this.b[i10] = albumEntry;
-        if (albumEntry == null) {
-            w5VarArr[i10].setVisibility(4);
-            return;
+    public y5(Context context) {
+        super(context);
+        this.e = new int[]{0, -45747, -753630, -13056, -8269183, -9321002, -16747844, -10080879};
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setGravity(5);
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 12.0f);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, gb1.h(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        for (int i10 = 0; i10 < this.e.length; i10++) {
+            RadioButton radioButton = new RadioButton(context);
+            radioButton.setSize(AndroidUtilities.dp(20.0f));
+            radioButton.setTag(Integer.valueOf(i10));
+            this.b.addView(radioButton, gb1.p(1.0f / this.e.length, 0, -1));
+            radioButton.setOnClickListener(new a(this, 8));
         }
-        w5 w5Var = w5VarArr[i10];
-        org.telegram.ui.Components.w9 w9Var = w5Var.a;
-        org.telegram.ui.Components.w9 w9Var2 = w5Var.a;
-        w9Var.q(0, true);
-        MediaController.PhotoEntry photoEntry = albumEntry.coverPhoto;
-        if (photoEntry == null || photoEntry.path == null) {
-            w9Var2.setImageDrawable(org.telegram.ui.ActionBar.k6.R4);
-        } else {
-            w9Var2.p(photoEntry.orientation, photoEntry.invert, true);
-            if (albumEntry.coverPhoto.isVideo) {
-                w9Var2.g("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.k6.R4);
-            } else {
-                w9Var2.g("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.k6.R4);
+        addView(this.b, gb1.h(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
+    }
+
+    public final void a(int i10, String str) {
+        this.d = i10;
+        this.a.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        b(false);
+    }
+
+    public final void b(boolean z10) {
+        LinearLayout linearLayout = this.b;
+        int childCount = linearLayout.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = linearLayout.getChildAt(i10);
+            if (childAt instanceof RadioButton) {
+                RadioButton radioButton = (RadioButton) childAt;
+                int intValue = ((Integer) radioButton.getTag()).intValue();
+                int[] iArr = this.e;
+                radioButton.a(this.d == iArr[intValue], z10);
+                radioButton.b(intValue == 0 ? -1 : iArr[intValue], intValue != 0 ? iArr[intValue] : -1);
             }
         }
-        w5Var.b.setText(albumEntry.bucketName);
-        w5Var.c.setText(String.format("%d", Integer.valueOf(albumEntry.photos.size())));
+    }
+
+    public int getCurrentColor() {
+        return this.d;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        View[] viewArr = this.a;
-        int B = AndroidUtilities.isTablet() ? sl.B(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : sl.B(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
-        for (int i12 = 0; i12 < this.c; i12++) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
-            layoutParams.topMargin = AndroidUtilities.dp(4.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + B) * i12;
-            layoutParams.width = B;
-            layoutParams.height = B;
-            layoutParams.gravity = 51;
-            viewArr[i12].setLayoutParams(layoutParams);
-        }
-        super.onMeasure(i10, sl.C(4.0f, B, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
-    public void setAlbumsCount(int i10) {
-        int i11 = 0;
-        while (true) {
-            w5[] w5VarArr = this.a;
-            if (i11 >= w5VarArr.length) {
-                this.c = i10;
-                return;
-            } else {
-                w5VarArr[i11].setVisibility(i11 < i10 ? 0 : 4);
-                i11++;
-            }
-        }
-    }
-
-    public void setDelegate(x5 x5Var) {
-        this.d = x5Var;
+    @Override // android.view.View
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.c = onClickListener;
     }
 }

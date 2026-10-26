@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,7 +11,7 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;

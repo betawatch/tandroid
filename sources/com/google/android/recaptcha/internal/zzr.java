@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
+import a8.jd;
 import android.app.Application;
-import be.i0;
+import ce.i0;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.tasks.Task;
-import id.f;
-import kd.c;
-import l8.b;
-import ld.a;
-import md.i;
-import td.p;
-import v7.i8;
+import jd.f;
+import ld.c;
+import m8.b;
+import md.a;
+import nd.i;
+import ud.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzr extends i implements p {
     int zza;
@@ -27,19 +27,19 @@ final class zzr extends i implements p {
         this.zzc = str;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final c create(Object obj, c cVar) {
         return new zzr(this.zzb, this.zzc, cVar);
     }
 
-    @Override // td.p
+    @Override // ud.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(id.i.a);
+        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x008c  */
-    @Override // md.a
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x008d  */
+    @Override // nd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,7 +52,7 @@ final class zzr extends i implements p {
         try {
             try {
                 if (i10 == 0) {
-                    i8.b(obj);
+                    jd.b(obj);
                     i0Var = this.zzb.zzc;
                     if (i0Var == null) {
                         i0Var = null;
@@ -64,7 +64,7 @@ final class zzr extends i implements p {
                     }
                 } else {
                     if (i10 != 1) {
-                        i8.b(obj);
+                        jd.b(obj);
                         str2 = ((b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
@@ -77,19 +77,19 @@ final class zzr extends i implements p {
                         zzf.zzf((zzxj) zzf2.zzk());
                         return new f((zzxx) zzf.zzk());
                     }
-                    i8.b(obj);
+                    jd.b(obj);
                 }
-                l8.a aVar2 = new l8.a();
+                m8.a aVar2 = new m8.a();
                 zzu zzuVar = this.zzb;
                 str = zzuVar.zzb;
                 aVar2.a = str != null ? str : null;
                 aVar2.b = this.zzc;
                 Application context = zzu.zzl(zzuVar);
                 kotlin.jvm.internal.i.e(context, "context");
-                a8.f fVar = new a8.f(context, a8.f.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c);
+                b8.f fVar = new b8.f(context, b8.f.k, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c);
                 u b10 = v.b();
-                b10.d = new k6.c[]{l8.f.a};
-                b10.c = new ya.c(aVar2, 1);
+                b10.d = new l6.c[]{m8.f.a};
+                b10.c = new rb.c(aVar2, 7);
                 b10.a = 34002;
                 Task e = fVar.e(0, b10.a());
                 kotlin.jvm.internal.i.d(e, "doRead(...)");
@@ -103,10 +103,10 @@ final class zzr extends i implements p {
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new f(i8.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new f(jd.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new f(i8.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new f(jd.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

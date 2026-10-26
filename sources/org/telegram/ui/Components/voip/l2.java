@@ -1,41 +1,28 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import a8.fg;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class l2 extends TextView {
-    public final RectF a;
-    public final /* synthetic */ o1 b;
-    public final /* synthetic */ n2 c;
+public final class l2 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ n2 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(n2 n2Var, Activity activity, o1 o1Var) {
-        super(activity);
-        this.c = n2Var;
-        this.b = o1Var;
-        this.a = new RectF();
-        o1Var.a(this);
+    public l2(n2 n2Var) {
+        this.a = n2Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        float x10 = ((View) getParent()).getX() + getX();
-        n2 n2Var = this.c;
-        float x11 = ((View) n2Var.getParent()).getX() + n2Var.getX() + x10;
-        float y3 = ((View) n2Var.getParent()).getY() + n2Var.getY() + ((View) getParent()).getY() + getY();
-        o1 o1Var = this.b;
-        o1Var.d(x11, y3);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), o1Var.b());
-        super.onDraw(canvas);
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        n2 n2Var = this.a;
+        fg fgVar = n2Var.S;
+        if (fgVar != null) {
+            fgVar.run();
+            n2Var.S = null;
+        }
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

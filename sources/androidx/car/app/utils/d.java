@@ -1,35 +1,29 @@
 package androidx.car.app.utils;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements a {
+public final /* synthetic */ class d implements b {
     public final /* synthetic */ int a;
     public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
+    public final /* synthetic */ w.b c;
 
-    public /* synthetic */ d(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, float f7, float f10, int i10) {
+    public /* synthetic */ d(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, w.b bVar, int i10) {
         this.a = i10;
         this.b = remoteUtils$SurfaceCallbackStub;
-        this.c = f7;
-        this.d = f10;
+        this.c = bVar;
     }
 
-    @Override // androidx.car.app.utils.a
+    @Override // androidx.car.app.utils.b
     public final Object a() {
-        Object lambda$onClick$7;
-        Object lambda$onScroll$4;
-        Object lambda$onFling$5;
+        Object lambda$onSurfaceDestroyed$3;
+        Object lambda$onSurfaceAvailable$0;
         switch (this.a) {
             case 0:
-                lambda$onClick$7 = this.b.lambda$onClick$7(this.c, this.d);
-                return lambda$onClick$7;
-            case 1:
-                lambda$onScroll$4 = this.b.lambda$onScroll$4(this.c, this.d);
-                return lambda$onScroll$4;
+                lambda$onSurfaceDestroyed$3 = this.b.lambda$onSurfaceDestroyed$3(this.c);
+                return lambda$onSurfaceDestroyed$3;
             default:
-                lambda$onFling$5 = this.b.lambda$onFling$5(this.c, this.d);
-                return lambda$onFling$5;
+                lambda$onSurfaceAvailable$0 = this.b.lambda$onSurfaceAvailable$0(this.c);
+                return lambda$onSurfaceAvailable$0;
         }
     }
 }

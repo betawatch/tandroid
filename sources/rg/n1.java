@@ -1,15 +1,62 @@
 package rg;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import a8.ic;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public interface n1 {
-    void C();
+public final class n1 extends o1 {
+    public final f1 f;
+    public final float g;
+    public final float h;
+    public final /* synthetic */ p1 i;
 
-    void a();
+    public n1(p1 p1Var, f1 f1Var, boolean z10, boolean z11) {
+        this.i = p1Var;
+        this.b = false;
+        this.f = f1Var;
+        this.g = z10 ? -1.0f : 1.0f;
+        this.h = z11 ? -1.0f : 1.0f;
+        a();
+    }
 
-    void c();
+    @Override // rg.o1
+    public final void a() {
+        f1 f1Var = this.f;
+        if (f1Var != null) {
+            float f7 = (this.g * f1Var.d) + f1Var.b;
+            float f10 = (this.h * f1Var.e) + f1Var.c;
+            p1 p1Var = this.i;
+            p1Var.c(f7, f10, true);
+            float[] fArr = p1Var.p;
+            float f11 = fArr[0];
+            float f12 = fArr[1];
+            this.d = f11;
+            this.e = f12;
+        }
+    }
 
-    void d(int i10);
-
-    void s();
+    @Override // rg.o1
+    public final void b(float f7, float f10) {
+        this.d = f7;
+        this.e = f10;
+        f1 f1Var = this.f;
+        float f11 = ((-this.g) * f1Var.d) + f1Var.b;
+        float f12 = ((-this.h) * f1Var.e) + f1Var.c;
+        p1 p1Var = this.i;
+        p1Var.c(f7, f10, false);
+        p1Var.c(f11, f12, true);
+        float[] fArr = p1Var.p;
+        float f13 = fArr[0];
+        float f14 = fArr[1];
+        double atan2 = (3.141592653589793d - Math.atan2(f10 - f14, f7 - f13)) - f1Var.h;
+        double cos = Math.cos(atan2) * ic.a(f7, f10, f13, f14);
+        double sin = Math.sin(atan2) * ic.a(f7, f10, f13, f14);
+        f1Var.d = ((float) Math.abs(cos)) / 2.0f;
+        f1Var.e = ((float) Math.abs(sin)) / 2.0f;
+        f1Var.b = (f7 + f13) / 2.0f;
+        f1Var.c = (f10 + f14) / 2.0f;
+        for (int i10 = 0; i10 < p1Var.m.size(); i10++) {
+            ((o1) p1Var.m.get(i10)).a();
+        }
+    }
 }

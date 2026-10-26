@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -27,7 +27,7 @@ public final /* synthetic */ class sf implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$229(this.e, (ArrayList) this.h, this.b, this.c, this.d);
+                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$232(this.e, (ArrayList) this.h, this.b, this.c, this.d);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
@@ -40,7 +40,7 @@ public final /* synthetic */ class sf implements Runnable {
                 }
                 org.telegram.ui.Components.og ogVar = chatActivityEnterView.Z2;
                 if (ogVar != null) {
-                    ogVar.L(charSequence, this.b, this.c, this.d, this.e);
+                    ogVar.A(charSequence, this.b, this.c, this.d, this.e);
                     break;
                 }
                 break;

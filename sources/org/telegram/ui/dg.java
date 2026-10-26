@@ -1,121 +1,91 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.ImageView;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg implements Utilities.Callback2 {
+public final /* synthetic */ class dg implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ float b;
     public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ dg(Object obj, int i10, TLObject tLObject, int i11) {
-        this.a = i11;
+    public /* synthetic */ dg(Object obj, float f7, int i10) {
+        this.a = i10;
         this.c = obj;
-        this.b = i10;
-        this.d = tLObject;
+        this.b = f7;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TLRPC.Updates updates;
-        int i10 = this.a;
-        int i11 = this.b;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ai.vb((sn) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 17));
-                break;
-            case 1:
-                LaunchActivity launchActivity = (LaunchActivity) obj4;
-                f80 f80Var = (f80) obj3;
-                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                Pattern pattern = LaunchActivity.E1;
-                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    MessagesController.getInstance(launchActivity.O).lambda$processUpdates$377(updates2, false);
-                    updates = updates2;
-                } else {
-                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        AndroidUtilities.runOnUIThread(new f80(2, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
-                    }
-                    updates = null;
-                }
-                AndroidUtilities.runOnUIThread(new ai.vb(launchActivity, f80Var, tL_error, updates, this.b, 26));
-                break;
-            case 2:
-                PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
-                TL_account.Passkey passkey = (TL_account.Passkey) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ArrayList arrayList = passkeysActivity.b;
-                if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse)) {
-                    if (tL_error2 != null) {
-                        org.telegram.ui.Components.xc.a0(passkeysActivity).f0(tL_error2, false);
-                        arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
-                        passkeysActivity.a.Z2.N(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.Components.xc.a0(passkeysActivity).e0("FALSE", false);
-                    arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
-                    passkeysActivity.a.Z2.N(true);
+                un unVar = (un) this.c;
+                unVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                unVar.T8 = floatValue;
+                unVar.X8 = floatValue / this.b;
+                View view = unVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
                     break;
                 }
                 break;
-            default:
-                org.telegram.ui.Wallet.t7 t7Var = (org.telegram.ui.Wallet.t7) obj4;
-                TL_wallet.card cardVar = (TL_wallet.card) obj3;
-                TL_wallet.card cardVar2 = (TL_wallet.card) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                t7Var.f1 = 0;
-                if (cardVar2 == null) {
-                    if (cardVar != null) {
-                        org.telegram.ui.Wallet.t7.e0(i11, cardVar);
-                    }
-                    if (!t7Var.a1) {
-                        if (tL_error3 != null) {
-                            org.telegram.ui.Components.xc.a0(t7Var.a).f0(tL_error3, false);
-                        }
-                        t7Var.d1 = false;
-                        TL_wallet.card cardVar3 = t7Var.b1;
-                        if (cardVar3 != null) {
-                            t7Var.d(cardVar3);
-                            break;
-                        }
-                    }
-                } else {
-                    org.telegram.ui.Wallet.t7.e0(i11, cardVar2);
-                    if (!t7Var.a1) {
-                        if (!t7Var.d1) {
-                            t7Var.d(cardVar2);
-                            break;
-                        } else {
-                            t7Var.b1 = cardVar2;
-                            t7Var.c1 = org.telegram.ui.Wallet.t7.T(cardVar2);
-                            t7Var.Q();
-                            break;
-                        }
+            case 1:
+                ArrayList arrayList = (ArrayList) this.c;
+                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    View view2 = (View) arrayList.get(i10);
+                    if (view2 != null) {
+                        view2.setTranslationY(this.b * floatValue2);
                     }
                 }
                 break;
+            case 2:
+                ((org.telegram.ui.Components.go) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            case 3:
+                ((mv0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            case 4:
+                s11 s11Var = (s11) this.c;
+                s11Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
+                s11Var.a.setTranslationX(lerp);
+                s11Var.b.setTranslationX(lerp);
+                ImageView imageView = s11Var.c;
+                imageView.setTranslationX(lerp);
+                org.telegram.ui.Components.zp zpVar = s11Var.f;
+                zpVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
+                float f7 = (floatValue3 * 0.5f) + 0.5f;
+                zpVar.setScaleX(f7);
+                zpVar.setScaleY(f7);
+                zpVar.setAlpha(floatValue3);
+                float f10 = 1.0f - floatValue3;
+                float f11 = (f10 * 0.5f) + 0.5f;
+                imageView.setScaleX(f11);
+                imageView.setScaleY(f11);
+                imageView.setAlpha(f10);
+                break;
+            case 5:
+                org.telegram.ui.Wallet.m3 m3Var = (org.telegram.ui.Wallet.m3) this.c;
+                m3Var.getClass();
+                m3Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
+                m3Var.a.invalidate();
+                break;
+            default:
+                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) this.c;
+                i8Var.getClass();
+                float floatValue4 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i8Var.c = i8Var.c();
+                i8Var.d = this.b * floatValue4;
+                i8Var.s = floatValue4 > 0.0f;
+                break;
         }
-    }
-
-    public /* synthetic */ dg(LaunchActivity launchActivity, f80 f80Var, int i10) {
-        this.a = 1;
-        this.c = launchActivity;
-        this.d = f80Var;
-        this.b = i10;
     }
 }

@@ -1,29 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.util.FloatProperty;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vr0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bs0 b;
-    public final /* synthetic */ boolean c;
-
-    public /* synthetic */ vr0(bs0 bs0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = bs0Var;
-        this.c = z10;
+public final class vr0 extends FloatProperty {
+    public vr0() {
+        super("progress");
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.xc.F(this.b.b.e0, this.c).j();
-                break;
-            default:
-                org.telegram.ui.Components.xc.F(this.b.b.e0, this.c).j();
-                break;
-        }
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((xu0) obj).a);
+    }
+
+    public final void setValue(Object obj, float f7) {
+        ((xu0) obj).b(f7);
     }
 }

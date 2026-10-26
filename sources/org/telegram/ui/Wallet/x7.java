@@ -4,17 +4,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x7 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i8 b;
+    public final /* synthetic */ h8 b;
 
-    public /* synthetic */ x7(i8 i8Var, int i10) {
+    public /* synthetic */ x7(h8 h8Var, int i10) {
         this.a = i10;
-        this.b = i8Var;
+        this.b = h8Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -25,19 +25,19 @@ public final /* synthetic */ class x7 implements Utilities.Callback {
                 break;
             case 1:
                 String str = (String) obj;
-                i8 i8Var = this.b;
+                h8 h8Var = this.b;
                 if (str == null) {
-                    qc M = xc.a0(i8Var).M(LocaleController.getString(R.string.WalletBackupEnabled), LocaleController.getString(R.string.WalletBackupEnabledInfo), R.raw.contact_check);
+                    qc M = wc.b0(h8Var).M(LocaleController.getString(R.string.WalletBackupEnabled), LocaleController.getString(R.string.WalletBackupEnabledInfo), R.raw.contact_check);
                     M.j = 5000;
                     M.j();
-                    i8Var.a.Z2.N(true);
+                    h8Var.a.g3.O(true);
                     break;
                 } else {
-                    xc.a0(i8Var).e0(str, false);
+                    wc.b0(h8Var).f0(str, false);
                     break;
                 }
             default:
-                i8.a0(this.b, (Boolean) obj);
+                h8.b0(this.b, (Boolean) obj);
                 break;
         }
     }

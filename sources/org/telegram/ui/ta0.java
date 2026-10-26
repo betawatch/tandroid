@@ -1,90 +1,66 @@
 package org.telegram.ui;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ta0 implements zf.k0 {
+public final /* synthetic */ class ta0 implements org.telegram.ui.Components.e5, org.telegram.ui.ActionBar.b2, org.telegram.ui.Components.yw0 {
     public final /* synthetic */ int a;
-    public boolean b;
-    public boolean c;
-    public final Object d;
+    public final /* synthetic */ db0 b;
 
-    public /* synthetic */ ta0(Object obj, int i10) {
+    public /* synthetic */ ta0(db0 db0Var, int i10) {
         this.a = i10;
-        this.d = obj;
+        this.b = db0Var;
     }
 
-    @Override // zf.k0
-    public void a(boolean z10) {
+    @Override // org.telegram.ui.Components.e5
+    public void G(int i10, int i11, boolean z10) {
+        this.b.W(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        db0 db0Var = this.b;
+        db0Var.S.a(db0Var.e);
+        db0Var.finishFragment();
+    }
+
+    @Override // org.telegram.ui.Components.yw0
+    public void j(int i10) {
         switch (this.a) {
-            case 0:
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
-                    if (launchActivity != null) {
-                        int i10 = launchActivity.D1 + (z10 ? 1 : -1);
-                        launchActivity.D1 = i10;
-                        l0 l0Var = launchActivity.w0;
-                        if (l0Var != null) {
-                            l0Var.setVisibility(i10 > 0 ? 8 : 0);
-                        }
-                        launchActivity.getWindow();
-                        break;
-                    }
+            case 2:
+                db0 db0Var = this.b;
+                if (i10 >= db0Var.O.size()) {
+                    db0Var.w.setText("");
+                    break;
+                } else {
+                    db0Var.w.setText(LocaleController.formatDateAudio(db0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
+                    break;
                 }
-                break;
             default:
-                zf.l0 l0Var2 = (zf.l0) this.d;
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    if (z10) {
-                        l0Var2.a++;
-                    } else {
-                        l0Var2.a--;
-                    }
-                    boolean z11 = l0Var2.a > 0;
-                    if (l0Var2.b != z11) {
-                        l0Var2.b = z11;
-                        Window window = (Window) ((WeakReference) l0Var2.c.b).get();
-                        if (window != null) {
-                            window.getDecorView().setVisibility(z11 ? 8 : 0);
-                            break;
-                        }
-                    }
+                db0 db0Var2 = this.b;
+                db0Var2.F.clearFocus();
+                db0Var2.N = true;
+                ArrayList arrayList = db0Var2.Q;
+                if (i10 < arrayList.size()) {
+                    db0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
+                } else {
+                    db0Var2.F.setText("");
                 }
+                db0Var2.N = false;
                 break;
         }
     }
 
-    public void b() {
-        if (this.b) {
-            return;
-        }
-        this.b = true;
-        Runnable runnable = (Runnable) this.d;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // org.telegram.ui.Components.yw0
+    public /* synthetic */ void m() {
+        int i10 = this.a;
     }
 
-    @Override // zf.k0
-    public void destroy() {
-        switch (this.a) {
-            case 0:
-                a(false);
-                this.c = true;
-                break;
-            default:
-                a(false);
-                this.c = true;
-                break;
-        }
+    private final /* synthetic */ void a() {
     }
 
-    public ta0(LaunchActivity launchActivity, boolean z10) {
-        this.a = 0;
-        this.d = new WeakReference(launchActivity);
+    private final /* synthetic */ void b() {
     }
 }

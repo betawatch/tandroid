@@ -1,85 +1,44 @@
 package org.telegram.ui.Components.voip;
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.transition.TransitionSet;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ix0;
-import w7.z5;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.v80;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class f2 extends LinearLayout {
-    public HashMap a;
-    public ArrayList b;
-    public ArrayList c;
-    public TransitionSet d;
-    public boolean e;
-    public boolean f;
-    public Runnable h;
-    public o1 n;
-    public TextPaint r;
+public final class f2 extends v80 {
+    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ TLRPC.Chat d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ TLRPC.InputPeer f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ Activity s;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 v;
+    public final /* synthetic */ AccountInstance w;
+    public final /* synthetic */ boolean x;
 
-    public final void a(int i10, String str, String str2) {
-        HashMap hashMap = this.a;
-        if (hashMap.get(str2) != null) {
-            return;
-        }
-        e2 e2Var = new e2(getContext(), this.n, i10);
-        e2Var.a = str2;
-        int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(120.0f);
-        TextView textView = e2Var.c;
-        StaticLayout c10 = ix0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, dp, 10, true);
-        if (c10 != null) {
-            dp = 0;
-            for (int i11 = 0; i11 < c10.getLineCount(); i11++) {
-                dp = (int) Math.max(dp, Math.ceil(c10.getLineWidth(i11)));
-            }
-        }
-        textView.setMaxWidth(dp);
-        textView.setText(str);
-        e2Var.b.setImageResource(i10);
-        hashMap.put(str2, e2Var);
-        if (this.e) {
-            this.b.add(e2Var);
-        } else {
-            this.f = true;
-            addView(e2Var, z5.t(-2, -2, 1, 4, 0, 0, 4));
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.r2 r2Var, AccountInstance accountInstance, boolean z13) {
+        super(context, chat);
+        this.c = user;
+        this.d = chat2;
+        this.e = str;
+        this.f = inputPeer;
+        this.h = z10;
+        this.n = z11;
+        this.r = z12;
+        this.s = activity;
+        this.v = r2Var;
+        this.w = accountInstance;
+        this.x = z13;
     }
 
-    public final CharSequence b(String str) {
-        return str == null ? "" : TextUtils.ellipsize(str, this.r, AndroidUtilities.dp(300.0f), TextUtils.TruncateAt.END);
-    }
-
-    public final void c(String str) {
-        e2 e2Var = (e2) this.a.remove(str);
-        this.n.m.remove(e2Var);
-        if (e2Var != null) {
-            if (!this.e) {
-                this.f = true;
-                removeView(e2Var);
-            } else {
-                if (this.b.remove(e2Var)) {
-                    return;
-                }
-                this.c.add(e2Var);
-            }
-        }
-    }
-
-    public int getChildsHight() {
-        int childCount = getChildCount();
-        return org.telegram.messenger.v0.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
-    }
-
-    public void setOnViewsUpdated(Runnable runnable) {
-        this.h = runnable;
+    @Override // org.telegram.ui.Components.v80
+    public final void m() {
+        g2.b(this.c, this.d, this.e, this.f, false, this.h, this.n, this.r, this.s, this.v, this.w, false, true, this.x);
     }
 }

@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
+import a8.id;
 import android.app.Application;
 import com.google.android.play.core.integrity.StandardIntegrityException;
-import id.c;
-import id.g;
 import java.nio.charset.StandardCharsets;
+import jd.c;
+import jd.g;
 import kotlin.jvm.internal.e;
-import v7.h8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzba implements zzar {
     private final zzbo zza;
@@ -42,29 +42,29 @@ public final class zzba implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, kd.c cVar) {
+    public final /* synthetic */ Object zzc(String str, ld.c cVar) {
         return zzam.zza(this, str, cVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, kd.c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, ld.c cVar) {
         Object zzd;
         zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, kd.c cVar) {
+    public final Object zze(String str, ld.c cVar) {
         return new zzhg(new zzax(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, kd.c cVar) {
+    public final Object zzf(zzxp zzxpVar, ld.c cVar) {
         return new zzhg(new zzay(this, zzxpVar, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzg(Exception exc, kd.c cVar) {
+    public final Object zzg(Exception exc, ld.c cVar) {
         int i10;
         Throwable cause = exc.getCause();
         if (cause != null) {
@@ -154,10 +154,10 @@ public final class zzba implements zzar {
         this.zzc = true;
         this.zzd = "";
         int i10 = zzby.zza;
-        this.zze = h8.a(zzaz.zza);
+        this.zze = id.a(zzaz.zza);
     }
 
     public zzba(zzbo zzboVar, zzda zzdaVar, int i10, e eVar) {
-        this(new zzbo(28800000L), new zzcz(k6.e.b));
+        this(new zzbo(28800000L), new zzcz(l6.e.b));
     }
 }

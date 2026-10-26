@@ -1,97 +1,194 @@
 package hi;
 
-import android.content.Context;
+import android.animation.ObjectAnimator;
+import android.graphics.Paint;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h3;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.j71;
-import w7.z5;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nf;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class e0 extends h0 {
-    public final /* synthetic */ k0 h;
+public abstract class e0 extends FrameLayout {
+    public ObjectAnimator a;
+    public b2.v0 b;
+    public bi.r1 c;
+    public Paint d;
+    public float e;
+    public boolean f;
+    public float h;
+    public boolean n;
+    public eh.d r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(k0 k0Var, Context context) {
-        super(k0Var, context);
-        int i10;
-        g6 g6Var;
-        g6 g6Var2;
-        g6 g6Var3;
-        g6 g6Var4;
-        g6 g6Var5;
-        g6 g6Var6;
-        this.h = k0Var;
-        AndroidUtilities.removeFromParent(this.b);
-        i10 = ((h3) k0Var).currentAccount;
-        s sVar = new s(k0Var, 3);
-        u uVar = new u(k0Var, 2);
-        g6Var = ((h3) k0Var).resourcesProvider;
-        j71 j71Var = new j71(context, i10, 0, false, sVar, uVar, null, g6Var);
-        this.d = j71Var;
-        j71Var.t1();
-        j71 j71Var2 = this.d;
-        j71Var2.Z2.r = false;
-        j71Var2.setClipToPadding(false);
-        this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
-        this.c.addView(k0Var.G, z5.g());
-        this.c.addView(this.d, 0, z5.c(-1.0f, -1));
-        this.c.addView(k0Var.I, z5.g());
-        g6Var2 = ((h3) k0Var).resourcesProvider;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, g6Var2);
-        this.a = kVar;
-        kVar.setOccupyStatusBar(false);
-        org.telegram.ui.ActionBar.k kVar2 = this.a;
-        int i11 = k6.G6;
-        g6Var3 = ((h3) k0Var).resourcesProvider;
-        r6.m(kVar2, 5, i11, g6Var3);
-        org.telegram.ui.ActionBar.k kVar3 = this.a;
-        int i12 = k6.z8;
-        g6Var4 = ((h3) k0Var).resourcesProvider;
-        r6.m(kVar3, 3, i12, g6Var4);
-        org.telegram.ui.ActionBar.k kVar4 = this.a;
-        boolean z10 = k0Var.N;
-        kVar4.setBackButtonImage(z10 ? R.drawable.ic_ab_close : R.drawable.ic_ab_back);
-        org.telegram.ui.ActionBar.k kVar5 = this.a;
-        int i13 = k6.y8;
-        g6Var5 = ((h3) k0Var).resourcesProvider;
-        r6.m(kVar5, 1, i13, g6Var5);
-        this.a.setTitle(LocaleController.getString(R.string.CommunityAddAChatToCommunity));
-        this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
-        this.a.setActionBarMenuOnItemClick(new ah.s(this, 8));
-        this.c.addView(this.a, z5.e(-1, 56, 48));
-        this.c.addView(k0Var.E, z5.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
-        org.telegram.ui.ActionBar.y m10 = this.a.m();
-        m10.setGlassMode(true);
-        m10.setTranslationX(-AndroidUtilities.dp(7.0f));
-        m10.a(3, R.drawable.outline_header_search);
-        Context context2 = getContext();
-        g6Var6 = ((h3) k0Var).resourcesProvider;
-        ei.d dVar = new ei.d(context2, g6Var6, true);
-        k0Var.r = dVar;
-        dVar.f();
-        k0Var.r.setText(LocaleController.getString(R.string.OK));
-        k0Var.r.setOnClickListener(new hg.r0(this, 3));
-        if (z10) {
-            k0Var.r.setVisibility(8);
+    public final void a() {
+        ObjectAnimator objectAnimator = this.a;
+        if (objectAnimator != null) {
+            objectAnimator.removeAllListeners();
+            this.a.cancel();
+            this.a = null;
         }
-        this.c.addView(k0Var.r, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+    }
+
+    public final void b() {
+        bi.r1 r1Var = this.c;
+        eh.d dVar = this.r;
+        if (dVar != null) {
+            dVar.setBounds(0, ((int) this.h) - AndroidUtilities.dp(25.0f), getMeasuredWidth(), AndroidUtilities.dp(5.0f) + getMeasuredHeight());
+            r1Var.invalidateOutline();
+            r1Var.invalidate();
+        }
+    }
+
+    public final void c() {
+        if (this.f) {
+            return;
+        }
+        this.f = true;
+        a();
+        bi.r1 r1Var = this.c;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(r1Var, (Property<bi.r1, Float>) FrameLayout.TRANSLATION_Y, r1Var.getTranslationY(), (getMeasuredHeight() - this.h) + AndroidUtilities.dp(40.0f));
+        this.a = ofFloat;
+        ofFloat.addListener(new bh.b(this, 27));
+        this.a.setDuration(150L);
+        this.a.setInterpolator(ds.f);
+        this.a.start();
+        i0 i0Var = ((nf) this).v.l0;
+        if (i0Var != null) {
+            i0Var.setOpened(false);
+        }
+    }
+
+    public final void d(boolean z10) {
+        if (this.f) {
+            return;
+        }
+        bi.r1 r1Var = this.c;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(r1Var, (Property<bi.r1, Float>) FrameLayout.TRANSLATION_Y, r1Var.getTranslationY(), 0.0f);
+        this.a = ofFloat;
+        if (z10) {
+            ofFloat.setDuration(320L);
+            this.a.setInterpolator(new OvershootInterpolator(0.8f));
+        } else {
+            ofFloat.setDuration(150L);
+            this.a.setInterpolator(ds.f);
+        }
+        this.a.start();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.h - AndroidUtilities.dp(24.0f)) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    public mm0 getListView() {
+        return this.c;
+    }
+
+    @Override // android.view.ViewGroup
+    public int getNestedScrollAxes() {
+        return this.b.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        bi.r1 r1Var = this.c;
+        super.onMeasure(i10, i11);
+        if (this.n && !this.f) {
+            r1Var.setTranslationY(AndroidUtilities.dp(16.0f) + (r1Var.getMeasuredHeight() - r1Var.getPaddingTop()));
+            d(true);
+            this.n = false;
+        }
+        b();
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onNestedFling(View view, float f7, float f10, boolean z10) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onNestedPreFling(View view, float f7, float f10) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedPreScroll(View view, int i10, int i11, int[] iArr) {
+        bi.r1 r1Var = this.c;
+        if (this.f) {
+            return;
+        }
+        a();
+        float translationY = r1Var.getTranslationY();
+        if (translationY <= 0.0f || i11 <= 0) {
+            return;
+        }
+        float f7 = translationY - i11;
+        iArr[1] = i11;
+        r1Var.setTranslationY(f7 >= 0.0f ? f7 : 0.0f);
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
+        bi.r1 r1Var = this.c;
+        if (this.f) {
+            return;
+        }
+        a();
+        if (i13 != 0) {
+            float translationY = r1Var.getTranslationY() - i13;
+            if (translationY < 0.0f) {
+                translationY = 0.0f;
+            }
+            r1Var.setTranslationY(translationY);
+            invalidate();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScrollAccepted(View view, View view2, int i10) {
+        this.b.a = i10;
+        if (this.f) {
+            return;
+        }
         a();
     }
 
-    @Override // hi.h0
-    public final float b() {
-        return zf.f0.b(this.h.c.e) * super.b();
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onStartNestedScroll(View view, View view2, int i10) {
+        return !this.f && i10 == 2;
     }
 
-    @Override // hi.h0
-    public final void c() {
-        super.c();
-        this.h.E.setTranslationY(Math.max(AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight, b() + AndroidUtilities.dp(4.0f)));
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+        this.b.a = 0;
+        boolean z10 = this.f;
+        if (z10 || z10) {
+            return;
+        }
+        if (this.c.getTranslationY() > AndroidUtilities.dp(16.0f)) {
+            c();
+        } else {
+            d(false);
+        }
+    }
+
+    public void setBackgroundDrawable(eh.d dVar) {
+        this.r = dVar;
+        dVar.x(AndroidUtilities.dp(22.0f));
+        this.r.w(AndroidUtilities.dp(5.0f));
+        bi.r1 r1Var = this.c;
+        if (dVar.y == null) {
+            dVar.y = new eh.b(dVar, 0);
+        }
+        r1Var.setOutlineProvider(dVar.y);
     }
 }

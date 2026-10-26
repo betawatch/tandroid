@@ -1,6 +1,6 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u2 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,16 +24,16 @@ public final /* synthetic */ class u2 implements Runnable {
             default:
                 y2 y2Var2 = this.b;
                 if (!y2Var2.S && !y2Var2.R) {
-                    hh.d.c(y2Var2.E, y2Var2.h);
+                    ih.d.c(y2Var2.E, y2Var2.h);
                     y2Var2.F.d();
-                    x5 x5Var = y2Var2.r;
+                    w5 w5Var = y2Var2.r;
                     u2 u2Var = new u2(y2Var2, 0);
-                    s5 s5Var = x5Var.y;
-                    if (s5Var == null) {
+                    r5 r5Var = w5Var.y;
+                    if (r5Var == null) {
                         u2Var.run();
                         break;
-                    } else if (s5Var.b == null) {
-                        s5Var.d = u2Var;
+                    } else if (r5Var.b == null) {
+                        r5Var.d = u2Var;
                         break;
                     } else {
                         u2Var.run();

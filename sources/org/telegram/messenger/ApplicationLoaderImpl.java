@@ -12,11 +12,11 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.x71;
+import org.telegram.ui.Components.y71;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends ApplicationLoader {
     private static long lastUpdateCheckTime;
@@ -28,7 +28,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public void appCenterLogInternal(Throwable th2) {
         try {
-            t9.c cVar = (t9.c) l9.h.c().b(t9.c.class);
+            u9.c cVar = (u9.c) m9.h.c().b(u9.c.class);
             if (cVar == null) {
                 throw new NullPointerException("FirebaseCrashlytics component is not present.");
             }
@@ -50,7 +50,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
         if (Build.VERSION.SDK_INT < 26 || ApplicationLoader.applicationContext.getPackageManager().canRequestPackageInstalls()) {
             return true;
         }
-        org.telegram.ui.Components.f5.j(context, null).show();
+        org.telegram.ui.Components.g5.j(context, null).show();
         return false;
     }
 
@@ -147,8 +147,8 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                     FileLog.e(e);
                 }
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         return z10;
     }
@@ -156,7 +156,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i10) {
         try {
-            new o71(context, betaUpdate).show();
+            new x71(context, betaUpdate).show();
             return true;
         } catch (Exception e) {
             FileLog.e(e);
@@ -179,7 +179,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 if (ConnectionsManager.getInstance(UserConfig.selectedAccount).isTestBackend()) {
                     str2 = str2 + " [TEST SERVER]";
                 }
-                t9.c cVar = (t9.c) l9.h.c().b(t9.c.class);
+                u9.c cVar = (u9.c) m9.h.c().b(u9.c.class);
                 if (cVar == null) {
                     throw new NullPointerException("FirebaseCrashlytics component is not present.");
                 }
@@ -206,7 +206,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         if (isCustomUpdate()) {
-            return new p71(activity, viewGroup);
+            return new y71(activity, viewGroup);
         }
         return null;
     }

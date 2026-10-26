@@ -1,14 +1,13 @@
 package j4;
 
-import b2.v0;
-import c3.l0;
-import e2.m0;
-import i2.n0;
-import i2.o1;
+import b2.w0;
+import c3.j0;
+import e2.n0;
+import i2.p0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -16,11 +15,11 @@ public final class n implements i {
     public final e2.x b;
     public final boolean[] c = new boolean[4];
     public final l d;
-    public final n0 e;
+    public final p0 e;
     public m f;
     public long g;
     public String h;
-    public l0 i;
+    public j0 i;
     public boolean j;
     public long k;
 
@@ -30,7 +29,7 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new n0(178);
+        this.e = new p0(178);
         this.b = new e2.x();
     }
 
@@ -60,14 +59,14 @@ public final class n implements i {
         while (true) {
             int c10 = f2.q.c(bArr, i14, i15, this.c);
             l lVar = this.d;
-            n0 n0Var = this.e;
+            p0 p0Var = this.e;
             if (c10 == i15) {
                 if (!this.j) {
                     lVar.a(i14, i15, bArr);
                 }
                 this.f.a(i14, i15, bArr);
-                if (n0Var != null) {
-                    n0Var.a(i14, i15, bArr);
+                if (p0Var != null) {
+                    p0Var.a(i14, i15, bArr);
                     return;
                 }
                 return;
@@ -107,7 +106,7 @@ public final class n implements i {
                             if (i17 == 179 || i17 == 181) {
                                 lVar.c -= i19;
                                 lVar.a = false;
-                                l0 l0Var = this.i;
+                                j0 j0Var = this.i;
                                 int i21 = lVar.d;
                                 String str = this.h;
                                 str.getClass();
@@ -121,11 +120,11 @@ public final class n implements i {
                                     gVar.o(4);
                                     gVar.o(3);
                                 }
-                                int g10 = gVar.g(4);
-                                if (g10 == 15) {
+                                int g7 = gVar.g(4);
+                                if (g7 == 15) {
+                                    int g10 = gVar.g(8);
                                     int g11 = gVar.g(8);
-                                    int g12 = gVar.g(8);
-                                    if (g12 == 0) {
+                                    if (g11 == 0) {
                                         e2.a.l("H263Reader", "Invalid aspect ratio");
                                         f7 = 1.0f;
                                         if (gVar.f()) {
@@ -149,89 +148,89 @@ public final class n implements i {
                                             e2.a.l("H263Reader", "Unhandled video object layer shape");
                                         }
                                         gVar.n();
-                                        int g13 = gVar.g(16);
+                                        int g12 = gVar.g(16);
                                         gVar.n();
                                         if (gVar.f()) {
-                                            if (g13 == 0) {
+                                            if (g12 == 0) {
                                                 e2.a.l("H263Reader", "Invalid vop_increment_time_resolution");
                                             } else {
                                                 int i22 = 0;
-                                                for (int i23 = g13 - 1; i23 > 0; i23 >>= 1) {
+                                                for (int i23 = g12 - 1; i23 > 0; i23 >>= 1) {
                                                     i22++;
                                                 }
                                                 gVar.o(i22);
                                             }
                                         }
                                         gVar.n();
+                                        int g13 = gVar.g(13);
+                                        gVar.n();
                                         int g14 = gVar.g(13);
                                         gVar.n();
-                                        int g15 = gVar.g(13);
                                         gVar.n();
-                                        gVar.n();
-                                        b2.v vVar = new b2.v();
-                                        vVar.a = str;
-                                        vVar.q = v0.n("video/mp2t");
-                                        vVar.r = v0.n("video/mp4v-es");
-                                        vVar.y = g14;
-                                        vVar.z = g15;
-                                        vVar.E = f7;
-                                        vVar.u = Collections.singletonList(copyOf);
-                                        o1.v(vVar, l0Var);
+                                        b2.w wVar = new b2.w();
+                                        wVar.a = str;
+                                        wVar.q = w0.n("video/mp2t");
+                                        wVar.r = w0.n("video/mp4v-es");
+                                        wVar.y = g13;
+                                        wVar.z = g14;
+                                        wVar.E = f7;
+                                        wVar.u = Collections.singletonList(copyOf);
+                                        ic.a.u(wVar, j0Var);
                                         this.j = true;
                                     } else {
-                                        f7 = g11 / g12;
+                                        f7 = g10 / g11;
                                         if (gVar.f()) {
                                         }
                                         if (gVar.g(2) != 0) {
                                         }
                                         gVar.n();
-                                        int g132 = gVar.g(16);
+                                        int g122 = gVar.g(16);
                                         gVar.n();
                                         if (gVar.f()) {
                                         }
                                         gVar.n();
+                                        int g132 = gVar.g(13);
+                                        gVar.n();
                                         int g142 = gVar.g(13);
                                         gVar.n();
-                                        int g152 = gVar.g(13);
                                         gVar.n();
-                                        gVar.n();
-                                        b2.v vVar2 = new b2.v();
-                                        vVar2.a = str;
-                                        vVar2.q = v0.n("video/mp2t");
-                                        vVar2.r = v0.n("video/mp4v-es");
-                                        vVar2.y = g142;
-                                        vVar2.z = g152;
-                                        vVar2.E = f7;
-                                        vVar2.u = Collections.singletonList(copyOf);
-                                        o1.v(vVar2, l0Var);
+                                        b2.w wVar2 = new b2.w();
+                                        wVar2.a = str;
+                                        wVar2.q = w0.n("video/mp2t");
+                                        wVar2.r = w0.n("video/mp4v-es");
+                                        wVar2.y = g132;
+                                        wVar2.z = g142;
+                                        wVar2.E = f7;
+                                        wVar2.u = Collections.singletonList(copyOf);
+                                        ic.a.u(wVar2, j0Var);
                                         this.j = true;
                                     }
-                                } else if (g10 < 7) {
-                                    f7 = l[g10];
+                                } else if (g7 < 7) {
+                                    f7 = l[g7];
                                     if (gVar.f()) {
                                     }
                                     if (gVar.g(2) != 0) {
                                     }
                                     gVar.n();
-                                    int g1322 = gVar.g(16);
+                                    int g1222 = gVar.g(16);
                                     gVar.n();
                                     if (gVar.f()) {
                                     }
                                     gVar.n();
+                                    int g1322 = gVar.g(13);
+                                    gVar.n();
                                     int g1422 = gVar.g(13);
                                     gVar.n();
-                                    int g1522 = gVar.g(13);
                                     gVar.n();
-                                    gVar.n();
-                                    b2.v vVar22 = new b2.v();
-                                    vVar22.a = str;
-                                    vVar22.q = v0.n("video/mp2t");
-                                    vVar22.r = v0.n("video/mp4v-es");
-                                    vVar22.y = g1422;
-                                    vVar22.z = g1522;
-                                    vVar22.E = f7;
-                                    vVar22.u = Collections.singletonList(copyOf);
-                                    o1.v(vVar22, l0Var);
+                                    b2.w wVar22 = new b2.w();
+                                    wVar22.a = str;
+                                    wVar22.q = w0.n("video/mp2t");
+                                    wVar22.r = w0.n("video/mp4v-es");
+                                    wVar22.y = g1322;
+                                    wVar22.z = g1422;
+                                    wVar22.E = f7;
+                                    wVar22.u = Collections.singletonList(copyOf);
+                                    ic.a.u(wVar22, j0Var);
                                     this.j = true;
                                 } else {
                                     e2.a.l("H263Reader", "Invalid aspect ratio");
@@ -241,25 +240,25 @@ public final class n implements i {
                                     if (gVar.g(2) != 0) {
                                     }
                                     gVar.n();
-                                    int g13222 = gVar.g(16);
+                                    int g12222 = gVar.g(16);
                                     gVar.n();
                                     if (gVar.f()) {
                                     }
                                     gVar.n();
+                                    int g13222 = gVar.g(13);
+                                    gVar.n();
                                     int g14222 = gVar.g(13);
                                     gVar.n();
-                                    int g15222 = gVar.g(13);
                                     gVar.n();
-                                    gVar.n();
-                                    b2.v vVar222 = new b2.v();
-                                    vVar222.a = str;
-                                    vVar222.q = v0.n("video/mp2t");
-                                    vVar222.r = v0.n("video/mp4v-es");
-                                    vVar222.y = g14222;
-                                    vVar222.z = g15222;
-                                    vVar222.E = f7;
-                                    vVar222.u = Collections.singletonList(copyOf);
-                                    o1.v(vVar222, l0Var);
+                                    b2.w wVar222 = new b2.w();
+                                    wVar222.a = str;
+                                    wVar222.q = w0.n("video/mp2t");
+                                    wVar222.r = w0.n("video/mp4v-es");
+                                    wVar222.y = g13222;
+                                    wVar222.z = g14222;
+                                    wVar222.E = f7;
+                                    wVar222.u = Collections.singletonList(copyOf);
+                                    ic.a.u(wVar222, j0Var);
                                     this.j = true;
                                 }
                             } else {
@@ -300,25 +299,25 @@ public final class n implements i {
                 lVar.a(i13, 3, l.f);
             }
             this.f.a(i14, c10, bArr);
-            if (n0Var != null) {
+            if (p0Var != null) {
                 if (i18 > 0) {
-                    n0Var.a(i14, c10, bArr);
+                    p0Var.a(i14, c10, bArr);
                     i12 = 0;
                 } else {
                     i12 = -i18;
                 }
-                if (n0Var.e(i12)) {
-                    int p5 = f2.q.p(n0Var.e, (byte[]) n0Var.f);
-                    String str2 = m0.a;
-                    byte[] bArr2 = (byte[]) n0Var.f;
+                if (p0Var.e(i12)) {
+                    int p10 = f2.q.p(p0Var.e, (byte[]) p0Var.f);
+                    String str2 = n0.a;
+                    byte[] bArr2 = (byte[]) p0Var.f;
                     e2.x xVar2 = this.b;
-                    xVar2.L(p5, bArr2);
+                    xVar2.L(p10, bArr2);
                     this.a.a(this.k, xVar2);
                 }
                 if (i17 == 178) {
                     z10 = true;
                     if (xVar.a[c10 + 2] == 1) {
-                        n0Var.h(i17);
+                        p0Var.h(i17);
                     }
                     int i24 = i10 - c10;
                     this.f.b(i24, this.g - i24, this.j);
@@ -364,24 +363,24 @@ public final class n implements i {
             mVar.d = false;
             mVar.e = -1;
         }
-        n0 n0Var = this.e;
-        if (n0Var != null) {
-            n0Var.g();
+        p0 p0Var = this.e;
+        if (p0Var != null) {
+            p0Var.g();
         }
         this.g = 0L;
         this.k = -9223372036854775807L;
     }
 
     @Override // j4.i
-    public final void d(c3.s sVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
         this.h = (String) f0Var.e;
         f0Var.c();
-        l0 j02 = sVar.j0(f0Var.c, 2);
-        this.i = j02;
-        this.f = new m(j02);
-        this.a.b(sVar, f0Var);
+        j0 F1 = qVar.F1(f0Var.c, 2);
+        this.i = F1;
+        this.f = new m(F1);
+        this.a.b(qVar, f0Var);
     }
 
     @Override // j4.i

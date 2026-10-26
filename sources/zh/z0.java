@@ -1,47 +1,26 @@
 package zh;
 
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.r5;
+import android.content.Context;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class z0 {
-    public TLRPC.Document A;
-    public TL_stars.TL_starGiftUnique B;
-    public long C;
-    public Bitmap D;
-    public long E;
-    public s F;
-    public boolean G;
-    public int a;
-    public Drawable[] b;
-    public r5 c;
-    public r5 d;
-    public Bitmap e;
-    public Bitmap f;
-    public long g;
-    public boolean h;
-    public int j;
-    public Bitmap k;
-    public Bitmap l;
-    public Bitmap m;
-    public Bitmap n;
-    public int o;
-    public int p;
-    public int r;
-    public PorterDuffColorFilter u;
-    public long[] w;
-    public boolean[] x;
-    public long[] y;
-    public TLRPC.Document z;
-    public final Paint i = new Paint(2);
-    public int q = -1;
-    public int s = -1;
-    public int t = -1;
-    public final Paint v = new Paint(2);
+public final class z0 extends y4 {
+    public final /* synthetic */ p1 z0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z0(p1 p1Var, Context context, int i10, tg.k kVar, long j10, l0 l0Var) {
+        super(context, i10, null, kVar, j10, l0Var, false, false);
+        this.z0 = p1Var;
+    }
+
+    @Override // zh.y4
+    public final wc X() {
+        u6 u6Var;
+        p1 p1Var = this.z0;
+        org.telegram.ui.ActionBar.h3 h3Var = p1Var.container;
+        u6Var = p1Var.resourcesProvider;
+        return new wc(h3Var, u6Var);
+    }
 }

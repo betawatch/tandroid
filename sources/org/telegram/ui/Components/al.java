@@ -39,16 +39,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class al extends li implements NotificationCenter.NotificationCenterDelegate {
     public float A0;
     public boolean B0;
     public boolean C0;
     public boolean D0;
-    public final org.telegram.ui.ActionBar.j5 E;
+    public final org.telegram.ui.ActionBar.l5 E;
     public float E0;
-    public xq F;
+    public zq F;
     public float F0;
     public String G;
     public float G0;
@@ -67,20 +67,20 @@ public final class al extends li implements NotificationCenter.NotificationCente
     public final xk N;
     public boolean N0;
     public final LinearLayout O;
-    public ai.v3 O0;
+    public bi.r3 O0;
     public final FrameLayout P;
     public TL_wallet.walletTransaction P0;
     public final TextView Q;
-    public org.telegram.ui.Wallet.e6 Q0;
-    public final org.telegram.ui.Wallet.i9 R;
-    public org.telegram.ui.Wallet.w9 R0;
+    public org.telegram.ui.Wallet.d6 Q0;
+    public final org.telegram.ui.Wallet.h9 R;
+    public org.telegram.ui.Wallet.v9 R0;
     public final EditTextBoldCursor S;
     public boolean S0;
-    public final q6 T;
-    public org.telegram.ui.ActionBar.c2 T0;
+    public final s6 T;
+    public org.telegram.ui.ActionBar.e2 T0;
     public final TextView U;
     public boolean U0;
-    public final y90 V;
+    public final z90 V;
     public DecimalFormat V0;
     public final TextView W;
     public final TextView a0;
@@ -94,11 +94,11 @@ public final class al extends li implements NotificationCenter.NotificationCente
     public org.telegram.ui.Wallet.m i0;
     public final FrameLayout j0;
     public final FrameLayout k0;
-    public o1.k l0;
+    public o1.j l0;
     public float m0;
     public final int n;
     public float n0;
-    public final ei.d o0;
+    public final fi.d o0;
     public boolean p0;
     public final SpannableString q0;
     public final TLRPC.User r;
@@ -107,18 +107,18 @@ public final class al extends li implements NotificationCenter.NotificationCente
     public String s0;
     public boolean t0;
     public boolean u0;
-    public final org.telegram.ui.Wallet.l8 v;
+    public final org.telegram.ui.Wallet.k8 v;
     public int v0;
-    public final org.telegram.ui.ActionBar.u0 w;
+    public final org.telegram.ui.ActionBar.w0 w;
     public DecimalFormat w0;
-    public final org.telegram.ui.ActionBar.u0 x;
+    public final org.telegram.ui.ActionBar.w0 x;
     public final int[] x0;
     public final ShapeDrawable y;
     public boolean y0;
     public float z0;
 
-    public al(ti tiVar, Context context, int i10, TLRPC.User user, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var, tiVar);
+    public al(ti tiVar, Context context, int i10, TLRPC.User user, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var, tiVar);
         this.g0 = -1L;
         this.m0 = 1.0f;
         this.n0 = 1.0f;
@@ -133,37 +133,37 @@ public final class al extends li implements NotificationCenter.NotificationCente
         final int i12 = 0;
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        addView(frameLayout, w7.z5.e(-1, -1, 55));
-        org.telegram.ui.ActionBar.u0 a2 = this.b.a1.m().a(31, R.drawable.ic_ab_other);
+        addView(frameLayout, gb1.i(-1, -1, 55));
+        org.telegram.ui.ActionBar.w0 a2 = this.b.a1.l().a(31, R.drawable.ic_ab_other);
         this.w = a2;
         a2.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         a2.e(2, R.drawable.msg_addbot, LocaleController.getString(R.string.WalletDepositFunds));
-        final int i13 = 3;
         a2.e(3, R.drawable.menu_comments, LocaleController.getString(R.string.WalletAddComment));
         a2.setVisibility(8);
-        org.telegram.ui.ActionBar.u0 u0Var = new org.telegram.ui.ActionBar.u0(context, null, 0, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, this.a), false, g6Var);
-        this.x = u0Var;
-        u0Var.setIcon(R.drawable.ic_ab_other);
-        u0Var.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
-        int i14 = org.telegram.ui.ActionBar.k6.i6;
-        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.k6.g0(org.telegram.ui.ActionBar.k6.w0(i14, this.a), 1, -1);
-        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i14);
-        u0Var.setBackground(g02);
-        org.telegram.ui.ActionBar.r6.k(u0Var, g02, null, O, g6Var);
-        u0Var.setOnClickListener(new ai.ia(this, g6Var, i10, 7));
-        org.telegram.ui.Wallet.l8 l8Var = new org.telegram.ui.Wallet.l8(context, new ee(14, this, user), new ee(15, this, g6Var), g6Var);
-        this.v = l8Var;
-        l8Var.a(this.G, user);
-        addView(l8Var, w7.z5.d(-2, 64.0f, 49, 6.0f, 0.0f, 6.0f, 0.0f));
+        org.telegram.ui.ActionBar.w0 w0Var = new org.telegram.ui.ActionBar.w0(context, null, 0, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.G6, this.a), false, u6Var);
+        this.x = w0Var;
+        w0Var.setIcon(R.drawable.ic_ab_other);
+        w0Var.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
+        int i13 = org.telegram.ui.ActionBar.y6.i6;
+        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(org.telegram.ui.ActionBar.y6.w0(i13, this.a), 1, -1);
+        org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i13);
+        w0Var.setBackground(g02);
+        org.telegram.ui.ActionBar.f7.k(w0Var, g02, null, N, u6Var);
+        w0Var.setOnClickListener(new bi.pa(this, u6Var, i10, 8));
+        org.telegram.ui.Wallet.k8 k8Var = new org.telegram.ui.Wallet.k8(context, new org.telegram.ui.ip(24, this, user), new org.telegram.ui.ip(25, this, u6Var), u6Var);
+        this.v = k8Var;
+        k8Var.a(this.G, user);
+        addView(k8Var, gb1.h(-2, 64.0f, 49, 6.0f, 0.0f, 6.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setClipChildren(false);
         frameLayout2.setClipToPadding(false);
-        frameLayout.addView(frameLayout2, w7.z5.e(-1, -1, 55));
+        frameLayout.addView(frameLayout2, gb1.i(-1, -1, 55));
         xk xkVar = new xk(context);
         this.N = xkVar;
         xkVar.setOrientation(1);
         xkVar.setClipChildren(false);
         xkVar.setClipToPadding(false);
+        final int i14 = 3;
         xkVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
             public final /* synthetic */ al b;
 
@@ -173,7 +173,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                switch (i13) {
+                switch (i14) {
                     case 0:
                         this.b.c0();
                         break;
@@ -198,11 +198,11 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 }
             }
         });
-        frameLayout2.addView(xkVar, w7.z5.e(-1, -2, 17));
-        org.telegram.ui.Wallet.i9 i9Var = new org.telegram.ui.Wallet.i9(context, g6Var);
-        this.R = i9Var;
+        frameLayout2.addView(xkVar, gb1.i(-1, -2, 17));
+        org.telegram.ui.Wallet.h9 h9Var = new org.telegram.ui.Wallet.h9(context, u6Var);
+        this.R = h9Var;
         final int i15 = 4;
-        i9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
+        h9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
             public final /* synthetic */ al b;
 
             {
@@ -236,8 +236,8 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 }
             }
         });
-        xkVar.addView(i9Var, w7.z5.t(-1, 64, 49, 16, 0, 16, 0));
-        EditTextBoldCursor editText = i9Var.getEditText();
+        xkVar.addView(h9Var, gb1.x(-1, 64, 49, 16, 0, 16, 0));
+        EditTextBoldCursor editText = h9Var.getEditText();
         this.S = editText;
         editText.setFilters(new InputFilter[]{new qk(i12, this)});
         editText.setImeOptions(33554438);
@@ -281,35 +281,35 @@ public final class al extends li implements NotificationCenter.NotificationCente
         editText.addTextChangedListener(new yk(this));
         SpannableString spannableString = new SpannableString("⇅");
         this.q0 = spannableString;
-        xq xqVar = new xq(R.drawable.wallet_currency_exchange, 0);
-        xqVar.setAlpha(0.72f);
-        spannableString.setSpan(xqVar, 0, spannableString.length(), 33);
+        zq zqVar = new zq(R.drawable.wallet_currency_exchange, 0);
+        zqVar.setAlpha(0.72f);
+        spannableString.setSpan(zqVar, 0, spannableString.length(), 33);
         SpannableString spannableString2 = new SpannableString("G");
         this.r0 = spannableString2;
-        xq xqVar2 = new xq(R.drawable.wallet_gram_small, 0);
-        xqVar2.recolorDrawable = false;
-        spannableString2.setSpan(xqVar2, 0, spannableString2.length(), 33);
-        q6 q6Var = new q6(context, false, true, true, true, true);
-        this.T = q6Var;
-        q6Var.c.m(0.35f, 320L, 3.5f, bs.h);
-        q6Var.setScaleProperty(0.35f);
-        q6Var.setText(U(org.telegram.ui.Wallet.l0.w(i10), 0L));
-        int i17 = org.telegram.ui.ActionBar.k6.d6;
-        int i18 = org.telegram.ui.ActionBar.k6.z6;
-        org.telegram.ui.ActionBar.n6 q6 = org.telegram.ui.ActionBar.r6.q(i17, i18);
-        org.telegram.ui.ActionBar.r6.n(q6Var, q6.a, q6.b, 4, 0.0f, g6Var);
-        q6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        q6Var.setTypeface(AndroidUtilities.getTypeface("fonts/gram.ttf"));
-        q6Var.setGravity(17);
-        q6Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-        q6Var.setAllowCancel(true);
-        ShapeDrawable c02 = org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.k6.o1(0.08f, org.telegram.ui.ActionBar.k6.w0(i18, this.a)));
+        zq zqVar2 = new zq(R.drawable.wallet_gram_small, 0);
+        zqVar2.recolorDrawable = false;
+        spannableString2.setSpan(zqVar2, 0, spannableString2.length(), 33);
+        s6 s6Var = new s6(context, false, true, true, true, true);
+        this.T = s6Var;
+        s6Var.c.m(0.35f, 320L, 3.5f, ds.h);
+        s6Var.setScaleProperty(0.35f);
+        s6Var.setText(U(org.telegram.ui.Wallet.l0.w(i10), 0L));
+        int i17 = org.telegram.ui.ActionBar.y6.d6;
+        int i18 = org.telegram.ui.ActionBar.y6.z6;
+        org.telegram.ui.ActionBar.b7 q5 = org.telegram.ui.ActionBar.f7.q(i17, i18);
+        org.telegram.ui.ActionBar.f7.n(s6Var, q5.a, q5.b, 4, 0.0f, u6Var);
+        s6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        s6Var.setTypeface(AndroidUtilities.getTypeface("fonts/gram.ttf"));
+        s6Var.setGravity(17);
+        s6Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
+        s6Var.setAllowCancel(true);
+        ShapeDrawable c02 = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.y6.o1(0.08f, org.telegram.ui.ActionBar.y6.w0(i18, this.a)));
         this.y = c02;
-        q6Var.setSizeableBackground(c02);
-        xkVar.addView(q6Var, w7.z5.t(-2, 28, 49, 0, 8, 0, 0));
-        w7.b6.a(q6Var);
+        s6Var.setSizeableBackground(c02);
+        xkVar.addView(s6Var, gb1.x(-2, 28, 49, 0, 8, 0, 0));
+        gb1.b(s6Var);
         final int i19 = 6;
-        q6Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
+        s6Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
             public final /* synthetic */ al b;
 
             {
@@ -345,20 +345,20 @@ public final class al extends li implements NotificationCenter.NotificationCente
         });
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.P = frameLayout3;
-        xkVar.addView(frameLayout3, w7.z5.q(-2, -2, 49));
+        xkVar.addView(frameLayout3, gb1.u(-2, -2, 49));
         LinearLayout linearLayout = new LinearLayout(context);
         this.O = linearLayout;
         linearLayout.setOrientation(1);
-        frameLayout3.addView(linearLayout, w7.z5.e(-2, -2, 49));
+        frameLayout3.addView(linearLayout, gb1.i(-2, -2, 49));
         TextView textView = new TextView(context);
         this.Q = textView;
         textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.W(textView, i18, g6Var);
+        org.telegram.ui.ActionBar.f7.V(textView, i18, u6Var);
         textView.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.WalletTapToSetAmount));
-        frameLayout3.addView(textView, w7.z5.d(-2, 28.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
-        w7.b6.a(textView);
+        frameLayout3.addView(textView, gb1.h(-2, 28.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        gb1.b(textView);
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
             public final /* synthetic */ al b;
 
@@ -404,25 +404,25 @@ public final class al extends li implements NotificationCenter.NotificationCente
         this.U0 = false;
         TextView textView2 = new TextView(context);
         this.U = textView2;
-        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(0, true, false, null);
-        this.E = j5Var;
-        j5Var.x = false;
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(0, true, false, null);
+        this.E = l5Var;
+        l5Var.x = false;
         Paint.Style style = Paint.Style.STROKE;
-        Paint paint = j5Var.c;
+        Paint paint = l5Var.c;
         paint.setStyle(style);
         paint.setStrokeWidth(Math.max(1.0f, AndroidUtilities.dpf2(0.5f)));
-        int i20 = org.telegram.ui.ActionBar.k6.kl;
-        paint.setColor(org.telegram.ui.ActionBar.k6.w0(i20, this.a));
-        j5Var.w = Integer.valueOf(org.telegram.ui.ActionBar.k6.w0(i20, this.a));
+        int i20 = org.telegram.ui.ActionBar.y6.kl;
+        paint.setColor(org.telegram.ui.ActionBar.y6.w0(i20, this.a));
+        l5Var.w = Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(i20, this.a));
         textView2.setPadding(AndroidUtilities.dp(15.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(8.0f));
-        textView2.setBackground(j5Var);
+        textView2.setBackground(l5Var);
         textView2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.W(textView2, i18, g6Var);
+        org.telegram.ui.ActionBar.f7.V(textView2, i18, u6Var);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setVisibility(8);
         textView2.setEllipsize(TextUtils.TruncateAt.END);
         textView2.setMaxLines(4);
-        linearLayout.addView(textView2, w7.z5.t(-2, -2, 49, 32, 12, 32, 0));
+        linearLayout.addView(textView2, gb1.x(-2, -2, 49, 32, 12, 32, 0));
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
             public final /* synthetic */ al b;
 
@@ -457,17 +457,17 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 }
             }
         });
-        w7.b6.b(textView2, 0.02f, 1.2f);
-        y90 y90Var = new y90(context, g6Var);
-        this.V = y90Var;
-        org.telegram.ui.ActionBar.r6.W(y90Var, org.telegram.ui.ActionBar.k6.q7, g6Var);
-        org.telegram.ui.ActionBar.r6.I(y90Var, org.telegram.ui.ActionBar.k6.Oh, g6Var);
-        y90Var.setTextSize(1, 14.0f);
-        y90Var.setGravity(17);
-        y90Var.setTypeface(AndroidUtilities.bold());
-        y90Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
+        gb1.c(textView2, 0.02f, 1.2f);
+        z90 z90Var = new z90(context, u6Var);
+        this.V = z90Var;
+        org.telegram.ui.ActionBar.f7.V(z90Var, org.telegram.ui.ActionBar.y6.q7, u6Var);
+        org.telegram.ui.ActionBar.f7.H(z90Var, org.telegram.ui.ActionBar.y6.Oh, u6Var);
+        z90Var.setTextSize(1, 14.0f);
+        z90Var.setGravity(17);
+        z90Var.setTypeface(AndroidUtilities.bold());
+        z90Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         e0(false);
-        linearLayout.addView(y90Var, w7.z5.t(-2, -2, 49, 0, 10, 0, 0));
+        linearLayout.addView(z90Var, gb1.x(-2, -2, 49, 0, 10, 0, 0));
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.j0 = frameLayout4;
         frameLayout4.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
@@ -477,30 +477,30 @@ public final class al extends li implements NotificationCenter.NotificationCente
         frameLayout4.setClipToPadding(false);
         frameLayout5.setClipChildren(false);
         frameLayout5.setClipToPadding(false);
-        frameLayout4.addView(frameLayout5, w7.z5.c(-1.0f, -1));
+        frameLayout4.addView(frameLayout5, gb1.g(-1.0f, -1));
         TextView textView3 = new TextView(context);
         this.W = textView3;
-        org.telegram.ui.ActionBar.r6.W(textView3, i18, g6Var);
+        org.telegram.ui.ActionBar.f7.V(textView3, i18, u6Var);
         textView3.setTextSize(1, 14.0f);
         textView3.setGravity(17);
-        frameLayout5.addView(textView3, w7.z5.e(-1, 20, 55));
+        frameLayout5.addView(textView3, gb1.i(-1, 20, 55));
         TextView textView4 = new TextView(context);
         this.a0 = textView4;
-        org.telegram.ui.ActionBar.r6.W(textView4, i18, g6Var);
+        org.telegram.ui.ActionBar.f7.V(textView4, i18, u6Var);
         textView4.setTextSize(1, 14.0f);
         textView4.setGravity(17);
         textView4.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         textView4.setVisibility(8);
-        frameLayout5.addView(textView4, w7.z5.d(-1, -2.0f, 55, 0.0f, 24.0f, 0.0f, 0.0f));
+        frameLayout5.addView(textView4, gb1.h(-1, -2.0f, 55, 0.0f, 24.0f, 0.0f, 0.0f));
         SpannableString spannableString3 = new SpannableString(LocaleController.getString(R.string.Loading));
         this.b0 = spannableString3;
-        spannableString3.setSpan(new da0(AndroidUtilities.dp(80.0f), textView4), 0, spannableString3.length(), 33);
-        ei.d g10 = org.telegram.messenger.sl.g(24, context, g6Var, true);
-        this.o0 = g10;
-        g10.setText(LocaleController.getString(R.string.WalletSendGrams));
-        g10.setEnabled(false);
+        spannableString3.setSpan(new ea0(AndroidUtilities.dp(80.0f), textView4), 0, spannableString3.length(), 33);
+        fi.d f7 = org.telegram.messenger.vh.f(24, context, u6Var, true);
+        this.o0 = f7;
+        f7.setText(LocaleController.getString(R.string.WalletSendGrams));
+        f7.setEnabled(false);
         final int i21 = 2;
-        g10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
+        f7.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.pk
             public final /* synthetic */ al b;
 
             {
@@ -534,8 +534,8 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 }
             }
         });
-        frameLayout5.addView(g10, w7.z5.e(-1, 48, 87));
-        frameLayout.addView(frameLayout4, w7.z5.d(-1, 92.0f, 87, 0.0f, 0.0f, 0.0f, 70.0f));
+        frameLayout5.addView(f7, gb1.i(-1, 48, 87));
+        frameLayout.addView(frameLayout4, gb1.h(-1, 92.0f, 87, 0.0f, 0.0f, 0.0f, 70.0f));
         m0(false, false);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.walletUpdate);
         h0();
@@ -550,16 +550,16 @@ public final class al extends li implements NotificationCenter.NotificationCente
     */
     public static void N(final al alVar) {
         boolean z10;
-        ai.v3 v3Var;
+        bi.r3 r3Var;
         EditTextBoldCursor editTextBoldCursor = alVar.S;
         int i10 = alVar.n;
-        ei.d dVar = alVar.o0;
+        fi.d dVar = alVar.o0;
         if (!dVar.c0 || dVar.Q) {
             return;
         }
-        org.telegram.ui.Wallet.l0 w9 = org.telegram.ui.Wallet.l0.w(i10);
+        org.telegram.ui.Wallet.l0 w10 = org.telegram.ui.Wallet.l0.w(i10);
         long gramNanoAmount = alVar.getGramNanoAmount();
-        long u10 = w9.u();
+        long u10 = w10.u();
         if (!WalletEngine2.isValidAddress(alVar.G) || gramNanoAmount <= 0) {
             return;
         }
@@ -575,10 +575,10 @@ public final class al extends li implements NotificationCenter.NotificationCente
         }
         if (gramNanoAmount > u10) {
             BotWebViewVibrationEffect.APP_ERROR.vibrate();
-            y90 y90Var = alVar.V;
+            z90 z90Var = alVar.V;
             int i12 = -alVar.v0;
             alVar.v0 = i12;
-            AndroidUtilities.shakeViewSpring(y90Var, i12);
+            AndroidUtilities.shakeViewSpring(z90Var, i12);
             return;
         }
         MessagesController messagesController = MessagesController.getInstance(i10);
@@ -590,9 +590,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 dVar.setLoading(true);
                 alVar.N0 = true;
                 alVar.M0 = false;
-                v3Var = alVar.O0;
-                if (v3Var != null) {
-                    alVar.removeCallbacks(v3Var);
+                r3Var = alVar.O0;
+                if (r3Var != null) {
+                    alVar.removeCallbacks(r3Var);
                     alVar.O0 = null;
                 }
                 alVar.P0 = null;
@@ -614,14 +614,14 @@ public final class al extends li implements NotificationCenter.NotificationCente
                             case 0:
                                 String str3 = (String) obj;
                                 al alVar2 = this.b;
-                                ei.d dVar2 = alVar2.o0;
+                                fi.d dVar2 = alVar2.o0;
                                 ti tiVar = alVar2.b;
                                 if (!alVar2.K && !tiVar.isDismissed()) {
                                     if (!"PASSCODE_FAILED".equalsIgnoreCase(str3)) {
                                         if (!TextUtils.isEmpty(str3)) {
                                             dVar2.setLoading(false);
                                             alVar2.N0 = false;
-                                            xc.X().e0(str3, false);
+                                            wc.Y().f0(str3, false);
                                             break;
                                         } else {
                                             tiVar.dismiss();
@@ -641,7 +641,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
                     }
                 };
                 final int i14 = 1;
-                w9.b0(user, str, gramNanoAmount, str2, publicKey, null, null, callback, new Utilities.Callback(alVar) { // from class: org.telegram.ui.Components.vk
+                w10.b0(user, str, gramNanoAmount, str2, publicKey, null, null, callback, new Utilities.Callback(alVar) { // from class: org.telegram.ui.Components.vk
                     public final /* synthetic */ al b;
 
                     {
@@ -654,14 +654,14 @@ public final class al extends li implements NotificationCenter.NotificationCente
                             case 0:
                                 String str3 = (String) obj;
                                 al alVar2 = this.b;
-                                ei.d dVar2 = alVar2.o0;
+                                fi.d dVar2 = alVar2.o0;
                                 ti tiVar = alVar2.b;
                                 if (!alVar2.K && !tiVar.isDismissed()) {
                                     if (!"PASSCODE_FAILED".equalsIgnoreCase(str3)) {
                                         if (!TextUtils.isEmpty(str3)) {
                                             dVar2.setLoading(false);
                                             alVar2.N0 = false;
-                                            xc.X().e0(str3, false);
+                                            wc.Y().f0(str3, false);
                                             break;
                                         } else {
                                             tiVar.dismiss();
@@ -687,8 +687,8 @@ public final class al extends li implements NotificationCenter.NotificationCente
         dVar.setLoading(true);
         alVar.N0 = true;
         alVar.M0 = false;
-        v3Var = alVar.O0;
-        if (v3Var != null) {
+        r3Var = alVar.O0;
+        if (r3Var != null) {
         }
         alVar.P0 = null;
         TLRPC.User user2 = alVar.r;
@@ -710,14 +710,14 @@ public final class al extends li implements NotificationCenter.NotificationCente
                     case 0:
                         String str32 = (String) obj;
                         al alVar2 = this.b;
-                        ei.d dVar2 = alVar2.o0;
+                        fi.d dVar2 = alVar2.o0;
                         ti tiVar = alVar2.b;
                         if (!alVar2.K && !tiVar.isDismissed()) {
                             if (!"PASSCODE_FAILED".equalsIgnoreCase(str32)) {
                                 if (!TextUtils.isEmpty(str32)) {
                                     dVar2.setLoading(false);
                                     alVar2.N0 = false;
-                                    xc.X().e0(str32, false);
+                                    wc.Y().f0(str32, false);
                                     break;
                                 } else {
                                     tiVar.dismiss();
@@ -737,7 +737,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
             }
         };
         final int i142 = 1;
-        w9.b0(user2, str3, gramNanoAmount, str22, publicKey, null, null, callback2, new Utilities.Callback(alVar) { // from class: org.telegram.ui.Components.vk
+        w10.b0(user2, str3, gramNanoAmount, str22, publicKey, null, null, callback2, new Utilities.Callback(alVar) { // from class: org.telegram.ui.Components.vk
             public final /* synthetic */ al b;
 
             {
@@ -750,14 +750,14 @@ public final class al extends li implements NotificationCenter.NotificationCente
                     case 0:
                         String str32 = (String) obj;
                         al alVar2 = this.b;
-                        ei.d dVar2 = alVar2.o0;
+                        fi.d dVar2 = alVar2.o0;
                         ti tiVar = alVar2.b;
                         if (!alVar2.K && !tiVar.isDismissed()) {
                             if (!"PASSCODE_FAILED".equalsIgnoreCase(str32)) {
                                 if (!TextUtils.isEmpty(str32)) {
                                     dVar2.setLoading(false);
                                     alVar2.N0 = false;
-                                    xc.X().e0(str32, false);
+                                    wc.Y().f0(str32, false);
                                     break;
                                 } else {
                                     tiVar.dismiss();
@@ -992,26 +992,26 @@ public final class al extends li implements NotificationCenter.NotificationCente
             i12 = (i11 / 5) * 2;
             tiVar.setAllowNestedScroll(true);
         }
-        int g10 = i2.o1.g(1.0f, i12, 0) + AndroidUtilities.statusBarHeight;
+        int c10 = org.telegram.messenger.t.c(1.0f, i12, 0) + AndroidUtilities.statusBarHeight;
         FrameLayout frameLayout = this.s;
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
-        if (layoutParams2.topMargin != g10) {
-            layoutParams2.topMargin = g10;
+        if (layoutParams2.topMargin != c10) {
+            layoutParams2.topMargin = c10;
             frameLayout.setLayoutParams(layoutParams2);
         }
-        int b10 = org.telegram.messenger.v0.b(4.0f, g10 - AndroidUtilities.statusBarHeight, 0);
-        org.telegram.ui.Wallet.l8 l8Var = this.v;
-        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) l8Var.getLayoutParams();
-        int max = Math.max(0, this.y0 ? AndroidUtilities.dp(4.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() : b10 - AndroidUtilities.dp(4.0f));
+        int z11 = org.telegram.messenger.t.z(4.0f, c10 - AndroidUtilities.statusBarHeight, 0);
+        org.telegram.ui.Wallet.k8 k8Var = this.v;
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) k8Var.getLayoutParams();
+        int max = Math.max(0, this.y0 ? AndroidUtilities.dp(4.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() : z11 - AndroidUtilities.dp(4.0f));
         if (layoutParams3.topMargin != max) {
             layoutParams3.topMargin = max;
-            l8Var.setLayoutParams(layoutParams3);
+            k8Var.setLayoutParams(layoutParams3);
         }
         i0();
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void F(li liVar) {
+    public final void G(li liVar) {
         Activity findActivity;
         R();
         if (this.L == null && !AndroidUtilities.isTablet()) {
@@ -1036,9 +1036,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
         this.K0 = false;
         this.N.setTranslationY(0.0f);
         this.j0.setTranslationY(0.0f);
-        org.telegram.ui.Wallet.l8 l8Var = this.v;
-        l8Var.setTranslationY(0.0f);
-        l8Var.setAlpha(1.0f);
+        org.telegram.ui.Wallet.k8 k8Var = this.v;
+        k8Var.setTranslationY(0.0f);
+        k8Var.setAlpha(1.0f);
         this.D0 = false;
         ti tiVar = this.b;
         tiVar.a1.setTitle(LocaleController.getString(R.string.WalletSendMoneyTo));
@@ -1046,18 +1046,18 @@ public final class al extends li implements NotificationCenter.NotificationCente
         this.w.setVisibility(0);
         editTextBoldCursor.clearFocus();
         Y();
-        org.telegram.ui.Wallet.i9 i9Var = this.R;
-        float f7 = i9Var.getDiamondView().f == null ? 1.0f : 0.0f;
+        org.telegram.ui.Wallet.h9 h9Var = this.R;
+        float f7 = h9Var.getDiamondView().f == null ? 1.0f : 0.0f;
         this.n0 = f7;
         this.m0 = f7;
         k0();
         if (this.m0 < 1.0f) {
-            i9Var.getDiamondView().l(new uk(this, 3));
+            h9Var.getDiamondView().l(new uk(this, 3));
         }
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void I() {
+    public final void H() {
         this.L0 = true;
         post(new uk(this, 4));
     }
@@ -1069,9 +1069,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
 
     public final void R() {
         this.R.getDiamondView().l(null);
-        o1.k kVar = this.l0;
-        if (kVar != null) {
-            kVar.c();
+        o1.j jVar = this.l0;
+        if (jVar != null) {
+            jVar.c();
         }
         this.m0 = 1.0f;
         k0();
@@ -1133,9 +1133,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
         }
         this.g0 = -1L;
         h0();
-        org.telegram.ui.Wallet.l0 w9 = org.telegram.ui.Wallet.l0.w(this.n);
+        org.telegram.ui.Wallet.l0 w10 = org.telegram.ui.Wallet.l0.w(this.n);
         if (this.h0) {
-            this.i0 = w9.h(this.G, Math.max(100000000L, getGramNanoAmount()), this.s0, this.t0 ? getPublicKey() : null, new tk(this, 1));
+            this.i0 = w10.h(this.G, Math.max(100000000L, getGramNanoAmount()), this.s0, this.t0 ? getPublicKey() : null, new tk(this, 1));
         }
     }
 
@@ -1144,9 +1144,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
             return;
         }
         c0();
-        ai.v3 v3Var = new ai.v3(this, SystemClock.uptimeMillis() + 1500, 24);
-        this.O0 = v3Var;
-        post(v3Var);
+        bi.r3 r3Var = new bi.r3(this, SystemClock.uptimeMillis() + 1500, 24);
+        this.O0 = r3Var;
+        post(r3Var);
     }
 
     public final void b0() {
@@ -1174,7 +1174,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
         EditTextBoldCursor editTextBoldCursor = this.S;
         editTextBoldCursor.setFocusableInTouchMode(true);
         editTextBoldCursor.setShowSoftInputOnFocus(true);
-        tiVar.z1(editTextBoldCursor, true);
+        tiVar.y1(editTextBoldCursor, true);
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
         editTextBoldCursor.postDelayed(new uk(this, 1), 220L);
@@ -1183,35 +1183,35 @@ public final class al extends li implements NotificationCenter.NotificationCente
     @Override // org.telegram.ui.Components.li
     public final void d() {
         try {
-            org.telegram.ui.ActionBar.u0 u0Var = this.x;
-            org.telegram.ui.ActionBar.g6 g6Var = this.a;
-            if (u0Var != null) {
-                u0Var.setIconColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, g6Var));
+            org.telegram.ui.ActionBar.w0 w0Var = this.x;
+            org.telegram.ui.ActionBar.u6 u6Var = this.a;
+            if (w0Var != null) {
+                w0Var.setIconColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.G6, u6Var));
             }
             ShapeDrawable shapeDrawable = this.y;
             if (shapeDrawable != null) {
-                org.telegram.ui.ActionBar.k6.z1(org.telegram.ui.ActionBar.k6.o1(0.08f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.z6, g6Var)), shapeDrawable);
-                q6 q6Var = this.T;
-                if (q6Var != null) {
-                    q6Var.invalidate();
+                org.telegram.ui.ActionBar.y6.z1(org.telegram.ui.ActionBar.y6.o1(0.08f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.z6, u6Var)), shapeDrawable);
+                s6 s6Var = this.T;
+                if (s6Var != null) {
+                    s6Var.invalidate();
                 }
             }
-            org.telegram.ui.ActionBar.j5 j5Var = this.E;
-            if (j5Var != null) {
-                int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.kl, g6Var);
-                j5Var.c.setColor(w02);
-                j5Var.w = Integer.valueOf(w02);
+            org.telegram.ui.ActionBar.l5 l5Var = this.E;
+            if (l5Var != null) {
+                int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.kl, u6Var);
+                l5Var.c.setColor(w02);
+                l5Var.w = Integer.valueOf(w02);
                 TextView textView = this.U;
                 if (textView != null) {
                     textView.invalidate();
                 }
             }
-            xq xqVar = this.F;
-            if (xqVar != null) {
-                xqVar.setOverrideColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var));
-                y90 y90Var = this.V;
-                if (y90Var != null) {
-                    y90Var.invalidate();
+            zq zqVar = this.F;
+            if (zqVar != null) {
+                zqVar.setOverrideColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, u6Var));
+                z90 z90Var = this.V;
+                if (z90Var != null) {
+                    z90Var.invalidate();
                 }
             }
         } catch (Exception e) {
@@ -1242,7 +1242,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
     }
 
     public final void e0(boolean z10) {
-        y90 y90Var = this.V;
+        z90 z90Var = this.V;
         if (z10) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.WalletInsufficientFunds));
@@ -1250,13 +1250,13 @@ public final class al extends li implements NotificationCenter.NotificationCente
             int length = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.WalletDepositFunds));
             spannableStringBuilder.append((CharSequence) " >");
-            xq translate = new xq(R.drawable.settings_arrow, 0).setOverrideColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, this.a)).translate(0.0f, AndroidUtilities.dpf2(0.66f));
+            zq translate = new zq(R.drawable.settings_arrow, 0).setOverrideColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, this.a)).translate(0.0f, AndroidUtilities.dpf2(0.66f));
             this.F = translate;
             spannableStringBuilder.setSpan(translate, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-            spannableStringBuilder.setSpan(new ei.kb(this, 6), length, spannableStringBuilder.length(), 33);
-            y90Var.setText(spannableStringBuilder);
+            spannableStringBuilder.setSpan(new fi.hb(this, 6), length, spannableStringBuilder.length(), 33);
+            z90Var.setText(spannableStringBuilder);
         }
-        y90Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setDuration(320L).setInterpolator(bs.h).start();
+        z90Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f).setDuration(320L).setInterpolator(ds.h).start();
     }
 
     public final void f0() {
@@ -1276,8 +1276,8 @@ public final class al extends li implements NotificationCenter.NotificationCente
         SpannableStringBuilder U;
         i0();
         int i10 = this.n;
-        org.telegram.ui.Wallet.l0 w9 = org.telegram.ui.Wallet.l0.w(i10);
-        long u10 = w9.u();
+        org.telegram.ui.Wallet.l0 w10 = org.telegram.ui.Wallet.l0.w(i10);
+        long u10 = w10.u();
         long gramNanoAmount = getGramNanoAmount();
         long j10 = MessagesController.getInstance(i10).config.walletTransferMinNanos.get();
         EditTextBoldCursor editTextBoldCursor = this.S;
@@ -1295,7 +1295,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
         e0(!TextUtils.isEmpty(editTextBoldCursor.getText()) && gramNanoAmount > u10);
         String gramsText = getGramsText();
         boolean z12 = this.G == null && this.I;
-        ei.d dVar = this.o0;
+        fi.d dVar = this.o0;
         dVar.setLoading(z12);
         dVar.i(TextUtils.isEmpty(gramsText) ? LocaleController.getString(R.string.WalletSendGrams) : LocaleController.formatSpannable(R.string.WalletSendAmount, org.telegram.ui.Wallet.l0.k("Grams", gramsText, R.string.Grams_other)), true, true);
         boolean isEmpty = TextUtils.isEmpty(editTextBoldCursor.getText());
@@ -1324,7 +1324,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85714287f), length2, spannableStringBuilder.length(), 33);
             U = spannableStringBuilder.append((CharSequence) " ").append((CharSequence) this.q0);
         } else {
-            U = U(w9, gramNanoAmount);
+            U = U(w10, gramNanoAmount);
         }
         this.T.setText(U);
     }
@@ -1345,7 +1345,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.Components.li
     public int getCustomBackground() {
-        return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, this.a);
+        return org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.d6, this.a);
     }
 
     @Override // org.telegram.ui.Components.li
@@ -1381,9 +1381,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
 
     public final void h0() {
         int i10 = this.n;
-        org.telegram.ui.Wallet.l0 w9 = org.telegram.ui.Wallet.l0.w(i10);
-        this.W.setText(LocaleController.formatSpannable(R.string.WalletBalanceAmount, org.telegram.ui.Wallet.l0.k("Grams", org.telegram.ui.Wallet.l0.o(w9.u(), true), R.string.Grams_other)));
-        this.h0 = !w9.D() && w9.u() >= MessagesController.getInstance(i10).config.walletTransferMinNanos.get();
+        org.telegram.ui.Wallet.l0 w10 = org.telegram.ui.Wallet.l0.w(i10);
+        this.W.setText(LocaleController.formatSpannable(R.string.WalletBalanceAmount, org.telegram.ui.Wallet.l0.k("Grams", org.telegram.ui.Wallet.l0.o(w10.u(), true), R.string.Grams_other)));
+        this.h0 = !w10.D() && w10.u() >= MessagesController.getInstance(i10).config.walletTransferMinNanos.get();
         boolean z10 = this.d0 | (!TextUtils.isEmpty(this.S.getText()));
         this.d0 = z10;
         boolean z11 = this.h0 && z10;
@@ -1399,8 +1399,8 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e0, f7);
                 this.f0 = ofFloat;
                 ofFloat.setDuration(320L);
-                this.f0.setInterpolator(bs.h);
-                this.f0.addUpdateListener(new l6(this, 11));
+                this.f0.setInterpolator(ds.h);
+                this.f0.addUpdateListener(new n6(this, 12));
                 this.f0.start();
             } else {
                 setFeeVisibilityProgress(f7);
@@ -1453,8 +1453,8 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 }
             }
         }).setDuration(320L);
-        bs bsVar = bs.h;
-        duration.setInterpolator(bsVar).start();
+        ds dsVar = ds.h;
+        duration.setInterpolator(dsVar).start();
         final int i11 = 1;
         textView.animate().alpha(z10 ? 0.0f : 1.0f).scaleX(!z10 ? 1.0f : 0.8f).scaleY(z10 ? 0.8f : 1.0f).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Components.wk
             public final /* synthetic */ al b;
@@ -1474,7 +1474,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
                         break;
                 }
             }
-        }).setDuration(320L).setInterpolator(bsVar).start();
+        }).setDuration(320L).setInterpolator(dsVar).start();
     }
 
     @Override // org.telegram.ui.Components.li
@@ -1483,9 +1483,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
             return false;
         }
         this.M0 = false;
-        ai.v3 v3Var = this.O0;
-        if (v3Var != null) {
-            removeCallbacks(v3Var);
+        bi.r3 r3Var = this.O0;
+        if (r3Var != null) {
+            removeCallbacks(r3Var);
             this.O0 = null;
         }
         EditTextBoldCursor editTextBoldCursor = this.S;
@@ -1502,9 +1502,9 @@ public final class al extends li implements NotificationCenter.NotificationCente
                 return;
             }
             float W = W(this.s);
-            org.telegram.ui.Wallet.l8 l8Var = this.v;
-            if (l8Var.getVisibility() == 0) {
-                f7 = Math.max(W, (l8Var.getScaleY() * (l8Var.getContentBottom() - l8Var.getPivotY())) + l8Var.getPivotY() + W(l8Var));
+            org.telegram.ui.Wallet.k8 k8Var = this.v;
+            if (k8Var.getVisibility() == 0) {
+                f7 = Math.max(W, (k8Var.getScaleY() * (k8Var.getContentBottom() - k8Var.getPivotY())) + k8Var.getPivotY() + W(k8Var));
             } else {
                 f7 = W;
             }
@@ -1524,13 +1524,13 @@ public final class al extends li implements NotificationCenter.NotificationCente
         float f7 = 1.0f - max;
         float f10 = this.m0;
         boolean z10 = this.l0 == null && f10 == 1.0f;
-        org.telegram.ui.Wallet.i9 i9Var = this.R;
-        i9Var.e(f10, max, z10);
-        i9Var.setTranslationY((1.0f - this.m0) * (((this.N.getHeight() / 2.0f) - i9Var.getTop()) - (i9Var.getHeight() / 2.0f)));
+        org.telegram.ui.Wallet.h9 h9Var = this.R;
+        h9Var.e(f10, max, z10);
+        h9Var.setTranslationY((1.0f - this.m0) * (((this.N.getHeight() / 2.0f) - h9Var.getTop()) - (h9Var.getHeight() / 2.0f)));
         float f11 = this.n0;
-        q6 q6Var = this.T;
-        q6Var.setAlpha(f11);
-        q6Var.setTranslationY(AndroidUtilities.dp(16.0f) * f7);
+        s6 s6Var = this.T;
+        s6Var.setAlpha(f11);
+        s6Var.setTranslationY(AndroidUtilities.dp(16.0f) * f7);
         float f12 = this.n0;
         FrameLayout frameLayout = this.P;
         frameLayout.setAlpha(f12);
@@ -1551,12 +1551,12 @@ public final class al extends li implements NotificationCenter.NotificationCente
         }
         float f7 = this.C0 ? this.A0 : 1.0f - this.A0;
         float f10 = this.I0;
-        float y3 = com.google.android.gms.internal.play_billing.k3.y(this.J0, f10, f7, f10);
+        float z10 = c3.h0.z(this.J0, f10, f7, f10);
         float f11 = this.G0;
-        float y10 = com.google.android.gms.internal.play_billing.k3.y(this.H0, f11, f7, f11);
-        frameLayout.setTranslationY(y3 - (getBottomYOnScreen() - frameLayout.getTranslationY()));
-        org.telegram.ui.Wallet.l8 l8Var = this.v;
-        l8Var.setTranslationY(y10 - (W(l8Var) - l8Var.getTranslationY()));
+        float z11 = c3.h0.z(this.H0, f11, f7, f11);
+        frameLayout.setTranslationY(z10 - (getBottomYOnScreen() - frameLayout.getTranslationY()));
+        org.telegram.ui.Wallet.k8 k8Var = this.v;
+        k8Var.setTranslationY(z11 - (W(k8Var) - k8Var.getTranslationY()));
         j0();
     }
 
@@ -1572,7 +1572,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
             return;
         }
         this.p0 = z10;
-        ei.d dVar = this.o0;
+        fi.d dVar = this.o0;
         dVar.animate().cancel();
         TextView textView = this.W;
         textView.animate().cancel();
@@ -1584,10 +1584,10 @@ public final class al extends li implements NotificationCenter.NotificationCente
         if (z11) {
             dVar.setVisibility(0);
             ViewPropertyAnimator duration = dVar.animate().alpha(f7).scaleX(f10).scaleY(f10).setDuration(320L);
-            bs bsVar = bs.h;
-            duration.setInterpolator(bsVar).withEndAction(new uk(this, 5)).start();
-            textView.animate().translationY(dp).setDuration(320L).setInterpolator(bsVar).start();
-            textView2.animate().translationY(dp).setDuration(320L).setInterpolator(bsVar).start();
+            ds dsVar = ds.h;
+            duration.setInterpolator(dsVar).withEndAction(new uk(this, 5)).start();
+            textView.animate().translationY(dp).setDuration(320L).setInterpolator(dsVar).start();
+            textView2.animate().translationY(dp).setDuration(320L).setInterpolator(dsVar).start();
             return;
         }
         dVar.setVisibility(z10 ? 0 : 4);
@@ -1596,6 +1596,76 @@ public final class al extends li implements NotificationCenter.NotificationCente
         dVar.setScaleY(f10);
         textView.setTranslationY(dp);
         textView2.setTranslationY(dp);
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final void o() {
+        if (this.K) {
+            return;
+        }
+        this.K = true;
+        R();
+        org.telegram.ui.Wallet.d6 d6Var = this.Q0;
+        if (d6Var != null) {
+            AnimatorSet animatorSet = d6Var.m;
+            if (!d6Var.v) {
+                if (animatorSet.isStarted()) {
+                    animatorSet.cancel();
+                } else {
+                    d6Var.a(false);
+                }
+            }
+            this.Q0 = null;
+        }
+        org.telegram.ui.Wallet.v9 v9Var = this.R0;
+        if (v9Var != null) {
+            AnimatorSet animatorSet2 = v9Var.m;
+            if (!v9Var.s) {
+                if (animatorSet2.isStarted()) {
+                    animatorSet2.cancel();
+                } else {
+                    v9Var.b();
+                }
+            }
+            this.R0 = null;
+        }
+        ValueAnimator valueAnimator = this.f0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.f0 = null;
+        }
+        Activity activity = this.L;
+        if (activity != null) {
+            try {
+                activity.setRequestedOrientation(this.M);
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+            this.L = null;
+        }
+        this.O.animate().cancel();
+        this.Q.animate().cancel();
+        this.V.animate().cancel();
+        this.o0.animate().cancel();
+        this.W.animate().cancel();
+        this.a0.animate().cancel();
+        bi.r3 r3Var = this.O0;
+        if (r3Var != null) {
+            removeCallbacks(r3Var);
+            this.O0 = null;
+        }
+        org.telegram.ui.ActionBar.e2 e2Var = this.T0;
+        if (e2Var != null) {
+            e2Var.dismiss();
+        }
+        org.telegram.ui.Wallet.m mVar = this.i0;
+        if (mVar != null) {
+            mVar.run();
+            this.i0 = null;
+        }
+        NotificationCenter.getInstance(this.n).removeObserver(this, NotificationCenter.walletUpdate);
+        this.b.a1.l().removeView(this.w);
+        AndroidUtilities.hideKeyboard(this.S);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -1621,76 +1691,6 @@ public final class al extends li implements NotificationCenter.NotificationCente
         super.onWindowFocusChanged(z10);
     }
 
-    @Override // org.telegram.ui.Components.li
-    public final void p() {
-        if (this.K) {
-            return;
-        }
-        this.K = true;
-        R();
-        org.telegram.ui.Wallet.e6 e6Var = this.Q0;
-        if (e6Var != null) {
-            AnimatorSet animatorSet = e6Var.m;
-            if (!e6Var.v) {
-                if (animatorSet.isStarted()) {
-                    animatorSet.cancel();
-                } else {
-                    e6Var.a(false);
-                }
-            }
-            this.Q0 = null;
-        }
-        org.telegram.ui.Wallet.w9 w9Var = this.R0;
-        if (w9Var != null) {
-            AnimatorSet animatorSet2 = w9Var.m;
-            if (!w9Var.s) {
-                if (animatorSet2.isStarted()) {
-                    animatorSet2.cancel();
-                } else {
-                    w9Var.b();
-                }
-            }
-            this.R0 = null;
-        }
-        ValueAnimator valueAnimator = this.f0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.f0 = null;
-        }
-        Activity activity = this.L;
-        if (activity != null) {
-            try {
-                activity.setRequestedOrientation(this.M);
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-            this.L = null;
-        }
-        this.O.animate().cancel();
-        this.Q.animate().cancel();
-        this.V.animate().cancel();
-        this.o0.animate().cancel();
-        this.W.animate().cancel();
-        this.a0.animate().cancel();
-        ai.v3 v3Var = this.O0;
-        if (v3Var != null) {
-            removeCallbacks(v3Var);
-            this.O0 = null;
-        }
-        org.telegram.ui.ActionBar.c2 c2Var = this.T0;
-        if (c2Var != null) {
-            c2Var.dismiss();
-        }
-        org.telegram.ui.Wallet.m mVar = this.i0;
-        if (mVar != null) {
-            mVar.run();
-            this.i0 = null;
-        }
-        NotificationCenter.getInstance(this.n).removeObserver(this, NotificationCenter.walletUpdate);
-        this.b.a1.m().removeView(this.w);
-        AndroidUtilities.hideKeyboard(this.S);
-    }
-
     public void setSendTransitionProgress(float f7) {
         this.v.setAlpha(1.0f - f7);
     }
@@ -1702,7 +1702,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void u() {
+    public final void t() {
         R();
         Activity activity = this.L;
         if (activity != null) {
@@ -1716,14 +1716,14 @@ public final class al extends li implements NotificationCenter.NotificationCente
         this.b.a1.setDrawGlassTitle(true);
         this.L0 = false;
         this.M0 = false;
-        ai.v3 v3Var = this.O0;
-        if (v3Var != null) {
-            removeCallbacks(v3Var);
+        bi.r3 r3Var = this.O0;
+        if (r3Var != null) {
+            removeCallbacks(r3Var);
             this.O0 = null;
         }
-        org.telegram.ui.ActionBar.c2 c2Var = this.T0;
-        if (c2Var != null) {
-            c2Var.dismiss();
+        org.telegram.ui.ActionBar.e2 e2Var = this.T0;
+        if (e2Var != null) {
+            e2Var.dismiss();
         }
         this.w.setVisibility(8);
         EditTextBoldCursor editTextBoldCursor = this.S;
@@ -1732,40 +1732,40 @@ public final class al extends li implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void w(int i10) {
+    public final void v(int i10) {
         if (i10 == 2) {
-            org.telegram.ui.Wallet.o5.E0(getContext(), this.n, this.a);
+            org.telegram.ui.Wallet.m5.F0(getContext(), this.n, this.a);
         } else if (i10 == 3) {
             Z();
         }
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void y() {
+    public final void x() {
         if (this.B0) {
             this.B0 = false;
             float bottomYOnScreen = getBottomYOnScreen();
             FrameLayout frameLayout = this.j0;
             frameLayout.setTranslationY(this.J0 - (bottomYOnScreen - frameLayout.getTranslationY()));
-            org.telegram.ui.Wallet.l8 l8Var = this.v;
-            l8Var.setTranslationY(this.H0 - (W(l8Var) - l8Var.getTranslationY()));
+            org.telegram.ui.Wallet.k8 k8Var = this.v;
+            k8Var.setTranslationY(this.H0 - (W(k8Var) - k8Var.getTranslationY()));
             this.K0 = true;
             requestLayout();
         }
     }
 
     @Override // org.telegram.ui.Components.li
-    public final void z(int i10, boolean z10) {
+    public final void y(int i10, boolean z10) {
         this.B0 = true;
         this.K0 = false;
         this.C0 = z10;
         this.A0 = z10 ? 0.0f : 1.0f;
         this.I0 = this.D0 ? this.E0 : getBottomYOnScreen();
         boolean z11 = this.D0;
-        org.telegram.ui.Wallet.l8 l8Var = this.v;
-        this.G0 = z11 ? this.F0 : W(l8Var);
+        org.telegram.ui.Wallet.k8 k8Var = this.v;
+        this.G0 = z11 ? this.F0 : W(k8Var);
         this.J0 = getBottomYOnScreen() - this.j0.getTranslationY();
-        this.H0 = W(l8Var) - l8Var.getTranslationY();
+        this.H0 = W(k8Var) - k8Var.getTranslationY();
         l0();
     }
 }

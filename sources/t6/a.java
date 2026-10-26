@@ -1,99 +1,63 @@
 package t6;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.util.Log;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.NoSuchElementException;
-import java.util.concurrent.Executor;
-import n6.h0;
-import n6.l;
-import org.telegram.tgnet.TLObject;
-import w6.b;
+import a8.df;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.n;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TreeSet;
+import o6.l;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final Object b = new Object();
-    public static volatile a c;
-    public final ConcurrentHashMap a = new ConcurrentHashMap();
+public final class a extends p6.a {
+    public static final Parcelable.Creator<a> CREATOR = new c();
+    public final List a;
+    public final boolean b;
+    public final String c;
+    public final String d;
 
-    public static a a() {
-        if (c == null) {
-            synchronized (b) {
-                try {
-                    if (c == null) {
-                        c = new a();
-                    }
-                } finally {
-                }
-            }
-        }
-        a aVar = c;
-        l.h(aVar);
-        return aVar;
+    public a(ArrayList arrayList, boolean z10, String str, String str2) {
+        l.h(arrayList);
+        this.a = arrayList;
+        this.b = z10;
+        this.c = str;
+        this.d = str2;
     }
 
-    public final void b(Context context, ServiceConnection serviceConnection) {
-        if (!(serviceConnection instanceof h0)) {
-            ConcurrentHashMap concurrentHashMap = this.a;
-            if (concurrentHashMap.containsKey(serviceConnection)) {
-                try {
-                    try {
-                        context.unbindService((ServiceConnection) concurrentHashMap.get(serviceConnection));
-                    } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused) {
-                    }
-                    return;
-                } finally {
-                    concurrentHashMap.remove(serviceConnection);
-                }
-            }
+    public static a b(List list, boolean z10) {
+        TreeSet treeSet = new TreeSet(b.a);
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            Collections.addAll(treeSet, ((n) it.next()).c());
         }
-        try {
-            context.unbindService(serviceConnection);
-        } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused2) {
-        }
+        return new a(new ArrayList(treeSet), z10, null, null);
     }
 
-    public final boolean c(Context context, String str, Intent intent, ServiceConnection serviceConnection, int i10, Executor executor) {
-        ComponentName component = intent.getComponent();
-        if (component != null) {
-            String packageName = component.getPackageName();
-            "com.google.android.gms".equals(packageName);
-            try {
-                if ((b.a(context).a.getPackageManager().getApplicationInfo(packageName, 0).flags & TLObject.FLAG_21) != 0) {
-                    Log.w("ConnectionTracker", "Attempted to bind to a service in a STOPPED package.");
-                    return false;
-                }
-            } catch (PackageManager.NameNotFoundException unused) {
-            }
-        }
-        if (serviceConnection instanceof h0) {
-            if (executor == null) {
-                executor = null;
-            }
-            return (Build.VERSION.SDK_INT < 29 || executor == null) ? context.bindService(intent, serviceConnection, i10) : context.bindService(intent, i10, executor, serviceConnection);
-        }
-        ConcurrentHashMap concurrentHashMap = this.a;
-        ServiceConnection serviceConnection2 = (ServiceConnection) concurrentHashMap.putIfAbsent(serviceConnection, serviceConnection);
-        if (serviceConnection2 != null && serviceConnection != serviceConnection2) {
-            Log.w("ConnectionTracker", String.format("Duplicate binding with the same ServiceConnection: %s, %s, %s.", serviceConnection, str, intent.getAction()));
-        }
-        if (executor == null) {
-            executor = null;
-        }
-        try {
-            boolean bindService = (Build.VERSION.SDK_INT < 29 || executor == null) ? context.bindService(intent, serviceConnection, i10) : context.bindService(intent, i10, executor, serviceConnection);
-            if (bindService) {
-                return bindService;
-            }
+    public final boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof a)) {
             return false;
-        } finally {
-            concurrentHashMap.remove(serviceConnection, serviceConnection);
         }
+        a aVar = (a) obj;
+        return this.b == aVar.b && l.l(this.a, aVar.a) && l.l(this.c, aVar.c) && l.l(this.d, aVar.d);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.b), this.a, this.c, this.d});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q5 = df.q(parcel, 20293);
+        df.p(parcel, 1, this.a);
+        df.s(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        df.l(parcel, 3, this.c);
+        df.l(parcel, 4, this.d);
+        df.r(parcel, q5);
     }
 }

@@ -1,122 +1,77 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.graphics.Canvas;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class yj extends org.telegram.ui.Components.jb0 {
-    public boolean V;
-    public final /* synthetic */ sn W;
+public final class yj extends org.telegram.ui.Cells.v0 {
+    public final /* synthetic */ un t2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yj(sn snVar, Context context, long j10, long j11, sn snVar2, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, j10, j11, snVar2, g6Var);
-        this.W = snVar;
-        this.V = true;
+    public yj(Context context, org.telegram.ui.ActionBar.u6 u6Var, un unVar) {
+        super(context, u6Var, false);
+        this.t2 = unVar;
     }
 
-    @Override // org.telegram.ui.Components.jb0
-    public final boolean a() {
-        sn snVar = this.W;
-        return snVar.R.getVisibility() != 0 || snVar.z3;
+    @Override // org.telegram.ui.Cells.v0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        un unVar = this.t2;
+        if (unVar.N8 != null) {
+            return;
+        }
+        float y3 = ((unVar.x0.getY() + unVar.E9) - getY()) - AndroidUtilities.dp(4.0f);
+        if (y3 <= 0.0f) {
+            super.onDraw(canvas);
+        } else if (y3 < getMeasuredHeight()) {
+            canvas.save();
+            canvas.clipRect(0.0f, y3, getMeasuredWidth(), getMeasuredHeight());
+            super.onDraw(canvas);
+            canvas.restore();
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() <= 0.0f) {
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
             return false;
         }
-        return super.dispatchTouchEvent(motionEvent);
+        un unVar = this.t2;
+        kVar = ((org.telegram.ui.ActionBar.r2) unVar).actionBar;
+        if (kVar.q() || unVar.J9()) {
+            return false;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.jb0
-    public final void j() {
-        this.W.zc();
+    @Override // org.telegram.ui.Cells.v0, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
+        }
+        un unVar = this.t2;
+        kVar = ((org.telegram.ui.ActionBar.r2) unVar).actionBar;
+        if (kVar.q() || unVar.J9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.jb0
-    public final void k(TLRPC.BotInlineResult botInlineResult) {
-        sn snVar = this.W;
-        if (snVar.getParentActivity() == null || botInlineResult.content == null) {
-            return;
-        }
-        if (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) && !botInlineResult.type.equals("web_player_video")) {
-            snVar.Ba(0, botInlineResult.content.url, null, null, false);
-            return;
-        }
-        int[] inlineResultWidthAndHeight = MessageObject.getInlineResultWidthAndHeight(botInlineResult);
-        bi biVar = snVar.Va;
-        String str = botInlineResult.title;
-        if (str == null) {
-            str = "";
-        }
-        String str2 = botInlineResult.description;
-        String str3 = botInlineResult.content.url;
-        org.telegram.ui.Components.cv.I(snVar, null, biVar, str, str2, str3, str3, inlineResultWidthAndHeight[0], inlineResultWidthAndHeight[1], -1, snVar.C9());
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
+        setVisibility(f7 > 0.0f ? 0 : 4);
     }
 
-    @Override // org.telegram.ui.Components.jb0
-    public final void l(boolean z10) {
-        String string;
-        sn snVar = this.W;
-        gk gkVar = snVar.Y;
-        if (gkVar != null) {
-            hg.j1 adapter = getAdapter();
-            TLRPC.User user = adapter.w0;
-            if (user != null) {
-                string = user.bot_inline_placeholder;
-            } else {
-                String str = adapter.q0;
-                string = (str == null || !str.equals("gif")) ? null : LocaleController.getString(R.string.SearchGifsTitle);
-            }
-            gkVar.setCaption(string);
-            org.telegram.ui.Components.we weVar = snVar.Y.P1;
-            if (weVar == null) {
-                return;
-            }
-            if (!z10) {
-                weVar.e = false;
-                return;
-            }
-            weVar.e = true;
-            weVar.b = System.currentTimeMillis();
-            weVar.invalidateSelf();
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            invalidate();
         }
-    }
-
-    @Override // org.telegram.ui.Components.jb0
-    public final void m() {
-        sn snVar = this.W;
-        if (snVar.l5 && ((getAdapter().R == null || snVar.m5 || snVar.n5) && snVar.h != null && getAdapter().R != null)) {
-            SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-            if (!globalMainSettings.getBoolean("secretbot", false)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(snVar.getParentActivity(), 0, snVar.qa);
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.SecretChatContextBotAlert);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                snVar.showDialog(alertDialog$Builder.a);
-                globalMainSettings.edit().putBoolean("secretbot", true).commit();
-            }
-        }
-        snVar.zc();
-    }
-
-    @Override // org.telegram.ui.Components.jb0
-    public final void n(boolean z10) {
-        if (this.V != z10) {
-            sn snVar = this.W;
-            AndroidUtilities.updateViewShow(snVar.p1, !snVar.isInPreviewMode() && z10, false, true);
-            this.V = z10;
-        }
+        super.setTranslationY(f7);
     }
 }

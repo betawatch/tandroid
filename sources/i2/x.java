@@ -1,59 +1,31 @@
 package i2;
 
-import android.os.Bundle;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.rg0;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements e2.o, e2.j, p.a, GenericProvider {
+public final /* synthetic */ class x implements e2.p, e2.o {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ j0 b;
 
-    public /* synthetic */ x(int i10, boolean z10) {
+    public /* synthetic */ x(j0 j0Var, int i10) {
         this.a = i10;
-        this.b = z10;
+        this.b = j0Var;
     }
 
-    @Override // e2.j
-    public void accept(Object obj) {
-        switch (this.a) {
-            case 2:
-                ((m4.m1) obj).X(this.b);
-                break;
-            case 3:
-                ((m4.m1) obj).q0(this.b);
-                break;
-            default:
-                ((m4.m1) obj).w(this.b);
-                break;
-        }
-    }
-
-    @Override // p.a
-    public qc c(xc xcVar) {
-        return xcVar.k(this.b);
+    @Override // e2.p
+    public void f(Object obj, b2.v vVar) {
+        ((b2.e1) obj).onEvents(this.b.f, new b2.d1(vVar));
     }
 
     @Override // e2.o
     public void invoke(Object obj) {
+        b2.e1 e1Var = (b2.e1) obj;
         switch (this.a) {
-            case 0:
-                ((b2.d1) obj).onShuffleModeEnabledChanged(this.b);
+            case 3:
+                e1Var.onAvailableCommandsChanged(this.b.P);
                 break;
             default:
-                ((b2.d1) obj).onSkipSilenceEnabledChanged(this.b);
+                e1Var.onPlaylistMetadataChanged(this.b.R);
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        Bundle h = a1.g.h("afterSignup", this.b);
-        rg0 rg0Var = new rg0();
-        rg0Var.l0(h);
-        return rg0Var;
     }
 }

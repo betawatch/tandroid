@@ -6,9 +6,9 @@ import android.os.Build;
 import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s90 extends dr {
+public final class s90 extends fr {
     public static CornerPathEffect w;
     public static int x;
     public Layout h;
@@ -44,7 +44,7 @@ public final class s90 extends dr {
         return w;
     }
 
-    @Override // org.telegram.ui.Components.dr, android.graphics.Path
+    @Override // org.telegram.ui.Components.fr, android.graphics.Path
     public final void addRect(float f7, float f10, float f11, float f12, Path.Direction direction) {
         Layout layout = this.h;
         if (layout == null) {
@@ -139,7 +139,7 @@ public final class s90 extends dr {
         super.addRect(f14, f16, f17, f18, direction);
     }
 
-    @Override // org.telegram.ui.Components.dr, android.graphics.Path
+    @Override // org.telegram.ui.Components.fr, android.graphics.Path
     public final void reset() {
         if (this.n) {
             super.reset();

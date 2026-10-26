@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
@@ -184,7 +184,7 @@ public final class h {
         int i12 = i11 + i10;
         int i13 = this.e;
         if (i12 <= i13) {
-            throw new IllegalStateException(i2.o1.l(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(ic.a.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.i;
         if (i10 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 && i14 + i11 + i10 <= this.j) {
@@ -292,13 +292,13 @@ public final class h {
         this.i += i12;
         this.g = 0;
         this.e = 0;
-        ArrayList p5 = p(i10 - i13);
+        ArrayList p10 = p(i10 - i13);
         byte[] bArr = new byte[i10];
         System.arraycopy(this.d, i11, bArr, 0, i13);
-        int size = p5.size();
+        int size = p10.size();
         int i14 = 0;
         while (i14 < size) {
-            Object obj = p5.get(i14);
+            Object obj = p10.get(i14);
             i14++;
             byte[] bArr2 = (byte[]) obj;
             System.arraycopy(bArr2, 0, bArr, i13, bArr2.length);

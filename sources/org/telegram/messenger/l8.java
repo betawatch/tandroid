@@ -1,51 +1,29 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Timer;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ a0.h d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ BaseController f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ l8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j10, a0.h hVar, Runnable runnable) {
-        this.f = mediaDataController;
-        this.h = task;
-        this.n = timer;
-        this.c = arrayList;
-        this.b = j10;
-        this.d = hVar;
-        this.e = runnable;
+    public /* synthetic */ l8(MediaDataController mediaDataController, String str, boolean z10, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = str;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
+                this.b.lambda$processLoadedDiceStickers$87(this.c, this.d);
                 break;
             default:
-                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
+                this.b.lambda$loadStickersByEmojiOrName$83(this.c, this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ l8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
-        this.f = topicsController;
-        this.h = tL_messages_savedDialogs;
-        this.b = j10;
-        this.c = arrayList;
-        this.d = hVar;
-        this.n = hashSet;
-        this.e = runnable;
     }
 }

@@ -1,19 +1,11 @@
 package z5;
 
-import android.accounts.Account;
-import java.util.HashMap;
-import java.util.HashSet;
+import b8.d;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.api.j;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public HashSet a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public String e;
-    public Account f;
-    public String g;
-    public HashMap h;
-    public String i;
+public abstract class a extends j {
+    public static final e k = new e("SmsRetriever.API", new d(19), new com.google.android.gms.common.api.d());
 }

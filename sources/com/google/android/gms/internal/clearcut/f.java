@@ -16,10 +16,10 @@ public final class f extends d {
     public final /* synthetic */ Object d(String str) {
         switch (this.i) {
             case 0:
-                if (f2.c.matcher(str).matches()) {
+                if (d2.c.matcher(str).matches()) {
                     return Boolean.TRUE;
                 }
-                if (f2.d.matcher(str).matches()) {
+                if (d2.d.matcher(str).matches()) {
                     return Boolean.FALSE;
                 }
                 String str2 = this.b;

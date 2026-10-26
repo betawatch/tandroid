@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import a8.ud;
+import ae.k;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import jd.g;
-import jd.h;
+import kd.g;
 import kotlin.jvm.internal.i;
-import zd.j;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zziq {
     private Set zza;
@@ -21,19 +21,19 @@ public final class zziq {
         List list;
         i.e(str, "<this>");
         String valueOf = String.valueOf(new char[]{'.'}[0]);
-        int d = j.d(0, str, valueOf, false);
+        int d = k.d(0, str, valueOf, false);
         if (d != -1) {
             ArrayList arrayList = new ArrayList(10);
             int i10 = 0;
             do {
                 arrayList.add(str.subSequence(i10, d).toString());
                 i10 = valueOf.length() + d;
-                d = j.d(i10, str, valueOf, false);
+                d = k.d(i10, str, valueOf, false);
             } while (d != -1);
             arrayList.add(str.subSequence(i10, str.length()).toString());
             list = arrayList;
         } else {
-            list = h.b(str.toString());
+            list = ud.a(str.toString());
         }
         Iterator it = list.iterator();
         String str2 = "";

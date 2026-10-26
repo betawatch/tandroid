@@ -1,152 +1,133 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
+import android.service.media.MediaBrowserService;
 import android.util.Pair;
-import java.io.File;
-import java.util.ArrayList;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.BirthdayController;
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.FilePathDatabase;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.PushListenerController;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.RequestTimeDelegate;
+import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.WriteToSocketDelegate;
+import org.telegram.ui.Components.hp0;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g0 implements Runnable {
+public final /* synthetic */ class g0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, fi.u7, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, hp0, org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ g0(Object obj, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ g0(Object obj, int i10) {
         this.a = i10;
         this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public void a(d5.i iVar, d5.s sVar) {
+        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, iVar, sVar);
+    }
+
+    @Override // org.telegram.ui.Components.hp0
+    public void c(float f7) {
+        ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f7);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ((MusicPlayerService) this.b).lambda$onCreate$0(imageReceiver, z10, z11, z12);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        o5.a(this, i10, str, drawable);
+    }
+
+    @Override // fi.u7
+    public Bitmap g(BitmapFactory.Options options) {
+        Bitmap lambda$rebuildPhoto$0;
+        lambda$rebuildPhoto$0 = ((MediaController.PhotoEntry) this.b).lambda$rebuildPhoto$0(options);
+        return lambda$rebuildPhoto$0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        SendMessagesHelper.lambda$sendCallback$45((un) this.b, e2Var, i10);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        o5.b(this, imageReceiver);
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$0(task);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public /* synthetic */ void onError(Throwable th2) {
+        int i10 = this.a;
+        org.telegram.tgnet.k.a(this, th2);
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        LanguageDetector.lambda$detectLanguage$1((LanguageDetector.ExceptionCallback) this.b, exc);
+    }
+
+    @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
+    public void onResult(List list) {
+        ((MediaBrowserService.Result) this.b).sendResult(list);
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        LanguageDetector.lambda$detectLanguage$0((LanguageDetector.StringCallback) this.b, (String) obj);
+    }
+
+    @Override // org.telegram.tgnet.WriteToSocketDelegate
+    public void run() {
+        ((FileUploadOperation) this.b).lambda$startUploadRequest$8();
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public void onComplete(Object obj) {
         switch (this.a) {
-            case 0:
-                ((BirthdayController) this.b).lambda$new$0((BirthdayController.TL_birthdays) this.c, (ArrayList) this.d);
-                break;
             case 1:
-                ((ImageLoader.5) this.b).lambda$fileLoadProgressChanged$7((String) this.c, (FileLoadOperation) this.d);
-                break;
-            case 2:
-                ((ImageLoader.CacheOutTask) this.b).lambda$onPostExecute$0((Drawable) this.c, (String) this.d);
-                break;
-            case 3:
-                ((SendMessagesHelper.ImportingHistory.3) this.b).lambda$run$0((TLRPC.TL_error) this.c, (TLRPC.TL_messages_startHistoryImport) this.d);
-                break;
-            case 4:
-                ((SendMessagesHelper.ImportingSticker.1) this.b).lambda$run$0((TLObject) this.c, (Runnable) this.d);
-                break;
-            case 5:
-                ((TelegramMediaSession.SessionCallback) this.b).lambda$onPlayFromMediaId$1((String) this.c, (Bundle) this.d);
-                break;
-            case 6:
-                ((TranslateController) this.b).lambda$detectStoryLanguage$33((TL_stories.StoryItem) this.c, (TranslateController.StoryKey) this.d);
-                break;
-            case 7:
-                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.zc[]) this.c, (qi.a) this.d);
-                break;
-            case 8:
-                ((BetaUpdaterController) this.b).lambda$checkForUpdate$1((String) this.c, (Runnable) this.d);
-                break;
-            case 9:
-                BillingController.lambda$launchBillingFlow$3((ArrayList) this.d, (AtomicInteger) this.b, (b0) this.c);
-                break;
-            case 10:
-                BillingController.lambda$onPurchasesUpdatedInternal$7((AccountInstance) this.b, (TLRPC.TL_payments_assignPlayMarketTransaction) this.c, (TL_update.TL_updateSentPhoneCode) this.d);
-                break;
-            case 11:
-                ((CacheFetcher) this.b).lambda$saveCallback$2((Pair) this.c, (Utilities.Callback) this.d);
-                break;
-            case 12:
-                ChannelBoostsController.lambda$getBoostsStats$0((TLObject) this.b, (Utilities.Callback) this.c, (TLRPC.TL_error) this.d);
-                break;
-            case 13:
-                ChatThemeController.lambda$saveWallpaperPatternBitmap$12((File) this.b, (List) this.c, (Bitmap) this.d);
-                break;
-            case 14:
-                ((ContactsController) this.b).lambda$addContact$51((TLRPC.Updates) this.c, (TLRPC.User) this.d);
-                break;
-            case 15:
-                ((ContactsController) this.b).lambda$reloadContactsStatuses$58((SharedPreferences.Editor) this.c, (Vector) this.d);
-                break;
-            case 16:
-                ((ContactsController) this.b).lambda$applyContactsUpdates$48((ArrayList) this.d, (ArrayList) this.c);
-                break;
-            case 17:
-                ((DispatchQueuePoolBackground) this.b).lambda$execute$1((Runnable) this.c, (DispatchQueue) this.d);
-                break;
-            case 18:
-                ((DownloadController) this.b).lambda$loadDownloadingFiles$10((ArrayList) this.d, (ArrayList) this.c);
-                break;
-            case 19:
-                FactCheckController.lambda$getFromDatabase$5((MessagesStorage) this.b, (ArrayList) this.d, (Utilities.Callback) this.c);
-                break;
-            case 20:
-                ((FileLoadOperation) this.b).lambda$getCurrentFile$4((File[]) this.c, (CountDownLatch) this.d);
-                break;
-            case 21:
-                FileLoadOperation.lambda$cancelRequests$16((FileLoadOperation.RequestInfo) this.b, (int[]) this.c, (Runnable) this.d);
-                break;
-            case 22:
-                ((FileLoader) this.b).lambda$setForceStreamLoadingFile$6((TLRPC.FileLocation) this.c, (String) this.d);
-                break;
-            case 23:
-                ((FileLoader) this.b).lambda$startVideoStream$15((TLRPC.Document) this.c, this.d);
-                break;
-            case 24:
-                ((FileLoader) this.b).lambda$checkDownloadQueue$17((FileLoaderPriorityQueue) this.c, (FileLoadOperation) this.d);
-                break;
-            case 25:
-                ((FilePathDatabase) this.b).lambda$saveFileDialogId$5((File) this.c, (FilePathDatabase.FileMeta) this.d);
-                break;
-            case 26:
-                LocaleController.lambda$applyRemoteLanguage$13((int[]) this.b, (int[]) this.c, (Runnable) this.d);
-                break;
-            case 27:
-                ((LocationController) this.b).lambda$addSharingLocation$11((LocationController.SharingLocationInfo) this.c, (LocationController.SharingLocationInfo) this.d);
-                break;
-            case 28:
-                ((MediaDataController) this.b).lambda$saveToRingtones$204((TLObject) this.c, (TLRPC.Document) this.d);
+                ChatThemeController.lambda$loadWallpaperBitmap$9((Utilities.Callback) this.b, (Bitmap) obj);
                 break;
             default:
-                ((MediaDataController) this.b).lambda$processLoadedDiceStickers$88((String) this.c, (TLRPC.TL_messages_stickerSet) this.d);
+                ((ChatThemeController) this.b).lambda$preloadAllWallpaperThumbs$5((Pair) obj);
                 break;
         }
     }
 
-    public /* synthetic */ g0(ArrayList arrayList, AtomicInteger atomicInteger, b0 b0Var) {
-        this.a = 9;
-        this.d = arrayList;
-        this.b = atomicInteger;
-        this.c = b0Var;
+    @Override // org.telegram.tgnet.ResultCallback
+    public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        org.telegram.tgnet.k.b(this, tL_error);
     }
 
-    public /* synthetic */ g0(BaseController baseController, ArrayList arrayList, Object obj, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.d = arrayList;
-        this.c = obj;
+    @Override // org.telegram.tgnet.RequestTimeDelegate
+    public void run(long j10) {
+        ProxyRotationController.lambda$new$1((SharedConfig.ProxyInfo) this.b, j10);
+    }
+
+    @Override // org.telegram.ui.Components.hp0
+    public /* synthetic */ void f(float f7) {
     }
 }

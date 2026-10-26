@@ -1,6 +1,35 @@
 package sf;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.app.Activity;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface a {
+public final class a extends FrameLayout {
+    public final Activity a;
+    public int b;
+    public int c;
+    public boolean d;
+
+    public a(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = launchActivity;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        boolean isInPictureInPictureMode = AndroidUtilities.isInPictureInPictureMode(this.a);
+        if (!isInPictureInPictureMode) {
+            this.b = size;
+            this.c = size2;
+        }
+        this.d = isInPictureInPictureMode && size < this.b && size2 < this.c;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+    }
 }

@@ -1,17 +1,18 @@
 package com.google.android.datatransport.runtime.scheduling.jobscheduling;
 
+import aa.b0;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.util.Base64;
-import androidx.biometric.e;
-import ea.b;
 import java.util.concurrent.Executor;
-import l5.i;
-import l5.t;
-import org.telegram.ui.Components.fz0;
-import v5.a;
+import k6.c;
+import m5.i;
+import m5.t;
+import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Wallet.q6;
+import w5.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class JobInfoSchedulerService extends JobService {
     public static final /* synthetic */ int a = 0;
@@ -23,14 +24,14 @@ public class JobInfoSchedulerService extends JobService {
         int i10 = jobParameters.getExtras().getInt("priority");
         int i11 = jobParameters.getExtras().getInt("attemptNumber");
         t.b(getApplicationContext());
-        e a2 = i.a();
-        a2.u(string);
+        c a2 = i.a();
+        a2.H(string);
         a2.d = a.b(i10);
         if (string2 != null) {
-            a2.c = Base64.decode(string2, 0);
+            a2.b = Base64.decode(string2, 0);
         }
-        b bVar = t.a().d;
-        ((Executor) bVar.e).execute(new fz0(bVar, a2.e(), i11, new p2.b(9, this, jobParameters), 20));
+        b0 b0Var = t.a().d;
+        ((Executor) b0Var.g).execute(new zr0(b0Var, a2.j(), i11, new q6(27, this, jobParameters), 22));
         return true;
     }
 

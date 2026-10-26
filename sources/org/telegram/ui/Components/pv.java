@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class pv extends qt {
+public final class pv extends st {
     public int M;
     public ArrayList N;
     public final ArrayList O = new ArrayList();
@@ -22,7 +22,7 @@ public final class pv extends qt {
         this.P = qvVar;
     }
 
-    @Override // org.telegram.ui.Components.qt
+    @Override // org.telegram.ui.Components.st
     public final void a(Canvas canvas, long j10, int i10, int i11, float f7) {
         ArrayList arrayList = this.N;
         if (arrayList == null) {
@@ -48,7 +48,7 @@ public final class pv extends qt {
         k();
     }
 
-    @Override // org.telegram.ui.Components.qt
+    @Override // org.telegram.ui.Components.st
     public final void c(Canvas canvas) {
         int i10 = 0;
         while (true) {
@@ -62,36 +62,36 @@ public final class pv extends qt {
         }
     }
 
-    @Override // org.telegram.ui.Components.qt
+    @Override // org.telegram.ui.Components.st
     public final void d(Canvas canvas, float f7) {
-        r5 r5Var;
+        t5 t5Var;
         if (this.N != null) {
             for (int i10 = 0; i10 < this.N.size(); i10++) {
                 rv rvVar = (rv) this.N.get(i10);
-                a6 a6Var = rvVar.c;
-                if (a6Var != null && (r5Var = (r5) this.P.y.b.get(a6Var.getDocumentId())) != null && r5Var.k != null && rvVar.b != null) {
-                    r5Var.setAlpha((int) (rvVar.getAlpha() * 255.0f * f7));
+                c6 c6Var = rvVar.c;
+                if (c6Var != null && (t5Var = (t5) this.P.y.b.get(c6Var.getDocumentId())) != null && t5Var.k != null && rvVar.b != null) {
+                    t5Var.setAlpha((int) (rvVar.getAlpha() * 255.0f * f7));
                     float width = ((rvVar.getWidth() - rvVar.getPaddingLeft()) - rvVar.getPaddingRight()) / 2.0f;
                     float height = ((rvVar.getHeight() - rvVar.getPaddingTop()) - rvVar.getPaddingBottom()) / 2.0f;
                     float right = (rvVar.getRight() + rvVar.getLeft()) / 2.0f;
                     float paddingTop = rvVar.getPaddingTop() + height;
                     float f10 = rvVar.e;
                     float f11 = f10 != 0.0f ? 1.0f * (((1.0f - f10) * 0.2f) + 0.8f) : 1.0f;
-                    r5Var.setBounds((int) (right - ((rvVar.getScaleX() * width) * f11)), (int) (paddingTop - ((rvVar.getScaleY() * height) * f11)), (int) ((rvVar.getScaleX() * width * f11) + right), (int) ((rvVar.getScaleY() * height * f11) + paddingTop));
-                    r5Var.draw(canvas);
+                    t5Var.setBounds((int) (right - ((rvVar.getScaleX() * width) * f11)), (int) (paddingTop - ((rvVar.getScaleY() * height) * f11)), (int) ((rvVar.getScaleX() * width * f11) + right), (int) ((rvVar.getScaleY() * height * f11) + paddingTop));
+                    t5Var.draw(canvas);
                 }
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.qt
+    @Override // org.telegram.ui.Components.st
     public final void g() {
         ViewGroup viewGroup;
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.O;
             if (i10 >= arrayList.size()) {
-                viewGroup = ((org.telegram.ui.ActionBar.h3) this.P.y).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.k3) this.P.y).containerView;
                 viewGroup.invalidate();
                 return;
             } else {
@@ -101,34 +101,34 @@ public final class pv extends qt {
         }
     }
 
-    @Override // org.telegram.ui.Components.qt
+    @Override // org.telegram.ui.Components.st
     public final void i(long j10) {
-        r5 r5Var;
+        t5 t5Var;
         aw awVar = this.P.y;
         ArrayList arrayList = this.O;
         arrayList.clear();
         for (int i10 = 0; i10 < this.N.size(); i10++) {
             rv rvVar = (rv) this.N.get(i10);
-            a6 a6Var = rvVar.c;
+            c6 c6Var = rvVar.c;
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = rvVar.a;
-            if (a6Var != null && (r5Var = (r5) awVar.b.get(a6Var.getDocumentId())) != null && r5Var.k != null) {
-                r5Var.t(j10);
-                ci.f3 f3Var = r5Var.k;
+            if (c6Var != null && (t5Var = (t5) awVar.b.get(c6Var.getDocumentId())) != null && t5Var.k != null) {
+                t5Var.t(j10);
+                di.f3 f3Var = t5Var.k;
                 int i11 = this.K;
                 ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = f3Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
                 backgroundThreadDrawHolderArr[i11] = drawInBackgroundThread;
                 drawInBackgroundThread.time = j10;
-                r5Var.setAlpha(255);
+                t5Var.setAlpha(255);
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(rvVar.getPaddingLeft() + rvVar.getLeft(), rvVar.getPaddingTop(), rvVar.getRight() - rvVar.getPaddingRight(), rvVar.getMeasuredHeight() - rvVar.getPaddingBottom());
                 backgroundThreadDrawHolderArr[i11].setBounds(rect);
-                int themedColor = awVar.getThemedColor(org.telegram.ui.ActionBar.k6.G6);
+                int themedColor = awVar.getThemedColor(org.telegram.ui.ActionBar.y6.G6);
                 if (themedColor != awVar.U || awVar.T == null) {
                     awVar.U = themedColor;
                     awVar.T = new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN);
                 }
-                r5Var.setColorFilter(awVar.T);
-                rvVar.b = r5Var.k;
+                t5Var.setColorFilter(awVar.T);
+                rvVar.b = t5Var.k;
                 arrayList.add(rvVar);
             }
         }

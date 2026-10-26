@@ -1,41 +1,30 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gg implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class gg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ gg(Object obj, int i10) {
+    public /* synthetic */ gg(un unVar, TLRPC.User user, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = unVar;
+        this.c = user;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                sn snVar = (sn) this.b;
-                snVar.n9 = true;
-                snVar.l9 = 0;
-                snVar.Db = 0;
-                snVar.Z4 = 0;
-                snVar.w9();
-                snVar.Tb(false);
-                break;
-            case 1:
-                ko koVar = (ko) this.b;
-                koVar.L0 = false;
-                koVar.b = null;
-                koVar.M0 = false;
-                break;
-            case 2:
-                ((kp) this.b).n = null;
+                un unVar = this.b;
+                unVar.getClass();
+                unVar.presentFragment(un.ba(this.c.id));
                 break;
             default:
-                ((ob0) this.b).b();
+                this.b.wa(this.c);
                 break;
         }
     }

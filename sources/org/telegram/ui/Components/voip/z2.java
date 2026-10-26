@@ -1,29 +1,49 @@
 package org.telegram.ui.Components.voip;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class z2 extends Drawable {
-    public final int a = -15130842;
+public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a3 b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawColor(this.a);
+    public /* synthetic */ z2(a3 a3Var, int i10) {
+        this.a = i10;
+        this.b = a3Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                a3 a3Var = this.b;
+                a3Var.getClass();
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                a3Var.d = intValue;
+                a3Var.e = intValue;
+                a3Var.f = intValue;
+                a3Var.h = intValue;
+                a3Var.n = intValue;
+                a3Var.invalidate();
+                break;
+            default:
+                a3 a3Var2 = this.b;
+                a3Var2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a3Var2.d = AndroidUtilities.lerp(a3Var2.F, AndroidUtilities.dp(56.0f), floatValue);
+                a3Var2.e = AndroidUtilities.lerp(a3Var2.F, AndroidUtilities.dp(36.0f), floatValue);
+                a3Var2.f = AndroidUtilities.lerp(a3Var2.F, AndroidUtilities.dp(60.0f), floatValue);
+                a3Var2.h = AndroidUtilities.lerp(a3Var2.F, AndroidUtilities.dp(36.0f), floatValue);
+                a3Var2.n = AndroidUtilities.lerp(a3Var2.F, AndroidUtilities.dp(64.0f), floatValue);
+                a3Var2.r = AndroidUtilities.lerp(0, AndroidUtilities.dp(50.0f), floatValue);
+                a3Var2.s = AndroidUtilities.lerp(0, AndroidUtilities.dp(20.0f), floatValue);
+                a3Var2.v = AndroidUtilities.lerp(0, 0, floatValue);
+                a3Var2.w = AndroidUtilities.lerp(0, AndroidUtilities.dp(-20.0f), floatValue);
+                a3Var2.x = AndroidUtilities.lerp(0, AndroidUtilities.dp(-40.0f), floatValue);
+                a3Var2.invalidate();
+                break;
+        }
     }
 }

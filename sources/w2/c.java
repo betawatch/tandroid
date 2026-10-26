@@ -1,20 +1,19 @@
 package w2;
 
-import e9.c0;
-import e9.k0;
-import e9.l0;
-import e9.n0;
-import e9.r;
-import e9.s1;
-import e9.x1;
+import a8.yb;
+import f9.f0;
+import f9.g0;
+import f9.i0;
+import f9.n;
+import f9.n1;
+import f9.s1;
+import f9.x;
 import java.util.ArrayList;
-import v0.k;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c implements a {
-    public static final c0 b = new c0(new r(new k(5), s1.b), new r(new k(6), s1.c));
+    public static final x b = new x(new n(new vg.d(7), n1.b), new n(new vg.d(8), n1.c));
     public final ArrayList a = new ArrayList();
 
     @Override // w2.a
@@ -44,7 +43,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final n0 b(long j10) {
+    public final i0 b(long j10) {
         ArrayList arrayList = this.a;
         if (!arrayList.isEmpty()) {
             if (j10 >= ((z3.a) arrayList.get(0)).b) {
@@ -58,23 +57,23 @@ public final class c implements a {
                         break;
                     }
                 }
-                x1 A = n0.A(b, arrayList2);
-                k0 t10 = n0.t();
+                s1 A = i0.A(b, arrayList2);
+                f0 t10 = i0.t();
                 for (int i11 = 0; i11 < A.d; i11++) {
                     t10.d(((z3.a) A.get(i11)).a);
                 }
                 return t10.f();
             }
         }
-        l0 l0Var = n0.b;
-        return x1.e;
+        g0 g0Var = i0.b;
+        return s1.e;
     }
 
     @Override // w2.a
     public final boolean c(z3.a aVar, long j10) {
         long j11 = aVar.b;
-        u6.g(j11 != -9223372036854775807L);
-        u6.g(aVar.c != -9223372036854775807L);
+        yb.g(j11 != -9223372036854775807L);
+        yb.g(aVar.c != -9223372036854775807L);
         boolean z10 = j11 <= j10 && j10 < aVar.d;
         ArrayList arrayList = this.a;
         for (int size = arrayList.size() - 1; size >= 0; size--) {

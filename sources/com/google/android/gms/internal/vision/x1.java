@@ -1,24 +1,25 @@
 package com.google.android.gms.internal.vision;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class x1 extends o6.a {
+public final class x1 extends p6.a {
     public static final Parcelable.Creator<x1> CREATOR = new a1(0);
     public int a;
     public boolean b;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
+        int q5 = df.q(parcel, 20293);
         int i11 = this.a;
-        w7.f0.s(parcel, 2, 4);
+        df.s(parcel, 2, 4);
         parcel.writeInt(i11);
         boolean z10 = this.b;
-        w7.f0.s(parcel, 3, 4);
+        df.s(parcel, 3, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        w7.f0.r(parcel, q6);
+        df.r(parcel, q5);
     }
 }

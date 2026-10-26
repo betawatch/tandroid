@@ -1,122 +1,84 @@
 package rg;
 
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.ve1;
-import w7.z5;
+import li.e3;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class l0 extends LinearLayout {
-    public final TextView a;
-    public final ah.v b;
-    public ImageView c;
-    public ImageView d;
-    public float e;
-    public boolean f;
-    public ValueAnimator h;
-    public final ImageView n;
-    public final /* synthetic */ m0 r;
+public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l0(m0 m0Var, Context context) {
-        super(context);
-        this.r = m0Var;
-        setOrientation(0);
-        int i10 = k6.i6;
-        u uVar = m0Var.Q1;
-        setBackground(k6.g0(k6.w0(i10, uVar), 2, -1));
-        ah.v vVar = new ah.v(this, context);
-        this.b = vVar;
-        addView(vVar, z5.t(-2, -2, 19, 16, 0, 16, 0));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        ImageView imageView2 = this.c;
-        int i11 = k6.E8;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
-        r6.t(imageView2, i11, uVar, mode);
-        vVar.addView(this.c, z5.e(-2, -2, 17));
-        ImageView imageView3 = new ImageView(context);
-        this.d = imageView3;
-        imageView3.setScaleType(scaleType);
-        r6.t(this.d, i11, uVar, mode);
-        this.d.setVisibility(8);
-        vVar.addView(this.d, z5.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        r6.W(textView, i11, uVar);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, z5.t(-2, -2, 19, 0, 0, 16, 0));
-        ImageView imageView4 = new ImageView(context);
-        this.n = imageView4;
-        imageView4.setImageResource(R.drawable.msg_text_check);
-        imageView4.setScaleType(scaleType);
-        r6.t(imageView4, k6.h7, uVar, PorterDuff.Mode.MULTIPLY);
-        imageView4.setVisibility(8);
-        addView(imageView4, z5.n(50, -1));
+    public /* synthetic */ l0(q0 q0Var, int i10) {
+        this.a = i10;
+        this.b = q0Var;
     }
 
-    public final void a(int i10, boolean z10, boolean z11) {
-        if (!z11) {
-            this.c.setImageResource(i10);
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                final q0 q0Var = this.b;
+                final int i10 = 1;
+                q0Var.f.f(new Runnable() { // from class: rg.k0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                q0 q0Var2 = q0Var;
+                                q0Var2.getClass();
+                                q0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                e3 e3Var = q0Var2.a;
+                                if (e3Var != null) {
+                                    e3Var.v0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                q0 q0Var3 = q0Var;
+                                q0Var3.getClass();
+                                q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                e3 e3Var2 = q0Var3.a;
+                                if (e3Var2 != null) {
+                                    e3Var2.v0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final q0 q0Var2 = this.b;
+                final int i11 = 0;
+                q0Var2.f.f(new Runnable() { // from class: rg.k0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                q0 q0Var22 = q0Var2;
+                                q0Var22.getClass();
+                                q0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                e3 e3Var = q0Var22.a;
+                                if (e3Var != null) {
+                                    e3Var.v0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                q0 q0Var3 = q0Var2;
+                                q0Var3.getClass();
+                                q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                e3 e3Var2 = q0Var3.a;
+                                if (e3Var2 != null) {
+                                    e3Var2.v0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.h = null;
-            a(i10, false, false);
-            return;
-        }
-        this.f = z10;
-        this.d.setImageResource(i10);
-        this.d.setVisibility(0);
-        this.d.setAlpha(1.0f);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new ah.k0(12, this, z10));
-        this.h.addListener(new ve1(this, 14));
-        this.h.setInterpolator(bs.h);
-        this.h.setDuration(420L);
-        this.h.start();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return true;
-    }
-
-    @Override // android.view.View
-    public final boolean performClick() {
-        m0 m0Var = this.r;
-        org.telegram.ui.ActionBar.m1 m1Var = m0Var.R1;
-        if (m1Var != null && m1Var.isShowing()) {
-            m0Var.R1.d(true);
-        }
-        return super.performClick();
-    }
-
-    public void setIcon(int i10) {
-        a(i10, true, false);
-    }
-
-    @Override // android.view.View
-    public void setSelected(boolean z10) {
-        this.n.setVisibility(z10 ? 0 : 8);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
     }
 }

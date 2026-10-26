@@ -1,17 +1,17 @@
 package k1;
 
+import a8.jd;
 import org.telegram.tgnet.TLObject;
-import v7.i8;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class s {
-    public final /* synthetic */ ke.a a;
+    public final /* synthetic */ le.a a;
     public final /* synthetic */ kotlin.jvm.internal.n b;
     public final /* synthetic */ kotlin.jvm.internal.p c;
     public final /* synthetic */ z d;
 
-    public s(ke.a aVar, kotlin.jvm.internal.n nVar, kotlin.jvm.internal.p pVar, z zVar) {
+    public s(le.a aVar, kotlin.jvm.internal.n nVar, kotlin.jvm.internal.p pVar, z zVar) {
         this.a = aVar;
         this.b = nVar;
         this.c = pVar;
@@ -25,20 +25,20 @@ public final class s {
     /* JADX WARN: Removed duplicated region for block: B:45:0x00d8 A[Catch: all -> 0x00d5, TRY_ENTER, TryCatch #1 {all -> 0x00d5, blocks: (B:40:0x0092, B:42:0x0096, B:45:0x00d8, B:46:0x00df), top: B:39:0x0092 }] */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0070  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
-    /* JADX WARN: Type inference failed for: r7v2, types: [ke.a] */
+    /* JADX WARN: Type inference failed for: r7v2, types: [le.a] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object a(e eVar, md.c cVar) {
+    public final Object a(e eVar, nd.c cVar) {
         r rVar;
         int i10;
         z zVar;
-        ke.d dVar;
+        le.d dVar;
         kotlin.jvm.internal.n nVar;
         kotlin.jvm.internal.p pVar;
-        td.p pVar2;
-        ke.a aVar;
-        ke.a aVar2;
+        ud.p pVar2;
+        le.a aVar;
+        le.a aVar2;
         z zVar2;
         Object obj;
         kotlin.jvm.internal.p pVar3;
@@ -49,12 +49,12 @@ public final class s {
                 if ((i11 & TLObject.FLAG_31) != 0) {
                     rVar.n = i11 - TLObject.FLAG_31;
                     Object obj2 = rVar.f;
-                    ld.a aVar3 = ld.a.a;
+                    md.a aVar3 = md.a.a;
                     i10 = rVar.n;
                     if (i10 != 0) {
-                        i8.b(obj2);
+                        jd.b(obj2);
                         rVar.a = eVar;
-                        ke.a aVar4 = this.a;
+                        le.a aVar4 = this.a;
                         rVar.b = aVar4;
                         kotlin.jvm.internal.n nVar2 = this.b;
                         rVar.c = nVar2;
@@ -63,7 +63,7 @@ public final class s {
                         zVar = this.d;
                         rVar.e = zVar;
                         rVar.n = 1;
-                        dVar = (ke.d) aVar4;
+                        dVar = (le.d) aVar4;
                         if (dVar.d(rVar) != aVar3) {
                             nVar = nVar2;
                             pVar = pVar4;
@@ -78,59 +78,59 @@ public final class s {
                             }
                             obj = rVar.c;
                             pVar3 = (kotlin.jvm.internal.p) rVar.b;
-                            aVar = (ke.a) rVar.a;
+                            aVar = (le.a) rVar.a;
                             try {
-                                i8.b(obj2);
+                                jd.b(obj2);
                                 pVar3.a = obj;
                                 pVar = pVar3;
                                 Object obj3 = pVar.a;
-                                ((ke.d) aVar).e(null);
+                                ((le.d) aVar).e(null);
                                 return obj3;
                             } catch (Throwable th2) {
                                 th = th2;
-                                ((ke.d) aVar).e(null);
+                                ((le.d) aVar).e(null);
                                 throw th;
                             }
                         }
                         zVar2 = (z) rVar.c;
                         pVar = (kotlin.jvm.internal.p) rVar.b;
-                        aVar2 = (ke.a) rVar.a;
+                        aVar2 = (le.a) rVar.a;
                         try {
-                            i8.b(obj2);
+                            jd.b(obj2);
                             if (!kotlin.jvm.internal.i.a(obj2, pVar.a)) {
                                 aVar = aVar2;
                                 Object obj32 = pVar.a;
-                                ((ke.d) aVar).e(null);
+                                ((le.d) aVar).e(null);
                                 return obj32;
                             }
                             rVar.a = aVar2;
                             rVar.b = pVar;
                             rVar.c = obj2;
                             rVar.n = 3;
-                            if (zVar2.j(obj2, rVar) != aVar3) {
+                            if (zVar2.i(obj2, rVar) != aVar3) {
                                 obj = obj2;
                                 pVar3 = pVar;
                                 aVar = aVar2;
                                 pVar3.a = obj;
                                 pVar = pVar3;
                                 Object obj322 = pVar.a;
-                                ((ke.d) aVar).e(null);
+                                ((le.d) aVar).e(null);
                                 return obj322;
                             }
                             return aVar3;
                         } catch (Throwable th3) {
                             th = th3;
                             aVar = aVar2;
-                            ((ke.d) aVar).e(null);
+                            ((le.d) aVar).e(null);
                             throw th;
                         }
                     }
                     z zVar3 = rVar.e;
                     pVar = rVar.d;
                     nVar = (kotlin.jvm.internal.n) rVar.c;
-                    ?? r72 = (ke.a) rVar.b;
-                    td.p pVar5 = (td.p) rVar.a;
-                    i8.b(obj2);
+                    ?? r72 = (le.a) rVar.b;
+                    ud.p pVar5 = (ud.p) rVar.a;
+                    jd.b(obj2);
                     zVar = zVar3;
                     pVar2 = pVar5;
                     dVar = r72;
@@ -160,12 +160,12 @@ public final class s {
         } catch (Throwable th4) {
             th = th4;
             aVar = dVar;
-            ((ke.d) aVar).e(null);
+            ((le.d) aVar).e(null);
             throw th;
         }
         rVar = new r(this, cVar);
         Object obj22 = rVar.f;
-        ld.a aVar32 = ld.a.a;
+        md.a aVar32 = md.a.a;
         i10 = rVar.n;
         if (i10 != 0) {
         }

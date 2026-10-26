@@ -1,15 +1,29 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class i0 {
-    public final Object a;
-    public final Object b;
-    public final Object c;
+import java.util.NoSuchElementException;
 
-    public i0(Object obj, Object obj2, Object obj3) {
-        this.a = obj;
-        this.b = obj2;
-        this.c = obj3;
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public final class i0 extends a8.y {
+    public boolean b;
+    public final /* synthetic */ Object c;
+
+    public i0(Object obj) {
+        super(2);
+        this.c = obj;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return !this.b;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (this.b) {
+            throw new NoSuchElementException();
+        }
+        this.b = true;
+        return this.c;
     }
 }

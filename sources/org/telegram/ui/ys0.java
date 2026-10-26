@@ -1,79 +1,48 @@
 package org.telegram.ui;
 
-import android.R;
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ys0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zs0 b;
+public final class ys0 extends org.telegram.ui.Components.d10 {
+    public final /* synthetic */ gs0 e;
+    public final /* synthetic */ PhotoViewer f;
 
-    public /* synthetic */ ys0(zs0 zs0Var, int i10) {
-        this.a = i10;
-        this.b = zs0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ys0(PhotoViewer photoViewer, gs0 gs0Var) {
+        super(false);
+        this.f = photoViewer;
+        this.e = gs0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
-    
-        if (r2 != 7) goto L31;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        b2.n nVar;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b.b;
-                du0 du0Var = photoViewer.E2;
-                if (du0Var != null) {
-                    org.telegram.ui.Components.j81 j81Var = photoViewer.F2;
-                    if (du0Var.e != j81Var) {
-                        du0Var.c = false;
-                        du0Var.d = false;
-                        if (du0Var.b) {
-                            du0Var.a++;
-                            du0Var.b = false;
-                        }
-                        du0Var.setImageResource(R.color.transparent);
-                    }
-                    if (j81Var != null) {
-                        i2.h0 h0Var = j81Var.d;
-                        if (h0Var != null) {
-                            try {
-                                h0Var.F1();
-                                b2.w wVar = h0Var.S;
-                                if (wVar != null && (nVar = wVar.I) != null) {
-                                    int i10 = nVar.c;
-                                    if (i10 != 6) {
-                                        break;
-                                    }
-                                }
-                            } catch (Exception unused) {
-                            }
-                        }
-                        long p5 = j81Var.p() - j81Var.n();
-                        if (!du0Var.c && !du0Var.d && !du0Var.b && p5 < 5250.0f) {
-                            Uri uri = j81Var.F;
-                            int i11 = du0Var.a + 1;
-                            du0Var.a = i11;
-                            Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.c41(du0Var, uri, i11, 8));
-                            du0Var.b = true;
-                        }
-                    }
-                    du0Var.e = j81Var;
-                    break;
-                }
-                break;
-            case 1:
-                du0.a(this.b.b.E2);
-                break;
-            default:
-                du0.a(this.b.b.E2);
-                break;
-        }
+    @Override // org.telegram.ui.Components.jp0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        PhotoViewer photoViewer = this.f;
+        int[] iArr = photoViewer.m3;
+        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
+        sb2.append(' ');
+        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
+        String sb3 = sb2.toString();
+        StringBuilder sb4 = new StringBuilder();
+        int[] iArr2 = photoViewer.n3;
+        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
+        sb4.append(' ');
+        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
+        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
+    }
+
+    @Override // org.telegram.ui.Components.d10
+    public final float k() {
+        return this.f.q3.c();
+    }
+
+    @Override // org.telegram.ui.Components.d10
+    public final void l(float f7) {
+        this.e.c(f7);
+        PhotoViewer photoViewer = this.f;
+        photoViewer.q3.h(f7, false);
+        photoViewer.r3.invalidate();
     }
 }

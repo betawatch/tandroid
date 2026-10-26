@@ -1,49 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class e81 implements g2.h {
-    public final g2.h a;
-    public final long b;
+public final class e81 implements View.OnLayoutChangeListener {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ k6.c c;
 
-    public e81(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
-        this.a = extendedDefaultDataSource;
-        this.b = j10;
+    public e81(k6.c cVar, View view) {
+        this.c = cVar;
+        o1.j jVar = new o1.j(view, o1.h.n, 0.0f);
+        cVar.c = jVar;
+        jVar.u.a(1.0f);
+        ((o1.j) cVar.c).u.b(350.0f);
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.c0 c0Var) {
-        this.a.addTransferListener(c0Var);
-    }
-
-    @Override // g2.h
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.m mVar) {
-        g2.l a2 = mVar.a();
-        a2.b = mVar.e + this.b;
-        return this.a.open(a2.d());
-    }
-
-    @Override // b2.o
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        Point point = AndroidUtilities.displaySize;
+        boolean z10 = point.x > point.y;
+        Boolean bool = this.a;
+        if (bool == null || bool.booleanValue() != z10) {
+            this.a = Boolean.valueOf(z10);
+            this.b = true;
+        }
+        if (i15 == 0 || i15 == i11 || this.b) {
+            this.b = false;
+            return;
+        }
+        k6.c cVar = this.c;
+        ((o1.j) cVar.c).c();
+        if (view.getVisibility() != 0) {
+            view.setTranslationY(0.0f);
+            return;
+        }
+        ((o1.j) cVar.c).u.i = 0.0f;
+        view.setTranslationY((i15 - i11) + 0.0f);
+        ((o1.j) cVar.c).h();
     }
 }

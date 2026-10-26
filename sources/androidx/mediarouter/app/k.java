@@ -1,11 +1,80 @@
 package androidx.mediarouter.app;
 
-import android.view.View;
+import android.view.animation.Animation;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class k implements View.OnClickListener {
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+public final class k implements Animation.AnimationListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ k(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationEnd(Animation animation) {
+        switch (this.a) {
+            case 0:
+                ((u) this.b).j(true);
+                break;
+            case 1:
+                break;
+            default:
+                o0 o0Var = ((m0) this.b).w;
+                o0Var.O = false;
+                o0Var.o();
+                break;
+        }
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationRepeat(Animation animation) {
+        int i10 = this.a;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationStart(Animation animation) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                u uVar = (u) this.b;
+                OverlayListView overlayListView = uVar.U;
+                ArrayList arrayList = overlayListView.a;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    p0 p0Var = (p0) obj;
+                    if (!p0Var.j) {
+                        p0Var.i = overlayListView.getDrawingTime();
+                        p0Var.j = true;
+                    }
+                }
+                uVar.U.postDelayed(uVar.E0, uVar.x0);
+                break;
+            default:
+                ((m0) this.b).w.O = true;
+                break;
+        }
+    }
+
+    private final void a(Animation animation) {
+    }
+
+    private final void b(Animation animation) {
+    }
+
+    private final void c(Animation animation) {
+    }
+
+    private final void d(Animation animation) {
+    }
+
+    private final void e(Animation animation) {
     }
 }

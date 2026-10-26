@@ -1,5 +1,6 @@
 package d1;
 
+import a8.ib;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -9,35 +10,34 @@ import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Base64;
-import c7.b0;
-import c7.e0;
-import c7.g;
-import c7.i0;
-import c7.j;
-import c7.k;
-import c7.m;
-import c7.o;
-import c7.s;
-import c7.t;
-import c7.u;
-import c7.v;
-import c7.w;
-import c7.x;
-import c7.y;
 import com.google.android.gms.fido.common.Transport;
+import d7.b0;
+import d7.e0;
+import d7.g;
+import d7.i0;
+import d7.j;
+import d7.k;
+import d7.m;
+import d7.o;
+import d7.s;
+import d7.t;
+import d7.u;
+import d7.v;
+import d7.w;
+import d7.x;
+import d7.y;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import n7.s0;
+import o7.s0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaDataController;
 import v0.i;
-import v7.p6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -60,7 +60,7 @@ public final class e extends b1.d {
             try {
                 JSONObject jSONObject2 = new JSONObject();
                 if (s0Var != null && s0Var.t().length > 0) {
-                    jSONObject2.put("rawId", u6.b.c(s0Var.t()));
+                    jSONObject2.put("rawId", v6.b.c(s0Var.t()));
                 }
                 String str = uVar.n;
                 if (str != null) {
@@ -75,7 +75,7 @@ public final class e extends b1.d {
                     jSONObject2.put("id", str3);
                 }
                 String str4 = "response";
-                c7.i iVar = uVar.e;
+                d7.i iVar = uVar.e;
                 boolean z10 = true;
                 if (iVar != null) {
                     jSONObject = iVar.b();
@@ -117,8 +117,8 @@ public final class e extends b1.d {
                 Bundle bundle = new Bundle();
                 bundle.putString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON", jSONObject4);
                 return new v0.f(jSONObject4, bundle);
-            } catch (JSONException e7) {
-                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e7);
+            } catch (JSONException e10) {
+                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e10);
             }
         } catch (Throwable th2) {
             throw new w0.c("The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage(), 2);
@@ -127,9 +127,9 @@ public final class e extends b1.d {
 
     /* JADX WARN: Multi-variable type inference failed */
     public final v d(v0.e request) {
-        c7.f fVar;
+        d7.f fVar;
         m mVar;
-        c7.f fVar2;
+        d7.f fVar2;
         String str;
         JSONArray jSONArray;
         ArrayList arrayList;
@@ -139,13 +139,13 @@ public final class e extends b1.d {
         String str2 = request.d;
         Context context = this.e;
         kotlin.jvm.internal.i.e(context, "context");
-        if (k6.d.d.d(context, k6.e.a) == 0) {
+        if (l6.d.d.d(context, l6.e.a) == 0) {
             PackageManager packageManager = context.getPackageManager();
             kotlin.jvm.internal.i.d(packageManager, "getPackageManager(...)");
             if (Build.VERSION.SDK_INT >= 28) {
                 PackageInfo packageInfo = packageManager.getPackageInfo("com.google.android.gms", 0);
                 kotlin.jvm.internal.i.d(packageInfo, "getPackageInfo(...)");
-                j10 = b5.d.s(packageInfo);
+                j10 = c5.d.s(packageInfo);
             } else {
                 j10 = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
             }
@@ -154,7 +154,7 @@ public final class e extends b1.d {
             }
         }
         JSONObject jSONObject = new JSONObject(str2);
-        byte[] a2 = p6.a(jSONObject);
+        byte[] a2 = ib.a(jSONObject);
         JSONObject jSONObject2 = jSONObject.getJSONObject("user");
         String str3 = "id";
         String string = jSONObject2.getString("id");
@@ -252,7 +252,7 @@ public final class e extends b1.d {
                             arrayList.add(Transport.a(jSONArray4.getString(i13)));
                             i13++;
                             jSONArray4 = jSONArray5;
-                        } catch (a7.a e) {
+                        } catch (b7.a e) {
                             throw new y0.a(new x0.a(4), e.getMessage());
                         }
                     }
@@ -272,7 +272,7 @@ public final class e extends b1.d {
         LinkedHashMap linkedHashMap5 = f.a;
         String optString5 = jSONObject.optString("attestation", "none");
         kotlin.jvm.internal.i.b(optString5);
-        c7.e a10 = c7.e.a(optString5.length() != 0 ? optString5 : "none");
+        d7.e a10 = d7.e.a(optString5.length() != 0 ? optString5 : "none");
         Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getLong("timeout") / MediaDataController.MAX_STYLE_RUNS_COUNT) : null;
         if (jSONObject.has("authenticatorSelection")) {
             JSONObject jSONObject6 = jSONObject.getJSONObject("authenticatorSelection");
@@ -283,7 +283,7 @@ public final class e extends b1.d {
             Boolean valueOf2 = Boolean.valueOf(optBoolean);
             String optString7 = jSONObject6.optString("authenticatorAttachment", "");
             kotlin.jvm.internal.i.b(optString7);
-            c7.c a12 = optString7.length() > 0 ? c7.c.a(optString7) : null;
+            d7.c a12 = optString7.length() > 0 ? d7.c.a(optString7) : null;
             fVar = null;
             mVar = new m(a12 == null ? null : a12.a, valueOf2, null, a11 == null ? null : a11.a);
         } else {
@@ -294,7 +294,7 @@ public final class e extends b1.d {
             JSONObject jSONObject7 = jSONObject.getJSONObject("extensions");
             String optString8 = jSONObject7.optString("appid", "");
             kotlin.jvm.internal.i.b(optString8);
-            fVar2 = new c7.f(optString8.length() > 0 ? new s(optString8) : fVar, null, jSONObject7.optBoolean("uvm", false) ? new i0(true) : fVar, null, null, null, null, null, jSONObject7.optBoolean("thirdPartyPayment", false) ? new t(true) : fVar, null, null, null);
+            fVar2 = new d7.f(optString8.length() > 0 ? new s(optString8) : fVar, null, jSONObject7.optBoolean("uvm", false) ? new i0(true) : fVar, null, null, null, null, null, jSONObject7.optBoolean("thirdPartyPayment", false) ? new t(true) : fVar, null, null, null);
         } else {
             fVar2 = fVar;
         }

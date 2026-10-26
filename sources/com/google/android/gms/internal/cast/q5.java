@@ -1,31 +1,32 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class q5 extends r5 {
-    @Override // com.google.android.gms.internal.cast.r5
-    public final void a(Object obj, long j10) {
-        u4 u4Var = (u4) ((k5) t6.h(obj, j10));
-        if (u4Var.a) {
-            u4Var.a = false;
-        }
+public final class q5 implements u5 {
+    public final u5[] a;
+
+    public q5(u5... u5VarArr) {
+        this.a = u5VarArr;
     }
 
-    @Override // com.google.android.gms.internal.cast.r5
-    public final void b(Object obj, long j10, Object obj2) {
-        k5 k5Var = (k5) t6.h(obj, j10);
-        k5 k5Var2 = (k5) t6.h(obj2, j10);
-        int size = k5Var.size();
-        int size2 = k5Var2.size();
-        if (size > 0 && size2 > 0) {
-            if (!((u4) k5Var).a) {
-                k5Var = k5Var.zzg(size2 + size);
+    @Override // com.google.android.gms.internal.cast.u5
+    public final d6 zzb(Class cls) {
+        for (int i10 = 0; i10 < 2; i10++) {
+            u5 u5Var = this.a[i10];
+            if (u5Var.zzc(cls)) {
+                return u5Var.zzb(cls);
             }
-            k5Var.addAll(k5Var2);
         }
-        if (size > 0) {
-            k5Var2 = k5Var;
+        throw new UnsupportedOperationException("No factory is available for message type: ".concat(cls.getName()));
+    }
+
+    @Override // com.google.android.gms.internal.cast.u5
+    public final boolean zzc(Class cls) {
+        for (int i10 = 0; i10 < 2; i10++) {
+            if (this.a[i10].zzc(cls)) {
+                return true;
+            }
         }
-        t6.l(obj, j10, k5Var2);
+        return false;
     }
 }

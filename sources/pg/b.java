@@ -1,22 +1,32 @@
 package pg;
 
-import hg.g;
-import java.util.ArrayList;
-import org.telegram.ui.Components.lm0;
-import s4.o;
+import org.telegram.ui.af1;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class b extends lm0 {
-    public final g c = new g();
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ un b;
 
-    public final void E(ArrayList arrayList, ArrayList arrayList2) {
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList();
+    public /* synthetic */ b(un unVar, int i10) {
+        this.a = i10;
+        this.b = unVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                un unVar = this.b;
+                if (unVar.getParentLayout() != null) {
+                    af1.I0(unVar);
+                    break;
+                }
+                break;
+            default:
+                this.b.kc();
+                break;
         }
-        g gVar = this.c;
-        gVar.c = arrayList;
-        gVar.d = arrayList2;
-        o.c(gVar, true).c(this);
     }
 }

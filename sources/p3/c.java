@@ -1,14 +1,14 @@
 package p3;
 
 import a1.g;
-import b2.q0;
-import b2.s0;
-import b2.w;
+import b2.r0;
+import b2.t0;
+import b2.x;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c implements s0 {
+public final class c implements t0 {
     public final byte[] a;
     public final String b;
     public final String c;
@@ -19,20 +19,20 @@ public final class c implements s0 {
         this.c = str2;
     }
 
-    @Override // b2.s0
-    public final /* synthetic */ w a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.s0
-    public final void b(q0 q0Var) {
+    @Override // b2.t0
+    public final void b(r0 r0Var) {
         String str = this.b;
         if (str != null) {
-            q0Var.a = str;
+            r0Var.a = str;
         }
     }
 
-    @Override // b2.s0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }

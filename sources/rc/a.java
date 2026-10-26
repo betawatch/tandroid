@@ -1,24 +1,96 @@
 package rc;
 
-import android.util.Log;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import d5.z;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a extends c {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class a {
+    public static int f;
+    public InputStream a;
+    public int b;
+    public int c;
+    public int d;
+    public z e;
 
-    @Override // rc.c
-    public final void b(String str) {
-        switch (this.a) {
-            case 0:
-                Log.d("isoparser", String.valueOf((String) this.b) + ":" + str);
-                break;
-            default:
-                ((Logger) this.b).log(Level.FINE, str);
-                break;
+    public final int a() {
+        if (this.d == 8) {
+            this.b = this.c;
+            this.c = this.a.read();
+            this.d = 0;
+            if (this.b == -1) {
+                return -1;
+            }
         }
+        int i10 = this.b;
+        int i11 = this.d;
+        int i12 = (i10 >> (7 - i11)) & 1;
+        this.d = i11 + 1;
+        z zVar = this.e;
+        char c10 = i12 == 0 ? '0' : '1';
+        int i13 = zVar.b;
+        char[] cArr = (char[]) zVar.c;
+        if (i13 < cArr.length - 1) {
+            cArr[i13] = c10;
+            zVar.b = i13 + 1;
+        }
+        f++;
+        return i12;
+    }
+
+    public final boolean b(String str) {
+        boolean z10 = a() != 0;
+        f(str, z10 ? "1" : "0");
+        return z10;
+    }
+
+    public final long c(int i10) {
+        if (i10 > 64) {
+            throw new IllegalArgumentException("Can not readByte more then 64 bit");
+        }
+        long j10 = 0;
+        for (int i11 = 0; i11 < i10; i11++) {
+            j10 = (j10 << 1) | a();
+        }
+        return j10;
+    }
+
+    public final long d(int i10, String str) {
+        long c10 = c(i10);
+        f(str, String.valueOf(c10));
+        return c10;
+    }
+
+    public final int e(String str) {
+        int i10 = 0;
+        int i11 = 0;
+        while (a() == 0) {
+            i11++;
+        }
+        if (i11 > 0) {
+            i10 = (int) (((1 << i11) - 1) + c(i11));
+        }
+        f(str, String.valueOf(i10));
+        return i10;
+    }
+
+    public final void f(String str, String str2) {
+        StringBuilder sb2 = new StringBuilder();
+        int i10 = f;
+        z zVar = this.e;
+        String valueOf = String.valueOf(i10 - zVar.b);
+        int length = 8 - valueOf.length();
+        sb2.append("@".concat(valueOf));
+        for (int i11 = 0; i11 < length; i11++) {
+            sb2.append(' ');
+        }
+        sb2.append(str);
+        int length2 = (100 - sb2.length()) - zVar.b;
+        for (int i12 = 0; i12 < length2; i12++) {
+            sb2.append(' ');
+        }
+        sb2.append(zVar);
+        sb2.append(" (" + str2 + ")");
+        zVar.b = 0;
     }
 }

@@ -1,5 +1,7 @@
 package m;
 
+import a8.kc;
+import a8.ng;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -8,29 +10,27 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.net.Uri;
 import android.util.AttributeSet;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import v7.q7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class v extends ImageButton {
+public class v extends ImageView {
     public final e2.c a;
-    public final a5.a b;
+    public final ng b;
     public boolean c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        d3.a(context);
+        c3.a(context);
         this.c = false;
-        c3.a(this, getContext());
+        b3.a(this, getContext());
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, i10);
-        a5.a aVar = new a5.a(this);
-        this.b = aVar;
-        aVar.u(attributeSet, i10);
+        ng ngVar = new ng(this);
+        this.b = ngVar;
+        ngVar.t(attributeSet, i10);
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -40,9 +40,9 @@ public class v extends ImageButton {
         if (cVar != null) {
             cVar.b();
         }
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            aVar.c();
+        ng ngVar = this.b;
+        if (ngVar != null) {
+            ngVar.b();
         }
     }
 
@@ -63,21 +63,21 @@ public class v extends ImageButton {
     }
 
     public ColorStateList getSupportImageTintList() {
-        e3 e3Var;
-        a5.a aVar = this.b;
-        if (aVar == null || (e3Var = (e3) aVar.d) == null) {
+        d3 d3Var;
+        ng ngVar = this.b;
+        if (ngVar == null || (d3Var = (d3) ngVar.d) == null) {
             return null;
         }
-        return (ColorStateList) e3Var.c;
+        return (ColorStateList) d3Var.c;
     }
 
     public PorterDuff.Mode getSupportImageTintMode() {
-        e3 e3Var;
-        a5.a aVar = this.b;
-        if (aVar == null || (e3Var = (e3) aVar.d) == null) {
+        d3 d3Var;
+        ng ngVar = this.b;
+        if (ngVar == null || (d3Var = (d3) ngVar.d) == null) {
             return null;
         }
-        return (PorterDuff.Mode) e3Var.d;
+        return (PorterDuff.Mode) d3Var.d;
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -106,27 +106,27 @@ public class v extends ImageButton {
     @Override // android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         super.setImageBitmap(bitmap);
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            aVar.c();
+        ng ngVar = this.b;
+        if (ngVar != null) {
+            ngVar.b();
         }
     }
 
     @Override // android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
-        a5.a aVar = this.b;
-        if (aVar != null && drawable != null && !this.c) {
-            aVar.b = drawable.getLevel();
+        ng ngVar = this.b;
+        if (ngVar != null && drawable != null && !this.c) {
+            ngVar.b = drawable.getLevel();
         }
         super.setImageDrawable(drawable);
-        if (aVar != null) {
-            aVar.c();
+        if (ngVar != null) {
+            ngVar.b();
             if (this.c) {
                 return;
             }
-            ImageView imageView = (ImageView) aVar.c;
+            ImageView imageView = (ImageView) ngVar.c;
             if (imageView.getDrawable() != null) {
-                imageView.getDrawable().setLevel(aVar.b);
+                imageView.getDrawable().setLevel(ngVar.b);
             }
         }
     }
@@ -139,26 +139,28 @@ public class v extends ImageButton {
 
     @Override // android.widget.ImageView
     public void setImageResource(int i10) {
-        a5.a aVar = this.b;
-        ImageView imageView = (ImageView) aVar.c;
-        if (i10 != 0) {
-            Drawable b10 = q7.b(imageView.getContext(), i10);
-            if (b10 != null) {
-                m1.a(b10);
+        ng ngVar = this.b;
+        if (ngVar != null) {
+            ImageView imageView = (ImageView) ngVar.c;
+            if (i10 != 0) {
+                Drawable b10 = kc.b(imageView.getContext(), i10);
+                if (b10 != null) {
+                    l1.a(b10);
+                }
+                imageView.setImageDrawable(b10);
+            } else {
+                imageView.setImageDrawable(null);
             }
-            imageView.setImageDrawable(b10);
-        } else {
-            imageView.setImageDrawable(null);
+            ngVar.b();
         }
-        aVar.c();
     }
 
     @Override // android.widget.ImageView
     public void setImageURI(Uri uri) {
         super.setImageURI(uri);
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            aVar.c();
+        ng ngVar = this.b;
+        if (ngVar != null) {
+            ngVar.b();
         }
     }
 
@@ -177,28 +179,28 @@ public class v extends ImageButton {
     }
 
     public void setSupportImageTintList(ColorStateList colorStateList) {
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            if (((e3) aVar.d) == null) {
-                aVar.d = new e3();
+        ng ngVar = this.b;
+        if (ngVar != null) {
+            if (((d3) ngVar.d) == null) {
+                ngVar.d = new d3();
             }
-            e3 e3Var = (e3) aVar.d;
-            e3Var.c = colorStateList;
-            e3Var.b = true;
-            aVar.c();
+            d3 d3Var = (d3) ngVar.d;
+            d3Var.c = colorStateList;
+            d3Var.b = true;
+            ngVar.b();
         }
     }
 
     public void setSupportImageTintMode(PorterDuff.Mode mode) {
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            if (((e3) aVar.d) == null) {
-                aVar.d = new e3();
+        ng ngVar = this.b;
+        if (ngVar != null) {
+            if (((d3) ngVar.d) == null) {
+                ngVar.d = new d3();
             }
-            e3 e3Var = (e3) aVar.d;
-            e3Var.d = mode;
-            e3Var.a = true;
-            aVar.c();
+            d3 d3Var = (d3) ngVar.d;
+            d3Var.d = mode;
+            d3Var.a = true;
+            ngVar.b();
         }
     }
 }

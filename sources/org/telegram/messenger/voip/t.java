@@ -1,53 +1,30 @@
 package org.telegram.messenger.voip;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t implements RequestDelegate {
+public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ t(Object obj, int i10) {
+    public /* synthetic */ t(VoIPService voIPService, TLRPC.Updates updates, long j10, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = voIPService;
+        this.c = updates;
+        this.d = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((VoIPService) this.b).lambda$hangUp$4(tLObject, tL_error);
-                break;
-            case 1:
-                ((VoIPService) this.b).lambda$hangUp$5(tLObject, tL_error);
-                break;
-            case 2:
-                ((VoIPService) this.b).lambda$startOutgoingCall$7(tLObject, tL_error);
-                break;
-            case 3:
-                ((VoIPService) this.b).lambda$startGroupCheckShortpoll$62(tLObject, tL_error);
-                break;
-            case 4:
-                ((VoIPService) this.b).lambda$declineIncomingCall$105(tLObject, tL_error);
-                break;
-            case 5:
-                ((VoIPService) this.b).lambda$processAcceptedCall$20(tLObject, tL_error);
-                break;
-            case 6:
-                ((VoIPService) this.b).lambda$startGroupCall$23(tLObject, tL_error);
-                break;
-            case 7:
-                ((VoIPService) this.b).lambda$stopScreenCapture$15(tLObject, tL_error);
-                break;
-            case 8:
-                ((VoIPService) this.b).lambda$acceptIncomingCall$102(tLObject, tL_error);
+                this.b.lambda$startConferenceGroupCall$38(this.c, this.d);
                 break;
             default:
-                VoIPService.lambda$updateServerConfig$107((SharedPreferences) this.b, tLObject, tL_error);
+                this.b.lambda$startConferenceGroupCall$46(this.c, this.d);
                 break;
         }
     }

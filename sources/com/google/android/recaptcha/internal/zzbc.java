@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import md.c;
+import nd.c;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzbc extends c {
     /* synthetic */ Object zza;
@@ -11,12 +11,12 @@ final class zzbc extends c {
     int zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbc(zzbo zzboVar, kd.c cVar) {
+    public zzbc(zzbo zzboVar, ld.c cVar) {
         super(cVar);
         this.zzb = zzboVar;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final Object invokeSuspend(Object obj) {
         Object zzl;
         this.zza = obj;

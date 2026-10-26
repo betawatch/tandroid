@@ -1,73 +1,32 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.LinkProperties;
-import android.net.Network;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class y {
-    public static final g6.b j = new g6.b("ConnectivityMonitor", null);
-    public final l4 a;
-    public final ConnectivityManager c;
-    public boolean f;
-    public final Context g;
-    public final Object h = new Object();
-    public final Set i = DesugarCollections.synchronizedSet(new HashSet());
-    public final Map d = DesugarCollections.synchronizedMap(new HashMap());
-    public final List e = DesugarCollections.synchronizedList(new ArrayList());
-    public final x b = new x(this);
-
-    public y(Context context, l4 l4Var) {
-        this.a = l4Var;
-        this.g = context;
-        this.c = (ConnectivityManager) context.getSystemService("connectivity");
-    }
-
-    public final void a(Network network, LinkProperties linkProperties) {
-        synchronized (this.h) {
-            try {
-                if (this.d != null && this.e != null) {
-                    j.b("a new network is available", new Object[0]);
-                    if (this.d.containsKey(network)) {
-                        this.e.remove(network);
-                    }
-                    this.d.put(network, linkProperties);
-                    this.e.add(network);
-                    b();
-                }
-            } finally {
-            }
+public class y extends Handler {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y(Looper looper, int i10) {
+        super(looper);
+        switch (i10) {
+            case 2:
+                super(looper);
+                Looper.getMainLooper();
+                break;
+            case 3:
+            default:
+                Looper.getMainLooper();
+                break;
+            case 4:
+                super(looper);
+                Looper.getMainLooper();
+                break;
         }
     }
 
-    public final void b() {
-        if (this.a == null) {
-            return;
-        }
-        synchronized (this.i) {
-            try {
-                Iterator it = this.i.iterator();
-                while (it.hasNext()) {
-                    if (it.next() != null) {
-                        throw new ClassCastException();
-                    }
-                    if (!((m4) this.a).a.isShutdown()) {
-                        ((m4) this.a).execute(new w(this, 0));
-                    }
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public y(Looper looper, Handler.Callback callback) {
+        super(looper, callback);
+        Looper.getMainLooper();
     }
 }

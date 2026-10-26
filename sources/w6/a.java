@@ -1,72 +1,21 @@
 package w6;
 
-import android.app.RemoteInput;
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.view.MenuItem;
-import android.webkit.WebView;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
+import m5.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static Context a;
-    public static Boolean b;
+public final class a implements ThreadFactory {
+    public final AtomicInteger b = new AtomicInteger();
+    public final ThreadFactory c = Executors.defaultThreadFactory();
+    public final String a = "GAC_Executor";
 
-    public static PackageInfo a() {
-        return WebView.getCurrentWebViewPackage();
-    }
-
-    public static synchronized boolean b(Context context) {
-        Boolean bool;
-        synchronized (a.class) {
-            Context applicationContext = context.getApplicationContext();
-            Context context2 = a;
-            if (context2 != null && (bool = b) != null && context2 == applicationContext) {
-                return bool.booleanValue();
-            }
-            b = null;
-            if (u6.b.d()) {
-                b = Boolean.valueOf(applicationContext.getPackageManager().isInstantApp());
-            } else {
-                try {
-                    context.getClassLoader().loadClass("com.google.android.instantapps.supervisor.InstantAppsRuntime");
-                    b = Boolean.TRUE;
-                } catch (ClassNotFoundException unused) {
-                    b = Boolean.FALSE;
-                }
-            }
-            a = applicationContext;
-            return b.booleanValue();
-        }
-    }
-
-    public static void c(RemoteInput.Builder builder, String str) {
-        builder.setAllowDataType(str, true);
-    }
-
-    public static void d(MenuItem menuItem, char c10, int i10) {
-        menuItem.setAlphabeticShortcut(c10, i10);
-    }
-
-    public static void e(MenuItem menuItem, CharSequence charSequence) {
-        menuItem.setContentDescription(charSequence);
-    }
-
-    public static void f(MenuItem menuItem, ColorStateList colorStateList) {
-        menuItem.setIconTintList(colorStateList);
-    }
-
-    public static void g(MenuItem menuItem, PorterDuff.Mode mode) {
-        menuItem.setIconTintMode(mode);
-    }
-
-    public static void h(MenuItem menuItem, char c10, int i10) {
-        menuItem.setNumericShortcut(c10, i10);
-    }
-
-    public static void i(MenuItem menuItem, CharSequence charSequence) {
-        menuItem.setTooltipText(charSequence);
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        Thread newThread = this.c.newThread(new p(2, runnable));
+        newThread.setName(this.a + "[" + this.b.getAndIncrement() + "]");
+        return newThread;
     }
 }

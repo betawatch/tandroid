@@ -2,72 +2,37 @@ package m4;
 
 import android.media.session.MediaSession;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.text.TextUtils;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class u1 {
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public static final String p;
-    public static final String q;
-    public static final String r;
-    public final int a;
-    public final int b;
-    public final int c;
-    public final String d;
-    public final String e;
-    public final IBinder f;
-    public final Bundle g;
-    public final MediaSession.Token h;
+    public static final String b;
+    public static final String c;
+    public final v1 a;
 
     static {
-        String str = e2.m0.a;
-        i = Integer.toString(0, 36);
-        j = Integer.toString(1, 36);
-        k = Integer.toString(2, 36);
-        l = Integer.toString(3, 36);
-        m = Integer.toString(4, 36);
-        n = Integer.toString(5, 36);
-        o = Integer.toString(6, 36);
-        p = Integer.toString(7, 36);
-        q = Integer.toString(8, 36);
-        r = Integer.toString(9, 36);
+        b2.q0.a("media3.session");
+        String str = e2.n0.a;
+        b = Integer.toString(0, 36);
+        c = Integer.toString(1, 36);
     }
 
-    public u1(int i10, String str, i1 i1Var, Bundle bundle, MediaSession.Token token) {
-        str.getClass();
-        bundle.getClass();
-        this.a = i10;
-        this.b = 1010001300;
-        this.c = 9;
-        this.d = str;
-        this.e = "";
-        this.f = i1Var;
-        this.g = bundle;
-        this.h = token;
+    public u1(int i10, String str, j1 j1Var, Bundle bundle, MediaSession.Token token) {
+        this.a = new v1(i10, str, j1Var, bundle, token);
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof u1)) {
-            return false;
+        if (obj instanceof u1) {
+            return this.a.equals(((u1) obj).a);
         }
-        u1 u1Var = (u1) obj;
-        return this.a == u1Var.a && this.b == u1Var.b && this.c == u1Var.c && TextUtils.equals(this.d, u1Var.d) && TextUtils.equals(this.e, u1Var.e) && Objects.equals(this.f, u1Var.f) && Objects.equals(this.h, u1Var.h);
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), 0, Integer.valueOf(this.b), Integer.valueOf(this.c), this.d, this.e, null, this.f, this.h);
+        return this.a.hashCode();
     }
 
     public final String toString() {
-        return "SessionToken {pkg=" + this.d + " type=0 libraryVersion=" + this.b + " interfaceVersion=" + this.c + " service=" + this.e + " IMediaSession=" + this.f + " extras=" + this.g + "}";
+        return this.a.toString();
     }
 }

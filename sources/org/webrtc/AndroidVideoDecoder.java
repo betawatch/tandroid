@@ -4,7 +4,6 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.SystemClock;
 import android.view.Surface;
-import i2.o1;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.BlockingDeque;
@@ -18,7 +17,7 @@ import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
@@ -50,7 +49,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private final Object dimensionLock = new Object();
     private final Object renderedTextureMetadataLock = new Object();
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class DecodedTextureMetadata {
         final Integer decodeTimeMs;
         final long presentationTimestampUs;
@@ -61,7 +60,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class FrameInfo {
         final long decodeStartTimeMs;
         final int rotation;
@@ -74,7 +73,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     public AndroidVideoDecoder(MediaCodecWrapperFactory mediaCodecWrapperFactory, String str, VideoCodecMimeType videoCodecMimeType, int i10, EglBase.Context context) {
         if (!isSupportedColorFormat(i10)) {
-            throw new IllegalArgumentException(o1.k(i10, "Unsupported color format: "));
+            throw new IllegalArgumentException(ic.a.i(i10, "Unsupported color format: "));
         }
         Logging.d(TAG, "ctor name: " + str + " type: " + videoCodecMimeType + " color format: " + i10 + " context: " + context);
         this.mediaCodecWrapperFactory = mediaCodecWrapperFactory;
@@ -87,7 +86,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     private VideoFrame.Buffer copyI420Buffer(ByteBuffer byteBuffer, int i10, int i11, int i12, int i13) {
         if (i10 % 2 != 0) {
-            throw new AssertionError(o1.k(i10, "Stride is not divisible by two: "));
+            throw new AssertionError(ic.a.i(i10, "Stride is not divisible by two: "));
         }
         int i14 = (i12 + 1) / 2;
         int i15 = i11 % 2 == 0 ? (i13 + 1) / 2 : i13 / 2;
@@ -251,8 +250,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                 Logging.e(TAG, "initDecode failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
-            } catch (IllegalStateException e7) {
-                e = e7;
+            } catch (IllegalStateException e10) {
+                e = e10;
                 Logging.e(TAG, "initDecode failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
@@ -357,9 +356,9 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
         try {
             this.codec.release();
-        } catch (Exception e7) {
-            Logging.e(TAG, "Media decoder release failed", e7);
-            this.shutdownException = e7;
+        } catch (Exception e10) {
+            Logging.e(TAG, "Media decoder release failed", e10);
+            this.shutdownException = e10;
         }
         Logging.d(TAG, "Release on output thread done");
     }
@@ -475,12 +474,12 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                     this.frameInfos.pollLast();
                     return VideoCodecStatus.ERROR;
                 }
-            } catch (IllegalStateException e7) {
-                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e7);
+            } catch (IllegalStateException e10) {
+                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e10);
                 return VideoCodecStatus.ERROR;
             }
-        } catch (IllegalStateException e10) {
-            Logging.e(TAG, "dequeueInputBuffer failed", e10);
+        } catch (IllegalStateException e11) {
+            Logging.e(TAG, "dequeueInputBuffer failed", e11);
             return VideoCodecStatus.ERROR;
         }
     }

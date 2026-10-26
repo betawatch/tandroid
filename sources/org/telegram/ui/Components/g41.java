@@ -1,28 +1,40 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g41 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ Utilities.Callback2 c;
+public final /* synthetic */ class g41 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ g41(String str, String str2, Utilities.Callback2 callback2) {
-        this.a = str;
-        this.b = str2;
-        this.c = callback2;
+    public /* synthetic */ g41(String str, MessageObject messageObject, long j10, int i10) {
+        this.a = i10;
+        this.b = messageObject;
+        this.c = j10;
+        this.d = str;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        y41.I(this.a, str, this.b, this.c);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        y41.I(this.a, "en", this.b, this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        String str = this.d;
+        long j10 = this.c;
+        MessageObject messageObject = this.b;
+        switch (i10) {
+            case 0:
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
+                int i11 = NotificationCenter.voiceTranscriptionUpdate;
+                Long valueOf = Long.valueOf(j10);
+                Boolean bool = Boolean.TRUE;
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, messageObject, valueOf, str, bool, bool);
+                break;
+            default:
+                l41.g(messageObject, j10, str);
+                break;
+        }
     }
 }

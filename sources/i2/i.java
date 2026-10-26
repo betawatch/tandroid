@@ -1,18 +1,17 @@
 package i2;
 
+import a8.yb;
 import android.text.TextUtils;
-import e9.x1;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Iterator;
 import java.util.Map;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class i implements s0 {
-    public static final x1 r;
-    public final b2.n1 a;
-    public final b2.l1 b;
+public final class i implements u0 {
+    public static final f9.s1 r;
+    public final b2.o1 a;
+    public final b2.m1 b;
     public final y2.d c;
     public final long d;
     public final long e;
@@ -25,15 +24,15 @@ public final class i implements s0 {
     public final int l;
     public final boolean m;
     public final long n;
-    public final e9.q0 o;
+    public final f9.l0 o;
     public final ConcurrentHashMap p;
     public long q;
 
     static {
-        e9.l0 l0Var = e9.n0.b;
+        f9.g0 g0Var = f9.i0.b;
         Object[] objArr = {"file", "content", "data", "android.resource", "rawresource", "asset"};
-        e9.s.d(6, objArr);
-        r = e9.n0.s(6, objArr);
+        f9.o.d(6, objArr);
+        r = f9.i0.s(6, objArr);
     }
 
     public i(y2.d dVar, int i10, int i11, int i12, int i13, int i14, boolean z10, Map map) {
@@ -48,28 +47,28 @@ public final class i implements s0 {
         a(50000, 50000, "maxBufferMs", "minBufferMs");
         a(50000, i10, "maxBufferForLocalPlaybackMs", "minBufferForLocalPlaybackMs");
         a(0, 0, "backBufferDurationMs", "0");
-        this.a = new b2.n1();
-        this.b = new b2.l1();
+        this.a = new b2.o1();
+        this.b = new b2.m1();
         this.c = dVar;
         long j10 = 50000;
-        this.d = e2.m0.S(j10);
-        this.e = e2.m0.S(i10);
-        this.f = e2.m0.S(j10);
-        this.g = e2.m0.S(j10);
-        this.h = e2.m0.S(i11);
-        this.i = e2.m0.S(i12);
-        this.j = e2.m0.S(i13);
-        this.k = e2.m0.S(i14);
+        this.d = e2.n0.S(j10);
+        this.e = e2.n0.S(i10);
+        this.f = e2.n0.S(j10);
+        this.g = e2.n0.S(j10);
+        this.h = e2.n0.S(i11);
+        this.i = e2.n0.S(i12);
+        this.j = e2.n0.S(i13);
+        this.k = e2.n0.S(i14);
         this.l = -1;
         this.m = z10;
-        this.n = e2.m0.S(0);
+        this.n = e2.n0.S(0);
         this.p = new ConcurrentHashMap();
-        this.o = e9.q0.a(map);
+        this.o = f9.l0.a(map);
         this.q = -1L;
     }
 
     public static void a(int i10, int i11, String str, String str2) {
-        u6.i(i10 >= i11, "%s cannot be less than %s", str, str2);
+        yb.i(i10 >= i11, "%s cannot be less than %s", str, str2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
@@ -82,13 +81,13 @@ public final class i implements s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(r0 r0Var) {
+    public final boolean b(t0 t0Var) {
         int i10;
         boolean z10;
         long j10;
         float f7;
-        j2.j jVar = r0Var.a;
-        long j11 = r0Var.d;
+        j2.j jVar = t0Var.a;
+        long j11 = t0Var.d;
         h hVar = (h) this.p.get(jVar);
         hVar.getClass();
         h hVar2 = (h) this.p.get(jVar);
@@ -103,17 +102,17 @@ public final class i implements s0 {
         if (jVar.equals(j2.j.c)) {
             return !z11;
         }
-        b2.o1 o1Var = r0Var.b;
-        b2.j0 j0Var = o1Var.m(o1Var.g(r0Var.c.a, this.b).c, this.a, 0L).c.b;
-        if (j0Var != null) {
-            String scheme = j0Var.a.getScheme();
+        b2.p1 p1Var = t0Var.b;
+        b2.k0 k0Var = p1Var.m(p1Var.g(t0Var.c.a, this.b).c, this.a, 0L).c.b;
+        if (k0Var != null) {
+            String scheme = k0Var.a.getScheme();
             if (TextUtils.isEmpty(scheme) || r.contains(scheme)) {
                 z10 = true;
                 j10 = !z10 ? this.e : this.d;
                 long j12 = !z10 ? this.g : this.f;
-                f7 = r0Var.e;
+                f7 = t0Var.e;
                 if (f7 > 1.0f) {
-                    j10 = Math.min(e2.m0.B(j10, f7), j12);
+                    j10 = Math.min(e2.n0.B(j10, f7), j12);
                 }
                 if (j11 >= Math.max(j10, 500000L)) {
                     boolean z12 = (z10 ? this.m : false) || !z11;
@@ -132,7 +131,7 @@ public final class i implements s0 {
         }
         if (!z10) {
         }
-        f7 = r0Var.e;
+        f7 = t0Var.e;
         if (f7 > 1.0f) {
         }
         if (j11 >= Math.max(j10, 500000L)) {

@@ -1,45 +1,32 @@
 package u9;
 
-import ai.f;
+import android.os.Bundle;
 import android.util.Log;
-import java.util.concurrent.atomic.AtomicReference;
-import qg.g0;
-import r9.p;
-import si.o0;
-import z9.b1;
+import androidx.emoji2.text.f;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final b c = new b();
-    public final p a;
-    public final AtomicReference b = new AtomicReference(null);
+public final /* synthetic */ class a implements w9.a {
+    public final /* synthetic */ f a;
 
-    public a(p pVar) {
-        this.a = pVar;
-        pVar.a(new g0(this, 18));
+    public /* synthetic */ a(f fVar) {
+        this.a = fVar;
     }
 
-    public final b a(String str) {
-        a aVar = (a) this.b.get();
-        return aVar == null ? c : aVar.a(str);
-    }
-
-    public final boolean b() {
-        a aVar = (a) this.b.get();
-        return aVar != null && aVar.b();
-    }
-
-    public final boolean c(String str) {
-        a aVar = (a) this.b.get();
-        return aVar != null && aVar.c(str);
-    }
-
-    public final void d(String str, long j10, b1 b1Var) {
-        String h = o0.h("Deferring native open session: ", str);
-        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", h, null);
+    public void a(vg.d dVar) {
+        f fVar = this.a;
+        synchronized (fVar) {
+            ((ArrayList) fVar.b).add(dVar);
+            ((tb.a) fVar.c).getClass();
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
+            }
         }
-        this.a.a(new f(str, j10, b1Var, 11));
+    }
+
+    @Override // w9.a
+    public void b(Bundle bundle) {
+        ((pa.d) this.a.a).b(bundle);
     }
 }

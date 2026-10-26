@@ -1,108 +1,183 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import java.util.HashSet;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class b2 extends HorizontalScrollView implements org.telegram.ui.ActionBar.b6, f3 {
-    public final f70 a;
-    public final FrameLayout b;
-    public final ImageView c;
+public final class b2 extends View implements org.telegram.ui.Cells.r9, e3 {
+    public final h70 a;
+    public final h4 b;
+    public a3 c;
     public int d;
+    public int e;
+    public TL_iv.pageBlockParagraph f;
 
-    public b2(Context context, f70 f70Var) {
+    public b2(Context context, h70 h70Var, h4 h4Var) {
         super(context);
-        this.a = f70Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        addView(frameLayout, w7.z5.c(-2.0f, -2));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, w7.z5.c(-2.0f, -2));
-        updateColors();
+        this.a = h70Var;
+        this.b = h4Var;
     }
 
-    @Override // org.telegram.ui.f3
+    @Override // org.telegram.ui.Cells.r9
+    public final void fillTextLayoutBlocks(ArrayList arrayList) {
+        a3 a3Var = this.c;
+        if (a3Var != null) {
+            arrayList.add(a3Var);
+        }
+    }
+
+    @Override // org.telegram.ui.e3
     public int getBoundLeft() {
-        if (this.d > getMeasuredWidth()) {
-            return 0;
+        a3 a3Var = this.c;
+        if (a3Var == null) {
+            return -1;
         }
-        return (getMeasuredWidth() - this.d) / 2;
+        int a2 = a3Var.a() + a3Var.s;
+        this.a.getClass();
+        return a2 - AndroidUtilities.dp(18);
     }
 
-    @Override // org.telegram.ui.f3
+    @Override // org.telegram.ui.e3
     public int getBoundRight() {
-        return this.d > getMeasuredWidth() ? getMeasuredWidth() : (getMeasuredWidth() + this.d) / 2;
+        a3 a3Var = this.c;
+        if (a3Var == null) {
+            return -1;
+        }
+        int b10 = a3Var.b() + a3Var.s;
+        this.a.getClass();
+        return AndroidUtilities.dp(18) + b10;
     }
 
-    @Override // org.telegram.ui.f3
+    @Override // org.telegram.ui.e3
     public int getLastLineBoundRight() {
-        return getBoundRight();
+        a3 a3Var = this.c;
+        if (a3Var == null) {
+            return -1;
+        }
+        int c10 = a3Var.c() + a3Var.s;
+        this.a.getClass();
+        return AndroidUtilities.dp(18) + c10;
     }
 
-    public int getMinWidth() {
-        return this.d;
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return d3.b(this);
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14 = i12 - i10;
-        int i15 = this.d;
-        if (i15 > i14) {
-            super.onLayout(z10, i10, i11, i12, i13);
-        } else {
-            FrameLayout frameLayout = this.b;
-            frameLayout.layout((i14 - i15) / 2, 0, (i14 + i15) / 2, frameLayout.getMeasuredHeight());
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a3 a3Var = this.c;
+        if (a3Var != null) {
+            a3Var.attach(this);
         }
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        a3 a3Var = this.c;
+        if (a3Var != null) {
+            a3Var.detach(this);
+        }
     }
 
-    public void setBlock(TL_iv.pageBlockMath pageblockmath) {
-        ki.r a2;
-        ImageView imageView = this.c;
-        imageView.setImageBitmap(null);
-        f70 f70Var = this.a;
-        f70Var.getClass();
-        float f7 = 18;
-        int dp = AndroidUtilities.dp(f7);
-        f70Var.getClass();
-        imageView.setPadding(dp, 0, AndroidUtilities.dp(f7), 0);
-        imageView.setLayoutParams(new FrameLayout.LayoutParams(0, 0));
-        f70Var.getClass();
-        float f10 = 36;
-        this.d = AndroidUtilities.dp(f10);
-        if (pageblockmath == null || (a2 = ki.r.a(pageblockmath.source, AndroidUtilities.dp(20.0f), false)) == null) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.f == null) {
             return;
         }
-        imageView.setImageBitmap(a2.a);
-        int i10 = a2.b;
-        f70Var.getClass();
-        int dp2 = AndroidUtilities.dp(f10) + i10;
-        this.d = dp2;
-        imageView.setLayoutParams(new FrameLayout.LayoutParams(dp2, a2.c));
+        a3 a3Var = this.c;
+        h70 h70Var = this.a;
+        if (a3Var != null) {
+            canvas.save();
+            canvas.translate(this.d, this.e);
+            j4.v(h70Var, canvas, this, 0);
+            this.c.draw(canvas, this);
+            canvas.restore();
+        }
+        j4.u(canvas, h70Var, this.f, getMeasuredHeight());
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        this.c.setColorFilter(new PorterDuffColorFilter(this.a.b(), PorterDuff.Mode.SRC_IN));
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setEnabled(true);
+        a3 a3Var = this.c;
+        if (a3Var == null) {
+            return;
+        }
+        accessibilityNodeInfo.setText(j4.j(this.a, this.b, a3Var));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        Layout.Alignment a2;
+        int dp;
+        int size = View.MeasureSpec.getSize(i10);
+        TL_iv.pageBlockParagraph pageblockparagraph = this.f;
+        if (pageblockparagraph != null) {
+            int i13 = pageblockparagraph.level;
+            h70 h70Var = this.a;
+            i12 = 0;
+            if (i13 == 0) {
+                h70Var.getClass();
+                this.e = AndroidUtilities.dp(8);
+                h70Var.getClass();
+                this.d = AndroidUtilities.dp(18);
+            } else {
+                this.e = 0;
+                h70Var.getClass();
+                this.d = AndroidUtilities.dp((this.f.level * 14) + 18);
+            }
+            if (this.f.text instanceof TL_iv.textMath) {
+                a2 = Layout.Alignment.ALIGN_CENTER;
+            } else {
+                h4 h4Var = this.b;
+                a2 = (h4Var == null || !h4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.px0.a();
+            }
+            Layout.Alignment alignment = a2;
+            TL_iv.RichText richText = this.f.text;
+            h70 h70Var2 = this.a;
+            h70Var2.getClass();
+            a3 p10 = j4.p(h70Var2, this, null, richText, (size - AndroidUtilities.dp(18)) - this.d, this.e, this.f, alignment, 0, this.b);
+            this.c = p10;
+            if (p10 != null) {
+                int height = p10.d.getHeight();
+                if (this.f.level > 0) {
+                    h70Var.getClass();
+                    dp = AndroidUtilities.dp(8);
+                } else {
+                    h70Var.getClass();
+                    dp = AndroidUtilities.dp(16);
+                }
+                i12 = dp + height;
+                a3 a3Var = this.c;
+                a3Var.s = this.d;
+                a3Var.v = this.e;
+            }
+        } else {
+            i12 = 1;
+        }
+        setMeasuredDimension(size, i12);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return j4.l(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
+    }
+
+    public void setBlock(TL_iv.pageBlockParagraph pageblockparagraph) {
+        this.f = pageblockparagraph;
+        requestLayout();
     }
 }

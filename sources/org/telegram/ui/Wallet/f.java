@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class f {
     public final int a;
@@ -143,8 +143,8 @@ public final class f {
     }
 
     public final double h() {
-        String g10 = g();
-        if (TextUtils.equals(g10, "USD")) {
+        String g7 = g();
+        if (TextUtils.equals(g7, "USD")) {
             return 1.0d;
         }
         if (this.d == null) {
@@ -152,7 +152,7 @@ public final class f {
         }
         for (int i10 = 0; i10 < this.d.rates.size(); i10++) {
             TL_wallet.currencyRate currencyrate = this.d.rates.get(i10);
-            if (TextUtils.equals(currencyrate.currency, g10)) {
+            if (TextUtils.equals(currencyrate.currency, g7)) {
                 return currencyrate.rate;
             }
         }
@@ -160,14 +160,14 @@ public final class f {
     }
 
     public final String i() {
-        String g10 = g();
+        String g7 = g();
         TL_wallet.currencyRates f7 = f();
         if (f7 == null) {
             return "";
         }
         for (int i10 = 0; i10 < f7.rates.size(); i10++) {
             TL_wallet.currencyRate currencyrate = f7.rates.get(i10);
-            if (TextUtils.equals(currencyrate.currency, g10)) {
+            if (TextUtils.equals(currencyrate.currency, g7)) {
                 return TextUtils.isEmpty(currencyrate.translatedTitle) ? currencyrate.title : currencyrate.translatedTitle;
             }
         }
@@ -175,16 +175,16 @@ public final class f {
     }
 
     public final TL_wallet.currencyRate j() {
-        String g10 = g();
+        String g7 = g();
         if (this.d == null) {
-            if (TextUtils.equals(g10, "USD")) {
+            if (TextUtils.equals(g7, "USD")) {
                 return e();
             }
             return null;
         }
         for (int i10 = 0; i10 < this.d.rates.size(); i10++) {
             TL_wallet.currencyRate currencyrate = this.d.rates.get(i10);
-            if (TextUtils.equals(currencyrate.currency, g10)) {
+            if (TextUtils.equals(currencyrate.currency, g7)) {
                 return currencyrate;
             }
         }

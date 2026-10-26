@@ -1,66 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class uc extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public enum uc {
+    d(R.raw.ic_download, 2, "Box", "Arrow"),
+    e(R.raw.ic_save_to_gallery, 0, "Box", "Arrow", "Mask", "Arrow 2", "Splash"),
+    f(R.raw.ic_save_to_music, 2, "Box", "Arrow"),
+    h(R.raw.ic_save_to_gifs, 0, "gif");
 
-    public /* synthetic */ uc(int i10, Runnable runnable) {
+    public final int a;
+    public final String[] b;
+    public final int c;
+
+    uc(int i10, int i11, String... strArr) {
         this.a = i10;
-        this.b = runnable;
-    }
-
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                break;
-            case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 2:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-            default:
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 1:
-                textPaint.setUnderlineText(false);
-                break;
-            case 2:
-                textPaint.setUnderlineText(false);
-                break;
-            default:
-                textPaint.setUnderlineText(false);
-                break;
-        }
+        this.c = i11;
+        this.b = strArr;
     }
 }

@@ -1,9 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes3.dex */
-public interface c81 {
-    boolean needUpdate();
+import org.telegram.messenger.ImageReceiver;
 
-    void onVisualizerUpdate(boolean z10, boolean z11, float[] fArr);
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes3.dex */
+public final class c81 extends ImageReceiver {
+    public final /* synthetic */ d81 a;
+
+    public c81(d81 d81Var) {
+        this.a = d81Var;
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.z5
+    public final void invalidate() {
+        this.a.invalidate();
+    }
 }

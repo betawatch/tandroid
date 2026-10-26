@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class f00 implements h00 {
     public final /* synthetic */ MediaController.SavedFilterState a;
@@ -57,7 +57,7 @@ public final class f00 implements h00 {
 
     @Override // org.telegram.ui.Components.h00
     public final float getContrastValue() {
-        return a1.g.d(this.a.contrastValue, 100.0f, 0.3f, 1.0f);
+        return a1.g.c(this.a.contrastValue, 100.0f, 0.3f, 1.0f);
     }
 
     @Override // org.telegram.ui.Components.h00
@@ -82,7 +82,7 @@ public final class f00 implements h00 {
 
     @Override // org.telegram.ui.Components.h00
     public final float getHighlightsValue() {
-        return com.google.android.gms.internal.play_billing.k3.w(this.a.highlightsValue, 0.75f, 100.0f, 100.0f);
+        return c3.h0.x(this.a.highlightsValue, 0.75f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.h00
@@ -96,12 +96,12 @@ public final class f00 implements h00 {
 
     @Override // org.telegram.ui.Components.h00
     public final float getShadowsValue() {
-        return com.google.android.gms.internal.play_billing.k3.w(this.a.shadowsValue, 0.55f, 100.0f, 100.0f);
+        return c3.h0.x(this.a.shadowsValue, 0.55f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.h00
     public final float getSharpenValue() {
-        return a1.g.d(this.a.sharpenValue, 100.0f, 0.6f, 0.11f);
+        return a1.g.c(this.a.sharpenValue, 100.0f, 0.6f, 0.11f);
     }
 
     @Override // org.telegram.ui.Components.h00

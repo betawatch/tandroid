@@ -1,26 +1,43 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.SharedConfig;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pz0 implements md0, od0 {
-    public final /* synthetic */ rz0 a;
+public final class pz0 extends mm0 {
+    public boolean f3;
+    public boolean g3;
+    public final /* synthetic */ tz0 h3;
 
-    @Override // org.telegram.ui.Components.md0
-    public String e(int i10) {
-        return this.a.n[i10];
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pz0(tz0 tz0Var, Context context) {
+        super(context, null);
+        this.h3 = tz0Var;
     }
 
-    @Override // org.telegram.ui.Components.od0
-    public void n(qd0 qd0Var, int i10) {
-        rz0 rz0Var = this.a;
-        rz0Var.b();
-        SharedConfig.updateChatListSwipeSetting(i10);
-        rz0Var.invalidate();
-        try {
-            qd0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i10) {
+        boolean canScrollHorizontally = canScrollHorizontally(-1);
+        boolean canScrollHorizontally2 = canScrollHorizontally(1);
+        if (this.f3 == canScrollHorizontally && this.g3 == canScrollHorizontally2) {
+            return;
         }
+        bh.r rVar = this.h3.d;
+        if (rVar != null) {
+            rVar.invalidate();
+        }
+        this.f3 = canScrollHorizontally;
+        this.g3 = canScrollHorizontally2;
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.dt previewDelegate;
+        org.telegram.ui.ft o10 = org.telegram.ui.ft.o();
+        tz0 tz0Var = this.h3;
+        pz0 pz0Var = tz0Var.e;
+        previewDelegate = tz0Var.getPreviewDelegate();
+        return super.onInterceptTouchEvent(motionEvent) || o10.p(motionEvent, pz0Var, previewDelegate, this.n2);
     }
 }

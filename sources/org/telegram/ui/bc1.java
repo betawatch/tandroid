@@ -1,19 +1,22 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class bc1 extends org.telegram.ui.ActionBar.k5 {
-    @Override // org.telegram.ui.ActionBar.k5
-    public final void m() {
+public final class bc1 extends tc1 {
+    public final /* synthetic */ un l2;
+    public final /* synthetic */ boolean m2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bc1(Object obj, un unVar, boolean z10) {
+        super(obj, null, true);
+        this.l2 = unVar;
+        this.m2 = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.k5
-    public final void n() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.k5
-    public final void q(EditText editText) {
+    @Override // org.telegram.ui.ActionBar.r2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        sn snVar = this.l2.qa;
+        snVar.q(snVar.f, snVar.g, false, Boolean.valueOf(this.m2), false);
     }
 }

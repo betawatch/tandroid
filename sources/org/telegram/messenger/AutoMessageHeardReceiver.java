@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class AutoMessageHeardReceiver extends BroadcastReceiver {
     /* JADX INFO: Access modifiers changed from: private */
@@ -17,7 +17,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onReceive$1(AccountInstance accountInstance, long j10, int i10, int i11) {
-        AndroidUtilities.runOnUIThread(new t(accountInstance, accountInstance.getMessagesStorage().getUserSync(j10), i10, j10, i11, 0));
+        AndroidUtilities.runOnUIThread(new w(accountInstance, accountInstance.getMessagesStorage().getUserSync(j10), i10, j10, i11, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -29,7 +29,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onReceive$3(AccountInstance accountInstance, long j10, int i10, int i11) {
-        AndroidUtilities.runOnUIThread(new t(accountInstance, accountInstance.getMessagesStorage().getChatSync(-j10), i10, j10, i11, 1));
+        AndroidUtilities.runOnUIThread(new w(accountInstance, accountInstance.getMessagesStorage().getChatSync(-j10), i10, j10, i11, 1));
     }
 
     @Override // android.content.BroadcastReceiver
@@ -44,11 +44,11 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
         AccountInstance accountInstance = AccountInstance.getInstance(intExtra2);
         if (DialogObject.isUserDialog(longExtra)) {
             if (accountInstance.getMessagesController().getUser(Long.valueOf(longExtra)) == null) {
-                Utilities.globalQueue.postRunnable(new s(accountInstance, longExtra, intExtra2, intExtra, 0));
+                Utilities.globalQueue.postRunnable(new v(accountInstance, longExtra, intExtra2, intExtra, 0));
                 return;
             }
         } else if (DialogObject.isChatDialog(longExtra) && accountInstance.getMessagesController().getChat(Long.valueOf(-longExtra)) == null) {
-            Utilities.globalQueue.postRunnable(new s(accountInstance, longExtra, intExtra2, intExtra, 1));
+            Utilities.globalQueue.postRunnable(new v(accountInstance, longExtra, intExtra2, intExtra, 1));
             return;
         }
         MessagesController.getInstance(intExtra2).markDialogAsRead(longExtra, intExtra, intExtra, 0, false, 0L, 0, true, 0);

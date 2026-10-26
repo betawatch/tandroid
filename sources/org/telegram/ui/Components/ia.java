@@ -1,91 +1,70 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class ia extends mm0 {
-    public int Y2;
-    public int Z2;
-    public int a3;
-    public boolean b3;
-    public int c3;
-    public boolean d3;
+public final class ia implements Runnable {
+    public boolean a;
+    public int b;
+    public int c;
+    public final /* synthetic */ ja d;
 
-    public int C1() {
-        return AndroidUtilities.dp(203.0f);
+    public ia(ja jaVar) {
+        this.d = jaVar;
     }
 
-    public final void D1() {
-        if (getLayoutParams() == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Bitmap bitmap;
+        ja jaVar = this.d;
+        Paint paint = jaVar.w;
+        if (jaVar.f == null) {
+            jaVar.f = new Bitmap[2];
+            jaVar.i = new Canvas[2];
         }
-        if (!SharedConfig.chatBlurEnabled()) {
-            this.Y2 = 0;
-            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
-        } else {
-            this.Y2 = C1();
-            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.Y2;
+        int i10 = (int) (this.b / 15.0f);
+        int i11 = 0;
+        while (i11 < 2) {
+            int i12 = (int) ((i11 == 0 ? jaVar.s : this.c) / 15.0f);
+            Bitmap bitmap2 = jaVar.f[i11];
+            if (bitmap2 != null && ((bitmap2.getHeight() != i12 || jaVar.f[i11].getWidth() != i10) && (bitmap = jaVar.f[i11]) != null)) {
+                bitmap.recycle();
+                jaVar.f[i11] = null;
+            }
+            System.currentTimeMillis();
+            Bitmap[] bitmapArr = jaVar.f;
+            if (bitmapArr[i11] == null) {
+                try {
+                    bitmapArr[i11] = Bitmap.createBitmap(i10, i12, Bitmap.Config.ARGB_8888);
+                    jaVar.i[i11] = new Canvas(jaVar.f[i11]);
+                    jaVar.i[i11].scale(i10 / jaVar.e[i11].getWidth(), i12 / jaVar.e[i11].getHeight());
+                } catch (Throwable th2) {
+                    FileLog.e(th2);
+                }
+            }
+            if (i11 == 1) {
+                jaVar.f[i11].eraseColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.d6, jaVar.y));
+            } else {
+                jaVar.f[i11].eraseColor(0);
+            }
+            paint.setAlpha(255);
+            Utilities.stackBlurBitmap(jaVar.e[i11], 15);
+            Canvas canvas = jaVar.i[i11];
+            if (canvas != null) {
+                canvas.drawBitmap(jaVar.e[i11], 0.0f, 0.0f, paint);
+            }
+            if (this.a) {
+                return;
+            } else {
+                i11++;
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        if (this.Y2 == 0 || a1()) {
-            super.dispatchDraw(canvas);
-        } else {
-            canvas.clipRect(0, this.Y2, getMeasuredWidth(), getMeasuredHeight() + this.c3);
-            super.dispatchDraw(canvas);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view.getY() + view.getMeasuredHeight() >= this.Y2 || this.d3 || a1()) {
-            return super.drawChild(canvas, view, j10);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.mm0, ch.a
-    public final void f(Canvas canvas, RectF rectF) {
-        this.d3 = true;
-        super.f(canvas, rectF);
-        this.d3 = false;
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        D1();
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        this.b3 = true;
-        D1();
-        super.setPadding(getPaddingLeft(), this.Z2 + this.Y2, getPaddingRight(), getPaddingBottom());
-        this.b3 = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        if (this.b3) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // android.view.View
-    public final void setPadding(int i10, int i11, int i12, int i13) {
-        this.Z2 = i11;
-        this.a3 = i13;
-        super.setPadding(i10, i11 + this.Y2, i12, i13);
+        AndroidUtilities.runOnUIThread(new pg(this, 13));
     }
 }

@@ -1,41 +1,79 @@
 package w7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
-/* loaded from: classes.dex */
-public final class m5 implements ja.d {
-    public static final m5 a = new m5();
-    public static final ja.c b = new ja.c("appId", i2.o1.p(si.o0.l(d.class, new a(1))));
-    public static final ja.c c = new ja.c("appVersion", i2.o1.p(si.o0.l(d.class, new a(2))));
-    public static final ja.c d = new ja.c("firebaseProjectId", i2.o1.p(si.o0.l(d.class, new a(3))));
-    public static final ja.c e = new ja.c("mlSdkVersion", i2.o1.p(si.o0.l(d.class, new a(4))));
-    public static final ja.c f = new ja.c("tfliteSchemaVersion", i2.o1.p(si.o0.l(d.class, new a(5))));
-    public static final ja.c g = new ja.c("gcmSenderId", i2.o1.p(si.o0.l(d.class, new a(6))));
-    public static final ja.c h = new ja.c("apiKey", i2.o1.p(si.o0.l(d.class, new a(7))));
-    public static final ja.c i = new ja.c("languages", i2.o1.p(si.o0.l(d.class, new a(8))));
-    public static final ja.c j = new ja.c("mlSdkInstanceId", i2.o1.p(si.o0.l(d.class, new a(9))));
-    public static final ja.c k = new ja.c("isClearcutClient", i2.o1.p(si.o0.l(d.class, new a(10))));
-    public static final ja.c l = new ja.c("isStandaloneMlkit", i2.o1.p(si.o0.l(d.class, new a(11))));
-    public static final ja.c m = new ja.c("isJsonLogging", i2.o1.p(si.o0.l(d.class, new a(12))));
-    public static final ja.c n = new ja.c("buildLevel", i2.o1.p(si.o0.l(d.class, new a(13))));
-    public static final ja.c o = new ja.c("optionalModuleVersion", i2.o1.p(si.o0.l(d.class, new a(14))));
+import java.util.List;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        l9 l9Var = (l9) obj;
-        ja.e eVar = (ja.e) obj2;
-        eVar.d(b, l9Var.a);
-        eVar.d(c, l9Var.b);
-        eVar.d(d, null);
-        eVar.d(e, l9Var.c);
-        eVar.d(f, l9Var.d);
-        eVar.d(g, null);
-        eVar.d(h, null);
-        eVar.d(i, l9Var.e);
-        eVar.d(j, l9Var.f);
-        eVar.d(k, l9Var.g);
-        eVar.d(l, l9Var.h);
-        eVar.d(m, l9Var.i);
-        eVar.d(n, l9Var.j);
-        eVar.d(o, l9Var.k);
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes.dex */
+public abstract class m5 {
+    public static void a(z3.d dVar, int i10, e2.j jVar) {
+        long e = dVar.e(i10);
+        List g7 = dVar.g(e);
+        if (g7.isEmpty()) {
+            return;
+        }
+        if (i10 == dVar.k() - 1) {
+            throw new IllegalStateException();
+        }
+        long e10 = dVar.e(i10 + 1) - dVar.e(i10);
+        if (e10 > 0) {
+            jVar.accept(new z3.a(e, e10, g7));
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0059 A[LOOP:0: B:14:0x0053->B:16:0x0059, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void b(z3.d dVar, z3.l lVar, e2.j jVar) {
+        int c10;
+        boolean z10;
+        int i10;
+        long j10 = lVar.a;
+        if (j10 == -9223372036854775807L) {
+            c10 = 0;
+        } else {
+            c10 = dVar.c(j10);
+            if (c10 == -1) {
+                c10 = dVar.k();
+            }
+            if (c10 > 0 && dVar.e(c10 - 1) == j10) {
+                c10--;
+            }
+        }
+        if (j10 != -9223372036854775807L && c10 < dVar.k()) {
+            List g7 = dVar.g(j10);
+            long e = dVar.e(c10);
+            if (!g7.isEmpty()) {
+                long j11 = lVar.a;
+                if (j11 < e) {
+                    jVar.accept(new z3.a(j11, e - j11, g7));
+                    z10 = true;
+                    for (i10 = c10; i10 < dVar.k(); i10++) {
+                        a(dVar, i10, jVar);
+                    }
+                    if (lVar.b) {
+                        return;
+                    }
+                    if (z10) {
+                        c10--;
+                    }
+                    for (int i11 = 0; i11 < c10; i11++) {
+                        a(dVar, i11, jVar);
+                    }
+                    if (z10) {
+                        jVar.accept(new z3.a(dVar.e(c10), j10 - dVar.e(c10), dVar.g(j10)));
+                        return;
+                    }
+                    return;
+                }
+            }
+        }
+        z10 = false;
+        while (i10 < dVar.k()) {
+        }
+        if (lVar.b) {
+        }
     }
 }

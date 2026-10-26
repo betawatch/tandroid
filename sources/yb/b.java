@@ -1,15 +1,11 @@
 package yb;
 
-import androidx.lifecycle.b0;
-import androidx.lifecycle.m;
-import androidx.lifecycle.s;
-import com.google.android.gms.common.api.n;
-import java.io.Closeable;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface b extends Closeable, s, n {
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    @b0(m.ON_DESTROY)
-    void close();
+public final class b {
+    public final ra.b a;
+
+    public b(ra.b bVar) {
+        this.a = bVar;
+    }
 }

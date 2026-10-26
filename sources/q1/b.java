@@ -7,20 +7,22 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
 import androidx.emoji2.text.l;
+import com.google.firebase.messaging.q;
 import java.nio.ByteBuffer;
+import u7.s;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b extends InputConnectionWrapper {
     public final EditText a;
-    public final sb.a b;
+    public final s b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public b(EditText editText, InputConnection inputConnection, EditorInfo editorInfo) {
         super(inputConnection, false);
-        sb.a aVar = new sb.a(19);
+        s sVar = new s(19);
         this.a = editText;
-        this.b = aVar;
+        this.b = sVar;
         if (l.j != null) {
             l a2 = l.a();
             if (a2.b() != 1 || editorInfo == null) {
@@ -32,7 +34,7 @@ public final class b extends InputConnectionWrapper {
             androidx.emoji2.text.f fVar = a2.e;
             fVar.getClass();
             Bundle bundle = editorInfo.extras;
-            p1.b bVar = (p1.b) ((qi.e) fVar.c).a;
+            p1.b bVar = (p1.b) ((q) fVar.c).a;
             int a10 = bVar.a(4);
             bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a10 != 0 ? ((ByteBuffer) bVar.d).getInt(a10 + bVar.a) : 0);
             editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", false);
@@ -43,13 +45,13 @@ public final class b extends InputConnectionWrapper {
     public final boolean deleteSurroundingText(int i10, int i11) {
         Editable editableText = this.a.getEditableText();
         this.b.getClass();
-        return sb.a.t2(this, editableText, i10, i11, false) || super.deleteSurroundingText(i10, i11);
+        return s.N0(this, editableText, i10, i11, false) || super.deleteSurroundingText(i10, i11);
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public final boolean deleteSurroundingTextInCodePoints(int i10, int i11) {
         Editable editableText = this.a.getEditableText();
         this.b.getClass();
-        return sb.a.t2(this, editableText, i10, i11, true) || super.deleteSurroundingTextInCodePoints(i10, i11);
+        return s.N0(this, editableText, i10, i11, true) || super.deleteSurroundingTextInCodePoints(i10, i11);
     }
 }

@@ -1,233 +1,78 @@
 package u2;
 
-import android.net.Uri;
-import java.io.EOFException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import v7.u6;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class c implements ka.a {
-    public final /* synthetic */ int a;
-    public Object b;
-    public Object c;
-    public Object d;
+public final class c implements d1 {
+    public final d1 a;
+    public boolean b;
+    public final /* synthetic */ d c;
 
-    public /* synthetic */ c(int i10, boolean z10) {
-        this.a = i10;
+    public c(d dVar, d1 d1Var) {
+        this.c = dVar;
+        this.a = d1Var;
     }
 
-    @Override // ka.a
-    public /* bridge */ /* synthetic */ ka.a a(Class cls, ja.d dVar) {
-        switch (this.a) {
-            case 1:
-                ((HashMap) this.b).put(cls, dVar);
-                ((HashMap) this.c).remove(cls);
-                break;
-            case 6:
-                ((HashMap) this.b).put(cls, dVar);
-                ((HashMap) this.c).remove(cls);
-                break;
-            case 9:
-                ((HashMap) this.b).put(cls, dVar);
-                ((HashMap) this.c).remove(cls);
-                break;
-            default:
-                ((HashMap) this.b).put(cls, dVar);
-                ((HashMap) this.c).remove(cls);
-                break;
-        }
-        return this;
+    @Override // u2.d1
+    public final void d() {
+        this.a.d();
     }
 
-    public long b() {
-        c3.l lVar = (c3.l) this.d;
-        if (lVar != null) {
-            return lVar.d;
-        }
-        return -1L;
+    @Override // u2.d1
+    public final boolean e() {
+        return !this.c.a() && this.a.e();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0056, code lost:
-    
-        if (r1.d != r11) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0059, code lost:
-    
-        r0 = false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0080, code lost:
-    
-        if (r1.d != r11) goto L23;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void c(g2.h hVar, Uri uri, Map map, long j10, long j11, y0 y0Var) {
-        c3.l lVar = new c3.l(hVar, j10, j11);
-        this.d = lVar;
-        if (((c3.q) this.c) != null) {
-            return;
+    @Override // u2.d1
+    public final int f(n4.s sVar, h2.h hVar, int i10) {
+        d dVar = this.c;
+        if (dVar.a()) {
+            return -3;
         }
-        c3.q[] e = ((c3.t) this.b).e(uri, map);
-        int length = e.length;
-        e9.l0 l0Var = e9.n0.b;
-        e9.s.f(length, "expectedSize");
-        e9.k0 k0Var = new e9.k0(length);
-        boolean z10 = true;
-        if (e.length == 1) {
-            this.c = e[0];
-        } else {
-            int length2 = e.length;
-            int i10 = 0;
-            while (true) {
-                if (i10 >= length2) {
-                    break;
-                }
-                c3.q qVar = e[i10];
-                try {
-                } catch (EOFException unused) {
-                    if (((c3.q) this.c) == null) {
-                    }
-                } catch (Throwable th2) {
-                    if (((c3.q) this.c) == null && lVar.d != j10) {
-                        z10 = false;
-                    }
-                    u6.p(z10);
-                    lVar.f = 0;
-                    throw th2;
-                }
-                if (qVar.a(lVar)) {
-                    this.c = qVar;
-                    lVar.f = 0;
-                    break;
-                }
-                k0Var.d(qVar.e());
-                if (((c3.q) this.c) == null) {
-                }
-                boolean z11 = true;
-                u6.p(z11);
-                lVar.f = 0;
-                i10++;
+        if (this.b) {
+            hVar.setFlags(4);
+            return -4;
+        }
+        long q5 = dVar.q();
+        int f7 = this.a.f(sVar, hVar, i10);
+        if (dVar.e != -9223372036854775807L && f7 != -3) {
+            dVar.e = -9223372036854775807L;
+        }
+        if (f7 != -5) {
+            long j10 = dVar.h;
+            if (j10 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j10) && !(f7 == -3 && q5 == Long.MIN_VALUE && !hVar.d))) {
+                return f7;
             }
-            if (((c3.q) this.c) == null) {
-                String str = "None of the available extractors (" + new d9.l(", ", 0).e(e9.s.x(e9.n0.v(e), new s0.b(19))) + ") could read the stream.";
-                uri.getClass();
-                throw new u1(str, k0Var.f());
+            hVar.clear();
+            hVar.setFlags(4);
+            this.b = true;
+            return -4;
+        }
+        long j11 = dVar.f;
+        long j12 = dVar.h;
+        b2.x xVar = (b2.x) sVar.c;
+        xVar.getClass();
+        int i11 = xVar.O;
+        int i12 = xVar.N;
+        if (i12 != 0 || i11 != 0) {
+            if (j11 != 0) {
+                i12 = 0;
             }
+            if (j12 != Long.MIN_VALUE) {
+                i11 = 0;
+            }
+            b2.w a2 = xVar.a();
+            a2.M = i12;
+            a2.N = i11;
+            sVar.c = new b2.x(a2);
         }
-        ((c3.q) this.c).c(y0Var);
+        return -5;
     }
 
-    public String toString() {
-        String str = "";
-        switch (this.a) {
-            case 3:
-                StringBuilder sb2 = new StringBuilder(32);
-                sb2.append((String) this.b);
-                sb2.append('{');
-                c cVar = (c) ((c) this.c).d;
-                while (cVar != null) {
-                    Object obj = cVar.c;
-                    sb2.append(str);
-                    String str2 = (String) cVar.b;
-                    if (str2 != null) {
-                        sb2.append(str2);
-                        sb2.append('=');
-                    }
-                    if (obj == null || !obj.getClass().isArray()) {
-                        sb2.append(obj);
-                    } else {
-                        sb2.append((CharSequence) Arrays.deepToString(new Object[]{obj}), 1, r5.length() - 1);
-                    }
-                    cVar = (c) cVar.d;
-                    str = ", ";
-                }
-                sb2.append('}');
-                return sb2.toString();
-            case 14:
-                StringBuilder sb3 = new StringBuilder(32);
-                sb3.append((String) this.b);
-                sb3.append('{');
-                c cVar2 = (c) ((c) this.c).d;
-                while (cVar2 != null) {
-                    Object obj2 = cVar2.c;
-                    sb3.append(str);
-                    String str3 = (String) cVar2.b;
-                    if (str3 != null) {
-                        sb3.append(str3);
-                        sb3.append('=');
-                    }
-                    if (obj2 == null || !obj2.getClass().isArray()) {
-                        sb3.append(obj2);
-                    } else {
-                        sb3.append((CharSequence) Arrays.deepToString(new Object[]{obj2}), 1, r5.length() - 1);
-                    }
-                    cVar2 = (c) cVar2.d;
-                    str = ", ";
-                }
-                sb3.append('}');
-                return sb3.toString();
-            default:
-                return super.toString();
+    @Override // u2.d1
+    public final int j(long j10) {
+        if (this.c.a()) {
+            return -3;
         }
-    }
-
-    public c(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 6:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                this.d = w7.e.c;
-                break;
-            case 9:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                this.d = x7.d0.c;
-                break;
-            case 15:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                this.d = z7.x.c;
-                break;
-            default:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                this.d = v7.i.c;
-                break;
-        }
-    }
-
-    public /* synthetic */ c(String str, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 14:
-                c cVar = new c(13, false);
-                this.c = cVar;
-                this.d = cVar;
-                this.b = str;
-                break;
-            default:
-                c cVar2 = new c(2, false);
-                this.c = cVar2;
-                this.d = cVar2;
-                this.b = str;
-                break;
-        }
-    }
-
-    public c(String str, Boolean bool, wc.a aVar, String str2) {
-        this.a = 8;
-        this.b = str;
-        this.c = str2;
-        this.d = aVar;
-    }
-
-    public c(c3.t tVar) {
-        this.a = 0;
-        this.b = tVar;
+        return this.a.j(j10);
     }
 }

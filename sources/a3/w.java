@@ -3,10 +3,10 @@ package a3;
 import android.content.Context;
 import android.util.Pair;
 import android.util.SparseArray;
-import e9.x1;
+import f9.s1;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class w {
     public static final b q = new b(0);
@@ -33,18 +33,18 @@ public final class w {
         uVar.getClass();
         this.b = uVar;
         this.c = new SparseArray();
-        e9.l0 l0Var = e9.n0.b;
-        x1 x1Var = x1.e;
+        f9.g0 g0Var = f9.i0.b;
+        s1 s1Var = s1.e;
         this.d = qVar.d;
-        e2.g0 g0Var = qVar.e;
-        this.f = g0Var;
+        e2.g0 g0Var2 = qVar.e;
+        this.f = g0Var2;
         long j10 = qVar.g;
         this.h = j10 != -9223372036854775807L ? -j10 : -9223372036854775807L;
         b0 b0Var = qVar.h;
         this.i = b0Var;
-        this.e = new f(qVar.b, b0Var, g0Var);
+        this.e = new f(qVar.b, b0Var, g0Var2);
         this.g = new CopyOnWriteArraySet();
-        new b2.v().a();
+        new b2.w().a();
         this.o = -9223372036854775807L;
         this.p = -1;
         this.n = 0;

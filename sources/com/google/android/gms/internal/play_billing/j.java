@@ -1,9 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
+import a8.ng;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -41,16 +42,16 @@ public enum j {
 
     static {
         char c10 = 0;
-        a5.a aVar = new a5.a(c10, 3);
-        aVar.c = new Object[8];
-        aVar.b = 0;
+        ng ngVar = new ng(c10, 5);
+        ngVar.c = new Object[8];
+        ngVar.b = 0;
         j[] values = values();
         int length = values.length;
         for (int i10 = c10; i10 < length; i10++) {
             j jVar = values[i10];
             Integer valueOf = Integer.valueOf(jVar.a);
-            int i11 = aVar.b + 1;
-            Object[] objArr = (Object[]) aVar.c;
+            int i11 = ngVar.b + 1;
+            Object[] objArr = (Object[]) ngVar.c;
             int length2 = objArr.length;
             int i12 = i11 + i11;
             if (i12 > length2) {
@@ -64,21 +65,21 @@ public enum j {
                         length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     }
                 }
-                aVar.c = Arrays.copyOf(objArr, length2);
+                ngVar.c = Arrays.copyOf(objArr, length2);
             }
-            Object[] objArr2 = (Object[]) aVar.c;
-            int i13 = aVar.b;
+            Object[] objArr2 = (Object[]) ngVar.c;
+            int i13 = ngVar.b;
             int i14 = i13 + i13;
             objArr2[i14] = valueOf;
             objArr2[i14 + 1] = jVar;
-            aVar.b = i13 + 1;
+            ngVar.b = i13 + 1;
         }
-        s sVar = (s) aVar.d;
+        s sVar = (s) ngVar.d;
         if (sVar != null) {
             throw sVar.a();
         }
-        a0 b10 = a0.b(aVar.b, (Object[]) aVar.c, aVar);
-        s sVar2 = (s) aVar.d;
+        a0 b10 = a0.b(ngVar.b, (Object[]) ngVar.c, ngVar);
+        s sVar2 = (s) ngVar.d;
         if (sVar2 != null) {
             throw sVar2.a();
         }

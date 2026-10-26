@@ -9,13 +9,13 @@ import android.os.Build;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.m0;
+import e0.l0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
     public Context a;
@@ -26,7 +26,7 @@ public final class c {
     public CharSequence f;
     public CharSequence g;
     public IconCompat h;
-    public m0[] i;
+    public l0[] i;
     public Set j;
     public f0.f k;
     public boolean l;
@@ -77,14 +77,14 @@ public final class c {
         }
         int i10 = 0;
         if (Build.VERSION.SDK_INT >= 29) {
-            m0[] m0VarArr = this.i;
-            if (m0VarArr != null && m0VarArr.length > 0) {
-                int length = m0VarArr.length;
+            l0[] l0VarArr = this.i;
+            if (l0VarArr != null && l0VarArr.length > 0) {
+                int length = l0VarArr.length;
                 Person[] personArr = new Person[length];
                 while (i10 < length) {
-                    m0 m0Var = this.i[i10];
-                    m0Var.getClass();
-                    personArr[i10] = b5.d.E(m0Var);
+                    l0 l0Var = this.i[i10];
+                    l0Var.getClass();
+                    personArr[i10] = c5.d.E(l0Var);
                     i10++;
                 }
                 intents.setPersons(personArr);
@@ -98,24 +98,24 @@ public final class c {
             if (this.n == null) {
                 this.n = new PersistableBundle();
             }
-            m0[] m0VarArr2 = this.i;
-            if (m0VarArr2 != null && m0VarArr2.length > 0) {
-                this.n.putInt("extraPersonCount", m0VarArr2.length);
+            l0[] l0VarArr2 = this.i;
+            if (l0VarArr2 != null && l0VarArr2.length > 0) {
+                this.n.putInt("extraPersonCount", l0VarArr2.length);
                 while (i10 < this.i.length) {
                     PersistableBundle persistableBundle2 = this.n;
                     StringBuilder sb2 = new StringBuilder("extraPerson_");
                     int i11 = i10 + 1;
                     sb2.append(i11);
                     String sb3 = sb2.toString();
-                    m0 m0Var2 = this.i[i10];
-                    m0Var2.getClass();
+                    l0 l0Var2 = this.i[i10];
+                    l0Var2.getClass();
                     PersistableBundle persistableBundle3 = new PersistableBundle();
-                    CharSequence charSequence = m0Var2.a;
+                    CharSequence charSequence = l0Var2.a;
                     persistableBundle3.putString("name", charSequence != null ? charSequence.toString() : null);
-                    persistableBundle3.putString("uri", m0Var2.c);
-                    persistableBundle3.putString("key", m0Var2.d);
-                    persistableBundle3.putBoolean("isBot", m0Var2.e);
-                    persistableBundle3.putBoolean("isImportant", m0Var2.f);
+                    persistableBundle3.putString("uri", l0Var2.c);
+                    persistableBundle3.putString("key", l0Var2.d);
+                    persistableBundle3.putBoolean("isBot", l0Var2.e);
+                    persistableBundle3.putBoolean("isImportant", l0Var2.f);
                     persistableBundle2.putPersistableBundle(sb3, persistableBundle3);
                     i10 = i11;
                 }
@@ -128,7 +128,7 @@ public final class c {
             intents.setExtras(this.n);
         }
         if (Build.VERSION.SDK_INT >= 33) {
-            a.h(intents);
+            a.f(intents);
         }
         return intents.build();
     }

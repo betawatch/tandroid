@@ -2,7 +2,7 @@ package j4;
 
 import e2.k0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class w implements g0 {
     public final i a;
@@ -61,7 +61,7 @@ public final class w implements g0 {
                                 gVar.o(4);
                                 gVar.o(1);
                                 gVar.o(1);
-                                long g10 = (gVar.g(15) << 15) | (gVar.g(3) << 30) | gVar.g(15);
+                                long g7 = (gVar.g(15) << 15) | (gVar.g(3) << 30) | gVar.g(15);
                                 gVar.o(1);
                                 if (!this.h && this.g) {
                                     gVar.o(4);
@@ -71,7 +71,7 @@ public final class w implements g0 {
                                     this.e.b((gVar.g(3) << 30) | (gVar.g(15) << 15) | gVar.g(15));
                                     this.h = true;
                                 }
-                                this.l = this.e.b(g10);
+                                this.l = this.e.b(g7);
                             }
                             i15 |= this.k ? 4 : 0;
                             iVar.f(i15, this.l);
@@ -114,9 +114,9 @@ public final class w implements g0 {
     }
 
     @Override // j4.g0
-    public final void b(k0 k0Var, c3.s sVar, f0 f0Var) {
+    public final void b(k0 k0Var, c3.q qVar, f0 f0Var) {
         this.e = k0Var;
-        this.a.d(sVar, f0Var);
+        this.a.d(qVar, f0Var);
     }
 
     @Override // j4.g0
@@ -145,26 +145,26 @@ public final class w implements g0 {
     public final boolean e() {
         a4.g gVar = this.b;
         gVar.m(0);
-        int g10 = gVar.g(24);
-        if (g10 != 1) {
-            a1.g.x(g10, "Unexpected start code prefix: ", "PesReader");
+        int g7 = gVar.g(24);
+        if (g7 != 1) {
+            a1.g.z(g7, "Unexpected start code prefix: ", "PesReader");
             this.j = -1;
             return false;
         }
         gVar.o(8);
-        int g11 = gVar.g(16);
+        int g10 = gVar.g(16);
         gVar.o(5);
         this.k = gVar.f();
         gVar.o(2);
         this.f = gVar.f();
         this.g = gVar.f();
         gVar.o(6);
-        int g12 = gVar.g(8);
-        this.i = g12;
-        if (g11 == 0) {
+        int g11 = gVar.g(8);
+        this.i = g11;
+        if (g10 == 0) {
             this.j = -1;
         } else {
-            int i10 = (g11 - 3) - g12;
+            int i10 = (g10 - 3) - g11;
             this.j = i10;
             if (i10 < 0) {
                 e2.a.l("PesReader", "Found negative packet payload size: " + this.j);

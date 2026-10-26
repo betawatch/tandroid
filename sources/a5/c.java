@@ -1,50 +1,35 @@
 package a5;
 
-import android.content.pm.PackageInfo;
-import android.net.Uri;
-import android.webkit.WebView;
-import b5.m;
-import b5.n;
-import b5.o;
-import java.util.Set;
-import java.util.WeakHashMap;
+import android.view.animation.Interpolator;
+import org.telegram.messenger.vh;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static final boolean a;
-    public static final WeakHashMap b;
+public final class c implements Interpolator {
+    public final /* synthetic */ int a;
 
-    static {
-        Uri.parse("*");
-        Uri.parse("");
-        a = true;
-        b = new WeakHashMap();
+    public /* synthetic */ c(int i10) {
+        this.a = i10;
     }
 
-    public static void a(WebView webView, String str, Set set, b bVar) {
-        if (!m.c.b()) {
-            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        switch (this.a) {
+            case 0:
+            case 4:
+            default:
+                float f10 = f7 - 1.0f;
+                return (f10 * f10 * f10 * f10 * f10) + 1.0f;
+            case 1:
+                return (float) Math.pow(f7, 2.0d);
+            case 2:
+                if (f7 < 0.33f) {
+                    return (f7 / 0.33f) * 0.1f;
+                }
+                float f11 = f7 - 0.33f;
+                return f11 < 0.33f ? vh.w(f11, 0.34f, 0.15f, 0.1f) : (((f11 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
+            case 3:
+                return f7 * f7 * f7 * f7 * f7;
         }
-        o c10 = c(webView);
-        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new ue.a(new qb.c(bVar, 9)));
-    }
-
-    public static PackageInfo b() {
-        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
-    }
-
-    public static o c(WebView webView) {
-        if (!m.e.b() || !a) {
-            return new o(n.a.createWebView(webView));
-        }
-        WeakHashMap weakHashMap = b;
-        o oVar = (o) weakHashMap.get(webView);
-        if (oVar != null) {
-            return oVar;
-        }
-        o oVar2 = new o(n.a.createWebView(webView));
-        weakHashMap.put(webView, oVar2);
-        return oVar2;
     }
 }

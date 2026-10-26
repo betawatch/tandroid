@@ -1,34 +1,25 @@
 package i2;
 
-import android.os.Handler;
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f0 implements Executor {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class f0 implements b1 {
+    public final Object a;
+    public final u2.b0 b;
+    public b2.p1 c;
 
-    public /* synthetic */ f0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public f0(Object obj, u2.b0 b0Var) {
+        this.a = obj;
+        this.b = b0Var;
+        this.c = b0Var.o;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((e2.i0) this.b).d(runnable);
-                break;
-            case 1:
-                ((Handler) this.b).post(runnable);
-                break;
-            case 2:
-                e2.m0.W(((m4.f0) this.b).l, runnable);
-                break;
-            default:
-                ((p4.b) this.b).post(runnable);
-                break;
-        }
+    @Override // i2.b1
+    public final Object a() {
+        return this.a;
+    }
+
+    @Override // i2.b1
+    public final b2.p1 b() {
+        return this.c;
     }
 }

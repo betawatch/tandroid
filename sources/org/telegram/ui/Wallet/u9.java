@@ -1,30 +1,37 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class u9 extends FrameLayout {
-    public final /* synthetic */ w9 a;
+public final class u9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ti a;
+    public final /* synthetic */ l6 b;
+    public final /* synthetic */ v9 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u9(w9 w9Var, Context context) {
-        super(context);
-        this.a = w9Var;
+    public u9(v9 v9Var, ti tiVar, l6 l6Var) {
+        this.c = v9Var;
+        this.a = tiVar;
+        this.b = l6Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(-getLeft(), -getTop());
-        w9 w9Var = this.a;
-        w9Var.j.c(canvas);
-        canvas.restore();
-        super.dispatchDraw(canvas);
-        if (w9Var.j.d()) {
-            postInvalidateOnAnimation();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        this.c.b();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.c.b();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        if (this.a != null) {
+            AndroidUtilities.hideKeyboard(this.b);
         }
     }
 }

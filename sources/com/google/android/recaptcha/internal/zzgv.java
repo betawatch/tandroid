@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import be.c0;
+import a8.jd;
+import ce.c0;
 import java.util.Timer;
-import kd.c;
-import ld.a;
-import md.i;
-import td.p;
-import v7.i8;
+import ld.c;
+import md.a;
+import nd.i;
+import ud.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 final class zzgv extends i implements p {
     final /* synthetic */ zzgz zza;
@@ -19,22 +19,22 @@ final class zzgv extends i implements p {
         this.zza = zzgzVar;
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final c create(Object obj, c cVar) {
         return new zzgv(this.zza, cVar);
     }
 
-    @Override // td.p
+    @Override // ud.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgv) create((c0) obj, (c) obj2)).invokeSuspend(id.i.a);
+        return ((zzgv) create((c0) obj, (c) obj2)).invokeSuspend(jd.i.a);
     }
 
-    @Override // md.a
+    @Override // nd.a
     public final Object invokeSuspend(Object obj) {
         zzgo zzgoVar;
         Timer timer;
         a aVar = a.a;
-        i8.b(obj);
+        jd.b(obj);
         zzgz zzgzVar = this.zza;
         synchronized (zzgs.class) {
             try {
@@ -51,6 +51,6 @@ final class zzgv extends i implements p {
                 throw th2;
             }
         }
-        return id.i.a;
+        return jd.i.a;
     }
 }

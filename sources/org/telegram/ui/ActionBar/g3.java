@@ -1,84 +1,51 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class g3 extends Drawable {
-    public final Paint a;
-    public final Rect b;
-    public final Rect c;
+public final class g3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h3 b;
 
-    public g3() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Rect();
-        this.c = new Rect();
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
-        paint.setColor(-16777216);
+    public /* synthetic */ g3(h3 h3Var, int i10) {
+        this.a = i10;
+        this.b = h3Var;
     }
 
-    public final void a(int i10) {
-        Rect rect = this.b;
-        if (rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == i10) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        h3 h3Var = this.b;
+        switch (i10) {
+            case 0:
+                h3Var.y = 0.0f;
+                h3Var.G.containerView.setTranslationX(0.0f);
+                h3Var.G.container.invalidate();
+                break;
+            case 1:
+                h3Var.G.skipDismissAnimation = true;
+                h3Var.G.containerView.setTranslationX(h3Var.getMeasuredWidth());
+                h3Var.G.dismiss();
+                h3Var.G.container.invalidate();
+                break;
+            case 2:
+                h3Var.G.containerView.setTranslationY(0.0f);
+                h3Var.G.onContainerViewTranslation();
+                k3 k3Var = h3Var.G;
+                k3Var.onSmoothContainerViewLayout(k3Var.containerView.getTranslationY());
+                h3Var.invalidate();
+                break;
+            default:
+                AnimatorSet animatorSet = h3Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    h3Var.h = null;
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
         }
-        rect.set(0, 0, 0, i10);
-        onBoundsChange(getBounds());
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect rect = this.c;
-        if (rect.isEmpty()) {
-            return;
-        }
-        Paint paint = this.a;
-        if (paint.getAlpha() == 0 || AndroidUtilities.makingGlobalBlurBitmap) {
-            return;
-        }
-        canvas.drawRect(rect, paint);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.a.getAlpha();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        Rect rect2 = this.c;
-        rect2.set(rect);
-        int i10 = rect2.left;
-        Rect rect3 = this.b;
-        rect2.left = Math.max(0, rect3.left) + i10;
-        rect2.top = Math.max(0, rect3.top) + rect2.top;
-        rect2.right -= Math.max(0, rect3.right);
-        rect2.bottom -= Math.max(0, rect3.bottom);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

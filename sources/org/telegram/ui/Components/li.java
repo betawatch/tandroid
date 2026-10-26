@@ -6,10 +6,10 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public abstract class li extends FrameLayout {
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.u6 a;
     public final ti b;
     public mm0 c;
     public mm0 d;
@@ -17,15 +17,15 @@ public abstract class li extends FrameLayout {
     public boolean f;
     public boolean h;
 
-    public li(Context context, org.telegram.ui.ActionBar.g6 g6Var, ti tiVar) {
+    public li(Context context, org.telegram.ui.ActionBar.u6 u6Var, ti tiVar) {
         super(context);
-        this.a = g6Var;
+        this.a = u6Var;
         this.b = tiVar;
     }
 
     public abstract void B(int i10, int i11);
 
-    public boolean E(int i10) {
+    public boolean F(int i10) {
         return false;
     }
 
@@ -34,7 +34,7 @@ public abstract class li extends FrameLayout {
     }
 
     public boolean L() {
-        return !(this instanceof gi.f4);
+        return !(this instanceof hi.o4);
     }
 
     public boolean M() {
@@ -81,10 +81,6 @@ public abstract class li extends FrameLayout {
         return 0;
     }
 
-    public ch.a getIBlur3Capture() {
-        return null;
-    }
-
     public int getListTopPadding() {
         return 0;
     }
@@ -93,7 +89,7 @@ public abstract class li extends FrameLayout {
         return 0;
     }
 
-    public ArrayList<org.telegram.ui.ActionBar.t6> getThemeDescriptions() {
+    public ArrayList<org.telegram.ui.ActionBar.h7> getThemeDescriptions() {
         return null;
     }
 
@@ -117,12 +113,19 @@ public abstract class li extends FrameLayout {
         return false;
     }
 
-    public boolean q() {
+    public boolean p() {
         return false;
     }
 
-    public boolean s() {
+    public boolean r() {
         return true;
+    }
+
+    public void setBlur3Capture(mm0 mm0Var) {
+        oi.q qVar;
+        qVar = ((org.telegram.ui.ActionBar.k3) this.b).glassEngine;
+        qVar.b(mm0Var);
+        this.c = mm0Var;
     }
 
     public void A() {
@@ -131,19 +134,10 @@ public abstract class li extends FrameLayout {
     public void C() {
     }
 
-    public void D(int i10) {
-    }
-
-    public void F(li liVar) {
-    }
-
-    public void I() {
+    public void H() {
     }
 
     public void J() {
-    }
-
-    public void a(CharSequence charSequence) {
     }
 
     public void d() {
@@ -152,33 +146,42 @@ public abstract class li extends FrameLayout {
     public void k() {
     }
 
-    public void l(float f7) {
+    public void o() {
     }
 
-    public void p() {
-    }
-
-    public void r(int i10) {
+    public void s() {
     }
 
     public void t() {
     }
 
-    public void u() {
-    }
-
-    public void v(float f7) {
-    }
-
-    public void w(int i10) {
+    public void w() {
     }
 
     public void x() {
     }
 
-    public void y() {
+    public void D(int i10) {
     }
 
-    public void z(int i10, boolean z10) {
+    public void G(li liVar) {
+    }
+
+    public void a(CharSequence charSequence) {
+    }
+
+    public void l(float f7) {
+    }
+
+    public void q(int i10) {
+    }
+
+    public void u(float f7) {
+    }
+
+    public void v(int i10) {
+    }
+
+    public void y(int i10, boolean z10) {
     }
 }

@@ -1,5 +1,6 @@
 package e2;
 
+import a8.yb;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -12,12 +13,10 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.WeakHashMap;
-import m.e3;
-import m.g3;
-import m.m1;
-import v7.u6;
+import m.d3;
+import m.l1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -30,7 +29,7 @@ public final class c {
     public c(View view) {
         this.a = -1;
         this.b = view;
-        this.c = m.r.a();
+        this.c = m.q.a();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x002c, code lost:
@@ -47,7 +46,7 @@ public final class c {
         if (j10 != -9223372036854775807L && (i10 = this.a) != 0) {
             if (i10 != -1 && priorityQueue.size() >= this.a) {
                 f2.v vVar = (f2.v) priorityQueue.peek();
-                String str = m0.a;
+                String str = n0.a;
             }
             ArrayDeque arrayDeque2 = (ArrayDeque) this.c;
             x xVar2 = arrayDeque2.isEmpty() ? new x() : (x) arrayDeque2.pop();
@@ -60,8 +59,8 @@ public final class c {
             }
             f2.v vVar3 = arrayDeque.isEmpty() ? new f2.v() : (f2.v) arrayDeque.pop();
             ArrayList arrayList = vVar3.a;
-            u6.g(j10 != -9223372036854775807L);
-            u6.p(arrayList.isEmpty());
+            yb.g(j10 != -9223372036854775807L);
+            yb.p(arrayList.isEmpty());
             vVar3.b = j10;
             arrayList.add(xVar2);
             priorityQueue.add(vVar3);
@@ -73,46 +72,46 @@ public final class c {
             }
             return;
         }
-        ((f2.w) this.b).b(j10, xVar);
+        ((f2.w) this.b).e(j10, xVar);
     }
 
     public void b() {
         View view = (View) this.b;
         Drawable background = view.getBackground();
         if (background != null) {
-            if (((e3) this.d) != null) {
-                if (((e3) this.f) == null) {
-                    this.f = new e3();
+            if (((d3) this.d) != null) {
+                if (((d3) this.f) == null) {
+                    this.f = new d3();
                 }
-                e3 e3Var = (e3) this.f;
-                e3Var.c = null;
-                e3Var.b = false;
-                e3Var.d = null;
-                e3Var.a = false;
+                d3 d3Var = (d3) this.f;
+                d3Var.c = null;
+                d3Var.b = false;
+                d3Var.d = null;
+                d3Var.a = false;
                 WeakHashMap weakHashMap = r0.i0.a;
                 ColorStateList c10 = r0.a0.c(view);
                 if (c10 != null) {
-                    e3Var.b = true;
-                    e3Var.c = c10;
+                    d3Var.b = true;
+                    d3Var.c = c10;
                 }
                 PorterDuff.Mode d = r0.a0.d(view);
                 if (d != null) {
-                    e3Var.a = true;
-                    e3Var.d = d;
+                    d3Var.a = true;
+                    d3Var.d = d;
                 }
-                if (e3Var.b || e3Var.a) {
-                    m.r.d(background, e3Var, view.getDrawableState());
+                if (d3Var.b || d3Var.a) {
+                    m.q.d(background, d3Var, view.getDrawableState());
                     return;
                 }
             }
-            e3 e3Var2 = (e3) this.e;
-            if (e3Var2 != null) {
-                m.r.d(background, e3Var2, view.getDrawableState());
+            d3 d3Var2 = (d3) this.e;
+            if (d3Var2 != null) {
+                m.q.d(background, d3Var2, view.getDrawableState());
                 return;
             }
-            e3 e3Var3 = (e3) this.d;
-            if (e3Var3 != null) {
-                m.r.d(background, e3Var3, view.getDrawableState());
+            d3 d3Var3 = (d3) this.d;
+            if (d3Var3 != null) {
+                m.q.d(background, d3Var3, view.getDrawableState());
             }
         }
     }
@@ -122,14 +121,14 @@ public final class c {
         PriorityQueue priorityQueue = (PriorityQueue) this.e;
         while (priorityQueue.size() > i10) {
             f2.v vVar = (f2.v) priorityQueue.poll();
-            String str = m0.a;
+            String str = n0.a;
             int i11 = 0;
             while (true) {
                 arrayList = vVar.a;
                 if (i11 >= arrayList.size()) {
                     break;
                 }
-                ((f2.w) this.b).b(vVar.b, (x) arrayList.get(i11));
+                ((f2.w) this.b).e(vVar.b, (x) arrayList.get(i11));
                 ((ArrayDeque) this.c).push((x) arrayList.get(i11));
                 i11++;
             }
@@ -143,17 +142,17 @@ public final class c {
     }
 
     public ColorStateList d() {
-        e3 e3Var = (e3) this.e;
-        if (e3Var != null) {
-            return (ColorStateList) e3Var.c;
+        d3 d3Var = (d3) this.e;
+        if (d3Var != null) {
+            return (ColorStateList) d3Var.c;
         }
         return null;
     }
 
     public PorterDuff.Mode e() {
-        e3 e3Var = (e3) this.e;
-        if (e3Var != null) {
-            return (PorterDuff.Mode) e3Var.d;
+        d3 d3Var = (d3) this.e;
+        if (d3Var != null) {
+            return (PorterDuff.Mode) d3Var.d;
         }
         return null;
     }
@@ -163,32 +162,32 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        g3 P = g3.P(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) P.c;
+        k6.c D = k6.c.D(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) D.c;
         View view2 = (View) this.b;
-        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
+        r0.i0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) D.c, i10);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
-                m.r rVar = (m.r) this.c;
+                m.q qVar = (m.q) this.c;
                 Context context2 = view.getContext();
                 int i12 = this.a;
-                synchronized (rVar) {
-                    i11 = rVar.a.i(context2, i12);
+                synchronized (qVar) {
+                    i11 = qVar.a.i(context2, i12);
                 }
                 if (i11 != null) {
                     j(i11);
                 }
             }
             if (typedArray.hasValue(1)) {
-                r0.a0.f(view, P.E(1));
+                r0.a0.f(view, D.v(1));
             }
             if (typedArray.hasValue(2)) {
-                r0.a0.g(view, m1.b(typedArray.getInt(2, -1), null));
+                r0.a0.g(view, l1.b(typedArray.getInt(2, -1), null));
             }
-            P.Q();
+            D.E();
         } catch (Throwable th2) {
-            P.Q();
+            D.E();
             throw th2;
         }
     }
@@ -202,11 +201,11 @@ public final class c {
     public void h(int i10) {
         ColorStateList colorStateList;
         this.a = i10;
-        m.r rVar = (m.r) this.c;
-        if (rVar != null) {
+        m.q qVar = (m.q) this.c;
+        if (qVar != null) {
             Context context = ((View) this.b).getContext();
-            synchronized (rVar) {
-                colorStateList = rVar.a.i(context, i10);
+            synchronized (qVar) {
+                colorStateList = qVar.a.i(context, i10);
             }
         } else {
             colorStateList = null;
@@ -224,12 +223,12 @@ public final class c {
 
     public void j(ColorStateList colorStateList) {
         if (colorStateList != null) {
-            if (((e3) this.d) == null) {
-                this.d = new e3();
+            if (((d3) this.d) == null) {
+                this.d = new d3();
             }
-            e3 e3Var = (e3) this.d;
-            e3Var.c = colorStateList;
-            e3Var.b = true;
+            d3 d3Var = (d3) this.d;
+            d3Var.c = colorStateList;
+            d3Var.b = true;
         } else {
             this.d = null;
         }
@@ -237,28 +236,28 @@ public final class c {
     }
 
     public void k(int i10) {
-        u6.p(i10 >= 0);
+        yb.p(i10 >= 0);
         this.a = i10;
         c(i10);
     }
 
     public void l(ColorStateList colorStateList) {
-        if (((e3) this.e) == null) {
-            this.e = new e3();
+        if (((d3) this.e) == null) {
+            this.e = new d3();
         }
-        e3 e3Var = (e3) this.e;
-        e3Var.c = colorStateList;
-        e3Var.b = true;
+        d3 d3Var = (d3) this.e;
+        d3Var.c = colorStateList;
+        d3Var.b = true;
         b();
     }
 
     public void m(PorterDuff.Mode mode) {
-        if (((e3) this.e) == null) {
-            this.e = new e3();
+        if (((d3) this.e) == null) {
+            this.e = new d3();
         }
-        e3 e3Var = (e3) this.e;
-        e3Var.d = mode;
-        e3Var.a = true;
+        d3 d3Var = (d3) this.e;
+        d3Var.d = mode;
+        d3Var.a = true;
         b();
     }
 
@@ -268,14 +267,14 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        i2.h0 h0Var = ((i2.w) this.d).b;
+        i2.j0 j0Var = ((i2.x) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        h0Var.F1();
-        h0Var.t1(1, 10, num);
-        h0Var.t1(2, 10, num);
-        h0Var.m.e(21, new i2.v(intValue, 1));
+        j0Var.F1();
+        j0Var.t1(1, 10, num);
+        j0Var.t1(2, 10, num);
+        j0Var.m.e(21, new i2.w(intValue, 1));
     }
 
     public c(f2.w wVar) {
@@ -286,11 +285,11 @@ public final class c {
         this.a = -1;
     }
 
-    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.w wVar) {
+    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.x xVar) {
         this.b = g0Var.a(looper, null);
         this.c = g0Var.a(looper2, null);
         this.e = obj;
         this.f = obj;
-        this.d = wVar;
+        this.d = xVar;
     }
 }

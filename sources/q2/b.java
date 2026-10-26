@@ -1,19 +1,19 @@
 package q2;
 
+import a8.yb;
+import ag.t0;
 import android.content.Context;
 import android.graphics.Point;
-import b2.w;
-import b2.w0;
-import e0.e0;
-import e2.m0;
+import b2.x;
+import b2.x0;
+import e2.n0;
 import h2.h;
 import h2.j;
 import h2.l;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b extends l {
     public final Context o;
@@ -50,23 +50,23 @@ public final class b extends l {
         a aVar = (a) jVar;
         ByteBuffer byteBuffer = hVar.c;
         byteBuffer.getClass();
-        u6.p(byteBuffer.hasArray());
-        u6.g(byteBuffer.arrayOffset() == 0);
+        yb.p(byteBuffer.hasArray());
+        yb.g(byteBuffer.arrayOffset() == 0);
         try {
             int i10 = this.p;
             if (i10 == -1) {
                 Context context = this.o;
                 if (context != null) {
-                    Point y3 = m0.y(context);
+                    Point y3 = n0.y(context);
                     int i11 = y3.x;
                     int i12 = y3.y;
-                    w wVar = hVar.a;
-                    if (wVar != null) {
-                        int i13 = wVar.R;
+                    x xVar = hVar.a;
+                    if (xVar != null) {
+                        int i13 = xVar.R;
                         if (i13 != -1) {
                             i11 *= i13;
                         }
-                        int i14 = wVar.S;
+                        int i14 = xVar.S;
                         if (i14 != -1) {
                             i12 *= i14;
                         }
@@ -76,13 +76,13 @@ public final class b extends l {
                     i10 = 4096;
                 }
             }
-            aVar.a = e0.a(byteBuffer.remaining(), i10, byteBuffer.array());
+            aVar.a = t0.b(byteBuffer.remaining(), i10, byteBuffer.array());
             aVar.timeUs = hVar.e;
             return null;
-        } catch (w0 e) {
+        } catch (x0 e) {
             return new c("Could not decode image data with BitmapFactory.", e);
-        } catch (IOException e7) {
-            return new c(e7);
+        } catch (IOException e10) {
+            return new c(e10);
         }
     }
 }

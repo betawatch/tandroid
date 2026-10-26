@@ -1,127 +1,178 @@
 package org.telegram.ui.Components;
 
-import android.os.Looper;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.LongSparseArray;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n5 b;
-    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ k5(n5 n5Var, ArrayList arrayList, int i10) {
+    public /* synthetic */ k5(int i10) {
         this.a = i10;
-        this.b = n5Var;
-        this.c = arrayList;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0056 A[Catch: SQLiteException -> 0x005a, TryCatch #2 {SQLiteException -> 0x005a, blocks: (B:5:0x0013, B:6:0x001a, B:8:0x0020, B:10:0x0028, B:18:0x0056, B:25:0x0050, B:20:0x005c, B:29:0x005f), top: B:4:0x0013 }] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005c A[SYNTHETIC] */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        NativeByteBuffer nativeByteBuffer;
         switch (this.a) {
             case 0:
-                ArrayList arrayList = this.c;
-                n5 n5Var = this.b;
-                int i10 = n5Var.e;
-                MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-                SQLiteDatabase database = messagesStorage.getDatabase();
-                if (database != null) {
-                    try {
-                        String join = TextUtils.join(",", arrayList);
-                        Locale locale = Locale.US;
-                        SQLiteCursor queryFinalized = database.queryFinalized("SELECT data FROM animated_emoji WHERE document_id IN (" + join + ")", new Object[0]);
-                        ArrayList arrayList2 = new ArrayList();
-                        HashSet hashSet = new HashSet(arrayList);
-                        while (queryFinalized.next()) {
-                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                            try {
-                                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                                if (TLdeserialize != null && TLdeserialize.id != 0) {
-                                    arrayList2.add(TLdeserialize);
-                                    hashSet.remove(Long.valueOf(TLdeserialize.id));
+                AndroidUtilities.cancelRunOnUIThread(t5.w);
+                try {
+                    if (t5.r != null) {
+                        for (int i10 = 0; i10 < t5.r.size(); i10++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) t5.r.valueAt(i10);
+                            int i11 = 0;
+                            while (i11 < longSparseArray.size()) {
+                                if (!((t5) longSparseArray.valueAt(i11)).a) {
+                                    longSparseArray.removeAt(i11);
+                                    i11--;
                                 }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            if (byteBufferValue != null) {
-                                byteBufferValue.reuse();
+                                i11++;
                             }
                         }
-                        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-                            n5Var.d(arrayList2);
-                            if (!hashSet.isEmpty()) {
-                                ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
-                                TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                                tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
-                                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.vc(10, n5Var, arrayList3));
-                            }
-                        } else {
-                            NotificationCenter.getInstance(i10).doOnIdle(new l5(n5Var, arrayList2, hashSet, 0));
-                        }
-                        queryFinalized.dispose();
                         break;
-                    } catch (SQLiteException e7) {
-                        messagesStorage.checkSQLException(e7);
+                    }
+                } catch (Exception e) {
+                    if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                        FileLog.e(e);
                         return;
                     }
+                    return;
                 }
                 break;
-            default:
-                ArrayList arrayList4 = this.c;
-                try {
-                    SQLitePreparedStatement executeFast = MessagesStorage.getInstance(this.b.e).getDatabase().executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
-                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
-                        if (arrayList4.get(i11) instanceof TLRPC.Document) {
-                            TLRPC.Document document = (TLRPC.Document) arrayList4.get(i11);
-                            NativeByteBuffer nativeByteBuffer2 = null;
-                            try {
-                                nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                            } catch (Exception e10) {
-                                e = e10;
-                            }
-                            try {
-                                document.serializeToStream(nativeByteBuffer);
-                                executeFast.requery();
-                                executeFast.bindLong(1, document.id);
-                                executeFast.bindByteBuffer(2, nativeByteBuffer);
-                                executeFast.step();
-                            } catch (Exception e11) {
-                                e = e11;
-                                nativeByteBuffer2 = nativeByteBuffer;
-                                e.printStackTrace();
-                                nativeByteBuffer = nativeByteBuffer2;
-                                if (nativeByteBuffer == null) {
-                                }
-                            }
-                            if (nativeByteBuffer == null) {
-                                nativeByteBuffer.reuse();
-                            }
-                        }
-                    }
-                    executeFast.dispose();
+            case 1:
+                m8 m8Var = m8.Y0;
+                break;
+            case 2:
+                SavedMessagesController.openSavedMessages();
+                break;
+            case 3:
+                LaunchActivity launchActivity = LaunchActivity.I1;
+                if (launchActivity != null && !launchActivity.isFinishing()) {
+                    Intent intent = new Intent("android.intent.action.VIEW_DOWNLOADS");
+                    intent.setFlags(268468224);
+                    LaunchActivity.I1.startActivity(intent);
                     break;
-                } catch (SQLiteException e12) {
-                    FileLog.e(e12);
                 }
+                break;
+            case 4:
+                SavedMessagesController.openSavedMessagesReminders();
+                break;
+            case 5:
+                MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
+                break;
+            case 6:
+                MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
+                break;
+            case 7:
+                break;
+            case 8:
+                int i12 = go.r1;
+                break;
+            case 9:
+                PhotoViewer.u1().H0(false, false);
+                break;
+            case 10:
+                PhotoViewer.u1().H0(false, false);
+                break;
+            case 11:
+                int i13 = ju.b;
+                break;
+            case 12:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 13:
+                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    break;
+                }
+                break;
+            case 14:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+                break;
+            case 15:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            case 16:
+                org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
+                if (R != null) {
+                    org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
+                    p2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), p2Var);
+                    break;
+                }
+                break;
+            case 17:
+                int i14 = r11.f;
+                break;
+            case 18:
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                g21.f = Boolean.TRUE;
+                edit.putBoolean("nothanos", true).apply();
+                break;
+            case 19:
+                SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
+                g21.f = Boolean.TRUE;
+                edit2.putBoolean("nothanos", true).apply();
+                break;
+            case 20:
+                int i15 = e41.i0;
+                break;
+            case 21:
+                SavedMessagesController.openSavedMessages();
+                break;
+            case 22:
+                fb1.f();
+                break;
+            case 23:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 24:
+                org.telegram.ui.Components.voip.n2.i();
+                break;
+            case 25:
+                di.f6.p();
+                break;
+            case 26:
+                org.telegram.ui.v50 v50Var = org.telegram.ui.v50.D3;
+                if (v50Var != null) {
+                    v50Var.show();
+                    break;
+                }
+                break;
+            case 27:
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    break;
+                }
+                break;
+            case 28:
+                Pattern pattern = LaunchActivity.D1;
+                break;
+            default:
+                Pattern pattern2 = LaunchActivity.D1;
+                break;
         }
+    }
+
+    public /* synthetic */ k5(TLRPC.TL_error tL_error) {
+        this.a = 29;
+    }
+
+    private final void a() {
     }
 }

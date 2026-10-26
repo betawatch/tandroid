@@ -1,33 +1,22 @@
 package hb;
 
-import i2.o1;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class q extends eb.u {
-    public static final p b = new p(new q(eb.t.b), 0);
-    public final eb.t a;
+public final class q extends s {
+    public final /* synthetic */ Method b;
 
-    public q(eb.t tVar) {
-        this.a = tVar;
+    public q(Method method) {
+        this.b = method;
     }
 
-    @Override // eb.u
-    public final Object read(mb.a aVar) {
-        int x10 = aVar.x();
-        int c10 = m1.j.c(x10);
-        if (c10 == 5 || c10 == 6) {
-            return this.a.a(aVar);
+    @Override // hb.s
+    public final Object a(Class cls) {
+        String F = rf.b.F(cls);
+        if (F == null) {
+            return this.b.invoke(null, cls, Object.class);
         }
-        if (c10 == 8) {
-            aVar.t();
-            return null;
-        }
-        throw new eb.j("Expecting number, got: " + o1.E(x10) + "; at path " + aVar.h());
-    }
-
-    @Override // eb.u
-    public final void write(mb.b bVar, Object obj) {
-        bVar.q((Number) obj);
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(F));
     }
 }

@@ -1,71 +1,62 @@
 package hb;
 
+import j$.util.Objects;
+import java.io.Serializable;
 import java.lang.reflect.Type;
-import java.util.Collection;
-import java.util.Iterator;
+import java.lang.reflect.WildcardType;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c extends eb.u {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final Object c;
+public final class c implements WildcardType, Serializable {
+    public final Type a;
+    public final Type b;
 
-    public c(eb.g gVar, Type type, eb.u uVar, gb.n nVar) {
-        this.b = new o(gVar, uVar, type);
-        this.c = nVar;
-    }
-
-    @Override // eb.u
-    public final Object read(mb.a aVar) {
-        switch (this.a) {
-            case 0:
-                if (aVar.x() == 9) {
-                    aVar.t();
-                    return null;
-                }
-                Collection collection = (Collection) ((gb.n) this.c).f2();
-                aVar.a();
-                while (aVar.k()) {
-                    collection.add(((eb.u) ((o) this.b).c).read(aVar));
-                }
-                aVar.e();
-                return collection;
-            default:
-                Class cls = (Class) this.b;
-                Object read = ((x0) this.c).c.read(aVar);
-                if (read == null || cls.isInstance(read)) {
-                    return read;
-                }
-                throw new eb.j("Expected a " + cls.getName() + " but was " + read.getClass().getName() + "; at path " + aVar.j());
+    public c(Type[] typeArr, Type[] typeArr2) {
+        d.b(typeArr2.length <= 1);
+        d.b(typeArr.length == 1);
+        if (typeArr2.length != 1) {
+            Objects.requireNonNull(typeArr[0]);
+            d.c(typeArr[0]);
+            this.b = null;
+            this.a = d.a(typeArr[0]);
+            return;
         }
+        Objects.requireNonNull(typeArr2[0]);
+        d.c(typeArr2[0]);
+        d.b(typeArr[0] == Object.class);
+        this.b = d.a(typeArr2[0]);
+        this.a = Object.class;
     }
 
-    @Override // eb.u
-    public final void write(mb.b bVar, Object obj) {
-        switch (this.a) {
-            case 0:
-                Collection collection = (Collection) obj;
-                if (collection != null) {
-                    bVar.b();
-                    Iterator it = collection.iterator();
-                    while (it.hasNext()) {
-                        ((o) this.b).write(bVar, it.next());
-                    }
-                    bVar.e();
-                    break;
-                } else {
-                    bVar.i();
-                    break;
-                }
-            default:
-                ((x0) this.c).c.write(bVar, obj);
-                break;
+    public final boolean equals(Object obj) {
+        return (obj instanceof WildcardType) && d.e(this, (WildcardType) obj);
+    }
+
+    @Override // java.lang.reflect.WildcardType
+    public final Type[] getLowerBounds() {
+        Type type = this.b;
+        return type != null ? new Type[]{type} : d.a;
+    }
+
+    @Override // java.lang.reflect.WildcardType
+    public final Type[] getUpperBounds() {
+        return new Type[]{this.a};
+    }
+
+    public final int hashCode() {
+        Type type = this.b;
+        return (type != null ? type.hashCode() + 31 : 1) ^ (this.a.hashCode() + 31);
+    }
+
+    public final String toString() {
+        Type type = this.b;
+        if (type != null) {
+            return "? super " + d.k(type);
         }
-    }
-
-    public c(x0 x0Var, Class cls) {
-        this.c = x0Var;
-        this.b = cls;
+        Type type2 = this.a;
+        if (type2 == Object.class) {
+            return "?";
+        }
+        return "? extends " + d.k(type2);
     }
 }

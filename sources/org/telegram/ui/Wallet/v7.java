@@ -4,7 +4,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v7 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class v7 implements Runnable {
                 w7 w7Var = this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(w7Var.getParentActivity(), 0, w7Var.getResourceProvider());
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WalletEnterSecretPhraseInfo);
-                org.telegram.messenger.v0.o(R.string.OK, alertDialog$Builder, null);
+                org.telegram.messenger.t.p(R.string.OK, alertDialog$Builder, null);
                 break;
             default:
-                this.b.Y();
+                this.b.Z();
                 break;
         }
     }

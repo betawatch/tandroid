@@ -1,20 +1,19 @@
 package j4;
 
-import b2.w0;
-import e9.l0;
-import e9.n0;
-import e9.x1;
+import b2.x0;
+import f9.i0;
+import f9.s1;
 import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class d implements c3.q {
+public final class d implements c3.o {
     public final int a;
     public final e2.x d;
     public final a4.g e;
-    public c3.s f;
+    public c3.q f;
     public long g;
     public boolean j;
     public boolean k;
@@ -32,76 +31,76 @@ public final class d implements c3.q {
         this.e = new a4.g(bArr, bArr.length);
     }
 
-    @Override // c3.q
-    public final boolean a(c3.r rVar) {
-        int g10 = g(rVar);
-        int i10 = g10;
+    @Override // c3.o
+    public final boolean a(c3.p pVar) {
+        int g7 = g(pVar);
+        int i10 = g7;
         int i11 = 0;
         int i12 = 0;
         do {
             e2.x xVar = this.d;
-            c3.l lVar = (c3.l) rVar;
-            lVar.j(xVar.a, 0, 2, false);
+            c3.l lVar = (c3.l) pVar;
+            lVar.h(xVar.a, 0, 2, false);
             xVar.N(0);
             if ((xVar.H() & 65526) == 65520) {
                 i11++;
                 if (i11 >= 4 && i12 > 188) {
                     return true;
                 }
-                lVar.j(xVar.a, 0, 4, false);
+                lVar.h(xVar.a, 0, 4, false);
                 a4.g gVar = this.e;
                 gVar.m(14);
-                int g11 = gVar.g(13);
-                if (g11 <= 6) {
+                int g10 = gVar.g(13);
+                if (g10 <= 6) {
                     i10++;
                     lVar.f = 0;
-                    lVar.u(i10, false);
+                    lVar.s(i10, false);
                 } else {
-                    lVar.u(g11 - 6, false);
-                    i12 += g11;
+                    lVar.s(g10 - 6, false);
+                    i12 += g10;
                 }
             } else {
                 i10++;
                 lVar.f = 0;
-                lVar.u(i10, false);
+                lVar.s(i10, false);
             }
             i11 = 0;
             i12 = 0;
-        } while (i10 - g10 < 8192);
+        } while (i10 - g7 < 8192);
         return false;
     }
 
-    @Override // c3.q
-    public final void c(c3.s sVar) {
-        this.f = sVar;
-        this.b.d(sVar, new f0(0, 1));
-        sVar.C();
+    @Override // c3.o
+    public final void c(c3.q qVar) {
+        this.f = qVar;
+        this.b.d(qVar, new f0(0, 1));
+        qVar.Q0();
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void d(long j10, long j11) {
         this.k = false;
         this.b.c();
         this.g = j11;
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final List e() {
-        l0 l0Var = n0.b;
-        return x1.e;
+        f9.g0 g0Var = i0.b;
+        return s1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:69:0x010b A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:70:0x010c  */
-    @Override // c3.q
+    @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int f(c3.r rVar, c3.u uVar) {
+    public final int f(c3.p pVar, c3.s sVar) {
         int i10;
         e eVar;
         this.f.getClass();
-        long length = rVar.getLength();
+        long length = pVar.getLength();
         int i11 = this.a;
         int i12 = 0;
         if ((i11 & 1) != 0 && length != -1) {
@@ -109,15 +108,15 @@ public final class d implements c3.q {
             e2.x xVar = this.d;
             if (!this.j) {
                 this.i = -1;
-                rVar.q();
+                pVar.p();
                 long j10 = 0;
-                if (rVar.getPosition() == 0) {
-                    g(rVar);
+                if (pVar.getPosition() == 0) {
+                    g(pVar);
                 }
                 int i13 = 0;
                 while (true) {
                     try {
-                        if (!rVar.j(xVar.a, i12, 2, true)) {
+                        if (!pVar.h(xVar.a, i12, 2, true)) {
                             break;
                         }
                         xVar.N(i12);
@@ -125,24 +124,24 @@ public final class d implements c3.q {
                             i13 = i12;
                             break;
                         }
-                        if (!rVar.j(xVar.a, i12, 4, true)) {
+                        if (!pVar.h(xVar.a, i12, 4, true)) {
                             break;
                         }
                         gVar.m(14);
-                        int g10 = gVar.g(13);
-                        if (g10 <= 6) {
+                        int g7 = gVar.g(13);
+                        if (g7 <= 6) {
                             this.j = true;
-                            throw w0.a(null, "Malformed ADTS stream");
+                            throw x0.a(null, "Malformed ADTS stream");
                         }
-                        j10 += g10;
+                        j10 += g7;
                         i13++;
-                        if (i13 != 1000 && rVar.u(g10 - 6, true)) {
+                        if (i13 != 1000 && pVar.s(g7 - 6, true)) {
                             i12 = 0;
                         }
                     } catch (EOFException unused) {
                     }
                 }
-                rVar.q();
+                pVar.p();
                 if (i13 > 0) {
                     this.i = (int) (j10 / i13);
                 } else {
@@ -152,7 +151,7 @@ public final class d implements c3.q {
             }
         }
         e2.x xVar2 = this.c;
-        int read = rVar.read(xVar2.a, 0, 2048);
+        int read = pVar.read(xVar2.a, 0, 2048);
         boolean z10 = read == -1;
         boolean z11 = this.l;
         e eVar2 = this.b;
@@ -162,11 +161,11 @@ public final class d implements c3.q {
                 if (z12) {
                     long j11 = eVar2.s;
                     if (j11 != -9223372036854775807L) {
-                        c3.s sVar = this.f;
+                        c3.q qVar = this.f;
                         int i14 = this.i;
                         i10 = -1;
                         eVar = eVar2;
-                        sVar.g0(new c3.k(length, this.h, (int) ((i14 * 8000000) / j11), i14, false, true));
+                        qVar.D1(new c3.k(length, this.h, (int) ((i14 * 8000000) / j11), i14, false, true));
                         this.l = true;
                         if (z10) {
                             return i10;
@@ -183,7 +182,7 @@ public final class d implements c3.q {
                 }
                 i10 = -1;
                 eVar = eVar2;
-                this.f.g0(new c3.v(-9223372036854775807L));
+                this.f.D1(new c3.t(-9223372036854775807L));
                 this.l = true;
                 if (z10) {
                 }
@@ -195,11 +194,11 @@ public final class d implements c3.q {
         }
     }
 
-    public final int g(c3.r rVar) {
+    public final int g(c3.p pVar) {
         int i10 = 0;
         while (true) {
             e2.x xVar = this.d;
-            rVar.a(0, 10, xVar.a);
+            pVar.b(0, 10, xVar.a);
             xVar.N(0);
             if (xVar.D() != 4801587) {
                 break;
@@ -207,22 +206,22 @@ public final class d implements c3.q {
             xVar.O(3);
             int z10 = xVar.z();
             i10 += z10 + 10;
-            rVar.l(z10);
+            pVar.j(z10);
         }
-        rVar.q();
-        rVar.l(i10);
+        pVar.p();
+        pVar.j(i10);
         if (this.h == -1) {
             this.h = i10;
         }
         return i10;
     }
 
-    @Override // c3.q
-    public final c3.q b() {
+    @Override // c3.o
+    public final c3.o b() {
         return this;
     }
 
-    @Override // c3.q
+    @Override // c3.o
     public final void release() {
     }
 }

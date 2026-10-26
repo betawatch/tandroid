@@ -1,57 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.text.TextUtils;
+import org.telegram.messenger.DispatchQueue2;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class qa {
-    public final int a;
-    public final yj0 b;
-    public final org.telegram.ui.Cells.y c;
-    public final TextPaint d;
-    public final StaticLayout e;
-    public final float f;
-    public final float g;
-    public final RectF h;
-    public final f6 i;
-    public final int j;
-    public final int k;
-    public int l;
-    public boolean m;
-    public int n;
-    public final /* synthetic */ wa0 o;
+    public String a;
+    public Bitmap b;
+    public final Paint c;
+    public final int d;
+    public final Runnable e;
+    public org.telegram.messenger.c8 f;
 
-    public qa(wa0 wa0Var, int i10, int i11, int i12, int i13, String str) {
-        this.o = wa0Var;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        this.h = new RectF();
-        this.i = new f6(wa0Var, 0L, 200L, bs.h);
-        this.n = -1;
-        this.a = i10;
-        this.j = i12;
-        this.k = i13;
-        yj0 yj0Var = new yj0(i11, AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f));
-        this.b = yj0Var;
-        yj0Var.R(wa0Var);
-        yj0Var.J(true);
-        yj0Var.h = true;
-        yj0Var.K(0);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        int i14 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.ActionBar.g6 g6Var = wa0Var.a;
-        textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(i14, g6Var));
-        StaticLayout staticLayout = new StaticLayout(str, textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.e = staticLayout;
-        this.f = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
-        this.g = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        int o12 = org.telegram.ui.ActionBar.k6.o1(0.1f, org.telegram.ui.ActionBar.k6.w0(i14, g6Var));
-        this.l = o12;
-        this.c = org.telegram.ui.ActionBar.k6.g0(o12, 7, AndroidUtilities.dp(16.0f));
+    public qa(int i10, Runnable runnable) {
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = i10;
+        this.e = runnable;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    }
+
+    public final void a() {
+        this.a = null;
+        if (this.f != null) {
+            Utilities.globalQueue.cancelRunnable(this.f);
+        }
+        Bitmap bitmap = this.b;
+        if (bitmap != null && !bitmap.isRecycled()) {
+            this.b.recycle();
+        }
+        this.b = null;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0019, code lost:
+    
+        if (r8.f != null) goto L5;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Bitmap b(Bitmap bitmap, String str, int i10, int i11, boolean z10) {
+        if (bitmap != null && !bitmap.isRecycled()) {
+            if (TextUtils.equals(this.a, str)) {
+                Bitmap bitmap2 = this.b;
+                if (bitmap2 != null) {
+                    return bitmap2;
+                }
+            }
+            if (this.f != null) {
+                Utilities.globalQueue.cancelRunnable(this.f);
+            }
+            this.a = str;
+            DispatchQueue2 dispatchQueue2 = Utilities.globalQueue;
+            org.telegram.messenger.c8 c8Var = new org.telegram.messenger.c8(this, bitmap, i10, i11, str, z10);
+            this.f = c8Var;
+            dispatchQueue2.postRunnable(c8Var);
+            return this.b;
+        }
+        return null;
+    }
+
+    public final Bitmap c(ImageReceiver.BitmapHolder bitmapHolder) {
+        if (bitmapHolder == null) {
+            return null;
+        }
+        return b(bitmapHolder.bitmap, bitmapHolder.getKey(), bitmapHolder.orientation, 0, false);
+    }
+
+    public final Bitmap d(ImageReceiver imageReceiver) {
+        if (imageReceiver == null) {
+            return null;
+        }
+        return b(imageReceiver.getBitmap(), imageReceiver.getImageKey(), imageReceiver.getOrientation(), imageReceiver.getInvert(), false);
     }
 }

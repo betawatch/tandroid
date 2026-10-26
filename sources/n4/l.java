@@ -1,6 +1,5 @@
 package n4;
 
-import ab.o0;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -11,11 +10,11 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class l {
     public boolean c;
-    public o0 e;
+    public androidx.mediarouter.app.c e;
     public final Object a = new Object();
     public final k b = new k(this);
     public WeakReference d = new WeakReference(null);
@@ -24,11 +23,11 @@ public abstract class l {
         synchronized (this.a) {
             try {
                 this.d = new WeakReference(nVar);
-                o0 o0Var = this.e;
-                if (o0Var != null) {
-                    o0Var.removeCallbacksAndMessages(null);
+                androidx.mediarouter.app.c cVar = this.e;
+                if (cVar != null) {
+                    cVar.removeCallbacksAndMessages(null);
                 }
-                this.e = new o0(this, handler.getLooper(), 7);
+                this.e = new androidx.mediarouter.app.c(this, handler.getLooper(), 7);
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -39,9 +38,9 @@ public abstract class l {
         if (this.c) {
             this.c = false;
             handler.removeMessages(1);
-            y yVar = nVar.g;
-            long j10 = yVar == null ? 0L : yVar.e;
-            boolean z10 = yVar != null && yVar.a == 3;
+            z zVar = nVar.g;
+            long j10 = zVar == null ? 0L : zVar.e;
+            boolean z10 = zVar != null && zVar.a == 3;
             boolean z11 = (516 & j10) != 0;
             boolean z12 = (j10 & 514) != 0;
             if (z10 && z12) {
@@ -57,33 +56,33 @@ public abstract class l {
 
     public boolean g(Intent intent) {
         n nVar;
-        o0 o0Var;
+        androidx.mediarouter.app.c cVar;
         KeyEvent keyEvent;
         if (Build.VERSION.SDK_INT < 27) {
             synchronized (this.a) {
                 nVar = (n) this.d.get();
-                o0Var = this.e;
+                cVar = this.e;
             }
-            if (nVar != null && o0Var != null && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0) {
+            if (nVar != null && cVar != null && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0) {
                 t c10 = nVar.c();
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79 && keyCode != 85) {
-                    a(nVar, o0Var);
+                    a(nVar, cVar);
                     return false;
                 }
                 if (keyEvent.getRepeatCount() != 0) {
-                    a(nVar, o0Var);
+                    a(nVar, cVar);
                     return true;
                 }
                 if (!this.c) {
                     this.c = true;
-                    o0Var.sendMessageDelayed(o0Var.obtainMessage(1, c10), ViewConfiguration.getDoubleTapTimeout());
+                    cVar.sendMessageDelayed(cVar.obtainMessage(1, c10), ViewConfiguration.getDoubleTapTimeout());
                     return true;
                 }
-                o0Var.removeMessages(1);
+                cVar.removeMessages(1);
                 this.c = false;
-                y yVar = nVar.g;
-                if (((yVar == null ? 0L : yVar.e) & 32) != 0) {
+                z zVar = nVar.g;
+                if (((zVar == null ? 0L : zVar.e) & 32) != 0) {
                     y();
                 }
                 return true;
@@ -131,10 +130,10 @@ public abstract class l {
     public void t(float f7) {
     }
 
-    public void u(z zVar) {
+    public void u(a0 a0Var) {
     }
 
-    public void v(z zVar) {
+    public void v(a0 a0Var) {
     }
 
     public void w(int i10) {

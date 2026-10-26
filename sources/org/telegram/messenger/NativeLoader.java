@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class NativeLoader {
     private static final String LIB_NAME = "tmessages.49";
@@ -113,11 +113,11 @@ public class NativeLoader {
                         sb3.append("\n");
                     }
                 }
-            } catch (Error e7) {
-                FileLog.e(e7);
+            } catch (Error e10) {
+                FileLog.e(e10);
                 StringBuilder sb4 = log;
                 sb4.append("128: ");
-                sb4.append(e7);
+                sb4.append(e10);
                 sb4.append("\n");
                 String abiFolder = getAbiFolder();
                 File file = new File(context.getFilesDir(), "lib");
@@ -131,11 +131,11 @@ public class NativeLoader {
                         System.load(file2.getAbsolutePath());
                         nativeLoaded = true;
                         return;
-                    } catch (Error e10) {
+                    } catch (Error e11) {
                         StringBuilder sb5 = log;
-                        sb5.append(e10);
+                        sb5.append(e11);
                         sb5.append("\n");
-                        FileLog.e(e10);
+                        FileLog.e(e11);
                         file2.delete();
                         if (BuildVars.LOGS_ENABLED) {
                             FileLog.e("Library not found, arch = " + abiFolder);
@@ -207,35 +207,35 @@ public class NativeLoader {
                     try {
                         System.load(file2.getAbsolutePath());
                         nativeLoaded = true;
-                    } catch (Error e7) {
-                        FileLog.e(e7);
-                    }
-                    try {
-                        inputStream2.close();
-                    } catch (Exception e10) {
+                    } catch (Error e10) {
                         FileLog.e(e10);
                     }
                     try {
-                        zipFile2.close();
+                        inputStream2.close();
                     } catch (Exception e11) {
                         FileLog.e(e11);
                     }
+                    try {
+                        zipFile2.close();
+                    } catch (Exception e12) {
+                        FileLog.e(e12);
+                    }
                     return true;
-                } catch (Exception e12) {
-                    e = e12;
+                } catch (Exception e13) {
+                    e = e13;
                     FileLog.e(e);
                     if (0 != 0) {
                         try {
                             inputStream.close();
-                        } catch (Exception e13) {
-                            FileLog.e(e13);
+                        } catch (Exception e14) {
+                            FileLog.e(e14);
                         }
                     }
                     if (zipFile2 != null) {
                         try {
                             zipFile2.close();
-                        } catch (Exception e14) {
-                            FileLog.e(e14);
+                        } catch (Exception e15) {
+                            FileLog.e(e15);
                         }
                     }
                     return false;
@@ -246,8 +246,8 @@ public class NativeLoader {
                 if (0 != 0) {
                     try {
                         inputStream.close();
-                    } catch (Exception e15) {
-                        FileLog.e(e15);
+                    } catch (Exception e16) {
+                        FileLog.e(e16);
                     }
                 }
                 if (zipFile != null) {
@@ -256,13 +256,13 @@ public class NativeLoader {
                 try {
                     zipFile.close();
                     throw th;
-                } catch (Exception e16) {
-                    FileLog.e(e16);
+                } catch (Exception e17) {
+                    FileLog.e(e17);
                     throw th;
                 }
             }
-        } catch (Exception e17) {
-            e = e17;
+        } catch (Exception e18) {
+            e = e18;
             zipFile2 = null;
         } catch (Throwable th3) {
             th = th3;

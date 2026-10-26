@@ -1,35 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s91 extends e91 {
-    public final int v;
-    public final int w;
-    public int x;
-    public oh y;
-
-    public s91(Context context, int i10, int i11, jg.f fVar, int i12) {
-        super(context, i11, fVar, null);
-        this.v = i10;
-        this.w = i12;
-    }
-
-    @Override // org.telegram.ui.e91
-    public final void b(g91 g91Var) {
-        int i10;
-        if (g91Var == null || (i10 = this.x) < 0) {
-            return;
-        }
-        g91Var.a(this.v, this.w, i10, this.y);
-    }
-
-    @Override // org.telegram.ui.e91
-    public final void c() {
-    }
-
-    @Override // org.telegram.ui.e91
-    public final void f() {
-    }
+public final class s91 {
+    public String a;
+    public String b;
+    public String c;
+    public boolean d;
+    public String e;
+    public String f;
+    public String g;
+    public boolean h;
+    public String i;
+    public String j;
+    public String k;
+    public boolean l;
+    public String m;
+    public String n;
+    public String o;
+    public boolean p;
 }

@@ -1,12 +1,36 @@
 package org.telegram.messenger.camera;
 
-import android.hardware.Camera;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k implements Camera.AutoFocusCallback {
-    @Override // android.hardware.Camera.AutoFocusCallback
-    public final void onAutoFocus(boolean z10, Camera camera) {
-        CameraSession.lambda$new$0(z10, camera);
+public final /* synthetic */ class k implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ CameraView b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ CameraView.CameraGLThread d;
+
+    public /* synthetic */ k(CameraView cameraView, int i10, CameraView.CameraGLThread cameraGLThread) {
+        this.b = cameraView;
+        this.c = i10;
+        this.d = cameraGLThread;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$createCamera$12(this.d, this.c);
+                break;
+            default:
+                this.b.lambda$createCamera$9(this.c, this.d);
+                break;
+        }
+    }
+
+    public /* synthetic */ k(CameraView cameraView, CameraView.CameraGLThread cameraGLThread, int i10) {
+        this.b = cameraView;
+        this.d = cameraGLThread;
+        this.c = i10;
     }
 }

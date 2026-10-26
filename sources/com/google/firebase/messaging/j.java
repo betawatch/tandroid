@@ -1,5 +1,6 @@
 package com.google.firebase.messaging;
 
+import a8.hb;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
@@ -8,12 +9,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import bi.u6;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
-import v7.o6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class j implements Application.ActivityLifecycleCallbacks {
     public final Set a = Collections.newSetFromMap(new WeakHashMap());
@@ -31,7 +32,7 @@ public final class j implements Application.ActivityLifecycleCallbacks {
         if (bundle == null ? false : "1".equals(bundle.getString("google.c.a.e"))) {
             if (bundle != null) {
                 if ("1".equals(bundle.getString("google.c.a.tc"))) {
-                    if (l9.h.c().b(m9.a.class) != null) {
+                    if (m9.h.c().b(n9.a.class) != null) {
                         throw new ClassCastException();
                     }
                     if (Log.isLoggable("FirebaseMessaging", 3)) {
@@ -42,7 +43,7 @@ public final class j implements Application.ActivityLifecycleCallbacks {
                     Log.d("FirebaseMessaging", "Received event with track-conversion=false. Do not set user property");
                 }
             }
-            o6.a("_no", bundle);
+            hb.a("_no", bundle);
         }
     }
 
@@ -53,7 +54,7 @@ public final class j implements Application.ActivityLifecycleCallbacks {
             return;
         }
         if (Build.VERSION.SDK_INT <= 25) {
-            new Handler(Looper.getMainLooper()).post(new androidx.fragment.app.d(this, intent));
+            new Handler(Looper.getMainLooper()).post(new u6(this, intent));
         } else {
             a(intent);
         }

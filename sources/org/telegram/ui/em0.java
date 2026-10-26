@@ -1,73 +1,113 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import j$.util.Objects;
+import java.util.regex.Pattern;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class em0 extends AnimatorListenerAdapter {
+public final class em0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ an0 c;
+    public final Object b;
+    public String c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ em0(an0 an0Var, boolean z10, int i10) {
+    public /* synthetic */ em0(in0 in0Var, EditTextBoldCursor editTextBoldCursor, String str, int i10) {
         this.a = i10;
-        this.c = an0Var;
-        this.b = z10;
+        this.d = in0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long parseLong;
+        int i10;
         switch (this.a) {
             case 0:
-                an0 an0Var = this.c;
-                AnimatorSet animatorSet = an0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    an0Var.M = null;
-                    break;
-                }
+                in0.J0((in0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+                break;
+            case 1:
+                in0.J0((in0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
                 break;
             default:
-                an0 an0Var2 = this.c;
-                AnimatorSet animatorSet2 = an0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    an0Var2.M = null;
-                    break;
+                rg.x xVar = (rg.x) this.d;
+                rg.y yVar = xVar.f;
+                EditTextBoldCursor editTextBoldCursor = xVar.d;
+                if (!xVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
+                    String obj = editable.toString();
+                    if (obj.length() > 8) {
+                        editTextBoldCursor.setText(obj.substring(2, 8).toUpperCase());
+                        editTextBoldCursor.setSelection(8);
+                        break;
+                    } else if (((Pattern) this.b).matcher(editable).find()) {
+                        int length = obj.length();
+                        if (length != 3) {
+                            if (length == 6) {
+                                i10 = ((int) Long.parseLong(obj, 16)) - 16777216;
+                            } else if (length != 8) {
+                                i10 = yVar.f;
+                            } else {
+                                parseLong = Long.parseLong(obj, 16);
+                            }
+                            if (i10 == yVar.f) {
+                                yVar.m(i10, 5);
+                                break;
+                            }
+                        } else {
+                            parseLong = Long.parseLong("FF" + obj.charAt(0) + obj.charAt(0) + obj.charAt(1) + obj.charAt(1) + obj.charAt(2) + obj.charAt(2), 16);
+                        }
+                        i10 = (int) parseLong;
+                        if (i10 == yVar.f) {
+                        }
+                    }
                 }
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                an0 an0Var = this.c;
-                AnimatorSet animatorSet = an0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        an0Var.N.setVisibility(4);
-                        break;
-                    } else {
-                        an0Var.L.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
+            case 1:
                 break;
             default:
-                an0 an0Var2 = this.c;
-                AnimatorSet animatorSet2 = an0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        an0Var2.P.setVisibility(4);
-                        break;
-                    } else {
-                        an0Var2.O.setVisibility(4);
-                        break;
-                    }
-                }
+                this.c = charSequence.toString();
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public em0(rg.x xVar) {
+        this.a = 2;
+        this.d = xVar;
+        this.b = Pattern.compile("^[0-9a-fA-F]*$");
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

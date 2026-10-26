@@ -1,92 +1,73 @@
 package li;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import java.util.ArrayList;
-import s4.b1;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class f extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ b1 c;
-    public final /* synthetic */ m d;
+public final /* synthetic */ class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q b;
+    public final /* synthetic */ a c;
 
-    public f(m mVar, b1 b1Var, View view) {
-        this.d = mVar;
-        this.c = b1Var;
-        this.b = view;
+    public /* synthetic */ f(q qVar, a aVar, int i10) {
+        this.a = i10;
+        this.b = qVar;
+        this.c = aVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        a aVar = this.c;
+        q qVar = this.b;
+        switch (i10) {
             case 0:
-                this.b.setAlpha(1.0f);
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                animator.removeAllListeners();
-                View view = this.b;
-                view.setAlpha(1.0f);
-                view.setScaleX(1.0f);
-                view.setScaleY(1.0f);
-                view.setTranslationY(0.0f);
-                view.setTranslationY(0.0f);
-                m mVar = this.d;
-                ArrayList arrayList = mVar.y;
-                b1 b1Var = this.c;
-                if (arrayList.remove(b1Var)) {
-                    mVar.u(b1Var);
-                    mVar.G();
+                v3 v3Var = qVar.r;
+                View F1 = v3Var.F1(aVar);
+                if (!(F1 instanceof o4)) {
+                    v3Var.g3.O(false);
+                    break;
+                } else {
+                    ((o4) F1).g(aVar, v3Var.getMapDelegate());
                     break;
                 }
+            case 1:
+                qVar.r.c5(aVar, 0);
+                break;
+            case 2:
+                qVar.r.c5(aVar, 1);
+                break;
+            case 3:
+                qVar.r.c5(aVar, 2);
+                break;
+            case 4:
+                qVar.r.c5(aVar, 3);
+                break;
+            case 5:
+                qVar.r.b5(aVar, new TL_iv.pageBlockParagraph());
+                break;
+            case 6:
+                v3 v3Var2 = qVar.r;
+                ArrayList arrayList = v3.A4;
+                TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
+                pageblockblockquote.caption = new TL_iv.textEmpty();
+                v3Var2.a5(this.c, pageblockblockquote, 0, 0, false, false);
+                break;
+            case 7:
+                v3 v3Var3 = qVar.r;
+                ArrayList arrayList2 = v3.A4;
+                TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
+                pageblockpullquote.caption = new TL_iv.textEmpty();
+                v3Var3.a5(this.c, pageblockpullquote, 0, 0, false, false);
+                break;
+            case 8:
+                qVar.r.b5(aVar, new TL_iv.pageBlockPreformatted());
                 break;
             default:
-                animator.removeAllListeners();
-                View view2 = this.b;
-                view2.setAlpha(1.0f);
-                view2.setScaleX(1.0f);
-                view2.setScaleY(1.0f);
-                view2.setTranslationX(0.0f);
-                view2.setTranslationY(0.0f);
-                m mVar2 = this.d;
-                ArrayList arrayList2 = mVar2.A;
-                b1 b1Var2 = this.c;
-                if (arrayList2.remove(b1Var2)) {
-                    mVar2.d(b1Var2);
-                    mVar2.G();
-                    break;
-                }
+                qVar.r.b5(aVar, new TL_iv.pageBlockFooter());
                 break;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.getClass();
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
-    }
-
-    public f(m mVar, View view, b1 b1Var) {
-        this.d = mVar;
-        this.b = view;
-        this.c = b1Var;
     }
 }

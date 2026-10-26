@@ -9,10 +9,9 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import m.g3;
-import org.telegram.ui.Wallet.m4;
+import org.telegram.ui.Components.cy0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -72,9 +71,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        g3 g3Var = eVar.C;
-        if (g3Var != null) {
-            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) g3Var.b;
+        k6.c cVar = eVar.C;
+        if (cVar != null) {
+            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) cVar.b;
             if (b0Var != null) {
                 return b0Var.a.c;
             }
@@ -109,19 +108,19 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new l2.f(c10, 14));
+                k kVar = new k(c10.h, new jg.i(c10));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
                 s0 s0Var = c10.c;
-                ((Handler) s0Var.d).post((m4) s0Var.h);
+                ((Handler) s0Var.d).post((cy0) s0Var.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
                 kVar2.h = c10.A;
                 if (!kVar2.b) {
                     kVar2.b = true;
-                    ((ab.o0) kVar2.e).sendEmptyMessage(2);
+                    ((androidx.mediarouter.app.c) kVar2.e).sendEmptyMessage(2);
                 }
             }
         } else {
@@ -138,7 +137,7 @@ public final class x {
                 }
                 c10.r = null;
                 s0 s0Var2 = c10.c;
-                ((Handler) s0Var2.d).post((m4) s0Var2.h);
+                ((Handler) s0Var2.d).post((cy0) s0Var2.h);
             }
         }
         bVar.b(769, zVar);

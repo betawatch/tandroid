@@ -1,11 +1,12 @@
 package org.telegram.messenger.secretmedia;
 
+import a8.yb;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LongSparseArray;
-import e2.m0;
+import e2.n0;
 import g2.a0;
 import g2.b;
 import g2.c0;
@@ -23,9 +24,8 @@ import java.util.List;
 import java.util.Map;
 import n4.s;
 import org.telegram.messenger.FileStreamLoadOperation;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -185,7 +185,7 @@ public final class ExtendedDefaultDataSource implements h {
 
     @Override // g2.h
     public long open(m mVar) {
-        u6.p(this.dataSource == null);
+        yb.p(this.dataSource == null);
         Uri uri = mVar.a;
         if ("mtproto".equals(uri.getScheme())) {
             uri = this.mtprotoUris.get(Long.parseLong(mVar.a.toString().substring(8)));
@@ -194,7 +194,7 @@ public final class ExtendedDefaultDataSource implements h {
             mVar = a2.d();
         }
         String scheme = uri.getScheme();
-        String str = m0.a;
+        String str = n0.a;
         String scheme2 = uri.getScheme();
         if (TextUtils.isEmpty(scheme2) || Objects.equals(scheme2, "file")) {
             String path = uri.getPath();
@@ -223,7 +223,7 @@ public final class ExtendedDefaultDataSource implements h {
         return this.dataSource.open(mVar);
     }
 
-    @Override // b2.o
+    @Override // b2.p
     public int read(byte[] bArr, int i10, int i11) {
         h hVar = this.dataSource;
         hVar.getClass();

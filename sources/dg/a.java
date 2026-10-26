@@ -1,20 +1,25 @@
 package dg;
 
 import java.nio.ShortBuffer;
-import oa.d;
-import rb.b;
+import pa.d;
+import sb.b;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface a {
-    public static final d q;
-    public static final b t;
+    public static final d l = new d();
+    public static final tb.a m;
+    public static final qb.a o;
+    public static final b p;
 
     static {
-        int i10 = 7;
-        q = new d(i10);
-        t = new b(i10);
+        int i10 = 6;
+        m = new tb.a(i10);
+        o = new qb.a(i10);
+        p = new b(i10);
     }
 
-    void z(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
+    void G0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+
+    int t1(int i10, int i11, int i12);
 }

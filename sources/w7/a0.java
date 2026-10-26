@@ -1,77 +1,44 @@
 package w7;
 
-import android.net.Uri;
 import android.os.Build;
-import android.os.SystemClock;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import android.os.Trace;
+import android.util.Log;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static n2.w a(g2.h hVar, String str, byte[] bArr, Map map) {
-        Map map2;
-        List list;
-        g2.b0 b0Var = new g2.b0(hVar);
-        Map map3 = Collections.EMPTY_MAP;
-        Uri parse = Uri.parse(str);
-        v7.u6.l(parse, "The uri must be set.");
-        g2.m mVar = new g2.m(parse, 2, bArr, map, 0L, -1L, null, 1);
-        int i10 = 0;
-        g2.m mVar2 = mVar;
-        while (true) {
-            try {
-                g2.k kVar = new g2.k(b0Var, mVar2);
-                try {
-                    byte[] b10 = f9.f.b(kVar);
-                    u2.v vVar = new u2.v(mVar, b0Var.c, b0Var.d, SystemClock.elapsedRealtime(), 0L, b10.length);
-                    mi.q qVar = new mi.q(b10);
-                    qVar.c = vVar;
-                    n2.w wVar = new n2.w(qVar);
-                    try {
-                        kVar.close();
-                    } catch (IOException unused) {
-                    }
-                    return wVar;
-                } catch (g2.x e) {
-                    try {
-                        int i11 = e.c;
-                        String str2 = null;
-                        if ((i11 == 307 || i11 == 308) && i10 < 5 && (map2 = e.d) != null && (list = (List) map2.get("Location")) != null && !list.isEmpty()) {
-                            str2 = (String) list.get(0);
-                        }
-                        if (str2 == null) {
-                            throw e;
-                        }
-                        i10++;
-                        g2.l a2 = mVar2.a();
-                        a2.e = Uri.parse(str2);
-                        mVar2 = a2.d();
-                        try {
-                            kVar.close();
-                        } catch (IOException unused2) {
-                        }
-                    } finally {
-                        String str3 = e2.m0.a;
-                        try {
-                            kVar.close();
-                        } catch (IOException unused3) {
-                        }
-                    }
-                }
-            } catch (Exception e7) {
-                throw new n2.x(mVar, b0Var.c, b0Var.a.getResponseHeaders(), b0Var.b, e7);
-            }
+    public static long a;
+    public static Method b;
+
+    public static void a(String str) {
+        if (str.length() > 127) {
+            str = str.substring(0, 127);
         }
+        Trace.beginSection(str);
     }
 
-    public static boolean b(Throwable th2) {
-        return Build.VERSION.SDK_INT == 34 && (th2 instanceof NoSuchMethodError) && th2.getMessage() != null && th2.getMessage().contains("Landroid/media/NotProvisionedException;.<init>(");
-    }
-
-    public static boolean c(Throwable th2) {
-        return Build.VERSION.SDK_INT == 34 && (th2 instanceof NoSuchMethodError) && th2.getMessage() != null && th2.getMessage().contains("Landroid/media/ResourceBusyException;.<init>(");
+    public static boolean b() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            return x4.a.a();
+        }
+        try {
+            if (b == null) {
+                a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
+                b = Trace.class.getMethod("isTagEnabled", Long.TYPE);
+            }
+            return ((Boolean) b.invoke(null, Long.valueOf(a))).booleanValue();
+        } catch (Exception e) {
+            if (!(e instanceof InvocationTargetException)) {
+                Log.v("Trace", "Unable to call isTagEnabled via reflection", e);
+                return false;
+            }
+            Throwable cause = e.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
+            }
+            throw new RuntimeException(cause);
+        }
     }
 }

@@ -1,36 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class r50 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ n50 b;
-    public final /* synthetic */ n60 c;
+public final class r50 extends Paint {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public r50(n60 n60Var, boolean[] zArr, n50 n50Var) {
-        this.c = n60Var;
-        this.a = zArr;
-        this.b = n50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ r50(Object obj, int i10) {
+        super(1);
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        if (floatValue > 0.5f) {
-            boolean[] zArr = this.a;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                this.b.run();
-            }
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(i10);
+                ((o60) this.b).invalidate();
+                break;
+            case 1:
+                super.setAlpha(i10);
+                dn0 dn0Var = (dn0) this.b;
+                dn0Var.a.setAlpha(Math.round(i10 * 0.2f));
+                dn0Var.invalidate();
+                break;
+            default:
+                super.setAlpha(i10);
+                ((ProfileActivity) this.b).fragmentView.invalidate();
+                break;
         }
-        if (floatValue >= 0.5f) {
-            floatValue -= 1.0f;
-        }
-        float f7 = floatValue * 180.0f;
-        n60 n60Var = this.c;
-        n60Var.h.setRotationY(f7);
-        n60Var.r0.setRotationY(f7);
     }
 }

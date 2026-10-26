@@ -1,90 +1,41 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class sq implements aq {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean[] e;
-    public final /* synthetic */ jr f;
+public final class sq extends gq {
+    public final /* synthetic */ boolean[] c1;
+    public final /* synthetic */ long d1;
+    public final /* synthetic */ kr e1;
 
-    public sq(jr jrVar, int i10, long j10, int i11, boolean z10, boolean[] zArr) {
-        this.f = jrVar;
-        this.a = i10;
-        this.b = j10;
-        this.c = i11;
-        this.d = z10;
-        this.e = zArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sq(kr krVar, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i10, boolean[] zArr, long j12) {
+        super(j10, j11, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i10, true, false, null);
+        this.e1 = krVar;
+        this.c1 = zArr;
+        this.d1 = j12;
     }
 
-    @Override // org.telegram.ui.aq
-    public final void a(TLRPC.User user) {
-        jr.c0(this.f, user);
-    }
-
-    @Override // org.telegram.ui.aq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        jr jrVar = this.f;
-        ArrayList arrayList = jrVar.F;
-        long j10 = this.b;
-        int i11 = this.a;
-        if (i11 != 0) {
-            if (i11 == 1 && i10 == 0) {
-                jrVar.v0(j10);
-                return;
-            }
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            if (i12 >= arrayList.size()) {
-                break;
-            }
-            TLObject tLObject = (TLObject) arrayList.get(i12);
-            if (tLObject instanceof TLRPC.ChannelParticipant) {
-                if (MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer) == j10) {
-                    TLRPC.ChannelParticipant tL_channelParticipantAdmin = i10 == 1 ? new TLRPC.TL_channelParticipantAdmin() : new TLRPC.TL_channelParticipant();
-                    tL_channelParticipantAdmin.admin_rights = tL_chatAdminRights;
-                    tL_channelParticipantAdmin.banned_rights = tL_chatBannedRights;
-                    tL_channelParticipantAdmin.inviter_id = jrVar.getUserConfig().getClientUserId();
-                    if (j10 > 0) {
-                        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                        tL_channelParticipantAdmin.peer = tL_peerUser;
-                        tL_peerUser.user_id = j10;
-                    } else {
-                        TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-                        tL_channelParticipantAdmin.peer = tL_peerChannel;
-                        tL_peerChannel.channel_id = -j10;
+    @Override // org.telegram.ui.ActionBar.r2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.c1[0]) {
+            kr krVar = this.e1;
+            if (org.telegram.ui.Components.wc.a(krVar)) {
+                long j10 = this.d1;
+                if (j10 > 0) {
+                    TLRPC.User user = getMessagesController().getUser(Long.valueOf(j10));
+                    if (user != null) {
+                        org.telegram.ui.Components.wc.C(krVar, user.first_name).j();
+                        return;
                     }
-                    tL_channelParticipantAdmin.date = this.c;
-                    tL_channelParticipantAdmin.flags |= 4;
-                    tL_channelParticipantAdmin.rank = str;
-                    arrayList.set(i12, tL_channelParticipantAdmin);
+                    return;
                 }
-            } else if (tLObject instanceof TLRPC.ChatParticipant) {
-                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) tLObject;
-                TLRPC.ChatParticipant tL_chatParticipantAdmin = i10 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
-                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
-                tL_chatParticipantAdmin.date = chatParticipant.date;
-                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
-                int indexOf = jrVar.s.participants.participants.indexOf(chatParticipant);
-                if (indexOf >= 0) {
-                    jrVar.s.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-j10));
+                if (chat != null) {
+                    org.telegram.ui.Components.wc.C(krVar, chat.title).j();
                 }
-                jrVar.r0();
             }
-            i12++;
         }
-        if (i10 != 1 || this.d) {
-            return;
-        }
-        this.e[0] = true;
     }
 }

@@ -1,38 +1,98 @@
 package k6;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import androidx.fragment.app.p;
+import android.os.Bundle;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
+import android.util.Log;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import k9.u;
+import n4.s;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class i extends p {
-    public Dialog A0;
-    public DialogInterface.OnCancelListener B0;
-    public AlertDialog C0;
+public final /* synthetic */ class i implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k b;
 
-    @Override // androidx.fragment.app.p
-    public final Dialog O() {
-        Dialog dialog = this.A0;
-        if (dialog != null) {
-            return dialog;
-        }
-        this.r0 = false;
-        if (this.C0 == null) {
-            Context n10 = n();
-            n6.l.h(n10);
-            this.C0 = new AlertDialog.Builder(n10).create();
-        }
-        return this.C0;
+    public /* synthetic */ i(k kVar, int i10) {
+        this.a = i10;
+        this.b = kVar;
     }
 
-    @Override // androidx.fragment.app.p, android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        DialogInterface.OnCancelListener onCancelListener = this.B0;
-        if (onCancelListener != null) {
-            onCancelListener.onCancel(dialogInterface);
+    private final void a() {
+        k kVar = this.b;
+        synchronized (kVar) {
+            if (kVar.a == 1) {
+                kVar.a("Timed out while binding");
+            }
+        }
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                a();
+                return;
+            default:
+                this.b.a("Service disconnected");
+                return;
+        }
+        while (true) {
+            k kVar = this.b;
+            synchronized (kVar) {
+                try {
+                    if (kVar.a != 2) {
+                        return;
+                    }
+                    if (kVar.d.isEmpty()) {
+                        kVar.c();
+                        return;
+                    }
+                    l lVar = (l) kVar.d.poll();
+                    kVar.e.put(lVar.a, lVar);
+                    ((ScheduledExecutorService) kVar.f.c).schedule(new u(18, kVar, lVar), 30L, TimeUnit.SECONDS);
+                    if (Log.isLoggable("MessengerIpcClient", 3)) {
+                        Log.d("MessengerIpcClient", "Sending ".concat(String.valueOf(lVar)));
+                    }
+                    m mVar = kVar.f;
+                    Messenger messenger = kVar.b;
+                    int i10 = lVar.c;
+                    Context context = (Context) mVar.b;
+                    Message obtain = Message.obtain();
+                    obtain.what = i10;
+                    obtain.arg1 = lVar.a;
+                    obtain.replyTo = messenger;
+                    Bundle bundle = new Bundle();
+                    bundle.putBoolean("oneWay", lVar.a());
+                    bundle.putString("pkg", context.getPackageName());
+                    bundle.putBundle("data", lVar.d);
+                    obtain.setData(bundle);
+                    try {
+                        s sVar = kVar.c;
+                        Messenger messenger2 = (Messenger) sVar.b;
+                        if (messenger2 != null) {
+                            messenger2.send(obtain);
+                        } else {
+                            g gVar = (g) sVar.c;
+                            if (gVar == null) {
+                                throw new IllegalStateException("Both messengers are null");
+                            }
+                            Messenger messenger3 = gVar.a;
+                            messenger3.getClass();
+                            messenger3.send(obtain);
+                        }
+                    } catch (RemoteException e) {
+                        kVar.a(e.getMessage());
+                    }
+                } finally {
+                }
+            }
         }
     }
 }

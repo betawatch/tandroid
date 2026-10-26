@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.play_billing;
 
 import androidx.car.app.navigation.model.Maneuver;
-import com.google.android.gms.internal.cast.z4;
+import com.google.android.gms.internal.cast.w4;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class n2 implements t2 {
     public static final int[] j = new int[0];
@@ -53,9 +53,9 @@ public final class n2 implements t2 {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder w9 = a1.g.w("Field ", str, " for ", name, " not found. Known fields are ");
-            w9.append(arrays);
-            throw new RuntimeException(w9.toString(), e);
+            StringBuilder w10 = a1.g.w("Field ", str, " for ", name, " not found. Known fields are ");
+            w10.append(arrays);
+            throw new RuntimeException(w10.toString(), e);
         }
     }
 
@@ -766,7 +766,7 @@ public final class n2 implements t2 {
                     break;
                 case 7:
                     i10 = i12 * 53;
-                    boolean g10 = c3.c.g(v1Var, j10);
+                    boolean g7 = c3.c.g(v1Var, j10);
                     Charset charset5 = a2.a;
                     break;
                 case 8:
@@ -1098,7 +1098,7 @@ public final class n2 implements t2 {
                         } else if (u10 != 49) {
                             if (u10 == 50 && !((j2) c3.h(obj, v & 1048575)).isEmpty()) {
                                 int i22 = i11 / 3;
-                                throw a1.g.i(this.b[i22 + i22]);
+                                throw c3.h0.k(this.b[i22 + i22]);
                             }
                         }
                         i14++;
@@ -1208,23 +1208,23 @@ public final class n2 implements t2 {
                     }
                 case 7:
                     if (n2Var.n(obj, i13, i15, i14, i10)) {
-                        byte g10 = c3.c.g(obj, j10);
+                        byte g7 = c3.c.g(obj, j10);
                         m1 m1Var = (m1) i2Var.a;
                         m1Var.o(i16 << 3);
                         int i19 = m1Var.d;
                         try {
                             int i20 = i19 + 1;
                             try {
-                                m1Var.b[i19] = g10;
+                                m1Var.b[i19] = g7;
                                 m1Var.d = i20;
                                 break;
                             } catch (IndexOutOfBoundsException e) {
                                 e = e;
                                 i19 = i20;
-                                throw new z4(i19, m1Var.c, 1, e);
+                                throw new w4(i19, m1Var.c, 1, e);
                             }
-                        } catch (IndexOutOfBoundsException e7) {
-                            e = e7;
+                        } catch (IndexOutOfBoundsException e10) {
+                            e = e10;
                         }
                     } else {
                         continue;
@@ -1455,7 +1455,7 @@ public final class n2 implements t2 {
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                     if (unsafe.getObject(obj, j10) != null) {
                         int i31 = i13 / 3;
-                        throw a1.g.i(n2Var.b[i31 + i31]);
+                        throw c3.h0.k(n2Var.b[i31 + i31]);
                     }
                     break;
                 case 51:
@@ -1515,17 +1515,17 @@ public final class n2 implements t2 {
                         int i32 = m1Var3.d;
                         try {
                             i11 = i32 + 1;
-                        } catch (IndexOutOfBoundsException e10) {
-                            e = e10;
+                        } catch (IndexOutOfBoundsException e11) {
+                            e = e11;
                         }
                         try {
                             m1Var3.b[i32] = booleanValue;
                             m1Var3.d = i11;
                             break;
-                        } catch (IndexOutOfBoundsException e11) {
-                            e = e11;
+                        } catch (IndexOutOfBoundsException e12) {
+                            e = e12;
                             i32 = i11;
-                            throw new z4(i32, m1Var3.c, 1, e);
+                            throw new w4(i32, m1Var3.c, 1, e);
                         }
                     } else {
                         continue;
@@ -1595,8 +1595,8 @@ public final class n2 implements t2 {
                     }
                 case 67:
                     if (n2Var.p(i16, i13, obj)) {
-                        long w9 = w(obj, j10);
-                        ((m1) i2Var.a).p(i16, (w9 >> 63) ^ (w9 + w9));
+                        long w10 = w(obj, j10);
+                        ((m1) i2Var.a).p(i16, (w10 >> 63) ^ (w10 + w10));
                         break;
                     } else {
                         break;
@@ -2581,9 +2581,9 @@ public final class n2 implements t2 {
                     }
                 case 53:
                     if (n2Var.p(i16, i12, e1Var2)) {
-                        long w9 = w(e1Var2, j10);
+                        long w10 = w(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
-                        c10 = m1.c(w9);
+                        c10 = m1.c(w10);
                         h = b11 + c10;
                         b18 = h;
                         i14 += b18;
@@ -2597,9 +2597,9 @@ public final class n2 implements t2 {
                     }
                 case 54:
                     if (n2Var.p(i16, i12, e1Var2)) {
-                        long w10 = w(e1Var2, j10);
+                        long w11 = w(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
-                        c10 = m1.c(w10);
+                        c10 = m1.c(w11);
                         h = b11 + c10;
                         b18 = h;
                         i14 += b18;
@@ -2818,9 +2818,9 @@ public final class n2 implements t2 {
                     }
                 case 67:
                     if (n2Var.p(i16, i12, e1Var2)) {
-                        long w11 = w(e1Var2, j10);
+                        long w12 = w(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
-                        c10 = m1.c((w11 >> 63) ^ (w11 + w11));
+                        c10 = m1.c((w12 >> 63) ^ (w12 + w12));
                         h = b11 + c10;
                         b18 = h;
                         i14 += b18;

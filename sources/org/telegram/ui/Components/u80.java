@@ -1,90 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class u80 extends org.telegram.ui.ActionBar.h3 {
-    public boolean b;
+public final class u80 extends FrameLayout {
+    public View a;
+    public TextView b;
 
-    public u80(Context context, TLRPC.Chat chat) {
-        super(context, true);
-        setApplyBottomPadding(false);
-        setApplyTopPadding(false);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        setCustomView(linearLayout);
-        w9 w9Var = new w9(context);
-        w9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
-        linearLayout.addView(w9Var, w7.z5.t(90, 90, 49, 0, 29, 0, 0));
-        w9Var.e(chat, new h9(chat));
-        TextView textView = new TextView(context);
-        org.telegram.messenger.sl.k(18.0f, 1, textView);
-        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.j5, null);
-        textView.setGravity(1);
-        TextView f7 = org.telegram.messenger.sl.f(linearLayout, textView, w7.z5.t(-2, -2, 49, 17, 24, 17, 0), context);
-        f7.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.W(f7, org.telegram.ui.ActionBar.k6.r5, null);
-        f7.setGravity(1);
-        linearLayout.addView(f7, w7.z5.t(-2, -2, 49, 30, 8, 30, 0));
-        ChatObject.Call groupCall = AccountInstance.getInstance(this.currentAccount).getMessagesController().getGroupCall(chat.id, false);
-        if (groupCall != null) {
-            if (TextUtils.isEmpty(groupCall.call.title)) {
-                textView.setText(chat.title);
-            } else {
-                textView.setText(groupCall.call.title);
-            }
-            int i10 = groupCall.call.participants_count;
-            if (i10 == 0) {
-                f7.setText(LocaleController.getString(R.string.NoOneJoinedYet));
-            } else {
-                f7.setText(LocaleController.formatPluralString("Participants", i10, new Object[0]));
-            }
-        } else {
-            textView.setText(chat.title);
-            f7.setText(LocaleController.getString(R.string.NoOneJoinedYet));
-        }
-        t80 t80Var = new t80(context);
-        View view = new View(context);
-        t80Var.a = view;
-        view.setBackground(org.telegram.ui.ActionBar.a6.f(new float[]{4.0f}, org.telegram.ui.ActionBar.k6.Oh));
-        t80Var.addView(view, w7.z5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
-        TextView textView2 = new TextView(context);
-        t80Var.b = textView2;
-        textView2.setLines(1);
-        textView2.setSingleLine(true);
-        textView2.setGravity(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        textView2.setGravity(17);
-        org.telegram.messenger.v0.q(textView2, org.telegram.ui.ActionBar.k6.Sh, null, 1, 14.0f);
-        t80Var.addView(textView2, w7.z5.e(-2, -2, 17));
-        t80Var.setBackground(null);
-        if (ChatObject.isChannelOrGiga(chat)) {
-            t80Var.setText(LocaleController.getString(R.string.VoipChannelJoinVoiceChatUrl));
-        } else {
-            t80Var.setText(LocaleController.getString(R.string.VoipGroupJoinVoiceChatUrl));
-        }
-        view.setOnClickListener(new f0(this, 29));
-        linearLayout.addView(t80Var, w7.z5.t(-1, 50, 51, 0, 30, 0, 0));
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.h3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        if (this.b) {
-            m();
-        }
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
-
-    public abstract void m();
 }

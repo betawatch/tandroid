@@ -1,41 +1,55 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ix0 implements Runnable {
+public final /* synthetic */ class ix0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacySettingsActivity b;
+    public final /* synthetic */ kx0 b;
 
-    public /* synthetic */ ix0(PrivacySettingsActivity privacySettingsActivity, int i10) {
+    public /* synthetic */ ix0(kx0 kx0Var, int i10) {
         this.a = i10;
-        this.b = privacySettingsActivity;
+        this.b = kx0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10;
+        int i11;
         switch (this.a) {
             case 0:
-                PrivacySettingsActivity privacySettingsActivity = this.b;
-                privacySettingsActivity.a.l();
-                privacySettingsActivity.R = true;
-                break;
-            case 1:
-                this.b.c.dismiss();
+                PrivacyControlActivity privacyControlActivity = this.b.d;
+                privacyControlActivity.K = ((Integer) obj).intValue();
+                AndroidUtilities.updateVisibleRow(privacyControlActivity.c, privacyControlActivity.i0);
+                privacyControlActivity.F0();
                 break;
             default:
-                PrivacySettingsActivity privacySettingsActivity2 = this.b;
-                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(privacySettingsActivity2.getParentActivity(), null);
-                ybVar.d(R.raw.email_check_inbox, new String[0]);
-                ybVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
-                org.telegram.ui.Components.qc.g(privacySettingsActivity2, ybVar, 1500).j();
-                try {
-                    privacySettingsActivity2.fragmentView.performHapticFeedback(3, 2);
-                } catch (Exception unused) {
+                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
+                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
+                updatebirthday.flags |= 1;
+                updatebirthday.birthday = tL_birthday;
+                kx0 kx0Var = this.b;
+                PrivacyControlActivity privacyControlActivity2 = kx0Var.d;
+                TLRPC.UserFull userFull = privacyControlActivity2.getMessagesController().getUserFull(privacyControlActivity2.getUserConfig().getClientUserId());
+                TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
+                if (userFull != null) {
+                    userFull.flags2 |= 32;
+                    userFull.birthday = tL_birthday;
+                    privacyControlActivity2.getMessagesStorage().updateUserInfo(userFull, false);
                 }
-                privacySettingsActivity2.z0();
+                privacyControlActivity2.getMessagesController().invalidateContentSettings();
+                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new as0(kx0Var, userFull, tL_birthday2, 1), 1024);
+                i10 = ((org.telegram.ui.ActionBar.r2) privacyControlActivity2).currentAccount;
+                MessagesController.getInstance(i10).removeSuggestion(0L, "BIRTHDAY_SETUP");
+                i11 = ((org.telegram.ui.ActionBar.r2) privacyControlActivity2).currentAccount;
+                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumPromoUpdated, new Object[0]);
+                privacyControlActivity2.G0(true);
                 break;
         }
     }

@@ -1,89 +1,289 @@
 package ig;
 
-import android.text.TextUtils;
+import android.hardware.Camera;
+import android.widget.TextView;
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.WebFile;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.camera.CameraInfo;
+import org.telegram.messenger.camera.CameraSession;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.sc0;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.y9;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.Wallet.e2;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements Utilities.Callback5, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ x0(c1 c1Var, int i10) {
-        this.a = i10;
-        this.b = c1Var;
+    public /* synthetic */ x0(j1 j1Var, String str, boolean z10, TLObject tLObject, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
+        this.a = 0;
+        this.c = j1Var;
+        this.d = str;
+        this.b = z10;
+        this.h = tLObject;
+        this.n = user;
+        this.e = str2;
+        this.r = messagesStorage;
+        this.f = str3;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        switch (this.a) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r10v2 */
+    /* JADX WARN: Type inference failed for: r10v3, types: [a0.h, java.util.ArrayList] */
+    /* JADX WARN: Type inference failed for: r10v4 */
+    /* JADX WARN: Type inference failed for: r16v3 */
+    /* JADX WARN: Type inference failed for: r16v4 */
+    /* JADX WARN: Type inference failed for: r16v5 */
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        ?? r10;
+        TextView textView;
+        ?? r16;
+        int i10 = this.a;
+        boolean z11 = this.b;
+        Object obj = this.r;
+        Object obj2 = this.n;
+        Object obj3 = this.h;
+        Object obj4 = this.f;
+        Object obj5 = this.e;
+        Object obj6 = this.d;
+        Object obj7 = this.c;
+        switch (i10) {
+            case 0:
+                j1 j1Var = (j1) obj7;
+                String str = (String) obj6;
+                TLObject tLObject = (TLObject) obj3;
+                TLRPC.User user = (TLRPC.User) obj2;
+                String str2 = (String) obj5;
+                MessagesStorage messagesStorage = (MessagesStorage) obj;
+                String str3 = (String) obj4;
+                bb0 bb0Var = j1Var.V;
+                if (str.equals(j1Var.r0)) {
+                    j1Var.u0 = 0;
+                    if (z11 && tLObject == null) {
+                        j1Var.T(false, user, str, str2);
+                    } else if (bb0Var != null) {
+                        bb0Var.b(false);
+                    }
+                    if (tLObject instanceof TLRPC.TL_messages_botResults) {
+                        TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
+                        if (!z11 && tL_messages_botResults.cache_time != 0) {
+                            messagesStorage.saveBotCache(str3, tL_messages_botResults);
+                        }
+                        j1Var.s0 = tL_messages_botResults.next_offset;
+                        if (j1Var.T == null) {
+                            j1Var.T = tL_messages_botResults.switch_pm;
+                        }
+                        j1Var.U = tL_messages_botResults.switch_webview;
+                        int i11 = 0;
+                        while (i11 < tL_messages_botResults.results.size()) {
+                            TLRPC.BotInlineResult botInlineResult = tL_messages_botResults.results.get(i11);
+                            if (!(botInlineResult.document instanceof TLRPC.TL_document) && !(botInlineResult.photo instanceof TLRPC.TL_photo) && !"game".equals(botInlineResult.type) && botInlineResult.content == null && (botInlineResult.send_message instanceof TLRPC.TL_botInlineMessageMediaAuto)) {
+                                tL_messages_botResults.results.remove(i11);
+                                i11--;
+                            }
+                            botInlineResult.query_id = tL_messages_botResults.query_id;
+                            i11++;
+                        }
+                        if (j1Var.R == null || str2.length() == 0) {
+                            j1Var.R = tL_messages_botResults.results;
+                            j1Var.x0 = tL_messages_botResults.gallery;
+                            z10 = false;
+                        } else {
+                            j1Var.R.addAll(tL_messages_botResults.results);
+                            if (tL_messages_botResults.results.isEmpty()) {
+                                j1Var.s0 = "";
+                            }
+                            z10 = true;
+                        }
+                        e2.m0 m0Var = j1Var.p0;
+                        if (m0Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(m0Var);
+                            r10 = 0;
+                            j1Var.p0 = null;
+                        } else {
+                            r10 = 0;
+                        }
+                        j1Var.I = r10;
+                        j1Var.A0 = r10;
+                        j1Var.x = r10;
+                        j1Var.y = r10;
+                        j1Var.J = r10;
+                        j1Var.Q = r10;
+                        j1Var.M = r10;
+                        j1Var.N = r10;
+                        j1Var.K = r10;
+                        j1Var.P = r10;
+                        j1Var.o0 = false;
+                        bb0Var.a((j1Var.R.isEmpty() && j1Var.T == null && j1Var.U == null) ? false : true);
+                        if (!z10) {
+                            j1Var.l();
+                            break;
+                        } else {
+                            int i12 = (j1Var.T == null && j1Var.U == null) ? 0 : 1;
+                            j1Var.m(((j1Var.R.size() - tL_messages_botResults.results.size()) + i12) - 1);
+                            j1Var.s((j1Var.R.size() - tL_messages_botResults.results.size()) + i12, tL_messages_botResults.results.size());
+                            break;
+                        }
+                    }
+                }
+                break;
             case 1:
-                this.b.W();
+                ((ContactsController) obj7).lambda$performSyncPhoneBook$19((HashMap) obj6, (HashMap) obj5, this.b, (HashMap) obj4, (ArrayList) obj3, (HashMap) obj2, (boolean[]) obj);
                 break;
             case 2:
-                this.b.finishFragment();
+                ((MediaDataController) obj7).lambda$broadcastPinnedMessage$169((ArrayList) obj6, this.b, (ArrayList) obj5, (ArrayList) obj4, (ArrayList) obj3, (a0.h) obj2, (a0.h) obj);
+                break;
+            case 3:
+                ((SendMessagesHelper) obj7).lambda$sendCallback$46((TLRPC.TL_error) obj6, (TLObject) obj3, (TwoStepVerificationActivity) obj5, this.b, (MessageObject) obj4, (TL_keyboard.KeyboardButtonProto) obj2, (un) obj);
+                break;
+            case 4:
+                ((CameraController) obj7).lambda$recordVideo$14((Camera) obj6, (CameraSession) obj5, this.b, (File) obj4, (CameraInfo) obj3, (CameraController.VideoTakeCallback) obj2, (Runnable) obj);
                 break;
             default:
-                c1 c1Var = this.b;
-                c1Var.b.a(1.0f);
-                TLRPC.UserFull userFull = c1Var.getMessagesController().getUserFull(c1Var.getUserConfig().getClientUserId());
-                TL_account.updateBusinessLocation updatebusinesslocation = new TL_account.updateBusinessLocation();
-                if (userFull != null) {
-                    userFull.business_location = null;
-                    userFull.flags2 &= -3;
+                fi.d dVar = (fi.d) obj7;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) obj6;
+                e2 e2Var = l0Var.g;
+                TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj5;
+                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj4;
+                TextView textView2 = (TextView) obj3;
+                y9 y9Var = (y9) obj2;
+                TextView textView3 = (TextView) obj;
+                if (!z11) {
+                    ArrayList arrayList = e2Var.d;
+                    int size = arrayList.size();
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 < size) {
+                            Object obj8 = arrayList.get(i13);
+                            i13++;
+                            TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj8;
+                            textView = textView3;
+                            r16 = 0;
+                            ArrayList arrayList2 = arrayList;
+                            if (tonconnectsession2.id == tonconnectsession.id) {
+                                z1Var.e = tonconnectsession2;
+                            } else {
+                                textView3 = textView;
+                                arrayList = arrayList2;
+                            }
+                        } else {
+                            textView = textView3;
+                            r16 = 0;
+                        }
+                    }
+                    TL_wallet.tonConnectSession tonconnectsession3 = z1Var.e;
+                    boolean z12 = (tonconnectsession3.manifest == null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing) ? r16 : true;
+                    dVar.setEnabled((!z12 || z1Var.f) ? r16 : true);
+                    TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession3.manifest;
+                    if (tonconnectmanifest != null) {
+                        int i14 = R.string.WalletConnectToApp;
+                        Object[] objArr = new Object[1];
+                        objArr[r16] = tonconnectmanifest.name;
+                        textView2.setText(LocaleController.formatSpannable(i14, objArr));
+                        TLRPC.WebDocument webDocument = tonconnectsession3.manifest.icon;
+                        if (webDocument != null) {
+                            y9Var.n(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), "76_76", null, tonconnectsession3.manifest);
+                        }
+                    }
+                    Integer num = tonconnectsession3.manifest_error;
+                    if (num == null) {
+                        if (!z12) {
+                            textView.setText(LocaleController.getString((tonconnectsession3.closed || tonconnectsession3.closing) ? R.string.WalletTonConnectSessionClosed : R.string.Loading));
+                            break;
+                        } else {
+                            e2Var.getClass();
+                            textView.setText(LocaleController.getString(e2.u(z1Var) ? R.string.WalletConnectProofInfo : R.string.WalletConnectInfo));
+                            break;
+                        }
+                    } else {
+                        int i15 = R.string.WalletTonConnectManifestLoadFailed;
+                        Object[] objArr2 = new Object[1];
+                        objArr2[r16] = num;
+                        textView.setText(LocaleController.formatString(i15, objArr2));
+                        break;
+                    }
+                } else {
+                    dVar.setEnabled((!l0Var.E() || l0Var.s() == null || l0Var.x() == null || dVar.Q) ? false : true);
+                    break;
                 }
-                c1Var.getConnectionsManager().sendRequest(updatebusinesslocation, new y0(c1Var, 1));
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        c1 c1Var = this.b;
-        m61 m61Var = (m61) obj;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = m61Var.d;
-        if (i10 != 1 && m61Var.c != c1Var.n) {
-            if (i10 == 2) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c1Var.getParentActivity());
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.BusinessLocationClearTitle);
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.BusinessLocationClearMessage);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new x0(c1Var, 3));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                c1Var.showDialog(alertDialog$Builder.a);
-                return;
-            }
-            return;
-        }
-        if (c1Var.y != null && m61Var.c != c1Var.n) {
-            c1Var.y = null;
-            c1Var.a.Z2.N(true);
-            return;
-        }
-        sc0 sc0Var = new sc0(8);
-        if (c1Var.y != null) {
-            TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
-            tL_channelLocation.address = c1Var.E;
-            tL_channelLocation.geo_point = c1Var.y;
-            sc0Var.A0 = tL_channelLocation;
-        }
-        sc0Var.F0 = new ah.h0(18, c1Var, sc0Var);
-        if (c1Var.y != null || TextUtils.isEmpty(c1Var.E)) {
-            c1Var.presentFragment(sc0Var);
-            return;
-        }
-        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(c1Var.getParentActivity(), 3, null);
-        c2Var.i0 = false;
-        c2Var.r(200L);
-        Utilities.searchQueue.postRunnable(new v0(c1Var, sc0Var, c2Var));
+    public /* synthetic */ x0(Object obj, Object obj2, Object obj3, boolean z10, Serializable serializable, Object obj4, Object obj5, Object obj6, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z10;
+        this.f = serializable;
+        this.h = obj4;
+        this.n = obj5;
+        this.r = obj6;
+    }
+
+    public /* synthetic */ x0(MediaDataController mediaDataController, ArrayList arrayList, boolean z10, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, a0.h hVar, a0.h hVar2) {
+        this.a = 2;
+        this.c = mediaDataController;
+        this.d = arrayList;
+        this.b = z10;
+        this.e = arrayList2;
+        this.f = arrayList3;
+        this.h = arrayList4;
+        this.n = hVar;
+        this.r = hVar2;
+    }
+
+    public /* synthetic */ x0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, un unVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+        this.a = 3;
+        this.c = sendMessagesHelper;
+        this.d = tL_error;
+        this.h = tLObject;
+        this.e = twoStepVerificationActivity;
+        this.b = z10;
+        this.f = messageObject;
+        this.n = keyboardButtonProto;
+        this.r = unVar;
+    }
+
+    public /* synthetic */ x0(boolean z10, fi.d dVar, org.telegram.ui.Wallet.l0 l0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.z1 z1Var, TextView textView, y9 y9Var, TextView textView2) {
+        this.a = 5;
+        this.b = z10;
+        this.c = dVar;
+        this.d = l0Var;
+        this.e = tonconnectsession;
+        this.f = z1Var;
+        this.h = textView;
+        this.n = y9Var;
+        this.r = textView2;
     }
 }

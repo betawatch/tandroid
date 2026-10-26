@@ -1,100 +1,16 @@
 package rh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.bs;
+import r0.k1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class d extends View {
-    public final Drawable a;
-    public final ne.b b;
-    public final int c;
-    public e d;
+public interface d {
+    void M();
 
-    public d(Context context, int i10) {
-        super(context);
-        this.b = new ne.b(this, bs.h, 380L);
-        this.c = i10;
-        Drawable mutate = context.getResources().getDrawable(R.drawable.outline_poll_attach_24).mutate();
-        this.a = mutate;
-        r6.z(this, mutate, k6.o7, null, PorterDuff.Mode.SRC_IN);
-    }
+    View O();
 
-    public final void a(e eVar, boolean z10) {
-        e eVar2;
-        e eVar3;
-        this.b.a(eVar != null, z10);
-        if (isAttachedToWindow() && (eVar3 = this.d) != null) {
-            eVar3.b();
-        }
-        this.d = eVar;
-        if (!isAttachedToWindow() || (eVar2 = this.d) == null) {
-            return;
-        }
-        eVar2.a(this);
-    }
+    void k(k1 k1Var);
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        e eVar = this.d;
-        if (eVar != null) {
-            eVar.a(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        e eVar = this.d;
-        if (eVar != null) {
-            eVar.b();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float f7 = this.b.e;
-        if (f7 < 1.0f) {
-            canvas.save();
-            float f10 = 1.0f - f7;
-            canvas.scale(f10, f10, width, height);
-            this.a.draw(canvas);
-            canvas.restore();
-        }
-        if (f7 > 0.0f) {
-            float f11 = this.c;
-            int dp = AndroidUtilities.dp(f11);
-            int width2 = (getWidth() - dp) / 2;
-            int height2 = (getHeight() - dp) / 2;
-            canvas.save();
-            canvas.translate(width2, height2);
-            canvas.scale(f7, f7, AndroidUtilities.dp(f11) / 2.0f, AndroidUtilities.dp(f11) / 2.0f);
-            e eVar = this.d;
-            if (eVar != null) {
-                eVar.c(canvas, AndroidUtilities.dp(f11), AndroidUtilities.dp(f11));
-            }
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(24.0f);
-        int i14 = (i10 - dp) / 2;
-        int i15 = (i11 - dp) / 2;
-        this.a.setBounds(i14, i15, i14 + dp, dp + i15);
-    }
+    void t();
 }

@@ -1,6 +1,197 @@
 package f6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.os.Looper;
+import android.util.SparseIntArray;
+import com.google.android.gms.cast.MediaInfo;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.internal.cast.y;
+import e6.c0;
+import j$.util.DesugarCollections;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c extends a9.a implements e {
+public final class c {
+    public long b;
+    public final h c;
+    public ArrayList d;
+    public final SparseIntArray e;
+    public final s f;
+    public final ArrayList g;
+    public final ArrayDeque h;
+    public final y i;
+    public final r j;
+    public BasePendingResult k;
+    public BasePendingResult l;
+    public final Set m = DesugarCollections.synchronizedSet(new HashSet());
+    public final h6.b a = new h6.b("MediaQueue", null);
+
+    public c(h hVar) {
+        this.c = hVar;
+        Math.max(20, 1);
+        this.d = new ArrayList();
+        this.e = new SparseIntArray();
+        this.g = new ArrayList();
+        this.h = new ArrayDeque(20);
+        this.i = new y(Looper.getMainLooper(), 0);
+        this.j = new r(this, 0);
+        hVar.p(new c0(this, 1));
+        this.f = new s(this);
+        this.b = e();
+        d();
+    }
+
+    public static void a(c cVar) {
+        synchronized (cVar.m) {
+            try {
+                Iterator it = cVar.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public static /* bridge */ /* synthetic */ void b(c cVar) {
+        SparseIntArray sparseIntArray = cVar.e;
+        sparseIntArray.clear();
+        for (int i10 = 0; i10 < cVar.d.size(); i10++) {
+            sparseIntArray.put(((Integer) cVar.d.get(i10)).intValue(), i10);
+        }
+    }
+
+    public final void c() {
+        h();
+        this.d.clear();
+        this.e.clear();
+        this.f.evictAll();
+        this.g.clear();
+        this.i.removeCallbacks(this.j);
+        this.h.clear();
+        BasePendingResult basePendingResult = this.l;
+        if (basePendingResult != null) {
+            basePendingResult.c();
+            this.l = null;
+        }
+        BasePendingResult basePendingResult2 = this.k;
+        if (basePendingResult2 != null) {
+            basePendingResult2.c();
+            this.k = null;
+        }
+        g();
+        f();
+    }
+
+    public final void d() {
+        BasePendingResult basePendingResult;
+        BasePendingResult basePendingResult2;
+        o6.l.e("Must be called from the main thread.");
+        if (this.b != 0 && (basePendingResult = this.l) == null) {
+            if (basePendingResult != null) {
+                basePendingResult.c();
+                this.l = null;
+            }
+            BasePendingResult basePendingResult3 = this.k;
+            if (basePendingResult3 != null) {
+                basePendingResult3.c();
+                this.k = null;
+            }
+            h hVar = this.c;
+            hVar.getClass();
+            o6.l.e("Must be called from the main thread.");
+            if (hVar.w()) {
+                j jVar = new j(hVar);
+                h.x(jVar);
+                basePendingResult2 = jVar;
+            } else {
+                basePendingResult2 = h.t();
+            }
+            this.l = basePendingResult2;
+            basePendingResult2.i(new q(this, 0));
+        }
+    }
+
+    public final long e() {
+        d6.q e = this.c.e();
+        if (e == null) {
+            return 0L;
+        }
+        MediaInfo mediaInfo = e.a;
+        int i10 = mediaInfo == null ? -1 : mediaInfo.b;
+        int i11 = e.e;
+        int i12 = e.f;
+        int i13 = e.w;
+        if (i11 == 1) {
+            if (i12 != 1) {
+                if (i12 != 2) {
+                    if (i12 != 3) {
+                        return 0L;
+                    }
+                } else if (i10 != 2) {
+                    return 0L;
+                }
+            }
+            if (i13 == 0) {
+                return 0L;
+            }
+        }
+        return e.b;
+    }
+
+    public final void f() {
+        synchronized (this.m) {
+            try {
+                Iterator it = this.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void g() {
+        synchronized (this.m) {
+            try {
+                Iterator it = this.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void h() {
+        synchronized (this.m) {
+            try {
+                Iterator it = this.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
 }

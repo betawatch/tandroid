@@ -1,40 +1,33 @@
 package m4;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Looper;
-import java.util.HashMap;
-import v7.u6;
+import a8.fd;
+import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class x {
-    public static final Object b = new Object();
-    public static final HashMap c = new HashMap();
-    public final f0 a;
+public final class x {
+    public final f9.i0 a;
+    public final int b;
+    public final long c;
 
-    public x(Context context, String str, b2.f1 f1Var, e9.n0 n0Var, e9.n0 n0Var2, e9.n0 n0Var3, pb.a aVar, Bundle bundle, Bundle bundle2, e2.d dVar, boolean z10, boolean z11) {
-        synchronized (b) {
-            HashMap hashMap = c;
-            if (hashMap.containsKey(str)) {
-                throw new IllegalStateException("Session ID must be unique. ID=" + str);
-            }
-            hashMap.put(str, this);
-        }
-        this.a = new f0(this, context, str, f1Var, n0Var, n0Var2, n0Var3, aVar, bundle, bundle2, dVar, z10, z11);
+    public x(long j10, int i10, List list) {
+        this.a = f9.i0.u(list);
+        this.b = i10;
+        this.c = j10;
     }
 
-    public final void a(b2.f1 f1Var) {
-        f1Var.getClass();
-        u6.g(f1Var.P());
-        Looper A0 = f1Var.A0();
-        f0 f0Var = this.a;
-        u6.g(A0 == f0Var.t.a.A0());
-        u6.p(f1Var.A0() == Looper.myLooper());
-        m1 m1Var = f0Var.t;
-        if (f1Var == m1Var.a) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        f0Var.u(m1Var, new m1(f1Var));
+        if (!(obj instanceof x)) {
+            return false;
+        }
+        x xVar = (x) obj;
+        return this.a.equals(xVar.a) && this.b == xVar.b && this.c == xVar.c;
+    }
+
+    public final int hashCode() {
+        return fd.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
     }
 }

@@ -11,8 +11,8 @@ import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
-public final class q0 implements a1 {
-    public static final Unsafe o = k1.f();
+public final class q0 implements z0 {
+    public static final Unsafe o = i1.f();
     public final int[] a;
     public final Object[] b;
     public final int c;
@@ -25,10 +25,10 @@ public final class q0 implements a1 {
     public final int[] j;
     public final s0 k;
     public final h0 l;
-    public final d1 m;
+    public final c1 m;
     public final n0 n;
 
-    public q0(int[] iArr, Object[] objArr, int i10, int i11, int i12, j jVar, boolean z10, int[] iArr2, int[] iArr3, int[] iArr4, s0 s0Var, h0 h0Var, d1 d1Var, r rVar, n0 n0Var) {
+    public q0(int[] iArr, Object[] objArr, int i10, int i11, int i12, j jVar, boolean z10, int[] iArr2, int[] iArr3, int[] iArr4, s0 s0Var, h0 h0Var, c1 c1Var, r rVar, n0 n0Var) {
         this.a = iArr;
         this.b = objArr;
         this.c = i10;
@@ -40,37 +40,37 @@ public final class q0 implements a1 {
         this.j = iArr4;
         this.k = s0Var;
         this.l = h0Var;
-        this.m = d1Var;
+        this.m = c1Var;
         this.f = jVar;
         this.n = n0Var;
     }
 
     public static int A(Object obj, long j10) {
-        return ((Integer) k1.k(obj, j10)).intValue();
+        return ((Integer) i1.k(obj, j10)).intValue();
     }
 
     public static long B(Object obj, long j10) {
-        return ((Long) k1.k(obj, j10)).longValue();
+        return ((Long) i1.k(obj, j10)).longValue();
     }
 
-    public static int h(a1 a1Var, int i10, byte[] bArr, int i11, int i12, c0 c0Var, m mVar) {
-        int j10 = j(a1Var, bArr, i11, i12, mVar);
+    public static int h(z0 z0Var, int i10, byte[] bArr, int i11, int i12, c0 c0Var, m mVar) {
+        int j10 = j(z0Var, bArr, i11, i12, mVar);
         while (true) {
             c0Var.add(mVar.c);
             if (j10 >= i12) {
                 break;
             }
-            int f7 = n1.f(bArr, j10, mVar);
+            int f7 = l1.f(bArr, j10, mVar);
             if (i10 != mVar.a) {
                 break;
             }
-            j10 = j(a1Var, bArr, f7, i12, mVar);
+            j10 = j(z0Var, bArr, f7, i12, mVar);
         }
         return j10;
     }
 
-    public static int i(a1 a1Var, byte[] bArr, int i10, int i11, int i12, m mVar) {
-        q0 q0Var = (q0) a1Var;
+    public static int i(z0 z0Var, byte[] bArr, int i10, int i11, int i12, m mVar) {
+        q0 q0Var = (q0) z0Var;
         Object a2 = q0Var.a();
         int m10 = q0Var.m(a2, bArr, i10, i11, i12, mVar);
         q0Var.b(a2);
@@ -78,21 +78,21 @@ public final class q0 implements a1 {
         return m10;
     }
 
-    public static int j(a1 a1Var, byte[] bArr, int i10, int i11, m mVar) {
+    public static int j(z0 z0Var, byte[] bArr, int i10, int i11, m mVar) {
         int i12 = i10 + 1;
         int i13 = bArr[i10];
         if (i13 < 0) {
-            i12 = n1.d(i13, bArr, i12, mVar);
+            i12 = l1.d(i13, bArr, i12, mVar);
             i13 = mVar.a;
         }
         int i14 = i12;
         if (i13 < 0 || i13 > i11 - i14) {
             throw d0.a();
         }
-        Object a2 = a1Var.a();
+        Object a2 = z0Var.a();
         int i15 = i14 + i13;
-        a1Var.f(a2, bArr, i14, i15, mVar);
-        a1Var.b(a2);
+        z0Var.f(a2, bArr, i14, i15, mVar);
+        z0Var.b(a2);
         mVar.c = a2;
         return i15;
     }
@@ -110,7 +110,7 @@ public final class q0 implements a1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static q0 n(y0 y0Var, s0 s0Var, h0 h0Var, d1 d1Var, r rVar, n0 n0Var) {
+    public static q0 n(x0 x0Var, s0 s0Var, h0 h0Var, c1 c1Var, r rVar, n0 n0Var) {
         int i10;
         int i11;
         int i12;
@@ -125,92 +125,92 @@ public final class q0 implements a1 {
         int i17;
         Field b11;
         Field b12;
-        if (!(y0Var instanceof y0)) {
-            y0Var.getClass();
+        if (!(x0Var instanceof x0)) {
+            x0Var.getClass();
             throw new ClassCastException();
         }
-        z0 z0Var = y0Var.b;
+        y0 y0Var = x0Var.b;
         int i18 = 1;
-        boolean z10 = (z0Var.d & 1) != 1;
-        if (z0Var.e == 0) {
+        boolean z10 = (y0Var.d & 1) != 1;
+        if (y0Var.e == 0) {
             i10 = 0;
             i11 = 0;
             i12 = 0;
         } else {
-            int i19 = z0Var.g;
-            int i20 = z0Var.h;
-            i10 = z0Var.k;
+            int i19 = y0Var.g;
+            int i20 = y0Var.h;
+            i10 = y0Var.k;
             i11 = i19;
             i12 = i20;
         }
         int[] iArr2 = new int[i10 << 2];
         Object[] objArr = new Object[i10 << 1];
-        int i21 = z0Var.i;
+        int i21 = y0Var.i;
         int[] iArr3 = i21 > 0 ? new int[i21] : null;
-        int i22 = z0Var.l;
+        int i22 = y0Var.l;
         int[] iArr4 = i22 > 0 ? new int[i22] : null;
-        boolean a2 = z0Var.a();
-        Class cls = z0Var.c;
-        Object[] objArr2 = z0Var.b;
+        boolean a2 = y0Var.a();
+        Class cls = y0Var.c;
+        Object[] objArr2 = y0Var.b;
         if (a2) {
-            int i23 = z0Var.s;
+            int i23 = y0Var.s;
             int i24 = 0;
             int i25 = 0;
             int i26 = 0;
             while (true) {
-                if (i23 >= z0Var.j || i24 >= ((i23 - i11) << 2)) {
+                if (i23 >= y0Var.j || i24 >= ((i23 - i11) << 2)) {
                     int i27 = i18;
-                    int i28 = z0Var.u;
+                    int i28 = y0Var.u;
                     u uVar2 = u.s;
                     if (i28 <= uVar2.a) {
                         iArr = iArr2;
                         uVar = uVar2;
-                        Field field = z0Var.x;
-                        j1 j1Var = k1.d;
-                        int a10 = (int) j1Var.a(field);
-                        if ((z0Var.d & 1) == i27 && z0Var.u <= u.d.a) {
-                            int i29 = (z0Var.w / 32) + (z0Var.f << 1);
+                        Field field = y0Var.x;
+                        h1 h1Var = i1.d;
+                        int a10 = (int) h1Var.a(field);
+                        if ((y0Var.d & 1) == i27 && y0Var.u <= u.d.a) {
+                            int i29 = (y0Var.w / 32) + (y0Var.f << 1);
                             Object obj2 = objArr2[i29];
                             if (obj2 instanceof Field) {
                                 b10 = (Field) obj2;
                             } else {
-                                b10 = z0.b(cls, (String) obj2);
+                                b10 = y0.b(cls, (String) obj2);
                                 objArr2[i29] = b10;
                             }
-                            i14 = (int) j1Var.a(b10);
-                            i15 = z0Var.w % 32;
+                            i14 = (int) h1Var.a(b10);
+                            i15 = y0Var.w % 32;
                             i13 = a10;
-                            iArr[i24] = z0Var.s;
+                            iArr[i24] = y0Var.s;
                             int i30 = i24 + 1;
                             int i31 = i14;
-                            int i32 = z0Var.t;
+                            int i32 = y0Var.t;
                             int i33 = i13;
                             int i34 = ((i32 & 256) == 0 ? TLObject.FLAG_28 : 0) | ((i32 & 512) == 0 ? TLObject.FLAG_29 : 0);
-                            i16 = z0Var.u;
+                            i16 = y0Var.u;
                             iArr[i30] = i34 | (i16 << 20) | i33;
                             iArr[i24 + 2] = (i15 << 20) | i31;
-                            obj = z0Var.A;
+                            obj = y0Var.A;
                             if (obj == null) {
                                 int i35 = (i24 / 4) << 1;
                                 objArr[i35] = obj;
-                                Object obj3 = z0Var.y;
+                                Object obj3 = y0Var.y;
                                 if (obj3 != null) {
                                     objArr[i35 + 1] = obj3;
                                 } else {
-                                    Object obj4 = z0Var.z;
+                                    Object obj4 = y0Var.z;
                                     if (obj4 != null) {
                                         objArr[i35 + 1] = obj4;
                                     }
                                 }
                                 i17 = 1;
                             } else {
-                                Object obj5 = z0Var.y;
+                                Object obj5 = y0Var.y;
                                 if (obj5 != null) {
                                     i17 = 1;
                                     objArr[((i24 / 4) << 1) + 1] = obj5;
                                 } else {
                                     i17 = 1;
-                                    Object obj6 = z0Var.z;
+                                    Object obj6 = y0Var.z;
                                     if (obj6 != null) {
                                         objArr[((i24 / 4) << 1) + 1] = obj6;
                                     }
@@ -223,56 +223,56 @@ public final class q0 implements a1 {
                                 iArr4[i26] = iArr[i30] & 1048575;
                                 i26++;
                             }
-                            if (z0Var.a()) {
+                            if (y0Var.a()) {
                                 break;
                             }
-                            i23 = z0Var.s;
+                            i23 = y0Var.s;
                         } else {
                             i13 = a10;
                             i14 = 0;
                         }
                     } else {
-                        int i36 = z0Var.v << 1;
+                        int i36 = y0Var.v << 1;
                         Object obj7 = objArr2[i36];
                         iArr = iArr2;
                         if (obj7 instanceof Field) {
                             b11 = (Field) obj7;
                         } else {
-                            b11 = z0.b(cls, (String) obj7);
+                            b11 = y0.b(cls, (String) obj7);
                             objArr2[i36] = b11;
                         }
-                        j1 j1Var2 = k1.d;
+                        h1 h1Var2 = i1.d;
                         uVar = uVar2;
-                        int a11 = (int) j1Var2.a(b11);
-                        int i37 = (z0Var.v << 1) + 1;
+                        int a11 = (int) h1Var2.a(b11);
+                        int i37 = (y0Var.v << 1) + 1;
                         Object obj8 = objArr2[i37];
                         if (obj8 instanceof Field) {
                             b12 = (Field) obj8;
                         } else {
-                            b12 = z0.b(cls, (String) obj8);
+                            b12 = y0.b(cls, (String) obj8);
                             objArr2[i37] = b12;
                         }
-                        i14 = (int) j1Var2.a(b12);
+                        i14 = (int) h1Var2.a(b12);
                         i13 = a11;
                     }
                     i15 = 0;
-                    iArr[i24] = z0Var.s;
+                    iArr[i24] = y0Var.s;
                     int i302 = i24 + 1;
                     int i312 = i14;
-                    int i322 = z0Var.t;
+                    int i322 = y0Var.t;
                     int i332 = i13;
                     if ((i322 & 512) == 0) {
                     }
                     int i342 = ((i322 & 256) == 0 ? TLObject.FLAG_28 : 0) | ((i322 & 512) == 0 ? TLObject.FLAG_29 : 0);
-                    i16 = z0Var.u;
+                    i16 = y0Var.u;
                     iArr[i302] = i342 | (i16 << 20) | i332;
                     iArr[i24 + 2] = (i15 << 20) | i312;
-                    obj = z0Var.A;
+                    obj = y0Var.A;
                     if (obj == null) {
                     }
                     if (i16 != uVar.ordinal()) {
                     }
-                    if (z0Var.a()) {
+                    if (y0Var.a()) {
                     }
                 } else {
                     i17 = i18;
@@ -288,26 +288,26 @@ public final class q0 implements a1 {
         } else {
             iArr = iArr2;
         }
-        return new q0(iArr, objArr, i11, i12, z0Var.j, y0Var.a, z10, z0Var.m, iArr3, iArr4, s0Var, h0Var, d1Var, rVar, n0Var);
+        return new q0(iArr, objArr, i11, i12, y0Var.j, x0Var.a, z10, y0Var.m, iArr3, iArr4, s0Var, h0Var, c1Var, rVar, n0Var);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.a1
+    @Override // com.google.android.gms.internal.clearcut.z0
     public final Object a() {
         this.k.getClass();
         return ((z) this.f).a(4);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.a1
+    @Override // com.google.android.gms.internal.clearcut.z0
     public final void b(Object obj) {
         int[] iArr = this.i;
         if (iArr != null) {
             for (int i10 : iArr) {
                 long v = v(i10) & 1048575;
-                Object k10 = k1.k(obj, v);
+                Object k10 = i1.k(obj, v);
                 if (k10 != null) {
                     this.n.getClass();
                     ((m0) k10).a = false;
-                    k1.d(obj, v, k10);
+                    i1.d(obj, v, k10);
                 }
             }
         }
@@ -322,10 +322,10 @@ public final class q0 implements a1 {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // com.google.android.gms.internal.clearcut.a1
+    @Override // com.google.android.gms.internal.clearcut.z0
     public final void c(z zVar, z zVar2) {
         z zVar3;
-        j1 j1Var;
+        h1 h1Var;
         long h;
         int i10;
         zVar2.getClass();
@@ -337,7 +337,7 @@ public final class q0 implements a1 {
                 if (this.g) {
                     return;
                 }
-                b1.a(this.m, zVar4, zVar2);
+                a1.a(this.m, zVar4, zVar2);
                 return;
             }
             int v = v(i11);
@@ -349,8 +349,8 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     } else {
-                        j1 j1Var2 = k1.d;
-                        j1Var2.c(zVar3, j10, j1Var2.k(zVar2, j10));
+                        h1 h1Var2 = i1.d;
+                        h1Var2.c(zVar3, j10, h1Var2.k(zVar2, j10));
                         x(i11, zVar3);
                         break;
                     }
@@ -359,8 +359,8 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     } else {
-                        j1 j1Var3 = k1.d;
-                        j1Var3.d(zVar3, j10, j1Var3.j(zVar2, j10));
+                        h1 h1Var3 = i1.d;
+                        h1Var3.d(zVar3, j10, h1Var3.j(zVar2, j10));
                         x(i11, zVar3);
                         break;
                     }
@@ -369,9 +369,9 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    j1Var = k1.d;
-                    h = j1Var.h(zVar2, j10);
-                    j1Var.e(zVar3, j10, h);
+                    h1Var = i1.d;
+                    h = h1Var.h(zVar2, j10);
+                    h1Var.e(zVar3, j10, h);
                     x(i11, zVar3);
                     break;
                 case 3:
@@ -379,9 +379,9 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    j1Var = k1.d;
-                    h = j1Var.h(zVar2, j10);
-                    j1Var.e(zVar3, j10, h);
+                    h1Var = i1.d;
+                    h = h1Var.h(zVar2, j10);
+                    h1Var.e(zVar3, j10, h);
                     x(i11, zVar3);
                     break;
                 case 4:
@@ -389,7 +389,7 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.b(j10, zVar3, k1.d.g(zVar2, j10));
+                    i1.b(j10, zVar3, i1.d.g(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 5:
@@ -397,9 +397,9 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    j1Var = k1.d;
-                    h = j1Var.h(zVar2, j10);
-                    j1Var.e(zVar3, j10, h);
+                    h1Var = i1.d;
+                    h = h1Var.h(zVar2, j10);
+                    h1Var.e(zVar3, j10, h);
                     x(i11, zVar3);
                     break;
                 case 6:
@@ -407,7 +407,7 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.b(j10, zVar3, k1.d.g(zVar2, j10));
+                    i1.b(j10, zVar3, i1.d.g(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 7:
@@ -415,8 +415,8 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     } else {
-                        j1 j1Var4 = k1.d;
-                        j1Var4.f(zVar3, j10, j1Var4.i(zVar2, j10));
+                        h1 h1Var4 = i1.d;
+                        h1Var4.f(zVar3, j10, h1Var4.i(zVar2, j10));
                         x(i11, zVar3);
                         break;
                     }
@@ -425,7 +425,7 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.d(zVar3, j10, k1.k(zVar2, j10));
+                    i1.d(zVar3, j10, i1.k(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 9:
@@ -437,7 +437,7 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.d(zVar3, j10, k1.k(zVar2, j10));
+                    i1.d(zVar3, j10, i1.k(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 11:
@@ -445,7 +445,7 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.b(j10, zVar3, k1.d.g(zVar2, j10));
+                    i1.b(j10, zVar3, i1.d.g(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 12:
@@ -453,7 +453,7 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.b(j10, zVar3, k1.d.g(zVar2, j10));
+                    i1.b(j10, zVar3, i1.d.g(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 13:
@@ -461,7 +461,7 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.b(j10, zVar3, k1.d.g(zVar2, j10));
+                    i1.b(j10, zVar3, i1.d.g(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 14:
@@ -469,9 +469,9 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    j1Var = k1.d;
-                    h = j1Var.h(zVar2, j10);
-                    j1Var.e(zVar3, j10, h);
+                    h1Var = i1.d;
+                    h = h1Var.h(zVar2, j10);
+                    h1Var.e(zVar3, j10, h);
                     x(i11, zVar3);
                     break;
                 case 15:
@@ -479,15 +479,15 @@ public final class q0 implements a1 {
                     if (!r(i11, zVar2)) {
                         break;
                     }
-                    k1.b(j10, zVar3, k1.d.g(zVar2, j10));
+                    i1.b(j10, zVar3, i1.d.g(zVar2, j10));
                     x(i11, zVar3);
                     break;
                 case 16:
                     if (r(i11, zVar2)) {
-                        j1Var = k1.d;
-                        h = j1Var.h(zVar2, j10);
+                        h1Var = i1.d;
+                        h = h1Var.h(zVar2, j10);
                         zVar3 = zVar;
-                        j1Var.e(zVar3, j10, h);
+                        h1Var.e(zVar3, j10, h);
                         x(i11, zVar3);
                         break;
                     }
@@ -533,11 +533,11 @@ public final class q0 implements a1 {
                     zVar3 = zVar;
                     break;
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                    Class cls = b1.a;
-                    Object k10 = k1.k(zVar, j10);
-                    Object k11 = k1.k(zVar2, j10);
+                    Class cls = a1.a;
+                    Object k10 = i1.k(zVar, j10);
+                    Object k11 = i1.k(zVar2, j10);
                     this.n.getClass();
-                    k1.d(zVar, j10, n0.a(k10, k11));
+                    i1.d(zVar, j10, n0.a(k10, k11));
                     zVar3 = zVar;
                     break;
                 case 51:
@@ -550,9 +550,9 @@ public final class q0 implements a1 {
                 case 58:
                 case 59:
                     if (q(i12, i11, zVar2)) {
-                        k1.d(zVar, j10, k1.k(zVar2, j10));
+                        i1.d(zVar, j10, i1.k(zVar2, j10));
                         i10 = iArr[i11 + 2];
-                        k1.b(i10 & 1048575, zVar, i12);
+                        i1.b(i10 & 1048575, zVar, i12);
                     }
                     zVar3 = zVar;
                     break;
@@ -569,9 +569,9 @@ public final class q0 implements a1 {
                 case 66:
                 case 67:
                     if (q(i12, i11, zVar2)) {
-                        k1.d(zVar, j10, k1.k(zVar2, j10));
+                        i1.d(zVar, j10, i1.k(zVar2, j10));
                         i10 = iArr[i11 + 2];
-                        k1.b(i10 & 1048575, zVar, i12);
+                        i1.b(i10 & 1048575, zVar, i12);
                     }
                     zVar3 = zVar;
                     break;
@@ -586,7 +586,7 @@ public final class q0 implements a1 {
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x005f, code lost:
     
-        if (com.google.android.gms.internal.clearcut.b1.c(com.google.android.gms.internal.clearcut.k1.k(r12, r7), com.google.android.gms.internal.clearcut.k1.k(r13, r7)) != false) goto L104;
+        if (com.google.android.gms.internal.clearcut.a1.c(com.google.android.gms.internal.clearcut.i1.k(r12, r7), com.google.android.gms.internal.clearcut.i1.k(r13, r7)) != false) goto L104;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0074, code lost:
     
@@ -614,15 +614,15 @@ public final class q0 implements a1 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:43:0x00ec, code lost:
     
-        if (com.google.android.gms.internal.clearcut.b1.c(com.google.android.gms.internal.clearcut.k1.k(r12, r7), com.google.android.gms.internal.clearcut.k1.k(r13, r7)) != false) goto L104;
+        if (com.google.android.gms.internal.clearcut.a1.c(com.google.android.gms.internal.clearcut.i1.k(r12, r7), com.google.android.gms.internal.clearcut.i1.k(r13, r7)) != false) goto L104;
      */
     /* JADX WARN: Code restructure failed: missing block: B:47:0x0102, code lost:
     
-        if (com.google.android.gms.internal.clearcut.b1.c(com.google.android.gms.internal.clearcut.k1.k(r12, r7), com.google.android.gms.internal.clearcut.k1.k(r13, r7)) != false) goto L104;
+        if (com.google.android.gms.internal.clearcut.a1.c(com.google.android.gms.internal.clearcut.i1.k(r12, r7), com.google.android.gms.internal.clearcut.i1.k(r13, r7)) != false) goto L104;
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:0x0118, code lost:
     
-        if (com.google.android.gms.internal.clearcut.b1.c(com.google.android.gms.internal.clearcut.k1.k(r12, r7), com.google.android.gms.internal.clearcut.k1.k(r13, r7)) != false) goto L104;
+        if (com.google.android.gms.internal.clearcut.a1.c(com.google.android.gms.internal.clearcut.i1.k(r12, r7), com.google.android.gms.internal.clearcut.i1.k(r13, r7)) != false) goto L104;
      */
     /* JADX WARN: Code restructure failed: missing block: B:55:0x012c, code lost:
     
@@ -658,9 +658,9 @@ public final class q0 implements a1 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x003a, code lost:
     
-        if (com.google.android.gms.internal.clearcut.b1.c(com.google.android.gms.internal.clearcut.k1.k(r12, r7), com.google.android.gms.internal.clearcut.k1.k(r13, r7)) != false) goto L104;
+        if (com.google.android.gms.internal.clearcut.a1.c(com.google.android.gms.internal.clearcut.i1.k(r12, r7), com.google.android.gms.internal.clearcut.i1.k(r13, r7)) != false) goto L104;
      */
-    @Override // com.google.android.gms.internal.clearcut.a1
+    @Override // com.google.android.gms.internal.clearcut.z0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -676,56 +676,56 @@ public final class q0 implements a1 {
                 switch ((v & 267386880) >>> 20) {
                     case 0:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var = k1.d;
+                            h1 h1Var = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 1:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var2 = k1.d;
+                            h1 h1Var2 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 2:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var3 = k1.d;
+                            h1 h1Var3 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 3:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var4 = k1.d;
+                            h1 h1Var4 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 4:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var5 = k1.d;
+                            h1 h1Var5 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 5:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var6 = k1.d;
+                            h1 h1Var6 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 6:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var7 = k1.d;
+                            h1 h1Var7 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 7:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var8 = k1.d;
+                            h1 h1Var8 = i1.d;
                             break;
                         }
                         z10 = false;
@@ -750,42 +750,42 @@ public final class q0 implements a1 {
                         break;
                     case 11:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var9 = k1.d;
+                            h1 h1Var9 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 12:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var10 = k1.d;
+                            h1 h1Var10 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 13:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var11 = k1.d;
+                            h1 h1Var11 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 14:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var12 = k1.d;
+                            h1 h1Var12 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 15:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var13 = k1.d;
+                            h1 h1Var13 = i1.d;
                             break;
                         }
                         z10 = false;
                         break;
                     case 16:
                         if (z(zVar, zVar2, i10)) {
-                            j1 j1Var14 = k1.d;
+                            h1 h1Var14 = i1.d;
                             break;
                         }
                         z10 = false;
@@ -829,7 +829,7 @@ public final class q0 implements a1 {
                     case 48:
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                        z10 = b1.c(k1.k(zVar, j10), k1.k(zVar2, j10));
+                        z10 = a1.c(i1.k(zVar, j10), i1.k(zVar2, j10));
                         break;
                     case 51:
                     case 52:
@@ -850,8 +850,8 @@ public final class q0 implements a1 {
                     case 67:
                     case 68:
                         long j11 = iArr[i10 + 2] & 1048575;
-                        j1 j1Var15 = k1.d;
-                        if (j1Var15.g(zVar, j11) == j1Var15.g(zVar2, j11)) {
+                        h1 h1Var15 = i1.d;
+                        if (h1Var15.g(zVar, j11) == h1Var15.g(zVar2, j11)) {
                             break;
                         }
                         z10 = false;
@@ -887,7 +887,7 @@ public final class q0 implements a1 {
     
         if (r4 != false) goto L44;
      */
-    @Override // com.google.android.gms.internal.clearcut.a1
+    @Override // com.google.android.gms.internal.clearcut.z0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -910,13 +910,13 @@ public final class q0 implements a1 {
             switch ((v & 267386880) >>> 20) {
                 case 0:
                     i10 = i12 * 53;
-                    doubleToLongBits = Double.doubleToLongBits(k1.d.k(zVar, j10));
+                    doubleToLongBits = Double.doubleToLongBits(i1.d.k(zVar, j10));
                     floatToIntBits = a0.b(doubleToLongBits);
                     i12 = floatToIntBits + i10;
                     break;
                 case 1:
                     i10 = i12 * 53;
-                    floatToIntBits = Float.floatToIntBits(k1.d.j(zVar, j10));
+                    floatToIntBits = Float.floatToIntBits(i1.d.j(zVar, j10));
                     i12 = floatToIntBits + i10;
                     break;
                 case 2:
@@ -925,7 +925,7 @@ public final class q0 implements a1 {
                 case 14:
                 case 16:
                     i10 = i12 * 53;
-                    doubleToLongBits = k1.d.h(zVar, j10);
+                    doubleToLongBits = i1.d.h(zVar, j10);
                     floatToIntBits = a0.b(doubleToLongBits);
                     i12 = floatToIntBits + i10;
                     break;
@@ -936,21 +936,21 @@ public final class q0 implements a1 {
                 case 13:
                 case 15:
                     i10 = i12 * 53;
-                    floatToIntBits = k1.d.g(zVar, j10);
+                    floatToIntBits = i1.d.g(zVar, j10);
                     i12 = floatToIntBits + i10;
                     break;
                 case 7:
                     i11 = i12 * 53;
-                    boolean i17 = k1.d.i(zVar, j10);
+                    boolean i17 = i1.d.i(zVar, j10);
                     Charset charset = a0.a;
                     break;
                 case 8:
                     i10 = i12 * 53;
-                    floatToIntBits = ((String) k1.k(zVar, j10)).hashCode();
+                    floatToIntBits = ((String) i1.k(zVar, j10)).hashCode();
                     i12 = floatToIntBits + i10;
                     break;
                 case 9:
-                    Object k11 = k1.k(zVar, j10);
+                    Object k11 = i1.k(zVar, j10);
                     if (k11 != null) {
                         i16 = k11.hashCode();
                     }
@@ -958,11 +958,11 @@ public final class q0 implements a1 {
                     break;
                 case 10:
                     i10 = i12 * 53;
-                    floatToIntBits = k1.k(zVar, j10).hashCode();
+                    floatToIntBits = i1.k(zVar, j10).hashCode();
                     i12 = floatToIntBits + i10;
                     break;
                 case 17:
-                    Object k12 = k1.k(zVar, j10);
+                    Object k12 = i1.k(zVar, j10);
                     if (k12 != null) {
                         i16 = k12.hashCode();
                     }
@@ -1002,14 +1002,14 @@ public final class q0 implements a1 {
                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                     i10 = i12 * 53;
-                    k10 = k1.k(zVar, j10);
+                    k10 = i1.k(zVar, j10);
                     floatToIntBits = k10.hashCode();
                     i12 = floatToIntBits + i10;
                     break;
                 case 51:
                     if (q(i14, i13, zVar)) {
                         i10 = i12 * 53;
-                        doubleToLongBits2 = Double.doubleToLongBits(((Double) k1.k(zVar, j10)).doubleValue());
+                        doubleToLongBits2 = Double.doubleToLongBits(((Double) i1.k(zVar, j10)).doubleValue());
                         floatToIntBits = a0.b(doubleToLongBits2);
                         i12 = floatToIntBits + i10;
                         break;
@@ -1019,7 +1019,7 @@ public final class q0 implements a1 {
                 case 52:
                     if (q(i14, i13, zVar)) {
                         i10 = i12 * 53;
-                        floatToIntBits = Float.floatToIntBits(((Float) k1.k(zVar, j10)).floatValue());
+                        floatToIntBits = Float.floatToIntBits(((Float) i1.k(zVar, j10)).floatValue());
                         i12 = floatToIntBits + i10;
                         break;
                     } else {
@@ -1071,7 +1071,7 @@ public final class q0 implements a1 {
                 case 58:
                     if (q(i14, i13, zVar)) {
                         i11 = i12 * 53;
-                        boolean booleanValue = ((Boolean) k1.k(zVar, j10)).booleanValue();
+                        boolean booleanValue = ((Boolean) i1.k(zVar, j10)).booleanValue();
                         Charset charset2 = a0.a;
                         break;
                     } else {
@@ -1080,7 +1080,7 @@ public final class q0 implements a1 {
                 case 59:
                     if (q(i14, i13, zVar)) {
                         i10 = i12 * 53;
-                        floatToIntBits = ((String) k1.k(zVar, j10)).hashCode();
+                        floatToIntBits = ((String) i1.k(zVar, j10)).hashCode();
                         i12 = floatToIntBits + i10;
                         break;
                     } else {
@@ -1090,7 +1090,7 @@ public final class q0 implements a1 {
                     if (!q(i14, i13, zVar)) {
                         break;
                     }
-                    k10 = k1.k(zVar, j10);
+                    k10 = i1.k(zVar, j10);
                     i10 = i12 * 53;
                     floatToIntBits = k10.hashCode();
                     i12 = floatToIntBits + i10;
@@ -1100,7 +1100,7 @@ public final class q0 implements a1 {
                         break;
                     }
                     i10 = i12 * 53;
-                    k10 = k1.k(zVar, j10);
+                    k10 = i1.k(zVar, j10);
                     floatToIntBits = k10.hashCode();
                     i12 = floatToIntBits + i10;
                     break;
@@ -1158,7 +1158,7 @@ public final class q0 implements a1 {
                     if (!q(i14, i13, zVar)) {
                         break;
                     }
-                    k10 = k1.k(zVar, j10);
+                    k10 = i1.k(zVar, j10);
                     i10 = i12 * 53;
                     floatToIntBits = k10.hashCode();
                     i12 = floatToIntBits + i10;
@@ -1175,7 +1175,7 @@ public final class q0 implements a1 {
      */
     /* JADX WARN: Failed to find 'out' block for switch in B:13:0x0041. Please report as an issue. */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0218  */
-    @Override // com.google.android.gms.internal.clearcut.a1
+    @Override // com.google.android.gms.internal.clearcut.z0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1183,7 +1183,7 @@ public final class q0 implements a1 {
         Unsafe unsafe;
         int i12;
         int i13;
-        c1 c1Var;
+        b1 b1Var;
         int k10;
         Unsafe unsafe2;
         Object obj2;
@@ -1204,16 +1204,16 @@ public final class q0 implements a1 {
             int i17 = i16 + 1;
             int i18 = bArr2[i16];
             if (i18 < 0) {
-                i17 = n1.d(i18, bArr2, i17, mVar2);
+                i17 = l1.d(i18, bArr2, i17, mVar2);
                 i18 = mVar2.a;
             }
             int i19 = i18;
             int i20 = i17;
             int i21 = i19 >>> 3;
             int i22 = i19 & 7;
-            int w9 = q0Var.w(i21);
-            if (w9 >= 0) {
-                int i23 = q0Var.a[w9 + 1];
+            int w10 = q0Var.w(i21);
+            if (w10 >= 0) {
+                int i23 = q0Var.a[w10 + 1];
                 int i24 = (267386880 & i23) >>> 20;
                 long j10 = 1048575 & i23;
                 if (i24 <= 17) {
@@ -1224,36 +1224,36 @@ public final class q0 implements a1 {
                                 i12 = i20;
                                 i13 = i12;
                                 z zVar = (z) obj;
-                                c1Var = zVar.zzjp;
-                                if (c1Var == c1.e) {
-                                    c1Var = c1.b();
-                                    zVar.zzjp = c1Var;
+                                b1Var = zVar.zzjp;
+                                if (b1Var == b1.e) {
+                                    b1Var = b1.b();
+                                    zVar.zzjp = b1Var;
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                k1.d.c(obj, j10, Double.longBitsToDouble(n1.r(i20, bArr2)));
+                                i1.d.c(obj, j10, Double.longBitsToDouble(l1.r(i20, bArr2)));
                                 i16 = i20 + 8;
                                 break;
                             }
                         case 1:
                             unsafe = unsafe3;
                             if (i22 == 5) {
-                                k1.d.d(obj, j10, Float.intBitsToFloat(n1.o(i20, bArr2)));
+                                i1.d.d(obj, j10, Float.intBitsToFloat(l1.o(i20, bArr2)));
                                 i16 = i20 + 4;
                                 break;
                             }
                             i12 = i20;
                             i13 = i12;
                             z zVar2 = (z) obj;
-                            c1Var = zVar2.zzjp;
-                            if (c1Var == c1.e) {
+                            b1Var = zVar2.zzjp;
+                            if (b1Var == b1.e) {
                             }
-                            i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                            i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                             q0Var = this;
                             bArr2 = bArr;
                             mVar2 = mVar;
@@ -1267,17 +1267,17 @@ public final class q0 implements a1 {
                                 i12 = i20;
                                 i13 = i12;
                                 z zVar22 = (z) obj;
-                                c1Var = zVar22.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar22.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                int m10 = n1.m(bArr2, i20, mVar2);
+                                int m10 = l1.m(bArr2, i20, mVar2);
                                 unsafe4.putLong(obj, j10, mVar2.b);
                                 unsafe = unsafe4;
                                 i16 = m10;
@@ -1292,17 +1292,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar222 = (z) obj;
-                                c1Var = zVar222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                i16 = n1.f(bArr2, i20, mVar2);
+                                i16 = l1.f(bArr2, i20, mVar2);
                                 unsafe2.putInt(obj, j10, mVar2.a);
                                 unsafe3 = unsafe2;
                                 break;
@@ -1316,17 +1316,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar2222 = (z) obj;
-                                c1Var = zVar2222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar2222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                unsafe2.putLong(obj, j10, n1.r(i20, bArr2));
+                                unsafe2.putLong(obj, j10, l1.r(i20, bArr2));
                                 i16 = i20 + 8;
                                 unsafe3 = unsafe2;
                                 break;
@@ -1340,17 +1340,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar22222 = (z) obj;
-                                c1Var = zVar22222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar22222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                unsafe2.putInt(obj, j10, n1.o(i20, bArr2));
+                                unsafe2.putInt(obj, j10, l1.o(i20, bArr2));
                                 i16 = i20 + 4;
                                 unsafe3 = unsafe2;
                                 break;
@@ -1363,18 +1363,18 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar222222 = (z) obj;
-                                c1Var = zVar222222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar222222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                i16 = n1.m(bArr2, i20, mVar2);
-                                k1.d.f(obj, j10, mVar2.b != 0);
+                                i16 = l1.m(bArr2, i20, mVar2);
+                                i1.d.f(obj, j10, mVar2.b != 0);
                                 unsafe3 = unsafe2;
                                 break;
                             }
@@ -1387,10 +1387,10 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar2222222 = (z) obj;
-                                c1Var = zVar2222222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar2222222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
@@ -1398,7 +1398,7 @@ public final class q0 implements a1 {
                                 break;
                             } else {
                                 if ((536870912 & i23) == 0) {
-                                    i16 = n1.f(bArr2, i20, mVar2);
+                                    i16 = l1.f(bArr2, i20, mVar2);
                                     int i25 = mVar2.a;
                                     if (i25 == 0) {
                                         mVar2.c = "";
@@ -1407,7 +1407,7 @@ public final class q0 implements a1 {
                                         i16 += i25;
                                     }
                                 } else {
-                                    i16 = n1.q(bArr2, i20, mVar2);
+                                    i16 = l1.q(bArr2, i20, mVar2);
                                 }
                                 a2 = mVar2.c;
                                 unsafe2.putObject(obj2, j10, a2);
@@ -1423,17 +1423,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar22222222 = (z) obj;
-                                c1Var = zVar22222222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar22222222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                i16 = j(q0Var.s(w9), bArr2, i20, i15, mVar2);
+                                i16 = j(q0Var.s(w10), bArr2, i20, i15, mVar2);
                                 Object object = unsafe2.getObject(obj2, j10);
                                 a2 = object == null ? mVar2.c : a0.a(object, mVar2.c);
                                 unsafe2.putObject(obj2, j10, a2);
@@ -1449,17 +1449,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar222222222 = (z) obj;
-                                c1Var = zVar222222222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar222222222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                i16 = n1.s(bArr2, i20, mVar2);
+                                i16 = l1.s(bArr2, i20, mVar2);
                                 a2 = mVar2.c;
                                 unsafe2.putObject(obj2, j10, a2);
                                 unsafe3 = unsafe2;
@@ -1474,17 +1474,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar2222222222 = (z) obj;
-                                c1Var = zVar2222222222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar2222222222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                i16 = n1.f(bArr2, i20, mVar2);
+                                i16 = l1.f(bArr2, i20, mVar2);
                                 i14 = mVar2.a;
                                 unsafe2.putInt(obj3, j10, i14);
                                 unsafe3 = unsafe2;
@@ -1499,17 +1499,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar22222222222 = (z) obj;
-                                c1Var = zVar22222222222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar22222222222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                i16 = n1.f(bArr2, i20, mVar2);
+                                i16 = l1.f(bArr2, i20, mVar2);
                                 int i26 = mVar2.a;
                                 i14 = (-(i26 & 1)) ^ (i26 >>> 1);
                                 unsafe2.putInt(obj3, j10, i14);
@@ -1524,17 +1524,17 @@ public final class q0 implements a1 {
                                 unsafe = unsafe2;
                                 i13 = i12;
                                 z zVar222222222222 = (z) obj;
-                                c1Var = zVar222222222222.zzjp;
-                                if (c1Var == c1.e) {
+                                b1Var = zVar222222222222.zzjp;
+                                if (b1Var == b1.e) {
                                 }
-                                i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                                i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                                 q0Var = this;
                                 bArr2 = bArr;
                                 mVar2 = mVar;
                                 i15 = i11;
                                 break;
                             } else {
-                                int m11 = n1.m(bArr2, i20, mVar2);
+                                int m11 = l1.m(bArr2, i20, mVar2);
                                 long j11 = mVar2.b;
                                 unsafe3.putLong(obj, j10, (-(j11 & 1)) ^ (j11 >>> 1));
                                 unsafe2 = unsafe3;
@@ -1554,7 +1554,7 @@ public final class q0 implements a1 {
                                 c0Var = c0Var.f(size == 0 ? 10 : size << 1);
                                 unsafe.putObject(obj, j10, c0Var);
                             }
-                            i16 = h(q0Var.s(w9), i19, bArr2, i20, i15, c0Var, mVar2);
+                            i16 = h(q0Var.s(w10), i19, bArr2, i20, i15, c0Var, mVar2);
                             bArr2 = bArr;
                             i15 = i11;
                             mVar2 = mVar;
@@ -1563,10 +1563,10 @@ public final class q0 implements a1 {
                             i12 = i20;
                             i13 = i12;
                             z zVar2222222222222 = (z) obj;
-                            c1Var = zVar2222222222222.zzjp;
-                            if (c1Var == c1.e) {
+                            b1Var = zVar2222222222222.zzjp;
+                            if (b1Var == b1.e) {
                             }
-                            i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                            i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                             q0Var = this;
                             bArr2 = bArr;
                             mVar2 = mVar;
@@ -1574,11 +1574,11 @@ public final class q0 implements a1 {
                         }
                     } else if (i24 <= 49) {
                         i19 = i19;
-                        k10 = q0Var.l(obj, bArr, i20, i11, i19, i21, i22, w9, i23, i24, j10, mVar);
+                        k10 = q0Var.l(obj, bArr, i20, i11, i19, i21, i22, w10, i23, i24, j10, mVar);
                     } else {
                         i19 = i19;
                         if (i24 != 50) {
-                            k10 = q0Var.k(obj, bArr, i20, i11, i19, i21, i22, i23, i24, j10, w9, mVar);
+                            k10 = q0Var.k(obj, bArr, i20, i11, i19, i21, i22, i23, i24, j10, w10, mVar);
                             if (k10 != i20) {
                                 q0Var = this;
                                 bArr2 = bArr;
@@ -1588,26 +1588,26 @@ public final class q0 implements a1 {
                             }
                             i13 = k10;
                             z zVar22222222222222 = (z) obj;
-                            c1Var = zVar22222222222222.zzjp;
-                            if (c1Var == c1.e) {
+                            b1Var = zVar22222222222222.zzjp;
+                            if (b1Var == b1.e) {
                             }
-                            i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                            i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                             q0Var = this;
                             bArr2 = bArr;
                             mVar2 = mVar;
                             i15 = i11;
                         } else {
                             if (i22 == 2) {
-                                q0Var.p(j10, obj, w9);
+                                q0Var.p(j10, obj, w10);
                                 throw null;
                             }
                             i12 = i20;
                             i13 = i12;
                             z zVar222222222222222 = (z) obj;
-                            c1Var = zVar222222222222222.zzjp;
-                            if (c1Var == c1.e) {
+                            b1Var = zVar222222222222222.zzjp;
+                            if (b1Var == b1.e) {
                             }
-                            i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+                            i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
                             q0Var = this;
                             bArr2 = bArr;
                             mVar2 = mVar;
@@ -1621,10 +1621,10 @@ public final class q0 implements a1 {
             i12 = i20;
             i13 = i12;
             z zVar2222222222222222 = (z) obj;
-            c1Var = zVar2222222222222222.zzjp;
-            if (c1Var == c1.e) {
+            b1Var = zVar2222222222222222.zzjp;
+            if (b1Var == b1.e) {
             }
-            i16 = n1.c(i19, bArr, i13, i11, c1Var, mVar);
+            i16 = l1.c(i19, bArr, i13, i11, b1Var, mVar);
             q0Var = this;
             bArr2 = bArr;
             mVar2 = mVar;
@@ -1636,7 +1636,7 @@ public final class q0 implements a1 {
         }
     }
 
-    @Override // com.google.android.gms.internal.clearcut.a1
+    @Override // com.google.android.gms.internal.clearcut.z0
     public final boolean g(Object obj) {
         boolean z10;
         int[] iArr;
@@ -1652,15 +1652,15 @@ public final class q0 implements a1 {
             int i13 = 0;
             while (i12 < length) {
                 int i14 = iArr2[i12];
-                int w9 = w(i14);
-                int v = v(w9);
+                int w10 = w(i14);
+                int v = v(w10);
                 boolean z12 = this.g;
                 if (z12) {
                     z10 = z11 ? 1 : 0;
                     iArr = iArr2;
                     i10 = 0;
                 } else {
-                    int i15 = this.a[w9 + 2];
+                    int i15 = this.a[w10 + 2];
                     int i16 = i15 & 1048575;
                     i10 = (z11 ? 1 : 0) << (i15 >>> 20);
                     if (i16 != i11) {
@@ -1675,13 +1675,13 @@ public final class q0 implements a1 {
                     }
                 }
                 if ((268435456 & v) != 0) {
-                    if (!(z12 ? r(w9, obj) : (i13 & i10) != 0 ? z10 : false)) {
+                    if (!(z12 ? r(w10, obj) : (i13 & i10) != 0 ? z10 : false)) {
                         return false;
                     }
                 }
                 int i17 = (267386880 & v) >>> 20;
                 if (i17 == 9 || i17 == 17) {
-                    if ((z12 ? r(w9, obj) : (i13 & i10) != 0 ? z10 : false) && !s(w9).g(k1.k(obj, v & 1048575))) {
+                    if ((z12 ? r(w10, obj) : (i13 & i10) != 0 ? z10 : false) && !s(w10).g(i1.k(obj, v & 1048575))) {
                         return false;
                     }
                     i12++;
@@ -1690,17 +1690,17 @@ public final class q0 implements a1 {
                 } else {
                     if (i17 != 27) {
                         if (i17 == 60 || i17 == 68) {
-                            if (q(i14, w9, obj) && !s(w9).g(k1.k(obj, v & 1048575))) {
+                            if (q(i14, w10, obj) && !s(w10).g(i1.k(obj, v & 1048575))) {
                                 return false;
                             }
                         } else if (i17 != 49) {
                             if (i17 != 50) {
                                 continue;
                             } else {
-                                Object k10 = k1.k(obj, v & 1048575);
+                                Object k10 = i1.k(obj, v & 1048575);
                                 this.n.getClass();
                                 if (!((m0) k10).isEmpty()) {
-                                    t(w9);
+                                    t(w10);
                                     throw new NoSuchMethodError();
                                 }
                             }
@@ -1709,11 +1709,11 @@ public final class q0 implements a1 {
                         z11 = z10;
                         iArr2 = iArr;
                     }
-                    List list = (List) k1.k(obj, v & 1048575);
+                    List list = (List) i1.k(obj, v & 1048575);
                     if (list.isEmpty()) {
                         continue;
                     } else {
-                        a1 s10 = s(w9);
+                        z0 s10 = s(w10);
                         for (int i18 = 0; i18 < list.size(); i18++) {
                             if (!s10.g(list.get(i18))) {
                                 return false;
@@ -1747,7 +1747,7 @@ public final class q0 implements a1 {
                 if (i14 != 1) {
                     return i18;
                 }
-                valueOf = Double.valueOf(Double.longBitsToDouble(n1.r(i18, bArr)));
+                valueOf = Double.valueOf(Double.longBitsToDouble(l1.r(i18, bArr)));
                 unsafe.putObject(obj, j10, valueOf);
                 m10 = i18 + 8;
                 unsafe.putInt(obj, j12, i13);
@@ -1757,7 +1757,7 @@ public final class q0 implements a1 {
                 if (i14 != 5) {
                     return i19;
                 }
-                valueOf2 = Float.valueOf(Float.intBitsToFloat(n1.o(i19, bArr)));
+                valueOf2 = Float.valueOf(Float.intBitsToFloat(l1.o(i19, bArr)));
                 unsafe.putObject(obj, j10, valueOf2);
                 m10 = i19 + 4;
                 unsafe.putInt(obj, j12, i13);
@@ -1767,7 +1767,7 @@ public final class q0 implements a1 {
                 if (i14 != 0) {
                     return i10;
                 }
-                m10 = n1.m(bArr, i10, mVar);
+                m10 = l1.m(bArr, i10, mVar);
                 j11 = mVar.b;
                 valueOf3 = Long.valueOf(j11);
                 unsafe.putObject(obj, j10, valueOf3);
@@ -1778,7 +1778,7 @@ public final class q0 implements a1 {
                 if (i14 != 0) {
                     return i10;
                 }
-                m10 = n1.f(bArr, i10, mVar);
+                m10 = l1.f(bArr, i10, mVar);
                 i20 = mVar.a;
                 valueOf3 = Integer.valueOf(i20);
                 unsafe.putObject(obj, j10, valueOf3);
@@ -1790,7 +1790,7 @@ public final class q0 implements a1 {
                 if (i14 != 1) {
                     return i18;
                 }
-                valueOf = Long.valueOf(n1.r(i18, bArr));
+                valueOf = Long.valueOf(l1.r(i18, bArr));
                 unsafe.putObject(obj, j10, valueOf);
                 m10 = i18 + 8;
                 unsafe.putInt(obj, j12, i13);
@@ -1801,7 +1801,7 @@ public final class q0 implements a1 {
                 if (i14 != 5) {
                     return i19;
                 }
-                valueOf2 = Integer.valueOf(n1.o(i19, bArr));
+                valueOf2 = Integer.valueOf(l1.o(i19, bArr));
                 unsafe.putObject(obj, j10, valueOf2);
                 m10 = i19 + 4;
                 unsafe.putInt(obj, j12, i13);
@@ -1810,7 +1810,7 @@ public final class q0 implements a1 {
                 if (i14 != 0) {
                     return i10;
                 }
-                m10 = n1.m(bArr, i10, mVar);
+                m10 = l1.m(bArr, i10, mVar);
                 valueOf3 = Boolean.valueOf(mVar.b != 0);
                 unsafe.putObject(obj, j10, valueOf3);
                 unsafe.putInt(obj, j12, i13);
@@ -1819,13 +1819,13 @@ public final class q0 implements a1 {
                 if (i14 != 2) {
                     return i10;
                 }
-                int f7 = n1.f(bArr, i10, mVar);
+                int f7 = l1.f(bArr, i10, mVar);
                 int i21 = mVar.a;
                 if (i21 == 0) {
                     unsafe.putObject(obj, j10, "");
                 } else {
                     if ((i15 & TLObject.FLAG_29) != 0) {
-                        if (!m1.a.t(bArr, f7, f7 + i21)) {
+                        if (!k1.a.t(bArr, f7, f7 + i21)) {
                             throw new d0("Protocol message had invalid UTF-8.");
                         }
                     }
@@ -1851,7 +1851,7 @@ public final class q0 implements a1 {
                 if (i14 != 2) {
                     return i10;
                 }
-                int f10 = n1.f(bArr, i10, mVar);
+                int f10 = l1.f(bArr, i10, mVar);
                 int i22 = mVar.a;
                 if (i22 == 0) {
                     unsafe.putObject(obj, j10, o.c);
@@ -1865,7 +1865,7 @@ public final class q0 implements a1 {
                 if (i14 != 0) {
                     return i10;
                 }
-                int f11 = n1.f(bArr, i10, mVar);
+                int f11 = l1.f(bArr, i10, mVar);
                 int i23 = mVar.a;
                 b0 u10 = u(i17);
                 if (u10 == null || u10.a(i23) != null) {
@@ -1875,18 +1875,18 @@ public final class q0 implements a1 {
                     return m10;
                 }
                 z zVar = (z) obj;
-                c1 c1Var = zVar.zzjp;
-                if (c1Var == c1.e) {
-                    c1Var = c1.b();
-                    zVar.zzjp = c1Var;
+                b1 b1Var = zVar.zzjp;
+                if (b1Var == b1.e) {
+                    b1Var = b1.b();
+                    zVar.zzjp = b1Var;
                 }
-                c1Var.a(i12, Long.valueOf(i23));
+                b1Var.a(i12, Long.valueOf(i23));
                 return f11;
             case 66:
                 if (i14 != 0) {
                     return i10;
                 }
-                m10 = n1.f(bArr, i10, mVar);
+                m10 = l1.f(bArr, i10, mVar);
                 int i24 = mVar.a;
                 i20 = (-(i24 & 1)) ^ (i24 >>> 1);
                 valueOf3 = Integer.valueOf(i20);
@@ -1897,7 +1897,7 @@ public final class q0 implements a1 {
                 if (i14 != 0) {
                     return i10;
                 }
-                m10 = n1.m(bArr, i10, mVar);
+                m10 = l1.m(bArr, i10, mVar);
                 long j14 = mVar.b;
                 j11 = (-(j14 & 1)) ^ (j14 >>> 1);
                 valueOf3 = Long.valueOf(j11);
@@ -1936,7 +1936,7 @@ public final class q0 implements a1 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:122:0x01c0, code lost:
     
-        r1 = com.google.android.gms.internal.clearcut.n1.f(r13, r12, r25);
+        r1 = com.google.android.gms.internal.clearcut.l1.f(r13, r12, r25);
      */
     /* JADX WARN: Code restructure failed: missing block: B:123:0x01c6, code lost:
     
@@ -1944,7 +1944,7 @@ public final class q0 implements a1 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:124:0x01c8, code lost:
     
-        r12 = com.google.android.gms.internal.clearcut.n1.f(r13, r1, r25);
+        r12 = com.google.android.gms.internal.clearcut.l1.f(r13, r1, r25);
         r1 = r25.a;
      */
     /* JADX WARN: Code restructure failed: missing block: B:125:0x01ce, code lost:
@@ -1989,7 +1989,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        Double.longBitsToDouble(n1.r(i10, bArr));
+                        Double.longBitsToDouble(l1.r(i10, bArr));
                         throw null;
                     }
                     return i10;
@@ -1997,10 +1997,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f7 = n1.f(bArr, i10, mVar);
+                int f7 = l1.f(bArr, i10, mVar);
                 int i17 = mVar.a + f7;
                 if (f7 < i17) {
-                    Double.longBitsToDouble(n1.r(f7, bArr));
+                    Double.longBitsToDouble(l1.r(f7, bArr));
                     throw null;
                 }
                 if (f7 == i17) {
@@ -2014,7 +2014,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        Float.intBitsToFloat(n1.o(i10, bArr));
+                        Float.intBitsToFloat(l1.o(i10, bArr));
                         throw null;
                     }
                     return i10;
@@ -2022,10 +2022,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f10 = n1.f(bArr, i10, mVar);
+                int f10 = l1.f(bArr, i10, mVar);
                 int i18 = mVar.a + f10;
                 if (f10 < i18) {
-                    Float.intBitsToFloat(n1.o(f10, bArr));
+                    Float.intBitsToFloat(l1.o(f10, bArr));
                     throw null;
                 }
                 if (f10 == i18) {
@@ -2041,7 +2041,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.m(bArr, i10, mVar);
+                        l1.m(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
@@ -2049,10 +2049,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f11 = n1.f(bArr, i10, mVar);
+                int f11 = l1.f(bArr, i10, mVar);
                 int i19 = mVar.a + f11;
                 if (f11 < i19) {
-                    n1.m(bArr, f11, mVar);
+                    l1.m(bArr, f11, mVar);
                     throw null;
                 }
                 if (f11 == i19) {
@@ -2068,7 +2068,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.f(bArr, i10, mVar);
+                        l1.f(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
@@ -2076,10 +2076,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f12 = n1.f(bArr, i10, mVar);
+                int f12 = l1.f(bArr, i10, mVar);
                 int i20 = mVar.a + f12;
                 if (f12 < i20) {
-                    n1.f(bArr, f12, mVar);
+                    l1.f(bArr, f12, mVar);
                     throw null;
                 }
                 if (f12 == i20) {
@@ -2095,7 +2095,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.r(i10, bArr);
+                        l1.r(i10, bArr);
                         throw null;
                     }
                     return i10;
@@ -2103,10 +2103,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f13 = n1.f(bArr, i10, mVar);
+                int f13 = l1.f(bArr, i10, mVar);
                 int i21 = mVar.a + f13;
                 if (f13 < i21) {
-                    n1.r(f13, bArr);
+                    l1.r(f13, bArr);
                     throw null;
                 }
                 if (f13 == i21) {
@@ -2122,7 +2122,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.o(i10, bArr);
+                        l1.o(i10, bArr);
                         throw null;
                     }
                     return i10;
@@ -2130,10 +2130,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f14 = n1.f(bArr, i10, mVar);
+                int f14 = l1.f(bArr, i10, mVar);
                 int i22 = mVar.a + f14;
                 if (f14 < i22) {
-                    n1.o(f14, bArr);
+                    l1.o(f14, bArr);
                     throw null;
                 }
                 if (f14 == i22) {
@@ -2147,7 +2147,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.m(bArr, i10, mVar);
+                        l1.m(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
@@ -2155,10 +2155,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f15 = n1.f(bArr, i10, mVar);
+                int f15 = l1.f(bArr, i10, mVar);
                 int i23 = mVar.a + f15;
                 if (f15 < i23) {
-                    n1.m(bArr, f15, mVar);
+                    l1.m(bArr, f15, mVar);
                     throw null;
                 }
                 if (f15 == i23) {
@@ -2168,17 +2168,17 @@ public final class q0 implements a1 {
             case 26:
                 if (i14 == 2) {
                     if ((j10 & 536870912) == 0) {
-                        int f16 = n1.f(bArr, i10, mVar);
+                        int f16 = l1.f(bArr, i10, mVar);
                         int i24 = mVar.a;
                         if (i24 != 0) {
                             c0Var.add(new String(bArr, f16, i24, a0.a));
                             f16 += i24;
                             while (f16 < i11) {
-                                int f17 = n1.f(bArr, f16, mVar);
+                                int f17 = l1.f(bArr, f16, mVar);
                                 if (i12 != mVar.a) {
                                     return f16;
                                 }
-                                f16 = n1.f(bArr, f17, mVar);
+                                f16 = l1.f(bArr, f17, mVar);
                                 int i25 = mVar.a;
                                 if (i25 != 0) {
                                     c0Var.add(new String(bArr, f16, i25, a0.a));
@@ -2192,25 +2192,25 @@ public final class q0 implements a1 {
                         }
                         return f16;
                     }
-                    int f18 = n1.f(bArr, i10, mVar);
+                    int f18 = l1.f(bArr, i10, mVar);
                     int i26 = mVar.a;
                     if (i26 != 0) {
                         int i27 = f18 + i26;
-                        if (!m1.a.t(bArr, f18, i27)) {
+                        if (!k1.a.t(bArr, f18, i27)) {
                             throw new d0("Protocol message had invalid UTF-8.");
                         }
                         c0Var.add(new String(bArr, f18, i26, a0.a));
                         f18 = i27;
                         while (f18 < i11) {
-                            int f19 = n1.f(bArr, f18, mVar);
+                            int f19 = l1.f(bArr, f18, mVar);
                             if (i12 != mVar.a) {
                                 return f18;
                             }
-                            f18 = n1.f(bArr, f19, mVar);
+                            f18 = l1.f(bArr, f19, mVar);
                             int i28 = mVar.a;
                             if (i28 != 0) {
                                 int i29 = f18 + i28;
-                                if (!m1.a.t(bArr, f18, i29)) {
+                                if (!k1.a.t(bArr, f18, i29)) {
                                     throw new d0("Protocol message had invalid UTF-8.");
                                 }
                                 c0Var.add(new String(bArr, f18, i28, a0.a));
@@ -2232,7 +2232,7 @@ public final class q0 implements a1 {
                 return i10;
             case 28:
                 if (i14 == 2) {
-                    int f20 = n1.f(bArr, i10, mVar);
+                    int f20 = l1.f(bArr, i10, mVar);
                     int i30 = mVar.a;
                     break;
                 }
@@ -2244,7 +2244,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.f(bArr, i10, mVar);
+                        l1.f(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
@@ -2252,22 +2252,22 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f21 = n1.f(bArr, i10, mVar);
+                int f21 = l1.f(bArr, i10, mVar);
                 int i31 = mVar.a + f21;
                 if (f21 < i31) {
-                    n1.f(bArr, f21, mVar);
+                    l1.f(bArr, f21, mVar);
                     throw null;
                 }
                 if (f21 != i31) {
                     throw d0.a();
                 }
                 z zVar = (z) obj;
-                c1 c1Var = zVar.zzjp;
-                c1 c1Var2 = c1Var != c1.e ? c1Var : null;
+                b1 b1Var = zVar.zzjp;
+                b1 b1Var2 = b1Var != b1.e ? b1Var : null;
                 b0 u10 = u(i15);
-                Class cls = b1.a;
+                Class cls = a1.a;
                 if (u10 != null) {
-                    d1 d1Var = this.m;
+                    c1 c1Var = this.m;
                     if (c0Var != null) {
                         int size2 = c0Var.size();
                         int i32 = 0;
@@ -2280,12 +2280,12 @@ public final class q0 implements a1 {
                                 }
                                 i32++;
                             } else {
-                                if (c1Var2 == null) {
-                                    d1Var.getClass();
-                                    c1Var2 = c1.b();
+                                if (b1Var2 == null) {
+                                    c1Var.getClass();
+                                    b1Var2 = b1.b();
                                 }
-                                d1Var.getClass();
-                                c1Var2.a(i13 << 3, Long.valueOf(intValue));
+                                c1Var.getClass();
+                                b1Var2.a(i13 << 3, Long.valueOf(intValue));
                             }
                         }
                         if (i32 != size2) {
@@ -2296,19 +2296,19 @@ public final class q0 implements a1 {
                         while (it.hasNext()) {
                             int intValue2 = ((Integer) it.next()).intValue();
                             if (u10.a(intValue2) == null) {
-                                if (c1Var2 == null) {
-                                    d1Var.getClass();
-                                    c1Var2 = c1.b();
+                                if (b1Var2 == null) {
+                                    c1Var.getClass();
+                                    b1Var2 = b1.b();
                                 }
-                                d1Var.getClass();
-                                c1Var2.a(i13 << 3, Long.valueOf(intValue2));
+                                c1Var.getClass();
+                                b1Var2.a(i13 << 3, Long.valueOf(intValue2));
                                 it.remove();
                             }
                         }
                     }
                 }
-                if (c1Var2 != null) {
-                    zVar.zzjp = c1Var2;
+                if (b1Var2 != null) {
+                    zVar.zzjp = b1Var2;
                 }
                 return f21;
             case 33:
@@ -2318,7 +2318,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.f(bArr, i10, mVar);
+                        l1.f(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
@@ -2326,10 +2326,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f22 = n1.f(bArr, i10, mVar);
+                int f22 = l1.f(bArr, i10, mVar);
                 int i34 = mVar.a + f22;
                 if (f22 < i34) {
-                    n1.f(bArr, f22, mVar);
+                    l1.f(bArr, f22, mVar);
                     throw null;
                 }
                 if (f22 == i34) {
@@ -2343,7 +2343,7 @@ public final class q0 implements a1 {
                         if (c0Var != null) {
                             throw new ClassCastException();
                         }
-                        n1.m(bArr, i10, mVar);
+                        l1.m(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
@@ -2351,10 +2351,10 @@ public final class q0 implements a1 {
                 if (c0Var != null) {
                     throw new ClassCastException();
                 }
-                int f23 = n1.f(bArr, i10, mVar);
+                int f23 = l1.f(bArr, i10, mVar);
                 int i35 = mVar.a + f23;
                 if (f23 < i35) {
-                    n1.m(bArr, f23, mVar);
+                    l1.m(bArr, f23, mVar);
                     throw null;
                 }
                 if (f23 == i35) {
@@ -2363,22 +2363,22 @@ public final class q0 implements a1 {
                 throw d0.a();
             case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
                 if (i14 == 3) {
-                    a1 s10 = s(i15);
+                    z0 s10 = s(i15);
                     int i36 = (i12 & (-8)) | 4;
                     int i37 = i(s10, bArr, i10, i11, i36, mVar);
-                    a1 a1Var = s10;
+                    z0 z0Var = s10;
                     m mVar2 = mVar;
                     c0Var.add(mVar2.c);
                     while (i37 < i11) {
-                        int f24 = n1.f(bArr, i37, mVar2);
+                        int f24 = l1.f(bArr, i37, mVar2);
                         if (i12 != mVar2.a) {
                             return i37;
                         }
                         m mVar3 = mVar2;
-                        a1 a1Var2 = a1Var;
-                        i37 = i(a1Var2, bArr, f24, i11, i36, mVar3);
+                        z0 z0Var2 = z0Var;
+                        i37 = i(z0Var2, bArr, f24, i11, i36, mVar3);
                         c0Var.add(mVar3.c);
-                        a1Var = a1Var2;
+                        z0Var = z0Var2;
                         mVar2 = mVar3;
                     }
                     return i37;
@@ -2404,7 +2404,7 @@ public final class q0 implements a1 {
         Object obj2;
         int i15;
         int i16;
-        c1 c1Var;
+        b1 b1Var;
         int i17;
         int i18;
         int i19;
@@ -2420,7 +2420,7 @@ public final class q0 implements a1 {
         Unsafe unsafe5;
         int i23;
         int i24;
-        int q6;
+        int q5;
         Object a2;
         m mVar3;
         int l4;
@@ -2441,22 +2441,22 @@ public final class q0 implements a1 {
                 int i31 = i27 + 1;
                 int i32 = bArr4[i27];
                 if (i32 < 0) {
-                    i31 = n1.d(i32, bArr4, i31, mVar4);
+                    i31 = l1.d(i32, bArr4, i31, mVar4);
                     i32 = mVar4.a;
                 }
                 int i33 = i32;
                 int i34 = i31;
                 int i35 = i33 >>> 3;
                 int i36 = i33 & 7;
-                int w9 = q0Var2.w(i35);
-                c1 c1Var2 = c1.e;
-                if (w9 != i26) {
-                    int i37 = iArr2[w9 + 1];
+                int w10 = q0Var2.w(i35);
+                b1 b1Var2 = b1.e;
+                if (w10 != i26) {
+                    int i37 = iArr2[w10 + 1];
                     int i38 = (i37 & 267386880) >>> 20;
                     int i39 = i33;
                     long j10 = i37 & 1048575;
                     if (i38 <= 17) {
-                        int i40 = iArr2[w9 + 2];
+                        int i40 = iArr2[w10 + 2];
                         int i41 = 1 << (i40 >>> 20);
                         int i42 = i40 & 1048575;
                         if (i42 != i28) {
@@ -2485,7 +2485,7 @@ public final class q0 implements a1 {
                                 i21 = i11;
                                 mVar4 = mVar;
                                 if (i36 == i17) {
-                                    k1.d.c(obj3, j10, Double.longBitsToDouble(n1.r(i20, bArr2)));
+                                    i1.d.c(obj3, j10, Double.longBitsToDouble(l1.r(i20, bArr2)));
                                     i27 = i20 + 8;
                                     int i43 = i19;
                                     i30 = i15 | i41;
@@ -2511,13 +2511,13 @@ public final class q0 implements a1 {
                                         break;
                                     } else {
                                         z zVar = (z) obj2;
-                                        c1Var = zVar.zzjp;
-                                        if (c1Var == c1Var2) {
-                                            c1Var = c1.b();
-                                            zVar.zzjp = c1Var;
+                                        b1Var = zVar.zzjp;
+                                        if (b1Var == b1Var2) {
+                                            b1Var = b1.b();
+                                            zVar.zzjp = b1Var;
                                         }
                                         int i44 = i29;
-                                        int c10 = n1.c(i44, bArr, i16, i11, c1Var, mVar);
+                                        int c10 = l1.c(i44, bArr, i16, i11, b1Var, mVar);
                                         i29 = i44;
                                         bArr4 = bArr;
                                         mVar4 = mVar;
@@ -2538,7 +2538,7 @@ public final class q0 implements a1 {
                                 i21 = i11;
                                 mVar4 = mVar;
                                 if (i36 == 5) {
-                                    k1.d.d(obj3, j10, Float.intBitsToFloat(n1.o(i20, bArr2)));
+                                    i1.d.d(obj3, j10, Float.intBitsToFloat(l1.o(i20, bArr2)));
                                     i27 = i20 + 4;
                                     int i432 = i19;
                                     i30 = i15 | i41;
@@ -2560,11 +2560,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar2 = (z) obj2;
-                                    c1Var = zVar2.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar2.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i442 = i29;
-                                    int c102 = n1.c(i442, bArr, i16, i11, c1Var, mVar);
+                                    int c102 = l1.c(i442, bArr, i16, i11, b1Var, mVar);
                                     i29 = i442;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2585,7 +2585,7 @@ public final class q0 implements a1 {
                                 i21 = i11;
                                 mVar4 = mVar;
                                 if (i36 == 0) {
-                                    int m10 = n1.m(bArr, i20, mVar4);
+                                    int m10 = l1.m(bArr, i20, mVar4);
                                     unsafe3.putLong(obj3, j10, mVar4.b);
                                     unsafe2 = unsafe3;
                                     int i45 = i19;
@@ -2610,11 +2610,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar22 = (z) obj2;
-                                    c1Var = zVar22.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar22.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i4422 = i29;
-                                    int c1022 = n1.c(i4422, bArr, i16, i11, c1Var, mVar);
+                                    int c1022 = l1.c(i4422, bArr, i16, i11, b1Var, mVar);
                                     i29 = i4422;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2634,7 +2634,7 @@ public final class q0 implements a1 {
                                 i20 = i34;
                                 mVar4 = mVar;
                                 if (i36 == 0) {
-                                    int f7 = n1.f(bArr, i20, mVar4);
+                                    int f7 = l1.f(bArr, i20, mVar4);
                                     unsafe3.putInt(obj3, j10, mVar4.a);
                                     i25 = i11;
                                     unsafe6 = unsafe3;
@@ -2657,11 +2657,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar222 = (z) obj2;
-                                    c1Var = zVar222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i44222 = i29;
-                                    int c10222 = n1.c(i44222, bArr, i16, i11, c1Var, mVar);
+                                    int c10222 = l1.c(i44222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i44222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2681,7 +2681,7 @@ public final class q0 implements a1 {
                                 if (i36 == i17) {
                                     i39 = i39;
                                     mVar4 = mVar;
-                                    unsafe4.putLong(obj3, j10, n1.r(i34, bArr));
+                                    unsafe4.putLong(obj3, j10, l1.r(i34, bArr));
                                     i27 = i34 + 8;
                                     unsafe6 = unsafe4;
                                     bArr4 = bArr;
@@ -2705,11 +2705,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar2222 = (z) obj2;
-                                    c1Var = zVar2222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar2222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i442222 = i29;
-                                    int c102222 = n1.c(i442222, bArr, i16, i11, c1Var, mVar);
+                                    int c102222 = l1.c(i442222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i442222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2732,7 +2732,7 @@ public final class q0 implements a1 {
                                 i23 = i39;
                                 i24 = i11;
                                 if (i36 == 5) {
-                                    unsafe5.putInt(obj3, j10, n1.o(i22, bArr3));
+                                    unsafe5.putInt(obj3, j10, l1.o(i22, bArr3));
                                     i27 = i22 + 4;
                                     int i46 = i19;
                                     i30 = i15 | i41;
@@ -2759,11 +2759,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar22222 = (z) obj2;
-                                    c1Var = zVar22222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar22222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i4422222 = i29;
-                                    int c1022222 = n1.c(i4422222, bArr, i16, i11, c1Var, mVar);
+                                    int c1022222 = l1.c(i4422222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i4422222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2785,8 +2785,8 @@ public final class q0 implements a1 {
                                 i23 = i39;
                                 i24 = i11;
                                 if (i36 == 0) {
-                                    i27 = n1.m(bArr3, i22, mVar2);
-                                    k1.d.f(obj3, j10, mVar2.b != 0 ? i17 : 0);
+                                    i27 = l1.m(bArr3, i22, mVar2);
+                                    i1.d.f(obj3, j10, mVar2.b != 0 ? i17 : 0);
                                     int i462 = i19;
                                     i30 = i15 | i41;
                                     bArr4 = bArr3;
@@ -2812,11 +2812,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar222222 = (z) obj2;
-                                    c1Var = zVar222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i44222222 = i29;
-                                    int c10222222 = n1.c(i44222222, bArr, i16, i11, c1Var, mVar);
+                                    int c10222222 = l1.c(i44222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i44222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2839,18 +2839,18 @@ public final class q0 implements a1 {
                                 i24 = i11;
                                 if (i36 == 2) {
                                     if ((i18 & TLObject.FLAG_29) == 0) {
-                                        q6 = n1.f(bArr3, i22, mVar2);
+                                        q5 = l1.f(bArr3, i22, mVar2);
                                         int i48 = mVar2.a;
                                         if (i48 == 0) {
                                             mVar2.c = "";
                                         } else {
-                                            mVar2.c = new String(bArr3, q6, i48, a0.a);
-                                            q6 += i48;
+                                            mVar2.c = new String(bArr3, q5, i48, a0.a);
+                                            q5 += i48;
                                         }
                                     } else {
-                                        q6 = n1.q(bArr3, i22, mVar2);
+                                        q5 = l1.q(bArr3, i22, mVar2);
                                     }
-                                    i27 = q6;
+                                    i27 = q5;
                                     a2 = mVar2.c;
                                     unsafe5.putObject(obj3, j10, a2);
                                     int i4622 = i19;
@@ -2878,11 +2878,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar2222222 = (z) obj2;
-                                    c1Var = zVar2222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar2222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i442222222 = i29;
-                                    int c102222222 = n1.c(i442222222, bArr, i16, i11, c1Var, mVar);
+                                    int c102222222 = l1.c(i442222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i442222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2904,7 +2904,7 @@ public final class q0 implements a1 {
                                 i23 = i39;
                                 i24 = i11;
                                 if (i36 == 2) {
-                                    i27 = j(q0Var2.s(w9), bArr3, i22, i24, mVar2);
+                                    i27 = j(q0Var2.s(w10), bArr3, i22, i24, mVar2);
                                     a2 = (i15 & i41) == 0 ? mVar2.c : a0.a(unsafe5.getObject(obj3, j10), mVar2.c);
                                     unsafe5.putObject(obj3, j10, a2);
                                     int i46222 = i19;
@@ -2932,11 +2932,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar22222222 = (z) obj2;
-                                    c1Var = zVar22222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar22222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i4422222222 = i29;
-                                    int c1022222222 = n1.c(i4422222222, bArr, i16, i11, c1Var, mVar);
+                                    int c1022222222 = l1.c(i4422222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i4422222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -2958,7 +2958,7 @@ public final class q0 implements a1 {
                                 i23 = i39;
                                 i24 = i11;
                                 if (i36 == 2) {
-                                    i27 = n1.s(bArr3, i22, mVar2);
+                                    i27 = l1.s(bArr3, i22, mVar2);
                                     a2 = mVar2.c;
                                     unsafe5.putObject(obj3, j10, a2);
                                     int i462222 = i19;
@@ -2986,11 +2986,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar222222222 = (z) obj2;
-                                    c1Var = zVar222222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar222222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i44222222222 = i29;
-                                    int c10222222222 = n1.c(i44222222222, bArr, i16, i11, c1Var, mVar);
+                                    int c10222222222 = l1.c(i44222222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i44222222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -3010,9 +3010,9 @@ public final class q0 implements a1 {
                                 unsafe5 = unsafe6;
                                 i24 = i11;
                                 if (i36 == 0) {
-                                    i27 = n1.f(bArr3, i34, mVar2);
+                                    i27 = l1.f(bArr3, i34, mVar2);
                                     int i49 = mVar2.a;
-                                    b0 u10 = q0Var2.u(w9);
+                                    b0 u10 = q0Var2.u(w10);
                                     if (u10 == null || u10.a(i49) != null) {
                                         i23 = i39;
                                         unsafe5.putInt(obj3, j10, i49);
@@ -3028,12 +3028,12 @@ public final class q0 implements a1 {
                                         break;
                                     } else {
                                         z zVar3 = (z) obj3;
-                                        c1 c1Var3 = zVar3.zzjp;
-                                        if (c1Var3 == c1Var2) {
-                                            c1Var3 = c1.b();
-                                            zVar3.zzjp = c1Var3;
+                                        b1 b1Var3 = zVar3.zzjp;
+                                        if (b1Var3 == b1Var2) {
+                                            b1Var3 = b1.b();
+                                            zVar3.zzjp = b1Var3;
                                         }
-                                        c1Var3.a(i39, Long.valueOf(i49));
+                                        b1Var3.a(i39, Long.valueOf(i49));
                                         unsafe6 = unsafe5;
                                         i25 = i24;
                                         mVar4 = mVar2;
@@ -3057,11 +3057,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar2222222222 = (z) obj2;
-                                    c1Var = zVar2222222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar2222222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i442222222222 = i29;
-                                    int c102222222222 = n1.c(i442222222222, bArr, i16, i11, c1Var, mVar);
+                                    int c102222222222 = l1.c(i442222222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i442222222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -3079,7 +3079,7 @@ public final class q0 implements a1 {
                                 mVar3 = mVar;
                                 unsafe4 = unsafe6;
                                 if (i36 == 0) {
-                                    i27 = n1.f(bArr, i34, mVar3);
+                                    i27 = l1.f(bArr, i34, mVar3);
                                     int i50 = mVar3.a;
                                     unsafe4.putInt(obj3, j10, (-(i50 & 1)) ^ (i50 >>> 1));
                                     int i51 = i19;
@@ -3105,11 +3105,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar22222222222 = (z) obj2;
-                                    c1Var = zVar22222222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar22222222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i4422222222222 = i29;
-                                    int c1022222222222 = n1.c(i4422222222222, bArr, i16, i11, c1Var, mVar);
+                                    int c1022222222222 = l1.c(i4422222222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i4422222222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -3126,7 +3126,7 @@ public final class q0 implements a1 {
                             case 16:
                                 mVar3 = mVar;
                                 if (i36 == 0) {
-                                    int m11 = n1.m(bArr, i34, mVar3);
+                                    int m11 = l1.m(bArr, i34, mVar3);
                                     long j11 = mVar3.b;
                                     Unsafe unsafe7 = unsafe6;
                                     unsafe7.putLong(obj3, j10, (j11 >>> i17) ^ (-(j11 & 1)));
@@ -3154,11 +3154,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar222222222222 = (z) obj2;
-                                    c1Var = zVar222222222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar222222222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i44222222222222 = i29;
-                                    int c10222222222222 = n1.c(i44222222222222, bArr, i16, i11, c1Var, mVar);
+                                    int c10222222222222 = l1.c(i44222222222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i44222222222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -3174,7 +3174,7 @@ public final class q0 implements a1 {
                                 break;
                             case 17:
                                 if (i36 == 3) {
-                                    i27 = i(q0Var2.s(w9), bArr, i34, i11, (i35 << 3) | 4, mVar);
+                                    i27 = i(q0Var2.s(w10), bArr, i34, i11, (i35 << 3) | 4, mVar);
                                     unsafe6.putObject(obj3, j10, (i15 & i41) == 0 ? mVar.c : a0.a(unsafe6.getObject(obj3, j10), mVar.c));
                                     int i53 = i19;
                                     i30 = i15 | i41;
@@ -3198,11 +3198,11 @@ public final class q0 implements a1 {
                                     if (i29 != i14) {
                                     }
                                     z zVar2222222222222 = (z) obj2;
-                                    c1Var = zVar2222222222222.zzjp;
-                                    if (c1Var == c1Var2) {
+                                    b1Var = zVar2222222222222.zzjp;
+                                    if (b1Var == b1Var2) {
                                     }
                                     int i442222222222222 = i29;
-                                    int c102222222222222 = n1.c(i442222222222222, bArr, i16, i11, c1Var, mVar);
+                                    int c102222222222222 = l1.c(i442222222222222, bArr, i16, i11, b1Var, mVar);
                                     i29 = i442222222222222;
                                     bArr4 = bArr;
                                     mVar4 = mVar;
@@ -3230,11 +3230,11 @@ public final class q0 implements a1 {
                                 if (i29 != i14) {
                                 }
                                 z zVar22222222222222 = (z) obj2;
-                                c1Var = zVar22222222222222.zzjp;
-                                if (c1Var == c1Var2) {
+                                b1Var = zVar22222222222222.zzjp;
+                                if (b1Var == b1Var2) {
                                 }
                                 int i4422222222222222 = i29;
-                                int c1022222222222222 = n1.c(i4422222222222222, bArr, i16, i11, c1Var, mVar);
+                                int c1022222222222222 = l1.c(i4422222222222222, bArr, i16, i11, b1Var, mVar);
                                 i29 = i4422222222222222;
                                 bArr4 = bArr;
                                 mVar4 = mVar;
@@ -3257,7 +3257,7 @@ public final class q0 implements a1 {
                                 unsafe = unsafe8;
                                 i29 = i39;
                                 i13 = i28;
-                                l4 = q0Var2.l(obj, bArr, i34, i11, i29, i35, i36, w9, i37, i38, j10, mVar);
+                                l4 = q0Var2.l(obj, bArr, i34, i11, i29, i35, i36, w10, i37, i38, j10, mVar);
                                 if (l4 == i34) {
                                     q0Var = q0Var2;
                                     obj2 = obj;
@@ -3278,7 +3278,7 @@ public final class q0 implements a1 {
                                 i29 = i39;
                                 i13 = i28;
                                 if (i38 != 50) {
-                                    l4 = q0Var2.k(obj, bArr, i34, i11, i29, i35, i36, i37, i38, j10, w9, mVar);
+                                    l4 = q0Var2.k(obj, bArr, i34, i11, i29, i35, i36, i37, i38, j10, w10, mVar);
                                     q0Var = q0Var2;
                                     obj2 = obj;
                                     if (l4 != i34) {
@@ -3295,7 +3295,7 @@ public final class q0 implements a1 {
                                     }
                                 } else {
                                     if (i36 == 2) {
-                                        q0Var2.p(j10, obj, w9);
+                                        q0Var2.p(j10, obj, w10);
                                         throw null;
                                     }
                                     q0Var = q0Var2;
@@ -3316,7 +3316,7 @@ public final class q0 implements a1 {
                             obj3 = obj;
                             i25 = i11;
                             mVar4 = mVar;
-                            i27 = h(q0Var2.s(w9), i39, bArr, i34, i11, c0Var, mVar);
+                            i27 = h(q0Var2.s(w10), i39, bArr, i34, i11, c0Var, mVar);
                             i29 = i39;
                             i26 = -1;
                             bArr4 = bArr;
@@ -3332,11 +3332,11 @@ public final class q0 implements a1 {
                         if (i29 != i14) {
                         }
                         z zVar222222222222222 = (z) obj2;
-                        c1Var = zVar222222222222222.zzjp;
-                        if (c1Var == c1Var2) {
+                        b1Var = zVar222222222222222.zzjp;
+                        if (b1Var == b1Var2) {
                         }
                         int i44222222222222222 = i29;
-                        int c10222222222222222 = n1.c(i44222222222222222, bArr, i16, i11, c1Var, mVar);
+                        int c10222222222222222 = l1.c(i44222222222222222, bArr, i16, i11, b1Var, mVar);
                         i29 = i44222222222222222;
                         bArr4 = bArr;
                         mVar4 = mVar;
@@ -3363,11 +3363,11 @@ public final class q0 implements a1 {
                 if (i29 != i14) {
                 }
                 z zVar2222222222222222 = (z) obj2;
-                c1Var = zVar2222222222222222.zzjp;
-                if (c1Var == c1Var2) {
+                b1Var = zVar2222222222222222.zzjp;
+                if (b1Var == b1Var2) {
                 }
                 int i442222222222222222 = i29;
-                int c102222222222222222 = n1.c(i442222222222222222, bArr, i16, i11, c1Var, mVar);
+                int c102222222222222222 = l1.c(i442222222222222222, bArr, i16, i11, b1Var, mVar);
                 i29 = i442222222222222222;
                 bArr4 = bArr;
                 mVar4 = mVar;
@@ -3395,7 +3395,7 @@ public final class q0 implements a1 {
         if (iArr3 != null) {
             for (int i55 : iArr3) {
                 int i56 = iArr[i55];
-                Object k10 = k1.k(obj2, q0Var.v(i55) & 1048575);
+                Object k10 = i1.k(obj2, q0Var.v(i55) & 1048575);
                 if (k10 != null && q0Var.u(i55) != null) {
                     q0Var.n.getClass();
                     q0Var.t(i55);
@@ -3416,14 +3416,14 @@ public final class q0 implements a1 {
     public final void o(int i10, Object obj, Object obj2) {
         long v = v(i10) & 1048575;
         if (r(i10, obj2)) {
-            Object k10 = k1.k(obj, v);
-            Object k11 = k1.k(obj2, v);
+            Object k10 = i1.k(obj, v);
+            Object k11 = i1.k(obj2, v);
             if (k10 != null && k11 != null) {
                 k11 = a0.a(k10, k11);
             } else if (k11 == null) {
                 return;
             }
-            k1.d(obj, v, k11);
+            i1.d(obj, v, k11);
             x(i10, obj);
         }
     }
@@ -3450,7 +3450,7 @@ public final class q0 implements a1 {
     }
 
     public final boolean q(int i10, int i11, Object obj) {
-        return k1.d.g(obj, (long) (this.a[i11 + 2] & 1048575)) == i10;
+        return i1.d.g(obj, (long) (this.a[i11 + 2] & 1048575)) == i10;
     }
 
     public final boolean r(int i10, Object obj) {
@@ -3459,44 +3459,44 @@ public final class q0 implements a1 {
             long j10 = v & 1048575;
             switch ((v & 267386880) >>> 20) {
                 case 0:
-                    if (k1.d.k(obj, j10) == 0.0d) {
+                    if (i1.d.k(obj, j10) == 0.0d) {
                         return false;
                     }
                     break;
                 case 1:
-                    if (k1.d.j(obj, j10) == 0.0f) {
+                    if (i1.d.j(obj, j10) == 0.0f) {
                         return false;
                     }
                     break;
                 case 2:
-                    if (k1.d.h(obj, j10) == 0) {
+                    if (i1.d.h(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 3:
-                    if (k1.d.h(obj, j10) == 0) {
+                    if (i1.d.h(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 4:
-                    if (k1.d.g(obj, j10) == 0) {
+                    if (i1.d.g(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 5:
-                    if (k1.d.h(obj, j10) == 0) {
+                    if (i1.d.h(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 6:
-                    if (k1.d.g(obj, j10) == 0) {
+                    if (i1.d.g(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 7:
-                    return k1.d.i(obj, j10);
+                    return i1.d.i(obj, j10);
                 case 8:
-                    Object k10 = k1.k(obj, j10);
+                    Object k10 = i1.k(obj, j10);
                     if (k10 instanceof String) {
                         if (((String) k10).isEmpty()) {
                             return false;
@@ -3511,47 +3511,47 @@ public final class q0 implements a1 {
                     }
                     break;
                 case 9:
-                    if (k1.k(obj, j10) == null) {
+                    if (i1.k(obj, j10) == null) {
                         return false;
                     }
                     break;
                 case 10:
-                    if (o.c.equals(k1.k(obj, j10))) {
+                    if (o.c.equals(i1.k(obj, j10))) {
                         return false;
                     }
                     break;
                 case 11:
-                    if (k1.d.g(obj, j10) == 0) {
+                    if (i1.d.g(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 12:
-                    if (k1.d.g(obj, j10) == 0) {
+                    if (i1.d.g(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 13:
-                    if (k1.d.g(obj, j10) == 0) {
+                    if (i1.d.g(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 14:
-                    if (k1.d.h(obj, j10) == 0) {
+                    if (i1.d.h(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 15:
-                    if (k1.d.g(obj, j10) == 0) {
+                    if (i1.d.g(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 16:
-                    if (k1.d.h(obj, j10) == 0) {
+                    if (i1.d.h(obj, j10) == 0) {
                         return false;
                     }
                     break;
                 case 17:
-                    if (k1.k(obj, j10) == null) {
+                    if (i1.k(obj, j10) == null) {
                         return false;
                     }
                     break;
@@ -3559,21 +3559,21 @@ public final class q0 implements a1 {
                     throw new IllegalArgumentException();
             }
         } else {
-            if ((k1.d.g(obj, r6 & 1048575) & (1 << (this.a[i10 + 2] >>> 20))) == 0) {
+            if ((i1.d.g(obj, r6 & 1048575) & (1 << (this.a[i10 + 2] >>> 20))) == 0) {
                 return false;
             }
         }
         return true;
     }
 
-    public final a1 s(int i10) {
+    public final z0 s(int i10) {
         int i11 = (i10 / 4) << 1;
         Object[] objArr = this.b;
-        a1 a1Var = (a1) objArr[i11];
-        if (a1Var != null) {
-            return a1Var;
+        z0 z0Var = (z0) objArr[i11];
+        if (z0Var != null) {
+            return z0Var;
         }
-        a1 a2 = w0.c.a((Class) objArr[i11 + 1]);
+        z0 a2 = v0.c.a((Class) objArr[i11 + 1]);
         objArr[i11] = a2;
         return a2;
     }
@@ -3629,7 +3629,7 @@ public final class q0 implements a1 {
         }
         int i11 = this.a[i10 + 2];
         long j10 = i11 & 1048575;
-        k1.b(j10, obj, k1.d.g(obj, j10) | (1 << (i11 >>> 20)));
+        i1.b(j10, obj, i1.d.g(obj, j10) | (1 << (i11 >>> 20)));
     }
 
     public final void y(int i10, Object obj, Object obj2) {
@@ -3639,19 +3639,19 @@ public final class q0 implements a1 {
         int i12 = iArr[i10];
         long j10 = v & 1048575;
         if (q(i12, i10, obj2)) {
-            Object k10 = k1.k(obj, j10);
-            Object k11 = k1.k(obj2, j10);
+            Object k10 = i1.k(obj, j10);
+            Object k11 = i1.k(obj2, j10);
             if (k10 != null && k11 != null) {
-                k1.d(obj, j10, a0.a(k10, k11));
+                i1.d(obj, j10, a0.a(k10, k11));
                 i11 = iArr[i10 + 2];
             } else {
                 if (k11 == null) {
                     return;
                 }
-                k1.d(obj, j10, k11);
+                i1.d(obj, j10, k11);
                 i11 = iArr[i10 + 2];
             }
-            k1.b(i11 & 1048575, obj, i12);
+            i1.b(i11 & 1048575, obj, i12);
         }
     }
 

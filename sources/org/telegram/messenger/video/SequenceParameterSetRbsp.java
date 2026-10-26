@@ -1,10 +1,10 @@
 package org.telegram.messenger.video;
 
-import c5.c0;
+import d5.z;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class SequenceParameterSetRbsp {
     public int bit_depth_chroma_minus8;
@@ -22,11 +22,11 @@ public class SequenceParameterSetRbsp {
     public boolean sps_temporal_id_nesting_flag;
 
     public SequenceParameterSetRbsp(InputStream inputStream) {
-        qc.a aVar = new qc.a();
+        rc.a aVar = new rc.a();
         boolean z10 = false;
-        c0 c0Var = new c0(8, z10, z10);
-        c0Var.c = new char[50];
-        aVar.e = c0Var;
+        z zVar = new z(8, z10, z10);
+        zVar.c = new char[50];
+        aVar.e = zVar;
         aVar.a = inputStream;
         aVar.b = inputStream.read();
         aVar.c = inputStream.read();
@@ -50,7 +50,7 @@ public class SequenceParameterSetRbsp {
         }
         this.bit_depth_luma_minus8 = aVar.e("bit_depth_luma_minus8");
         this.bit_depth_chroma_minus8 = aVar.e("bit_depth_chroma_minus8");
-        int e7 = aVar.e("log2_max_pic_order_cnt_lsb_minus4");
+        int e10 = aVar.e("log2_max_pic_order_cnt_lsb_minus4");
         boolean b10 = aVar.b("sps_sub_layer_ordering_info_present_flag");
         int i10 = this.sps_max_sub_layers_minus1;
         int i11 = (i10 - (b10 ? 0 : i10)) + 1;
@@ -82,11 +82,11 @@ public class SequenceParameterSetRbsp {
         }
         parse_short_term_ref_pic_sets(aVar.e("num_short_term_ref_pic_sets"), aVar);
         if (aVar.b("long_term_ref_pics_present_flag")) {
-            int e10 = aVar.e("num_long_term_ref_pics_sps");
-            int[] iArr4 = new int[e10];
-            boolean[] zArr = new boolean[e10];
-            for (int i12 = 0; i12 < e10; i12++) {
-                iArr4[i12] = (int) aVar.d(e7 + 4, "lt_ref_pic_poc_lsb_sps[" + i12 + "]");
+            int e11 = aVar.e("num_long_term_ref_pics_sps");
+            int[] iArr4 = new int[e11];
+            boolean[] zArr = new boolean[e11];
+            for (int i12 = 0; i12 < e11; i12++) {
+                iArr4[i12] = (int) aVar.d(e10 + 4, "lt_ref_pic_poc_lsb_sps[" + i12 + "]");
                 zArr[i12] = aVar.b("used_by_curr_pic_lt_sps_flag[" + i12 + "]");
             }
         }
@@ -94,7 +94,7 @@ public class SequenceParameterSetRbsp {
         aVar.b("strong_intra_smoothing_enabled_flag");
     }
 
-    private void parse_short_term_ref_pic_sets(int i10, qc.a aVar) {
+    private void parse_short_term_ref_pic_sets(int i10, rc.a aVar) {
         long[] jArr = new long[i10];
         for (int i11 = 0; i11 < i10; i11++) {
             if (i11 == 0 || aVar.a() != 1) {
@@ -119,7 +119,7 @@ public class SequenceParameterSetRbsp {
         }
     }
 
-    private void profile_tier_level(int i10, qc.a aVar) {
+    private void profile_tier_level(int i10, rc.a aVar) {
         boolean[] zArr;
         int[] iArr;
         boolean[] zArr2;
@@ -200,7 +200,7 @@ public class SequenceParameterSetRbsp {
         }
     }
 
-    private static void skip_scaling_list_data(qc.a aVar) {
+    private static void skip_scaling_list_data(rc.a aVar) {
         int i10 = 0;
         while (i10 < 4) {
             int i11 = 0;

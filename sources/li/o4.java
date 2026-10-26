@@ -1,0 +1,277 @@
+package li;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.WebFile;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Cells.s9;
+import org.telegram.ui.Components.gb1;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* loaded from: classes4.dex */
+public final class o4 extends z implements p6, r9, k0 {
+    public static final /* synthetic */ int M = 0;
+    public final Drawable E;
+    public final View F;
+    public m4 G;
+    public int H;
+    public String I;
+    public Drawable J;
+    public int K;
+    public final j0 L;
+    public final int n;
+    public final u6 r;
+    public final Paint s;
+    public final Paint v;
+    public final Paint w;
+    public final TextPaint x;
+    public final ImageReceiver y;
+
+    public o4(Context context, int i10, u6 u6Var) {
+        super(context);
+        this.s = new Paint(1);
+        this.v = new Paint(1);
+        this.w = new Paint(1);
+        TextPaint textPaint = new TextPaint(1);
+        this.x = textPaint;
+        this.n = i10;
+        this.r = u6Var;
+        setWillNotDraw(false);
+        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        this.y = new ImageReceiver(this);
+        this.E = getContext().getResources().getDrawable(R.drawable.msg_map).mutate();
+        f(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
+        View view = new View(context);
+        this.F = view;
+        view.setOnClickListener(new ig.d0(this, 11));
+        addView(view, gb1.i(-1, -2, 51));
+        j0 j0Var = new j0(context, u6Var, new jg.i(this));
+        this.L = j0Var;
+        addView(j0Var.a, gb1.i(-2, -2, 51));
+        updateColors();
+    }
+
+    private TL_iv.pageBlockMap getMap() {
+        a aVar = this.a;
+        if (aVar == null) {
+            return null;
+        }
+        TL_iv.PageBlock pageBlock = aVar.b;
+        if (pageBlock instanceof TL_iv.pageBlockMap) {
+            return (TL_iv.pageBlockMap) pageBlock;
+        }
+        return null;
+    }
+
+    @Override // li.k0
+    public final boolean a(int i10, int i11) {
+        return this.L.f(i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(y6.pe));
+        hashSet.add(Integer.valueOf(y6.Gd));
+        hashSet.add(Integer.valueOf(y6.uf));
+        hashSet.add(Integer.valueOf(y6.G6));
+    }
+
+    @Override // li.k0
+    public final void b() {
+        this.L.i();
+    }
+
+    @Override // li.z
+    public final int d() {
+        return 0;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.L.c(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.r9
+    public final void fillTextLayoutBlocks(ArrayList arrayList) {
+        this.L.e(arrayList);
+    }
+
+    public final void g(a aVar, m4 m4Var) {
+        this.a = aVar;
+        this.G = m4Var;
+        c(aVar);
+        this.I = null;
+        this.L.b();
+        h();
+        requestLayout();
+        invalidate();
+    }
+
+    @Override // li.k0
+    public g1 getCaptionEditText() {
+        return this.L.a;
+    }
+
+    @Override // li.k0
+    public a getRow() {
+        return this.a;
+    }
+
+    public final void h() {
+        TL_iv.pageBlockMap map = getMap();
+        ImageReceiver imageReceiver = this.y;
+        if (map == null || !(map.geo instanceof TLRPC.TL_geoPoint)) {
+            imageReceiver.setImageBitmap((Drawable) null);
+            this.I = null;
+            return;
+        }
+        int measuredWidth = getMeasuredWidth();
+        int i10 = this.K;
+        if (measuredWidth <= 0 || i10 <= 0) {
+            return;
+        }
+        float f7 = AndroidUtilities.density;
+        int i11 = (int) (measuredWidth / f7);
+        int i12 = (int) (i10 / f7);
+        String str = map.geo.lat + "_" + map.geo._long + "_" + i11 + "x" + i12;
+        if (str.equals(this.I)) {
+            return;
+        }
+        this.I = str;
+        int i13 = MessagesController.getInstance(this.n).mapProvider;
+        this.H = i13;
+        if (i13 == 2) {
+            imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(map.geo, i11, i12, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), null, null, null, null, 0);
+            return;
+        }
+        TLRPC.GeoPoint geoPoint = map.geo;
+        imageReceiver.setImage(AndroidUtilities.formapMapUrl(this.n, geoPoint.lat, geoPoint._long, i11, i12, true, 15, -1), null, null, null, 0L);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.y.onAttachedToWindow();
+        this.I = null;
+        h();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.y.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        s9 textSelectionHelper;
+        if (getMap() != null) {
+            ImageReceiver imageReceiver = this.y;
+            canvas2 = canvas;
+            canvas2.drawRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2(), this.s);
+            int centerX = (int) imageReceiver.getCenterX();
+            int centerY = (int) imageReceiver.getCenterY();
+            Drawable drawable = this.E;
+            if (drawable != null) {
+                int x9 = org.telegram.ui.d3.x(2, centerX, drawable);
+                int i10 = org.telegram.ui.d3.i(2, centerY, drawable);
+                drawable.setBounds(x9, i10, drawable.getIntrinsicWidth() + x9, drawable.getIntrinsicHeight() + i10);
+                drawable.draw(canvas2);
+            }
+            TL_iv.pageBlockMap map = getMap();
+            if (map != null && (map.geo instanceof TLRPC.TL_geoPoint)) {
+                imageReceiver.draw(canvas2);
+                if (this.H == 2 && imageReceiver.hasNotThumb()) {
+                    if (this.J == null) {
+                        this.J = getContext().getResources().getDrawable(R.drawable.map_pin).mutate();
+                    }
+                    int intrinsicWidth = (int) (this.J.getIntrinsicWidth() * 0.8f);
+                    int intrinsicHeight = (int) (this.J.getIntrinsicHeight() * 0.8f);
+                    int centerX2 = (int) (imageReceiver.getCenterX() - (intrinsicWidth / 2.0f));
+                    int centerY2 = (int) (imageReceiver.getCenterY() - intrinsicHeight);
+                    this.J.setAlpha((int) (imageReceiver.getCurrentAlpha() * 255.0f));
+                    this.J.setBounds(centerX2, centerY2, intrinsicWidth + centerX2, intrinsicHeight + centerY2);
+                    this.J.draw(canvas2);
+                }
+            }
+        } else {
+            canvas2 = canvas;
+        }
+        m4 m4Var = this.G;
+        if (m4Var != null && (textSelectionHelper = ((r3) m4Var).a.getTextSelectionHelper()) != null && textSelectionHelper.x() && (getParent() instanceof RecyclerView)) {
+            ((RecyclerView) getParent()).getClass();
+            int R = RecyclerView.R(this);
+            if (R >= 0 && R > textSelectionHelper.p0 && R <= textSelectionHelper.s0) {
+                canvas2.drawRect(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + this.K, this.w);
+            }
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int i14 = i12 - i10;
+        int max = Math.max(0, (i14 - paddingLeft) - paddingRight);
+        this.y.setImageCoords(paddingLeft, getPaddingTop(), max, this.K);
+        this.F.layout(paddingLeft, getPaddingTop(), max + paddingLeft, getPaddingTop() + this.K);
+        this.L.g(paddingLeft, paddingRight, i14, getPaddingTop() + this.K);
+        h();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int max = Math.max(0, (size - paddingLeft) - paddingRight);
+        TL_iv.pageBlockMap map = getMap();
+        if (map == null || map.w <= 0 || map.h <= 0) {
+            this.K = (AndroidUtilities.dp(200.0f) - getPaddingTop()) - getPaddingBottom();
+        } else {
+            this.K = Math.max(Math.min((int) (((max - AndroidUtilities.dp(32.0f)) * map.h) / map.w), AndroidUtilities.dp(420.0f)), AndroidUtilities.dp(120.0f));
+        }
+        int h = this.L.h(paddingLeft, paddingRight, size);
+        this.F.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.K, TLObject.FLAG_30));
+        setMeasuredDimension(size, getPaddingBottom() + getPaddingTop() + this.K + h);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        int i10 = y6.pe;
+        u6 u6Var = this.r;
+        this.s.setColor(y6.w0(i10, u6Var));
+        this.v.setColor(y6.w0(y6.Gd, u6Var));
+        this.w.setColor(y6.w0(y6.uf, u6Var));
+        int i11 = y6.G6;
+        this.x.setColor(y6.o1(0.5f, y6.w0(i11, u6Var)));
+        this.E.setColorFilter(new PorterDuffColorFilter(y6.o1(0.5f, y6.w0(i11, u6Var)), PorterDuff.Mode.SRC_IN));
+        j0 j0Var = this.L;
+        if (j0Var != null) {
+            j0Var.a();
+        }
+    }
+}

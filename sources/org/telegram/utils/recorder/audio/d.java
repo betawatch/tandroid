@@ -8,9 +8,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import ri.h;
+import ui.h;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class d {
     public long A;
@@ -20,8 +20,8 @@ public final class d {
     public final long c;
     public final long d;
     public final h e;
-    public final ri.b f;
-    public final cc.e g;
+    public final ui.b f;
+    public final dc.e g;
     public final HandlerThread h;
     public final Handler i;
     public final HandlerThread j;
@@ -42,7 +42,7 @@ public final class d {
     public final AtomicInteger m = new AtomicInteger();
     public final ByteBuffer s = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
 
-    public d(File file, File file2, long j10, long j11, h hVar, ri.b bVar, cc.e eVar) {
+    public d(File file, File file2, long j10, long j11, h hVar, ui.b bVar, dc.e eVar) {
         this.a = file;
         this.b = file2;
         this.c = j10;
@@ -75,7 +75,7 @@ public final class d {
             this.z++;
             this.A += nanoTime2;
             this.B = Math.max(this.B, nanoTime2);
-            ri.b bVar = this.f;
+            ui.b bVar = this.f;
             if (!b10) {
                 bVar.b("RNNoise processing failed; recording unprocessed PCM");
                 this.u.c();
@@ -104,7 +104,7 @@ public final class d {
         if (this.o) {
             return;
         }
-        this.i.postAtFrontOfQueue(new ri.a(this, 1));
+        this.i.postAtFrontOfQueue(new ui.a(this, 1));
     }
 
     public final void e(Exception exc) {

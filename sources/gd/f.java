@@ -1,24 +1,24 @@
 package gd;
 
-import df.p;
-import java.util.regex.Pattern;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f extends h {
-    public static final Pattern e = Pattern.compile("^&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
+public final class f extends f2.f {
+    public final StringBuilder c;
+    public final StringBuilder d;
+    public final StringBuilder e;
 
-    @Override // gd.h
-    public final p b() {
-        String a2 = a(e);
-        if (a2 != null) {
-            return f(cf.b.a(a2));
-        }
-        return null;
+    public f() {
+        super(1, 1);
+        this.c = new StringBuilder();
+        this.d = new StringBuilder();
+        this.e = new StringBuilder();
     }
 
-    @Override // gd.h
-    public final char d() {
-        return '&';
+    @Override // f2.f
+    public final f2.f b() {
+        f2.f.c(this.c);
+        f2.f.c(this.d);
+        f2.f.c(this.e);
+        return this;
     }
 }

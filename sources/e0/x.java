@@ -7,37 +7,36 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.TextAppearanceSpan;
-import i2.o1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class x extends y {
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
-    public final m0 g;
+    public final l0 g;
     public CharSequence h;
     public Boolean i;
 
     public x() {
-        m0 m0Var = new m0();
-        m0Var.a = "";
-        m0Var.b = null;
-        m0Var.c = null;
-        m0Var.d = null;
-        m0Var.e = false;
-        m0Var.f = false;
-        this.g = m0Var;
+        l0 l0Var = new l0();
+        l0Var.a = "";
+        l0Var.b = null;
+        l0Var.c = null;
+        l0Var.d = null;
+        l0Var.e = false;
+        l0Var.f = false;
+        this.g = l0Var;
     }
 
     @Override // e0.y
     public final void a(Bundle bundle) {
         super.a(bundle);
-        m0 m0Var = this.g;
-        bundle.putCharSequence("android.selfDisplayName", m0Var.a);
-        bundle.putBundle("android.messagingStyleUser", m0Var.c());
+        l0 l0Var = this.g;
+        bundle.putCharSequence("android.selfDisplayName", l0Var.a);
+        bundle.putBundle("android.messagingStyleUser", l0Var.c());
         bundle.putCharSequence("android.hiddenConversationTitle", this.h);
         if (this.h != null && this.i.booleanValue()) {
             bundle.putCharSequence("android.conversationTitle", this.h);
@@ -61,13 +60,13 @@ public final class x extends y {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(f0 f0Var) {
+    public final void b(e0 e0Var) {
         boolean booleanValue;
         w wVar;
         boolean z10;
         int size;
         Notification.MessagingStyle b10;
-        Notification.Builder builder = (Notification.Builder) f0Var.d;
+        Notification.Builder builder = (Notification.Builder) e0Var.d;
         q qVar = this.a;
         int i10 = 0;
         if (qVar == null || qVar.a.getApplicationInfo().targetSdkVersion >= 28 || this.i != null) {
@@ -86,12 +85,12 @@ public final class x extends y {
         int i11 = Build.VERSION.SDK_INT;
         ArrayList arrayList = this.e;
         if (i11 >= 24) {
-            m0 m0Var = this.g;
+            l0 l0Var = this.g;
             if (i11 >= 28) {
-                m0Var.getClass();
-                b10 = t.a(b5.d.E(m0Var));
+                l0Var.getClass();
+                b10 = t.a(c5.d.E(l0Var));
             } else {
-                b10 = r.b(m0Var.a);
+                b10 = r.b(l0Var.a);
             }
             int size2 = arrayList.size();
             int i12 = 0;
@@ -122,23 +121,23 @@ public final class x extends y {
         while (true) {
             if (size4 >= 0) {
                 wVar = (w) arrayList.get(size4);
-                m0 m0Var2 = wVar.c;
-                if (m0Var2 != null && !TextUtils.isEmpty(m0Var2.a)) {
+                l0 l0Var2 = wVar.c;
+                if (l0Var2 != null && !TextUtils.isEmpty(l0Var2.a)) {
                     break;
                 } else {
                     size4--;
                 }
             } else {
-                wVar = !arrayList.isEmpty() ? (w) o1.i(1, arrayList) : null;
+                wVar = !arrayList.isEmpty() ? (w) ic.a.g(1, arrayList) : null;
             }
         }
         if (this.h != null && this.i.booleanValue()) {
             builder.setContentTitle(this.h);
         } else if (wVar != null) {
             builder.setContentTitle("");
-            m0 m0Var3 = wVar.c;
-            if (m0Var3 != null) {
-                builder.setContentTitle(m0Var3.a);
+            l0 l0Var3 = wVar.c;
+            if (l0Var3 != null) {
+                builder.setContentTitle(l0Var3.a);
             }
         }
         if (wVar != null) {
@@ -147,8 +146,8 @@ public final class x extends y {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         if (this.h == null) {
             for (int size5 = arrayList.size() - 1; size5 >= 0; size5--) {
-                m0 m0Var4 = ((w) arrayList.get(size5)).c;
-                if (m0Var4 == null || m0Var4.a != null) {
+                l0 l0Var4 = ((w) arrayList.get(size5)).c;
+                if (l0Var4 == null || l0Var4.a != null) {
                 }
             }
             z10 = false;
@@ -181,8 +180,8 @@ public final class x extends y {
         String str = p0.b.b;
         p0.b bVar = TextUtils.getLayoutDirectionFromLocale(Locale.getDefault()) == 1 ? p0.b.e : p0.b.d;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        m0 m0Var = wVar.c;
-        CharSequence charSequence = m0Var == null ? "" : m0Var.a;
+        l0 l0Var = wVar.c;
+        CharSequence charSequence = l0Var == null ? "" : l0Var.a;
         int i10 = -16777216;
         if (TextUtils.isEmpty(charSequence)) {
             charSequence = this.g.a;
@@ -203,9 +202,9 @@ public final class x extends y {
         this.h = str;
     }
 
-    public x(m0 m0Var) {
-        if (!TextUtils.isEmpty(m0Var.a)) {
-            this.g = m0Var;
+    public x(l0 l0Var) {
+        if (!TextUtils.isEmpty(l0Var.a)) {
+            this.g = l0Var;
             return;
         }
         throw new IllegalArgumentException("User's name must not be empty.");

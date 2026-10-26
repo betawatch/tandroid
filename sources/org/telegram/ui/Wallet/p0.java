@@ -44,16 +44,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.zy0;
-import org.telegram.ui.if0;
-import org.telegram.ui.v90;
+import org.telegram.ui.Components.iz0;
+import org.telegram.ui.d80;
+import org.telegram.ui.u90;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final class p0 {
     public static final Object f = new Object();
     public static final HashMap g = new HashMap();
-    public static final ExecutorService h = Executors.newSingleThreadExecutor(new e2.l0(4));
+    public static final ExecutorService h = Executors.newSingleThreadExecutor(new e2.l0(5));
     public static final CopyOnWriteArrayList i = new CopyOnWriteArrayList();
     public final Context a;
     public final int b;
@@ -128,7 +128,7 @@ public final class p0 {
                             String string = jSONObject.getString("address");
                             p0 p0Var = new p0(context, string, 0);
                             if (p0Var.d.equals(file)) {
-                                zy0 u10 = p0Var.u(jSONObject);
+                                iz0 u10 = p0Var.u(jSONObject);
                                 if (u10.a == j10 && !((LinkedHashMap) u10.e).isEmpty()) {
                                     arrayList.add(string);
                                 }
@@ -149,13 +149,13 @@ public final class p0 {
                         try {
                             p0 p0Var2 = new p0(context, substring, 0);
                             if (!p0Var2.d.exists()) {
-                                zy0 r10 = p0Var2.r();
-                                if (r10.a == j10 && !((LinkedHashMap) r10.e).isEmpty() && !arrayList.contains(substring)) {
+                                iz0 r6 = p0Var2.r();
+                                if (r6.a == j10 && !((LinkedHashMap) r6.e).isEmpty() && !arrayList.contains(substring)) {
                                     arrayList.add(substring);
                                 }
                             }
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
                         }
                     }
                 }
@@ -216,8 +216,8 @@ public final class p0 {
         }
     }
 
-    public static boolean y(zy0 zy0Var, String str) {
-        Iterator it = ((LinkedHashMap) zy0Var.e).values().iterator();
+    public static boolean y(iz0 iz0Var, String str) {
+        Iterator it = ((LinkedHashMap) iz0Var.e).values().iterator();
         while (it.hasNext()) {
             if (str.equals(((JSONObject) it.next()).optString("alias"))) {
                 return true;
@@ -246,18 +246,18 @@ public final class p0 {
             hashMap.put(file.getAbsolutePath(), Long.valueOf(l() + 1));
             AndroidUtilities.runOnUIThread(new q0(file.getAbsolutePath(), 0));
             try {
-                zy0 zy0Var = new zy0();
-                zy0Var.c = i(this.a);
-                v(zy0Var, new LinkedHashMap());
-                d(zy0Var);
+                iz0 iz0Var = new iz0();
+                iz0Var.c = i(this.a);
+                v(iz0Var, new LinkedHashMap());
+                d(iz0Var);
             } catch (Exception e) {
                 FileLog.e(e);
             }
         }
     }
 
-    public final byte[] a(zy0 zy0Var, String str) {
-        return ("GramWallet:2\n" + this.c + "\n" + zy0Var.a + "\n" + str + "\n" + zy0Var.c).getBytes(StandardCharsets.UTF_8);
+    public final byte[] a(iz0 iz0Var, String str) {
+        return ("GramWallet:2\n" + this.c + "\n" + iz0Var.a + "\n" + str + "\n" + iz0Var.c).getBytes(StandardCharsets.UTF_8);
     }
 
     public final void b(long j10, boolean z10) {
@@ -268,10 +268,10 @@ public final class p0 {
             c(j10);
         }
         String absolutePath = this.d.getAbsolutePath();
-        ci.d1 d1Var = new ci.d1(this, j10, 12);
+        di.d1 d1Var = new di.d1(this, j10, 12);
         v0 v0Var = new v0();
         v0Var.d = absolutePath;
-        AndroidUtilities.runOnUIThread(new v90(v0Var, d1Var, z10, 11));
+        AndroidUtilities.runOnUIThread(new d80(v0Var, d1Var, z10, 12));
         try {
             if (v0Var.a.await(90L, TimeUnit.SECONDS)) {
                 str = v0Var.c;
@@ -302,7 +302,7 @@ public final class p0 {
         }
     }
 
-    public final void d(zy0 zy0Var) {
+    public final void d(iz0 iz0Var) {
         String str = this.c;
         try {
             FileDescriptor open = Os.open(this.d.getParent(), OsConstants.O_RDONLY, 0);
@@ -314,11 +314,11 @@ public final class p0 {
                 Enumeration<String> aliases = keyStore.aliases();
                 while (aliases.hasMoreElements()) {
                     String nextElement = aliases.nextElement();
-                    if (nextElement.startsWith(this.e) && !y(zy0Var, nextElement)) {
+                    if (nextElement.startsWith(this.e) && !y(iz0Var, nextElement)) {
                         keyStore.deleteEntry(nextElement);
                     }
                 }
-                if (zy0Var.d) {
+                if (iz0Var.d) {
                     return;
                 }
                 if (!q().edit().clear().commit()) {
@@ -341,7 +341,7 @@ public final class p0 {
         }
         synchronized (f) {
             try {
-                zy0 r10 = r();
+                iz0 r6 = r();
                 KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
                 keyStore.load(null);
                 int size = arrayList.size();
@@ -350,7 +350,7 @@ public final class p0 {
                     Object obj = arrayList.get(i10);
                     i10++;
                     String str = (String) obj;
-                    if (!y(r10, str)) {
+                    if (!y(r6, str)) {
                         keyStore.deleteEntry(str);
                     }
                 }
@@ -380,16 +380,16 @@ public final class p0 {
         return containsKey;
     }
 
-    public final byte[] g(zy0 zy0Var, String str) {
+    public final byte[] g(iz0 iz0Var, String str) {
         Key key;
-        JSONObject jSONObject = (JSONObject) ((LinkedHashMap) zy0Var.e).get(str);
+        JSONObject jSONObject = (JSONObject) ((LinkedHashMap) iz0Var.e).get(str);
         if (jSONObject == null) {
             throw new IOException("record missing");
         }
         if (!jSONObject.optBoolean("legacy", false)) {
             Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
             cipher.init(2, x(jSONObject), new GCMParameterSpec(128, Base64.decode(jSONObject.getString("iv"), 2)));
-            cipher.updateAAD(a(zy0Var, str));
+            cipher.updateAAD(a(iz0Var, str));
             return cipher.doFinal(Base64.decode(jSONObject.getString("ciphertext"), 2));
         }
         String string = q().getString("swkey", null);
@@ -399,7 +399,7 @@ public final class p0 {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
             keyStore.load(null);
             StringBuilder sb2 = new StringBuilder();
-            sb2.append(zy0Var.c ? "gramwallet_lock_" : "gramwallet_free_");
+            sb2.append(iz0Var.c ? "gramwallet_lock_" : "gramwallet_free_");
             sb2.append(this.c);
             Key key2 = keyStore.getKey(sb2.toString(), null);
             if (!(key2 instanceof SecretKey)) {
@@ -412,40 +412,40 @@ public final class p0 {
         return cipher2.doFinal(A(jSONObject.getString("ciphertext")));
     }
 
-    public final i0 h(zy0 zy0Var, String str, long j10) {
-        byte[] g10;
+    public final i0 h(iz0 iz0Var, String str, long j10) {
+        byte[] g7;
         try {
-            g10 = g(zy0Var, str);
+            g7 = g(iz0Var, str);
         } catch (Exception e) {
-            if (!zy0Var.c || !t(e)) {
+            if (!iz0Var.c || !t(e)) {
                 throw e;
             }
             b(j10, false);
             try {
-                g10 = g(zy0Var, str);
-            } catch (Exception e7) {
-                if (!t(e7)) {
-                    throw e7;
+                g7 = g(iz0Var, str);
+            } catch (Exception e10) {
+                if (!t(e10)) {
+                    throw e10;
                 }
                 b(j10, true);
-                g10 = g(zy0Var, str);
+                g7 = g(iz0Var, str);
             }
         }
         try {
-            return new i0(g10);
+            return new i0(g7);
         } finally {
-            Arrays.fill(g10, (byte) 0);
+            Arrays.fill(g7, (byte) 0);
         }
     }
 
-    public final JSONObject j(zy0 zy0Var, String str, i0 i0Var, ArrayList arrayList, long j10) {
+    public final JSONObject j(iz0 iz0Var, String str, i0 i0Var, ArrayList arrayList, long j10) {
         Cipher k10;
         String str2 = this.e + UUID.randomUUID();
         arrayList.add(str2);
         JSONObject put = new JSONObject().put("alias", str2);
         int i10 = Build.VERSION.SDK_INT;
-        KeyGenParameterSpec.Builder userAuthenticationRequired = new KeyGenParameterSpec.Builder(str2, 3).setKeySize(256).setBlockModes("GCM").setEncryptionPaddings("NoPadding").setUserAuthenticationRequired(zy0Var.c);
-        if (zy0Var.c) {
+        KeyGenParameterSpec.Builder userAuthenticationRequired = new KeyGenParameterSpec.Builder(str2, 3).setKeySize(256).setBlockModes("GCM").setEncryptionPaddings("NoPadding").setUserAuthenticationRequired(iz0Var.c);
+        if (iz0Var.c) {
             if (i10 >= 30) {
                 userAuthenticationRequired.setUserAuthenticationParameters(30, 3);
             } else {
@@ -459,20 +459,20 @@ public final class p0 {
         keyGenerator.init(userAuthenticationRequired.build());
         keyGenerator.generateKey();
         try {
-            k10 = k(zy0Var, str, put);
+            k10 = k(iz0Var, str, put);
         } catch (Exception e) {
-            if (!zy0Var.c || !t(e)) {
+            if (!iz0Var.c || !t(e)) {
                 throw e;
             }
             b(j10, false);
             try {
-                k10 = k(zy0Var, str, put);
-            } catch (Exception e7) {
-                if (!t(e7)) {
-                    throw e7;
+                k10 = k(iz0Var, str, put);
+            } catch (Exception e10) {
+                if (!t(e10)) {
+                    throw e10;
                 }
                 b(j10, true);
-                k10 = k(zy0Var, str, put);
+                k10 = k(iz0Var, str, put);
             }
         }
         byte[] c10 = i0Var.c();
@@ -485,10 +485,10 @@ public final class p0 {
         }
     }
 
-    public final Cipher k(zy0 zy0Var, String str, JSONObject jSONObject) {
+    public final Cipher k(iz0 iz0Var, String str, JSONObject jSONObject) {
         Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
         cipher.init(1, x(jSONObject));
-        cipher.updateAAD(a(zy0Var, str));
+        cipher.updateAAD(a(iz0Var, str));
         return cipher;
     }
 
@@ -524,41 +524,41 @@ public final class p0 {
     }
 
     public final void p(long j10, byte[] bArr, i0 i0Var, Utilities.Callback callback) {
-        h.execute(new ai.n3(this, bArr == null ? "" : o(bArr), i0Var == null ? null : i0Var.b(), l(), j10, callback));
+        h.execute(new bi.j3(this, bArr == null ? "" : o(bArr), i0Var == null ? null : i0Var.b(), l(), j10, callback));
     }
 
     public final SharedPreferences q() {
         return this.a.getSharedPreferences("gramwallet_" + this.c, 0);
     }
 
-    public final zy0 r() {
+    public final iz0 r() {
         File file = this.d;
         if (file.exists()) {
             return u(new JSONObject(new String(w(file), StandardCharsets.UTF_8)));
         }
-        zy0 zy0Var = new zy0();
-        SharedPreferences q6 = q();
-        zy0Var.c = q6.getBoolean("locked", i(this.a));
-        zy0Var.a = q6.getLong("userId", 0L);
-        zy0Var.b = q6.getInt("lastUsageDate", 0);
-        if (!q6.contains("phrase")) {
-            return zy0Var;
+        iz0 iz0Var = new iz0();
+        SharedPreferences q5 = q();
+        iz0Var.c = q5.getBoolean("locked", i(this.a));
+        iz0Var.a = q5.getLong("userId", 0L);
+        iz0Var.b = q5.getInt("lastUsageDate", 0);
+        if (!q5.contains("phrase")) {
+            return iz0Var;
         }
-        String o10 = o(A(q6.getString("pubkey", "")));
+        String o10 = o(A(q5.getString("pubkey", "")));
         if (o10.isEmpty()) {
             throw new IOException("legacy public key missing");
         }
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("legacy", true);
-        jSONObject.put("ciphertext", q6.getString("phrase", null));
-        jSONObject.put("iv", q6.getString("iv", null));
-        ((LinkedHashMap) zy0Var.e).put(o10, jSONObject);
-        zy0Var.d = true;
-        return zy0Var;
+        jSONObject.put("ciphertext", q5.getString("phrase", null));
+        jSONObject.put("iv", q5.getString("iv", null));
+        ((LinkedHashMap) iz0Var.e).put(o10, jSONObject);
+        iz0Var.d = true;
+        return iz0Var;
     }
 
-    public final void s(zy0 zy0Var, String str, LinkedHashMap linkedHashMap, ArrayList arrayList, long j10) {
-        LinkedHashMap linkedHashMap2 = (LinkedHashMap) zy0Var.e;
+    public final void s(iz0 iz0Var, String str, LinkedHashMap linkedHashMap, ArrayList arrayList, long j10) {
+        LinkedHashMap linkedHashMap2 = (LinkedHashMap) iz0Var.e;
         ArrayList arrayList2 = new ArrayList(linkedHashMap2.keySet());
         int size = arrayList2.size();
         int i10 = 0;
@@ -567,21 +567,21 @@ public final class p0 {
             i10++;
             String str2 = (String) obj;
             if (!str2.equals(str) && ((JSONObject) linkedHashMap2.get(str2)).optBoolean("legacy", false)) {
-                i0 h10 = h(zy0Var, str2, j10);
+                i0 h10 = h(iz0Var, str2, j10);
                 linkedHashMap.put(str2, h10);
-                linkedHashMap2.put(str2, j(zy0Var, str2, h10, arrayList, j10));
+                linkedHashMap2.put(str2, j(iz0Var, str2, h10, arrayList, j10));
             }
         }
-        zy0Var.d = false;
+        iz0Var.d = false;
     }
 
-    public final zy0 u(JSONObject jSONObject) {
+    public final iz0 u(JSONObject jSONObject) {
         if (jSONObject.getInt("version") == 2) {
             if (this.c.equals(jSONObject.getString("address"))) {
-                zy0 zy0Var = new zy0();
-                zy0Var.a = jSONObject.getLong("userId");
-                zy0Var.b = jSONObject.getInt("lastUsage");
-                zy0Var.c = jSONObject.getBoolean("locked");
+                iz0 iz0Var = new iz0();
+                iz0Var.a = jSONObject.getLong("userId");
+                iz0Var.b = jSONObject.getInt("lastUsage");
+                iz0Var.c = jSONObject.getBoolean("locked");
                 JSONObject jSONObject2 = jSONObject.getJSONObject("records");
                 Iterator<String> keys = jSONObject2.keys();
                 while (keys.hasNext()) {
@@ -590,26 +590,26 @@ public final class p0 {
                         throw new IOException("public key encoding");
                     }
                     JSONObject jSONObject3 = jSONObject2.getJSONObject(next);
-                    ((LinkedHashMap) zy0Var.e).put(next, jSONObject3);
-                    zy0Var.d |= jSONObject3.optBoolean("legacy", false);
+                    ((LinkedHashMap) iz0Var.e).put(next, jSONObject3);
+                    iz0Var.d |= jSONObject3.optBoolean("legacy", false);
                 }
-                return zy0Var;
+                return iz0Var;
             }
         }
         throw new IOException("wallet format/address");
     }
 
-    public final void v(zy0 zy0Var, LinkedHashMap linkedHashMap) {
+    public final void v(iz0 iz0Var, LinkedHashMap linkedHashMap) {
         File file = this.d;
         File parentFile = file.getParentFile();
         if (!parentFile.isDirectory() && !parentFile.mkdirs()) {
             throw new IOException("wallet directory");
         }
         JSONObject jSONObject = new JSONObject();
-        for (Map.Entry entry : ((LinkedHashMap) zy0Var.e).entrySet()) {
+        for (Map.Entry entry : ((LinkedHashMap) iz0Var.e).entrySet()) {
             jSONObject.put((String) entry.getKey(), entry.getValue());
         }
-        String jSONObject2 = new JSONObject().put("version", 2).put("address", this.c).put("userId", zy0Var.a).put("lastUsage", zy0Var.b).put("locked", zy0Var.c).put("records", jSONObject).toString();
+        String jSONObject2 = new JSONObject().put("version", 2).put("address", this.c).put("userId", iz0Var.a).put("lastUsage", iz0Var.b).put("locked", iz0Var.c).put("records", jSONObject).toString();
         Charset charset = StandardCharsets.UTF_8;
         byte[] bytes = jSONObject2.getBytes(charset);
         if (bytes.length > 4194304) {
@@ -623,11 +623,11 @@ public final class p0 {
                 fileOutputStream.flush();
                 fileOutputStream.getFD().sync();
                 fileOutputStream.close();
-                byte[] w9 = w(file2);
-                if (!Arrays.equals(bytes, w9)) {
+                byte[] w10 = w(file2);
+                if (!Arrays.equals(bytes, w10)) {
                     throw new IOException("wallet read-back mismatch");
                 }
-                zy0 u10 = u(new JSONObject(new String(w9, charset)));
+                iz0 u10 = u(new JSONObject(new String(w10, charset)));
                 for (Map.Entry entry2 : linkedHashMap.entrySet()) {
                     byte[] c10 = ((i0) entry2.getValue()).c();
                     byte[] bArr = null;
@@ -649,7 +649,7 @@ public final class p0 {
                     }
                 }
                 Os.rename(file2.getAbsolutePath(), file.getAbsolutePath());
-                AndroidUtilities.runOnUIThread(new if0(9));
+                AndroidUtilities.runOnUIThread(new u90(12));
             } finally {
             }
         } finally {

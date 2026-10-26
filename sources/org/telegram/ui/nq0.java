@@ -1,64 +1,49 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class nq0 implements org.telegram.ui.Components.nn0 {
-    public final /* synthetic */ rq0 a;
+public final class nq0 extends org.telegram.ui.Components.c10 {
+    public final /* synthetic */ int U;
 
-    public nq0(rq0 rq0Var) {
-        this.a = rq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ nq0(Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        this.U = i10;
     }
 
-    @Override // org.telegram.ui.Components.nn0
-    public final /* synthetic */ boolean b1(int i10, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.nn0
-    public final void d(int i10, boolean z10) {
-        rq0 rq0Var = this.a;
-        if (rq0Var.n[0].e == i10) {
-            return;
-        }
-        rq0Var.e = i10 == rq0Var.h.getFirstTabId();
-        pq0 pq0Var = rq0Var.n[1];
-        pq0Var.e = i10;
-        pq0Var.setVisibility(0);
-        rq0Var.j0(true);
-        rq0Var.v = z10;
-        if (i10 == 0) {
-            rq0Var.c.setSearchFieldHint(LocaleController.getString(R.string.SearchImagesTitle));
-        } else {
-            rq0Var.c.setSearchFieldHint(LocaleController.getString(R.string.SearchGifsTitle));
+    @Override // org.telegram.ui.Components.c10
+    public int getColumnsCount() {
+        switch (this.U) {
+            case 0:
+                return 3;
+            default:
+                return super.getColumnsCount();
         }
     }
 
-    @Override // org.telegram.ui.Components.nn0
-    public final void k0(float f7) {
-        rq0 rq0Var = this.a;
-        if (f7 != 1.0f || rq0Var.n[1].getVisibility() == 0) {
-            if (rq0Var.v) {
-                rq0Var.n[0].setTranslationX((-f7) * r3.getMeasuredWidth());
-                rq0Var.n[1].setTranslationX(r3[0].getMeasuredWidth() - (f7 * rq0Var.n[0].getMeasuredWidth()));
-            } else {
-                rq0Var.n[0].setTranslationX(r3.getMeasuredWidth() * f7);
-                rq0Var.n[1].setTranslationX((f7 * r3[0].getMeasuredWidth()) - rq0Var.n[0].getMeasuredWidth());
-            }
-            if (f7 == 1.0f) {
-                pq0[] pq0VarArr = rq0Var.n;
-                pq0 pq0Var = pq0VarArr[0];
-                pq0VarArr[0] = pq0VarArr[1];
-                pq0VarArr[1] = pq0Var;
-                pq0Var.setVisibility(8);
-            }
+    @Override // org.telegram.ui.Components.c10
+    public int getViewType() {
+        switch (this.U) {
+            case 0:
+                return 2;
+            default:
+                return super.getViewType();
         }
     }
 
-    @Override // org.telegram.ui.Components.nn0
-    public final /* synthetic */ void x() {
+    @Override // org.telegram.ui.Components.c10, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.U) {
+            case 1:
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

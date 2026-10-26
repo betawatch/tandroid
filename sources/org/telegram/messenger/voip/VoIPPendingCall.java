@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.voip.d2;
+import org.telegram.ui.Components.voip.g2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
@@ -25,7 +25,7 @@ public final class VoIPPendingCall {
     private final boolean video;
 
     private VoIPPendingCall(Activity activity, long j10, boolean z10, long j11, AccountInstance accountInstance) {
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.o
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.n
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
                 VoIPPendingCall.this.lambda$new$0(i10, i11, objArr);
@@ -77,9 +77,9 @@ public final class VoIPPendingCall {
         TLRPC.User user = messagesController.getUser(Long.valueOf(this.userId));
         if (user != null) {
             TLRPC.UserFull userFull = messagesController.getUserFull(user.id);
-            d2.m(user, this.video, userFull != null && userFull.video_calls_available, this.activity, userFull, this.accountInstance);
+            g2.m(user, this.video, userFull != null && userFull.video_calls_available, this.activity, userFull, this.accountInstance);
         } else if (isAirplaneMode()) {
-            d2.m(null, this.video, false, this.activity, null, this.accountInstance);
+            g2.m(null, this.video, false, this.activity, null, this.accountInstance);
         }
         release();
         return true;

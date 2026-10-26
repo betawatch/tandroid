@@ -4,8 +4,9 @@ import android.content.SharedPreferences;
 import android.util.LongSparseArray;
 import org.telegram.messenger.FilePathDatabase;
 import org.telegram.messenger.NotificationBadge;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class SaveToGallerySettingsHelper {
     public static String CHANNELS_PREF_NAME = "channels_save_gallery_exceptions";
@@ -17,7 +18,7 @@ public class SaveToGallerySettingsHelper {
     public static SharedSettings groups;
     public static SharedSettings user;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class DialogException extends Settings {
         public long dialogId;
 
@@ -46,7 +47,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static abstract class Settings {
         public long limitVideo = SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT;
         public boolean savePhoto;
@@ -69,7 +70,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class SharedSettings extends Settings {
         private int type;
 
@@ -110,7 +111,7 @@ public class SaveToGallerySettingsHelper {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void save(String str, SharedPreferences sharedPreferences) {
-            sharedPreferences.edit().putBoolean(si.o0.u(str, "_save_gallery_photo"), this.savePhoto).putBoolean(si.o0.u(str, "_save_gallery_video"), this.saveVideo).putLong(si.o0.u(str, "_save_gallery_limitVideo"), this.limitVideo).apply();
+            sharedPreferences.edit().putBoolean(b10.u(str, "_save_gallery_photo"), this.savePhoto).putBoolean(b10.u(str, "_save_gallery_video"), this.saveVideo).putLong(b10.u(str, "_save_gallery_limitVideo"), this.limitVideo).apply();
         }
 
         @Override // org.telegram.messenger.SaveToGallerySettingsHelper.Settings

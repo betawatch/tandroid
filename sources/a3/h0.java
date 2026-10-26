@@ -1,7 +1,7 @@
 package a3;
 
-import ai.l7;
-import ci.x0;
+import bi.h7;
+import di.x0;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
@@ -17,16 +17,15 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.zo;
+import org.telegram.ui.Components.bp;
+import org.telegram.ui.Components.l11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ey;
-import org.telegram.ui.sn;
-import org.telegram.ui.ye1;
-import si.q0;
-import si.u0;
+import org.telegram.ui.af1;
+import org.telegram.ui.cy;
+import org.telegram.ui.un;
+import vi.s0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,27 +51,27 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j10 = this.b;
                 long j11 = this.c;
                 m0 m0Var = (m0) sVar.c;
-                String str2 = e2.m0.a;
-                j2.e eVar = ((i2.b0) m0Var).a.s;
-                j2.a p5 = eVar.p();
-                eVar.q(p5, 1016, new ih.l(p5, str, j11, j10, 21));
+                String str2 = e2.n0.a;
+                j2.e eVar = ((i2.d0) m0Var).a.s;
+                j2.a p10 = eVar.p();
+                eVar.q(p10, 1016, new ig.g(p10, str, j11, j10, 19));
                 return;
             case 1:
-                l7.a1((l7) this.d, this.b, this.c, (Utilities.Callback) this.e);
+                h7.a1((h7) this.d, this.b, this.c, (Utilities.Callback) this.e);
                 return;
             case 2:
                 ((x0) this.d).n(this.b, (TLRPC.TL_textWithEntities) this.e, this.c);
                 return;
             case 3:
-                qf.b bVar = (qf.b) this.d;
+                rf.b bVar = (rf.b) this.d;
                 String str3 = (String) this.e;
                 long j12 = this.b;
                 long j13 = this.c;
                 k2.v vVar = (k2.v) bVar.c;
-                String str4 = e2.m0.a;
-                j2.e eVar2 = ((i2.b0) vVar).a.s;
-                j2.a p9 = eVar2.p();
-                eVar2.q(p9, 1008, new ih.l(p9, str3, j13, j12, 9));
+                String str4 = e2.n0.a;
+                j2.e eVar2 = ((i2.d0) vVar).a.s;
+                j2.a p11 = eVar2.p();
+                eVar2.q(p11, 1008, new ig.g(p11, str3, j13, j12, 7));
                 return;
             case 4:
                 ((FileUploadOperation) this.d).lambda$checkNewDataAvailable$4((Float) this.e, this.b, this.c);
@@ -90,7 +89,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((MessagesStorage) this.d).lambda$loadPendingTasks$21(this.b, (TLRPC.InputPeer) this.e, this.c);
                 return;
             case 9:
-                ((MessagesStorage) this.d).lambda$getUnreadMention$156(this.b, this.c, (MessagesStorage.IntCallback) this.e);
+                ((MessagesStorage) this.d).lambda$getUnreadMention$159(this.b, this.c, (MessagesStorage.IntCallback) this.e);
                 return;
             case 10:
                 ((NotificationsSettingsFacade) this.d).lambda$applyDialogNotificationsSettings$1(this.b, this.c, (TLRPC.PeerNotifySettings) this.e);
@@ -102,22 +101,22 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
                 return;
             case 13:
-                ((zo) this.d).e(this.b, this.c, (HashSet) this.e);
+                ((bp) this.d).e(this.b, this.c, (HashSet) this.e);
                 return;
             case 14:
-                ey eyVar = (ey) this.d;
+                cy cyVar = (cy) this.d;
                 long j14 = this.b;
                 long j15 = this.c;
-                ye1 ye1Var = (ye1) this.e;
-                if (eyVar.C2 == null) {
-                    eyVar.finishFragment();
+                af1 af1Var = (af1) this.e;
+                if (cyVar.C2 == null) {
+                    cyVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(j14, j15));
-                eyVar.C2.w(eyVar, arrayList, null, false, eyVar.J2, eyVar.K2, eyVar.L2, ye1Var);
-                if (eyVar.i2) {
-                    eyVar.C2 = null;
+                cyVar.C2.v(cyVar, arrayList, null, false, cyVar.J2, cyVar.K2, cyVar.L2, af1Var);
+                if (cyVar.i2) {
+                    cyVar.C2 = null;
                     return;
                 }
                 return;
@@ -125,8 +124,8 @@ public final /* synthetic */ class h0 implements Runnable {
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
                 long j16 = this.b;
                 long j17 = this.c;
-                sn snVar = (sn) this.e;
-                Pattern pattern = LaunchActivity.E1;
+                un unVar = (un) this.e;
+                Pattern pattern = LaunchActivity.D1;
                 TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j16, j17);
                 StringBuilder t10 = a1.g.t(j16, "LaunchActivity openForum after load ", " ");
                 t10.append(j17);
@@ -134,19 +133,19 @@ public final /* synthetic */ class h0 implements Runnable {
                 t10.append(findTopic);
                 FileLog.d(t10.toString());
                 if (launchActivity.q0 != null) {
-                    og.d.a(snVar, MessagesStorage.TopicKey.of(-j16, j17));
-                    ((ActionBarLayout) launchActivity.O()).Q(snVar);
+                    pg.d.a(unVar, MessagesStorage.TopicKey.of(-j16, j17));
+                    ((ActionBarLayout) launchActivity.O()).R(unVar);
                     return;
                 }
                 return;
             default:
-                u0 u0Var = (u0) this.d;
-                q0 q0Var = (q0) this.e;
+                s0 s0Var = (s0) this.d;
+                vi.o0 o0Var = (vi.o0) this.e;
                 long j18 = this.b;
                 long j19 = this.c;
-                synchronized (u0Var.g) {
-                    if (!q0Var.d && !q0Var.e) {
-                        ((d11) u0Var.e).a(q0Var.a, q0Var.b, j18, j19);
+                synchronized (s0Var.g) {
+                    if (!o0Var.d && !o0Var.e) {
+                        ((l11) s0Var.e).a(o0Var.a, o0Var.b, j18, j19);
                         return;
                     }
                     return;

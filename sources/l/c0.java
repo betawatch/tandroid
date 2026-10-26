@@ -1,6 +1,5 @@
 package l;
 
-import ai.n6;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -14,13 +13,14 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import bi.i6;
 import java.util.WeakHashMap;
-import m.k2;
-import m.s1;
+import m.j2;
+import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public ViewTreeObserver E;
@@ -34,13 +34,13 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     public final boolean e;
     public final int f;
     public final int h;
-    public final k2 n;
+    public final j2 n;
     public PopupWindow.OnDismissListener v;
     public View w;
     public View x;
     public w y;
-    public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 2);
-    public final n6 s = new n6(this, 4);
+    public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 2);
+    public final i6 s = new i6(this, 4);
     public int I = 0;
 
     public c0(Context context, k kVar, View view, int i10, boolean z10) {
@@ -52,7 +52,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
         Resources resources = context.getResources();
         this.f = Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(R.dimen.abc_config_prefDialogWidth));
         this.w = view;
-        this.n = new k2(context, null, i10);
+        this.n = new j2(context, null, i10);
         kVar.b(this, context);
     }
 
@@ -67,14 +67,11 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.x
-    public final void d(k kVar, boolean z10) {
-        if (kVar != this.c) {
-            return;
-        }
-        dismiss();
-        w wVar = this.y;
-        if (wVar != null) {
-            wVar.d(kVar, z10);
+    public final void d() {
+        this.G = false;
+        h hVar = this.d;
+        if (hVar != null) {
+            hVar.notifyDataSetChanged();
         }
     }
 
@@ -86,21 +83,29 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.x
-    public final void e() {
-        this.G = false;
-        h hVar = this.d;
-        if (hVar != null) {
-            hVar.notifyDataSetChanged();
+    public final void e(w wVar) {
+        this.y = wVar;
+    }
+
+    @Override // l.b0
+    public final r1 f() {
+        return this.n.c;
+    }
+
+    @Override // l.x
+    public final void g(k kVar, boolean z10) {
+        if (kVar != this.c) {
+            return;
+        }
+        dismiss();
+        w wVar = this.y;
+        if (wVar != null) {
+            wVar.g(kVar, z10);
         }
     }
 
     @Override // l.b0
-    public final s1 f() {
-        return this.n.c;
-    }
-
-    @Override // l.b0
-    public final void g() {
+    public final void h() {
         View view;
         if (a()) {
             return;
@@ -109,13 +114,13 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             throw new IllegalStateException("StandardMenuPopup cannot be used without an anchor");
         }
         this.x = view;
-        k2 k2Var = this.n;
-        m.y yVar = k2Var.O;
-        m.y yVar2 = k2Var.O;
-        yVar.setOnDismissListener(this);
-        k2Var.F = this;
-        k2Var.N = true;
-        yVar2.setFocusable(true);
+        j2 j2Var = this.n;
+        m.x xVar = j2Var.O;
+        m.x xVar2 = j2Var.O;
+        xVar.setOnDismissListener(this);
+        j2Var.F = this;
+        j2Var.N = true;
+        xVar2.setFocusable(true);
         View view2 = this.x;
         boolean z10 = this.E == null;
         ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
@@ -124,8 +129,8 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             viewTreeObserver.addOnGlobalLayoutListener(this.r);
         }
         view2.addOnAttachStateChangeListener(this.s);
-        k2Var.E = view2;
-        k2Var.w = this.I;
+        j2Var.E = view2;
+        j2Var.w = this.I;
         boolean z11 = this.G;
         Context context = this.b;
         h hVar = this.d;
@@ -133,32 +138,27 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             this.H = s.m(hVar, context, this.f);
             this.G = true;
         }
-        k2Var.r(this.H);
-        yVar2.setInputMethodMode(2);
+        j2Var.p(this.H);
+        xVar2.setInputMethodMode(2);
         Rect rect = this.a;
-        k2Var.M = rect != null ? new Rect(rect) : null;
-        k2Var.g();
-        s1 s1Var = k2Var.c;
-        s1Var.setOnKeyListener(this);
+        j2Var.M = rect != null ? new Rect(rect) : null;
+        j2Var.h();
+        r1 r1Var = j2Var.c;
+        r1Var.setOnKeyListener(this);
         if (this.J) {
             k kVar = this.c;
             if (kVar.m != null) {
-                FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(context).inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) s1Var, false);
+                FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(context).inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) r1Var, false);
                 TextView textView = (TextView) frameLayout.findViewById(android.R.id.title);
                 if (textView != null) {
                     textView.setText(kVar.m);
                 }
                 frameLayout.setEnabled(false);
-                s1Var.addHeaderView(frameLayout, null, false);
+                r1Var.addHeaderView(frameLayout, null, false);
             }
         }
-        k2Var.o(hVar);
-        k2Var.g();
-    }
-
-    @Override // l.x
-    public final void h(w wVar) {
-        this.y = wVar;
+        j2Var.n(hVar);
+        j2Var.h();
     }
 
     @Override // l.x
@@ -170,7 +170,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             vVar.h = wVar;
             s sVar = vVar.i;
             if (sVar != null) {
-                sVar.h(wVar);
+                sVar.e(wVar);
             }
             int size = d0Var.f.size();
             int i10 = 0;
@@ -194,9 +194,9 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             vVar.j = this.v;
             this.v = null;
             this.c.c(false);
-            k2 k2Var = this.n;
-            int i11 = k2Var.f;
-            int n10 = k2Var.n();
+            j2 j2Var = this.n;
+            int i11 = j2Var.f;
+            int m10 = j2Var.m();
             int i12 = this.I;
             View view = this.w;
             WeakHashMap weakHashMap = i0.a;
@@ -205,12 +205,12 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             }
             if (!vVar.b()) {
                 if (vVar.e != null) {
-                    vVar.d(i11, n10, true, true);
+                    vVar.d(i11, m10, true, true);
                 }
             }
             w wVar2 = this.y;
             if (wVar2 != null) {
-                wVar2.o(d0Var);
+                wVar2.t(d0Var);
             }
             return true;
         }

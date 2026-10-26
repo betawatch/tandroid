@@ -1,41 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class m31 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ w31 b;
+public final /* synthetic */ class m31 implements oe.d, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ e41 a;
 
-    public m31(w31 w31Var, boolean z10) {
-        this.b = w31Var;
-        this.a = z10;
+    @Override // oe.d
+    public void E(int i10, float f7, float f10, oe.e eVar) {
+        this.a.h();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        w31 w31Var = this.b;
-        long j10 = w31Var.c;
-        if (w31Var.a0 == animator) {
-            boolean z10 = this.a;
-            w31Var.R = z10 ? 1.0f : 0.0f;
-            w31Var.p();
-            w31Var.S = false;
-            w31Var.E.setImageResource(w31Var.P ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
-            w31Var.a0 = null;
-            MessagesController.getInstance(w31Var.b).getMainSettings().edit().putBoolean(a1.g.o(j10, "topicssidetabs"), w31Var.Q).putBoolean(a1.g.o(j10, "topicssidetabsb"), w31Var.P).apply();
-            Boolean bool = w31Var.W;
-            if (bool != null && z10 != bool.booleanValue()) {
-                boolean booleanValue = w31Var.W.booleanValue();
-                w31Var.W = null;
-                w31Var.d(booleanValue);
-            }
-            AndroidUtilities.runOnUIThread(new kr0(this, 20));
-        }
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(e41.c(this.a, (t61) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        e41.a(this.a, (t61) obj);
+    }
+
+    @Override // oe.d
+    public /* synthetic */ void z(float f7, int i10) {
     }
 }

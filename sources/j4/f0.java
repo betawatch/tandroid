@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 import javax.net.SocketFactory;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f0 {
     public final int a;
@@ -24,18 +24,18 @@ public final class f0 {
     }
 
     public Socket a(InetAddress[] inetAddressArr) {
-        tc.h hVar = new tc.h();
+        uc.h hVar = new uc.h();
         ArrayList arrayList = new ArrayList(inetAddressArr.length);
         int i10 = 0;
-        c5.c0 c0Var = null;
+        d5.z zVar = null;
         int i11 = 0;
         for (InetAddress inetAddress : inetAddressArr) {
             int i12 = this.b;
             if ((i12 != 2 || (inetAddress instanceof Inet4Address)) && (i12 != 3 || (inetAddress instanceof Inet6Address))) {
                 int i13 = i11 + this.c;
-                c5.c0 c0Var2 = new c5.c0(i13, 12);
-                arrayList.add(new tc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((tc.a) this.e).b), this.a, c0Var, c0Var2));
-                c0Var = c0Var2;
+                d5.z zVar2 = new d5.z(i13, 13);
+                arrayList.add(new uc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((uc.a) this.e).b), this.a, zVar, zVar2));
+                zVar = zVar2;
                 i11 = i13;
             }
         }
@@ -46,7 +46,7 @@ public final class f0 {
         while (i10 < size) {
             Object obj = arrayList2.get(i10);
             i10++;
-            ((tc.t) obj).start();
+            ((uc.t) obj).start();
         }
         ((CountDownLatch) hVar.a).await();
         Socket socket = (Socket) hVar.c;
@@ -57,7 +57,7 @@ public final class f0 {
         if (exc != null) {
             throw exc;
         }
-        throw new tc.v(44, "No viable interface to connect");
+        throw new uc.v(44, "No viable interface to connect");
     }
 
     public void b() {
@@ -80,7 +80,7 @@ public final class f0 {
         this.e = "";
     }
 
-    public f0(SocketFactory socketFactory, tc.a aVar, int i10, int i11, int i12) {
+    public f0(SocketFactory socketFactory, uc.a aVar, int i10, int i11, int i12) {
         this.d = socketFactory;
         this.e = aVar;
         this.a = i10;

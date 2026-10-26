@@ -213,12 +213,12 @@ public final class j implements ChronoZonedDateTime, Serializable {
     @Override // j$.time.temporal.Temporal
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         Objects.requireNonNull(temporal, "endExclusive");
-        ChronoZonedDateTime p5 = a().p(temporal);
+        ChronoZonedDateTime p10 = a().p(temporal);
         if (qVar instanceof ChronoUnit) {
-            return this.a.g(p5.i(this.b).r(), qVar);
+            return this.a.g(p10.i(this.b).r(), qVar);
         }
         Objects.requireNonNull(qVar, "unit");
-        return qVar.between(this, p5);
+        return qVar.between(this, p10);
     }
 
     private Object writeReplace() {

@@ -1,10 +1,10 @@
 package kotlin.jvm.internal;
 
-import be.e0;
+import ce.e0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class g extends b implements f, xd.e {
+public abstract class g extends b implements f, yd.e {
     private final int arity;
     private final int flags;
 
@@ -15,7 +15,7 @@ public abstract class g extends b implements f, xd.e {
     }
 
     @Override // kotlin.jvm.internal.b
-    public xd.b computeReflected() {
+    public yd.b computeReflected() {
         q.a.getClass();
         return this;
     }
@@ -28,7 +28,7 @@ public abstract class g extends b implements f, xd.e {
             g gVar = (g) obj;
             return getName().equals(gVar.getName()) && getSignature().equals(gVar.getSignature()) && this.flags == gVar.flags && this.arity == gVar.arity && i.a(getBoundReceiver(), gVar.getBoundReceiver()) && i.a(getOwner(), gVar.getOwner());
         }
-        if (obj instanceof xd.e) {
+        if (obj instanceof yd.e) {
             return obj.equals(compute());
         }
         return false;
@@ -43,33 +43,33 @@ public abstract class g extends b implements f, xd.e {
         return getSignature().hashCode() + ((getName().hashCode() + (getOwner() == null ? 0 : getOwner().hashCode() * 31)) * 31);
     }
 
-    @Override // xd.e
+    @Override // yd.e
     public boolean isExternal() {
         return getReflected().isExternal();
     }
 
-    @Override // xd.e
+    @Override // yd.e
     public boolean isInfix() {
         return getReflected().isInfix();
     }
 
-    @Override // xd.e
+    @Override // yd.e
     public boolean isInline() {
         return getReflected().isInline();
     }
 
-    @Override // xd.e
+    @Override // yd.e
     public boolean isOperator() {
         return getReflected().isOperator();
     }
 
-    @Override // xd.e
+    @Override // yd.e
     public boolean isSuspend() {
         return getReflected().isSuspend();
     }
 
     public String toString() {
-        xd.b compute = compute();
+        yd.b compute = compute();
         if (compute != this) {
             return compute.toString();
         }
@@ -80,10 +80,10 @@ public abstract class g extends b implements f, xd.e {
     }
 
     @Override // kotlin.jvm.internal.b
-    public xd.e getReflected() {
-        xd.b compute = compute();
+    public yd.e getReflected() {
+        yd.b compute = compute();
         if (compute != this) {
-            return (xd.e) compute;
+            return (yd.e) compute;
         }
         throw new e0("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
     }

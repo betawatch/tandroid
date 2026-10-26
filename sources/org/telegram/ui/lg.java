@@ -1,58 +1,121 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg implements View.OnKeyListener {
+public final /* synthetic */ class lg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ lg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ lg(Object obj, int i10, TLObject tLObject, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
+        this.d = tLObject;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        TLRPC.Updates updates;
+        int i10 = this.a;
+        int i11 = this.b;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i10) {
             case 0:
-                sn snVar = (sn) this.b;
-                snVar.getClass();
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
-                    snVar.xa();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new bi.sb((un) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 17));
                 break;
             case 1:
-                an0 an0Var = (an0) this.b;
-                if (i10 != 67) {
-                    an0Var.getClass();
-                    break;
-                } else if (an0Var.Y[2].length() == 0) {
-                    an0Var.Y[1].requestFocus();
-                    EditTextBoldCursor editTextBoldCursor2 = an0Var.Y[1];
-                    editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                    an0Var.Y[1].dispatchKeyEvent(keyEvent);
+                LaunchActivity launchActivity = (LaunchActivity) obj4;
+                sz szVar = (sz) obj3;
+                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                Pattern pattern = LaunchActivity.D1;
+                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
+                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
+                    MessagesController.getInstance(launchActivity.O).lambda$processUpdates$379(updates2, false);
+                    updates = updates2;
+                } else {
+                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
+                        AndroidUtilities.runOnUIThread(new sz(19, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
+                    }
+                    updates = null;
+                }
+                AndroidUtilities.runOnUIThread(new bi.sb(launchActivity, szVar, tL_error, updates, this.b, 26));
+                break;
+            case 2:
+                PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
+                TL_account.Passkey passkey = (TL_account.Passkey) obj3;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                ArrayList arrayList = passkeysActivity.b;
+                if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse)) {
+                    if (tL_error2 != null) {
+                        org.telegram.ui.Components.wc.b0(passkeysActivity).g0(tL_error2, false);
+                        arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
+                        passkeysActivity.a.g3.O(true);
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.Components.wc.b0(passkeysActivity).f0("FALSE", false);
+                    arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
+                    passkeysActivity.a.g3.O(true);
                     break;
                 }
                 break;
             default:
-                fv0 fv0Var = (fv0) this.b;
-                EditTextBoldCursor editTextBoldCursor3 = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor3.length() == 0) {
-                    ImageView imageView = fv0Var.f;
-                    if (imageView != null) {
-                        imageView.callOnClick();
-                        break;
+                org.telegram.ui.Wallet.t7 t7Var = (org.telegram.ui.Wallet.t7) obj4;
+                TL_wallet.card cardVar = (TL_wallet.card) obj3;
+                TL_wallet.card cardVar2 = (TL_wallet.card) obj;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
+                t7Var.f1 = 0;
+                if (cardVar2 == null) {
+                    if (cardVar != null) {
+                        org.telegram.ui.Wallet.t7.e0(i11, cardVar);
+                    }
+                    if (!t7Var.a1) {
+                        if (tL_error3 != null) {
+                            org.telegram.ui.Components.wc.b0(t7Var.a).g0(tL_error3, false);
+                        }
+                        t7Var.d1 = false;
+                        TL_wallet.card cardVar3 = t7Var.b1;
+                        if (cardVar3 != null) {
+                            t7Var.d(cardVar3);
+                            break;
+                        }
+                    }
+                } else {
+                    org.telegram.ui.Wallet.t7.e0(i11, cardVar2);
+                    if (!t7Var.a1) {
+                        if (!t7Var.d1) {
+                            t7Var.d(cardVar2);
+                            break;
+                        } else {
+                            t7Var.b1 = cardVar2;
+                            t7Var.c1 = org.telegram.ui.Wallet.t7.T(cardVar2);
+                            t7Var.Q();
+                            break;
+                        }
                     }
                 }
                 break;
         }
-        return true;
+    }
+
+    public /* synthetic */ lg(LaunchActivity launchActivity, sz szVar, int i10) {
+        this.a = 1;
+        this.c = launchActivity;
+        this.d = szVar;
+        this.b = i10;
     }
 }

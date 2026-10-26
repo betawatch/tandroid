@@ -1,103 +1,40 @@
 package gh;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import dh.f;
+import fh.d;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class b implements a {
-    public final Paint a;
-    public final Matrix b;
-    public BitmapShader c;
-    public Bitmap d;
-    public final Matrix e;
-    public Bitmap f;
-    public int h;
-    public int n;
+public final /* synthetic */ class b implements d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u6 b;
 
-    public b() {
-        Paint paint = new Paint(3);
-        this.a = paint;
-        this.b = new Matrix();
-        this.e = new Matrix();
-        paint.setFilterBitmap(true);
+    public /* synthetic */ b(int i10, u6 u6Var) {
+        this.a = i10;
+        this.b = u6Var;
     }
 
-    public final void a(Bitmap bitmap) {
-        if (this.d == bitmap) {
-            return;
+    @Override // fh.d
+    public final int i(u6 u6Var, boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (c.c(UserConfig.selectedAccount, this.b)) {
+                    return y6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.Sd, u6Var));
+                }
+                return i0.a.o(y6.w0(y6.Sd, u6Var), 255);
+            case 1:
+                if (c.c(UserConfig.selectedAccount, this.b)) {
+                    return y6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.ce, u6Var));
+                }
+                return i0.a.o(y6.w0(z10 ? y6.s8 : y6.ce, u6Var), 255);
+            default:
+                if (c.c(UserConfig.selectedAccount, this.b)) {
+                    return y6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.ce, u6Var));
+                }
+                return i0.a.o(y6.w0(z10 ? y6.s8 : y6.ce, u6Var), 255);
         }
-        this.d = bitmap;
-        Paint paint = this.a;
-        paint.setShader(null);
-        this.c = null;
-        if (bitmap != null) {
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.c = bitmapShader;
-            paint.setShader(bitmapShader);
-            e();
-        }
-    }
-
-    public final void c(int i10, int i11) {
-        if (this.h == i10 && this.n == i11) {
-            return;
-        }
-        this.h = i10;
-        this.n = i11;
-        e();
-    }
-
-    @Override // gh.a
-    public final dh.d d() {
-        return new f(this);
-    }
-
-    public final void e() {
-        Bitmap bitmap = this.d;
-        Matrix matrix = this.b;
-        if (bitmap == null) {
-            matrix.reset();
-            return;
-        }
-        int width = bitmap.getWidth();
-        int height = this.d.getHeight();
-        int i10 = this.h;
-        int i11 = this.n;
-        matrix.reset();
-        if (width <= 0 || height <= 0 || i10 <= 0 || i11 <= 0) {
-            return;
-        }
-        float f7 = i10;
-        float f10 = width;
-        float f11 = i11;
-        float f12 = height;
-        float max = Math.max(f7 / f10, f11 / f12);
-        matrix.setScale(max, max);
-        matrix.postTranslate((f7 - (f10 * max)) * 0.5f, ((f11 - (f12 * max)) * 0.5f) + 0);
-    }
-
-    @Override // gh.a
-    public final void y(Canvas canvas, float f7, float f10, float f11, float f12) {
-        Bitmap bitmap = this.d;
-        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
-            return;
-        }
-        Matrix matrix = this.e;
-        Matrix matrix2 = this.b;
-        matrix.set(matrix2);
-        matrix.postTranslate(f7, f10);
-        this.c.setLocalMatrix(matrix2);
-        canvas.drawRect(f7, f10, f11, f12, this.a);
-    }
-
-    @Override // gh.a
-    public final /* synthetic */ void b() {
     }
 }

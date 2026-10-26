@@ -1,49 +1,22 @@
 package ke;
 
-import be.j2;
-import be.l;
-import be.m;
-import ge.t;
+import com.google.firebase.messaging.p;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class c implements l, j2 {
-    public final m a;
-    public final /* synthetic */ d b;
+public final class c implements b {
+    public final Object a;
 
-    public c(d dVar, m mVar) {
-        this.b = dVar;
-        this.a = mVar;
+    public /* synthetic */ c(Object obj) {
+        this.a = obj;
     }
 
-    @Override // be.j2
-    public final void a(t tVar, int i10) {
-        this.a.a(tVar, i10);
-    }
-
-    @Override // be.l
-    public final com.google.android.gms.internal.clearcut.e d(td.l lVar, Object obj) {
-        d dVar = this.b;
-        b bVar = new b(dVar, this, 1);
-        com.google.android.gms.internal.clearcut.e F = this.a.F(bVar, (id.i) obj);
-        if (F != null) {
-            d.g.set(dVar, null);
+    public Object a() {
+        if (o7.a.b == null) {
+            o7.a.b = new p();
         }
-        return F;
-    }
-
-    @Override // be.l
-    public final void f(Object obj) {
-        this.a.f(obj);
-    }
-
-    @Override // kd.c
-    public final kd.h getContext() {
-        return this.a.e;
-    }
-
-    @Override // kd.c
-    public final void resumeWith(Object obj) {
-        this.a.resumeWith(obj);
+        synchronized (o7.a.a) {
+        }
+        throw new IllegalStateException("Must call PhenotypeContext.setContext() first");
     }
 }

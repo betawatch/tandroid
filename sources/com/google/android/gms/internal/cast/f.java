@@ -1,40 +1,117 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class f {
-    public final Context a;
-    public final String b;
-    public final d6.j c;
-    public final d6.b d;
-    public final r e;
-
-    public f(Context context, d6.b bVar, r rVar) {
-        String g02;
-        ArrayList arrayList = bVar.b;
-        String str = bVar.a;
-        if (DesugarCollections.unmodifiableList(arrayList).isEmpty()) {
-            g02 = c6.y.a(str);
+public final class f extends a8.a {
+    public final e6.q V0(e6.b bVar, y6.a aVar, e6.j jVar) {
+        e6.q oVar;
+        Parcel N0 = N0();
+        t.c(N0, bVar);
+        t.d(N0, aVar);
+        t.d(N0, jVar);
+        Parcel P0 = P0(N0, 3);
+        IBinder readStrongBinder = P0.readStrongBinder();
+        int i10 = e6.p.b;
+        if (readStrongBinder == null) {
+            oVar = null;
         } else {
-            List unmodifiableList = DesugarCollections.unmodifiableList(bVar.b);
-            if (str == null) {
-                throw new IllegalArgumentException("applicationId cannot be null");
-            }
-            if (unmodifiableList == null) {
-                throw new IllegalArgumentException("namespaces cannot be null");
-            }
-            g02 = qf.b.g0(new qf.b(9, str, unmodifiableList));
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ICastSession");
+            oVar = queryLocalInterface instanceof e6.q ? (e6.q) queryLocalInterface : new e6.o(readStrongBinder, "com.google.android.gms.cast.framework.ICastSession", 2);
         }
-        this.c = new d6.j(this);
-        this.a = context.getApplicationContext();
-        n6.l.f(g02);
-        this.b = g02;
-        this.d = bVar;
-        this.e = rVar;
+        P0.recycle();
+        return oVar;
+    }
+
+    public final e6.u W0(y6.b bVar, y6.a aVar, y6.a aVar2) {
+        e6.u sVar;
+        Parcel N0 = N0();
+        t.d(N0, bVar);
+        t.d(N0, aVar);
+        t.d(N0, aVar2);
+        Parcel P0 = P0(N0, 5);
+        IBinder readStrongBinder = P0.readStrongBinder();
+        int i10 = e6.t.b;
+        if (readStrongBinder == null) {
+            sVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.IReconnectionService");
+            sVar = queryLocalInterface instanceof e6.u ? (e6.u) queryLocalInterface : new e6.s(readStrongBinder, "com.google.android.gms.cast.framework.IReconnectionService", 2);
+        }
+        P0.recycle();
+        return sVar;
+    }
+
+    public final e6.x X0(String str, String str2, e6.j jVar) {
+        e6.x vVar;
+        Parcel N0 = N0();
+        N0.writeString(str);
+        N0.writeString(str2);
+        t.d(N0, jVar);
+        Parcel P0 = P0(N0, 2);
+        IBinder readStrongBinder = P0.readStrongBinder();
+        int i10 = e6.w.b;
+        if (readStrongBinder == null) {
+            vVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ISession");
+            vVar = queryLocalInterface instanceof e6.x ? (e6.x) queryLocalInterface : new e6.v(readStrongBinder, "com.google.android.gms.cast.framework.ISession", 2);
+        }
+        P0.recycle();
+        return vVar;
+    }
+
+    public final g6.e Y0(y6.b bVar, e6.j jVar, int i10, int i11) {
+        g6.e cVar;
+        Parcel N0 = N0();
+        t.d(N0, bVar);
+        t.d(N0, jVar);
+        N0.writeInt(i10);
+        N0.writeInt(i11);
+        N0.writeInt(0);
+        N0.writeLong(2097152L);
+        N0.writeInt(5);
+        N0.writeInt(333);
+        N0.writeInt(10000);
+        Parcel P0 = P0(N0, 6);
+        IBinder readStrongBinder = P0.readStrongBinder();
+        int i12 = g6.d.b;
+        if (readStrongBinder == null) {
+            cVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask");
+            cVar = queryLocalInterface instanceof g6.e ? (g6.e) queryLocalInterface : new g6.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 2);
+        }
+        P0.recycle();
+        return cVar;
+    }
+
+    public final g6.e Z0(y6.b bVar, y6.b bVar2, e6.j jVar, int i10, int i11) {
+        g6.e cVar;
+        Parcel N0 = N0();
+        t.d(N0, bVar);
+        t.d(N0, bVar2);
+        t.d(N0, jVar);
+        N0.writeInt(i10);
+        N0.writeInt(i11);
+        N0.writeInt(0);
+        N0.writeLong(2097152L);
+        N0.writeInt(5);
+        N0.writeInt(333);
+        N0.writeInt(10000);
+        Parcel P0 = P0(N0, 7);
+        IBinder readStrongBinder = P0.readStrongBinder();
+        int i12 = g6.d.b;
+        if (readStrongBinder == null) {
+            cVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask");
+            cVar = queryLocalInterface instanceof g6.e ? (g6.e) queryLocalInterface : new g6.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 2);
+        }
+        P0.recycle();
+        return cVar;
     }
 }

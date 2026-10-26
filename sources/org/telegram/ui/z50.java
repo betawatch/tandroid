@@ -1,44 +1,31 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class z50 extends s4.o {
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ a60 c;
+public final class z50 extends org.telegram.ui.Components.voip.l {
+    public final /* synthetic */ b60 h;
 
-    public z50(a60 a60Var, ArrayList arrayList) {
-        this.c = a60Var;
-        this.b = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z50(b60 b60Var, Context context) {
+        super(context, true);
+        this.h = b60Var;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return true;
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return false;
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        b60 b60Var = this.h;
+        if (!b60Var.r || getParticipant() == null) {
+            return;
         }
-        a60 a60Var = this.c;
-        if (i11 < a60Var.e.size()) {
-            return ((ChatObject.VideoParticipant) arrayList.get(i10)).equals(a60Var.e.get(i11));
-        }
-        return false;
+        b60Var.E(this, true);
     }
 
-    @Override // s4.o
-    public final int d() {
-        return this.c.e.size();
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b.size();
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.h.E(this, false);
     }
 }

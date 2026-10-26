@@ -1,56 +1,93 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class l2 extends View implements org.telegram.ui.ActionBar.b6 {
-    public final f70 a;
-    public final org.telegram.ui.Components.yq b;
+public final class l2 implements a5.i {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public l2(Context context, f70 f70Var) {
-        super(context);
-        this.a = f70Var;
-        org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(new ColorDrawable(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Qk, false)), org.telegram.ui.ActionBar.k6.W0(context, R.drawable.greydivider_bottom, -16777216));
-        this.b = yqVar;
-        yqVar.w = true;
-        setBackgroundDrawable(yqVar);
-        setImportantForAccessibility(2);
+    public /* synthetic */ l2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Qk));
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(12.0f));
-        int i12 = org.telegram.ui.ActionBar.k6.Qk;
-        ((k4) this.a).getClass();
-        org.telegram.ui.ActionBar.k6.y1(this.b, org.telegram.ui.ActionBar.k6.x0(null, i12, false), false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        f70 f70Var;
-        try {
-            org.telegram.ui.Components.yq yqVar = this.b;
-            if (yqVar == null || (f70Var = this.a) == null) {
-                return;
-            }
-            int i10 = org.telegram.ui.ActionBar.k6.Qk;
-            ((k4) f70Var).getClass();
-            org.telegram.ui.ActionBar.k6.y1(yqVar, org.telegram.ui.ActionBar.k6.x0(null, i10, false), false);
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // a5.i
+    public final void a(int i10) {
+        switch (this.a) {
+            case 0:
+                p2 p2Var = (p2) this.b;
+                p2Var.w = i10;
+                p2Var.d.invalidate();
+                break;
+            case 1:
+                ((p70) this.b).H = i10;
+                break;
+            default:
+                ((tc1) this.b).b0.invalidate();
+                break;
         }
+    }
+
+    @Override // a5.i
+    public final void b(float f7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                p2 p2Var = (p2) this.b;
+                float measuredWidth = p2Var.b.getMeasuredWidth();
+                if (measuredWidth != 0.0f) {
+                    p2Var.v = c3.h0.f(p2Var.w, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
+                    p2Var.d.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                p70 p70Var = (p70) this.b;
+                org.telegram.ui.Components.sa saVar = p70Var.e;
+                saVar.b = f7;
+                saVar.c = i10;
+                saVar.invalidate();
+                float measuredWidth2 = p70Var.d.getMeasuredWidth();
+                if (measuredWidth2 != 0.0f) {
+                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (p70Var.H * measuredWidth2)) / measuredWidth2);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // a5.i
+    public final void c(int i10) {
+        switch (this.a) {
+            case 1:
+                p70 p70Var = (p70) this.b;
+                if (i10 != 1) {
+                    if (i10 == 0 || i10 == 2) {
+                        if (p70Var.K) {
+                            p70Var.K = false;
+                        }
+                        if (p70Var.w != p70Var.d.getCurrentItem()) {
+                            p70Var.w = p70Var.d.getCurrentItem();
+                            break;
+                        }
+                    }
+                } else {
+                    p70Var.K = true;
+                    p70Var.d.getCurrentItem();
+                    p70Var.d.getMeasuredWidth();
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void d(int i10) {
+    }
+
+    private final void e(int i10) {
+    }
+
+    private final void f(float f7, int i10, int i11) {
     }
 }

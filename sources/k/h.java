@@ -1,5 +1,6 @@
 package k;
 
+import a8.kc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -15,12 +16,11 @@ import android.view.MenuInflater;
 import android.view.SubMenu;
 import java.io.IOException;
 import l.n;
-import m.m1;
+import m.l1;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.q7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -167,12 +167,12 @@ public final class h extends MenuInflater {
                             gVar.A = obtainStyledAttributes2.getText(17);
                             gVar.B = obtainStyledAttributes2.getText(22);
                             if (obtainStyledAttributes2.hasValue(19)) {
-                                gVar.D = m1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
+                                gVar.D = l1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
                             } else {
                                 gVar.D = null;
                             }
                             if (obtainStyledAttributes2.hasValue(18)) {
-                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = q7.a(context, resourceId)) == null) {
+                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = kc.a(context, resourceId)) == null) {
                                     colorStateList = obtainStyledAttributes2.getColorStateList(18);
                                 }
                                 gVar.C = colorStateList;
@@ -222,11 +222,11 @@ public final class h extends MenuInflater {
                     xmlResourceParser = this.c.getResources().getLayout(i10);
                     b(xmlResourceParser, Xml.asAttributeSet(xmlResourceParser), menu);
                     xmlResourceParser.close();
-                } catch (IOException e7) {
-                    throw new InflateException("Error inflating menu XML", e7);
+                } catch (IOException e10) {
+                    throw new InflateException("Error inflating menu XML", e10);
                 }
-            } catch (XmlPullParserException e10) {
-                throw new InflateException("Error inflating menu XML", e10);
+            } catch (XmlPullParserException e11) {
+                throw new InflateException("Error inflating menu XML", e11);
             }
         } catch (Throwable th2) {
             if (xmlResourceParser != null) {

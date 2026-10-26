@@ -4,36 +4,36 @@ import android.content.Intent;
 import java.io.PrintWriter;
 import java.util.Set;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public interface c {
     boolean a();
 
-    void b(n6.h hVar, Set set);
+    Set b();
 
-    Set c();
+    void c(String str);
 
-    void d(String str);
+    boolean d();
 
     void disconnect();
 
-    void e(n6.b bVar);
+    void e(String str, PrintWriter printWriter);
 
-    boolean f();
+    String f();
 
-    void g(String str, PrintWriter printWriter);
+    void g(rb.c cVar);
 
-    String h();
+    void h(o6.b bVar);
 
-    void i(a4.l lVar);
+    boolean i();
 
-    boolean j();
+    void j(o6.h hVar, Set set);
 
     boolean k();
 
     int l();
 
-    k6.c[] m();
+    l6.c[] m();
 
     String n();
 

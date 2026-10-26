@@ -1,39 +1,59 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class ny implements View.OnClickListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b3 b;
-    public final /* synthetic */ oy c;
+    public final /* synthetic */ sy a;
 
-    public ny(oy oyVar, boolean[] zArr, org.telegram.ui.ActionBar.b3 b3Var) {
-        this.c = oyVar;
-        this.a = zArr;
-        this.b = b3Var;
+    public ny(sy syVar) {
+        this.a = syVar;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        ty tyVar = this.c.a;
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
+        boolean[] zArr = new boolean[1];
+        sy syVar = this.a;
+        sz szVar = syVar.F;
+        org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(szVar.getContext(), null);
+        LinearLayout linearLayout = new LinearLayout(szVar.getContext());
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
+        ImageView imageView = new ImageView(szVar.getContext());
+        imageView.setImageResource(R.drawable.smiles_info);
+        linearLayout.addView(imageView, gb1.x(-2, -2, 49, 0, 15, 0, 0));
+        TextView textView = new TextView(szVar.getContext());
+        org.telegram.ui.d3.o(R.string.EmojiSuggestions, textView, 1, 15.0f);
+        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.n5, szVar.Z1);
+        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView.setTypeface(AndroidUtilities.bold());
+        linearLayout.addView(textView, gb1.x(-2, -2, 51, 0, 24, 0, 0));
+        TextView textView2 = new TextView(szVar.getContext());
+        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.EmojiSuggestionsInfo)));
+        textView2.setTextSize(1, 15.0f);
+        org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.j5, szVar.Z1);
+        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+        linearLayout.addView(textView2, gb1.x(-2, -2, 51, 0, 11, 0, 0));
+        TextView textView3 = new TextView(szVar.getContext());
+        int i10 = R.string.EmojiSuggestionsUrl;
+        Object obj = syVar.w;
+        if (obj == null) {
+            obj = szVar.W0;
         }
-        zArr[0] = true;
-        org.telegram.ui.ActionBar.c2[] c2VarArr = {new org.telegram.ui.ActionBar.c2(tyVar.F.getContext(), 3, null)};
-        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
-        tz tzVar = tyVar.F;
-        String str = tyVar.w;
-        if (str == null) {
-            str = tzVar.W0[0];
-        }
-        tL_messages_getEmojiURL.lang_code = str;
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.h4(this, c2VarArr, ConnectionsManager.getInstance(tzVar.c1).sendRequest(tL_messages_getEmojiURL, new ai.j2(this, c2VarArr, this.b, 13)), 8), 1000L);
+        textView3.setText(LocaleController.formatString("EmojiSuggestionsUrl", i10, obj));
+        textView3.setTextSize(1, 15.0f);
+        org.telegram.ui.ActionBar.f7.V(textView3, org.telegram.ui.ActionBar.y6.k5, szVar.Z1);
+        textView3.setGravity(LocaleController.isRTL ? 5 : 3);
+        linearLayout.addView(textView3, gb1.x(-2, -2, 51, 0, 18, 0, 16));
+        textView3.setOnClickListener(new my(this, zArr, e3Var));
+        e3Var.b(linearLayout);
+        e3Var.a.show();
     }
 }

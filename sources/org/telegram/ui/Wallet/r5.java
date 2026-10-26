@@ -1,238 +1,544 @@
 package org.telegram.ui.Wallet;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.graphics.Matrix;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.t00;
+import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class r5 extends View {
+public final class r5 extends FrameLayout implements SensorEventListener {
+    public static final Object n0 = new Object();
+    public final float[] E;
+    public final float[] F;
+    public final y5 G;
+    public final int H;
+    public float I;
+    public float J;
+    public float K;
+    public float L;
+    public float M;
+    public float N;
+    public float O;
+    public int P;
+    public float Q;
+    public float R;
+    public float S;
+    public float T;
+    public boolean U;
+    public long V;
+    public boolean W;
     public boolean a;
-    public final /* synthetic */ s5 b;
+    public boolean a0;
+    public n5 b;
+    public ValueAnimator b0;
+    public int c;
+    public float c0;
+    public u2 d;
+    public float d0;
+    public final t00 e;
+    public float e0;
+    public final di.l1 f;
+    public float f0;
+    public float g0;
+    public final fi.f6 h;
+    public float h0;
+    public int i0;
+    public int j0;
+    public final cy0 k0;
+    public float l0;
+    public float m0;
+    public final q5 n;
+    public final p5 r;
+    public final m.r3 s;
+    public final float[] v;
+    public final SensorManager w;
+    public final Sensor x;
+    public final boolean y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r5(s5 s5Var, Context context) {
+    public r5(Context context, int i10, int i11) {
         super(context);
-        this.b = s5Var;
+        this.s = new m.r3();
+        this.v = new float[8];
+        this.E = new float[9];
+        this.F = new float[3];
+        this.G = new y5();
+        this.I = -0.22f;
+        this.J = -0.28f;
+        this.P = -1;
+        this.e0 = 1.0f;
+        this.g0 = Float.NaN;
+        this.h0 = Float.NaN;
+        this.k0 = new cy0(this, 7);
+        this.c = i10;
+        boolean z10 = false;
+        setClipChildren(false);
+        setClipToPadding(false);
+        setWillNotDraw(false);
+        setCameraDistance(AndroidUtilities.dp(4800.0f));
+        gb1.c(this, 0.02f, 1.2f);
+        t00 t00Var = new t00(this, context);
+        this.e = t00Var;
+        addView(t00Var, gb1.i(-1, -1, 17));
+        di.l1 l1Var = new di.l1(context, 1);
+        this.f = l1Var;
+        l1Var.setPadding(2, 2, 2, 2);
+        l1Var.setLayerType(2, null);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
+        layoutParams.setMargins(-2, -2, -2, -2);
+        t00Var.addView(l1Var, layoutParams);
+        fi.f6 f6Var = new fi.f6(this, context);
+        this.h = f6Var;
+        l1Var.addView(f6Var, gb1.i(-1, -1, 17));
+        q5 q5Var = new q5(this, context);
+        this.n = q5Var;
+        l1Var.addView(q5Var, gb1.i(-1, -1, 17));
+        p5 p5Var = new p5(this, context, 0);
+        this.r = p5Var;
+        p5Var.setClipChildren(false);
+        p5Var.setClipToPadding(false);
+        p5Var.setLayerType(2, null);
+        p5Var.setPivotX(0.0f);
+        p5Var.setPivotY(0.0f);
+        l1Var.addView(p5Var, gb1.i(336, 205, 51));
+        this.H = ViewConfiguration.get(context).getScaledTouchSlop();
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.w = sensorManager;
+        Sensor defaultSensor = sensorManager.getDefaultSensor(15);
+        defaultSensor = defaultSensor == null ? sensorManager.getDefaultSensor(11) : defaultSensor;
+        defaultSensor = defaultSensor == null ? sensorManager.getDefaultSensor(4) : defaultSensor;
+        this.x = defaultSensor;
+        if (defaultSensor != null && defaultSensor.getType() != 4) {
+            z10 = true;
+        }
+        this.y = z10;
+        o5 o5Var = new o5(this, 1);
+        if (n5.j0 && n5.p0.get(Integer.valueOf(i10)) != null) {
+            this.b = new n5(context.getApplicationContext(), i10, i11, o5Var);
+        } else {
+            t00Var.setVisibility(4);
+            n5.l0.postRunnable(new hi.v4(this, context, i10, i11, o5Var));
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0085, code lost:
-    
-        if ((r6 - r14) <= 328.0f) goto L15;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        float f10;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        float f11;
-        boolean z10;
-        int i16;
-        super.onDraw(canvas);
-        int save = canvas.save();
-        canvas.scale(getWidth() / 336.0f, getHeight() / 205.0f);
-        s5 s5Var = this.b;
-        p5 p5Var = s5Var.b;
-        if (p5Var != null) {
-            boolean z11 = !s5Var.a && this.a;
-            f7 = 168.0f;
-            Path path = p5Var.t;
-            f10 = 102.5f;
-            Paint paint = p5Var.b;
-            paint.setShader(null);
-            paint.setColor(-1);
-            i10 = 5;
-            float[][] fArr = p5Var.L;
-            int length = fArr.length;
-            int i17 = 0;
-            i11 = 1;
-            while (i17 < length) {
-                float[] fArr2 = fArr[i17];
-                if (!p5Var.M.contains(fArr2[0], fArr2[1])) {
-                    if (z11) {
-                        float f12 = fArr2[0];
-                        float f13 = fArr2[2];
-                        if (f12 + f13 >= 298.0f) {
+    public static float c(float f7, float f10, float f11) {
+        return Math.max(f10, Math.min(f11, f7));
+    }
+
+    public final void a() {
+        ValueAnimator valueAnimator = this.b0;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.b0.cancel();
+            this.b0 = null;
+        }
+        float f7 = this.N;
+        float f10 = this.O;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.b0 = ofFloat;
+        ofFloat.setDuration(600L);
+        org.telegram.ui.d3.m(1.2f, this.b0);
+        this.b0.addUpdateListener(new fi.fa(this, f7, f10, 6));
+        this.b0.addListener(new fc1(this, 9));
+        this.b0.start();
+    }
+
+    public final void b(float f7, float f10) {
+        this.c0 = f7;
+        this.f0 = f10;
+        float f11 = f7 + this.l0;
+        float f12 = f10 + this.m0;
+        boolean z10 = Math.cos(Math.toRadians((double) f12)) * Math.cos(Math.toRadians((double) f11)) < 0.0d;
+        boolean z11 = this.a;
+        q5 q5Var = this.n;
+        if (z11 != z10) {
+            this.a = z10;
+            this.r.invalidate();
+            q5Var.invalidate();
+        }
+        int width = getWidth();
+        int height = getHeight();
+        if (this.g0 == f11 && this.h0 == f12 && this.i0 == width && this.j0 == height) {
+            return;
+        }
+        this.g0 = f11;
+        this.h0 = f12;
+        this.i0 = width;
+        this.j0 = height;
+        if (width > 0 && height > 0) {
+            this.s.c(width, height, f11, f12, z10, this.v);
+            n5 n5Var = this.b;
+            if (n5Var != null) {
+                float[] fArr = n5Var.n;
+                float[] fArr2 = n5Var.m;
+                float[] fArr3 = n5Var.k;
+                float[] fArr4 = n5Var.l;
+                int[] iArr = n5Var.o;
+                n5Var.r = z10;
+                float[] fArr5 = n5Var.i;
+                float[] fArr6 = z10 ? fArr4 : fArr3;
+                if (!z10) {
+                    fArr3 = fArr4;
+                }
+                m.r3 r3Var = this.s;
+                r3Var.getClass();
+                int i10 = 0;
+                while (i10 < fArr5.length / 2) {
+                    int i11 = i10 * 2;
+                    float f13 = (fArr5[i11 + 1] * (-1.212122f)) + 0.618561f;
+                    float f14 = ((fArr5[i11] * 2.0f) - 1.0f) * 1.0f;
+                    float d = r3Var.d(-0.0125f, f13, f14, width, height, fArr6, i11);
+                    float[] fArr7 = fArr6;
+                    float[] fArr8 = fArr3;
+                    fArr2[i10] = (d + r3Var.d(0.0125f, f13, f14, width, height, fArr8, i11)) * 0.5f;
+                    i10++;
+                    r3Var = r3Var;
+                    fArr3 = fArr8;
+                    fArr5 = fArr5;
+                    iArr = iArr;
+                    fArr6 = fArr7;
+                }
+                int[] iArr2 = iArr;
+                n5Var.q = width / 336.0f;
+                int i12 = 0;
+                while (i12 < 76) {
+                    int i13 = i12 + 1;
+                    fArr[i12] = (fArr2[i12] + fArr2[i13 % 76]) * 0.5f;
+                    iArr2[i12] = i12;
+                    i12 = i13;
+                }
+                for (int i14 = 1; i14 < 76; i14++) {
+                    int i15 = iArr2[i14];
+                    int i16 = i14 - 1;
+                    while (i16 >= 0) {
+                        int i17 = iArr2[i16];
+                        if (fArr[i17] < fArr[i15]) {
+                            iArr2[i16 + 1] = i17;
+                            i16--;
                         }
                     }
-                    z10 = z11;
-                    double atan2 = Math.atan2(fArr2[1] - 102.5f, fArr2[0] - 168.0f);
-                    double cos = Math.cos(atan2 - p5Var.U);
-                    i16 = i17;
-                    paint.setAlpha(Math.round(p5.i(0.16f, 0.96f, Math.max(0.0f, (fArr2[5] * p5Var.Y) + (fArr2[4] * p5Var.X) + (fArr2[3] * p5Var.W)) * ((float) Math.pow(Math.max(0.0f, (fArr2[5] * p5Var.b0) + (fArr2[4] * p5Var.a0) + (fArr2[3] * p5Var.Z)), 10.0d))) * (1.0f - ((1.0f - p5.l(0.12f, 0.85f, (float) Math.pow(Math.pow(Math.sin(atan2 - p5Var.V) / 0.64d, 2.0d) + 1.0d, -2.0d))) * (1.0f - p5.l(0.25f, 0.85f, (float) Math.pow(Math.abs(cos), cos >= 0.0d ? 3.081664098613251d : 5.0d))))) * 255.0f));
-                    float f14 = fArr2[0];
-                    float f15 = fArr2[1];
-                    float f16 = fArr2[2];
-                    float f17 = 0.15f * f16;
-                    path.rewind();
-                    path.moveTo(f14 - f16, f15);
-                    float f18 = f14 - f17;
-                    float f19 = f15 - f17;
-                    path.lineTo(f18, f19);
-                    path.lineTo(f14, f15 - f16);
-                    float f20 = f14 + f17;
-                    path.lineTo(f20, f19);
-                    path.lineTo(f14 + f16, f15);
-                    float f21 = f17 + f15;
-                    path.lineTo(f20, f21);
-                    path.lineTo(f14, f15 + f16);
-                    path.lineTo(f18, f21);
-                    path.close();
-                    canvas.drawPath(path, paint);
-                    i17 = i16 + 1;
-                    z11 = z10;
+                    iArr2[i16 + 1] = i15;
                 }
-                i16 = i17;
-                z10 = z11;
-                i17 = i16 + 1;
-                z11 = z10;
             }
-            i12 = 3;
-            i13 = 2;
-            paint.setAlpha(255);
+            t00 t00Var = this.e;
+            int width2 = t00Var.getWidth();
+            int height2 = t00Var.getHeight();
+            if (width2 != 0 && height2 != 0) {
+                float[] fArr9 = (float[]) t00Var.d;
+                fArr9[0] = 0.0f;
+                fArr9[1] = 0.0f;
+                float f15 = width2;
+                fArr9[2] = f15;
+                fArr9[3] = 0.0f;
+                fArr9[4] = f15;
+                float f16 = height2;
+                fArr9[5] = f16;
+                fArr9[6] = 0.0f;
+                fArr9[7] = f16;
+                t00Var.b = ((Matrix) t00Var.c).setPolyToPoly(fArr9, 0, this.v, 0, 4);
+                t00Var.invalidate();
+            }
+        }
+        n5 n5Var2 = this.b;
+        if (n5Var2 != null) {
+            n5Var2.k(f11, f12);
+        }
+        this.h.invalidate();
+        q5Var.invalidate();
+    }
+
+    public final void d(int i10, MotionEvent motionEvent) {
+        this.P = motionEvent.getPointerId(i10);
+        this.Q = motionEvent.getX(i10);
+        this.R = motionEvent.getY(i10);
+        this.S = this.N;
+        this.T = this.O;
+    }
+
+    public final void e() {
+        SensorManager sensorManager = this.w;
+        if (sensorManager != null) {
+            boolean z10 = this.W && isShown() && getWindowVisibility() == 0 && hasWindowFocus();
+            if (this.a0 == z10) {
+                return;
+            }
+            this.a0 = z10;
+            cy0 cy0Var = this.k0;
+            removeCallbacks(cy0Var);
+            if (!z10) {
+                sensorManager.unregisterListener(this);
+                return;
+            }
+            this.V = 0L;
+            Sensor sensor = this.x;
+            if (sensor != null) {
+                sensorManager.registerListener(this, sensor, 1);
+            }
+            postOnAnimation(cy0Var);
+        }
+    }
+
+    public float getCardRotationX() {
+        return this.c0;
+    }
+
+    public float getCardRotationY() {
+        return this.f0;
+    }
+
+    public FrameLayout getFrontFace() {
+        return this.r;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.W = true;
+        this.V = 0L;
+        y5 y5Var = this.G;
+        y5Var.a = false;
+        y5Var.h = 0L;
+        y5Var.i = 0L;
+        y5Var.j = 0L;
+        this.K = 0.0f;
+        this.L = 0.0f;
+        this.M = 0.0f;
+        e();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        this.W = false;
+        e();
+        ValueAnimator valueAnimator = this.b0;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.b0.cancel();
+            this.b0 = null;
+        }
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.round(size / 1.64f), TLObject.FLAG_30));
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        if (this.y) {
+            float[] fArr = sensorEvent.values;
+            float[] fArr2 = this.E;
+            SensorManager.getRotationMatrixFromVector(fArr2, fArr);
+            float[] fArr3 = this.F;
+            SensorManager.getOrientation(fArr2, fArr3);
+            if (Float.isNaN(fArr3[1]) || Float.isNaN(fArr3[2])) {
+                return;
+            }
+            this.I = c((float) Math.sin(fArr3[2]), -0.82f, 0.82f);
+            this.J = c(-((float) Math.sin(fArr3[1])), -0.82f, 0.82f);
         } else {
-            f7 = 168.0f;
-            f10 = 102.5f;
-            i10 = 5;
-            i11 = 1;
-            i12 = 3;
-            i13 = 2;
-        }
-        p5 p5Var2 = s5Var.b;
-        if (p5Var2 != null && !s5Var.a) {
-            RectF rectF = p5Var2.g;
-            Paint paint2 = p5Var2.d;
-            int save2 = canvas.save();
-            Path path2 = p5Var2.s;
-            path2.rewind();
-            RectF rectF2 = p5Var2.M;
-            path2.addRoundRect(rectF2, 8.0f, 8.0f, Path.Direction.CW);
-            canvas.clipPath(path2);
-            Paint paint3 = p5Var2.b;
-            paint3.setShader(p5Var2.c0);
-            canvas.drawRect(rectF2, paint3);
-            paint3.setShader(null);
-            p5Var2.b(canvas, p5.m0[4], rectF2, 55);
-            p5Var2.b(canvas, p5.m0[i10], rectF2, 95);
-            ComposeShader composeShader = p5Var2.e0;
-            if (composeShader != null) {
-                paint3.setShader(composeShader);
-                paint3.setAlpha(95);
-                canvas.drawRect(rectF2, paint3);
-                paint3.setShader(null);
-                paint3.setAlpha(255);
-            }
-            if (p5Var2.Q != null) {
-                float l4 = (p5.l(0.05f, 0.42f, -((float) Math.sin(Math.toRadians(p5Var2.S)))) * 0.65f) + 0.35f;
-                paint3.setColorFilter(new PorterDuffColorFilter(-14405316, PorterDuff.Mode.SRC_IN));
-                p5Var2.b(canvas, p5Var2.Q, rectF2, Math.round(((l4 * 0.495f) + 0.1f) * 255.0f));
-                paint3.setColorFilter(null);
-                float f22 = (float) (((((p5Var2.V / 6.283185307179586d) % 1.0d) + 1.0d) % 1.0d) * 8.0d);
-                int i18 = (int) f22;
-                float f23 = f22 - i18;
-                int i19 = 0;
-                for (int i20 = i13; i19 < i20; i20 = 2) {
-                    float f24 = i19 == 0 ? 1.0f - f23 : f23;
-                    int i21 = (i18 + i19) % 8;
-                    p5Var2.b(canvas, p5Var2.P[i21], rectF2, Math.round(204.0f * f24));
-                    p5Var2.b(canvas, p5Var2.O[i21], rectF2, Math.round(f24 * 248.0f));
-                    i19++;
+            if (this.V != 0) {
+                float f7 = (sensorEvent.timestamp - r4) * 1.0E-9f;
+                if (f7 > 0.0f && f7 < 0.1f) {
+                    this.I = c(org.telegram.ui.d3.A(sensorEvent.values[1], f7, -0.75f, this.I), -0.82f, 0.82f);
+                    this.J = c(c3.h0.u(sensorEvent.values[0], f7, -0.75f, this.J), -0.82f, 0.82f);
                 }
             }
-            float cos2 = ((float) Math.cos(p5Var2.V - 0.7d)) * 24.0f;
-            float sin = ((float) Math.sin(p5Var2.V - 0.7d)) * 18.0f;
-            float[] fArr3 = new float[i12];
-            // fill-array-data instruction
-            fArr3[0] = 0.0f;
-            fArr3[1] = 0.45f;
-            fArr3[2] = 1.0f;
-            paint2.setShader(new LinearGradient(rectF2.centerX() - cos2, rectF2.centerY() - sin, rectF2.centerX() + cos2, rectF2.centerY() + sin, new int[]{1812994342, 268435455, -1493172225}, fArr3, Shader.TileMode.CLAMP));
-            paint2.setStrokeWidth(0.7f);
-            rectF.set(rectF2);
-            rectF.inset(0.35f, 0.35f);
-            canvas.drawRoundRect(rectF, 7.65f, 7.65f, paint2);
-            canvas.restoreToCount(save2);
+            this.V = sensorEvent.timestamp;
         }
-        p5 p5Var3 = s5Var.b;
-        if (p5Var3 != null) {
-            RectF rectF3 = p5Var3.g;
-            Paint paint4 = p5Var3.d;
-            double radians = Math.toRadians((p5Var3.T * 3.6d) - (p5Var3.S * 3.2d)) - 2.0420352248333655d;
-            float cos3 = (float) Math.cos(radians);
-            float sin2 = (float) Math.sin(radians);
-            float abs = ((Math.abs(sin2) * 205.0f) + (Math.abs(cos3) * 336.0f)) * 0.5f;
-            int i22 = 0;
-            while (true) {
-                float f25 = 0.8f;
-                if (i22 >= 3) {
-                    break;
+        float f10 = ((-this.J) / 0.82f) * 15.0f;
+        float f11 = (this.I / 0.82f) * 15.0f;
+        long j10 = sensorEvent.timestamp;
+        y5 y5Var = this.G;
+        y5Var.getClass();
+        if (Float.isNaN(f10) || Float.isInfinite(f10) || Float.isNaN(f11) || Float.isInfinite(f11)) {
+            return;
+        }
+        y5Var.b = f10;
+        y5Var.c = f11;
+        y5Var.i = j10;
+        if (!y5Var.a) {
+            y5Var.a = true;
+            y5Var.d = f10;
+            y5Var.e = f11;
+            y5Var.f = f10;
+            y5Var.g = f11;
+            y5Var.h = j10;
+            return;
+        }
+        float f12 = f10 - y5Var.f;
+        float f13 = f11 - y5Var.g;
+        if ((f13 * f13) + (f12 * f12) > 1.265625f) {
+            y5Var.f = f10;
+            y5Var.g = f11;
+            y5Var.h = j10;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        p5 p5Var = this.r;
+        p5Var.setScaleX(i10 / AndroidUtilities.dp(336.0f));
+        p5Var.setScaleY(i11 / AndroidUtilities.dp(205.0f));
+        b(this.c0, this.f0);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            ValueAnimator valueAnimator = this.b0;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.b0.cancel();
+                this.b0 = null;
+            }
+            getParent().requestDisallowInterceptTouchEvent(true);
+            d(0, motionEvent);
+            this.U = false;
+            setPressed(true);
+            return true;
+        }
+        if (actionMasked == 1) {
+            this.P = -1;
+            getParent().requestDisallowInterceptTouchEvent(false);
+            setPressed(false);
+            if (this.U) {
+                a();
+                return true;
+            }
+            postDelayed(new o5(this, 0), Math.max(0L, 80 - (motionEvent.getEventTime() - motionEvent.getDownTime())));
+            return true;
+        }
+        if (actionMasked == 2) {
+            int findPointerIndex = motionEvent.findPointerIndex(this.P);
+            if (findPointerIndex >= 0) {
+                float x9 = motionEvent.getX(findPointerIndex);
+                float y3 = motionEvent.getY(findPointerIndex);
+                float abs = Math.abs(x9 - this.Q);
+                float f7 = this.H;
+                if (abs > f7 || Math.abs(y3 - this.R) > f7) {
+                    this.U = true;
+                    setPressed(false);
                 }
-                if (i22 == 0) {
-                    f25 = 0.66f;
-                    i14 = i11;
-                } else {
-                    i14 = i11;
-                    if (i22 != i14) {
-                        f25 = 0.92f;
+                if (this.U) {
+                    float f10 = this.T;
+                    this.O = c(ic.a.d(x9, this.Q, 0.03f, f10), f10 - 32.0f, f10 + 32.0f);
+                    float f11 = this.S;
+                    this.N = c(ic.a.d(y3, this.R, 0.03f, f11), f11 - 22.0f, f11 + 22.0f);
+                }
+            }
+        } else if (actionMasked == 3) {
+            this.P = -1;
+            getParent().requestDisallowInterceptTouchEvent(false);
+            setPressed(false);
+            if (this.U) {
+                a();
+                return true;
+            }
+        } else {
+            if (actionMasked == 5) {
+                d(motionEvent.getActionIndex(), motionEvent);
+                this.U = true;
+                setPressed(false);
+                return true;
+            }
+            if (actionMasked == 6 && motionEvent.getPointerId(motionEvent.getActionIndex()) == this.P) {
+                for (int i10 = 0; i10 < motionEvent.getPointerCount(); i10++) {
+                    if (i10 != motionEvent.getActionIndex()) {
+                        d(i10, motionEvent);
+                        return true;
                     }
                 }
-                float f26 = i22 == 0 ? 0.4f : i22 == i14 ? 0.24f : 0.1f;
-                int rgb = Color.rgb(Math.round(Color.red(p5Var3.g0) * f25), Math.round(Color.green(p5Var3.g0) * f25), Math.round(Color.blue(p5Var3.g0) * f25));
-                int f27 = i0.a.f(0.45f, p5Var3.g0, p5Var3.h0);
-                int f28 = i0.a.f(f26, p5Var3.h0, -1);
-                float f29 = cos3 * abs;
-                float f30 = sin2 * abs;
-                int[] iArr = {rgb, rgb, f27, f28, f28};
-                int i23 = i10;
-                float[] fArr4 = new float[i23];
-                // fill-array-data instruction
-                fArr4[0] = 0.0f;
-                fArr4[1] = 0.32f;
-                fArr4[2] = 0.53f;
-                fArr4[3] = 0.76f;
-                fArr4[4] = 1.0f;
-                paint4.setShader(new LinearGradient(f7 - f29, f10 - f30, f29 + f7, f30 + f10, iArr, fArr4, Shader.TileMode.CLAMP));
-                if (i22 == 0) {
-                    f11 = 0.3f;
-                    i15 = 1;
-                } else {
-                    i15 = 1;
-                    f11 = i22 == 1 ? 0.88f : 1.47f;
-                }
-                paint4.setStrokeWidth(i22 == 0 ? 0.6f : i22 == i15 ? 1.0f : 0.43f);
-                rectF3.set(f11, f11, 336.0f - f11, 205.0f - f11);
-                float f31 = 25.2f - f11;
-                canvas.drawRoundRect(rectF3, f31, f31, paint4);
-                i22++;
-                i10 = i23;
-                i11 = i15;
             }
-            float c10 = p5.c(((float) Math.sin(Math.toRadians(p5Var3.T))) * 1.7f);
-            float c11 = p5.c((-((float) Math.sin(Math.toRadians(p5Var3.T)))) * 1.7f);
-            int f32 = i0.a.f(0.38f, p5Var3.h0, -1);
-            paint4.setShader(new LinearGradient(0.0f, 102.5f, 336.0f, 102.5f, new int[]{p5.a(c11 * 0.8f, f32), p5.a(c11 * 0.38f, f32), p5.a(0.0f, f32), p5.a(0.0f, f32), p5.a(0.38f * c10, f32), p5.a(c10 * 0.8f, f32)}, new float[]{0.0f, 0.15f, 0.34f, 0.66f, 0.85f, 1.0f}, Shader.TileMode.CLAMP));
-            paint4.setStrokeWidth(1.05f);
-            rectF3.set(0.95f, 0.95f, 335.05f, 204.05f);
-            canvas.drawRoundRect(rectF3, 24.25f, 24.25f, paint4);
-            paint4.setShader(null);
         }
-        canvas.restoreToCount(save);
+        return true;
+    }
+
+    @Override // android.view.View
+    public final void onVisibilityChanged(View view, int i10) {
+        super.onVisibilityChanged(view, i10);
+        e();
+    }
+
+    @Override // android.view.View
+    public final void onWindowFocusChanged(boolean z10) {
+        super.onWindowFocusChanged(z10);
+        e();
+    }
+
+    @Override // android.view.View
+    public final void onWindowVisibilityChanged(int i10) {
+        super.onWindowVisibilityChanged(i10);
+        e();
+    }
+
+    @Override // android.view.View
+    public final boolean performClick() {
+        super.performClick();
+        return true;
+    }
+
+    public void setAdditionalTilt(float f7) {
+        float f10 = this.d0;
+        if (f10 == f7) {
+            return;
+        }
+        float f11 = (this.c0 + f7) - f10;
+        this.d0 = f7;
+        b(f11, this.f0);
+    }
+
+    public void setCardIcon(int i10) {
+        q5 q5Var = this.n;
+        r5 r5Var = q5Var.b;
+        r5Var.c = i10;
+        n5 n5Var = r5Var.b;
+        if (n5Var != null) {
+            n5Var.j(i10);
+        }
+        q5Var.invalidate();
+    }
+
+    public void setHasCardNumber(boolean z10) {
+        q5 q5Var = this.n;
+        q5Var.a = z10;
+        q5Var.invalidate();
+    }
+
+    public void setStickerStyle(float[] fArr) {
+        fi.f6 f6Var = this.h;
+        f6Var.b = fArr;
+        this.e.invalidate();
+        f6Var.invalidate();
+        this.n.invalidate();
+    }
+
+    public void setUseGyroscope(float f7) {
+        if (this.e0 == f7) {
+            return;
+        }
+        this.e0 = f7;
+        b((this.L * f7) + this.N + this.d0, (this.M * f7) + this.O);
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

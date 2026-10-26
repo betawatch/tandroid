@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j extends pg.b {
+public final class j extends qg.b {
     public final /* synthetic */ k d;
 
     public j(k kVar) {
@@ -16,17 +16,17 @@ public final class j extends pg.b {
     }
 
     @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        int i10 = b1Var.f;
+    public final boolean D(s4.e1 e1Var) {
+        int i10 = e1Var.f;
         return (i10 == 2 || i10 == 0) ? false : true;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int h() {
         return this.d.h.size();
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int j(int i10) {
         if (i10 < 0) {
             return 0;
@@ -38,8 +38,8 @@ public final class j extends pg.b {
         return ((i) kVar.h.get(i10)).a;
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
         boolean z10;
         k kVar = this.d;
         ArrayList arrayList = kVar.h;
@@ -50,33 +50,33 @@ public final class j extends pg.b {
         int i11 = i10 + 1;
         int i12 = 0;
         boolean z11 = i11 < arrayList.size() && ((i) arrayList.get(i11)).a == iVar.a;
-        int i13 = b1Var.f;
-        View view = b1Var.a;
+        int i13 = e1Var.f;
+        View view = e1Var.a;
         if (i13 == 0) {
-            ((org.telegram.ui.Cells.l4) view).setText(iVar.c);
+            ((org.telegram.ui.Cells.q4) view).setText(iVar.c);
             return;
         }
         if (i13 == 2) {
-            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            org.telegram.ui.Cells.i9 i9Var = (org.telegram.ui.Cells.i9) view;
             if (TextUtils.isEmpty(iVar.c)) {
-                e9Var.setFixedSize(12);
-                e9Var.setText(null);
+                i9Var.setFixedSize(12);
+                i9Var.setText(null);
                 return;
             } else {
-                e9Var.setFixedSize(0);
-                e9Var.setText(iVar.c);
+                i9Var.setFixedSize(0);
+                i9Var.setText(iVar.c);
                 return;
             }
         }
         if (i13 == 1) {
-            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
             int i14 = iVar.d;
             if (i14 == 1) {
                 z10 = kVar.d.keep_archived_unmuted;
-                w8Var.setCheckBoxIcon(0);
+                a9Var.setCheckBoxIcon(0);
             } else if (i14 == 4) {
                 z10 = kVar.d.keep_archived_folders;
-                w8Var.setCheckBoxIcon(0);
+                a9Var.setCheckBoxIcon(0);
             } else {
                 if (i14 != 7) {
                     return;
@@ -85,16 +85,16 @@ public final class j extends pg.b {
                 if (!kVar.getUserConfig().isPremium() && !kVar.getMessagesController().autoarchiveAvailable) {
                     i12 = R.drawable.permission_locked;
                 }
-                w8Var.setCheckBoxIcon(i12);
+                a9Var.setCheckBoxIcon(i12);
                 z10 = z12;
             }
-            w8Var.f(iVar.c, z10, z11);
+            a9Var.f(iVar.c, z10, z11);
         }
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
         k kVar = this.d;
-        return new org.telegram.ui.Components.wl0(i10 == 0 ? new org.telegram.ui.Cells.l4(kVar.getParentActivity()) : i10 == 1 ? new org.telegram.ui.Cells.w8(kVar.getParentActivity()) : new org.telegram.ui.Cells.e9(kVar.getParentActivity()));
+        return new org.telegram.ui.Components.vl0(i10 == 0 ? new org.telegram.ui.Cells.q4(kVar.getParentActivity()) : i10 == 1 ? new org.telegram.ui.Cells.a9(kVar.getParentActivity()) : new org.telegram.ui.Cells.i9(kVar.getParentActivity()));
     }
 }

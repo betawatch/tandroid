@@ -10,10 +10,11 @@ import android.view.Display;
 import com.google.android.gms.internal.vision.g3;
 import java.util.ArrayList;
 import java.util.Locale;
+import li.e3;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class j0 extends k0 implements b0 {
     public static final ArrayList I;
@@ -43,7 +44,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public j0(Context context, e eVar) {
-        super(context, new le.b(new ComponentName("android", k0.class.getName()), 14));
+        super(context, new e3(new ComponentName("android", k0.class.getName()), 14));
         this.G = new ArrayList();
         this.H = new ArrayList();
         this.r = eVar;
@@ -125,9 +126,9 @@ public class j0 extends k0 implements b0 {
 
     @Override // com.google.android.gms.internal.vision.g3
     public final q d(String str) {
-        int p5 = p(str);
-        if (p5 >= 0) {
-            return new g0(((h0) this.G.get(p5)).a);
+        int p10 = p(str);
+        if (p10 >= 0) {
+            return new g0(((h0) this.G.get(p10)).a);
         }
         return null;
     }
@@ -165,9 +166,9 @@ public class j0 extends k0 implements b0 {
         if (s(routeInfo) != null || o(routeInfo) >= 0) {
             return false;
         }
-        MediaRouter.RouteInfo r10 = r();
+        MediaRouter.RouteInfo r6 = r();
         Context context = this.a;
-        if (r10 == routeInfo) {
+        if (r6 == routeInfo) {
             format = "DEFAULT_ROUTE";
         } else {
             Locale locale = Locale.US;
@@ -291,11 +292,11 @@ public class j0 extends k0 implements b0 {
     }
 
     public final void w(v vVar) {
-        int q6;
-        if (vVar.c() == this || (q6 = q(vVar)) < 0) {
+        int q5;
+        if (vVar.c() == this || (q5 = q(vVar)) < 0) {
             return;
         }
-        MediaRouter.UserRouteInfo userRouteInfo = ((i0) this.H.remove(q6)).b;
+        MediaRouter.UserRouteInfo userRouteInfo = ((i0) this.H.remove(q5)).b;
         userRouteInfo.setTag(null);
         userRouteInfo.setVolumeCallback(null);
         try {
@@ -308,16 +309,16 @@ public class j0 extends k0 implements b0 {
     public final void x(v vVar) {
         if (vVar.g()) {
             if (vVar.c() != this) {
-                int q6 = q(vVar);
-                if (q6 >= 0) {
-                    z(((i0) this.H.get(q6)).b);
+                int q5 = q(vVar);
+                if (q5 >= 0) {
+                    z(((i0) this.H.get(q5)).b);
                     return;
                 }
                 return;
             }
-            int p5 = p(vVar.b);
-            if (p5 >= 0) {
-                z(((h0) this.G.get(p5)).a);
+            int p10 = p(vVar.b);
+            if (p10 >= 0) {
+                z(((h0) this.G.get(p10)).a);
             }
         }
     }
@@ -336,7 +337,7 @@ public class j0 extends k0 implements b0 {
             }
             arrayList.add(mVar);
         }
-        g(new b2.t(arrayList, false));
+        g(new b2.u(arrayList, false));
     }
 
     public void z(MediaRouter.RouteInfo routeInfo) {

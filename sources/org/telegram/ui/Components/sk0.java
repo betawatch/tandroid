@@ -1,49 +1,57 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sk0 implements Utilities.Callback {
+public final class sk0 extends s4.n0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gl0 b;
+    public final /* synthetic */ fl0 b;
 
-    public /* synthetic */ sk0(gl0 gl0Var, int i10) {
+    public /* synthetic */ sk0(fl0 fl0Var, int i10) {
         this.a = i10;
-        this.b = gl0Var;
+        this.b = fl0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        View view = (View) obj;
+    @Override // s4.n0
+    public final void d(Rect rect, View view, RecyclerView recyclerView, s4.b1 b1Var) {
         switch (this.a) {
             case 0:
-                gl0 gl0Var = this.b;
-                ArrayList arrayList = gl0Var.d;
-                gl0Var.b.getClass();
-                int R = RecyclerView.R(view);
-                if (R >= 0 && R < arrayList.size() && (view instanceof el0)) {
-                    ((el0) view).f(((xk0) arrayList.get(R)).c, true);
+                super.d(rect, view, recyclerView, b1Var);
+                fl0 fl0Var = this.b;
+                if (!fl0Var.q()) {
+                    int R = RecyclerView.R(view);
+                    if (R == 0) {
+                        rect.left = AndroidUtilities.dp(6.0f);
+                    }
+                    rect.right = AndroidUtilities.dp(4.0f);
+                    if (R == fl0Var.a0.h() - 1) {
+                        if ((!fl0Var.U.isEmpty() && !MessagesController.getInstance(fl0Var.J).premiumFeaturesBlocked()) || fl0Var.q()) {
+                            rect.right = AndroidUtilities.dp(2.0f);
+                            break;
+                        } else {
+                            rect.right = AndroidUtilities.dp(6.0f);
+                            break;
+                        }
+                    }
+                } else {
+                    rect.left = 0;
+                    rect.right = 0;
                     break;
                 }
                 break;
             default:
-                if (view instanceof el0) {
-                    el0 el0Var = (el0) view;
-                    dl0 dl0Var = el0Var.b;
-                    el0Var.N = false;
-                    dl0Var.setAlpha(1.0f);
-                    if (!this.b.N0) {
-                        el0Var.d();
-                        break;
-                    } else {
-                        dl0Var.setScaleX(el0Var.I * (el0Var.w ? 0.76f : 1.0f));
-                        dl0Var.setScaleY(el0Var.I * (el0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
+                int R2 = RecyclerView.R(view);
+                if (R2 == 0) {
+                    rect.left = AndroidUtilities.dp(8.0f);
+                }
+                if (R2 == this.b.a0.h() - 1) {
+                    rect.right = AndroidUtilities.dp(8.0f);
+                    break;
                 }
                 break;
         }

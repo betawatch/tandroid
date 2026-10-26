@@ -1,5 +1,7 @@
 package i0;
 
+import a8.sc;
+import a8.tc;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -15,12 +17,10 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import v7.y7;
-import v7.z7;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public class f extends y7 {
+public class f extends sc {
     public static Class a = null;
     public static Constructor b = null;
     public static Method c = null;
@@ -32,12 +32,12 @@ public class f extends y7 {
         try {
             try {
                 return ((Boolean) c.invoke(obj, str, Integer.valueOf(i10), Boolean.valueOf(z10))).booleanValue();
-            } catch (InvocationTargetException e7) {
-                e = e7;
+            } catch (InvocationTargetException e10) {
+                e = e10;
                 throw new RuntimeException(e);
             }
-        } catch (IllegalAccessException | InvocationTargetException e10) {
-            e = e10;
+        } catch (IllegalAccessException | InvocationTargetException e11) {
+            e = e11;
         }
     }
 
@@ -56,8 +56,8 @@ public class f extends y7 {
             method2 = cls.getMethod("addFontWeightStyle", String.class, Integer.TYPE, Boolean.TYPE);
             method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
             constructor = constructor2;
-        } catch (ClassNotFoundException | NoSuchMethodException e7) {
-            Log.e("TypefaceCompatApi21Impl", e7.getClass().getName(), e7);
+        } catch (ClassNotFoundException | NoSuchMethodException e10) {
+            Log.e("TypefaceCompatApi21Impl", e10.getClass().getName(), e10);
             method = null;
             cls = null;
             method2 = null;
@@ -68,18 +68,18 @@ public class f extends y7 {
         d = method;
     }
 
-    @Override // v7.y7
+    @Override // a8.sc
     public Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         h();
         try {
             Object newInstance = b.newInstance(null);
             for (h0.f fVar : eVar.a) {
-                File d10 = z7.d(context);
+                File d10 = tc.d(context);
                 if (d10 == null) {
                     return null;
                 }
                 try {
-                    if (!z7.b(d10, resources, fVar.f)) {
+                    if (!tc.b(d10, resources, fVar.f)) {
                         return null;
                     }
                     if (!g(newInstance, d10.getPath(), fVar.b, fVar.c)) {
@@ -97,15 +97,15 @@ public class f extends y7 {
                 Object newInstance2 = Array.newInstance((Class<?>) a, 1);
                 Array.set(newInstance2, 0, newInstance);
                 return (Typeface) d.invoke(null, newInstance2);
-            } catch (IllegalAccessException | InvocationTargetException e7) {
-                throw new RuntimeException(e7);
+            } catch (IllegalAccessException | InvocationTargetException e10) {
+                throw new RuntimeException(e10);
             }
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e10) {
-            throw new RuntimeException(e10);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e11) {
+            throw new RuntimeException(e11);
         }
     }
 
-    @Override // v7.y7
+    @Override // a8.sc
     public Typeface b(Context context, o0.h[] hVarArr, int i10) {
         File file;
         String readlink;

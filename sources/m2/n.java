@@ -1,10 +1,10 @@
 package m2;
 
-import e2.m0;
+import e2.n0;
 import java.math.RoundingMode;
 import java.util.List;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class n extends s {
     public final long d;
@@ -63,11 +63,11 @@ public abstract class n extends s {
                 long j14 = j12;
                 while (j14 <= j13) {
                     long j15 = ((j13 - j14) / 2) + j14;
-                    long g10 = g(j15);
-                    if (g10 < j10) {
+                    long g7 = g(j15);
+                    if (g7 < j10) {
                         j14 = j15 + 1;
                     } else {
-                        if (g10 <= j10) {
+                        if (g7 <= j10) {
                             return j15;
                         }
                         j13 = j15 - 1;
@@ -87,8 +87,8 @@ public abstract class n extends s {
         long j11 = this.d;
         List list = this.f;
         long j12 = list != null ? ((q) list.get((int) (j10 - j11))).a - this.c : (j10 - j11) * this.e;
-        String str = m0.a;
-        return m0.a0(j12, 1000000L, this.b, RoundingMode.DOWN);
+        String str = n0.a;
+        return n0.a0(j12, 1000000L, this.b, RoundingMode.DOWN);
     }
 
     public abstract j h(k kVar, long j10);

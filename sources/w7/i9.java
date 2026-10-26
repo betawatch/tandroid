@@ -1,60 +1,78 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class i9 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String l4;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                l4 = "null";
-            } else {
-                try {
-                    l4 = obj.toString();
-                } catch (Exception e) {
-                    String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    l4 = org.telegram.ui.Cells.b1.l("<", D, " threw ", e.getClass().getName(), ">");
-                }
-            }
-            objArr[i11] = l4;
-            i11++;
+public final class i9 extends a8.y implements ListIterator {
+    public final int b;
+    public int c;
+    public final k9 d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i9(k9 k9Var, int i10) {
+        super(7);
+        int size = k9Var.size();
+        if (i10 < 0 || i10 > size) {
+            throw new IndexOutOfBoundsException(y.c(i10, size, "index"));
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
-            }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+        this.b = size;
+        this.c = i10;
+        this.d = k9Var;
+    }
+
+    public final Object a(int i10) {
+        return this.d.get(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
         }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
-            }
-            sb2.append(']');
+        int i10 = this.c;
+        this.c = i10 + 1;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
         }
-        return sb2.toString();
+        int i10 = this.c - 1;
+        this.c = i10;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

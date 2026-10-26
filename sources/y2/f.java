@@ -1,38 +1,39 @@
 package y2;
 
+import a8.yb;
 import android.content.Context;
 import android.os.SystemClock;
-import com.google.firebase.messaging.s;
+import di.s8;
 import e2.g0;
 import e2.v;
 import e2.w;
-import e9.n0;
-import e9.q0;
-import e9.x1;
+import f9.i0;
+import f9.l0;
+import f9.s1;
 import g2.c0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import k2.t;
-import v7.u6;
+import s4.o0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
-    public static final x1 p = n0.x(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
-    public static final x1 q = n0.x(1500000L, 980000L, 750000L, 520000L, 290000L);
-    public static final x1 r = n0.x(2000000L, 1300000L, 1000000L, 860000L, 610000L);
-    public static final x1 s = n0.x(2500000L, 1700000L, 1200000L, 970000L, 680000L);
-    public static final x1 t = n0.x(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
-    public static final x1 u = n0.x(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
+    public static final s1 p = i0.x(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
+    public static final s1 q = i0.x(1500000L, 980000L, 750000L, 520000L, 290000L);
+    public static final s1 r = i0.x(2000000L, 1300000L, 1000000L, 860000L, 610000L);
+    public static final s1 s = i0.x(2500000L, 1700000L, 1200000L, 970000L, 680000L);
+    public static final s1 t = i0.x(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
+    public static final s1 u = i0.x(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
     public static f v;
     public final Context a;
-    public final q0 b;
-    public final te.b c;
+    public final l0 b;
+    public final o0 c;
     public final g0 d;
     public final boolean e;
-    public final q f;
+    public final r f;
     public int g;
     public long h;
     public long i;
@@ -47,9 +48,11 @@ public final class f implements c, c0 {
         boolean z10;
         g0 g0Var = g0.a;
         this.a = context == null ? null : context.getApplicationContext();
-        this.b = q0.a(hashMap);
-        this.c = new te.b(7);
-        this.f = new q();
+        this.b = l0.a(hashMap);
+        o0 o0Var = new o0();
+        o0Var.a = new CopyOnWriteArrayList();
+        this.c = o0Var;
+        this.f = new r();
         this.d = g0Var;
         this.e = true;
         if (context == null) {
@@ -77,7 +80,7 @@ public final class f implements c, c0 {
             z10 = a2.a;
         }
         if (z10) {
-            vVar2.b.execute(new s(vVar2, 4));
+            vVar2.b.execute(new s8(vVar2, 6));
         }
     }
 
@@ -110,10 +113,10 @@ public final class f implements c, c0 {
         int[] iArr;
         long longValue;
         Integer valueOf = Integer.valueOf(i10);
-        q0 q0Var = this.b;
-        Long l4 = (Long) q0Var.get(valueOf);
+        l0 l0Var = this.b;
+        Long l4 = (Long) l0Var.get(valueOf);
         if (l4 == null) {
-            l4 = (Long) q0Var.get(0);
+            l4 = (Long) l0Var.get(0);
         } else if (l4.longValue() == -9223372036854775807L) {
             String str = this.o;
             if (str == null) {
@@ -722,7 +725,7 @@ public final class f implements c, c0 {
             return;
         }
         this.m = j11;
-        Iterator it = ((CopyOnWriteArrayList) this.c.b).iterator();
+        Iterator it = ((CopyOnWriteArrayList) this.c.a).iterator();
         while (it.hasNext()) {
             b bVar = (b) it.next();
             if (bVar.c) {
@@ -797,7 +800,7 @@ public final class f implements c, c0 {
                     return;
                 }
                 try {
-                    u6.p(this.g > 0);
+                    yb.p(this.g > 0);
                     this.d.getClass();
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     int i10 = (int) (elapsedRealtime - this.h);

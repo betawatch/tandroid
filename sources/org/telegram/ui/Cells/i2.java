@@ -1,28 +1,70 @@
 package org.telegram.ui.Cells;
 
-import android.view.ViewGroup;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.cy;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i2 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public final class i2 extends di.w7 {
+    public final /* synthetic */ p2 S;
 
-    public /* synthetic */ i2(ViewGroup viewGroup, int i10) {
-        this.a = i10;
-        this.b = viewGroup;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i2(p2 p2Var) {
+        super(null, false);
+        this.S = p2Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((q2) this.b).c0(true);
-                break;
-            default:
-                ((m4) this.b).c(true);
-                break;
+    @Override // di.w7
+    public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
+        return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.O0) ? false : true;
+    }
+
+    @Override // di.w7
+    public final boolean d(long j10) {
+        p2 p2Var = this.S;
+        int i10 = p2Var.F0;
+        cy cyVar = p2Var.D4;
+        if (cyVar == null || p2Var.O0) {
+            return false;
+        }
+        if (j10 > 0) {
+            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
+            if (user == null || user.linked_community_id == 0) {
+                return false;
+            }
+            cyVar.showDialog(new ii.j0(cyVar, user.linked_community_id));
+            return true;
+        }
+        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
+        if (chat == null || chat.linked_community_id == 0) {
+            return false;
+        }
+        cyVar.showDialog(new ii.j0(cyVar, chat.linked_community_id));
+        return true;
+    }
+
+    @Override // di.w7
+    public final void e() {
+        p2 p2Var = this.S;
+        l2 l2Var = p2Var.d0;
+        if (l2Var == null) {
+            return;
+        }
+        l2Var.f(p2Var);
+    }
+
+    @Override // di.w7
+    public final void f(long j10) {
+        p2 p2Var = this.S;
+        l2 l2Var = p2Var.d0;
+        if (l2Var == null) {
+            return;
+        }
+        if (p2Var.J0 != 0) {
+            l2Var.c();
+        } else {
+            l2Var.e(p2Var);
         }
     }
 }

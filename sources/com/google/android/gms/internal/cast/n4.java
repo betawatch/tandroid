@@ -1,63 +1,47 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.Delayed;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class n4 extends v7.n5 implements ScheduledFuture, j9.y, Future {
-    public final f4 b;
-    public final ScheduledFuture c;
+public final class n4 extends j4 implements ScheduledExecutorService {
+    public final ScheduledExecutorService b;
 
-    public n4(f4 f4Var, ScheduledFuture scheduledFuture) {
-        this.b = f4Var;
-        this.c = scheduledFuture;
+    public n4(ScheduledExecutorService scheduledExecutorService) {
+        super(scheduledExecutorService);
+        this.b = scheduledExecutorService;
     }
 
-    @Override // j9.y
-    public final void a(Runnable runnable, Executor executor) {
-        this.b.a(runnable, executor);
+    @Override // com.google.android.gms.internal.cast.j4, java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        f4.d(this);
     }
 
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
-        boolean cancel = this.b.cancel(z10);
-        if (cancel) {
-            this.c.cancel(z10);
-        }
-        return cancel;
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final ScheduledFuture schedule(Runnable runnable, long j10, TimeUnit timeUnit) {
+        p4 p4Var = new p4(Executors.callable(runnable, null));
+        return new k4(p4Var, this.b.schedule(p4Var, j10, timeUnit));
     }
 
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
-        return this.c.compareTo(delayed);
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
+        m4 m4Var = new m4(runnable);
+        return new k4(m4Var, this.b.scheduleAtFixedRate(m4Var, j10, j11, timeUnit));
     }
 
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j10, long j11, TimeUnit timeUnit) {
+        m4 m4Var = new m4(runnable);
+        return new k4(m4Var, this.b.scheduleWithFixedDelay(m4Var, j10, j11, timeUnit));
     }
 
-    @Override // java.util.concurrent.Delayed
-    public final long getDelay(TimeUnit timeUnit) {
-        return this.c.getDelay(timeUnit);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof x3;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j10, TimeUnit timeUnit) {
+        p4 p4Var = new p4(callable);
+        return new k4(p4Var, this.b.schedule(p4Var, j10, timeUnit));
     }
 }

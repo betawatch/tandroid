@@ -8,7 +8,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.ThreadUtils;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public class YuvConverter {
     private static final String FRAGMENT_SHADER = "uniform vec2 xUnit;\nuniform vec4 coeffs;\n\nvoid main() {\n  gl_FragColor.r = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 1.5 * xUnit).rgb);\n  gl_FragColor.g = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 0.5 * xUnit).rgb);\n  gl_FragColor.b = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 0.5 * xUnit).rgb);\n  gl_FragColor.a = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 1.5 * xUnit).rgb);\n}\n";
@@ -18,7 +18,7 @@ public class YuvConverter {
     private final ThreadUtils.ThreadChecker threadChecker;
     private final VideoFrameDrawer videoFrameDrawer;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ShaderCallbacks implements GlGenericDrawer.ShaderCallbacks {
         private float[] coeffs;
         private int coeffsLoc;
@@ -104,19 +104,19 @@ public class YuvConverter {
                         e = e;
                         i12 = i14;
                     }
-                } catch (Exception e7) {
-                    e = e7;
+                } catch (Exception e10) {
+                    e = e10;
                     i12 = i14;
                 }
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e11) {
+                e = e11;
                 i10 = i13;
                 i12 = i14;
                 byteBuffer = nativeAllocateByteBuffer;
                 i11 = 0;
             }
-        } catch (Exception e11) {
-            e = e11;
+        } catch (Exception e12) {
+            e = e12;
             i10 = i13;
             byteBuffer = nativeAllocateByteBuffer;
             i11 = 0;
@@ -124,8 +124,8 @@ public class YuvConverter {
         }
         try {
             byteBuffer = nativeAllocateByteBuffer;
-        } catch (Exception e12) {
-            e = e12;
+        } catch (Exception e13) {
+            e = e13;
             byteBuffer = nativeAllocateByteBuffer;
             FileLog.e(e);
             int i17 = i10 * height;
@@ -148,8 +148,8 @@ public class YuvConverter {
             GLES20.glReadPixels(0, 0, this.i420TextureFrameBuffer.getWidth(), this.i420TextureFrameBuffer.getHeight(), 6408, 5121, byteBuffer);
             GlUtil.checkNoGLES2Error("YuvConverter.convert");
             GLES20.glBindFramebuffer(36160, 0);
-        } catch (Exception e13) {
-            e = e13;
+        } catch (Exception e14) {
+            e = e14;
             FileLog.e(e);
             int i172 = i10 * height;
             int i182 = i10 / 2;

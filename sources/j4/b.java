@@ -1,12 +1,12 @@
 package j4;
 
-import b2.v0;
-import c3.l0;
+import a8.yb;
+import b2.w0;
+import c3.j0;
 import j$.util.Objects;
 import org.telegram.messenger.MediaDataController;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -16,12 +16,12 @@ public final class b implements i {
     public final int e;
     public final String f;
     public String g;
-    public l0 h;
+    public j0 h;
     public int i;
     public int j;
     public boolean k;
     public long l;
-    public b2.w m;
+    public b2.x m;
     public int n;
     public long o;
 
@@ -101,32 +101,32 @@ public final class b implements i {
                             gVar.m(e);
                             if (objArr == true) {
                                 gVar.o(16);
-                                int g10 = gVar.g(2);
-                                char c10 = g10 != 0 ? g10 != 1 ? g10 != 2 ? (char) 65535 : (char) 2 : (char) 1 : (char) 0;
+                                int g7 = gVar.g(2);
+                                char c10 = g7 != 0 ? g7 != 1 ? g7 != 2 ? (char) 65535 : (char) 2 : (char) 1 : (char) 0;
                                 gVar.o(3);
                                 i14 = (gVar.g(11) + 1) * 2;
-                                int g11 = gVar.g(2);
-                                if (g11 == 3) {
+                                int g10 = gVar.g(2);
+                                if (g10 == 3) {
                                     i15 = c3.b.e[gVar.g(2)];
                                     i16 = 3;
                                     i17 = 6;
                                 } else {
-                                    int g12 = gVar.g(2);
-                                    int i29 = c3.b.c[g12];
-                                    i15 = iArr2[g11];
-                                    i16 = g12;
+                                    int g11 = gVar.g(2);
+                                    int i29 = c3.b.c[g11];
+                                    i15 = iArr2[g10];
+                                    i16 = g11;
                                     i17 = i29;
                                 }
                                 i12 = i17 * 256;
                                 int i30 = (i14 * i15) / (i17 * 32);
-                                int g13 = gVar.g(3);
+                                int g12 = gVar.g(3);
                                 boolean f7 = gVar.f();
-                                i11 = iArr[g13] + (f7 ? 1 : 0);
+                                i11 = iArr[g12] + (f7 ? 1 : 0);
                                 gVar.o(10);
                                 if (gVar.f()) {
                                     gVar.o(8);
                                 }
-                                if (g13 == 0) {
+                                if (g12 == 0) {
                                     gVar.o(5);
                                     if (gVar.f()) {
                                         gVar.o(8);
@@ -136,16 +136,16 @@ public final class b implements i {
                                     gVar.o(16);
                                 }
                                 if (gVar.f()) {
-                                    if (g13 > 2) {
+                                    if (g12 > 2) {
                                         gVar.o(2);
                                     }
-                                    if ((g13 & 1) == 0 || g13 <= 2) {
+                                    if ((g12 & 1) == 0 || g12 <= 2) {
                                         i22 = 6;
                                     } else {
                                         i22 = 6;
                                         gVar.o(6);
                                     }
-                                    if ((g13 & 4) != 0) {
+                                    if ((g12 & 4) != 0) {
                                         gVar.o(i22);
                                     }
                                     if (f7 && gVar.f()) {
@@ -158,21 +158,21 @@ public final class b implements i {
                                         } else {
                                             i23 = 6;
                                         }
-                                        if (g13 == 0 && gVar.f()) {
+                                        if (g12 == 0 && gVar.f()) {
                                             gVar.o(i23);
                                         }
                                         if (gVar.f()) {
                                             gVar.o(i23);
                                         }
-                                        int g14 = gVar.g(2);
-                                        if (g14 == 1) {
+                                        int g13 = gVar.g(2);
+                                        if (g13 == 1) {
                                             gVar.o(5);
                                             i25 = 2;
                                         } else {
-                                            if (g14 == 2) {
+                                            if (g13 == 2) {
                                                 gVar.o(12);
-                                            } else if (g14 == 3) {
-                                                int g15 = gVar.g(5);
+                                            } else if (g13 == 3) {
+                                                int g14 = gVar.g(5);
                                                 if (gVar.f()) {
                                                     gVar.o(5);
                                                     if (gVar.f()) {
@@ -216,23 +216,23 @@ public final class b implements i {
                                                             i24 = 8;
                                                             gVar.o(8);
                                                             i25 = 2;
-                                                            gVar.o((g15 + 2) * i24);
+                                                            gVar.o((g14 + 2) * i24);
                                                             gVar.c();
                                                         }
                                                     }
                                                 }
                                                 i24 = 8;
                                                 i25 = 2;
-                                                gVar.o((g15 + 2) * i24);
+                                                gVar.o((g14 + 2) * i24);
                                                 gVar.c();
                                             }
                                             i25 = 2;
                                         }
-                                        if (g13 < i25) {
+                                        if (g12 < i25) {
                                             if (gVar.f()) {
                                                 gVar.o(14);
                                             }
-                                            if (g13 == 0 && gVar.f()) {
+                                            if (g12 == 0 && gVar.f()) {
                                                 gVar.o(14);
                                             }
                                         }
@@ -251,10 +251,10 @@ public final class b implements i {
                                                 i19 = 3;
                                             } else {
                                                 gVar.o(5);
-                                                if (g13 == 2) {
+                                                if (g12 == 2) {
                                                     gVar.o(4);
                                                 }
-                                                if (g13 >= 6) {
+                                                if (g12 >= 6) {
                                                     gVar.o(2);
                                                 }
                                                 if (gVar.f()) {
@@ -263,11 +263,11 @@ public final class b implements i {
                                                 } else {
                                                     i21 = 8;
                                                 }
-                                                if (g13 == 0 && gVar.f()) {
+                                                if (g12 == 0 && gVar.f()) {
                                                     gVar.o(i21);
                                                 }
                                                 i19 = 3;
-                                                if (g11 < 3) {
+                                                if (g10 < 3) {
                                                     gVar.n();
                                                 }
                                             }
@@ -299,50 +299,50 @@ public final class b implements i {
                                 i13 = i30;
                             } else {
                                 gVar.o(32);
-                                int g16 = gVar.g(2);
-                                String str2 = g16 == 3 ? null : "audio/ac3";
-                                int g17 = gVar.g(6);
-                                int i32 = c3.b.g[g17 / 2] * MediaDataController.MAX_STYLE_RUNS_COUNT;
-                                int e7 = c3.b.e(g16, g17);
+                                int g15 = gVar.g(2);
+                                String str2 = g15 == 3 ? null : "audio/ac3";
+                                int g16 = gVar.g(6);
+                                int i32 = c3.b.g[g16 / 2] * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                                int e10 = c3.b.e(g15, g16);
                                 gVar.o(8);
-                                int g18 = gVar.g(3);
-                                if ((g18 & 1) == 0 || g18 == 1) {
+                                int g17 = gVar.g(3);
+                                if ((g17 & 1) == 0 || g17 == 1) {
                                     i10 = 2;
                                 } else {
                                     i10 = 2;
                                     gVar.o(2);
                                 }
-                                if ((g18 & 4) != 0) {
+                                if ((g17 & 4) != 0) {
                                     gVar.o(i10);
                                 }
-                                if (g18 == i10) {
+                                if (g17 == i10) {
                                     gVar.o(i10);
                                 }
-                                int i33 = g16 < 3 ? iArr2[g16] : -1;
-                                i11 = iArr[g18] + (gVar.f() ? 1 : 0);
+                                int i33 = g15 < 3 ? iArr2[g15] : -1;
+                                i11 = iArr[g17] + (gVar.f() ? 1 : 0);
                                 i12 = 1536;
                                 str = str2;
                                 i13 = i32;
-                                i14 = e7;
+                                i14 = e10;
                                 i15 = i33;
                             }
-                            b2.w wVar = this.m;
-                            if (wVar == null || i11 != wVar.K || i15 != wVar.L || !Objects.equals(str, wVar.s)) {
-                                b2.v vVar = new b2.v();
-                                vVar.a = this.g;
-                                vVar.q = v0.n(this.f);
-                                vVar.r = v0.n(str);
-                                vVar.J = i11;
-                                vVar.K = i15;
-                                vVar.d = this.d;
-                                vVar.f = this.e;
-                                vVar.i = i13;
+                            b2.x xVar3 = this.m;
+                            if (xVar3 == null || i11 != xVar3.K || i15 != xVar3.L || !Objects.equals(str, xVar3.s)) {
+                                b2.w wVar = new b2.w();
+                                wVar.a = this.g;
+                                wVar.q = w0.n(this.f);
+                                wVar.r = w0.n(str);
+                                wVar.J = i11;
+                                wVar.K = i15;
+                                wVar.d = this.d;
+                                wVar.f = this.e;
+                                wVar.i = i13;
                                 if ("audio/ac3".equals(str)) {
-                                    vVar.h = i13;
+                                    wVar.h = i13;
                                 }
-                                b2.w wVar2 = new b2.w(vVar);
-                                this.m = wVar2;
-                                this.h.b(wVar2);
+                                b2.x xVar4 = new b2.x(wVar);
+                                this.m = xVar4;
+                                this.h.b(xVar4);
                             }
                             this.n = i14;
                             this.l = (i12 * 1000000) / this.m.L;
@@ -356,7 +356,7 @@ public final class b implements i {
                         int i34 = this.j + min2;
                         this.j = i34;
                         if (i34 == this.n) {
-                            u6.p(this.o != -9223372036854775807L);
+                            yb.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;
@@ -368,7 +368,7 @@ public final class b implements i {
                 this.h.getClass();
                 while (xVar.a() > 0) {
                     int i35 = this.i;
-                    e2.x xVar3 = this.c;
+                    e2.x xVar5 = this.c;
                     if (i35 == 0) {
                         while (xVar.a() > 0) {
                             if (this.k) {
@@ -377,7 +377,7 @@ public final class b implements i {
                                 if (A2 == 64 || A2 == 65) {
                                     Object[] objArr2 = A2 == 65;
                                     this.i = 1;
-                                    byte[] bArr3 = xVar3.a;
+                                    byte[] bArr3 = xVar5.a;
                                     bArr3[0] = -84;
                                     bArr3[1] = (byte) (objArr2 == true ? 65 : 64);
                                     this.j = 2;
@@ -387,7 +387,7 @@ public final class b implements i {
                             }
                         }
                     } else if (i35 == 1) {
-                        byte[] bArr4 = xVar3.a;
+                        byte[] bArr4 = xVar5.a;
                         int min3 = Math.min(xVar.a(), 16 - this.j);
                         xVar.k(this.j, min3, bArr4);
                         int i36 = this.j + min3;
@@ -397,24 +397,24 @@ public final class b implements i {
                             gVar2.m(0);
                             a3.l m10 = c3.b.m(gVar2);
                             int i37 = m10.a;
-                            b2.w wVar3 = this.m;
-                            if (wVar3 == null || 2 != wVar3.K || i37 != wVar3.L || !"audio/ac4".equals(wVar3.s)) {
-                                b2.v vVar2 = new b2.v();
-                                vVar2.a = this.g;
-                                vVar2.q = v0.n(this.f);
-                                vVar2.r = v0.n("audio/ac4");
-                                vVar2.J = 2;
-                                vVar2.K = i37;
-                                vVar2.d = this.d;
-                                vVar2.f = this.e;
-                                b2.w wVar4 = new b2.w(vVar2);
-                                this.m = wVar4;
-                                this.h.b(wVar4);
+                            b2.x xVar6 = this.m;
+                            if (xVar6 == null || 2 != xVar6.K || i37 != xVar6.L || !"audio/ac4".equals(xVar6.s)) {
+                                b2.w wVar2 = new b2.w();
+                                wVar2.a = this.g;
+                                wVar2.q = w0.n(this.f);
+                                wVar2.r = w0.n("audio/ac4");
+                                wVar2.J = 2;
+                                wVar2.K = i37;
+                                wVar2.d = this.d;
+                                wVar2.f = this.e;
+                                b2.x xVar7 = new b2.x(wVar2);
+                                this.m = xVar7;
+                                this.h.b(xVar7);
                             }
                             this.n = m10.b;
                             this.l = (m10.c * 1000000) / this.m.L;
-                            xVar3.N(0);
-                            this.h.d(16, xVar3);
+                            xVar5.N(0);
+                            this.h.d(16, xVar5);
                             this.i = 2;
                         }
                     } else if (i35 == 2) {
@@ -423,7 +423,7 @@ public final class b implements i {
                         int i38 = this.j + min4;
                         this.j = i38;
                         if (i38 == this.n) {
-                            u6.p(this.o != -9223372036854775807L);
+                            yb.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;
@@ -453,21 +453,21 @@ public final class b implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.s sVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
                 f0Var.b();
                 f0Var.c();
                 this.g = (String) f0Var.e;
                 f0Var.c();
-                this.h = sVar.j0(f0Var.c, 1);
+                this.h = qVar.F1(f0Var.c, 1);
                 break;
             default:
                 f0Var.b();
                 f0Var.c();
                 this.g = (String) f0Var.e;
                 f0Var.c();
-                this.h = sVar.j0(f0Var.c, 1);
+                this.h = qVar.F1(f0Var.c, 1);
                 break;
         }
     }

@@ -5,15 +5,15 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.k;
 import androidx.car.app.messaging.model.ConversationCallbackDelegateImpl;
 import androidx.car.app.messaging.model.IConversationCallback;
-import androidx.car.app.utils.g;
+import androidx.car.app.utils.h;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 class ConversationCallbackDelegateImpl implements c {
     private final IConversationCallback mConversationCallbackBinder;
 
-    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
     public static class ConversationCallbackStub extends IConversationCallback.Stub {
         private final b mConversationCallback;
 
@@ -35,8 +35,8 @@ class ConversationCallbackDelegateImpl implements c {
 
         @Override // androidx.car.app.messaging.model.IConversationCallback
         public void onMarkAsRead(IOnDoneCallback iOnDoneCallback) {
-            g.b(iOnDoneCallback, "onMarkAsRead", new androidx.car.app.utils.a() { // from class: androidx.car.app.messaging.model.e
-                @Override // androidx.car.app.utils.a
+            h.b(iOnDoneCallback, "onMarkAsRead", new androidx.car.app.utils.b() { // from class: androidx.car.app.messaging.model.e
+                @Override // androidx.car.app.utils.b
                 public final Object a() {
                     Object lambda$onMarkAsRead$0;
                     lambda$onMarkAsRead$0 = ConversationCallbackDelegateImpl.ConversationCallbackStub.this.lambda$onMarkAsRead$0();
@@ -47,8 +47,8 @@ class ConversationCallbackDelegateImpl implements c {
 
         @Override // androidx.car.app.messaging.model.IConversationCallback
         public void onTextReply(IOnDoneCallback iOnDoneCallback, final String str) {
-            g.b(iOnDoneCallback, "onReply", new androidx.car.app.utils.a() { // from class: androidx.car.app.messaging.model.d
-                @Override // androidx.car.app.utils.a
+            h.b(iOnDoneCallback, "onReply", new androidx.car.app.utils.b() { // from class: androidx.car.app.messaging.model.d
+                @Override // androidx.car.app.utils.b
                 public final Object a() {
                     Object lambda$onTextReply$1;
                     lambda$onTextReply$1 = ConversationCallbackDelegateImpl.ConversationCallbackStub.this.lambda$onTextReply$1(str);
@@ -66,7 +66,7 @@ class ConversationCallbackDelegateImpl implements c {
         try {
             IConversationCallback iConversationCallback = this.mConversationCallbackBinder;
             Objects.requireNonNull(iConversationCallback);
-            iConversationCallback.onMarkAsRead(g.a());
+            iConversationCallback.onMarkAsRead(h.a());
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }
@@ -76,7 +76,7 @@ class ConversationCallbackDelegateImpl implements c {
         try {
             IConversationCallback iConversationCallback = this.mConversationCallbackBinder;
             Objects.requireNonNull(iConversationCallback);
-            iConversationCallback.onTextReply(g.a(), str);
+            iConversationCallback.onTextReply(h.a(), str);
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }

@@ -1,58 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class qs {
-    public int a;
-    public int b;
-    public i11 c;
-    public int d;
-    public boolean e;
-    public int f;
-    public int g;
+    public final int a;
+    public String b;
+    public final ArrayList c;
+    public final boolean[] d;
+    public boolean[] e;
+    public boolean f;
+    public final int g;
+    public int h;
+    public int i;
+    public final /* synthetic */ rs j;
 
-    public static qs b(org.telegram.ui.Cells.q2 q2Var, MessagesController.DialogFilter dialogFilter) {
-        qs qsVar = new qs();
-        qsVar.a = dialogFilter.id;
-        qsVar.b = dialogFilter.color;
-        String str = dialogFilter.name;
-        if (str == null) {
-            str = "";
+    public qs(rs rsVar, int i10, ArrayList arrayList) {
+        this.j = rsVar;
+        this.a = i10;
+        int size = arrayList.size();
+        this.g = size;
+        this.i = 0;
+        if (size > 0) {
+            this.c = arrayList;
+            this.d = new boolean[size];
+            this.f = true;
+            g();
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        i11 i11Var = new i11(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
-        i11Var.s(q2Var);
-        qsVar.c = i11Var;
-        qsVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, i11Var.a.getFontMetricsInt(), false), dialogFilter.entities, qsVar.c.a.getFontMetricsInt()));
-        qsVar.c.p(26);
-        int dp = AndroidUtilities.dp(9.32f);
-        i11 i11Var2 = qsVar.c;
-        qsVar.g = dp + ((int) i11Var2.c);
-        i11Var2.j();
-        int[] iArr = org.telegram.ui.ActionBar.k6.r8;
-        int i10 = iArr[dialogFilter.color % iArr.length];
-        qsVar.f = i10;
-        qsVar.e = true;
-        qsVar.d = org.telegram.ui.ActionBar.k6.x0(null, i10, false);
-        return qsVar;
     }
 
-    public final void a(Canvas canvas) {
-        if (this.e) {
-            this.d = org.telegram.ui.ActionBar.k6.x0(null, this.f, false);
+    public final boolean a() {
+        boolean[] zArr;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            if (!this.d[i10] || ((zArr = this.e) != null && !zArr[i10])) {
+                return false;
+            }
         }
-        org.telegram.ui.ActionBar.k6.A0.setColor(org.telegram.ui.ActionBar.k6.o1(org.telegram.ui.ActionBar.k6.I.q() ? 0.2f : 0.1f, this.d));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, this.g, AndroidUtilities.dp(14.66f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.k6.A0);
-        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
+        return true;
+    }
+
+    public final boolean b() {
+        return (this.e != null ? this.h : this.g) > 1;
+    }
+
+    public final boolean c() {
+        return (this.e != null ? this.h : this.g) > 0;
+    }
+
+    public final void d() {
+        boolean[] zArr;
+        boolean[] zArr2;
+        boolean z10 = false;
+        int i10 = 0;
+        while (true) {
+            int i11 = this.g;
+            zArr = this.d;
+            if (i10 >= i11) {
+                break;
+            }
+            if (!zArr[i10] || ((zArr2 = this.e) != null && !zArr2[i10])) {
+                i10++;
+            }
+        }
+        z10 = true;
+        Arrays.fill(zArr, !z10);
+        f();
+        this.j.X.O(true);
+    }
+
+    public final void e(int i10) {
+        boolean[] zArr = this.e;
+        if (zArr == null || zArr[i10]) {
+            boolean[] zArr2 = this.d;
+            boolean z10 = zArr2[i10];
+            zArr2[i10] = !z10;
+            if (z10) {
+                this.i--;
+            } else {
+                this.i++;
+            }
+            this.j.X.O(true);
+        }
+    }
+
+    public final void f() {
+        this.i = 0;
+        this.h = 0;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            boolean[] zArr = this.e;
+            boolean[] zArr2 = this.d;
+            if (zArr == null) {
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            } else if (zArr[i10]) {
+                this.h++;
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            }
+        }
+    }
+
+    public final void g() {
+        TLObject tLObject;
+        int i10 = this.g;
+        if (i10 == 0) {
+            return;
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            boolean[] zArr = this.e;
+            if (zArr == null || zArr[i11]) {
+                tLObject = (TLObject) this.c.get(i11);
+                break;
+            }
+        }
+        tLObject = null;
+        String forcedFirstName = tLObject instanceof TLRPC.User ? UserObject.getForcedFirstName((TLRPC.User) tLObject) : ContactsController.formatName(tLObject);
+        int i12 = this.a;
+        if (i12 == 0) {
+            this.b = LocaleController.getString(R.string.DeleteReportSpam);
+            return;
+        }
+        if (i12 == 1) {
+            this.b = b() ? LocaleController.getString(R.string.DeleteAllMessagesFromUsers) : LocaleController.formatString(R.string.DeleteAllFrom, forcedFirstName);
+            return;
+        }
+        if (i12 == 3) {
+            this.b = b() ? LocaleController.getString(R.string.DeleteAllReactionsFromUsers) : LocaleController.formatString(R.string.DeleteAllReactionsFrom, forcedFirstName);
+        } else if (i12 == 2) {
+            if (this.j.g0) {
+                this.b = b() ? LocaleController.getString(R.string.DeleteRestrictUsers) : LocaleController.formatString(R.string.DeleteRestrict, forcedFirstName);
+            } else {
+                this.b = b() ? LocaleController.getString(R.string.DeleteBanUsers) : LocaleController.formatString(R.string.DeleteBan, forcedFirstName);
+            }
+        }
     }
 }

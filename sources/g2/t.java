@@ -4,12 +4,12 @@ import android.net.Uri;
 import android.system.ErrnoException;
 import android.system.OsConstants;
 import android.text.TextUtils;
-import e2.m0;
+import e2.n0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class t extends c {
     public RandomAccessFile a;
@@ -70,24 +70,24 @@ public final class t extends c {
             } catch (IOException e) {
                 throw new s(e, 2000);
             }
-        } catch (FileNotFoundException e7) {
+        } catch (FileNotFoundException e10) {
             if (TextUtils.isEmpty(uri.getQuery()) && TextUtils.isEmpty(uri.getFragment())) {
-                throw new s(e7, ((e7.getCause() instanceof ErrnoException) && ((ErrnoException) e7.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
+                throw new s(e10, ((e10.getCause() instanceof ErrnoException) && ((ErrnoException) e10.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
             }
             String path2 = uri.getPath();
             String query = uri.getQuery();
             String fragment = uri.getFragment();
-            StringBuilder w9 = a1.g.w("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
-            w9.append(fragment);
-            throw new s(w9.toString(), e7, 1004);
-        } catch (SecurityException e10) {
-            throw new s(e10, 2006);
-        } catch (RuntimeException e11) {
-            throw new s(e11, 2000);
+            StringBuilder w10 = a1.g.w("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
+            w10.append(fragment);
+            throw new s(w10.toString(), e10, 1004);
+        } catch (SecurityException e11) {
+            throw new s(e11, 2006);
+        } catch (RuntimeException e12) {
+            throw new s(e12, 2000);
         }
     }
 
-    @Override // b2.o
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
@@ -98,7 +98,7 @@ public final class t extends c {
         }
         try {
             RandomAccessFile randomAccessFile = this.a;
-            String str = m0.a;
+            String str = n0.a;
             int read = randomAccessFile.read(bArr, i10, (int) Math.min(j10, i11));
             if (read > 0) {
                 this.c -= read;

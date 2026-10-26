@@ -1,27 +1,87 @@
 package com.google.android.gms.internal.cast;
 
-import sun.misc.Unsafe;
+import android.text.TextUtils;
+import com.google.android.gms.cast.CastDevice;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class s6 {
-    public final Unsafe a;
+public final class s6 {
+    public static final h6.b n = new h6.b("SessionFlowSummary", null);
+    public static final String o = "21.4.0";
+    public static long p = System.currentTimeMillis();
+    public final b0 a;
+    public final List b;
+    public final List c;
+    public final List d;
+    public final Map e;
+    public final m0 f;
+    public final String g;
+    public final long h;
+    public final long i;
+    public e6.c j;
+    public String k;
+    public String l;
+    public String m;
 
-    public s6(Unsafe unsafe) {
-        this.a = unsafe;
+    public s6(m0 m0Var, String str) {
+        b1 b1Var = b1.b;
+        b0 b0Var = new b0(0);
+        b0Var.c = b1Var;
+        this.a = b0Var;
+        this.b = DesugarCollections.synchronizedList(new ArrayList());
+        this.c = DesugarCollections.synchronizedList(new ArrayList());
+        this.d = DesugarCollections.synchronizedList(new ArrayList());
+        this.e = DesugarCollections.synchronizedMap(new HashMap());
+        this.f = m0Var;
+        this.g = str;
+        this.h = System.currentTimeMillis();
+        long j10 = p;
+        p = 1 + j10;
+        this.i = j10;
     }
 
-    public abstract double a(Object obj, long j10);
+    public final void a(e6.c cVar) {
+        if (cVar == null) {
+            b(2);
+            return;
+        }
+        o6.l.e("Must be called from the main thread.");
+        CastDevice castDevice = cVar.k;
+        if (castDevice == null) {
+            b(3);
+            return;
+        }
+        String str = castDevice.w;
+        this.j = cVar;
+        String str2 = this.l;
+        if (str2 == null) {
+            this.l = str;
+            this.m = castDevice.e;
+            cVar.e();
+        } else {
+            if (TextUtils.equals(str2, str)) {
+                return;
+            }
+            b(5);
+        }
+    }
 
-    public abstract float b(Object obj, long j10);
-
-    public abstract void c(Object obj, long j10, boolean z10);
-
-    public abstract void d(Object obj, long j10, byte b10);
-
-    public abstract void e(Object obj, long j10, double d);
-
-    public abstract void f(Object obj, long j10, float f7);
-
-    public abstract boolean g(Object obj, long j10);
+    public final void b(int i10) {
+        Integer valueOf = Integer.valueOf(i10 - 1);
+        Map map = this.e;
+        b bVar = (b) map.get(valueOf);
+        if (bVar != null) {
+            bVar.d.incrementAndGet();
+            bVar.b = System.currentTimeMillis();
+        } else {
+            b bVar2 = new b(new ag.j(i10));
+            bVar2.c = this.h;
+            map.put(valueOf, bVar2);
+        }
+    }
 }

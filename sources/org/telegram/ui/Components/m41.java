@@ -1,108 +1,185 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.util.Log;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import org.json.JSONArray;
-import org.json.JSONTokener;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class m41 extends Thread {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Utilities.Callback2 d;
+public final class m41 extends View implements org.telegram.ui.ActionBar.p6 {
+    public int a;
+    public float b;
+    public final Paint c;
+    public final Paint d;
+    public Drawable e;
+    public boolean f;
+    public int h;
+    public final RectF n;
 
-    public m41(String str, String str2, String str3, Utilities.Callback2 callback2) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = callback2;
+    public m41(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        this.f = true;
+        this.h = 0;
+        this.n = new RectF();
+        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.P9, false);
+        this.a = x02;
+        paint.setColor(x02);
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        HttpURLConnection httpURLConnection;
-        String str;
-        Utilities.Callback2 callback2 = this.d;
-        String str2 = this.c;
-        boolean z10 = false;
+    @Override // android.view.View
+    public final void drawableHotspotChanged(float f7, float f10) {
+        super.drawableHotspotChanged(f7, f10);
+        Drawable drawable = this.e;
+        if (drawable != null) {
+            drawable.setHotspot(f7, f10);
+        }
+    }
+
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        Drawable drawable = this.e;
+        if (drawable != null) {
+            drawable.setState(getDrawableState());
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        Drawable drawable = this.e;
+        if (drawable != null) {
+            drawable.jumpToCurrentState();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2 = canvas;
+        if (this.f) {
+            float dp = AndroidUtilities.dp(((this.h == 0 ? this.b : 1.0f) * 26.0f) + 6.0f);
+            float width = getWidth();
+            float height = getHeight();
+            RectF rectF = this.n;
+            rectF.set(0.0f, 0.0f, width, height);
+            canvas2.drawRoundRect(rectF, dp, dp, this.c);
+        }
+        int i10 = this.h;
+        Paint paint = this.d;
+        if (i10 == 0) {
+            float max = (Math.max(0.4f, this.b) - 0.4f) / 0.6f;
+            if (max != 0.0f) {
+                float C = (org.telegram.messenger.vh.C(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
+                float height2 = getHeight() / 2.0f;
+                canvas.drawLine(AndroidUtilities.dp(21.0f), height2, C, height2, paint);
+                double dp2 = AndroidUtilities.dp(9.0f) * max;
+                float cos = (float) (C - (Math.cos(0.7853981633974483d) * dp2));
+                float sin = (float) (Math.sin(0.7853981633974483d) * dp2);
+                canvas2 = canvas;
+                canvas2.drawLine(C, height2, cos, height2 - sin, paint);
+                canvas2.drawLine(C, height2, cos, height2 + sin, paint);
+            } else {
+                canvas2 = canvas;
+            }
+        } else if (i10 == 1) {
+            float dp3 = AndroidUtilities.dp(21.0f);
+            float width2 = getWidth() - AndroidUtilities.dp(21.0f);
+            float height3 = getHeight() / 2.0f;
+            canvas2.save();
+            canvas2.translate((-AndroidUtilities.dp(2.0f)) * this.b, 0.0f);
+            canvas2.rotate(this.b * 90.0f, getWidth() / 2.0f, getHeight() / 2.0f);
+            canvas2.drawLine(dp3 + ((width2 - dp3) * this.b), height3, width2, height3, paint);
+            int dp4 = AndroidUtilities.dp((this.b * (-1.0f)) + 9.0f);
+            int dp5 = AndroidUtilities.dp((this.b * 7.0f) + 9.0f);
+            double d = width2;
+            double d10 = dp4;
+            double d11 = height3;
+            canvas.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d10)), (float) ((Math.sin(0.7853981633974483d) * d10) + d11), paint);
+            double d12 = dp5;
+            canvas2 = canvas;
+            canvas2.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d12)), (float) (d11 - (Math.sin(0.7853981633974483d) * d12)), paint);
+            canvas.restore();
+        }
+        Drawable drawable = this.e;
+        if (drawable != null) {
+            drawable.setBounds(0, 0, getWidth(), getHeight());
+            this.e.setHotspotBounds(0, 0, getWidth(), getHeight());
+            this.e.draw(canvas2);
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.c.setColor(i10);
+        invalidate();
+    }
+
+    public void setColor(int i10) {
+        this.d.setColor(i10);
+        invalidate();
+    }
+
+    public void setDrawBackground(boolean z10) {
+        this.f = z10;
+    }
+
+    public void setProgress(float f7) {
+        this.b = f7;
+        invalidate();
+    }
+
+    public void setRippleDrawable(Drawable drawable) {
+        this.e = drawable;
+        invalidate();
+    }
+
+    public void setTransformType(int i10) {
+        this.h = i10;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        Paint paint = this.c;
         try {
-            httpURLConnection = (HttpURLConnection) new URI(("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + Uri.encode(this.a) + "&tl=" + Uri.encode(this.b) + "&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&q=") + str2).toURL().openConnection();
+            if (paint.getColor() == this.a) {
+                this.a = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.P9, false);
+                int color = paint.getColor();
+                int i10 = this.a;
+                if (color != i10) {
+                    paint.setColor(i10);
+                    invalidate();
+                }
+            }
         } catch (Exception e) {
-            e = e;
-            httpURLConnection = null;
+            FileLog.e(e);
         }
-        try {
-            httpURLConnection.setRequestMethod("GET");
-            httpURLConnection.setRequestProperty("User-Agent", y41.X[(int) Math.round(Math.random() * 5)]);
-            httpURLConnection.setRequestProperty("Content-Type", "application/json");
-            StringBuilder sb2 = new StringBuilder();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), d9.j.a));
-            while (true) {
-                try {
-                    int read = bufferedReader.read();
-                    if (read == -1) {
-                        break;
-                    } else {
-                        sb2.append((char) read);
-                    }
-                } finally {
-                }
-            }
-            bufferedReader.close();
-            JSONArray jSONArray = new JSONArray(new JSONTokener(sb2.toString()));
-            JSONArray jSONArray2 = jSONArray.getJSONArray(0);
-            try {
-                str = jSONArray.getString(2);
-            } catch (Exception unused) {
-                str = null;
-            }
-            if (str != null && str.contains("-")) {
-                str.substring(0, str.indexOf("-"));
-            }
-            String str3 = "";
-            for (int i10 = 0; i10 < jSONArray2.length(); i10++) {
-                String string = jSONArray2.getJSONArray(i10).getString(0);
-                if (string != null && !string.equals("null")) {
-                    str3 = str3 + string;
-                }
-            }
-            if (str2.length() > 0 && str2.charAt(0) == '\n') {
-                str3 = "\n" + str3;
-            }
-            AndroidUtilities.runOnUIThread(new l41(str3, 0, callback2));
-        } catch (Exception e7) {
-            e = e7;
-            try {
-                StringBuilder sb3 = new StringBuilder();
-                sb3.append("failed to translate a text ");
-                sb3.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
-                sb3.append(" ");
-                sb3.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
-                Log.e("translate", sb3.toString());
-            } catch (IOException e10) {
-                e10.printStackTrace();
-            }
-            e.printStackTrace();
-            if (httpURLConnection != null) {
-                try {
-                    if (httpURLConnection.getResponseCode() == 429) {
-                        z10 = true;
-                    }
-                } catch (Exception unused2) {
-                    AndroidUtilities.runOnUIThread(new kr0(callback2, 22));
-                    return;
-                }
-            }
-            AndroidUtilities.runOnUIThread(new b60(8, callback2, z10));
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        if (super.verifyDrawable(drawable)) {
+            return true;
         }
+        Drawable drawable2 = this.e;
+        return drawable2 != null && drawable == drawable2;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

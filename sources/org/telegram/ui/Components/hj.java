@@ -2,13 +2,13 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.bi1;
-import org.telegram.ui.ci1;
-import org.telegram.ui.qc1;
+import org.telegram.ui.di1;
+import org.telegram.ui.ei1;
+import org.telegram.ui.tc1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.Cells.bb {
+public final class hj extends org.telegram.ui.Cells.fb {
     public final /* synthetic */ int w;
     public final /* synthetic */ lm0 x;
 
@@ -19,7 +19,7 @@ public final class hj extends org.telegram.ui.Cells.bb {
         this.x = lm0Var;
     }
 
-    @Override // org.telegram.ui.Cells.bb
+    @Override // org.telegram.ui.Cells.fb
     public final void a(int i10, Object obj) {
         switch (this.w) {
             case 0:
@@ -30,19 +30,19 @@ public final class hj extends org.telegram.ui.Cells.bb {
                 }
                 break;
             case 1:
-                WallpapersListActivity.r0(((bi1) this.x).d, this, obj, i10);
+                WallpapersListActivity.s0(((di1) this.x).d, this, obj, i10);
                 break;
             default:
-                ((ci1) this.x).E.presentFragment(new qc1(obj, null, true));
+                ((ei1) this.x).E.presentFragment(new tc1(obj, null, true));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Cells.bb
+    @Override // org.telegram.ui.Cells.fb
     public boolean b(Object obj, int i10) {
         switch (this.w) {
             case 1:
-                return WallpapersListActivity.s0(((bi1) this.x).d, this, obj, i10);
+                return WallpapersListActivity.t0(((di1) this.x).d, this, obj, i10);
             default:
                 return super.b(obj, i10);
         }

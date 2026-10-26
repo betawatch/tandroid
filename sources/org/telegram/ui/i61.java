@@ -1,23 +1,18 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class i61 extends s4.r0 {
-    public final /* synthetic */ l61 a;
+public final class i61 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ m61 a;
 
-    public i61(l61 l61Var) {
-        this.a = l61Var;
+    public i61(m61 m61Var) {
+        this.a = m61Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        l61 l61Var = this.a;
-        if (l61Var.d.I1) {
-            AndroidUtilities.hideKeyboard(l61Var.c0);
-        }
-        l61.S(l61Var);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        m61.S(this.a);
     }
 }

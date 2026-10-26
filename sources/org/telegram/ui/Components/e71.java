@@ -1,41 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public abstract class e71 extends org.telegram.ui.ActionBar.o2 {
-    public d71 a;
-    public int b;
-    public int c;
+public final class e71 extends FrameLayout {
+    public int a;
+    public boolean b;
 
-    public e71() {
-        super(null);
-        this.b = -1;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = this.a;
+        View view = getParent() instanceof View ? (View) getParent() : null;
+        if (this.b && view != null) {
+            i12 = view.getPaddingBottom() + view.getPaddingTop() + i12;
+        }
+        if (view != null && view.getMeasuredHeight() > 0) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i12, TLObject.FLAG_30));
+            return;
+        }
+        if (View.MeasureSpec.getMode(i11) != 0) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11) - i12, TLObject.FLAG_30));
+            return;
+        }
+        int size = View.MeasureSpec.getSize(i11);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
+        measureChildren(makeMeasureSpec, i11);
+        int i13 = 0;
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            i13 = Math.max(i13, getChildAt(i14).getMeasuredHeight());
+        }
+        if (size > 0) {
+            i13 = Math.min(i13, size - i12);
+        }
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30));
     }
 
-    public abstract void U(ArrayList arrayList, b71 b71Var);
+    public void setMinusHeight(int i10) {
+        this.a = i10;
+    }
 
-    public abstract CharSequence V();
-
-    public abstract void W(m61 m61Var, View view);
-
-    public abstract boolean X(m61 m61Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public View createView(Context context) {
-        i2.o1.y(false, this.actionBar);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(V());
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.ea(this, 16));
-        ig.o1 o1Var = new ig.o1(context, null, 1);
-        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, o1Var, null);
-        d71 d71Var = new d71(this, this, new d(this, 22), new c71(this), new c71(this));
-        this.a = d71Var;
-        o1Var.addView(d71Var, w7.z5.c(-1.0f, -1));
-        this.fragmentView = o1Var;
-        return o1Var;
+    public void setMinusPadding(boolean z10) {
+        this.b = z10;
     }
 }

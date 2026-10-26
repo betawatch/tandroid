@@ -1,33 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.SpannableString;
 import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class su extends CharacterStyle {
-    public final /* synthetic */ int a;
-    public int b;
+public final class su extends xh.n {
+    public final w90 U;
+    public aa0 V;
+    public boolean W;
+    public boolean a0;
+    public boolean b0;
 
-    public /* synthetic */ su(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public su(Context context) {
+        super(context, null, true);
+        this.U = new w90(this);
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
-                break;
-            default:
-                textPaint.setColor(org.telegram.ui.ActionBar.k6.o1(textPaint.getAlpha() / 255.0f, this.b));
-                break;
+    @Override // xh.n
+    public final ClickableSpan a(int i10, int i11) {
+        Layout layout = getLayout();
+        if (layout == null) {
+            return null;
         }
+        int paddingLeft = i10 - getPaddingLeft();
+        int paddingTop = i11 - getPaddingTop();
+        int lineForVertical = layout.getLineForVertical(paddingTop);
+        float f7 = paddingLeft;
+        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f7);
+        float lineLeft = getLayout().getLineLeft(lineForVertical);
+        if (lineLeft <= f7 && layout.getLineWidth(lineForVertical) + lineLeft >= f7 && paddingTop >= 0 && paddingTop <= layout.getHeight()) {
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+            if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                return clickableSpanArr[0];
+            }
+        }
+        return null;
     }
 
-    public su() {
-        this.a = 0;
-        this.b = 0;
+    @Override // xh.n, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        if (!this.W) {
+            canvas.translate(this.a0 ? 0.0f : getPaddingLeft(), this.b0 ? 0.0f : getPaddingTop());
+        }
+        if (this.U.f(canvas)) {
+            invalidate();
+        }
+        canvas.restore();
+        super.onDraw(canvas);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        CharacterStyle characterStyle;
+        w90 w90Var = this.U;
+        if (w90Var != null) {
+            Layout layout = getLayout();
+            ClickableSpan a2 = a((int) motionEvent.getX(), (int) motionEvent.getY());
+            if (a2 != null && motionEvent.getAction() == 0) {
+                aa0 aa0Var = new aa0(a2, null, motionEvent.getX(), motionEvent.getY(), 0);
+                this.V = aa0Var;
+                w90Var.a(aa0Var, null);
+                SpannableString spannableString = new SpannableString(layout.getText());
+                int spanStart = spannableString.getSpanStart(this.V.i);
+                int spanEnd = spannableString.getSpanEnd(this.V.i);
+                s90 b10 = this.V.b();
+                b10.d(layout, spanStart, getPaddingTop());
+                layout.getSelectionPath(spanStart, spanEnd, b10);
+                AndroidUtilities.runOnUIThread(new bq(this, aa0Var, a2), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                w90Var.d(true);
+                aa0 aa0Var2 = this.V;
+                if (aa0Var2 != null && (characterStyle = aa0Var2.i) == a2) {
+                    if (characterStyle != null) {
+                        ((ClickableSpan) characterStyle).onClick(this);
+                    }
+                    this.V = null;
+                    return true;
+                }
+                this.V = null;
+            }
+            if (motionEvent.getAction() == 3) {
+                w90Var.d(true);
+                this.V = null;
+            }
+        }
+        return this.V != null || super.onTouchEvent(motionEvent);
+    }
+
+    @Override // xh.n
+    public void setDisablePaddingsOffset(boolean z10) {
+        this.W = z10;
+    }
+
+    @Override // xh.n
+    public void setDisablePaddingsOffsetX(boolean z10) {
+        this.a0 = z10;
+    }
+
+    @Override // xh.n
+    public void setDisablePaddingsOffsetY(boolean z10) {
+        this.b0 = z10;
+    }
+
+    @Override // xh.n, android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
     }
 }

@@ -1,15 +1,30 @@
 package zh;
 
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import org.telegram.ui.Components.p5;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class b1 {
-    public p5 a;
-    public long b;
-    public Bitmap c;
-    public Paint d;
-    public int e;
+public final class b1 extends h4 {
+    public final /* synthetic */ ViewTreeObserver Q;
+    public final /* synthetic */ m0 R;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b1(long j10, String str, long j11, u6 u6Var, ViewTreeObserver viewTreeObserver, m0 m0Var) {
+        super(j10, str, j11, u6Var);
+        this.Q = viewTreeObserver;
+        this.R = m0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final void onPause() {
+        super.onPause();
+        this.Q.removeOnPreDrawListener(this.R);
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final void onResume() {
+        super.onResume();
+        this.Q.addOnPreDrawListener(this.R);
+    }
 }

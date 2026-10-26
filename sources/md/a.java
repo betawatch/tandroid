@@ -1,131 +1,28 @@
 package md;
 
-import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import m.x2;
-import v7.i8;
+import a8.we;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class a implements kd.c, d, Serializable {
-    private final kd.c completion;
+public final class a {
+    public static final a a;
+    public static final /* synthetic */ a[] b;
 
-    public a(kd.c cVar) {
-        this.completion = cVar;
+    static {
+        a aVar = new a("COROUTINE_SUSPENDED", 0);
+        a = aVar;
+        a[] aVarArr = {aVar, new a("UNDECIDED", 1), new a("RESUMED", 2)};
+        b = aVarArr;
+        we.a(aVarArr);
     }
 
-    public kd.c create(kd.c completion) {
-        kotlin.jvm.internal.i.e(completion, "completion");
-        throw new UnsupportedOperationException("create(Continuation) has not been overridden");
+    public static a valueOf(String str) {
+        return (a) Enum.valueOf(a.class, str);
     }
 
-    public d getCallerFrame() {
-        kd.c cVar = this.completion;
-        if (cVar instanceof d) {
-            return (d) cVar;
-        }
-        return null;
-    }
-
-    public final kd.c getCompletion() {
-        return this.completion;
-    }
-
-    public StackTraceElement getStackTraceElement() {
-        int i10;
-        String str;
-        Method method;
-        Object invoke;
-        Method method2;
-        Object invoke2;
-        e eVar = (e) getClass().getAnnotation(e.class);
-        String str2 = null;
-        if (eVar == null) {
-            return null;
-        }
-        int v = eVar.v();
-        if (v > 1) {
-            throw new IllegalStateException(("Debug metadata version mismatch. Expected: 1, got " + v + ". Please update the Kotlin standard library.").toString());
-        }
-        try {
-            Field declaredField = getClass().getDeclaredField("label");
-            declaredField.setAccessible(true);
-            Object obj = declaredField.get(this);
-            Integer num = obj instanceof Integer ? (Integer) obj : null;
-            i10 = (num != null ? num.intValue() : 0) - 1;
-        } catch (Exception unused) {
-            i10 = -1;
-        }
-        int i11 = i10 >= 0 ? eVar.l()[i10] : -1;
-        x2 x2Var = f.b;
-        x2 x2Var2 = f.a;
-        if (x2Var == null) {
-            try {
-                x2 x2Var3 = new x2(Class.class.getDeclaredMethod("getModule", null), getClass().getClassLoader().loadClass("java.lang.Module").getDeclaredMethod("getDescriptor", null), getClass().getClassLoader().loadClass("java.lang.module.ModuleDescriptor").getDeclaredMethod("name", null));
-                f.b = x2Var3;
-                x2Var = x2Var3;
-            } catch (Exception unused2) {
-                f.b = x2Var2;
-                x2Var = x2Var2;
-            }
-        }
-        if (x2Var != x2Var2 && (method = x2Var.a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = x2Var.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
-            Method method3 = x2Var.c;
-            Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
-            if (invoke3 instanceof String) {
-                str2 = (String) invoke3;
-            }
-        }
-        if (str2 == null) {
-            str = eVar.c();
-        } else {
-            str = str2 + '/' + eVar.c();
-        }
-        return new StackTraceElement(str, eVar.m(), eVar.f(), i11);
-    }
-
-    public abstract Object invokeSuspend(Object obj);
-
-    @Override // kd.c
-    public final void resumeWith(Object obj) {
-        kd.c cVar = this;
-        while (true) {
-            a aVar = (a) cVar;
-            kd.c cVar2 = aVar.completion;
-            kotlin.jvm.internal.i.b(cVar2);
-            try {
-                obj = aVar.invokeSuspend(obj);
-                if (obj == ld.a.a) {
-                    return;
-                }
-            } catch (Throwable th2) {
-                obj = i8.a(th2);
-            }
-            aVar.releaseIntercepted();
-            if (!(cVar2 instanceof a)) {
-                cVar2.resumeWith(obj);
-                return;
-            }
-            cVar = cVar2;
-        }
-    }
-
-    public String toString() {
-        StringBuilder sb2 = new StringBuilder("Continuation at ");
-        Object stackTraceElement = getStackTraceElement();
-        if (stackTraceElement == null) {
-            stackTraceElement = getClass().getName();
-        }
-        sb2.append(stackTraceElement);
-        return sb2.toString();
-    }
-
-    public kd.c create(Object obj, kd.c completion) {
-        kotlin.jvm.internal.i.e(completion, "completion");
-        throw new UnsupportedOperationException("create(Any?;Continuation) has not been overridden");
-    }
-
-    public void releaseIntercepted() {
+    public static a[] values() {
+        return (a[]) b.clone();
     }
 }

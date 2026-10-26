@@ -1,29 +1,124 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.yq;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.dg1;
+import org.telegram.ui.ms0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k0 extends AnimatorListenerAdapter {
+public final class k0 extends ImageView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ k0(u0 u0Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k0(Object obj, Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = u0Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                u0 u0Var = this.b;
-                u0Var.s.setVisibility(4);
-                u0Var.v = null;
+                getBackground().draw(canvas);
+                super.draw(canvas);
                 break;
             default:
-                this.b.v = null;
+                super.draw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                w0 w0Var = (w0) this.b;
+                super.onDetachedFromWindow();
+                clearAnimation();
+                if (getTag() != null) {
+                    w0Var.s.setAlpha(1.0f);
+                    w0Var.s.setRotation(0.0f);
+                    w0Var.s.setScaleX(1.0f);
+                    w0Var.s.setScaleY(1.0f);
+                    break;
+                } else {
+                    w0Var.s.setVisibility(4);
+                    w0Var.s.setAlpha(0.0f);
+                    w0Var.s.setRotation(45.0f);
+                    w0Var.s.setScaleX(0.0f);
+                    w0Var.s.setScaleY(0.0f);
+                    break;
+                }
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 3:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setCheckable(true);
+                accessibilityNodeInfo.setChecked(((dg1) this.b).n.getTransformationMethod() == null);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        switch (this.a) {
+            case 1:
+                super.setAlpha(f7);
+                ((yq) this.b).x.invalidate();
+                break;
+            default:
+                super.setAlpha(f7);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        switch (this.a) {
+            case 2:
+                super.setTranslationY(f7);
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                ArrayList arrayList = photoViewer.h1;
+                if (arrayList != null) {
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        ((fi.v3) obj).setTranslationY(f7);
+                    }
+                }
+                ms0 ms0Var = photoViewer.g1;
+                if (ms0Var != null) {
+                    ms0Var.setTranslationY(f7);
+                }
+                ba0 ba0Var = photoViewer.f1;
+                if (ba0Var != null) {
+                    ba0Var.setTranslationY(f7);
+                    break;
+                }
+                break;
+            default:
+                super.setTranslationY(f7);
                 break;
         }
     }

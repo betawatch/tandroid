@@ -2,100 +2,66 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class s7 extends bk0 {
-    public final r7 E;
-    public long F;
-    public final /* synthetic */ float G;
-    public final /* synthetic */ k8 H;
-    public float r;
-    public float s;
-    public int v;
-    public long w;
-    public long x;
-    public final r7 y;
+public final class s7 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m8 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s7(k8 k8Var, Context context, float f7) {
+    public /* synthetic */ s7(m8 m8Var, Context context, int i10) {
         super(context);
-        this.H = k8Var;
-        this.G = f7;
-        this.v = 0;
-        this.y = new r7(this, 0);
-        this.E = new r7(this, 1);
+        this.a = i10;
+        this.b = m8Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.addAction(16);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x002a, code lost:
-    
-        if (r6 != 3) goto L20;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        k8 k8Var = this.H;
-        s7 s7Var = k8Var.J;
-        if (k8Var.S.w || k8Var.G0 == 1) {
-            return false;
-        }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        r7 r7Var = this.y;
-        if (action == 0) {
-            this.r = rawX;
-            this.s = rawY;
-            this.F = System.currentTimeMillis();
-            k8Var.G0 = 0;
-            AndroidUtilities.runOnUIThread(r7Var, 300L);
-            if (getBackground() != null) {
-                getBackground().setHotspot(this.r, this.s);
-            }
-            setPressed(true);
-            return true;
-        }
-        if (action != 1) {
-            if (action == 2) {
-                float f7 = rawX - this.r;
-                float f10 = rawY - this.s;
-                float f11 = (f10 * f10) + (f7 * f7);
-                float f12 = this.G;
-                if (f11 > f12 * f12 && k8Var.G0 == 0) {
-                    AndroidUtilities.cancelRunOnUIThread(r7Var);
-                    setPressed(false);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        TextView textView;
+        switch (this.a) {
+            case 0:
+                int B = org.telegram.messenger.vh.B(248.0f, i12 - i10, 4);
+                for (int i14 = 0; i14 < 5; i14++) {
+                    int dp = (B * i14) + AndroidUtilities.dp((i14 * 48) + 4);
+                    int dp2 = AndroidUtilities.dp(9.0f);
+                    m8 m8Var = this.b;
+                    View view = m8Var.m0[i14];
+                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, m8Var.m0[i14].getMeasuredHeight() + dp2);
                 }
-            }
-            return true;
+                break;
+            case 1:
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+            case 2:
+                super.onLayout(z10, i10, i11, i12, i13);
+                m8 m8Var2 = this.b;
+                if (m8Var2.U != null && (textView = m8Var2.Z) != null) {
+                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - m8Var2.U.getMeasuredWidth();
+                    org.telegram.ui.ActionBar.w0 w0Var = m8Var2.U;
+                    w0Var.layout(left, w0Var.getTop(), m8Var2.U.getMeasuredWidth() + left, m8Var2.U.getBottom());
+                    break;
+                }
+                break;
         }
-        AndroidUtilities.cancelRunOnUIThread(r7Var);
-        r7 r7Var2 = this.E;
-        AndroidUtilities.cancelRunOnUIThread(r7Var2);
-        if (k8Var.G0 == 0 && motionEvent.getAction() == 1 && System.currentTimeMillis() - this.F < 300) {
-            MediaController.getInstance().playPreviousMessage();
-            s7Var.setProgress(0.0f);
-            s7Var.d();
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                m8 m8Var = this.b;
+                if (m8Var.h0.getTag() != null) {
+                    m8Var.H0(false, true);
+                }
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
         }
-        if (this.v > 0) {
-            this.x = 0L;
-            r7Var2.run();
-            MediaController.getInstance().resumeByRewind();
-        }
-        k8Var.H0 = -1.0f;
-        setPressed(false);
-        k8Var.G0 = 0;
-        this.v = 0;
-        return true;
     }
 }

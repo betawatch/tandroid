@@ -1,21 +1,17 @@
 package ee;
 
-import ab.u;
-import kotlin.jvm.internal.p;
-import org.telegram.tgnet.TLObject;
+import ce.j2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class j extends md.c {
-    public p a;
-    public u b;
-    public /* synthetic */ Object c;
-    public int d;
+public final class j {
+    public final j2 a;
 
-    @Override // md.a
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.d |= TLObject.FLAG_31;
-        return n.b(null, this);
+    public j(j2 j2Var) {
+        this.a = j2Var;
+    }
+
+    public final String toString() {
+        return "WaiterEB(" + this.a + ')';
     }
 }

@@ -1,46 +1,95 @@
 package org.telegram.messenger;
 
+import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kd implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class kd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ kd(MessagesController messagesController, long j10, Utilities.Callback callback, TLRPC.User user, int i10) {
+    public /* synthetic */ kd(MessagesController messagesController, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.r2 r2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z10, boolean z11) {
+        this.a = 0;
         this.d = messagesController;
-        this.b = j10;
-        this.e = callback;
-        this.f = user;
-        this.c = i10;
+        this.e = tL_error;
+        this.f = r2Var;
+        this.h = tL_channels_editAdmin;
+        this.b = z10;
+        this.c = z11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Object obj = this.h;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
+        switch (i10) {
             case 0:
-                ((MessagesController) this.d).lambda$loadFullUser$71(this.b, (Utilities.Callback) this.e, (TLRPC.User) this.f, this.c, tLObject, tL_error);
+                ((MessagesController) obj4).lambda$setUserAdminRole$100((TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.r2) obj2, (TLRPC.TL_channels_editAdmin) obj, this.b, this.c);
+                break;
+            case 1:
+                ((NotificationsController) obj4).lambda$processNewMessages$28((ArrayList) obj3, (ArrayList) obj2, this.b, this.c, (CountDownLatch) obj);
+                break;
+            case 2:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) obj4;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj3;
+                org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) obj2;
+                org.telegram.ui.ActionBar.r2 r2Var2 = (org.telegram.ui.ActionBar.r2) obj;
+                if (this.b) {
+                    actionBarLayout.h = true;
+                    actionBarLayout.J = actionBarPopupWindow$ActionBarPopupWindowLayout;
+                    actionBarLayout.a0 = false;
+                    actionBarLayout.s.setScaleX(1.0f);
+                    actionBarLayout.s.setScaleY(1.0f);
+                } else {
+                    Drawable drawable = ActionBarLayout.v1;
+                    actionBarLayout.V(r2Var, this.c);
+                    actionBarLayout.s.setTranslationX(0.0f);
+                }
+                if (r2Var != null) {
+                    r2Var.onTransitionAnimationEnd(false, false);
+                }
+                r2Var2.onTransitionAnimationEnd(true, false);
+                r2Var2.onBecomeFullyVisible();
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ai.f9((org.telegram.ui.Cells.g6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f));
+                TwoStepVerificationActivity.b0((TwoStepVerificationActivity) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, this.b, this.c, (Runnable) obj);
                 break;
         }
     }
 
-    public /* synthetic */ kd(org.telegram.ui.Cells.g6 g6Var, MessagesStorage messagesStorage, long j10, int i10, ArrayList arrayList) {
-        this.d = g6Var;
-        this.e = messagesStorage;
-        this.b = j10;
-        this.c = i10;
-        this.f = arrayList;
+    public /* synthetic */ kd(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, Object obj2, boolean z10, boolean z11, Object obj3, int i10) {
+        this.a = i10;
+        this.d = notificationCenterDelegate;
+        this.e = obj;
+        this.f = obj2;
+        this.b = z10;
+        this.c = z11;
+        this.h = obj3;
+    }
+
+    public /* synthetic */ kd(ActionBarLayout actionBarLayout, boolean z10, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, boolean z11, org.telegram.ui.ActionBar.r2 r2Var, org.telegram.ui.ActionBar.r2 r2Var2) {
+        this.a = 2;
+        this.d = actionBarLayout;
+        this.b = z10;
+        this.e = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.c = z11;
+        this.f = r2Var;
+        this.h = r2Var2;
     }
 }

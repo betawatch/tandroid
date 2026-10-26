@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public class pl0 {
     public final /* synthetic */ int a;
@@ -25,12 +25,12 @@ public class pl0 {
     public final Object j;
     public Object k;
 
-    public pl0(mm0 mm0Var, s4.b0 b0Var) {
+    public pl0(mm0 mm0Var, s4.c0 c0Var) {
         this.a = 0;
         this.j = new SparseArray();
         this.k = new HashMap();
         this.e = mm0Var;
-        this.f = b0Var;
+        this.f = c0Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -44,7 +44,7 @@ public class pl0 {
                 mm0 mm0Var = (mm0) this.e;
                 mm0Var.setVerticalScrollBarEnabled(true);
                 mm0Var.V1 = false;
-                s4.g0 adapter = mm0Var.getAdapter();
+                s4.h0 adapter = mm0Var.getAdapter();
                 if (adapter instanceof nl0) {
                     ((nl0) adapter).E();
                 }
@@ -53,8 +53,8 @@ public class pl0 {
                 for (int i10 = 0; i10 < childCount; i10++) {
                     View childAt = mm0Var.getChildAt(i10);
                     childAt.setTranslationY(0.0f);
-                    if (childAt instanceof org.telegram.ui.Cells.n4) {
-                        ((org.telegram.ui.Cells.n4) childAt).d(false, false);
+                    if (childAt instanceof org.telegram.ui.Cells.s4) {
+                        ((org.telegram.ui.Cells.s4) childAt).b(false, false);
                     }
                 }
                 break;
@@ -139,22 +139,22 @@ public class pl0 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public void c(int i10, int i11, boolean z10, boolean z11) {
-        s4.g0 g0Var;
+        s4.h0 h0Var;
         long j10;
         HashMap hashMap = (HashMap) this.k;
         SparseArray sparseArray = (SparseArray) this.j;
-        s4.b0 b0Var = (s4.b0) this.f;
+        s4.c0 c0Var = (s4.c0) this.f;
         mm0 mm0Var = (mm0) this.e;
         if (mm0Var.V1) {
             return;
         }
         if (mm0Var.getItemAnimator() != null) {
             if (z11) {
-                s4.l0 itemAnimator = mm0Var.getItemAnimator();
-                kl0 kl0Var = new kl0(this, i10, i11, z10);
+                s4.m0 itemAnimator = mm0Var.getItemAnimator();
+                jl0 jl0Var = new jl0(this, i10, i11, z10);
                 boolean k10 = itemAnimator.k();
                 if (k10) {
-                    itemAnimator.b.add(kl0Var);
+                    itemAnimator.b.add(jl0Var);
                 } else {
                     c(i10, i11, z10, false);
                 }
@@ -166,74 +166,74 @@ public class pl0 {
             }
         }
         if (this.b == -1) {
-            b0Var.i1(i10, i11, z10);
+            c0Var.i1(i10, i11, z10);
             return;
         }
         int childCount = mm0Var.getChildCount();
         if (childCount == 0 || !MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
-            b0Var.i1(i10, i11, z10);
+            c0Var.i1(i10, i11, z10);
             return;
         }
         boolean z12 = this.b == 0;
         mm0Var.setScrollEnabled(false);
         ArrayList arrayList = new ArrayList();
         sparseArray.clear();
-        s4.g0 adapter = mm0Var.getAdapter();
+        s4.h0 adapter = mm0Var.getAdapter();
         hashMap.clear();
         int i12 = 0;
         while (i12 < childCount) {
             View childAt = mm0Var.getChildAt(i12);
             arrayList.add(childAt);
-            b0Var.getClass();
-            sparseArray.put(s4.n0.H(childAt), childAt);
+            c0Var.getClass();
+            sparseArray.put(s4.p0.H(childAt), childAt);
             if (adapter == null || !(adapter.b || this.c)) {
-                g0Var = adapter;
+                h0Var = adapter;
             } else {
                 if (this.c) {
-                    int b10 = ((s4.o0) childAt.getLayoutParams()).a.b();
+                    int b10 = ((s4.q0) childAt.getLayoutParams()).a.b();
                     if (b10 < 0) {
-                        g0Var = adapter;
+                        h0Var = adapter;
                         i12++;
-                        adapter = g0Var;
+                        adapter = h0Var;
                     } else {
-                        g0Var = adapter;
+                        h0Var = adapter;
                         j10 = adapter.i(b10);
                     }
                 } else {
-                    g0Var = adapter;
-                    j10 = ((s4.o0) childAt.getLayoutParams()).a.e;
+                    h0Var = adapter;
+                    j10 = ((s4.q0) childAt.getLayoutParams()).a.e;
                 }
                 hashMap.put(Long.valueOf(j10), childAt);
             }
-            if (childAt instanceof org.telegram.ui.Cells.n4) {
-                ((org.telegram.ui.Cells.n4) childAt).d(true, true);
+            if (childAt instanceof org.telegram.ui.Cells.s4) {
+                ((org.telegram.ui.Cells.s4) childAt).b(true, true);
             }
             i12++;
-            adapter = g0Var;
+            adapter = h0Var;
         }
-        s4.g0 g0Var2 = adapter;
-        mm0Var.B0();
-        mm0Var.o0();
+        s4.h0 h0Var2 = adapter;
+        mm0Var.C0();
+        mm0Var.p0();
         s4.b bVar = mm0Var.d;
         bVar.m((ArrayList) bVar.d);
         bVar.m((ArrayList) bVar.e);
         bVar.b = 0;
-        qf.e eVar = mm0Var.b;
-        s4.g0 g0Var3 = mm0Var.w;
-        eVar.d(g0Var3, g0Var3);
+        rf.e eVar = mm0Var.b;
+        s4.h0 h0Var3 = mm0Var.w;
+        eVar.d(h0Var3, h0Var3);
         mm0Var.u0.f = true;
-        mm0Var.e.R();
+        mm0Var.e.r();
         eVar.l();
-        nl0 nl0Var = g0Var2 instanceof nl0 ? (nl0) g0Var2 : null;
-        b0Var.i1(i10, i11, z10);
-        if (g0Var2 != null) {
-            g0Var2.l();
+        nl0 nl0Var = h0Var2 instanceof nl0 ? (nl0) h0Var2 : null;
+        c0Var.i1(i10, i11, z10);
+        if (h0Var2 != null) {
+            h0Var2.l();
         }
-        mm0Var.B0();
+        mm0Var.C0();
         mm0Var.setVerticalScrollBarEnabled(false);
-        w7.a6 a6Var = (w7.a6) this.i;
-        if (a6Var != null) {
-            a6Var.c();
+        gb1 gb1Var = (gb1) this.i;
+        if (gb1Var != null) {
+            gb1Var.Q();
         }
         mm0Var.V1 = true;
         if (nl0Var != null) {
@@ -242,11 +242,11 @@ public class pl0 {
             nl0Var.e.clear();
             nl0Var.f.clear();
         }
-        mm0Var.addOnLayoutChangeListener(new ml0(this, g0Var2, arrayList, z12, nl0Var));
+        mm0Var.addOnLayoutChangeListener(new ml0(this, h0Var2, arrayList, z12, nl0Var));
     }
 
-    public void d(w7.a6 a6Var) {
-        this.i = a6Var;
+    public void d(gb1 gb1Var) {
+        this.i = gb1Var;
     }
 
     public pl0(p4.e eVar, p4.v vVar, p4.q qVar, int i10, p4.v vVar2, Collection collection) {
@@ -261,6 +261,6 @@ public class pl0 {
         this.f = eVar.d;
         this.h = vVar2;
         this.i = collection != null ? new ArrayList(collection) : null;
-        eVar.a.postDelayed(new org.telegram.ui.web.a2(this, 3), 15000L);
+        eVar.a.postDelayed(new org.telegram.ui.web.h1(this, 6), 15000L);
     }
 }

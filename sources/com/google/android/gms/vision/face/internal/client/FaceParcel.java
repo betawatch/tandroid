@@ -1,12 +1,12 @@
 package com.google.android.gms.vision.face.internal.client;
 
+import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
-import o6.a;
-import p7.m;
-import w7.f0;
+import p6.a;
+import q7.m;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public class FaceParcel extends a {
     public static final Parcelable.Creator<FaceParcel> CREATOR = new m(23);
@@ -24,9 +24,9 @@ public class FaceParcel extends a {
     public final float v;
     public final float w;
     public final float x;
-    public final u8.a[] y;
+    public final v8.a[] y;
 
-    public FaceParcel(int i10, int i11, float f7, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18, u8.a[] aVarArr, float f19) {
+    public FaceParcel(int i10, int i11, float f7, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18, v8.a[] aVarArr, float f19) {
         this.a = i10;
         this.b = i11;
         this.c = f7;
@@ -46,39 +46,39 @@ public class FaceParcel extends a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
+        int q5 = df.q(parcel, 20293);
+        df.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f0.s(parcel, 2, 4);
+        df.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        f0.s(parcel, 3, 4);
+        df.s(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        f0.s(parcel, 4, 4);
+        df.s(parcel, 4, 4);
         parcel.writeFloat(this.d);
-        f0.s(parcel, 5, 4);
+        df.s(parcel, 5, 4);
         parcel.writeFloat(this.e);
-        f0.s(parcel, 6, 4);
+        df.s(parcel, 6, 4);
         parcel.writeFloat(this.f);
-        f0.s(parcel, 7, 4);
+        df.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        f0.s(parcel, 8, 4);
+        df.s(parcel, 8, 4);
         parcel.writeFloat(this.n);
-        f0.o(parcel, 9, this.s, i10);
-        f0.s(parcel, 10, 4);
+        df.o(parcel, 9, this.s, i10);
+        df.s(parcel, 10, 4);
         parcel.writeFloat(this.v);
-        f0.s(parcel, 11, 4);
+        df.s(parcel, 11, 4);
         parcel.writeFloat(this.w);
-        f0.s(parcel, 12, 4);
+        df.s(parcel, 12, 4);
         parcel.writeFloat(this.x);
-        f0.o(parcel, 13, this.y, i10);
-        f0.s(parcel, 14, 4);
+        df.o(parcel, 13, this.y, i10);
+        df.s(parcel, 14, 4);
         parcel.writeFloat(this.r);
-        f0.s(parcel, 15, 4);
+        df.s(parcel, 15, 4);
         parcel.writeFloat(this.E);
-        f0.r(parcel, q6);
+        df.r(parcel, q5);
     }
 
     public FaceParcel(int i10, int i11, float f7, float f10, float f11, float f12, float f13, float f14, LandmarkParcel[] landmarkParcelArr, float f15, float f16, float f17) {
-        this(i10, i11, f7, f10, f11, f12, f13, f14, 0.0f, landmarkParcelArr, f15, f16, f17, new u8.a[0], -1.0f);
+        this(i10, i11, f7, f10, f11, f12, f13, f14, 0.0f, landmarkParcelArr, f15, f16, f17, new v8.a[0], -1.0f);
     }
 }

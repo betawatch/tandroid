@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class qi extends lm0 {
     public int E;
@@ -45,18 +45,18 @@ public final class qi extends lm0 {
     }
 
     @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
+    public final boolean D(s4.e1 e1Var) {
         return false;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int h() {
         int i10 = this.J;
         ti tiVar = this.K;
-        return (tiVar.K1 == null && (tiVar.f0 instanceof org.telegram.ui.sn) && !tiVar.H) ? MediaDataController.getInstance(tiVar.M1).inlineBots.size() + i10 : i10;
+        return (tiVar.K1 == null && (tiVar.f0 instanceof org.telegram.ui.un) && !tiVar.H) ? MediaDataController.getInstance(tiVar.M1).inlineBots.size() + i10 : i10;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int j(int i10) {
         if (i10 < this.J) {
             return (i10 < this.e || i10 >= this.f) ? 0 : 1;
@@ -64,7 +64,7 @@ public final class qi extends lm0 {
         return 1;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final void l() {
         int i10 = 0;
         this.J = 0;
@@ -85,47 +85,47 @@ public final class qi extends lm0 {
         this.r = -1;
         ti tiVar = this.K;
         int i11 = tiVar.M1;
-        org.telegram.ui.ActionBar.o2 o2Var = tiVar.f0;
+        org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
         if (tiVar.H) {
             this.J = 1;
             this.d = 0;
             int i12 = tiVar.I;
-            if (i12 == 0 || w7.j6.a(i12, 16)) {
+            if (i12 == 0 || a8.pf.a(i12, 16)) {
                 int i13 = this.J;
                 this.J = i13 + 1;
                 this.n = i13;
             }
             int i14 = tiVar.I;
-            if (i14 == 0 || w7.j6.a(i14, 8192)) {
+            if (i14 == 0 || a8.pf.a(i14, 8192)) {
                 int i15 = this.J;
                 this.J = i15 + 1;
                 this.F = i15;
             }
             int i16 = tiVar.I;
-            if (i16 == 0 || w7.j6.a(i16, 16384)) {
+            if (i16 == 0 || a8.pf.a(i16, 16384)) {
                 int i17 = this.J;
                 this.J = i17 + 1;
                 this.G = i17;
             }
             int i18 = tiVar.I;
-            if (i18 == 0 || w7.j6.a(i18, 8)) {
+            if (i18 == 0 || a8.pf.a(i18, 8)) {
                 int i19 = this.J;
                 this.J = i19 + 1;
                 this.s = i19;
             }
             int i20 = tiVar.I;
-            if (i20 == 0 || w7.j6.a(i20, 64)) {
+            if (i20 == 0 || a8.pf.a(i20, 64)) {
                 int i21 = this.J;
                 this.J = i21 + 1;
                 this.E = i21;
             }
             int i22 = tiVar.I;
-            if (i22 == 0 || w7.j6.a(i22, 32768)) {
+            if (i22 == 0 || a8.pf.a(i22, 32768)) {
                 int i23 = this.J;
                 this.J = i23 + 1;
                 this.H = i23;
             }
-        } else if (!(o2Var instanceof org.telegram.ui.sn)) {
+        } else if (!(r2Var instanceof org.telegram.ui.un)) {
             this.d = 0;
             this.J = 2;
             this.n = 1;
@@ -157,14 +157,14 @@ public final class qi extends lm0 {
                 }
             }
         } else {
-            TLRPC.User i27 = ((org.telegram.ui.sn) o2Var).i();
-            TLRPC.Chat chat = o2Var instanceof org.telegram.ui.sn ? ((org.telegram.ui.sn) o2Var).e : null;
-            boolean z10 = i27 != null && ((org.telegram.ui.sn) o2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
+            TLRPC.User i27 = ((org.telegram.ui.un) r2Var).i();
+            TLRPC.Chat chat = r2Var instanceof org.telegram.ui.un ? ((org.telegram.ui.un) r2Var).e : null;
+            boolean z10 = i27 != null && ((org.telegram.ui.un) r2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
             int i28 = this.J;
             this.d = i28;
             this.J = i28 + 2;
             this.n = i28 + 1;
-            if (MessagesController.getInstance(i11).config.walletAvailable.get() && ((org.telegram.ui.sn) o2Var).d4 == 0 && ti.y1(i27)) {
+            if (MessagesController.getInstance(i11).config.walletAvailable.get() && ((org.telegram.ui.un) r2Var).d4 == 0 && ti.x1(i27)) {
                 int i29 = this.J;
                 this.J = i29 + 1;
                 this.r = i29;
@@ -198,14 +198,14 @@ public final class qi extends lm0 {
                 this.J = i34 + 2;
                 this.w = i35;
             }
-            if ((o2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) o2Var).d4 == 0 && i27 != null && !z10 && !i27.bot && !ig.z1.f(i11).b.isEmpty()) {
+            if ((r2Var instanceof org.telegram.ui.un) && ((org.telegram.ui.un) r2Var).d4 == 0 && i27 != null && !z10 && !i27.bot && !jg.c2.f(i11).b.isEmpty()) {
                 int i36 = this.J;
                 this.J = i36 + 1;
                 this.y = i36;
             }
-            if ((tiVar.O1 || tiVar.P1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (o2Var instanceof org.telegram.ui.sn) && !((org.telegram.ui.sn) o2Var).c() && !((org.telegram.ui.sn) o2Var).x())) {
-                org.telegram.ui.sn snVar = (org.telegram.ui.sn) o2Var;
-                if (snVar.d4 != 5) {
+            if ((tiVar.O1 || tiVar.P1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (r2Var instanceof org.telegram.ui.un) && !((org.telegram.ui.un) r2Var).c() && !((org.telegram.ui.un) r2Var).w())) {
+                org.telegram.ui.un unVar = (org.telegram.ui.un) r2Var;
+                if (unVar.d4 != 5) {
                     this.e = this.J;
                     ArrayList arrayList = this.h;
                     arrayList.clear();
@@ -216,9 +216,9 @@ public final class qi extends lm0 {
                         i10++;
                         TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                         if (tL_attachMenuBot2.show_in_attach_menu) {
-                            TLObject tLObject = snVar.e;
+                            TLObject tLObject = unVar.e;
                             if (tLObject == null) {
-                                tLObject = snVar.i();
+                                tLObject = unVar.i();
                             }
                             if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot2, tLObject)) {
                                 arrayList.add(tL_attachMenuBot2);
@@ -248,24 +248,24 @@ public final class qi extends lm0 {
      */
     /* JADX WARN: Removed duplicated region for block: B:37:0x02e7  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x02f0  */
-    @Override // s4.g0
+    @Override // s4.h0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(s4.b1 b1Var, int i10) {
+    public final void v(s4.e1 e1Var, int i10) {
         boolean z10;
         boolean z11;
         boolean z12;
         int i11 = this.K.M1;
-        int i12 = b1Var.f;
-        View view = b1Var.a;
+        int i12 = e1Var.f;
+        View view = e1Var.a;
         boolean z13 = false;
         if (i12 != 0) {
             if (i12 != 1) {
                 return;
             }
             mi miVar = (mi) view;
-            ph.b bVar = miVar.a;
+            qh.b bVar = miVar.a;
             ti tiVar = miVar.d;
             bVar.getClass();
             int i13 = this.e;
@@ -275,7 +275,7 @@ public final class qi extends lm0 {
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = (TLRPC.TL_attachMenuBot) this.h.get(i14);
                 TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(tL_attachMenuBot.bot_id));
                 if (user != null) {
-                    ph.b bVar2 = miVar.a;
+                    qh.b bVar2 = miVar.a;
                     bVar2.getClass();
                     bVar2.y = null;
                     bVar2.E = tL_attachMenuBot;
@@ -284,7 +284,7 @@ public final class qi extends lm0 {
                     bVar2.a.setText(tL_attachMenuBot.short_name);
                     bVar2.c.setRoundRadius(0);
                     bVar2.c.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-                    bVar2.c.setLayoutParams(w7.z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+                    bVar2.c.setLayoutParams(gb1.h(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
                     bVar2.M = true;
                     bVar2.b(false);
                     bVar2.a();
@@ -303,7 +303,7 @@ public final class qi extends lm0 {
             if (user2 == null) {
                 return;
             }
-            ph.b bVar3 = miVar.a;
+            qh.b bVar3 = miVar.a;
             int i16 = tiVar.M1;
             bVar3.y = null;
             bVar3.E = null;
@@ -311,13 +311,13 @@ public final class qi extends lm0 {
             bVar3.P = 0L;
             bVar3.a.setText(ContactsController.formatName(user2.first_name, user2.last_name));
             if (bVar3.U == null) {
-                bVar3.U = new h9((org.telegram.ui.ActionBar.g6) null);
+                bVar3.U = new j9((org.telegram.ui.ActionBar.u6) null);
             }
             bVar3.U.m(i16, user2);
-            bVar3.c.e(user2, bVar3.U);
+            bVar3.c.f(user2, bVar3.U);
             bVar3.c.s(-1, -1);
             bVar3.c.setRoundRadius(AndroidUtilities.dp(11.33f));
-            bVar3.c.setLayoutParams(w7.z5.d(22, 22.0f, 49, 0.0f, 5.0f, 0.0f, 0.0f));
+            bVar3.c.setLayoutParams(gb1.h(22, 22.0f, 49, 0.0f, 5.0f, 0.0f, 0.0f));
             bVar3.c.setColorFilter(null);
             bVar3.M = false;
             bVar3.invalidate();
@@ -333,46 +333,46 @@ public final class qi extends lm0 {
         Context context = this.c;
         if (i10 != i17) {
             if (i10 == this.r) {
-                niVar.a(17, LocaleController.getString(R.string.WalletAttachMoney), ph.a.N);
+                niVar.a(17, LocaleController.getString(R.string.WalletAttachMoney), qh.a.N);
                 niVar.setTag(17);
             } else if (i10 == this.n) {
-                niVar.a(4, LocaleController.getString(R.string.ChatDocument), ph.a.w);
+                niVar.a(4, LocaleController.getString(R.string.ChatDocument), qh.a.w);
                 niVar.setTag(4);
                 if (Build.VERSION.SDK_INT < 33) {
                 }
             } else if (i10 == this.E) {
-                niVar.a(6, LocaleController.getString(R.string.ChatLocation), ph.a.y);
+                niVar.a(6, LocaleController.getString(R.string.ChatLocation), qh.a.y);
                 niVar.setTag(6);
             } else if (i10 == this.s) {
-                niVar.a(3, LocaleController.getString(R.string.AttachMusic), ph.a.H);
+                niVar.a(3, LocaleController.getString(R.string.AttachMusic), qh.a.H);
                 niVar.setTag(3);
             } else if (i10 == this.v) {
-                niVar.a(9, LocaleController.getString(R.string.Poll), ph.a.I);
+                niVar.a(9, LocaleController.getString(R.string.Poll), qh.a.I);
                 niVar.setTag(9);
             } else {
                 if (i10 != this.x) {
                     if (i10 == this.y) {
-                        niVar.a(11, LocaleController.getString(R.string.AttachQuickReplies), ph.a.K);
+                        niVar.a(11, LocaleController.getString(R.string.AttachQuickReplies), qh.a.K);
                         niVar.setTag(11);
                     } else if (i10 == this.w) {
-                        niVar.a(12, LocaleController.getString(R.string.Todo), ph.a.s);
+                        niVar.a(12, LocaleController.getString(R.string.Todo), qh.a.s);
                         niVar.setTag(12);
                     } else if (i10 == this.F) {
-                        niVar.a(13, LocaleController.getString(R.string.ChatSticker), ph.a.E);
+                        niVar.a(13, LocaleController.getString(R.string.ChatSticker), qh.a.E);
                         niVar.setTag(13);
                     } else if (i10 == this.H) {
-                        niVar.a(15, LocaleController.getString(R.string.ChatLink), ph.a.L);
+                        niVar.a(15, LocaleController.getString(R.string.ChatLink), qh.a.L);
                         niVar.setTag(15);
                     } else if (i10 == this.G) {
-                        niVar.a(14, LocaleController.getString(R.string.ChatEmoji), ph.a.F);
+                        niVar.a(14, LocaleController.getString(R.string.ChatEmoji), qh.a.F);
                         niVar.setTag(14);
                     } else if (i10 == this.I) {
-                        niVar.a(16, LocaleController.getString(R.string.AttachArticle), ph.a.M);
+                        niVar.a(16, LocaleController.getString(R.string.AttachArticle), qh.a.M);
                         niVar.setTag(16);
                         z10 = !MessagesController.getInstance(i11).storyEntitiesAllowed();
                         z11 = false;
                         niVar.a.e(z11 ? "!" : null, z11, false);
-                        ph.b bVar4 = niVar.a;
+                        qh.b bVar4 = niVar.a;
                         if (z10 && !UserConfig.getInstance(i11).isPremium()) {
                             z13 = true;
                         }
@@ -381,47 +381,47 @@ public final class qi extends lm0 {
                     z11 = false;
                     z10 = true;
                     niVar.a.e(z11 ? "!" : null, z11, false);
-                    ph.b bVar42 = niVar.a;
+                    qh.b bVar42 = niVar.a;
                     if (z10) {
                         z13 = true;
                     }
                     bVar42.setPremiumBadge(z13);
                 }
-                niVar.a(5, LocaleController.getString(R.string.AttachContact), ph.a.f);
+                niVar.a(5, LocaleController.getString(R.string.AttachContact), qh.a.f);
                 niVar.setTag(5);
             }
             z11 = false;
             z10 = false;
             niVar.a.e(z11 ? "!" : null, z11, false);
-            ph.b bVar422 = niVar.a;
+            qh.b bVar422 = niVar.a;
             if (z10) {
             }
             bVar422.setPremiumBadge(z13);
         }
-        niVar.a(1, LocaleController.getString(R.string.ChatGallery), ph.a.x);
+        niVar.a(1, LocaleController.getString(R.string.ChatGallery), qh.a.x);
         niVar.setTag(1);
         z12 = Build.VERSION.SDK_INT < 33 ? false : false;
         z11 = !z12;
         z10 = false;
         niVar.a.e(z11 ? "!" : null, z11, false);
-        ph.b bVar4222 = niVar.a;
+        qh.b bVar4222 = niVar.a;
         if (z10) {
         }
         bVar4222.setPremiumBadge(z13);
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
         ti tiVar = this.K;
         View miVar = i10 != 0 ? new mi(tiVar, context) : new ni(tiVar, context);
         miVar.setImportantForAccessibility(1);
         miVar.setFocusable(true);
-        miVar.setLayoutParams(new s4.o0(-2, -1));
-        return new wl0(miVar);
+        miVar.setLayoutParams(new s4.q0(-2, -1));
+        return new vl0(miVar);
     }
 
-    @Override // s4.g0
-    public final void y(s4.b1 b1Var) {
+    @Override // s4.h0
+    public final void y(s4.e1 e1Var) {
     }
 }

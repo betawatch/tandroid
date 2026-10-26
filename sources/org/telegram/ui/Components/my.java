@@ -1,6 +1,39 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class my extends oh.a {
+public final class my implements View.OnClickListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3 b;
+    public final /* synthetic */ ny c;
+
+    public my(ny nyVar, boolean[] zArr, org.telegram.ui.ActionBar.e3 e3Var) {
+        this.c = nyVar;
+        this.a = zArr;
+        this.b = e3Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        sy syVar = this.c.a;
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        org.telegram.ui.ActionBar.e2[] e2VarArr = {new org.telegram.ui.ActionBar.e2(syVar.F.getContext(), 3, null)};
+        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
+        sz szVar = syVar.F;
+        String str = syVar.w;
+        if (str == null) {
+            str = szVar.W0[0];
+        }
+        tL_messages_getEmojiURL.lang_code = str;
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.g4(this, e2VarArr, ConnectionsManager.getInstance(szVar.c1).sendRequest(tL_messages_getEmojiURL, new bi.h2(this, e2VarArr, this.b, 13)), 8), 1000L);
+    }
 }

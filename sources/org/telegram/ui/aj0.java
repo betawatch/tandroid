@@ -1,46 +1,27 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aj0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fj0 b;
+public final class aj0 extends fi.d {
+    public final /* synthetic */ cj0 k0;
 
-    public /* synthetic */ aj0(fj0 fj0Var, int i10) {
-        this.a = i10;
-        this.b = fj0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public aj0(cj0 cj0Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var, true);
+        this.k0 = cj0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                fj0 fj0Var = this.b;
-                ej0 ej0Var = fj0Var.q0;
-                HashSet hashSet = fj0Var.d0;
-                if (hashSet.size() != 0 && ej0Var != null) {
-                    ArrayList arrayList = new ArrayList();
-                    for (TLRPC.User user : fj0Var.i0.values()) {
-                        if (hashSet.contains(Long.valueOf(user.id))) {
-                            arrayList.add(Long.valueOf(user.id));
-                        }
-                    }
-                    ej0Var.a(arrayList);
-                    fj0Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                fj0 fj0Var2 = this.b;
-                fj0Var2.d0.clear();
-                fj0Var2.Y.d.b(true);
-                fj0Var2.U(true, false);
-                break;
+    @Override // fi.d
+    public final float a(float f7, float f10) {
+        cj0 cj0Var = this.k0;
+        boolean z10 = cj0Var.n0 == 0.0f;
+        cj0Var.n0 = f7;
+        if (z10) {
+            cj0Var.o0 = new org.telegram.ui.Components.kb0(cj0Var, 1);
+            cj0Var.S(false);
         }
+        return f7;
     }
 }

@@ -1,13 +1,31 @@
 package vf;
 
-import ci.h3;
+import android.content.Context;
+import android.os.Build;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b {
-    public final h3 a;
+public abstract class b {
+    public static final int[] a = new int[2];
 
-    public b(h3 h3Var) {
-        this.a = h3Var;
+    public static int a(Context context) {
+        if (AndroidUtilities.checkInlinePermissions(context)) {
+            return 2;
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            return AndroidUtilities.checkPipPermissions(context) ? 1 : -2;
+        }
+        return -1;
+    }
+
+    public static WindowManager.LayoutParams b(Context context, boolean z10) {
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.gravity = 51;
+        layoutParams.format = -3;
+        layoutParams.type = (z10 || !AndroidUtilities.checkInlinePermissions(context)) ? 2 : Build.VERSION.SDK_INT >= 26 ? 2038 : 2003;
+        layoutParams.flags = 520;
+        return layoutParams;
     }
 }

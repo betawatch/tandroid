@@ -1,10 +1,10 @@
 package b4;
 
+import a8.wb;
+import a8.yb;
 import android.text.TextUtils;
-import v7.s6;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class b {
     public final int a;
@@ -26,7 +26,7 @@ public final class b {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static b a(String str) {
         char c10;
-        u6.g(str.startsWith("Format:"));
+        yb.g(str.startsWith("Format:"));
         String[] split = TextUtils.split(str.substring(7), ",");
         int i10 = -1;
         int i11 = -1;
@@ -34,7 +34,7 @@ public final class b {
         int i13 = -1;
         int i14 = -1;
         for (int i15 = 0; i15 < split.length; i15++) {
-            String c11 = s6.c(split[i15].trim());
+            String c11 = wb.c(split[i15].trim());
             c11.getClass();
             switch (c11.hashCode()) {
                 case 100571:

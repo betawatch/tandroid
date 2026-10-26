@@ -1,52 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class j40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ k40 c;
+public final class j40 extends aw0 {
+    public final /* synthetic */ m40 r2;
 
-    public /* synthetic */ j40(k40 k40Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = k40Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j40(m40 m40Var, Context context, sv0 sv0Var, m40 m40Var2, i40 i40Var, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, 0L, sv0Var, 0, null, null, null, 8, 0, m40Var2, i40Var, 0, u6Var, null);
+        this.r2 = m40Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.tn tnVar;
-        ai.u1 u1Var;
-        switch (this.a) {
-            case 0:
-                float f7 = this.b ? 1.0f : 0.0f;
-                k40 k40Var = this.c;
-                k40Var.w = f7;
-                k40Var.e.setTranslationY(f7 * AndroidUtilities.dp(48.0f));
-                k40Var.e.setPadding(0, 0, 0, (int) (k40Var.w * AndroidUtilities.dp(48.0f)));
-                break;
-            default:
-                boolean z10 = this.b;
-                float f10 = z10 ? 1.0f : 0.0f;
-                k40 k40Var2 = this.c;
-                k40Var2.E = f10;
-                k40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, f10));
-                k40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, k40Var2.E));
-                org.telegram.ui.bk bkVar = k40Var2.f;
-                if (bkVar != null && (tnVar = bkVar.a) != null && (u1Var = tnVar.X3) != null) {
-                    u1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, k40Var2.E));
-                    k40Var2.f.a.X3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, k40Var2.E));
-                }
-                k40Var2.h.setAlpha(k40Var2.E);
-                if (!z10) {
-                    k40Var2.h.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.aw0
+    public final boolean B0() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public final int getInitialTab() {
+        return 8;
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public final String getStoriesHashtag() {
+        return this.r2.b;
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public final String getStoriesHashtagUsername() {
+        return this.r2.c;
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public final void K0(SparseArray sparseArray) {
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public final void R0(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public final void T0(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.aw0
+    public final void k1(boolean z10) {
     }
 }

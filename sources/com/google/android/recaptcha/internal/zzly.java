@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
+import a8.id;
 import android.app.Application;
 import android.webkit.WebView;
-import be.e2;
-import be.f0;
-import be.s;
-import be.t;
-import id.c;
-import id.g;
+import ce.e2;
+import ce.f0;
+import ce.s;
+import ce.t;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import jd.c;
+import jd.g;
 import kotlin.jvm.internal.i;
-import ld.a;
-import v7.h8;
+import md.a;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class zzly extends zzg {
     public s zza;
@@ -35,13 +35,13 @@ public final class zzly extends zzg {
 
     public zzly() {
         int i10 = zzby.zza;
-        this.zzi = h8.a(zzlm.zza);
-        this.zzj = h8.a(zzln.zza);
-        this.zzk = h8.a(zzlo.zza);
-        this.zzl = h8.a(zzlp.zza);
-        this.zzm = h8.a(zzlq.zza);
-        this.zzn = h8.a(zzlr.zza);
-        this.zzo = h8.a(zzls.zza);
+        this.zzi = id.a(zzlm.zza);
+        this.zzj = id.a(zzln.zza);
+        this.zzk = id.a(zzlo.zza);
+        this.zzl = id.a(zzlp.zza);
+        this.zzm = id.a(zzlq.zza);
+        this.zzn = id.a(zzlr.zza);
+        this.zzo = id.a(zzls.zza);
     }
 
     private final Application zzC() {
@@ -69,14 +69,14 @@ public final class zzly extends zzg {
         return (zzig) ((g) zzlyVar.zzk).a();
     }
 
-    public static final /* synthetic */ Object zzu(zzly zzlyVar, kd.c cVar) {
+    public static final /* synthetic */ Object zzu(zzly zzlyVar, ld.c cVar) {
         return new zzhg(new zzlu(zzlyVar, null));
     }
 
     public final zzip zzB(zzxn zzxnVar, zzdo zzdoVar, WebView webView) {
         zzis zzisVar = new zzis(webView, zzD().zzb());
         zzku zzkuVar = new zzku();
-        zzkuVar.zzb(jd.g.n(zzxnVar.zzQ()));
+        zzkuVar.zzb(kd.g.n(zzxnVar.zzQ()));
         zzjb zzjbVar = new zzjb(zzisVar, zzdoVar, new zzct());
         zzkv zzkvVar = new zzkv(zzkuVar, new zzks());
         zzjbVar.zze(3, zzC());
@@ -90,40 +90,40 @@ public final class zzly extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zza(String str, kd.c cVar) {
+    public final Object zza(String str, ld.c cVar) {
         zzxw zzf = zzxx.zzf();
         zzf.zze(str);
         return zzf.zzk();
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzb(String str, kd.c cVar) {
+    public final Object zzb(String str, ld.c cVar) {
         return new zzhg(new zzlk(this, str, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzc(zzcg zzcgVar, kd.c cVar) {
+    public final Object zzc(zzcg zzcgVar, ld.c cVar) {
         i.a(zzcgVar.zza(), zzcd.zzb);
-        return id.i.a;
+        return jd.i.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzd(zzxn zzxnVar, kd.c cVar) {
+    public final Object zzd(zzxn zzxnVar, ld.c cVar) {
         return new zzhg(new zzll(zzxnVar, this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zze(String str, long j10, Exception exc, kd.c cVar) {
+    public final Object zze(String str, long j10, Exception exc, ld.c cVar) {
         exc.getMessage();
         s sVar = (s) this.zzd.remove(str);
         if (sVar != null) {
             ((t) sVar).L(exc);
         }
-        return id.i.a;
+        return jd.i.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzf(Exception exc, kd.c cVar) {
+    public final Object zzf(Exception exc, ld.c cVar) {
         return ((exc instanceof e2) && this.zzh.zza() == null) ? new zzcg(zzce.zzc, zzcd.zzH, null, null, 12, null) : zzh.zza(exc, new zzcg(zzce.zzb, zzcd.zzV, exc.getMessage(), null, 8, null));
     }
 
@@ -145,13 +145,13 @@ public final class zzly extends zzg {
         return this.zzh;
     }
 
-    public final Object zzv(kd.c cVar) {
+    public final Object zzv(ld.c cVar) {
         return f0.w(zzD().zzb().c(), new zzma((zzmb) ((g) this.zzi).a(), zzC(), null), cVar);
     }
 
-    public final Object zzw(kd.c cVar) {
-        Object w9 = f0.w(zzD().zzb().c(), new zzlf(this, null), cVar);
-        return w9 == a.a ? w9 : id.i.a;
+    public final Object zzw(ld.c cVar) {
+        Object w10 = f0.w(zzD().zzb().c(), new zzlf(this, null), cVar);
+        return w10 == a.a ? w10 : jd.i.a;
     }
 
     public final s zzz() {

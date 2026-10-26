@@ -1,106 +1,151 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.net.Uri;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class l3 extends org.telegram.ui.web.b1 {
-    public final /* synthetic */ n3 T0;
+public final class l3 implements org.telegram.ui.web.g0 {
+    public final /* synthetic */ m3 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(n3 n3Var, Context context, int i10) {
-        super(i10, context, null, false);
-        this.T0 = n3Var;
+    public l3(m3 m3Var) {
+        this.a = m3Var;
     }
 
-    @Override // org.telegram.ui.web.b1
-    public final void D(boolean z10, String str) {
-        n3 n3Var = this.T0;
-        if (z10) {
-            if (n3Var.r == null) {
-                k3 k3Var = n3Var.e;
-                e3 e3Var = new e3(n3Var.getContext());
-                n3Var.r = e3Var;
-                k3Var.addView(e3Var, w7.z5.c(-1.0f, -1));
-                n3Var.r.h.setOnClickListener(new a(n3Var, 2));
-                AndroidUtilities.updateViewVisibilityAnimated(n3Var.r, n3Var.n, 1.0f, false);
-            }
-            e3 e3Var2 = n3Var.r;
-            String url = getWebView() != null ? getWebView().getUrl() : null;
-            TextView textView = e3Var2.e;
-            e3Var2.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-            String u10 = org.telegram.ui.web.b1.u(url);
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags((u10 == null || Uri.parse(u10) == null || Uri.parse(u10).getAuthority() == null) ? LocaleController.getString(R.string.WebErrorInfo) : LocaleController.formatString(R.string.WebErrorInfoDomain, Uri.parse(u10).getAuthority())), textView.getPaint().getFontMetricsInt(), false));
-            e3Var2.f.setText(str);
-            e3 e3Var3 = n3Var.r;
-            int i10 = org.telegram.ui.ActionBar.k6.Pk;
-            e3Var3.b(AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.k6.x0(null, i10, false)) <= 0.721f, false);
-            org.telegram.ui.ActionBar.r6.i(i10, n3Var.r, null);
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ hi.f1 A() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void b() {
+        v3 v3Var = this.a.L.K;
+        if (v3Var != null) {
+            v3Var.dismiss(true);
         }
-        e3 e3Var4 = n3Var.r;
-        n3Var.n = z10;
-        AndroidUtilities.updateViewVisibilityAnimated(e3Var4, z10, 1.0f, false);
-        invalidate();
     }
 
-    @Override // org.telegram.ui.web.b1
-    public final void H() {
-        this.T0.L.i0(true);
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ String g(boolean z10, boolean z11) {
+        return "UNSUPPORTED";
     }
 
-    @Override // org.telegram.ui.web.b1
-    public final void I(boolean z10, boolean z11) {
-        n3 n3Var = this.T0;
-        n3Var.s = !z10;
-        n3Var.v = !z11;
-        k4 k4Var = n3Var.L;
-        k4Var.i0(true);
-        if (n3Var == k4Var.u0[0]) {
-            m0 m0Var = k4Var.h0;
-            if (m0Var.W || m0Var.T) {
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void j() {
+        m3 m3Var = this.a;
+        j4 j4Var = m3Var.L;
+        v3 v3Var = j4Var.K;
+        if (v3Var == null) {
+            if (j4Var.u0[0] == m3Var) {
+                j4Var.G();
+            }
+        } else {
+            if (v3Var.h) {
                 return;
             }
-            ArticleViewer$WindowView articleViewer$WindowView = k4Var.f0;
-            if (articleViewer$WindowView.e || articleViewer$WindowView.f) {
-                return;
-            }
-            if (k4Var.J() || k4Var.d0.size() > 1) {
-                k4Var.h0.M.c((n3Var.s || k4Var.d0.size() > 1) ? 0.0f : 1.0f, true);
-                k4Var.h0.setBackButtonCached(n3Var.s || k4Var.d0.size() > 1);
-                k4Var.h0.P.f();
-            } else {
-                k4Var.h0.setBackButtonCached(false);
-                k4Var.h0.P.f();
-            }
-            k4Var.h0.setHasForward(n3Var.v);
-            m0 m0Var2 = k4Var.h0;
-            n3 n3Var2 = k4Var.u0[0];
-            m0Var2.setIsTonsite(n3Var2 != null && n3Var2.e());
-            m0 m0Var3 = k4Var.h0;
-            n3 n3Var3 = k4Var.u0[0];
-            m0Var3.setIsLocal(n3Var3 != null && n3Var3.d());
+            v3Var.h = true;
+            v3Var.release();
+            v3Var.K.s();
         }
     }
 
-    @Override // org.telegram.ui.web.b1
-    public final void J(org.telegram.ui.web.y0 y0Var) {
-        this.T0.e.setWebView(y0Var);
+    @Override // org.telegram.ui.web.g0
+    public final void o(int i10, boolean z10) {
+        m3.a(this.a, z10, i10);
     }
 
-    @Override // org.telegram.ui.web.b1
-    public final void T(String str, boolean z10) {
-        org.telegram.ui.web.g2 g2Var;
-        n3 n3Var = this.T0;
-        k4 k4Var = n3Var.L;
-        if (k4Var.h0 != null && n3Var == k4Var.u0[0] && (g2Var = n3Var.E) != null && g2Var.b() == null) {
-            n3Var.E.d(getWebView());
+    @Override // org.telegram.ui.web.g0
+    public final void z() {
+        m3 m3Var = this.a;
+        j4 j4Var = m3Var.L;
+        if (j4Var.u0[0] == m3Var) {
+            j4Var.G();
         }
-        super.T(str, z10);
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void s() {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void d(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void e(String str) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void f(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void i(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void k(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void m(int i10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void p(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void r(int i10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void t(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final /* synthetic */ void w(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void x(int i10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void y(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void u(int i10, int i11, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void v(TLRPC.User user, String str, ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void q(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13) {
+    }
+
+    @Override // org.telegram.ui.web.g0
+    public final void l(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13, String str2) {
     }
 }

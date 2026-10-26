@@ -1,6 +1,7 @@
 package o0;
 
 import a0.l;
+import a8.sc;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
@@ -10,10 +11,9 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import v7.y7;
-import w7.d8;
+import w7.a0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final a0.j a = new a0.j(16);
@@ -54,7 +54,7 @@ public abstract class g {
         int i11;
         Typeface b10;
         a0.j jVar = a;
-        d8.a("getFontSync");
+        a0.a("getFontSync");
         try {
             typeface = (Typeface) jVar.a(str);
         } catch (PackageManager.NameNotFoundException unused) {
@@ -77,8 +77,8 @@ public abstract class g {
                 }
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
                     h[] hVarArr = (h[]) list2.get(0);
-                    y7 y7Var = i0.e.a;
-                    d8.a("TypefaceCompat.createFromFontInfo");
+                    sc scVar = i0.e.a;
+                    a0.a("TypefaceCompat.createFromFontInfo");
                     b10 = i0.e.a.b(context, hVarArr, i10);
                     Trace.endSection();
                     if (b10 != null) {
@@ -87,8 +87,8 @@ public abstract class g {
                     jVar.b(str, b10);
                     return new f(b10);
                 }
-                y7 y7Var2 = i0.e.a;
-                d8.a("TypefaceCompat.createFromFontInfoWithFallback");
+                sc scVar2 = i0.e.a;
+                a0.a("TypefaceCompat.createFromFontInfoWithFallback");
                 b10 = i0.e.a.c(context, list2, i10);
                 Trace.endSection();
                 if (b10 != null) {

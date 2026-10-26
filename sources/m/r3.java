@@ -1,331 +1,232 @@
 package m;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.Resources;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.accessibility.AccessibilityManager;
-import android.widget.TextView;
-import java.lang.reflect.Method;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
+import android.opengl.Matrix;
+import android.widget.LinearLayout;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicMarkableReference;
+import li.d6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.k80;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class r3 implements View.OnLongClickListener, View.OnHoverListener, View.OnAttachStateChangeListener {
-    public static r3 v;
-    public static r3 w;
-    public final View a;
-    public final CharSequence b;
-    public final int c;
-    public final q3 d;
-    public final q3 e;
-    public int f;
-    public int h;
-    public s3 n;
-    public boolean r;
-    public boolean s;
+public final class r3 implements o5.b {
+    public Object a;
+    public Object b;
+    public Object c;
+    public Object d;
+    public Object e;
+    public Object f;
+    public Object h;
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [m.q3] */
-    /* JADX WARN: Type inference failed for: r0v1, types: [m.q3] */
-    public r3(View view, CharSequence charSequence) {
-        final int i10 = 0;
-        this.d = new Runnable(this) { // from class: m.q3
-            public final /* synthetic */ r3 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        this.b.c(false);
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        };
-        final int i11 = 1;
-        this.e = new Runnable(this) { // from class: m.q3
-            public final /* synthetic */ r3 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        this.b.c(false);
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        };
-        this.a = view;
-        this.b = charSequence;
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(view.getContext());
-        Method method = r0.j0.a;
-        this.c = Build.VERSION.SDK_INT >= 28 ? b5.d.o(viewConfiguration) : viewConfiguration.getScaledTouchSlop() / 2;
-        this.s = true;
-        view.setOnLongClickListener(this);
-        view.setOnHoverListener(this);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v3, types: [java.util.Map] */
+    public r3(Set set, a0.f fVar, String str, String str2, o8.a aVar) {
+        Set unmodifiableSet = set == null ? Collections.EMPTY_SET : DesugarCollections.unmodifiableSet(set);
+        this.a = unmodifiableSet;
+        a0.f fVar2 = fVar == null ? Collections.EMPTY_MAP : fVar;
+        this.c = fVar2;
+        this.d = str;
+        this.e = str2;
+        this.f = aVar == null ? o8.a.a : aVar;
+        HashSet hashSet = new HashSet(unmodifiableSet);
+        Iterator it = fVar2.values().iterator();
+        if (it.hasNext()) {
+            throw a1.g.j(it);
+        }
+        this.b = DesugarCollections.unmodifiableSet(hashSet);
     }
 
-    public static void b(r3 r3Var) {
-        r3 r3Var2 = v;
-        if (r3Var2 != null) {
-            r3Var2.a.removeCallbacks(r3Var2.d);
+    public void a() {
+        e(null);
+        k80 k80Var = (k80) this.c;
+        if (k80Var != null) {
+            k80Var.u();
+            this.c = null;
         }
-        v = r3Var;
-        if (r3Var != null) {
-            r3Var.a.postDelayed(r3Var.d, ViewConfiguration.getLongPressTimeout());
+        this.d = null;
+        this.e = null;
+        this.f = null;
+    }
+
+    public void b(d6 d6Var, ArrayList arrayList) {
+        u6 u6Var = (u6) this.b;
+        LinearLayout linearLayout = (LinearLayout) this.d;
+        if (linearLayout == null) {
+            return;
+        }
+        linearLayout.removeAllViews();
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            li.m0 m0Var = (li.m0) obj;
+            li.l0 l0Var = new li.l0(d6Var.getContext(), m0Var, u6Var);
+            l0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
+            l0Var.setBackground(y6.Z(y6.w0(y6.i6, u6Var), 0, 0));
+            l0Var.setOnClickListener(new bi.w0(this, d6Var, m0Var, 13));
+            ((LinearLayout) this.d).addView(l0Var, gb1.r(-1, 48));
         }
     }
 
-    public final void a() {
-        r3 r3Var = w;
-        View view = this.a;
-        if (r3Var == this) {
-            w = null;
-            s3 s3Var = this.n;
-            if (s3Var != null) {
-                View view2 = (View) s3Var.b;
-                if (view2.getParent() != null) {
-                    ((WindowManager) ((Context) s3Var.a).getSystemService("window")).removeView(view2);
-                }
-                this.n = null;
-                this.s = true;
-                view.removeOnAttachStateChangeListener(this);
-            } else {
-                Log.e("TooltipCompatHandler", "sActiveHandler.mPopup == null");
-            }
+    public void c(int i10, int i11, float f7, float f10, boolean z10, float[] fArr) {
+        float[] fArr2 = (float[]) this.a;
+        float f11 = (i10 - i11) / 0.3902439f;
+        if (f11 <= 0.0f || f11 > i10) {
+            f11 = i10;
         }
-        if (v == this) {
-            b(null);
-        }
-        view.removeCallbacks(this.e);
+        Matrix.perspectiveM(fArr2, 0, (float) Math.toDegrees(Math.atan(Math.tan(Math.toRadians(5.199999809265137d)) * (i11 / Math.max(1.0f, f11 / 1.64f))) * 2.0d), i10 / Math.max(1, i11), 0.1f, 20.0f);
+        Matrix.setLookAtM((float[]) this.b, 0, 0.0f, 0.0f, 6.7f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+        float[] fArr3 = (float[]) this.c;
+        Matrix.setIdentityM(fArr3, 0);
+        Matrix.rotateM(fArr3, 0, -f7, 1.0f, 0.0f, 0.0f);
+        Matrix.rotateM(fArr3, 0, -f10, 0.0f, 1.0f, 0.0f);
+        Matrix.rotateM(fArr3, 0, 90.0f, 0.0f, 1.0f, 0.0f);
+        Matrix.translateM(fArr3, 0, -0.02f, 0.0f, 0.0f);
+        Matrix.scaleM(fArr3, 0, 0.965f, 0.965f, 0.965f);
+        Matrix.multiplyMM((float[]) this.d, 0, (float[]) this.b, 0, (float[]) this.c, 0);
+        Matrix.multiplyMM((float[]) this.e, 0, (float[]) this.a, 0, (float[]) this.d, 0);
+        float f12 = z10 ? 0.0125f : -0.0125f;
+        float f13 = z10 ? 1.0f : -1.0f;
+        float f14 = -f13;
+        d(f12, 0.618561f, f13, i10, i11, fArr, 0);
+        d(f12, 0.618561f, f14, i10, i11, fArr, 2);
+        d(f12, -0.593561f, f14, i10, i11, fArr, 4);
+        d(f12, -0.593561f, f13, i10, i11, fArr, 6);
     }
 
-    public final void c(boolean z10) {
-        int height;
-        int i10;
-        int i11;
-        boolean z11;
-        int i12;
-        int i13;
-        long longPressTimeout;
-        long j10;
-        long j11;
-        WeakHashMap weakHashMap = r0.i0.a;
-        View view = this.a;
-        if (view.isAttachedToWindow()) {
-            b(null);
-            r3 r3Var = w;
-            if (r3Var != null) {
-                r3Var.a();
-            }
-            w = this;
-            this.r = z10;
-            Context context = view.getContext();
-            s3 s3Var = new s3();
-            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-            s3Var.d = layoutParams;
-            s3Var.e = new Rect();
-            s3Var.f = new int[2];
-            s3Var.h = new int[2];
-            s3Var.a = context;
-            View inflate = LayoutInflater.from(context).inflate(R.layout.abc_tooltip, (ViewGroup) null);
-            s3Var.b = inflate;
-            s3Var.c = (TextView) inflate.findViewById(R.id.message);
-            layoutParams.setTitle(s3.class.getSimpleName());
-            layoutParams.packageName = context.getPackageName();
-            layoutParams.type = 1002;
-            layoutParams.width = -2;
-            layoutParams.height = -2;
-            layoutParams.format = -3;
-            layoutParams.windowAnimations = R.style.Animation_AppCompat_Tooltip;
-            layoutParams.flags = 24;
-            View view2 = (View) s3Var.b;
-            Context context2 = (Context) s3Var.a;
-            this.n = s3Var;
-            int i14 = this.f;
-            int i15 = this.h;
-            boolean z12 = this.r;
-            WindowManager.LayoutParams layoutParams2 = (WindowManager.LayoutParams) s3Var.d;
-            if (view2.getParent() != null && view2.getParent() != null) {
-                ((WindowManager) context2.getSystemService("window")).removeView(view2);
-            }
-            ((TextView) s3Var.c).setText(this.b);
-            int[] iArr = (int[]) s3Var.h;
-            int[] iArr2 = (int[]) s3Var.f;
-            Rect rect = (Rect) s3Var.e;
-            layoutParams2.token = view.getApplicationWindowToken();
-            int dimensionPixelOffset = context2.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
-            if (view.getWidth() < dimensionPixelOffset) {
-                i14 = view.getWidth() / 2;
-            }
-            if (view.getHeight() >= dimensionPixelOffset) {
-                int dimensionPixelOffset2 = context2.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
-                height = i15 + dimensionPixelOffset2;
-                i10 = i15 - dimensionPixelOffset2;
-            } else {
-                height = view.getHeight();
-                i10 = 0;
-            }
-            layoutParams2.gravity = 49;
-            int dimensionPixelOffset3 = context2.getResources().getDimensionPixelOffset(z12 ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
-            View rootView = view.getRootView();
-            ViewGroup.LayoutParams layoutParams3 = rootView.getLayoutParams();
-            int i16 = i14;
-            if (!(layoutParams3 instanceof WindowManager.LayoutParams) || ((WindowManager.LayoutParams) layoutParams3).type != 2) {
-                Context context3 = view.getContext();
-                while (true) {
-                    if (!(context3 instanceof ContextWrapper)) {
-                        break;
-                    }
-                    if (context3 instanceof Activity) {
-                        rootView = ((Activity) context3).getWindow().getDecorView();
-                        break;
-                    }
-                    context3 = ((ContextWrapper) context3).getBaseContext();
-                }
-            }
-            if (rootView == null) {
-                Log.e("TooltipPopup", "Cannot find app view");
-                i13 = 1;
-            } else {
-                rootView.getWindowVisibleDisplayFrame(rect);
-                if (rect.left >= 0 || rect.top >= 0) {
-                    i11 = i10;
-                    z11 = z12;
-                    i12 = 0;
-                    i13 = 1;
-                } else {
-                    Resources resources = context2.getResources();
-                    i13 = 1;
-                    i11 = i10;
-                    z11 = z12;
-                    int identifier = resources.getIdentifier("status_bar_height", "dimen", "android");
-                    int dimensionPixelSize = identifier != 0 ? resources.getDimensionPixelSize(identifier) : 0;
-                    DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-                    i12 = 0;
-                    rect.set(0, dimensionPixelSize, displayMetrics.widthPixels, displayMetrics.heightPixels);
-                }
-                rootView.getLocationOnScreen(iArr);
-                view.getLocationOnScreen(iArr2);
-                int i17 = iArr2[i12] - iArr[i12];
-                iArr2[i12] = i17;
-                iArr2[i13] = iArr2[i13] - iArr[i13];
-                layoutParams2.x = (i17 + i16) - (rootView.getWidth() / 2);
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i12, i12);
-                view2.measure(makeMeasureSpec, makeMeasureSpec);
-                int measuredHeight = view2.getMeasuredHeight();
-                int i18 = iArr2[i13];
-                int i19 = ((i18 + i11) - dimensionPixelOffset3) - measuredHeight;
-                int i20 = i18 + height + dimensionPixelOffset3;
-                if (z11) {
-                    if (i19 >= 0) {
-                        layoutParams2.y = i19;
-                    } else {
-                        layoutParams2.y = i20;
-                    }
-                } else if (measuredHeight + i20 <= rect.height()) {
-                    layoutParams2.y = i20;
-                } else {
-                    layoutParams2.y = i19;
-                }
-            }
-            ((WindowManager) context2.getSystemService("window")).addView(view2, layoutParams2);
-            view.addOnAttachStateChangeListener(this);
-            if (this.r) {
-                j11 = 2500;
-            } else {
-                if ((view.getWindowSystemUiVisibility() & 1) == i13) {
-                    longPressTimeout = ViewConfiguration.getLongPressTimeout();
-                    j10 = 3000;
-                } else {
-                    longPressTimeout = ViewConfiguration.getLongPressTimeout();
-                    j10 = 15000;
-                }
-                j11 = j10 - longPressTimeout;
-            }
-            q3 q3Var = this.e;
-            view.removeCallbacks(q3Var);
-            view.postDelayed(q3Var, j11);
+    public float d(float f7, float f10, float f11, int i10, int i11, float[] fArr, int i12) {
+        float[] fArr2 = (float[]) this.f;
+        fArr2[0] = f7;
+        fArr2[1] = f10;
+        fArr2[2] = f11;
+        fArr2[3] = 1.0f;
+        Matrix.multiplyMV((float[]) this.h, 0, (float[]) this.e, 0, fArr2, 0);
+        float[] fArr3 = (float[]) this.h;
+        float f12 = 1.0f / fArr3[3];
+        fArr[i12] = c3.h0.u(fArr3[0], f12, 0.5f, 0.5f) * i10;
+        fArr[i12 + 1] = org.telegram.ui.d3.A(fArr3[1], f12, 0.5f, 0.5f) * i11;
+        return fArr3[2] * f12;
+    }
+
+    public void e(d6 d6Var) {
+        d6 d6Var2 = (d6) this.h;
+        if (d6Var2 == d6Var) {
+            return;
+        }
+        if (d6Var2 != null) {
+            d6Var2.setShowCommandBackground(false);
+        }
+        this.h = d6Var;
+        if (d6Var != null) {
+            d6Var.setShowCommandBackground(true);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0064, code lost:
-    
-        if (java.lang.Math.abs(r5 - r3.h) <= r2) goto L30;
-     */
-    @Override // android.view.View.OnHoverListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onHover(View view, MotionEvent motionEvent) {
-        if (this.n == null || !this.r) {
-            View view2 = this.a;
-            AccessibilityManager accessibilityManager = (AccessibilityManager) view2.getContext().getSystemService("accessibility");
-            if (!accessibilityManager.isEnabled() || !accessibilityManager.isTouchExplorationEnabled()) {
-                int action = motionEvent.getAction();
-                if (action != 7) {
-                    if (action == 10) {
-                        this.s = true;
-                        a();
-                        return false;
-                    }
-                } else if (view2.isEnabled() && this.n == null) {
-                    int x10 = (int) motionEvent.getX();
-                    int y3 = (int) motionEvent.getY();
-                    if (!this.s) {
-                        int abs = Math.abs(x10 - this.f);
-                        int i10 = this.c;
-                        if (abs <= i10) {
-                        }
-                    }
-                    this.f = x10;
-                    this.h = y3;
-                    this.s = false;
-                    b(this);
-                }
-            }
+    public void f(d6 d6Var, String str) {
+        k80 k80Var;
+        k80 k80Var2;
+        if (str == null) {
+            a();
+            return;
         }
-        return false;
-    }
-
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        this.f = view.getWidth() / 2;
-        this.h = view.getHeight() / 2;
-        c(true);
-        return true;
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
+        ArrayList a2 = li.m0.a(str);
+        if (a2.isEmpty()) {
+            a();
+            return;
+        }
+        e(d6Var);
+        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (k80Var2 = (k80) this.c) != null && k80Var2.D()) {
+            return;
+        }
+        if (((d6) this.f) == d6Var && (k80Var = (k80) this.c) != null && k80Var.D() && ((LinearLayout) this.d) != null) {
+            this.e = a2;
+            b(d6Var, a2);
+            ((k80) this.c).O();
+            return;
+        }
         a();
+        e(d6Var);
+        this.f = d6Var;
+        this.e = a2;
+        LinearLayout linearLayout = new LinearLayout(d6Var.getContext());
+        this.d = linearLayout;
+        linearLayout.setOrientation(1);
+        b(d6Var, a2);
+        k80 a10 = ((li.n0) this.a).a(d6Var.getEditText());
+        a10.Q = true;
+        a10.s = 0;
+        a10.t = false;
+        a10.r((LinearLayout) this.d, gb1.r(220, -2));
+        a10.X = AndroidUtilities.dp(240.0f);
+        a10.i = 3;
+        a10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
+        a10.p = new k2.c(this, 6);
+        a10.d0 = true;
+        if (a10.D()) {
+            a10.C();
+        }
+        a10.Z();
+        this.c = a10;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
+    @Override // id.a
+    public Object get() {
+        Context context = (Context) ((id.a) this.a).get();
+        n5.d dVar = (n5.d) ((id.a) this.b).get();
+        t5.d dVar2 = (t5.d) ((id.a) this.c).get();
+        s4.d dVar3 = (s4.d) ((k6.c) this.d).get();
+        Executor executor = (Executor) ((id.a) this.e).get();
+        u5.c cVar = (u5.c) ((id.a) this.f).get();
+        pa.d dVar4 = new pa.d();
+        u7.s sVar = new u7.s(24);
+        t5.c cVar2 = (t5.c) ((id.a) this.h).get();
+        aa.b0 b0Var = new aa.b0();
+        b0Var.a = context;
+        b0Var.c = dVar;
+        b0Var.f = dVar2;
+        b0Var.b = dVar3;
+        b0Var.g = executor;
+        b0Var.d = cVar;
+        b0Var.e = dVar4;
+        b0Var.h = sVar;
+        b0Var.i = cVar2;
+        return b0Var;
+    }
+
+    public r3() {
+        this.a = new float[16];
+        this.b = new float[16];
+        this.c = new float[16];
+        this.d = new float[16];
+        this.e = new float[16];
+        this.f = new float[4];
+        this.h = new float[4];
+    }
+
+    public r3(li.n0 n0Var, u6 u6Var) {
+        this.a = n0Var;
+        this.b = u6Var;
+    }
+
+    public r3(String str, da.c cVar, com.google.firebase.messaging.q qVar) {
+        this.d = new c2.b(this, false);
+        this.e = new c2.b(this, true);
+        this.f = new d5.z(18, (short) 0);
+        this.h = new AtomicMarkableReference(null, false);
+        this.c = str;
+        this.a = new z9.f(cVar);
+        this.b = qVar;
     }
 }

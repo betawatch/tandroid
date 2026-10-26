@@ -1,22 +1,22 @@
 package j4;
 
-import b2.v0;
+import a8.bd;
+import a8.nc;
+import a8.yb;
 import b2.w0;
-import c3.l0;
-import ci.b7;
-import e2.m0;
-import e9.n0;
-import e9.x1;
+import b2.x0;
+import c3.j0;
+import di.b7;
+import e2.n0;
+import f9.i0;
+import f9.s1;
 import org.telegram.messenger.OneUIUtilities;
-import v7.l8;
-import v7.n7;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class v implements i {
     public String e;
-    public l0 f;
+    public j0 f;
     public boolean i;
     public int k;
     public int l;
@@ -83,11 +83,11 @@ public final class v implements i {
                         a4.g gVar = this.b;
                         gVar.k(i21, bArr2);
                         gVar.d();
-                        int a10 = l8.a(gVar, 3, 8, 8);
+                        int a10 = bd.a(gVar, 3, 8, 8);
                         b7Var.b = a10;
                         if (a10 != -1) {
-                            u6.g(Math.max(Math.max(2, 8), 32) <= 63);
-                            n7.a(n7.a(3L, 255L), 4294967296L);
+                            yb.g(Math.max(Math.max(2, 8), 32) <= 63);
+                            nc.a(nc.a(3L, 255L), 4294967296L);
                             if (gVar.b() >= 2) {
                                 long i22 = gVar.i(2);
                                 if (i22 == 3) {
@@ -105,21 +105,21 @@ public final class v implements i {
                                 b7Var.c = j12;
                                 if (j12 != -1) {
                                     if (j12 > 16) {
-                                        throw w0.c("Contains sub-stream with an invalid packet label " + b7Var.c);
+                                        throw x0.c("Contains sub-stream with an invalid packet label " + b7Var.c);
                                     }
                                     if (j12 == 0) {
                                         int i24 = b7Var.b;
                                         if (i24 == 1) {
-                                            throw w0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
+                                            throw x0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
                                         }
                                         if (i24 == 2) {
-                                            throw w0.a(null, "Mpegh3daFrame packet with invalid packet label 0");
+                                            throw x0.a(null, "Mpegh3daFrame packet with invalid packet label 0");
                                         }
                                         if (i24 == 17) {
-                                            throw w0.a(null, "AudioTruncation packet with invalid packet label 0");
+                                            throw x0.a(null, "AudioTruncation packet with invalid packet label 0");
                                         }
                                     }
-                                    int a11 = l8.a(gVar, 11, 24, 24);
+                                    int a11 = bd.a(gVar, 11, 24, 24);
                                     b7Var.d = a11;
                                     if (a11 != -1) {
                                         z10 = true;
@@ -183,10 +183,10 @@ public final class v implements i {
                         if (i29 == 1) {
                             byte[] bArr3 = xVar2.a;
                             a4.g gVar2 = new a4.g(bArr3, bArr3.length);
-                            int g10 = gVar2.g(8);
-                            int g11 = gVar2.g(5);
-                            if (g11 != 31) {
-                                switch (g11) {
+                            int g7 = gVar2.g(8);
+                            int g10 = gVar2.g(5);
+                            if (g10 != 31) {
+                                switch (g10) {
                                     case 0:
                                         i13 = 96000;
                                         break;
@@ -229,7 +229,7 @@ public final class v implements i {
                                     case 13:
                                     case 14:
                                     default:
-                                        throw w0.c("Unsupported sampling rate index " + g11);
+                                        throw x0.c("Unsupported sampling rate index " + g10);
                                     case 15:
                                         i13 = 57600;
                                         break;
@@ -273,65 +273,65 @@ public final class v implements i {
                             } else {
                                 i13 = gVar2.g(24);
                             }
-                            int g12 = gVar2.g(3);
-                            if (g12 == 0) {
+                            int g11 = gVar2.g(3);
+                            if (g11 == 0) {
                                 i14 = 768;
-                            } else if (g12 == 1) {
+                            } else if (g11 == 1) {
                                 i14 = 1024;
-                            } else if (g12 == 2 || g12 == 3) {
+                            } else if (g11 == 2 || g11 == 3) {
                                 i14 = 2048;
                             } else {
-                                if (g12 != 4) {
-                                    throw w0.c("Unsupported coreSbrFrameLengthIndex " + g12);
+                                if (g11 != 4) {
+                                    throw x0.c("Unsupported coreSbrFrameLengthIndex " + g11);
                                 }
                                 i14 = 4096;
                             }
                             int i30 = i14;
-                            if (g12 == 0 || g12 == 1) {
+                            if (g11 == 0 || g11 == 1) {
                                 c10 = 0;
-                            } else if (g12 == 2) {
+                            } else if (g11 == 2) {
                                 c10 = 2;
-                            } else if (g12 == 3) {
+                            } else if (g11 == 3) {
                                 c10 = 3;
                             } else {
-                                if (g12 != 4) {
-                                    throw w0.c("Unsupported coreSbrFrameLengthIndex " + g12);
+                                if (g11 != 4) {
+                                    throw x0.c("Unsupported coreSbrFrameLengthIndex " + g11);
                                 }
                                 c10 = 1;
                             }
                             gVar2.o(2);
-                            l8.c(gVar2);
-                            int g13 = gVar2.g(5);
+                            bd.c(gVar2);
+                            int g12 = gVar2.g(5);
                             int i31 = 0;
                             int i32 = 0;
                             while (true) {
                                 int i33 = i20;
                                 int i34 = 16;
-                                if (i31 < g13 + 1) {
-                                    int g14 = gVar2.g(3);
-                                    i32 = l8.a(gVar2, 5, 8, 16) + 1 + i32;
-                                    if ((g14 == 0 || g14 == 2) && gVar2.f()) {
-                                        l8.c(gVar2);
+                                if (i31 < g12 + 1) {
+                                    int g13 = gVar2.g(3);
+                                    i32 = bd.a(gVar2, 5, 8, 16) + 1 + i32;
+                                    if ((g13 == 0 || g13 == 2) && gVar2.f()) {
+                                        bd.c(gVar2);
                                     }
                                     i31++;
                                     i20 = i33;
                                 } else {
-                                    int a12 = l8.a(gVar2, 4, 8, 16) + 1;
+                                    int a12 = bd.a(gVar2, 4, 8, 16) + 1;
                                     gVar2.n();
                                     int i35 = 0;
                                     while (true) {
                                         double d = 2.0d;
                                         if (i35 < a12) {
-                                            int g15 = gVar2.g(2);
-                                            if (g15 == 0) {
+                                            int g14 = gVar2.g(2);
+                                            if (g14 == 0) {
                                                 gVar2.o(i19);
                                                 if (gVar2.f()) {
                                                     gVar2.o(13);
                                                 }
                                                 if (c10 > 0) {
-                                                    l8.b(gVar2);
+                                                    bd.b(gVar2);
                                                 }
-                                            } else if (g15 == i33) {
+                                            } else if (g14 == i33) {
                                                 gVar2.o(i19);
                                                 boolean f7 = gVar2.f();
                                                 if (f7) {
@@ -341,14 +341,14 @@ public final class v implements i {
                                                     gVar2.n();
                                                 }
                                                 if (c10 > 0) {
-                                                    l8.b(gVar2);
+                                                    bd.b(gVar2);
                                                     i15 = gVar2.g(2);
                                                 } else {
                                                     i15 = 0;
                                                 }
                                                 if (i15 > 0) {
                                                     gVar2.o(6);
-                                                    int g16 = gVar2.g(2);
+                                                    int g15 = gVar2.g(2);
                                                     gVar2.o(4);
                                                     if (gVar2.f()) {
                                                         gVar2.o(5);
@@ -356,26 +356,26 @@ public final class v implements i {
                                                     if (i15 == 2 || i15 == i19) {
                                                         gVar2.o(6);
                                                     }
-                                                    if (g16 == 2) {
+                                                    if (g15 == 2) {
                                                         gVar2.n();
                                                     }
                                                 }
                                                 int floor = ((int) Math.floor(Math.log(i32 - 1) / Math.log(2.0d))) + 1;
-                                                int g17 = gVar2.g(2);
-                                                if (g17 > 0 && gVar2.f()) {
+                                                int g16 = gVar2.g(2);
+                                                if (g16 > 0 && gVar2.f()) {
                                                     gVar2.o(floor);
                                                 }
                                                 if (gVar2.f()) {
                                                     gVar2.o(floor);
                                                 }
-                                                if (c10 == 0 && g17 == 0) {
+                                                if (c10 == 0 && g16 == 0) {
                                                     gVar2.n();
                                                 }
-                                            } else if (g15 == i19) {
-                                                l8.a(gVar2, 4, i18, i34);
-                                                int a13 = l8.a(gVar2, 4, i18, i34);
+                                            } else if (g14 == i19) {
+                                                bd.a(gVar2, 4, i18, i34);
+                                                int a13 = bd.a(gVar2, 4, i18, i34);
                                                 if (gVar2.f()) {
-                                                    l8.a(gVar2, i18, i34, 0);
+                                                    bd.a(gVar2, i18, i34, 0);
                                                 }
                                                 gVar2.n();
                                                 if (a13 > 0) {
@@ -390,17 +390,17 @@ public final class v implements i {
                                         } else {
                                             if (gVar2.f()) {
                                                 int i36 = 8;
-                                                int a14 = l8.a(gVar2, 2, 4, 8) + 1;
+                                                int a14 = bd.a(gVar2, 2, 4, 8) + 1;
                                                 int i37 = 0;
                                                 bArr = null;
                                                 while (i37 < a14) {
-                                                    int a15 = l8.a(gVar2, 4, i36, 16);
-                                                    int a16 = l8.a(gVar2, 4, i36, 16);
+                                                    int a15 = bd.a(gVar2, 4, i36, 16);
+                                                    int a16 = bd.a(gVar2, 4, i36, 16);
                                                     if (a15 == 7) {
-                                                        int g18 = gVar2.g(4) + 1;
+                                                        int g17 = gVar2.g(4) + 1;
                                                         gVar2.o(4);
-                                                        byte[] bArr4 = new byte[g18];
-                                                        for (int i38 = 0; i38 < g18; i38++) {
+                                                        byte[] bArr4 = new byte[g17];
+                                                        for (int i38 = 0; i38 < g17; i38++) {
                                                             bArr4[i38] = (byte) gVar2.g(i36);
                                                         }
                                                         bArr = bArr4;
@@ -423,16 +423,16 @@ public final class v implements i {
                                                     j11 = b7Var.c;
                                                     if (j10 != j11) {
                                                         this.t = j11;
-                                                        String concat = g10 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(g10))) : "mhm1";
-                                                        x1 z11 = (bArr == null || bArr.length <= 0) ? null : n0.z(m0.b, bArr);
-                                                        b2.v vVar = new b2.v();
-                                                        vVar.a = this.e;
-                                                        vVar.q = v0.n("video/mp2t");
-                                                        vVar.r = v0.n("audio/mhm1");
-                                                        vVar.K = this.q;
-                                                        vVar.j = concat;
-                                                        vVar.u = z11;
-                                                        this.f.b(new b2.w(vVar));
+                                                        String concat = g7 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(g7))) : "mhm1";
+                                                        s1 z11 = (bArr == null || bArr.length <= 0) ? null : i0.z(n0.b, bArr);
+                                                        b2.w wVar = new b2.w();
+                                                        wVar.a = this.e;
+                                                        wVar.q = w0.n("video/mp2t");
+                                                        wVar.r = w0.n("audio/mhm1");
+                                                        wVar.K = this.q;
+                                                        wVar.j = concat;
+                                                        wVar.u = z11;
+                                                        this.f.b(new b2.x(wVar));
                                                     }
                                                     i11 = 1;
                                                     this.u = true;
@@ -477,7 +477,7 @@ public final class v implements i {
                                                     this.u = true;
                                                     break;
                                                 default:
-                                                    throw w0.c("Unsupported sampling rate " + i13);
+                                                    throw x0.c("Unsupported sampling rate " + i13);
                                             }
                                         }
                                     }
@@ -562,12 +562,12 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.s sVar, f0 f0Var) {
+    public final void d(c3.q qVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
         this.e = (String) f0Var.e;
         f0Var.c();
-        this.f = sVar.j0(f0Var.c, 1);
+        this.f = qVar.F1(f0Var.c, 1);
     }
 
     @Override // j4.i

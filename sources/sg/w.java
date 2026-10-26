@@ -1,78 +1,79 @@
 package sg;
 
-import android.view.ViewGroup;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.e50;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.ui.nt0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+public final class w implements rg.v {
+    public boolean a;
+    public final /* synthetic */ Bitmap b;
+    public final /* synthetic */ nt0 c;
 
-    public /* synthetic */ w(j0 j0Var, int i10) {
-        this.a = i10;
-        this.b = j0Var;
+    public w(nt0 nt0Var, Bitmap bitmap) {
+        this.c = nt0Var;
+        this.b = bitmap;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        j0 j0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (LaunchActivity.R() != null) {
-                    m2 m2Var = new m2();
-                    m2Var.a = true;
-                    j0Var.K0.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), m2Var);
-                    break;
-                }
-                break;
-            case 1:
-                j0Var.x0.g(j0Var.b0, false);
-                j0Var.D1();
-                break;
-            case 2:
-                HashSet hashSet = j0Var.y0;
-                xc X = xc.X();
-                if (X != null) {
-                    if (hashSet.size() != 1) {
-                        X.Q(R.raw.voip_invite, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("InviteLinkSent", hashSet.size(), Integer.valueOf(hashSet.size())))).j();
-                        break;
-                    } else {
-                        X.Q(R.raw.voip_invite, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.InviteLinkSentSingle, ContactsController.formatName((TLRPC.User) hashSet.iterator().next())))).j();
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                ei.d dVar = j0Var.S0;
-                TLRPC.ChatFull x12 = j0Var.x1();
-                dVar.b(Math.max(x12.boosts_unrestrict - x12.boosts_applied, 0), false);
-                break;
-            default:
-                if (ChatObject.hasAdminRights(j0Var.w1())) {
-                    if (j0Var.E0.getParent() != null) {
-                        ((ViewGroup) j0Var.E0.getParent()).removeView(j0Var.E0);
-                    }
-                    e50 e50Var = j0Var.L0;
-                    if (e50Var != null && e50Var.getParent() != null) {
-                        ((ViewGroup) j0Var.L0.getParent()).removeView(j0Var.L0);
-                    }
-                    j0Var.d.setPadding(0, 0, 0, 0);
-                    break;
-                }
-                break;
-        }
+    @Override // rg.v
+    public final void a() {
+        this.a = true;
+    }
+
+    @Override // rg.v
+    public final void b(Canvas canvas) {
+        d0 d0Var = this.c.L0;
+        Matrix matrix = d0Var.getMatrix();
+        canvas.save();
+        canvas.translate(d0Var.getX(), d0Var.getY());
+        canvas.concat(matrix);
+        float width = d0Var.getWidth();
+        Bitmap bitmap = this.b;
+        canvas.scale(width / bitmap.getWidth(), d0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
+        canvas.restore();
+    }
+
+    @Override // rg.v
+    public final boolean c() {
+        return this.a;
+    }
+
+    @Override // rg.v
+    public final void d() {
+        this.a = false;
+    }
+
+    @Override // rg.v
+    public final View e() {
+        return this.c;
+    }
+
+    @Override // rg.v
+    public final FrameLayout f() {
+        return this.c.T0;
+    }
+
+    @Override // rg.v
+    public final boolean g() {
+        return this.b != null;
+    }
+
+    @Override // rg.v
+    public final void h(int i10) {
+        nt0 nt0Var = this.c;
+        nt0Var.v0(false);
+        rg.s0 s0Var = nt0Var.K1;
+        s0Var.h(i10, true);
+        s0Var.g();
+        nt0Var.setNewColor(i10);
+        k0 k0Var = nt0Var.v1;
+        k0Var.setSelectedColorIndex(s0Var.d());
+        k0Var.getAdapter().l();
     }
 }

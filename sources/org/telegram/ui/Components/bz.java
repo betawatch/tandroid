@@ -1,50 +1,104 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class bz {
-    public final ArrayList a = new ArrayList();
-    public final /* synthetic */ tz b;
+public final class bz extends ImageView {
+    public int a;
+    public t5 b;
+    public boolean c;
+    public c6 d;
+    public ey e;
+    public final ImageReceiver.BackgroundThreadDrawHolder[] f;
+    public float h;
+    public ValueAnimator n;
 
-    public bz(tz tzVar) {
-        this.b = tzVar;
+    public bz(Context context) {
+        super(context);
+        this.f = new ImageReceiver.BackgroundThreadDrawHolder[2];
+        setScaleType(ImageView.ScaleType.CENTER);
+        int i10 = org.telegram.ui.ActionBar.y6.i6;
+        org.telegram.ui.Cells.y Z = org.telegram.ui.ActionBar.y6.Z(org.telegram.ui.ActionBar.y6.x0(null, i10, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
+        org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i10);
+        setBackground(Z);
+        org.telegram.ui.ActionBar.f7.k(this, Z, null, N, null);
     }
 
-    public final void a(String str, boolean z10) {
-        tz tzVar = this.b;
-        int i10 = tzVar.c1;
-        String p5 = a1.g.p("gif_search_", str, "_");
-        if (z10 && tzVar.l0.containsKey(p5)) {
-            return;
-        }
-        String str2 = str;
-        ai.i4 i4Var = new ai.i4(this, str2, z10, p5, 5);
-        ArrayList arrayList = this.a;
-        if (z10) {
-            arrayList.add(p5);
-            MessagesStorage.getInstance(i10).getBotCache(p5, i4Var);
-            return;
-        }
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        TLObject userOrChat = messagesController.getUserOrChat(messagesController.gifSearchBot);
-        if (userOrChat instanceof TLRPC.User) {
-            arrayList.add(p5);
-            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            if (str2 == null) {
-                str2 = "";
+    public final void a(Drawable drawable, boolean z10) {
+        setImageDrawable(drawable);
+        this.c = z10;
+    }
+
+    public c6 getSpan() {
+        return this.d;
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (isPressed()) {
+            float f7 = this.h;
+            if (f7 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f7;
+                this.h = min;
+                this.h = Utilities.clamp(min, 1.0f, 0.0f);
+                invalidate();
             }
-            tL_messages_getInlineBotResults.query = str2;
-            tL_messages_getInlineBotResults.bot = messagesController.getInputUser((TLRPC.User) userOrChat);
-            tL_messages_getInlineBotResults.offset = "";
-            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getInlineBotResults, i4Var, 2);
         }
+        float f10 = ((1.0f - this.h) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        super.onDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.view.View");
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i10));
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
+        if (isPressed() != z10) {
+            super.setPressed(z10);
+            invalidate();
+            if (z10 && (valueAnimator = this.n) != null) {
+                valueAnimator.removeAllListeners();
+                this.n.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f7 = this.h;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+                this.n = ofFloat;
+                ofFloat.addUpdateListener(new n6(this, 22));
+                this.n.addListener(new org.telegram.ui.qp(this, 27));
+                org.telegram.ui.d3.m(5.0f, this.n);
+                this.n.setDuration(350L);
+                this.n.start();
+            }
+        }
+    }
+
+    public void setSpan(c6 c6Var) {
+        this.d = c6Var;
     }
 }

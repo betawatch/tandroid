@@ -1,161 +1,169 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.view.View;
-import android.view.animation.LinearInterpolator;
-import java.util.ArrayList;
-import org.telegram.ui.Components.p31;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.vg1;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class o1 {
-    public final com.google.firebase.messaging.l a;
-    public final com.google.firebase.messaging.l b;
-    public com.google.firebase.messaging.l c;
-    public com.google.firebase.messaging.l d;
-    public boolean e;
+public final class o1 extends FrameLayout {
+    public final ak0 a;
+    public final ak0 b;
+    public final org.telegram.ui.Cells.y c;
+    public k1 d;
+    public n1 e;
     public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public final Paint j;
-    public final Paint k;
-    public final Paint l;
-    public final ArrayList m;
 
-    public o1() {
-        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l(80, 80);
-        this.a = lVar;
-        com.google.firebase.messaging.l lVar2 = new com.google.firebase.messaging.l(80, 80);
-        this.b = lVar2;
+    public o1(Context context) {
+        super(context);
         this.f = 0;
-        this.g = 0;
-        Paint paint = new Paint(1);
-        this.j = paint;
-        Paint paint2 = new Paint(1);
-        this.k = paint2;
-        Paint paint3 = new Paint(1);
-        this.l = paint3;
-        this.m = new ArrayList();
-        lVar2.w(0.0f, 0.0f, 80.0f, 80.0f);
-        lVar.w(0.0f, 0.0f, 80.0f, 80.0f);
-        paint.setColor(-1);
-        paint.setAlpha(35);
-        paint2.setColor(-16777216);
-        paint2.setAlpha(102);
-        paint3.setColor(-16777216);
-        paint3.setAlpha(35);
-        ((Paint) lVar2.a).setAlpha(180);
+        setWillNotDraw(false);
+        ak0 ak0Var = new ak0(context);
+        this.a = ak0Var;
+        ak0 ak0Var2 = new ak0(context);
+        this.b = ak0Var2;
+        ak0Var.f(R.raw.star_stroke, 37, 37, null);
+        ak0Var2.f(R.raw.star_fill, 37, 37, null);
+        ak0Var2.setAlpha(0.0f);
+        addView(ak0Var, gb1.g(37.0f, 37));
+        addView(ak0Var2, gb1.g(37.0f, 37));
+        org.telegram.ui.Cells.y i02 = y6.i0(AndroidUtilities.dp(37.0f), 0, i0.a.o(-1, 76));
+        this.c = i02;
+        i02.setCallback(this);
+        setClickable(true);
     }
 
-    public final void a(View view) {
-        this.m.add(view);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int i10;
+        n1 n1Var;
+        int action = motionEvent.getAction();
+        int i11 = 0;
+        if (action == 0) {
+            n1 n1Var2 = this.e;
+            if (n1Var2 != null) {
+                o1[] o1VarArr = ((p1) ((j1) n1Var2).b).c;
+                while (true) {
+                    i10 = this.f;
+                    if (i11 > i10) {
+                        break;
+                    }
+                    o1 o1Var = o1VarArr[i11];
+                    ak0 ak0Var = o1Var.a;
+                    ak0 ak0Var2 = o1Var.b;
+                    ak0Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    ak0Var2.animate().alpha(1.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    i11++;
+                }
+                for (int i12 = i10 + 1; i12 < o1VarArr.length; i12++) {
+                    o1 o1Var2 = o1VarArr[i12];
+                    ak0 ak0Var3 = o1Var2.a;
+                    ak0 ak0Var4 = o1Var2.b;
+                    ak0Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    ak0Var4.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                }
+            }
+        } else if (action == 1) {
+            n1 n1Var3 = this.e;
+            if (n1Var3 != null) {
+                o1[] o1VarArr2 = ((p1) ((j1) n1Var3).b).c;
+                for (int i13 = 0; i13 <= this.f; i13++) {
+                    o1 o1Var3 = o1VarArr2[i13];
+                    ak0 ak0Var5 = o1Var3.a;
+                    ak0 ak0Var6 = o1Var3.b;
+                    ak0Var5.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    ak0Var6.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                }
+            }
+            if (this.d != null) {
+                int[] iArr = new int[2];
+                getLocationOnScreen(iArr);
+                int i14 = iArr[0];
+                int i15 = iArr[1];
+                k1 k1Var = this.d;
+                float width = (getWidth() / 2.0f) + i14;
+                float height = (getHeight() / 2.0f) + i15;
+                int i16 = this.f + 1;
+                p1 p1Var = (p1) k1Var.c;
+                Context context = (Context) k1Var.b;
+                if (i16 >= 4) {
+                    ak0 ak0Var7 = new ak0(context);
+                    int dp = AndroidUtilities.dp(133.0f);
+                    ak0Var7.f(R.raw.rate, 133, 133, null);
+                    int[] iArr2 = new int[2];
+                    p1Var.getLocationOnScreen(iArr2);
+                    int i17 = iArr2[0];
+                    int i18 = iArr2[1];
+                    p1Var.addView(ak0Var7, gb1.g(133.0f, 133));
+                    float f7 = width - i17;
+                    float f10 = dp / 2.0f;
+                    ak0Var7.setTranslationX(f7 - f10);
+                    ak0Var7.setTranslationY((height - i18) - f10);
+                    ak0Var7.setOnAnimationEndListener(new l1(p1Var, ak0Var7, 0));
+                    ak0Var7.d();
+                }
+                vg1 vg1Var = p1Var.d;
+                if (vg1Var != null) {
+                    vg1Var.b.L = i16;
+                }
+            }
+        } else if (action == 3 && (n1Var = this.e) != null) {
+            o1[] o1VarArr3 = ((p1) ((j1) n1Var).b).c;
+            int length = o1VarArr3.length;
+            while (i11 < length) {
+                o1 o1Var4 = o1VarArr3[i11];
+                ak0 ak0Var8 = o1Var4.a;
+                ak0 ak0Var9 = o1Var4.b;
+                ak0Var8.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                ak0Var9.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                i11++;
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public final Paint b() {
-        return this.i ? this.k : (Paint) this.b.a;
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.m;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((View) obj).invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        org.telegram.ui.Cells.y yVar = this.c;
+        if (yVar != null) {
+            yVar.setState(getDrawableState());
         }
     }
 
-    public final void d(float f7, float f10) {
-        float f11 = this.g * 1.12f;
-        float f12 = -f7;
-        float f13 = -f10;
-        this.b.y(f12 - ((f11 - this.f) / 2.0f), f13 - ((f11 - this.g) / 2.0f), f11 / ((Bitmap) r1.c).getHeight(), this.h);
-        this.d.w(f12, f13, this.f - f7, this.g - f10);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        org.telegram.ui.Cells.y yVar = this.c;
+        if (yVar != null) {
+            yVar.jumpToCurrentState();
+        }
     }
 
-    public final void e(boolean z10) {
-        if (!this.i || z10) {
-            this.i = z10;
-        } else {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-            final int i10 = 0;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.n1
-                public final /* synthetic */ o1 b;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int width = getWidth();
+        int height = getHeight();
+        org.telegram.ui.Cells.y yVar = this.c;
+        yVar.setBounds(0, 0, width, height);
+        yVar.draw(canvas);
+    }
 
-                {
-                    this.b = this;
-                }
+    public void setAllStarsProvider(n1 n1Var) {
+        this.e = n1Var;
+    }
 
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i10) {
-                        case 0:
-                            o1 o1Var = this.b;
-                            o1Var.getClass();
-                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i11 = (int) (35.0f * floatValue);
-                            o1Var.l.setAlpha(i11);
-                            o1Var.k.setAlpha((int) (floatValue * 102.0f));
-                            o1Var.j.setAlpha(i11);
-                            o1Var.c();
-                            break;
-                        default:
-                            o1 o1Var2 = this.b;
-                            o1Var2.getClass();
-                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            ((Paint) o1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
-                            ((Paint) o1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
-                            o1Var2.c();
-                            break;
-                    }
-                }
-            });
-            ofFloat.setInterpolator(new LinearInterpolator());
-            ofFloat.setDuration(80L);
-            ofFloat.addListener(new p31(this, 13));
-            ofFloat.start();
-            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            final int i11 = 1;
-            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.n1
-                public final /* synthetic */ o1 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i11) {
-                        case 0:
-                            o1 o1Var = this.b;
-                            o1Var.getClass();
-                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i112 = (int) (35.0f * floatValue);
-                            o1Var.l.setAlpha(i112);
-                            o1Var.k.setAlpha((int) (floatValue * 102.0f));
-                            o1Var.j.setAlpha(i112);
-                            o1Var.c();
-                            break;
-                        default:
-                            o1 o1Var2 = this.b;
-                            o1Var2.getClass();
-                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            ((Paint) o1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
-                            ((Paint) o1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
-                            o1Var2.c();
-                            break;
-                    }
-                }
-            });
-            ofFloat2.setInterpolator(new LinearInterpolator());
-            ofFloat2.setStartDelay(80L);
-            ofFloat2.setDuration(80L);
-            ofFloat2.start();
-        }
-        c();
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.c == drawable || super.verifyDrawable(drawable);
     }
 }

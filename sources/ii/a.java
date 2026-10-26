@@ -1,58 +1,71 @@
 package ii;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.y6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class a extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final RectF d;
-    public final /* synthetic */ g6 e;
+public final class a extends Drawable {
+    public int b;
+    public int c = 255;
+    public final Drawable a = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.settings_arrow).mutate();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(Context context, g6 g6Var) {
-        super(context);
-        this.e = g6Var;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.b = paint2;
-        Paint paint3 = new Paint(1);
-        this.c = paint3;
-        this.d = new RectF();
-        paint2.setColor(-1);
-        paint.setColor(k6.w0(k6.d6, g6Var));
-        paint3.setColor(k6.w0(k6.wj, g6Var));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float exactCenterX = getBounds().exactCenterX();
+        float exactCenterY = getBounds().exactCenterY();
+        int x02 = y6.x0(null, y6.G6, false);
+        int x03 = y6.x0(null, y6.d6, false);
+        int i10 = this.b;
+        Drawable drawable = this.a;
+        if (i10 != x03) {
+            this.b = x03;
+            drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
+        }
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), y6.m0(i0.a.o(x03, this.c)));
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), y6.m0(i0.a.o(x02, this.c)));
+        ag.v.d(drawable, exactCenterX, exactCenterY, 17);
+        canvas.translate(0.0f, AndroidUtilities.dp(0.66f));
+        canvas.save();
+        canvas.rotate(90.0f, exactCenterX, exactCenterY);
+        ag.v.b(canvas, drawable, 0.8f);
+        canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int i10 = k6.d6;
-        g6 g6Var = this.e;
-        int w02 = k6.w0(i10, g6Var);
-        Paint paint = this.a;
-        paint.setColor(w02);
-        int w03 = k6.w0(k6.wj, g6Var);
-        Paint paint2 = this.c;
-        paint2.setColor(w03);
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.d;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint);
-        rectF.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
-        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint2);
-        rectF.inset(AndroidUtilities.dpf2(4.67f), AndroidUtilities.dpf2(9.066f));
-        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.b);
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.c;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(13.333333f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(13.333333f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c = i10;
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

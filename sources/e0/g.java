@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
     public final IconCompat a;
@@ -32,11 +32,11 @@ public final class g {
         this.h = true;
     }
 
-    public final void a(o0 o0Var) {
+    public final void a(n0 n0Var) {
         if (this.f == null) {
             this.f = new ArrayList();
         }
-        this.f.add(o0Var);
+        this.f.add(n0Var);
     }
 
     public final h b() {
@@ -49,12 +49,12 @@ public final class g {
             while (i10 < size) {
                 Object obj = arrayList3.get(i10);
                 i10++;
-                o0 o0Var = (o0) obj;
-                o0Var.getClass();
-                arrayList2.add(o0Var);
+                n0 n0Var = (n0) obj;
+                n0Var.getClass();
+                arrayList2.add(n0Var);
             }
         }
-        return new h(this.a, this.b, this.c, this.e, arrayList2.isEmpty() ? null : (o0[]) arrayList2.toArray(new o0[arrayList2.size()]), arrayList.isEmpty() ? null : (o0[]) arrayList.toArray(new o0[arrayList.size()]), this.d, this.g, this.h);
+        return new h(this.a, this.b, this.c, this.e, arrayList2.isEmpty() ? null : (n0[]) arrayList2.toArray(new n0[arrayList2.size()]), arrayList.isEmpty() ? null : (n0[]) arrayList.toArray(new n0[arrayList.size()]), this.d, this.g, this.h);
     }
 
     public final void c() {

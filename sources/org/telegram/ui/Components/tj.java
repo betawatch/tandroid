@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class tj extends lm0 {
     public final Context c;
@@ -24,8 +24,8 @@ public final class tj extends lm0 {
     }
 
     @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f == 0;
+    public final boolean D(s4.e1 e1Var) {
+        return e1Var.f == 0;
     }
 
     public final Object E(int i10) {
@@ -36,12 +36,12 @@ public final class tj extends lm0 {
         return this.d.get(i11);
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int h() {
         return this.d.size() + 2;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final int j(int i10) {
         if (i10 == 0) {
             return 1;
@@ -49,17 +49,17 @@ public final class tj extends lm0 {
         return i10 == h() - 1 ? 2 : 0;
     }
 
-    @Override // s4.g0
+    @Override // s4.h0
     public final void l() {
         super.l();
         this.n.Q();
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
         TLRPC.User user;
-        if (b1Var.f == 0) {
-            wj wjVar = (wj) b1Var.a;
+        if (e1Var.f == 0) {
+            wj wjVar = (wj) e1Var.a;
             boolean z10 = i10 != h() + (-2);
             Object E = E(i10);
             if (E instanceof ContactsController.Contact) {
@@ -77,16 +77,16 @@ public final class tj extends lm0 {
                 wjVar.a(user, (CharSequence) this.e.get(i10 - 1), new qj(1, user), z10);
             }
             boolean containsKey = this.n.w.containsKey(nj.a(E));
-            xp xpVar = wjVar.d;
-            if (xpVar.getVisibility() != 0) {
-                xpVar.setVisibility(0);
+            zp zpVar = wjVar.d;
+            if (zpVar.getVisibility() != 0) {
+                zpVar.setVisibility(0);
             }
-            xpVar.a(containsKey, false);
+            zpVar.a(containsKey, false);
         }
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
         View wjVar;
         Context context = this.c;
         if (i10 == 0) {
@@ -96,9 +96,9 @@ public final class tj extends lm0 {
             wjVar.setTag(-33024);
         } else {
             wjVar = new View(context);
-            wjVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
+            wjVar.setLayoutParams(new s4.q0(-1, AndroidUtilities.dp(56.0f)));
             wjVar.setTag(-33024);
         }
-        return new wl0(wjVar);
+        return new vl0(wjVar);
     }
 }

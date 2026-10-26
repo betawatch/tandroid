@@ -1,54 +1,25 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.function.IntFunction;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fe implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+public final /* synthetic */ class fe implements IntFunction {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ fe(MessagesController messagesController, long j10, int i10, int i11, long j11, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z10, Runnable runnable) {
-        this.h = messagesController;
-        this.c = j10;
-        this.b = i10;
-        this.e = i11;
-        this.d = j11;
-        this.n = tL_messages_affectedHistory;
-        this.f = z10;
-        this.r = runnable;
+    public /* synthetic */ fe(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i10) {
+        int[][] lambda$new$16;
         switch (this.a) {
             case 0:
-                ((MessagesController) this.h).lambda$deleteMessagesRange$467(this.c, this.b, this.e, this.d, (TLRPC.TL_messages_affectedHistory) this.n, this.f, (Runnable) this.r);
-                break;
+                return String.valueOf(i10);
             default:
-                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
-                break;
+                lambda$new$16 = MessagesController.lambda$new$16(i10);
+                return lambda$new$16;
         }
-    }
-
-    public /* synthetic */ fe(TLObject tLObject, int i10, long j10, long j11, int i11, boolean z10, Context context, String str) {
-        this.h = tLObject;
-        this.b = i10;
-        this.c = j10;
-        this.d = j11;
-        this.e = i11;
-        this.f = z10;
-        this.n = context;
-        this.r = str;
     }
 }

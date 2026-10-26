@@ -1,61 +1,12 @@
 package xf;
 
-import android.os.Binder;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import android.os.Parcel;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final class b extends Binder implements IInterface {
-    public final Handler a;
-    public final /* synthetic */ rb.b b;
-
-    public b(rb.b bVar) {
-        this.b = bVar;
-        attachInterface(this, "android.support.customtabs.ICustomTabsCallback");
-        this.a = new Handler(Looper.getMainLooper());
-    }
-
-    @Override // android.os.Binder
-    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
-        Handler handler = this.a;
-        if (i10 == 2) {
-            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-            handler.post(new a(this, parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
-            parcel2.writeNoException();
-            return true;
-        }
-        if (i10 == 3) {
-            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-            handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 1));
-            parcel2.writeNoException();
-            return true;
-        }
-        if (i10 == 4) {
-            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-            handler.post(new a(this, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
-            parcel2.writeNoException();
-            return true;
-        }
-        if (i10 != 5) {
-            if (i10 != 1598968902) {
-                return super.onTransact(i10, parcel, parcel2, i11);
-            }
-            parcel2.writeString("android.support.customtabs.ICustomTabsCallback");
-            return true;
-        }
-        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-        handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 3));
-        parcel2.writeNoException();
-        return true;
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
-    }
+public final class b {
+    public TLRPC.Document a;
+    public String b;
+    public int c;
+    public boolean d;
 }

@@ -1,33 +1,69 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class wz extends FrameLayout {
-    public ImageView a;
-    public TextView b;
-    public int c;
-    public boolean d;
-    public Boolean e;
+    public final TextView a;
+    public final ImageView b;
+    public boolean c;
+
+    public wz(Context context) {
+        super(context);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.q6, null);
+        textView.setTextSize(1, 16.0f);
+        textView.setText(LocaleController.getString(R.string.CreateNewLink));
+        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+        boolean z10 = LocaleController.isRTL;
+        textView.setPadding(z10 ? 16 : 0, 0, z10 ? 0 : 16, 0);
+        boolean z11 = LocaleController.isRTL;
+        addView(textView, org.telegram.ui.Components.gb1.h(-1, -2.0f, 23, z11 ? 0.0f : 64.0f, 0.0f, z11 ? 64.0f : 0.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
+        Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
+        int i10 = org.telegram.ui.ActionBar.y6.Oh;
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        org.telegram.ui.ActionBar.f7.y(this, drawable, i10, null, mode);
+        org.telegram.ui.ActionBar.f7.y(this, drawable2, org.telegram.ui.ActionBar.y6.k7, null, mode);
+        imageView.setImageDrawable(new org.telegram.ui.Components.ar(drawable, drawable2));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        boolean z12 = LocaleController.isRTL;
+        addView(imageView, org.telegram.ui.Components.gb1.h(32, 32.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f));
+    }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        TextView textView = this.b;
         super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.k6.k0);
+        if (this.c) {
+            TextView textView = this.a;
+            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.y6.k0);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final void setEnabled(boolean z10) {
+        super.setEnabled(z10);
+        this.a.setAlpha(z10 ? 1.0f : 0.5f);
+        this.b.setAlpha(z10 ? 1.0f : 0.5f);
     }
 }

@@ -1,18 +1,18 @@
 package androidx.emoji2.text;
 
 import android.os.Trace;
-import ci.c8;
+import di.a8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.voip.k2;
-import org.telegram.ui.Components.x20;
+import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.voip.n2;
+import org.telegram.ui.Components.z20;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.v2;
+import org.telegram.ui.t2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public final /* synthetic */ int a;
@@ -44,27 +44,27 @@ public final class n implements Runnable {
                 }
             case 1:
                 Math.abs(Utilities.random.nextInt() % 3);
-                x20[] x20VarArr = c8.a;
+                z20[] z20VarArr = a8.a;
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
-                AndroidUtilities.runOnUIThread(c8.o, 1000L);
+                AndroidUtilities.runOnUIThread(a8.o, 1000L);
                 LaunchActivity.R().getFragmentView();
                 return;
             case 2:
                 return;
             case 3:
-                k6.j = false;
-                k6.l(false);
+                y6.j = false;
+                y6.l(false);
                 return;
             case 4:
-                k6.k = false;
-                k6.l(true);
+                y6.k = false;
+                y6.l(true);
                 return;
             case 5:
                 return;
             case 6:
-                k2 k2Var = k2.V;
-                if (k2Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(k2Var.b.f.N);
+                n2 n2Var = n2.V;
+                if (n2Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(n2Var.b.f.N);
                     return;
                 }
                 return;
@@ -73,7 +73,7 @@ public final class n implements Runnable {
         }
     }
 
-    public n(v2 v2Var) {
+    public n(t2 t2Var) {
         this.a = 5;
     }
 

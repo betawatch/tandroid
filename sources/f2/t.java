@@ -1,9 +1,9 @@
 package f2;
 
+import a8.yb;
 import java.nio.ByteBuffer;
-import v7.u6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class t {
     public final boolean a;
@@ -25,7 +25,7 @@ public final class t {
     public t(s sVar) {
         int i10 = sVar.a;
         ByteBuffer byteBuffer = sVar.b;
-        u6.g(i10 == 1);
+        yb.g(i10 == 1);
         int remaining = byteBuffer.remaining();
         byte[] bArr = new byte[remaining];
         byteBuffer.asReadOnlyBuffer().get(bArr);
@@ -59,8 +59,8 @@ public final class t {
                 this.b = false;
             }
             this.h = gVar.f();
-            int g10 = gVar.g(5);
-            for (int i12 = 0; i12 <= g10; i12++) {
+            int g7 = gVar.g(5);
+            for (int i12 = 0; i12 <= g7; i12++) {
                 gVar.o(12);
                 if (i12 == 0) {
                     if (gVar.g(5) > 7) {
@@ -81,10 +81,10 @@ public final class t {
                 }
             }
         }
+        int g10 = gVar.g(4);
         int g11 = gVar.g(4);
-        int g12 = gVar.g(4);
+        gVar.o(g10 + 1);
         gVar.o(g11 + 1);
-        gVar.o(g12 + 1);
         if (this.a) {
             this.c = false;
         } else {

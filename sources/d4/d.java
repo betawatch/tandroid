@@ -1,11 +1,11 @@
 package d4;
 
+import a8.ed;
+import a8.yb;
 import android.graphics.Color;
-import com.google.android.gms.internal.play_billing.k3;
-import v7.b8;
-import v7.u6;
+import c3.h0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class d {
     public final String a;
@@ -57,7 +57,7 @@ public final class d {
             }
         } catch (NumberFormatException unused) {
         }
-        k3.q("Ignoring unknown alignment: ", str, "SsaStyle");
+        h0.p("Ignoring unknown alignment: ", str, "SsaStyle");
         return -1;
     }
 
@@ -74,8 +74,8 @@ public final class d {
     public static Integer c(String str) {
         try {
             long parseLong = str.startsWith("&H") ? Long.parseLong(str.substring(2), 16) : Long.parseLong(str);
-            u6.g(parseLong <= 4294967295L);
-            return Integer.valueOf(Color.argb(b8.b(((parseLong >> 24) & 255) ^ 255), b8.b(parseLong & 255), b8.b((parseLong >> 8) & 255), b8.b((parseLong >> 16) & 255)));
+            yb.g(parseLong <= 4294967295L);
+            return Integer.valueOf(Color.argb(ed.b(((parseLong >> 24) & 255) ^ 255), ed.b(parseLong & 255), ed.b((parseLong >> 8) & 255), ed.b((parseLong >> 16) & 255)));
         } catch (IllegalArgumentException e) {
             e2.a.m("SsaStyle", "Failed to parse color expression: '" + str + "'", e);
             return null;

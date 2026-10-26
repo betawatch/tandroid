@@ -1,133 +1,58 @@
 package ji;
 
-import ai.v0;
-import ai.xa;
-import ai.y7;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import ei.d;
-import hg.o;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Cells.j6;
-import org.telegram.ui.Components.b71;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.mm0;
-import s4.o0;
-import w7.z5;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.ActionBar.y6;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
-public final class a extends bb {
-    public b71 X;
-    public boolean Y;
-    public final FrameLayout Z;
-    public final boolean a0;
-    public final boolean b0;
-    public int c0;
+public final class a extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final RectF d;
+    public final /* synthetic */ u6 e;
 
-    public a(Context context, TLRPC.Chat chat, long j10, Utilities.Callback callback) {
-        super(context, (g6) null, false);
-        int i10;
-        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10));
-        TLRPC.Chat chat2 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
-        this.b0 = UserObject.isBot(user);
-        this.a0 = ChatObject.isChannelAndNotMegaGroup(chat2);
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(z());
-        setBackgroundColorKey(k6.a7);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.Z = frameLayout;
-        frameLayout.setPadding(0, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f));
-        frameLayout.setLayoutParams(new o0(-1, -2));
-        i6 i6Var = new i6(context, null);
-        if (chat2 != null) {
-            i10 = -1;
-            i6Var.t(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
-        } else {
-            i10 = -1;
-            if (user != null) {
-                i6Var.t(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
-            }
-        }
-        frameLayout.addView(i6Var, z5.c(-2.0f, i10));
-        mm0 mm0Var = this.d;
-        int i11 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.t1();
-        this.d.setClipToPadding(false);
-        this.d.setOnItemClickListener(new xa(this, 16));
-        d dVar = new d(context, this.resourcesProvider, true);
-        if (chat != null) {
-            dVar.setText(LocaleController.getString(ChatObject.canAddChatToCommunity(chat) ? R.string.CommunityAddToCommunityButton : R.string.CommunityAddToCommunityRequestButton));
-        } else {
-            dVar.setText(LocaleController.getString(R.string.CommunityCreateCommunity));
-        }
-        dVar.f();
-        dVar.setOnClickListener(new v0(this, callback, chat, 12));
-        this.containerView.addView(dVar, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
-        this.X.N(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(Context context, u6 u6Var) {
+        super(context);
+        this.e = u6Var;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        Paint paint3 = new Paint(1);
+        this.c = paint3;
+        this.d = new RectF();
+        paint2.setColor(-1);
+        paint.setColor(y6.w0(y6.d6, u6Var));
+        paint3.setColor(y6.w0(y6.wj, u6Var));
     }
 
-    public final void P(Utilities.Callback callback, boolean z10, boolean z11) {
-        if (z11 && !z10 && !this.b0) {
-            f5.P(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.a0 ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new y7(this, callback, z10, 6)).show();
-        } else {
-            callback.run(Boolean.valueOf(z10));
-            dismiss();
-        }
-    }
-
-    public final void Q(boolean z10) {
-        boolean z11;
-        if (this.Y == z10) {
-            return;
-        }
-        this.Y = z10;
-        int i10 = this.c0 + 1;
-        mm0 mm0Var = this.d;
-        View V0 = mm0Var.V0(i10);
-        if (V0 instanceof j6) {
-            ((j6) V0).a(!z10);
-            z11 = false;
-        } else {
-            z11 = true;
-        }
-        View V02 = mm0Var.V0(this.c0 + 2);
-        if (V02 instanceof j6) {
-            ((j6) V02).a(z10);
-        } else {
-            z11 = true;
-        }
-        if (z11) {
-            this.X.N(true);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final lm0 w(mm0 mm0Var) {
-        b71 b71Var = new b71(this.d, getContext(), this.currentAccount, 0, false, new o(this, 11), this.resourcesProvider);
-        this.X = b71Var;
-        b71Var.r = false;
-        return b71Var;
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence z() {
-        return LocaleController.getString(this.b0 ? R.string.CommunityAddBotTitle : R.string.CommunityAddChatTitle);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i10 = y6.d6;
+        u6 u6Var = this.e;
+        int w02 = y6.w0(i10, u6Var);
+        Paint paint = this.a;
+        paint.setColor(w02);
+        int w03 = y6.w0(y6.wj, u6Var);
+        Paint paint2 = this.c;
+        paint2.setColor(w03);
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.d;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint);
+        rectF.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint2);
+        rectF.inset(AndroidUtilities.dpf2(4.67f), AndroidUtilities.dpf2(9.066f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.b);
     }
 }

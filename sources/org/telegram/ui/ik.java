@@ -1,68 +1,55 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class ik extends org.telegram.ui.Components.nd {
-    public org.telegram.ui.Cells.y e;
-    public int f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ sn n;
+public final class ik extends org.telegram.ui.Components.pd {
+    public final /* synthetic */ un d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ik(sn snVar, Context context, boolean z10) {
+    public ik(un unVar, Context context) {
         super(context);
-        this.n = snVar;
-        this.h = z10;
+        this.d = unVar;
     }
 
-    @Override // org.telegram.ui.Components.nd
-    public final void d() {
-        try {
-            int themedColor = this.n.getThemedColor(org.telegram.ui.ActionBar.k6.ve);
-            if (this.e != null) {
-                Drawable background = getBackground();
-                Drawable drawable = this.e;
-                if (background == drawable) {
-                    if (themedColor != this.f) {
-                        org.telegram.ui.ActionBar.k6.E1(drawable, themedColor & 436207615, true);
-                    }
-                    if (getImageView() != null && (themedColor != this.f || getImageView().getColorFilter() == null)) {
-                        getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-                    }
-                    this.f = themedColor;
-                    if (getTextView() != null || getTextView().getCurrentTextColor() == themedColor) {
-                    }
-                    getTextView().setTextColor(themedColor);
-                    return;
-                }
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        un unVar = this.d;
+        hk hkVar = unVar.Y;
+        if (hkVar != null) {
+            hkVar.invalidate();
+        }
+        if (getVisibility() != 8) {
+            unVar.r9(true);
+            FrameLayout frameLayout = unVar.P;
+            if (frameLayout != null) {
+                frameLayout.setTranslationY(f7);
             }
-            org.telegram.ui.Cells.y X = org.telegram.ui.ActionBar.k6.X(AndroidUtilities.dp(19.0f), themedColor & 436207615, this.h ? AndroidUtilities.dp(4.0f) : 0, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f));
-            this.e = X;
-            setBackground(X);
-            if (getImageView() != null) {
-                getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+            unVar.x9();
+            unVar.z9();
+            View view = unVar.fragmentView;
+            if (view != null) {
+                view.invalidate();
             }
-            this.f = themedColor;
-            if (getTextView() != null) {
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.Components.nd
-    public final void setEditButton(boolean z10) {
-        super.setEditButton(z10);
-        if (this.h) {
-            getTextView().setMaxWidth(z10 ? AndroidUtilities.dp(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        FrameLayout frameLayout;
+        super.setVisibility(i10);
+        if (i10 != 8 || (frameLayout = this.d.P) == null) {
+            return;
         }
+        frameLayout.setTranslationY(0.0f);
     }
 }

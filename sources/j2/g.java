@@ -1,26 +1,26 @@
 package j2;
 
 import a3.s;
-import b2.l1;
-import b2.n1;
+import b2.m1;
 import b2.o1;
-import e2.m0;
+import b2.p1;
+import e2.n0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
-import u2.h0;
+import u2.g0;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class g {
     public static final s h = new s(4);
     public static final Random i = new Random();
     public h d;
     public String f;
-    public final n1 a = new n1();
-    public final l1 b = new l1();
+    public final o1 a = new o1();
+    public final m1 b = new m1();
     public final HashMap c = new HashMap();
-    public o1 e = o1.a;
+    public p1 e = p1.a;
     public long g = -1;
 
     public final void a(f fVar) {
@@ -62,7 +62,7 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final f c(int i10, h0 h0Var) {
+    public final f c(int i10, g0 g0Var) {
         long j10;
         long j11;
         long j12;
@@ -71,9 +71,9 @@ public final class g {
         long j13 = Long.MAX_VALUE;
         for (f fVar2 : hashMap.values()) {
             long j14 = fVar2.c;
-            h0 h0Var2 = fVar2.d;
-            if (j14 == -1 && i10 == fVar2.b && h0Var != null) {
-                long j15 = h0Var.d;
+            g0 g0Var2 = fVar2.d;
+            if (j14 == -1 && i10 == fVar2.b && g0Var != null) {
+                long j15 = g0Var.d;
                 g gVar = fVar2.g;
                 j10 = -1;
                 f fVar3 = (f) gVar.c.get(gVar.f);
@@ -87,23 +87,23 @@ public final class g {
             } else {
                 j10 = -1;
             }
-            if (h0Var != null) {
-                long j16 = h0Var.d;
+            if (g0Var != null) {
+                long j16 = g0Var.d;
                 if (j16 != j10) {
-                    if (h0Var2 == null) {
-                        if (!h0Var.b() && j16 == fVar2.c) {
+                    if (g0Var2 == null) {
+                        if (!g0Var.b() && j16 == fVar2.c) {
                             j11 = fVar2.c;
                             if (j11 == j10 || j11 < j13) {
                                 fVar = fVar2;
                                 j13 = j11;
                             } else if (j11 == j13) {
-                                String str = m0.a;
-                                if (fVar.d != null && h0Var2 != null) {
+                                String str = n0.a;
+                                if (fVar.d != null && g0Var2 != null) {
                                     fVar = fVar2;
                                 }
                             }
                         }
-                    } else if (j16 == h0Var2.d && h0Var.b == h0Var2.b && h0Var.c == h0Var2.c) {
+                    } else if (j16 == g0Var2.d && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
                         j11 = fVar2.c;
                         if (j11 == j10) {
                         }
@@ -124,23 +124,23 @@ public final class g {
             return fVar;
         }
         String str2 = (String) h.get();
-        f fVar4 = new f(this, str2, i10, h0Var);
+        f fVar4 = new f(this, str2, i10, g0Var);
         hashMap.put(str2, fVar4);
         return fVar4;
     }
 
-    public final synchronized String d(o1 o1Var, h0 h0Var) {
-        return c(o1Var.g(h0Var.a, this.b).c, h0Var).a;
+    public final synchronized String d(p1 p1Var, g0 g0Var) {
+        return c(p1Var.g(g0Var.a, this.b).c, g0Var).a;
     }
 
     public final void e(a aVar) {
-        h0 h0Var;
-        o1 o1Var = aVar.b;
+        g0 g0Var;
+        p1 p1Var = aVar.b;
         int i10 = aVar.c;
-        h0 h0Var2 = aVar.d;
-        boolean p5 = o1Var.p();
+        g0 g0Var2 = aVar.d;
+        boolean p10 = p1Var.p();
         HashMap hashMap = this.c;
-        if (p5) {
+        if (p10) {
             String str = this.f;
             if (str != null) {
                 f fVar = (f) hashMap.get(str);
@@ -151,15 +151,15 @@ public final class g {
             return;
         }
         f fVar2 = (f) hashMap.get(this.f);
-        this.f = c(i10, h0Var2).a;
+        this.f = c(i10, g0Var2).a;
         f(aVar);
-        if (h0Var2 != null) {
-            long j10 = h0Var2.d;
-            if (h0Var2.b()) {
-                if (fVar2 != null && fVar2.c == j10 && (h0Var = fVar2.d) != null && h0Var.b == h0Var2.b && h0Var.c == h0Var2.c) {
+        if (g0Var2 != null) {
+            long j10 = g0Var2.d;
+            if (g0Var2.b()) {
+                if (fVar2 != null && fVar2.c == j10 && (g0Var = fVar2.d) != null && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
                     return;
                 }
-                c(i10, new h0(h0Var2.a, j10));
+                c(i10, new g0(g0Var2.a, j10));
                 this.d.getClass();
             }
         }
@@ -175,9 +175,9 @@ public final class g {
         if (aVar.b.p()) {
             return;
         }
-        h0 h0Var = aVar.d;
-        if (h0Var != null) {
-            long j11 = h0Var.d;
+        g0 g0Var = aVar.d;
+        if (g0Var != null) {
+            long j11 = g0Var.d;
             if (j11 != -1) {
                 f fVar = (f) this.c.get(this.f);
                 if (fVar != null) {
@@ -201,15 +201,15 @@ public final class g {
         if (this.f == null) {
             this.f = c10.a;
         }
-        h0 h0Var2 = aVar.d;
-        if (h0Var2 != null && h0Var2.b()) {
-            h0 h0Var3 = aVar.d;
-            f c11 = c(aVar.c, new h0(h0Var3.a, h0Var3.d, h0Var3.b));
+        g0 g0Var2 = aVar.d;
+        if (g0Var2 != null && g0Var2.b()) {
+            g0 g0Var3 = aVar.d;
+            f c11 = c(aVar.c, new g0(g0Var3.a, g0Var3.d, g0Var3.b));
             if (!c11.e) {
                 c11.e = true;
                 aVar.b.g(aVar.d.a, this.b);
                 this.b.d(aVar.d.b);
-                Math.max(0L, m0.h0(0L) + m0.h0(this.b.e));
+                Math.max(0L, n0.h0(0L) + n0.h0(this.b.e));
                 this.d.getClass();
             }
         }

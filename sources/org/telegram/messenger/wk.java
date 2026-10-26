@@ -1,37 +1,41 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wk implements Utilities.Callback2 {
+public final /* synthetic */ class wk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ Utilities.Callback4 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ long g;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ BaseController c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ wk(TranslateController translateController, Utilities.Callback4 callback4, boolean z10, int i10, String str, long j10, int i11) {
-        this.a = i11;
-        this.b = translateController;
-        this.c = callback4;
-        this.d = z10;
-        this.e = i10;
-        this.f = str;
-        this.g = j10;
+    public /* synthetic */ wk(BaseController baseController, Object obj, long j10, int i10) {
+        this.a = i10;
+        this.c = baseController;
+        this.d = obj;
+        this.b = j10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$pushToTranslate$21(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
+                ((TopicsController) this.c).lambda$updateTopicsWithDeletedMessages$10((ArrayList) this.d, this.b);
+                break;
+            case 1:
+                ((TranslateController) this.c).lambda$setDialogTranslateTo$0(this.b, (String) this.d);
                 break;
             default:
-                this.b.lambda$pushToTranslate$20(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
+                ((TranslateController) this.c).lambda$invalidateTranslation$9((MessageObject) this.d, this.b);
                 break;
         }
+    }
+
+    public /* synthetic */ wk(TranslateController translateController, long j10, String str) {
+        this.a = 1;
+        this.c = translateController;
+        this.b = j10;
+        this.d = str;
     }
 }

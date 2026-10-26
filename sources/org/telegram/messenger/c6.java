@@ -1,30 +1,39 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ Uri c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
+    public final /* synthetic */ boolean[] c;
 
-    public /* synthetic */ c6(Utilities.Callback callback, Uri uri, int i10) {
+    public /* synthetic */ c6(org.telegram.ui.ActionBar.e2 e2Var, boolean[] zArr, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = uri;
+        this.b = e2Var;
+        this.c = zArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
+                MediaController.lambda$saveFile$48(this.c, this.b);
+                break;
+            case 1:
+                MediaController.lambda$saveFile$52(this.b, this.c);
+                break;
+            case 2:
+                MediaController.lambda$saveFile$57(this.b, this.c);
                 break;
             default:
-                this.b.run(this.c);
+                MediaController.lambda$saveFile$55(this.c, this.b);
                 break;
         }
+    }
+
+    public /* synthetic */ c6(boolean[] zArr, org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        this.a = i10;
+        this.c = zArr;
+        this.b = e2Var;
     }
 }

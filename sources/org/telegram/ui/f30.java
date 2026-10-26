@@ -1,23 +1,16 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.UndoView;
+import android.view.View;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class f30 extends UndoView {
-    public final /* synthetic */ u50 j0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f30(u50 u50Var, LaunchActivity launchActivity) {
+public final class f30 extends View {
+    public f30(LaunchActivity launchActivity) {
         super(launchActivity);
-        this.j0 = u50Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        if (this.j0.z0 != null) {
-            return;
-        }
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
     }
 }

@@ -1,113 +1,74 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
+import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g31 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g31 extends org.telegram.ui.ActionBar.r2 {
+    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
+    public org.telegram.ui.Components.mm0 a;
+    public f31 b;
 
-    public /* synthetic */ g31(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public static String V(int i10) {
+        if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
+            return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
+        }
+        if (i10 > 1000000) {
+            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
+        }
+        return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
-                if (saveToGallerySettingsActivity.d) {
-                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
-                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
-                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
-                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
-                }
-                saveToGallerySettingsActivity.finishFragment();
-                break;
-            case 1:
-                ((l31) this.b).dismiss();
-                break;
-            case 2:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-                MessageObject messageObject = secretMediaViewer.h0;
-                if (messageObject != null) {
-                    TLRPC.Message message = messageObject.messageOwner;
-                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
-                        ei.x3 x3Var = secretMediaViewer.r;
-                        if (x3Var.V) {
-                            x3Var.e(true);
-                            break;
-                        } else {
-                            secretMediaViewer.l();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                l61 l61Var = (l61) this.b;
-                if (l61Var.a0 instanceof TLRPC.User) {
-                    ei.d dVar = l61Var.h0;
-                    if (!dVar.Q) {
-                        dVar.setLoading(true);
-                        l61Var.T((TLRPC.User) l61Var.a0, null, null);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                SessionsActivity sessionsActivity = ((m71) this.b).f;
-                if (sessionsActivity.getParentActivity() != null) {
-                    if (sessionsActivity.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
-                        sessionsActivity.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
-                        break;
-                    } else {
-                        w9.e0(sessionsActivity.getParentActivity(), 2, new k71(sessionsActivity));
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                ((ed1) this.b).c(true);
-                break;
-            case 6:
-                ((ed1) ((ai.j5) this.b).c).c(true);
-                break;
-            case 7:
-                md1 md1Var = (md1) this.b;
-                ArrayList arrayList = md1Var.f;
-                HashSet hashSet = md1Var.w;
-                if (!hashSet.isEmpty()) {
-                    TLRPC.User user = md1Var.getMessagesController().getUser(Long.valueOf(md1Var.getUserConfig().getClientUserId()));
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
-                            arrayList2.add((TLRPC.Chat) arrayList.get(i10));
-                        }
-                    }
-                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
-                        md1Var.getMessagesController().putChat(chat, false);
-                        md1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
-                    }
-                    md1Var.finishFragment();
-                    break;
-                }
-                break;
-            default:
-                hi1 hi1Var = (hi1) this.b;
-                hi1Var.a.c(!r0.b(), true);
-                hi1Var.c.setEnabled(hi1Var.a.b());
-                hi1Var.c.animate().alpha(hi1Var.a.b() ? 1.0f : 0.5f).start();
-                break;
-        }
+    public final void W(int i10, CharSequence[] charSequenceArr, org.telegram.ui.Components.voip.c1 c1Var) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.getString(i10);
+        alertDialog$Builder.f(charSequenceArr, new ng.j(11, this, c1Var));
+        showDialog(alertDialog$Builder.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(LocaleController.getString(R.string.RoundVideoSettings));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new p11(this, 3));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
+        this.a = mm0Var;
+        mm0Var.u1();
+        this.a.setSectionsDrawBackground(true);
+        this.a.setLayoutManager(new s4.c0());
+        this.a.setVerticalScrollBarEnabled(false);
+        org.telegram.ui.Components.mm0 mm0Var2 = this.a;
+        f31 f31Var = new f31(context);
+        this.b = f31Var;
+        mm0Var2.setAdapter(f31Var);
+        this.a.setOnItemClickListener(new m11(this, 3));
+        frameLayout.addView(this.a, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final org.telegram.ui.Components.mm0 getListViewForSimpleGlass() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

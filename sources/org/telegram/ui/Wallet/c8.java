@@ -2,17 +2,17 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c8 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ i8 b;
+    public final /* synthetic */ h8 b;
     public final /* synthetic */ Utilities.Callback c;
     public final /* synthetic */ p0 d;
     public final /* synthetic */ l0 e;
 
-    public /* synthetic */ c8(i8 i8Var, Utilities.Callback callback, l0 l0Var, p0 p0Var) {
-        this.b = i8Var;
+    public /* synthetic */ c8(h8 h8Var, Utilities.Callback callback, l0 l0Var, p0 p0Var) {
+        this.b = h8Var;
         this.c = callback;
         this.e = l0Var;
         this.d = p0Var;
@@ -22,7 +22,7 @@ public final /* synthetic */ class c8 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                i8.Y(this.b, this.c, this.e, this.d, (i0) obj);
+                h8.Z(this.b, this.c, this.e, this.d, (i0) obj);
                 break;
             default:
                 c0 c0Var = (c0) obj;
@@ -45,7 +45,7 @@ public final /* synthetic */ class c8 implements Utilities.Callback {
                         break;
                     } else {
                         c8 c8Var = new c8(this.b, callback, this.e, p0Var);
-                        p0.h.execute(new org.telegram.ui.Components.q2(p0Var, p0Var.l(), bArr == null ? "" : p0.o(bArr), z10, c8Var));
+                        p0.h.execute(new org.telegram.ui.Components.s2(p0Var, p0Var.l(), bArr == null ? "" : p0.o(bArr), z10, c8Var));
                         break;
                     }
                 } else {
@@ -55,8 +55,8 @@ public final /* synthetic */ class c8 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ c8(i8 i8Var, Utilities.Callback callback, p0 p0Var, l0 l0Var) {
-        this.b = i8Var;
+    public /* synthetic */ c8(h8 h8Var, Utilities.Callback callback, p0 p0Var, l0 l0Var) {
+        this.b = h8Var;
         this.c = callback;
         this.d = p0Var;
         this.e = l0Var;

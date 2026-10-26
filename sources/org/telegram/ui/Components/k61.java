@@ -1,157 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class k61 extends kx0 {
-    public final int a = UserConfig.selectedAccount;
-    public boolean b = false;
-    public final float[] c = new float[3];
-    public final float[] d = {0.0f, 150.0f, 300.0f};
-    public final float[] e = {0.0f, 0.0f, 0.0f};
-    public long f = 0;
-    public boolean g = false;
-    public final DecelerateInterpolator h = new DecelerateInterpolator();
-    public boolean i;
-    public final Paint j;
+public final class k61 implements az0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ p61 b;
 
-    public k61(boolean z10) {
-        if (z10) {
-            this.j = new Paint(1);
+    public k61(p61 p61Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = p61Var;
+        this.a = inputStickerSet;
+    }
+
+    @Override // org.telegram.ui.Components.az0
+    public final void a() {
+        p61 p61Var = this.b;
+        s4.h0 adapter = p61Var.n.getAdapter();
+        o61 o61Var = p61Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == o61Var) {
+            while (i10 < o61Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) o61Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    o61Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i10++;
+            }
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.kx0
-    public final void b(int i10) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColor(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kx0
-    public final void c(boolean z10) {
-        this.b = z10;
-    }
-
-    @Override // org.telegram.ui.Components.kx0
-    public final void d() {
-        this.f = System.currentTimeMillis();
-        this.g = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int dp;
-        int i10;
-        int i11 = getBounds().left;
-        if (this.b) {
-            dp = AndroidUtilities.dp(8.5f);
-            i10 = getBounds().top;
-        } else {
-            dp = AndroidUtilities.dp(9.3f);
-            i10 = getBounds().top;
-        }
-        int i12 = dp + i10;
-        Paint paint = this.j;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.k6.c2;
-            paint.setAlpha(255);
-        }
-        float dp2 = AndroidUtilities.dp(3.0f) + i11;
-        float f7 = i12;
-        float[] fArr = this.c;
-        canvas.drawCircle(dp2, f7, fArr[0] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(9.0f) + i11, f7, fArr[1] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(15.0f) + i11, f7, fArr[2] * AndroidUtilities.density, paint);
-        f();
-    }
-
-    @Override // org.telegram.ui.Components.kx0
-    public final void e() {
-        for (int i10 = 0; i10 < 3; i10++) {
-            this.e[i10] = 0.0f;
-            this.c[i10] = 1.33f;
-        }
-        float[] fArr = this.d;
-        fArr[0] = 0.0f;
-        fArr[1] = 150.0f;
-        fArr[2] = 300.0f;
-        this.g = false;
-    }
-
-    public final void f() {
-        if (this.g) {
-            if (NotificationCenter.getInstance(this.a).isAnimationInProgress() && !this.i) {
-                AndroidUtilities.runOnUIThread(new kr0(this, 27), 100L);
+        ig.d2 d2Var = p61Var.v;
+        ArrayList arrayList = d2Var.E;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                d2Var.F(stickerSetCovered2, null);
                 return;
             }
-            long currentTimeMillis = System.currentTimeMillis();
-            long j10 = currentTimeMillis - this.f;
-            this.f = currentTimeMillis;
-            if (j10 > 50) {
-                j10 = 50;
-            }
-            for (int i10 = 0; i10 < 3; i10++) {
-                float[] fArr = this.e;
-                float f7 = fArr[i10] + j10;
-                fArr[i10] = f7;
-                float[] fArr2 = this.d;
-                float f10 = f7 - fArr2[i10];
-                float[] fArr3 = this.c;
-                if (f10 > 0.0f) {
-                    DecelerateInterpolator decelerateInterpolator = this.h;
-                    if (f10 <= 320.0f) {
-                        fArr3[i10] = decelerateInterpolator.getInterpolation(f10 / 320.0f) + 1.33f;
-                    } else if (f10 <= 640.0f) {
-                        fArr3[i10] = (1.0f - decelerateInterpolator.getInterpolation((f10 - 320.0f) / 320.0f)) + 1.33f;
-                    } else if (f10 >= 800.0f) {
-                        fArr[i10] = 0.0f;
-                        fArr2[i10] = 0.0f;
-                        fArr3[i10] = 1.33f;
-                    } else {
-                        fArr3[i10] = 1.33f;
-                    }
-                } else {
-                    fArr3[i10] = 1.33f;
-                }
-            }
-            a();
+            i10++;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColorFilter(colorFilter);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
     }
 }

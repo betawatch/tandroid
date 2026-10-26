@@ -4,9 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.view.Surface;
-import b2.a2;
+import b2.b2;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class m implements Handler.Callback {
     public final Handler a;
@@ -14,9 +14,9 @@ public final class m implements Handler.Callback {
 
     public m(n nVar, r2.l lVar) {
         this.b = nVar;
-        Handler q6 = e2.m0.q(this);
-        this.a = q6;
-        lVar.d(this, q6);
+        Handler q5 = e2.n0.q(this);
+        this.a = q5;
+        lVar.g(this, q5);
     }
 
     public final void a(long j10) {
@@ -32,19 +32,19 @@ public final class m implements Handler.Callback {
         }
         try {
             nVar.C0(j10);
-            a2 a2Var = nVar.H1;
-            if (!a2Var.equals(a2.d) && !a2Var.equals(nVar.I1)) {
-                nVar.I1 = a2Var;
-                sVar.I(a2Var);
+            b2 b2Var = nVar.H1;
+            if (!b2Var.equals(b2.d) && !b2Var.equals(nVar.I1)) {
+                nVar.I1 = b2Var;
+                sVar.J(b2Var);
             }
             nVar.O0.e++;
             a0 a0Var = nVar.e1;
             boolean z10 = a0Var.e != 3;
             a0Var.e = 3;
             a0Var.l.getClass();
-            a0Var.g = e2.m0.S(SystemClock.elapsedRealtime());
+            a0Var.g = e2.n0.S(SystemClock.elapsedRealtime());
             if (z10 && (surface = nVar.r1) != null) {
-                sVar.B(surface);
+                sVar.E(surface);
                 nVar.u1 = true;
             }
             nVar.h0(j10);
@@ -60,7 +60,7 @@ public final class m implements Handler.Callback {
         }
         int i10 = message.arg1;
         int i11 = message.arg2;
-        String str = e2.m0.a;
+        String str = e2.n0.a;
         a(((i10 & 4294967295L) << 32) | (4294967295L & i11));
         return true;
     }

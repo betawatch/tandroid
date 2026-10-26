@@ -4,12 +4,12 @@ import android.app.PendingIntent;
 import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class h {
     public final Bundle a;
     public IconCompat b;
-    public final o0[] c;
+    public final n0[] c;
     public final boolean d;
     public final boolean e;
     public final int f;
@@ -17,7 +17,7 @@ public final class h {
     public final CharSequence h;
     public final PendingIntent i;
 
-    public h(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, o0[] o0VarArr, o0[] o0VarArr2, boolean z10, int i10, boolean z11) {
+    public h(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, n0[] n0VarArr, n0[] n0VarArr2, boolean z10, int i10, boolean z11) {
         this.e = true;
         this.b = iconCompat;
         if (iconCompat != null && iconCompat.i() == 2) {
@@ -26,7 +26,7 @@ public final class h {
         this.h = q.d(charSequence);
         this.i = pendingIntent;
         this.a = bundle == null ? new Bundle() : bundle;
-        this.c = o0VarArr;
+        this.c = n0VarArr;
         this.d = z10;
         this.f = i10;
         this.e = z11;

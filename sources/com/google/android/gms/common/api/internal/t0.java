@@ -1,19 +1,19 @@
 package com.google.android.gms.common.api.internal;
 
+import a8.ba;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import v7.i5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class t0 extends BroadcastReceiver {
     public Context a;
-    public final i5 b;
+    public final ba b;
 
-    public t0(i5 i5Var) {
-        this.b = i5Var;
+    public t0(ba baVar) {
+        this.b = baVar;
     }
 
     public final synchronized void a() {

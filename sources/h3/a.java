@@ -5,10 +5,10 @@ import c3.f;
 import c3.g;
 import c3.h;
 import c3.i;
-import c3.r;
-import c3.u;
+import c3.p;
+import c3.s;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -26,11 +26,11 @@ public final class a {
         return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
     }
 
-    public static int c(r rVar, long j10, u uVar) {
-        if (j10 == rVar.getPosition()) {
+    public static int c(p pVar, long j10, s sVar) {
+        if (j10 == pVar.getPosition()) {
             return 0;
         }
-        uVar.a = j10;
+        sVar.a = j10;
         return 1;
     }
 
@@ -41,7 +41,7 @@ public final class a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int b(r rVar, u uVar) {
+    public final int b(p pVar, s sVar) {
         while (true) {
             f fVar = this.c;
             fVar.getClass();
@@ -53,23 +53,23 @@ public final class a {
             i iVar = this.b;
             if (j13 <= j14) {
                 this.c = null;
-                iVar.d();
-                return c(rVar, j10, uVar);
+                iVar.z();
+                return c(pVar, j10, sVar);
             }
-            long position = j12 - rVar.getPosition();
+            long position = j12 - pVar.getPosition();
             if (position < 0 || position > 262144) {
                 break;
             }
-            rVar.r((int) position);
-            rVar.q();
-            h b10 = iVar.b(rVar, fVar.b);
-            int i10 = b10.a;
-            long j15 = b10.b;
-            long j16 = b10.c;
+            pVar.q((int) position);
+            pVar.p();
+            h f7 = iVar.f(pVar, fVar.b);
+            int i10 = f7.a;
+            long j15 = f7.b;
+            long j16 = f7.c;
             if (i10 == -3) {
                 this.c = null;
-                iVar.d();
-                return c(rVar, j12, uVar);
+                iVar.z();
+                return c(pVar, j12, sVar);
             }
             if (i10 == -2) {
                 fVar.d = j15;
@@ -80,13 +80,13 @@ public final class a {
                     if (i10 != 0) {
                         throw new IllegalStateException("Invalid case");
                     }
-                    long position2 = j16 - rVar.getPosition();
+                    long position2 = j16 - pVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
-                        rVar.r((int) position2);
+                        pVar.q((int) position2);
                     }
                     this.c = null;
-                    iVar.d();
-                    return c(rVar, j16, uVar);
+                    iVar.z();
+                    return c(pVar, j16, sVar);
                 }
                 fVar.e = j15;
                 fVar.g = j16;
@@ -99,7 +99,7 @@ public final class a {
         f fVar = this.c;
         if (fVar == null || fVar.a != j10) {
             e eVar = this.a;
-            this.c = new f(j10, eVar.a.k(j10), eVar.c, eVar.d, eVar.e, eVar.f);
+            this.c = new f(j10, eVar.a.g(j10), eVar.c, eVar.d, eVar.e, eVar.f);
         }
     }
 }

@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class fc extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ ub a;
@@ -23,8 +23,8 @@ public final class fc extends GestureDetector.SimpleOnGestureListener {
             return false;
         }
         ub ubVar = this.a;
-        ibVar.v = ub.access$1400(ubVar, true);
-        ibVar.w = ub.access$1400(ubVar, false);
+        ibVar.v = ub.access$1600(ubVar, true);
+        ibVar.w = ub.access$1600(ubVar, false);
         return true;
     }
 
@@ -40,10 +40,10 @@ public final class fc extends GestureDetector.SimpleOnGestureListener {
         }
         float signum = Math.signum(f7);
         ub ubVar = this.a;
-        o1.k kVar = new o1.k(ubVar, o1.h.m, signum * ubVar.getWidth() * 2.0f);
+        o1.j jVar = new o1.j(ubVar, o1.h.m, signum * ubVar.getWidth() * 2.0f);
         if (!z10) {
             final int i10 = 0;
-            kVar.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
+            jVar.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
                 public final /* synthetic */ fc b;
 
                 {
@@ -62,16 +62,16 @@ public final class fc extends GestureDetector.SimpleOnGestureListener {
                     }
                 }
             });
-            kVar.b(new l7(ubVar, 2));
+            jVar.b(new n7(ubVar, 2));
         }
-        kVar.u.a(1.0f);
-        kVar.u.b(100.0f);
-        kVar.a = f7;
-        kVar.h();
+        jVar.u.a(1.0f);
+        jVar.u.b(100.0f);
+        jVar.a = f7;
+        jVar.h();
         if (z10) {
-            o1.k kVar2 = new o1.k(ubVar, o1.h.t, 0.0f);
+            o1.j jVar2 = new o1.j(ubVar, o1.h.t, 0.0f);
             final int i11 = 1;
-            kVar2.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
+            jVar2.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
                 public final /* synthetic */ fc b;
 
                 {
@@ -90,11 +90,11 @@ public final class fc extends GestureDetector.SimpleOnGestureListener {
                     }
                 }
             });
-            kVar2.b(new ec());
-            kVar.u.a(1.0f);
-            kVar.u.b(10.0f);
-            kVar.a = f7;
-            kVar2.h();
+            jVar2.b(new ec());
+            jVar.u.a(1.0f);
+            jVar.u.b(10.0f);
+            jVar.a = f7;
+            jVar2.h();
         }
         ibVar.s = true;
         return true;

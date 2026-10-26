@@ -1,75 +1,55 @@
 package ig;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s0 b;
+public final class m0 extends s4.p {
+    public final /* synthetic */ r0 b;
 
-    public /* synthetic */ m0(s0 s0Var, int i10) {
-        this.a = i10;
-        this.b = s0Var;
+    public m0(r0 r0Var) {
+        this.b = r0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                s0 s0Var = this.b;
-                s0Var.L.manage_stories = !r2.manage_stories;
-                s0Var.e.Z2.N(true);
-                s0Var.Y(true);
-                break;
-            case 1:
-                s0 s0Var2 = this.b;
-                TL_account.TL_businessBotRights tL_businessBotRights = s0Var2.L;
-                tL_businessBotRights.transfer_stars = true;
-                tL_businessBotRights.transfer_and_upgrade_gifts = true;
-                tL_businessBotRights.change_gift_settings = true;
-                tL_businessBotRights.sell_gifts = true;
-                tL_businessBotRights.view_gifts = true;
-                s0Var2.e.Z2.N(true);
-                s0Var2.Y(true);
-                break;
-            case 2:
-                s0 s0Var3 = this.b;
-                TL_account.TL_businessBotRights tL_businessBotRights2 = s0Var3.L;
-                tL_businessBotRights2.edit_username = true;
-                tL_businessBotRights2.edit_profile_photo = true;
-                tL_businessBotRights2.edit_bio = true;
-                tL_businessBotRights2.edit_name = true;
-                s0Var3.e.Z2.N(true);
-                s0Var3.Y(true);
-                break;
-            case 3:
-                s0 s0Var4 = this.b;
-                s0Var4.e.Z2.N(true);
-                s0Var4.Y(true);
-                break;
-            default:
-                s0 s0Var5 = this.b;
-                String obj = s0Var5.n.getText().toString();
-                String str = s0Var5.F;
-                if (str == null || !TextUtils.equals(str, obj)) {
-                    s0Var5.E = false;
-                    if (!TextUtils.isEmpty(obj)) {
-                        hg.a2 a2Var = s0Var5.f;
-                        s0Var5.F = obj;
-                        int i10 = s0Var5.G;
-                        s0Var5.G = i10 + 1;
-                        a2Var.h(obj, true, false, true, false, false, 0L, false, 0, i10, 0L, null);
-                        break;
-                    } else {
-                        s0Var5.F = null;
-                        s0Var5.f.b();
-                        s0Var5.e.Z2.N(true);
-                        break;
-                    }
-                }
-                break;
+    @Override // s4.p
+    public final boolean a(int i10, int i11) {
+        return true;
+    }
+
+    @Override // s4.p
+    public final boolean b(int i10, int i11) {
+        r0 r0Var = this.b;
+        p0 p0Var = (p0) r0Var.g3.get(i10);
+        p0 p0Var2 = (p0) r0Var.f3.get(i11);
+        if (!p0Var.b(p0Var2)) {
+            return false;
         }
+        int i12 = p0Var.d;
+        if (i12 != 4) {
+            return i12 == 6 ? p0Var.c.equals(p0Var2.c) : i12 == 7;
+        }
+        TLObject tLObject = p0Var.f;
+        if (tLObject instanceof TLRPC.User) {
+            TLObject tLObject2 = p0Var2.f;
+            if (tLObject2 instanceof TLRPC.User) {
+                return ((TLRPC.User) tLObject).id == ((TLRPC.User) tLObject2).id;
+            }
+        }
+        if (!(tLObject instanceof TLRPC.Chat)) {
+            return false;
+        }
+        TLObject tLObject3 = p0Var2.f;
+        return (tLObject3 instanceof TLRPC.Chat) && ((TLRPC.Chat) tLObject).id == ((TLRPC.Chat) tLObject3).id;
+    }
+
+    @Override // s4.p
+    public final int d() {
+        return this.b.f3.size();
+    }
+
+    @Override // s4.p
+    public final int e() {
+        return this.b.g3.size();
     }
 }

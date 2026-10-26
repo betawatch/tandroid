@@ -1,47 +1,31 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class vp0 extends LinearLayout {
-    public final ew0 a;
-    public final TextView b;
-    public final TextView c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public vp0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vp0(Context context, int i10, int i11) {
         super(context);
-        setLayoutParams(new s4.o0(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = dp / 2;
-        setPadding(dp, i10, dp, i10);
-        ew0 ew0Var = new ew0(context);
-        this.a = ew0Var;
-        addView(ew0Var, w7.z5.c(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.z5.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i11 = org.telegram.ui.ActionBar.k6.E8;
-        org.telegram.ui.ActionBar.r6.W(textView, i11, g6Var);
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        org.telegram.ui.ActionBar.r6.X(textView2, org.telegram.ui.ActionBar.r6.h(i11, 102), g6Var);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+        this.a = i10;
+        this.b = i11;
+    }
+
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return AndroidUtilities.dp(260.0f);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
     }
 }

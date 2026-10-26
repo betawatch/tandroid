@@ -1,18 +1,25 @@
 package w7;
 
-import android.os.StrictMode;
-import java.util.concurrent.Callable;
+import android.net.Uri;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public abstract class h0 {
-    public static Object a(Callable callable) {
-        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
-        try {
-            StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
-            return callable.call();
-        } finally {
-            StrictMode.setThreadPolicy(threadPolicy);
+    public static Uri a(Uri uri) {
+        if (!uri.isHierarchical() || uri.getQueryParameter("CMCD") == null) {
+            return uri;
         }
+        Uri.Builder buildUpon = uri.buildUpon();
+        buildUpon.clearQuery();
+        for (String str : uri.getQueryParameterNames()) {
+            if (!str.equals("CMCD")) {
+                Iterator<String> it = uri.getQueryParameters(str).iterator();
+                while (it.hasNext()) {
+                    buildUpon.appendQueryParameter(str, it.next());
+                }
+            }
+        }
+        return buildUpon.build();
     }
 }

@@ -1,104 +1,64 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sq0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class sq0 implements org.telegram.ui.Components.sn0 {
+    public final /* synthetic */ vq0 a;
 
-    public /* synthetic */ sq0(PhotoViewer photoViewer, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
+    public sq0(vq0 vq0Var) {
+        this.a = vq0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.i3.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                CropAreaView cropAreaView = photoViewer.C1.b.a;
-                float lerp = AndroidUtilities.lerp(photoViewer.a6, photoViewer.e6, photoViewer.l6);
-                float lerp2 = AndroidUtilities.lerp(photoViewer.X5, photoViewer.c6, photoViewer.l6);
-                float lerp3 = AndroidUtilities.lerp(photoViewer.Y5, photoViewer.d6, photoViewer.l6);
-                cropAreaView.n0 = 0.0f;
-                cropAreaView.o0 = lerp;
-                cropAreaView.p0 = lerp2;
-                cropAreaView.q0 = lerp3;
-                cropAreaView.invalidate();
-                break;
-            case 2:
-                photoViewer.L1.t0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 3:
-                photoViewer.L1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 4:
-                Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 5:
-                Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer.u3();
-                break;
-            case 6:
-                photoViewer.L1.t0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 7:
-                photoViewer.L1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 8:
-                jt0 jt0Var = photoViewer.L1;
-                if (jt0Var != null) {
-                    jt0Var.d1.invalidate();
-                    break;
-                }
-                break;
-            case 9:
-                Drawable[] drawableArr4 = PhotoViewer.U8;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer.Z5 = floatValue;
-                jt0 jt0Var2 = photoViewer.L1;
-                if (jt0Var2 != null && Math.abs(floatValue - jt0Var2.X1) > 0.1f) {
-                    jt0Var2.X1 = floatValue;
-                    jt0Var2.v0(jt0Var2.I0, jt0Var2.J0, jt0Var2.K0, jt0Var2.N0, jt0Var2.O0);
-                }
-                photoViewer.e0.invalidate();
-                break;
-            case 10:
-                Drawable[] drawableArr5 = PhotoViewer.U8;
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer.H1();
-                break;
-            case 11:
-                Drawable[] drawableArr6 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 12:
-                Drawable[] drawableArr7 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 13:
-                photoViewer.W0[0].e(1, ((Float) valueAnimator.getAnimatedValue()).floatValue(), false);
-                break;
-            default:
-                Drawable[] drawableArr8 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
+    @Override // org.telegram.ui.Components.sn0
+    public final void f(int i10, boolean z10) {
+        vq0 vq0Var = this.a;
+        if (vq0Var.n[0].b == i10) {
+            return;
         }
+        vq0Var.e = i10 == vq0Var.h.getFirstTabId();
+        org.telegram.ui.ActionBar.q5 q5Var = vq0Var.n[1];
+        q5Var.b = i10;
+        q5Var.setVisibility(0);
+        vq0Var.k0(true);
+        vq0Var.v = z10;
+        if (i10 == 0) {
+            vq0Var.c.setSearchFieldHint(LocaleController.getString(R.string.SearchImagesTitle));
+        } else {
+            vq0Var.c.setSearchFieldHint(LocaleController.getString(R.string.SearchGifsTitle));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.sn0
+    public final /* synthetic */ boolean h1(int i10, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.sn0
+    public final void z0(float f7) {
+        vq0 vq0Var = this.a;
+        if (f7 != 1.0f || vq0Var.n[1].getVisibility() == 0) {
+            if (vq0Var.v) {
+                vq0Var.n[0].setTranslationX((-f7) * r3.getMeasuredWidth());
+                vq0Var.n[1].setTranslationX(r3[0].getMeasuredWidth() - (f7 * vq0Var.n[0].getMeasuredWidth()));
+            } else {
+                vq0Var.n[0].setTranslationX(r3.getMeasuredWidth() * f7);
+                vq0Var.n[1].setTranslationX((f7 * r3[0].getMeasuredWidth()) - vq0Var.n[0].getMeasuredWidth());
+            }
+            if (f7 == 1.0f) {
+                org.telegram.ui.ActionBar.q5[] q5VarArr = vq0Var.n;
+                org.telegram.ui.ActionBar.q5 q5Var = q5VarArr[0];
+                q5VarArr[0] = q5VarArr[1];
+                q5VarArr[1] = q5Var;
+                q5Var.setVisibility(8);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.sn0
+    public final /* synthetic */ void z() {
     }
 }

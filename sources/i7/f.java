@@ -1,39 +1,61 @@
 package i7;
 
-import android.os.BadParcelableException;
-import android.os.Parcel;
-import android.os.Parcelable;
-import i2.o1;
+import a8.aa;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import h7.l;
+import h7.q;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class f {
-    public static final /* synthetic */ int a = 0;
+public final class f extends c8.b implements a {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    static {
-        f.class.getClassLoader();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(int i10, TaskCompletionSource taskCompletionSource) {
+        super(8);
+        this.b = i10;
+        this.c = taskCompletionSource;
+        attachInterface(this, "com.google.android.gms.identitycredentials.internal.IIdentityCredentialCallbacks");
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
+    @Override // i7.a
+    public void D(Status status, q qVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // i7.a
+    public void D0(Status status, h7.e eVar) {
+        switch (this.b) {
+            case 0:
+                i.e(status, "status");
+                aa.a(status, eVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
         }
-        return (Parcelable) creator.createFromParcel(parcel);
     }
 
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(o1.k(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
+    @Override // i7.a
+    public void d0(Status status, h7.b bVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
     }
 
-    public static void c(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
+    @Override // i7.a
+    public void s0(Status status, l lVar) {
+        switch (this.b) {
+            case 1:
+                i.e(status, "status");
+                aa.a(status, lVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
         }
     }
 }

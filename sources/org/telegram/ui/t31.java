@@ -1,29 +1,56 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class t31 extends org.telegram.ui.Components.j81 {
-    public final /* synthetic */ SecretMediaViewer m0;
+public final class t31 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public t31(SecretMediaViewer secretMediaViewer) {
-        this.m0 = secretMediaViewer;
+    public /* synthetic */ t31(SecretMediaViewer secretMediaViewer, int i10) {
+        this.a = i10;
+        this.b = secretMediaViewer;
     }
 
-    @Override // org.telegram.ui.Components.j81
-    public final void B() {
-        super.B();
-        this.m0.W.a(false, true);
-    }
-
-    @Override // org.telegram.ui.Components.j81
-    public final void C() {
-        super.C();
-        this.m0.W.a(true, true);
-    }
-
-    @Override // org.telegram.ui.Components.j81
-    public final void P(boolean z10) {
-        super.P(z10);
-        this.m0.W.a(z10, true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.o0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.o0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.G;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.F.setVisibility(8);
+                    secretMediaViewer2.G = null;
+                    secretMediaViewer2.a0.scrollTo(0, 0);
+                    break;
+                }
+                break;
+            case 2:
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.o0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.o0 = null;
+                    break;
+                }
+                break;
+            default:
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.K0 = null;
+                secretMediaViewer4.e.invalidate();
+                break;
+        }
     }
 }

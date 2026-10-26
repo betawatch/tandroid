@@ -1,66 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class h10 extends FrameLayout {
-    public final q6 a;
-    public final q6 b;
+public final /* synthetic */ class h10 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j10 b;
 
-    public h10(Context context) {
-        super(context);
-        q6 q6Var = new q6(context, true, true, false);
-        this.a = q6Var;
-        q6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        q6Var.setTypeface(AndroidUtilities.bold());
-        int i10 = org.telegram.ui.ActionBar.k6.L6;
-        org.telegram.ui.ActionBar.r6.a0(q6Var, i10, null);
-        q6Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(q6Var, w7.z5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
-        q6 q6Var2 = new q6(context, true, true, true);
-        this.b = q6Var2;
-        q6Var2.b(0.45f, 250L, bs.h);
-        q6Var2.setTextSize(AndroidUtilities.dp(15.0f));
-        org.telegram.ui.ActionBar.r6.a0(q6Var2, i10, null);
-        q6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(q6Var2, w7.z5.d(-2, 20.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
-        WeakHashMap weakHashMap = r0.i0.a;
-        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
+    public /* synthetic */ h10(j10 j10Var, int i10) {
+        this.a = i10;
+        this.b = j10Var;
     }
 
-    public final void a(String str, Runnable runnable) {
-        boolean z10 = !LocaleController.isRTL;
-        q6 q6Var = this.b;
-        q6Var.c(str, z10, true);
-        q6Var.setOnClickListener(new v6(1, runnable));
-    }
-
-    public final void b(String str, boolean z10) {
-        q6 q6Var = this.a;
-        if (z10) {
-            q6Var.a();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                j10 j10Var = this.b;
+                j10Var.getClass();
+                j10Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j10Var.invalidate();
+                break;
+            case 1:
+                j10 j10Var2 = this.b;
+                j10Var2.getClass();
+                j10Var2.v = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                j10Var2.invalidate();
+                break;
+            default:
+                j10 j10Var3 = this.b;
+                j10Var3.getClass();
+                j10Var3.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j10Var3.invalidate();
+                break;
         }
-        q6Var.c(str, z10 && !LocaleController.isRTL, true);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setText(this.a.getText());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

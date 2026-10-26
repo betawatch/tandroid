@@ -1,18 +1,33 @@
 package gf;
 
-import af.f;
-import df.s;
+import bf.b;
+import bf.g;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public interface a {
-    char a();
+public abstract class a {
+    public boolean b(ef.a aVar) {
+        return this instanceof b;
+    }
 
-    void b(s sVar, s sVar2, int i10);
+    public boolean c() {
+        return this instanceof af.b;
+    }
 
-    int c();
+    public abstract ef.a e();
 
-    int d(f fVar, f fVar2);
+    public boolean f() {
+        return this instanceof b;
+    }
 
-    char e();
+    public abstract bf.a h(g gVar);
+
+    public void d() {
+    }
+
+    public void a(CharSequence charSequence) {
+    }
+
+    public void g(ff.a aVar) {
+    }
 }

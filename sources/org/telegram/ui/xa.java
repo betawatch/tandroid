@@ -1,88 +1,37 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xa implements RequestDelegate {
+public final /* synthetic */ class xa implements dh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vb b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ xa(vb vbVar, int i10) {
+    public /* synthetic */ xa(Object obj, int i10) {
         this.a = i10;
-        this.b = vbVar;
+        this.b = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // dh.a
+    public final void b(ch.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // dh.a
+    public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
-                if (tLObject != null) {
-                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults = (TLRPC.TL_channels_adminLogResults) tLObject;
-                    final int i10 = 1;
-                    final vb vbVar = this.b;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ua
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i10) {
-                                case 0:
-                                    vb.U(vbVar, tL_channels_adminLogResults);
-                                    break;
-                                default:
-                                    vb.Y(vbVar, tL_channels_adminLogResults);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                }
-                break;
-            case 1:
-                vb vbVar2 = this.b;
-                vbVar2.getClass();
-                if (tLObject instanceof Vector) {
-                    ArrayList<T> arrayList = ((Vector) tLObject).objects;
-                    ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11) instanceof TLRPC.User) {
-                            arrayList2.add((TLRPC.User) arrayList.get(i11));
-                        }
-                    }
-                    vbVar2.getMessagesController().putUsers(arrayList2, false);
-                    break;
-                }
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new h0(13, this.b, tLObject));
-                break;
-            case 3:
-                if (tLObject != null) {
-                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults2 = (TLRPC.TL_channels_adminLogResults) tLObject;
-                    final int i12 = 0;
-                    final vb vbVar3 = this.b;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ua
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i12) {
-                                case 0:
-                                    vb.U(vbVar3, tL_channels_adminLogResults2);
-                                    break;
-                                default:
-                                    vb.Y(vbVar3, tL_channels_adminLogResults2);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                }
+                ((tb) this.b).X(canvas, rectF);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new s1(this.b, tL_error, tLObject, 9));
+                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
+                org.telegram.ui.Components.mm0 mm0Var = premiumPreviewFragment.a;
+                ih.d.a(mm0Var, canvas, rectF, mm0Var, premiumPreviewFragment.d0);
                 break;
         }
     }

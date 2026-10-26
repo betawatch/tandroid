@@ -1,50 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class hs0 extends org.telegram.ui.Components.u81 {
-    public final org.telegram.ui.Components.na g0;
-    public final /* synthetic */ PhotoViewer h0;
+public final class hs0 implements Runnable {
+    public final /* synthetic */ PhotoViewer a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hs0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.h0 = photoViewer;
-        new Path();
-        this.g0 = new org.telegram.ui.Components.na(photoViewer.b0, this, 0, false);
+    public hs0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.u81
-    public final void b(Canvas canvas, RectF rectF) {
-        canvas.save();
-        canvas.clipRect(rectF);
-        float f7 = -getX();
-        PhotoViewer photoViewer = this.h0;
-        canvas.translate(f7 - photoViewer.R7.getX(), (-getY()) - photoViewer.R7.getY());
-        photoViewer.V0(canvas, this.g0, -14803426, 855638016, false, true, false);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        int i10;
-        if (SharedConfig.photoViewerBlur && ((i10 = this.h0.n4) == 1 || i10 == 2 || i10 == 3)) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        PhotoViewer photoViewer = this.a;
+        MessageObject messageObject = photoViewer.T4;
+        if (messageObject == null) {
             return;
         }
-        super.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            this.h0.e0.invalidate();
-        }
+        FileLoader.getInstance(messageObject.currentAccount).setLoadingVideo(photoViewer.T4.getDocument(), true, false);
     }
 }

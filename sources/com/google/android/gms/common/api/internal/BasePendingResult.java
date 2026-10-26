@@ -1,5 +1,6 @@
 package com.google.android.gms.common.api.internal;
 
+import a8.z9;
 import android.os.Looper;
 import android.util.Log;
 import android.util.Pair;
@@ -11,15 +12,14 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
-import v7.g5;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
-public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends g5 {
+public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends z9 {
     public static final m1 n = new m1(0);
     public final g b;
     public final WeakReference c;
-    public e6.q f;
+    public f6.q f;
     public com.google.android.gms.common.api.q h;
     public Status i;
     public volatile boolean j;
@@ -38,9 +38,9 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     }
 
     public static void m(com.google.android.gms.common.api.q qVar) {
-        if (qVar instanceof x8.e) {
+        if (qVar instanceof y8.e) {
             try {
-                DataHolder dataHolder = ((x8.e) qVar).a;
+                DataHolder dataHolder = ((y8.e) qVar).a;
                 if (dataHolder != null) {
                     dataHolder.close();
                 }
@@ -50,7 +50,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         }
     }
 
-    @Override // v7.g5
+    @Override // a8.z9
     public final void b(com.google.android.gms.common.api.o oVar) {
         synchronized (this.a) {
             try {
@@ -115,8 +115,8 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                     return;
                 }
                 g();
-                n6.l.j("Results have already been set", !g());
-                n6.l.j("Result has already been consumed", !this.j);
+                o6.l.j("Results have already been set", !g());
+                o6.l.j("Result has already been consumed", !this.j);
                 k(qVar);
             } catch (Throwable th2) {
                 throw th2;
@@ -124,10 +124,10 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         }
     }
 
-    public final void i(e6.q qVar) {
+    public final void i(f6.q qVar) {
         synchronized (this.a) {
             try {
-                n6.l.j("Result has already been consumed.", !this.j);
+                o6.l.j("Result has already been consumed.", !this.j);
                 if (f()) {
                     return;
                 }
@@ -148,8 +148,8 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     public final com.google.android.gms.common.api.q j() {
         com.google.android.gms.common.api.q qVar;
         synchronized (this.a) {
-            n6.l.j("Result has already been consumed.", !this.j);
-            n6.l.j("Result is not ready.", g());
+            o6.l.j("Result has already been consumed.", !this.j);
+            o6.l.j("Result is not ready.", g());
             qVar = this.h;
             this.h = null;
             this.f = null;
@@ -159,7 +159,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         if (e1Var != null) {
             ((Set) e1Var.a.a).remove(this);
         }
-        n6.l.h(qVar);
+        o6.l.h(qVar);
         return qVar;
     }
 
@@ -170,12 +170,12 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         if (this.k) {
             this.f = null;
         } else {
-            e6.q qVar2 = this.f;
+            f6.q qVar2 = this.f;
             if (qVar2 != null) {
                 g gVar = this.b;
                 gVar.removeMessages(2);
                 gVar.sendMessage(gVar.obtainMessage(1, new Pair(qVar2, j())));
-            } else if (this.h instanceof x8.e) {
+            } else if (this.h instanceof y8.e) {
                 this.resultGuardian = new n1(this);
             }
         }

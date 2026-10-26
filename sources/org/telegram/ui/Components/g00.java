@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.opengl.GLES20;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
 public final class g00 {
     public final String a;
@@ -89,10 +89,10 @@ public final class g00 {
                 int i25 = i23 + 2;
                 float f15 = fArr3[i25];
                 float f16 = f14 + f15;
-                float w9 = com.google.android.gms.internal.play_billing.k3.w(f15, i25, f14 * i24, f16);
+                float x9 = c3.h0.x(f15, i25, f14 * i24, f16);
                 Locale locale3 = Locale.US;
-                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] + singleStepOffset * %f) * %f;\n", Float.valueOf(w9), Float.valueOf(f16)));
-                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] - singleStepOffset * %f) * %f;\n", Float.valueOf(w9), Float.valueOf(f16)));
+                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] + singleStepOffset * %f) * %f;\n", Float.valueOf(x9), Float.valueOf(f16)));
+                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] - singleStepOffset * %f) * %f;\n", Float.valueOf(x9), Float.valueOf(f16)));
                 min++;
             }
         }
@@ -124,7 +124,7 @@ public final class g00 {
             float f20 = fArr4[i30];
             int i31 = i29 + 2;
             float f21 = fArr4[i31];
-            fArr5[i28] = com.google.android.gms.internal.play_billing.k3.w(f21, i31, f20 * i30, f20 + f21);
+            fArr5[i28] = c3.h0.x(f21, i31, f20 * i30, f20 + f21);
         }
         StringBuilder sb3 = new StringBuilder("attribute vec4 position;\nattribute vec4 inputTexCoord;\nuniform float texelWidthOffset;\nuniform float texelHeightOffset;\n");
         Locale locale4 = Locale.US;

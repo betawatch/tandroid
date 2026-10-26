@@ -18,10 +18,11 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.c41;
-import org.telegram.ui.Wallet.m4;
+import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.voip.j1;
+import org.telegram.ui.yx;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -35,8 +36,8 @@ public final class s0 {
 
     public s0(Context context, e eVar) {
         this.f = new ArrayList();
-        this.g = new androidx.mediarouter.app.f(this, 10);
-        this.h = new m4(this, 2);
+        this.g = new androidx.mediarouter.app.g(this, 10);
+        this.h = new cy0(this, 8);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -51,13 +52,13 @@ public final class s0 {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).v();
+            ((r4.c) this.c).T();
             return null;
         }
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new c41(this, i10, serializable, 24));
+        ((Executor) this.b).execute(new yx(this, i10, serializable, 22));
     }
 
     public void c() {
@@ -114,7 +115,7 @@ public final class s0 {
                     }
                     if (i13 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new j5.b(this, r0Var);
+                        r0Var.F = new j1(this, r0Var);
                         if (!r0Var.w) {
                             r0Var.w = true;
                             r0Var.r();

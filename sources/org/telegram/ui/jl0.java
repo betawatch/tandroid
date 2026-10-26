@@ -1,121 +1,119 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jl0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ an0 b;
+public final class jl0 extends org.telegram.ui.Components.vw0 {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ FrameLayout m0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 n0;
 
-    public /* synthetic */ jl0(an0 an0Var, int i10) {
-        this.a = i10;
-        this.b = an0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jl0(org.telegram.ui.ActionBar.r2 r2Var, Context context, FrameLayout frameLayout, int i10) {
+        super(context, null);
+        this.l0 = i10;
+        this.n0 = r2Var;
+        this.m0 = frameLayout;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.vw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int measuredHeight;
+        org.telegram.ui.ActionBar.r5 r5Var;
+        int measuredHeight2;
+        switch (this.l0) {
             case 0:
-                an0 an0Var = this.b;
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        an0Var.getClass();
-                        break;
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n0;
+                int visibility = passcodeActivity.v.getVisibility();
+                FrameLayout frameLayout = this.m0;
+                if (visibility == 8 || Q() < AndroidUtilities.dp(20.0f)) {
+                    if (passcodeActivity.v.getVisibility() != 8) {
+                        int measuredWidth = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(230.0f);
+                        frameLayout.layout(0, 0, measuredWidth, measuredHeight);
                     } else {
-                        an0Var.L.callOnClick();
-                        break;
+                        int measuredWidth2 = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight();
+                        frameLayout.layout(0, 0, measuredWidth2, measuredHeight);
                     }
+                } else if (passcodeActivity.m0()) {
+                    int measuredWidth3 = getMeasuredWidth();
+                    measuredHeight = Q() + (getMeasuredHeight() - AndroidUtilities.dp(230.0f));
+                    frameLayout.layout(0, 0, measuredWidth3, measuredHeight);
                 } else {
-                    an0Var.Y[2].requestFocus();
-                    break;
+                    int measuredWidth4 = getMeasuredWidth();
+                    measuredHeight = getMeasuredHeight();
+                    frameLayout.layout(0, 0, measuredWidth4, measuredHeight);
                 }
-            case 1:
-                an0 an0Var2 = this.b;
-                an0Var2.getClass();
-                if (i10 == 5) {
-                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr = an0Var2.Y;
-                    if (intValue < editTextBoldCursorArr.length) {
-                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
-                            an0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            an0Var2.Y[intValue].requestFocus();
-                            break;
-                        }
+                r5Var = ((org.telegram.ui.ActionBar.r2) passcodeActivity).simpleActionBar;
+                View view = r5Var != null ? ((org.telegram.ui.ActionBar.r2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.r2) passcodeActivity).actionBar;
+                if (view != null && view.getParent() == this) {
+                    view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                }
+                passcodeActivity.v.layout(0, measuredHeight, getMeasuredWidth(), AndroidUtilities.dp(230.0f) + measuredHeight);
+                R();
+                break;
+            default:
+                k0 k0Var = (k0) this.m0;
+                dg1 dg1Var = (dg1) this.n0;
+                if (dg1Var.e0.getVisibility() == 8 || Q() < AndroidUtilities.dp(20.0f)) {
+                    if (dg1Var.e0.getVisibility() != 8) {
+                        int measuredWidth5 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight() - AndroidUtilities.dp(230.0f);
+                        k0Var.layout(0, 0, measuredWidth5, measuredHeight2);
+                    } else {
+                        int measuredWidth6 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight();
+                        k0Var.layout(0, 0, measuredWidth6, measuredHeight2);
                     }
+                } else if (dg1Var.w0()) {
+                    int measuredWidth7 = getMeasuredWidth();
+                    measuredHeight2 = Q() + (getMeasuredHeight() - AndroidUtilities.dp(230.0f));
+                    k0Var.layout(0, 0, measuredWidth7, measuredHeight2);
+                } else {
+                    int measuredWidth8 = getMeasuredWidth();
+                    measuredHeight2 = getMeasuredHeight();
+                    k0Var.layout(0, 0, measuredWidth8, measuredHeight2);
                 }
+                dg1Var.e0.layout(0, measuredHeight2, getMeasuredWidth(), AndroidUtilities.dp(230.0f) + measuredHeight2);
                 break;
-            case 2:
-                an0 an0Var3 = this.b;
-                an0Var3.getClass();
-                if (i10 == 5) {
-                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr2 = an0Var3.a0;
-                    if (intValue2 < editTextBoldCursorArr2.length) {
-                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
-                            an0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            an0Var3.a0[intValue2].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                an0 an0Var4 = this.b;
-                an0Var4.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    an0Var4.L.callOnClick();
-                    break;
-                }
-                break;
-            case 4:
-                an0 an0Var5 = this.b;
-                an0Var5.getClass();
-                if (i10 == 5) {
-                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr3 = an0Var5.Y;
-                    if (intValue3 < editTextBoldCursorArr3.length) {
-                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
-                            an0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            an0Var5.Y[intValue3].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                an0 an0Var6 = this.b;
-                an0Var6.getClass();
-                if (i10 == 5 || i10 == 6) {
-                    an0Var6.L.callOnClick();
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.ActionBar.r5 r5Var;
+        switch (this.l0) {
+            case 0:
+                int size = View.MeasureSpec.getSize(i10);
+                int size2 = View.MeasureSpec.getSize(i11);
+                setMeasuredDimension(size, size2);
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n0;
+                this.m0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((passcodeActivity.v.getVisibility() == 8 || Q() >= AndroidUtilities.dp(20.0f)) ? size2 : size2 - AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
+                passcodeActivity.v.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
+                r5Var = ((org.telegram.ui.ActionBar.r2) passcodeActivity).simpleActionBar;
+                View view = r5Var != null ? ((org.telegram.ui.ActionBar.r2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.r2) passcodeActivity).actionBar;
+                if (view != null && view.getParent() == this) {
+                    view.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     break;
                 }
                 break;
             default:
-                an0 an0Var7 = this.b;
-                an0Var7.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    an0Var7.L.callOnClick();
-                    break;
+                int size3 = View.MeasureSpec.getSize(i10);
+                int size4 = View.MeasureSpec.getSize(i11);
+                setMeasuredDimension(size3, size4);
+                dg1 dg1Var = (dg1) this.n0;
+                if (dg1Var.e0.getVisibility() != 8 && Q() < AndroidUtilities.dp(20.0f)) {
+                    size4 -= AndroidUtilities.dp(230.0f);
                 }
+                ((k0) this.m0).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30));
+                dg1Var.e0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
                 break;
         }
-        return true;
     }
 }

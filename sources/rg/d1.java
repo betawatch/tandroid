@@ -1,52 +1,50 @@
 package rg;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.graphics.Color;
+import android.opengl.GLES20;
+import java.util.HashMap;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
+/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
 /* loaded from: classes3.dex */
-public final class d1 extends s4.m0 {
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        org.telegram.ui.Cells.t1 t1Var;
-        MessageObject.GroupedMessages currentMessagesGroup;
-        MessageObject.GroupedMessagePosition currentPosition;
-        int i10 = 0;
-        rect.bottom = 0;
-        if (!(view instanceof org.telegram.ui.Cells.t1) || (currentMessagesGroup = (t1Var = (org.telegram.ui.Cells.t1) view).getCurrentMessagesGroup()) == null || (currentPosition = t1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
-            return;
+public final class d1 {
+    public int a;
+    public HashMap b;
+
+    public static void a(int i10, int i11) {
+        GLES20.glUniform4f(i10, Color.red(i11) / 255.0f, Color.green(i11) / 255.0f, Color.blue(i11) / 255.0f, Color.alpha(i11) / 255.0f);
+    }
+
+    public static b2.v0 b(int i10, String str) {
+        int glCreateShader = GLES20.glCreateShader(i10);
+        GLES20.glShaderSource(glCreateShader, str);
+        GLES20.glCompileShader(glCreateShader);
+        int[] iArr = new int[1];
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
+        if (iArr[0] == 0 && BuildVars.LOGS_ENABLED) {
+            FileLog.e(GLES20.glGetShaderInfoLog(glCreateShader));
         }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int extraInsetHeight = t1Var.getExtraInsetHeight();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= currentPosition.siblingHeights.length) {
-                break;
-            }
-            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
-            i11++;
+        int i11 = iArr[0];
+        b2.v0 v0Var = new b2.v0();
+        v0Var.a = glCreateShader;
+        v0Var.b = i11;
+        return v0Var;
+    }
+
+    public static void c(int i10, int i11, int i12) {
+        if (i10 != 0) {
+            GLES20.glDeleteShader(i10);
         }
-        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
-        int size = currentMessagesGroup.posArray.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
-                byte b10 = groupedMessagePosition.minY;
-                byte b11 = currentPosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.v0.z(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
-                    break;
-                }
-                i10++;
-            } else {
-                break;
-            }
+        if (i11 != 0) {
+            GLES20.glDeleteShader(i11);
         }
-        rect.bottom = -round;
+        if (i12 != 0) {
+            GLES20.glDeleteProgram(i10);
+        }
+    }
+
+    public final int d(String str) {
+        return ((Integer) this.b.get(str)).intValue();
     }
 }
